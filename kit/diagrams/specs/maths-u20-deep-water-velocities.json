@@ -1,0 +1,99 @@
+{
+ "id": "maths-u20-deep-water-velocities",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u20",
+ "lesson": "Wave Mechanics",
+ "title": "Phase and group velocity of deep-water waves",
+ "caption": "For ω = √(gk) the phase velocity is √(g/k) and the group velocity is half of it, whatever the wavenumber: the crests overtake the group.",
+ "alt": "Two falling curves of speed against wavenumber k, the phase velocity above and the group velocity exactly half as high.",
+ "description": [
+  "The phase velocity v_p = ω/k = √(g/k) falls as k grows.",
+  "The group velocity v_g = dω/dk = ½√(g/k) is half of it at every k.",
+  "At k = 1 rad/m with g = 9.81 m/s² the phase velocity is 3.13 m/s and the group velocity 1.57 m/s."
+ ],
+ "range": {
+  "x": [
+   0.2,
+   4
+  ],
+  "y": [
+   0,
+   7
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4
+  ],
+  [
+   2,
+   4,
+   6
+  ]
+ ],
+ "grid": [
+  1,
+  2
+ ],
+ "height": [
+  330,
+  300
+ ],
+ "axisLabels": [
+  "k (rad/m)",
+  "v (m/s)"
+ ],
+ "curves": [
+  {
+   "expr": "sqrt(9.81/x)",
+   "colour": "a1",
+   "label": "v_p",
+   "labelAt": [
+    0.5,
+    4.8
+   ],
+   "anchor": "start"
+  },
+  {
+   "expr": "0.5*sqrt(9.81/x)",
+   "colour": "a2",
+   "label": "v_g",
+   "labelAt": [
+    0.5,
+    2.5
+   ],
+   "anchor": "start"
+  }
+ ],
+ "checks": [
+  {
+   "type": "order",
+   "a": "sqrt(9.81/x)",
+   "b": "0.5*sqrt(9.81/x)",
+   "x": 1,
+   "rel": ">",
+   "name": "the phase velocity exceeds the group velocity"
+  },
+  {
+   "type": "point",
+   "expr": "sqrt(9.81/x)",
+   "x": 1,
+   "y": 3.132,
+   "name": "v_p(1) = √9.81 = 3.13 m/s"
+  },
+  {
+   "type": "slope",
+   "expr": "sqrt(9.81*x)",
+   "x": 1,
+   "value": 1.5660459763365826,
+   "name": "dω/dk = ½√(g/k) at k = 1"
+  }
+ ],
+ "fromLesson": [
+  "v_{g} = v_{p}/2"
+ ]
+}

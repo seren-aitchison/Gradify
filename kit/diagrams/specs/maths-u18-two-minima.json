@@ -1,0 +1,147 @@
+{
+ "id": "maths-u18-two-minima",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u18",
+ "lesson": "Nonconvex Optimisation",
+ "title": "Two local minima, one global",
+ "caption": "f(x) = x⁴ − 4x² + x has stationary points at x ≈ -1.47, 0.13 and 1.35. The outer two are minima, with f ≈ -5.44 and -2.62, so only the left one is the global minimum; descent from the right would stop at the worse one.",
+ "alt": "A double-well curve with a deep minimum near x = -1.47, a shallow one near x = 1.35 and a small peak near x = 0.13.",
+ "description": [
+  "Solve f′(x) = 4x³ − 8x + 1 = 0: three roots near −1.47, 0.13 and 1.35.",
+  "f″ > 0 at the outer two (minima) and f″ < 0 at 0.13 (maximum).",
+  "f(−1.47) ≈ -5.44 is lower than f(1.35) ≈ -2.62.",
+  "The left minimum is global; the right is only local."
+ ],
+ "range": {
+  "x": [
+   -2.2,
+   2.2
+  ],
+  "y": [
+   -7,
+   7
+  ]
+ },
+ "ticks": [
+  [
+   -2,
+   -1,
+   1,
+   2
+  ],
+  [
+   -6,
+   -4,
+   -2,
+   2,
+   4,
+   6
+  ]
+ ],
+ "grid": [
+  1,
+  2
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "x^4-4*x^2+x",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": -1.47299760111403,
+   "y": -5.444192066610898,
+   "label": "global min",
+   "colour": "a2",
+   "dx": 12,
+   "dy": -12
+  },
+  {
+   "x": 1.3469974085277738,
+   "y": -2.618555980765248,
+   "label": "local min",
+   "colour": "a4",
+   "dx": 0,
+   "dy": 20
+  },
+  {
+   "x": 0.1260001925862561,
+   "y": 0.06274804737614482,
+   "label": "local max",
+   "colour": "ink",
+   "dx": 10,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "slope",
+   "expr": "x^4-4*x^2+x",
+   "x": -1.47299760111403,
+   "value": 0,
+   "name": "f′ = 0 at the left minimum"
+  },
+  {
+   "type": "slope",
+   "expr": "x^4-4*x^2+x",
+   "x": 0.1260001925862561,
+   "value": 0,
+   "name": "f′ = 0 at the local maximum"
+  },
+  {
+   "type": "slope",
+   "expr": "x^4-4*x^2+x",
+   "x": 1.3469974085277738,
+   "value": 0,
+   "name": "f′ = 0 at the right minimum"
+  },
+  {
+   "type": "min",
+   "expr": "x^4-4*x^2+x",
+   "domain": [
+    -2.2,
+    0
+   ],
+   "x": -1.47299760111403,
+   "y": -5.444192066610898,
+   "tol": 0.01,
+   "name": "the left minimum is about −5.44"
+  },
+  {
+   "type": "min",
+   "expr": "x^4-4*x^2+x",
+   "domain": [
+    0.6,
+    2.2
+   ],
+   "x": 1.3469974085277738,
+   "y": -2.618555980765248,
+   "tol": 0.01,
+   "name": "the right minimum is about −2.62"
+  },
+  {
+   "type": "max",
+   "expr": "x^4-4*x^2+x",
+   "domain": [
+    -0.5,
+    1
+   ],
+   "x": 0.1260001925862561,
+   "y": 0.06274804737614482,
+   "name": "the stationary point at 0.13 is a maximum"
+  }
+ ],
+ "fromLesson": [
+  "x ≈ −1.47"
+ ]
+}

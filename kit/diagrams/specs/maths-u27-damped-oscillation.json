@@ -1,0 +1,110 @@
+{
+ "id": "maths-u27-damped-oscillation",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u27",
+ "lesson": "MapleSim",
+ "title": "The mass–spring–damper oscillation",
+ "caption": "For m = 1 kg, c = 2 N·s/m and k = 100 N/m, ẍ + 2ẋ + 100x = 0 gives x = e^{−t} cos(√99 t) from a start at x = 1: it oscillates at √99 ≈ 9.95 rad/s, close to √100 = 10, inside the decaying envelope e^{−t}.",
+ "alt": "A cosine wave of about ten radians per second starting at 1 and shrinking inside the dashed envelope e^{−t}.",
+ "description": [
+  "The model is ẍ + 2ẋ + 100x = 0 with the mass displaced to x = 1.",
+  "The solution is x = e^{−t} cos(√99 t).",
+  "The oscillation has angular frequency about 10 rad/s.",
+  "The amplitude decays like e^{−t}."
+ ],
+ "range": {
+  "x": [
+   0,
+   4
+  ],
+  "y": [
+   -1.2,
+   1.2
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4
+  ],
+  [
+   -1,
+   -0.5,
+   0.5,
+   1
+  ]
+ ],
+ "grid": [
+  1,
+  0.5
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "axisLabels": [
+  "t (s)",
+  "x"
+ ],
+ "curves": [
+  {
+   "expr": "exp(-x)",
+   "colour": "a2",
+   "dash": "6 4",
+   "domain": [
+    0,
+    4
+   ]
+  },
+  {
+   "expr": "-exp(-x)",
+   "colour": "a2",
+   "dash": "6 4",
+   "domain": [
+    0,
+    4
+   ]
+  },
+  {
+   "expr": "exp(-x)*cos(9.9498743710662*x)",
+   "colour": "a1",
+   "domain": [
+    0,
+    4
+   ],
+   "samples": 600
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "exp(-x)*cos(9.9498743710662*x)",
+   "x": 0,
+   "y": 1,
+   "name": "x(0) = 1"
+  },
+  {
+   "type": "point",
+   "expr": "exp(-x)*cos(9.9498743710662*x)",
+   "x": 0.6314838833996552,
+   "y": 0.5318020829442597,
+   "name": "one period 2π/√99 ≈ 0.631 s later the displacement is e^{−t}"
+  },
+  {
+   "type": "value",
+   "expr": "exp(-x)*cos(9.9498743710662*x)",
+   "x": 2,
+   "between": [
+    -0.1354,
+    0.1354
+   ],
+   "name": "at t = 2 s the oscillation is inside the envelope ±e^{−2}"
+  }
+ ],
+ "fromLesson": [
+  "√100 = 10"
+ ]
+}

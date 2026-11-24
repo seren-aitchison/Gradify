@@ -1,0 +1,99 @@
+{
+ "id": "maths-u21-vasicek-mean",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u21",
+ "lesson": "Interest Rate Models",
+ "title": "The expected short rate in the Vasicek model",
+ "caption": "Starting at 2% with speed a = 0.5 and long-run level b = 4%, the expected rate rises at first by a(b − r) = 1% a year and then flattens towards 4%.",
+ "alt": "A curve rising from 2% and flattening towards the dashed 4% level.",
+ "description": [
+  "The drift is a(b − r) = 0.5 × (0.04 − 0.02) = 0.01 per year.",
+  "So the expected rate climbs at 1% a year at first.",
+  "As r nears b the pull weakens: E[r] → 4%."
+ ],
+ "range": {
+  "x": [
+   0,
+   10
+  ],
+  "y": [
+   0.015,
+   0.045
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   4,
+   6,
+   8,
+   10
+  ],
+  [
+   0.02,
+   0.03,
+   0.04
+  ]
+ ],
+ "grid": [
+  2,
+  0.01
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "years",
+  "expected rate"
+ ],
+ "curves": [
+  {
+   "expr": "0.04-0.02*exp(0-0.5*x)",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "y": 0.04,
+   "label": "b = 4%"
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 0.02,
+   "label": "2%",
+   "colour": "a2",
+   "dx": 10,
+   "dy": 16
+  }
+ ],
+ "checks": [
+  {
+   "type": "slope",
+   "expr": "0.04-0.02*exp(0-0.5*x)",
+   "x": 0,
+   "value": 0.01,
+   "name": "the initial slope is a(b − r) = 0.01 a year"
+  },
+  {
+   "type": "point",
+   "expr": "0.04-0.02*exp(0-0.5*x)",
+   "x": 60,
+   "y": 0.04,
+   "name": "in the long run E[r] → 4%"
+  },
+  {
+   "type": "point",
+   "expr": "0.04-0.02*exp(0-0.5*x)",
+   "x": 0,
+   "y": 0.02,
+   "name": "the rate starts at 2%"
+  }
+ ],
+ "fromLesson": [
+  "1%"
+ ]
+}

@@ -253,24 +253,10 @@ async function model({ autoMove = true } = {}) {
   }
   m.L = L;
   m.storeMode = store.mode;
-  if (ACCESS.has("calendar")) backgroundSync(m);
   if (!remindersStarted && m.intel.notify?.on) { remindersStarted = true; startReminders(() => model({ autoMove: false }), m.intel.notify); }
   return m;
 }
 let remindersStarted = false;
-// calendar links re-sync in the background every six hours; the screen refreshes once when they're in
-let syncing = false;
-function backgroundSync(m) {
-  const feeds = m.intel.calendars || [];
-  const stale = feeds.length && feeds.some((f) => !f.at || Date.now() - Date.parse(f.at) > 6 * 36e5);
-  if (!stale || syncing || store.mode !== "cloud") return;
-  syncing = true;
-  const at = location.hash;
-  import("../intel/calsync.js").then(({ syncCalendars }) => syncCalendars(store, feeds)).then(async (res) => {
-    await saveIntel({ calendars: res.map(({ name, url, ok, events, error, at: t }) => ({ name, url, ok, events, error, at: t })) });
-    if (location.hash === at) route();
-  }).catch(() => {}).finally(() => { setTimeout(() => { syncing = false; }, 60000); });
-}
 async function saveIntel(patch) {
   const cur = intelOf(learnerOf(profile));
   await saveLearner(store, { intel: { ...cur, ...patch } });
@@ -1484,7 +1470,7 @@ async function renderPlan(arg) {
     ${ACCESS.has("intelligence") ? `${catchUpHtml(M) || rescheduleHtml(M)}
     ${tellHtml()}
     ${smartPlanHtml(M, arg)}` : ""}
-    ${ACCESS.has("calendar") ? calendarPanelHtml(M, { signedIn: store.mode === "cloud" }) : ""}
+    ${ACCESS.has("calendar") || M.intel.calendars_retired?.seen === false || M.blocks.some((b) => ["external", "away", "allday", "ext-exam", "ext-deadline"].includes(b.cal)) ? calendarPanelHtml(M) : ""}
     <div class="cal-top">
       <article class="panel glass"><div class="panel-head"><h3>Next five weeks</h3><span class="pill-dark">${fmtDate(Date.now(), { month: "long", year: "numeric" })}</span></div>${monthGrid([...ahead, ...goalDates.map((g) => ({ day: g.target_date, cal: "goal" }))], profile.exam_date)}</article>
       <article class="panel glass"><div class="panel-head"><h3>Coming up</h3></div>
@@ -1779,6 +1765,13 @@ async function start() {
   profile = await within(store.getProfile(), 12000, "Loading your profile");
   markLocks();
   syncMirror(profile);   // the account's settings, for every site in this browser
+  // calendar links saved before November 2026 are removed from the account and this browser (a feed link works like
+  // a password); events already imported from them stay in the plan, and the calendar panel says so once
+  {
+    const { retiredIntel } = await import("../intel/calsync.js");
+    const next = retiredIntel(learnerOf(profile).intel);
+    if (next) { await saveLearner(store, { intel: next }).catch((e) => console.warn("Calendar links not removed yet", e?.message)); profile = await store.getProfile(); }
+  }
   // the launch offer follows the account to the learner's other devices
   // (awaited, once per account, so it can't race a set-up or settings save made straight after)
   if (user) { const o = storedOffer(Date.now(), learnerOf(profile)); if (o && !learnerOf(profile).offer) { await saveLearner(store, offerForAccount(o)).catch(() => {}); profile = await store.getProfile(); } }

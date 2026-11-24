@@ -1,0 +1,125 @@
+{
+ "id": "maths-u18-feasible-endpoint",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u18",
+ "lesson": "Constrained Optimisation",
+ "title": "The minimum on 0 ≤ x ≤ 2 is at the boundary",
+ "caption": "The unconstrained minimum of (x − 3)² is at x = 3, outside the feasible interval [0, 2]. On the feasible part the curve keeps falling, so the best feasible point is the endpoint x = 2, where f = 1 and the constraint x ≤ 2 is active.",
+ "alt": "A parabola with minimum at (3, 0), the part with 0 ≤ x ≤ 2 highlighted, and the lowest feasible point (2, 1) marked.",
+ "description": [
+  "The unconstrained minimum is x = 3, where f = 0.",
+  "That is infeasible: it breaks x ≤ 2.",
+  "On [0, 2] the curve is falling, so moving right always helps until the boundary.",
+  "The constrained minimum is f(2) = 1 at x = 2."
+ ],
+ "range": {
+  "x": [
+   -0.5,
+   4.5
+  ],
+  "y": [
+   -0.5,
+   10
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4
+  ],
+  [
+   2,
+   4,
+   6,
+   8,
+   10
+  ]
+ ],
+ "grid": [
+  1,
+  2
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "(x-3)^2",
+   "colour": "a1",
+   "domain": [
+    -0.5,
+    4.5
+   ]
+  },
+  {
+   "expr": "(x-3)^2",
+   "colour": "a2",
+   "domain": [
+    0,
+    2
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 2,
+   "y": 1,
+   "label": "feasible minimum (2, 1)",
+   "colour": "a2",
+   "dx": 12,
+   "dy": -14
+  },
+  {
+   "x": 3,
+   "y": 0,
+   "label": "infeasible minimum",
+   "colour": "a4",
+   "dx": 4,
+   "dy": -14
+  }
+ ],
+ "checks": [
+  {
+   "type": "min",
+   "expr": "(x-3)^2",
+   "domain": [
+    0,
+    2
+   ],
+   "x": 2,
+   "y": 1,
+   "tol": 0.01,
+   "name": "on [0, 2] the minimum of (x − 3)² is f(2) = 1"
+  },
+  {
+   "type": "min",
+   "expr": "(x-3)^2",
+   "domain": [
+    -0.5,
+    4.5
+   ],
+   "x": 3,
+   "y": 0,
+   "tol": 0.01,
+   "name": "without the constraint the minimum is at x = 3"
+  },
+  {
+   "type": "slope",
+   "expr": "(x-3)^2",
+   "x": 1,
+   "value": -4,
+   "name": "f is falling on the feasible interval"
+  }
+ ],
+ "fromLesson": [
+  "Minimum f(2) = 1"
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "checked_at": "2026-11-24",
+ "id": "src_ipeds",
+ "name": "IPEDS institutional characteristics (HD directory)",
+ "owner": "US Department of Education, NCES",
+ "url": "https://nces.ed.gov/ipeds/datacenter/data/HD2024.zip",
+ "verdict": "confirmation_needed",
+ "licence": null,
+ "rights": {
+  "ingest": null,
+  "publish": null,
+  "evidence": null,
+  "archive": null
+ },
+ "fields_allowed": {},
+ "cadence": "Annual",
+ "identifiers": [
+  "UNITID (assumed first column)",
+  "OPEID"
+ ],
+ "measured": {
+  "hd2024_zip_bytes": 1088372,
+  "institutions": 6072,
+  "columns": 72,
+  "states_and_territories": 59,
+  "largest_state": {
+   "CA": 668,
+   "NY": 408,
+   "TX": 403
+  }
+ },
+ "evidence_urls": [
+  "https://nces.ed.gov/ipeds/about-ipeds",
+  "https://nces.ed.gov/help/"
+ ],
+ "notes": "Covers institutions in federal student aid programmes only. As CCD (B2)."
+}

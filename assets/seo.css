@@ -508,6 +508,19 @@ main.seo .mini { background: var(--tile); border-color: var(--tile-edge); box-sh
 .hb-go { margin-top: 4px; }
 .tool .g-act.soft { background: color-mix(in srgb, var(--g-accent) 13%, transparent); }
 @media (max-width: 640px) { .hb-fields { grid-template-columns: 1fr 1fr; } .hb-name, .hb-fields > div:last-child { grid-column: 1 / -1; } .hb-take { padding-top: 24px; } }
+/* the tracker's Connections page (kit/data/connections.js): a calendar file in, a review list of possible due dates,
+   nothing ticked for the student */
+.cx-how { list-style: none; margin: 0 0 12px; padding: 0; display: grid; gap: 8px; } .cx-how li { display: grid; gap: 2px; font-size: 14px; } .cx-how b { color: var(--ink); } .cx-how span { color: var(--sub); }
+.cx-later { margin: 14px 4px 0; font-size: 13px; color: var(--sub) !important; }
+.cx-title { grid-column: 2; margin: 0; font-size: 16px; font-weight: 700; color: var(--ink) !important; overflow-wrap: anywhere; }
+.cx-fields { display: grid; grid-template-columns: 1fr 1.6fr; gap: 8px; } .cx-fields > div { min-width: 0; }
+.cx-fields input, .cx-fields select { width: 100%; background: var(--group); }
+.cx-new { grid-column: 1 / -1; display: grid; grid-template-columns: 1.6fr 1fr; gap: 8px; } .cx-new[hidden] { display: none; }
+.cx-kind { display: inline-block; font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 99px; margin-right: 8px; color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); }
+.cx-all { justify-self: start; }
+.cx-note { margin: 0 4px; font-size: 14px; color: var(--sub) !important; }
+[data-cx] .hb-take { padding-top: 0; }
+@media (max-width: 640px) { .cx-fields, .cx-new { grid-template-columns: 1fr; } }
 /* the tracker's Ask Gradify AI page (kit/assess/tutor.js mode "degree"): a question box, suggestions, and answers with
    what came from the tracker kept apart from estimates, ending in an action card */
 .ask-box { display: grid; grid-template-columns: 1fr auto; gap: 8px; align-items: end; padding: 8px; border-radius: 24px; background: var(--tile); border: 1px solid var(--tile-edge); box-shadow: var(--tile-shadow); }

@@ -1,0 +1,130 @@
+{
+ "id": "maths-u21-sharpe-lines",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u21",
+ "lesson": "Modern Portfolio Theory",
+ "title": "Sharpe ratio as the slope from the risk-free rate",
+ "caption": "Each fund lies on a line from the 2% risk-free rate; its slope is the Sharpe ratio. B's line (0.75) is steeper than A's (0.53), so B earns more excess return per unit of risk.",
+ "alt": "Two lines from (0, 2%): a shallower one through fund A at (15, 10) and a steeper one through fund B at (8, 8).",
+ "description": [
+  "Excess return is return minus the 2% risk-free rate.",
+  "A: (10 − 2)/15 = 0.53 per unit of risk.",
+  "B: (8 − 2)/8 = 0.75, the steeper line.",
+  "A steeper line from the risk-free rate means a better risk-adjusted return."
+ ],
+ "range": {
+  "x": [
+   0,
+   20
+  ],
+  "y": [
+   0,
+   14
+  ]
+ },
+ "ticks": [
+  [
+   5,
+   10,
+   15,
+   20
+  ],
+  [
+   2,
+   4,
+   6,
+   8,
+   10,
+   12
+  ]
+ ],
+ "grid": [
+  5,
+  2
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "risk σ (%)",
+  "return (%)"
+ ],
+ "curves": [
+  {
+   "expr": "2+0.533333333333*x",
+   "colour": "a1",
+   "domain": [
+    0,
+    20
+   ]
+  },
+  {
+   "expr": "2+0.75*x",
+   "colour": "a2",
+   "domain": [
+    0,
+    20
+   ]
+  }
+ ],
+ "marks": [
+  {
+   "y": 2,
+   "label": "risk-free 2%"
+  }
+ ],
+ "points": [
+  {
+   "x": 15,
+   "y": 10,
+   "label": "A",
+   "colour": "a1",
+   "dx": 10,
+   "dy": 18
+  },
+  {
+   "x": 8,
+   "y": 8,
+   "label": "B",
+   "colour": "a2",
+   "dx": -14,
+   "dy": -10,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "2+0.533333333333*x",
+   "x": 15,
+   "y": 10,
+   "name": "fund A lies on its line from the risk-free rate"
+  },
+  {
+   "type": "point",
+   "expr": "2+0.75*x",
+   "x": 8,
+   "y": 8,
+   "name": "fund B lies on its line"
+  },
+  {
+   "type": "slope",
+   "expr": "2+0.533333333333*x",
+   "x": 5,
+   "value": 0.5333333333333333,
+   "name": "A's slope (its Sharpe ratio) is 0.53"
+  },
+  {
+   "type": "slope",
+   "expr": "2+0.75*x",
+   "x": 5,
+   "value": 0.75,
+   "name": "B's slope (its Sharpe ratio) is 0.75"
+  }
+ ],
+ "fromLesson": [
+  "0.75"
+ ]
+}

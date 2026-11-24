@@ -1,0 +1,17 @@
+{
+ "checked_at": "2026-11-24",
+ "id": "src_wales_schools",
+ "name": "Welsh Government address list of schools",
+ "owner": "Welsh Government",
+ "url": "https://www.gov.wales/",
+ "verdict": "blocked",
+ "licence": null,
+ "rights": {
+  "ingest": null,
+  "publish": null,
+  "evidence": null,
+  "archive": null
+ },
+ "fields_allowed": {},
+ "notes": "B5: gov.wales refuses automated access."
+}

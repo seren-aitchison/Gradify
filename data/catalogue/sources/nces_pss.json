@@ -1,0 +1,21 @@
+{
+ "checked_at": "2026-11-24",
+ "id": "src_nces_pss",
+ "name": "NCES Private School Universe Survey (PSS)",
+ "owner": "US Department of Education, NCES",
+ "url": "https://nces.ed.gov/surveys/pss/",
+ "verdict": "confirmation_needed",
+ "licence": null,
+ "rights": {
+  "ingest": null,
+  "publish": null,
+  "evidence": null,
+  "archive": null
+ },
+ "fields_allowed": {},
+ "cadence": "Every two years (2023-24 public-use data released September 2026)",
+ "evidence_urls": [
+  "https://nces.ed.gov/surveys/pss/"
+ ],
+ "notes": "As CCD (B2)."
+}

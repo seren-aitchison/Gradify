@@ -1,0 +1,101 @@
+{
+ "id": "maths-u20-emax",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u20",
+ "lesson": "Pharmacodynamic Modelling",
+ "title": "A dose–response curve",
+ "caption": "E = 100C/(2 + C) rises steeply and then saturates at E_max = 100%. At C = EC₅₀ = 2 mg/L the effect is 50%, and at C = 6 mg/L it is 75%.",
+ "alt": "A saturating curve of effect against concentration, passing 50 percent at 2 milligrams per litre and 75 percent at 6, levelling towards 100 percent.",
+ "description": [
+  "With E_max = 100% and EC₅₀ = 2 mg/L the effect is E = 100C/(2 + C).",
+  "At C = 2 mg/L the effect is half of E_max: 50%.",
+  "At C = 6 mg/L: E = 100 × 6/8 = 75%.",
+  "The curve approaches 100% but never reaches it."
+ ],
+ "range": {
+  "x": [
+   0,
+   20
+  ],
+  "y": [
+   0,
+   105
+  ]
+ },
+ "ticks": [
+  [
+   5,
+   10,
+   15,
+   20
+  ],
+  [
+   25,
+   50,
+   75,
+   100
+  ]
+ ],
+ "grid": [
+  5,
+  25
+ ],
+ "height": [
+  330,
+  300
+ ],
+ "axisLabels": [
+  "C (mg/L)",
+  "E (%)"
+ ],
+ "marks": [
+  {
+   "y": 100,
+   "label": "E_max"
+  }
+ ],
+ "curves": [
+  {
+   "expr": "100*x/(2+x)",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 2,
+   "y": 50,
+   "label": "EC₅₀: 50%",
+   "colour": "a2",
+   "dx": 10,
+   "dy": 20
+  },
+  {
+   "x": 6,
+   "y": 75,
+   "label": "75%",
+   "colour": "a2",
+   "dx": 10,
+   "dy": 20
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "100*x/(2+x)",
+   "x": 2,
+   "y": 50,
+   "name": "at C = EC₅₀ the effect is E_max/2"
+  },
+  {
+   "type": "point",
+   "expr": "100*x/(2+x)",
+   "x": 6,
+   "y": 75,
+   "name": "100 × 6/8 = 75%"
+  }
+ ],
+ "fromLesson": [
+  "= 100 × 0.75"
+ ]
+}

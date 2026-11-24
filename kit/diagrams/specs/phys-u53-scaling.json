@@ -1,0 +1,99 @@
+{
+ "id": "phys-u53-scaling",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u53",
+ "lesson": "Complex systems",
+ "title": "Superlinear scaling with β = 1.15",
+ "caption": "Output Y ∝ N^β with β = 1.15 grows faster than linearly: a city 10 times larger produces 10^1.15 ≈ 14 times as much, i.e. 1.4 times more per person. The dashed line shows the linear case β = 1.",
+ "alt": "Output against size, in units of the smallest city: a curve N to the 1.15 above the straight line N, reaching about 14 at size 10.",
+ "description": [
+  "Y = N^1.15 in units where N = 1 gives Y = 1.",
+  "N = 10: Y = 14.1, against 10 if linear.",
+  "Per capita Y/N = N^0.15 = 1.41 at N = 10."
+ ],
+ "range": {
+  "x": [
+   0,
+   10.5
+  ],
+  "y": [
+   0,
+   16
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   4,
+   6,
+   8,
+   10
+  ],
+  [
+   4,
+   8,
+   12,
+   16
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "city size N (relative)",
+  "total output (relative)"
+ ],
+ "curves": [
+  {
+   "expr": "x^1.15",
+   "colour": "a1",
+   "label": "β = 1.15",
+   "labelAt": [
+    5.5,
+    8.7
+   ]
+  },
+  {
+   "expr": "x",
+   "colour": "a2",
+   "dash": "6 5",
+   "label": "linear",
+   "labelAt": [
+    7,
+    5.8
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 10,
+   "y": 14.125,
+   "colour": "a1",
+   "label": "≈ 14",
+   "anchor": "end",
+   "dx": -8,
+   "dy": -4
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "x^1.15",
+   "x": 10,
+   "y": 14.125375,
+   "tol": 0.001,
+   "name": "10^1.15 ≈ 14.1"
+  },
+  {
+   "type": "point",
+   "expr": "x^1.15/x",
+   "x": 10,
+   "y": 1.412538,
+   "tol": 0.001,
+   "name": "per capita 1.4×"
+  }
+ ]
+}

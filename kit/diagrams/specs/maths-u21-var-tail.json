@@ -1,0 +1,74 @@
+{
+ "id": "maths-u21-var-tail",
+ "renderer": "distribution",
+ "course": "maths",
+ "unit": "u21",
+ "lesson": "Value at Risk (VaR)",
+ "title": "The 99% one-day VaR as a tail",
+ "caption": "Daily losses on the £10m portfolio are normal with standard deviation £100,000. The 1% worst outcomes lie beyond 2.326 standard deviations, £232,600, which is the 99% VaR.",
+ "alt": "A bell curve of daily loss in £ thousands, with the 1% tail beyond £232.6k shaded.",
+ "description": [
+  "σV = 1% × £10m = £100,000.",
+  "The 99th percentile of a normal is z = 2.326.",
+  "VaR = 2.326 × £100,000 ≈ £232,600: only 1% of days should lose more."
+ ],
+ "dist": {
+  "dist": "normal",
+  "mu": 0,
+  "sigma": 100
+ },
+ "range": {
+  "x": [
+   -350,
+   350
+  ],
+  "y": [
+   0,
+   0.0045
+  ]
+ },
+ "ticks": [
+  [
+   -300,
+   -200,
+   -100,
+   0,
+   100,
+   200,
+   300
+  ],
+  [
+   0.001,
+   0.002,
+   0.003,
+   0.004
+  ]
+ ],
+ "axisLabels": [
+  "loss (£ thousand)",
+  "density"
+ ],
+ "shade": [
+  232.6,
+  null
+ ],
+ "p": 0.01,
+ "marks": [
+  {
+   "x": 232.6,
+   "label": "VaR 232.6"
+  }
+ ],
+ "checks": [
+  {
+   "type": "prob",
+   "from": 232.6,
+   "to": 900,
+   "p": 0.01,
+   "name": "only 1% of losses exceed 2.326σ"
+  }
+ ],
+ "fromLesson": [
+  "232,600"
+ ]
+}

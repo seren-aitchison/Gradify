@@ -1,0 +1,102 @@
+{
+ "id": "phys-u44-reflection",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u44",
+ "lesson": "Microwave and radio-frequency measurement",
+ "title": "Mismatch reflects power",
+ "caption": "On a 50 Ω line the reflection |Γ| = |Z_L − 50|/(Z_L + 50) is zero only for a matched load. A 75 Ω load gives Γ = 25/125 = 0.2, VSWR = (1 + 0.2)/(1 − 0.2) = 1.5, and 4% of the power is reflected. Open and short circuits reflect everything.",
+ "alt": "Magnitude of the reflection coefficient against load impedance from 0 to 200 ohms: zero at 50 ohms, rising either side, with 0.2 marked at 75 ohms and approaching 1 for very large and very small loads.",
+ "description": [
+  "|Γ| = |Z_L − Z₀|/(Z_L + Z₀), Z₀ = 50 Ω.",
+  "Z_L = 75 Ω: Γ = 25/125 = 0.2; VSWR = 1.2/0.8 = 1.5.",
+  "Reflected power = Γ² = 0.04, i.e. 4%.",
+  "Z_L = 50 Ω gives Γ = 0 and no reflection."
+ ],
+ "range": {
+  "x": [
+   0,
+   200
+  ],
+  "y": [
+   0,
+   1.05
+  ]
+ },
+ "ticks": [
+  [
+   50,
+   100,
+   150,
+   200
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "load impedance Z_L / Ω",
+  "|Γ|"
+ ],
+ "curves": [
+  {
+   "expr": "abs((x-50)/(x+50))",
+   "colour": "a1",
+   "label": "|Γ|",
+   "labelAt": [
+    150,
+    0.7
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 50,
+   "y": 0,
+   "colour": "a2",
+   "label": "matched",
+   "dx": -8,
+   "dy": -14,
+   "anchor": "end"
+  },
+  {
+   "x": 75,
+   "y": 0.2,
+   "colour": "a2",
+   "label": "Γ = 0.2, VSWR 1.5",
+   "dx": 12,
+   "dy": 8
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "abs((x-50)/(x+50))",
+   "x": 75,
+   "y": 0.2,
+   "name": "|Γ| = 0.2 for 75 Ω"
+  },
+  {
+   "type": "point",
+   "expr": "abs((x-50)/(x+50))",
+   "x": 50,
+   "y": 0,
+   "name": "matched load reflects nothing"
+  },
+  {
+   "type": "point",
+   "expr": "(1+abs((x-50)/(x+50)))/(1-abs((x-50)/(x+50)))",
+   "x": 75,
+   "y": 1.5,
+   "name": "VSWR = 1.5"
+  }
+ ]
+}

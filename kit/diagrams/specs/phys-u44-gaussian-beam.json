@@ -1,0 +1,119 @@
+{
+ "id": "phys-u44-gaussian-beam",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u44",
+ "lesson": "Laser systems",
+ "title": "A laser beam spreads beyond its Rayleigh range",
+ "caption": "A HeNe beam (633 nm) with waist w₀ = 0.5 mm stays nearly parallel over the Rayleigh range z_R = πw₀²/λ ≈ 1.24 m, where its radius has grown by √2 to 0.71 mm. Farther out the radius grows linearly at the divergence θ = λ/(πw₀) ≈ 0.4 mrad (dashed).",
+ "alt": "Beam radius in millimetres against distance from the waist, starting at 0.5 mm, reaching 0.71 mm at 1.24 metres and approaching a straight dashed line of slope 0.4 millimetres per metre.",
+ "description": [
+  "w(z) = w₀√(1 + (z/z_R)²), with w₀ = 0.5 mm.",
+  "z_R = π(5 × 10⁻⁴)²/(6.33 × 10⁻⁷) ≈ 1.24 m, where w = √2 w₀ ≈ 0.71 mm.",
+  "Far field: w ≈ θz with θ = 6.33 × 10⁻⁷/(π × 5 × 10⁻⁴) ≈ 0.4 mrad, i.e. 0.4 mm per metre."
+ ],
+ "range": {
+  "x": [
+   0,
+   4
+  ],
+  "y": [
+   0,
+   2
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4
+  ],
+  [
+   0.5,
+   1,
+   1.5,
+   2
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "distance from the waist z / m",
+  "beam radius w / mm"
+ ],
+ "curves": [
+  {
+   "expr": "0.403*x",
+   "colour": "a4",
+   "dash": "6 5",
+   "label": "w = θz",
+   "labelAt": [
+    2.8,
+    0.78
+   ]
+  },
+  {
+   "expr": "0.5*sqrt(1+(x/1.2408)^2)",
+   "colour": "a1",
+   "label": "w(z)",
+   "labelAt": [
+    2.2,
+    1.58
+   ]
+  }
+ ],
+ "marks": [
+  {
+   "x": 1.2408,
+   "to": 0.7071
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 0.5,
+   "colour": "a2",
+   "label": "w₀ = 0.5 mm",
+   "dx": 10,
+   "dy": -12
+  },
+  {
+   "x": 1.2408,
+   "y": 0.7071,
+   "colour": "a2",
+   "label": "z_{R} ≈ 1.24 m",
+   "dx": 10,
+   "dy": 22
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "0.5*sqrt(1+(x/1.2408)^2)",
+   "x": 1.2408,
+   "y": 0.70711,
+   "name": "w = √2 w₀ at z = z_R"
+  },
+  {
+   "type": "point",
+   "expr": "0.5*sqrt(1+(x/1.2408)^2)",
+   "x": 0,
+   "y": 0.5,
+   "name": "w = w₀ at the waist"
+  },
+  {
+   "type": "value",
+   "expr": "0.403*x",
+   "x": 4,
+   "between": [
+    1.6,
+    1.62
+   ],
+   "name": "θ ≈ 0.4 mrad far-field slope"
+  }
+ ]
+}

@@ -1,0 +1,83 @@
+{
+ "id": "phys-u54-false-positive",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u54",
+ "lesson": "Research ethics and integrity",
+ "title": "False positives grow with the number of tests",
+ "caption": "Each test has a 5% false-positive chance, but the chance of at least one among n independent tests is 1 − 0.95ⁿ. For 20 tests that is 0.64: more likely than not, so a lone \"significant\" result among many is weak evidence.",
+ "alt": "Probability of at least one false positive against the number of tests, rising from 0.05 at one test to 0.64 at twenty and towards 1.",
+ "description": [
+  "P(at least one) = 1 − (1 − α)^n with α = 0.05.",
+  "n = 1: 0.05. n = 20: 1 − 0.95^20 = 0.642. n = 50: 0.92.",
+  "Corrections such as Bonferroni (α/n per test) restore the overall rate."
+ ],
+ "range": {
+  "x": [
+   0,
+   60
+  ],
+  "y": [
+   0,
+   1.05
+  ]
+ },
+ "ticks": [
+  [
+   10,
+   20,
+   30,
+   40,
+   50,
+   60
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "number of tests n",
+  "P(at least one false positive)"
+ ],
+ "curves": [
+  {
+   "expr": "1-0.95^x",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 20,
+   "y": 0.6415,
+   "colour": "a2",
+   "label": "0.64 at n = 20",
+   "dx": 10,
+   "dy": 18
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "1-0.95^x",
+   "x": 20,
+   "y": 0.641514,
+   "tol": 0.001,
+   "name": "1 − 0.95^20 = 0.64"
+  },
+  {
+   "type": "point",
+   "expr": "1-0.95^x",
+   "x": 1,
+   "y": 0.05,
+   "name": "one test: 0.05"
+  }
+ ]
+}

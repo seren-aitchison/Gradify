@@ -1,0 +1,104 @@
+{
+ "id": "maths-u25-lyapunov-v",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u25",
+ "lesson": "Lyapunov Stability",
+ "title": "V = x² and its rate −2x⁴",
+ "caption": "V = x² is positive away from 0 and V̇ = 2x(−x³) = −2x⁴ is negative away from 0, so the energy-like V always decreases: the origin is asymptotically stable.",
+ "alt": "Two curves: V = x², a parabola above the axis, and V̇ = −2x⁴, a flat-bottomed curve below the axis, both touching zero only at x = 0.",
+ "description": [
+  "Take V = x², positive for every x ≠ 0.",
+  "Along ẋ = −x³: V̇ = 2x·ẋ = −2x⁴.",
+  "V̇ < 0 for every x ≠ 0, so V falls to 0 and the origin is globally asymptotically stable."
+ ],
+ "range": {
+  "x": [
+   -1.2,
+   1.2
+  ],
+  "y": [
+   -4.5,
+   3
+  ]
+ },
+ "ticks": [
+  [
+   -1,
+   0,
+   1
+  ],
+  [
+   -4,
+   -2,
+   0,
+   2
+  ]
+ ],
+ "grid": [
+  0.5,
+  1
+ ],
+ "axisLabels": [
+  "x",
+  ""
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "curves": [
+  {
+   "expr": "x^2",
+   "colour": "a1"
+  },
+  {
+   "expr": "-2*x^4",
+   "colour": "a2"
+  }
+ ],
+ "legend": [
+  [
+   "V = x²",
+   "a1"
+  ],
+  [
+   "V̇ = −2x⁴",
+   "a2"
+  ]
+ ],
+ "legendData": [
+  -1.15,
+  2.85
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "x^2",
+   "x": 1,
+   "y": 1,
+   "name": "V(1) = 1 > 0"
+  },
+  {
+   "type": "point",
+   "expr": "-2*x^4",
+   "x": 1,
+   "y": -2,
+   "name": "V̇(1) = −2 < 0"
+  },
+  {
+   "type": "max",
+   "expr": "-2*x^4",
+   "domain": [
+    -1.2,
+    1.2
+   ],
+   "x": 0,
+   "y": 0,
+   "name": "V̇ ≤ 0, with 0 only at x = 0"
+  }
+ ],
+ "fromLesson": [
+  "−2x^{4}"
+ ]
+}

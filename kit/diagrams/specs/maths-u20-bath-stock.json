@@ -1,0 +1,96 @@
+{
+ "id": "maths-u20-bath-stock",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u20",
+ "lesson": "Systems Theory",
+ "title": "A stock rising at the net flow",
+ "caption": "The net flow is 10 − 6 = 4 L/min, so the stock rises along a straight line of gradient 4: from 100 L to 140 L in 10 minutes.",
+ "alt": "A straight rising line of bath volume against time, from 100 litres at 0 minutes to 140 litres at 10 minutes.",
+ "description": [
+  "The inflow is 10 L/min and the outflow 6 L/min, so the net flow is 4 L/min.",
+  "dS/dt = 4 is constant, so S is a straight line with gradient 4.",
+  "After 10 minutes the bath holds 100 + 4 × 10 = 140 L."
+ ],
+ "range": {
+  "x": [
+   0,
+   12
+  ],
+  "y": [
+   90,
+   150
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   4,
+   6,
+   8,
+   10,
+   12
+  ],
+  [
+   100,
+   120,
+   140
+  ]
+ ],
+ "grid": [
+  2,
+  20
+ ],
+ "height": [
+  330,
+  300
+ ],
+ "axisLabels": [
+  "t (minutes)",
+  "S (litres)"
+ ],
+ "curves": [
+  {
+   "expr": "100+4*x",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 100,
+   "label": "100 L",
+   "colour": "a2",
+   "dx": 10,
+   "dy": -8
+  },
+  {
+   "x": 10,
+   "y": 140,
+   "label": "140 L",
+   "colour": "a2",
+   "dx": -10,
+   "dy": -10,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "slope",
+   "expr": "100+4*x",
+   "x": 5,
+   "value": 4,
+   "name": "the gradient is the net flow 10 − 6 = 4 L/min"
+  },
+  {
+   "type": "point",
+   "expr": "100+4*x",
+   "x": 10,
+   "y": 140,
+   "name": "after 10 minutes the bath holds 140 L"
+  }
+ ],
+ "fromLesson": [
+  "after 10 minutes the bath holds 140 L"
+ ]
+}

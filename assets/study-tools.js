@@ -6,6 +6,7 @@ import { icon } from "../kit/core/icons.js";
 import { accentOf, accentOnLight } from "../kit/core/accent.js";
 import { actionCard, SPARK } from "../kit/core/action-card.js";
 import { parseHandbook, toRow } from "../kit/data/handbook.js";
+import { deadlinesFromIcs, applyDeadlines } from "../kit/data/connections.js";
 import { UNI_RULES, CHECKED, ruleById, ruleW3, boundariesOf, effectiveMark, threshold, zoneOf, borderlineCheck, describeTest } from "../kit/data/uni-rules.js";
 
 // ---------- UK degree classification ----------
@@ -314,7 +315,10 @@ const TOOLS = {
     const subjectByName = new Map();
 
     // pages: Overview, Plan, Goals and Modules, switched from the toolbar (assets/sheet.js docks it on phones)
-    const PAGES = ["overview", "plan", "goals", "modules", "rules", "import", "ask"];
+    // Connections is for university students only: never offered on JuniorGradify or YouthGradify
+    const CHILD = /^\/(juniorgradify|youthgradify)(\/|$)/i.test(location.pathname);
+    const PAGES = ["overview", "plan", "goals", "modules", "rules", "import", "ask", ...(CHILD ? [] : ["connections"])];
+    if (CHILD) root.querySelectorAll('[data-panel="connections"], [data-page="connections"]').forEach((el) => el.remove());
     let page = (() => { try { return sessionStorage.getItem("gradify.degree.page"); } catch { return null; } })();
     const show = (p, scroll) => {
       if (!PAGES.includes(p)) return;
@@ -425,6 +429,74 @@ const TOOLS = {
       found = []; hbStatus.textContent = "";
       hbOut.innerHTML = actionCard({ kicker: "Done", title: `${picked.length} module${picked.length === 1 ? "" : "s"} ${rep ? "now make up your tracker" : "added to your tracker"}`, iconSvg: ICON.tick,
         why: "Gradify now ranks them by how much they move your degree and how soon they're due. Add each mark when you get it back.",
+        actions: [{ label: "See your plan", icon: "route", attrs: 'data-go="plan"' }, { label: "Check your modules", icon: "checklist", attrs: 'data-go="modules"', soft: true }] });
+    });
+
+    // Connections (kit/data/connections.js): due dates from a calendar file. Read in the browser, then a review list
+    // where nothing is ticked until the student ticks it; only the ticked dates reach the tracker rows. The file isn't
+    // kept, and no calendar link or sign-in is ever asked for.
+    const cxOut = root.querySelector("[data-cx-out]"), cxStatus = root.querySelector("[data-cx-status]");
+    let cx = [];
+    const cxDate = (d) => new Date(`${d}T12:00:00`).toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short", year: "numeric" });
+    const bracket = (t) => t.match(/\[([^\]]+)\]\s*$/)?.[1]?.replace(/\s*\d{4}(-\d{2,4})?\s*$/, "").trim() || "";
+    const cxReview = (res, rows) => {
+      cx = res.items;
+      if (!cx.length) { cxOut.innerHTML = `<div class="rule-card rule-none">${res.notes.map((n) => `<p>${esc(n)}</p>`).join("")}</div>`; return; }
+      const opts = (sel) => `<option value="">Choose a module…</option>${rows.map((r, i) => `<option value="${i}"${sel === i ? " selected" : ""}>${esc(r.name)}</option>`).join("")}<option value="new"${sel === "new" ? " selected" : ""}>A new module…</option>`;
+      cxOut.innerHTML = `<div class="hb-review">
+        <p class="hb-lead"><b>Found ${cx.length} possible deadline${cx.length === 1 ? "" : "s"} or exam${cx.length === 1 ? "" : "s"}.</b> Nothing is ticked yet: tick the ones that are real, check the date and module, then add them. Each module keeps its earliest upcoming date.</p>
+        ${res.notes.map((n) => `<p class="cx-note">${esc(n)}</p>`).join("")}
+        <button type="button" class="chip cx-all" data-cx-all>Tick all except ones already in your tracker</button>
+        <ul class="hb-list">${cx.map((it, i) => { const sel = it.module ?? (rows.length ? null : "new"); return `<li class="hb-mod${it.module == null ? " check" : ""}" data-cx="${i}">
+          <label class="hb-take"><input type="checkbox" data-k="take"><span class="sr-only">Add ${esc(it.title)}</span></label>
+          <p class="cx-title">${esc(it.title)}</p>
+          <div class="cx-fields">
+            <div><label>Date</label><input type="date" data-k="date" value="${esc(it.date)}"></div>
+            <div><label>Module</label><select data-k="module">${opts(sel)}</select></div>
+            <div class="cx-new" data-cx-new${sel === "new" ? "" : " hidden"}><div><label>New module's name</label><input type="text" data-k="name" maxlength="60" value="${esc(bracket(it.title))}"></div><div><label>Year</label><select data-k="year"><option value="2">Year 2</option><option value="3">Final year</option></select></div></div>
+          </div>
+          <p class="hb-meta"><span class="cx-kind">${it.kind === "exam" ? "Exam?" : "Deadline?"}</span>${it.time ? `${esc(it.time)} · ` : ""}${esc(cxDate(it.date))}${it.dup ? ` <span class="hb-flag">Already in your tracker</span>` : ""}${it.marked ? ` <span class="hb-flag">This module already has a mark</span>` : ""}${it.module == null ? ` <span class="hb-flag">Choose its module</span>` : ""}</p>
+        </li>`; }).join("")}</ul>
+        <div class="g-action-buttons hb-go"><button type="button" class="g-act" data-cx-add>Add ticked dates</button><button type="button" class="g-act soft" data-cx-cancel>Cancel</button></div>
+      </div>`;
+    };
+    root.querySelector("[data-cx-file]")?.addEventListener("change", async (e) => {
+      const f = e.target.files?.[0]; e.target.value = ""; if (!f) return;
+      cxOut.innerHTML = "";
+      if (f.size > 2_000_000) { cxStatus.textContent = "That calendar file is too big (over 2 MB). Export just the coming months."; return; }
+      const text = await f.text().catch(() => "");
+      if (!/BEGIN:VCALENDAR/i.test(text)) { cxStatus.textContent = "That file isn't a calendar. Choose the .ics file your timetable, Moodle or Canvas exported."; return; }
+      const rows = current();
+      cxStatus.textContent = "";
+      cxReview(deadlinesFromIcs(text, { today: new Date(), rows }), rows);
+    });
+    cxOut?.addEventListener("change", (e) => {
+      const sel = e.target.closest('[data-k="module"]'); if (!sel) return;
+      const li = sel.closest("[data-cx]"), box = li.querySelector("[data-cx-new]");
+      box.hidden = sel.value !== "new";
+      if (sel.value === "new") li.querySelector('[data-k="name"]').focus();
+    });
+    cxOut?.addEventListener("click", (e) => {
+      if (e.target.closest("[data-cx-all]")) { cxOut.querySelectorAll("[data-cx]").forEach((li) => { li.querySelector('[data-k="take"]').checked = !cx[Number(li.dataset.cx)].dup; }); return; }
+      if (e.target.closest("[data-cx-cancel]")) { cxOut.innerHTML = ""; cx = []; cxStatus.textContent = "Nothing was added."; return; }
+      if (!e.target.closest("[data-cx-add]")) return;
+      const picks = [];
+      for (const li of cxOut.querySelectorAll("[data-cx]")) {
+        const k = (n) => li.querySelector(`[data-k="${n}"]`);
+        if (!k("take").checked) continue;
+        const m = k("module").value;
+        if (m === "") { cxStatus.textContent = `Choose a module for “${cx[Number(li.dataset.cx)].title}”, or untick it.`; k("module").focus(); return; }
+        if (m === "new" && !k("name").value.trim()) { cxStatus.textContent = "Give the new module a name, or untick it."; k("name").focus(); return; }
+        picks.push(m === "new" ? { date: k("date").value, module: "new", name: k("name").value, year: k("year").value } : { date: k("date").value, module: Number(m) });
+      }
+      if (!picks.length) { cxStatus.textContent = "Tick at least one date to add."; return; }
+      const res = applyDeadlines(current(), picks, { today: new Date() });
+      root.loadRows(res.rows);
+      root.dispatchEvent(new Event("input"));
+      cx = []; cxStatus.textContent = "";
+      const n = res.updated + res.added;
+      cxOut.innerHTML = actionCard({ kicker: "Done", title: n ? `${n} module${n === 1 ? "" : "s"} now ${n === 1 ? "has its" : "have their"} next due date` : "Your tracker already had these dates", iconSvg: ICON.tick,
+        why: `${res.added ? `${res.added} new module${res.added === 1 ? "" : "s"} added: give ${res.added === 1 ? "it" : "them"} credits on the Modules page. ` : ""}${res.skipped ? `${res.skipped} date${res.skipped === 1 ? " was" : "s were"} left out, because the module already has a mark. ` : ""}Gradify ranks your work by how much it moves your degree and how soon it's due.`,
         actions: [{ label: "See your plan", icon: "route", attrs: 'data-go="plan"' }, { label: "Check your modules", icon: "checklist", attrs: 'data-go="modules"', soft: true }] });
     });
 

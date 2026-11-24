@@ -1,0 +1,48 @@
+{
+ "id": "maths-u21-one-period-tree",
+ "renderer": "prob-tree",
+ "course": "maths",
+ "unit": "u21",
+ "lesson": "Mathematical Finance",
+ "title": "A one-period market and its risk-neutral probability",
+ "caption": "The stock goes from £100 to £120 or £90. Weighting the two prices with q = 1/3 and 2/3 gives back £100, the only probability for which the stock is a fair price when r = 0.",
+ "alt": "A tree from £100 with an up branch to £120 of probability 1/3 and a down branch to £90 of probability 2/3.",
+ "description": [
+  "The martingale condition is 100 = q × 120 + (1 − q) × 90.",
+  "This gives 100 = 90 + 30q, so q = 1/3.",
+  "The unique q means every payoff can be priced: the market is complete."
+ ],
+ "tree": {
+  "children": [
+   {
+    "label": "Up £120",
+    "p": "1/3"
+   },
+   {
+    "label": "Down £90",
+    "p": "2/3"
+   }
+  ]
+ },
+ "outcomes": true,
+ "checks": [
+  {
+   "type": "outcome",
+   "path": [
+    "Up £120"
+   ],
+   "p": "1/3",
+   "name": "q = 1/3 satisfies 100 = q × 120 + (1 − q) × 90"
+  },
+  {
+   "type": "outcome",
+   "path": [
+    "Down £90"
+   ],
+   "p": "2/3"
+  }
+ ],
+ "fromLesson": [
+  "q = 1/3"
+ ]
+}

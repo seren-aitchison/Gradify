@@ -27,6 +27,7 @@ X: Solve x^{2} − 2 = 0 exactly and numerically in Mathematica.
 > Solve[x^2 - 2 == 0, x] returns {{x -> -Sqrt[2]}, {x -> Sqrt[2]}}, exact roots
 > N[Sqrt[2], 10] gives 1.414213562
 > NSolve gives the decimals directly; Solve keeps exact forms
+D: maths-u27-sqrt2-roots
 K: Mathematica is a commercial system for symbolic, numerical and visual mathematics in notebooks; it returns exact results by default; assumptions and checks matter for symbolic answers.
 !: Expecting Simplify[Sqrt[x^2]] to return x without stating that x is positive.
 Q: Who makes Mathematica? | Wolfram Research.
@@ -101,6 +102,7 @@ X: Use Wolfram|Alpha to check a derivative you worked out by hand.
 > Type "derivative of x^2 sin x"
 > It returns 2x sin x + x^{2} cos x, matching the product rule
 > Check the interpretation line shows d/dx(x^{2} sin x), not something else
+D: maths-u27-derivative-check
 K: Wolfram|Alpha computes answers from natural-language queries using algorithms and curated data; check its interpretation; use it to check and explore rather than replace understanding.
 !: Accepting an answer without checking how Wolfram|Alpha interpreted the query.
 Q: When was Wolfram|Alpha launched? | 2009.
@@ -175,6 +177,7 @@ X: Solve x^{2} − 5x + 6 = 0 and differentiate x^{3} in Maple.
 > solve(x^2 - 5*x + 6 = 0, x); returns 2, 3
 > diff(x^3, x); returns 3x^{2}
 > evalf(sqrt(2), 10); gives 1.414213562
+D: maths-u27-maple-roots
 K: Maple is a commercial CAS with strong symbolic tools, document-style worksheets and packages; := assigns, evalf gives decimals; assumptions matter for symbolic answers.
 !: Using = instead of := for assignment in Maple.
 Q: What Maple command evaluates numerically? | evalf.
@@ -213,6 +216,7 @@ X: Expand (x + 1)^{3}, differentiate it and evaluate at x = 2 in Maxima.
 > diff(%, x); gives 3*x^2 + 6*x + 3, where % means the previous result
 > subst(2, x, %); gives 12 + 12 + 3 = 27
 > float(%pi); gives 3.141592653589793 for comparison
+D: maths-u27-maxima-cubic
 K: Maxima is a free CAS descended from MIT's Macsyma; it uses : for assignment and := for functions; wxMaxima gives a notebook interface; it underpins parts of SageMath.
 !: Writing pi instead of %pi, which Maxima treats as an unknown symbol.
 Q: What system is Maxima descended from? | Macsyma, developed at MIT.
@@ -324,6 +328,7 @@ X: Solve the system 2x + y = 5, x + 3y = 10 in MATLAB.
 > A = [2 1; 1 3]; b = [5; 10];
 > x = A \\ b returns [1; 3]
 > Check: A*x reproduces b, confirming the solution
+D: maths-u27-linear-system
 - The Command Window, Editor and Workspace panes organise interactive work.
 K: MATLAB is a matrix-based numerical environment; indexing starts at 1; * is matrix multiplication and .* element-wise; A \\ b solves systems; toolboxes extend it.
 !: Using * when element-wise multiplication .* was intended.
@@ -362,6 +367,7 @@ X: Run a MATLAB-style script in Octave to find the mean of squares of 1 to 4.
 > x = 1:4; y = x.^2; gives [1 4 9 16]
 > mean(y) returns 7.5
 > The same lines run unchanged in MATLAB
+D: maths-u27-octave-squares
 - Octave scripts can be called from the shell for automated batch jobs.
 - The Octave GUI shows variables, history and files like MATLAB's desktop.
 K: Octave is a free MATLAB-compatible environment; most scripts run unchanged; some toolboxes and Simulink are missing; Octave adds conveniences such as # comments and +=.
@@ -512,6 +518,7 @@ X: Find the minimum of f(x) = (x − 2)^{2} + 1 with SciPy.
 > from scipy.optimize import minimize_scalar; res = minimize_scalar(lambda x: (x - 2)**2 + 1)
 > res.x ≈ 2.0 and res.fun ≈ 1.0
 > Check res.success before using the answer
+D: maths-u27-scipy-minimum
 K: SciPy provides integration, optimisation, linear algebra, statistics and signal tools on top of NumPy; results include error estimates and success flags; choose methods and tolerances carefully.
 !: Using an optimiser's result without checking its success flag.
 Q: What does scipy.integrate.quad return? | The integral value and an error estimate.
@@ -549,6 +556,7 @@ X: Differentiate and integrate x sin x symbolically in SymPy.
 > x = symbols('x'); diff(x*sin(x), x) returns x*cos(x) + sin(x)
 > integrate(x*sin(x), x) returns -x*cos(x) + sin(x)
 > Differentiating the result gives back x sin x, a quick check
+D: maths-u27-sympy-antiderivative
 K: SymPy does symbolic mathematics in Python with exact numbers and assumptions; diff, integrate and solve cover calculus and algebra; lambdify and code generation bridge to numerics.
 !: Writing 1/3 in SymPy expressions, which Python evaluates as a float before SymPy sees it.
 Q: How do you create a symbol x in SymPy? | x = symbols('x').
@@ -623,6 +631,7 @@ X: Fit a straight line to x = 1:5, y = c(2, 4, 6, 8, 10) in R.
 > fit <- lm(y ~ x)
 > coef(fit) gives intercept 0 and slope 2
 > summary(fit) adds standard errors and R^{2} (here a perfect fit)
+D: maths-u27-r-fit
 - Functions in packages are loaded with library(name) after install.packages(name).
 K: R is a free statistical language with vectorised operations, data frames and model formulas; lm and glm fit models; CRAN and the tidyverse extend it; reports via R Markdown.
 !: Forgetting that NA values propagate, so mean(x) returns NA unless na.rm = TRUE.
@@ -993,6 +1002,7 @@ X: Estimate a coin's bias from 7 heads in 10 tosses with PyMC.
 > with pm.Model(): p = pm.Beta('p', 1, 1); pm.Binomial('k', n=10, p=p, observed=7)
 > idata = pm.sample() draws from the posterior
 > az.summary(idata) shows a mean near 8/12 ≈ 0.67, the Beta(8, 4) mean
+D: maths-u27-beta-posterior
 K: PyMC writes Bayesian models in Python; NUTS samples posteriors; ArviZ summarises and diagnoses; posterior predictive checks and LOO compare models.
 !: Interpreting results before checking R̂, effective sample size and divergences.
 Q: What sampler does pm.sample() use by default for continuous models? | NUTS.
@@ -1177,6 +1187,7 @@ X: Set up Solver to maximise profit 3x + 2y with x + y ≤ 4 and x + 3y ≤ 6.
 > Put x and y in cells B1 and B2; objective =3*B1+2*B2 in B4
 > Constraints: =B1+B2 ≤ 4 and =B1+3*B2 ≤ 6, with non-negativity
 > Simplex LP finds x = 4, y = 0 with profit 12
+D: maths-u27-solver-region
 K: Solver optimises a target cell by changing variable cells under constraints; Simplex LP handles linear models globally; GRG Nonlinear finds local optima; reports give sensitivity information.
 !: Using GRG Nonlinear on a nonconvex model and assuming the answer is the global optimum.
 Q: Which Solver method guarantees a global optimum for linear models? | Simplex LP.
@@ -1251,6 +1262,7 @@ X: Construct a triangle and its three perpendicular bisectors in GeoGebra. What 
 > The three bisectors always meet at one point (the circumcentre)
 > A circle centred there passes through all three vertices
 > Dragging gives strong evidence; a proof shows why it's always true
+D: maths-u27-circumcentre
 K: GeoGebra links dynamic geometry, algebra, graphs and statistics; sliders and dragging support exploration; observations suggest theorems but don't prove them.
 !: Treating a dragging experiment as a proof of a geometric theorem.
 Q: Who created GeoGebra? | Markus Hohenwarter (2001).
@@ -1288,6 +1300,7 @@ X: How would you show in Desmos how a changes the graph y = a(x − 2)^{2} + 1?
 > Type y = a(x − 2)^{2} + 1 and accept the slider for a
 > Drag a: positive a opens upwards, negative downwards, larger |a| narrows the curve
 > The vertex stays at (2, 1) throughout
+D: maths-u27-desmos-slider
 K: Desmos graphs functions, inequalities, parametric and polar curves instantly; sliders and restrictions support exploration; tables and ~ fit regressions; it's widely used in teaching.
 !: Forgetting that Desmos's regression fit is only as good as the model form you choose.
 Q: How do you fit a regression in Desmos? | Use ~, such as y₁ ~ mx₁ + b.
@@ -1476,6 +1489,7 @@ X: Factor an integer and compute Euler's totient in GP.
 > factor(360) returns the matrix [2, 3; 3, 2; 5, 1], meaning 2^{3} × 3^{2} × 5
 > eulerphi(360) returns 96
 > Check: 360 × (1/2)(2/3)(4/5) = 96
+D: maths-u27-factor-360
 K: PARI/GP is a free, fast number theory system: PARI is the C library and GP the shell; it handles factorisation, modular arithmetic, number fields and elliptic curves; SageMath uses it.
 !: Forgetting to set enough precision with \\p for high-precision real computations.
 Q: Who started PARI/GP? | Henri Cohen and colleagues at Bordeaux (1985).
@@ -1661,6 +1675,7 @@ X: Model a mass–spring–damper in MapleSim.
 > Connect a Fixed frame, Spring (k = 100 N/m), Damper (c = 2 N·s/m) and Mass (1 kg)
 > MapleSim assembles mẍ + cẋ + kx = 0 automatically
 > Simulating a displaced start shows decaying oscillation at about √100 = 10 rad/s
+D: maths-u27-damped-oscillation
 K: MapleSim builds models from physical components using acausal Modelica-based connections; it derives and simplifies DAEs symbolically and generates fast code; it complements causal block-diagram tools.
 !: Confusing acausal physical connections with causal signal-flow block diagrams.
 Q: What modelling language underlies MapleSim? | Modelica.
@@ -1698,6 +1713,7 @@ X: Model a first-order system with time constant 2 s in Simulink.
 > Use a Step input feeding a Transfer Fcn block 1/(2s + 1)
 > Connect a Scope to the output
 > The response reaches about 63% of the final value at t = 2 s
+D: maths-u27-step-response
 K: Simulink models dynamic systems as causal block diagrams; solvers simulate them with fixed or variable steps; Simscape adds physical modelling; code generation supports model-based design.
 !: Using a non-stiff solver on a stiff model, making simulation extremely slow.
 Q: Which Simulink block integrates a signal over time? | The Integrator block.
@@ -1771,6 +1787,7 @@ X: Solve a linear program with CPLEX through docplex.
 > mdl = Model(); x = mdl.continuous_var(); y = mdl.continuous_var()
 > mdl.maximize(3*x + 2*y); mdl.add_constraint(x + y <= 4); mdl.add_constraint(x + 3*y <= 6)
 > mdl.solve() returns x = 4, y = 0 with objective 12
+D: maths-u27-solver-region
 K: CPLEX solves LP, QP and MIP problems with simplex, barrier and branch and cut, plus constraint programming; OPL and many APIs access it; open-source solvers like HiGHS and SCIP are alternatives.
 !: Locking a model to one solver's API when a modelling layer would allow comparing solvers.
 Q: Who owns CPLEX today? | IBM.

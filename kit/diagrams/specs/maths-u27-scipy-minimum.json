@@ -1,0 +1,91 @@
+{
+ "id": "maths-u27-scipy-minimum",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u27",
+ "lesson": "SciPy",
+ "title": "The minimum of (x − 2)² + 1",
+ "caption": "The parabola f(x) = (x − 2)² + 1 has its lowest point at x = 2, where f = 1. These are the values res.x ≈ 2.0 and res.fun ≈ 1.0 that minimize_scalar reports.",
+ "alt": "The parabola y = (x − 2)² + 1 with its lowest point marked at (2, 1).",
+ "description": [
+  "Plot f(x) = (x − 2)² + 1.",
+  "The curve is lowest at x = 2.",
+  "There f(2) = 1.",
+  "minimize_scalar returns res.x ≈ 2.0 and res.fun ≈ 1.0."
+ ],
+ "range": {
+  "x": [
+   -1,
+   5
+  ],
+  "y": [
+   0,
+   10
+  ]
+ },
+ "ticks": [
+  [
+   -1,
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  [
+   2,
+   4,
+   6,
+   8,
+   10
+  ]
+ ],
+ "grid": [
+  2,
+  2
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "(x-2)^2+1",
+   "colour": "a1",
+   "domain": [
+    -0.9,
+    4.9
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 2,
+   "y": 1,
+   "label": "min (2, 1)",
+   "colour": "a2",
+   "dx": 12,
+   "dy": 24
+  }
+ ],
+ "checks": [
+  {
+   "type": "min",
+   "expr": "(x-2)^2+1",
+   "domain": [
+    -1,
+    5
+   ],
+   "x": 2,
+   "y": 1,
+   "name": "the minimum of (x − 2)² + 1 is 1 at x = 2"
+  }
+ ],
+ "fromLesson": [
+  "res.x ≈ 2.0"
+ ]
+}

@@ -1,0 +1,63 @@
+{
+ "id": "maths-u27-factor-360",
+ "renderer": "factor-tree",
+ "course": "maths",
+ "unit": "u27",
+ "lesson": "PARI/GP",
+ "title": "factor(360) = 2³ × 3² × 5",
+ "caption": "GP returns the matrix [2, 3; 3, 2; 5, 1]: the primes of 360 with their exponents. The factor tree shows where they come from, and eulerphi(360) = 360 × (1/2)(2/3)(4/5) = 96 uses the same three primes.",
+ "alt": "A factor tree for 360 splitting into 2 and 180, then down to three 2s, two 3s and a 5.",
+ "description": [
+  "Split 360 = 2 × 180.",
+  "Keep splitting: 180 = 2 × 90, 90 = 2 × 45, 45 = 5 × 9, 9 = 3 × 3.",
+  "The prime leaves are 2, 2, 2, 5, 3, 3.",
+  "So 360 = 2³ × 3² × 5, as factor(360) reports."
+ ],
+ "tree": {
+  "n": 360,
+  "children": [
+   {
+    "n": 2
+   },
+   {
+    "n": 180,
+    "children": [
+     {
+      "n": 2
+     },
+     {
+      "n": 90,
+      "children": [
+       {
+        "n": 2
+       },
+       {
+        "n": 45,
+        "children": [
+         {
+          "n": 5
+         },
+         {
+          "n": 9,
+          "children": [
+           {
+            "n": 3
+           },
+           {
+            "n": 3
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "result": "2^{3} × 3^{2} × 5",
+ "fromLesson": [
+  "96"
+ ]
+}

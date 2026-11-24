@@ -1,0 +1,31 @@
+{
+ "checked_at": "2026-11-24",
+ "id": "src_de_ni",
+ "name": "Department of Education (NI) institution search",
+ "owner": "Department of Education, Northern Ireland",
+ "url": "https://apps.education-ni.gov.uk/appinstitutes/instmain.aspx",
+ "verdict": "confirmation_needed",
+ "licence": {
+  "name": "Open Government Licence v3.0",
+  "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+  "quote": "You may use and re-use the information featured on this website (not including logos) free of charge in any format or medium, under the terms of the Open Government Licence"
+ },
+ "rights": {
+  "ingest": null,
+  "publish": null,
+  "evidence": null,
+  "archive": null
+ },
+ "fields_allowed": {},
+ "identifiers": [
+  "DE institution reference (e.g. 542-0059)"
+ ],
+ "measured": {
+  "default_search_institutions": 1116
+ },
+ "evidence_urls": [
+  "https://www.education-ni.gov.uk/articles/crown-copyright-education",
+  "https://www.education-ni.gov.uk/services/schools-plus"
+ ],
+ "notes": "B3: the OGL statement is on www.education-ni.gov.uk; confirm it covers the apps. host's export. Excludes personal data and OSNI mapping."
+}

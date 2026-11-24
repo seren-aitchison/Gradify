@@ -1,0 +1,88 @@
+{
+ "id": "maths-u21-forward-price",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u21",
+ "lesson": "Derivatives Pricing",
+ "title": "The forward price against delivery time",
+ "caption": "With no dividends the forward price is the spot price grown at the interest rate: 50e^{0.04T}. For T = 1 it is £52.04; longer contracts cost more.",
+ "alt": "A gently rising exponential curve from £50, passing through (1, £52.04).",
+ "description": [
+  "Buying forward is the same as buying the stock now and paying interest.",
+  "F = S₀e^{rT} = 50e^{0.04T}.",
+  "At T = 1, F ≈ £52.04."
+ ],
+ "range": {
+  "x": [
+   0,
+   3
+  ],
+  "y": [
+   48,
+   58
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3
+  ],
+  [
+   50,
+   52,
+   54,
+   56,
+   58
+  ]
+ ],
+ "grid": [
+  1,
+  2
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "T (years)",
+  "forward price £"
+ ],
+ "curves": [
+  {
+   "expr": "50*exp(0.04*x)",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 52.04053870961941,
+   "label": "£52.04",
+   "colour": "a2",
+   "dx": -12,
+   "dy": -14,
+   "anchor": "end"
+  },
+  {
+   "x": 0,
+   "y": 50,
+   "label": "£50 spot",
+   "colour": "a4",
+   "dx": 12,
+   "dy": 22
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "50*exp(0.04*x)",
+   "x": 1,
+   "y": 52.04053870961941,
+   "name": "the one-year forward price is £52.04"
+  }
+ ],
+ "fromLesson": [
+  "52.04"
+ ]
+}

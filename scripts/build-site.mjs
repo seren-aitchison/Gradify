@@ -47,6 +47,7 @@ export const EXCLUDE = {
     "campaign": "marketing: ad copy, video scripts and ad creatives",
     "scripts": "operational and deployment scripts",
     "supabase": "database migrations and server function source",
+    "data": "catalogue source data, schemas and fictional fixtures (docs/CATALOGUE.md); not published until the owner approves Stage 3 (G3)",
     "tests": "automated tests",
     "labs": "design research prototypes (the Liquid Glass material lab), opened locally and never published",
     "poc": "proofs of concept (the Next.js migration test), built and checked locally, never published",

@@ -110,6 +110,40 @@ jobs:
         env:
           BASE: http://127.0.0.1:8080
 
+  catalogue:
+    # The MyGradify catalogue foundation (docs/CATALOGUE.md): the reference search box against fictional and synthetic
+    # catalogues at the volumes Stage 1 measured. It fails on a missed target (search shard size, warm first results on
+    # a 4x slower CPU, offline, the slow-3G loading message), on any axe-core violation in light or dark, or on a
+    # keyboard failure. Screen-reader checks are manual (docs/catalogue/MANUAL-ACCESSIBILITY.md). Not yet a deploy gate.
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    concurrency:
+      group: catalogue-${{ github.ref }}
+      cancel-in-progress: true
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: Install pinned dev dependencies (Playwright, axe-core)
+        run: npm ci --no-audit --no-fund
+
+      - name: Install Chromium for Playwright
+        run: npx playwright install --with-deps chromium
+
+      - name: Catalogue harness (performance, offline, axe, keyboard)
+        run: node scripts/catalogue/harness.cjs --out catalogue-benchmark.json
+
+      - name: Keep the measured results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: catalogue-benchmark
+          path: catalogue-benchmark.json
+          if-no-files-found: ignore
+
   deploy:
     # only after every test step and the signed-in journey have passed, and only from main (never from a pull request
     # or another branch)

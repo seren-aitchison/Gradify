@@ -1,0 +1,91 @@
+{
+ "id": "maths-u25-gain-first-order",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u25",
+ "lesson": "Frequency Response",
+ "title": "Gain of G(s) = 10/(s + 10)",
+ "caption": "At ω = 10 rad/s, G(10i) = 1/(1 + i): the gain is 1/√2 ≈ 0.707 (−3 dB) and the phase −45°. The gain falls away at higher frequencies.",
+ "alt": "A curve starting at gain 1 and falling; at ω = 10 rad/s the gain is 0.707, marked.",
+ "description": [
+  "Substitute s = iω: G(iω) = 10/(10 + iω).",
+  "Its gain is |G| = 10/√(100 + ω²).",
+  "At ω = 10: |G| = 10/√200 = 1/√2 ≈ 0.707, which is −3 dB."
+ ],
+ "range": {
+  "x": [
+   0,
+   50
+  ],
+  "y": [
+   0,
+   1.1
+  ]
+ },
+ "ticks": [
+  [
+   10,
+   20,
+   30,
+   40,
+   50
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "grid": [
+  10,
+  0.25
+ ],
+ "axisLabels": [
+  "ω (rad/s)",
+  "|G|"
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "curves": [
+  {
+   "expr": "10/sqrt(100+x^2)",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 10
+  }
+ ],
+ "points": [
+  {
+   "x": 10,
+   "y": 0.7071,
+   "label": "0.707",
+   "dx": 12,
+   "dy": -8
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "10/sqrt(100+x^2)",
+   "x": 10,
+   "y": 0.7071,
+   "name": "|G(10i)| = 1/√2 ≈ 0.707"
+  },
+  {
+   "type": "point",
+   "expr": "10/sqrt(100+x^2)",
+   "x": 0,
+   "y": 1,
+   "name": "the DC gain is 1"
+  }
+ ],
+ "fromLesson": [
+  "|G| = 1/√2 ≈ 0.707"
+ ]
+}

@@ -22,8 +22,7 @@ Written 24 November 2026 for the next session. You're continuing work on Gradify
 | 4 | Ask Gradify AI about your degree: course-tutor mode `degree`, and a guard that withholds any figure not in the tracker's results | 193 |
 
 The degree tracker is at `/tools/degree-classification-calculator/`. Its markup is in `scripts/seo/tools.mjs` and its
-logic in `assets/study-tools.js`. The "More" sheet now lists Rules, Import and Ask as real pages; only
-**Connections** is still a "Later" card.
+logic in `assets/study-tools.js`. The "More" sheet lists Rules, Import, Ask and Connections as real pages.
 
 **Production facts you need:**
 - The degree-mode migration (`20261124150000_degree_mode.sql`) is applied, and course-tutor v5 is deployed.
@@ -69,50 +68,55 @@ logic in `assets/study-tools.js`. The "More" sheet now lists Rules, Import and A
 
 ---
 
-## Stage 5: calendar, Moodle and Canvas connections
+## Stage 5: calendar, Moodle and Canvas connections (decided 24 November 2026; first release done)
 
-**Ask the owner before building anything here.** The owner said so explicitly, because this needs their own
-accounts, app approvals and university permission. Start the session by asking the questions below, with
-`AskUserQuestion`.
+**The owner's decisions.** Product principle: *Gradify should know when a student has time to study, not what every
+private appointment says; if Gradify can deliver the benefit without holding a third-party credential, it shouldn't
+collect one.*
 
-**What already exists (reuse it):**
-- `.ics` export of revision sessions from the tracker. This is the no-permission fallback, and it must stay.
-- `supabase/functions/calendar-sync`, which fetches an iCalendar feed URL server-side, because of CORS. It works for
-  Google's "secret address in iCal format", iCloud and Outlook published calendars, and university or Moodle, Canvas
-  or Blackboard calendar exports.
-  - The browser parses the feed (`kit/intel/ical.js`) and keeps the events as busy time; nothing is stored on the
-    server.
-  - This is the **read-only route that needs no OAuth at all**. Build on it first: a "Connections" page in the tracker
-    (`data-page="connections"`) where a student pastes their university timetable or VLE calendar export URL.
-    Deadlines in that feed then fill the tracker's due dates, after a review screen like the handbook import.
+| Question | Decision |
+|---|---|
+| Google Calendar | No OAuth and no Google secret iCal addresses for now. Keep `.ics` export; `.ics` **file** import only. Later, investigate `calendar.freebusy` first (not `calendar.readonly`); write access only as a separate, optional permission, preferably to a dedicated Gradify calendar, never touching the student's own events. |
+| Microsoft 365 / Outlook | Not yet. Later: delegated Graph access only, `getSchedule` with `Calendars.ReadBasic` (note: not busy-only), no mail/OneDrive/Teams scopes, handle admin-consent-required errors gracefully, never help students get round university policy. Don't approach universities yet. |
+| Moodle and Canvas | Calendar export **files** only. No Canvas personal access tokens, Moodle web-service tokens or LTI yet. Later phases: official Canvas API / Moodle web services with delegated OAuth, read-only and minimum data; then LTI 1.3 as a separate institutional workstream. Never scrape portals or ask for university passwords. A calendar file is not a substitute for LMS data: the handbook import covers course structure. |
+| Tokens and links | Store no third-party credentials anywhere (no new table, not in profiles, localStorage, IndexedDB, URLs or logs). Feed links count as credentials. One-off URL fetching is deferred until there's a compelling need and a separate security review. A credential table needs an architecture proposal and explicit approval first (Supabase Vault or similar). |
+| Existing saved links | Stop saving links, remove saved ones server-side as well as on next open, tell students once, keep imported events and all progress. |
+| Under-18s | Connections in the university degree tracker only, never on JuniorGradify or YouthGradify (enforced in code, not just hidden). Don't assume a university student is an adult. Smart Plan's local `.ics` import/export stays for everyone. |
+| What's kept from a file | Tracker: only the due dates the student ticks. Smart Plan: busy intervals labelled "Busy"; titles only for exams and deadlines the student confirms. Never descriptions, locations, attendees or categories. A keyword match is a suggestion, never a decision. Repeats, exceptions, time zones and re-imports must be handled correctly. |
 
-**Questions for the owner:**
-1. **Google Calendar.** Read the student's calendar (`calendar.readonly`), write revision sessions
-   (`calendar.events`), or both? Both need a Google Cloud OAuth client and Google's app verification for sensitive
-   scopes, which takes weeks. Does a Google Cloud project exist, and who owns it?
-2. **Microsoft (Outlook and university Microsoft 365).** This needs a Microsoft Entra app registration. Many
-   universities block third-party apps until their IT admins approve them. Should Gradify apply, and to which
-   universities first?
-3. **Moodle and Canvas.**
-   - A personal token per student, where the university allows them: Canvas access tokens, or Moodle's mobile web
-     service token.
-   - Or proper LTI 1.3, which needs each university's agreement.
-   - Which universities have you got contacts at?
-   - Read-only first (assignments, due dates, module names). Is that right?
-4. **Data.** Store tokens in Supabase (encrypted, per student, revocable), or never store them (fetch on demand
-   only)? The privacy policy must be updated either way.
-5. **Under-18s.** Connections for university students only (UnderGradify, PostGradify), and never on JuniorGradify or
-   YouthGradify?
+Also asked for before any ongoing calendar access: a UK GDPR lawful basis per purpose, a DPIA check, processor and
+transfer review, and a UK data-protection solicitor's review. Never claim Google or Microsoft approval that hasn't
+been obtained.
 
-**Build order once agreed:**
-1. A feed URL import, with review, using calendar-sync.
-2. OAuth read-only.
-3. Write-back of revision sessions.
-4. Moodle and Canvas read-only, through a Supabase function proxy.
+**Built (first release):**
+- **Degree tracker → Connections** (`data-page="connections"`): choose an `.ics` file; `kit/data/connections.js`
+  (`deadlinesFromIcs`, `matchModule`, `applyDeadlines`) lists possible deadlines and exams, matches them to modules
+  (module code, Canvas `[course]`, Moodle `CATEGORIES`), and nothing is ticked until the student ticks it. Applying
+  keeps each module's earliest upcoming date and never changes marks, names or credits. Canvas assignments are spotted
+  by their UID. Removed on `/juniorgradify` and `/youthgradify` paths. Tests: `tests/connections.test.mjs`.
+- **Parser** (`kit/intel/ical.js`): TZIDs converted with Intl (Windows zone names mapped), repeats expanded in their
+  own zone across clock changes, `RECURRENCE-ID` replaces the original occurrence, alarms ignored. `toBlocks` keeps
+  "Busy"/"Away" only, plus confirmed titles. `candidates()` gives the review list.
+- **Smart Plan** (`kit/app/intel-views.js`, `kit/intel/calsync.js`): link form and the six-hourly background sync
+  removed; file import with an exam/deadline review; "Remove imported events"; on open, saved links are deleted from
+  the profile and this browser (`retiredIntel`) with a one-off notice.
+- **`calendar-sync` function** now answers 410 and fetches nothing. **Owner to do:** deploy it (or delete it) and run
+  `docs/sql/retire-calendar-links.sql` (preview → transaction → verify) so links are removed for students who never
+  return. Neither was done from the session: there was no Supabase access.
+- `privacy.html#calendars`, homepage and Pricing wording ("Calendar import"), `docs/INTELLIGENCE.md`.
 
-Keep every connection optional and revocable, and say plainly what is read.
+**Next for Stage 5, only with the owner's go-ahead:** Google `freebusy` OAuth, then Microsoft Graph `getSchedule`, then
+official Canvas/Moodle APIs, then LTI. Each needs the owner's app registrations and a security and privacy review.
 
 ---
+
+## MyGradify status (24 November 2026)
+
+- **Architecture:** approved in principle: `docs/PROPOSAL-mygradify-catalogue.md` (Proposal 5 + Addendum A, with the
+  decision register and approval gates G1–G7).
+- **Stage 1 (research):** reported in `docs/STAGE1-RESEARCH-REPORT.md`. Only GIAS is cleared; blockers B1–B9.
+- **Stage 2 (catalogue foundation, repo only):** `docs/CATALOGUE.md`. It's on a PR, waiting for the owner's approval to
+  merge. **G3 (real ingestion) is not approved.**
 
 ## MyGradify: deep academic personalisation and institution intelligence
 

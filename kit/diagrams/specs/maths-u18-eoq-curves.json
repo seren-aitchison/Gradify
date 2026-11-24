@@ -1,0 +1,144 @@
+{
+ "id": "maths-u18-eoq-curves",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u18",
+ "lesson": "Inventory Theory",
+ "title": "Ordering and holding cost against order size",
+ "caption": "Ordering cost 60000/Q falls with Q while holding cost 1.5Q rises. Their sum is smallest where the two are equal, at Q = 200, with each costing £300 and the total £600 a year.",
+ "alt": "Three curves against order size Q: a falling ordering cost, a rising holding-cost line and their U-shaped sum with its minimum 600 at Q = 200 where the first two cross at 300.",
+ "description": [
+  "Orders per year D/Q cost S each: 60000/Q.",
+  "Average stock Q/2 costs H each: 1.5Q.",
+  "The total is smallest where they cross: Q = √(2DS/H) = 200, with 6 orders a year.",
+  "At Q = 200 each cost is £300, total £600."
+ ],
+ "range": {
+  "x": [
+   0,
+   500
+  ],
+  "y": [
+   0,
+   1200
+  ]
+ },
+ "ticks": [
+  [
+   100,
+   200,
+   300,
+   400,
+   500
+  ],
+  [
+   300,
+   600,
+   900,
+   1200
+  ]
+ ],
+ "grid": [
+  100,
+  300
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "order size Q",
+  "annual cost £"
+ ],
+ "curves": [
+  {
+   "expr": "60000/x",
+   "colour": "a2",
+   "domain": [
+    50,
+    500
+   ],
+   "label": "ordering",
+   "labelAt": [
+    70,
+    900
+   ]
+  },
+  {
+   "expr": "1.5*x",
+   "colour": "a4",
+   "domain": [
+    0,
+    500
+   ],
+   "label": "holding",
+   "labelAt": [
+    420,
+    520
+   ]
+  },
+  {
+   "expr": "60000/x+1.5*x",
+   "colour": "a1",
+   "domain": [
+    50,
+    500
+   ],
+   "label": "total",
+   "labelAt": [
+    440,
+    860
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 200,
+   "y": 600,
+   "label": "Q = 200, £600",
+   "colour": "ink",
+   "dx": 14,
+   "dy": 30
+  },
+  {
+   "x": 200,
+   "y": 300,
+   "label": "£300 each",
+   "colour": "ink",
+   "dx": 10,
+   "dy": 22
+  }
+ ],
+ "checks": [
+  {
+   "type": "min",
+   "expr": "60000/x+1.5*x",
+   "domain": [
+    50,
+    500
+   ],
+   "x": 200,
+   "y": 600,
+   "tol": 0.5,
+   "name": "the total cost is least at Q = 200, £600"
+  },
+  {
+   "type": "intersect",
+   "a": "60000/x",
+   "b": "1.5*x",
+   "x": 200,
+   "y": 300,
+   "name": "ordering and holding cost are equal at Q = 200: £300"
+  },
+  {
+   "type": "point",
+   "expr": "60000/x+1.5*x",
+   "x": 200,
+   "y": 600,
+   "name": "300 + 300 = 600"
+  }
+ ],
+ "fromLesson": [
+  "EOQ"
+ ]
+}

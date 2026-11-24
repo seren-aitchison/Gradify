@@ -1,0 +1,91 @@
+{
+ "id": "maths-u25-step-4-over-s2",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u25",
+ "lesson": "Transfer Functions",
+ "title": "Step response of G(s) = 4/(s + 2)",
+ "caption": "The step response is 2(1 − e^{−2t}); it settles at the DC gain G(0) = 4/2 = 2, as the final value theorem predicts.",
+ "alt": "A curve rising from 0 and levelling off at 2, with a dashed line at the final value 2.",
+ "description": [
+  "The output transform is Y(s) = G(s)/s.",
+  "Inverting gives y(t) = 2(1 − e^{−2t}).",
+  "The final value is lim s·Y(s) = 4/2 = 2, the DC gain."
+ ],
+ "range": {
+  "x": [
+   0,
+   3
+  ],
+  "y": [
+   0,
+   2.5
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3
+  ],
+  [
+   0.5,
+   1,
+   1.5,
+   2
+  ]
+ ],
+ "grid": [
+  1,
+  0.5
+ ],
+ "axisLabels": [
+  "t (s)",
+  "y"
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "curves": [
+  {
+   "expr": "2*(1-exp(-2*x))",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "y": 2,
+   "label": "final value 2"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "2*(1-exp(-2*x))",
+   "x": 0,
+   "y": 0,
+   "name": "y(0) = 0"
+  },
+  {
+   "type": "value",
+   "expr": "2*(1-exp(-2*x))",
+   "x": 3,
+   "between": [
+    1.99,
+    2
+   ],
+   "name": "y settles at the DC gain 2"
+  },
+  {
+   "type": "slope",
+   "expr": "2*(1-exp(-2*x))",
+   "x": 0,
+   "value": 4,
+   "name": "the initial slope is G(∞)-free: 4"
+  }
+ ],
+ "fromLesson": [
+  "= 2 (the DC gain)"
+ ]
+}

@@ -72,6 +72,7 @@ X: £5000 is lent at 6% simple interest for 9 months. Find the interest and the 
 > t = 9/12 = 0.75 years
 > I = 5000 × 0.06 × 0.75 = £225
 > Total repaid A = £5225
+D: maths-u21-simple-interest-line
 - Discounting at simple interest: P = A/(1 + rt) gives the price of a Treasury bill.
 - Simple interest is common in legal judgments and some consumer agreements.
 K: Simple interest I = Prt grows linearly; A = P(1 + rt); it's used for short terms and accrued interest; compound interest overtakes it after one period.
@@ -119,6 +120,7 @@ X: £1000 is invested at 5% compounded annually for 10 years. Find the amount an
 > A = 1000 × 1.05^{10} ≈ £1628.89
 > The rule of 72 gives doubling in about 72/5 = 14.4 years
 > Exact doubling time ln 2/ln 1.05 ≈ 14.2 years
+D: maths-u21-compound-doubling
 - Logarithms solve for time: n = ln(A/P)/ln(1 + r).
 P: **Investigate with the lab.** Choose Compound interest and write each answer as P × multiplierⁿ before calculating.
 IX: practice
@@ -169,6 +171,7 @@ X: A debt of £1000 due now and £2000 due in 2 years is to be replaced by one p
 > Value at time 1: £1000 accumulates to 1000 × 1.05 = £1050
 > £2000 discounts back one year to 2000/1.05 ≈ £1904.76
 > The single payment is 1050 + 1904.76 = £2954.76
+D: maths-u21-single-payment
 K: Accumulate with (1 + i)ⁿ and discount with vⁿ; equations of value equate cash flows at one date; real rates adjust for inflation; this underlies all valuation.
 !: Adding cash flows due at different dates without moving them to a common date.
 Q: What is the discount factor at 10% for one year? | 1/1.1 ≈ 0.909.
@@ -215,6 +218,7 @@ X: Find the present value of £100 a year forever at 5%, and of £100 growing at
 > Level perpetuity: 100/0.05 = £2000
 > Growing perpetuity: 100/(0.05 − 0.02) = 100/0.03
 > ≈ £3333.33
+D: maths-u21-perpetuity-pv
 K: PV discounts future cash flows to today; perpetuities have PV C/r and growing ones C/(r − g); higher discount rates lower PV, most strongly for distant flows.
 !: Using a growing perpetuity formula when growth is at or above the discount rate.
 Q: What is the PV of a perpetuity paying C at rate r? | C/r.
@@ -259,6 +263,7 @@ X: You save £200 at the end of each month for 5 years at 0.5% a month. Find the
 > n = 60, r = 0.005
 > FV = 200 × (1.005^{60} − 1)/0.005 = 200 × (1.34885 − 1)/0.005
 > ≈ 200 × 69.77 ≈ £13,954
+D: maths-u21-savings-fv
 - Inflation erodes future value: divide by (1 + π)ⁿ for today's money.
 - Spreadsheet FV functions follow the same formulas.
 K: Future value compounds lump sums and regular payments; FV = P((1 + r)ⁿ − 1)/r for regular savings; solve for payments or time to meet targets.
@@ -306,6 +311,7 @@ X: Find the PV of £1000 a year for 10 years at 5%, paid at year ends.
 > v^{10} = 1.05^{−10} ≈ 0.6139
 > a₁₀ = (1 − 0.6139)/0.05 ≈ 7.722
 > PV ≈ £7,722
+D: maths-u21-annuity-bars
 - Increasing annuities pay 1, 2, 3, … and have their own closed-form PV.
 - Annuity rates depend on age, health and gilt yields.
 - Spreadsheet PV and PMT functions implement these formulas.
@@ -354,6 +360,7 @@ X: A £10,000 loan at 1% a month is repaid over 12 months. Find the payment and 
 > P = 10,000 × 0.01/(1 − 1.01^{−12}) = 100/(1 − 0.88745) ≈ £888.49
 > Month 1 interest = 0.01 × 10,000 = £100
 > Capital repaid = 888.49 − 100 = £788.49, leaving £9,211.51
+D: maths-u21-loan-balance
 K: Level payments P = Li/(1 − vⁿ) amortise loans; interest is charged on the balance; early payments are interest-heavy; balances equal the PV of remaining payments.
 !: Assuming each payment reduces the balance by the full payment amount.
 Q: How is each period's interest calculated? | Interest rate times the outstanding balance.
@@ -399,6 +406,7 @@ X: Find the monthly payment on a £150,000 repayment mortgage over 25 years at 6
 > j = 0.005 and 12n = 300
 > (1.005)^{−300} ≈ 0.2240
 > P = 150,000 × 0.005/(1 − 0.2240) ≈ 750/0.776 ≈ £966.45
+D: maths-u21-mortgage-balance
 K: Mortgage payments follow the amortisation formula with monthly rates; rates and terms strongly affect payments and total interest; overpayments save interest; LTV and affordability rules shape borrowing.
 !: Comparing mortgages by monthly payment alone, ignoring term and total interest.
 Q: What does LTV mean? | Loan-to-value ratio.
@@ -445,6 +453,7 @@ X: A firm expects cash flows of £10m next year, growing 3% forever. With a 9% d
 > Growing perpetuity: V = C₁/(r − g)
 > = 10/(0.09 − 0.03)
 > = £166.7m
+D: maths-u21-dcf-running-value
 K: DCF values an asset by discounting forecast cash flows plus a terminal value; WACC or CAPM sets the rate; terminal value and assumptions dominate, so sensitivity analysis is essential.
 !: Using a terminal growth rate above long-run economic growth.
 Q: What does WACC combine? | The costs of debt and equity weighted by their shares of financing.
@@ -491,6 +500,7 @@ X: A project costs £1000 now and returns £600 in each of the next 2 years. Fin
 > PV of inflows = 600/1.1 + 600/1.21 = 545.45 + 495.87 = 1041.32
 > NPV = 1041.32 − 1000
 > = £41.32 > 0, so accept
+D: maths-u21-npv-curve
 K: NPV discounts all cash flows and subtracts the outlay; accept positive NPVs and choose the highest among exclusive projects; use incremental flows, ignore sunk costs.
 !: Including sunk costs already spent in the NPV of a decision.
 Q: What does a positive NPV indicate? | The project earns more than the required return.
@@ -537,6 +547,7 @@ X: A project costs £1000 and returns £1100 in one year. Find its IRR.
 > NPV(r) = −1000 + 1100/(1 + r) = 0
 > 1 + r = 1.1
 > IRR = 10%
+D: maths-u21-irr-root
 - IRR is a root of a polynomial in v = 1/(1 + r).
 K: IRR makes NPV zero; it's found numerically; it can have multiple values or rank projects wrongly; use it alongside NPV, and MIRR when reinvestment matters.
 !: Choosing the higher-IRR project when it has the lower NPV.
@@ -584,6 +595,7 @@ X: A 3-year bond with face £100 pays a 5% annual coupon. Price it at a 6% yield
 > P = 5/1.06 + 5/1.06^{2} + 105/1.06^{3}
 > = 4.717 + 4.450 + 88.160
 > = £97.33, below par since the yield exceeds the coupon
+D: maths-u21-bond-price-yield
 K: Bond prices are PVs of coupons and face value; prices move opposite to yields; duration measures rate sensitivity; convexity refines it.
 !: Thinking a bond's price rises when market yields rise.
 Q: When does a bond trade at par? | When its coupon rate equals its yield.
@@ -630,6 +642,7 @@ X: A share will pay £2 next year, dividends grow 4% a year, and investors requi
 > P₀ = D₁/(r − g)
 > = 2/(0.09 − 0.04)
 > = £40
+D: maths-u21-gordon-value
 - Share buybacks return cash like dividends, so total payout models include them.
 K: Shares are valued by discounting dividends or cash flows; the Gordon model gives D₁/(r − g); multiples compare with peers; results are sensitive to growth and required return.
 !: Applying the Gordon model with g close to or above r.
@@ -676,6 +689,7 @@ X: Two assets each have σ = 20%, correlation 0.5. Find the risk of a 50/50 port
 > σ_{p}^{2} = 0.25 × 0.04 + 0.25 × 0.04 + 2 × 0.25 × 0.5 × 0.04
 > = 0.01 + 0.01 + 0.01 = 0.03
 > σ_{p} = √0.03 ≈ 17.3%, lower than 20% for either asset
+D: maths-u21-two-asset-risk
 K: Portfolio return is a weighted average, but risk depends on correlations; diversification removes specific risk; systematic risk remains; correlations can rise in crises.
 !: Averaging individual volatilities to get portfolio volatility.
 Q: What correlation gives no diversification benefit? | +1.
@@ -721,6 +735,7 @@ X: Fund A returns 10% with σ = 15%; fund B returns 8% with σ = 8%; r_{f} = 2%.
 > A: (10 − 2)/15 ≈ 0.53
 > B: (8 − 2)/8 = 0.75
 > B offers more excess return per unit of risk
+D: maths-u21-sharpe-lines
 K: MPT finds efficient portfolios by mean–variance optimisation; a risk-free asset gives the capital market line and two-fund separation; the Sharpe ratio compares risk-adjusted returns; estimation error is a major practical problem.
 !: Trusting optimised weights without allowing for estimation error in expected returns.
 Q: Who founded modern portfolio theory? | Harry Markowitz (1952).
@@ -767,6 +782,7 @@ X: A share has β = 1.2; r_{f} = 3%; the expected market return is 8%. Find its 
 > Market risk premium = 8 − 3 = 5%
 > E[R] = 3 + 1.2 × 5
 > = 9%
+D: maths-u21-security-market-line
 K: CAPM prices assets by beta; the security market line gives required returns; alpha measures out-performance; evidence supports multi-factor extensions.
 !: Using total volatility instead of beta to set a CAPM required return.
 Q: What does β = 1 mean? | The asset moves one-for-one with the market on average.
@@ -812,6 +828,7 @@ X: An asset has β₁ = 1.0 to growth (premium 4%) and β₂ = 0.5 to inflation 
 > E[R] = r_{f} + β₁λ₁ + β₂λ₂
 > = 3 + 1.0 × 4 + 0.5 × 2
 > = 8%
+D: maths-u21-apt-build-up
 K: APT prices assets by exposure to several factors using no-arbitrage; factors come from macroeconomics, statistics or firm characteristics; CAPM is a one-factor case; beware spurious factors.
 !: Treating every factor found in back-tests as a genuine source of risk premium.
 Q: Who proposed arbitrage pricing theory? | Stephen Ross (1976).
@@ -905,6 +922,7 @@ X: In a one-period market, a stock is £100 and will be £120 or £90; r = 0. Fi
 > Martingale condition: 100 = q × 120 + (1 − q) × 90
 > 100 = 90 + 30q
 > q = 1/3, unique, so the market is complete
+D: maths-u21-one-period-tree
 K: The first fundamental theorem links no arbitrage to martingale measures; the second links completeness to uniqueness; prices are expected discounted payoffs under Q; incomplete markets have price ranges.
 !: Assuming every market model has a unique risk-neutral price.
 Q: What does the second fundamental theorem say? | A market is complete iff the martingale measure is unique.
@@ -952,6 +970,7 @@ X: A product sells 10,000 units at £20 with variable cost £12 and fixed costs 
 > Contribution per unit = 20 − 12 = £8
 > Profit = 10,000 × 8 − 50,000 = £30,000
 > Break-even volume = 50,000/8 = 6,250 units
+D: maths-u21-break-even
 K: Financial models link statements and drivers; separate inputs from calculations; use scenarios and sensitivity tables; follow standards and checks, since spreadsheet errors are common and costly.
 !: Hard-coding numbers inside formulas, which hides assumptions and causes errors.
 Q: What check confirms a three-statement model is consistent? | The balance sheet balances.
@@ -1044,6 +1063,7 @@ X: A stock at £100 has μ = 8% and σ = 20%. Find its expected price and median
 > E[S₁] = 100e^{0.08} ≈ £108.33
 > Median = 100e^{0.08 − 0.02} = 100e^{0.06}
 > ≈ £106.18: the median is below the mean because of skew
+D: maths-u21-gbm-mean-median
 K: GBM gives log-normal prices with drift μ − ½σ^{2} in log terms; E[S_{T}] = S₀e^{μT}; volatility drag lowers the median; real markets show fat tails and jumps.
 !: Confusing the expected price growth μ with the median (typical) growth μ − ½σ^{2}.
 Q: What is E[S_{T}] under GBM? | S₀e^{μT}.
@@ -1091,6 +1111,7 @@ X: A stock pays no dividends, S₀ = £50, r = 4% (continuous) and T = 1. Find t
 > F = S₀e^{rT}
 > = 50e^{0.04}
 > ≈ £52.04
+D: maths-u21-forward-price
 K: Derivatives include forwards, futures, options and swaps; forwards price as S₀e^{(r − q)T}; replication and risk-neutral expectation give prices; delta hedging and put–call parity are key tools.
 !: Pricing a forward by the expected future spot price instead of by no-arbitrage.
 Q: What is the forward price of a non-dividend stock? | S₀e^{rT}.
@@ -1138,6 +1159,7 @@ X: A call with K = £50 is priced £6 when the stock is £53. Find intrinsic and
 > Intrinsic value = max(53 − 50, 0) = £3
 > Time value = 6 − 3 = £3
 > The time value reflects the chance of further gains before expiry
+D: maths-u21-call-value-split
 K: Calls and puts have payoffs max(S − K, 0) and max(K − S, 0); value = intrinsic + time value; volatility, time, rates and the underlying price drive it; Greeks measure sensitivities.
 !: Thinking higher volatility lowers option values because of more downside.
 Q: What does vega measure? | Sensitivity of option value to volatility.
@@ -1183,6 +1205,7 @@ X: S = £100, u = 1.2, d = 0.8, r = 0 per step. Price a one-step call with K = �
 > q = (1 − 0.8)/(1.2 − 0.8) = 0.5
 > Payoffs: up £20, down £0
 > Call value = 0.5 × 20 + 0.5 × 0 = £10
+D: maths-u21-binomial-call
 K: Binomial trees price options by backward induction with risk-neutral q; replication gives the same answer; American options compare exercise with continuation; trees converge to Black–Scholes.
 !: Using real-world probabilities instead of risk-neutral q in the tree.
 Q: What is the risk-neutral probability in a binomial tree? | q = (e^{rΔt} − d)/(u − d).
@@ -1229,6 +1252,7 @@ X: Price an at-the-money call with S₀ = K = £100, r = 0, σ = 20% and T = 1.
 > d₁ = (0 + 0.02)/0.2 = 0.1 and d₂ = −0.1
 > N(0.1) ≈ 0.5398 and N(−0.1) ≈ 0.4602
 > C = 100 × 0.5398 − 100 × 0.4602 ≈ £7.97
+D: maths-u21-bs-normal-area
 K: Black–Scholes prices European options using S, K, r, σ and T; it follows from delta hedging and no arbitrage; drift drops out; constant volatility is its main unrealistic assumption.
 !: Plugging the stock's expected return μ into the Black–Scholes formula.
 Q: Which parameter of the stock does the Black–Scholes price not depend on? | Its expected return μ.
@@ -1276,6 +1300,7 @@ X: In Vasicek with a = 0.5, b = 4% and current r = 2%, what is the expected rate
 > The drift a(b − r) = 0.5 × (0.04 − 0.02) = 0.01 per year
 > So rates are pulled up by 1% a year at first
 > In the long run E[r] → b = 4%
+D: maths-u21-vasicek-mean
 K: Yield curves link rates to maturities; forward rates come from spot rates; Vasicek, CIR and Hull–White model the short rate with mean reversion; models are calibrated to market curves.
 !: Using a model that allows negative rates without checking whether that matters for the product.
 Q: What feature makes rates return to a long-run level? | Mean reversion.
@@ -1321,6 +1346,7 @@ X: Claims are exponential with mean £1000 and θ = 0.25. Find the ruin probabil
 > ψ(u) = (1/1.25) e^{−0.25 × 5000/(1.25 × 1000)}
 > = 0.8 × e^{−1}
 > ≈ 0.294
+D: maths-u21-ruin-probability
 K: Ruin theory models surplus as capital plus premiums minus compound Poisson claims; positive safety loading is essential; ψ(u) decays exponentially for light tails (Lundberg); heavy tails increase ruin risk.
 !: Charging premiums equal to expected claims, which makes eventual ruin certain.
 Q: What is the net profit condition? | Premiums exceed expected claims (θ > 0).
@@ -1366,6 +1392,7 @@ X: Using EWMA with λ = 0.94, yesterday's variance 0.0001 and return 2%, update 
 > σₜ^{2} = 0.94 × 0.0001 + 0.06 × 0.02^{2}
 > = 0.000094 + 0.000024 = 0.000118
 > Daily volatility ≈ √0.000118 ≈ 1.09%
+D: maths-u21-ewma-update
 K: Market risk is modelled by variance–covariance, historical simulation or Monte Carlo; EWMA and GARCH track changing volatility; backtesting and stress tests validate models.
 !: Assuming normal returns, which underestimates extreme losses.
 Q: What does backtesting check? | Whether actual losses exceed predicted thresholds as often as expected.
@@ -1413,6 +1440,7 @@ X: A £1m loan has PD = 2% and recovery rate 40%. Find the expected loss.
 > LGD = 1 − 0.4 = 0.6
 > EL = 0.02 × 0.6 × 1,000,000
 > = £12,000
+D: maths-u21-loss-given-default
 K: Expected loss is PD × LGD × EAD; structural models link default to asset values; reduced-form models use hazard rates; portfolio models capture correlated defaults for capital.
 !: Ignoring default correlation, which understates the risk of many defaults at once.
 Q: What is LGD in terms of the recovery rate? | 1 − recovery rate.
@@ -1459,6 +1487,7 @@ X: A £10m portfolio has daily volatility 1%. Find its 99% one-day VaR assuming 
 > σV = 0.01 × 10m = £100,000
 > VaR = 2.326 × 100,000
 > ≈ £232,600
+D: maths-u21-var-tail
 - Banks report VaR daily to management and regulators.
 K: VaR is a loss quantile at a given confidence and horizon; parametric VaR uses z_{α}σV; it ignores losses beyond the threshold and isn't always subadditive.
 !: Reading VaR as the maximum possible loss.
@@ -1505,6 +1534,7 @@ X: Ten equally likely losses are 1, 2, 3, 4, 5, 6, 7, 8, 20 and 50. Find the 80%
 > The worst 20% of outcomes are 20 and 50
 > VaR at 80%: the threshold at the 8th worst value, 8 (by one convention)
 > ES = average of the worst 20% = (20 + 50)/2 = 35, much more than VaR shows
+D: maths-u21-expected-shortfall
 K: Expected shortfall averages losses beyond VaR; it's coherent and captures tail severity; 97.5% ES is close to 99% VaR for normal distributions; regulators now use it for market risk.
 !: Assuming two portfolios with equal VaR have equal tail risk.
 Q: Is expected shortfall subadditive? | Yes: it's coherent.
@@ -1552,6 +1582,7 @@ X: A 1-year term policy pays £10,000 if a 60-year-old dies within a year (q₆�
 > Benefit paid at year end with probability 0.01
 > EPV = 10,000 × 0.01/1.05
 > ≈ £95.24
+D: maths-u21-term-policy-tree
 K: Actuarial mathematics combines life tables with discounting; insurance and annuity values are expected present values; the equivalence principle sets premiums; reserves cover future obligations.
 !: Ignoring interest and valuing benefits by probability alone.
 Q: What does ₜpₓ mean? | The probability that a life aged x survives t more years.
@@ -1645,6 +1676,7 @@ X: 10 patients are at risk; 2 die at month 1; 1 is censored at month 2; 1 of the
 > Month 1: factor 1 − 2/10 = 0.8
 > Month 3: 7 at risk, factor 1 − 1/7 ≈ 0.857
 > S(3) = 0.8 × 0.857 ≈ 0.686
+D: maths-u21-kaplan-meier
 K: Survival analysis uses S(t), f(t) and h(t); censoring needs special methods; Kaplan–Meier estimates S(t); Cox models relate hazards to covariates through hazard ratios.
 !: Treating censored observations as events or dropping them.
 Q: What is the survival function of an exponential distribution? | e^{−λt}.
@@ -1691,6 +1723,7 @@ X: A DB scheme pays 1/60 of final salary per year of service. A member retiring 
 > Accrual = 30/60 = 0.5
 > Pension = 0.5 × 45,000
 > = £22,500 a year
+D: maths-u21-pension-accrual
 K: DB schemes promise salary-linked benefits with sponsor risk; DC schemes give members a pot; liabilities are PVs of projected benefits; discount rates and longevity strongly affect funding levels.
 !: Ignoring how sensitive long-duration liabilities are to the discount rate.
 Q: Who bears investment risk in a DC scheme? | The member.
@@ -1738,6 +1771,7 @@ X: A consumer has u = x^{0.5}y^{0.5}, income £100, and prices p_{x} = £2, p_{y
 > Cobb–Douglas: spend half of income on each good
 > x = 50/2 = 25
 > y = 50/5 = 10
+D: maths-u21-consumer-optimum
 K: Mathematical economics uses optimisation for consumers and firms and fixed-point theorems for equilibrium; Cobb–Douglas gives constant expenditure shares; the welfare theorems link equilibrium and efficiency.
 !: Forgetting that welfare theorems need assumptions such as no externalities and complete markets.
 Q: What does the first welfare theorem say? | Competitive equilibria are Pareto efficient.
@@ -1829,6 +1863,7 @@ X: Demand Q = 100 − 2P and supply Q = 3P. Find the equilibrium and consumer su
 > 100 − 2P = 3P gives P = 20 and Q = 60
 > Demand hits zero at P = 50
 > Consumer surplus = ½ × 60 × (50 − 20) = 900
+D: maths-u21-supply-demand
 K: Microeconomic models find equilibria from supply and demand; taxes cause deadweight loss; competition sets P = MC while monopoly sets MR = MC; surplus measures welfare.
 !: Assuming the party legally paying a tax bears all of its burden.
 Q: Where does a monopolist produce? | Where marginal revenue equals marginal cost.
@@ -1876,6 +1911,7 @@ X: Using the Taylor rule with r* = 2%, π = 4%, π* = 2% and output gap 1%, find
 > i = 2 + 4 + 0.5 × (4 − 2) + 0.5 × 1
 > = 6 + 1 + 0.5
 > = 7.5%
+D: maths-u21-taylor-rule
 K: Macroeconomic models describe output, inflation and rates; Solow explains growth via capital and technology; the Taylor rule guides policy; DSGE models are standard but have known limits.
 !: Treating model forecasts as precise despite wide uncertainty.
 Q: What drives long-run growth in the Solow model? | Technological progress.
@@ -1922,6 +1958,7 @@ X: Two firms face P = 120 − Q with zero costs. Find the Cournot equilibrium.
 > Firm 1 maximises q₁(120 − q₁ − q₂): best response q₁ = (120 − q₂)/2
 > By symmetry q₁ = q₂ = q: q = (120 − q)/2 gives q = 40
 > Total output 80, price 40 (monopoly would give Q = 60, P = 60)
+D: maths-u21-cournot-reaction
 K: Nash equilibrium is the core concept; the prisoner's dilemma shows individual and collective interests can clash; Cournot and Bertrand model oligopoly; auctions and repeated games apply it widely.
 !: Assuming a Nash equilibrium is the best outcome for the players jointly.
 Q: In a second-price sealed-bid auction, what should you bid? | Your true value.
@@ -1969,6 +2006,7 @@ X: A scheme costs £10m now and yields £1.2m of benefits a year for 15 years. A
 > PV of benefits = 1.2 × (1 − 1.035^{−15})/0.035
 > 1.035^{−15} ≈ 0.5969, so the annuity factor ≈ 11.517 and PV ≈ £13.82m
 > BCR = 13.82/10 ≈ 1.38
+D: maths-u21-bcr-pv-benefits
 K: CBA monetises and discounts social costs and benefits; NPSV and BCR summarise results; non-market values use VSL, QALYs and revealed preference; discount rates and equity weights are contested.
 !: Ignoring who bears costs and who receives benefits.
 Q: What is the UK Green Book's standard social discount rate? | 3.5%.
@@ -2016,6 +2054,7 @@ X: Using exponential smoothing with α = 0.3, the last forecast was 100 and the 
 > ŷ_{t+1} = αy_{t} + (1 − α)ŷ_{t}
 > = 0.3 × 110 + 0.7 × 100
 > = 103
+D: maths-u21-smoothing-forecast
 K: Forecasting uses naive, smoothing, regression and judgemental methods; accuracy is judged out of sample against benchmarks; combinations often help; uncertainty must be communicated.
 !: Judging a method by its fit to past data rather than out-of-sample accuracy.
 Q: What is the naive forecast? | The next value equals the last observed value.

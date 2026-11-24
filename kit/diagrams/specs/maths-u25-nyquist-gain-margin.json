@@ -1,0 +1,91 @@
+{
+ "id": "maths-u25-nyquist-gain-margin",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u25",
+ "lesson": "Nyquist Stability Criterion",
+ "title": "Critical gain for K/(s + 1)³",
+ "caption": "The phase is −180° at ω = √3, where |L| = K/8. At the critical K = 8 the gain there is exactly 1, so the locus passes through −1; any K < 8 keeps it clear.",
+ "alt": "The gain curve 8/(1 + ω²)^{3/2} falling from 8; it crosses the level 1 at ω = √3 ≈ 1.73.",
+ "description": [
+  "The phase of 1/(s + 1)³ is −3 arctan ω; it equals −180° when ω = √3.",
+  "There |L| = K/(1 + 3)^{3/2} = K/8.",
+  "The locus touches −1 when K/8 = 1: stable for K < 8."
+ ],
+ "range": {
+  "x": [
+   0,
+   4
+  ],
+  "y": [
+   0,
+   9
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4
+  ],
+  [
+   2,
+   4,
+   6,
+   8
+  ]
+ ],
+ "grid": [
+  1,
+  2
+ ],
+ "axisLabels": [
+  "ω (rad/s)",
+  "|L| at K = 8"
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "curves": [
+  {
+   "expr": "8/(1+x^2)^1.5",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "y": 1,
+   "label": "|L| = 1"
+  }
+ ],
+ "points": [
+  {
+   "x": 1.7321,
+   "y": 1,
+   "label": "ω = √3",
+   "dx": 10,
+   "dy": -14
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "8/(1+x^2)^1.5",
+   "x": 1.7320508075688772,
+   "y": 1,
+   "name": "|L(i√3)| = 8/8 = 1 at K = 8"
+  },
+  {
+   "type": "point",
+   "expr": "8/(1+x^2)^1.5",
+   "x": 0,
+   "y": 8,
+   "name": "|L(0)| = K = 8"
+  }
+ ],
+ "fromLesson": [
+  "K < 8"
+ ]
+}

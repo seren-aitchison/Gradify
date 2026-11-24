@@ -1,0 +1,125 @@
+{
+ "id": "maths-u21-perpetuity-pv",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u21",
+ "lesson": "Present Value",
+ "title": "Adding up the present values of ever more payments",
+ "caption": "Each payment is worth a little less than the one before, so the running total of present values levels off. Level £100 a year at 5% approaches £2,000; payments growing at 2% approach £3,333.33.",
+ "alt": "Two rising curves over 100 years, each flattening: the level payments towards £2,000 and the growing payments towards £3,333.33.",
+ "description": [
+  "The present value of n payments of £100 at 5% is 100 × (1 − 1.05^−n)/0.05.",
+  "As n grows this approaches 100/0.05 = £2,000.",
+  "With 2% growth the limit is 100/(0.05 − 0.02) = £3,333.33."
+ ],
+ "range": {
+  "x": [
+   0,
+   100
+  ],
+  "y": [
+   0,
+   3800
+  ]
+ },
+ "ticks": [
+  [
+   20,
+   40,
+   60,
+   80,
+   100
+  ],
+  [
+   1000,
+   2000,
+   3000
+  ]
+ ],
+ "grid": [
+  20,
+  1000
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "payments n",
+  "present value £"
+ ],
+ "curves": [
+  {
+   "expr": "100*(1-1.05^(0-x))/0.05",
+   "colour": "a1",
+   "label": "level",
+   "labelAt": [
+    55,
+    1620
+   ]
+  },
+  {
+   "expr": "100/0.03*(1-(1.02/1.05)^x)",
+   "colour": "a2",
+   "label": "growing 2%",
+   "labelAt": [
+    55,
+    3000
+   ]
+  }
+ ],
+ "marks": [
+  {
+   "y": 2000
+  },
+  {
+   "y": 3333.33
+  }
+ ],
+ "points": [
+  {
+   "x": 100,
+   "y": 1984.7910200042531,
+   "label": "→ £2,000",
+   "colour": "a1",
+   "dx": -8,
+   "dy": 18,
+   "anchor": "end"
+  },
+  {
+   "x": 100,
+   "y": 3149.69387018539,
+   "label": "→ £3,333.33",
+   "colour": "a2",
+   "dx": -8,
+   "dy": -12,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "100*(1-1.05^(0-x))/0.05",
+   "x": 2000,
+   "y": 2000,
+   "name": "level perpetuity: the running total tends to 100/0.05 = £2,000"
+  },
+  {
+   "type": "point",
+   "expr": "100/0.03*(1-(1.02/1.05)^x)",
+   "x": 2000,
+   "y": 3333.3333333333335,
+   "name": "growing perpetuity: the total tends to 100/(0.05 − 0.02) = £3,333.33"
+  },
+  {
+   "type": "point",
+   "expr": "100*(1-1.05^(0-x))/0.05",
+   "x": 1,
+   "y": 95.23809523809524,
+   "name": "the first payment is worth 100/1.05"
+  }
+ ],
+ "fromLesson": [
+  "3333.33"
+ ]
+}
