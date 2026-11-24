@@ -1,0 +1,62 @@
+## Osmosis
+S: Osmosis is the net movement of water from a higher to a lower water potential across a partially permeable membrane.
+LV: Undergraduate
+O: Define osmosis and use the term correctly
+O: Explain what water potential is
+O: Use ψ = ψs + ψp to work out water potential of a cell
+O: Predict and explain what osmosis does to animal and plant cells
+PRE: Diffusion
+PRE: Solutes, solvents and solutions
+PRE: Partially permeable membranes
+H: The idea
+P: **Water potential** (ψ, the Greek letter psi, measured in kPa) describes how strongly water tends to leave a solution. Pure water at atmospheric pressure has the highest water potential, defined as 0 kPa. Dissolving solutes lowers it, so every solution has a negative water potential, and the more concentrated the solution, the more negative it is.
+P: Solutions are described relative to a cell. A **hypotonic** solution has a higher water potential than the cell, so water enters it; an **isotonic** solution has the same water potential, so there is no net movement; a **hypertonic** solution has a lower water potential, so water leaves the cell.
+P: **Osmosis** is the net movement of water across a partially permeable membrane from a region of higher (less negative) water potential to a region of lower (more negative) water potential.
+P: Osmosis is a passive process: the cell uses no energy from respiration to move water this way. Water simply moves down its own concentration gradient.
+P: Some water diffuses slowly through the lipid bilayer itself, but most crosses through **aquaporins**: channel proteins that let water molecules through in single file while keeping out ions. Cells that move a lot of water, such as red blood cells and the cells lining kidney collecting ducts, have many of them, and the number of aquaporins in a membrane controls how quickly water crosses it.
+K: **Osmosis** is the net movement of water from a higher to a lower water potential across a partially permeable membrane.
+H: Calculations
+P: A plant cell's water potential is the sum of its solute potential, which is negative, and its pressure potential, which is positive when the cell wall pushes back on a full cell.
+E: ψ = ψs + ψp :: water potential = solute potential + pressure potential, all in kPa
+X: A plant cell has a solute potential of −750 kPa and a pressure potential of +250 kPa. It is placed in a solution with a water potential of −600 kPa. Which way does water move?
+> Cell: ψ = ψs + ψp = −750 + 250 = −500 kPa.
+> −500 kPa is higher (less negative) than −600 kPa.
+> Water moves from the higher to the lower water potential: out of the cell into the solution.
+H: What osmosis does to animal and plant cells
+P: Whether water enters or leaves a cell depends on the solution around it. Plant cells have a cell wall; animal cells do not, and that changes what happens.
+- **A red blood cell is placed in pure water:** water enters by osmosis, and the cell swells and bursts. The cell's contents are more concentrated than pure water, and an animal cell has no wall to stop it expanding.
+- **A red blood cell is placed in a concentrated salt solution:** water leaves by osmosis, and the cell shrinks. The solution has a lower concentration of water than the cell's contents.
+- **A plant cell is placed in pure water:** water enters by osmosis, and the cell becomes turgid without bursting. The cell wall pushes back on the swelling cell and stops it bursting; a firm, turgid cell helps hold the plant up.
+- **A plant cell is placed in a concentrated sugar solution:** water leaves by osmosis, and the cell becomes flaccid, then plasmolysed. As the cell loses water its contents shrink and the membrane pulls away from the cell wall.
+- **A cell is placed in a solution with the same concentration of water as its contents:** there is no net movement of water, and the cell stays the same. Water crosses both ways equally often.
+D: bio-osmosis-cells
+!: "Osmosis needs energy from respiration." Osmosis is passive: water moves down its own gradient, and the cell spends no energy on it. Moving substances against a gradient (active transport) is what needs energy.
+!: "When both solutions have the same concentration, water stops moving." Water molecules keep crossing in both directions; they just cross equally often, so there is no net movement.
+T: Water potential | The tendency of water to move out of a solution, ψ in kPa; pure water at atmospheric pressure has the highest value, 0 kPa
+T: Solute potential | The part of water potential due to dissolved solutes, ψs: zero for pure water, negative for any solution
+T: Pressure potential | The part of water potential due to pressure, ψp: in a turgid plant cell, the positive pressure of the wall on the contents
+T: Hypotonic | A solution with a higher water potential than a cell's contents, so water enters the cell
+T: Isotonic | A solution with the same water potential as a cell's contents: no net movement of water
+T: Hypertonic | A solution with a lower water potential than a cell's contents, so water leaves the cell
+T: Osmosis | The net movement of water from a higher to a lower water potential across a partially permeable membrane
+T: Passive transport | Movement of substances across a membrane down a gradient, using no energy from the cell
+T: Aquaporin | A channel protein in cell membranes that lets water molecules cross quickly while excluding ions
+T: Turgid | Describes a plant cell that has taken in water and is firm, its contents pressing on the cell wall
+T: Flaccid | Describes a plant cell that has lost water and is soft, no longer pressing on its wall
+T: Plasmolysis | The shrinking of a plant cell's contents so the membrane pulls away from the cell wall, when the cell loses a lot of water
+SUM: Osmosis is the net movement of water from a higher to a lower water potential across a partially permeable membrane.
+SUM: Pure water has the highest water potential, 0 kPa; solutes lower it, so solutions have negative water potentials.
+SUM: Hypotonic, isotonic and hypertonic compare a solution's water potential with a cell's.
+SUM: Osmosis is passive: it uses no energy from respiration.
+SUM: Most water crosses membranes through aquaporins, and their number sets how fast it crosses.
+SRC: OpenStax, Rice University, Biology 2e, section 5.2: Passive Transport (Mary Ann Clark, Matthew Douglas, Jung Choi), Creative Commons Attribution-NonCommercial-ShareAlike 4.0: used to check facts, not reproduced | secondary | 2026-11-24 | https://openstax.org/books/biology-2e/pages/5-2-passive-transport
+SRC: Preston G.M., Carroll T.P., Guggino W.B., Agre P., "Appearance of water channels in Xenopus oocytes expressing red cell CHIP28 protein", Science 256:385–387 | primary | 1992 | https://doi.org/10.1126/science.256.5055.385
+M1#kb-gradify-bio-u02-21-ug-q1@2: Which of these best describes water potential? | The tendency of water to move out of a solution, ψ in kPa; pure water at atmospheric pressure has the highest value, 0 kPa | Osmosis needs energy from respiration | A channel protein in cell membranes that lets water molecules cross quickly while excluding ions | A solution with a lower water potential than a cell's contents, so water leaves the cell | Water potential: the tendency of water to move out of a solution, ψ in kPa; pure water at atmospheric pressure has the highest value, 0 kPa.
+M1#kb-gradify-bio-u02-21-ug-q2@2: Which of these best describes solute potential? | The part of water potential due to dissolved solutes, ψs: zero for pure water, negative for any solution | The part of water potential due to pressure, ψp: in a turgid plant cell, the positive pressure of the wall on the contents | The net movement of water from a higher to a lower water potential across a partially permeable membrane | The tendency of water to move out of a solution, ψ in kPa; pure water at atmospheric pressure has the highest value, 0 kPa | Solute potential: the part of water potential due to dissolved solutes, ψs: zero for pure water, negative for any solution.
+M1#kb-gradify-bio-u02-21-ug-q3@2: Which of these best describes pressure potential? | The part of water potential due to pressure, ψp: in a turgid plant cell, the positive pressure of the wall on the contents | Movement of substances across a membrane down a gradient, using no energy from the cell | A solution with a lower water potential than a cell's contents, so water leaves the cell | Osmosis needs energy from respiration | Pressure potential: the part of water potential due to pressure, ψp: in a turgid plant cell, the positive pressure of the wall on the contents.
+M2#kb-gradify-bio-u02-21-ug-q4@4: A plant cell is placed in pure water. What happens? | Water enters by osmosis, and the cell becomes turgid without bursting | Water leaves by osmosis, and the cell becomes flaccid, then plasmolysed | There is no net movement of water, and the cell stays the same | Water enters by osmosis, and the cell swells and bursts | The cell wall pushes back on the swelling cell and stops it bursting; a firm, turgid cell helps hold the plant up.
+M2#kb-gradify-bio-u02-21-ug-q5@4: A red blood cell is placed in pure water. What happens? | Water enters by osmosis, and the cell swells and bursts | Water enters by osmosis, and the cell becomes turgid without bursting | There is no net movement of water, and the cell stays the same | Water leaves by osmosis, and the cell shrinks | The cell's contents are more concentrated than pure water, and an animal cell has no wall to stop it expanding.
+M2#kb-gradify-bio-u02-21-ug-q6@4: A red blood cell is placed in a concentrated salt solution. What happens? | Water leaves by osmosis, and the cell shrinks | There is no net movement of water, and the cell stays the same | Water enters by osmosis, and the cell swells and bursts | Water enters by osmosis, and the cell becomes turgid without bursting | The solution has a lower concentration of water than the cell's contents.
+TF1#kb-gradify-bio-u02-21-ug-q7@1: When both solutions have the same concentration, water stops moving. | false | Water molecules keep crossing in both directions; they just cross equally often, so there is no net movement.
+TF1#kb-gradify-bio-u02-21-ug-q8@1: Osmosis needs energy from respiration. | false | Osmosis is passive: water moves down its own gradient, and the cell spends no energy on it. Moving substances against a gradient (active transport) is what needs energy.
+NUM2#kb-gradify-bio-u02-21-ug-q9@3: A plant cell has a solute potential of −880 kPa and a pressure potential of +170 kPa. What is its water potential, in kPa? | -710 | 1 | kPa | ψ = ψs + ψp = −880 + 170 = −710 kPa.

@@ -1,0 +1,229 @@
+{
+ "id": "gradify-biology-u02-21",
+ "title": "Gradify Biology, lesson u02-21: Osmosis",
+ "publisher": "Gradify",
+ "authors": [
+  "Gradify"
+ ],
+ "course": "biology",
+ "unit": "u02",
+ "lesson": "Osmosis",
+ "url": "kit/courses/biology/notes/u02.js",
+ "licence": "gradify",
+ "level": "ug",
+ "type": "gradify-notes",
+ "retrievedOn": "2026-11-24",
+ "version": "as of 2026-11-24",
+ "sha256": "8ace4b4f096db60e11d856825654a484a9cb20c49d1a571f8f697f97e400d46a",
+ "bytes": 140925,
+ "licenceName": "Gradify's own work",
+ "policy": "reuse",
+ "attribution": false,
+ "parsedTitle": "Osmosis",
+ "passages": [
+  {
+   "id": "L691",
+   "kind": "S",
+   "hash": "a19d2ffe87b558da",
+   "words": 29
+  },
+  {
+   "id": "L692",
+   "kind": "O",
+   "hash": "426122ca5fdf15a7",
+   "words": 7
+  },
+  {
+   "id": "L693",
+   "kind": "O",
+   "hash": "5281d80b492a8362",
+   "words": 11
+  },
+  {
+   "id": "L694",
+   "kind": "O",
+   "hash": "2f534f32a259c903",
+   "words": 8
+  },
+  {
+   "id": "L695",
+   "kind": "PRE",
+   "hash": "151014a3ae7fe440",
+   "words": 1
+  },
+  {
+   "id": "L696",
+   "kind": "H",
+   "hash": "00bec23566670477",
+   "words": 2
+  },
+  {
+   "id": "L697",
+   "kind": "P",
+   "hash": "63626b0d3c0255b8",
+   "words": 55
+  },
+  {
+   "id": "L698",
+   "kind": "E",
+   "hash": "972481bbebff177a",
+   "words": 5
+  },
+  {
+   "id": "L699",
+   "kind": "P",
+   "hash": "664c5b9e155685d3",
+   "words": 30
+  },
+  {
+   "id": "L700",
+   "kind": "H",
+   "hash": "343a90336391b76d",
+   "words": 3
+  },
+  {
+   "id": "L701",
+   "kind": "P",
+   "hash": "d701599d4e953d8f",
+   "words": 26
+  },
+  {
+   "id": "L702",
+   "kind": "P",
+   "hash": "12993359d50135bf",
+   "words": 14
+  },
+  {
+   "id": "L703",
+   "kind": "P",
+   "hash": "aff1e4d880c04331",
+   "words": 28
+  },
+  {
+   "id": "L704",
+   "kind": "D",
+   "hash": "d4f099ff3538d0ed",
+   "words": 1
+  },
+  {
+   "id": "L705",
+   "kind": "X",
+   "hash": "5e2f25c28189ef2e",
+   "words": 29
+  },
+  {
+   "id": "L706",
+   "kind": "P",
+   "hash": "bcc7ede3ccf6521b",
+   "words": 10
+  },
+  {
+   "id": "L707",
+   "kind": "P",
+   "hash": "7b042cd27ff7f430",
+   "words": 18
+  },
+  {
+   "id": "L708",
+   "kind": "K",
+   "hash": "c2c03a070681739f",
+   "words": 21
+  },
+  {
+   "id": "L709",
+   "kind": "!",
+   "hash": "1c642a4475ce249f",
+   "words": 30
+  },
+  {
+   "id": "L710",
+   "kind": "T",
+   "hash": "4dfb2b15300cea63",
+   "words": 25
+  },
+  {
+   "id": "L711",
+   "kind": "T",
+   "hash": "250766f71a253cfb",
+   "words": 23
+  },
+  {
+   "id": "L712",
+   "kind": "T",
+   "hash": "7ff820ec52a3f3d8",
+   "words": 18
+  },
+  {
+   "id": "L713",
+   "kind": "SUM",
+   "hash": "88582ade3c76eb5c",
+   "words": 14
+  },
+  {
+   "id": "L714",
+   "kind": "SUM",
+   "hash": "128293cc69a3e9f1",
+   "words": 15
+  },
+  {
+   "id": "L715",
+   "kind": "SUM",
+   "hash": "10407a58d71578cb",
+   "words": 11
+  },
+  {
+   "id": "L716",
+   "kind": "SRC",
+   "hash": "c15c5691e63750cb",
+   "words": 13
+  },
+  {
+   "id": "L717",
+   "kind": "SRC",
+   "hash": "5fd59c8306672a3e",
+   "words": 24
+  },
+  {
+   "id": "L718",
+   "kind": "Q",
+   "hash": "0c0a1f967940cb22",
+   "words": 12
+  },
+  {
+   "id": "L719",
+   "kind": "Q",
+   "hash": "f254f576fdf5fc6b",
+   "words": 34
+  },
+  {
+   "id": "L720",
+   "kind": "NUM2",
+   "hash": "0b770371b2bf9f74",
+   "words": 43
+  },
+  {
+   "id": "L721",
+   "kind": "M1",
+   "hash": "a88836fdc2ebcb63",
+   "words": 35
+  },
+  {
+   "id": "L722",
+   "kind": "M2",
+   "hash": "f512a4baaacaa15b",
+   "words": 68
+  },
+  {
+   "id": "L723",
+   "kind": "M3",
+   "hash": "3646f997c024a85c",
+   "words": 68
+  },
+  {
+   "id": "L724",
+   "kind": "TF2",
+   "hash": "2fdb26f679a5dc6f",
+   "words": 27
+  }
+ ]
+}

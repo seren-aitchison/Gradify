@@ -1,0 +1,64 @@
+## Osmosis
+S: Osmosis is the net movement of water from a dilute solution to a more concentrated one, across a partially permeable membrane.
+LV: GCSE
+O: Define osmosis and use the term correctly
+O: Explain why water moves overall into the concentrated solution
+O: Predict and explain what osmosis does to animal and plant cells
+H: The idea
+P: **Diffusion** is the net movement of particles from where they are more concentrated to where they are less concentrated. It happens because particles move about randomly: more of them leave a crowded region than arrive in it, so they spread out until they are evenly mixed.
+P: A **solution** is a **solute** (such as sugar or salt) dissolved in a **solvent**; in living things the solvent is water. A **dilute solution** contains little solute, so most of its molecules are water. A **concentrated solution** contains a lot of solute, so a smaller share of its molecules are water.
+P: A **partially permeable membrane** lets some molecules cross but not others. A cell membrane lets small molecules such as water pass through, but holds back larger solute molecules such as sucrose.
+P: **Osmosis** is the net movement of water molecules across a partially permeable membrane, from a dilute solution into a more concentrated one. It is diffusion of water: water moves from where its molecules are more concentrated to where they are less concentrated.
+P: Osmosis is a passive process: the cell uses no energy from respiration to move water this way. Water simply moves down its own concentration gradient.
+P: If both sides have the same concentration of water, water molecules still cross in both directions, but equally often. There is no net movement of water.
+K: **Osmosis** is the diffusion of water: its net movement from a dilute solution to a more concentrated solution across a partially permeable membrane.
+H: Why water moves overall into the concentrated solution
+P: A particle model explains the direction.
+- Water molecules move about randomly, and some pass through the membrane in each direction.
+- In the dilute solution a bigger share of the molecules are water, so more water molecules reach the membrane from that side each second.
+- So more water crosses from the dilute side to the concentrated side than crosses back.
+- The overall (net) movement of water is into the concentrated solution.
+- The solute molecules are too large to pass through the membrane, so they stay on their own side.
+D: kb-aqa8461-4-1-3-2-a-gcse-osmosis-particle-model
+H: What osmosis does to animal and plant cells
+P: Whether water enters or leaves a cell depends on the solution around it. Plant cells have a cell wall; animal cells do not, and that changes what happens.
+- **A red blood cell is placed in pure water:** water enters by osmosis, and the cell swells and bursts. The cell's contents are more concentrated than pure water, and an animal cell has no wall to stop it expanding.
+- **A red blood cell is placed in a concentrated salt solution:** water leaves by osmosis, and the cell shrinks. The solution has a lower concentration of water than the cell's contents.
+- **A plant cell is placed in pure water:** water enters by osmosis, and the cell becomes turgid without bursting. The cell wall pushes back on the swelling cell and stops it bursting; a firm, turgid cell helps hold the plant up.
+- **A plant cell is placed in a concentrated sugar solution:** water leaves by osmosis, and the cell becomes flaccid, then plasmolysed. As the cell loses water its contents shrink and the membrane pulls away from the cell wall.
+- **A cell is placed in a solution with the same concentration of water as its contents:** there is no net movement of water, and the cell stays the same. Water crosses both ways equally often.
+!: "In osmosis, the sugar or salt moves across the membrane." In osmosis it is water that moves overall; the partially permeable membrane holds the solute molecules back.
+!: "Water moves from the concentrated solution to the dilute solution." Water moves overall from the dilute solution, which has more water, to the concentrated solution, which has less.
+!: "Water moves from a high concentration to a low concentration." Say which concentration you mean: water moves from a high concentration of water (a dilute solution) to a low concentration of water (a concentrated solution). The two are opposites, so leaving it out makes the answer ambiguous.
+!: "Osmosis needs energy from respiration." Osmosis is passive: water moves down its own gradient, and the cell spends no energy on it. Moving substances against a gradient (active transport) is what needs energy.
+!: "When both solutions have the same concentration, water stops moving." Water molecules keep crossing in both directions; they just cross equally often, so there is no net movement.
+!: "A plant cell in pure water swells until it bursts, like a red blood cell." The cell wall pushes back and stops the plant cell bursting; it becomes turgid instead.
+H: Where this leads
+P: The rest of AQA GCSE Biology 4.1.3.2 (Osmosis) has its own lessons: 4.1.3.2.b, 4.1.3.2.c, 4.1.3.2.RP3.
+P: Later, at A level and university: water potential; osmosis in terms of water potential; water potential of a cell; aquaporins; hypotonic, isotonic and hypertonic.
+T: Diffusion | The net movement of particles from a region of higher concentration to a region of lower concentration, as a result of their random movement
+T: Concentration gradient | A difference in the concentration of a substance between two regions
+T: Solute | A substance dissolved in a solvent, such as sugar or salt in water
+T: Dilute solution | A solution with little solute, so it has a high concentration of water
+T: Concentrated solution | A solution with a lot of solute, so it has a lower concentration of water
+T: Partially permeable membrane | A membrane that lets some molecules, such as water, cross but stops others, such as larger solute molecules
+T: Osmosis | The diffusion of water: its net movement from a dilute solution to a more concentrated solution across a partially permeable membrane
+T: Passive transport | Movement of substances across a membrane down a gradient, using no energy from the cell
+T: Turgid | Describes a plant cell that has taken in water and is firm, its contents pressing on the cell wall
+T: Flaccid | Describes a plant cell that has lost water and is soft, no longer pressing on its wall
+T: Plasmolysis | The shrinking of a plant cell's contents so the membrane pulls away from the cell wall, when the cell loses a lot of water
+SUM: Osmosis is the net movement of water from a dilute solution to a more concentrated one, across a partially permeable membrane.
+SUM: Osmosis is passive: it uses no energy from respiration.
+SUM: Water crosses the membrane both ways, but more crosses from the dilute side, so the net movement is into the concentrated solution; the solute can't cross.
+SUM: In pure water an animal cell swells and may burst, while a plant cell becomes turgid because its wall resists; in a concentrated solution both lose water, and a plant cell can become plasmolysed.
+SRC: OpenStax, Rice University, Biology 2e, section 5.2: Passive Transport (Mary Ann Clark, Matthew Douglas, Jung Choi), Creative Commons Attribution-NonCommercial-ShareAlike 4.0: used to check facts, not reproduced | secondary | 2026-11-24 | https://openstax.org/books/biology-2e/pages/5-2-passive-transport
+M1#kb-aqa8461-4-1-3-2-a-gcse-q1@1: Which of these best describes diffusion? | The net movement of particles from a region of higher concentration to a region of lower concentration, as a result of their random movement | The diffusion of water: its net movement from a dilute solution to a more concentrated solution across a partially permeable membrane | A solution with little solute, so it has a high concentration of water | A solution with a lot of solute, so it has a lower concentration of water | Diffusion: the net movement of particles from a region of higher concentration to a region of lower concentration, as a result of their random movement.
+M1#kb-aqa8461-4-1-3-2-a-gcse-q2@1: Which of these best describes concentration gradient? | A difference in the concentration of a substance between two regions | A solution with a lot of solute, so it has a lower concentration of water | The net movement of particles from a region of higher concentration to a region of lower concentration, as a result of their random movement | A membrane that lets some molecules, such as water, cross but stops others, such as larger solute molecules | Concentration gradient: a difference in the concentration of a substance between two regions.
+M1#kb-aqa8461-4-1-3-2-a-gcse-q3@1: Which of these best describes solute? | A substance dissolved in a solvent, such as sugar or salt in water | A plant cell in pure water swells until it bursts, like a red blood cell | Osmosis needs energy from respiration | A difference in the concentration of a substance between two regions | Solute: a substance dissolved in a solvent, such as sugar or salt in water.
+M2#kb-aqa8461-4-1-3-2-a-gcse-q4@1,2: Why does water move overall into the concentrated solution? | In the dilute solution a bigger share of the molecules are water, so more water molecules reach the membrane from that side each second. | Water moves from a high concentration to a low concentration. | A plant cell in pure water swells until it bursts, like a red blood cell. | In osmosis, the sugar or salt moves across the membrane. | So more water crosses from the dilute side to the concentrated side than crosses back.
+M2#kb-aqa8461-4-1-3-2-a-gcse-q5@3: A cell is placed in a solution with the same concentration of water as its contents. What happens? | There is no net movement of water, and the cell stays the same | Water enters by osmosis, and the cell swells and bursts | Water leaves by osmosis, and the cell shrinks | Water leaves by osmosis, and the cell becomes flaccid, then plasmolysed | Water crosses both ways equally often.
+M2#kb-aqa8461-4-1-3-2-a-gcse-q6@3: A red blood cell is placed in a concentrated salt solution. What happens? | Water leaves by osmosis, and the cell shrinks | There is no net movement of water, and the cell stays the same | Water enters by osmosis, and the cell swells and bursts | Water leaves by osmosis, and the cell becomes flaccid, then plasmolysed | The solution has a lower concentration of water than the cell's contents.
+M2#kb-aqa8461-4-1-3-2-a-gcse-q7@3: A plant cell is placed in pure water. What happens? | Water enters by osmosis, and the cell becomes turgid without bursting | There is no net movement of water, and the cell stays the same | Water leaves by osmosis, and the cell becomes flaccid, then plasmolysed | Water enters by osmosis, and the cell swells and bursts | The cell wall pushes back on the swelling cell and stops it bursting; a firm, turgid cell helps hold the plant up.
+TF1#kb-aqa8461-4-1-3-2-a-gcse-q8@1: Osmosis needs energy from respiration. | false | Osmosis is passive: water moves down its own gradient, and the cell spends no energy on it. Moving substances against a gradient (active transport) is what needs energy.
+TF1#kb-aqa8461-4-1-3-2-a-gcse-q9@1: Water moves from a high concentration to a low concentration. | false | Say which concentration you mean: water moves from a high concentration of water (a dilute solution) to a low concentration of water (a concentrated solution). The two are opposites, so leaving it out makes the answer ambiguous.
+TF1#kb-aqa8461-4-1-3-2-a-gcse-q10@1: When both solutions have the same concentration, water stops moving. | false | Water molecules keep crossing in both directions; they just cross equally often, so there is no net movement.

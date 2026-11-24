@@ -1,0 +1,32 @@
+{
+ "about": "Where the knowledge engine's sources come from. `node scripts/knowledge/pipeline.mjs ingest` fetches each one, records its provenance in data/knowledge/sources/<id>.json and keeps the retrieved text in data/knowledge/raw/ (local only). Pin every source to an exact version.",
+ "sources": [
+  {
+   "id": "openstax-biology-2e-5-2",
+   "type": "openstax-cnxml",
+   "title": "Biology 2e, section 5.2: Passive Transport",
+   "publisher": "OpenStax, Rice University",
+   "authors": ["Mary Ann Clark", "Matthew Douglas", "Jung Choi"],
+   "url": "https://raw.githubusercontent.com/openstax/osbooks-biology-bundle/bc1be223bd23a00cc68efb6195dc183f4e1e228a/modules/m66374/index.cnxml",
+   "readerUrl": "https://openstax.org/books/biology-2e/pages/5-2-passive-transport",
+   "version": "osbooks-biology-bundle@bc1be223bd23a00cc68efb6195dc183f4e1e228a, module m66374",
+   "licence": "CC-BY-NC-SA-4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+   "licenceEvidence": "LICENSE file and <md:license> in the repository at this commit",
+   "level": "ug"
+  },
+  {
+   "id": "gradify-biology-u02-21",
+   "type": "gradify-notes",
+   "title": "Gradify Biology, lesson u02-21: Osmosis",
+   "publisher": "Gradify",
+   "authors": ["Gradify"],
+   "course": "biology",
+   "unit": "u02",
+   "lesson": "Osmosis",
+   "url": "kit/courses/biology/notes/u02.js",
+   "licence": "gradify",
+   "level": "ug"
+  }
+ ]
+}

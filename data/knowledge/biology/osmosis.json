@@ -1,0 +1,868 @@
+{
+ "subject": "biology",
+ "topic": "Osmosis and the movement of water",
+ "about": "Gradify's own explanations, written for the knowledge engine (2026-11-24) and checked against the sources named on each item; status draft until a biology specialist reviews them. Each item holds for the levels in its range; deeper items take over above it (the solutions-based definition of osmosis to GCSE, the water potential definition from A level).",
+ "items": [
+  {
+   "id": "bio.diffusion.definition",
+   "kind": "definition",
+   "version": 1,
+   "status": "draft",
+   "title": "Diffusion",
+   "text": "**Diffusion** is the net movement of particles from where they are more concentrated to where they are less concentrated. It happens because particles move about randomly: more of them leave a crowded region than arrive in it, so they spread out until they are evenly mixed.",
+   "level": {
+    "from": "ks3",
+    "to": "pg"
+   },
+   "concepts": [
+    "diffusion",
+    "concentration-gradient"
+   ],
+   "terms": [
+    {
+     "term": "Diffusion",
+     "definition": "The net movement of particles from a region of higher concentration to a region of lower concentration, as a result of their random movement"
+    },
+    {
+     "term": "Concentration gradient",
+     "definition": "A difference in the concentration of a substance between two regions"
+    }
+   ],
+   "sources": [
+    {
+     "source": "openstax-biology-2e-5-2"
+    },
+    {
+     "source": "gradify-biology-u02-21"
+    }
+   ]
+  },
+  {
+   "id": "bio.solutions.vocabulary",
+   "kind": "definition",
+   "version": 1,
+   "status": "draft",
+   "title": "Solutes, solvents and solutions",
+   "text": "A **solution** is a **solute** (such as sugar or salt) dissolved in a **solvent**; in living things the solvent is water. A **dilute solution** contains little solute, so most of its molecules are water. A **concentrated solution** contains a lot of solute, so a smaller share of its molecules are water.",
+   "level": {
+    "from": "ks3",
+    "to": "gcse"
+   },
+   "concepts": [
+    "solutions",
+    "osmosis"
+   ],
+   "terms": [
+    {
+     "term": "Solute",
+     "definition": "A substance dissolved in a solvent, such as sugar or salt in water"
+    },
+    {
+     "term": "Dilute solution",
+     "definition": "A solution with little solute, so it has a high concentration of water"
+    },
+    {
+     "term": "Concentrated solution",
+     "definition": "A solution with a lot of solute, so it has a lower concentration of water"
+    }
+   ],
+   "sources": [
+    {
+     "source": "openstax-biology-2e-5-2"
+    }
+   ]
+  },
+  {
+   "id": "bio.membrane.partially-permeable",
+   "kind": "definition",
+   "version": 1,
+   "status": "draft",
+   "title": "Partially permeable membranes",
+   "text": "A **partially permeable membrane** lets some molecules cross but not others. A cell membrane lets small molecules such as water pass through, but holds back larger solute molecules such as sucrose.",
+   "level": {
+    "from": "ks3",
+    "to": "pg"
+   },
+   "concepts": [
+    "membranes",
+    "osmosis"
+   ],
+   "terms": [
+    {
+     "term": "Partially permeable membrane",
+     "definition": "A membrane that lets some molecules, such as water, cross but stops others, such as larger solute molecules"
+    }
+   ],
+   "sources": [
+    {
+     "source": "openstax-biology-2e-5-2"
+    },
+    {
+     "source": "gradify-biology-u02-21"
+    }
+   ]
+  },
+  {
+   "id": "bio.osmosis.definition-solutions",
+   "kind": "definition",
+   "version": 1,
+   "status": "draft",
+   "title": "Osmosis",
+   "text": "**Osmosis** is the net movement of water molecules across a partially permeable membrane, from a dilute solution into a more concentrated one. It is diffusion of water: water moves from where its molecules are more concentrated to where they are less concentrated.",
+   "level": {
+    "from": "ks3",
+    "to": "gcse"
+   },
+   "concepts": [
+    "osmosis"
+   ],
+   "terms": [
+    {
+     "term": "Osmosis",
+     "definition": "The diffusion of water: its net movement from a dilute solution to a more concentrated solution across a partially permeable membrane"
+    }
+   ],
+   "prereqs": [
+    "bio.diffusion.definition",
+    "bio.solutions.vocabulary",
+    "bio.membrane.partially-permeable"
+   ],
+   "sources": [
+    {
+     "source": "openstax-biology-2e-5-2"
+    },
+    {
+     "source": "gradify-biology-u02-21"
+    }
+   ],
+   "summary": "Osmosis is the net movement of water from a dilute solution to a more concentrated one, across a partially permeable membrane."
+  },
+  {
+   "id": "bio.osmosis.particle-model",
+   "kind": "mechanism",
+   "version": 1,
+   "status": "draft",
+   "title": "Why water moves overall into the concentrated solution",
+   "text": "A particle model explains the direction.",
+   "steps": [
+    "Water molecules move about randomly, and some pass through the membrane in each direction.",
+    "In the dilute solution a bigger share of the molecules are water, so more water molecules reach the membrane from that side each second.",
+    "So more water crosses from the dilute side to the concentrated side than crosses back.",
+    "The overall (net) movement of water is into the concentrated solution.",
+    "The solute molecules are too large to pass through the membrane, so they stay on their own side."
+   ],
+   "level": {
+    "from": "ks3",
+    "to": "alevel"
+   },
+   "concepts": [
+    "osmosis",
+    "membranes"
+   ],
+   "prereqs": [
+    "bio.osmosis.definition-solutions"
+   ],
+   "visual": {
+    "renderer": "osmosisbox",
+    "purpose": "water molecules crossing a partially permeable membrane both ways, more of them into the concentrated solution, while solute molecules can't cross",
+    "data": {
+     "sides": [
+      {
+       "water": 16,
+       "solute": 2
+      },
+      {
+       "water": 8,
+       "solute": 7
+      }
+     ],
+     "membrane": {
+      "pore": 2.2
+     },
+     "sizes": {
+      "water": 1,
+      "solute": 2.6
+     },
+     "solute": {
+      "label": "sugar molecule"
+     },
+     "water": {
+      "label": "water molecule"
+     },
+     "claims": [
+      {
+       "type": "net",
+       "from": 0,
+       "to": 1
+      }
+     ]
+    },
+    "byLevel": [
+     {
+      "level": {
+       "from": "ks3",
+       "to": "gcse"
+      },
+      "labels": {
+       "sides": [
+        {
+         "label": "dilute solution",
+         "sub": "more water molecules"
+        },
+        {
+         "label": "concentrated solution",
+         "sub": "fewer water molecules"
+        }
+       ],
+       "membrane": "partially permeable membrane",
+       "net": "net movement of water"
+      },
+      "title": "Osmosis across a partially permeable membrane",
+      "caption": "Water molecules cross the membrane both ways, but more cross from the dilute solution, so the net movement of water is into the concentrated solution. The sugar molecules are too big to cross.",
+      "alt": "Two solutions separated by a partially permeable membrane. The dilute solution on the left has many water molecules and few sugar molecules; the concentrated solution on the right has fewer water molecules and more sugar molecules. Small arrows show water crossing both ways, three to the right and one to the left, and a large arrow shows the net movement of water to the right.",
+      "description": [
+       "Left: a dilute solution, mostly water molecules with two sugar molecules.",
+       "Right: a concentrated solution, with fewer water molecules and seven sugar molecules.",
+       "Water molecules pass through the membrane's pores in both directions; more pass from left to right.",
+       "The sugar molecules are bigger than the pores and stay on their side.",
+       "Net movement of water: from the dilute solution into the concentrated solution."
+      ]
+     },
+     {
+      "level": {
+       "from": "alevel",
+       "to": "alevel"
+      },
+      "labels": {
+       "sides": [
+        {
+         "label": "higher water potential",
+         "sub": "less negative ψ"
+        },
+        {
+         "label": "lower water potential",
+         "sub": "more negative ψ"
+        }
+       ],
+       "membrane": "partially permeable membrane",
+       "net": "net movement of water (osmosis)"
+      },
+      "title": "Osmosis down a water potential gradient",
+      "caption": "Solute molecules lower the water potential. Water moves overall from the higher to the lower water potential; the solute can't cross.",
+      "alt": "Two solutions separated by a partially permeable membrane, the left with higher water potential and few solute molecules, the right with lower water potential and more solute molecules; a large arrow shows net water movement to the right.",
+      "description": [
+       "Left: higher water potential (fewer solute molecules).",
+       "Right: lower water potential (more solute molecules).",
+       "Water crosses both ways, more from left to right.",
+       "Net movement: from higher to lower water potential."
+      ]
+     }
+    ]
+   },
+   "sources": [
+    {
+     "source": "openstax-biology-2e-5-2"
+    }
+   ],
+   "summary": "Water crosses the membrane both ways, but more crosses from the dilute side, so the net movement is into the concentrated solution; the solute can't cross."
+  },
+  {
+   "id": "bio.osmosis.passive",
+   "kind": "fact",
+   "version": 1,
+   "status": "draft",
+   "title": "Osmosis is passive",
+   "text": "Osmosis is a passive process: the cell uses no energy from respiration to move water this way. Water simply moves down its own concentration gradient.",
+   "level": {
+    "from": "gcse",
+    "to": "pg"
+   },
+   "concepts": [
+    "osmosis",
+    "passive-transport"
+   ],
+   "terms": [
+    {
+     "term": "Passive transport",
+     "definition": "Movement of substances across a membrane down a gradient, using no energy from the cell"
+    }
+   ],
+   "sources": [
+    {
+     "source": "openstax-biology-2e-5-2"
+    },
+    {
+     "source": "gradify-biology-u02-21"
+    }
+   ],
+   "summary": "Osmosis is passive: it uses no energy from respiration."
+  },
+  {
+   "id": "bio.osmosis.no-net-movement",
+   "kind": "fact",
+   "version": 1,
+   "status": "draft",
+   "title": "When there is no net movement",
+   "text": "If both sides have the same concentration of water, water molecules still cross in both directions, but equally often. There is no net movement of water.",
+   "level": {
+    "from": "ks3",
+    "to": "alevel"
+   },
+   "concepts": [
+    "osmosis",
+    "equilibrium"
+   ],
+   "sources": [
+    {
+     "source": "openstax-biology-2e-5-2"
+    }
+   ]
+  },
+  {
+   "id": "bio.water-potential.concept",
+   "kind": "concept",
+   "version": 1,
+   "status": "draft",
+   "title": "Water potential",
+   "text": "**Water potential** (ψ, the Greek letter psi, measured in kPa) describes how strongly water tends to leave a solution. Pure water at atmospheric pressure has the highest water potential, defined as 0 kPa. Dissolving solutes lowers it, so every solution has a negative water potential, and the more concentrated the solution, the more negative it is.",
+   "level": {
+    "from": "alevel",
+    "to": "pg"
+   },
+   "concepts": [
+    "osmosis",
+    "water-potential"
+   ],
+   "terms": [
+    {
+     "term": "Water potential",
+     "definition": "The tendency of water to move out of a solution, ψ in kPa; pure water at atmospheric pressure has the highest value, 0 kPa"
+    },
+    {
+     "term": "Solute potential",
+     "definition": "The part of water potential due to dissolved solutes, ψs: zero for pure water, negative for any solution"
+    },
+    {
+     "term": "Pressure potential",
+     "definition": "The part of water potential due to pressure, ψp: in a turgid plant cell, the positive pressure of the wall on the contents"
+    }
+   ],
+   "sources": [
+    {
+     "source": "gradify-biology-u02-21"
+    },
+    {
+     "source": "openstax-biology-2e-5-2"
+    }
+   ],
+   "summary": "Pure water has the highest water potential, 0 kPa; solutes lower it, so solutions have negative water potentials."
+  },
+  {
+   "id": "bio.osmosis.definition-water-potential",
+   "kind": "definition",
+   "version": 1,
+   "status": "draft",
+   "title": "Osmosis, in terms of water potential",
+   "text": "**Osmosis** is the net movement of water across a partially permeable membrane from a region of higher (less negative) water potential to a region of lower (more negative) water potential.",
+   "level": {
+    "from": "alevel",
+    "to": "pg"
+   },
+   "concepts": [
+    "osmosis",
+    "water-potential"
+   ],
+   "terms": [
+    {
+     "term": "Osmosis",
+     "definition": "The net movement of water from a higher to a lower water potential across a partially permeable membrane"
+    }
+   ],
+   "prereqs": [
+    "bio.diffusion.definition",
+    "bio.membrane.partially-permeable",
+    "bio.water-potential.concept"
+   ],
+   "sources": [
+    {
+     "source": "gradify-biology-u02-21"
+    },
+    {
+     "source": "openstax-biology-2e-5-2"
+    }
+   ],
+   "summary": "Osmosis is the net movement of water from a higher to a lower water potential across a partially permeable membrane."
+  },
+  {
+   "id": "bio.water-potential.equation",
+   "kind": "equation",
+   "version": 1,
+   "status": "draft",
+   "title": "Water potential of a cell",
+   "text": "A plant cell's water potential is the sum of its solute potential, which is negative, and its pressure potential, which is positive when the cell wall pushes back on a full cell.",
+   "equation": "ψ = ψs + ψp",
+   "equationNote": "water potential = solute potential + pressure potential, all in kPa",
+   "compute": {
+    "fn": "waterPotential",
+    "inputs": [
+     "psiS",
+     "psiP"
+    ],
+    "unit": "kPa"
+   },
+   "level": {
+    "from": "alevel",
+    "to": "pg"
+   },
+   "concepts": [
+    "water-potential",
+    "osmosis"
+   ],
+   "prereqs": [
+    "bio.water-potential.concept"
+   ],
+   "sources": [
+    {
+     "source": "gradify-biology-u02-21"
+    }
+   ],
+   "summary": "A cell's water potential is ψs + ψp: a negative solute potential plus a pressure potential from the wall."
+  },
+  {
+   "id": "bio.osmosis.aquaporins",
+   "kind": "fact",
+   "version": 1,
+   "status": "draft",
+   "title": "Aquaporins",
+   "text": "Some water diffuses slowly through the lipid bilayer itself, but most crosses through **aquaporins**: channel proteins that let water molecules through in single file while keeping out ions. Cells that move a lot of water, such as red blood cells and the cells lining kidney collecting ducts, have many of them, and the number of aquaporins in a membrane controls how quickly water crosses it.",
+   "level": {
+    "from": "ug",
+    "to": "pg"
+   },
+   "concepts": [
+    "osmosis",
+    "membranes",
+    "membrane-proteins"
+   ],
+   "terms": [
+    {
+     "term": "Aquaporin",
+     "definition": "A channel protein in cell membranes that lets water molecules cross quickly while excluding ions"
+    }
+   ],
+   "prereqs": [
+    "bio.membrane.partially-permeable"
+   ],
+   "sources": [
+    {
+     "source": "openstax-biology-2e-5-2"
+    },
+    {
+     "source": "gradify-biology-u02-21",
+     "cites": {
+      "citation": "Preston G.M., Carroll T.P., Guggino W.B., Agre P., \"Appearance of water channels in Xenopus oocytes expressing red cell CHIP28 protein\", Science 256:385–387",
+      "kind": "primary",
+      "date": "1992",
+      "link": "https://doi.org/10.1126/science.256.5055.385"
+     }
+    }
+   ],
+   "summary": "Most water crosses membranes through aquaporins, and their number sets how fast it crosses."
+  },
+  {
+   "id": "bio.osmosis.tonicity",
+   "kind": "definition",
+   "version": 1,
+   "status": "draft",
+   "title": "Hypotonic, isotonic and hypertonic",
+   "text": "Solutions are described relative to a cell. A **hypotonic** solution has a higher water potential than the cell, so water enters it; an **isotonic** solution has the same water potential, so there is no net movement; a **hypertonic** solution has a lower water potential, so water leaves the cell.",
+   "level": {
+    "from": "alevel",
+    "to": "pg"
+   },
+   "concepts": [
+    "tonicity",
+    "osmosis"
+   ],
+   "terms": [
+    {
+     "term": "Hypotonic",
+     "definition": "A solution with a higher water potential than a cell's contents, so water enters the cell"
+    },
+    {
+     "term": "Isotonic",
+     "definition": "A solution with the same water potential as a cell's contents: no net movement of water"
+    },
+    {
+     "term": "Hypertonic",
+     "definition": "A solution with a lower water potential than a cell's contents, so water leaves the cell"
+    }
+   ],
+   "prereqs": [
+    "bio.water-potential.concept"
+   ],
+   "sources": [
+    {
+     "source": "openstax-biology-2e-5-2"
+    },
+    {
+     "source": "gradify-biology-u02-21"
+    }
+   ],
+   "summary": "Hypotonic, isotonic and hypertonic compare a solution's water potential with a cell's."
+  },
+  {
+   "id": "bio.osmosis.cells",
+   "kind": "application",
+   "version": 1,
+   "status": "draft",
+   "title": "What osmosis does to animal and plant cells",
+   "text": "Whether water enters or leaves a cell depends on the solution around it. Plant cells have a cell wall; animal cells do not, and that changes what happens.",
+   "cases": [
+    {
+     "situation": "A red blood cell is placed in pure water",
+     "outcome": "Water enters by osmosis, and the cell swells and bursts",
+     "why": "The cell's contents are more concentrated than pure water, and an animal cell has no wall to stop it expanding."
+    },
+    {
+     "situation": "A red blood cell is placed in a concentrated salt solution",
+     "outcome": "Water leaves by osmosis, and the cell shrinks",
+     "why": "The solution has a lower concentration of water than the cell's contents."
+    },
+    {
+     "situation": "A plant cell is placed in pure water",
+     "outcome": "Water enters by osmosis, and the cell becomes turgid without bursting",
+     "why": "The cell wall pushes back on the swelling cell and stops it bursting; a firm, turgid cell helps hold the plant up."
+    },
+    {
+     "situation": "A plant cell is placed in a concentrated sugar solution",
+     "outcome": "Water leaves by osmosis, and the cell becomes flaccid, then plasmolysed",
+     "why": "As the cell loses water its contents shrink and the membrane pulls away from the cell wall."
+    },
+    {
+     "situation": "A cell is placed in a solution with the same concentration of water as its contents",
+     "outcome": "There is no net movement of water, and the cell stays the same",
+     "why": "Water crosses both ways equally often."
+    }
+   ],
+   "level": {
+    "from": "gcse",
+    "to": "pg"
+   },
+   "concepts": [
+    "osmosis",
+    "cells"
+   ],
+   "terms": [
+    {
+     "term": "Turgid",
+     "definition": "Describes a plant cell that has taken in water and is firm, its contents pressing on the cell wall"
+    },
+    {
+     "term": "Flaccid",
+     "definition": "Describes a plant cell that has lost water and is soft, no longer pressing on its wall"
+    },
+    {
+     "term": "Plasmolysis",
+     "definition": "The shrinking of a plant cell's contents so the membrane pulls away from the cell wall, when the cell loses a lot of water"
+    }
+   ],
+   "prereqs": [
+    "bio.osmosis.definition-solutions"
+   ],
+   "sources": [
+    {
+     "source": "openstax-biology-2e-5-2"
+    },
+    {
+     "source": "gradify-biology-u02-21"
+    }
+   ],
+   "summary": "In pure water an animal cell swells and may burst, while a plant cell becomes turgid because its wall resists; in a concentrated solution both lose water, and a plant cell can become plasmolysed."
+  },
+  {
+   "id": "bio.osmosis.percent-change",
+   "kind": "method",
+   "version": 1,
+   "status": "draft",
+   "title": "Percentage change in mass",
+   "text": "To compare pieces of tissue that started at different masses, work out the percentage change in mass. A gain means water entered by osmosis; a loss means water left.",
+   "equation": "percentage change in mass = (final mass − initial mass) ÷ initial mass × 100",
+   "compute": {
+    "fn": "percentChange",
+    "inputs": [
+     "initial",
+     "final"
+    ],
+    "unit": "%"
+   },
+   "level": {
+    "from": "gcse",
+    "to": "alevel"
+   },
+   "concepts": [
+    "osmosis",
+    "calculation",
+    "practical"
+   ],
+   "sources": [
+    {
+     "source": "gradify-biology-u02-21"
+    }
+   ]
+  },
+  {
+   "id": "bio.osmosis.worked-percent",
+   "kind": "worked-example",
+   "version": 1,
+   "status": "draft",
+   "title": "Did water enter or leave the potato?",
+   "text": "A cylinder of potato has a mass of 2.50 g. After 30 minutes in a sugar solution its mass is 2.80 g. Find the percentage change in mass, and say what it shows.",
+   "steps": [
+    "Change in mass = 2.80 − 2.50 = +0.30 g.",
+    "Percentage change = 0.30 ÷ 2.50 × 100 = +12%.",
+    "The potato gained mass, so water entered its cells by osmosis: the solution had a higher concentration of water than the potato cells."
+   ],
+   "values": {
+    "initial": 2.5,
+    "final": 2.8,
+    "answer": 12
+   },
+   "compute": {
+    "fn": "percentChange"
+   },
+   "level": {
+    "from": "gcse",
+    "to": "alevel"
+   },
+   "concepts": [
+    "osmosis",
+    "calculation",
+    "practical"
+   ],
+   "prereqs": [
+    "bio.osmosis.percent-change"
+   ],
+   "sources": [
+    {
+     "source": "gradify-biology-u02-21"
+    }
+   ]
+  },
+  {
+   "id": "bio.osmosis.worked-water-potential",
+   "kind": "worked-example",
+   "version": 1,
+   "status": "draft",
+   "title": "Which way does water move?",
+   "text": "A plant cell has a solute potential of −750 kPa and a pressure potential of +250 kPa. It is placed in a solution with a water potential of −600 kPa. Which way does water move?",
+   "steps": [
+    "Cell: ψ = ψs + ψp = −750 + 250 = −500 kPa.",
+    "−500 kPa is higher (less negative) than −600 kPa.",
+    "Water moves from the higher to the lower water potential: out of the cell into the solution."
+   ],
+   "values": {
+    "psiS": -750,
+    "psiP": 250,
+    "answer": -500
+   },
+   "compute": {
+    "fn": "waterPotential"
+   },
+   "level": {
+    "from": "alevel",
+    "to": "pg"
+   },
+   "concepts": [
+    "water-potential",
+    "osmosis",
+    "calculation"
+   ],
+   "prereqs": [
+    "bio.water-potential.equation"
+   ],
+   "sources": [
+    {
+     "source": "gradify-biology-u02-21"
+    }
+   ]
+  },
+  {
+   "id": "bio.osmosis.practical-tissue",
+   "kind": "practical",
+   "version": 1,
+   "status": "draft",
+   "title": "Investigating osmosis in plant tissue",
+   "text": "Cut cylinders of the same plant tissue (such as potato) to the same length, blot them dry and weigh each one. Put one in each of a range of sugar or salt solutions, from pure water upwards, for the same time at the same temperature. Blot and reweigh each cylinder, work out its percentage change in mass, and plot this against the concentration of the solution. Where the line crosses zero, the solution has the same concentration of water as the tissue.",
+   "level": {
+    "from": "gcse",
+    "to": "alevel"
+   },
+   "concepts": [
+    "osmosis",
+    "practical"
+   ],
+   "prereqs": [
+    "bio.osmosis.percent-change"
+   ],
+   "sources": [
+    {
+     "source": "gradify-biology-u02-21"
+    },
+    {
+     "source": "openstax-biology-2e-5-2"
+    }
+   ]
+  },
+  {
+   "id": "bio.osmosis.mistake-solute-moves",
+   "kind": "misconception",
+   "version": 1,
+   "status": "draft",
+   "title": "The solute doesn't cross",
+   "wrong": "In osmosis, the sugar or salt moves across the membrane.",
+   "right": "In osmosis it is water that moves overall; the partially permeable membrane holds the solute molecules back.",
+   "level": {
+    "from": "ks3",
+    "to": "alevel"
+   },
+   "concepts": [
+    "osmosis"
+   ],
+   "sources": [
+    {
+     "source": "openstax-biology-2e-5-2"
+    }
+   ]
+  },
+  {
+   "id": "bio.osmosis.mistake-direction",
+   "kind": "misconception",
+   "version": 1,
+   "status": "draft",
+   "title": "Which way water goes",
+   "wrong": "Water moves from the concentrated solution to the dilute solution.",
+   "right": "Water moves overall from the dilute solution, which has more water, to the concentrated solution, which has less.",
+   "level": {
+    "from": "ks3",
+    "to": "gcse"
+   },
+   "concepts": [
+    "osmosis"
+   ],
+   "sources": [
+    {
+     "source": "openstax-biology-2e-5-2"
+    }
+   ]
+  },
+  {
+   "id": "bio.osmosis.mistake-whose-concentration",
+   "kind": "misconception",
+   "version": 1,
+   "status": "draft",
+   "title": "Say whose concentration",
+   "wrong": "Water moves from a high concentration to a low concentration.",
+   "right": "Say which concentration you mean: water moves from a high concentration of water (a dilute solution) to a low concentration of water (a concentrated solution). The two are opposites, so leaving it out makes the answer ambiguous.",
+   "level": {
+    "from": "gcse",
+    "to": "gcse"
+   },
+   "concepts": [
+    "osmosis"
+   ],
+   "sources": [
+    {
+     "source": "openstax-biology-2e-5-2"
+    }
+   ]
+  },
+  {
+   "id": "bio.osmosis.mistake-energy",
+   "kind": "misconception",
+   "version": 1,
+   "status": "draft",
+   "title": "Osmosis doesn't need energy",
+   "wrong": "Osmosis needs energy from respiration.",
+   "right": "Osmosis is passive: water moves down its own gradient, and the cell spends no energy on it. Moving substances against a gradient (active transport) is what needs energy.",
+   "level": {
+    "from": "gcse",
+    "to": "pg"
+   },
+   "concepts": [
+    "osmosis",
+    "passive-transport"
+   ],
+   "sources": [
+    {
+     "source": "openstax-biology-2e-5-2"
+    }
+   ]
+  },
+  {
+   "id": "bio.osmosis.mistake-stops",
+   "kind": "misconception",
+   "version": 1,
+   "status": "draft",
+   "title": "Water doesn't stop moving",
+   "wrong": "When both solutions have the same concentration, water stops moving.",
+   "right": "Water molecules keep crossing in both directions; they just cross equally often, so there is no net movement.",
+   "level": {
+    "from": "gcse",
+    "to": "pg"
+   },
+   "concepts": [
+    "osmosis",
+    "equilibrium"
+   ],
+   "sources": [
+    {
+     "source": "openstax-biology-2e-5-2"
+    }
+   ]
+  },
+  {
+   "id": "bio.osmosis.mistake-plant-bursts",
+   "kind": "misconception",
+   "version": 1,
+   "status": "draft",
+   "title": "Plant cells don't burst",
+   "wrong": "A plant cell in pure water swells until it bursts, like a red blood cell.",
+   "right": "The cell wall pushes back and stops the plant cell bursting; it becomes turgid instead.",
+   "level": {
+    "from": "gcse",
+    "to": "alevel"
+   },
+   "concepts": [
+    "osmosis",
+    "cells"
+   ],
+   "sources": [
+    {
+     "source": "gradify-biology-u02-21"
+    }
+   ]
+  },
+  {
+   "id": "bio.osmosis.mistake-psi-sign",
+   "kind": "misconception",
+   "version": 1,
+   "status": "draft",
+   "title": "Solutes lower water potential",
+   "wrong": "A more concentrated solution has a higher water potential.",
+   "right": "Solutes lower water potential: the more concentrated a solution, the more negative its ψ. Pure water, at 0 kPa, is the highest.",
+   "level": {
+    "from": "alevel",
+    "to": "pg"
+   },
+   "concepts": [
+    "water-potential"
+   ],
+   "sources": [
+    {
+     "source": "gradify-biology-u02-21"
+    }
+   ]
+  }
+ ]
+}
