@@ -1,7 +1,7 @@
 // The free tools hub (getgradify.com/tools/): filter chips by category, and the visitor's pinned tools first.
 import { pins } from "./memory.js";
+import { esc } from "../kit/core/text.js";
 
-const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
 export function mount(el) {
   const chips = [...el.querySelectorAll("[data-cat]")].filter((c) => c.tagName === "BUTTON"), secs = [...el.querySelectorAll("[data-cat-sec]")];

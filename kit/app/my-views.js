@@ -7,8 +7,8 @@ import { actionCard } from "../core/action-card.js";
 import { createCatalogue, describeStatus } from "../data/catalogue.js";
 import { academicOf, completeness, saveAcademic, addUnit, updateUnit, removeUnit, sourceLabel, MODES } from "../data/academic.js";
 import { learnerOf } from "../data/profile.js";
+import { esc } from "../core/text.js";
 
-const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 export const MY_CHILD = /^(JuniorGradify|YouthGradify)$/;
 const LABEL = { country: "Country", institution: "University or college", subject: "Subject", offering: "Course", start_year: "Started", current_stage: "Year", mode: "Study mode", units: "Modules" };
 let catalogue = null;

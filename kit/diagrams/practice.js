@@ -13,7 +13,7 @@
 import { savePractice, practiceOf } from "../core/glass-diagrams.js";
 
 const NS = "http://www.w3.org/2000/svg";
-const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+import { esc } from "../core/text.js";
 // renderers whose text is explanation split over several lines: covering a line of it would test nothing
 const SENTENCE_RENDERERS = new Set(["decision-tree", "free-body"]);
 

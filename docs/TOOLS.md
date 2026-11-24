@@ -103,6 +103,10 @@ in `tests/community-db.test.mjs`. Rules for learners: `terms.html#community`.
 **YouTube**: the `youtube-notes` function reads a video's public watch page for its captions. YouTube often refuses
 requests from servers ("confirm you're not a bot"); Gradify doesn't try to get round that, and the tool asks the
 learner to paste the transcript instead, which gives the same notes, cards, map and chat.
+It works signed out, so it's rate limited in the database across every instance (`public.youtube_take`,
+`supabase/migrations/20261124180000_youtube_rate_limit.sql`): 10 videos a minute and 200 a day per caller, 5000 a day
+in all. A caller is an HMAC of their IP address keyed with the service role key; it's kept for a day, never the address.
+Apply that migration before deploying the function: without it every request is refused (503), never let through.
 
 **Handwriting**: read on the device, by the browser's handwriting recogniser where there is one, otherwise Tesseract OCR
 (tesseract.js 5.1.1 from jsDelivr, loaded on first use). Neat print reads best.

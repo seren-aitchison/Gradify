@@ -106,13 +106,14 @@
   <link rel="modulepreload" href="/kit/data/waitlist.js">
   <link rel="modulepreload" href="/kit/data/billing.js">
   <link rel="modulepreload" href="/kit/data/limits.js">
+  <link rel="modulepreload" href="/kit/core/analytics.js">
   <link rel="modulepreload" href="/kit/data/plan.js">
   <link rel="modulepreload" href="/kit/data/offer.js">
   <link rel="modulepreload" href="/kit/core/attribution.js">
-  <link rel="modulepreload" href="/kit/core/analytics.js">
   <link rel="modulepreload" href="/kit/ui/global-nav.js">
   <link rel="modulepreload" href="/kit/core/menu-set.js">
   <link rel="modulepreload" href="/kit/data/functions.js">
+  <link rel="modulepreload" href="/kit/core/text.js">
   <link rel="modulepreload" href="/kit/ui/store.js">
   <link rel="modulepreload" href="/kit/ui/icons.js">
   <link rel="modulepreload" href="/kit/ui/palette.js">
@@ -234,6 +235,9 @@
     import { joinWaitlist, PRO_LIST, PLUS_LIST } from "/kit/data/waitlist.js";
     import { PLAN_PRICES, PLUS_ON_SALE, PRO_ON_SALE, AI_ALLOWANCES, uses, planOf, describePlan, clientStore, mySubscription, startCheckout, openPortal } from "/kit/data/billing.js";
     import { FREE } from "/kit/data/limits.js";
+    import { track } from "/kit/core/analytics.js";
+    // the Plus funnel: this page opened (anonymous count; kit/core/analytics.js)
+    track("pricing_view", "Gradify");
     import { pounds } from "/kit/data/plan.js";
     import { OFFER, captureOffer, offerToShow, offerTerms } from "/kit/data/offer.js";
     import { captureFirstTouch } from "/kit/core/attribution.js";
@@ -335,7 +339,7 @@
         catch (err) { msg.textContent = err.invalid ? err.message : "Sorry, that didn't work. Please try again in a moment."; input.focus(); }
         finally { btn.disabled = false; }
       }));
-      document.querySelectorAll("[data-buy]").forEach((b) => b.addEventListener("click", (e) => go(e.currentTarget, () => startCheckout(store, b.dataset.buy, "month", "/pricing.html", b.dataset.promo))));
+      document.querySelectorAll("[data-buy]").forEach((b) => b.addEventListener("click", (e) => go(e.currentTarget, () => (track("checkout_start", "Gradify", { path: `/plus/checkout/${b.dataset.buy}` }), startCheckout(store, b.dataset.buy, "month", "/pricing.html", b.dataset.promo)))));
       document.querySelectorAll("[data-manage]").forEach((b) => b.addEventListener("click", (e) => go(e.currentTarget, () => openPortal(store, "/pricing.html"))));
     }
 
@@ -363,7 +367,7 @@
     // Back from Stripe Checkout. The webhook usually lands within a few seconds; until then the row still says Free.
     async function afterCheckout() {
       const result = new URLSearchParams(location.search).get("checkout");
-      if (result === "cancelled") return notice("info", "Checkout cancelled.", "You haven't been charged.");
+      if (result === "cancelled") { track("checkout_cancel", "Gradify"); return notice("info", "Checkout cancelled.", "You haven't been charged."); }
       if (result !== "success") return;
       notice("info", "Payment received.", "Adding your plan to your account…");
       for (let i = 0; i < 12 && planOf(sub) === "free"; i++) {
@@ -374,6 +378,7 @@
       const plan = planOf(sub);
       // Google Analytics and Google Ads, with consent (kit/core/consent.js): a purchase once per checkout return, not on a refresh
       if (plan !== "free") { try { if (!sessionStorage.getItem("gradify.ga.sub")) { sessionStorage.setItem("gradify.ga.sub", "1"); globalThis.gradifyConsent?.event("purchase", { plan, currency: "GBP", value: (PLAN_PRICES[plan]?.month || 0) / 100 }); } } catch { /* storage blocked */ } }
+      if (plan !== "free") track("checkout_success", "Gradify", { path: `/plus/paid/${plan}` });
       if (plan !== "free") notice("ok", `Welcome to ${plan === "plus" ? "Gradify Pro" : "Gradify Ultra"}.`, describePlan(sub).line);
       else notice("warn", "Your payment went through, but your plan isn't showing yet.", "This can take a minute. Refresh this page shortly; if it still says Free, your receipt from Stripe is your proof of payment.");
     }

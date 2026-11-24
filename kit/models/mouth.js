@@ -113,6 +113,7 @@ export default {
   title: "The mouth in 3D", kicker: "3D dental anatomy",
   intro: { title: "Explore the mouth", text: "The real skull, jaw and every tooth from anatomy scan data, enlarged, with the gums and the nerve under the lower teeth, and a molar cut in half beside them. Click any tooth to learn it, zoom right in, and read the full notes for each section below." },
   trueColour: true,   // anatomy keeps its own tissue colours
+  ao: true,   // ambient occlusion (kit/models/viewer.js)
   groups: GROUPS, structures: STRUCTURES, notes: NOTES, calloutName: "Clinical",
   quiz: "find the structure",
   credit: ATTRIBUTION,

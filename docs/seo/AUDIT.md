@@ -6,14 +6,14 @@ This says what is **eligible** to be indexed. It is not evidence that Google has
 
 | | Pages |
 |---|---|
-| Published HTML pages | 2583 |
-| Indexable (not noindex, not blocked, not an app screen) | 1505 |
-| In the sitemap | 1505 |
-| Indexable with complete metadata (title, description, canonical, link preview, valid JSON-LD) | 1505 |
-| Indexable with structured data | 1481 |
-| Indexable and passing every error check | 1505 |
+| Published HTML pages | 2587 |
+| Indexable (not noindex, not blocked, not an app screen) | 1508 |
+| In the sitemap | 1508 |
+| Indexable with complete metadata (title, description, canonical, link preview, valid JSON-LD) | 1508 |
+| Indexable with structured data | 1482 |
+| Indexable and passing every error check | 1508 |
 | Errors | 0 |
-| Warnings | 17 |
+| Warnings | 19 |
 
 ## Pages by category
 
@@ -27,10 +27,10 @@ This says what is **eligible** to be indexed. It is not evidence that Google has
 | practice questions | 68 | 68 |
 | guide | 43 | 43 |
 | tool | 42 | 42 |
-| feature | 40 | 37 |
+| feature | 41 | 38 |
 | course | 34 | 33 |
 | site home | 31 | 30 |
-| 3d explorer | 18 | 18 |
+| 3d explorer | 21 | 20 |
 | glossary | 16 | 16 |
 | hub page | 12 | 10 |
 | checklist | 10 | 10 |
@@ -47,5 +47,5 @@ This says what is **eligible** to be indexed. It is not evidence that Google has
 
 ## Warnings (worth fixing, don't fail CI)
 
-- 15 × description is N characters
+- 17 × description is N characters
 - 2 × its content is drawn by JavaScript: no hN in the HTML a crawler reads first

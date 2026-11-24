@@ -25,6 +25,11 @@ export const ACTION_EVENTS = ["tool_use", "quiz_finish", "cta_click", "share", "
 // page view. Live once supabase/migrations/20261123140000_page_events_vitals.sql is applied (done 23 Nov 2026).
 export const VITALS_LIVE = true;
 export const VITALS_EVENTS = ["lcp", "inp", "cls"].flatMap((m) => ["good", "ni", "poor"].map((b) => `${m}_${b}`));
+// the Gradify Plus funnel (supabase/migrations/20261124190000_plus_funnel.sql): a prompt shown and pressed (its path says
+// what triggered it: /plus/lesson, /plus/tool/cards…), the pricing page, checkout started, paid, cancelled. Counted the
+// same anonymous way, once that migration has run on the live database; set PLUS_LIVE to true then.
+export const PLUS_LIVE = false;
+export const PLUS_EVENTS = ["plus_prompt", "plus_click", "pricing_view", "checkout_start", "checkout_success", "checkout_cancel"];
 
 export function analyticsAllowed(env = globalThis, configured = Boolean(SUPABASE_URL && SUPABASE_ANON_KEY)) {
   const nav = env.navigator || {}, loc = env.location || {};
@@ -38,11 +43,11 @@ export function setAnalytics(on) { try { if (on) localStorage.removeItem(OFF); e
 export const analyticsOptedOut = () => { try { return localStorage.getItem(OFF) === "1"; } catch { return false; } };
 
 // the row for an event: only these fields, cut to the database's limits
-export function eventRow(event, site, env = globalThis) {
+export function eventRow(event, site, env = globalThis, path = null) {
   const loc = env.location || {}, doc = env.document || {}, w = env.innerWidth || 1024;
   let referrer = null;
   try { const r = doc.referrer ? new URL(doc.referrer) : null; if (r && r.hostname !== loc.hostname) referrer = r.hostname.slice(0, 100); } catch { /* not a URL */ }
-  return { site: String(site || "Gradify").slice(0, 40), path: String(loc.pathname || "/").slice(0, 200), event, referrer, device: w < 640 ? "phone" : w < 1024 ? "tablet" : "desktop" };
+  return { site: String(site || "Gradify").slice(0, 40), path: String(path || loc.pathname || "/").slice(0, 200), event, referrer, device: w < 640 ? "phone" : w < 1024 ? "tablet" : "desktop" };
 }
 
 // the same learning and action events go to Google Analytics too, only when the visitor accepted analytics
@@ -51,13 +56,15 @@ export const GOOGLE_EVENTS = ["lesson_complete", "exam_finish", "tutor", "tool_u
 export function googleEvent(name, params, env = globalThis) { try { env.gradifyConsent?.event(name, params); } catch { /* never breaks the page */ } }
 
 // params go to Google Analytics only (short strings and numbers, e.g. the page type a click came from); the anonymous
-// count stays exactly the row eventRow() describes
+// count stays exactly the row eventRow() describes, except params.path, which replaces the page's path in it for the
+// funnel events that say what triggered them (/plus/lesson), and isn't sent to Google
 export function track(event, site, params) {
-  if (GOOGLE_EVENTS.includes(event)) googleEvent(event === "tutor" ? "tutor_open" : event, params);
-  if (!(EVENTS.includes(event) || (RHYTHM_LIVE && RHYTHM_EVENTS.includes(event)) || (ACTIONS_LIVE && ACTION_EVENTS.includes(event)) || (VITALS_LIVE && VITALS_EVENTS.includes(event))) || !analyticsAllowed()) return;
+  const { path = null, ...gaParams } = params || {};
+  if (GOOGLE_EVENTS.includes(event)) googleEvent(event === "tutor" ? "tutor_open" : event, gaParams);
+  if (!(EVENTS.includes(event) || (RHYTHM_LIVE && RHYTHM_EVENTS.includes(event)) || (ACTIONS_LIVE && ACTION_EVENTS.includes(event)) || (VITALS_LIVE && VITALS_EVENTS.includes(event)) || (PLUS_LIVE && PLUS_EVENTS.includes(event))) || !analyticsAllowed()) return;
   const headers = { apikey: SUPABASE_ANON_KEY, "Content-Type": "application/json", Prefer: "return=minimal" };
   if (SUPABASE_ANON_KEY.startsWith("eyJ")) headers.Authorization = `Bearer ${SUPABASE_ANON_KEY}`;
-  fetch(`${SUPABASE_URL}/rest/v1/page_events`, { method: "POST", keepalive: true, headers, body: JSON.stringify(eventRow(event, site)) }).catch(() => {});
+  fetch(`${SUPABASE_URL}/rest/v1/page_events`, { method: "POST", keepalive: true, headers, body: JSON.stringify(eventRow(event, site, globalThis, path)) }).catch(() => {});
 }
 let viewed = false;
 export function trackView(site) { if (!viewed) { viewed = true; track("view", site); } }

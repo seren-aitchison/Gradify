@@ -33,7 +33,7 @@ export function mount(el, ctx = {}) {
 
 function chiralLab(el, ctx) {
   const $ = shell(el, `<div class="lab-row top"></div><div class="lab-cols"><div class="lab-stage"></div><div class="lab-ctrl"></div></div><div class="lab-row tools"></div>`);
-  const S = stage3d($(".lab-stage"), { distance: 12, aspect: 0.62 }); S.spin = 0;
+  const S = stage3d($(".lab-stage"), { distance: 12, aspect: 0.62, ao: true }); S.spin = 0;
   const ctrl = $(".lab-ctrl"), info = panel(ctrl);
   let k = 0, mirror = null; const judged = new Map();
   const st = { right: 0 };
@@ -59,7 +59,7 @@ function chiralLab(el, ctx) {
 
 function rsLab(el, ctx) {
   const $ = shell(el, `<div class="lab-cols"><div class="lab-stage"></div><div class="lab-ctrl"></div></div><div class="lab-row tools"></div>`);
-  const S = stage3d($(".lab-stage"), { distance: 9, aspect: 0.8 }); S.spin = 0;
+  const S = stage3d($(".lab-stage"), { distance: 9, aspect: 0.8, ao: true }); S.spin = 0;
   const ctrl = $(".lab-ctrl"), info = panel(ctrl);
   let m, c, picks = [], answer, score = 0, tried = 0, idx = 0;
   const st = { score: 0 };

@@ -4,10 +4,8 @@
 // as the example it is, because the rest of the tour (Today, the assistant, the plan) reviews Alex's topics there.
 // Only on a built site with a map; elsewhere (the homepage's LifeOS window) the tour is unchanged. The map loads when
 // the Earth view first opens, so the tour doesn't start two globes at once. Styles: .life-mymap in components.css.
+import { esc } from "../core/text.js";
 import { SITES } from "../core/site.js";
-
-const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
-
 /** Adds the learner's real learning map to the Earth view; returns the section, or null where there's no map. */
 export function mountMyMap({ doc = document } = {}) {
   const name = doc.querySelector('meta[name="gradify-site"]')?.content, site = SITES.find((s) => s.n === name);

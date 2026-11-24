@@ -5,8 +5,7 @@ import { icon } from "../core/icons.js";
 import { createGlobe, vec } from "../earth/globe.js";
 
 const $ = (s, el = document) => el.querySelector(s);
-const esc = (s) => String(s).replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[ch]);
-
+import { esc } from "../core/text.js";
 export const MODULES = {
   anat: { name: "Anatomy", c: "#f99246" },
   bio: { name: "Biochemistry", c: "#a855f7" },

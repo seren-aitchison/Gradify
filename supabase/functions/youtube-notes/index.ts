@@ -3,8 +3,13 @@
 // Reads a YouTube video's captions (the ones its uploader added, or YouTube's automatic ones) so the YouTube to notes
 // tool (kit/tools/youtube.js) can turn them into notes, flashcards and a chat about the video. Browsers can't fetch
 // captions themselves (YouTube doesn't allow other sites to), so this does it for them. It only ever fetches
-// youtube.com pages for an 11-character video id, sends nothing of the learner's anywhere, and keeps nothing.
-// No secrets. Deployed with verify_jwt off, so it works signed out; per-instance rate limit below.
+// youtube.com pages for an 11-character video id and sends nothing of the learner's anywhere.
+// Deployed with verify_jwt off, so it works signed out. Rate limited across every instance by public.youtube_take
+// (supabase/migrations/20261124180000_youtube_rate_limit.sql): 10 videos a minute and 200 a day from one caller, 5000 a
+// day in all. The only thing kept is a keyed hash of the caller's IP address (HMAC-SHA-256 with the service role key,
+// which never leaves the server), for one day. Uses SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY (set by Supabase).
+import { createClient } from "npm:@supabase/supabase-js@2.117.0";
+
 const ALLOWED = (Deno.env.get("GRADIFY_ALLOWED_ORIGINS") ?? "https://getgradify.com,http://localhost:8080").split(",");
 const cors = (req: Request) => {
   const origin = req.headers.get("origin") ?? "";
@@ -58,14 +63,36 @@ async function segmentsOf(url: string) {
   return out.filter((s) => s.text);
 }
 
+// The caller's key for the rate limit: an HMAC of their IP address, so the address itself is never stored, and the key
+// can't be reversed by hashing every IPv4 address without the server's key.
+export async function callerKey(ip: string, secret: string): Promise<string> {
+  const key = await crypto.subtle.importKey("raw", new TextEncoder().encode(secret), { name: "HMAC", hash: "SHA-256" }, false, ["sign"]);
+  const mac = await crypto.subtle.sign("HMAC", key, new TextEncoder().encode(`youtube-notes:${ip}`));
+  return [...new Uint8Array(mac)].map((b) => b.toString(16).padStart(2, "0")).join("");
+}
+export const LIMITED: Record<string, string> = {
+  rate: "Too many videos in a minute. Wait a moment and try again.",
+  daily: "That's the most videos Gradify can read for you today. Try again tomorrow, or paste the transcript.",
+  busy: "Gradify has read as many videos as it can today. Try again tomorrow, or paste the transcript.",
+};
+
+// A first, per-instance limit (no database round trip for an obvious burst); the shared one is youtube_take.
 const hits = new Map<string, number[]>();
+const SECRET = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "";
+const admin = SECRET ? createClient(Deno.env.get("SUPABASE_URL")!, SECRET) : null;
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: cors(req) });
   if (req.method !== "POST") return json(req, { error: "Use POST." }, 405);
   const who = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "?";
   const now = Date.now(), recent = (hits.get(who) ?? []).filter((t) => now - t < 60_000);
-  if (recent.length >= 10) return json(req, { error: "Too many videos in a minute. Wait a moment and try again." }, 429);
+  if (recent.length >= 10) return json(req, { error: LIMITED.rate }, 429);
   hits.set(who, [...recent, now]);
+  if (hits.size > 5000) hits.clear(); // a long-lived instance doesn't grow without bound
+  // The shared limit. If the database can't be reached the request is refused rather than let through unmetered.
+  if (!admin) return json(req, { error: "Reading YouTube isn't set up on this server. Paste the transcript instead." }, 503);
+  const { data: turn, error } = await admin.rpc("youtube_take", { p_caller: await callerKey(who, SECRET) });
+  if (error) return json(req, { error: "Couldn't read this video just now. Try again in a minute, or paste the transcript." }, 503);
+  if (turn !== "ok") return json(req, { error: LIMITED[turn as string] ?? LIMITED.rate, limited: turn }, 429);
   let body: { url?: string } = {};
   try { body = await req.json(); } catch { return json(req, { error: "Send { url }." }, 400); }
   const id = videoId(body.url ?? "");

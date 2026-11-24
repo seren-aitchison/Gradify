@@ -7,9 +7,21 @@ import * as THREE from "../vendor/three/three.module.min.js";
 import { GLTFLoader } from "../vendor/three/addons/GLTFLoader.js";
 import { MeshoptDecoder } from "../vendor/three/addons/meshopt_decoder.module.js";
 
-export const ATTRIBUTION = "Anatomy: BodyParts3D © The Database Center for Life Science (CC BY 4.0), modified by open-anatomy-3d (CC BY 4.0) and Gradify.";
+export const ATTRIBUTION = "Anatomy: BodyParts3D © The Database Center for Life Science (CC BY 4.0), modified by open-anatomy-3d (CC BY 4.0) and Gradify. HD skull and teeth: Z-Anatomy (CC BY-SA 4.0).";
 const base = new URL("../vendor/anatomy/", import.meta.url);
-let loading = null;
+let loading = null, hdLoading = null;
+const live = {}, centres = {};   // the copies take() handed out, by key, and where each key's geometry was centred
+
+// The HD layer (anatomy-hd.glb, built in Blender by scripts/build-anatomy-hd.sh from the full-resolution
+// BodyParts3D 4.3 meshes): the skull, mandible and teeth subdivided ~15x. It loads after the model is up and
+// swaps in place, so the page never waits for it. Skipped on slow or data-saving connections and small
+// devices; ?hd=1 or ?hd=0 forces it either way.
+export function wantsHD() {
+  try { const q = new URLSearchParams(location.search).get("hd"); if (q === "1") return true; if (q === "0") return false; } catch { /* no location */ }
+  const c = navigator.connection;
+  if (c?.saveData || /(^|-)2g|3g/.test(c?.effectiveType || "")) return false;
+  return !(navigator.deviceMemory && navigator.deviceMemory < 4);
+}
 
 export function loadAnatomy() {
   loading ||= (async () => {
@@ -40,10 +52,11 @@ export function loadAnatomy() {
         g.setAttribute("uv", new THREE.BufferAttribute(boxUVArrays(g.attributes.position.array, g.attributes.normal.array), 2));
       }
       const mesh = new THREE.Mesh(g); mesh.position.copy(c); mesh.name = key;
-      (byKey[key] ||= []).push(mesh);
+      (byKey[key] ||= []).push(mesh); centres[key] ||= c;   // the HD layer (upgradeHD) uses the same frame
       if (performance.now() - slice > 8) { await new Promise((r) => setTimeout(r, 0)); slice = performance.now(); }
     }
     const anchors = Object.fromEntries(catalog.filter((c) => c.anchor).map((c) => [c.key, new THREE.Vector3(...c.anchor)]));
+    if (wantsHD()) (window.requestIdleCallback || setTimeout)(() => upgradeHD(), { timeout: 1500 });
     return { byKey, anchors, catalog };
   })();
   return loading;
@@ -75,6 +88,36 @@ function toWorld(pa, na, matrix, c) {
   return { pos, nor };
 }
 
+// fetch the HD layer and put its geometry into every copy that still shows the standard mesh
+export function upgradeHD() {
+  hdLoading ||= (async () => {
+    const gltf = await new GLTFLoader().setMeshoptDecoder(MeshoptDecoder).loadAsync(new URL("anatomy-hd.glb", base).href);
+    gltf.scene.updateMatrixWorld(true);
+    const done = [];
+    gltf.scene.traverse((m) => {
+      const key = centres[m.name] ? m.name : m.parent?.name, c = centres[key];   // gltfpack puts the name on a parent node
+      if (!m.isMesh || !c) return;
+      const g = toFloat(m.geometry); g.applyMatrix4(m.matrixWorld); g.translate(-c.x, -c.y, -c.z);   // same local frame as the standard mesh: a drop-in swap
+      boxUV(g); g.computeBoundingBox(); g.computeBoundingSphere();
+      for (const { mesh, from } of live[key] || []) if (mesh.geometry === from) mesh.geometry = g;
+      done.push(key);
+    });
+    window.dispatchEvent(new CustomEvent("gradify:anatomy-hd", { detail: done }));
+    return done;
+  })().catch((e) => { console.warn("HD anatomy didn't load", e); return []; });
+  return hdLoading;
+}
+
+function toFloat(src) {
+  const g = new THREE.BufferGeometry(); g.setIndex(src.index);
+  for (const name of ["position", "normal"]) { const at = src.attributes[name]; if (!at) continue; const f = new Float32Array(at.count * 3); for (let i = 0; i < at.count; i++) { f[i * 3] = at.getX(i); f[i * 3 + 1] = at.getY(i); f[i * 3 + 2] = at.getZ(i); } g.setAttribute(name, new THREE.BufferAttribute(f, 3)); }
+  if (!g.attributes.normal) g.computeVertexNormals();
+  return g;
+}
+
+// box-projected texture coordinates on a geometry (the HD layer's copy of what the standard build does inline)
+function boxUV(g) { g.setAttribute("uv", new THREE.BufferAttribute(boxUVArrays(g.attributes.position.array, g.attributes.normal.array), 2)); }
+
 // texture coordinates by box projection: each vertex uses the two axes its normal points away from,
 // in metres × 12, so a texture repeats about every 8 cm whatever the mesh
 function boxUVArrays(p, n) {
@@ -89,7 +132,7 @@ function boxUVArrays(p, n) {
 }
 
 // a copy of meshes for one model (the shared geometry isn't duplicated)
-export const take = (byKey, key) => (byKey[key] || []).map((m) => { const c = new THREE.Mesh(m.geometry); c.position.copy(m.position); c.name = key; return c; });
+export const take = (byKey, key) => (byKey[key] || []).map((m) => { const c = new THREE.Mesh(m.geometry); c.position.copy(m.position); c.name = key; (live[key] ||= []).push({ mesh: c, from: m.geometry }); return c; });
 
 // the scan's skin sits a few millimetres inside parts of its muscle layer (the neck, around the eyes):
 // push it out along its normals so everything is covered

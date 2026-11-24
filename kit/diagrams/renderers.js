@@ -20,7 +20,7 @@ export const COLOURS = C;
 const HALO = "var(--vx-card, #fff)";
 const col = (k) => C[k] || k;
 const f1 = (n) => (+n).toFixed(1);
-const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+import { esc } from "../core/text.js";
 const near = (a, b, tol = 1e-6) => Math.abs(a - b) <= tol * Math.max(1, Math.abs(a), Math.abs(b));
 const check = (name, ok, detail = "") => ({ name, ok: !!ok, detail });
 

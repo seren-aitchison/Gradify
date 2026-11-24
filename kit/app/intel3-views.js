@@ -2,13 +2,12 @@
 // evidence-weighted knowledge graph with shared concepts, the card coach (what kind of card each topic needs, and the
 // cards Gradify can write from the learner's own) and teaching experiments. Everything is read from the one model
 // (kit/intel/model.js → m.v3). Styles: "Intelligence 3.0" in kit/app/app.css.
+import { esc } from "../core/text.js";
 import { icon } from "../core/icons.js";
 import { haptic } from "../core/haptics.js";
 import { complete } from "../core/complete.js";
 import { forWindow } from "../intel/order.js";
 import { record } from "../intel/ledger.js";
-
-const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 const pct = (v) => (v == null ? "–" : `${Math.round(v * 100)}%`);
 const STATUS = { ready: ["Ready", "green"], likely: ["Likely", "blue"], borderline: ["Borderline", "amber"], "at-risk": ["At risk", "hot"], unknown: ["Not enough evidence", ""] };
 const NEED = { compare: ["Compare", "violet"], reverse: ["Reverse", "blue"], apply: ["Apply", "green"], explain: ["Explain", "amber"], rephrase: ["Rephrase", "hot"] };

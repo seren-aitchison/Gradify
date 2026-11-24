@@ -3,6 +3,7 @@
 // learner chooses which appear (learner.intel.widgets); a calm default is used until they do. Every widget sizes to
 // what's inside it, says what to do about what it shows, and has an empty state that says how to fill it.
 // Wiring reuses the existing handlers (wireCockpit, wireIntel, wireTell), so the attributes here match theirs.
+import { esc } from "../core/text.js";
 import { icon } from "../core/icons.js";
 import { LEVELS } from "../learning/mastery.js";
 import { heroCard, deckCard } from "./cockpit.js";
@@ -10,8 +11,6 @@ import { freeIntervals, windowsFor } from "../intel/schedule.js";
 import { dayKey, DAY, hhmm } from "../intel/memory.js";
 import { opportunities } from "../intel/autopilot.js";
 import { QUESTIONS } from "../intel/ask.js";
-
-const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 const pct = (v) => (v == null ? "–" : `${Math.round(v * 100)}%`);
 const n0 = (x) => Number(x || 0).toLocaleString("en-GB");
 const enc = encodeURIComponent;

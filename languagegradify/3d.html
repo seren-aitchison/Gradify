@@ -34,6 +34,7 @@
   <link rel="modulepreload" href="../kit/models/index.js">
   <link rel="modulepreload" href="../kit/models/viewer.js">
   <link rel="modulepreload" href="../kit/core/subheader.js">
+  <link rel="modulepreload" href="../kit/core/text.js">
   <link rel="modulepreload" href="../kit/core/sites.js">
   <link rel="modulepreload" href="../gradify.config.js">
   <link rel="modulepreload" href="../kit/core/subnav.js">
@@ -45,6 +46,9 @@
   <link rel="modulepreload" href="../kit/vendor/three/addons/UnrealBloomPass.js">
   <link rel="modulepreload" href="../kit/vendor/three/addons/OutputPass.js">
   <link rel="modulepreload" href="../kit/vendor/three/addons/RoomEnvironment.js">
+  <link rel="modulepreload" href="../kit/vendor/three/addons/GTAOPass.js">
+  <link rel="modulepreload" href="../kit/core/render-quality.js">
+  <link rel="modulepreload" href="../kit/models/reviews.js">
   <link rel="modulepreload" href="../kit/vendor/three/addons/BufferGeometryUtils.js">
   <link rel="modulepreload" href="../kit/data/store.js">
   <link rel="modulepreload" href="../kit/ui/global-nav.js">
@@ -55,6 +59,9 @@
   <link rel="modulepreload" href="../kit/vendor/three/addons/Pass.js">
   <link rel="modulepreload" href="../kit/vendor/three/addons/LuminosityHighPassShader.js">
   <link rel="modulepreload" href="../kit/vendor/three/addons/OutputShader.js">
+  <link rel="modulepreload" href="../kit/vendor/three/addons/GTAOShader.js">
+  <link rel="modulepreload" href="../kit/vendor/three/addons/PoissonDenoiseShader.js">
+  <link rel="modulepreload" href="../kit/vendor/three/addons/SimplexNoise.js">
   <link rel="modulepreload" href="../kit/data/billing.js">
   <link rel="modulepreload" href="../kit/data/plan.js">
   <link rel="modulepreload" href="../kit/ui/store.js">
@@ -66,8 +73,15 @@
   <link rel="modulepreload" href="../kit/ui/keys.js">
   <link rel="modulepreload" href="../kit/ui/shelf.js">
   <link rel="modulepreload" href="../kit/data/functions.js">
+  <link rel="modulepreload" href="../kit/core/analytics.js">
   <link rel="modulepreload" href="../kit/ui/overlay.js">
   <!-- /module-preload -->
+  <script src="../kit/vendor/supabase/supabase.js" defer></script>
+  <!-- start the heavy downloads with the page instead of after the scripts that need them -->
+  <link rel="modulepreload" href="../kit/vendor/three/three.module.min.js">
+  <link rel="modulepreload" href="../kit/models/viewer.js">
+  <link rel="modulepreload" href="../kit/models/voice.js">
+  <link rel="preload" as="image" type="image/avif" href="../kit/models/previews/voice-1920.avif" imagesrcset="../kit/models/previews/voice-1920.avif 1920w, ../kit/models/previews/voice-3840.avif 3840w" imagesizes="100vw" fetchpriority="high">
   <script type="module">
     import { SITES, nameHtml, accentOf } from "../kit/core/site.js";
     import { icon } from "../kit/core/icons.js";
@@ -82,7 +96,7 @@
     }
     const m = modelOf(name);
     const model = (await import(`../kit/models/${m.file}`)).default;
-    mountModel(document.getElementById("model"), name, model);
+    mountModel(document.getElementById("model"), name, model, { poster: `../kit/models/previews/${m.file.replace(".js", "")}` });
   </script>
 </head>
 <body class="sub-page">

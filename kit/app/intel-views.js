@@ -2,6 +2,7 @@
 // the Intelligence, My Knowledge, Revision Centre and Smart Plan sections of LifeOS, plus Ask Gradify. Everything is
 // read from one model (kit/intel/model.js), so every screen agrees, and every recommendation shows its reason and
 // the evidence behind it. Styles: the "Intelligence" section of kit/app/app.css.
+import { esc } from "../core/text.js";
 import { icon } from "../core/icons.js";
 import { haptic } from "../core/haptics.js";
 import { complete } from "../core/complete.js";
@@ -12,8 +13,6 @@ import { dayKey, hhmm, DAY } from "../intel/memory.js";
 import { askCoach } from "../intel/coach.js";
 import { record } from "../intel/ledger.js";
 import { modeOf, fillFocus, FOCUS } from "../intel/autopilot.js";
-
-const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 const pct = (v) => (v == null ? "–" : `${Math.round(v * 100)}%`);
 const enc = encodeURIComponent;
 const dateLabel = (d, o = { weekday: "short", day: "numeric", month: "short" }) => new Date(`${d}T12:00:00`).toLocaleDateString("en-GB", o);

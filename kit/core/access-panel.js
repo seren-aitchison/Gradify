@@ -8,6 +8,7 @@
 //
 // Baseline: WCAG 2.2 AA. The panel is a modal dialog with a heading, labelled radio groups, a visible focus, Escape to
 // close, and focus returned to the button that opened it.
+import { esc } from "./text.js";
 
 export const SETTINGS = [
   { k: "size", label: "Page size", why: "Makes everything bigger, text and controls together.", opts: [["default", "100%"], ["112", "112%"], ["125", "125%"], ["150", "150%"]] },
@@ -32,8 +33,6 @@ export const SUGGESTIONS = [
   ["Hard to stay focused", { focus: "on", motion: "reduce", block: "15" }],
   ["Low vision", { size: "125", font: "hyperlegible", contrast: "high", links: "underline" }],
 ];
-
-const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 const A = () => window.gradifyAccess;
 let panel = null, opener = null, offTheme = null;
 

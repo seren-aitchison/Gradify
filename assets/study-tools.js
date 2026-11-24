@@ -8,6 +8,7 @@ import { actionCard, SPARK } from "../kit/core/action-card.js";
 import { parseHandbook, toRow } from "../kit/data/handbook.js";
 import { deadlinesFromIcs, applyDeadlines } from "../kit/data/connections.js";
 import { UNI_RULES, CHECKED, ruleById, ruleW3, boundariesOf, effectiveMark, threshold, zoneOf, borderlineCheck, describeTest } from "../kit/data/uni-rules.js";
+import { esc } from "../kit/core/text.js";
 
 // ---------- UK degree classification ----------
 /**
@@ -241,7 +242,7 @@ export function ics(topic, dates, stamp = new Date()) {
 
 // ---------- on the page (shared by assets/tools-plan.js and assets/tools-write.js) ----------
 export const fmt = (n, dp = 1) => (Math.round(n * 10 ** dp) / 10 ** dp).toLocaleString("en-GB");
-export const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+export { esc };
 export const longDay = (d) => d.toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short", year: "numeric" });
 export function download(name, text, type) {
   const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([text], { type })); a.download = name; a.click();

@@ -426,3 +426,59 @@ A signed-out check against production after the migration confirmed `goals` from
   (such as `TRUNCATE`, `REFERENCES`, `TRIGGER`, and writes on tables they can only read), after checking Supabase
   compatibility. No production permissions were changed in this release.
 - **Recovery:** a tested single-table restore procedure (`docs/RECOVERY.md`, section 4) doesn't exist yet.
+
+## 2026-11-17 13:05 UTC · Migrations · ezlohntrnassgsbofcfc
+
+All migrations applied and verified.
+
+| migration | result | objects checked | sha256 | detail |
+|---|---|---|---|---|
+| 20261028120000_gradify_core.sql | already applied |  | 669c6c071f0a |  |
+| 20261029120000_mastery_evidence.sql | already applied |  | 1fa8fc1287fa |  |
+| 20261031120000_sport_body_intelligence.sql | already applied |  | f57af713cf3d |  |
+| 20261101120000_assessment_attempts.sql | already applied |  | 9a4dc8f0f92c |  |
+| 20261105120000_course_progress.sql | already applied |  | 8e91fc50a9f0 |  |
+| 20261105130000_tutor_usage.sql | already applied |  | e28f425f9254 |  |
+| 20261105140000_revalidation.sql | already applied |  | ea912e3a20e6 |  |
+| 20261106120000_learner_profile.sql | already applied |  | 94038916a0d5 |  |
+| 20261106130000_tutor_modes.sql | already applied |  | 07067e243f59 |  |
+| 20261106140000_page_events.sql | already applied |  | 0a42ad23bb52 |  |
+| 20261107120000_game_rewards.sql | already applied |  | 40f556898d25 |  |
+| 20261110120000_billing_and_ai_allowances.sql | already applied |  | aeafef577d4e |  |
+| 20261110180000_monthly_ai_windows.sql | already applied |  | c565a2ddcac0 |  |
+| 20261111120000_ai_controls.sql | already applied |  | 5bbcecd24be9 |  |
+| 20261112120000_goals.sql | already applied |  | 9b5de1ebf0fa |  |
+| 20261113120000_client_privileges.sql | already applied |  | 8a84702c2393 |  |
+| 20261113130000_coach_mode.sql | applied and verified | 2 | 68073405add4 |  |
+| 20261113140000_learning_events.sql | applied and verified | 8 | 7afd6e9a52d6 |  |
+| 20261113150000_push_subscriptions.sql | applied and verified | 9 | b5aa6647b70b |  |
+| 20261117120000_plus_plan.sql | applied and verified | 60 | fd617582fc43 |  |
+
+## 2026-11-17 13:08 UTC · Stripe check (read-only) · ezlohntrnassgsbofcfc
+
+Everything matches what the site sells.
+
+| check | result | detail |
+|---|---|---|
+| Stripe account | ok | GB, default currency gbp, charges enabled |
+| Mode | ok | LIVE: real payments |
+| Gradify Plus monthly price | ok | price_1UclOUEOmpIuKzUMzo9QxcRh: GBP 10.00 every 1 month, inclusive of tax, active; product "Gradify Plus" active; site sells 10.00 |
+| Gradify Pro monthly price | ok | price_1UclOUEOmpIuKzUMxHujazXB: GBP 15.00 every 1 month, inclusive of tax, active; product "Gradify Pro" active; site sells 15.00 |
+| One product per plan | ok | prod_Ve3V6tEjlR4hfV "Gradify Plus", prod_VbFtYIrZfgHAtD "Gradify Pro" |
+| Original Pro prices (£7.99 / £63.99) | ok | 2 still active: existing subscribers keep them; archive them in Stripe once nobody is on them, so the portal offers only the new prices |
+| Webhook endpoint | ok | we_1Ua3NFEOmpIuKzUM5WTc9Qwp enabled, API 2025-08-27.basil, 1 endpoint(s) for this URL |
+| Webhook events | ok | checkout.session.completed, customer.subscription.created, customer.subscription.updated, customer.subscription.deleted, customer.subscription.paused, customer.subscription.resumed |
+| Billing portal | ok | bpc_1Ua3NFEOmpIuKzUMj2Ai3lNL (default): cancel at_period_end, card updates on, invoices on |
+| Portal plan switching | ok | offers: price_1UclOUEOmpIuKzUMzo9QxcRh (Plus only until Pro opens) |
+| Supabase secret STRIPE_SECRET_KEY | ok | set |
+| Supabase secret STRIPE_WEBHOOK_SECRET | ok | set |
+| Supabase secret STRIPE_PRICE_PLUS_MONTH | ok | set |
+| Supabase secret STRIPE_PRICE_PRO_MONTH | ok | set |
+| STRIPE_PRICE_PLUS_MONTH is the Gradify Plus price | ok | compared by SHA-256 |
+| STRIPE_PRICE_PRO_MONTH is the Gradify Pro price | ok | compared by SHA-256 |
+| Supabase secret STRIPE_PRICE_MONTH | ok | the original Pro price: keep it while anyone subscribes on it, so their webhook events still read as Pro |
+| Supabase secret STRIPE_PRICE_YEAR | ok | the original Pro price: keep it while anyone subscribes on it, so their webhook events still read as Pro |
+| On sale | ok | GRADIFY_PLUS_ON_SALE not set; GRADIFY_PRO_ON_SALE not set; testers not set |
+| Existing subscriptions | ok | 0 |
+
+Changes made by this check: none.
