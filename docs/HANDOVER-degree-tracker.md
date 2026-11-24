@@ -117,6 +117,15 @@ Written 24 November 2026 for whoever picks this up next. Read this first, then `
   untick, edit or replace before anything reaches the tracker; nothing is uploaded and no AI is used. Tests:
   `tests/handbook.test.mjs`. Gradify AI could help with messy layouts later, with consent and a clear notice.
 
+- **Ask Gradify AI about your degree** (Stage 5 below): the tracker's "Ask Gradify AI" page (`data-page="ask"`).
+  `degreeBrief()` in `assets/study-tools.js` turns `degreeIntel`'s results into short sentences (no list of marks);
+  the course-tutor function's new mode `"degree"` (`kit/assess/tutor.js`, synced to `_shared/tutor.js`) answers from
+  them with `{ answer, facts, estimates, action }`. **Guard:** `checkReply` withholds any reply containing a number
+  that isn't in the brief or the question (small counts aside), so the AI can't do maths. Migration
+  `20261124150000_degree_mode.sql` is **applied to production** and course-tutor **v5 is deployed**. Gradify AI is
+  still switched off in production (`ai_settings.enabled = false`, no testers): the owner turns it on. Privacy policy
+  updated. Tests: `tests/degree-ai.test.mjs`.
+
 ### Stage 2: roll the new UI out across the whole site (done, see above)
 Apply the same visual language: tokens like `.tool` in `assets/seo.css` (`--tile`, `--group`, `--tile-edge`,
 `--tile-shadow`, `--brand`, `--c70`…), white tiles, 22–30px radii, coloured squircle icons, and `.g-action` for next
@@ -149,7 +158,7 @@ Run `scripts/theme-tokens.mjs` and the full tests after each step.
 - **Always show a review screen**, where the student confirms or edits, before anything fills the tracker rows.
   Nothing is uploaded unless AI is used, and then say so.
 
-### Stage 5: Ask Gradify AI about your degree
+### Stage 5: Ask Gradify AI about your degree (done, see above)
 - Gradify already has an AI backend: a Supabase edge function calling Anthropic, with per-plan allowances. See
   `docs/AI-PIPELINE.md`, `kit/data/functions.js`, `kit/assess/tutor.js` and `supabase/functions/`.
 - Send the AI the tracker's computed results (`degreeIntel` output and rows), never ask it to compute.
