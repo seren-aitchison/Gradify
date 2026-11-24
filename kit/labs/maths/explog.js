@@ -43,7 +43,7 @@ export function mount(el, ctx = {}) {
       // log scale: plot log10(y) against x, labelled in powers of ten
       const P = plane(g, W, H, { x0: 0, x1: 10, y0: -3, y1: 6 }); P.draw();
       curve(g, P, (x) => Math.log10(f(x)), C.blue, 2.6);
-      g.fillStyle = C.mute; g.font = "11px Geist, system-ui"; for (let e = -2; e <= 5; e++) g.fillText(`10^${e}`, P.X(0) + 6, P.Y(e) - 3);
+      g.fillStyle = C.mute; g.font = "11px Inter, system-ui"; for (let e = -2; e <= 5; e++) g.fillText(`10^${e}`, P.X(0) + 6, P.Y(e) - 3);
       if (touched) st.straight = true;
       text = `On a log scale y = ${fmt(a, 1)} × ${fmt(b, 2)}ˣ is a straight line: log y = log a + x log b, with gradient log ${fmt(b, 2)} = ${fmt(Math.log10(b), 3)}.`;
     }

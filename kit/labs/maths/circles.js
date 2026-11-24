@@ -53,7 +53,7 @@ export function mount(el, ctx = {}) {
     g.strokeStyle = "rgba(255,255,255,.55)"; g.lineWidth = 2; g.beginPath(); g.arc(p.X(0), p.Y(0), p.X(R) - p.X(0), 0, 2 * Math.PI); g.stroke();
     const line = (a, b, c = "rgba(255,255,255,.7)", w = 1.8) => { g.strokeStyle = c; g.lineWidth = w; g.beginPath(); g.moveTo(X(a), Y(a)); g.lineTo(X(b), Y(b)); g.stroke(); };
     // labels sit just outside the circle, kept inside the drawing
-    const lab = (q, t, c) => { g.fillStyle = c; g.font = "600 14px Geist, system-ui, sans-serif"; const k = 1.13, lx = Math.min(W - 14, Math.max(4, p.X(q.x * k) - 5)), ly = Math.min(Ht - 6, Math.max(16, p.Y(q.y * k) + 5)); g.fillText(t, lx, ly); };
+    const lab = (q, t, c) => { g.fillStyle = c; g.font = "600 14px Inter, system-ui, sans-serif"; const k = 1.13, lx = Math.min(W - 14, Math.max(4, p.X(q.x * k) - 5)), ly = Math.min(Ht - 6, Math.max(16, p.Y(q.y * k) + 5)); g.fillText(t, lx, ly); };
     let text = "", report = "";
     if (mode === "centre") {
       line(A, Cp, C.teal); line(B, Cp, C.teal); line(A, O, C.amber); line(B, O, C.amber); line(A, B, "rgba(255,255,255,.3)", 1);

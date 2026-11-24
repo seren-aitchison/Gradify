@@ -106,7 +106,7 @@ export function axes(g, box, { x0, x1, y0, y1, xl = "", yl = "", xt = 5, yt = 4,
   const { l, t, w, h } = box;
   const X = (v) => l + ((v - x0) / (x1 - x0)) * w;
   const Y = logy ? (v) => t + h - ((Math.log10(Math.max(v, 1e-300)) - Math.log10(y0)) / (Math.log10(y1) - Math.log10(y0))) * h : (v) => t + h - ((v - y0) / (y1 - y0)) * h;
-  g.save(); g.strokeStyle = C.grid; g.lineWidth = 1; g.fillStyle = C.mute; g.font = "11px Geist, system-ui, sans-serif";
+  g.save(); g.strokeStyle = C.grid; g.lineWidth = 1; g.fillStyle = C.mute; g.font = "11px Inter, system-ui, sans-serif";
   for (let i = 0; i <= xt; i++) { const v = x0 + ((x1 - x0) * i) / xt, x = X(v); g.beginPath(); g.moveTo(x, t); g.lineTo(x, t + h); g.stroke(); g.textAlign = "center"; g.fillText(xf(v), x, t + h + 14); }
   if (logy) { for (let e = Math.ceil(Math.log10(y0)); e <= Math.log10(y1); e++) { const y = Y(10 ** e); g.beginPath(); g.moveTo(l, y); g.lineTo(l + w, y); g.stroke(); g.textAlign = "right"; g.fillText(`1e${e}`, l - 5, y + 4); } }
   else for (let i = 0; i <= yt; i++) { const v = y0 + ((y1 - y0) * i) / yt, y = Y(v); g.beginPath(); g.moveTo(l, y); g.lineTo(l + w, y); g.stroke(); g.textAlign = "right"; g.fillText(yf(v), l - 5, y + 4); }
@@ -121,7 +121,7 @@ export function line(g, pts, color, width = 2, dash = null) {
   g.beginPath(); pts.forEach(([x, y], i) => (i ? g.lineTo(x, y) : g.moveTo(x, y))); g.stroke(); g.restore();
 }
 export function text(g, s, x, y, { color = C.text, size = 12, align = "left", weight = 400, base = "alphabetic" } = {}) {
-  g.save(); g.fillStyle = color; g.font = `${weight} ${size}px Geist, system-ui, sans-serif`; g.textAlign = align; g.textBaseline = base; g.fillText(s, x, y); g.restore();
+  g.save(); g.fillStyle = color; g.font = `${weight} ${size}px Inter, system-ui, sans-serif`; g.textAlign = align; g.textBaseline = base; g.fillText(s, x, y); g.restore();
 }
 export function clear(g, W, H, color = C.bg) { g.save(); g.setTransform(1, 0, 0, 1, 0, 0); g.fillStyle = color; g.fillRect(0, 0, g.canvas.width, g.canvas.height); g.restore(); }
 export function circle(g, x, y, r, fill, stroke) { g.beginPath(); g.arc(x, y, r, 0, Math.PI * 2); if (fill) { g.fillStyle = fill; g.fill(); } if (stroke) { g.strokeStyle = stroke; g.stroke(); } }

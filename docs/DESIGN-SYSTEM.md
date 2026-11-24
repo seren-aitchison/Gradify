@@ -21,7 +21,7 @@ are the base for every page. The other influences are used selectively, where th
 | 3D anatomy, 3D Earth, the course shelf | Three.js and 3D CSS, used for memorable moments only |
 | Course content | Minimal and highly readable |
 
-**Tokens.** `kit/design/tokens.json` is the source: fonts (the system San Francisco on Apple devices, Geist elsewhere),
+**Tokens.** `kit/design/tokens.json` is the source: fonts (Inter on every platform, self-hosted with its optical-size axis, with San Francisco and the system fonts as fallbacks; Geist Mono for code and maths working only; the weights and tracking are in "Gradify typography" at the end of `kit/styles/base.css`),
 a seven-step type scale (hero, title, heading, lead, body, eyebrow, caption), spacing (4 → 128px and a fluid section
 gap), radii, content widths, colour for both themes, and motion (Apple's ease, 180 / 320 / 700ms). `kit/styles/system.css`
 is the same values as CSS custom properties (`--ds-*`), and `tests/design-tokens.test.mjs` fails if the two drift. The

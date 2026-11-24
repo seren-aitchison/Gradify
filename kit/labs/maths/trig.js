@@ -53,7 +53,7 @@ export function mount(el, ctx = {}) {
     for (const [f, col] of [[Math.sin, C.blue], [Math.cos, C.green]]) { g.strokeStyle = col; g.lineWidth = 2; g.beginPath(); for (let d = 0; d <= 360; d += 2) { const yy = Y(f(toRad(d))); d ? g.lineTo(X(d), yy) : g.moveTo(X(d), yy); } g.stroke(); }
     g.setLineDash([3, 3]); g.strokeStyle = "rgba(255,255,255,.4)"; g.beginPath(); g.moveTo(px, py); g.lineTo(X(s.th), py); g.stroke(); g.setLineDash([]);
     dot(g, X(s.th), Y(Math.sin(t)), C.blue, 5); dot(g, X(s.th), Y(Math.cos(t)), C.green, 5);
-    g.fillStyle = C.mute; g.font = "11px Geist, system-ui"; for (const d of [90, 180, 270, 360]) g.fillText(fmtA(d), X(d) - 10, cy + r + 16);
+    g.fillStyle = C.mute; g.font = "11px Inter, system-ui"; for (const d of [90, 180, 270, 360]) g.fillText(fmtA(d), X(d) - 10, cy + r + 16);
     g.fillStyle = C.blue; g.fillText("sin θ", gx0 + 4, cy - r - 4); g.fillStyle = C.green; g.fillText("cos θ", gx0 + 50, cy - r - 4);
     hd.place();
     // the transformed graph

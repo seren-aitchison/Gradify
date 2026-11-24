@@ -137,9 +137,9 @@ function box(w, h, d, m, r = 0) {
 // a flat text label that always faces the camera
 function text(str, { size = 0.06, colour = "#eaffff", bg = null, weight = 600 } = {}) {
   const c = document.createElement("canvas"), g = c.getContext("2d"), px = 64;
-  g.font = `${weight} ${px}px Geist, system-ui, sans-serif`;
+  g.font = `${weight} ${px}px Inter, system-ui, sans-serif`;
   const w = Math.ceil(g.measureText(str).width) + 40; c.width = w; c.height = px + 36;
-  g.font = `${weight} ${px}px Geist, system-ui, sans-serif`; g.textBaseline = "middle";
+  g.font = `${weight} ${px}px Inter, system-ui, sans-serif`; g.textBaseline = "middle";
   if (mat.realistic) { bg = "rgba(246, 242, 234, 0.94)"; colour = "#2b2722"; }   // in the studio, labels are printed cards
   if (bg) { g.fillStyle = bg; g.beginPath(); g.roundRect(0, 0, w, c.height, mat.realistic ? 10 : c.height / 2); g.fill(); }
   g.fillStyle = colour; g.fillText(str, 20, c.height / 2 + 2);
