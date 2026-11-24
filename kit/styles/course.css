@@ -2289,3 +2289,19 @@ body:has(> .co-modal) .cx-rings { display: none !important; }
 .mx-lines li.shown { border-color: rgba(255, 192, 2, .7); border-left-style: dashed; }
 .mx-lines li.shown .mx-mark { color: var(--mute); font-weight: 500; }
 .mx-solution .mx-rule { margin: 2px 0 6px; }
+
+/* the static course overview under the app (scripts/seo/coursepages.mjs): the course's syllabus as plain, readable HTML */
+.course-overview { max-width: 860px; margin: 48px auto 24px; padding: 0 4px; line-height: 1.6; }
+.course-overview[hidden] { display: none; }
+.course-overview h1, .course-overview .co-ov-title { font-size: clamp(24px, 3.4vw, 32px); letter-spacing: -.02em; margin: 0 0 10px; }
+.course-overview h2 { font-size: 20px; margin: 28px 0 8px; }
+.course-overview p, .course-overview li { color: var(--mute); }
+.course-overview b, .course-overview a { color: var(--fg); }
+.co-ov-lead { font-size: 17px; color: var(--fg) !important; }
+.co-ov-notice { font-size: 13px; border: 1px solid var(--line); border-radius: 12px; padding: 10px 14px; }
+.co-ov-unit { border-bottom: 1px solid var(--line); padding: 4px 0; }
+.co-ov-unit summary { cursor: pointer; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; padding: 8px 0; }
+.co-ov-unit summary h3 { display: inline; font-size: 16px; margin: 0; color: var(--fg); }
+.co-ov-unit summary span { font-size: 13px; color: var(--faint); }
+.co-ov-unit ol { padding-left: 22px; font-size: 15px; } .co-ov-unit li { margin: 4px 0; }
+.co-ov-facts { padding-left: 20px; } .co-ov-plans { columns: 2 220px; padding-left: 20px; } .co-ov-more { font-size: 14px; margin-top: 24px; }

@@ -55,7 +55,7 @@ If you'd rather use a Google Ads conversion tag directly (an `AW-…` ID and con
 - Admin › Data retention: **2 months** for event data (the privacy policy says 2 months; change both together).
 - Admin › Data streams › Web › Enhanced measurement: page views on; **turn off "Page changes based on browser history events"** if lesson routes (`#/lesson/…`) double-count page views; turn off form interactions (they can capture field names on sign-in forms).
 - Admin › Data filters: activate the **Internal traffic** filter (`traffic_type = internal`). Testers mark their own browsers with `localStorage.setItem("gradify.internal", "1")` in the console on getgradify.com.
-- Admin › Product links: no Google Ads link until advertising consent is added to the banner.
+- Admin › Product links: link Google Ads (personalised advertising off), as in "Google Ads set-up" above. The banner already asks for advertising consent separately.
 - Key events: mark `sign_up`, `begin_checkout` and `purchase`.
 - Admin › Custom definitions: add event-scoped dimensions for `gradify_site`, `method`, `plan`, `billing_interval`, `mode` and `passed`, and metrics for `cards` and `minutes`, to see them in reports.
 

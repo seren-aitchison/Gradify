@@ -23,7 +23,7 @@ function serve() {
     server.listen(0, "127.0.0.1", () => resolve(server));
   });
 }
-const PAGES = ["/", "/tools/", "/tools/cram-planner/", "/topics/biology/u02/", "/guides/command-words/", "/vs/mitosis-vs-meiosis/", "/terms/saturation/", "/checklists/exam-day/", "/research/", "/medgradify/"];
+const PAGES = ["/", "/lessons/biology/u02-04/", "/scigradify/biology/", "/tools/", "/tools/cram-planner/", "/topics/biology/u02/", "/guides/command-words/", "/vs/mitosis-vs-meiosis/", "/terms/saturation/", "/checklists/exam-day/", "/research/", "/medgradify/"];
 const LCP_MS = Number(process.env.LCP_MS || 2500), CLS_MAX = Number(process.env.CLS_MAX || 0.1);
 
 (async () => {
