@@ -1,7 +1,7 @@
 // Electric fields and potential from point charges (Coulomb's law, superposed): field lines traced through the
 // field, equipotential colouring and a test charge you can place. Charges in a plane, in a vacuum; field lines are
 // traced numerically and their density is only roughly proportional to field strength.
-import { shell, canvas, seg, clear, text, circle, arrow, challenges, panel, C } from "../lab.js";
+import { shell, canvas, seg, clear, text, circle, arrow, challenges, panel, C, isLight } from "../lab.js";
 
 export const k = 8.9875e9;
 // field (N/C) and potential (V) at (x, y) metres from charges [{ x, y, q (C) }]
@@ -65,11 +65,15 @@ export function mount(el, ctx = {}) {
   function draw() {
     const g = cv.g, W = cv.W, H = cv.H; clear(g, W, H);
     // potential as colour: red positive, blue negative
-    const img = g.createImageData(Math.ceil(W / 4), Math.ceil(H / 4));
+    const img = g.createImageData(Math.ceil(W / 4), Math.ceil(H / 4)), light = isLight();
     for (let j = 0; j < img.height; j++) for (let i = 0; i < img.width; i++) {
       // equipotentials spaced on a log scale, so they stay thin where the potential changes slowly
       const [mx, my] = toM(i * 4 + 2, j * 4 + 2), V = F(mx, my).V, s = Math.tanh(V / 150), lv = Math.sign(V) * Math.log1p(Math.abs(V) / 2) * 3, band = Math.abs(lv - Math.round(lv)) < 0.06 && Math.abs(V) > 0.5 ? 0.35 : 0;
-      const p = (j * img.width + i) * 4; img.data[p] = 255 * Math.max(0, s) * 0.55 + band * 120; img.data[p + 1] = band * 120 + 12; img.data[p + 2] = 255 * Math.max(0, -s) * 0.6 + band * 120; img.data[p + 3] = 255;
+      const p = (j * img.width + i) * 4;
+      if (light) { // light mode: white paper tinted red or blue, equipotentials as dark bands
+        const r = 1 - Math.max(0, -s) * 0.55, b = 1 - Math.max(0, s) * 0.55, gg = 1 - Math.abs(s) * 0.45, d = band ? 0.55 : 1;
+        img.data[p] = 255 * r * d; img.data[p + 1] = 255 * gg * d; img.data[p + 2] = 255 * b * d; img.data[p + 3] = 255;
+      } else { img.data[p] = 255 * Math.max(0, s) * 0.55 + band * 120; img.data[p + 1] = band * 120 + 12; img.data[p + 2] = 255 * Math.max(0, -s) * 0.6 + band * 120; img.data[p + 3] = 255; }
     }
     const off = document.createElement("canvas"); off.width = img.width; off.height = img.height; off.getContext("2d").putImageData(img, 0, 0);
     g.imageSmoothingEnabled = true; g.drawImage(off, 0, 0, W, H);

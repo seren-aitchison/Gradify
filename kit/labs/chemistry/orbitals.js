@@ -3,7 +3,7 @@
 // (phase) of ψ in two colours, a 3D cloud of points sampled from |ψ|², and the radial distribution
 // r²R² with its radial nodes. Exact for hydrogen; in many-electron atoms the shapes are similar but the
 // sizes and energies change.
-import { shell, seg, canvas, axes, line, clear, text, panel, challenges, quiz, C } from "../lab.js";
+import { shell, seg, canvas, axes, line, clear, text, panel, challenges, quiz, C, isLight } from "../lab.js";
 import { stage3d, THREE } from "../three.js";
 
 const S3 = Math.sqrt(3), S6 = Math.sqrt(6), S30 = Math.sqrt(30), PI = Math.PI;
@@ -49,7 +49,14 @@ export function mount(el, ctx = {}) {
     const g = cv.g, W = cv.W, H = cv.H, img = g.createImageData(Math.round(W * cv.dpr), Math.round(H * cv.dpr));
     let mx = 0; const N = img.width, M = img.height, vals = new Float32Array(N * M);
     for (let j = 0; j < M; j++) for (let i = 0; i < N; i++) { const u = (i / N - 0.5) * 2 * L, v = (0.5 - j / M) * 2 * L, p = pl === "xy" ? psi(cur, u, v, 0) : psi(cur, u, 0, v); vals[j * N + i] = p; mx = Math.max(mx, p * p); }
-    for (let k = 0; k < N * M; k++) { const p = vals[k], d = Math.sqrt((p * p) / mx); img.data[k * 4] = p >= 0 ? 255 * d : 60 * d; img.data[k * 4 + 1] = p >= 0 ? 170 * d : 150 * d; img.data[k * 4 + 2] = p >= 0 ? 40 * d : 255 * d; img.data[k * 4 + 3] = 255; }
+    // dark mode: glowing lobes on black; light mode: the same lobes as colour on white paper
+    const light = isLight();
+    for (let k = 0; k < N * M; k++) {
+      const p = vals[k], d = Math.sqrt((p * p) / mx), o = k * 4;
+      if (light) { const [r, gg, b] = p >= 0 ? [230, 120, 0] : [30, 100, 235]; img.data[o] = 255 - (255 - r) * d; img.data[o + 1] = 255 - (255 - gg) * d; img.data[o + 2] = 255 - (255 - b) * d; }
+      else { img.data[o] = p >= 0 ? 255 * d : 60 * d; img.data[o + 1] = p >= 0 ? 170 * d : 150 * d; img.data[o + 2] = p >= 0 ? 40 * d : 255 * d; }
+      img.data[o + 3] = 255;
+    }
     g.putImageData(img, 0, 0);
     text(g, `${pl} plane · |ψ|², orange +, blue −`, 8, 16, { size: 11 }); text(g, `${L} a₀`, W - 8, H - 8, { size: 10, align: "right", color: C.mute });
     // radial distribution

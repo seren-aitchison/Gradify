@@ -70,7 +70,7 @@ function timeline(el, ctx) {
   }
   function show(i) { sel = i; seen.add(THEORISTS[i][0]); ch.check({}); const [n, b, d, w, idea, grp] = THEORISTS[i]; card.innerHTML = `<h5>${esc(n)} (${b}–${d ?? ""})</h5><p><b>${esc(GROUPS[grp][0])}.</b> ${esc(idea)}</p><p><small>Key work: ${esc(w)}</small></p>`; btns.querySelectorAll("button").forEach((b2) => b2.setAttribute("aria-pressed", Number(b2.dataset.i) === i)); draw(); }
   btns.addEventListener("click", (e) => { const b = e.target.closest("[data-i]"); if (b) show(Number(b.dataset.i)); });
-  caveat(ctrl, "Lines run from birth to death; a white dot marks the key work's date. Traditions are rough groupings: many theorists fit more than one.");
+  caveat(ctrl, "Lines run from birth to death; a dot marks the key work's date. Traditions are rough groupings: many theorists fit more than one.");
   show(6); cv.onresize = draw;
   return () => cv.stop();
 }
