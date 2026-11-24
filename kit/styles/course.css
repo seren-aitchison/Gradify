@@ -1785,7 +1785,7 @@ html.cx-focus .co.co-reading .co-body, html.cx-focus .co.co-reading .co-body.has
 .cx-fbtn .co-ic { width: 16px; height: 16px; }
 .cx-fsum:hover .cx-fpaper { transform: translateY(-10px); }
 .cx-fsum:hover .cx-ffront { transform: translateY(3px); }
-.cx-folder.open .cx-fpaper { transform: translateY(-16px) rotate(-1.5deg); }
+.cx-folder.open .cx-fpaper { transform: translateY(-16px); }
 .cx-folder.open .cx-ffront { transform: translateY(5px); }
 .cx-folder.open .cx-fbtn { transform: rotate(90deg); }
 .cx-folder.full .cx-fbar i { background: var(--s-mastered); }
@@ -2299,7 +2299,7 @@ body:has(> .co-modal) .cx-rings { display: none !important; }
 .co.co-reading .co-read {
   /* the subject's colour, mixed towards the ink so text in it always reads (AA in both themes) */
   --lc: var(--accent, #4641ff);
-  --lc-ink: color-mix(in oklab, var(--lc) 72%, var(--fg));
+  --lc-ink: color-mix(in oklab, var(--lc) 58%, var(--fg));
   --lc-wash: color-mix(in srgb, var(--lc) 7%, transparent);
   --lc-line: color-mix(in srgb, var(--lc) 26%, transparent);
   --ls-sheet: rgb(var(--surface-rgb));
@@ -2455,7 +2455,7 @@ body:has(.co-modal) .cx-dock { visibility: hidden; }
 .co.co-reading .co-lesson .co-pncard small { font: 600 13px var(--sans); letter-spacing: 0; text-transform: none; color: var(--mute); }
 .co.co-reading .co-lesson .co-pncard.next { align-items: flex-end; text-align: right;
   background: color-mix(in srgb, var(--accent, #4641ff) 7%, rgb(var(--surface-rgb))); border-color: color-mix(in srgb, var(--accent, #4641ff) 35%, transparent); }
-.co.co-reading .co-lesson .co-pncard.next small { color: color-mix(in oklab, var(--accent, #4641ff) 72%, var(--fg)); }
+.co.co-reading .co-lesson .co-pncard.next small { color: color-mix(in oklab, var(--accent, #4641ff) 58%, var(--fg)); }
 .co.co-reading .co-lesson .co-pncard:hover { border-color: var(--accent, var(--line-strong)); transform: translateY(-2px); }
 .co.co-reading .co-lesson .co-pncard.prev small::after, .co.co-reading .co-lesson .co-pncard.next small::before { content: none; }
 @media (max-width: 760px) {
@@ -2467,3 +2467,29 @@ body:has(.co-modal) .cx-dock { visibility: hidden; }
 
 /* the shared "What would you like to do next?" kicker, in the sans like every other label */
 .gx-switch .gx-kicker { font: 600 13px var(--sans); letter-spacing: 0; text-transform: none; }
+/* the in-lesson quick checks (gd-mini) and their labels, in the same sans; a section whose heading has its own icon
+   (the generated "Quick check") doesn't also need a number */
+.co.co-reading .co-read .gd-mhead, .co.co-reading .co-read .gd-mhead * { font-family: var(--sans); letter-spacing: 0; text-transform: none; }
+.co.co-reading .co-read .gd-mhead { font-size: 13px; font-weight: 650; }
+.co.co-reading .co-read .co-prose section[id] h3:has(> svg)::before { content: none; }
+
+/* ---- navigation labels in the sans: the outline, the lesson bar, course home and the "what next" switcher.
+   Mono stays where it means something (code, maths working, keys, timers). Tabular figures keep numbers aligned. ---- */
+.co :is(.cx-un, .cx-up, .cx-mt small, .cx-n, .cx-pn small, .cx-sess em, .cx-tqxp, .cx-uprog b, .cx-tg, .cx-stages a span:first-child, .cx-rr b, .cx-wday small, .cx-bcover small, .cx-chips button small),
+.co .gx-switch .gx-res em {
+  font-family: var(--sans); letter-spacing: 0; font-variant-numeric: tabular-nums;
+}
+.co :is(.cx-up, .cx-mt small, .cx-pn small, .cx-sess em, .cx-tqxp) { font-size: 12.5px; }
+.co .gx-switch .gx-res em { font-style: normal; font-size: 12.5px; }
+/* XP rewards on quests and missions: a small pill with AA text (was pale amber on white) */
+.co .cx-q em { font: 650 12px var(--sans); font-variant-numeric: tabular-nums; padding: 3px 9px; border-radius: 99px;
+  color: light-dark(#8a5300, #f0b24a); background: light-dark(#fdf1dc, #2c2210); }
+.co .cx-stages small { font-family: var(--sans); font-variant-numeric: tabular-nums; }
+/* "Your course" counts: the status dot now sits inside its dt (valid definition list), so the row is two columns */
+.co .cx-course dl div { grid-template-columns: 1fr auto; }
+.co .cx-course dt { display: flex; align-items: center; gap: 8px; }
+/* locked sessions stay readable: the tile is quieter (dashed, no fill), the words keep AA contrast */
+.co .cx-sess.off { opacity: 1; background: transparent; border-style: dashed; box-shadow: none; }
+.co .cx-sess.off > :is(b, em) { color: var(--mute); }
+.co .cx-sess.off > small { color: var(--faint); }
+.co .cx-sess.off .cx-sessi { opacity: .55; filter: grayscale(.6); }

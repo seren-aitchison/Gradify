@@ -1209,6 +1209,8 @@ code { font: 12px var(--mono); color: var(--mute); }
 .gd-defs { display: grid; gap: 8px; }
 .gd-defs > div { display: grid; gap: 4px; }
 .gd-defs dt { font-size: 1.02em; }
+/* the answer is a block inside its dd, so covering it (role="button") keeps the list a valid definition list */
+.gd-defs dd { margin: 0; min-width: 0; } .gd-defs dd > .gd-a { display: block; }
 @container gd (min-width: 520px) { .gd-defs > div { grid-template-columns: minmax(120px, 32%) 1fr; gap: 16px; align-items: baseline; } }
 .gd-stack > li.gd-item { display: flex; gap: 12px; align-items: flex-start; }
 .gd-stack > li.gd-item > .gd-n { margin-top: -1px; }
@@ -1276,6 +1278,8 @@ dialog.gd-zoom[open] { animation: gd-zin .18s ease-out; }
 
 /* ---------- the modes: Step through, Match up, Which is true?, Rate the evidence (kit/core/glass-diagrams.js) ---------- */
 .gd-btn.gd-main { border-color: color-mix(in srgb, var(--a) 80%, transparent); background: color-mix(in srgb, var(--a) 22%, var(--gd-bg)); }
+/* pressed wins over main: white text needs the deep fill (the main tint above was overriding it, 1.2:1) */
+.gd-btn.gd-main[aria-pressed="true"] { color: #fff; border-color: transparent; background: color-mix(in oklab, var(--a) 50%, #000); }
 .gd-btn:disabled { opacity: .45; cursor: default; }
 .gd.gd .gd-card .gd-score { flex-basis: 100%; min-height: 1.2em; font-size: 13px; font-weight: 600; color: var(--gd-soft); font-variant-numeric: tabular-nums; }
 .gd.gd .gd-card .gd-score:empty { display: none; }

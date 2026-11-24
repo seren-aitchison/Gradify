@@ -477,7 +477,7 @@ function bodyPanels(d, heads, { answerFrom = 0, cols = 3 } = {}) {
   return `<div class="gd-panels gd-c${cols}">${d.items.map((t, i) => `<section class="gd-item" style="--c:${ink(i * 2)}"><b class="gd-ph">${esc(heads[i])}</b>${i >= answerFrom ? A(t, "p") : `<p>${esc(t)}</p>`}</section>`).join("")}</div>`;
 }
 function bodyDefs(d) {
-  return `<dl class="gd-defs">${d.items.map((it, i) => `<div class="gd-item"${it.def ? " data-gd-row" : ""} style="--c:${ink(i)}"><dt class="gd-k">${esc(it.term)}</dt>${it.def ? A(it.def, "dd") : ""}</div>`).join("")}</dl>`;
+  return `<dl class="gd-defs">${d.items.map((it, i) => `<div class="gd-item"${it.def ? " data-gd-row" : ""} style="--c:${ink(i)}"><dt class="gd-k">${esc(it.term)}</dt>${it.def ? `<dd>${A(it.def)}</dd>` : ""}</div>`).join("")}</dl>`;
 }
 function bodyRows(d, kind) {
   const EV = { established: GOOD, contested: WARN, hypothetical: "#7c3aed" }, EVL = { established: "Established", contested: "Contested", hypothetical: "Hypothetical" };
