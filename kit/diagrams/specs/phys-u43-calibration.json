@@ -1,0 +1,122 @@
+{
+ "id": "phys-u43-calibration",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u43",
+ "lesson": "Detector calibration",
+ "title": "Calibrating the energy scale from two peaks",
+ "caption": "Two known lines fix the straight line E = a·ADC + b: a = (1332 − 662)/(3240 − 1650) ≈ 0.421 keV per count and b ≈ -33 keV. Any ADC value then reads as an energy; 2500 counts is ≈ 1020 keV. Checking other known lines against the line is the linearity test.",
+ "alt": "Energy in keV against ADC count: a straight line through the 662 keV peak at 1650 and the 1332 keV peak at 3240, with 2500 counts read as about 1020 keV.",
+ "description": [
+  "Slope a = (1332 − 662)/(3240 − 1650) = 670/1590 ≈ 0.421 keV per ADC count.",
+  "Intercept b = 662 − 0.421 × 1650 ≈ -33 keV.",
+  "Reading ADC = 2500: E ≈ 0.421 × 2500 − 33 ≈ 1020 keV."
+ ],
+ "range": {
+  "x": [
+   0,
+   4000
+  ],
+  "y": [
+   0,
+   1500
+  ]
+ },
+ "ticks": [
+  [
+   1000,
+   2000,
+   3000,
+   4000
+  ],
+  [
+   500,
+   1000,
+   1500
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "ADC channel",
+  "energy / keV"
+ ],
+ "curves": [
+  {
+   "expr": "0.421384*x-33.283",
+   "colour": "a1",
+   "label": "E = a·ADC + b",
+   "labelAt": [
+    450,
+    350
+   ]
+  }
+ ],
+ "marks": [
+  {
+   "x": 2500,
+   "to": 1020.2
+  }
+ ],
+ "points": [
+  {
+   "x": 1650,
+   "y": 662,
+   "colour": "a2",
+   "label": "662 keV",
+   "dx": 10,
+   "dy": 20
+  },
+  {
+   "x": 3240,
+   "y": 1332,
+   "colour": "a2",
+   "label": "1332 keV",
+   "dx": -10,
+   "dy": 22,
+   "anchor": "end"
+  },
+  {
+   "x": 2500,
+   "y": 1020.2,
+   "colour": "a4",
+   "label": "2500 → 1020 keV",
+   "dx": -10,
+   "dy": -12,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "0.421384*x-33.283",
+   "x": 1650,
+   "y": 662,
+   "name": "662 keV at ADC 1650"
+  },
+  {
+   "type": "point",
+   "expr": "0.421384*x-33.283",
+   "x": 3240,
+   "y": 1332,
+   "name": "1332 keV at ADC 3240"
+  },
+  {
+   "type": "slope",
+   "expr": "0.421384*x-33.283",
+   "x": 2000,
+   "value": 0.421384,
+   "name": "a = 0.421 keV per count"
+  },
+  {
+   "type": "point",
+   "expr": "0.421384*x-33.283",
+   "x": 2500,
+   "y": 1020.1761,
+   "name": "2500 counts ≈ 1020 keV"
+  }
+ ]
+}

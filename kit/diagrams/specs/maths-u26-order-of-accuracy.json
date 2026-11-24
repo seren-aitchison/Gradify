@@ -1,0 +1,107 @@
+{
+ "id": "maths-u26-order-of-accuracy",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u26",
+ "lesson": "Model Verification",
+ "title": "Halving h divides the error by 4",
+ "caption": "The errors 0.016 at h = 0.1 and 0.004 at h = 0.05 both lie on e = 1.6h². Their ratio is 0.016/0.004 = 4 = 2², so the observed order is p = 2, as theory predicts.",
+ "alt": "The curve e = 1.6h² rising from the origin, with marked points (0.05, 0.004) and (0.1, 0.016).",
+ "description": [
+  "Record the error at two step sizes: 0.016 and 0.004.",
+  "Both points lie on the curve e = 1.6h².",
+  "Their ratio is 4, and 4 = 2^p gives p = 2.",
+  "The observed order matches the expected second order."
+ ],
+ "range": {
+  "x": [
+   0,
+   0.12
+  ],
+  "y": [
+   0,
+   0.024
+  ]
+ },
+ "ticks": [
+  [
+   0.05,
+   0.1
+  ],
+  [
+   0.008,
+   0.016,
+   0.024
+  ]
+ ],
+ "grid": [
+  0.05,
+  0.008
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "step size h",
+  "error"
+ ],
+ "curves": [
+  {
+   "expr": "1.6*x^2",
+   "colour": "a1",
+   "domain": [
+    0,
+    0.115
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 0.05,
+   "y": 0.004,
+   "label": "0.004",
+   "colour": "a2",
+   "dx": 12,
+   "dy": 20
+  },
+  {
+   "x": 0.1,
+   "y": 0.016,
+   "label": "0.016",
+   "colour": "a2",
+   "dx": -10,
+   "dy": -10,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "1.6*x^2",
+   "x": 0.1,
+   "y": 0.016,
+   "name": "at h = 0.1 the error is 0.016"
+  },
+  {
+   "type": "point",
+   "expr": "1.6*x^2",
+   "x": 0.05,
+   "y": 0.004,
+   "name": "at h = 0.05 the error is 0.004"
+  },
+  {
+   "type": "value",
+   "expr": "1.6*x^2/(1.6*(x/2)^2)",
+   "x": 0.1,
+   "between": [
+    4,
+    4
+   ],
+   "name": "the ratio 0.016/0.004 is 4 = 2²"
+  }
+ ],
+ "fromLesson": [
+  "0.016/0.004 = 4"
+ ]
+}

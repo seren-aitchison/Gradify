@@ -1,0 +1,54 @@
+{
+ "id": "maths-u26-area-uncertainty",
+ "renderer": "number-line",
+ "course": "maths",
+ "unit": "u26",
+ "lesson": "Error Propagation",
+ "title": "Area 50 ± 1.1 cm²",
+ "caption": "The relative uncertainties 1% and 2% combine to 2.24%, so δA ≈ 1.1 cm². The area 50.0 cm² could lie anywhere from 48.9 to 51.1 cm², which the lesson reports as 50 ± 1 cm².",
+ "alt": "A number line from 47 to 53 with the point 50 and the interval from 48.9 to 51.1 marked.",
+ "description": [
+  "Area = 10.0 × 5.0 = 50.0 cm².",
+  "Relative uncertainties 1% and 2% combine to √(1² + 2²) ≈ 2.24%.",
+  "That is 0.0224 × 50 ≈ 1.1 cm².",
+  "So the area lies between 48.9 and 51.1 cm²."
+ ],
+ "range": [
+  47,
+  53
+ ],
+ "ticks": {
+  "step": 1
+ },
+ "points": [
+  {
+   "value": 50,
+   "label": "50.0",
+   "colour": "a2"
+  }
+ ],
+ "intervals": [
+  {
+   "from": 48.9,
+   "to": 51.1,
+   "closed": [
+    true,
+    true
+   ],
+   "inequality": "48.9 <= x <= 51.1",
+   "label": "50 ± 1.1",
+   "colour": "a1"
+  }
+ ],
+ "checks": [
+  {
+   "type": "value",
+   "expr": "sqrt(0.01^2+0.02^2)*50",
+   "value": 1.118033988749895,
+   "name": "√(1² + 2²)% of 50 = 1.1 cm²"
+  }
+ ],
+ "fromLesson": [
+  "2.24%"
+ ]
+}

@@ -69320,5 +69320,1463 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "maths-u16-bijection-inverse": {
+  "title": "f(x) = 3x − 5 and its inverse",
+  "caption": "f is a bijection: every y is reached by exactly one x = (y + 5)/3. The graph of the inverse is the reflection of f in the line y = x; the two cross at (2.5, 2.5).",
+  "alt": "The lines y = 3x − 5 and y = (x + 5)/3 drawn as reflections in the dashed line y = x, meeting at (2.5, 2.5).",
+  "description": [
+   "f(x) = 3x − 5 is a straight line of gradient 3, so each output comes from one input.",
+   "Solving y = 3x − 5 for x gives f⁻¹(y) = (y + 5)/3.",
+   "Its graph is f reflected in y = x, with gradient 1/3.",
+   "The curves meet on y = x, at x = 3x − 5, that is x = 2.5."
+  ],
+  "course": "maths",
+  "lesson": "Functions and Mappings",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u16.js: Functions and Mappings"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "f(3) = 4",
+    "ok": true,
+    "detail": "y(3) = 4"
+   },
+   {
+    "name": "f⁻¹(4) = 3: the inverse undoes f",
+    "ok": true,
+    "detail": "y(4) = 3"
+   },
+   {
+    "name": "f has gradient 3",
+    "ok": true,
+    "detail": "gradient 3.0000"
+   },
+   {
+    "name": "f⁻¹ has gradient 1/3",
+    "ok": true,
+    "detail": "gradient 0.3333"
+   },
+   {
+    "name": "f and f⁻¹ meet at (2.5, 2.5)",
+    "ok": true,
+    "detail": "3*x-5 → 2.5, (x+5)/3 → 2.5"
+   },
+   {
+    "name": "that point is on y = x",
+    "ok": true,
+    "detail": "y(2.5) = 2.5"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u16-circle-relation": {
+  "title": "x² + y² = 1 is not a function of x",
+  "caption": "At x = 0 the relation x² + y² = 1 holds for both y = 1 and y = −1, so the input 0 has two outputs. Only the upper half y = √(1 − x²) is a function.",
+  "alt": "The unit circle with the points (0, 1) and (0, −1) joined by a vertical dashed line at x = 0.",
+  "description": [
+   "The relation is the unit circle.",
+   "At x = 0 the circle has two points, (0, 1) and (0, −1).",
+   "A function gives one output per input, so the relation is not a function.",
+   "Cutting it to the upper half gives y = √(1 − x²), which is."
+  ],
+  "course": "maths",
+  "lesson": "Relations and Functions",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u16.js: Relations and Functions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(0, 1) and (0, −1) both lie on x² + y² = 1",
+    "ok": true,
+    "detail": "1, 1"
+   },
+   {
+    "name": "√(1 − 0²) = 1: the function takes only the upper value",
+    "ok": true,
+    "detail": "1"
+   },
+   {
+    "name": "the lesson states \"0 has two outputs\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "8 labels in 640×340"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "8 labels in 380×320"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u16-classes-mod-3": {
+  "title": "The classes of 'same remainder mod 3'",
+  "caption": "The three classes {3, 6}, {1, 4} and {2, 5} do not overlap and together contain all six elements: an equivalence relation splits the set into a partition.",
+  "alt": "Three separate groups of elements with no overlap: {3, 6}, {1, 4} and {2, 5}.",
+  "description": [
+   "Sort 1 to 6 by remainder on division by 3.",
+   "Remainder 0 gives {3, 6}, remainder 1 gives {1, 4}, remainder 2 gives {2, 5}.",
+   "No element is in two classes, and every element is in one.",
+   "So the classes partition the set."
+  ],
+  "course": "maths",
+  "lesson": "Equivalence Classes",
+  "also": [],
+  "renderer": "venn",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u16.js: Equivalence Classes"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "classes 0 and 1 do not overlap",
+    "ok": true,
+    "detail": "counted 0"
+   },
+   {
+    "name": "classes 0 and 2 do not overlap",
+    "ok": true,
+    "detail": "counted 0"
+   },
+   {
+    "name": "classes 1 and 2 do not overlap",
+    "ok": true,
+    "detail": "counted 0"
+   },
+   {
+    "name": "the three classes hold all 6 elements",
+    "ok": true,
+    "detail": "total 6"
+   },
+   {
+    "name": "the lesson states \"Three classes partition the set\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 620×400"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 380×380"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "620px wide, shown at 114% (labels 17.1px)"
+   }
+  ]
+ },
+ "maths-u16-de-morgan": {
+  "title": "(A ∪ B)ᶜ in {1, …, 10}",
+  "caption": "A = evens and B = multiples of 3. The union covers 2, 3, 4, 6, 8, 9, 10, so its complement is {1, 5, 7}: the elements outside both circles, which is also Aᶜ ∩ Bᶜ.",
+  "alt": "A Venn diagram with evens in A, multiples of 3 in B, 6 in the overlap and 1, 5 and 7 outside both circles.",
+  "description": [
+   "Place 1 to 10: evens in A, multiples of 3 in B, and 6 in both.",
+   "A ∪ B holds everything inside either circle.",
+   "The complement (A ∪ B)ᶜ is what lies outside both circles: {1, 5, 7}.",
+   "That is the same as Aᶜ ∩ Bᶜ, as De Morgan says."
+  ],
+  "course": "maths",
+  "lesson": "Complements",
+  "also": [],
+  "renderer": "venn",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u16.js: Complements"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(A ∪ B)ᶜ = {1, 5, 7} has 3 elements",
+    "ok": true,
+    "detail": "counted 3"
+   },
+   {
+    "name": "Aᶜ ∩ Bᶜ has the same 3 elements",
+    "ok": true,
+    "detail": "counted 3"
+   },
+   {
+    "name": "the universe has 10 elements",
+    "ok": true,
+    "detail": "total 10"
+   },
+   {
+    "name": "the lesson states \"{1, 5, 7}\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 620×290"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 380×260"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "620px wide, shown at 114% (labels 17.1px)"
+   }
+  ]
+ },
+ "maths-u16-divisors-30": {
+  "title": "The divisors of 30 form a cube",
+  "caption": "The eight divisors of 30 match the eight subsets of {2, 3, 5}: going up one edge multiplies by a prime. The complement of 6 is 5, since lcm(6, 5) = 30 and gcd(6, 5) = 1, which is the complement of {2, 3} in {2, 3, 5}.",
+  "alt": "A cube-shaped lattice with 1 at the bottom, 2, 3 and 5 above it, 6, 10 and 15 above those and 30 at the top; the vertices 6 and 5 are highlighted.",
+  "description": [
+   "The divisors of 30 are 1, 2, 3, 5, 6, 10, 15, 30: eight, matching the subsets of {2, 3, 5}.",
+   "Each edge multiplies by one prime, so the diagram is a cube.",
+   "Complement of 6 = 2 × 3: the missing prime is 5.",
+   "Check: lcm(6, 5) = 30 is the top and gcd(6, 5) = 1 is the bottom."
+  ],
+  "course": "maths",
+  "lesson": "Boolean Lattices",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u16.js: Boolean Lattices"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "lcm(6, 5) = 6 × 5 ÷ gcd(6, 5) = 30",
+    "ok": true,
+    "detail": "30"
+   },
+   {
+    "name": "the cube has 2³ = 8 vertices",
+    "ok": true,
+    "detail": "8"
+   },
+   {
+    "name": "the lesson states \"x = 5\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "8 labels in 640×360"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "8 labels in 380×266"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u16-hasse-diamond": {
+  "title": "The Hasse diagram of divisibility on {1, 2, 3, 6}",
+  "caption": "Only covering pairs are drawn: 1 is covered by 2 and by 3, and each of those by 6. The edge from 1 to 6 is left out because 2 lies between, so the diagram is a diamond.",
+  "alt": "A diamond: 1 at the bottom, 2 and 3 in the middle and 6 at the top, with four edges and no edge from 1 straight to 6.",
+  "description": [
+   "List the pairs a | b with nothing strictly between them: (1, 2), (1, 3), (2, 6), (3, 6).",
+   "Draw 1 at the bottom and 6 at the top, with 2 and 3 between.",
+   "Join each covering pair by an edge going upwards.",
+   "1 | 6 is not drawn: it follows from the path through 2."
+  ],
+  "course": "maths",
+  "lesson": "Partial Orders",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u16.js: Partial Orders"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "divisibility on {1, 2, 3, 6} has exactly 4 covering pairs",
+    "ok": true,
+    "detail": "4"
+   },
+   {
+    "name": "2 and 3 sit level: neither divides the other",
+    "ok": true,
+    "detail": "measured 2"
+   },
+   {
+    "name": "the lesson states \"the Hasse diagram is a diamond\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "4 labels in 640×300"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "4 labels in 380×290"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u16-interval-union": {
+  "title": "Intersection of [0, 1 + 1/n] is [0, 1]",
+  "caption": "Every interval [0, 1 + 1/n] contains [0, 1], and any x > 1 is excluded once 1 + 1/n < x, so the intersection is exactly [0, 1]. The union of [1/n, 2] is (0, 2]: every positive x up to 2 gets in, but 0 never does.",
+  "alt": "A number line from −1 to 3 with the half-open interval (0, 2] for the union and the closed interval [0, 1] for the intersection.",
+  "description": [
+   "The intervals [1/n, 2] grow towards 0 as n increases but never reach it.",
+   "So the union is (0, 2]: 0 excluded, 2 included.",
+   "The intervals [0, 1 + 1/n] shrink towards 1 from above.",
+   "So the intersection is [0, 1]."
+  ],
+  "course": "maths",
+  "lesson": "Union and Intersection",
+  "also": [],
+  "renderer": "number-line",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u16.js: Union and Intersection"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the interval drawn is 0 < x ≤ 2",
+    "ok": true,
+    "detail": "drawn 0)…2; inequality gives {\"from\":0,\"to\":2,\"closed\":[false,true]}"
+   },
+   {
+    "name": "the interval drawn is 0 ≤ x ≤ 1",
+    "ok": true,
+    "detail": "drawn 0]…1; inequality gives {\"from\":0,\"to\":1,\"closed\":[true,true]}"
+   },
+   {
+    "name": "the lesson states \"Intersection = [0, 1]\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 680×124"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 380×124"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u16-set-difference": {
+  "title": "A \\ B, B \\ A and A Δ B",
+  "caption": "With A = {1, 2, 3, 4} and B = {3, 4, 5}: A \\ B = {1, 2} is the part of A outside B, B \\ A = {5} the part of B outside A, and the symmetric difference A Δ B = {1, 2, 5} joins the two, leaving out the shared 3 and 4.",
+  "alt": "A two-circle Venn diagram: 1 and 2 only in A, 3 and 4 in both, 5 only in B.",
+  "description": [
+   "Place each element: 1 and 2 are only in A; 3 and 4 are in both; 5 is only in B.",
+   "A \\ B is what is left of A once the overlap is removed: {1, 2}.",
+   "B \\ A is {5}.",
+   "A Δ B takes both outer parts: {1, 2, 5}."
+  ],
+  "course": "maths",
+  "lesson": "Set Operations",
+  "also": [],
+  "renderer": "venn",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u16.js: Set Operations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "A \\ B = {1, 2} has 2 elements",
+    "ok": true,
+    "detail": "counted 2"
+   },
+   {
+    "name": "B \\ A = {5} has 1 element",
+    "ok": true,
+    "detail": "counted 1"
+   },
+   {
+    "name": "A Δ B = {1, 2, 5} has 3 elements",
+    "ok": true,
+    "detail": "counted 3"
+   },
+   {
+    "name": "the lesson states \"A Δ B = {1, 2, 5}\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 620×290"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 380×260"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "620px wide, shown at 114% (labels 17.1px)"
+   }
+  ]
+ },
+ "maths-u16-triangle-sums": {
+  "title": "1 + 2 + … + n as triangle numbers",
+  "caption": "The sums 1, 1 + 2, 1 + 2 + 3, … are the triangle numbers 1, 3, 6, 10, 15. Each step adds a row of k + 1 dots, which is the inductive step k(k + 1)/2 + (k + 1) = (k + 1)(k + 2)/2.",
+  "alt": "Five triangles of dots with 1, 3, 6, 10 and 15 dots, each one row longer than the last.",
+  "description": [
+   "For n = 1 the sum is 1 = 1 × 2/2: the base case.",
+   "Each new triangle adds a row with one more dot than the last.",
+   "Adding row k + 1 turns k(k + 1)/2 into (k + 1)(k + 2)/2.",
+   "So n(n + 1)/2 holds for every n ≥ 1; for example n = 5 gives 15."
+  ],
+  "course": "maths",
+  "lesson": "Mathematical Induction",
+  "also": [],
+  "renderer": "sequence",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u16.js: Mathematical Induction"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every term follows the rule (nth n*(n+1)/2)",
+    "ok": true,
+    "detail": "1, 3, 6, 10, 15"
+   },
+   {
+    "name": "each triangle figure has exactly the term's dots",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "term 100 is 5050",
+    "ok": true,
+    "detail": "5,050"
+   },
+   {
+    "name": "the lesson states \"n(n + 1)/2\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "12 labels in 680×250"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "12 labels in 380×230"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u26-area-uncertainty": {
+  "title": "Area 50 ± 1.1 cm²",
+  "caption": "The relative uncertainties 1% and 2% combine to 2.24%, so δA ≈ 1.1 cm². The area 50.0 cm² could lie anywhere from 48.9 to 51.1 cm², which the lesson reports as 50 ± 1 cm².",
+  "alt": "A number line from 47 to 53 with the point 50 and the interval from 48.9 to 51.1 marked.",
+  "description": [
+   "Area = 10.0 × 5.0 = 50.0 cm².",
+   "Relative uncertainties 1% and 2% combine to √(1² + 2²) ≈ 2.24%.",
+   "That is 0.0224 × 50 ≈ 1.1 cm².",
+   "So the area lies between 48.9 and 51.1 cm²."
+  ],
+  "course": "maths",
+  "lesson": "Error Propagation",
+  "also": [],
+  "renderer": "number-line",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u26.js: Error Propagation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the interval drawn is 48.9 <= x <= 51.1",
+    "ok": true,
+    "detail": "drawn 48.9]…51.1; inequality gives {\"from\":48.9,\"to\":51.1,\"closed\":[true,true]}"
+   },
+   {
+    "name": "√(1² + 2²)% of 50 = 1.1 cm²",
+    "ok": true,
+    "detail": "1.118034"
+   },
+   {
+    "name": "the lesson states \"2.24%\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "9 labels in 680×134"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "9 labels in 380×134"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u26-circle-regions": {
+  "title": "Regions made by chords: 1, 2, 4, 8, 16, 31",
+  "caption": "Joining n points on a circle gives 1, 2, 4, 8, 16 regions, which suggests 32 for n = 6. Counting carefully gives 31: the differences 1, 2, 4, 8 are doubling, then the next one is 15, and the pattern fails.",
+  "alt": "The six terms 1, 2, 4, 8, 16, 31 with their differences 1, 2, 4, 8, 15 underneath.",
+  "description": [
+   "For n = 1 to 5 the regions are 1, 2, 4, 8, 16.",
+   "The pattern suggests 2⁵ = 32 for n = 6.",
+   "A careful count gives 31, and the last difference is 15, not 16.",
+   "A pattern from five cases is not a proof."
+  ],
+  "course": "maths",
+  "lesson": "Inductive Reasoning",
+  "also": [],
+  "renderer": "sequence",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u26.js: Inductive Reasoning"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every term follows the rule (nth (n^4-6*n^3+23*n^2-18*n+24)/24)",
+    "ok": true,
+    "detail": "1, 2, 4, 8, 16, 31"
+   },
+   {
+    "name": "term 6 is 31",
+    "ok": true,
+    "detail": "31"
+   },
+   {
+    "name": "the lesson states \"31\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "17 labels in 680×154"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "17 labels in 380×154"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u26-four-sides": {
+  "title": "Four sides does not make a square",
+  "caption": "Every square has four sides, so the squares sit inside the four-sided shapes. But a rectangle or a rhombus is also inside the four-sided set and outside the squares: knowing a shape has four sides cannot tell you it is a square.",
+  "alt": "A small set of squares drawn inside a larger set of four-sided shapes, with the rectangle and the rhombus in the larger set only.",
+  "description": [
+   "Draw the set of four-sided shapes.",
+   "Every square lies inside it: if square then four sides.",
+   "A rectangle and a rhombus are four-sided but not squares.",
+   "So 'four sides, therefore square' is invalid."
+  ],
+  "course": "maths",
+  "lesson": "Deductive Reasoning",
+  "also": [],
+  "renderer": "venn",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u26.js: Deductive Reasoning"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every square has four sides",
+    "ok": true,
+    "detail": "counted 0"
+   },
+   {
+    "name": "the rectangle and the rhombus have four sides without being squares",
+    "ok": true,
+    "detail": "counted 2"
+   },
+   {
+    "name": "the lesson states \"rectangle or rhombus\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 620×290"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 380×260"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "620px wide, shown at 114% (labels 17.1px)"
+   }
+  ]
+ },
+ "maths-u26-log-log-line": {
+  "title": "y = 3x² becomes a straight line on log axes",
+  "caption": "Taking logs of y = 3x² gives log y = log 3 + 2 log x. Plotting log y against log x gives a straight line of slope 2 (the exponent) and intercept log 3 ≈ 0.477 (the constant).",
+  "alt": "A straight line rising with slope 2 from intercept 0.477 on the vertical axis, plotted against log x.",
+  "description": [
+   "Take logs of both sides: log y = log 3 + 2 log x.",
+   "Plot log y against log x.",
+   "The graph is a straight line.",
+   "Its slope 2 is the exponent and its intercept log 3 gives the constant 3."
+  ],
+  "course": "maths",
+  "lesson": "Mathematical Visualisation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u26.js: Mathematical Visualisation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the slope is the exponent 2",
+    "ok": true,
+    "detail": "gradient 2.0000"
+   },
+   {
+    "name": "the intercept is log 3 ≈ 0.477",
+    "ok": true,
+    "detail": "y(0) = 0.4771"
+   },
+   {
+    "name": "x = 10 gives y = 300: log 300 = log 3 + 2",
+    "ok": true,
+    "detail": "y(1) = 2.4771"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u26-odd-sums": {
+  "title": "Sums of the first odd numbers",
+  "caption": "1, 1 + 3, 1 + 3 + 5, … give 1, 4, 9, 16, 25. The differences are the odd numbers being added, and the dot squares show each total is a square: the conjecture is that the sum of the first n odd numbers is n².",
+  "alt": "The terms 1, 4, 9, 16, 25 drawn as square arrays of dots, with the differences 3, 5, 7, 9 between them.",
+  "description": [
+   "Add the first n odd numbers for n = 1 to 5: 1, 4, 9, 16, 25.",
+   "Each total is a perfect square, drawn here as an n by n array of dots.",
+   "The differences 3, 5, 7, 9 are the next odd number added each time.",
+   "Conjecture: the sum is n². It still needs proving."
+  ],
+  "course": "maths",
+  "lesson": "Mathematical Reasoning",
+  "also": [],
+  "renderer": "sequence",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u26.js: Mathematical Reasoning"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every term follows the rule (nth n^2)",
+    "ok": true,
+    "detail": "1, 4, 9, 16, 25"
+   },
+   {
+    "name": "each square figure has exactly the term's dots",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "term 10 is 100",
+    "ok": true,
+    "detail": "100"
+   },
+   {
+    "name": "the lesson states \"1, 4, 9, 16, 25\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "16 labels in 680×284"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "16 labels in 380×264"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u26-order-of-accuracy": {
+  "title": "Halving h divides the error by 4",
+  "caption": "The errors 0.016 at h = 0.1 and 0.004 at h = 0.05 both lie on e = 1.6h². Their ratio is 0.016/0.004 = 4 = 2², so the observed order is p = 2, as theory predicts.",
+  "alt": "The curve e = 1.6h² rising from the origin, with marked points (0.05, 0.004) and (0.1, 0.016).",
+  "description": [
+   "Record the error at two step sizes: 0.016 and 0.004.",
+   "Both points lie on the curve e = 1.6h².",
+   "Their ratio is 4, and 4 = 2^p gives p = 2.",
+   "The observed order matches the expected second order."
+  ],
+  "course": "maths",
+  "lesson": "Model Verification",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u26.js: Model Verification"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "at h = 0.1 the error is 0.016",
+    "ok": true,
+    "detail": "y(0.1) = 0.016"
+   },
+   {
+    "name": "at h = 0.05 the error is 0.004",
+    "ok": true,
+    "detail": "y(0.05) = 0.004"
+   },
+   {
+    "name": "the ratio 0.016/0.004 is 4 = 2²",
+    "ok": true,
+    "detail": "1.6*x^2/(1.6*(x/2)^2) at 0.1 = 4; expected 4–4"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u26-screening-tree": {
+  "title": "Most positives are false",
+  "caption": "Of 1000 people 9 are ill and test positive, but 98.99999999999997 healthy people also test positive (10% of 990). Only 9 of 107.99999999999997 positives are true: 8.3%, about 8%.",
+  "alt": "A probability tree: ill with probability 1/100 or healthy 99/100, then positive or negative on each branch, listing the four outcomes.",
+  "description": [
+   "Split by prevalence: 1/100 ill, 99/100 healthy.",
+   "Ill people test positive with probability 9/10.",
+   "Healthy people test positive with probability 1/10.",
+   "True positives 9/1000 against false positives 99/1000: 9 out of 108 positives are true."
+  ],
+  "course": "maths",
+  "lesson": "Quantitative Reasoning",
+  "also": [],
+  "renderer": "prob-tree",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u26.js: Quantitative Reasoning"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the branches from every point add up to 1",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "P(ill, +) = 9/1000",
+    "ok": true,
+    "detail": "multiplied: 9/1000"
+   },
+   {
+    "name": "P(healthy, +) = 99/1000",
+    "ok": true,
+    "detail": "multiplied: 99/1000"
+   },
+   {
+    "name": "P = 108/1000",
+    "ok": true,
+    "detail": "added: 27/250"
+   },
+   {
+    "name": "the lesson states \"9/(9 + 99)\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "18 labels in 680×218"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "18 labels in 380×202"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u43-beta-momentum": {
+  "title": "Speed against momentum separates the hadrons",
+  "caption": "At the same momentum a heavier particle is slower. At p = 0.5 GeV the pion has β = 0.963 and the proton β = 0.47, so the proton's dE/dx ∝ 1/β² is about 4× larger. By a few GeV all three have β near 1: dE/dx and time of flight lose their power, and Cherenkov detectors take over.",
+  "alt": "Speed β against momentum for pion, kaon and proton: the three curves rise from zero and approach 1, the pion fastest and the proton slowest, with 0.963 and 0.470 marked at 0.5 GeV.",
+  "description": [
+   "β = p/E = p/√(p² + m²), with m² = 0.0195, 0.244 and 0.880 GeV² for the pion, kaon and proton.",
+   "At p = 0.5 GeV: pion E = 0.519 GeV, β = 0.963; proton E = 1.063 GeV, β = 0.47.",
+   "dE/dx ∝ 1/β² makes the proton's loss about 4 times the pion's.",
+   "At high p every curve tends to β = 1."
+  ],
+  "course": "physics",
+  "lesson": "Particle identification",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u43.js: Particle identification"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "pion β = 0.963 at 0.5 GeV",
+    "ok": true,
+    "detail": "y(0.5) = 0.9631"
+   },
+   {
+    "name": "proton β = 0.47 at 0.5 GeV",
+    "ok": true,
+    "detail": "y(0.5) = 0.4704"
+   },
+   {
+    "name": "tends to 1 at high momentum",
+    "ok": true,
+    "detail": "x/sqrt(x^2+0.88) at 3 = 0.95; expected 0.95–1"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u43-calibration": {
+  "title": "Calibrating the energy scale from two peaks",
+  "caption": "Two known lines fix the straight line E = a·ADC + b: a = (1332 − 662)/(3240 − 1650) ≈ 0.421 keV per count and b ≈ -33 keV. Any ADC value then reads as an energy; 2500 counts is ≈ 1020 keV. Checking other known lines against the line is the linearity test.",
+  "alt": "Energy in keV against ADC count: a straight line through the 662 keV peak at 1650 and the 1332 keV peak at 3240, with 2500 counts read as about 1020 keV.",
+  "description": [
+   "Slope a = (1332 − 662)/(3240 − 1650) = 670/1590 ≈ 0.421 keV per ADC count.",
+   "Intercept b = 662 − 0.421 × 1650 ≈ -33 keV.",
+   "Reading ADC = 2500: E ≈ 0.421 × 2500 − 33 ≈ 1020 keV."
+  ],
+  "course": "physics",
+  "lesson": "Detector calibration",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u43.js: Detector calibration"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "662 keV at ADC 1650",
+    "ok": true,
+    "detail": "y(1650) = 662.0006"
+   },
+   {
+    "name": "1332 keV at ADC 3240",
+    "ok": true,
+    "detail": "y(3240) = 1332.0012"
+   },
+   {
+    "name": "a = 0.421 keV per count",
+    "ok": true,
+    "detail": "gradient 0.4214"
+   },
+   {
+    "name": "2500 counts ≈ 1020 keV",
+    "ok": true,
+    "detail": "y(2500) = 1020.177"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u43-compton-edge": {
+  "title": "Where the Compton edge comes from",
+  "caption": "A 662 keV photon that scatters through angle θ hands the electron less than all its energy; the most is at θ = 180°, a backscatter. With 2E/m_ec² = 2.59, that maximum is 478 keV, the Compton edge: the Compton continuum in a scintillator spectrum stops there, short of the photopeak at 662 keV.",
+  "alt": "Electron recoil energy against photon scattering angle for 662 keV gamma rays, rising from zero at 0 degrees to 478 keV at 180 degrees, below the 662 keV photon energy line.",
+  "description": [
+   "Electron recoil energy T = E·ε(1 − cos θ)/(1 + ε(1 − cos θ)), with ε = E/m_ec² = 662/511.",
+   "At θ = 180° this is E(2ε)/(1 + 2ε) = 662 × 2.59/3.59 ≈ 478 keV.",
+   "Smaller scattering angles give smaller recoil energies, filling the continuum below the edge.",
+   "The photopeak, full absorption at 662 keV, lies above the edge."
+  ],
+  "course": "physics",
+  "lesson": "Scintillation detectors",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u43.js: Scintillation detectors"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Compton edge 478 keV at 180°",
+    "ok": true,
+    "detail": "y(180) = 477.6501"
+   },
+   {
+    "name": "the largest recoil energy is the backscatter",
+    "ok": true,
+    "detail": "found (180, 477.65)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u43-dead-time": {
+  "title": "A Geiger counter loses counts at high rates",
+  "caption": "With τ = 100 μs the counter reads m = n/(1 + nτ), which bends below the true rate n and can never exceed 1/τ = 10000 counts s⁻¹. A reading of 2000 counts s⁻¹ means the true rate is n = m/(1 − mτ) = 2500 counts s⁻¹: a fifth of the counts were missed.",
+  "alt": "Measured rate against true rate: a curve that bends away from the straight no-loss line and levels off towards a dashed limit of 10 000 counts per second, with the point (2500, 2000) marked.",
+  "description": [
+   "Non-paralysable dead time: n = m/(1 − mτ), so m = n/(1 + nτ).",
+   "Reading m = 2000 counts s⁻¹: mτ = 0.2, so n = 2000/0.8 = 2500 counts s⁻¹.",
+   "The dashed line m = n is a counter with no dead time.",
+   "However fast the source, m stays below 1/τ = 10000 counts s⁻¹."
+  ],
+  "course": "physics",
+  "lesson": "Geiger–Müller counters",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u43.js: Geiger–Müller counters"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "true rate 2500 reads 2000",
+    "ok": true,
+    "detail": "y(2.5) = 2"
+   },
+   {
+    "name": "n = m/(1 − mτ) = 2500",
+    "ok": true,
+    "detail": "y(2) = 2.5"
+   },
+   {
+    "name": "the reading stays below 1/τ",
+    "ok": true,
+    "detail": "x/(1+0.1*x) at 20 = 6.67; expected 0–10"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u43-significance": {
+  "title": "S/√B overstates the significance when S is large",
+  "caption": "For B = 16 the simple S/√B and the Asimov formula agree when S ≪ B but part company as S grows. At S = 25 they give 6.25 and 5.2: the Asimov result is the one to quote when S is comparable to B, because it accounts for the Poisson spread of the background.",
+  "alt": "Significance in sigma against signal counts S for background 16: a straight line S over root B and a lower curved Asimov line that separate as S grows, with 6.25 and 5.2 marked at S equal 25.",
+  "description": [
+   "Simple: Z = S/√B = S/4 for B = 16, a straight line.",
+   "Asimov: Z = √(2[(S + B)ln(1 + S/B) − S]); at S = 25, √(2[41 × 0.941 − 25]) ≈ 5.2.",
+   "At S = 25 the simple formula gives 6.25σ, about 20% too high.",
+   "For small S the two curves coincide."
+  ],
+  "course": "physics",
+  "lesson": "Statistical significance of discoveries",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u43.js: Statistical significance of discoveries"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "S/√B = 6.25 at S = 25",
+    "ok": true,
+    "detail": "y(25) = 6.25"
+   },
+   {
+    "name": "Asimov Z = 5.2 at S = 25",
+    "ok": true,
+    "detail": "y(25) = 5.2116"
+   },
+   {
+    "name": "stays below S/√B (10 at S = 40)",
+    "ok": true,
+    "detail": "sqrt(2*((x+16)*log(1+x/16)-x)) at 40 = 7.77; expected 0–10"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u43-tof-separation": {
+  "title": "Time-of-flight separation falls as 1/p²",
+  "caption": "Over L = 3.7 m a kaon and a pion of the same momentum arrive Δt ≈ L(m_K² − m_π²)/(2cp²) apart: 1.39 ns at p = 1 GeV, but only 0.15 ns at 3 GeV. The exact relativistic difference (dashed) is smaller at low p, where the approximation p ≫ m fails, but follows the same 1/p² fall. TOF is a low-momentum technique.",
+  "alt": "Pion–kaon flight time difference in nanoseconds against momentum from 0.5 to 3 GeV, falling steeply; the approximate curve lies above the exact dashed curve at low momentum, with 1.39 ns marked at 1 GeV.",
+  "description": [
+   "β = L/(ct); for the same p the lighter particle is faster.",
+   "Approximate: Δt = 3.7 × 0.225/(2 × 3 × 10⁸ × p²) with m_K² − m_π² = 0.244 − 0.019 = 0.225 GeV².",
+   "p = 1 GeV: 1.39 ns. With 80 ps resolution this is about 17σ.",
+   "p = 3 GeV: 0.15 ns, nine times smaller."
+  ],
+  "course": "physics",
+  "lesson": "Time-of-flight measurements",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u43.js: Time-of-flight measurements"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Δt ≈ 1.39 ns at 1 GeV",
+    "ok": true,
+    "detail": "y(1) = 1.3875"
+   },
+   {
+    "name": "falls to 1/9 at 3 GeV",
+    "ok": true,
+    "detail": "y(3) = 0.1542"
+   },
+   {
+    "name": "exact 1.31 ns at 1 GeV",
+    "ok": true,
+    "detail": "y(1) = 1.306"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }

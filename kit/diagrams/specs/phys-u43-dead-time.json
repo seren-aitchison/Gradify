@@ -1,0 +1,118 @@
+{
+ "id": "phys-u43-dead-time",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u43",
+ "lesson": "Geiger–Müller counters",
+ "title": "A Geiger counter loses counts at high rates",
+ "caption": "With τ = 100 μs the counter reads m = n/(1 + nτ), which bends below the true rate n and can never exceed 1/τ = 10000 counts s⁻¹. A reading of 2000 counts s⁻¹ means the true rate is n = m/(1 − mτ) = 2500 counts s⁻¹: a fifth of the counts were missed.",
+ "alt": "Measured rate against true rate: a curve that bends away from the straight no-loss line and levels off towards a dashed limit of 10 000 counts per second, with the point (2500, 2000) marked.",
+ "description": [
+  "Non-paralysable dead time: n = m/(1 − mτ), so m = n/(1 + nτ).",
+  "Reading m = 2000 counts s⁻¹: mτ = 0.2, so n = 2000/0.8 = 2500 counts s⁻¹.",
+  "The dashed line m = n is a counter with no dead time.",
+  "However fast the source, m stays below 1/τ = 10000 counts s⁻¹."
+ ],
+ "range": {
+  "x": [
+   0,
+   20
+  ],
+  "y": [
+   0,
+   11
+  ]
+ },
+ "ticks": [
+  [
+   5,
+   10,
+   15,
+   20
+  ],
+  [
+   2,
+   4,
+   6,
+   8,
+   10
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "true rate n / 10³ counts s⁻¹",
+  "measured rate m / 10³ counts s⁻¹"
+ ],
+ "curves": [
+  {
+   "expr": "x",
+   "domain": [
+    0,
+    11
+   ],
+   "colour": "a4",
+   "dash": "6 5",
+   "label": "no dead time",
+   "labelAt": [
+    8.2,
+    9.6
+   ],
+   "anchor": "end"
+  },
+  {
+   "expr": "x/(1+0.1*x)",
+   "colour": "a1",
+   "label": "measured m",
+   "labelAt": [
+    14,
+    5.4
+   ]
+  }
+ ],
+ "marks": [
+  {
+   "y": 10,
+   "label": "limit 1/τ"
+  }
+ ],
+ "points": [
+  {
+   "x": 2.5,
+   "y": 2,
+   "colour": "a2",
+   "label": "n = 2500, m = 2000",
+   "dx": 10,
+   "dy": 22
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "x/(1+0.1*x)",
+   "x": 2.5,
+   "y": 2,
+   "name": "true rate 2500 reads 2000"
+  },
+  {
+   "type": "point",
+   "expr": "x/(1-0.1*x)",
+   "x": 2,
+   "y": 2.5,
+   "name": "n = m/(1 − mτ) = 2500"
+  },
+  {
+   "type": "value",
+   "expr": "x/(1+0.1*x)",
+   "x": 20,
+   "between": [
+    0,
+    10
+   ],
+   "name": "the reading stays below 1/τ"
+  }
+ ]
+}
