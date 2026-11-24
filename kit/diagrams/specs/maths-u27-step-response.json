@@ -1,0 +1,107 @@
+{
+ "id": "maths-u27-step-response",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u27",
+ "lesson": "Simulink",
+ "title": "Step response of 1/(2s + 1)",
+ "caption": "A first-order system with time constant 2 s responds to a unit step with y = 1 − e^{−t/2}. At t = 2 s it has reached 1 − e^{−1} = 0.632 of the final value 1, about 63%.",
+ "alt": "A curve rising from 0 towards 1, passing the point (2, 0.63) marked by a dashed guide.",
+ "description": [
+  "A step input drives the transfer function 1/(2s + 1).",
+  "The output is y = 1 − e^{−t/2}.",
+  "At t = 2 s, y = 1 − e⁻¹ ≈ 0.632.",
+  "The response is about 63% of the way to its final value."
+ ],
+ "range": {
+  "x": [
+   0,
+   10
+  ],
+  "y": [
+   0,
+   1.2
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   4,
+   6,
+   8,
+   10
+  ],
+  [
+   0.5,
+   1
+  ]
+ ],
+ "grid": [
+  2,
+  0.5
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "t (s)",
+  "output"
+ ],
+ "curves": [
+  {
+   "expr": "1-exp(-x/2)",
+   "colour": "a1",
+   "domain": [
+    0,
+    10
+   ]
+  }
+ ],
+ "marks": [
+  {
+   "y": 1,
+   "label": "final value 1"
+  },
+  {
+   "x": 2,
+   "to": 0.6321205588285577
+  }
+ ],
+ "points": [
+  {
+   "x": 2,
+   "y": 0.6321205588285577,
+   "label": "63% at t = 2",
+   "colour": "a2",
+   "dx": 10,
+   "dy": 22
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "1-exp(-x/2)",
+   "x": 2,
+   "y": 0.6321205588285577,
+   "name": "y(2) = 1 − e⁻¹ ≈ 0.632"
+  },
+  {
+   "type": "point",
+   "expr": "1-exp(-x/2)",
+   "x": 0,
+   "y": 0,
+   "name": "the output starts at 0"
+  },
+  {
+   "type": "slope",
+   "expr": "1-exp(-x/2)",
+   "x": 0,
+   "value": 0.5,
+   "name": "the initial slope is 1/τ = 0.5"
+  }
+ ],
+ "fromLesson": [
+  "63%"
+ ]
+}

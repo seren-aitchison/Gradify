@@ -1,0 +1,108 @@
+{
+ "id": "maths-u21-bcr-pv-benefits",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u21",
+ "lesson": "Cost-Benefit Analysis",
+ "title": "Discounted benefits against the £10m cost",
+ "caption": "The running present value of the £1.2m benefits passes the £10m cost after about 10.0 years and reaches £13.82m by year 15, so the benefit–cost ratio is 13.82/10 ≈ 1.38.",
+ "alt": "A rising, flattening curve of cumulative discounted benefits that crosses the £10m cost line near year 10 and ends at £13.82m at year 15.",
+ "description": [
+  "The annuity factor at 3.5% for 15 years is (1 − 1.035^−15)/0.035 ≈ 11.517.",
+  "PV of benefits = 1.2 × 11.517 ≈ £13.82m.",
+  "BCR = 13.82/10 ≈ 1.38, so benefits exceed costs."
+ ],
+ "range": {
+  "x": [
+   0,
+   15
+  ],
+  "y": [
+   0,
+   15
+  ]
+ },
+ "ticks": [
+  [
+   3,
+   6,
+   9,
+   12,
+   15
+  ],
+  [
+   5,
+   10,
+   15
+  ]
+ ],
+ "grid": [
+  3,
+  5
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "years",
+  "£ million"
+ ],
+ "curves": [
+  {
+   "expr": "1.2*(1-1.035^(0-x))/0.035",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "y": 10,
+   "label": "cost £10m"
+  }
+ ],
+ "points": [
+  {
+   "x": 15,
+   "y": 13.82089307572097,
+   "label": "£13.82m",
+   "colour": "a2",
+   "dx": -8,
+   "dy": -12,
+   "anchor": "end"
+  },
+  {
+   "x": 10.02401700153878,
+   "y": 10,
+   "label": "10.0 years",
+   "colour": "a4",
+   "dx": 10,
+   "dy": 22
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "1.2*(1-1.035^(0-x))/0.035",
+   "x": 15,
+   "y": 13.82089307572097,
+   "name": "after 15 years the benefits are worth £13.82m"
+  },
+  {
+   "type": "point",
+   "expr": "1.2*(1-1.035^(0-x))/0.035",
+   "x": 10.02401700153878,
+   "y": 10,
+   "name": "discounted benefits equal the £10m cost"
+  },
+  {
+   "type": "point",
+   "expr": "13.82/10",
+   "x": 0,
+   "y": 1.382,
+   "name": "BCR = 13.82/10 ≈ 1.38"
+  }
+ ],
+ "fromLesson": [
+  "1.38"
+ ]
+}

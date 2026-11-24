@@ -1,0 +1,136 @@
+{
+ "id": "maths-u25-consensus-three",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u25",
+ "lesson": "Distributed Control",
+ "title": "Three agents agree on the average",
+ "caption": "Each agent moves towards its neighbours: x₁ = 3 − 3e^{−t}, x₂ = 3, x₃ = 3 + 3e^{−t}. All three meet at (0 + 3 + 6)/3 = 3.",
+ "alt": "Three curves starting at 0, 3 and 6 and converging to 3: the middle agent stays at 3, the others approach it.",
+ "description": [
+  "Agents 1–2–3 start at 0, 3 and 6.",
+  "The graph is connected and undirected, so the states converge to the average.",
+  "(0 + 3 + 6)/3 = 3: every agent ends at 3."
+ ],
+ "range": {
+  "x": [
+   0,
+   5
+  ],
+  "y": [
+   -0.3,
+   6.5
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ]
+ ],
+ "grid": [
+  1,
+  1
+ ],
+ "axisLabels": [
+  "t",
+  "state"
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "curves": [
+  {
+   "expr": "3-3*exp(-x)",
+   "colour": "a1"
+  },
+  {
+   "expr": "3",
+   "colour": "a2"
+  },
+  {
+   "expr": "3+3*exp(-x)",
+   "colour": "a4"
+  }
+ ],
+ "marks": [
+  {
+   "y": 3,
+   "label": "average 3"
+  }
+ ],
+ "legend": [
+  [
+   "agent 3",
+   "a4"
+  ],
+  [
+   "agent 2",
+   "a2"
+  ],
+  [
+   "agent 1",
+   "a1"
+  ]
+ ],
+ "legendData": [
+  2.6,
+  5.6
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "3-3*exp(-x)",
+   "x": 0,
+   "y": 0,
+   "name": "agent 1 starts at 0"
+  },
+  {
+   "type": "point",
+   "expr": "3+3*exp(-x)",
+   "x": 0,
+   "y": 6,
+   "name": "agent 3 starts at 6"
+  },
+  {
+   "type": "slope",
+   "expr": "3-3*exp(-x)",
+   "x": 0,
+   "value": 3,
+   "name": "agent 1's initial rate x₂ − x₁ = 3"
+  },
+  {
+   "type": "slope",
+   "expr": "3+3*exp(-x)",
+   "x": 0,
+   "value": -3,
+   "name": "agent 3's initial rate x₂ − x₃ = −3"
+  },
+  {
+   "type": "value",
+   "expr": "3-3*exp(-x)",
+   "x": 5,
+   "between": [
+    2.97,
+    3
+   ],
+   "name": "agent 1 approaches 3"
+  }
+ ],
+ "fromLesson": [
+  "(0 + 3 + 6)/3 = 3"
+ ]
+}

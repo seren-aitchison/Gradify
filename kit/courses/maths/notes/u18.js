@@ -26,6 +26,7 @@ X: A farmer has 100 m of fencing for a rectangle against a wall (wall on one sid
 > Variables: width x (two sides) and length y (one side); constraint 2x + y = 100
 > Area A = xy = x(100 − 2x); dA/dx = 100 − 4x = 0 gives x = 25
 > y = 50, so the maximum area is 25 × 50 = 1250 m^{2}
+D: maths-u18-fence-area
 K: Optimisation problems have variables, an objective and constraints; their class (linear, convex, integer, nonconvex) determines the method; local and global optima can differ.
 !: Forgetting to check that a stationary point is a maximum and is feasible.
 Q: How do you turn a maximisation into a minimisation? | Minimise the negative of the objective.
@@ -103,6 +104,7 @@ X: Minimise f(x) = (x − 3)^{2} subject to 0 ≤ x ≤ 2.
 > Unconstrained minimum x = 3 is infeasible
 > f is decreasing on [0, 2], so check the endpoint x = 2
 > Minimum f(2) = 1 at x = 2, where the constraint x ≤ 2 is active
+D: maths-u18-feasible-endpoint
 K: Constraints shape the feasible set; optima often lie on the boundary with active constraints; substitution, multipliers, penalties and projection handle them.
 !: Taking the unconstrained optimum without checking it's feasible.
 Q: What is an active constraint? | One that holds with equality at the point.
@@ -139,6 +141,7 @@ X: Maximise f = xy subject to x + y = 10.
 > L = xy − λ(x + y − 10); ∂L/∂x = y − λ = 0 and ∂L/∂y = x − λ = 0
 > So x = y = λ, and x + y = 10 gives x = y = 5
 > Maximum f = 25, with λ = 5: raising the total to 11 increases the maximum by about 5
+D: maths-u18-lagrange-tangent
 K: At an equality-constrained optimum ∇f = λ∇h; solve ∇L = 0 with the constraint; λ is the shadow price of the constraint; check candidates and qualifications.
 !: Forgetting to include the constraint equation itself when solving.
 Q: What is the geometric meaning of the Lagrange condition? | ∇f is parallel to ∇h.
@@ -175,6 +178,7 @@ X: Minimise x^{2} subject to x ≥ 1, written as g(x) = 1 − x ≤ 0.
 > Stationarity: 2x − μ = 0. Complementary slackness: μ(1 − x) = 0
 > Case μ = 0 gives x = 0, which is infeasible; so the constraint is active, x = 1
 > Then μ = 2 ≥ 0 ✓, so x* = 1 with minimum value 1
+D: maths-u18-kkt-boundary
 K: KKT conditions are stationarity, primal and dual feasibility and complementary slackness; they need a constraint qualification; for convex problems they are sufficient.
 !: Allowing negative multipliers for ≤ constraints in a minimisation.
 Q: What does complementary slackness say? | Each multiplier is zero unless its constraint is active.
@@ -248,6 +252,7 @@ X: Find the local minima of f(x) = x^{4} − 4x^{2} + x and say which is global.
 > f′(x) = 4x^{3} − 8x + 1 = 0 has roots near x ≈ −1.47, 0.13 and 1.35
 > f″ > 0 at −1.47 and 1.35 (minima); f″ < 0 at 0.13 (maximum)
 > f(−1.47) ≈ −5.44 and f(1.35) ≈ −2.62, so x ≈ −1.47 is the global minimum
+D: maths-u18-two-minima
 P: **Investigate with the lab.** On the two-valley function, reach both minima from different starting points (the lab's challenge).
 IX: descent
 K: Nonconvex problems have multiple local minima and saddles and are often NP-hard; multi-start, branch and bound, relaxations and metaheuristics help; deep learning is nonconvex yet trainable.
@@ -360,6 +365,7 @@ X: Which of A = (cost 3, emissions 5), B = (4, 4), C = (5, 5) and D = (2, 7) are
 > C is dominated by B (4 ≤ 5 and 4 ≤ 5, strictly better in both)
 > A, B and D: none is better in both objectives than another
 > Pareto optimal: A, B and D
+D: maths-u18-pareto-front
 K: Pareto optimality means no objective can improve without another worsening; weighted sums miss non-convex parts of the front; ε-constraints and evolutionary methods map it.
 !: Thinking a single "optimal" answer exists without stating preferences.
 Q: What is the Pareto front? | The set of best achievable trade-offs between objectives.
@@ -503,6 +509,7 @@ X: Maximise 3x + 2y subject to x + y ≤ 4, x + 3y ≤ 6, x, y ≥ 0.
 > Vertices: (0, 0), (4, 0), (0, 2) and the intersection of x + y = 4 with x + 3y = 6, which is (3, 1)
 > Objective values: 0, 12, 4 and 11
 > The optimum is 12 at (4, 0)
+D: maths-u18-lp-vertices
 K: LPs optimise linear objectives over polyhedra; optima occur at vertices; graphs solve 2D cases; every LP has a dual with equal optimal value and shadow-price interpretation.
 !: Checking only intersection points that lie outside the feasible region.
 Q: Where does an LP's optimum occur, if it exists? | At a vertex of the feasible region (possibly along an edge too).
@@ -1012,6 +1019,7 @@ X: At T = 10, a move worsens the cost by Δ = 5. What's the acceptance probabili
 > At T = 10: e^{−5/10} = e^{−0.5} ≈ 0.61
 > At T = 1: e^{−5} ≈ 0.0067
 > Cooling makes uphill moves much rarer
+D: maths-u18-annealing-acceptance
 K: Simulated annealing accepts worse moves with probability e^{−Δ/T}; temperature controls exploration; slow cooling converges in theory, geometric cooling works in practice.
 !: Cooling too fast, which turns it into greedy local search.
 Q: What is the acceptance probability for an improving move? | 1.
@@ -1192,6 +1200,7 @@ X: Customers arrive at 8 per hour; one server serves 10 per hour. Find ρ, L and
 > ρ = 8/10 = 0.8
 > L = 0.8/0.2 = 4 customers
 > W = 1/(10 − 8) = 0.5 hours; check Little's law: L = λW = 8 × 0.5 = 4 ✓
+D: maths-u18-queue-blowup
 K: Kendall notation names queues; M/M/1 gives L = ρ/(1 − ρ) and W = 1/(μ − λ); Little's law L = λW is general; waits explode as utilisation nears 1; pooling helps.
 !: Planning for 100% utilisation, which makes queues grow without bound.
 Q: What does Little's law state? | L = λW.
@@ -1227,6 +1236,7 @@ X: D = 1200 units/year, S = £50 per order, H = £3 per unit per year. Find the 
 > EOQ = √(2 × 1200 × 50/3) = √40000 = 200 units
 > Orders per year = 1200/200 = 6
 > Ordering cost 6 × 50 = £300 equals holding cost (200/2) × 3 = £300
+D: maths-u18-eoq-curves
 K: EOQ balances ordering and holding costs; reorder points add safety stock for uncertain demand; the newsvendor orders to the critical ratio; cost curves are flat near the optimum.
 !: Ignoring lead-time variability when setting safety stock.
 Q: At the EOQ, how do ordering and holding costs compare? | They're equal.

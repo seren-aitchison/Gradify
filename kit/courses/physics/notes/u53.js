@@ -352,6 +352,7 @@ H: Applications
 P: Earthquake hazard assessment and early warning; volcano monitoring; resource exploration (minerals, geothermal, carbon storage sites); groundwater management; nuclear test monitoring (seismic networks distinguish explosions from quakes); and understanding planetary interiors on Mars and the Moon.
 X: Seismic S-waves travel at 4 km s^{-1} and P-waves at 7 km s^{-1}. Distance if S arrives 30 s after P?
 > d(1/4 − 1/7) = 30 ⇒ d × 0.107 = 30 ⇒ d ≈ 280 km
+D: phys-u53-seismic
 X: A rock has daughter/parent ratio D/P = 1 for a decay with T_{1/2} = 1.25 Gyr. Age?
 > One half-life: 1.25 Gyr
 K: Geophysics uses seismic waves, gravity, magnetism and geodesy to probe Earth's interior and processes.
@@ -409,6 +410,7 @@ P: Traffic jams emerge spontaneously from driver interactions (phantom jams). Ec
 E: Y ∝ N^{β}, β ≈ 1.15 for innovation in cities :: urban scaling
 X: A city 10× larger: how much more total innovation output with β = 1.15?
 > 10^{1.15} ≈ 14×: per capita ~1.4× more
+D: phys-u53-scaling
 X: Why do phantom traffic jams form?
 > Small speed fluctuations amplify as drivers over-brake; above a critical density, stop-and-go waves propagate backward
 K: Complex systems show emergence, nonlinearity and scaling; physics provides models to understand collective behaviour.

@@ -1,0 +1,151 @@
+{
+ "id": "maths-u18-lp-vertices",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u18",
+ "lesson": "Linear Programming",
+ "title": "The feasible region and its vertices",
+ "caption": "The constraints x + y ≤ 4 and x + 3y ≤ 6 with x, y ≥ 0 bound a quadrilateral with vertices (0, 0), (4, 0), (3, 1) and (0, 2). The objective 3x + 2y takes 0, 12, 11 and 4 there, so the optimum is 12 at the vertex (4, 0).",
+ "alt": "A shaded quadrilateral with corners (0, 0), (4, 0), (3, 1) and (0, 2), each labelled with the value of 3x + 2y, the largest 12 at (4, 0).",
+ "description": [
+  "Draw x + y = 4 and x + 3y = 6 with the axes: they meet at (3, 1).",
+  "The feasible region is the quadrilateral with vertices (0, 0), (4, 0), (3, 1), (0, 2).",
+  "Evaluate 3x + 2y at each vertex: 0, 12, 11, 4.",
+  "An optimum of a linear objective is at a vertex: here (4, 0) with value 12."
+ ],
+ "points": {
+  "O": [
+   0,
+   0
+  ],
+  "P": [
+   4,
+   0
+  ],
+  "Q": [
+   3,
+   1
+  ],
+  "R": [
+   0,
+   2
+  ]
+ },
+ "hide": [
+  "O",
+  "P",
+  "Q",
+  "R"
+ ],
+ "polygons": [
+  {
+   "pts": [
+    "O",
+    "P",
+    "Q",
+    "R"
+   ],
+   "colour": "a1",
+   "opacity": 0.14
+  }
+ ],
+ "segments": [],
+ "circles": [
+  {
+   "centre": "P",
+   "r": 0.14,
+   "colour": "a2"
+  }
+ ],
+ "grid": {
+  "step": 1,
+  "axes": true,
+  "labels": 1
+ },
+ "view": {
+  "x": [
+   -0.8,
+   5.5
+  ],
+  "y": [
+   -1,
+   3.2
+  ]
+ },
+ "height": [
+  330,
+  300
+ ],
+ "notes": [
+  {
+   "at": [
+    0.35,
+    0.3
+   ],
+   "text": "0",
+   "colour": "ink",
+   "size": 13
+  },
+  {
+   "at": [
+    4,
+    -0.5
+   ],
+   "text": "(4, 0): 12",
+   "colour": "a2",
+   "size": 13
+  },
+  {
+   "at": [
+    3.3,
+    1.5
+   ],
+   "text": "(3, 1): 11",
+   "colour": "ink",
+   "size": 13
+  },
+  {
+   "at": [
+    0.7,
+    2.4
+   ],
+   "text": "(0, 2): 4",
+   "colour": "ink",
+   "size": 13
+  }
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "polygon": [
+    "O",
+    "P",
+    "Q",
+    "R"
+   ],
+   "value": 5,
+   "name": "the feasible region has area 5"
+  },
+  {
+   "type": "value",
+   "expr": "3*4+2*0",
+   "value": 12,
+   "name": "3x + 2y = 12 at (4, 0), the largest vertex value"
+  },
+  {
+   "type": "value",
+   "expr": "3*3+2*1",
+   "value": 11,
+   "name": "3x + 2y = 11 at (3, 1)"
+  },
+  {
+   "type": "value",
+   "expr": "3+3*1",
+   "value": 6,
+   "name": "(3, 1) satisfies x + 3y = 6"
+  }
+ ],
+ "fromLesson": [
+  "The optimum is 12 at (4, 0)"
+ ]
+}

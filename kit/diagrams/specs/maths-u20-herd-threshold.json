@@ -1,0 +1,52 @@
+{
+ "id": "maths-u20-herd-threshold",
+ "renderer": "number-line",
+ "course": "maths",
+ "unit": "u20",
+ "lesson": "Epidemiological Modelling",
+ "title": "Measles: the threshold and the coverage needed",
+ "caption": "With R₀ = 15 the immune fraction must reach 1 − 1/15 ≈ 0.933. A vaccine that is 97% effective needs coverage 0.933/0.97 ≈ 0.962 to get there.",
+ "alt": "A number line from 0.9 to 1 with two marked points: 0.933, the herd immunity threshold, and 0.962, the vaccine coverage needed.",
+ "description": [
+  "R₀ = 15, so the herd immunity threshold is 1 − 1/15 ≈ 0.933.",
+  "A 97%-effective vaccine protects 0.97 of those covered.",
+  "Coverage 0.933/0.97 ≈ 0.962 is needed: higher than the threshold itself."
+ ],
+ "range": [
+  0.9,
+  1
+ ],
+ "ticks": {
+  "step": 0.02
+ },
+ "points": [
+  {
+   "value": 0.9333333333333333,
+   "expr": "14/15",
+   "label": "threshold 0.933"
+  },
+  {
+   "value": 0.9621993127147767,
+   "expr": "(14/15)/0.97",
+   "label": "coverage 0.962",
+   "below": true
+  }
+ ],
+ "checks": [
+  {
+   "type": "value",
+   "expr": "1-1/15",
+   "value": 0.9333333333333333,
+   "name": "threshold 1 − 1/15 = 0.933"
+  },
+  {
+   "type": "value",
+   "expr": "(14/15)/0.97",
+   "value": 0.9621993127147767,
+   "name": "coverage 0.933/0.97 = 0.962"
+  }
+ ],
+ "fromLesson": [
+  "Threshold = 1 − 1/15 ≈ 0.933"
+ ]
+}

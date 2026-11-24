@@ -1,0 +1,99 @@
+{
+ "id": "maths-u21-gordon-value",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u21",
+ "lesson": "Equity Valuation",
+ "title": "Share value against required return",
+ "caption": "With a £2 dividend growing 4%, the value is 2/(r − 0.04): £40 at r = 9%. A small rise in the required return cuts the value sharply, and as r approaches the growth rate the value explodes.",
+ "alt": "A steeply falling curve of share value against required return, passing through (9%, £40).",
+ "description": [
+  "P₀ = D₁/(r − g) with D₁ = £2 and g = 4%.",
+  "At r = 9% the value is 2/0.05 = £40.",
+  "The curve falls steeply as r rises towards the right and rises sharply as r nears 4%."
+ ],
+ "range": {
+  "x": [
+   0.05,
+   0.15
+  ],
+  "y": [
+   0,
+   130
+  ]
+ },
+ "ticks": [
+  [
+   0.06,
+   0.08,
+   0.1,
+   0.12,
+   0.14
+  ],
+  [
+   20,
+   40,
+   60,
+   80,
+   100,
+   120
+  ]
+ ],
+ "grid": [
+  0.02,
+  20
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "required return r",
+  "value £"
+ ],
+ "curves": [
+  {
+   "expr": "2/(x-0.04)",
+   "colour": "a1",
+   "domain": [
+    0.0516,
+    0.15
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 0.09,
+   "y": 40,
+   "label": "9%: £40",
+   "colour": "a2",
+   "dx": 12,
+   "dy": -12
+  }
+ ],
+ "marks": [
+  {
+   "x": 0.09,
+   "to": 40
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "2/(x-0.04)",
+   "x": 0.09,
+   "y": 40,
+   "name": "at 9% the share is worth 2/0.05 = £40"
+  },
+  {
+   "type": "point",
+   "expr": "2/(x-0.04)",
+   "x": 0.06,
+   "y": 100,
+   "name": "at 6% it would be worth £100"
+  }
+ ],
+ "fromLesson": [
+  "£40"
+ ]
+}

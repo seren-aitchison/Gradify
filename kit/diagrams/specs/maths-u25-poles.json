@@ -1,0 +1,104 @@
+{
+ "id": "maths-u25-poles",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u25",
+ "lesson": "State-Space Representation",
+ "title": "The characteristic polynomial λ² + 3λ + 2",
+ "caption": "The eigenvalues of A = [[0, 1], [−2, −3]] are the roots of λ² + 3λ + 2 = 0: the curve crosses zero at the poles −1 and −2.",
+ "alt": "A parabola λ² + 3λ + 2 crossing the horizontal axis at −2 and −1, with minimum −0.25 at −1.5.",
+ "description": [
+  "Write the state equations with x₁ = x and x₂ = ẋ.",
+  "det(λI − A) = λ² + 3λ + 2.",
+  "Its roots are the poles −1 and −2, both negative: stable."
+ ],
+ "range": {
+  "x": [
+   -3.2,
+   0.5
+  ],
+  "y": [
+   -0.6,
+   3
+  ]
+ },
+ "ticks": [
+  [
+   -3,
+   -2,
+   -1,
+   0
+  ],
+  [
+   0,
+   1,
+   2,
+   3
+  ]
+ ],
+ "grid": [
+  1,
+  1
+ ],
+ "axisLabels": [
+  "λ",
+  "λ² + 3λ + 2"
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "curves": [
+  {
+   "expr": "x^2+3*x+2",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": -1,
+   "y": 0,
+   "label": "−1",
+   "dx": 12,
+   "dy": -10
+  },
+  {
+   "x": -2,
+   "y": 0,
+   "label": "−2",
+   "dx": -10,
+   "dy": -10,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "x^2+3*x+2",
+   "x": -1,
+   "y": 0,
+   "name": "λ = −1 is a root"
+  },
+  {
+   "type": "point",
+   "expr": "x^2+3*x+2",
+   "x": -2,
+   "y": 0,
+   "name": "λ = −2 is a root"
+  },
+  {
+   "type": "min",
+   "expr": "x^2+3*x+2",
+   "domain": [
+    -3,
+    0
+   ],
+   "x": -1.5,
+   "y": -0.25,
+   "name": "the sum of the roots is −3 = trace A"
+  }
+ ],
+ "fromLesson": [
+  "poles −1 and −2"
+ ]
+}

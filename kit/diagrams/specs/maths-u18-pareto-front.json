@@ -1,0 +1,117 @@
+{
+ "id": "maths-u18-pareto-front",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u18",
+ "lesson": "Multiobjective Optimisation",
+ "title": "The Pareto front of cost against emissions",
+ "caption": "Minimising both, C = (5, 5) is dominated by B = (4, 4), which is lower on both axes. A, B and D each beat the others on one objective, so they form the Pareto front.",
+ "alt": "Four points on a cost against emissions grid; A, B and D joined by a dashed front, and C above and to the right of B.",
+ "description": [
+  "Plot each option as (cost, emissions); lower-left is better.",
+  "B = (4, 4) has cost and emissions both at most C's, and strictly less, so C is dominated.",
+  "No other pair is ordered on both objectives.",
+  "The Pareto optimal set is {A, B, D}."
+ ],
+ "points": {
+  "A": [
+   3,
+   5
+  ],
+  "B": [
+   4,
+   4
+  ],
+  "C": [
+   5,
+   5
+  ],
+  "D": [
+   2,
+   7
+  ]
+ },
+ "grid": {
+  "step": 1,
+  "axes": true,
+  "labels": 1
+ },
+ "view": {
+  "x": [
+   0,
+   6.5
+  ],
+  "y": [
+   0,
+   8.5
+  ]
+ },
+ "height": [
+  340,
+  320
+ ],
+ "segments": [
+  {
+   "a": "D",
+   "b": "A",
+   "colour": "a2",
+   "dash": "5 4"
+  },
+  {
+   "a": "A",
+   "b": "B",
+   "colour": "a2",
+   "dash": "5 4"
+  }
+ ],
+ "circles": [
+  {
+   "centre": "A",
+   "r": 0.14,
+   "colour": "a2"
+  },
+  {
+   "centre": "B",
+   "r": 0.14,
+   "colour": "a2"
+  },
+  {
+   "centre": "D",
+   "r": 0.14,
+   "colour": "a2"
+  },
+  {
+   "centre": "C",
+   "r": 0.14,
+   "colour": "a4"
+  }
+ ],
+ "notes": [
+  {
+   "at": [
+    3.6,
+    1.6
+   ],
+   "text": "x: cost, y: emissions",
+   "colour": "ink",
+   "size": 12
+  }
+ ],
+ "checks": [
+  {
+   "type": "value",
+   "expr": "3",
+   "value": 3,
+   "name": "three of the four options are Pareto optimal"
+  },
+  {
+   "type": "value",
+   "expr": "5-4",
+   "value": 1,
+   "name": "C is 1 worse than B in cost and 1 worse in emissions (5 − 4)"
+  }
+ ],
+ "fromLesson": [
+  "Pareto optimal: A, B and D"
+ ]
+}

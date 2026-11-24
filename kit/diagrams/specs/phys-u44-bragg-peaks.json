@@ -1,0 +1,110 @@
+{
+ "id": "phys-u44-bragg-peaks",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u44",
+ "lesson": "X-ray diffraction",
+ "title": "Which planes diffract, and where",
+ "caption": "Cu Kα from copper (a = 0.3615 nm): Bragg's law puts a reflection with N = √(h² + k² + l²) at 2θ = 2 sin⁻¹(λN/2a). FCC needs h, k, l all even or all odd, so (111) at 2θ ≈ 43.3° and (200) at 50.4° appear, while (100) and (110) (grey) are absent.",
+ "alt": "Peak angle 2 theta against the square root of h squared plus k squared plus l squared: a rising curve with the 111 and 200 reflections marked present at 43.3 and 50.4 degrees and the 100 and 110 positions marked grey as absent.",
+ "description": [
+  "d₁₁₁ = 0.3615/√3 = 0.2087 nm; sin θ = 0.15406/(2 × 0.2087) = 0.369, so θ = 21.7°, 2θ ≈ 43.3°.",
+  "(200): d = 0.18075 nm, 2θ ≈ 50.4°.",
+  "Positions only: (100) would be at 24.6° and (110) at 35.1°, but mixed parity cancels them in FCC."
+ ],
+ "range": {
+  "x": [
+   0.5,
+   2.5
+  ],
+  "y": [
+   15,
+   60
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   1.5,
+   2,
+   2.5
+  ],
+  [
+   20,
+   30,
+   40,
+   50,
+   60
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "√(h² + k² + l²)",
+  "peak position 2θ / °"
+ ],
+ "curves": [
+  {
+   "expr": "114.5916*asin(0.213084*x)",
+   "domain": [
+    0.5,
+    2.5
+   ],
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 24.606,
+   "colour": "a4",
+   "label": "(100)",
+   "dx": 8,
+   "dy": 22
+  },
+  {
+   "x": 1.41421,
+   "y": 35.077,
+   "colour": "a4",
+   "label": "(110)",
+   "dx": 8,
+   "dy": 22
+  },
+  {
+   "x": 1.73205,
+   "y": 43.317,
+   "colour": "a2",
+   "label": "(111) 43.3°",
+   "dx": -8,
+   "dy": -12,
+   "anchor": "end"
+  },
+  {
+   "x": 2,
+   "y": 50.449,
+   "colour": "a2",
+   "label": "(200) 50.4°",
+   "dx": 8,
+   "dy": 22
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "114.5916*asin(0.213084*x)",
+   "x": 1.732051,
+   "y": 43.31691,
+   "name": "(111) at 2θ = 43.3°"
+  },
+  {
+   "type": "point",
+   "expr": "114.5916*asin(0.213084*x)",
+   "x": 2,
+   "y": 50.44933,
+   "name": "(200) at 2θ = 50.4°"
+  }
+ ]
+}

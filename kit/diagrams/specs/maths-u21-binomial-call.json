@@ -1,0 +1,41 @@
+{
+ "id": "maths-u21-binomial-call",
+ "renderer": "prob-tree",
+ "course": "maths",
+ "unit": "u21",
+ "lesson": "Binomial Options Pricing",
+ "title": "A one-step binomial call",
+ "caption": "From £100 the stock moves to £120 (call pays £20) or £80 (pays £0). With r = 0 the risk-neutral probability is q = 0.5, so the call is worth 0.5 × 20 + 0.5 × 0 = £10.",
+ "alt": "A tree from £100 with an up branch to £120 and a down branch to £80, each of probability ½, and the call payoffs 20 and 0.",
+ "description": [
+  "q = (1 − d)/(u − d) = 0.2/0.4 = 0.5.",
+  "Up: stock £120, call pays £20. Down: stock £80, call pays £0.",
+  "Call value = 0.5 × 20 + 0.5 × 0 = £10."
+ ],
+ "tree": {
+  "children": [
+   {
+    "label": "Up £120",
+    "p": "1/2"
+   },
+   {
+    "label": "Down £80",
+    "p": "1/2"
+   }
+  ]
+ },
+ "outcomes": true,
+ "checks": [
+  {
+   "type": "outcome",
+   "path": [
+    "Up £120"
+   ],
+   "p": "1/2",
+   "name": "q = (1 − 0.8)/(1.2 − 0.8) = ½"
+  }
+ ],
+ "fromLesson": [
+  "£10"
+ ]
+}

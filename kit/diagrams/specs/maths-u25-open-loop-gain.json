@@ -1,0 +1,127 @@
+{
+ "id": "maths-u25-open-loop-gain",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u25",
+ "lesson": "Open-Loop Control",
+ "title": "Open-loop heating with the wrong gain",
+ "caption": "Planned with 5 °C per kW, 3 kW should give 15 °C. If the true gain is 4 °C per kW the rise is only 12 °C, and open-loop control cannot notice the 3 °C shortfall.",
+ "alt": "Two lines of temperature rise against power: the assumed 5 °C per kW and the true 4 °C per kW; at 3 kW they read 15 and 12, a gap of 3.",
+ "description": [
+  "Assume the room warms 5 °C per kW: for 15 °C choose u = 15/5 = 3 kW.",
+  "If the real gain is 4 °C per kW, the same 3 kW gives 4 × 3 = 12 °C.",
+  "The 3 °C error is never detected: there is no feedback."
+ ],
+ "range": {
+  "x": [
+   0,
+   4
+  ],
+  "y": [
+   0,
+   20
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4
+  ],
+  [
+   5,
+   10,
+   15,
+   20
+  ]
+ ],
+ "grid": [
+  1,
+  5
+ ],
+ "axisLabels": [
+  "power u (kW)",
+  "temperature rise (°C)"
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "curves": [
+  {
+   "expr": "5*x",
+   "colour": "a1"
+  },
+  {
+   "expr": "4*x",
+   "colour": "a2"
+  }
+ ],
+ "marks": [
+  {
+   "x": 3
+  }
+ ],
+ "legend": [
+  [
+   "assumed 5 °C/kW",
+   "a1"
+  ],
+  [
+   "true 4 °C/kW",
+   "a2"
+  ]
+ ],
+ "legendData": [
+  0.15,
+  19
+ ],
+ "points": [
+  {
+   "x": 3,
+   "y": 15,
+   "label": "15 °C",
+   "dx": -10,
+   "dy": -6,
+   "anchor": "end",
+   "colour": "a1"
+  },
+  {
+   "x": 3,
+   "y": 12,
+   "label": "12 °C",
+   "dx": 10,
+   "dy": 14,
+   "colour": "a2"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "5*x",
+   "x": 3,
+   "y": 15,
+   "name": "5 × 3 = 15 °C"
+  },
+  {
+   "type": "point",
+   "expr": "4*x",
+   "x": 3,
+   "y": 12,
+   "name": "4 × 3 = 12 °C"
+  },
+  {
+   "type": "intersect",
+   "a": "5*x",
+   "b": "4*x",
+   "x": 0,
+   "y": 0,
+   "name": "both lines start at 0"
+  }
+ ],
+ "fromLesson": [
+  "u = 15/5 = 3 kW",
+  "A 3 °C error remains"
+ ]
+}

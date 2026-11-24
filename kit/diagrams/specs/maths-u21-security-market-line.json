@@ -1,0 +1,110 @@
+{
+ "id": "maths-u21-security-market-line",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u21",
+ "lesson": "Capital Asset Pricing Model (CAPM)",
+ "title": "The security market line",
+ "caption": "Required return rises with beta by the market risk premium, 5% per unit: 3 + 5β. At β = 1.2 the share must return 9%; the market itself (β = 1) returns 8%.",
+ "alt": "A straight line from 3% at β = 0 rising 5% per unit of beta, with marked points (1, 8%) for the market and (1.2, 9%) for the share.",
+ "description": [
+  "The line starts at the risk-free rate 3%.",
+  "Its slope is the market risk premium 8 − 3 = 5%.",
+  "At β = 1.2 the required return is 3 + 1.2 × 5 = 9%."
+ ],
+ "range": {
+  "x": [
+   0,
+   2
+  ],
+  "y": [
+   0,
+   14
+  ]
+ },
+ "ticks": [
+  [
+   0.5,
+   1,
+   1.5,
+   2
+  ],
+  [
+   3,
+   6,
+   9,
+   12
+  ]
+ ],
+ "grid": [
+  0.5,
+  3
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "beta β",
+  "required return (%)"
+ ],
+ "curves": [
+  {
+   "expr": "3+5*x",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 8,
+   "label": "market 8%",
+   "colour": "a4",
+   "dx": 10,
+   "dy": 20
+  },
+  {
+   "x": 1.2,
+   "y": 9,
+   "label": "share 9%",
+   "colour": "a2",
+   "dx": -12,
+   "dy": -12,
+   "anchor": "end"
+  },
+  {
+   "x": 0,
+   "y": 3,
+   "label": "3%",
+   "colour": "a4",
+   "dx": 10,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "3+5*x",
+   "x": 1.2,
+   "y": 9,
+   "name": "at β = 1.2 the required return is 9%"
+  },
+  {
+   "type": "point",
+   "expr": "3+5*x",
+   "x": 1,
+   "y": 8,
+   "name": "the market (β = 1) returns 8%"
+  },
+  {
+   "type": "slope",
+   "expr": "3+5*x",
+   "x": 1,
+   "value": 5,
+   "name": "the slope is the 5% market premium"
+  }
+ ],
+ "fromLesson": [
+  "9%"
+ ]
+}

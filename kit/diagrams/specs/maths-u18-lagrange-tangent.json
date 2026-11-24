@@ -1,0 +1,126 @@
+{
+ "id": "maths-u18-lagrange-tangent",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u18",
+ "lesson": "Lagrange Multipliers",
+ "title": "The level curve xy = 25 just touches x + y = 10",
+ "caption": "On the constraint line x + y = 10 the product xy is largest where the level curve xy = 25 only touches the line, at (5, 5). There the curve and the line have the same gradient −1, which is what ∇f = λ∇g says.",
+ "alt": "The hyperbola xy = 25 touching the line x + y = 10 at the single point (5, 5).",
+ "description": [
+  "The constraint is the line y = 10 − x; the level curves of xy are hyperbolas.",
+  "The level xy = 25 touches the line at (5, 5) without crossing it.",
+  "Both have gradient −1 there, so the gradients of f and g are parallel.",
+  "Hence the maximum of xy on the line is 25."
+ ],
+ "range": {
+  "x": [
+   0,
+   10
+  ],
+  "y": [
+   0,
+   10
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   4,
+   6,
+   8,
+   10
+  ],
+  [
+   2,
+   4,
+   6,
+   8,
+   10
+  ]
+ ],
+ "grid": [
+  2,
+  2
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "25/x",
+   "colour": "a1",
+   "domain": [
+    2.5,
+    10
+   ],
+   "label": "xy = 25",
+   "labelAt": [
+    7.3,
+    4.2
+   ]
+  },
+  {
+   "expr": "10-x",
+   "colour": "a2",
+   "label": "x + y = 10",
+   "labelAt": [
+    1.2,
+    9.4
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 5,
+   "y": 5,
+   "label": "(5, 5)",
+   "colour": "a4",
+   "dx": 12,
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "intersect",
+   "a": "25/x",
+   "b": "10-x",
+   "x": 5,
+   "y": 5,
+   "name": "xy = 25 meets x + y = 10 at (5, 5)"
+  },
+  {
+   "type": "slope",
+   "expr": "25/x",
+   "x": 5,
+   "value": -1,
+   "name": "xy = 25 has gradient −1 at (5, 5)"
+  },
+  {
+   "type": "slope",
+   "expr": "10-x",
+   "x": 5,
+   "value": -1,
+   "name": "the line has gradient −1"
+  },
+  {
+   "type": "max",
+   "expr": "x*(10-x)",
+   "domain": [
+    0,
+    10
+   ],
+   "x": 5,
+   "y": 25,
+   "name": "on the line, xy = x(10 − x) is largest at x = 5 with value 25"
+  }
+ ],
+ "fromLesson": [
+  "Maximum f = 25"
+ ]
+}

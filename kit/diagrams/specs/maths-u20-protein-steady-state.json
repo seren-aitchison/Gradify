@@ -1,0 +1,92 @@
+{
+ "id": "maths-u20-protein-steady-state",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u20",
+ "lesson": "Systems Biology",
+ "title": "A protein approaching its steady state",
+ "caption": "With production β = 10 nM/min and degradation α = 0.1 per minute, x(t) = 100(1 − e^(−0.1t)) climbs to x* = β/α = 100 nM, reaching half of it after ln 2/α ≈ 6.9 minutes.",
+ "alt": "A rising curve of protein concentration from 0, passing 50 nanomolar at 6.9 minutes and levelling off at 100 nanomolar.",
+ "description": [
+  "Production β = 10 nM/min and degradation α = 0.1 per minute balance at x* = β/α = 100 nM.",
+  "Starting from zero the protein follows x = 100(1 − e^(−0.1t)).",
+  "It is half-way (50 nM) at t = ln 2/α ≈ 6.9 minutes, a time set by the degradation rate."
+ ],
+ "range": {
+  "x": [
+   0,
+   40
+  ],
+  "y": [
+   0,
+   110
+  ]
+ },
+ "ticks": [
+  [
+   10,
+   20,
+   30,
+   40
+  ],
+  [
+   25,
+   50,
+   75,
+   100
+  ]
+ ],
+ "grid": [
+  10,
+  25
+ ],
+ "height": [
+  330,
+  300
+ ],
+ "axisLabels": [
+  "t (minutes)",
+  "x (nM)"
+ ],
+ "marks": [
+  {
+   "y": 100,
+   "label": "x* = 100 nM"
+  }
+ ],
+ "curves": [
+  {
+   "expr": "100*(1-exp(-0.1*x))",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 6.931471805599452,
+   "y": 50,
+   "label": "50 nM at 6.9 min",
+   "colour": "a2",
+   "dx": 10,
+   "dy": 22
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "100*(1-exp(-0.1*x))",
+   "x": 6.931471805599452,
+   "y": 50,
+   "name": "half of x* is reached at ln 2/α = 6.93 minutes"
+  },
+  {
+   "type": "slope",
+   "expr": "100*(1-exp(-0.1*x))",
+   "x": 0,
+   "value": 10,
+   "name": "the initial rate is the production rate β = 10 nM/min"
+  }
+ ],
+ "fromLesson": [
+  "≈ 6.9 minutes"
+ ]
+}

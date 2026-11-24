@@ -1,0 +1,83 @@
+{
+ "id": "maths-u25-kalman-fixed-point",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u25",
+ "lesson": "Kalman Filtering",
+ "title": "Steady-state predicted variance as a fixed point",
+ "caption": "The predicted variance repeats P⁻ → P⁻/(P⁻ + 1) + 1. The curve meets the line y = x at P⁻ = (1 + √5)/2 ≈ 1.618, giving gain 1.618/2.618 ≈ 0.618.",
+ "alt": "The curve y = P/(P + 1) + 1 and the diagonal y = x cross at 1.618, marked.",
+ "description": [
+  "Update with R = 1: P = P⁻/(P⁻ + 1); predict with Q = 1: next P⁻ = P + 1.",
+  "At steady state P⁻ = P⁻/(P⁻ + 1) + 1, so P⁻² − P⁻ − 1 = 0.",
+  "P⁻ = (1 + √5)/2 ≈ 1.618 and the gain is K = 1.618/2.618 ≈ 0.618."
+ ],
+ "range": {
+  "x": [
+   0,
+   3
+  ],
+  "y": [
+   0,
+   3
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3
+  ],
+  [
+   1,
+   2,
+   3
+  ]
+ ],
+ "grid": [
+  1,
+  1
+ ],
+ "axisLabels": [
+  "P⁻ now",
+  "P⁻ next"
+ ],
+ "height": [
+  340,
+  340
+ ],
+ "curves": [
+  {
+   "expr": "x/(x+1)+1",
+   "colour": "a1"
+  },
+  {
+   "expr": "x",
+   "colour": "a2",
+   "dash": "5 4"
+  }
+ ],
+ "points": [
+  {
+   "x": 1.61803,
+   "y": 1.61803,
+   "label": "1.618",
+   "dx": 12,
+   "dy": 18
+  }
+ ],
+ "checks": [
+  {
+   "type": "intersect",
+   "a": "x/(x+1)+1",
+   "b": "x",
+   "x": 1.618033988749895,
+   "y": 1.618033988749895,
+   "name": "the fixed point is (1 + √5)/2 ≈ 1.618"
+  }
+ ],
+ "fromLesson": [
+  "1.618",
+  "0.618"
+ ]
+}

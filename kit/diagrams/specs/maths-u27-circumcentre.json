@@ -1,0 +1,219 @@
+{
+ "id": "maths-u27-circumcentre",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u27",
+ "lesson": "GeoGebra",
+ "title": "The circumcentre of a triangle",
+ "caption": "The perpendicular bisectors of the three sides of triangle ABC meet at one point O = (3, 1). A circle centred there passes through A, B and C. Dragging a vertex in GeoGebra moves everything but keeps this true.",
+ "alt": "A triangle ABC with a circle through its three vertices, centred at O where the perpendicular bisectors of the sides cross.",
+ "description": [
+  "Draw triangle ABC with A = (0, 0), B = (6, 0), C = (2, 4).",
+  "Mark the midpoint of each side and draw its perpendicular bisector.",
+  "All three bisectors pass through O = (3, 1).",
+  "The circle centred at O through A also passes through B and C."
+ ],
+ "points": {
+  "A": [
+   0,
+   0
+  ],
+  "B": [
+   6,
+   0
+  ],
+  "C": [
+   2,
+   4
+  ],
+  "O": [
+   3,
+   1
+  ],
+  "M": [
+   3,
+   0
+  ],
+  "N": [
+   1,
+   2
+  ],
+  "K": [
+   4,
+   2
+  ]
+ },
+ "labelAt": {
+  "A": [
+   -14,
+   14
+  ],
+  "B": [
+   14,
+   14
+  ],
+  "C": [
+   0,
+   -12
+  ],
+  "O": [
+   12,
+   -8
+  ],
+  "M": [
+   0,
+   16
+  ],
+  "N": [
+   -14,
+   -4
+  ],
+  "K": [
+   14,
+   -4
+  ]
+ },
+ "grid": {
+  "step": 1,
+  "axes": false
+ },
+ "view": {
+  "x": [
+   -3,
+   9
+  ],
+  "y": [
+   -3.5,
+   5.5
+  ]
+ },
+ "height": [
+  380,
+  340
+ ],
+ "polygons": [
+  {
+   "pts": [
+    "A",
+    "B",
+    "C"
+   ],
+   "colour": "a1",
+   "opacity": 0.06
+  }
+ ],
+ "segments": [
+  {
+   "a": "A",
+   "b": "B",
+   "colour": "a1",
+   "w": 3
+  },
+  {
+   "a": "B",
+   "b": "C",
+   "colour": "a1",
+   "w": 3
+  },
+  {
+   "a": "C",
+   "b": "A",
+   "colour": "a1",
+   "w": 3
+  },
+  {
+   "a": "M",
+   "b": "O",
+   "colour": "a2",
+   "dash": "5 4"
+  },
+  {
+   "a": "N",
+   "b": "O",
+   "colour": "a2",
+   "dash": "5 4"
+  },
+  {
+   "a": "K",
+   "b": "O",
+   "colour": "a2",
+   "dash": "5 4"
+  }
+ ],
+ "circles": [
+  {
+   "centre": "O",
+   "through": "A",
+   "colour": "a4"
+  }
+ ],
+ "checks": [
+  {
+   "type": "midpoint",
+   "m": "M",
+   "a": "A",
+   "b": "B"
+  },
+  {
+   "type": "midpoint",
+   "m": "N",
+   "a": "A",
+   "b": "C"
+  },
+  {
+   "type": "midpoint",
+   "m": "K",
+   "a": "B",
+   "b": "C"
+  },
+  {
+   "type": "perpendicular",
+   "a": [
+    "M",
+    "O"
+   ],
+   "b": [
+    "A",
+    "B"
+   ],
+   "name": "OM is perpendicular to AB"
+  },
+  {
+   "type": "perpendicular",
+   "a": [
+    "N",
+    "O"
+   ],
+   "b": [
+    "A",
+    "C"
+   ],
+   "name": "ON is perpendicular to AC"
+  },
+  {
+   "type": "perpendicular",
+   "a": [
+    "K",
+    "O"
+   ],
+   "b": [
+    "B",
+    "C"
+   ],
+   "name": "OK is perpendicular to BC"
+  },
+  {
+   "type": "onCircle",
+   "circle": 0,
+   "points": [
+    "A",
+    "B",
+    "C"
+   ],
+   "name": "the circle centred at O passes through A, B and C"
+  }
+ ],
+ "fromLesson": [
+  "circumcentre"
+ ]
+}

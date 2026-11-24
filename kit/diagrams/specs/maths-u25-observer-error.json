@@ -1,0 +1,110 @@
+{
+ "id": "maths-u25-observer-error",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u25",
+ "lesson": "State Estimation",
+ "title": "Estimation error with and without correction",
+ "caption": "With L = 4 the error obeys ė = −5e and shrinks five times faster than the plain model's e^{−t}: after 0.2 s it has fallen to 1/e.",
+ "alt": "Two decaying curves from error 1: the slow one e^{−t} with no correction and the fast one e^{−5t} with L = 4.",
+ "description": [
+  "The error dynamics are ė = (A − LC)e = (−1 − L)e.",
+  "Rate 5 needs −1 − L = −5, so L = 4.",
+  "The error e^{−5t} dies out five times faster than e^{−t}."
+ ],
+ "range": {
+  "x": [
+   0,
+   2
+  ],
+  "y": [
+   0,
+   1.1
+  ]
+ },
+ "ticks": [
+  [
+   0.5,
+   1,
+   1.5,
+   2
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "grid": [
+  0.5,
+  0.25
+ ],
+ "axisLabels": [
+  "t (s)",
+  "estimation error"
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "curves": [
+  {
+   "expr": "exp(-1*x)",
+   "colour": "a2"
+  },
+  {
+   "expr": "exp(-5*x)",
+   "colour": "a1"
+  }
+ ],
+ "legend": [
+  [
+   "L = 0: e^{−t}",
+   "a2"
+  ],
+  [
+   "L = 4: e^{−5t}",
+   "a1"
+  ]
+ ],
+ "legendData": [
+  0.9,
+  1.05
+ ],
+ "points": [
+  {
+   "x": 0.2,
+   "y": 0.3679,
+   "label": "0.2 s",
+   "dx": 10,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "slope",
+   "expr": "exp(-1*x)",
+   "x": 0,
+   "value": -1,
+   "name": "L = 0: rate −1"
+  },
+  {
+   "type": "slope",
+   "expr": "exp(-5*x)",
+   "x": 0,
+   "value": -5,
+   "name": "L = 4: rate −1 − L = −5"
+  },
+  {
+   "type": "point",
+   "expr": "exp(-5*x)",
+   "x": 0.2,
+   "y": 0.3679,
+   "name": "after 1/5 s the error is 1/e"
+  }
+ ],
+ "fromLesson": [
+  "L = 4"
+ ]
+}

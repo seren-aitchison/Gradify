@@ -1,0 +1,115 @@
+{
+ "id": "maths-u21-loan-balance",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u21",
+ "lesson": "Loan Amortisation",
+ "title": "A £10,000 loan repaid by twelve payments",
+ "caption": "Each month 1% interest is added and £888.49 is paid. In month 1 the interest is £100, so £788.49 reduces the debt to £9,211.51; the interest share falls and the balance reaches exactly zero at month 12.",
+ "alt": "The loan balance falling from £10,000 at month 0 to £9,211.51 at month 1 and £0 at month 12, steepening as interest shrinks.",
+ "description": [
+  "Payment P = 10,000 × 0.01/(1 − 1.01^−12) ≈ £888.49.",
+  "Month 1: interest £100, so £788.49 of the payment repays capital.",
+  "The balance after k months is 10,000 × 1.01^k minus the accumulated payments.",
+  "After 12 payments it is zero."
+ ],
+ "range": {
+  "x": [
+   0,
+   12
+  ],
+  "y": [
+   0,
+   11000
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   4,
+   6,
+   8,
+   10,
+   12
+  ],
+  [
+   2000,
+   4000,
+   6000,
+   8000,
+   10000
+  ]
+ ],
+ "grid": [
+  2,
+  2000
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "months",
+  "balance £"
+ ],
+ "curves": [
+  {
+   "expr": "10000*1.01^x-888.487886783*(1.01^x-1)/0.01",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 10000,
+   "label": "£10,000",
+   "colour": "a2",
+   "dx": 14,
+   "dy": -14
+  },
+  {
+   "x": 1,
+   "y": 9211.512113216582,
+   "label": "£9,211.51",
+   "colour": "a2",
+   "dx": 16,
+   "dy": 34
+  },
+  {
+   "x": 12,
+   "y": 0,
+   "label": "£0",
+   "colour": "a4",
+   "dx": -10,
+   "dy": -12,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "10000*1.01^x-888.487886783*(1.01^x-1)/0.01",
+   "x": 1,
+   "y": 9211.512113216582,
+   "name": "after month 1 the balance is £9,211.51"
+  },
+  {
+   "type": "point",
+   "expr": "10000*1.01^x-888.487886783*(1.01^x-1)/0.01",
+   "x": 12,
+   "y": 0,
+   "name": "after 12 payments the balance is zero"
+  },
+  {
+   "type": "point",
+   "expr": "10000*0.01/(1-1.01^(0-12))",
+   "x": 0,
+   "y": 888.4878867834161,
+   "name": "the payment is £888.49"
+  }
+ ],
+ "fromLesson": [
+  "£888.49"
+ ]
+}

@@ -1,0 +1,84 @@
+{
+ "id": "maths-u21-bs-normal-area",
+ "renderer": "distribution",
+ "course": "maths",
+ "unit": "u21",
+ "lesson": "Black–Scholes Model",
+ "title": "N(d₁) as an area under the standard normal curve",
+ "caption": "With S = K = 100, r = 0, σ = 20% and T = 1: d₁ = 0.1 and d₂ = −0.1. N(0.1) = 0.5398 is the shaded area to the left of d₁; N(−0.1) = 0.4602. The call is worth 100 × 0.5398 − 100 × 0.4602 ≈ £7.97.",
+ "alt": "A standard normal bell curve with the area to the left of 0.1 shaded, 0.5398, and a mark at −0.1.",
+ "description": [
+  "d₁ = (ln(S/K) + (r + σ²/2)T)/(σ√T) = 0.02/0.2 = 0.1; d₂ = d₁ − σ√T = −0.1.",
+  "N(0.1) ≈ 0.5398 and N(−0.1) ≈ 0.4602.",
+  "C = 100 × 0.5398 − 100 × 0.4602 ≈ £7.97."
+ ],
+ "dist": {
+  "dist": "normal",
+  "mu": 0,
+  "sigma": 1
+ },
+ "range": {
+  "x": [
+   -3.5,
+   3.5
+  ],
+  "y": [
+   0,
+   0.5
+  ]
+ },
+ "ticks": [
+  [
+   -3,
+   -2,
+   -1,
+   0,
+   1,
+   2,
+   3
+  ],
+  [
+   0.1,
+   0.2,
+   0.3,
+   0.4
+  ]
+ ],
+ "axisLabels": [
+  "z",
+  "density"
+ ],
+ "shade": [
+  null,
+  0.1
+ ],
+ "p": 0.5398,
+ "marks": [
+  {
+   "x": 0.1,
+   "label": "d₁ = 0.1"
+  },
+  {
+   "x": -0.1
+  }
+ ],
+ "checks": [
+  {
+   "type": "prob",
+   "from": -9,
+   "to": 0.1,
+   "p": 0.5398,
+   "name": "N(d₁) = N(0.1) = 0.5398"
+  },
+  {
+   "type": "prob",
+   "from": -9,
+   "to": -0.1,
+   "p": 0.4602,
+   "name": "N(d₂) = N(−0.1) = 0.4602"
+  }
+ ],
+ "fromLesson": [
+  "7.97"
+ ]
+}

@@ -63,6 +63,7 @@ X: Solve ẋ = −2x with x(0) = 5 and give the time constant.
 > Solution x(t) = 5e^{−2t}
 > Eigenvalue λ = −2, so the time constant τ = 1/2 s
 > After one time constant x ≈ 5 × 0.368 ≈ 1.84
+D: maths-u25-decay
 K: Linear systems obey superposition; state-space and transfer-function models describe them; solutions use the matrix exponential; eigenvalues determine growth, decay and oscillation.
 !: Applying superposition to a system with saturation or other non-linearity.
 Q: What does superposition mean? | The response to a sum of inputs is the sum of responses.
@@ -100,6 +101,7 @@ X: Find the equilibria of the pendulum θ̈ = −sin θ and their stability.
 > Equilibria where sin θ = 0: θ = 0 and θ = π
 > At θ = 0: θ̈ ≈ −θ, eigenvalues ±i (a centre, neutrally stable without friction)
 > At θ = π: θ̈ ≈ +(θ − π), eigenvalues ±1, a saddle: unstable
+D: maths-u25-pendulum
 K: Non-linear systems can have many equilibria, limit cycles, finite escape and chaos; linearisation gives local behaviour; regions of attraction and Lyapunov methods address global behaviour.
 !: Concluding global stability from a linearisation, which only describes behaviour near the equilibrium.
 Q: What is a region of attraction? | The set of starting states that converge to a stable equilibrium.
@@ -136,6 +138,7 @@ X: Write ẍ + 3ẋ + 2x = u in state-space form and find the poles.
 > States x₁ = x, x₂ = ẋ: ẋ₁ = x₂, ẋ₂ = −2x₁ − 3x₂ + u
 > A = [[0, 1], [−2, −3]], B = [0, 1]ᵀ, C = [1, 0]
 > Eigenvalues solve λ^{2} + 3λ + 2 = 0: poles −1 and −2
+D: maths-u25-poles
 K: State-space models use first-order matrix equations; higher-order ODEs convert via position and velocity states; eigenvalues of A are poles; G(s) = C(sI − A)^{−1}B + D links to transfer functions.
 !: Choosing too few state variables, so the model can't capture the system's memory.
 Q: How are a state-space model's poles found? | As eigenvalues of A.
@@ -172,6 +175,7 @@ X: Find the steady-state output of G(s) = 4/(s + 2) for a unit step input.
 > Y(s) = G(s)/s
 > Final value = lim_{s→0} s × 4/(s(s + 2)) = 4/2
 > = 2 (the DC gain)
+D: maths-u25-step-4-over-s2
 K: Transfer functions turn ODEs into algebra; poles determine stability and speed; zeros shape responses; DC gain and the final value theorem give steady states; second-order forms use ζ and ωₙ.
 !: Applying the final value theorem to an unstable system, where it gives a meaningless answer.
 Q: Where must poles lie for a continuous-time system to be stable? | In the left half of the complex plane.
@@ -208,6 +212,7 @@ X: A ball is dropped from 1 m and bounces with restitution e = 0.5. How does eac
 > Velocity after impact is e times the impact velocity
 > Height scales with velocity squared, so each bounce reaches e^{2} = 0.25 of the previous height
 > Heights 1, 0.25, 0.0625, …: infinitely many bounces in finite total time (Zeno)
+D: maths-u25-bounce-heights
 K: Hybrid systems mix continuous flows with discrete jumps via modes, guards and resets; Zeno behaviour and chattering can occur; reachability analysis verifies safety of cyber-physical systems.
 !: Simulating Zeno systems naively, which gets stuck taking ever smaller steps.
 Q: What is a guard in a hybrid automaton? | A condition that triggers a transition between modes.
@@ -280,6 +285,7 @@ X: A heater's steady temperature rise is 5 °C per kW. To raise a room by 15 °C
 > u = 15/5 = 3 kW
 > With true gain 4: the rise is 4 × 3 = 12 °C
 > A 3 °C error remains, since open-loop control can't detect it
+D: maths-u25-open-loop-gain
 K: Open-loop control applies planned inputs without measuring outputs; it's simple and stable but can't correct model errors or disturbances; feedforward combined with feedback gets the best of both.
 !: Relying on open-loop control when the plant model is uncertain or disturbances are large.
 Q: Does open-loop control use output measurements? | No.
@@ -314,6 +320,7 @@ X: A plant G = 2/(s + 1) has proportional control C = 4. Find the closed-loop DC
 > L(0) = GC at s = 0 = 2 × 4 = 8
 > Closed-loop DC gain T(0) = 8/9 ≈ 0.889
 > Steady-state error = 1/(1 + 8) = 1/9 ≈ 0.111
+D: maths-u25-closed-loop-step
 K: Closed-loop control uses error feedback; S and T describe disturbance and reference responses with S + T = 1; integral action removes step error; the waterbed effect limits shaping.
 !: Increasing gain indefinitely to cut error, ignoring stability and noise amplification.
 Q: What is the sensitivity function? | S = 1/(1 + L).
@@ -350,6 +357,7 @@ X: The plant ẋ = 2x + u is unstable. Choose K in u = −Kx to place the pole a
 > Closed loop: ẋ = (2 − K)x
 > Set 2 − K = −3
 > K = 5 stabilises it with time constant 1/3 s
+D: maths-u25-pole-placement
 K: Feedback reduces sensitivity, rejects disturbances and stabilises unstable plants; it costs sensors and risks instability; state feedback places closed-loop poles when the system is controllable.
 !: Placing poles very far left without considering actuator saturation and noise.
 Q: What does pole placement choose? | State-feedback gains that set the closed-loop eigenvalues.
@@ -459,6 +467,7 @@ X: Show ẋ = −x^{3} is asymptotically stable at 0 using V = x^{2}.
 > V = x^{2} > 0 for x ≠ 0
 > V̇ = 2xẋ = 2x(−x^{3}) = −2x^{4} < 0 for x ≠ 0
 > So the origin is (globally) asymptotically stable, though linearisation (ẋ ≈ 0) is inconclusive
+D: maths-u25-lyapunov-v
 K: Lyapunov functions prove stability by decreasing along trajectories; the Lyapunov equation handles linear systems; LaSalle's principle covers V̇ ≤ 0; the method works where linearisation fails.
 !: Concluding instability because one candidate V fails; another function might work.
 Q: What must V̇ satisfy for asymptotic stability? | Negative definite (V̇ < 0 away from the origin).
@@ -564,6 +573,7 @@ X: Find the gain and phase of G(s) = 10/(s + 10) at ω = 10 rad/s.
 > G(10i) = 10/(10 + 10i) = 1/(1 + i)
 > |G| = 1/√2 ≈ 0.707 (−3 dB)
 > Phase = −45°
+D: maths-u25-gain-first-order
 K: Frequency response G(iω) gives gain and phase at each frequency; bandwidth and resonance describe performance; gain and phase margins measure robustness of feedback loops.
 !: Ignoring the phase lag of time delays, which can destroy stability margins.
 Q: What phase does a first-order lag have at its corner frequency? | −45°.
@@ -600,6 +610,7 @@ X: Sketch the gain of G(s) = 100/(s + 10) at ω = 1, 10 and 100 rad/s.
 > Low frequency: G(0) = 10, i.e. 20 dB
 > At ω = 10: about 20 − 3 = 17 dB
 > At ω = 100: one decade past the corner, about 20 − 20 = 0 dB
+D: maths-u25-bode-gain
 K: Bode plots show dB gain and phase against log frequency; poles, zeros and integrators add straight-line slopes; margins are read at crossover frequencies; loop shaping uses them for design.
 !: Forgetting that a negative gain adds −180° of phase.
 Q: What slope does one pole add to a Bode magnitude plot? | −20 dB per decade.
@@ -637,6 +648,7 @@ X: L(s) = K/(s + 1)^{3}. For which K is the closed loop stable?
 > Phase −180° when 3 arctan ω = 180°, so ω = √3
 > |L| there = K/(1 + 3)^{3/2} = K/8
 > Stable (no encirclement of −1) if K/8 < 1, so K < 8
+D: maths-u25-nyquist-gain-margin
 K: The Nyquist criterion counts encirclements of −1 to determine closed-loop stability; Z = N + P; distance from −1 measures robustness; it handles delays and unstable plants.
 !: Forgetting to count open-loop unstable poles P when applying the criterion.
 Q: What point do Nyquist plots encircle to indicate instability? | −1.
@@ -673,6 +685,7 @@ X: For L(s) = 1/(s(s + 2)), find the closed-loop poles as K varies and the K giv
 > Characteristic equation s^{2} + 2s + K = 0
 > Poles s = −1 ± √(1 − K): real for K ≤ 1, complex for K > 1
 > Critical damping (double pole at −1) at K = 1
+D: maths-u25-root-locus-real
 K: Root loci trace closed-loop poles as gain varies; Evans's rules sketch them; damping-ratio lines guide gain choice; zeros and poles from compensators reshape the locus.
 !: Choosing a gain beyond the imaginary-axis crossing, which makes the closed loop unstable.
 Q: Where does a root locus start? | At the open-loop poles.
@@ -708,6 +721,7 @@ X: For scalar ẋ = −x + u, y = x, choose observer gain L to make the estimati
 > Error dynamics ė = (A − LC)e = (−1 − L)e
 > Set −1 − L = −5
 > L = 4
+D: maths-u25-observer-error
 K: Observers copy the model and correct with output errors; error dynamics A − LC are set by L; the separation principle lets controller and observer be designed separately; Kalman filters choose L optimally.
 !: Making observer poles extremely fast, which amplifies measurement noise.
 Q: What equation governs a Luenberger observer's error? | ė = (A − LC)e.
@@ -744,6 +758,7 @@ X: A scalar system x_{k+1} = x_{k} + w with Q_{w} = 1 is measured with R = 1. Fi
 > At steady state P⁻ = P + 1 and P = P⁻R/(P⁻ + R) = P⁻/(P⁻ + 1)
 > So P⁻ = P⁻/(P⁻ + 1) + 1, giving P⁻^{2} − P⁻ − 1 = 0, so P⁻ = (1 + √5)/2 ≈ 1.618
 > Gain K = 1.618/2.618 ≈ 0.618
+D: maths-u25-kalman-fixed-point
 K: The Kalman filter is the optimal linear estimator under Gaussian noise; its matrix form uses process and measurement covariances; steady-state gains solve a Riccati equation; LQG combines it with LQR.
 !: Assuming LQG controllers inherit LQR's robustness margins (they don't).
 Q: What does LQG combine? | An LQR controller with a Kalman filter.
@@ -780,6 +795,7 @@ X: Data satisfy y_{t} = 0.8y_{t−1} + 2u_{t−1}. What are the ARX parameters a
 > a₁ = −0.8 and b₁ = 2 in the convention y_{t} + a₁y_{t−1} = b₁u_{t−1}
 > At steady state y = 0.8y + 2u
 > DC gain y/u = 2/0.2 = 10
+D: maths-u25-arx-step
 K: System identification fits models to data; ARX uses least squares; subspace and frequency methods give state-space and frequency models; inputs must excite the dynamics; validate on new data.
 !: Using a single step test with a noisy plant and expecting accurate high-frequency dynamics.
 Q: What is persistent excitation? | An input rich enough to reveal all the system's dynamics.
@@ -816,6 +832,7 @@ X: For ẋ = u with Q = 9 and R = 1, find the LQR gain.
 > Riccati: −P^{2} + 9 = 0 (A = 0, B = 1), so P = 3
 > K = R^{−1}BP = 3
 > Closed loop ẋ = −3x
+D: maths-u25-lqr-riccati
 K: LQR minimises quadratic state and control costs; the Riccati equation gives K = R^{−1}BᵀP; Q and R tune speed versus effort; single-input LQR has at least 60° phase margin.
 !: Choosing Q and R without scaling for units, giving unbalanced performance.
 Q: What does increasing R do in LQR? | Penalises control effort more, giving gentler control.
@@ -1032,6 +1049,7 @@ X: Three agents in a line (1–2–3) start at 0, 3 and 6 with undirected consen
 > The graph is connected and undirected
 > Consensus converges to the average of initial values
 > (0 + 3 + 6)/3 = 3
+D: maths-u25-consensus-three
 K: Distributed control coordinates agents with local information; consensus ẋ = −Lx reaches the average on connected graphs; λ₂ sets the speed; applications include formations, sensor networks and power systems.
 !: Assuming consensus holds when the communication graph is disconnected.
 Q: What do agents converge to under undirected consensus on a connected graph? | The average of their initial values.

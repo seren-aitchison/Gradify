@@ -1,0 +1,102 @@
+{
+ "id": "maths-u25-arx-step",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u25",
+ "lesson": "System Identification",
+ "title": "Step response of y_t = 0.8y_{t−1} + 2u_{t−1}",
+ "caption": "Fed a unit step, the model's output creeps from 0 towards 10 as 10(1 − 0.8^t): the first step gives 2, and the DC gain is b/(1 − a) = 2/0.2 = 10.",
+ "alt": "A curve rising from 0 by 2 at t = 1 and levelling off at 10, with a dashed line at 10.",
+ "description": [
+  "The model has a₁ = −0.8 and b₁ = 2.",
+  "A unit step gives y₁ = 2, y₂ = 3.6, … following 10(1 − 0.8^t).",
+  "At steady state y = 0.8y + 2u, so the DC gain is 2/0.2 = 10."
+ ],
+ "range": {
+  "x": [
+   0,
+   20
+  ],
+  "y": [
+   0,
+   11
+  ]
+ },
+ "ticks": [
+  [
+   5,
+   10,
+   15,
+   20
+  ],
+  [
+   2,
+   4,
+   6,
+   8,
+   10
+  ]
+ ],
+ "grid": [
+  5,
+  2
+ ],
+ "axisLabels": [
+  "step t",
+  "y"
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "curves": [
+  {
+   "expr": "10*(1-0.8^x)",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "y": 10,
+   "label": "DC gain 10"
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 2,
+   "label": "2",
+   "dx": 10,
+   "dy": 14
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "10*(1-0.8^x)",
+   "x": 1,
+   "y": 2,
+   "name": "y₁ = 2 from the recursion"
+  },
+  {
+   "type": "point",
+   "expr": "10*(1-0.8^x)",
+   "x": 2,
+   "y": 3.6,
+   "name": "y₂ = 3.6 from the recursion"
+  },
+  {
+   "type": "value",
+   "expr": "10*(1-0.8^x)",
+   "x": 20,
+   "between": [
+    9.8,
+    10
+   ],
+   "name": "the output approaches the DC gain 10"
+  }
+ ],
+ "fromLesson": [
+  "DC gain y/u = 2/0.2 = 10"
+ ]
+}

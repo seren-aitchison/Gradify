@@ -1,0 +1,105 @@
+{
+ "id": "maths-u27-derivative-check",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u27",
+ "lesson": "Wolfram Alpha",
+ "title": "Checking x² sin x against 2x sin x + x² cos x",
+ "caption": "Wolfram|Alpha returns 2x sin x + x² cos x. At x = 2 the product-rule formula gives 1.973, which is the slope of the curve there, and the second curve is that formula for every x.",
+ "alt": "The curve y = x² sin x and the curve of its derivative 2x sin x + x² cos x, with the point x = 2 marked.",
+ "description": [
+  "Plot f(x) = x² sin x.",
+  "Plot the returned derivative 2x sin x + x² cos x.",
+  "At x = 2 the derivative's value 1.973 equals the slope of f.",
+  "Where f has a turning point the derivative crosses zero."
+ ],
+ "range": {
+  "x": [
+   0,
+   4
+  ],
+  "y": [
+   -8,
+   8
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4
+  ],
+  [
+   -8,
+   -4,
+   4,
+   8
+  ]
+ ],
+ "grid": [
+  1,
+  4
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "x^2*sin(x)",
+   "colour": "a1",
+   "label": "f(x)",
+   "labelAt": [
+    3.3,
+    -6.6
+   ]
+  },
+  {
+   "expr": "2*x*sin(x)+x^2*cos(x)",
+   "colour": "a2",
+   "label": "f′(x)",
+   "labelAt": [
+    0.5,
+    3.2
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 2,
+   "y": 1.9726023611141572,
+   "colour": "a2"
+  }
+ ],
+ "checks": [
+  {
+   "type": "slope",
+   "expr": "x^2*sin(x)",
+   "x": 2,
+   "value": 1.9726023611141572,
+   "name": "the slope of x² sin x at x = 2 is 2x sin x + x² cos x = 1.973"
+  },
+  {
+   "type": "slope",
+   "expr": "x^2*sin(x)",
+   "x": 1,
+   "value": 2.2232442754839328,
+   "name": "and at x = 1 it is 2 sin 1 + cos 1"
+  },
+  {
+   "type": "point",
+   "expr": "2*x*sin(x)+x^2*cos(x)",
+   "x": 2,
+   "y": 1.9726023611141572,
+   "name": "the derivative curve passes through (2, f′(2))"
+  }
+ ],
+ "fromLesson": [
+  "2x sin x + x"
+ ]
+}

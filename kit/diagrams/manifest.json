@@ -71112,5 +71112,5834 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "maths-u18-annealing-acceptance": {
+  "title": "Acceptance probability of a worsening move, Δ = 5",
+  "caption": "A move that worsens the cost by Δ = 5 is accepted with probability e^(−Δ/T). At T = 10 that is 0.61; at T = 1 it falls to 0.0067: cooling makes uphill moves rare.",
+  "alt": "A rising curve e^(−5/T) against temperature T, passing through (10, 0.61) and (1, 0.0067).",
+  "description": [
+   "Acceptance probability is e^(−Δ/T) with Δ = 5.",
+   "At T = 10: e^(−0.5) ≈ 0.61.",
+   "At T = 1: e^(−5) ≈ 0.0067.",
+   "The curve shows the probability rising with T: hot searches accept most uphill moves, cold ones almost none."
+  ],
+  "course": "maths",
+  "lesson": "Simulated Annealing",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u18.js: Simulated Annealing"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "at T = 10, e^(−0.5) ≈ 0.61",
+    "ok": true,
+    "detail": "y(10) = 0.6065"
+   },
+   {
+    "name": "at T = 1, e^(−5) ≈ 0.0067",
+    "ok": true,
+    "detail": "y(1) = 0.0067"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u18-eoq-curves": {
+  "title": "Ordering and holding cost against order size",
+  "caption": "Ordering cost 60000/Q falls with Q while holding cost 1.5Q rises. Their sum is smallest where the two are equal, at Q = 200, with each costing £300 and the total £600 a year.",
+  "alt": "Three curves against order size Q: a falling ordering cost, a rising holding-cost line and their U-shaped sum with its minimum 600 at Q = 200 where the first two cross at 300.",
+  "description": [
+   "Orders per year D/Q cost S each: 60000/Q.",
+   "Average stock Q/2 costs H each: 1.5Q.",
+   "The total is smallest where they cross: Q = √(2DS/H) = 200, with 6 orders a year.",
+   "At Q = 200 each cost is £300, total £600."
+  ],
+  "course": "maths",
+  "lesson": "Inventory Theory",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u18.js: Inventory Theory"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the total cost is least at Q = 200, £600",
+    "ok": true,
+    "detail": "found (200.007, 600)"
+   },
+   {
+    "name": "ordering and holding cost are equal at Q = 200: £300",
+    "ok": true,
+    "detail": "60000/x → 300, 1.5*x → 300"
+   },
+   {
+    "name": "300 + 300 = 600",
+    "ok": true,
+    "detail": "y(200) = 600"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u18-feasible-endpoint": {
+  "title": "The minimum on 0 ≤ x ≤ 2 is at the boundary",
+  "caption": "The unconstrained minimum of (x − 3)² is at x = 3, outside the feasible interval [0, 2]. On the feasible part the curve keeps falling, so the best feasible point is the endpoint x = 2, where f = 1 and the constraint x ≤ 2 is active.",
+  "alt": "A parabola with minimum at (3, 0), the part with 0 ≤ x ≤ 2 highlighted, and the lowest feasible point (2, 1) marked.",
+  "description": [
+   "The unconstrained minimum is x = 3, where f = 0.",
+   "That is infeasible: it breaks x ≤ 2.",
+   "On [0, 2] the curve is falling, so moving right always helps until the boundary.",
+   "The constrained minimum is f(2) = 1 at x = 2."
+  ],
+  "course": "maths",
+  "lesson": "Constrained Optimisation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u18.js: Constrained Optimisation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "on [0, 2] the minimum of (x − 3)² is f(2) = 1",
+    "ok": true,
+    "detail": "found (2, 1)"
+   },
+   {
+    "name": "without the constraint the minimum is at x = 3",
+    "ok": true,
+    "detail": "found (3, 0)"
+   },
+   {
+    "name": "f is falling on the feasible interval",
+    "ok": true,
+    "detail": "gradient -4.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u18-fence-area": {
+  "title": "Area against width for 100 m of fencing",
+  "caption": "With the wall as one side, the area is A = x(100 − 2x). The curve peaks where dA/dx = 100 − 4x = 0, at x = 25 m (so y = 50 m), giving the maximum area 1250 m².",
+  "alt": "A downward parabola A = x(100 − 2x) for x from 0 to 50 with its maximum 1250 at x = 25 marked.",
+  "description": [
+   "Two sides of width x and one of length y use 2x + y = 100 m of fence, so y = 100 − 2x.",
+   "The area is A = x(100 − 2x).",
+   "At the top of the curve dA/dx = 100 − 4x = 0, so x = 25 and y = 50.",
+   "The maximum area is 25 × 50 = 1250 m²."
+  ],
+  "course": "maths",
+  "lesson": "Mathematical Optimisation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u18.js: Mathematical Optimisation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the maximum area is 1250 m² at x = 25",
+    "ok": true,
+    "detail": "found (25, 1250)"
+   },
+   {
+    "name": "the gradient is 0 at x = 25",
+    "ok": true,
+    "detail": "gradient 0.0000"
+   },
+   {
+    "name": "25 × (100 − 50) = 1250",
+    "ok": true,
+    "detail": "y(25) = 1250"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u18-kkt-boundary": {
+  "title": "Minimising x² with x ≥ 1",
+  "caption": "The free minimum x = 0 breaks x ≥ 1, so the constraint is active and x* = 1 with value 1. The gradient of f there is 2, equal to the multiplier μ = 2 ≥ 0.",
+  "alt": "The parabola y = x² with the feasible part x ≥ 1 highlighted, the optimum at (1, 1) and the infeasible vertex at the origin.",
+  "description": [
+   "The unconstrained minimum is x = 0, which has x < 1.",
+   "Case μ = 0 therefore fails: the constraint must be active, so x = 1.",
+   "Stationarity 2x − μ = 0 gives μ = 2 at x = 1.",
+   "μ = 2 ≥ 0, so x* = 1 satisfies the KKT conditions with value 1."
+  ],
+  "course": "maths",
+  "lesson": "Karush–Kuhn–Tucker Conditions",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u18.js: Karush–Kuhn–Tucker Conditions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "on x ≥ 1 the minimum is at x = 1 with value 1",
+    "ok": true,
+    "detail": "found (1, 1)"
+   },
+   {
+    "name": "the gradient of f at x = 1 is 2 = μ",
+    "ok": true,
+    "detail": "gradient 2.0000"
+   },
+   {
+    "name": "f(1) = 1",
+    "ok": true,
+    "detail": "y(1) = 1"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u18-lagrange-tangent": {
+  "title": "The level curve xy = 25 just touches x + y = 10",
+  "caption": "On the constraint line x + y = 10 the product xy is largest where the level curve xy = 25 only touches the line, at (5, 5). There the curve and the line have the same gradient −1, which is what ∇f = λ∇g says.",
+  "alt": "The hyperbola xy = 25 touching the line x + y = 10 at the single point (5, 5).",
+  "description": [
+   "The constraint is the line y = 10 − x; the level curves of xy are hyperbolas.",
+   "The level xy = 25 touches the line at (5, 5) without crossing it.",
+   "Both have gradient −1 there, so the gradients of f and g are parallel.",
+   "Hence the maximum of xy on the line is 25."
+  ],
+  "course": "maths",
+  "lesson": "Lagrange Multipliers",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u18.js: Lagrange Multipliers"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "xy = 25 meets x + y = 10 at (5, 5)",
+    "ok": true,
+    "detail": "25/x → 5, 10-x → 5"
+   },
+   {
+    "name": "xy = 25 has gradient −1 at (5, 5)",
+    "ok": true,
+    "detail": "gradient -1.0000"
+   },
+   {
+    "name": "the line has gradient −1",
+    "ok": true,
+    "detail": "gradient -1.0000"
+   },
+   {
+    "name": "on the line, xy = x(10 − x) is largest at x = 5 with value 25",
+    "ok": true,
+    "detail": "found (5, 25)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u18-lp-vertices": {
+  "title": "The feasible region and its vertices",
+  "caption": "The constraints x + y ≤ 4 and x + 3y ≤ 6 with x, y ≥ 0 bound a quadrilateral with vertices (0, 0), (4, 0), (3, 1) and (0, 2). The objective 3x + 2y takes 0, 12, 11 and 4 there, so the optimum is 12 at the vertex (4, 0).",
+  "alt": "A shaded quadrilateral with corners (0, 0), (4, 0), (3, 1) and (0, 2), each labelled with the value of 3x + 2y, the largest 12 at (4, 0).",
+  "description": [
+   "Draw x + y = 4 and x + 3y = 6 with the axes: they meet at (3, 1).",
+   "The feasible region is the quadrilateral with vertices (0, 0), (4, 0), (3, 1), (0, 2).",
+   "Evaluate 3x + 2y at each vertex: 0, 12, 11, 4.",
+   "An optimum of a linear objective is at a vertex: here (4, 0) with value 12."
+  ],
+  "course": "maths",
+  "lesson": "Linear Programming",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u18.js: Linear Programming"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the feasible region has area 5",
+    "ok": true,
+    "detail": "shoelace 5"
+   },
+   {
+    "name": "3x + 2y = 12 at (4, 0), the largest vertex value",
+    "ok": true,
+    "detail": "12"
+   },
+   {
+    "name": "3x + 2y = 11 at (3, 1)",
+    "ok": true,
+    "detail": "11"
+   },
+   {
+    "name": "(3, 1) satisfies x + 3y = 6",
+    "ok": true,
+    "detail": "6"
+   },
+   {
+    "name": "the lesson states \"The optimum is 12 at (4, 0)\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "15 labels in 640×330"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "15 labels in 380×271"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u18-pareto-front": {
+  "title": "The Pareto front of cost against emissions",
+  "caption": "Minimising both, C = (5, 5) is dominated by B = (4, 4), which is lower on both axes. A, B and D each beat the others on one objective, so they form the Pareto front.",
+  "alt": "Four points on a cost against emissions grid; A, B and D joined by a dashed front, and C above and to the right of B.",
+  "description": [
+   "Plot each option as (cost, emissions); lower-left is better.",
+   "B = (4, 4) has cost and emissions both at most C's, and strictly less, so C is dominated.",
+   "No other pair is ordered on both objectives.",
+   "The Pareto optimal set is {A, B, D}."
+  ],
+  "course": "maths",
+  "lesson": "Multiobjective Optimisation",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u18.js: Multiobjective Optimisation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "three of the four options are Pareto optimal",
+    "ok": true,
+    "detail": "3"
+   },
+   {
+    "name": "C is 1 worse than B in cost and 1 worse in emissions (5 − 4)",
+    "ok": true,
+    "detail": "1"
+   },
+   {
+    "name": "the lesson states \"Pareto optimal: A, B and D\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "21 labels in 640×340"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "21 labels in 380×320"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u18-queue-blowup": {
+  "title": "Queue length L = ρ/(1 − ρ)",
+  "caption": "With λ = 8 and μ = 10 the utilisation is ρ = 0.8 and the mean number in the system is L = 0.8/0.2 = 4. The curve climbs steeply as ρ nears 1, so a busy server brings long queues.",
+  "alt": "The curve L = ρ/(1 − ρ) for ρ from 0 to 0.95, passing through (0.8, 4) and rising steeply near 1.",
+  "description": [
+   "Utilisation ρ = λ/μ = 8/10 = 0.8.",
+   "L = ρ/(1 − ρ) = 0.8/0.2 = 4 customers.",
+   "Little's law: W = L/λ = 0.5 hours, matching 1/(μ − λ).",
+   "Small rises in ρ near 1 make L grow very fast."
+  ],
+  "course": "maths",
+  "lesson": "Queueing Theory",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u18.js: Queueing Theory"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "ρ = 8/10 = 0.8 gives L = 0.8/0.2 = 4",
+    "ok": true,
+    "detail": "y(0.8) = 4"
+   },
+   {
+    "name": "ρ = 0.95 gives L = 19",
+    "ok": true,
+    "detail": "y(0.95) = 19"
+   },
+   {
+    "name": "Little's law: λW = 8 × 0.5 = 4",
+    "ok": true,
+    "detail": "8*(1/(10-8)) at 0 = 4; expected 3.999–4.001"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u18-two-minima": {
+  "title": "Two local minima, one global",
+  "caption": "f(x) = x⁴ − 4x² + x has stationary points at x ≈ -1.47, 0.13 and 1.35. The outer two are minima, with f ≈ -5.44 and -2.62, so only the left one is the global minimum; descent from the right would stop at the worse one.",
+  "alt": "A double-well curve with a deep minimum near x = -1.47, a shallow one near x = 1.35 and a small peak near x = 0.13.",
+  "description": [
+   "Solve f′(x) = 4x³ − 8x + 1 = 0: three roots near −1.47, 0.13 and 1.35.",
+   "f″ > 0 at the outer two (minima) and f″ < 0 at 0.13 (maximum).",
+   "f(−1.47) ≈ -5.44 is lower than f(1.35) ≈ -2.62.",
+   "The left minimum is global; the right is only local."
+  ],
+  "course": "maths",
+  "lesson": "Nonconvex Optimisation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u18.js: Nonconvex Optimisation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "f′ = 0 at the left minimum",
+    "ok": true,
+    "detail": "gradient -0.0000"
+   },
+   {
+    "name": "f′ = 0 at the local maximum",
+    "ok": true,
+    "detail": "gradient 0.0000"
+   },
+   {
+    "name": "f′ = 0 at the right minimum",
+    "ok": true,
+    "detail": "gradient 0.0000"
+   },
+   {
+    "name": "the left minimum is about −5.44",
+    "ok": true,
+    "detail": "found (-1.473, -5.4442)"
+   },
+   {
+    "name": "the right minimum is about −2.62",
+    "ok": true,
+    "detail": "found (1.347, -2.6186)"
+   },
+   {
+    "name": "the stationary point at 0.13 is a maximum",
+    "ok": true,
+    "detail": "found (0.126, 0.063)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u20-bath-stock": {
+  "title": "A stock rising at the net flow",
+  "caption": "The net flow is 10 − 6 = 4 L/min, so the stock rises along a straight line of gradient 4: from 100 L to 140 L in 10 minutes.",
+  "alt": "A straight rising line of bath volume against time, from 100 litres at 0 minutes to 140 litres at 10 minutes.",
+  "description": [
+   "The inflow is 10 L/min and the outflow 6 L/min, so the net flow is 4 L/min.",
+   "dS/dt = 4 is constant, so S is a straight line with gradient 4.",
+   "After 10 minutes the bath holds 100 + 4 × 10 = 140 L."
+  ],
+  "course": "maths",
+  "lesson": "Systems Theory",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u20.js: Systems Theory"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the gradient is the net flow 10 − 6 = 4 L/min",
+    "ok": true,
+    "detail": "gradient 4.0000"
+   },
+   {
+    "name": "after 10 minutes the bath holds 140 L",
+    "ok": true,
+    "detail": "y(10) = 140"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u20-cooling-tea": {
+  "title": "A cooling cup of tea",
+  "caption": "Newton's law of cooling gives T = 20 + 70e^(−kt): the tea starts at 90 °C and falls toward the 20 °C room. The reading 60 °C at 10 minutes fixes k = ln(70/40)/10 ≈ 0.056 per minute.",
+  "alt": "A decaying curve starting at 90 degrees Celsius at time 0, passing through 60 degrees at 10 minutes and levelling off towards the dashed room-temperature line at 20 degrees.",
+  "description": [
+   "The temperature starts at 90 °C and the room is at 20 °C.",
+   "The curve T = 20 + 70e^(−kt) falls fast at first, then more slowly.",
+   "The measurement 60 °C at 10 minutes gives k = ln(70/40)/10 ≈ 0.056 per minute.",
+   "The curve levels off at the room temperature, 20 °C."
+  ],
+  "course": "maths",
+  "lesson": "Mathematical Modelling",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u20.js: Mathematical Modelling"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "T(0) = 20 + 70 = 90 °C",
+    "ok": true,
+    "detail": "y(0) = 90"
+   },
+   {
+    "name": "T(10) = 60 °C fixes k = ln(70/40)/10",
+    "ok": true,
+    "detail": "y(10) = 60"
+   },
+   {
+    "name": "T(60) is close to the 20 °C room temperature",
+    "ok": true,
+    "detail": "y(60) = 22.4371"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u20-deep-water-velocities": {
+  "title": "Phase and group velocity of deep-water waves",
+  "caption": "For ω = √(gk) the phase velocity is √(g/k) and the group velocity is half of it, whatever the wavenumber: the crests overtake the group.",
+  "alt": "Two falling curves of speed against wavenumber k, the phase velocity above and the group velocity exactly half as high.",
+  "description": [
+   "The phase velocity v_p = ω/k = √(g/k) falls as k grows.",
+   "The group velocity v_g = dω/dk = ½√(g/k) is half of it at every k.",
+   "At k = 1 rad/m with g = 9.81 m/s² the phase velocity is 3.13 m/s and the group velocity 1.57 m/s."
+  ],
+  "course": "maths",
+  "lesson": "Wave Mechanics",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u20.js: Wave Mechanics"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the phase velocity exceeds the group velocity",
+    "ok": true,
+    "detail": "3.13 > 1.57"
+   },
+   {
+    "name": "v_p(1) = √9.81 = 3.13 m/s",
+    "ok": true,
+    "detail": "y(1) = 3.1321"
+   },
+   {
+    "name": "dω/dk = ½√(g/k) at k = 1",
+    "ok": true,
+    "detail": "gradient 1.5660"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u20-emax": {
+  "title": "A dose–response curve",
+  "caption": "E = 100C/(2 + C) rises steeply and then saturates at E_max = 100%. At C = EC₅₀ = 2 mg/L the effect is 50%, and at C = 6 mg/L it is 75%.",
+  "alt": "A saturating curve of effect against concentration, passing 50 percent at 2 milligrams per litre and 75 percent at 6, levelling towards 100 percent.",
+  "description": [
+   "With E_max = 100% and EC₅₀ = 2 mg/L the effect is E = 100C/(2 + C).",
+   "At C = 2 mg/L the effect is half of E_max: 50%.",
+   "At C = 6 mg/L: E = 100 × 6/8 = 75%.",
+   "The curve approaches 100% but never reaches it."
+  ],
+  "course": "maths",
+  "lesson": "Pharmacodynamic Modelling",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u20.js: Pharmacodynamic Modelling"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "at C = EC₅₀ the effect is E_max/2",
+    "ok": true,
+    "detail": "y(2) = 50"
+   },
+   {
+    "name": "100 × 6/8 = 75%",
+    "ok": true,
+    "detail": "y(6) = 75"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u20-error-growth": {
+  "title": "A small error grows to O(1)",
+  "caption": "With λ = 0.5 per day the difference 0.001e^(0.5t) grows by a factor e every 2 days and reaches 1 at t = 2 ln 1000 ≈ 13.8 days: an error of one part in a thousand ruins a forecast in two weeks.",
+  "alt": "An exponential curve of the difference between two weather states, starting at 0.001 and climbing through 1 at 13.8 days.",
+  "description": [
+   "The separation starts at 0.001 and grows as 0.001e^(0.5t).",
+   "It is still tiny for the first week, then climbs sharply.",
+   "It reaches 1 when e^(0.5t) = 1000, at t = 2 ln 1000 ≈ 13.8 days."
+  ],
+  "course": "maths",
+  "lesson": "Chaos and Complex Systems",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u20.js: Chaos and Complex Systems"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "0.001e^(0.5 × 13.8) = 1",
+    "ok": true,
+    "detail": "y(13.815510557964274) = 1"
+   },
+   {
+    "name": "the starting difference is 0.001",
+    "ok": true,
+    "detail": "y(0) = 0.001"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u20-final-size": {
+  "title": "The final size relation for R₀ = 2",
+  "caption": "The final fraction infected z solves z = 1 − e^(−R₀z). For R₀ = 2 the curve 1 − e^(−2z) meets the line y = z at z ≈ 0.797: about 80% are infected.",
+  "alt": "The curve y = 1 − e to the minus 2z and the straight line y = z crossing at z about 0.797.",
+  "description": [
+   "Plot y = z (the line) and y = 1 − e^(−2z) (the curve).",
+   "Both are zero at z = 0; the non-zero crossing is the epidemic's final size.",
+   "It is at z ≈ 0.797: 1 − e^(−1.6) = 0.798 is close to 0.8."
+  ],
+  "course": "maths",
+  "lesson": "Mathematical Epidemiology",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u20.js: Mathematical Epidemiology"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the curve and the line meet at z ≈ 0.797",
+    "ok": true,
+    "detail": "1-exp(-2*x) → 0.797, x → 0.797"
+   },
+   {
+    "name": "1 − e^(−1.6) = 0.798, close to 0.8",
+    "ok": true,
+    "detail": "y(0.8) = 0.7981"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u20-herd-threshold": {
+  "title": "Measles: the threshold and the coverage needed",
+  "caption": "With R₀ = 15 the immune fraction must reach 1 − 1/15 ≈ 0.933. A vaccine that is 97% effective needs coverage 0.933/0.97 ≈ 0.962 to get there.",
+  "alt": "A number line from 0.9 to 1 with two marked points: 0.933, the herd immunity threshold, and 0.962, the vaccine coverage needed.",
+  "description": [
+   "R₀ = 15, so the herd immunity threshold is 1 − 1/15 ≈ 0.933.",
+   "A 97%-effective vaccine protects 0.97 of those covered.",
+   "Coverage 0.933/0.97 ≈ 0.962 is needed: higher than the threshold itself."
+  ],
+  "course": "maths",
+  "lesson": "Epidemiological Modelling",
+  "also": [],
+  "renderer": "number-line",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u20.js: Epidemiological Modelling"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "threshold 0.933 is at 0.9333",
+    "ok": true,
+    "detail": "14/15 = 0.933333"
+   },
+   {
+    "name": "coverage 0.962 is at 0.9622",
+    "ok": true,
+    "detail": "(14/15)/0.97 = 0.962199"
+   },
+   {
+    "name": "threshold 1 − 1/15 = 0.933",
+    "ok": true,
+    "detail": "0.933333"
+   },
+   {
+    "name": "coverage 0.933/0.97 = 0.962",
+    "ok": true,
+    "detail": "0.962199"
+   },
+   {
+    "name": "the lesson states \"Threshold = 1 − 1/15 ≈ 0.933\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "8 labels in 680×112"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "8 labels in 380×112"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u20-hydrogen-levels": {
+  "title": "The hydrogen transition n = 2 → n = 1",
+  "caption": "E_n = −13.6/n² eV gives E₁ = −13.6 eV and E₂ = −3.4 eV. The photon carries the difference, −3.4 − (−13.6) = 10.2 eV.",
+  "alt": "Two horizontal energy levels, n = 1 at minus 13.6 electron volts and n = 2 at minus 3.4, joined by a downward arrow marked 10.2 electron volts.",
+  "description": [
+   "E_n = −13.6/n² eV: E₁ = −13.6 eV and E₂ = −13.6/4 = −3.4 eV.",
+   "The electron falls from n = 2 to n = 1.",
+   "The photon takes the difference: ΔE = −3.4 − (−13.6) = 10.2 eV."
+  ],
+  "course": "maths",
+  "lesson": "Quantum Mechanics",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u20.js: Quantum Mechanics"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "E₁ = −13.6 eV",
+    "ok": true,
+    "detail": "y(0) = -13.6"
+   },
+   {
+    "name": "E₂ = −13.6/4 = −3.4 eV",
+    "ok": true,
+    "detail": "y(0) = -3.4"
+   },
+   {
+    "name": "ΔE = 10.2 eV",
+    "ok": true,
+    "detail": "y(0) = 10.2"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u20-iv-decay": {
+  "title": "Concentration after an IV dose",
+  "caption": "A 500 mg dose in V = 50 L gives C₀ = 10 mg/L, and the half-life of 4 hours means k = 0.693/4 ≈ 0.173 per hour: the concentration is 5 mg/L at 4 hours and 2.5 mg/L at 8.",
+  "alt": "A decaying curve of concentration starting at 10 milligrams per litre, passing 5 at 4 hours and 2.5 at 8 hours.",
+  "description": [
+   "The dose of 500 mg in V = 50 L gives C₀ = 10 mg/L.",
+   "Each 4 hours the concentration halves: 5 mg/L at 4 h, 2.5 mg/L at 8 h, 1.25 mg/L at 12 h.",
+   "The decay rate is k = 0.693/4 ≈ 0.173 per hour and the clearance is CL = kV ≈ 8.7 L/hour."
+  ],
+  "course": "maths",
+  "lesson": "Pharmacokinetic Modelling",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u20.js: Pharmacokinetic Modelling"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "C(0) = 500/50 = 10 mg/L",
+    "ok": true,
+    "detail": "y(0) = 10"
+   },
+   {
+    "name": "one half-life of 4 hours halves the concentration",
+    "ok": true,
+    "detail": "y(4) = 5"
+   },
+   {
+    "name": "two half-lives give a quarter",
+    "ok": true,
+    "detail": "y(8) = 2.5"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u20-levins": {
+  "title": "The Levins metapopulation model",
+  "caption": "dp/dt = 0.4p(1 − p) − 0.1p is positive for small p and negative beyond p* = 1 − e/c = 0.75, so the occupied fraction settles at three-quarters of the patches.",
+  "alt": "A downward parabola of the rate of change of the occupied fraction p against p, crossing zero at p = 0 and at the stable equilibrium p = 0.75.",
+  "description": [
+   "Set c = 0.4 and e = 0.1.",
+   "The rate of change is positive for 0 < p < 0.75 and negative for p > 0.75.",
+   "It is zero at p* = 1 − e/c = 0.75: three-quarters of the patches are occupied."
+  ],
+  "course": "maths",
+  "lesson": "Ecological Modelling",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u20.js: Ecological Modelling"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "dp/dt = 0 at p = 0.75",
+    "ok": true,
+    "detail": "y(0.75) = 0"
+   },
+   {
+    "name": "the rate peaks half-way between 0 and p*",
+    "ok": true,
+    "detail": "found (0.375, 0.056)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u20-logistic-rate": {
+  "title": "Logistic growth rate against population",
+  "caption": "With r = 0.5 per hour and K = 10⁹, dN/dt = rN(1 − N/K) is a parabola in N. At N = 5 × 10⁸ the rate is 1.25 × 10⁸ cells per hour, its maximum, half-way to K.",
+  "alt": "A downward parabola of growth rate against population, zero at N = 0 and N = 10 to the 9, with its peak 1.25 at N = 5 (in units of 10 to the 8).",
+  "description": [
+   "Measure N in units of 10⁸ cells, so K = 10 and the rate is in units of 10⁸ cells per hour.",
+   "The rate 0.5N(1 − N/10) is zero at N = 0 and N = 10.",
+   "Its maximum is at N = 5, where the rate is 1.25 (× 10⁸ cells per hour)."
+  ],
+  "course": "maths",
+  "lesson": "Biological Modelling",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u20.js: Biological Modelling"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "0.5 × 5 × (1 − 0.5) = 1.25",
+    "ok": true,
+    "detail": "y(5) = 1.25"
+   },
+   {
+    "name": "the maximum rate is at N = K/2",
+    "ok": true,
+    "detail": "found (5, 1.25)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u20-perturbation-root": {
+  "title": "The first-order root against the exact root",
+  "caption": "The positive root of x² + εx − 1 = 0 is x ≈ 1 − ε/2 for small ε. At ε = 0.1 the approximation gives 0.95 and the exact root is 0.9512; the two curves part company only as ε grows.",
+  "alt": "Two curves of the root against epsilon from 0 to 0.6: the exact root and the straight line 1 minus epsilon over 2, almost touching near epsilon 0 and separating slowly.",
+  "description": [
+   "For ε = 0 the root is 1.",
+   "The first-order approximation 1 − ε/2 is a straight line.",
+   "The exact root (−ε + √(ε² + 4))/2 is a curve that leaves the line only slowly.",
+   "At ε = 0.1 the approximation is 0.95 and the exact root is 0.9512."
+  ],
+  "course": "maths",
+  "lesson": "Perturbation Theory",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u20.js: Perturbation Theory"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "exact root at ε = 0.1 is 0.9512",
+    "ok": true,
+    "detail": "y(0.1) = 0.9512"
+   },
+   {
+    "name": "first-order root at ε = 0.1 is 0.95",
+    "ok": true,
+    "detail": "y(0.1) = 0.95"
+   },
+   {
+    "name": "the exact root satisfies x² + 0.1x − 1 = 0",
+    "ok": true,
+    "detail": "y(0.9512492197250393) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u20-protein-steady-state": {
+  "title": "A protein approaching its steady state",
+  "caption": "With production β = 10 nM/min and degradation α = 0.1 per minute, x(t) = 100(1 − e^(−0.1t)) climbs to x* = β/α = 100 nM, reaching half of it after ln 2/α ≈ 6.9 minutes.",
+  "alt": "A rising curve of protein concentration from 0, passing 50 nanomolar at 6.9 minutes and levelling off at 100 nanomolar.",
+  "description": [
+   "Production β = 10 nM/min and degradation α = 0.1 per minute balance at x* = β/α = 100 nM.",
+   "Starting from zero the protein follows x = 100(1 − e^(−0.1t)).",
+   "It is half-way (50 nM) at t = ln 2/α ≈ 6.9 minutes, a time set by the degradation rate."
+  ],
+  "course": "maths",
+  "lesson": "Systems Biology",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u20.js: Systems Biology"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "half of x* is reached at ln 2/α = 6.93 minutes",
+    "ok": true,
+    "detail": "y(6.931471805599452) = 50"
+   },
+   {
+    "name": "the initial rate is the production rate β = 10 nM/min",
+    "ok": true,
+    "detail": "gradient 10.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u20-stable-spiral": {
+  "title": "Eigenvalues (−1 ± i√3)/2: a decaying oscillation",
+  "caption": "The Jacobian has trace −1 and determinant 1, so the eigenvalues are (−1 ± i√3)/2: the imaginary part makes x(t) oscillate and the negative real part makes the oscillation die away as e^(−t/2).",
+  "alt": "The position x against time for the system starting at x = 1: a wave that crosses zero repeatedly and shrinks inside the dashed decay envelope e to the minus t over 2.",
+  "description": [
+   "The Jacobian [[0, 1], [−1, −1]] has trace −1 and determinant 1.",
+   "Its eigenvalues (−1 ± i√3)/2 have real part −½ and imaginary part ±√3/2.",
+   "A solution from x(0) = 1, y(0) = 0 is x = e^(−t/2)(cos(√3t/2) + sin(√3t/2)/√3).",
+   "It oscillates (imaginary part) and decays (negative real part): a stable spiral."
+  ],
+  "course": "maths",
+  "lesson": "Nonlinear Dynamics",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u20.js: Nonlinear Dynamics"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "x(0) = 1",
+    "ok": true,
+    "detail": "y(0) = 1"
+   },
+   {
+    "name": "x′(0) = y(0) = 0",
+    "ok": true,
+    "detail": "gradient 0.0000"
+   },
+   {
+    "name": "the envelope decays at the real part −½: e^(−1) at t = 2",
+    "ok": true,
+    "detail": "y(2) = 0.3679"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u27-beta-posterior": {
+  "title": "The Beta(8, 4) posterior",
+  "caption": "With a uniform Beta(1, 1) prior and 7 heads in 10 tosses the posterior is Beta(8, 4), with density 1320 x⁷(1 − x)³. It has area 1 and mean 8/12 ≈ 0.67, which az.summary reports.",
+  "alt": "A single-humped curve over p from 0 to 1, peaking near 0.7 and centred near 0.67.",
+  "description": [
+   "Start from a flat prior on the coin's bias p.",
+   "Seven heads in ten tosses multiply by p⁷(1 − p)³.",
+   "The result is the Beta(8, 4) density 1320 p⁷(1 − p)³.",
+   "Its mean is 8/12 ≈ 0.67."
+  ],
+  "course": "maths",
+  "lesson": "PyMC",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u27.js: PyMC"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the posterior density has area 1",
+    "ok": true,
+    "detail": "area 1.0000"
+   },
+   {
+    "name": "its mean is 8/12 ≈ 0.67",
+    "ok": true,
+    "detail": "area 0.6667"
+   },
+   {
+    "name": "its peak is at p = 7/10",
+    "ok": true,
+    "detail": "found (0.7, 2.935)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u27-circumcentre": {
+  "title": "The circumcentre of a triangle",
+  "caption": "The perpendicular bisectors of the three sides of triangle ABC meet at one point O = (3, 1). A circle centred there passes through A, B and C. Dragging a vertex in GeoGebra moves everything but keeps this true.",
+  "alt": "A triangle ABC with a circle through its three vertices, centred at O where the perpendicular bisectors of the sides cross.",
+  "description": [
+   "Draw triangle ABC with A = (0, 0), B = (6, 0), C = (2, 4).",
+   "Mark the midpoint of each side and draw its perpendicular bisector.",
+   "All three bisectors pass through O = (3, 1).",
+   "The circle centred at O through A also passes through B and C."
+  ],
+  "course": "maths",
+  "lesson": "GeoGebra",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u27.js: GeoGebra"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "M is the midpoint of AB",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "N is the midpoint of AC",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "K is the midpoint of BC",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "OM is perpendicular to AB",
+    "ok": true,
+    "detail": "0"
+   },
+   {
+    "name": "ON is perpendicular to AC",
+    "ok": true,
+    "detail": "0"
+   },
+   {
+    "name": "OK is perpendicular to BC",
+    "ok": true,
+    "detail": "0"
+   },
+   {
+    "name": "the circle centred at O passes through A, B and C",
+    "ok": true,
+    "detail": "3.1623, 3.1623, 3.1623"
+   },
+   {
+    "name": "the lesson states \"circumcentre\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 640×380"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 380×298"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u27-damped-oscillation": {
+  "title": "The mass–spring–damper oscillation",
+  "caption": "For m = 1 kg, c = 2 N·s/m and k = 100 N/m, ẍ + 2ẋ + 100x = 0 gives x = e^{−t} cos(√99 t) from a start at x = 1: it oscillates at √99 ≈ 9.95 rad/s, close to √100 = 10, inside the decaying envelope e^{−t}.",
+  "alt": "A cosine wave of about ten radians per second starting at 1 and shrinking inside the dashed envelope e^{−t}.",
+  "description": [
+   "The model is ẍ + 2ẋ + 100x = 0 with the mass displaced to x = 1.",
+   "The solution is x = e^{−t} cos(√99 t).",
+   "The oscillation has angular frequency about 10 rad/s.",
+   "The amplitude decays like e^{−t}."
+  ],
+  "course": "maths",
+  "lesson": "MapleSim",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u27.js: MapleSim"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "x(0) = 1",
+    "ok": true,
+    "detail": "y(0) = 1"
+   },
+   {
+    "name": "one period 2π/√99 ≈ 0.631 s later the displacement is e^{−t}",
+    "ok": true,
+    "detail": "y(0.6314838833996552) = 0.5318"
+   },
+   {
+    "name": "at t = 2 s the oscillation is inside the envelope ±e^{−2}",
+    "ok": true,
+    "detail": "exp(-x)*cos(9.9498743710662*x) at 2 = 0.07; expected -0.1354–0.1354"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u27-derivative-check": {
+  "title": "Checking x² sin x against 2x sin x + x² cos x",
+  "caption": "Wolfram|Alpha returns 2x sin x + x² cos x. At x = 2 the product-rule formula gives 1.973, which is the slope of the curve there, and the second curve is that formula for every x.",
+  "alt": "The curve y = x² sin x and the curve of its derivative 2x sin x + x² cos x, with the point x = 2 marked.",
+  "description": [
+   "Plot f(x) = x² sin x.",
+   "Plot the returned derivative 2x sin x + x² cos x.",
+   "At x = 2 the derivative's value 1.973 equals the slope of f.",
+   "Where f has a turning point the derivative crosses zero."
+  ],
+  "course": "maths",
+  "lesson": "Wolfram Alpha",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u27.js: Wolfram Alpha"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the slope of x² sin x at x = 2 is 2x sin x + x² cos x = 1.973",
+    "ok": true,
+    "detail": "gradient 1.9726"
+   },
+   {
+    "name": "and at x = 1 it is 2 sin 1 + cos 1",
+    "ok": true,
+    "detail": "gradient 2.2232"
+   },
+   {
+    "name": "the derivative curve passes through (2, f′(2))",
+    "ok": true,
+    "detail": "y(2) = 1.9726"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u27-desmos-slider": {
+  "title": "y = a(x − 2)² + 1 for three values of a",
+  "caption": "Every value of a gives a parabola with its vertex at (2, 1). Positive a opens upwards, negative a opens downwards, and a larger |a| makes the curve narrower: a = 2 is steeper than a = 1.",
+  "alt": "Three parabolas with the same vertex (2, 1): a = 1 and a = 2 opening upwards, a = −1 opening downwards.",
+  "description": [
+   "Type y = a(x − 2)² + 1 and accept the slider for a.",
+   "With a = 1 the parabola opens upwards from (2, 1).",
+   "With a = 2 it is narrower; with a = −1 it opens downwards.",
+   "The vertex stays at (2, 1) throughout."
+  ],
+  "course": "maths",
+  "lesson": "Desmos",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u27.js: Desmos"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "with a = -1 the vertex is (2, 1)",
+    "ok": true,
+    "detail": "y(2) = 1"
+   },
+   {
+    "name": "with a = 1 the vertex is (2, 1)",
+    "ok": true,
+    "detail": "y(2) = 1"
+   },
+   {
+    "name": "with a = 2 the vertex is (2, 1)",
+    "ok": true,
+    "detail": "y(2) = 1"
+   },
+   {
+    "name": "a = 2: the gradient at x = 3 is 4",
+    "ok": true,
+    "detail": "gradient 4.0000"
+   },
+   {
+    "name": "a = 1: the gradient at x = 3 is only 2",
+    "ok": true,
+    "detail": "gradient 2.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u27-factor-360": {
+  "title": "factor(360) = 2³ × 3² × 5",
+  "caption": "GP returns the matrix [2, 3; 3, 2; 5, 1]: the primes of 360 with their exponents. The factor tree shows where they come from, and eulerphi(360) = 360 × (1/2)(2/3)(4/5) = 96 uses the same three primes.",
+  "alt": "A factor tree for 360 splitting into 2 and 180, then down to three 2s, two 3s and a 5.",
+  "description": [
+   "Split 360 = 2 × 180.",
+   "Keep splitting: 180 = 2 × 90, 90 = 2 × 45, 45 = 5 × 9, 9 = 3 × 3.",
+   "The prime leaves are 2, 2, 2, 5, 3, 3.",
+   "So 360 = 2³ × 3² × 5, as factor(360) reports."
+  ],
+  "course": "maths",
+  "lesson": "PARI/GP",
+  "also": [],
+  "renderer": "factor-tree",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u27.js: PARI/GP"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every branch multiplies to the number above it, and every leaf is prime",
+    "ok": true,
+    "detail": "leaves 2, 2, 2, 5, 3, 3"
+   },
+   {
+    "name": "360 = 2^{3} × 3^{2} × 5",
+    "ok": true,
+    "detail": "leaves 2 × 2 × 2 × 3 × 3 × 5"
+   },
+   {
+    "name": "the lesson states \"96\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "12 labels in 560×448"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "12 labels in 380×408"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "560px wide, shown at 126% (labels 18.9px)"
+   }
+  ]
+ },
+ "maths-u27-linear-system": {
+  "title": "2x + y = 5 and x + 3y = 10 meet at (1, 3)",
+  "caption": "Each equation is a straight line. MATLAB's A \\ b returns [1; 3], the one point where the lines cross, and A*x reproduces b.",
+  "alt": "Two straight lines, y = 5 − 2x and y = (10 − x)/3, crossing at the point (1, 3).",
+  "description": [
+   "Write each equation as a line: y = 5 − 2x and y = (10 − x)/3.",
+   "The solution is the point on both lines.",
+   "They cross at (1, 3), the output of A \\ b.",
+   "Check: 2 + 3 = 5 and 1 + 9 = 10."
+  ],
+  "course": "maths",
+  "lesson": "MATLAB",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u27.js: MATLAB"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the two lines meet at (1, 3)",
+    "ok": true,
+    "detail": "5-2*x → 3, (10-x)/3 → 3"
+   },
+   {
+    "name": "2(1) + 3 = 5",
+    "ok": true,
+    "detail": "y(1) = 3"
+   },
+   {
+    "name": "1 + 3(3) = 10",
+    "ok": true,
+    "detail": "y(1) = 3"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u27-maple-roots": {
+  "title": "solve(x^2 - 5*x + 6 = 0, x) gives 2, 3",
+  "caption": "The parabola y = x² − 5x + 6 crosses the x-axis at x = 2 and x = 3, the two values Maple's solve returns. Its minimum is below the axis halfway between them, at x = 2.5.",
+  "alt": "The parabola y = x² − 5x + 6 crossing the x-axis at (2, 0) and (3, 0).",
+  "description": [
+   "Plot y = x² − 5x + 6.",
+   "It crosses the axis where the quadratic is zero.",
+   "Those places are x = 2 and x = 3.",
+   "That is the output of solve."
+  ],
+  "course": "maths",
+  "lesson": "Maple",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u27.js: Maple"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "x = 2 is a root",
+    "ok": true,
+    "detail": "y(2) = 0"
+   },
+   {
+    "name": "x = 3 is a root",
+    "ok": true,
+    "detail": "y(3) = 0"
+   },
+   {
+    "name": "the minimum is at x = 2.5, halfway between the roots",
+    "ok": true,
+    "detail": "found (2.5, -0.25)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u27-maxima-cubic": {
+  "title": "(x + 1)³ and its gradient at x = 2",
+  "caption": "Maxima expands (x + 1)³ to x³ + 3x² + 3x + 1 and differentiates to 3x² + 6x + 3. Substituting x = 2 gives 27 for the gradient: the tangent at (2, 27) rises 27 units for every 1 across.",
+  "alt": "The cubic y = (x + 1)³ with its steep tangent line touching at the point (2, 27).",
+  "description": [
+   "The curve is y = (x + 1)³ = x³ + 3x² + 3x + 1.",
+   "Its derivative is 3x² + 6x + 3.",
+   "At x = 2 the derivative is 12 + 12 + 3 = 27.",
+   "The tangent at (2, 27) has gradient 27."
+  ],
+  "course": "maths",
+  "lesson": "Maxima",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u27.js: Maxima"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(2 + 1)³ = 27",
+    "ok": true,
+    "detail": "y(2) = 27"
+   },
+   {
+    "name": "the gradient at x = 2 is 3·4 + 6·2 + 3 = 27",
+    "ok": true,
+    "detail": "gradient 27.0000"
+   },
+   {
+    "name": "the tangent has gradient 27",
+    "ok": true,
+    "detail": "gradient 27.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u27-octave-squares": {
+  "title": "x = 1:4; y = x.^2",
+  "caption": "The squares of 1 to 4 are 1, 4, 9, 16, which total 30, so mean(y) = 30/4 = 7.5. The same lines run unchanged in MATLAB.",
+  "alt": "A bar chart of the four values 1, 4, 9 and 16 for x = 1 to 4.",
+  "description": [
+   "x = 1:4 gives the values 1, 2, 3, 4.",
+   "x.^2 squares each one: 1, 4, 9, 16.",
+   "The total is 30.",
+   "mean(y) = 30/4 = 7.5."
+  ],
+  "course": "maths",
+  "lesson": "GNU Octave",
+  "also": [],
+  "renderer": "barchart",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u27.js: GNU Octave"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "1 + 4 + 9 + 16 = 30, so the mean is 30/4 = 7.5",
+    "ok": true,
+    "detail": "computed 30"
+   },
+   {
+    "name": "the lesson states \"7.5\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "10 labels in 640×340"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "10 labels in 380×300"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u27-r-fit": {
+  "title": "lm(y ~ x): intercept 0, slope 2",
+  "caption": "The five points (1, 2) to (5, 10) lie exactly on y = 2x, so coef(fit) gives intercept 0 and slope 2 and R² is 1, a perfect fit.",
+  "alt": "Five points on the straight line y = 2x from (1, 2) to (5, 10), with the fitted line through them all.",
+  "description": [
+   "Plot the five points x = 1:5 against y = 2, 4, 6, 8, 10.",
+   "Every point lies on one straight line.",
+   "The fitted line has intercept 0 and slope 2.",
+   "The fit is perfect, so R² = 1."
+  ],
+  "course": "maths",
+  "lesson": "R",
+  "also": [],
+  "renderer": "scatter",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u27.js: R"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the line is the least-squares line y = 0 + 2x",
+    "ok": true,
+    "detail": "from the data y = 0 + 2x"
+   },
+   {
+    "name": "r = 1",
+    "ok": true,
+    "detail": "r = 1"
+   },
+   {
+    "name": "the lesson states \"intercept 0 and slope 2\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "15 labels in 640×380"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "15 labels in 380×340"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u27-scipy-minimum": {
+  "title": "The minimum of (x − 2)² + 1",
+  "caption": "The parabola f(x) = (x − 2)² + 1 has its lowest point at x = 2, where f = 1. These are the values res.x ≈ 2.0 and res.fun ≈ 1.0 that minimize_scalar reports.",
+  "alt": "The parabola y = (x − 2)² + 1 with its lowest point marked at (2, 1).",
+  "description": [
+   "Plot f(x) = (x − 2)² + 1.",
+   "The curve is lowest at x = 2.",
+   "There f(2) = 1.",
+   "minimize_scalar returns res.x ≈ 2.0 and res.fun ≈ 1.0."
+  ],
+  "course": "maths",
+  "lesson": "SciPy",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u27.js: SciPy"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the minimum of (x − 2)² + 1 is 1 at x = 2",
+    "ok": true,
+    "detail": "found (2, 1)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u27-solver-region": {
+  "title": "The feasible region and the best corner",
+  "caption": "Solver's answer x = 4, y = 0 is a corner of the feasible region. Profit 3x + 2y is 0 at the origin, 12 at (4, 0), 11 at (3, 1) and 4 at (0, 2), so the largest profit, 12, is at (4, 0).",
+  "alt": "A four-sided region with corners (0, 0), (4, 0), (3, 1) and (0, 2), bounded by x + y = 4 and x + 3y = 6.",
+  "description": [
+   "The constraints x + y ≤ 4, x + 3y ≤ 6, x ≥ 0 and y ≥ 0 bound a four-cornered region.",
+   "The corners are (0, 0), (4, 0), (3, 1) and (0, 2).",
+   "Profit 3x + 2y is 0, 12, 11 and 4 at them.",
+   "The largest is 12 at (4, 0): x = 4, y = 0."
+  ],
+  "course": "maths",
+  "lesson": "Solver in Excel",
+  "also": [
+   {
+    "course": "maths",
+    "unit": "u27",
+    "lesson": "IBM ILOG CPLEX"
+   }
+  ],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u27.js: Solver in Excel"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in maths: IBM ILOG CPLEX",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u27.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "profit 3x + 2y at (4, 0) is 12",
+    "ok": true,
+    "detail": "12"
+   },
+   {
+    "name": "profit at the corner (3, 1) is 11",
+    "ok": true,
+    "detail": "11"
+   },
+   {
+    "name": "profit at the corner (0, 2) is 4",
+    "ok": true,
+    "detail": "4"
+   },
+   {
+    "name": "(4, 0) satisfies x + y = 4",
+    "ok": true,
+    "detail": "4"
+   },
+   {
+    "name": "(4, 0) satisfies x + 3y ≤ 6",
+    "ok": true,
+    "detail": "4"
+   },
+   {
+    "name": "(3, 1) lies on x + y = 4",
+    "ok": true,
+    "detail": "4"
+   },
+   {
+    "name": "(3, 1) lies on x + 3y = 6",
+    "ok": true,
+    "detail": "6"
+   },
+   {
+    "name": "(0, 2) lies on x + 3y = 6",
+    "ok": true,
+    "detail": "6"
+   },
+   {
+    "name": "the lesson states \"x = 4, y = 0\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "8 labels in 640×340"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "8 labels in 380×276"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u27-sqrt2-roots": {
+  "title": "The roots of x² − 2",
+  "caption": "Solve[x^2 - 2 == 0, x] returns x = −√2 and x = √2. On the graph y = x² − 2 crosses the axis at ±1.414, and N[Sqrt[2], 10] gives the decimal 1.414213562.",
+  "alt": "The parabola y = x² − 2 with its minimum −2 at x = 0 and crossing the x-axis at −√2 and √2.",
+  "description": [
+   "Plot y = x² − 2.",
+   "It crosses y = 0 where x² = 2.",
+   "The exact roots are −√2 and √2.",
+   "Numerically √2 ≈ 1.414."
+  ],
+  "course": "maths",
+  "lesson": "Mathematica",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u27.js: Mathematica"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "x = √2 is a root",
+    "ok": true,
+    "detail": "y(1.4142135623730951) = 0"
+   },
+   {
+    "name": "x = −√2 is a root",
+    "ok": true,
+    "detail": "y(-1.4142135623730951) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u27-step-response": {
+  "title": "Step response of 1/(2s + 1)",
+  "caption": "A first-order system with time constant 2 s responds to a unit step with y = 1 − e^{−t/2}. At t = 2 s it has reached 1 − e^{−1} = 0.632 of the final value 1, about 63%.",
+  "alt": "A curve rising from 0 towards 1, passing the point (2, 0.63) marked by a dashed guide.",
+  "description": [
+   "A step input drives the transfer function 1/(2s + 1).",
+   "The output is y = 1 − e^{−t/2}.",
+   "At t = 2 s, y = 1 − e⁻¹ ≈ 0.632.",
+   "The response is about 63% of the way to its final value."
+  ],
+  "course": "maths",
+  "lesson": "Simulink",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u27.js: Simulink"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "y(2) = 1 − e⁻¹ ≈ 0.632",
+    "ok": true,
+    "detail": "y(2) = 0.6321"
+   },
+   {
+    "name": "the output starts at 0",
+    "ok": true,
+    "detail": "y(0) = 0"
+   },
+   {
+    "name": "the initial slope is 1/τ = 0.5",
+    "ok": true,
+    "detail": "gradient 0.5000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u27-sympy-antiderivative": {
+  "title": "x sin x and its antiderivative",
+  "caption": "SymPy gives ∫ x sin x dx = sin x − x cos x. Differentiating that returns x sin x: the slope of the antiderivative curve at each x equals the height of x sin x, which is the quick check.",
+  "alt": "The curve y = x sin x and its antiderivative y = sin x − x cos x, with the slope of the second at x = 2 equal to the height of the first.",
+  "description": [
+   "Plot f(x) = x sin x.",
+   "Plot SymPy's antiderivative sin x − x cos x.",
+   "At x = 2 the antiderivative's slope equals f(2) = 2 sin 2.",
+   "That is the check: differentiate the result."
+  ],
+  "course": "maths",
+  "lesson": "SymPy",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u27.js: SymPy"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the antiderivative's slope at x = 2 is 2 sin 2 = f(2)",
+    "ok": true,
+    "detail": "gradient 1.8186"
+   },
+   {
+    "name": "and at x = 4 it is 4 sin 4 = f(4)",
+    "ok": true,
+    "detail": "gradient -3.0272"
+   },
+   {
+    "name": "f(2) = 2 sin 2",
+    "ok": true,
+    "detail": "y(2) = 1.8186"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u44-bragg-peaks": {
+  "title": "Which planes diffract, and where",
+  "caption": "Cu Kα from copper (a = 0.3615 nm): Bragg's law puts a reflection with N = √(h² + k² + l²) at 2θ = 2 sin⁻¹(λN/2a). FCC needs h, k, l all even or all odd, so (111) at 2θ ≈ 43.3° and (200) at 50.4° appear, while (100) and (110) (grey) are absent.",
+  "alt": "Peak angle 2 theta against the square root of h squared plus k squared plus l squared: a rising curve with the 111 and 200 reflections marked present at 43.3 and 50.4 degrees and the 100 and 110 positions marked grey as absent.",
+  "description": [
+   "d₁₁₁ = 0.3615/√3 = 0.2087 nm; sin θ = 0.15406/(2 × 0.2087) = 0.369, so θ = 21.7°, 2θ ≈ 43.3°.",
+   "(200): d = 0.18075 nm, 2θ ≈ 50.4°.",
+   "Positions only: (100) would be at 24.6° and (110) at 35.1°, but mixed parity cancels them in FCC."
+  ],
+  "course": "physics",
+  "lesson": "X-ray diffraction",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u44.js: X-ray diffraction"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(111) at 2θ = 43.3°",
+    "ok": true,
+    "detail": "y(1.732051) = 43.3169"
+   },
+   {
+    "name": "(200) at 2θ = 50.4°",
+    "ok": true,
+    "detail": "y(2) = 50.4493"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u44-cryo-cost": {
+  "title": "The cost of cold",
+  "caption": "The Carnot COP T_c/(T_h − T_c) means that removing 1 W at temperature T_c needs at least (300 − T_c)/T_c watts of work. At 77 K that is 2.9 W; at 4 K it is 74 W (COP 0.0135). Real refrigerators are far worse, needing about 1000 W per watt at 4 K.",
+  "alt": "Minimum work per watt of heat removed against cold temperature from 3 to 100 kelvin: a curve that climbs steeply as the temperature falls, passing 2.9 at 77 K and 74 at 4 K.",
+  "description": [
+   "Carnot: COP = T_c/(T_h − T_c) with T_h = 300 K, so work per watt removed = (T_h − T_c)/T_c.",
+   "T_c = 77 K: 2.9 W per watt.",
+   "T_c = 4 K: 296/4 = 74 W per watt, so COP ≈ 0.0135.",
+   "Real systems need about 1000 W/W at 4 K, far above this ideal limit."
+  ],
+  "course": "physics",
+  "lesson": "Cryogenic systems",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u44.js: Cryogenic systems"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "74 W per watt at 4 K",
+    "ok": true,
+    "detail": "y(4) = 74"
+   },
+   {
+    "name": "2.9 W per watt at 77 K",
+    "ok": true,
+    "detail": "y(77) = 2.8961"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u44-gaussian-beam": {
+  "title": "A laser beam spreads beyond its Rayleigh range",
+  "caption": "A HeNe beam (633 nm) with waist w₀ = 0.5 mm stays nearly parallel over the Rayleigh range z_R = πw₀²/λ ≈ 1.24 m, where its radius has grown by √2 to 0.71 mm. Farther out the radius grows linearly at the divergence θ = λ/(πw₀) ≈ 0.4 mrad (dashed).",
+  "alt": "Beam radius in millimetres against distance from the waist, starting at 0.5 mm, reaching 0.71 mm at 1.24 metres and approaching a straight dashed line of slope 0.4 millimetres per metre.",
+  "description": [
+   "w(z) = w₀√(1 + (z/z_R)²), with w₀ = 0.5 mm.",
+   "z_R = π(5 × 10⁻⁴)²/(6.33 × 10⁻⁷) ≈ 1.24 m, where w = √2 w₀ ≈ 0.71 mm.",
+   "Far field: w ≈ θz with θ = 6.33 × 10⁻⁷/(π × 5 × 10⁻⁴) ≈ 0.4 mrad, i.e. 0.4 mm per metre."
+  ],
+  "course": "physics",
+  "lesson": "Laser systems",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u44.js: Laser systems"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "w = √2 w₀ at z = z_R",
+    "ok": true,
+    "detail": "y(1.2408) = 0.7071"
+   },
+   {
+    "name": "w = w₀ at the waist",
+    "ok": true,
+    "detail": "y(0) = 0.5"
+   },
+   {
+    "name": "θ ≈ 0.4 mrad far-field slope",
+    "ok": true,
+    "detail": "0.403*x at 4 = 1.61; expected 1.6–1.62"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u44-reflection": {
+  "title": "Mismatch reflects power",
+  "caption": "On a 50 Ω line the reflection |Γ| = |Z_L − 50|/(Z_L + 50) is zero only for a matched load. A 75 Ω load gives Γ = 25/125 = 0.2, VSWR = (1 + 0.2)/(1 − 0.2) = 1.5, and 4% of the power is reflected. Open and short circuits reflect everything.",
+  "alt": "Magnitude of the reflection coefficient against load impedance from 0 to 200 ohms: zero at 50 ohms, rising either side, with 0.2 marked at 75 ohms and approaching 1 for very large and very small loads.",
+  "description": [
+   "|Γ| = |Z_L − Z₀|/(Z_L + Z₀), Z₀ = 50 Ω.",
+   "Z_L = 75 Ω: Γ = 25/125 = 0.2; VSWR = 1.2/0.8 = 1.5.",
+   "Reflected power = Γ² = 0.04, i.e. 4%.",
+   "Z_L = 50 Ω gives Γ = 0 and no reflection."
+  ],
+  "course": "physics",
+  "lesson": "Microwave and radio-frequency measurement",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u44.js: Microwave and radio-frequency measurement"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "|Γ| = 0.2 for 75 Ω",
+    "ok": true,
+    "detail": "y(75) = 0.2"
+   },
+   {
+    "name": "matched load reflects nothing",
+    "ok": true,
+    "detail": "y(50) = 0"
+   },
+   {
+    "name": "VSWR = 1.5",
+    "ok": true,
+    "detail": "y(75) = 1.5"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u44-tunnel-current": {
+  "title": "The tunnelling current is exquisitely sensitive to the gap",
+  "caption": "For φ = 4.5 eV, κ = √(2mφ)/ħ ≈ 10.9 nm⁻¹ and I ∝ e^(−2κd). Retracting the tip by only 0.1 nm multiplies the current by e^(−2.2) ≈ 0.11: about 9× smaller. That sensitivity is what lets an STM feel individual atoms.",
+  "alt": "Relative tunnelling current against increase in gap from 0 to 0.3 nanometres: an exponential decay from 1 that has fallen to 0.11 at 0.1 nanometre and about 0.01 at 0.2.",
+  "description": [
+   "κ = √(2 × 9.11 × 10⁻³¹ × 7.2 × 10⁻¹⁹)/1.055 × 10⁻³⁴ ≈ 10.87 nm⁻¹ for φ = 4.5 eV.",
+   "Gap increase Δd = 0.1 nm: I/I₀ = e^(−2κΔd) = e^(−2.17) ≈ 0.11, about 9× smaller.",
+   "Δd = 0.2 nm: 0.013; each 0.1 nm costs about a factor of 9."
+  ],
+  "course": "physics",
+  "lesson": "Scanning probe microscopy",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u44.js: Scanning probe microscopy"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "current falls to 0.11 for 0.1 nm",
+    "ok": true,
+    "detail": "y(0.1) = 0.1138"
+   },
+   {
+    "name": "I = I₀ at no change",
+    "ok": true,
+    "detail": "y(0) = 1"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u21-annuity-bars": {
+  "title": "The present value of ten £1,000 payments",
+  "caption": "Each payment is worth 1000 × 1.05^−t today, so later payments count for less: £952 for the first down to £614 for the tenth. The ten bars add up to about £7,722.",
+  "alt": "Ten bars falling from about 952 to 614, one for the present value of each year-end payment.",
+  "description": [
+   "The payment at the end of year t is worth 1000 × 1.05^−t now.",
+   "These fall from £952 in year 1 to £614 in year 10.",
+   "Adding all ten gives 1000 × a₁₀ ≈ £7,722."
+  ],
+  "course": "maths",
+  "lesson": "Annuities",
+  "also": [],
+  "renderer": "barchart",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u21.js: Annuities"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the ten present values add to 1000 × a₁₀ ≈ £7,722",
+    "ok": true,
+    "detail": "computed 7,721.7349"
+   },
+   {
+    "name": "the lesson states \"7,722\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "17 labels in 640×340"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "17 labels in 380×300"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u21-apt-build-up": {
+  "title": "Building the expected return from factor premiums",
+  "caption": "The expected return is a stack: 3% risk-free, plus 1.0 × 4% for growth, plus 0.5 × 2% for inflation: 3 + 4 + 1 = 8%.",
+  "alt": "One bar made of three parts, 3 (risk-free), 4 (growth) and 1 (inflation), with a bracket for the 8% total.",
+  "description": [
+   "Start from the risk-free rate, 3%.",
+   "Add the growth exposure: 1.0 × 4% = 4%.",
+   "Add the inflation exposure: 0.5 × 2% = 1%.",
+   "The total expected return is 8%."
+  ],
+  "course": "maths",
+  "lesson": "Arbitrage Pricing Theory",
+  "also": [],
+  "renderer": "bar-model",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u21.js: Arbitrage Pricing Theory"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the bracket over 1–3 is 8",
+    "ok": true,
+    "detail": "parts add to 8"
+   },
+   {
+    "name": "the bracket label \"8%\" states 8",
+    "ok": true,
+    "detail": "8%"
+   },
+   {
+    "name": "growth part: 1.0 × 4% = 4%",
+    "ok": true,
+    "detail": "0.04"
+   },
+   {
+    "name": "inflation part: 0.5 × 2% = 1%",
+    "ok": true,
+    "detail": "0.01"
+   },
+   {
+    "name": "the lesson states \"= 8%\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "5 labels in 680×118"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "5 labels in 380×142"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u21-bcr-pv-benefits": {
+  "title": "Discounted benefits against the £10m cost",
+  "caption": "The running present value of the £1.2m benefits passes the £10m cost after about 10.0 years and reaches £13.82m by year 15, so the benefit–cost ratio is 13.82/10 ≈ 1.38.",
+  "alt": "A rising, flattening curve of cumulative discounted benefits that crosses the £10m cost line near year 10 and ends at £13.82m at year 15.",
+  "description": [
+   "The annuity factor at 3.5% for 15 years is (1 − 1.035^−15)/0.035 ≈ 11.517.",
+   "PV of benefits = 1.2 × 11.517 ≈ £13.82m.",
+   "BCR = 13.82/10 ≈ 1.38, so benefits exceed costs."
+  ],
+  "course": "maths",
+  "lesson": "Cost-Benefit Analysis",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u21.js: Cost-Benefit Analysis"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "after 15 years the benefits are worth £13.82m",
+    "ok": true,
+    "detail": "y(15) = 13.8209"
+   },
+   {
+    "name": "discounted benefits equal the £10m cost",
+    "ok": true,
+    "detail": "y(10.02401700153878) = 10"
+   },
+   {
+    "name": "BCR = 13.82/10 ≈ 1.38",
+    "ok": true,
+    "detail": "y(0) = 1.382"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u21-binomial-call": {
+  "title": "A one-step binomial call",
+  "caption": "From £100 the stock moves to £120 (call pays £20) or £80 (pays £0). With r = 0 the risk-neutral probability is q = 0.5, so the call is worth 0.5 × 20 + 0.5 × 0 = £10.",
+  "alt": "A tree from £100 with an up branch to £120 and a down branch to £80, each of probability ½, and the call payoffs 20 and 0.",
+  "description": [
+   "q = (1 − d)/(u − d) = 0.2/0.4 = 0.5.",
+   "Up: stock £120, call pays £20. Down: stock £80, call pays £0.",
+   "Call value = 0.5 × 20 + 0.5 × 0 = £10."
+  ],
+  "course": "maths",
+  "lesson": "Binomial Options Pricing",
+  "also": [],
+  "renderer": "prob-tree",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u21.js: Binomial Options Pricing"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the branches from every point add up to 1",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "q = (1 − 0.8)/(1.2 − 0.8) = ½",
+    "ok": true,
+    "detail": "multiplied: 1/2"
+   },
+   {
+    "name": "the lesson states \"£10\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "6 labels in 680×108"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "6 labels in 380×100"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u21-bond-price-yield": {
+  "title": "Price falls as the yield rises",
+  "caption": "The 3-year 5% coupon bond is worth £100 (par) when the yield equals the coupon, 5%. At a 6% yield it is £97.33, below par; a lower yield would put it above par.",
+  "alt": "A downward-sloping curve of price against yield, passing through £100 at 5% and £97.33 at 6%.",
+  "description": [
+   "Price = 5/(1 + y) + 5/(1 + y)² + 105/(1 + y)³.",
+   "At y = 5% (the coupon) the price is exactly £100.",
+   "At y = 6% it is 4.717 + 4.450 + 88.160 = £97.33.",
+   "Higher yields discount the cash flows more, so the price falls."
+  ],
+  "course": "maths",
+  "lesson": "Bond Pricing",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u21.js: Bond Pricing"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "at a 6% yield the price is £97.33",
+    "ok": true,
+    "detail": "y(0.06) = 97.327"
+   },
+   {
+    "name": "at a 5% yield (the coupon) the price is par",
+    "ok": true,
+    "detail": "y(0.05) = 100"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u21-break-even": {
+  "title": "Revenue and cost: the break-even volume",
+  "caption": "Revenue 20 per unit overtakes total cost 50,000 + 12 per unit once each unit contributes £8 towards the fixed costs: at 6,250 units. At 10,000 units the gap is the £30,000 profit.",
+  "alt": "Two rising lines, revenue steeper than cost, crossing at 6,250 units and £125,000.",
+  "description": [
+   "Contribution per unit is 20 − 12 = £8.",
+   "Fixed costs £50,000 are covered at 50,000/8 = 6,250 units.",
+   "At 10,000 units revenue £200,000 exceeds cost £170,000 by £30,000."
+  ],
+  "course": "maths",
+  "lesson": "Financial Modelling",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u21.js: Financial Modelling"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "revenue equals cost at 6,250 units (£125,000)",
+    "ok": true,
+    "detail": "20*x → 125, 50+12*x → 125"
+   },
+   {
+    "name": "10,000 units earn £200,000",
+    "ok": true,
+    "detail": "y(10) = 200"
+   },
+   {
+    "name": "10,000 units cost £170,000, a profit of £30,000",
+    "ok": true,
+    "detail": "y(10) = 170"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u21-bs-normal-area": {
+  "title": "N(d₁) as an area under the standard normal curve",
+  "caption": "With S = K = 100, r = 0, σ = 20% and T = 1: d₁ = 0.1 and d₂ = −0.1. N(0.1) = 0.5398 is the shaded area to the left of d₁; N(−0.1) = 0.4602. The call is worth 100 × 0.5398 − 100 × 0.4602 ≈ £7.97.",
+  "alt": "A standard normal bell curve with the area to the left of 0.1 shaded, 0.5398, and a mark at −0.1.",
+  "description": [
+   "d₁ = (ln(S/K) + (r + σ²/2)T)/(σ√T) = 0.02/0.2 = 0.1; d₂ = d₁ − σ√T = −0.1.",
+   "N(0.1) ≈ 0.5398 and N(−0.1) ≈ 0.4602.",
+   "C = 100 × 0.5398 − 100 × 0.4602 ≈ £7.97."
+  ],
+  "course": "maths",
+  "lesson": "Black–Scholes Model",
+  "also": [],
+  "renderer": "distribution",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u21.js: Black–Scholes Model"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the shaded probability is 0.5398",
+    "ok": true,
+    "detail": "computed 0.539828"
+   },
+   {
+    "name": "N(d₁) = N(0.1) = 0.5398",
+    "ok": true,
+    "detail": "0.539828"
+   },
+   {
+    "name": "N(d₂) = N(−0.1) = 0.4602",
+    "ok": true,
+    "detail": "0.460172"
+   },
+   {
+    "name": "the lesson states \"7.97\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "14 labels in 640×360"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "14 labels in 380×320"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u21-call-value-split": {
+  "title": "Intrinsic value and time value of a call",
+  "caption": "At expiry the call pays max(S − 50, 0). With the stock at £53 that is £3 intrinsic value, but the option costs £6: the extra £3 is time value, for the chance of further gains.",
+  "alt": "The hockey-stick payoff of a call with strike 50, with a marked gap at S = 53 between the payoff £3 and the price £6.",
+  "description": [
+   "Intrinsic value = max(53 − 50, 0) = £3.",
+   "The option price is £6.",
+   "Time value = 6 − 3 = £3: what the market pays for the chance of a higher price before expiry."
+  ],
+  "course": "maths",
+  "lesson": "Options Pricing",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u21.js: Options Pricing"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the intrinsic value at S = 53 is £3",
+    "ok": true,
+    "detail": "y(53) = 3"
+   },
+   {
+    "name": "the call is worth nothing at S = K",
+    "ok": true,
+    "detail": "y(50) = 0"
+   },
+   {
+    "name": "time value = 6 − 3 = £3",
+    "ok": true,
+    "detail": "y(53) = 3"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u21-compound-doubling": {
+  "title": "£1,000 at 5% compounded annually",
+  "caption": "The balance reaches £1,628.89 after 10 years. It doubles to £2,000 at ln 2/ln 1.05 ≈ 14.2 years; the rule of 72 says 72/5 = 14.4 years, close but a little high.",
+  "alt": "An upward-curving exponential from £1,000, with points at 10 years (£1,628.89) and where it reaches £2,000 near 14.2 years.",
+  "description": [
+   "Each year multiplies the balance by 1.05, so after t years it is 1000 × 1.05^t.",
+   "At t = 10 the balance is about £1,628.89.",
+   "The balance hits £2,000 at ln 2/ln 1.05 ≈ 14.2 years; the rule of 72 estimates 14.4."
+  ],
+  "course": "maths",
+  "lesson": "Compound Interest",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u21.js: Compound Interest"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "after 10 years the balance is £1,628.89",
+    "ok": true,
+    "detail": "y(10) = 1628.8946"
+   },
+   {
+    "name": "the balance reaches £2,000 at ln 2/ln 1.05 ≈ 14.2 years",
+    "ok": true,
+    "detail": "y(14.206699082890461) = 2000"
+   },
+   {
+    "name": "the rule of 72 gives 72/5 = 14.4 years",
+    "ok": true,
+    "detail": "y(0) = 14.4"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u21-consumer-optimum": {
+  "title": "The consumer's best bundle",
+  "caption": "The budget line 2x + 5y = 100 is tangent to the indifference curve xy = 250 at (25, 10): half of income, £50, goes on each good.",
+  "alt": "A downward budget line touching a curved indifference curve at the point (25, 10).",
+  "description": [
+   "Budget: 2x + 5y = 100, so y = 20 − 0.4x.",
+   "Cobb–Douglas spends half of income on each good: x = 50/2 = 25, y = 50/5 = 10.",
+   "The utility level there is 25 × 10 = 250.",
+   "The line touches the curve xy = 250 at that point (equal slopes)."
+  ],
+  "course": "maths",
+  "lesson": "Mathematical Economics",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u21.js: Mathematical Economics"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the budget line and indifference curve meet at (25, 10)",
+    "ok": true,
+    "detail": "20-0.4*x → 10, 250/x → 10"
+   },
+   {
+    "name": "the indifference curve has the budget line's slope −0.4 there",
+    "ok": true,
+    "detail": "gradient -0.4000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u21-cournot-reaction": {
+  "title": "Best-response lines meeting at the Cournot equilibrium",
+  "caption": "Each firm's best response is half of what the market leaves: q₁ = (120 − q₂)/2 and q₂ = (120 − q₁)/2. They cross at (40, 40): total output 80 and price 120 − 80 = 40.",
+  "alt": "Two straight lines, firm 1's and firm 2's best responses, crossing at (40, 40).",
+  "description": [
+   "Firm 1 maximises q₁(120 − q₁ − q₂), giving q₁ = (120 − q₂)/2.",
+   "By symmetry q = (120 − q)/2, so q = 40.",
+   "Total output 80 and price 40, against a monopoly's Q = 60, P = 60."
+  ],
+  "course": "maths",
+  "lesson": "Game-Theoretic Economics",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u21.js: Game-Theoretic Economics"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the best responses cross at (40, 40)",
+    "ok": true,
+    "detail": "120-2*x → 40, (120-x)/2 → 40"
+   },
+   {
+    "name": "the price at Q = 80 is 120 − 80 = 40",
+    "ok": true,
+    "detail": "y(0) = 40"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u21-dcf-running-value": {
+  "title": "Cash flows growing 3% discounted at 9%",
+  "caption": "Adding the present value of each year's cash flow, starting with £10m/1.09 in year 1, the total climbs towards C₁/(r − g) = 10/0.06 = £166.7m: later years add less and less.",
+  "alt": "A rising curve over 100 years that levels off just below £166.7m.",
+  "description": [
+   "Year t's cash flow is 10 × 1.03^(t−1), discounted by 1.09^t.",
+   "The running total after n years is 10/(0.09 − 0.03) × (1 − (1.03/1.09)^n).",
+   "As n grows it settles at £166.7m, the value of the firm."
+  ],
+  "course": "maths",
+  "lesson": "Discounted Cash Flow",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u21.js: Discounted Cash Flow"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "year 1 adds 10/1.09 = £9.17m",
+    "ok": true,
+    "detail": "y(1) = 9.1743"
+   },
+   {
+    "name": "the running total tends to 10/(0.09 − 0.03) = £166.7m",
+    "ok": true,
+    "detail": "y(2000) = 166.6667"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u21-ewma-update": {
+  "title": "Updating the variance with EWMA",
+  "caption": "The new variance is a blend: 94% weight on yesterday's variance and 6% on today's squared return. In units of 10⁻⁶ that is 94 + 24 = 118, a daily volatility of about 1.09%.",
+  "alt": "One bar made of two parts, 94 (from yesterday's variance) and 24 (from today's return), bracketed as 118.",
+  "description": [
+   "0.94 × 0.0001 = 0.000094, the part from yesterday's variance.",
+   "0.06 × 0.02² = 0.000024, the part from today's squared return.",
+   "Their sum is 0.000118, and its square root is about 1.09%."
+  ],
+  "course": "maths",
+  "lesson": "Market Risk Modelling",
+  "also": [],
+  "renderer": "bar-model",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u21.js: Market Risk Modelling"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the bracket over 1–2 is 118",
+    "ok": true,
+    "detail": "parts add to 118"
+   },
+   {
+    "name": "the bracket label \"118\" states 118",
+    "ok": true,
+    "detail": "118"
+   },
+   {
+    "name": "0.94 × 0.0001 = 0.000094",
+    "ok": true,
+    "detail": "0.000094"
+   },
+   {
+    "name": "0.06 × 0.02² = 0.000024",
+    "ok": true,
+    "detail": "0.000024"
+   },
+   {
+    "name": "the lesson states \"0.000118\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "4 labels in 680×118"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "4 labels in 380×142"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u21-expected-shortfall": {
+  "title": "Ten losses: VaR and expected shortfall",
+  "caption": "The two worst of ten equally likely losses, 20 and 50, are the 20% tail. The 80% VaR is only 8, the threshold, but the expected shortfall averages the tail: (20 + 50)/2 = 35.",
+  "alt": "Ten bars of losses 1 to 8, 20 and 50, with the two largest highlighted.",
+  "description": [
+   "Sort the ten losses: 1, 2, …, 8, 20, 50.",
+   "The worst 20% are 20 and 50.",
+   "ES = (20 + 50)/2 = 35, far above the VaR of 8."
+  ],
+  "course": "maths",
+  "lesson": "Expected Shortfall",
+  "also": [],
+  "renderer": "barchart",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u21.js: Expected Shortfall"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the ten losses add to 106",
+    "ok": true,
+    "detail": "computed 106"
+   },
+   {
+    "name": "the lesson states \"= 35\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "17 labels in 640×340"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "17 labels in 380×300"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u21-forward-price": {
+  "title": "The forward price against delivery time",
+  "caption": "With no dividends the forward price is the spot price grown at the interest rate: 50e^{0.04T}. For T = 1 it is £52.04; longer contracts cost more.",
+  "alt": "A gently rising exponential curve from £50, passing through (1, £52.04).",
+  "description": [
+   "Buying forward is the same as buying the stock now and paying interest.",
+   "F = S₀e^{rT} = 50e^{0.04T}.",
+   "At T = 1, F ≈ £52.04."
+  ],
+  "course": "maths",
+  "lesson": "Derivatives Pricing",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u21.js: Derivatives Pricing"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the one-year forward price is £52.04",
+    "ok": true,
+    "detail": "y(1) = 52.0405"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u21-gbm-mean-median": {
+  "title": "Mean and median of a geometric Brownian motion",
+  "caption": "With μ = 8% and σ = 20%, the expected price grows as 100e^{0.08t} but the median as 100e^{0.06t}, because the volatility drag σ²/2 = 2% pulls the typical path below the mean. After one year: £108.33 against £106.18.",
+  "alt": "Two exponential curves from £100: the mean rising faster than the median, 108.33 and 106.18 at one year.",
+  "description": [
+   "E[S_t] = 100e^{0.08t}.",
+   "The median is 100e^{(μ − σ²/2)t} = 100e^{0.06t}.",
+   "At t = 1: mean £108.33, median £106.18.",
+   "The gap widens with time because the distribution is skewed."
+  ],
+  "course": "maths",
+  "lesson": "Geometric Brownian Motion",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u21.js: Geometric Brownian Motion"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the mean after a year is £108.33",
+    "ok": true,
+    "detail": "y(1) = 108.3287"
+   },
+   {
+    "name": "the median after a year is £106.18",
+    "ok": true,
+    "detail": "y(1) = 106.1837"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u21-gordon-value": {
+  "title": "Share value against required return",
+  "caption": "With a £2 dividend growing 4%, the value is 2/(r − 0.04): £40 at r = 9%. A small rise in the required return cuts the value sharply, and as r approaches the growth rate the value explodes.",
+  "alt": "A steeply falling curve of share value against required return, passing through (9%, £40).",
+  "description": [
+   "P₀ = D₁/(r − g) with D₁ = £2 and g = 4%.",
+   "At r = 9% the value is 2/0.05 = £40.",
+   "The curve falls steeply as r rises towards the right and rises sharply as r nears 4%."
+  ],
+  "course": "maths",
+  "lesson": "Equity Valuation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u21.js: Equity Valuation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "at 9% the share is worth 2/0.05 = £40",
+    "ok": true,
+    "detail": "y(0.09) = 40"
+   },
+   {
+    "name": "at 6% it would be worth £100",
+    "ok": true,
+    "detail": "y(0.06) = 100"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u21-irr-root": {
+  "title": "The IRR is where NPV crosses zero",
+  "caption": "−1000 + 1100/(1 + r) falls as r rises and is zero at 1 + r = 1.1: the IRR is 10%. At lower rates the project has positive NPV, at higher rates negative.",
+  "alt": "A falling NPV curve crossing the horizontal axis at a rate of 10%.",
+  "description": [
+   "NPV(r) = −1000 + 1100/(1 + r).",
+   "Set it to zero: 1100/(1 + r) = 1000, so 1 + r = 1.1.",
+   "The curve crosses zero at r = 10%, the IRR."
+  ],
+  "course": "maths",
+  "lesson": "Internal Rate of Return (IRR)",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u21.js: Internal Rate of Return (IRR)"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "NPV(10%) = 0, so the IRR is 10%",
+    "ok": true,
+    "detail": "y(0.1) = 0"
+   },
+   {
+    "name": "at a zero rate the NPV is 1100 − 1000 = £100",
+    "ok": true,
+    "detail": "y(0) = 100"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u21-kaplan-meier": {
+  "title": "The Kaplan–Meier curve",
+  "caption": "The estimate drops by 20% at month 1 (2 of 10 die), stays level at month 2 when one patient is censored (leaving 7 at risk), and drops by 1/7 at month 3 to S(3) = 0.8 × 6/7 ≈ 0.686.",
+  "alt": "A step curve falling from 1 to 0.8 at month 1 and to 0.686 at month 3, with the censoring at month 2 marked.",
+  "description": [
+   "Month 1: 2 of 10 die, so S = 1 − 2/10 = 0.8.",
+   "Month 2: one patient is censored, leaving 7 at risk; the curve does not drop.",
+   "Month 3: 1 of 7 dies, factor 6/7, S = 0.8 × 6/7 ≈ 0.686."
+  ],
+  "course": "maths",
+  "lesson": "Survival Models",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u21.js: Survival Models"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "after month 1: 1 − 2/10 = 0.8",
+    "ok": true,
+    "detail": "y(0) = 0.8"
+   },
+   {
+    "name": "S(3) = 0.8 × (1 − 1/7) ≈ 0.686",
+    "ok": true,
+    "detail": "y(0) = 0.6857"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u21-loan-balance": {
+  "title": "A £10,000 loan repaid by twelve payments",
+  "caption": "Each month 1% interest is added and £888.49 is paid. In month 1 the interest is £100, so £788.49 reduces the debt to £9,211.51; the interest share falls and the balance reaches exactly zero at month 12.",
+  "alt": "The loan balance falling from £10,000 at month 0 to £9,211.51 at month 1 and £0 at month 12, steepening as interest shrinks.",
+  "description": [
+   "Payment P = 10,000 × 0.01/(1 − 1.01^−12) ≈ £888.49.",
+   "Month 1: interest £100, so £788.49 of the payment repays capital.",
+   "The balance after k months is 10,000 × 1.01^k minus the accumulated payments.",
+   "After 12 payments it is zero."
+  ],
+  "course": "maths",
+  "lesson": "Loan Amortisation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u21.js: Loan Amortisation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "after month 1 the balance is £9,211.51",
+    "ok": true,
+    "detail": "y(1) = 9211.5121"
+   },
+   {
+    "name": "after 12 payments the balance is zero",
+    "ok": true,
+    "detail": "y(12) = 0"
+   },
+   {
+    "name": "the payment is £888.49",
+    "ok": true,
+    "detail": "y(0) = 888.4879"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u21-loss-given-default": {
+  "title": "A £1m loan: what is lost on default",
+  "caption": "If the borrower defaults, 40% is recovered and 60% (LGD) is lost: £600,000 of the £1,000,000. With a 2% chance of default the expected loss is 0.02 × £600,000 = £12,000.",
+  "alt": "One bar for the £1,000,000 loan split into £600,000 lost and £400,000 recovered.",
+  "description": [
+   "Recovery rate 40%, so LGD = 1 − 0.4 = 0.6.",
+   "On default £600,000 is lost and £400,000 recovered.",
+   "Expected loss = PD × LGD × exposure = 0.02 × 0.6 × £1,000,000 = £12,000."
+  ],
+  "course": "maths",
+  "lesson": "Credit Risk Modelling",
+  "also": [],
+  "renderer": "bar-model",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u21.js: Credit Risk Modelling"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the bracket over 1–2 is 1,000",
+    "ok": true,
+    "detail": "parts add to 1,000"
+   },
+   {
+    "name": "the bracket label \"1,000\" states 1,000",
+    "ok": true,
+    "detail": "1,000"
+   },
+   {
+    "name": "LGD 60% and recovery 40% of £1,000k are 600 and 400",
+    "ok": true,
+    "detail": "parts 600, 400"
+   },
+   {
+    "name": "2% of the £600,000 loss given default is £12,000",
+    "ok": true,
+    "detail": "12,000"
+   },
+   {
+    "name": "the lesson states \"£12,000\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "4 labels in 680×118"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "4 labels in 380×142"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u21-mortgage-balance": {
+  "title": "A £150,000 mortgage over 25 years",
+  "caption": "The payment is £966.45 a month. Early on most goes to interest, so the balance falls slowly at first and fastest at the end; at year 12.5 more than half is still owed (£101,816).",
+  "alt": "The mortgage balance curving down from £150,000 to zero over 25 years, flat at the start and steep at the end.",
+  "description": [
+   "The monthly rate is j = 6%/12 = 0.5%, with 12 × 25 = 300 payments.",
+   "P = 150,000 × 0.005/(1 − 1.005^−300) ≈ £966.45.",
+   "Interest takes most of early payments, so the balance falls slowly then faster.",
+   "The balance reaches zero at year 25."
+  ],
+  "course": "maths",
+  "lesson": "Mortgage Mathematics",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u21.js: Mortgage Mathematics"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "after 300 payments the balance is zero",
+    "ok": true,
+    "detail": "y(25) = 0"
+   },
+   {
+    "name": "after 12.5 years more than half is still owed",
+    "ok": true,
+    "detail": "y(12.5) = 101815.705"
+   },
+   {
+    "name": "the payment is £966.45 a month",
+    "ok": true,
+    "detail": "y(0) = 966.4521"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u21-npv-curve": {
+  "title": "NPV against the discount rate",
+  "caption": "The project's NPV falls as the discount rate rises. At 10% it is £41.32, so accept; it crosses zero at about 13.1%, the project's IRR.",
+  "alt": "A falling curve of NPV against discount rate, passing through (10%, £41.32) and crossing the axis near 13.1%.",
+  "description": [
+   "NPV(r) = −1000 + 600/(1 + r) + 600/(1 + r)².",
+   "At r = 10% it is 1041.32 − 1000 = £41.32 > 0.",
+   "Higher rates discount the inflows more, so NPV falls.",
+   "NPV is zero at about 13.1%."
+  ],
+  "course": "maths",
+  "lesson": "Net Present Value (NPV)",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u21.js: Net Present Value (NPV)"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "at 10% the NPV is £41.32",
+    "ok": true,
+    "detail": "y(0.1) = 41.3223"
+   },
+   {
+    "name": "the NPV is zero at the IRR",
+    "ok": true,
+    "detail": "y(0.1306623862918075) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u21-one-period-tree": {
+  "title": "A one-period market and its risk-neutral probability",
+  "caption": "The stock goes from £100 to £120 or £90. Weighting the two prices with q = 1/3 and 2/3 gives back £100, the only probability for which the stock is a fair price when r = 0.",
+  "alt": "A tree from £100 with an up branch to £120 of probability 1/3 and a down branch to £90 of probability 2/3.",
+  "description": [
+   "The martingale condition is 100 = q × 120 + (1 − q) × 90.",
+   "This gives 100 = 90 + 30q, so q = 1/3.",
+   "The unique q means every payoff can be priced: the market is complete."
+  ],
+  "course": "maths",
+  "lesson": "Mathematical Finance",
+  "also": [],
+  "renderer": "prob-tree",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u21.js: Mathematical Finance"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the branches from every point add up to 1",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "q = 1/3 satisfies 100 = q × 120 + (1 − q) × 90",
+    "ok": true,
+    "detail": "multiplied: 1/3"
+   },
+   {
+    "name": "P(Down £90) = 2/3",
+    "ok": true,
+    "detail": "multiplied: 2/3"
+   },
+   {
+    "name": "the lesson states \"q = 1/3\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "6 labels in 680×108"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "6 labels in 380×100"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u21-pension-accrual": {
+  "title": "Thirty sixtieths of final salary",
+  "caption": "Each year of service earns 1/60 of final salary. After 30 years the accrual is 30/60 = ½, so the pension is half of £45,000: £22,500 a year.",
+  "alt": "A bar of 60 equal cells with 30 shaded, showing one half.",
+  "description": [
+   "Each year of service earns one sixtieth.",
+   "Thirty years give 30 of the 60 sixtieths: ½.",
+   "The pension is ½ × £45,000 = £22,500 a year."
+  ],
+  "course": "maths",
+  "lesson": "Pension Mathematics",
+  "also": [],
+  "renderer": "bar-model",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u21.js: Pension Mathematics"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "30/60 = ½",
+    "ok": true,
+    "detail": "shaded 1/2"
+   },
+   {
+    "name": "half of £45,000 is £22,500",
+    "ok": true,
+    "detail": "22,500"
+   },
+   {
+    "name": "the lesson states \"£22,500\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "1 labels in 680×84"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "1 labels in 380×108"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u21-perpetuity-pv": {
+  "title": "Adding up the present values of ever more payments",
+  "caption": "Each payment is worth a little less than the one before, so the running total of present values levels off. Level £100 a year at 5% approaches £2,000; payments growing at 2% approach £3,333.33.",
+  "alt": "Two rising curves over 100 years, each flattening: the level payments towards £2,000 and the growing payments towards £3,333.33.",
+  "description": [
+   "The present value of n payments of £100 at 5% is 100 × (1 − 1.05^−n)/0.05.",
+   "As n grows this approaches 100/0.05 = £2,000.",
+   "With 2% growth the limit is 100/(0.05 − 0.02) = £3,333.33."
+  ],
+  "course": "maths",
+  "lesson": "Present Value",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u21.js: Present Value"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "level perpetuity: the running total tends to 100/0.05 = £2,000",
+    "ok": true,
+    "detail": "y(2000) = 2000"
+   },
+   {
+    "name": "growing perpetuity: the total tends to 100/(0.05 − 0.02) = £3,333.33",
+    "ok": true,
+    "detail": "y(2000) = 3333.3333"
+   },
+   {
+    "name": "the first payment is worth 100/1.05",
+    "ok": true,
+    "detail": "y(1) = 95.2381"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u21-ruin-probability": {
+  "title": "Ruin probability against initial capital",
+  "caption": "For exponential claims with mean £1,000 and loading 0.25, ψ(u) = 0.8e^{−u/5000}. With £5,000 of capital the exponent is −1 and the ruin probability is 0.8/e ≈ 0.294; more capital cuts it rapidly.",
+  "alt": "A decaying curve starting at 0.8 for no capital and falling to 0.294 at £5,000.",
+  "description": [
+   "ψ(u) = (1/(1 + θ)) e^{−θu/((1 + θ)μ)} with θ = 0.25 and μ = £1,000.",
+   "The exponent is −0.25u/1250 = −u/5000, and 1/1.25 = 0.8.",
+   "At u = £5,000: 0.8e^{−1} ≈ 0.294."
+  ],
+  "course": "maths",
+  "lesson": "Risk Theory",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u21.js: Risk Theory"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "with £5,000 the ruin probability is 0.8e^{−1} ≈ 0.294",
+    "ok": true,
+    "detail": "y(5000) = 0.2943"
+   },
+   {
+    "name": "with no capital it is 1/(1 + θ) = 0.8",
+    "ok": true,
+    "detail": "y(0) = 0.8"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u21-savings-fv": {
+  "title": "Saving £200 a month for 5 years",
+  "caption": "The pot grows faster as interest earns interest: after 60 monthly deposits at 0.5% a month it holds about £13,954, of which £12,000 is deposits.",
+  "alt": "A curve rising from zero over 60 months, steepening, to about £13,954.",
+  "description": [
+   "Each month's £200 earns 0.5% a month from the date it is paid.",
+   "After n months the pot is 200 × (1.005^n − 1)/0.005.",
+   "At n = 60 it is about £13,954; the other £1,954 is interest."
+  ],
+  "course": "maths",
+  "lesson": "Future Value",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u21.js: Future Value"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "after 60 months the pot is about £13,954",
+    "ok": true,
+    "detail": "y(60) = 13954.0061"
+   },
+   {
+    "name": "deposits alone total £12,000",
+    "ok": true,
+    "detail": "y(60) = 12000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u21-security-market-line": {
+  "title": "The security market line",
+  "caption": "Required return rises with beta by the market risk premium, 5% per unit: 3 + 5β. At β = 1.2 the share must return 9%; the market itself (β = 1) returns 8%.",
+  "alt": "A straight line from 3% at β = 0 rising 5% per unit of beta, with marked points (1, 8%) for the market and (1.2, 9%) for the share.",
+  "description": [
+   "The line starts at the risk-free rate 3%.",
+   "Its slope is the market risk premium 8 − 3 = 5%.",
+   "At β = 1.2 the required return is 3 + 1.2 × 5 = 9%."
+  ],
+  "course": "maths",
+  "lesson": "Capital Asset Pricing Model (CAPM)",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u21.js: Capital Asset Pricing Model (CAPM)"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "at β = 1.2 the required return is 9%",
+    "ok": true,
+    "detail": "y(1.2) = 9"
+   },
+   {
+    "name": "the market (β = 1) returns 8%",
+    "ok": true,
+    "detail": "y(1) = 8"
+   },
+   {
+    "name": "the slope is the 5% market premium",
+    "ok": true,
+    "detail": "gradient 5.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u21-sharpe-lines": {
+  "title": "Sharpe ratio as the slope from the risk-free rate",
+  "caption": "Each fund lies on a line from the 2% risk-free rate; its slope is the Sharpe ratio. B's line (0.75) is steeper than A's (0.53), so B earns more excess return per unit of risk.",
+  "alt": "Two lines from (0, 2%): a shallower one through fund A at (15, 10) and a steeper one through fund B at (8, 8).",
+  "description": [
+   "Excess return is return minus the 2% risk-free rate.",
+   "A: (10 − 2)/15 = 0.53 per unit of risk.",
+   "B: (8 − 2)/8 = 0.75, the steeper line.",
+   "A steeper line from the risk-free rate means a better risk-adjusted return."
+  ],
+  "course": "maths",
+  "lesson": "Modern Portfolio Theory",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u21.js: Modern Portfolio Theory"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "fund A lies on its line from the risk-free rate",
+    "ok": true,
+    "detail": "y(15) = 10"
+   },
+   {
+    "name": "fund B lies on its line",
+    "ok": true,
+    "detail": "y(8) = 8"
+   },
+   {
+    "name": "A's slope (its Sharpe ratio) is 0.53",
+    "ok": true,
+    "detail": "gradient 0.5333"
+   },
+   {
+    "name": "B's slope (its Sharpe ratio) is 0.75",
+    "ok": true,
+    "detail": "gradient 0.7500"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u21-simple-interest-line": {
+  "title": "Simple interest grows in a straight line",
+  "caption": "£5,000 at 6% simple interest earns the same £300 every year, so the total is a straight line. After 9 months (0.75 years) the interest is £225 and £5,225 is repaid.",
+  "alt": "A straight line from £5,000 at time 0 rising by £300 a year, with the point (0.75, £5,225) marked.",
+  "description": [
+   "Interest is 5000 × 0.06 = £300 for every full year.",
+   "After t years the amount is 5000 + 300t, a straight line.",
+   "At t = 0.75 years (9 months) the amount is £5,225, of which £225 is interest."
+  ],
+  "course": "maths",
+  "lesson": "Simple Interest",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u21.js: Simple Interest"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "after 0.75 years the total is £5,225",
+    "ok": true,
+    "detail": "y(0.75) = 5225"
+   },
+   {
+    "name": "the line rises £300 a year",
+    "ok": true,
+    "detail": "gradient 300.0000"
+   },
+   {
+    "name": "the interest 5000 × 0.06 × 0.75 is £225",
+    "ok": true,
+    "detail": "y(0.75) = 5225"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u21-single-payment": {
+  "title": "Two debts replaced by one payment at year 1",
+  "caption": "At time 1, £1,000 due now has grown to £1,050, and £2,000 due at time 2 is worth £1,904.76 one year earlier. Moving every amount to the same date lets them be added: £2,954.76.",
+  "alt": "One bar split into £1,050 (the debt due now, accumulated) and £1,904.76 (the debt due at year 2, discounted), with a bracket over both for £2,954.76.",
+  "description": [
+   "Choose time 1 as the comparison date.",
+   "The £1,000 due now accumulates one year: 1000 × 1.05 = £1,050.",
+   "The £2,000 due at year 2 is discounted one year: 2000/1.05 = £1,904.76.",
+   "Add the two values at the same date: £2,954.76."
+  ],
+  "course": "maths",
+  "lesson": "Time Value of Money",
+  "also": [],
+  "renderer": "bar-model",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u21.js: Time Value of Money"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the bracket over 1–2 is 2,954.76",
+    "ok": true,
+    "detail": "parts add to 2,954.76"
+   },
+   {
+    "name": "the bracket label \"£2,954.76\" states 2,954.76",
+    "ok": true,
+    "detail": "£2,954.76"
+   },
+   {
+    "name": "£1,000 grown at 5% for one year is £1,050",
+    "ok": true,
+    "detail": "1,050"
+   },
+   {
+    "name": "£1,904.76 grown a year is the £2,000 due at year 2",
+    "ok": true,
+    "detail": "2,000"
+   },
+   {
+    "name": "the lesson states \"2954.76\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "4 labels in 680×118"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "4 labels in 380×142"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u21-smoothing-forecast": {
+  "title": "A smoothed forecast is a weighted mix",
+  "caption": "With α = 0.3 the new forecast takes 30% of the latest actual (110) and 70% of the last forecast (100): 33 + 70 = 103.",
+  "alt": "One bar of two parts, 33 from the actual value and 70 from the old forecast, bracketed as 103.",
+  "description": [
+   "0.3 × 110 = 33 comes from the new observation.",
+   "0.7 × 100 = 70 comes from the last forecast.",
+   "The next forecast is 33 + 70 = 103."
+  ],
+  "course": "maths",
+  "lesson": "Forecasting",
+  "also": [],
+  "renderer": "bar-model",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u21.js: Forecasting"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the bracket over 1–2 is 103",
+    "ok": true,
+    "detail": "parts add to 103"
+   },
+   {
+    "name": "the bracket label \"103\" states 103",
+    "ok": true,
+    "detail": "103"
+   },
+   {
+    "name": "0.3 × 110 = 33",
+    "ok": true,
+    "detail": "33"
+   },
+   {
+    "name": "0.7 × 100 = 70",
+    "ok": true,
+    "detail": "70"
+   },
+   {
+    "name": "the lesson states \"= 103\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "4 labels in 680×118"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "4 labels in 380×142"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u21-supply-demand": {
+  "title": "Equilibrium and consumer surplus",
+  "caption": "Demand Q = 100 − 2P and supply Q = 3P meet at P = £20, Q = 60. The demand curve reaches the price axis at £50, so consumer surplus is the triangle ½ × 60 × (50 − 20) = 900.",
+  "alt": "A falling demand line and a rising supply line crossing at quantity 60, price £20; the triangle above the price down to demand is the consumer surplus.",
+  "description": [
+   "Demand: P = (100 − Q)/2. Supply: P = Q/3.",
+   "Equal prices when 100 − 2P = 3P: P = 20, Q = 60.",
+   "Demand hits P = 50 when Q = 0.",
+   "Consumer surplus = ½ × 60 × 30 = 900."
+  ],
+  "course": "maths",
+  "lesson": "Microeconomic Modelling",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u21.js: Microeconomic Modelling"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "demand and supply meet at Q = 60, P = £20",
+    "ok": true,
+    "detail": "(100-x)/2 → 20, x/3 → 20"
+   },
+   {
+    "name": "the consumer surplus triangle has area 900",
+    "ok": true,
+    "detail": "area 900.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u21-taylor-rule": {
+  "title": "Building the Taylor-rule rate",
+  "caption": "The rule adds up: 2% neutral real rate, 4% inflation, 1% for inflation 2 points above target (0.5 × 2) and 0.5% for the 1% output gap (0.5 × 1): 7.5%.",
+  "alt": "One bar of four parts, 2, 4, 1 and 0.5, bracketed as 7.5%.",
+  "description": [
+   "Start with r* + π = 2 + 4 = 6.",
+   "Add 0.5 × (4 − 2) = 1 for the inflation gap.",
+   "Add 0.5 × 1 = 0.5 for the output gap.",
+   "The recommended rate is 7.5%."
+  ],
+  "course": "maths",
+  "lesson": "Macroeconomic Modelling",
+  "also": [],
+  "renderer": "bar-model",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u21.js: Macroeconomic Modelling"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the bracket over 1–4 is 7.5",
+    "ok": true,
+    "detail": "parts add to 7.5"
+   },
+   {
+    "name": "the bracket label \"7.5%\" states 7.5",
+    "ok": true,
+    "detail": "7.5%"
+   },
+   {
+    "name": "inflation gap: 0.5 × (4 − 2) = 1",
+    "ok": true,
+    "detail": "1"
+   },
+   {
+    "name": "output gap: 0.5 × 1 = 0.5",
+    "ok": true,
+    "detail": "0.5"
+   },
+   {
+    "name": "the lesson states \"7.5%\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "6 labels in 680×118"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "6 labels in 380×142"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u21-term-policy-tree": {
+  "title": "A one-year term policy",
+  "caption": "The policyholder dies within the year with probability 0.01, when £10,000 is paid at year end. The expected present value of the benefit is 10,000 × 0.01/1.05 ≈ £95.24: the single premium.",
+  "alt": "A tree with a death branch of probability 1/100 and a survival branch of 99/100.",
+  "description": [
+   "Dying within the year has probability q₆₀ = 0.01; surviving 0.99.",
+   "Only the death branch pays £10,000, at the end of the year.",
+   "EPV = 10,000 × 0.01/1.05 ≈ £95.24."
+  ],
+  "course": "maths",
+  "lesson": "Actuarial Mathematics",
+  "also": [],
+  "renderer": "prob-tree",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u21.js: Actuarial Mathematics"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the branches from every point add up to 1",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "q₆₀ = 0.01",
+    "ok": true,
+    "detail": "multiplied: 1/100"
+   },
+   {
+    "name": "P = 1",
+    "ok": true,
+    "detail": "added: 1"
+   },
+   {
+    "name": "the lesson states \"95.24\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "6 labels in 680×108"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "6 labels in 380×100"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u21-two-asset-risk": {
+  "title": "Risk of a two-asset portfolio",
+  "caption": "With two assets of 20% risk and correlation 0.5, mixing them lowers the risk: a 50/50 split has σ = √0.03 ≈ 17.3%, the minimum on this curve. Holding all of either gives 20%.",
+  "alt": "A shallow U-shaped curve of portfolio risk against the weight in the first asset, from 20% at 0 and 1 down to 17.3% at 0.5.",
+  "description": [
+   "With weights w and 1 − w: σp² = 0.04(w² + (1 − w)² + w(1 − w)).",
+   "At w = 0.5 this is 0.01 + 0.01 + 0.01 = 0.03.",
+   "So σp = √0.03 ≈ 17.3%, below the 20% of either asset."
+  ],
+  "course": "maths",
+  "lesson": "Portfolio Theory",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u21.js: Portfolio Theory"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the 50/50 portfolio has σ = √0.03 ≈ 17.3%",
+    "ok": true,
+    "detail": "y(0.5) = 17.3205"
+   },
+   {
+    "name": "the minimum risk is at the 50/50 split",
+    "ok": true,
+    "detail": "found (0.5, 17.3205)"
+   },
+   {
+    "name": "all in one asset has risk 20%",
+    "ok": true,
+    "detail": "y(1) = 20"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u21-var-tail": {
+  "title": "The 99% one-day VaR as a tail",
+  "caption": "Daily losses on the £10m portfolio are normal with standard deviation £100,000. The 1% worst outcomes lie beyond 2.326 standard deviations, £232,600, which is the 99% VaR.",
+  "alt": "A bell curve of daily loss in £ thousands, with the 1% tail beyond £232.6k shaded.",
+  "description": [
+   "σV = 1% × £10m = £100,000.",
+   "The 99th percentile of a normal is z = 2.326.",
+   "VaR = 2.326 × £100,000 ≈ £232,600: only 1% of days should lose more."
+  ],
+  "course": "maths",
+  "lesson": "Value at Risk (VaR)",
+  "also": [],
+  "renderer": "distribution",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u21.js: Value at Risk (VaR)"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the shaded probability is 0.01",
+    "ok": true,
+    "detail": "computed 0.010009"
+   },
+   {
+    "name": "only 1% of losses exceed 2.326σ",
+    "ok": true,
+    "detail": "0.010009"
+   },
+   {
+    "name": "the lesson states \"232,600\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "14 labels in 640×360"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "14 labels in 380×320"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u21-vasicek-mean": {
+  "title": "The expected short rate in the Vasicek model",
+  "caption": "Starting at 2% with speed a = 0.5 and long-run level b = 4%, the expected rate rises at first by a(b − r) = 1% a year and then flattens towards 4%.",
+  "alt": "A curve rising from 2% and flattening towards the dashed 4% level.",
+  "description": [
+   "The drift is a(b − r) = 0.5 × (0.04 − 0.02) = 0.01 per year.",
+   "So the expected rate climbs at 1% a year at first.",
+   "As r nears b the pull weakens: E[r] → 4%."
+  ],
+  "course": "maths",
+  "lesson": "Interest Rate Models",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u21.js: Interest Rate Models"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the initial slope is a(b − r) = 0.01 a year",
+    "ok": true,
+    "detail": "gradient 0.0100"
+   },
+   {
+    "name": "in the long run E[r] → 4%",
+    "ok": true,
+    "detail": "y(60) = 0.04"
+   },
+   {
+    "name": "the rate starts at 2%",
+    "ok": true,
+    "detail": "y(0) = 0.02"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u53-scaling": {
+  "title": "Superlinear scaling with β = 1.15",
+  "caption": "Output Y ∝ N^β with β = 1.15 grows faster than linearly: a city 10 times larger produces 10^1.15 ≈ 14 times as much, i.e. 1.4 times more per person. The dashed line shows the linear case β = 1.",
+  "alt": "Output against size, in units of the smallest city: a curve N to the 1.15 above the straight line N, reaching about 14 at size 10.",
+  "description": [
+   "Y = N^1.15 in units where N = 1 gives Y = 1.",
+   "N = 10: Y = 14.1, against 10 if linear.",
+   "Per capita Y/N = N^0.15 = 1.41 at N = 10."
+  ],
+  "course": "physics",
+  "lesson": "Complex systems",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u53.js: Complex systems"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "10^1.15 ≈ 14.1",
+    "ok": true,
+    "detail": "y(10) = 14.1254"
+   },
+   {
+    "name": "per capita 1.4×",
+    "ok": true,
+    "detail": "y(10) = 1.4125"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u53-seismic": {
+  "title": "P and S arrival times",
+  "caption": "P-waves (7 km s⁻¹) arrive at t = d/7, S-waves (4 km s⁻¹) at t = d/4, so the delay grows with distance: d(1/4 − 1/7) = 30 s gives d ≈ 280 km. There P arrives after 40 s and S after 70 s.",
+  "alt": "Arrival time against distance for P and S waves: two straight lines from the origin, S steeper, with a 30 second gap between them at 280 kilometres.",
+  "description": [
+   "P: t = d/7. S: t = d/4 (d in km, t in s).",
+   "Delay = d(1/4 − 1/7) = 0.107d; for 30 s, d = 280 km.",
+   "At 280 km: P 40 s, S 70 s."
+  ],
+  "course": "physics",
+  "lesson": "Physics and Earth science",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u53.js: Physics and Earth science"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "S − P delay is 30 s at 280 km",
+    "ok": true,
+    "detail": "y(280) = 30"
+   },
+   {
+    "name": "S slope 1/4",
+    "ok": true,
+    "detail": "gradient 0.2500"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u25-arx-step": {
+  "title": "Step response of y_t = 0.8y_{t−1} + 2u_{t−1}",
+  "caption": "Fed a unit step, the model's output creeps from 0 towards 10 as 10(1 − 0.8^t): the first step gives 2, and the DC gain is b/(1 − a) = 2/0.2 = 10.",
+  "alt": "A curve rising from 0 by 2 at t = 1 and levelling off at 10, with a dashed line at 10.",
+  "description": [
+   "The model has a₁ = −0.8 and b₁ = 2.",
+   "A unit step gives y₁ = 2, y₂ = 3.6, … following 10(1 − 0.8^t).",
+   "At steady state y = 0.8y + 2u, so the DC gain is 2/0.2 = 10."
+  ],
+  "course": "maths",
+  "lesson": "System Identification",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u25.js: System Identification"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "y₁ = 2 from the recursion",
+    "ok": true,
+    "detail": "y(1) = 2"
+   },
+   {
+    "name": "y₂ = 3.6 from the recursion",
+    "ok": true,
+    "detail": "y(2) = 3.6"
+   },
+   {
+    "name": "the output approaches the DC gain 10",
+    "ok": true,
+    "detail": "10*(1-0.8^x) at 20 = 9.88; expected 9.8–10"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u25-bode-gain": {
+  "title": "Bode gain of G(s) = 100/(s + 10)",
+  "caption": "The gain is 20 dB at low frequency, about 17 dB at the corner ω = 10 (3 dB down) and about 0 dB a decade later, falling 20 dB per decade.",
+  "alt": "Gain in decibels against log of frequency: flat at 20 dB, then falling; marked values 20 dB at ω = 1, 17 dB at ω = 10 and 0 dB at ω = 100.",
+  "description": [
+   "The low-frequency gain is G(0) = 10, which is 20 dB.",
+   "At the corner ω = 10 the gain is 3 dB lower: about 17 dB.",
+   "One decade later, at ω = 100, it has fallen about 20 dB to roughly 0 dB."
+  ],
+  "course": "maths",
+  "lesson": "Bode Plots",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u25.js: Bode Plots"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "ω = 1: 20 dB",
+    "ok": true,
+    "detail": "y(0) = 19.9568"
+   },
+   {
+    "name": "ω = 10: 17 dB",
+    "ok": true,
+    "detail": "y(1) = 16.9897"
+   },
+   {
+    "name": "ω = 100: 0 dB",
+    "ok": true,
+    "detail": "y(2) = -0.0432"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u25-bounce-heights": {
+  "title": "Bounce heights with e = 0.5",
+  "caption": "Each bounce keeps e² = 0.25 of the previous height: 1, 0.25, 0.0625, 0.015625, … infinitely many bounces, yet a finite total time (Zeno behaviour).",
+  "alt": "Bounce heights 1, 0.25, 0.0625, 0.015625 metres with the constant ratio 0.25 between them.",
+  "description": [
+   "The ball is dropped from 1 m.",
+   "Each impact multiplies the speed by e = 0.5, so the height by e² = 0.25.",
+   "Heights 1, 0.25, 0.0625, …: a geometric sequence with ratio 0.25, and infinitely many bounces."
+  ],
+  "course": "maths",
+  "lesson": "Hybrid Systems",
+  "also": [],
+  "renderer": "sequence",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u25.js: Hybrid Systems"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every term follows the rule (geometric)",
+    "ok": true,
+    "detail": "1, 0.25, 0.063, 0.016"
+   },
+   {
+    "name": "term 4 is 0.015625",
+    "ok": true,
+    "detail": "0.015625"
+   },
+   {
+    "name": "the lesson states \"0.0625\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "13 labels in 680×180"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "13 labels in 380×180"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u25-closed-loop-step": {
+  "title": "Proportional control leaves a steady-state error",
+  "caption": "With C = 4 the loop gain is L(0) = 8, so the closed-loop step response settles at 8/9 ≈ 0.889 and misses the reference 1 by 1/(1 + 8) = 1/9 ≈ 0.111.",
+  "alt": "A step response rising quickly and levelling at 0.889, below the dashed reference line at 1.",
+  "description": [
+   "The loop gain at zero frequency is L(0) = 2 × 4 = 8.",
+   "The closed loop is T(s) = 8/(s + 9), so T(0) = 8/9 ≈ 0.889.",
+   "The step ends short of the reference by 1/(1 + 8) = 1/9 ≈ 0.111."
+  ],
+  "course": "maths",
+  "lesson": "Closed-Loop Control",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u25.js: Closed-Loop Control"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the response settles at T(0) = 8/9 ≈ 0.889",
+    "ok": true,
+    "detail": "0.888888889*(1-exp(-9*x)) at 0.8 = 0.89; expected 0.888–0.8889"
+   },
+   {
+    "name": "y(0) = 0",
+    "ok": true,
+    "detail": "y(0) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u25-consensus-three": {
+  "title": "Three agents agree on the average",
+  "caption": "Each agent moves towards its neighbours: x₁ = 3 − 3e^{−t}, x₂ = 3, x₃ = 3 + 3e^{−t}. All three meet at (0 + 3 + 6)/3 = 3.",
+  "alt": "Three curves starting at 0, 3 and 6 and converging to 3: the middle agent stays at 3, the others approach it.",
+  "description": [
+   "Agents 1–2–3 start at 0, 3 and 6.",
+   "The graph is connected and undirected, so the states converge to the average.",
+   "(0 + 3 + 6)/3 = 3: every agent ends at 3."
+  ],
+  "course": "maths",
+  "lesson": "Distributed Control",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u25.js: Distributed Control"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "agent 1 starts at 0",
+    "ok": true,
+    "detail": "y(0) = 0"
+   },
+   {
+    "name": "agent 3 starts at 6",
+    "ok": true,
+    "detail": "y(0) = 6"
+   },
+   {
+    "name": "agent 1's initial rate x₂ − x₁ = 3",
+    "ok": true,
+    "detail": "gradient 3.0000"
+   },
+   {
+    "name": "agent 3's initial rate x₂ − x₃ = −3",
+    "ok": true,
+    "detail": "gradient -3.0000"
+   },
+   {
+    "name": "agent 1 approaches 3",
+    "ok": true,
+    "detail": "3-3*exp(-x) at 5 = 2.98; expected 2.97–3"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u25-decay": {
+  "title": "ẋ = −2x: the time constant",
+  "caption": "The solution 5e^{−2t} falls by a factor e each time constant τ = 1/2 s: after one τ it is 5 × 0.368 ≈ 1.84.",
+  "alt": "Exponential decay from 5 at t = 0 towards 0; at t = 0.5 s the value is about 1.84, marked.",
+  "description": [
+   "Start at x(0) = 5.",
+   "The eigenvalue λ = −2 gives x(t) = 5e^{−2t}.",
+   "After one time constant τ = 1/2 s the value is 5 × 0.368 ≈ 1.84."
+  ],
+  "course": "maths",
+  "lesson": "Linear Systems",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u25.js: Linear Systems"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "x(0) = 5",
+    "ok": true,
+    "detail": "y(0) = 5"
+   },
+   {
+    "name": "x(1/2) = 5e⁻¹ ≈ 1.84",
+    "ok": true,
+    "detail": "y(0.5) = 1.8394"
+   },
+   {
+    "name": "the slope at 0 is λx(0) = −10",
+    "ok": true,
+    "detail": "gradient -10.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u25-gain-first-order": {
+  "title": "Gain of G(s) = 10/(s + 10)",
+  "caption": "At ω = 10 rad/s, G(10i) = 1/(1 + i): the gain is 1/√2 ≈ 0.707 (−3 dB) and the phase −45°. The gain falls away at higher frequencies.",
+  "alt": "A curve starting at gain 1 and falling; at ω = 10 rad/s the gain is 0.707, marked.",
+  "description": [
+   "Substitute s = iω: G(iω) = 10/(10 + iω).",
+   "Its gain is |G| = 10/√(100 + ω²).",
+   "At ω = 10: |G| = 10/√200 = 1/√2 ≈ 0.707, which is −3 dB."
+  ],
+  "course": "maths",
+  "lesson": "Frequency Response",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u25.js: Frequency Response"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "|G(10i)| = 1/√2 ≈ 0.707",
+    "ok": true,
+    "detail": "y(10) = 0.7071"
+   },
+   {
+    "name": "the DC gain is 1",
+    "ok": true,
+    "detail": "y(0) = 1"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u25-kalman-fixed-point": {
+  "title": "Steady-state predicted variance as a fixed point",
+  "caption": "The predicted variance repeats P⁻ → P⁻/(P⁻ + 1) + 1. The curve meets the line y = x at P⁻ = (1 + √5)/2 ≈ 1.618, giving gain 1.618/2.618 ≈ 0.618.",
+  "alt": "The curve y = P/(P + 1) + 1 and the diagonal y = x cross at 1.618, marked.",
+  "description": [
+   "Update with R = 1: P = P⁻/(P⁻ + 1); predict with Q = 1: next P⁻ = P + 1.",
+   "At steady state P⁻ = P⁻/(P⁻ + 1) + 1, so P⁻² − P⁻ − 1 = 0.",
+   "P⁻ = (1 + √5)/2 ≈ 1.618 and the gain is K = 1.618/2.618 ≈ 0.618."
+  ],
+  "course": "maths",
+  "lesson": "Kalman Filtering",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u25.js: Kalman Filtering"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the fixed point is (1 + √5)/2 ≈ 1.618",
+    "ok": true,
+    "detail": "x/(x+1)+1 → 1.618, x → 1.618"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u25-lqr-riccati": {
+  "title": "The scalar Riccati equation 9 − P² = 0",
+  "caption": "With A = 0, B = 1, Q = 9 and R = 1 the Riccati equation is −P² + 9 = 0. The positive root P = 3 gives the gain K = 3 and the closed loop ẋ = −3x.",
+  "alt": "The downward parabola 9 − P² crossing the horizontal axis at P = 3, marked.",
+  "description": [
+   "For ẋ = u the Riccati equation reads −P² + Q = 0, that is 9 − P² = 0.",
+   "The positive root is P = 3.",
+   "K = R⁻¹BP = 3, and the closed loop is ẋ = −3x."
+  ],
+  "course": "maths",
+  "lesson": "Linear Quadratic Regulation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u25.js: Linear Quadratic Regulation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "P = 3 solves the Riccati equation",
+    "ok": true,
+    "detail": "y(3) = 0"
+   },
+   {
+    "name": "the constant term is Q = 9",
+    "ok": true,
+    "detail": "y(0) = 9"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u25-lyapunov-v": {
+  "title": "V = x² and its rate −2x⁴",
+  "caption": "V = x² is positive away from 0 and V̇ = 2x(−x³) = −2x⁴ is negative away from 0, so the energy-like V always decreases: the origin is asymptotically stable.",
+  "alt": "Two curves: V = x², a parabola above the axis, and V̇ = −2x⁴, a flat-bottomed curve below the axis, both touching zero only at x = 0.",
+  "description": [
+   "Take V = x², positive for every x ≠ 0.",
+   "Along ẋ = −x³: V̇ = 2x·ẋ = −2x⁴.",
+   "V̇ < 0 for every x ≠ 0, so V falls to 0 and the origin is globally asymptotically stable."
+  ],
+  "course": "maths",
+  "lesson": "Lyapunov Stability",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u25.js: Lyapunov Stability"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "V(1) = 1 > 0",
+    "ok": true,
+    "detail": "y(1) = 1"
+   },
+   {
+    "name": "V̇(1) = −2 < 0",
+    "ok": true,
+    "detail": "y(1) = -2"
+   },
+   {
+    "name": "V̇ ≤ 0, with 0 only at x = 0",
+    "ok": true,
+    "detail": "found (0, 0)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u25-nyquist-gain-margin": {
+  "title": "Critical gain for K/(s + 1)³",
+  "caption": "The phase is −180° at ω = √3, where |L| = K/8. At the critical K = 8 the gain there is exactly 1, so the locus passes through −1; any K < 8 keeps it clear.",
+  "alt": "The gain curve 8/(1 + ω²)^{3/2} falling from 8; it crosses the level 1 at ω = √3 ≈ 1.73.",
+  "description": [
+   "The phase of 1/(s + 1)³ is −3 arctan ω; it equals −180° when ω = √3.",
+   "There |L| = K/(1 + 3)^{3/2} = K/8.",
+   "The locus touches −1 when K/8 = 1: stable for K < 8."
+  ],
+  "course": "maths",
+  "lesson": "Nyquist Stability Criterion",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u25.js: Nyquist Stability Criterion"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "|L(i√3)| = 8/8 = 1 at K = 8",
+    "ok": true,
+    "detail": "y(1.7320508075688772) = 1"
+   },
+   {
+    "name": "|L(0)| = K = 8",
+    "ok": true,
+    "detail": "y(0) = 8"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u25-observer-error": {
+  "title": "Estimation error with and without correction",
+  "caption": "With L = 4 the error obeys ė = −5e and shrinks five times faster than the plain model's e^{−t}: after 0.2 s it has fallen to 1/e.",
+  "alt": "Two decaying curves from error 1: the slow one e^{−t} with no correction and the fast one e^{−5t} with L = 4.",
+  "description": [
+   "The error dynamics are ė = (A − LC)e = (−1 − L)e.",
+   "Rate 5 needs −1 − L = −5, so L = 4.",
+   "The error e^{−5t} dies out five times faster than e^{−t}."
+  ],
+  "course": "maths",
+  "lesson": "State Estimation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u25.js: State Estimation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "L = 0: rate −1",
+    "ok": true,
+    "detail": "gradient -1.0000"
+   },
+   {
+    "name": "L = 4: rate −1 − L = −5",
+    "ok": true,
+    "detail": "gradient -5.0000"
+   },
+   {
+    "name": "after 1/5 s the error is 1/e",
+    "ok": true,
+    "detail": "y(0.2) = 0.3679"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u25-open-loop-gain": {
+  "title": "Open-loop heating with the wrong gain",
+  "caption": "Planned with 5 °C per kW, 3 kW should give 15 °C. If the true gain is 4 °C per kW the rise is only 12 °C, and open-loop control cannot notice the 3 °C shortfall.",
+  "alt": "Two lines of temperature rise against power: the assumed 5 °C per kW and the true 4 °C per kW; at 3 kW they read 15 and 12, a gap of 3.",
+  "description": [
+   "Assume the room warms 5 °C per kW: for 15 °C choose u = 15/5 = 3 kW.",
+   "If the real gain is 4 °C per kW, the same 3 kW gives 4 × 3 = 12 °C.",
+   "The 3 °C error is never detected: there is no feedback."
+  ],
+  "course": "maths",
+  "lesson": "Open-Loop Control",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u25.js: Open-Loop Control"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "5 × 3 = 15 °C",
+    "ok": true,
+    "detail": "y(3) = 15"
+   },
+   {
+    "name": "4 × 3 = 12 °C",
+    "ok": true,
+    "detail": "y(3) = 12"
+   },
+   {
+    "name": "both lines start at 0",
+    "ok": true,
+    "detail": "5*x → 0, 4*x → 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u25-pendulum": {
+  "title": "Pendulum: the restoring term −sin θ",
+  "caption": "The restoring term −sin θ is zero at θ = 0 and θ = π. Its slope there is −1 (restoring: a centre) and +1 (pushing away: a saddle).",
+  "alt": "The curve −sin θ crosses zero at θ = 0 with slope −1 and at θ = π with slope +1; the two tangent lines are dashed.",
+  "description": [
+   "Plot the right-hand side −sin θ.",
+   "It is zero at θ = 0 and θ = π: the equilibria.",
+   "At 0 the slope is −1, so θ̈ ≈ −θ: eigenvalues ±i.",
+   "At π the slope is +1, so θ̈ ≈ +(θ − π): eigenvalues ±1, a saddle."
+  ],
+  "course": "maths",
+  "lesson": "Nonlinear Systems",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u25.js: Nonlinear Systems"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "θ = 0 is an equilibrium",
+    "ok": true,
+    "detail": "y(0) = 0"
+   },
+   {
+    "name": "θ = π is an equilibrium",
+    "ok": true,
+    "detail": "y(3.141592653589793) = 0"
+   },
+   {
+    "name": "slope −1 at 0 (a centre)",
+    "ok": true,
+    "detail": "gradient -1.0000"
+   },
+   {
+    "name": "slope +1 at π (a saddle)",
+    "ok": true,
+    "detail": "gradient 1.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u25-pole-placement": {
+  "title": "Feedback moves the pole from +2 to −3",
+  "caption": "Without control ẋ = 2x grows like e^{2t}. With u = −5x the closed loop is ẋ = −3x and x(t) = e^{−3t} decays with time constant 1/3 s.",
+  "alt": "From x(0) = 1, one curve grows rapidly (open loop e^{2t}) and one decays (closed loop e^{−3t}); the decaying one is at 0.368 at t = 1/3.",
+  "description": [
+   "Open loop: ẋ = 2x, pole at +2, so x = e^{2t} grows.",
+   "Choose u = −Kx: ẋ = (2 − K)x, and 2 − K = −3 needs K = 5.",
+   "Closed loop x = e^{−3t}: it reaches 1/e ≈ 0.368 at t = 1/3 s."
+  ],
+  "course": "maths",
+  "lesson": "Feedback Control",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u25.js: Feedback Control"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "open-loop slope at 0 is +2",
+    "ok": true,
+    "detail": "gradient 2.0000"
+   },
+   {
+    "name": "closed-loop slope at 0 is 2 − K = −3",
+    "ok": true,
+    "detail": "gradient -3.0000"
+   },
+   {
+    "name": "after τ = 1/3 the value is e⁻¹",
+    "ok": true,
+    "detail": "y(0.3333333333333333) = 0.3679"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u25-poles": {
+  "title": "The characteristic polynomial λ² + 3λ + 2",
+  "caption": "The eigenvalues of A = [[0, 1], [−2, −3]] are the roots of λ² + 3λ + 2 = 0: the curve crosses zero at the poles −1 and −2.",
+  "alt": "A parabola λ² + 3λ + 2 crossing the horizontal axis at −2 and −1, with minimum −0.25 at −1.5.",
+  "description": [
+   "Write the state equations with x₁ = x and x₂ = ẋ.",
+   "det(λI − A) = λ² + 3λ + 2.",
+   "Its roots are the poles −1 and −2, both negative: stable."
+  ],
+  "course": "maths",
+  "lesson": "State-Space Representation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u25.js: State-Space Representation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "λ = −1 is a root",
+    "ok": true,
+    "detail": "y(-1) = 0"
+   },
+   {
+    "name": "λ = −2 is a root",
+    "ok": true,
+    "detail": "y(-2) = 0"
+   },
+   {
+    "name": "the sum of the roots is −3 = trace A",
+    "ok": true,
+    "detail": "found (-1.5, -0.25)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u25-root-locus-real": {
+  "title": "Closed-loop poles of 1/(s(s + 2)) as K grows",
+  "caption": "For K ≤ 1 the poles −1 ± √(1 − K) are real and move together; they meet at −1 when K = 1 (critical damping). Beyond K = 1 they are complex with real part −1.",
+  "alt": "Real parts of the two poles against K: two branches from 0 and −2 meeting at −1 when K = 1, then a single line at −1 for K above 1.",
+  "description": [
+   "The characteristic equation is s² + 2s + K = 0, with poles −1 ± √(1 − K).",
+   "At K = 0 they are 0 and −2; as K grows they approach each other.",
+   "At K = 1 they meet at −1: critical damping. For K > 1 they are −1 ± i√(K − 1), real part −1."
+  ],
+  "course": "maths",
+  "lesson": "Root Locus",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u25.js: Root Locus"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the poles meet at −1 when K = 1",
+    "ok": true,
+    "detail": "y(1) = -1"
+   },
+   {
+    "name": "(the other branch too)",
+    "ok": true,
+    "detail": "y(1) = -1"
+   },
+   {
+    "name": "K = 0 gives the open-loop pole 0",
+    "ok": true,
+    "detail": "y(0) = 0"
+   },
+   {
+    "name": "K = 0 gives the open-loop pole −2",
+    "ok": true,
+    "detail": "y(0) = -2"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u25-step-4-over-s2": {
+  "title": "Step response of G(s) = 4/(s + 2)",
+  "caption": "The step response is 2(1 − e^{−2t}); it settles at the DC gain G(0) = 4/2 = 2, as the final value theorem predicts.",
+  "alt": "A curve rising from 0 and levelling off at 2, with a dashed line at the final value 2.",
+  "description": [
+   "The output transform is Y(s) = G(s)/s.",
+   "Inverting gives y(t) = 2(1 − e^{−2t}).",
+   "The final value is lim s·Y(s) = 4/2 = 2, the DC gain."
+  ],
+  "course": "maths",
+  "lesson": "Transfer Functions",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u25.js: Transfer Functions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "y(0) = 0",
+    "ok": true,
+    "detail": "y(0) = 0"
+   },
+   {
+    "name": "y settles at the DC gain 2",
+    "ok": true,
+    "detail": "2*(1-exp(-2*x)) at 3 = 2; expected 1.99–2"
+   },
+   {
+    "name": "the initial slope is G(∞)-free: 4",
+    "ok": true,
+    "detail": "gradient 4.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }

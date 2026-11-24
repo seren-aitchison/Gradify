@@ -1,0 +1,87 @@
+{
+ "id": "maths-u27-r-fit",
+ "renderer": "scatter",
+ "course": "maths",
+ "unit": "u27",
+ "lesson": "R",
+ "title": "lm(y ~ x): intercept 0, slope 2",
+ "caption": "The five points (1, 2) to (5, 10) lie exactly on y = 2x, so coef(fit) gives intercept 0 and slope 2 and R² is 1, a perfect fit.",
+ "alt": "Five points on the straight line y = 2x from (1, 2) to (5, 10), with the fitted line through them all.",
+ "description": [
+  "Plot the five points x = 1:5 against y = 2, 4, 6, 8, 10.",
+  "Every point lies on one straight line.",
+  "The fitted line has intercept 0 and slope 2.",
+  "The fit is perfect, so R² = 1."
+ ],
+ "points": [
+  [
+   1,
+   2
+  ],
+  [
+   2,
+   4
+  ],
+  [
+   3,
+   6
+  ],
+  [
+   4,
+   8
+  ],
+  [
+   5,
+   10
+  ]
+ ],
+ "line": {
+  "a": 0,
+  "b": 2
+ },
+ "r": 1,
+ "range": {
+  "x": [
+   0,
+   6
+  ],
+  "y": [
+   0,
+   12
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  [
+   2,
+   4,
+   6,
+   8,
+   10,
+   12
+  ]
+ ],
+ "grid": [
+  1,
+  2
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "lineLabel": "y = 2x",
+ "lineLabelAt": [
+  4.2,
+  8.2
+ ],
+ "fromLesson": [
+  "intercept 0 and slope 2"
+ ]
+}

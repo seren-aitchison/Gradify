@@ -1,0 +1,99 @@
+{
+ "id": "maths-u21-savings-fv",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u21",
+ "lesson": "Future Value",
+ "title": "Saving £200 a month for 5 years",
+ "caption": "The pot grows faster as interest earns interest: after 60 monthly deposits at 0.5% a month it holds about £13,954, of which £12,000 is deposits.",
+ "alt": "A curve rising from zero over 60 months, steepening, to about £13,954.",
+ "description": [
+  "Each month's £200 earns 0.5% a month from the date it is paid.",
+  "After n months the pot is 200 × (1.005^n − 1)/0.005.",
+  "At n = 60 it is about £13,954; the other £1,954 is interest."
+ ],
+ "range": {
+  "x": [
+   0,
+   60
+  ],
+  "y": [
+   0,
+   15000
+  ]
+ },
+ "ticks": [
+  [
+   12,
+   24,
+   36,
+   48,
+   60
+  ],
+  [
+   3000,
+   6000,
+   9000,
+   12000,
+   15000
+  ]
+ ],
+ "grid": [
+  12,
+  3000
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "months",
+  "pot £"
+ ],
+ "curves": [
+  {
+   "expr": "200*(1.005^x-1)/0.005",
+   "colour": "a1"
+  },
+  {
+   "expr": "200*x",
+   "colour": "a3",
+   "dash": "6 4",
+   "label": "deposits only",
+   "labelAt": [
+    34,
+    5400
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 60,
+   "y": 13954.0061019723,
+   "label": "£13,954",
+   "colour": "a2",
+   "dx": -8,
+   "dy": -12,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "200*(1.005^x-1)/0.005",
+   "x": 60,
+   "y": 13954.0061019723,
+   "name": "after 60 months the pot is about £13,954"
+  },
+  {
+   "type": "point",
+   "expr": "200*x",
+   "x": 60,
+   "y": 12000,
+   "name": "deposits alone total £12,000"
+  }
+ ],
+ "fromLesson": [
+  "13,954"
+ ]
+}

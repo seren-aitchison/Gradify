@@ -1,0 +1,39 @@
+{
+ "id": "maths-u25-bounce-heights",
+ "renderer": "sequence",
+ "course": "maths",
+ "unit": "u25",
+ "lesson": "Hybrid Systems",
+ "title": "Bounce heights with e = 0.5",
+ "caption": "Each bounce keeps e² = 0.25 of the previous height: 1, 0.25, 0.0625, 0.015625, … infinitely many bounces, yet a finite total time (Zeno behaviour).",
+ "alt": "Bounce heights 1, 0.25, 0.0625, 0.015625 metres with the constant ratio 0.25 between them.",
+ "description": [
+  "The ball is dropped from 1 m.",
+  "Each impact multiplies the speed by e = 0.5, so the height by e² = 0.25.",
+  "Heights 1, 0.25, 0.0625, …: a geometric sequence with ratio 0.25, and infinitely many bounces."
+ ],
+ "terms": [
+  1,
+  0.25,
+  0.0625,
+  0.015625
+ ],
+ "rule": {
+  "kind": "geometric",
+  "a": 1,
+  "r": 0.25
+ },
+ "show": "ratios",
+ "more": true,
+ "ruleText": "height = 0.25^(n − 1) m",
+ "checks": [
+  {
+   "type": "nth",
+   "n": 4,
+   "value": 0.015625
+  }
+ ],
+ "fromLesson": [
+  "0.0625"
+ ]
+}

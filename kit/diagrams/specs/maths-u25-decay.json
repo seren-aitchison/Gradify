@@ -1,0 +1,106 @@
+{
+ "id": "maths-u25-decay",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u25",
+ "lesson": "Linear Systems",
+ "title": "ẋ = −2x: the time constant",
+ "caption": "The solution 5e^{−2t} falls by a factor e each time constant τ = 1/2 s: after one τ it is 5 × 0.368 ≈ 1.84.",
+ "alt": "Exponential decay from 5 at t = 0 towards 0; at t = 0.5 s the value is about 1.84, marked.",
+ "description": [
+  "Start at x(0) = 5.",
+  "The eigenvalue λ = −2 gives x(t) = 5e^{−2t}.",
+  "After one time constant τ = 1/2 s the value is 5 × 0.368 ≈ 1.84."
+ ],
+ "range": {
+  "x": [
+   0,
+   3
+  ],
+  "y": [
+   0,
+   5.5
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3
+  ],
+  [
+   1,
+   2,
+   3,
+   4,
+   5
+  ]
+ ],
+ "grid": [
+  1,
+  1
+ ],
+ "axisLabels": [
+  "t (s)",
+  "x"
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "curves": [
+  {
+   "expr": "5*exp(-2*x)",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 0.5,
+   "label": "τ = 1/2"
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 5,
+   "label": "5",
+   "dx": 10,
+   "dy": 4
+  },
+  {
+   "x": 0.5,
+   "y": 1.8394,
+   "label": "≈ 1.84",
+   "dx": 12,
+   "dy": -8
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "5*exp(-2*x)",
+   "x": 0,
+   "y": 5,
+   "name": "x(0) = 5"
+  },
+  {
+   "type": "point",
+   "expr": "5*exp(-2*x)",
+   "x": 0.5,
+   "y": 1.8394,
+   "name": "x(1/2) = 5e⁻¹ ≈ 1.84"
+  },
+  {
+   "type": "slope",
+   "expr": "5*exp(-2*x)",
+   "x": 0,
+   "value": -10,
+   "name": "the slope at 0 is λx(0) = −10"
+  }
+ ],
+ "fromLesson": [
+  "τ = 1/2 s",
+  "≈ 1.84"
+ ]
+}

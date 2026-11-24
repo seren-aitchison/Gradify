@@ -1,0 +1,102 @@
+{
+ "id": "maths-u18-annealing-acceptance",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u18",
+ "lesson": "Simulated Annealing",
+ "title": "Acceptance probability of a worsening move, Δ = 5",
+ "caption": "A move that worsens the cost by Δ = 5 is accepted with probability e^(−Δ/T). At T = 10 that is 0.61; at T = 1 it falls to 0.0067: cooling makes uphill moves rare.",
+ "alt": "A rising curve e^(−5/T) against temperature T, passing through (10, 0.61) and (1, 0.0067).",
+ "description": [
+  "Acceptance probability is e^(−Δ/T) with Δ = 5.",
+  "At T = 10: e^(−0.5) ≈ 0.61.",
+  "At T = 1: e^(−5) ≈ 0.0067.",
+  "The curve shows the probability rising with T: hot searches accept most uphill moves, cold ones almost none."
+ ],
+ "range": {
+  "x": [
+   0,
+   12
+  ],
+  "y": [
+   0,
+   1
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   4,
+   6,
+   8,
+   10,
+   12
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "grid": [
+  2,
+  0.25
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "temperature T",
+  "P(accept)"
+ ],
+ "curves": [
+  {
+   "expr": "exp(-5/x)",
+   "colour": "a1",
+   "domain": [
+    0.2,
+    12
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 10,
+   "y": 0.6065306597126334,
+   "label": "T = 10: 0.61",
+   "colour": "a2",
+   "dx": -8,
+   "dy": -16,
+   "anchor": "end"
+  },
+  {
+   "x": 1,
+   "y": 0.006737946999085467,
+   "label": "T = 1: 0.0067",
+   "colour": "a4",
+   "dx": 14,
+   "dy": -22
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "exp(-5/x)",
+   "x": 10,
+   "y": 0.6065306597126334,
+   "name": "at T = 10, e^(−0.5) ≈ 0.61"
+  },
+  {
+   "type": "point",
+   "expr": "exp(-5/x)",
+   "x": 1,
+   "y": 0.006737946999085467,
+   "name": "at T = 1, e^(−5) ≈ 0.0067"
+  }
+ ],
+ "fromLesson": [
+  "0.0067"
+ ]
+}

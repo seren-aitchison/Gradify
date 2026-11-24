@@ -1,0 +1,54 @@
+{
+ "id": "maths-u27-octave-squares",
+ "renderer": "barchart",
+ "course": "maths",
+ "unit": "u27",
+ "lesson": "GNU Octave",
+ "title": "x = 1:4; y = x.^2",
+ "caption": "The squares of 1 to 4 are 1, 4, 9, 16, which total 30, so mean(y) = 30/4 = 7.5. The same lines run unchanged in MATLAB.",
+ "alt": "A bar chart of the four values 1, 4, 9 and 16 for x = 1 to 4.",
+ "description": [
+  "x = 1:4 gives the values 1, 2, 3, 4.",
+  "x.^2 squares each one: 1, 4, 9, 16.",
+  "The total is 30.",
+  "mean(y) = 30/4 = 7.5."
+ ],
+ "categories": [
+  "x = 1",
+  "x = 2",
+  "x = 3",
+  "x = 4"
+ ],
+ "values": [
+  1,
+  4,
+  9,
+  16
+ ],
+ "range": {
+  "y": [
+   0,
+   18
+  ]
+ },
+ "ticks": [
+  4,
+  8,
+  12,
+  16
+ ],
+ "axisLabels": [
+  "x",
+  "x²"
+ ],
+ "checks": [
+  {
+   "type": "total",
+   "value": 30,
+   "name": "1 + 4 + 9 + 16 = 30, so the mean is 30/4 = 7.5"
+  }
+ ],
+ "fromLesson": [
+  "7.5"
+ ]
+}
