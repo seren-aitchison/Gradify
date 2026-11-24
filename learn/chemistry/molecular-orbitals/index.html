@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Molecular Orbitals Explained | Gradify</title>
+  <meta name="description" content="This lesson applies molecular orbital theory to diatomic molecules and conjugated systems.">
+  <meta name="robots" content="max-image-preview:large">
+  <link rel="canonical" href="https://getgradify.com/learn/chemistry/molecular-orbitals/">
+  <link rel="alternate" hreflang="en-GB" href="https://getgradify.com/learn/chemistry/molecular-orbitals/">
+  <link rel="alternate" hreflang="x-default" href="https://getgradify.com/learn/chemistry/molecular-orbitals/">
+  <link rel="alternate" type="application/rss+xml" title="Gradify: new study guides and tools" href="https://getgradify.com/feed.xml">
+  <meta property="og:title" content="Molecular Orbitals Explained | Gradify">
+  <meta property="og:description" content="This lesson applies molecular orbital theory to diatomic molecules and conjugated systems.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://getgradify.com/learn/chemistry/molecular-orbitals/">
+  <meta property="og:site_name" content="Gradify">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:image" content="https://getgradify.com/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Gradify: turn your notes into flashcards checked against what you wrote.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Molecular Orbitals Explained | Gradify">
+  <meta name="twitter:description" content="This lesson applies molecular orbital theory to diatomic molecules and conjugated systems.">
+  <meta name="twitter:image" content="https://getgradify.com/assets/og.png">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/kit/styles/base.css">
+  <script src="/kit/core/theme-boot.js"></script>
+  <link rel="stylesheet" href="/assets/seo.css">
+  <!-- module-preload: written by scripts/preload-modules.mjs; run it after changing imports -->
+  <link rel="modulepreload" href="/assets/seo.js">
+  <link rel="modulepreload" href="/kit/core/hubnav.js">
+  <link rel="modulepreload" href="/assets/memory.js">
+  <link rel="modulepreload" href="/kit/ui/global-nav.js">
+  <link rel="modulepreload" href="/kit/core/menu-set.js">
+  <link rel="modulepreload" href="/kit/ui/store.js">
+  <link rel="modulepreload" href="/kit/ui/icons.js">
+  <link rel="modulepreload" href="/kit/ui/palette.js">
+  <link rel="modulepreload" href="/kit/ui/places.js">
+  <link rel="modulepreload" href="/kit/ui/feedback.js">
+  <link rel="modulepreload" href="/kit/ui/resources.js">
+  <link rel="modulepreload" href="/kit/ui/keys.js">
+  <link rel="modulepreload" href="/kit/core/site.js">
+  <link rel="modulepreload" href="/kit/ui/shelf.js">
+  <link rel="modulepreload" href="/kit/ui/overlay.js">
+  <link rel="modulepreload" href="/kit/core/sites.js">
+  <link rel="modulepreload" href="/gradify.config.js">
+  <link rel="modulepreload" href="/kit/core/subnav.js">
+  <link rel="modulepreload" href="/kit/core/accent.js">
+  <link rel="modulepreload" href="/kit/core/colour.js">
+  <!-- /module-preload -->
+  <script type="module" src="/assets/seo.js"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://getgradify.com/"},{"@type":"ListItem","position":2,"name":"Learn","item":"https://getgradify.com/learn/"},{"@type":"ListItem","position":3,"name":"Chemistry","item":"https://getgradify.com/learn/chemistry/"},{"@type":"ListItem","position":4,"name":"Molecular Orbitals","item":"https://getgradify.com/learn/chemistry/molecular-orbitals/"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"Molecular Orbitals","description":"This lesson applies molecular orbital theory to diatomic molecules and conjugated systems.","url":"https://getgradify.com/learn/chemistry/molecular-orbitals/","learningResourceType":"Lesson","inLanguage":"en-GB","isAccessibleForFree":true,"teaches":"Atomic orbitals combine into bonding and antibonding MOs; bond order is half the difference in electrons, O₂'s two unpaired π* electrons make it paramagnetic and Hückel theory describes conjugated π systems, whose HOMO-LUMO gap narrows with conjugation.","isPartOf":{"@type":"Course","name":"Chemistry","url":"https://getgradify.com/scigradify/chemistry/"},"publisher":{"@id":"https://getgradify.com/#org"},"author":{"@id":"https://getgradify.com/#org"},"image":["https://getgradify.com/kit/diagrams/svg/chem-mo-h2.wide.svg"],"citation":["Mulliken R. S., \"Electronic structures of polyatomic molecules and valence\", Physical Review 40(1), 55–62","Hückel E., \"Quantentheoretische Beiträge zum Benzolproblem\", Zeitschrift für Physik 70, 204–286"]}</script>
+</head>
+<body>
+  <div class="wrap hub-top">
+    <!-- hub-header: written by scripts/sync-headers.mjs; edit it there -->
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="bar glass hub-bar">
+      <a class="brand" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4641ff"/><stop offset=".35" stop-color="#f055dd"/><stop offset=".7" stop-color="#ff5600"/><stop offset="1" stop-color="#ffc002"/></linearGradient></defs><rect x=".75" y=".75" width="30.5" height="30.5" rx="9" fill="#0b0b0b" stroke="rgba(255,255,255,.22)" stroke-width="1.5"/><path d="M22.9 10.9A8.6 8.6 0 1 0 24.6 16H16.4" fill="none" stroke="url(#gg)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Gradify</a>
+      <nav class="sections" aria-label="Gradify"><a href="/explore.html">Explore</a><a href="/#find">Sites</a><a href="/journey.html">Journey</a><a href="/pricing.html">Pricing</a></nav>
+      <div class="right">
+        <a class="link hub-signin" href="/app.html#/account">Sign in</a>
+        <a class="btn btn-primary btn-sm lg hub-open" href="/app.html">Open Gradify</a>
+        <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      </div>
+      <nav class="menu" id="menu" aria-label="Menu" hidden><a href="/explore.html">Explore</a><a href="/#find">Sites</a><a href="/journey.html">Journey</a><a href="/pricing.html">Pricing</a><a class="hub-signin" href="/app.html#/account">Sign in</a><a class="btn btn-primary lg hub-open" href="/app.html">Open Gradify</a></nav>
+    </header>
+    <script type="module" src="/kit/core/hubnav.js"></script>
+    <!-- /hub-header -->
+  </div>
+  <main id="main" class="seo">
+    <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/learn/">Learn</a></li><li><a href="/learn/chemistry/">Chemistry</a></li><li aria-current="page">Molecular Orbitals</li></ol></nav>
+    <h1>Molecular Orbitals</h1>
+    <p class="answer">Atomic orbitals combine into bonding and antibonding MOs; bond order is half the difference in electrons, O₂'s two unpaired π* electrons make it paramagnetic and Hückel theory describes conjugated π systems, whose HOMO-LUMO gap narrows with conjugation.</p>
+    <p class="lr-meta">Chemistry · Physical Chemistry and Molecular Science · about 2 minutes</p>
+    <section class="lr-obj"><h2 id="what-you-ll-be-able-to-do">What you'll be able to do</h2><ul><li>Construct MO diagrams for second-row diatomic molecules</li><li>Explain the paramagnetism of oxygen using MO theory</li><li>Describe Hückel theory for conjugated π systems</li></ul></section>
+    <div class="lr-notes"><section id="co-s1"><h2 id="diatomic-molecules">Diatomic molecules</h2><ul><li>Atomic orbitals combine to form <b>bonding</b> and <b>antibonding</b> MOs.</li><li><b>Bond order</b> = ½(bonding − antibonding electrons).</li><li>O₂ has two unpaired electrons in π* orbitals: it is <b>paramagnetic</b>.</li><li>In B₂, C₂ and N₂, <b>s-p mixing</b> raises σ2p above π2p.</li></ul><figure class="lr-fig"><picture><source media="(max-width: 640px)" srcset="/kit/diagrams/svg/chem-mo-h2.narrow.svg" width="380" height="460"><img src="/kit/diagrams/svg/chem-mo-h2.wide.svg" alt="MO diagram: 1s on each hydrogen; σ1s below with two paired electrons, σ*1s above and empty." width="680" height="420" loading="lazy" decoding="async"></picture><figcaption><b>Molecular orbitals of hydrogen.</b> Two 1s orbitals combine into a lower-energy bonding σ1s and a higher-energy antibonding σ*1s. H₂&#39;s two electrons pair in σ1s: bond order 1. In He₂ the extra two would fill σ*1s and cancel the bond, which is why He₂ does not exist.</figcaption></figure></section><section id="co-s2"><h2 id="conjugated-systems">Conjugated systems</h2><ul><li><b>Hückel theory</b> treats π orbitals separately from σ.</li><li>n p orbitals combine into n π molecular orbitals.</li><li>The <b>HOMO</b> (highest occupied) and <b>LUMO</b> (lowest unoccupied) control reactivity and colour.</li><li>Longer conjugation narrows the HOMO-LUMO gap.</li></ul><p>Lewis structures predict O₂ has all electrons paired, but liquid oxygen sticks to a magnet. MO theory explains this. Frontier orbital theory, using HOMO and LUMO, explains many reactions, including cycloadditions.</p><div class="co-ex"><b>Worked example</b><p>MO configuration of O₂.</p><ol><li>O₂ has 12 valence electrons.</li><li>σ2s² σ<i>2s² σ2p² π2p⁴ π</i>2p².</li><li>The two π* electrons occupy separate orbitals.</li><li>Bond order = ½(8 − 4) = 2; two unpaired electrons.</li></ol></div><div class="mv-clin co-pit"><b>Common mistake</b>Using Lewis structures to predict magnetism. They fail for O₂, which MO theory explains.</div></section></div>
+    <p class="core-rule"><b>In 3 lines:</b> Bonding and antibonding. O₂ paramagnetic. HOMO and LUMO.</p>
+    <section id="practice"><h2 id="practice-questions">Practice questions</h2><p>Answer each one in your head before you open it: recalling beats rereading.</p><ol class="lr-qs"><li><details class="self-test"><summary>Why is O₂ paramagnetic?<ul class="lr-opts"><li>It has two unpaired electrons in π* orbitals</li><li>All its electrons are paired</li><li>It has an odd number of electrons</li><li>It contains metal atoms</li></ul><span class="reveal">Show the answer</span></summary><p><b>Answer: It has two unpaired electrons in π* orbitals.</b> Hund's rule places one electron in each π* orbital.</p></details></li><li><details class="self-test"><summary>What happens to the HOMO-LUMO gap as conjugation increases?<ul class="lr-opts"><li>It increases steadily with each bond</li><li>It decreases, shifting absorption to longer wavelengths</li><li>It stays exactly the same</li><li>It becomes zero immediately</li></ul><span class="reveal">Show the answer</span></summary><p><b>Answer: It decreases, shifting absorption to longer wavelengths.</b> More combined p orbitals bring levels closer.</p></details></li><li><details class="self-test"><summary>Why does s-p mixing change the MO order in N₂ but not in O₂?<ul class="lr-opts"><li>O₂ has no p orbitals available for bonding</li><li>N₂ has no s orbitals in its valence shell</li><li>The 2s and 2p energies are closer in lighter atoms, allowing mixing</li><li>s-p mixing only ever happens in charged ions</li></ul><span class="reveal">Show the answer</span></summary><p><b>Answer: The 2s and 2p energies are closer in lighter atoms, allowing mixing.</b> Larger s-p gaps in O and F suppress mixing.</p></details></li></ol></section>
+    <section id="key-terms"><h2 id="key-terms-2">Key terms</h2><dl class="lr-terms"><dt>HOMO</dt><dd>Highest occupied molecular orbital</dd><dt>LUMO</dt><dd>Lowest unoccupied molecular orbital</dd><dt>Hückel theory</dt><dd>A simple MO method for π systems</dd></dl></section>
+    <aside class="g-action cta-box"><span class="g-sq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l1.9 5.1 5.1 1.9-5.1 1.9L12 17.5l-1.9-5.1L5 10.5l5.1-1.9z"/><path d="M18.5 16.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/></svg></span><div class="g-action-text"><span class="g-kicker">Your next step</span><h2 class="g-title" id="keep-it-dont-just-read-it">Keep it, don&#39;t just read it</h2><p>Open the interactive lesson to answer check questions at three levels, add its flashcards to your revision and have them come back just before you&#39;d forget. Free, no card.</p><div class="g-action-buttons"><a class="g-act" href="/scigradify/chemistry/#/lesson/u16-02" data-cta="learn"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/><path d="M22 10v6"/></svg><span>Open the interactive lesson</span></a><a class="g-act soft" href="/features/notes-studio/" data-cta="learn"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m17 8-5-5-5 5"/><path d="M12 3v12"/></svg><span>Make flashcards from your own notes</span></a></div></div></aside>
+    <section id="sources"><h2 id="sources-2">Sources</h2><ul class="lr-src"><li>Mulliken R. S., &quot;Electronic structures of polyatomic molecules and valence&quot;, Physical Review 40(1), 55–62</li><li>Hückel E., &quot;Quantentheoretische Beiträge zum Benzolproblem&quot;, Zeitschrift für Physik 70, 204–286</li></ul><p class="lr-note">Written and checked by Gradify against these sources. Independent study material: not affiliated with or endorsed by any exam board.</p></section>
+    <nav class="unit-nav" aria-label="Next and previous lessons"><a href="/learn/chemistry/molecular-structure/">← Molecular Structure</a><a href="/learn/chemistry/quantum-chemistry/">Quantum Chemistry →</a></nav>
+    <section class="related" aria-label="Keep going"><h2 id="keep-going">Keep going</h2><ul><li><a href="/topics/chemistry/u16/">Physical Chemistry and Molecular Science: the whole topic</a><span>every lesson, a quick quiz and a mind map</span></li><li><a href="/learn/chemistry/">Every chemistry lesson explained</a></li></ul></section>
+    <p class="share-row"><button type="button" class="share-btn" data-share>Share with your study group</button><span class="share-msg" role="status" aria-live="polite"></span></p>
+  </main>
+  <div class="wrap hub-bottom">
+    <!-- hub-footer: written by scripts/sync-headers.mjs; edit it there -->
+    <footer class="hub-foot glass">
+      <div class="hub-foot-cols">
+        <div class="hub-foot-brand"><b>Gradify™</b><p>Turn your notes into flashcards checked against what you wrote, and revise them at the right time.</p></div>
+        <nav aria-label="Gradify"><b>Gradify</b><a href="/explore.html">Explore</a><a href="/#find">Sites</a><a href="/journey.html">Journey</a><a href="/pricing.html">Pricing</a><a href="/app.html">Open Gradify</a></nav>
+        <nav aria-label="Free resources"><b>Free resources</b><a href="/features/">Every feature</a><a href="/tools/">Study tools</a><a href="/guides/">Study guides</a><a href="/topics/">Revision topics</a><a href="/study-plan/">Study plans</a><a href="/checklists/">Checklists</a><a href="/questions/">Practice questions</a><a href="/exam-traps/">Exam traps</a><a href="/glossary/">Glossary</a><a href="/terms/">Key terms A–Z</a><a href="/vs/">Concept comparisons</a><a href="/research/">Research</a><a href="/templates/">Templates</a><a href="/compare/">Compare apps</a><a href="/changelog/">What's new</a></nav>
+        <nav aria-label="Popular tools"><b>Popular tools</b><a href="/tools/degree-classification-calculator/">Degree calculator</a><a href="/tools/final-grade-calculator/">Final grade needed</a><a href="/tools/cram-planner/">Cram planner</a><a href="/tools/study-timer/">Study timer</a><a href="/tools/citation-helper/">Citation helper</a><a href="/pdf-to-flashcards/">PDF to flashcards</a></nav>
+        <nav aria-label="About Gradify"><b>About</b><a href="/about.html">About</a><a href="/quality.html">Quality</a><a href="/ambassadors.html">Ambassadors</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/site-map.html">Site map</a><a href="mailto:hello@getgradify.com">Contact</a></nav>
+      </div>
+      <div class="hub-foot-base"><p><b>Also from the Gradify team:</b> Seren Aitchison (portfolio blog), BioFrontier, Eirova™, Erya™ and Vizeon™.</p><p>© <span class="hub-year">2026</span> Gradify™</p></div>
+    </footer>
+    <!-- /hub-footer -->
+  </div>
+</body>
+</html>

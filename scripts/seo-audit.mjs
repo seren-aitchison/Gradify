@@ -35,6 +35,8 @@ function robotsDisallowed() {
   return [...new Set(out)];
 }
 
+// the text a search result shows, not its HTML escapes ("Hund&#39;s" is 6 characters, not 10)
+const dec = (s) => (s == null ? s : s.replace(/&#39;/g, "'").replace(/&quot;/g, '"').replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&"));
 /** everything about one page that the audit checks */
 function inspect(p, html) {
   const g = (re) => html.match(re)?.[1] ?? null;
@@ -43,7 +45,7 @@ function inspect(p, html) {
   const types = ld.filter(Boolean).flatMap((o) => (o["@graph"] || [o]).map((x) => x["@type"])).flat().filter(Boolean);
   const body = html.split(/<body[^>]*>/)[1] || "";
   return {
-    title: g(/<title>([^<]*)<\/title>/), description: g(/<meta name="description" content="([^"]*)"/), canonical: g(/<link rel="canonical" href="([^"]*)"/),
+    title: dec(g(/<title>([^<]*)<\/title>/)), description: dec(g(/<meta name="description" content="([^"]*)"/)), canonical: g(/<link rel="canonical" href="([^"]*)"/),
     ogTitle: /property="og:title"/.test(html), ogImage: g(/<meta property="og:image" content="([^"]*)"/), noindex: /noindex/.test(robots),
     h1: (body.match(/<h1\b/g) || []).length, jsonld: ld.length, jsonldBad: ld.filter((x) => x === null).length, types: [...new Set(types)],
     imgNoAlt: (body.match(/<img\b(?![^>]*\balt=)[^>]*>/g) || []).length, appShell: /<main[^>]*>\s*<\/main>|id="app"|id="course"/.test(html) && !/<h1\b/.test(body),

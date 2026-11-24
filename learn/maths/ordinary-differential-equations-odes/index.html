@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Ordinary Differential Equations (ODEs) Explained | Gradify</title>
+  <meta name="description" content="An ordinary differential equation relates an unknown function of one variable to its derivatives.">
+  <meta name="robots" content="max-image-preview:large">
+  <link rel="canonical" href="https://getgradify.com/learn/maths/ordinary-differential-equations-odes/">
+  <link rel="alternate" hreflang="en-GB" href="https://getgradify.com/learn/maths/ordinary-differential-equations-odes/">
+  <link rel="alternate" hreflang="x-default" href="https://getgradify.com/learn/maths/ordinary-differential-equations-odes/">
+  <link rel="alternate" type="application/rss+xml" title="Gradify: new study guides and tools" href="https://getgradify.com/feed.xml">
+  <meta property="og:title" content="Ordinary Differential Equations (ODEs) Explained | Gradify">
+  <meta property="og:description" content="An ordinary differential equation relates an unknown function of one variable to its derivatives.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://getgradify.com/learn/maths/ordinary-differential-equations-odes/">
+  <meta property="og:site_name" content="Gradify">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:image" content="https://getgradify.com/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Gradify: turn your notes into flashcards checked against what you wrote.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ordinary Differential Equations (ODEs) Explained | Gradify">
+  <meta name="twitter:description" content="An ordinary differential equation relates an unknown function of one variable to its derivatives.">
+  <meta name="twitter:image" content="https://getgradify.com/assets/og.png">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/kit/styles/base.css">
+  <script src="/kit/core/theme-boot.js"></script>
+  <link rel="stylesheet" href="/assets/seo.css">
+  <!-- module-preload: written by scripts/preload-modules.mjs; run it after changing imports -->
+  <link rel="modulepreload" href="/assets/seo.js">
+  <link rel="modulepreload" href="/kit/core/hubnav.js">
+  <link rel="modulepreload" href="/assets/memory.js">
+  <link rel="modulepreload" href="/kit/ui/global-nav.js">
+  <link rel="modulepreload" href="/kit/core/menu-set.js">
+  <link rel="modulepreload" href="/kit/ui/store.js">
+  <link rel="modulepreload" href="/kit/ui/icons.js">
+  <link rel="modulepreload" href="/kit/ui/palette.js">
+  <link rel="modulepreload" href="/kit/ui/places.js">
+  <link rel="modulepreload" href="/kit/ui/feedback.js">
+  <link rel="modulepreload" href="/kit/ui/resources.js">
+  <link rel="modulepreload" href="/kit/ui/keys.js">
+  <link rel="modulepreload" href="/kit/core/site.js">
+  <link rel="modulepreload" href="/kit/ui/shelf.js">
+  <link rel="modulepreload" href="/kit/ui/overlay.js">
+  <link rel="modulepreload" href="/kit/core/sites.js">
+  <link rel="modulepreload" href="/gradify.config.js">
+  <link rel="modulepreload" href="/kit/core/subnav.js">
+  <link rel="modulepreload" href="/kit/core/accent.js">
+  <link rel="modulepreload" href="/kit/core/colour.js">
+  <!-- /module-preload -->
+  <script type="module" src="/assets/seo.js"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://getgradify.com/"},{"@type":"ListItem","position":2,"name":"Learn","item":"https://getgradify.com/learn/"},{"@type":"ListItem","position":3,"name":"Mathematics","item":"https://getgradify.com/learn/maths/"},{"@type":"ListItem","position":4,"name":"Ordinary Differential Equations (ODEs)","item":"https://getgradify.com/learn/maths/ordinary-differential-equations-odes/"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"Ordinary Differential Equations (ODEs)","description":"An ordinary differential equation relates an unknown function of one variable to its derivatives.","url":"https://getgradify.com/learn/maths/ordinary-differential-equations-odes/","learningResourceType":"Lesson","inLanguage":"en-GB","isAccessibleForFree":true,"teaches":"Classify by order and linearity; verify by substitution; n constants for order n, fixed by conditions; existence and uniqueness need f Lipschitz in y.","isPartOf":{"@type":"Course","name":"Mathematics","url":"https://getgradify.com/mathgradify/course/"},"publisher":{"@id":"https://getgradify.com/#org"},"author":{"@id":"https://getgradify.com/#org"},"image":["https://getgradify.com/kit/diagrams/svg/maths-u10-exponential-solution.wide.svg"],"citation":["Boyce WE, DiPrima RC, Meade DB, Elementary Differential Equations and Boundary Value Problems (12th edn, Wiley 2022)","Department for Education, AS and A level further mathematics subject content"]}</script>
+</head>
+<body>
+  <div class="wrap hub-top">
+    <!-- hub-header: written by scripts/sync-headers.mjs; edit it there -->
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="bar glass hub-bar">
+      <a class="brand" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4641ff"/><stop offset=".35" stop-color="#f055dd"/><stop offset=".7" stop-color="#ff5600"/><stop offset="1" stop-color="#ffc002"/></linearGradient></defs><rect x=".75" y=".75" width="30.5" height="30.5" rx="9" fill="#0b0b0b" stroke="rgba(255,255,255,.22)" stroke-width="1.5"/><path d="M22.9 10.9A8.6 8.6 0 1 0 24.6 16H16.4" fill="none" stroke="url(#gg)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Gradify</a>
+      <nav class="sections" aria-label="Gradify"><a href="/explore.html">Explore</a><a href="/#find">Sites</a><a href="/journey.html">Journey</a><a href="/pricing.html">Pricing</a></nav>
+      <div class="right">
+        <a class="link hub-signin" href="/app.html#/account">Sign in</a>
+        <a class="btn btn-primary btn-sm lg hub-open" href="/app.html">Open Gradify</a>
+        <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      </div>
+      <nav class="menu" id="menu" aria-label="Menu" hidden><a href="/explore.html">Explore</a><a href="/#find">Sites</a><a href="/journey.html">Journey</a><a href="/pricing.html">Pricing</a><a class="hub-signin" href="/app.html#/account">Sign in</a><a class="btn btn-primary lg hub-open" href="/app.html">Open Gradify</a></nav>
+    </header>
+    <script type="module" src="/kit/core/hubnav.js"></script>
+    <!-- /hub-header -->
+  </div>
+  <main id="main" class="seo">
+    <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/learn/">Learn</a></li><li><a href="/learn/maths/">Mathematics</a></li><li aria-current="page">Ordinary Differential Equations (ODEs)</li></ol></nav>
+    <h1>Ordinary Differential Equations (ODEs)</h1>
+    <p class="answer">Classify by order and linearity; verify by substitution; n constants for order n, fixed by conditions; existence and uniqueness need f Lipschitz in y.</p>
+    <p class="lr-meta">Mathematics · Differential Equations · about 2 minutes</p>
+    <section class="lr-obj"><h2 id="what-you-ll-be-able-to-do">What you'll be able to do</h2><ul><li>Classify ODEs by order and linearity</li><li>Verify solutions and use initial conditions to find particular solutions</li></ul></section>
+    <div class="lr-notes"><section id="co-s1"><h2 id="classification">Classification</h2><ul><li>Order: the highest derivative present.</li><li>Linear vs nonlinear: y″ + 3y′ + 2y = sin x is linear; y′ = y<sup>2</sup> and θ″ + sin θ = 0 aren't.</li><li>Homogeneous linear: g(x) = 0 (zero right-hand side); superposition then holds.</li></ul></section><section id="co-s2"><h2 id="solutions">Solutions</h2><ul><li>A solution makes the equation true when substituted; check by differentiating.</li><li>General solutions contain n arbitrary constants for an nth-order equation.</li><li>Initial or boundary conditions fix the constants, giving a particular solution.</li></ul></section><section id="co-s3"><h2 id="existence-and-understanding">Existence and understanding</h2><ul><li>Picard–Lindelöf: y′ = f(x, y), y(x₀) = y₀ has a unique local solution if f is continuous and Lipschitz in y.</li><li>Direction fields show solution curves without solving.</li><li>Most ODEs have no closed-form solution; numerical and qualitative methods fill the gap.</li></ul><div class="co-ex"><b>Worked example</b><p>Check that y = Ce<sup>2x</sup> solves y′ = 2y, and find the solution with y(0) = 3.</p><ol><li>y′ = 2Ce<sup>2x</sup> = 2y ✓</li><li>y(0) = C = 3</li><li>The particular solution is y = 3e<sup>2x</sup></li></ol></div><figure class="lr-fig"><picture><source media="(max-width: 640px)" srcset="/kit/diagrams/svg/maths-u10-exponential-solution.narrow.svg" width="400" height="320"><img src="/kit/diagrams/svg/maths-u10-exponential-solution.wide.svg" alt="The curve y = 3e^(2x) rising steeply through the point (0, 3)." width="680" height="360" loading="lazy" decoding="async"></picture><figcaption><b>y = Ce²ˣ with y(0) = 3.</b> y = Ce²ˣ has y′ = 2Ce²ˣ = 2y for every C. The condition y(0) = 3 picks C = 3: the curve y = 3e²ˣ through (0, 3).</figcaption></figure><p><b>Investigate with the lab.</b> Draw the slope field and click to set initial values. Each click traces the unique solution through that point.</p><div class="mv-clin co-pit"><b>Common mistake</b>Forgetting that the general solution of an nth-order equation needs n constants.</div></section></div>
+    <p class="core-rule"><b>In 2 lines:</b> ODEs relate functions to their derivatives. Conditions pick out particular solutions.</p>
+    <section id="practice"><h2 id="practice-questions">Practice questions</h2><p>Answer each one in your head before you open it: recalling beats rereading.</p><ol class="lr-qs"><li><details class="self-test"><summary>Which equation is linear?<ul class="lr-opts"><li>y′ = y<sup>2</sup> + 1</li><li>yy″ = 1</li><li>y″ + x<sup>2</sup>y′ + y = e<sup>x</sup></li><li>y′ + sin y = 0</li><li>(y′)<sup>2</sup> = x</li></ul><span class="reveal">Show the answer</span></summary><p><b>Answer: y″ + x<sup>2</sup>y′ + y = e<sup>x</sup>.</b> y and its derivatives appear only to the first power, multiplied by functions of x.</p></details></li><li><details class="self-test"><summary>Why does a direction field help even without solving the ODE?<ul class="lr-opts"><li>It gives the exact solution formula</li><li>It only works for linear equations</li><li>It replaces initial conditions</li><li>It shows the slope at each point, so solution curves can be sketched</li><li>Each arrow points to where the equation has an equilibrium</li></ul><span class="reveal">Show the answer</span></summary><p><b>Answer: It shows the slope at each point, so solution curves can be sketched.</b> Each arrow has slope f(x, y); solutions follow the arrows.</p></details></li><li><details class="self-test"><summary>What does a slope field show for dy/dx = f(x, y)?<ul class="lr-opts"><li>The exact solution formula</li><li>Only the equilibrium points</li><li>The area under each solution</li><li>The second derivative</li><li>The gradient a solution must have at each point</li></ul><span class="reveal">Show the answer</span></summary><p><b>Answer: The gradient a solution must have at each point.</b> Each short segment has gradient f(x, y), and solutions follow them.</p></details></li></ol></section>
+    <section id="key-terms"><h2 id="key-terms-2">Key terms</h2><dl class="lr-terms"><dt>Order</dt><dd>The highest derivative in the equation: y″ + y = 0 is second order</dd><dt>Linear ODE</dt><dd>An equation linear in y and its derivatives: a<sub>n</sub>(x)y<sup>(n)</sup> + … + a₀(x)y = g(x)</dd></dl></section>
+    <aside class="g-action cta-box"><span class="g-sq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l1.9 5.1 5.1 1.9-5.1 1.9L12 17.5l-1.9-5.1L5 10.5l5.1-1.9z"/><path d="M18.5 16.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/></svg></span><div class="g-action-text"><span class="g-kicker">Your next step</span><h2 class="g-title" id="keep-it-dont-just-read-it">Keep it, don&#39;t just read it</h2><p>Open the interactive lesson to answer check questions at three levels, add its flashcards to your revision and have them come back just before you&#39;d forget. Free, no card.</p><div class="g-action-buttons"><a class="g-act" href="/mathgradify/course/#/lesson/u10-01" data-cta="learn"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/><path d="M22 10v6"/></svg><span>Open the interactive lesson</span></a><a class="g-act soft" href="/features/notes-studio/" data-cta="learn"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m17 8-5-5-5 5"/><path d="M12 3v12"/></svg><span>Make flashcards from your own notes</span></a></div></div></aside>
+    <section id="sources"><h2 id="sources-2">Sources</h2><ul class="lr-src"><li>Boyce WE, DiPrima RC, Meade DB, Elementary Differential Equations and Boundary Value Problems (12th edn, Wiley 2022)</li><li>Department for Education, AS and A level further mathematics subject content</li></ul><p class="lr-note">Written and checked by Gradify against these sources. Independent study material: not affiliated with or endorsed by any exam board.</p></section>
+    <nav class="unit-nav" aria-label="Next and previous lessons"><span></span><a href="/learn/maths/autonomous-differential-equations/">Autonomous Differential Equations →</a></nav>
+    <section class="related" aria-label="Keep going"><h2 id="keep-going">Keep going</h2><ul><li><a href="/topics/maths/u10/">Differential Equations: the whole topic</a><span>every lesson, a quick quiz and a mind map</span></li><li><a href="/learn/maths/">Every mathematics lesson explained</a></li></ul></section>
+    <p class="share-row"><button type="button" class="share-btn" data-share>Share with your study group</button><span class="share-msg" role="status" aria-live="polite"></span></p>
+  </main>
+  <div class="wrap hub-bottom">
+    <!-- hub-footer: written by scripts/sync-headers.mjs; edit it there -->
+    <footer class="hub-foot glass">
+      <div class="hub-foot-cols">
+        <div class="hub-foot-brand"><b>Gradify™</b><p>Turn your notes into flashcards checked against what you wrote, and revise them at the right time.</p></div>
+        <nav aria-label="Gradify"><b>Gradify</b><a href="/explore.html">Explore</a><a href="/#find">Sites</a><a href="/journey.html">Journey</a><a href="/pricing.html">Pricing</a><a href="/app.html">Open Gradify</a></nav>
+        <nav aria-label="Free resources"><b>Free resources</b><a href="/features/">Every feature</a><a href="/tools/">Study tools</a><a href="/guides/">Study guides</a><a href="/topics/">Revision topics</a><a href="/study-plan/">Study plans</a><a href="/checklists/">Checklists</a><a href="/questions/">Practice questions</a><a href="/exam-traps/">Exam traps</a><a href="/glossary/">Glossary</a><a href="/terms/">Key terms A–Z</a><a href="/vs/">Concept comparisons</a><a href="/research/">Research</a><a href="/templates/">Templates</a><a href="/compare/">Compare apps</a><a href="/changelog/">What's new</a></nav>
+        <nav aria-label="Popular tools"><b>Popular tools</b><a href="/tools/degree-classification-calculator/">Degree calculator</a><a href="/tools/final-grade-calculator/">Final grade needed</a><a href="/tools/cram-planner/">Cram planner</a><a href="/tools/study-timer/">Study timer</a><a href="/tools/citation-helper/">Citation helper</a><a href="/pdf-to-flashcards/">PDF to flashcards</a></nav>
+        <nav aria-label="About Gradify"><b>About</b><a href="/about.html">About</a><a href="/quality.html">Quality</a><a href="/ambassadors.html">Ambassadors</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/site-map.html">Site map</a><a href="mailto:hello@getgradify.com">Contact</a></nav>
+      </div>
+      <div class="hub-foot-base"><p><b>Also from the Gradify team:</b> Seren Aitchison (portfolio blog), BioFrontier, Eirova™, Erya™ and Vizeon™.</p><p>© <span class="hub-year">2026</span> Gradify™</p></div>
+    </footer>
+    <!-- /hub-footer -->
+  </div>
+</body>
+</html>

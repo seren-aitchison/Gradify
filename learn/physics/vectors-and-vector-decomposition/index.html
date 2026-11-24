@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Vectors and Vector Decomposition Explained | Gradify</title>
+  <meta name="description" content="Vectors are added, scaled and multiplied using components. A free physics lesson with a diagram, a worked example, common mistakes and 3 practice…">
+  <meta name="robots" content="max-image-preview:large">
+  <link rel="canonical" href="https://getgradify.com/learn/physics/vectors-and-vector-decomposition/">
+  <link rel="alternate" hreflang="en-GB" href="https://getgradify.com/learn/physics/vectors-and-vector-decomposition/">
+  <link rel="alternate" hreflang="x-default" href="https://getgradify.com/learn/physics/vectors-and-vector-decomposition/">
+  <link rel="alternate" type="application/rss+xml" title="Gradify: new study guides and tools" href="https://getgradify.com/feed.xml">
+  <meta property="og:title" content="Vectors and Vector Decomposition Explained | Gradify">
+  <meta property="og:description" content="Vectors are added, scaled and multiplied using components. A free physics lesson with a diagram, a worked example, common mistakes and 3 practice…">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://getgradify.com/learn/physics/vectors-and-vector-decomposition/">
+  <meta property="og:site_name" content="Gradify">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:image" content="https://getgradify.com/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Gradify: turn your notes into flashcards checked against what you wrote.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Vectors and Vector Decomposition Explained | Gradify">
+  <meta name="twitter:description" content="Vectors are added, scaled and multiplied using components. A free physics lesson with a diagram, a worked example, common mistakes and 3 practice…">
+  <meta name="twitter:image" content="https://getgradify.com/assets/og.png">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/kit/styles/base.css">
+  <script src="/kit/core/theme-boot.js"></script>
+  <link rel="stylesheet" href="/assets/seo.css">
+  <!-- module-preload: written by scripts/preload-modules.mjs; run it after changing imports -->
+  <link rel="modulepreload" href="/assets/seo.js">
+  <link rel="modulepreload" href="/kit/core/hubnav.js">
+  <link rel="modulepreload" href="/assets/memory.js">
+  <link rel="modulepreload" href="/kit/ui/global-nav.js">
+  <link rel="modulepreload" href="/kit/core/menu-set.js">
+  <link rel="modulepreload" href="/kit/ui/store.js">
+  <link rel="modulepreload" href="/kit/ui/icons.js">
+  <link rel="modulepreload" href="/kit/ui/palette.js">
+  <link rel="modulepreload" href="/kit/ui/places.js">
+  <link rel="modulepreload" href="/kit/ui/feedback.js">
+  <link rel="modulepreload" href="/kit/ui/resources.js">
+  <link rel="modulepreload" href="/kit/ui/keys.js">
+  <link rel="modulepreload" href="/kit/core/site.js">
+  <link rel="modulepreload" href="/kit/ui/shelf.js">
+  <link rel="modulepreload" href="/kit/ui/overlay.js">
+  <link rel="modulepreload" href="/kit/core/sites.js">
+  <link rel="modulepreload" href="/gradify.config.js">
+  <link rel="modulepreload" href="/kit/core/subnav.js">
+  <link rel="modulepreload" href="/kit/core/accent.js">
+  <link rel="modulepreload" href="/kit/core/colour.js">
+  <!-- /module-preload -->
+  <script type="module" src="/assets/seo.js"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://getgradify.com/"},{"@type":"ListItem","position":2,"name":"Learn","item":"https://getgradify.com/learn/"},{"@type":"ListItem","position":3,"name":"Physics","item":"https://getgradify.com/learn/physics/"},{"@type":"ListItem","position":4,"name":"Vectors and Vector Decomposition","item":"https://getgradify.com/learn/physics/vectors-and-vector-decomposition/"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"Vectors and Vector Decomposition","description":"Vectors are added, scaled and multiplied using components. A free physics lesson with a diagram, a worked example, common mistakes and 3 practice…","url":"https://getgradify.com/learn/physics/vectors-and-vector-decomposition/","learningResourceType":"Lesson","inLanguage":"en-GB","isAccessibleForFree":true,"teaches":"Vectors are added, scaled and multiplied using components. Resolving a vector into perpendicular components turns 2D and 3D problems into independent 1D ones.","isPartOf":{"@type":"Course","name":"Physics","url":"https://getgradify.com/scigradify/physics/"},"publisher":{"@id":"https://getgradify.com/#org"},"author":{"@id":"https://getgradify.com/#org"},"image":["https://getgradify.com/kit/diagrams/svg/phys-u02-force-components.wide.svg"]}</script>
+</head>
+<body>
+  <div class="wrap hub-top">
+    <!-- hub-header: written by scripts/sync-headers.mjs; edit it there -->
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="bar glass hub-bar">
+      <a class="brand" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4641ff"/><stop offset=".35" stop-color="#f055dd"/><stop offset=".7" stop-color="#ff5600"/><stop offset="1" stop-color="#ffc002"/></linearGradient></defs><rect x=".75" y=".75" width="30.5" height="30.5" rx="9" fill="#0b0b0b" stroke="rgba(255,255,255,.22)" stroke-width="1.5"/><path d="M22.9 10.9A8.6 8.6 0 1 0 24.6 16H16.4" fill="none" stroke="url(#gg)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Gradify</a>
+      <nav class="sections" aria-label="Gradify"><a href="/explore.html">Explore</a><a href="/#find">Sites</a><a href="/journey.html">Journey</a><a href="/pricing.html">Pricing</a></nav>
+      <div class="right">
+        <a class="link hub-signin" href="/app.html#/account">Sign in</a>
+        <a class="btn btn-primary btn-sm lg hub-open" href="/app.html">Open Gradify</a>
+        <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      </div>
+      <nav class="menu" id="menu" aria-label="Menu" hidden><a href="/explore.html">Explore</a><a href="/#find">Sites</a><a href="/journey.html">Journey</a><a href="/pricing.html">Pricing</a><a class="hub-signin" href="/app.html#/account">Sign in</a><a class="btn btn-primary lg hub-open" href="/app.html">Open Gradify</a></nav>
+    </header>
+    <script type="module" src="/kit/core/hubnav.js"></script>
+    <!-- /hub-header -->
+  </div>
+  <main id="main" class="seo">
+    <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/learn/">Learn</a></li><li><a href="/learn/physics/">Physics</a></li><li aria-current="page">Vectors and Vector Decomposition</li></ol></nav>
+    <h1>Vectors and Vector Decomposition</h1>
+    <p class="answer">Vectors are added, scaled and multiplied using components. Resolving a vector into perpendicular components turns 2D and 3D problems into independent 1D ones.</p>
+    <p class="lr-meta">Physics · Mathematics for Physics · about 2 minutes</p>
+    <div class="lr-notes"><section id="co-s1"><h2 id="components">Components</h2><div class="co-eq"><div><code>A = A<sub>x</sub>i + A<sub>y</sub>j + A<sub>z</sub>k; |A| = √(A<sub>x</sub><sup>2</sup> + A<sub>y</sub><sup>2</sup> + A<sub>z</sub><sup>2</sup>)</code></div><div><code>A<sub>x</sub> = A cos θ, A<sub>y</sub> = A sin θ</code><span>θ measured from the x-axis</span></div></div></section><section id="co-s2"><h2 id="products">Products</h2><div class="co-eq"><div><code>A·B = AB cos θ = A<sub>x</sub>B<sub>x</sub> + A<sub>y</sub>B<sub>y</sub> + A<sub>z</sub>B<sub>z</sub></code><span>scalar (dot) product</span></div><div><code>|A × B| = AB sin θ, direction by the right-hand rule</code><span>vector (cross) product</span></div></div><ul><li>Dot product: work W = F·s, power P = F·v, flux Φ = B·A. Zero when perpendicular.</li><li>Cross product: torque τ = r × F, angular momentum L = r × p, force F = qv × B. Zero when parallel.</li><li>The component of A along unit vector n̂ is A·n̂.</li></ul><div class="co-ex"><b>Worked example</b><p>A 50 N force acts at 30° above the horizontal on a crate moving 4.0 m horizontally. Find the work done.</p><ol><li>Horizontal component = 50 cos 30° = 43.3 N</li><li>W = 43.3 × 4.0 = 173 J ≈ 170 J (the vertical component does no work)</li></ol></div><figure class="lr-fig"><picture><source media="(max-width: 640px)" srcset="/kit/diagrams/svg/phys-u02-force-components.narrow.svg" width="380" height="376"><img src="/kit/diagrams/svg/phys-u02-force-components.wide.svg" alt="A 50 newton force arrow at 30 degrees above the horizontal with its horizontal component of 43.3 newtons and vertical component of 25 newtons dashed." width="660" height="386" loading="lazy" decoding="async"></picture><figcaption><b>Resolving the 50 N force.</b> The 50 N force at 30° above the horizontal resolves into 43.3 N along the motion and 25 N up. Only the horizontal component does work: W = 43.3 × 4.0 = 173 J; the vertical component, perpendicular to the displacement, does none.</figcaption></figure></section><section id="co-s3"><h2 id="choosing-axes">Choosing axes</h2><p>Choose axes to make components simple: along and perpendicular to a slope, along the motion, or along a symmetry axis. The physics doesn't depend on the choice, only the algebra does.</p><div class="mv-clin co-pit"><b>Common mistake</b>The cross product is anticommutative: A × B = −B × A. Order matters for torque and the magnetic force.</div></section></div>
+    <section id="practice"><h2 id="practice-questions">Practice questions</h2><p>Answer each one in your head before you open it: recalling beats rereading.</p><ol class="lr-qs"><li><details class="self-test"><summary>What is (2, 3, 0)·(4, −1, 5)?<ul class="lr-opts"><li>5</li><li>8</li><li>13</li><li>3</li></ul><span class="reveal">Show the answer</span></summary><p><b>Answer: 5.</b> 8 − 3 + 0 = 5.</p></details></li><li><details class="self-test"><summary>What is i × j?<ul class="lr-opts"><li>−k</li><li>k</li><li>0</li><li>1</li></ul><span class="reveal">Show the answer</span></summary><p><b>Answer: k.</b> Right-handed axes: i × j = k.</p></details></li><li><details class="self-test"><summary>A block sits on a 30° slope. What fraction of its weight acts down the slope?<ul class="lr-opts"><li>cos 30° = 0.87</li><li>tan 30° = 0.58</li><li>sin 30° = 0.5</li><li>1</li></ul><span class="reveal">Show the answer</span></summary><p><b>Answer: sin 30° = 0.5.</b> The component along the slope is mg sin θ.</p></details></li></ol></section>
+    <aside class="g-action cta-box"><span class="g-sq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l1.9 5.1 5.1 1.9-5.1 1.9L12 17.5l-1.9-5.1L5 10.5l5.1-1.9z"/><path d="M18.5 16.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/></svg></span><div class="g-action-text"><span class="g-kicker">Your next step</span><h2 class="g-title" id="keep-it-dont-just-read-it">Keep it, don&#39;t just read it</h2><p>Open the interactive lesson to answer check questions at three levels, add its flashcards to your revision and have them come back just before you&#39;d forget. Free, no card.</p><div class="g-action-buttons"><a class="g-act" href="/scigradify/physics/#/lesson/u02-07" data-cta="learn"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/><path d="M22 10v6"/></svg><span>Open the interactive lesson</span></a><a class="g-act soft" href="/features/notes-studio/" data-cta="learn"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m17 8-5-5-5 5"/><path d="M12 3v12"/></svg><span>Make flashcards from your own notes</span></a></div></div></aside>
+    <nav class="unit-nav" aria-label="Next and previous lessons"><a href="/learn/physics/complex-numbers/">← Complex Numbers</a><span></span></nav>
+    <section class="related" aria-label="Keep going"><h2 id="keep-going">Keep going</h2><ul><li><a href="/topics/physics/u02/">Mathematics for Physics: the whole topic</a><span>every lesson, a quick quiz and a mind map</span></li><li><a href="/learn/physics/">Every physics lesson explained</a></li></ul></section>
+    <p class="share-row"><button type="button" class="share-btn" data-share>Share with your study group</button><span class="share-msg" role="status" aria-live="polite"></span></p>
+  </main>
+  <div class="wrap hub-bottom">
+    <!-- hub-footer: written by scripts/sync-headers.mjs; edit it there -->
+    <footer class="hub-foot glass">
+      <div class="hub-foot-cols">
+        <div class="hub-foot-brand"><b>Gradify™</b><p>Turn your notes into flashcards checked against what you wrote, and revise them at the right time.</p></div>
+        <nav aria-label="Gradify"><b>Gradify</b><a href="/explore.html">Explore</a><a href="/#find">Sites</a><a href="/journey.html">Journey</a><a href="/pricing.html">Pricing</a><a href="/app.html">Open Gradify</a></nav>
+        <nav aria-label="Free resources"><b>Free resources</b><a href="/features/">Every feature</a><a href="/tools/">Study tools</a><a href="/guides/">Study guides</a><a href="/topics/">Revision topics</a><a href="/study-plan/">Study plans</a><a href="/checklists/">Checklists</a><a href="/questions/">Practice questions</a><a href="/exam-traps/">Exam traps</a><a href="/glossary/">Glossary</a><a href="/terms/">Key terms A–Z</a><a href="/vs/">Concept comparisons</a><a href="/research/">Research</a><a href="/templates/">Templates</a><a href="/compare/">Compare apps</a><a href="/changelog/">What's new</a></nav>
+        <nav aria-label="Popular tools"><b>Popular tools</b><a href="/tools/degree-classification-calculator/">Degree calculator</a><a href="/tools/final-grade-calculator/">Final grade needed</a><a href="/tools/cram-planner/">Cram planner</a><a href="/tools/study-timer/">Study timer</a><a href="/tools/citation-helper/">Citation helper</a><a href="/pdf-to-flashcards/">PDF to flashcards</a></nav>
+        <nav aria-label="About Gradify"><b>About</b><a href="/about.html">About</a><a href="/quality.html">Quality</a><a href="/ambassadors.html">Ambassadors</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/site-map.html">Site map</a><a href="mailto:hello@getgradify.com">Contact</a></nav>
+      </div>
+      <div class="hub-foot-base"><p><b>Also from the Gradify team:</b> Seren Aitchison (portfolio blog), BioFrontier, Eirova™, Erya™ and Vizeon™.</p><p>© <span class="hub-year">2026</span> Gradify™</p></div>
+    </footer>
+    <!-- /hub-footer -->
+  </div>
+</body>
+</html>

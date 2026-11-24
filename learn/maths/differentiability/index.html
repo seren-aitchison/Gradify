@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Differentiability Explained | Gradify</title>
+  <meta name="description" content="A function is differentiable at a point if it has a well-defined tangent there: a single slope.">
+  <meta name="robots" content="max-image-preview:large">
+  <link rel="canonical" href="https://getgradify.com/learn/maths/differentiability/">
+  <link rel="alternate" hreflang="en-GB" href="https://getgradify.com/learn/maths/differentiability/">
+  <link rel="alternate" hreflang="x-default" href="https://getgradify.com/learn/maths/differentiability/">
+  <link rel="alternate" type="application/rss+xml" title="Gradify: new study guides and tools" href="https://getgradify.com/feed.xml">
+  <meta property="og:title" content="Differentiability Explained | Gradify">
+  <meta property="og:description" content="A function is differentiable at a point if it has a well-defined tangent there: a single slope.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://getgradify.com/learn/maths/differentiability/">
+  <meta property="og:site_name" content="Gradify">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:image" content="https://getgradify.com/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Gradify: turn your notes into flashcards checked against what you wrote.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Differentiability Explained | Gradify">
+  <meta name="twitter:description" content="A function is differentiable at a point if it has a well-defined tangent there: a single slope.">
+  <meta name="twitter:image" content="https://getgradify.com/assets/og.png">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/kit/styles/base.css">
+  <script src="/kit/core/theme-boot.js"></script>
+  <link rel="stylesheet" href="/assets/seo.css">
+  <!-- module-preload: written by scripts/preload-modules.mjs; run it after changing imports -->
+  <link rel="modulepreload" href="/assets/seo.js">
+  <link rel="modulepreload" href="/kit/core/hubnav.js">
+  <link rel="modulepreload" href="/assets/memory.js">
+  <link rel="modulepreload" href="/kit/ui/global-nav.js">
+  <link rel="modulepreload" href="/kit/core/menu-set.js">
+  <link rel="modulepreload" href="/kit/ui/store.js">
+  <link rel="modulepreload" href="/kit/ui/icons.js">
+  <link rel="modulepreload" href="/kit/ui/palette.js">
+  <link rel="modulepreload" href="/kit/ui/places.js">
+  <link rel="modulepreload" href="/kit/ui/feedback.js">
+  <link rel="modulepreload" href="/kit/ui/resources.js">
+  <link rel="modulepreload" href="/kit/ui/keys.js">
+  <link rel="modulepreload" href="/kit/core/site.js">
+  <link rel="modulepreload" href="/kit/ui/shelf.js">
+  <link rel="modulepreload" href="/kit/ui/overlay.js">
+  <link rel="modulepreload" href="/kit/core/sites.js">
+  <link rel="modulepreload" href="/gradify.config.js">
+  <link rel="modulepreload" href="/kit/core/subnav.js">
+  <link rel="modulepreload" href="/kit/core/accent.js">
+  <link rel="modulepreload" href="/kit/core/colour.js">
+  <!-- /module-preload -->
+  <script type="module" src="/assets/seo.js"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://getgradify.com/"},{"@type":"ListItem","position":2,"name":"Learn","item":"https://getgradify.com/learn/"},{"@type":"ListItem","position":3,"name":"Mathematics","item":"https://getgradify.com/learn/maths/"},{"@type":"ListItem","position":4,"name":"Differentiability","item":"https://getgradify.com/learn/maths/differentiability/"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"Differentiability","description":"A function is differentiable at a point if it has a well-defined tangent there: a single slope.","url":"https://getgradify.com/learn/maths/differentiability/","learningResourceType":"Lesson","inLanguage":"en-GB","isAccessibleForFree":true,"teaches":"Differentiable means a unique tangent slope; corners, jumps and vertical tangents fail; differentiable implies continuous, not conversely.","isPartOf":{"@type":"Course","name":"Mathematics","url":"https://getgradify.com/mathgradify/course/"},"publisher":{"@id":"https://getgradify.com/#org"},"author":{"@id":"https://getgradify.com/#org"},"image":["https://getgradify.com/kit/diagrams/svg/maths-u07-smooth-join.wide.svg"],"citation":["Spivak M, Calculus (4th edn, Publish or Perish 2008)","Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020)"]}</script>
+</head>
+<body>
+  <div class="wrap hub-top">
+    <!-- hub-header: written by scripts/sync-headers.mjs; edit it there -->
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="bar glass hub-bar">
+      <a class="brand" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4641ff"/><stop offset=".35" stop-color="#f055dd"/><stop offset=".7" stop-color="#ff5600"/><stop offset="1" stop-color="#ffc002"/></linearGradient></defs><rect x=".75" y=".75" width="30.5" height="30.5" rx="9" fill="#0b0b0b" stroke="rgba(255,255,255,.22)" stroke-width="1.5"/><path d="M22.9 10.9A8.6 8.6 0 1 0 24.6 16H16.4" fill="none" stroke="url(#gg)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Gradify</a>
+      <nav class="sections" aria-label="Gradify"><a href="/explore.html">Explore</a><a href="/#find">Sites</a><a href="/journey.html">Journey</a><a href="/pricing.html">Pricing</a></nav>
+      <div class="right">
+        <a class="link hub-signin" href="/app.html#/account">Sign in</a>
+        <a class="btn btn-primary btn-sm lg hub-open" href="/app.html">Open Gradify</a>
+        <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      </div>
+      <nav class="menu" id="menu" aria-label="Menu" hidden><a href="/explore.html">Explore</a><a href="/#find">Sites</a><a href="/journey.html">Journey</a><a href="/pricing.html">Pricing</a><a class="hub-signin" href="/app.html#/account">Sign in</a><a class="btn btn-primary lg hub-open" href="/app.html">Open Gradify</a></nav>
+    </header>
+    <script type="module" src="/kit/core/hubnav.js"></script>
+    <!-- /hub-header -->
+  </div>
+  <main id="main" class="seo">
+    <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/learn/">Learn</a></li><li><a href="/learn/maths/">Mathematics</a></li><li aria-current="page">Differentiability</li></ol></nav>
+    <h1>Differentiability</h1>
+    <p class="answer">Differentiable means a unique tangent slope; corners, jumps and vertical tangents fail; differentiable implies continuous, not conversely.</p>
+    <p class="lr-meta">Mathematics · Calculus · about 2 minutes</p>
+    <section class="lr-obj"><h2 id="what-you-ll-be-able-to-do">What you'll be able to do</h2><ul><li>Decide whether a function is differentiable at a point</li><li>Explain the relationship between continuity and differentiability</li></ul></section>
+    <div class="lr-notes"><section id="co-s1"><h2 id="when-derivatives-fail-to-exist">When derivatives fail to exist</h2><ul><li><b>Corners</b>: |x| at x = 0 has slope −1 on the left and +1 on the right, so no single derivative.</li><li><b>Discontinuities</b>: a jump means no tangent.</li><li><b>Vertical tangents</b>: ∛x at x = 0 has an infinitely steep tangent.</li><li><b>Wild oscillation</b>: x sin(1/x) is continuous at 0 but not differentiable there.</li></ul></section><section id="co-s2"><h2 id="continuity-versus-differentiability">Continuity versus differentiability</h2><ul><li>Differentiable implies continuous: if the derivative exists at a, f is continuous at a.</li><li>Continuous doesn't imply differentiable: |x| is continuous everywhere but not differentiable at 0.</li><li>Weierstrass (1872) found a function continuous everywhere and differentiable nowhere.</li><li>Piecewise functions are differentiable at a join only if the values and the slopes match.</li></ul><div class="co-ex"><b>Worked example</b><p>f(x) = x<sup>2</sup> for x ≤ 1 and ax + b for x &gt; 1. Find a and b so that f is differentiable at x = 1.</p><ol><li>Continuity: 1 = a + b</li><li>Slopes must match: 2x = 2 at x = 1, so a = 2</li><li>Then b = −1: f(x) = 2x − 1 for x &gt; 1</li></ol></div><figure class="lr-fig"><picture><source media="(max-width: 640px)" srcset="/kit/diagrams/svg/maths-u07-smooth-join.narrow.svg" width="400" height="340"><img src="/kit/diagrams/svg/maths-u07-smooth-join.wide.svg" alt="The parabola y = x² on the left and the line y = 2x − 1 on the right, meeting at (1, 1) with the same gradient 2." width="680" height="380" loading="lazy" decoding="async"></picture><figcaption><b>Joining x² to a straight line smoothly.</b> For f to be differentiable at x = 1 the two pieces must meet (1 = a + b) and have the same slope (2x = 2 gives a = 2). So b = −1 and the line 2x − 1 touches the parabola at (1, 1) without a corner.</figcaption></figure><p><b>Investigate with the lab.</b> Choose |x| and set the point to 0. Shrink h with positive and negative values and see the secant gradients refuse to agree.</p><div class="mv-clin co-pit"><b>Common mistake</b>Assuming that a continuous function must be differentiable.</div></section></div>
+    <p class="core-rule"><b>In 2 lines:</b> Differentiable functions are smooth. Continuity is necessary but not sufficient.</p>
+    <section id="practice"><h2 id="practice-questions">Practice questions</h2><p>Answer each one in your head before you open it: recalling beats rereading.</p><ol class="lr-qs"><li><details class="self-test"><summary>Where is f(x) = |x + 2| not differentiable?<ul class="lr-opts"><li>At x = 0</li><li>At x = 2</li><li>At x = −2</li><li>Nowhere</li><li>Everywhere</li></ul><span class="reveal">Show the answer</span></summary><p><b>Answer: At x = −2.</b> The graph has a corner where x + 2 = 0, so the slope jumps from −1 to 1.</p></details></li><li><details class="self-test"><summary>Which statement about continuity and differentiability is true?<ul class="lr-opts"><li>Every continuous function is differentiable</li><li>|x| is differentiable at 0</li><li>A jump discontinuity can still be differentiable</li><li>Every differentiable function is continuous</li><li>∛x has derivative 0 at x = 0</li></ul><span class="reveal">Show the answer</span></summary><p><b>Answer: Every differentiable function is continuous.</b> Differentiability at a point forces continuity there; the converse fails, as |x| shows.</p></details></li><li><details class="self-test"><summary>Why is |x| continuous but not differentiable at 0?<ul class="lr-opts"><li>Its graph has a gap at 0, so neither property holds</li><li>Its gradient is infinite at 0, like a vertical tangent</li><li>It isn't defined at 0, so it can't be differentiated</li><li>It is differentiable at 0, with derivative 0 there</li><li>Its graph has no gap, but the gradient jumps from −1 to +1 at a corner</li></ul><span class="reveal">Show the answer</span></summary><p><b>Answer: Its graph has no gap, but the gradient jumps from −1 to +1 at a corner.</b> Continuity needs no break; differentiability needs a single tangent, which a corner lacks.</p></details></li></ol></section>
+    <section id="key-terms"><h2 id="key-terms-2">Key terms</h2><dl class="lr-terms"><dt>Differentiable at a</dt><dd>The limit lim<sub>h→0</sub> (f(a + h) − f(a))/h exists</dd><dt>Cusp</dt><dd>A sharp point where the slopes from either side approach ±∞ in opposite directions</dd></dl></section>
+    <aside class="g-action cta-box"><span class="g-sq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l1.9 5.1 5.1 1.9-5.1 1.9L12 17.5l-1.9-5.1L5 10.5l5.1-1.9z"/><path d="M18.5 16.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/></svg></span><div class="g-action-text"><span class="g-kicker">Your next step</span><h2 class="g-title" id="keep-it-dont-just-read-it">Keep it, don&#39;t just read it</h2><p>Open the interactive lesson to answer check questions at three levels, add its flashcards to your revision and have them come back just before you&#39;d forget. Free, no card.</p><div class="g-action-buttons"><a class="g-act" href="/mathgradify/course/#/lesson/u07-05" data-cta="learn"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/><path d="M22 10v6"/></svg><span>Open the interactive lesson</span></a><a class="g-act soft" href="/features/notes-studio/" data-cta="learn"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m17 8-5-5-5 5"/><path d="M12 3v12"/></svg><span>Make flashcards from your own notes</span></a></div></div></aside>
+    <section id="sources"><h2 id="sources-2">Sources</h2><ul class="lr-src"><li>Spivak M, Calculus (4th edn, Publish or Perish 2008)</li><li>Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020)</li></ul><p class="lr-note">Written and checked by Gradify against these sources. Independent study material: not affiliated with or endorsed by any exam board.</p></section>
+    <nav class="unit-nav" aria-label="Next and previous lessons"><a href="/learn/maths/limits/">← Limits</a><a href="/learn/maths/differential-calculus/">Differential Calculus →</a></nav>
+    <section class="related" aria-label="Keep going"><h2 id="keep-going">Keep going</h2><ul><li><a href="/topics/maths/u07/">Calculus: the whole topic</a><span>every lesson, a quick quiz and a mind map</span></li><li><a href="/learn/maths/">Every mathematics lesson explained</a></li></ul></section>
+    <p class="share-row"><button type="button" class="share-btn" data-share>Share with your study group</button><span class="share-msg" role="status" aria-live="polite"></span></p>
+  </main>
+  <div class="wrap hub-bottom">
+    <!-- hub-footer: written by scripts/sync-headers.mjs; edit it there -->
+    <footer class="hub-foot glass">
+      <div class="hub-foot-cols">
+        <div class="hub-foot-brand"><b>Gradify™</b><p>Turn your notes into flashcards checked against what you wrote, and revise them at the right time.</p></div>
+        <nav aria-label="Gradify"><b>Gradify</b><a href="/explore.html">Explore</a><a href="/#find">Sites</a><a href="/journey.html">Journey</a><a href="/pricing.html">Pricing</a><a href="/app.html">Open Gradify</a></nav>
+        <nav aria-label="Free resources"><b>Free resources</b><a href="/features/">Every feature</a><a href="/tools/">Study tools</a><a href="/guides/">Study guides</a><a href="/topics/">Revision topics</a><a href="/study-plan/">Study plans</a><a href="/checklists/">Checklists</a><a href="/questions/">Practice questions</a><a href="/exam-traps/">Exam traps</a><a href="/glossary/">Glossary</a><a href="/terms/">Key terms A–Z</a><a href="/vs/">Concept comparisons</a><a href="/research/">Research</a><a href="/templates/">Templates</a><a href="/compare/">Compare apps</a><a href="/changelog/">What's new</a></nav>
+        <nav aria-label="Popular tools"><b>Popular tools</b><a href="/tools/degree-classification-calculator/">Degree calculator</a><a href="/tools/final-grade-calculator/">Final grade needed</a><a href="/tools/cram-planner/">Cram planner</a><a href="/tools/study-timer/">Study timer</a><a href="/tools/citation-helper/">Citation helper</a><a href="/pdf-to-flashcards/">PDF to flashcards</a></nav>
+        <nav aria-label="About Gradify"><b>About</b><a href="/about.html">About</a><a href="/quality.html">Quality</a><a href="/ambassadors.html">Ambassadors</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/site-map.html">Site map</a><a href="mailto:hello@getgradify.com">Contact</a></nav>
+      </div>
+      <div class="hub-foot-base"><p><b>Also from the Gradify team:</b> Seren Aitchison (portfolio blog), BioFrontier, Eirova™, Erya™ and Vizeon™.</p><p>© <span class="hub-year">2026</span> Gradify™</p></div>
+    </footer>
+    <!-- /hub-footer -->
+  </div>
+</body>
+</html>

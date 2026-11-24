@@ -190,6 +190,7 @@ Gradify is free to use (no card). Gradify Pro (£10 a month) adds planning and r
 
 ## Reference
 - [Study glossary](https://getgradify.com/glossary/): active recall, spaced repetition, FSRS and more
+- [Learn: lessons explained](https://getgradify.com/learn/): full lessons with diagrams, worked examples, common mistakes and practice questions
 - [Revision topics](https://getgradify.com/topics/): every unit of 33 free courses with key terms, sample flashcards, a quick quiz and a mind map
 - [Practice questions](https://getgradify.com/questions/): multiple-choice questions with answers and explanations, by subject
 - [Exam traps](https://getgradify.com/exam-traps/): the common mistakes in each subject

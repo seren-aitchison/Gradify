@@ -6,12 +6,12 @@ This says what is **eligible** to be indexed. It is not evidence that Google has
 
 | | Pages |
 |---|---|
-| Published HTML pages | 2498 |
-| Indexable (not noindex, not blocked, not an app screen) | 1403 |
-| In the sitemap | 1403 |
-| Indexable with complete metadata (title, description, canonical, link preview, valid JSON-LD) | 1403 |
-| Indexable with structured data | 1397 |
-| Indexable and passing every error check | 1403 |
+| Published HTML pages | 3587 |
+| Indexable (not noindex, not blocked, not an app screen) | 2492 |
+| In the sitemap | 2492 |
+| Indexable with complete metadata (title, description, canonical, link preview, valid JSON-LD) | 2492 |
+| Indexable with structured data | 2486 |
+| Indexable and passing every error check | 2492 |
 | Errors | 0 |
 | Warnings | 35 |
 
@@ -20,6 +20,7 @@ This says what is **eligible** to be indexed. It is not evidence that Google has
 | Category | Published | Indexable |
 |---|---|---|
 | key term | 1345 | 376 |
+| resource | 1092 | 1092 |
 | topic | 519 | 519 |
 | study plan | 203 | 199 |
 | private / app | 114 | 0 |
@@ -34,7 +35,6 @@ This says what is **eligible** to be indexed. It is not evidence that Google has
 | checklist | 10 | 10 |
 | comparison | 8 | 8 |
 | template | 5 | 5 |
-| resource | 3 | 3 |
 | site page | 3 | 3 |
 | home | 1 | 1 |
 | redirect | 1 | 0 |

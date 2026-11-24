@@ -528,3 +528,24 @@ main.seo .mini { background: var(--tile); border-color: var(--tile-edge); box-sh
 .ask-note a { color: var(--accent) !important; font-weight: 700; }
 @keyframes ask-pulse { 50% { opacity: .45; } }
 @media (prefers-reduced-motion: reduce) { .ask-wait { animation: none; } }
+
+/* the learn library (scripts/seo/learn.mjs): lesson notes, diagrams and practice */
+main.seo .lr-meta { color: var(--faint); font-size: 14px; margin: -4px 0 18px; }
+main.seo .lr-fig { margin: 18px 0; }
+main.seo .lr-fig img { display: block; width: 100%; height: auto; max-width: 100%; background: #fff; border-radius: 12px; border: 1px solid var(--line-strong); }
+main.seo .lr-fig figcaption { font-size: 14px; color: var(--mute, var(--fg)); margin-top: 8px; }
+main.seo .co-ex, main.seo .co-pit, main.seo .co-safe { border: 1px solid var(--line-strong); border-left: 3px solid #1fae8c; border-radius: 12px; padding: 10px 14px; margin: 16px 0; }
+main.seo .co-pit { border-left-color: #ff5a4d; } main.seo .co-safe { border-left-color: #ffc002; }
+main.seo .co-ex > b, main.seo .co-pit > b, main.seo .co-safe > b { display: block; margin-bottom: 4px; }
+main.seo .co-ex p { margin: 0 0 6px; }
+main.seo .co-eq div { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; margin: 6px 0; }
+main.seo .lr-qs { padding-left: 0; list-style: none; counter-reset: q; }
+main.seo .lr-qs > li { counter-increment: q; }
+main.seo .lr-qs summary { list-style: none; }
+main.seo .lr-qs summary::-webkit-details-marker { display: none; }
+main.seo .lr-qs summary::before { content: counter(q) ". "; font-weight: 600; }
+main.seo .lr-opts { margin: 6px 0 4px; padding-left: 20px; list-style: lower-alpha; }
+main.seo .lr-qs .reveal { display: inline-block; margin: 4px 0 0; font-size: 13px; text-decoration: underline; }
+main.seo .lr-qs details[open] .reveal { display: none; }
+main.seo .lr-terms dt { font-weight: 600; margin-top: 10px; } main.seo .lr-terms dd { margin: 2px 0 0; }
+main.seo .lr-note { font-size: 13px; color: var(--faint); }
