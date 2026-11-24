@@ -1,0 +1,25 @@
+{
+ "id": "phys-u24-annihilation",
+ "renderer": "nuclear",
+ "course": "physics",
+ "unit": "u24",
+ "lesson": "Antimatter and antiparticles",
+ "title": "Annihilation into two photons",
+ "caption": "e⁺ + e⁻ → 2γ at rest: charge is conserved (+1 − 1 = 0) and the two rest energies, 2 × 0.511 MeV = 1.022 MeV, become two photons of 511 keV each, emitted back to back. The reverse, γ → e⁺ + e⁻ near a nucleus, needs more than 1.022 MeV.",
+ "alt": "The equation e plus plus e minus gives gamma plus gamma, with charge and nucleon number conserved and Q equal to 1.022 MeV.",
+ "description": [
+  "Positron (charge +1) and electron (charge −1): total charge 0.",
+  "Two photons: total charge 0.",
+  "Energy released: 2 × 0.511 MeV = 1.022 MeV, shared as 511 keV per photon."
+ ],
+ "mode": "reaction",
+ "lhs": [
+  "e+",
+  "e-"
+ ],
+ "rhs": [
+  "gamma",
+  "gamma"
+ ],
+ "Q": 1.022
+}

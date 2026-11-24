@@ -1,0 +1,43 @@
+{
+ "id": "phys-u24-fermion-masses",
+ "renderer": "scale",
+ "course": "physics",
+ "unit": "u24",
+ "lesson": "Particle generations",
+ "title": "The mass hierarchy",
+ "caption": "Fermion masses span from the electron (0.511 MeV) to the top quark (173 GeV): 5.5 orders of magnitude, and the neutrinos are lighter still (below 1 eV, so at least 5.7 orders below the electron). No one knows why.",
+ "alt": "A logarithmic mass scale in eV from 10 to the 0 up to 10 to the 12, with neutrinos below 1 eV, the electron at 0.511 MeV and the top quark at 173 GeV.",
+ "description": [
+  "Neutrinos: below 1 eV.",
+  "Electron: 0.511 MeV = 5.11 × 10⁵ eV.",
+  "Top quark: 173 GeV = 1.73 × 10¹¹ eV, 5.5 orders above the electron."
+ ],
+ "quantity": "mass",
+ "units": "eV",
+ "min": -1,
+ "max": 12,
+ "markers": [
+  {
+   "label": "neutrinos (< 1 eV)",
+   "value": 1
+  },
+  {
+   "label": "electron",
+   "value": 511000
+  },
+  {
+   "label": "top quark",
+   "value": 173000000000
+  }
+ ],
+ "claims": [
+  {
+   "type": "orders",
+   "a": "electron",
+   "b": "top quark",
+   "value": 5.53,
+   "tol": 0.05,
+   "name": "top is about 3.4 × 10⁵ times the electron"
+  }
+ ]
+}

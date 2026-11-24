@@ -24,18 +24,50 @@ export const TOOLS = [
     description: "Free UK degree calculator: enter your module marks and credits for year 2 and your final year, choose the weighting, and see your classification, with borderline cases flagged.",
     body: () => `<h1>UK degree classification calculator</h1>
     <p class="answer">Enter your module marks and credits, choose how your university weights year 2 against your final year, and the calculator shows your degree average so far, how much of your degree is marked, and the average you need on the rest for a First, 2:1 or 2:2. In most UK universities 70%+ is a First, 60–69% a 2:1, 50–59% a 2:2 and 40–49% a Third.</p>
-    <div class="tool" data-tool="degree" data-layout="dash">
-      <div class="result dash">Add your marks to see your degree so far.</div>
+    <div class="tool" data-tool="degree" data-layout="dash" data-view="overview">
       <p class="sr-only" role="status" aria-live="polite" data-live></p>
-      <section class="sheet" data-sheet aria-label="Your modules">
-        <button type="button" class="sheet-handle" aria-expanded="true" aria-controls="degree-modules"><span class="grip" aria-hidden="true"></span><b>Your modules</b><span class="sheet-sum" data-sum></span></button>
-        <div class="sheet-body" id="degree-modules">
-          <div class="grid"><div><label for="w3">Final-year weighting</label><select id="w3" name="w3"><option value="50">50 / 50</option><option value="60" selected>40 / 60 (year 2 / final)</option><option value="67">33 / 67</option><option value="70">30 / 70</option><option value="75">25 / 75</option><option value="80">20 / 80</option><option value="100">Final year only</option></select></div></div>
-          <p class="sheet-help" id="mark-help">Leave the mark blank for work you haven't had back yet, and add its due date: Gradify ranks it by how much it moves your degree.</p>
+      <div class="result dash">Add your marks to see your degree so far.</div>
+      <section class="tracker-page" role="tabpanel" id="panel-modules" aria-labelledby="tab-modules" data-panel="modules">
+        <h2 class="dash-h">Your modules</h2>
+        <div class="mod-grid" data-mod-grid></div>
+        <div class="mod-editor">
+          <div class="grid"><div><label for="w3">Final-year weighting</label><select id="w3" name="w3"><option value="50">50 / 50</option><option value="60" selected>40 / 60 (year 2 / final)</option><option value="66.67">1:2 (33.3 / 66.7)</option><option value="67">33 / 67</option><option value="70">30 / 70</option><option value="75">25 / 75</option><option value="80">20 / 80</option><option value="100">Final year only</option></select></div></div>
+          <p class="sheet-help" id="mark-help">Leave the mark blank for work you haven't had back yet, and add its due date: Gradify ranks it by how much it moves your degree. Each module takes its subject's icon and colour from its name.</p>
           <div class="rows"></div>
           <div class="actions"><button type="button" class="ghost" data-add>+ Add a module</button></div>
         </div>
       </section>
+      <section class="tracker-page" role="tabpanel" id="panel-rules" aria-label="University rules" data-panel="rules" hidden>
+        <h2 class="dash-h">University rules</h2>
+        <p class="dash-sub">Your university's own weighting, boundaries and borderline rule, each with a link to its regulations.</p>
+        <div class="uni-pick"><label for="uni">Your university</label><select id="uni" data-uni><option value="">Not listed: use my own weighting</option></select></div>
+        <div data-uni-out></div>
+      </section>
+      <section class="tracker-page" role="tabpanel" id="panel-import" aria-label="Import a module handbook" data-panel="import" hidden>
+        <h2 class="dash-h">Import a module handbook</h2>
+        <p class="dash-sub">Gradify finds each module's name, credits, year and deadlines. You check everything before it goes into your tracker.</p>
+        <div class="hb-drop">
+          <label class="hb-file"><input type="file" accept=".pdf,.txt,application/pdf,text/plain" data-hb-file><span class="sq grad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V4"/><path d="m7 9 5-5 5 5"/><path d="M4 15v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4"/></svg></span><b>Choose your handbook</b><small>A PDF or a text file</small></label>
+          <details class="hb-paste"><summary>Or paste the module list</summary><textarea rows="6" data-hb-text aria-label="Module list from your handbook" placeholder="CHEM2001  Organic Chemistry  20 credits  Level 5&#10;Coursework 30% due 14 November 2026"></textarea><button type="button" class="ghost" data-hb-read>Read this text</button></details>
+          <p class="hb-private">Your handbook is read in this browser. Nothing is uploaded.</p>
+        </div>
+        <p class="hb-status" role="status" aria-live="polite" data-hb-status></p>
+        <div data-hb-out></div>
+      </section>
+      <section class="tracker-page" role="tabpanel" id="panel-ask" aria-label="Ask Gradify AI about your degree" data-panel="ask" hidden>
+        <h2 class="dash-h">Ask Gradify AI</h2>
+        <p class="dash-sub">Questions about your degree, answered from your tracker's own numbers.</p>
+        <div class="ask-box"><label class="sr-only" for="ask-q">Your question</label><textarea id="ask-q" rows="2" maxlength="600" data-ask-q placeholder="e.g. Can I still get a First?"></textarea><button type="button" class="g-act" data-ask-send>Ask</button></div>
+        <div class="chips ask-suggest" data-ask-suggest><button type="button" class="chip">Can I still get a First?</button><button type="button" class="chip">What should I focus on this week?</button><button type="button" class="chip">Am I in a borderline zone?</button><button type="button" class="chip">Which module matters most?</button></div>
+        <p class="ask-privacy">Gradify AI is sent your tracker's results: your averages, class, what each class needs, your modules' names and due dates, and the tracker's insights. Not your files. It explains these numbers and doesn't calculate new ones. Needs a free Gradify account; uses count towards your AI tutor allowance.</p>
+        <div data-ask-out aria-live="polite"></div>
+      </section>
+      <nav class="sheet tracker-nav" data-sheet aria-label="Degree tracker pages">
+        <div class="sheet-handle"><span class="grip" aria-hidden="true"></span>
+          <div class="tabs" role="tablist" aria-label="Degree tracker"><button type="button" role="tab" class="tab" data-page="overview" id="tab-overview" aria-controls="panel-overview" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 11 12 4l8.5 7"/><path d="M6 9.5V20h12V9.5"/></svg><span>Overview</span></button><button type="button" role="tab" class="tab" data-page="plan" id="tab-plan" aria-controls="panel-plan" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l1.9 5.1 5.1 1.9-5.1 1.9L12 17.5l-1.9-5.1L5 10.5l5.1-1.9z"/></svg><span>Plan</span></button><button type="button" role="tab" class="tab" data-page="goals" id="tab-goals" aria-controls="panel-goals" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".8" fill="currentColor"/></svg><span>Goals</span></button><button type="button" role="tab" class="tab" data-page="modules" id="tab-modules" aria-controls="panel-modules" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="2"/><rect x="13.5" y="3.5" width="7" height="7" rx="2"/><rect x="3.5" y="13.5" width="7" height="7" rx="2"/><rect x="13.5" y="13.5" width="7" height="7" rx="2"/></svg><span>Modules</span></button><button type="button" class="tab sheet-toggle" aria-expanded="false" aria-controls="tracker-more" aria-label="All pages"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>More</span></button></div>
+        </div>
+        <div class="sheet-body" id="tracker-more"><p class="more-title">Everything in your degree tracker</p><div class="more-grid"><button type="button" class="more-card" data-page="overview"><b>Overview</b><span>Where your degree stands, and your next best action.</span></button><button type="button" class="more-card" data-page="plan"><b>Plan</b><span>Your priorities, ranked by impact and due date.</span></button><button type="button" class="more-card" data-page="goals"><b>Goals & years</b><span>What each class needs, and each year's progress.</span></button><button type="button" class="more-card" data-page="modules"><b>Modules</b><span>Add and edit your modules and marks.</span></button><button type="button" class="more-card" data-page="rules"><b>University rules</b><span>Your university's weightings and borderline rules, with sources.</span></button><button type="button" class="more-card" data-page="import"><b>Import a handbook</b><span>Choose your module handbook and Gradify finds your modules for you to check.</span></button><button type="button" class="more-card" data-page="ask"><b>Ask Gradify AI</b><span>“Can I still get a First?”, answered from your own numbers.</span></button><div class="more-card soon" aria-disabled="true"><b>Connections <em>Later</em></b><span>Calendar, Moodle and Canvas.</span></div></div></div>
+      </nav>
       <noscript><p>This calculator needs JavaScript. The method is below if you'd rather work it out by hand.</p></noscript>
     </div>
     <h2>How UK degree classifications are calculated</h2>

@@ -81,9 +81,14 @@ Diagram counts exclude reused older diagrams (u16 also places `phys-kirchhoff-lo
 
 A unit listed here is being built; don't start it in another session. Remove the row when the unit is on main.
 
+Claimed 24 Nov 2026. Every other unit is on main.
+
 | Units | Claimed by |
 |---|---|
-| u19, u20 (u18 landed) | lead session 01PJjzVE, agent P1 (worktree /home/user/wt-p1, branch diagrams/p1) |
+| u24 (from wip/phys-u24), u40, u41, u42 | lead session 01H1szfk, agent Q1 |
+| u43, u44, u45, u46 | lead session 01H1szfk, agent Q2 |
+| u47, u48, u49, u50 | lead session 01H1szfk, agent Q3 |
+| u51, u52, u53, u54 | lead session 01H1szfk, agent Q4 |
 
 ## Unit notes
 

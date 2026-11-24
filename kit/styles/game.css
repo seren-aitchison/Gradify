@@ -10,7 +10,8 @@
 .gj-sub { display: block; color: var(--mute); font-size: 13px; line-height: 1.5; }
 .gj-sub em { color: var(--gold); font-style: normal; }
 .gj-ic svg { width: 15px; height: 15px; vertical-align: -2px; }
-.gj-card { border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; background: linear-gradient(180deg, rgba(var(--ink-rgb), .045), rgba(var(--ink-rgb), .01)), var(--panel); }
+.gj-card { border: 1px solid var(--g-edge); border-radius: 22px; padding: 16px 18px; background: var(--g-tile); box-shadow: var(--g-shadow); }
+.gj-card .g-action { margin: 10px 0 4px; box-shadow: none; }
 .gj-big { display: block; font-size: 30px; font-weight: 700; letter-spacing: -.02em; margin: 2px 0; }
 .gj-big small { font-size: 14px; color: var(--mute); font-weight: 500; }
 .gj-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }

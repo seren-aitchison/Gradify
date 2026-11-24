@@ -76,6 +76,7 @@ H: Tips
 P: Choose axes along accelerations or symmetry directions. Put the origin where the most things are zero. Define positive directions clearly and stick to them; signs are a major source of error. Exploit symmetry: a uniformly charged sphere needs only r. Switch frames if it simplifies (centre-of-mass frame for elastic collisions).
 X: A block slides down a 30° frictionless incline. With tilted axes, what's the acceleration?
 > Along slope: a = g sin 30° = 4.9 m s^{-2}; perpendicular: N = mg cos 30° (no acceleration)
+D: phys-u52-tilted-axes
 X: In the CM frame, two equal masses collide elastically head-on at ±v. Outcome?
 > They reverse velocities: ∓v; transform back to the lab frame afterward
 K: Align coordinates with motion and symmetry; switch frames (CM, rotating) when it simplifies the physics.
@@ -106,6 +107,7 @@ X: A 2 kg mass hangs at rest from two strings at 30° and 60° to the horizontal
 > Horizontal: T_{1}cos 30° = T_{2}cos 60°
 > Vertical: T_{1}sin 30° + T_{2}sin 60° = 19.6 N
 > T_{2} = √3T_{1} ⇒ 0.5T_{1} + 1.5T_{1} = 19.6 ⇒ T_{1} = 9.8 N, T_{2} ≈ 17.0 N
+D: phys-u52-two-strings
 X: Sketch fields for a dipole. What happens along the perpendicular bisector?
 > The field is parallel to the dipole axis (pointing from + to − side), and the potential is zero there
 K: Isolate the object, draw only real forces acting on it, resolve along sensible axes; field lines and equipotentials are perpendicular.
@@ -218,6 +220,7 @@ H: Why it works
 P: Limits often correspond to simpler problems you can solve intuitively. Experts routinely check limits before trusting results. Limits also guide guessing forms of answers and spotting errors in derivations, and help interpret results physically (what dominates when?).
 X: A block on a frictionless incline: a = g sin θ. Check limits.
 > θ = 0: a = 0 (flat) ✓; θ = 90°: a = g (free fall) ✓
+D: phys-u52-limits
 X: Check T = 2π√(L/g) in a lift accelerating upward at a (effective g → g + a).
 > a → −g (free fall): T → ∞ (pendulum doesn't swing) ✓
 K: Test answers in limits where the physics is obvious; failing a limit check reveals an error.
@@ -356,6 +359,7 @@ P: **Verify** codes against known analytical solutions (SHM, projectile without 
 X: Compare Euler and exact solutions for dy/dt = −y, y(0) = 1, at t = 1 with h = 0.1.
 > Euler: (1 − 0.1)^{10} ≈ 0.349; exact e^{−1} ≈ 0.368: error ~5%
 > With h = 0.01: (0.99)^{100} ≈ 0.366: error ~0.5% (first-order convergence)
+D: phys-u52-euler-check
 X: A large-amplitude pendulum (θ_{0} = 90°): analytical or numerical?
 > Exact period involves an elliptic integral: T ≈ 1.18 × 2π√(L/g); numerics confirm and handle damping or driving
 K: Use analytical solutions for insight and code verification, numerics for complexity, and compare to build confidence.

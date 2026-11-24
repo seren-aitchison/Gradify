@@ -7,29 +7,29 @@
   "coursesWithPlan": 6,
   "lessons": 10112,
   "written": 9979,
-  "assessed": 2416,
-  "plannedVisual": 1330,
-  "plannedDiagram": 1197,
+  "assessed": 2637,
+  "plannedVisual": 1372,
+  "plannedDiagram": 1239,
   "plannedLab": 400,
-  "excluded": 1086,
-  "notAssessed": 7563,
-  "withDiagram": 1199,
+  "excluded": 1265,
+  "notAssessed": 7342,
+  "withDiagram": 1241,
   "withLab": 846,
   "withBoth": 280,
-  "withAny": 1765,
+  "withAny": 1807,
   "plannedNotDelivered": 0,
-  "placements": 1224,
+  "placements": 1266,
   "withInteractiveDiagram": 272,
   "withSimulation": 397,
   "withLabActivity": 198
  },
  "diagrams": {
-  "manifest": 1148,
-  "uniquePlaced": 1148,
-  "placements": 1224,
+  "manifest": 1190,
+  "uniquePlaced": 1190,
+  "placements": 1266,
   "reused": 69,
-  "byStatus": {"ai-reviewed":4,"approved":11,"validated":1133},
-  "placedByStatus": {"ai-reviewed":4,"approved":11,"validated":1133},
+  "byStatus": {"ai-reviewed":4,"approved":11,"validated":1175},
+  "placedByStatus": {"ai-reviewed":4,"approved":11,"validated":1175},
   "failing": [],
   "unplaced": []
  },
@@ -558,18 +558,18 @@
    "totals": {
     "lessons": 1077,
     "written": 1077,
-    "assessed": 558,
-    "plannedVisual": 328,
-    "plannedDiagram": 298,
+    "assessed": 675,
+    "plannedVisual": 345,
+    "plannedDiagram": 315,
     "plannedLab": 76,
-    "excluded": 230,
-    "notAssessed": 519,
-    "withDiagram": 298,
+    "excluded": 330,
+    "notAssessed": 402,
+    "withDiagram": 315,
     "withLab": 102,
     "withBoth": 58,
-    "withAny": 342,
+    "withAny": 359,
     "plannedNotDelivered": 0,
-    "placements": 298,
+    "placements": 315,
     "withInteractiveDiagram": 18,
     "withSimulation": 9,
     "withLabActivity": 76
@@ -585,18 +585,18 @@
    "totals": {
     "lessons": 2159,
     "written": 2109,
-    "assessed": 1767,
-    "plannedVisual": 918,
-    "plannedDiagram": 817,
+    "assessed": 1871,
+    "plannedVisual": 943,
+    "plannedDiagram": 842,
     "plannedLab": 322,
-    "excluded": 849,
-    "notAssessed": 342,
-    "withDiagram": 818,
+    "excluded": 928,
+    "notAssessed": 238,
+    "withDiagram": 843,
     "withLab": 322,
     "withBoth": 222,
-    "withAny": 918,
+    "withAny": 943,
     "plannedNotDelivered": 0,
-    "placements": 839,
+    "placements": 864,
     "withInteractiveDiagram": 85,
     "withSimulation": 228,
     "withLabActivity": 9
@@ -14426,18 +14426,18 @@
    "totals": {
     "lessons": 1077,
     "written": 1077,
-    "assessed": 558,
-    "plannedVisual": 328,
-    "plannedDiagram": 298,
+    "assessed": 675,
+    "plannedVisual": 345,
+    "plannedDiagram": 315,
     "plannedLab": 76,
-    "excluded": 230,
-    "notAssessed": 519,
-    "withDiagram": 298,
+    "excluded": 330,
+    "notAssessed": 402,
+    "withDiagram": 315,
     "withLab": 102,
     "withBoth": 58,
-    "withAny": 342,
+    "withAny": 359,
     "plannedNotDelivered": 0,
-    "placements": 298,
+    "placements": 315,
     "withInteractiveDiagram": 18,
     "withSimulation": 9,
     "withLabActivity": 76
@@ -17848,67 +17848,371 @@
      "totals": {
       "lessons": 44,
       "written": 44,
-      "assessed": 0,
-      "plannedVisual": 0,
-      "plannedDiagram": 0,
+      "assessed": 44,
+      "plannedVisual": 1,
+      "plannedDiagram": 1,
       "plannedLab": 0,
-      "excluded": 0,
-      "notAssessed": 44,
-      "withDiagram": 0,
+      "excluded": 43,
+      "notAssessed": 0,
+      "withDiagram": 1,
       "withLab": 0,
       "withBoth": 0,
-      "withAny": 0,
+      "withAny": 1,
       "plannedNotDelivered": 0,
-      "placements": 0,
+      "placements": 1,
       "withInteractiveDiagram": 0,
       "withSimulation": 0,
       "withLabActivity": 0
      },
      "lessons": [
-      {"id":"u15-01","title":"Graph Theory","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-02","title":"Undirected Graphs","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-03","title":"Directed Graphs","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-04","title":"Weighted Graphs","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-05","title":"Degree Sequences","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-06","title":"Paths and Cycles","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-07","title":"Graph Connectivity","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-08","title":"Trees","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-09","title":"Trees and Forests","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-10","title":"Spanning Trees","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-11","title":"Directed Acyclic Graphs","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-12","title":"Bipartite Graphs","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-13","title":"Planar Graphs","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-14","title":"Planarity","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-15","title":"Eulerian Paths","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-16","title":"Hamiltonian Paths","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-17","title":"Graph Colouring","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-18","title":"Chromatic Polynomials","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-19","title":"Matching Theory","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-20","title":"Matching and Vertex Covers","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-21","title":"Shortest Path Algorithms","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-22","title":"Shortest Path Problems","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-23","title":"Minimum Spanning Trees","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-24","title":"Network Flows","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-25","title":"Maximum Flow","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-26","title":"Minimum Cut","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-27","title":"Weighted Networks","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-28","title":"Network Centrality","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-29","title":"Betweenness Centrality","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-30","title":"Closeness Centrality","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-31","title":"Eigenvector Centrality","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-32","title":"PageRank Mathematics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-33","title":"Community Detection","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-34","title":"Network Clustering","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-35","title":"Spectral Graph Theory","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-36","title":"Random Graphs","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-37","title":"Small-World Networks","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-38","title":"Scale-Free Networks","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-39","title":"Network Science","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-40","title":"Percolation Theory","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-41","title":"Social Network Analysis","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-42","title":"Biological Network Analysis","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-43","title":"Network Epidemiology","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-44","title":"Graph Neural Network Mathematics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}}
+      {
+       "id": "u15-01",
+       "title": "Graph Theory",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): a small graph with the degrees 3, 3, 2, 2, 2 beside the handshake count"}
+      },
+      {
+       "id": "u15-02",
+       "title": "Undirected Graphs",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): K₆ and its complement"}
+      },
+      {
+       "id": "u15-03",
+       "title": "Directed Graphs",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the digraph with arcs 1→2, 1→3, 2→3, 3→1"}
+      },
+      {
+       "id": "u15-04",
+       "title": "Weighted Graphs",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the weighted graph with routes A–B–D and A–C–D"}
+      },
+      {
+       "id": "u15-05",
+       "title": "Degree Sequences",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): a graph realising the degree sequence (3, 3, 2, 2, 2)"}
+      },
+      {
+       "id": "u15-06",
+       "title": "Paths and Cycles",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the cycle C₆ and a 10-vertex path with their diameters"}
+      },
+      {
+       "id": "u15-07",
+       "title": "Graph Connectivity",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): two triangles sharing a vertex, with the cut vertex marked"}
+      },
+      {
+       "id": "u15-08",
+       "title": "Trees",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the labelled trees on 4 vertices"}
+      },
+      {
+       "id": "u15-09",
+       "title": "Trees and Forests",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): a forest of 3 components"}
+      },
+      {
+       "id": "u15-10",
+       "title": "Spanning Trees",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the spanning trees of C₄ and K₄"}
+      },
+      {
+       "id": "u15-11",
+       "title": "Directed Acyclic Graphs",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the task network A, B → C → D with its critical path"}
+      },
+      {
+       "id": "u15-12",
+       "title": "Bipartite Graphs",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): C₅ and the cube graph with a two-colouring"}
+      },
+      {
+       "id": "u15-13",
+       "title": "Planar Graphs",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): a planar drawing of the cube graph with its 6 faces"}
+      },
+      {
+       "id": "u15-14",
+       "title": "Planarity",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): K₃,₃ drawn with its crossing"}
+      },
+      {
+       "id": "u15-15",
+       "title": "Eulerian Paths",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): a graph with degrees 4, 3, 2, 3, 2 and its Eulerian path"}
+      },
+      {
+       "id": "u15-16",
+       "title": "Hamiltonian Paths",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the Hamiltonian cycles of K₅"}
+      },
+      {
+       "id": "u15-17",
+       "title": "Graph Colouring",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the five-course conflict cycle with colours"}
+      },
+      {
+       "id": "u15-18",
+       "title": "Chromatic Polynomials",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the path P₃ and cycle C₄ with their 3-colourings"}
+      },
+      {
+       "id": "u15-19",
+       "title": "Matching Theory",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the bipartite applicants-and-jobs graph"}
+      },
+      {
+       "id": "u15-20",
+       "title": "Matching and Vertex Covers",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the star K₁,₅ and path P₄ with a matching and a vertex cover"}
+      },
+      {
+       "id": "u15-21",
+       "title": "Shortest Path Algorithms",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the weighted graph A, B, C, D with the shortest-path tree from A"}
+      },
+      {
+       "id": "u15-22",
+       "title": "Shortest Path Problems",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {
+        "verdict": "none",
+        "reason": "the exchange rates 1.4 × 0.9 × 0.8 = 1.008 are a three-term product set out in the notes; the cycle needs a network renderer and a picture of three arrows would only decorate it"
+       }
+      },
+      {
+       "id": "u15-23",
+       "title": "Minimum Spanning Trees",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the weighted graph AB 1, AC 2, BC 3, CD 4, BD 5 with its minimum spanning tree"}
+      },
+      {
+       "id": "u15-24",
+       "title": "Network Flows",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the capacitated routes s–a–t and s–b–t"}
+      },
+      {
+       "id": "u15-25",
+       "title": "Maximum Flow",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the flow network s, a, b, t with capacities and the maximum flow"}
+      },
+      {
+       "id": "u15-26",
+       "title": "Minimum Cut",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the same network with the cuts {s} and {s, a}"}
+      },
+      {
+       "id": "u15-27",
+       "title": "Weighted Networks",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a short calculation set out in the notes' worked steps; a picture would only decorate it"}
+      },
+      {
+       "id": "u15-28",
+       "title": "Network Centrality",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the star with centre and 5 leaves sized by centrality"}
+      },
+      {
+       "id": "u15-29",
+       "title": "Betweenness Centrality",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the path 1–2–3–4–5 with betweenness"}
+      },
+      {
+       "id": "u15-30",
+       "title": "Closeness Centrality",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the path 1–2–3–4–5 with closeness"}
+      },
+      {
+       "id": "u15-31",
+       "title": "Eigenvector Centrality",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the star K₁,₃ with eigenvector scores"}
+      },
+      {
+       "id": "u15-32",
+       "title": "PageRank Mathematics",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a short calculation set out in the notes' worked steps; a picture would only decorate it"}
+      },
+      {
+       "id": "u15-33",
+       "title": "Community Detection",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): two triangles joined by an edge, split into two communities"}
+      },
+      {
+       "id": "u15-34",
+       "title": "Network Clustering",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): a node with 4 neighbours and 2 links among them"}
+      },
+      {
+       "id": "u15-35",
+       "title": "Spectral Graph Theory",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the path a–b–c beside its Laplacian"}
+      },
+      {
+       "id": "u15-36",
+       "title": "Random Graphs",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a short calculation set out in the notes' worked steps; a picture would only decorate it"}
+      },
+      {
+       "id": "u15-37",
+       "title": "Small-World Networks",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a short calculation set out in the notes' worked steps; a picture would only decorate it"}
+      },
+      {"id":"u15-38","title":"Scale-Free Networks","written":true,"diagrams":[{"id":"maths-u15-power-law","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["maths-u15-power-law"]}},
+      {
+       "id": "u15-39",
+       "title": "Network Science",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a short calculation set out in the notes' worked steps; a picture would only decorate it"}
+      },
+      {
+       "id": "u15-40",
+       "title": "Percolation Theory",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a short calculation set out in the notes' worked steps; a picture would only decorate it"}
+      },
+      {
+       "id": "u15-41",
+       "title": "Social Network Analysis",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the 12-person team with 22 ties"}
+      },
+      {
+       "id": "u15-42",
+       "title": "Biological Network Analysis",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the feed-forward loop X → Y → Z with X → Z"}
+      },
+      {
+       "id": "u15-43",
+       "title": "Network Epidemiology",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a short calculation set out in the notes' worked steps; a picture would only decorate it"}
+      },
+      {
+       "id": "u15-44",
+       "title": "Graph Neural Network Mathematics",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): node v with three neighbours for the mean aggregation"}
+      }
      ]
     },
     {
@@ -17918,75 +18222,390 @@
      "totals": {
       "lessons": 52,
       "written": 52,
-      "assessed": 0,
-      "plannedVisual": 0,
-      "plannedDiagram": 0,
+      "assessed": 52,
+      "plannedVisual": 9,
+      "plannedDiagram": 9,
       "plannedLab": 0,
-      "excluded": 0,
-      "notAssessed": 52,
-      "withDiagram": 0,
+      "excluded": 43,
+      "notAssessed": 0,
+      "withDiagram": 9,
       "withLab": 0,
       "withBoth": 0,
-      "withAny": 0,
+      "withAny": 9,
       "plannedNotDelivered": 0,
-      "placements": 0,
+      "placements": 9,
       "withInteractiveDiagram": 0,
       "withSimulation": 0,
       "withLabActivity": 0
      },
      "lessons": [
-      {"id":"u16-01","title":"Elementary Set Theory","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-02","title":"Set Theory","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-03","title":"Set Operations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-04","title":"Union and Intersection","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-05","title":"Complements","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-06","title":"Cartesian Products","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-07","title":"Power Sets","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-08","title":"Countability","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-09","title":"Countable and Uncountable Sets","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-10","title":"Relations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-11","title":"Relations and Functions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-12","title":"Functions and Mappings","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-13","title":"Equivalence Relations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-14","title":"Equivalence Classes","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-15","title":"Partial Orders","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-16","title":"Partially Ordered Sets","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-17","title":"Totally Ordered Sets","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-18","title":"Lattices","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-19","title":"Boolean Lattices","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-20","title":"Mathematical Logic","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-21","title":"Propositional Logic","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-22","title":"Predicate Logic","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-23","title":"First-Order Logic","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-24","title":"Higher-Order Logic","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-25","title":"Modal Logic","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-26","title":"Intuitionistic Logic","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-27","title":"Fuzzy Logic","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-28","title":"Temporal Logic","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-29","title":"Proof Techniques","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-30","title":"Direct Proof","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-31","title":"Proof by Contraposition","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-32","title":"Proof by Contradiction","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-33","title":"Mathematical Induction","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-34","title":"Formal Proofs","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-35","title":"Axiomatic Systems","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-36","title":"Axiomatic Set Theory","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-37","title":"Zermelo–Fraenkel Set Theory","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-38","title":"Axiom of Choice","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-39","title":"Set-Theoretic Mathematics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-40","title":"Ordinal Arithmetic","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-41","title":"Cardinal Arithmetic","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-42","title":"Large Cardinal Theory","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-43","title":"Proof Theory","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-44","title":"Model Theory","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-45","title":"Gödel's Incompleteness Theorems","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-46","title":"Computability Theory","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-47","title":"Recursive Functions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-48","title":"Lambda Calculus","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-49","title":"Type Theory","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-50","title":"Constructive Mathematics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-51","title":"Category-Theoretic Foundations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-52","title":"Philosophy of Mathematics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}}
+      {
+       "id": "u16-01",
+       "title": "Elementary Set Theory",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a definition or short list-and-check exercise: the notes give it in words and notation, and a picture would only repeat the set or table already written"}
+      },
+      {
+       "id": "u16-02",
+       "title": "Set Theory",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a definition or short list-and-check exercise: the notes give it in words and notation, and a picture would only repeat the set or table already written"}
+      },
+      {
+       "id": "u16-03",
+       "title": "Set Operations",
+       "written": true,
+       "diagrams": [{"id":"maths-u16-set-difference","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u16-set-difference"]}
+      },
+      {
+       "id": "u16-04",
+       "title": "Union and Intersection",
+       "written": true,
+       "diagrams": [{"id":"maths-u16-interval-union","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u16-interval-union"]}
+      },
+      {"id":"u16-05","title":"Complements","written":true,"diagrams":[{"id":"maths-u16-de-morgan","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["maths-u16-de-morgan"]}},
+      {
+       "id": "u16-06",
+       "title": "Cartesian Products",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a definition or short list-and-check exercise: the notes give it in words and notation, and a picture would only repeat the set or table already written"}
+      },
+      {
+       "id": "u16-07",
+       "title": "Power Sets",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a definition or short list-and-check exercise: the notes give it in words and notation, and a picture would only repeat the set or table already written"}
+      },
+      {
+       "id": "u16-08",
+       "title": "Countability",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a definition or short list-and-check exercise: the notes give it in words and notation, and a picture would only repeat the set or table already written"}
+      },
+      {
+       "id": "u16-09",
+       "title": "Countable and Uncountable Sets",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a proof or derivation: the notes lay it out line by line and no quantity is drawn"}
+      },
+      {
+       "id": "u16-10",
+       "title": "Relations",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a definition or short list-and-check exercise: the notes give it in words and notation, and a picture would only repeat the set or table already written"}
+      },
+      {
+       "id": "u16-11",
+       "title": "Relations and Functions",
+       "written": true,
+       "diagrams": [{"id":"maths-u16-circle-relation","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u16-circle-relation"]}
+      },
+      {
+       "id": "u16-12",
+       "title": "Functions and Mappings",
+       "written": true,
+       "diagrams": [{"id":"maths-u16-bijection-inverse","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u16-bijection-inverse"]}
+      },
+      {
+       "id": "u16-13",
+       "title": "Equivalence Relations",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a definition or short list-and-check exercise: the notes give it in words and notation, and a picture would only repeat the set or table already written"}
+      },
+      {
+       "id": "u16-14",
+       "title": "Equivalence Classes",
+       "written": true,
+       "diagrams": [{"id":"maths-u16-classes-mod-3","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u16-classes-mod-3"]}
+      },
+      {"id":"u16-15","title":"Partial Orders","written":true,"diagrams":[{"id":"maths-u16-hasse-diamond","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["maths-u16-hasse-diamond"]}},
+      {
+       "id": "u16-16",
+       "title": "Partially Ordered Sets",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a definition or short list-and-check exercise: the notes give it in words and notation, and a picture would only repeat the set or table already written"}
+      },
+      {
+       "id": "u16-17",
+       "title": "Totally Ordered Sets",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a definition or short list-and-check exercise: the notes give it in words and notation, and a picture would only repeat the set or table already written"}
+      },
+      {
+       "id": "u16-18",
+       "title": "Lattices",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a definition or short list-and-check exercise: the notes give it in words and notation, and a picture would only repeat the set or table already written"}
+      },
+      {"id":"u16-19","title":"Boolean Lattices","written":true,"diagrams":[{"id":"maths-u16-divisors-30","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["maths-u16-divisors-30"]}},
+      {
+       "id": "u16-20",
+       "title": "Mathematical Logic",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a logical system or formula: the worked example is a symbolic evaluation or derivation with no geometry to draw"}
+      },
+      {
+       "id": "u16-21",
+       "title": "Propositional Logic",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a logical system or formula: the worked example is a symbolic evaluation or derivation with no geometry to draw"}
+      },
+      {
+       "id": "u16-22",
+       "title": "Predicate Logic",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a logical system or formula: the worked example is a symbolic evaluation or derivation with no geometry to draw"}
+      },
+      {
+       "id": "u16-23",
+       "title": "First-Order Logic",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a logical system or formula: the worked example is a symbolic evaluation or derivation with no geometry to draw"}
+      },
+      {
+       "id": "u16-24",
+       "title": "Higher-Order Logic",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a logical system or formula: the worked example is a symbolic evaluation or derivation with no geometry to draw"}
+      },
+      {
+       "id": "u16-25",
+       "title": "Modal Logic",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a three-world Kripke model: the evaluation is two lines of symbolic checking and the notes already list the worlds"}
+      },
+      {
+       "id": "u16-26",
+       "title": "Intuitionistic Logic",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a logical system or formula: the worked example is a symbolic evaluation or derivation with no geometry to draw"}
+      },
+      {
+       "id": "u16-27",
+       "title": "Fuzzy Logic",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"three truth values combined by min, max and 1 − x: a one-line calculation with no picture beyond the numbers"}
+      },
+      {"id":"u16-28","title":"Temporal Logic","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a temporal formula and a classification: no quantity to draw"}},
+      {"id":"u16-29","title":"Proof Techniques","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a proof or derivation: the notes lay it out line by line and no quantity is drawn"}},
+      {"id":"u16-30","title":"Direct Proof","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a proof or derivation: the notes lay it out line by line and no quantity is drawn"}},
+      {
+       "id": "u16-31",
+       "title": "Proof by Contraposition",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a proof or derivation: the notes lay it out line by line and no quantity is drawn"}
+      },
+      {
+       "id": "u16-32",
+       "title": "Proof by Contradiction",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a proof or derivation: the notes lay it out line by line and no quantity is drawn"}
+      },
+      {
+       "id": "u16-33",
+       "title": "Mathematical Induction",
+       "written": true,
+       "diagrams": [{"id":"maths-u16-triangle-sums","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u16-triangle-sums"]}
+      },
+      {"id":"u16-34","title":"Formal Proofs","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a proof or derivation: the notes lay it out line by line and no quantity is drawn"}},
+      {
+       "id": "u16-35",
+       "title": "Axiomatic Systems",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a foundational or metamathematical argument: the notes give it in prose and symbols, with nothing numeric to draw"}
+      },
+      {
+       "id": "u16-36",
+       "title": "Axiomatic Set Theory",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a foundational or metamathematical argument: the notes give it in prose and symbols, with nothing numeric to draw"}
+      },
+      {
+       "id": "u16-37",
+       "title": "Zermelo–Fraenkel Set Theory",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a foundational or metamathematical argument: the notes give it in prose and symbols, with nothing numeric to draw"}
+      },
+      {
+       "id": "u16-38",
+       "title": "Axiom of Choice",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a foundational or metamathematical argument: the notes give it in prose and symbols, with nothing numeric to draw"}
+      },
+      {
+       "id": "u16-39",
+       "title": "Set-Theoretic Mathematics",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a foundational or metamathematical argument: the notes give it in prose and symbols, with nothing numeric to draw"}
+      },
+      {
+       "id": "u16-40",
+       "title": "Ordinal Arithmetic",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a symbolic reduction or ordinal/recursive computation shown step by step in the notes"}
+      },
+      {
+       "id": "u16-41",
+       "title": "Cardinal Arithmetic",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a foundational or metamathematical argument: the notes give it in prose and symbols, with nothing numeric to draw"}
+      },
+      {
+       "id": "u16-42",
+       "title": "Large Cardinal Theory",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a foundational or metamathematical argument: the notes give it in prose and symbols, with nothing numeric to draw"}
+      },
+      {
+       "id": "u16-43",
+       "title": "Proof Theory",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a foundational or metamathematical argument: the notes give it in prose and symbols, with nothing numeric to draw"}
+      },
+      {
+       "id": "u16-44",
+       "title": "Model Theory",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a foundational or metamathematical argument: the notes give it in prose and symbols, with nothing numeric to draw"}
+      },
+      {
+       "id": "u16-45",
+       "title": "Gödel's Incompleteness Theorems",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a foundational or metamathematical argument: the notes give it in prose and symbols, with nothing numeric to draw"}
+      },
+      {
+       "id": "u16-46",
+       "title": "Computability Theory",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a foundational or metamathematical argument: the notes give it in prose and symbols, with nothing numeric to draw"}
+      },
+      {
+       "id": "u16-47",
+       "title": "Recursive Functions",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a symbolic reduction or ordinal/recursive computation shown step by step in the notes"}
+      },
+      {
+       "id": "u16-48",
+       "title": "Lambda Calculus",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a symbolic reduction or ordinal/recursive computation shown step by step in the notes"}
+      },
+      {
+       "id": "u16-49",
+       "title": "Type Theory",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a foundational or metamathematical argument: the notes give it in prose and symbols, with nothing numeric to draw"}
+      },
+      {
+       "id": "u16-50",
+       "title": "Constructive Mathematics",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a foundational or metamathematical argument: the notes give it in prose and symbols, with nothing numeric to draw"}
+      },
+      {
+       "id": "u16-51",
+       "title": "Category-Theoretic Foundations",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a foundational or metamathematical argument: the notes give it in prose and symbols, with nothing numeric to draw"}
+      },
+      {
+       "id": "u16-52",
+       "title": "Philosophy of Mathematics",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a foundational or metamathematical argument: the notes give it in prose and symbols, with nothing numeric to draw"}
+      }
      ]
     },
     {
@@ -18670,44 +19289,100 @@
      "totals": {
       "lessons": 21,
       "written": 21,
-      "assessed": 0,
-      "plannedVisual": 0,
-      "plannedDiagram": 0,
+      "assessed": 21,
+      "plannedVisual": 7,
+      "plannedDiagram": 7,
       "plannedLab": 0,
-      "excluded": 0,
-      "notAssessed": 21,
-      "withDiagram": 0,
+      "excluded": 14,
+      "notAssessed": 0,
+      "withDiagram": 7,
       "withLab": 0,
       "withBoth": 0,
-      "withAny": 0,
+      "withAny": 7,
       "plannedNotDelivered": 0,
-      "placements": 0,
+      "placements": 7,
       "withInteractiveDiagram": 0,
       "withSimulation": 0,
       "withLabActivity": 0
      },
      "lessons": [
-      {"id":"u26-01","title":"Mathematical Reasoning","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u26-02","title":"Mathematical Proofs","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u26-03","title":"Deductive Reasoning","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u26-04","title":"Inductive Reasoning","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u26-05","title":"Abstract Reasoning","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u26-06","title":"Quantitative Reasoning","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u26-07","title":"Problem Solving","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u26-08","title":"Estimation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u26-09","title":"Approximation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u26-10","title":"Error Propagation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u26-11","title":"Research Methodology","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u26-12","title":"Literature Review","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u26-13","title":"Hypothesis Formulation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u26-14","title":"Model Validation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u26-15","title":"Model Verification","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u26-16","title":"Computational Experiments","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u26-17","title":"Reproducible Research","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u26-18","title":"Mathematical Visualisation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u26-19","title":"Mathematical Communication","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u26-20","title":"Mathematical Writing","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u26-21","title":"Scientific Reporting","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}}
+      {"id":"u26-01","title":"Mathematical Reasoning","written":true,"diagrams":[{"id":"maths-u26-odd-sums","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["maths-u26-odd-sums"]}},
+      {"id":"u26-02","title":"Mathematical Proofs","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"an argument or a worked chain of steps: the notes lay it out line by line"}},
+      {"id":"u26-03","title":"Deductive Reasoning","written":true,"diagrams":[{"id":"maths-u26-four-sides","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["maths-u26-four-sides"]}},
+      {
+       "id": "u26-04",
+       "title": "Inductive Reasoning",
+       "written": true,
+       "diagrams": [{"id":"maths-u26-circle-regions","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u26-circle-regions"]}
+      },
+      {"id":"u26-05","title":"Abstract Reasoning","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"an abstract comparison of three structures: no single picture holds all three"}},
+      {
+       "id": "u26-06",
+       "title": "Quantitative Reasoning",
+       "written": true,
+       "diagrams": [{"id":"maths-u26-screening-tree","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u26-screening-tree"]}
+      },
+      {
+       "id": "u26-07",
+       "title": "Problem Solving",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer grid-colouring: an 8 × 8 board with two opposite corners removed, 32 squares of one colour and 30 of the other"}
+      },
+      {"id":"u26-08","title":"Estimation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"an argument or a worked chain of steps: the notes lay it out line by line"}},
+      {
+       "id": "u26-09",
+       "title": "Approximation",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"the tangent line and √x differ by 0.0001 at x = 101, so a picture would show one line"}
+      },
+      {
+       "id": "u26-10",
+       "title": "Error Propagation",
+       "written": true,
+       "diagrams": [{"id":"maths-u26-area-uncertainty","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u26-area-uncertainty"]}
+      },
+      {"id":"u26-11","title":"Research Methodology","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a procedure in words with no numbers to draw: the notes list the steps"}},
+      {"id":"u26-12","title":"Literature Review","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a procedure in words with no numbers to draw: the notes list the steps"}},
+      {"id":"u26-13","title":"Hypothesis Formulation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a procedure in words with no numbers to draw: the notes list the steps"}},
+      {"id":"u26-14","title":"Model Validation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a procedure in words with no numbers to draw: the notes list the steps"}},
+      {
+       "id": "u26-15",
+       "title": "Model Verification",
+       "written": true,
+       "diagrams": [{"id":"maths-u26-order-of-accuracy","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u26-order-of-accuracy"]}
+      },
+      {"id":"u26-16","title":"Computational Experiments","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a procedure in words with no numbers to draw: the notes list the steps"}},
+      {"id":"u26-17","title":"Reproducible Research","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a procedure in words with no numbers to draw: the notes list the steps"}},
+      {
+       "id": "u26-18",
+       "title": "Mathematical Visualisation",
+       "written": true,
+       "diagrams": [{"id":"maths-u26-log-log-line","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u26-log-log-line"]}
+      },
+      {
+       "id": "u26-19",
+       "title": "Mathematical Communication",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"an argument or a worked chain of steps: the notes lay it out line by line"}
+      },
+      {"id":"u26-20","title":"Mathematical Writing","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a procedure in words with no numbers to draw: the notes list the steps"}},
+      {"id":"u26-21","title":"Scientific Reporting","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a procedure in words with no numbers to draw: the notes list the steps"}}
      ]
     },
     {
@@ -21829,18 +22504,18 @@
    "totals": {
     "lessons": 1308,
     "written": 1308,
-    "assessed": 966,
-    "plannedVisual": 338,
-    "plannedDiagram": 284,
+    "assessed": 1070,
+    "plannedVisual": 363,
+    "plannedDiagram": 309,
     "plannedLab": 115,
-    "excluded": 628,
-    "notAssessed": 342,
-    "withDiagram": 284,
+    "excluded": 707,
+    "notAssessed": 238,
+    "withDiagram": 309,
     "withLab": 115,
     "withBoth": 61,
-    "withAny": 338,
+    "withAny": 363,
     "plannedNotDelivered": 0,
-    "placements": 286,
+    "placements": 311,
     "withInteractiveDiagram": 0,
     "withSimulation": 115,
     "withLabActivity": 0
@@ -25880,56 +26555,253 @@
      "totals": {
       "lessons": 33,
       "written": 33,
-      "assessed": 0,
-      "plannedVisual": 0,
-      "plannedDiagram": 0,
+      "assessed": 33,
+      "plannedVisual": 9,
+      "plannedDiagram": 9,
       "plannedLab": 0,
-      "excluded": 0,
-      "notAssessed": 33,
-      "withDiagram": 0,
+      "excluded": 24,
+      "notAssessed": 0,
+      "withDiagram": 9,
       "withLab": 0,
       "withBoth": 0,
-      "withAny": 0,
+      "withAny": 9,
       "plannedNotDelivered": 0,
-      "placements": 0,
+      "placements": 9,
       "withInteractiveDiagram": 0,
       "withSimulation": 0,
       "withLabActivity": 0
      },
      "lessons": [
-      {"id":"u24-01","title":"Fundamental particles","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-02","title":"Quarks and leptons","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-03","title":"Fermions and bosons","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-04","title":"Fundamental interactions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-05","title":"Electromagnetic interaction","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-06","title":"Weak interaction","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-07","title":"Strong interaction","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-08","title":"Gravitational interaction","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-09","title":"Standard Model","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-10","title":"Particle generations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-11","title":"Quark flavours and colour charge","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-12","title":"Hadrons, baryons and mesons","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-13","title":"Antimatter and antiparticles","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-14","title":"Particle decay","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-15","title":"Conservation laws in particle reactions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-16","title":"Feynman diagrams","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-17","title":"Quantum electrodynamics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-18","title":"Quantum chromodynamics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-19","title":"Electroweak theory","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-20","title":"Higgs mechanism","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-21","title":"Higgs boson","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-22","title":"Neutrino oscillations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-23","title":"CP violation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-24","title":"Symmetry breaking","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-25","title":"Particle accelerators","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-26","title":"Collider experiments","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-27","title":"Particle detectors","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-28","title":"Scattering experiments","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-29","title":"Beyond the Standard Model","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-30","title":"Supersymmetry","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-31","title":"Grand unified theories","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-32","title":"Dark matter candidates","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-33","title":"Open questions in particle physics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}}
+      {"id":"u24-01","title":"Fundamental particles","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a list or classification that a picture would not teach"}},
+      {
+       "id": "u24-02",
+       "title": "Quarks and leptons",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer particle-table: the fermions in three generations with charge, spin and mass, and the bosons that act on them (a labelled grid of cells)"}
+      },
+      {"id":"u24-03","title":"Fermions and bosons","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a list or classification that a picture would not teach"}},
+      {
+       "id": "u24-04",
+       "title": "Fundamental interactions",
+       "written": true,
+       "diagrams": [{"id":"phys-u24-interaction-strengths","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u24-interaction-strengths"]}
+      },
+      {
+       "id": "u24-05",
+       "title": "Electromagnetic interaction",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {
+        "verdict": "none",
+        "reason": "needs renderer feynman: Compton scattering and e⁺e⁻ → γγ: lines and vertices (fermion arrows, wavy photon or W, curly gluon, dashed Higgs) with charge and quantum numbers checked at each vertex"
+       }
+      },
+      {
+       "id": "u24-06",
+       "title": "Weak interaction",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {
+        "verdict": "none",
+        "reason": "needs renderer feynman: neutron beta decay at the quark level, d → u + W⁻ → e⁻ ν̄ₑ: lines and vertices (fermion arrows, wavy photon or W, curly gluon, dashed Higgs) with charge and quantum numbers checked at each vertex"
+       }
+      },
+      {
+       "id": "u24-07",
+       "title": "Strong interaction",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer string-breaking: a gluon flux tube stretching and snapping into a quark-antiquark pair, and a jet of hadrons (energy in the tube against separation)"}
+      },
+      {
+       "id": "u24-08",
+       "title": "Gravitational interaction",
+       "written": true,
+       "diagrams": [{"id":"phys-u24-energy-ladder","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u24-energy-ladder"]}
+      },
+      {
+       "id": "u24-09",
+       "title": "Standard Model",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer particle-table: the fermions in three generations with charge, spin and mass, and the bosons that act on them (a labelled grid of cells)"}
+      },
+      {
+       "id": "u24-10",
+       "title": "Particle generations",
+       "written": true,
+       "diagrams": [{"id":"phys-u24-fermion-masses","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u24-fermion-masses"]}
+      },
+      {
+       "id": "u24-11",
+       "title": "Quark flavours and colour charge",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"the worked example is the sum N_c Σq² = 2; the lesson gives no thresholds or other plateau values to draw, and the colour-factor argument is carried by the text"}
+      },
+      {
+       "id": "u24-12",
+       "title": "Hadrons, baryons and mesons",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer multiplet: the baryon octet and decuplet and the meson nonet as strangeness-charge weight diagrams with quark content"}
+      },
+      {
+       "id": "u24-13",
+       "title": "Antimatter and antiparticles",
+       "written": true,
+       "diagrams": [{"id":"phys-u24-annihilation","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u24-annihilation"]}
+      },
+      {"id":"u24-14","title":"Particle decay","written":true,"diagrams":[{"id":"phys-u24-pion-survival","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["phys-u24-pion-survival"]}},
+      {
+       "id": "u24-15",
+       "title": "Conservation laws in particle reactions",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer reaction-ledger: a reaction with charge, baryon number, lepton number and strangeness totalled on each side, flagging the one that fails"}
+      },
+      {
+       "id": "u24-16",
+       "title": "Feynman diagrams",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {
+        "verdict": "none",
+        "reason": "needs renderer feynman: Møller scattering, e⁺e⁻ → μ⁺μ⁻ and Compton scattering with the vertex count and amplitude order: lines and vertices (fermion arrows, wavy photon or W, curly gluon, dashed Higgs) with charge and quantum numbers checked at each vertex"
+       }
+      },
+      {
+       "id": "u24-17",
+       "title": "Quantum electrodynamics",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer feynman: the vacuum-polarisation loop that makes α run (and the electron-photon vertex); the numbers are in the text"}
+      },
+      {
+       "id": "u24-18",
+       "title": "Quantum chromodynamics",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer string-breaking: see u24-07; the text's confinement argument is about the energy stored in the flux tube"}
+      },
+      {
+       "id": "u24-19",
+       "title": "Electroweak theory",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a calculation method, carried by the worked example; a picture would not add to it"}
+      },
+      {
+       "id": "u24-20",
+       "title": "Higgs mechanism",
+       "written": true,
+       "diagrams": [{"id":"phys-u24-higgs-potential","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u24-higgs-potential"]}
+      },
+      {
+       "id": "u24-21",
+       "title": "Higgs boson",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer bars: the Higgs branching fractions bb̄ 58%, WW* 21%, ττ 6%, γγ 0.2% and the rest as bars summing to 100%"}
+      },
+      {
+       "id": "u24-22",
+       "title": "Neutrino oscillations",
+       "written": true,
+       "diagrams": [{"id":"phys-u24-oscillation-probability","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u24-oscillation-probability"]}
+      },
+      {
+       "id": "u24-23",
+       "title": "CP violation",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"CP violation is an argument about asymmetries (10⁻²⁰ against 10⁻¹⁰) with no geometry to draw; the Sakharov conditions are a list"}
+      },
+      {
+       "id": "u24-24",
+       "title": "Symmetry breaking",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"the symmetric-potential picture is drawn in u24-20; the pion-mass argument is carried by the text"}
+      },
+      {
+       "id": "u24-25",
+       "title": "Particle accelerators",
+       "written": true,
+       "diagrams": [{"id":"phys-u24-bending-radius","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u24-bending-radius"]}
+      },
+      {
+       "id": "u24-26",
+       "title": "Collider experiments",
+       "written": true,
+       "diagrams": [{"id":"phys-u24-collider-energy","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u24-collider-energy"]}
+      },
+      {
+       "id": "u24-27",
+       "title": "Particle detectors",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {
+        "verdict": "none",
+        "reason": "needs renderer detector-section: concentric tracker, calorimeters and muon chambers with the paths of an electron, photon, muon, hadron and neutrino; the p = 0.3BR example is a calculation"
+       }
+      },
+      {
+       "id": "u24-28",
+       "title": "Scattering experiments",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a calculation method, carried by the worked example; a picture would not add to it"}
+      },
+      {"id":"u24-29","title":"Beyond the Standard Model","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a list or classification that a picture would not teach"}},
+      {"id":"u24-30","title":"Supersymmetry","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"the coupling-unification plot is needed in u24-31 (renderer missing)"}},
+      {
+       "id": "u24-31",
+       "title": "Grand unified theories",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {
+        "verdict": "none",
+        "reason": "needs renderer running-couplings: the three inverse couplings against energy, nearly meeting near 10¹⁴–10¹⁶ GeV in the Standard Model and meeting in minimal supersymmetry (the lesson gives no coupling values, only the energies)"
+       }
+      },
+      {"id":"u24-32","title":"Dark matter candidates","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"an argument about backgrounds and underground depth, carried in the text"}},
+      {"id":"u24-33","title":"Open questions in particle physics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a list or classification that a picture would not teach"}}
      ]
     },
     {
@@ -28424,42 +29296,98 @@
      "totals": {
       "lessons": 19,
       "written": 19,
-      "assessed": 0,
-      "plannedVisual": 0,
-      "plannedDiagram": 0,
+      "assessed": 19,
+      "plannedVisual": 6,
+      "plannedDiagram": 6,
       "plannedLab": 0,
-      "excluded": 0,
-      "notAssessed": 19,
-      "withDiagram": 0,
+      "excluded": 13,
+      "notAssessed": 0,
+      "withDiagram": 6,
       "withLab": 0,
       "withBoth": 0,
-      "withAny": 0,
+      "withAny": 6,
       "plannedNotDelivered": 0,
-      "placements": 0,
+      "placements": 6,
       "withInteractiveDiagram": 0,
       "withSimulation": 0,
       "withLabActivity": 0
      },
      "lessons": [
-      {"id":"u43-01","title":"Ionisation chambers","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u43-02","title":"Geiger–Müller counters","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u43-03","title":"Scintillation detectors","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u43-04","title":"Semiconductor radiation detectors","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u43-05","title":"Photomultiplier tubes","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u43-06","title":"Silicon tracking detectors","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u43-07","title":"Time projection chambers","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u43-08","title":"Calorimeters","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u43-09","title":"Cherenkov detectors","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u43-10","title":"Time-of-flight measurements","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u43-11","title":"Particle identification","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u43-12","title":"Trigger systems","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u43-13","title":"Event reconstruction","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u43-14","title":"Background suppression","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u43-15","title":"Detector calibration","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u43-16","title":"Radiation spectroscopy","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u43-17","title":"Accelerator instrumentation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u43-18","title":"Collider data analysis","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u43-19","title":"Statistical significance of discoveries","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}}
+      {
+       "id": "u43-01",
+       "title": "Ionisation chambers",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a calculation method, carried by the worked example; a picture would not add to it"}
+      },
+      {"id":"u43-02","title":"Geiger–Müller counters","written":true,"diagrams":[{"id":"phys-u43-dead-time","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["phys-u43-dead-time"]}},
+      {
+       "id": "u43-03",
+       "title": "Scintillation detectors",
+       "written": true,
+       "diagrams": [{"id":"phys-u43-compton-edge","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u43-compton-edge"]}
+      },
+      {
+       "id": "u43-04",
+       "title": "Semiconductor radiation detectors",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a calculation method, carried by the worked example; a picture would not add to it"}
+      },
+      {"id":"u43-05","title":"Photomultiplier tubes","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"an argument or explanation, carried in the text"}},
+      {"id":"u43-06","title":"Silicon tracking detectors","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"an argument or explanation, carried in the text"}},
+      {"id":"u43-07","title":"Time projection chambers","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"an argument or explanation, carried in the text"}},
+      {"id":"u43-08","title":"Calorimeters","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"an argument or explanation, carried in the text"}},
+      {
+       "id": "u43-09",
+       "title": "Cherenkov detectors",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a calculation method, carried by the worked example; a picture would not add to it"}
+      },
+      {
+       "id": "u43-10",
+       "title": "Time-of-flight measurements",
+       "written": true,
+       "diagrams": [{"id":"phys-u43-tof-separation","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u43-tof-separation"]}
+      },
+      {
+       "id": "u43-11",
+       "title": "Particle identification",
+       "written": true,
+       "diagrams": [{"id":"phys-u43-beta-momentum","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u43-beta-momentum"]}
+      },
+      {"id":"u43-12","title":"Trigger systems","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"an argument or explanation, carried in the text"}},
+      {"id":"u43-13","title":"Event reconstruction","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"an argument or explanation, carried in the text"}},
+      {
+       "id": "u43-14",
+       "title": "Background suppression",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a calculation method, carried by the worked example; a picture would not add to it"}
+      },
+      {"id":"u43-15","title":"Detector calibration","written":true,"diagrams":[{"id":"phys-u43-calibration","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["phys-u43-calibration"]}},
+      {"id":"u43-16","title":"Radiation spectroscopy","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"an argument or explanation, carried in the text"}},
+      {"id":"u43-17","title":"Accelerator instrumentation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"an argument or explanation, carried in the text"}},
+      {"id":"u43-18","title":"Collider data analysis","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"an argument or explanation, carried in the text"}},
+      {
+       "id": "u43-19",
+       "title": "Statistical significance of discoveries",
+       "written": true,
+       "diagrams": [{"id":"phys-u43-significance","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u43-significance"]}
+      }
      ]
     },
     {
@@ -28614,41 +29542,139 @@
      "totals": {
       "lessons": 18,
       "written": 18,
-      "assessed": 0,
-      "plannedVisual": 0,
-      "plannedDiagram": 0,
+      "assessed": 18,
+      "plannedVisual": 3,
+      "plannedDiagram": 3,
       "plannedLab": 0,
-      "excluded": 0,
-      "notAssessed": 18,
-      "withDiagram": 0,
+      "excluded": 15,
+      "notAssessed": 0,
+      "withDiagram": 3,
       "withLab": 0,
       "withBoth": 0,
-      "withAny": 0,
+      "withAny": 3,
       "plannedNotDelivered": 0,
-      "placements": 0,
+      "placements": 3,
       "withInteractiveDiagram": 0,
       "withSimulation": 0,
       "withLabActivity": 0
      },
      "lessons": [
-      {"id":"u47-01","title":"Mechanical vibration analysis","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u47-02","title":"Structural dynamics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u47-03","title":"Resonance and damping","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u47-04","title":"Modal analysis","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u47-05","title":"Noise control","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u47-06","title":"Acoustic materials","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u47-07","title":"Sound propagation in structures","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u47-08","title":"Aeroacoustics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u47-09","title":"Underwater acoustics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u47-10","title":"Vibration isolation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u47-11","title":"Seismic engineering physics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u47-12","title":"Shock waves","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u47-13","title":"Impact mechanics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u47-14","title":"Tribology and friction","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u47-15","title":"Fluid-structure interaction","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u47-16","title":"Engineering measurement systems","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u47-17","title":"Failure analysis","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u47-18","title":"Reliability and physical modelling","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}}
+      {
+       "id": "u47-01",
+       "title": "Mechanical vibration analysis",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a calculation method, carried by the worked example; a picture would not add to it"}
+      },
+      {
+       "id": "u47-02",
+       "title": "Structural dynamics",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a calculation method, carried by the worked example; a picture would not add to it"}
+      },
+      {
+       "id": "u47-03",
+       "title": "Resonance and damping",
+       "written": true,
+       "diagrams": [{"id":"phys-u47-resonance-peak","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u47-resonance-peak"]}
+      },
+      {"id":"u47-04","title":"Modal analysis","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a calculation method, carried by the worked example; a picture would not add to it"}},
+      {"id":"u47-05","title":"Noise control","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a calculation method, carried by the worked example; a picture would not add to it"}},
+      {
+       "id": "u47-06",
+       "title": "Acoustic materials",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a calculation method, carried by the worked example; a picture would not add to it"}
+      },
+      {
+       "id": "u47-07",
+       "title": "Sound propagation in structures",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a calculation method, carried by the worked example; a picture would not add to it"}
+      },
+      {"id":"u47-08","title":"Aeroacoustics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a calculation method, carried by the worked example; a picture would not add to it"}},
+      {
+       "id": "u47-09",
+       "title": "Underwater acoustics",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a calculation method, carried by the worked example; a picture would not add to it"}
+      },
+      {
+       "id": "u47-10",
+       "title": "Vibration isolation",
+       "written": true,
+       "diagrams": [{"id":"phys-u47-transmissibility","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u47-transmissibility"]}
+      },
+      {
+       "id": "u47-11",
+       "title": "Seismic engineering physics",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a calculation method, carried by the worked example; a picture would not add to it"}
+      },
+      {"id":"u47-12","title":"Shock waves","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a calculation method, carried by the worked example; a picture would not add to it"}},
+      {
+       "id": "u47-13",
+       "title": "Impact mechanics",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a calculation method, carried by the worked example; a picture would not add to it"}
+      },
+      {
+       "id": "u47-14",
+       "title": "Tribology and friction",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a calculation method, carried by the worked example; a picture would not add to it"}
+      },
+      {
+       "id": "u47-15",
+       "title": "Fluid-structure interaction",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a calculation method, carried by the worked example; a picture would not add to it"}
+      },
+      {
+       "id": "u47-16",
+       "title": "Engineering measurement systems",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a calculation method, carried by the worked example; a picture would not add to it"}
+      },
+      {
+       "id": "u47-17",
+       "title": "Failure analysis",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a calculation method, carried by the worked example; a picture would not add to it"}
+      },
+      {
+       "id": "u47-18",
+       "title": "Reliability and physical modelling",
+       "written": true,
+       "diagrams": [{"id":"phys-u47-reliability","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u47-reliability"]}
+      }
      ]
     },
     {
@@ -28801,40 +29827,96 @@
      "totals": {
       "lessons": 17,
       "written": 17,
-      "assessed": 0,
-      "plannedVisual": 0,
-      "plannedDiagram": 0,
+      "assessed": 17,
+      "plannedVisual": 3,
+      "plannedDiagram": 3,
       "plannedLab": 0,
-      "excluded": 0,
-      "notAssessed": 17,
-      "withDiagram": 0,
+      "excluded": 14,
+      "notAssessed": 0,
+      "withDiagram": 3,
       "withLab": 0,
       "withBoth": 0,
-      "withAny": 0,
+      "withAny": 3,
       "plannedNotDelivered": 0,
-      "placements": 0,
+      "placements": 3,
       "withInteractiveDiagram": 0,
       "withSimulation": 0,
       "withLabActivity": 0
      },
      "lessons": [
-      {"id":"u51-01","title":"Explaining physical concepts clearly","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u51-02","title":"Scientific diagrams and representations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u51-03","title":"Deriving equations from first principles","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u51-04","title":"Translating physical situations into mathematical models","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u51-05","title":"Estimation and order-of-magnitude reasoning","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u51-06","title":"Solving multi-step problems","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u51-07","title":"Interpreting graphs and experimental data","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u51-08","title":"Demonstrations and practical investigations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u51-09","title":"Laboratory report writing","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u51-10","title":"Scientific presentations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u51-11","title":"Peer review and research critique","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u51-12","title":"Communicating uncertainty","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u51-13","title":"Public engagement with physics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u51-14","title":"Science communication and misinformation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u51-15","title":"Teaching and assessing conceptual understanding","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u51-16","title":"Identifying misconceptions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u51-17","title":"Interdisciplinary communication","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}}
+      {"id":"u51-01","title":"Explaining physical concepts clearly","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a skill, strategy or communication topic, carried in the text"}},
+      {
+       "id": "u51-02",
+       "title": "Scientific diagrams and representations",
+       "written": true,
+       "diagrams": [{"id":"phys-u51-incline-fbd","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u51-incline-fbd"]}
+      },
+      {
+       "id": "u51-03",
+       "title": "Deriving equations from first principles",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a skill, strategy or communication topic, carried in the text"}
+      },
+      {
+       "id": "u51-04",
+       "title": "Translating physical situations into mathematical models",
+       "written": true,
+       "diagrams": [{"id":"phys-u51-skydiver","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u51-skydiver"]}
+      },
+      {
+       "id": "u51-05",
+       "title": "Estimation and order-of-magnitude reasoning",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a skill, strategy or communication topic, carried in the text"}
+      },
+      {"id":"u51-06","title":"Solving multi-step problems","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a skill, strategy or communication topic, carried in the text"}},
+      {
+       "id": "u51-07",
+       "title": "Interpreting graphs and experimental data",
+       "written": true,
+       "diagrams": [{"id":"phys-u51-loglog","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u51-loglog"]}
+      },
+      {
+       "id": "u51-08",
+       "title": "Demonstrations and practical investigations",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a skill, strategy or communication topic, carried in the text"}
+      },
+      {"id":"u51-09","title":"Laboratory report writing","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a skill, strategy or communication topic, carried in the text"}},
+      {"id":"u51-10","title":"Scientific presentations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a skill, strategy or communication topic, carried in the text"}},
+      {"id":"u51-11","title":"Peer review and research critique","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a skill, strategy or communication topic, carried in the text"}},
+      {"id":"u51-12","title":"Communicating uncertainty","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a skill, strategy or communication topic, carried in the text"}},
+      {"id":"u51-13","title":"Public engagement with physics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a skill, strategy or communication topic, carried in the text"}},
+      {
+       "id": "u51-14",
+       "title": "Science communication and misinformation",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a skill, strategy or communication topic, carried in the text"}
+      },
+      {
+       "id": "u51-15",
+       "title": "Teaching and assessing conceptual understanding",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a skill, strategy or communication topic, carried in the text"}
+      },
+      {"id":"u51-16","title":"Identifying misconceptions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a skill, strategy or communication topic, carried in the text"}},
+      {"id":"u51-17","title":"Interdisciplinary communication","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a skill, strategy or communication topic, carried in the text"}}
      ]
     },
     {
@@ -28844,40 +29926,152 @@
      "totals": {
       "lessons": 17,
       "written": 17,
-      "assessed": 0,
-      "plannedVisual": 0,
-      "plannedDiagram": 0,
+      "assessed": 17,
+      "plannedVisual": 4,
+      "plannedDiagram": 4,
       "plannedLab": 0,
-      "excluded": 0,
-      "notAssessed": 17,
-      "withDiagram": 0,
+      "excluded": 13,
+      "notAssessed": 0,
+      "withDiagram": 4,
       "withLab": 0,
       "withBoth": 0,
-      "withAny": 0,
+      "withAny": 4,
       "plannedNotDelivered": 0,
-      "placements": 0,
+      "placements": 4,
       "withInteractiveDiagram": 0,
       "withSimulation": 0,
       "withLabActivity": 0
      },
      "lessons": [
-      {"id":"u52-01","title":"Identifying relevant physical principles","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u52-02","title":"Defining systems and boundaries","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u52-03","title":"Choosing coordinate systems","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u52-04","title":"Drawing free-body and field diagrams","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u52-05","title":"Applying conservation laws","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u52-06","title":"Deriving equations from fundamental laws","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u52-07","title":"Checking units and dimensions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u52-08","title":"Evaluating limiting cases","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u52-09","title":"Estimating numerical answers","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u52-10","title":"Analysing approximations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u52-11","title":"Solving coupled equations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u52-12","title":"Selecting appropriate mathematical techniques","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u52-13","title":"Comparing analytical and numerical solutions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u52-14","title":"Sensitivity analysis","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u52-15","title":"Physical interpretation of mathematical results","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u52-16","title":"Error checking and independent verification","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u52-17","title":"Communicating assumptions and limitations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}}
+      {
+       "id": "u52-01",
+       "title": "Identifying relevant physical principles",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a problem-solving method, carried by the worked example; a picture would not add to it"}
+      },
+      {
+       "id": "u52-02",
+       "title": "Defining systems and boundaries",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a problem-solving method, carried by the worked example; a picture would not add to it"}
+      },
+      {
+       "id": "u52-03",
+       "title": "Choosing coordinate systems",
+       "written": true,
+       "diagrams": [{"id":"phys-u52-tilted-axes","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u52-tilted-axes"]}
+      },
+      {
+       "id": "u52-04",
+       "title": "Drawing free-body and field diagrams",
+       "written": true,
+       "diagrams": [{"id":"phys-u52-two-strings","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u52-two-strings"]}
+      },
+      {
+       "id": "u52-05",
+       "title": "Applying conservation laws",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a problem-solving method, carried by the worked example; a picture would not add to it"}
+      },
+      {
+       "id": "u52-06",
+       "title": "Deriving equations from fundamental laws",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a problem-solving method, carried by the worked example; a picture would not add to it"}
+      },
+      {
+       "id": "u52-07",
+       "title": "Checking units and dimensions",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a problem-solving method, carried by the worked example; a picture would not add to it"}
+      },
+      {"id":"u52-08","title":"Evaluating limiting cases","written":true,"diagrams":[{"id":"phys-u52-limits","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["phys-u52-limits"]}},
+      {
+       "id": "u52-09",
+       "title": "Estimating numerical answers",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a problem-solving method, carried by the worked example; a picture would not add to it"}
+      },
+      {
+       "id": "u52-10",
+       "title": "Analysing approximations",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a problem-solving method, carried by the worked example; a picture would not add to it"}
+      },
+      {
+       "id": "u52-11",
+       "title": "Solving coupled equations",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a problem-solving method, carried by the worked example; a picture would not add to it"}
+      },
+      {
+       "id": "u52-12",
+       "title": "Selecting appropriate mathematical techniques",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a problem-solving method, carried by the worked example; a picture would not add to it"}
+      },
+      {
+       "id": "u52-13",
+       "title": "Comparing analytical and numerical solutions",
+       "written": true,
+       "diagrams": [{"id":"phys-u52-euler-check","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u52-euler-check"]}
+      },
+      {
+       "id": "u52-14",
+       "title": "Sensitivity analysis",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a problem-solving method, carried by the worked example; a picture would not add to it"}
+      },
+      {
+       "id": "u52-15",
+       "title": "Physical interpretation of mathematical results",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a problem-solving method, carried by the worked example; a picture would not add to it"}
+      },
+      {
+       "id": "u52-16",
+       "title": "Error checking and independent verification",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a problem-solving method, carried by the worked example; a picture would not add to it"}
+      },
+      {
+       "id": "u52-17",
+       "title": "Communicating assumptions and limitations",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a problem-solving method, carried by the worked example; a picture would not add to it"}
+      }
      ]
     },
     {

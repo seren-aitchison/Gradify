@@ -26,6 +26,7 @@ X: Explore the sums 1, 1 + 3, 1 + 3 + 5, … and form a conjecture.
 > Values: 1, 4, 9, 16, 25
 > These are perfect squares: the sum of the first n odd numbers seems to be n^{2}
 > Test more cases, then prove it (by induction or by arranging dots in a square)
+D: maths-u26-odd-sums
 K: Mathematical reasoning cycles through exploring, conjecturing, testing and proving; specialising, generalising, invariants and counterexamples are key habits; intuition and rigour work together.
 !: Treating a pattern that fits several cases as proved.
 Q: What is a conjecture? | A statement believed true but not yet proved.
@@ -100,6 +101,7 @@ X: "If it's a square, it has four sides. This shape has four sides. So it's a sq
 > Form: P → Q, Q; therefore P
 > This is affirming the consequent
 > Invalid: a rectangle or rhombus has four sides without being a square
+D: maths-u26-four-sides
 K: Deduction guarantees conclusions from true premises; modus ponens and tollens are valid; affirming the consequent and denying the antecedent are fallacies; soundness adds true premises.
 !: Affirming the consequent: reasoning from Q back to P.
 Q: What does modus tollens conclude from P → Q and not Q? | Not P.
@@ -136,6 +138,7 @@ X: Joining n points on a circle with all chords gives 1, 2, 4, 8, 16 regions for
 > The pattern suggests 2^{5} = 32 regions
 > Counting carefully (points in general position) gives 31
 > The doubling pattern fails, showing why proofs are needed
+D: maths-u26-circle-regions
 K: Inductive reasoning generalises from cases to probable conclusions; it suggests conjectures; famous patterns fail later; mathematical induction is deductive; strength depends on evidence quality.
 !: Confusing inductive generalisation with mathematical induction.
 Q: Is mathematical induction a form of inductive reasoning? | No, it's deductive.
@@ -210,6 +213,7 @@ X: A test is 90% sensitive and 90% specific for a disease with prevalence 1%. Wh
 > Of 1000 people: 10 have the disease, 9 test positive
 > Of 990 without it, 10% (99) test positive
 > True positives 9/(9 + 99) ≈ 8%: most positives are false
+D: maths-u26-screening-tree
 K: Quantitative reasoning uses proportions, rates, units and estimation; base rates, relative versus absolute risk and Simpson's paradox are classic traps; natural frequencies clarify reasoning.
 !: Reporting only relative risk, which can make tiny absolute changes sound dramatic.
 Q: What's the difference between a percentage-point and a percentage change? | Percentage points are absolute differences; percentage change is relative.
@@ -359,6 +363,7 @@ X: A rectangle measures 10.0 ± 0.1 cm by 5.0 ± 0.1 cm. Find its area and uncer
 > Area = 50.0 cm^{2}
 > Relative uncertainties: 0.1/10 = 1% and 0.1/5 = 2%; combined √(1^{2} + 2^{2}) ≈ 2.24%
 > δA ≈ 0.0224 × 50 ≈ 1.1 cm^{2}, so A = 50 ± 1 cm^{2}
+D: maths-u26-area-uncertainty
 K: Uncertainties add in quadrature for independent sums (absolute) and products (relative); powers multiply relative error; the partial-derivative formula is general; correlations and non-linearity need care.
 !: Adding uncertainties linearly for independent errors, which overstates the combined uncertainty.
 Q: How do relative uncertainties combine for a product of independent quantities? | In quadrature (square root of the sum of squares).
@@ -542,6 +547,7 @@ X: A second-order code gives errors 0.016 at h = 0.1 and 0.004 at h = 0.05. Does
 > Ratio of errors = 0.016/0.004 = 4
 > 4 = 2^{p} gives p = 2
 > The observed order matches the theoretical second order
+D: maths-u26-order-of-accuracy
 K: Verification checks code solves its equations correctly; convergence tests, manufactured solutions and conservation checks are core; software practices such as unit tests and CI support it; verify before validating.
 !: Trusting a code because it produces plausible-looking output.
 Q: What does code verification check? | That software correctly solves its mathematical model.
@@ -652,6 +658,7 @@ X: Data follow y = 3x^{2}. How would a log–log plot help confirm this?
 > Taking logs: log y = log 3 + 2 log x
 > A log–log plot is a straight line with slope 2
 > Reading the slope confirms the exponent, and the intercept gives the constant
+D: maths-u26-log-log-line
 K: Visualisation reveals patterns and communicates; match the plot type to the question; label clearly, avoid distortion and show uncertainty; log scales reveal power laws.
 !: Truncating a bar chart's axis so small differences look dramatic.
 Q: What does a straight line on a log–log plot indicate? | A power law relationship.

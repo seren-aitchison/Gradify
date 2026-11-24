@@ -1,0 +1,88 @@
+{
+ "id": "maths-u26-screening-tree",
+ "renderer": "prob-tree",
+ "course": "maths",
+ "unit": "u26",
+ "lesson": "Quantitative Reasoning",
+ "title": "Most positives are false",
+ "caption": "Of 1000 people 9 are ill and test positive, but 98.99999999999997 healthy people also test positive (10% of 990). Only 9 of 107.99999999999997 positives are true: 8.3%, about 8%.",
+ "alt": "A probability tree: ill with probability 1/100 or healthy 99/100, then positive or negative on each branch, listing the four outcomes.",
+ "description": [
+  "Split by prevalence: 1/100 ill, 99/100 healthy.",
+  "Ill people test positive with probability 9/10.",
+  "Healthy people test positive with probability 1/10.",
+  "True positives 9/1000 against false positives 99/1000: 9 out of 108 positives are true."
+ ],
+ "tree": {
+  "children": [
+   {
+    "label": "ill",
+    "p": "1/100",
+    "children": [
+     {
+      "label": "+",
+      "p": "9/10"
+     },
+     {
+      "label": "−",
+      "p": "1/10"
+     }
+    ]
+   },
+   {
+    "label": "healthy",
+    "p": "99/100",
+    "children": [
+     {
+      "label": "+",
+      "p": "1/10"
+     },
+     {
+      "label": "−",
+      "p": "9/10"
+     }
+    ]
+   }
+  ]
+ },
+ "stages": [
+  "Disease",
+  "Test"
+ ],
+ "outcomes": true,
+ "checks": [
+  {
+   "type": "outcome",
+   "path": [
+    "ill",
+    "+"
+   ],
+   "p": "9/1000"
+  },
+  {
+   "type": "outcome",
+   "path": [
+    "healthy",
+    "+"
+   ],
+   "p": "99/1000"
+  },
+  {
+   "type": "event",
+   "paths": [
+    [
+     "ill",
+     "+"
+    ],
+    [
+     "healthy",
+     "+"
+    ]
+   ],
+   "p": "108/1000"
+  }
+ ],
+ "fromLesson": [
+  "9/(9 + 99)"
+ ]
+}

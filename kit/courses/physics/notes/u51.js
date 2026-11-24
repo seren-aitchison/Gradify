@@ -47,6 +47,7 @@ E: ΣF = ma :: read directly from a free-body diagram
 X: A box rests on a 30° incline with friction. Which forces go on its free-body diagram?
 > Weight mg (vertically down), normal force N (perpendicular to slope), friction f (up the slope)
 > No "force of motion" or "downhill force" as separate arrows: the component of weight along the slope does that
+D: phys-u51-incline-fbd
 X: Why do field lines never cross?
 > At any point the field has one direction; crossing lines would imply two directions
 K: Diagrams encode physics visually; correct, labelled, uncluttered diagrams make reasoning easier and errors obvious.
@@ -102,6 +103,7 @@ H: Example: a falling skydiver
 P: Forces: weight mg and drag ½ρC_{d}Av^{2}. Newton's second law gives m dv/dt = mg − ½ρC_{d}Av^{2}. Terminal velocity v_{t} = √(2mg/(ρC_{d}A)) ≈ 55 m s^{-1} for a spread-eagle skydiver. The model neglects changing air density, body posture changes and wind, which could be added. Comparing predicted terminal velocity to measured data validates the model.
 X: Estimate a skydiver's terminal velocity (m = 80 kg, C_{d} = 1.0, A = 0.7 m^{2}, ρ = 1.2 kg m^{-3}).
 > v_{t} = √(2 × 80 × 9.81/(1.2 × 1.0 × 0.7)) ≈ √1869 ≈ 43 m s^{-1}
+D: phys-u51-skydiver
 X: Is drag important for a dropped steel ball over 2 m?
 > Speed at impact ~6 m s^{-1}; drag force is a tiny fraction of weight for a dense ball: neglect it
 K: Modelling means idealising wisely, applying laws, solving and validating; compare effect sizes to decide what to neglect.
@@ -185,6 +187,7 @@ H: Pitfalls
 P: Watch for outliers (investigate, don't just delete), non-zero intercepts (systematic error), extrapolation beyond data, correlation without causation, and misleading axes (non-zero starts, inconsistent scales). Residual plots reveal whether a model fits. Report uncertainties in gradients and derived quantities.
 X: A log–log plot of period against orbit radius has gradient 1.5. Interpretation?
 > T ∝ r^{1.5}: Kepler's third law (T^{2} ∝ r^{3})
+D: phys-u51-loglog
 X: A pendulum T^{2} vs L graph has gradient 4.02 s^{2} m^{-1}. Value of g?
 > T^{2} = (4π^{2}/g)L ⇒ g = 4π^{2}/4.02 ≈ 9.82 m s^{-2}
 K: Gradients and areas carry physical meaning; linearise data to extract constants and quantify uncertainties.

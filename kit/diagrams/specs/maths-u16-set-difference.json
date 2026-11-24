@@ -1,0 +1,55 @@
+{
+ "id": "maths-u16-set-difference",
+ "renderer": "venn",
+ "course": "maths",
+ "unit": "u16",
+ "lesson": "Set Operations",
+ "title": "A \\ B, B \\ A and A Δ B",
+ "caption": "With A = {1, 2, 3, 4} and B = {3, 4, 5}: A \\ B = {1, 2} is the part of A outside B, B \\ A = {5} the part of B outside A, and the symmetric difference A Δ B = {1, 2, 5} joins the two, leaving out the shared 3 and 4.",
+ "alt": "A two-circle Venn diagram: 1 and 2 only in A, 3 and 4 in both, 5 only in B.",
+ "description": [
+  "Place each element: 1 and 2 are only in A; 3 and 4 are in both; 5 is only in B.",
+  "A \\ B is what is left of A once the overlap is removed: {1, 2}.",
+  "B \\ A is {5}.",
+  "A Δ B takes both outer parts: {1, 2, 5}."
+ ],
+ "sets": [
+  {
+   "name": "A",
+   "label": "A"
+  },
+  {
+   "name": "B",
+   "label": "B"
+  }
+ ],
+ "regions": {
+  "A": 2,
+  "AB": 2,
+  "B": 1,
+  "": 0
+ },
+ "checks": [
+  {
+   "type": "count",
+   "event": "A∩B′",
+   "n": 2,
+   "name": "A \\ B = {1, 2} has 2 elements"
+  },
+  {
+   "type": "count",
+   "event": "B∩A′",
+   "n": 1,
+   "name": "B \\ A = {5} has 1 element"
+  },
+  {
+   "type": "count",
+   "event": "(A∩B′)∪(B∩A′)",
+   "n": 3,
+   "name": "A Δ B = {1, 2, 5} has 3 elements"
+  }
+ ],
+ "fromLesson": [
+  "A Δ B = {1, 2, 5}"
+ ]
+}

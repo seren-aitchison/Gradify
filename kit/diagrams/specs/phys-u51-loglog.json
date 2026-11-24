@@ -1,0 +1,108 @@
+{
+ "id": "phys-u51-loglog",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u51",
+ "lesson": "Interpreting graphs and experimental data",
+ "title": "A log–log gradient of 1.5",
+ "caption": "If log T = 1.5 log r + c, then T = 10^c r^1.5: a power law. Planets (r in AU, T in years) lie on a straight line of gradient 1.5 through the origin, since Earth has r = T = 1. Squaring gives T² ∝ r³, Kepler's third law.",
+ "alt": "Straight line of log T against log r with gradient 1.5 through the origin, with points for Earth, Mars and Jupiter.",
+ "description": [
+  "Plot log₁₀ T against log₁₀ r.",
+  "Gradient 1.5 means T ∝ r^1.5.",
+  "Mars: log r = 0.183, log T = 0.2745 (T = 1.88 years). Jupiter: log r = 0.7163, log T = 1.0744 (T = 11.9 years).",
+  "T² ∝ r³."
+ ],
+ "range": {
+  "x": [
+   -0.1,
+   0.9
+  ],
+  "y": [
+   -0.1,
+   1.4
+  ]
+ },
+ "ticks": [
+  [
+   0.2,
+   0.4,
+   0.6,
+   0.8
+  ],
+  [
+   0.4,
+   0.8,
+   1.2
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "log r",
+  "log T"
+ ],
+ "curves": [
+  {
+   "expr": "1.5*x",
+   "domain": [
+    -0.05,
+    0.9
+   ],
+   "colour": "a1",
+   "label": "gradient 1.5",
+   "labelAt": [
+    0.55,
+    0.5
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 0,
+   "colour": "a2",
+   "label": "Earth",
+   "dx": 10,
+   "dy": 18
+  },
+  {
+   "x": 0.183,
+   "y": 0.2745,
+   "colour": "a2",
+   "label": "Mars",
+   "dx": -8,
+   "dy": -6,
+   "anchor": "end"
+  },
+  {
+   "x": 0.7163,
+   "y": 1.0744,
+   "colour": "a2",
+   "label": "Jupiter",
+   "dx": -8,
+   "dy": 14,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "slope",
+   "expr": "1.5*x",
+   "x": 0.4,
+   "value": 1.5,
+   "name": "gradient 1.5"
+  },
+  {
+   "type": "point",
+   "expr": "1.5*x",
+   "x": 0.7163,
+   "y": 1.0744,
+   "tol": 0.001,
+   "name": "Jupiter on the line"
+  }
+ ]
+}

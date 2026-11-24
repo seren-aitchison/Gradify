@@ -70,6 +70,7 @@ H: Comparison (relative strength at ~1 fm)
 - **Electromagnetic**: ~1/137; infinite range; photon.
 - **Weak**: ~10^{-6}; range ~10^{-18} m (massive W, Z).
 - **Gravity**: ~10^{-38}; infinite range; graviton (not observed; no quantum theory yet).
+D: phys-u24-interaction-strengths
 H: Unification
 - Electricity + magnetism (Maxwell, 1860s).
 - Electromagnetism + weak = electroweak (Glashow, Weinberg, Salam; confirmed by W and Z discoveries, 1983).
@@ -161,6 +162,7 @@ H: The Planck scale
 E: E_{P} = √(ħc^{5}/G) ≈ 1.2 × 10^{19} GeV; l_{P} ≈ 1.6 × 10^{-35} m
 - Where quantum gravity effects should become strong.
 - Far beyond any accelerator (LHC: 10^{4} GeV).
+D: phys-u24-energy-ladder
 H: Open problems
 P: Combining general relativity with quantum field theory gives non-renormalisable infinities. Candidates include string theory, loop quantum gravity and asymptotic safety. Black hole entropy and Hawking radiation, the information paradox, and the cosmological constant problem are the main theoretical clues; experiments test quantum effects on gravitationally interacting masses at ever smaller scales.
 X: Ratio of gravitational to electric force between two electrons?
@@ -204,6 +206,7 @@ H: Why exactly three?
 P: LEP measured the Z boson's decay width (1989): it allows exactly three types of light neutrinos (2.984 ± 0.008), ruling out a fourth generation with a light neutrino. The cosmic microwave background and Big Bang nucleosynthesis agree. Three generations are also the minimum needed for CP violation in the quark sector (Kobayashi and Maskawa, Nobel 2008).
 H: Mass hierarchy
 - Masses span ~0.5 MeV (electron) to 173 GeV (top), and neutrinos < 1 eV.
+D: phys-u24-fermion-masses
 - Yukawa couplings to the Higgs set the masses; their pattern is unexplained ("flavour puzzle").
 X: Why don't we find muons in ordinary matter?
 > Muons decay (μ → e ν̄_{e} ν_{μ}) with lifetime 2.2 μs
@@ -269,6 +272,7 @@ H: Discovery
 - Antiproton (1955), antineutron (1956), antihydrogen (1995; trapped 2010), antihelium nuclei.
 H: Annihilation and creation
 E: e^{+} + e^{−} → 2γ (each 511 keV, at rest)
+D: phys-u24-annihilation
 E: γ → e^{+} + e^{−} (near a nucleus, E_{γ} > 1.022 MeV)
 H: Uses and puzzles
 P: PET scans use positron annihilation. CERN's antimatter experiments test whether antimatter falls the same way (ALPHA-g, 2023: it falls down, as expected) and whether its spectra match matter's. The universe has essentially no primordial antimatter: explaining this baryon asymmetry needs CP violation beyond the Standard Model's amount.
@@ -297,6 +301,7 @@ H: Branching ratios
 - Higgs: ~58% bb̄, ~21% WW*, ~6% ττ, ~0.2% γγ (rare but clean).
 X: A pion (τ = 26 ns) with γ = 10. Mean decay length?
 > L = γβcτ ≈ 10 × 3 × 10^{8} × 2.6 × 10^{-8} = 78 m
+D: phys-u24-pion-survival
 !: Lifetimes quoted in tables are in the particle's rest frame; lab-frame lifetimes are longer by γ.
 Q: How is decay width related to lifetime? | Γ = ħ/τ.
 Q: Why do cosmic-ray muons reach the ground? | Relativistic time dilation extends their lifetime in Earth's frame.
@@ -424,6 +429,7 @@ M2: Electroweak symmetry is broken by: | The Higgs field | Gravity | Colour | Ne
 S: The Higgs mechanism explains how the W and Z bosons, quarks and charged leptons acquire mass without breaking the underlying gauge symmetry of the theory. A field fills all of space with a nonzero value, and particles interacting with it become massive.
 H: How it works
 - The Higgs field has a "Mexican hat" potential: V = −μ^{2}|φ|^{2} + λ|φ|^{4}.
+D: phys-u24-higgs-potential
 - Its lowest energy is at nonzero |φ| = v/√2, v ≈ 246 GeV: spontaneous symmetry breaking.
 - Three of the field's four components become the longitudinal polarisations of W^{+}, W^{−}, Z (making them massive); the fourth is the Higgs boson.
 - Fermion masses come from Yukawa couplings: m_{f} = y_{f}v/√2 (top quark y ≈ 1).
@@ -478,6 +484,7 @@ H: Parameters and questions
 X: At what L/E is the first oscillation maximum for atmospheric Δm^{2} = 2.5 × 10^{-3} eV^{2}?
 > 1.27 × 2.5 × 10^{-3} × L/E = π/2
 > L/E ≈ 500 km GeV^{-1} (T2K: 295 km at 0.6 GeV)
+D: phys-u24-oscillation-probability
 !: Oscillations depend on mass differences, not absolute masses; they prove neutrinos are massive but don't measure the masses themselves.
 Q: Why do neutrino oscillations prove neutrinos have mass? | Oscillation requires different mass states evolving with different phases.
 Q: How was the solar neutrino problem solved? | SNO measured all flavours, showing electron neutrinos had changed flavour.
@@ -544,6 +551,7 @@ P: Synchrotron light sources produce intense X-rays for protein crystallography 
 X: Radius of a 7 TeV proton in a 8.3 T field?
 > p = 7 TeV/c = 3.7 × 10^{-15} kg m s^{-1}
 > r = p/(eB) = 3.7 × 10^{-15}/(1.6 × 10^{-19} × 8.3) = 2.8 km (LHC bending radius ~2.8 km)
+D: phys-u24-bending-radius
 !: Higher energy needs bigger rings or stronger magnets; synchrotron radiation makes circular electron machines impractical above a few hundred GeV.
 Q: Why do circular electron colliders lose energy so fast? | Synchrotron radiation scales as γ^{4}, and electrons have huge γ for their energy.
 Q: How does a synchrotron keep particles on a fixed orbit as they speed up? | The magnetic field and RF frequency rise in step with the particles' momentum.
@@ -554,6 +562,7 @@ M2: Medical linacs mainly produce: | High-energy X-rays for radiotherapy | Neutr
 S: Colliders smash particle beams head-on so all their energy is available to create new particles. Giant detectors record the debris, and statistical analysis of billions of events reveals rare processes like Higgs production.
 H: Why collide
 E: √s = 2E (symmetric collider) vs √(2Em c^{2}) (fixed target)
+D: phys-u24-collider-energy
 - Head-on collisions give vastly more usable energy.
 H: Key quantities
 E: N = σ × ∫L dt :: number of events = cross-section × integrated luminosity

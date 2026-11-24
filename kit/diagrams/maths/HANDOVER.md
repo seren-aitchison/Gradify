@@ -54,9 +54,14 @@ Every diagram is `validated` (its checks pass); none has had a subject review ye
 
 A unit listed here is being built; don't start it in another session. Remove the row when the unit is on main.
 
+Claimed 24 Nov 2026. Every other unit is on main.
+
 | Units | Claimed by |
 |---|---|
-| u07 (u04 and u06 landed) | lead session 01PJjzVE, agent M1 (worktree /home/user/wt-m1, branch diagrams/m1) |
+| u20, u25 (landing now) | lead session 01H1szfk |
+| u16, u18, u19 | lead session 01H1szfk, agent N1 |
+| u21, u22, u23, u24 | lead session 01H1szfk, agent N2 |
+| u26, u27, u28, u29 | lead session 01H1szfk, agent N3 |
 
 ## Unit notes
 

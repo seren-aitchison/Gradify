@@ -474,3 +474,44 @@ header.bar.glass, header.sub-nav.glass {
   .gj select, .gj-sub select, .lab-seg button, .lab-chips button, .lab-try { min-height: 44px; }
   .lab-try { display: inline-flex; align-items: center; padding: 0 14px; }
 }
+
+/* ---------- Action card (.g-action): one clear next step, why, and buttons that do it ----------
+   Built by actionCard() in kit/core/action-card.js; first used for the degree tracker's "Your next best action".
+   A white (dark: near-black) tile with a Gradify-gradient hairline, a gradient squircle icon, an uppercase kicker in
+   the accent colour, a bold title, a muted reason and pill buttons. docs/DESIGN-SYSTEM.md, "Action card". */
+:root { --g-brand: linear-gradient(135deg, #4641ff 0%, #9b3cf0 42%, #e0409f 72%, #ff6a2b 100%); --g-accent: #8a87ff; --g-btn: #5b55ff; --g-tile: #16161f; --g-ink: #fff; --g-sub: #b4b4c8; --g-edge: rgba(255, 255, 255, .08); --g-shadow: none; }
+:root[data-theme="light"] { --g-accent: #4641ff; --g-btn: #4641ff; --g-tile: #fff; --g-ink: #0d0d1f; --g-sub: #4a4a63; --g-edge: rgba(22, 22, 48, .07); --g-shadow: 0 1px 2px rgba(22, 22, 48, .06), 0 4px 14px rgba(22, 22, 48, .05); }
+.g-action { position: relative; display: flex; gap: 14px; align-items: flex-start; padding: 18px; border-radius: 22px; background: var(--g-tile); color: var(--g-ink); border: 1px solid var(--g-edge); box-shadow: var(--g-shadow); }
+.g-action::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.5px; background: var(--g-brand); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
+.g-sq { width: 40px; height: 40px; flex: none; border-radius: 12px; display: grid; place-items: center; color: #fff; background: var(--g-brand); }
+.g-sq svg { width: 22px; height: 22px; }
+.g-kicker { display: block; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--g-accent); margin-bottom: 2px; }
+.g-action-text { min-width: 0; }
+.g-action-text b, .g-action-text .g-title { display: block; margin: 0; font-size: 19px; font-weight: 700; letter-spacing: -.01em; line-height: 1.3; color: var(--g-ink); }
+.g-action-text p { margin: 6px 0 0; font-size: 15px; line-height: 1.5; color: var(--g-sub) !important; }
+.g-action-buttons { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.g-act { all: unset; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 10px 16px; border-radius: 99px; font-size: 15px; font-weight: 600; line-height: 1.2; cursor: pointer; color: #fff; background: var(--g-btn, var(--g-accent)); }
+.g-act svg { width: 18px; height: 18px; flex: none; }
+.g-act.soft { color: var(--g-accent); background: color-mix(in srgb, var(--g-accent) 13%, transparent); }
+.g-act:hover { filter: brightness(1.06); } .g-act:focus-visible { outline: 2px solid var(--g-accent); outline-offset: 2px; }
+/* compact: one sentence with its link, under a result (the free tools' "Next step") */
+.g-action.compact { padding: 14px 16px; gap: 12px; align-items: center; }
+.g-action.compact .g-sq { width: 32px; height: 32px; border-radius: 10px; } .g-action.compact .g-sq svg { width: 18px; height: 18px; }
+.g-action.compact p { margin: 2px 0 0; color: var(--g-ink) !important; }
+.g-action.compact[hidden] { display: none; }
+@media (max-width: 480px) { .g-action { padding: 16px; gap: 12px; } .g-sq { width: 36px; height: 36px; } .g-action-text b, .g-action-text .g-title { font-size: 17px; } }
+
+/* ---------- Link tiles (.g-tiles): a grid of white rounded tiles, each with a coloured squircle icon, a bold name and a
+   muted line; the whole tile is the link. Colours cycle indigo, pink, orange, amber, or set --k on an <li>. ---------- */
+.g-tiles { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px; text-align: left; }
+.g-tiles > li { --k: #4641ff; } .g-tiles > li:nth-child(4n+2) { --k: #c42a8c; } .g-tiles > li:nth-child(4n+3) { --k: #e1540f; } .g-tiles > li:nth-child(4n+4) { --k: #b97a00; }
+.g-tiles a { display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto auto; column-gap: 12px; row-gap: 2px; align-items: center; height: 100%; box-sizing: border-box; padding: 14px 16px; border-radius: 20px;
+  background: var(--g-tile); border: 1px solid var(--g-edge); box-shadow: var(--g-shadow); color: var(--g-ink); text-decoration: none;
+  transition: transform .32s cubic-bezier(.32, .72, 0, 1), box-shadow .32s cubic-bezier(.32, .72, 0, 1); }
+.g-tiles a:hover { transform: translateY(-2px); box-shadow: 0 2px 4px rgba(22, 22, 48, .06), 0 12px 28px rgba(22, 22, 48, .1); }
+.g-tiles a:focus-visible { outline: 2px solid var(--g-accent); outline-offset: 2px; }
+:where(:root) .g-ic { grid-row: 1 / span 2; width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; color: #fff; background: var(--k); }
+.g-ic svg { width: 22px; height: 22px; }
+.g-tiles b { font-size: 16px; line-height: 1.3; color: var(--g-ink); align-self: end; }
+.g-tiles a > span:last-child { font-size: 14px; line-height: 1.4; color: var(--g-sub); align-self: start; }
+@media (prefers-reduced-motion: reduce) { .g-tiles a { transition: none; } .g-tiles a:hover { transform: none; } }

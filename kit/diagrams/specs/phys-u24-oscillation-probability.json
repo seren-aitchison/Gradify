@@ -1,0 +1,94 @@
+{
+ "id": "phys-u24-oscillation-probability",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u24",
+ "lesson": "Neutrino oscillations",
+ "title": "The first oscillation maximum",
+ "caption": "For maximal mixing (sin²2θ = 1) and Δm² = 2.5 × 10⁻³ eV², P = sin²(1.27Δm²L/E) first reaches 1 where 1.27Δm²L/E = π/2, at L/E ≈ 495 km GeV⁻¹. T2K's 295 km at 0.6 GeV is 492 km GeV⁻¹, close to the first maximum.",
+ "alt": "A sine-squared curve against L over E in km per GeV, rising from zero to its first peak of 1 near 495 and falling again, with T2K marked near 492.",
+ "description": [
+  "P = sin²2θ × sin²(1.27 Δm² L/E), with Δm² = 2.5 × 10⁻³ eV², L in km, E in GeV.",
+  "Maximum when 1.27 × 2.5 × 10⁻³ × L/E = π/2: L/E = 495 km GeV⁻¹.",
+  "T2K: 295 km / 0.6 GeV = 492 km GeV⁻¹."
+ ],
+ "range": {
+  "x": [
+   0,
+   1100
+  ],
+  "y": [
+   0,
+   1.1
+  ]
+ },
+ "ticks": [
+  [
+   250,
+   500,
+   750,
+   1000
+  ],
+  [
+   0.5,
+   1
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "L/E / km GeV⁻¹",
+  "P (sin²2θ = 1)"
+ ],
+ "curves": [
+  {
+   "expr": "sin(1.27*0.0025*x)^2",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 494.7,
+   "y": 1,
+   "colour": "a2",
+   "label": "first maximum, 495",
+   "dx": 10,
+   "dy": -12
+  },
+  {
+   "x": 491.7,
+   "y": 0.9999,
+   "colour": "a4",
+   "label": "T2K",
+   "anchor": "end",
+   "dx": -8,
+   "dy": 18
+  }
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "sin(1.27*0.0025*x)^2",
+   "domain": [
+    0,
+    800
+   ],
+   "x": 494.72,
+   "y": 1,
+   "name": "first maximum at L/E ≈ 495 km GeV⁻¹"
+  },
+  {
+   "type": "value",
+   "expr": "sin(1.27*0.0025*x)^2",
+   "x": 491.6666666666667,
+   "between": [
+    0.99,
+    1
+   ],
+   "name": "T2K's L/E is near the maximum"
+  }
+ ]
+}

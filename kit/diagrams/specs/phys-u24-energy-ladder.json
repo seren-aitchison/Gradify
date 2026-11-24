@@ -1,0 +1,51 @@
+{
+ "id": "phys-u24-energy-ladder",
+ "renderer": "scale",
+ "course": "physics",
+ "unit": "u24",
+ "lesson": "Gravitational interaction",
+ "title": "How far above the LHC is the Planck energy?",
+ "caption": "The LHC reaches about 10⁴ GeV. The unification energy (about 10¹⁶ GeV) is 12 orders of magnitude higher, and the Planck energy E_P ≈ 1.2 × 10¹⁹ GeV is about 15 orders above the LHC. Gravity's quantum effects are far beyond any accelerator.",
+ "alt": "A logarithmic energy scale in GeV from 10 to the 2 up to 10 to the 20, with the LHC at 10 to the 4, grand unification at 10 to the 16 and the Planck energy at 1.2 times 10 to the 19.",
+ "description": [
+  "LHC: about 10⁴ GeV.",
+  "Unification: about 10¹⁶ GeV, 12 orders above the LHC.",
+  "Planck energy: 1.2 × 10¹⁹ GeV, 15.1 orders above the LHC."
+ ],
+ "quantity": "energy",
+ "units": "GeV",
+ "min": 2,
+ "max": 20,
+ "markers": [
+  {
+   "label": "LHC",
+   "value": 10000
+  },
+  {
+   "label": "unification",
+   "value": 10000000000000000
+  },
+  {
+   "label": "Planck energy",
+   "value": 12000000000000000000
+  }
+ ],
+ "claims": [
+  {
+   "type": "orders",
+   "a": "LHC",
+   "b": "unification",
+   "value": 12,
+   "tol": 0.1,
+   "name": "unification is 10¹² times the LHC"
+  },
+  {
+   "type": "orders",
+   "a": "LHC",
+   "b": "Planck energy",
+   "value": 15.08,
+   "tol": 0.1,
+   "name": "Planck energy about 10¹⁵ times the LHC"
+  }
+ ]
+}
