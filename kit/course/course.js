@@ -71,7 +71,7 @@ import { feel } from "../ui/feel.js";
 import { CHAPTER_PREREQS, chapterPrereqsFromConcepts } from "../learning/chapter-map.js";
 import { masteryMap } from "../learning/mastery-map.js";
 import { renderMasteryMap } from "../ui/mastery-map-view.js";
-import { art as spotArt } from "../ui/art.js";
+import { art as spotArt, heroArt } from "../ui/art.js";
 
 const DAY = 864e5;
 const XP = { lesson: 10, check: 5, chest: 15, quiz: 50, perfect: 20, review: 2, problem: 5, weekly: 100 };
@@ -414,6 +414,7 @@ export function mountCourse(root, cfg) {
     <div class="co-head">
       <div class="co-title"><nav class="cx-crumbs" aria-label="Breadcrumb"><a href="/">Gradify</a><a href="../">${esc(cfg.site)}</a><span aria-current="page">${esc(cfg.name)}</span></nav><h1>${esc(cfg.name)}</h1><div class="cx-headrow"><span class="cx-save" hidden></span><button type="button" class="gx-link cx-pin" data-pincourse aria-pressed="false"></button></div></div>
       <div class="co-hud" aria-label="Your progress"></div>
+      ${heroArt(`${cfg.name} ${cfg.site}`, { cls: "co-headart" })}
     </div>
     ${cfg.notice ? `<p class="co-notice" role="note">${cfg.notice}</p>` : ""}
     <nav class="co-tabs" aria-label="${esc(cfg.name)}">${PRIMARY.map(([id, t]) => `<a href="#/${id}" data-v="${id}">${t}${id === "revise" ? '<i class="co-due" hidden></i>' : ""}</a>`).join("")}

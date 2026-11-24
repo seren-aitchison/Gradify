@@ -7,7 +7,7 @@ import { ink } from "./colour.js";
 import { modelOf } from "../models/index.js";
 import { applyPrefs } from "../data/profile.js";
 import { trackView } from "./analytics.js";
-import { art, artFor } from "../ui/art.js";
+import { art, artFor, heroArt } from "../ui/art.js";
 import { hydrate as glassIcons, cluster as glassCluster } from "./glass-icons.js";
 import { mountContinue } from "./continue.js";
 applyPrefs();
@@ -37,6 +37,8 @@ export function renderHome(el, siteName) {
   const fill = (t) => esc(t).replaceAll("{site}", site.n).replaceAll("{who}", esc(who)).replaceAll("{exams}", esc(c.exams || "your exams")).replaceAll("{topic}", esc(c.topics[0][0]));
   const fillName = (t) => fill(t).replaceAll(esc(site.n), nameHtml(site));
   const accent = accentOf(site);
+  // the course banner carries the site's hero drawing (kit/ui/art.js), in white ink on the banner's own colour
+  document.querySelectorAll(".sub-course:not([data-art])").forEach((b) => { b.dataset.art = "1"; b.insertAdjacentHTML("beforeend", heroArt(`${siteName} ${b.querySelector("b")?.textContent || ""}`, { cls: "sc-art", accent: "#ffffff" })); });
   const dims = DIMS[c.kind === "kids" ? "kids" : "default"], values = [88, 72, 61, 80, 54];
   const section = (id, title, sub, body) => `<section class="sm-sec" id="${id}"><div class="sm-head"><h2>${title}</h2>${sub ? `<p>${sub}</p>` : ""}</div>${body}</section>`;
   document.body.classList.add(`kind-${c.kind}`);

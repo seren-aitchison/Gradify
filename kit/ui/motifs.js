@@ -9,8 +9,18 @@
 //
 //   import { mountMotifs } from "kit/ui/motifs.js";   mountMotifs();   // idempotent; re-places itself as the page changes
 
-const LIGHT = { stops: ["#2fa8f5", "#8a6bff", "#f25aa8", "#ff9a4d", "#22c4ad", "#5468ff", "#f0609a"], bright: "#ffffff", glow: 0, alpha: [0.5, 0.95] };
-const DARK = { stops: ["#ff1f45", "#ff4f8b", "#e8173a", "#ff9fb8", "#ff3d7f", "#ffb3c4", "#ff2244"], bright: "#ffffff", glow: 5, alpha: [0.16, 0.55] };
+// each tone: a cycle of colours the lines shimmer through (thin-film light), one set for white and one for black.
+// The light-mode colours are deeper, so hair-thin lines still show on white.
+export const TONES = {
+  pink:   { light: ["#e8157a", "#f24fbf", "#9b38f0", "#ff6fae", "#e62e5c", "#c040ff"], dark: ["#ff1f8f", "#ff5fd2", "#b23cff", "#ff9ad5", "#ff3d6e", "#ffd1ec"] },
+  blue:   { light: ["#1361e8", "#1fa9e6", "#5b4cf0", "#12b5d4", "#2a46d8", "#3c8cff"], dark: ["#1f7bff", "#39d0ff", "#6a5cff", "#9ff3ff", "#2a5bff", "#5ee0e8"] },
+  lime:   { light: ["#4caf10", "#86c400", "#10b386", "#9fb400", "#2f9e3c", "#62c21a"], dark: ["#8dff2e", "#d4ff3a", "#2dffa8", "#f4ff8a", "#46e05a", "#b6ff6e"] },
+  yellow: { light: ["#d9a400", "#e3b800", "#e08a00", "#c99600", "#efb000", "#d27f00"], dark: ["#ffd60a", "#fff06a", "#ffab1f", "#fff6c2", "#ffc83d", "#ffe14d"] },
+  orange: { light: ["#e85a00", "#f08a1c", "#e0304f", "#e39a36", "#d94a10", "#f07a2a"], dark: ["#ff6a00", "#ffa040", "#ff3d5e", "#ffcf80", "#ff5020", "#ffb35c"] },
+  iris:   { light: ["#2fa8f5", "#8a6bff", "#f25aa8", "#ff9a4d", "#22c4ad", "#5468ff"], dark: ["#ff2d8a", "#b44cff", "#3fc5ff", "#2effb0", "#ffd400", "#ff6a00"] },
+  red:    { light: ["#e8173a", "#f2457e", "#c4124b", "#ff7a8f", "#d8204a", "#f06a8c"], dark: ["#ff1f45", "#ff4f8b", "#e8173a", "#ff9fb8", "#ff3d7f", "#ffb3c4"] },
+};
+export const TONE_NAMES = Object.keys(TONES);
 const MAX = 6;          // at most this many on a page
 const EVERY = 1.7;      // one per this many screen heights, at most
 const TEXT = "h1,h2,h3,h4,h5,h6,p,li,dt,dd,label,blockquote,figcaption,td,th,summary,a,button,small,b,strong,em,span,input,textarea,select";
@@ -18,44 +28,63 @@ const TEXT = "h1,h2,h3,h4,h5,h6,p,li,dt,dd,label,blockquote,figcaption,td,th,sum
 const rng = (s) => () => ((s = (s * 1664525 + 1013904223) >>> 0) / 4294967296);
 const lightMode = () => document.documentElement.getAttribute("data-theme") === "light";
 
-/** Draws one ribbon onto a square canvas of `size` pixels and returns it. `seed` picks the shape. */
-export function drawRibbon(size, { light = true, seed = 1, lines = 130 } = {}) {
-  const P = light ? LIGHT : DARK, r = rng(seed * 7919 + 13);
+const hex = (h) => [parseInt(h.slice(1, 3), 16), parseInt(h.slice(3, 5), 16), parseInt(h.slice(5, 7), 16)];
+// a colour from a cycle of colours, blended smoothly (h wraps round)
+function cycle(cols, h) {
+  const n = cols.length, x = ((h % 1) + 1) % 1 * n, i = Math.floor(x), f = x - i, a = cols[i % n], b = cols[(i + 1) % n];
+  const k = f * f * (3 - 2 * f);
+  return [a[0] + (b[0] - a[0]) * k, a[1] + (b[1] - a[1]) * k, a[2] + (b[2] - a[2]) * k];
+}
+
+/**
+ * Draws one ribbon onto a square canvas of `size` pixels and returns it: a band of hair-thin wavy lines whose ripples
+ * slide across them, so they crowd into bright folds; the colour shimmers through the tone's cycle along and across the
+ * band (thin-film light), a soft haze glows beneath it, and its edges and ends fade away. `seed` picks the shape.
+ */
+export function drawRibbon(size, { light = true, seed = 1, tone = light ? "iris" : "red", lines = 96 } = {}) {
+  const cols = (TONES[tone] || TONES.iris)[light ? "light" : "dark"].map(hex), r = rng(seed * 7919 + 13);
   const cv = document.createElement("canvas"); cv.width = cv.height = size;
   const g = cv.getContext("2d"); if (!g) return cv;
-  // the ribbon: a broad band whose spine sweeps across the square in an S, swelling and narrowing, and twisting so it
-  // turns edge-on in places (there its lines crowd together into bright folds, as light does on a turning ribbon)
-  const a0 = -0.9 + r() * 1.8, sw = 0.16 + r() * 0.12, ph = r() * 6.28, turns = 1.1 + r() * 0.9, fat = 0.42 + r() * 0.16;
-  const dir = [Math.cos(a0 + 0.8), Math.sin(a0 + 0.8)], nrm = [-dir[1], dir[0]];
-  const spine = (t) => {
-    const u = t - 0.5, s1 = Math.sin(t * Math.PI * 2 + ph) * sw, s2 = Math.sin(t * Math.PI * 3.3 + ph * 1.7) * sw * 0.35;
-    const x = 0.5 + dir[0] * u * 1.15 + nrm[0] * (s1 + s2), y = 0.5 + dir[1] * u * 1.15 + nrm[1] * (s1 + s2);
-    const dx = dir[0] + nrm[0] * Math.cos(t * Math.PI * 2 + ph) * sw * 6, dy = dir[1] + nrm[1] * Math.cos(t * Math.PI * 2 + ph) * sw * 6;
-    return [x, y, Math.atan2(dy, dx) + Math.PI / 2];
+  // the shape: a band crossing the square at an angle, meandering (two slow waves), with ripples that drift across it
+  const ang = (-0.7 + r() * 1.4) + (r() < 0.5 ? 0 : Math.PI / 2), ca = Math.cos(ang), sa = Math.sin(ang);
+  const A1 = 0.09 + r() * 0.08, f1 = 0.7 + r() * 0.6, p1 = r() * 6.28, A2 = 0.04 + r() * 0.04, f2 = 1.6 + r() * 1.2, p2 = r() * 6.28;
+  const B = 0.05 + r() * 0.04, f3 = 1.3 + r() * 1.4, gv = 0.6 + r() * 1.1, p3 = r() * 6.28, W0 = 0.5 + r() * 0.2;
+  const hc1 = 1.1 + r() * 1.1, hc2 = 1.3 + r() * 1.1, hp = r();
+  const N = 120, M = lines;
+  const at = (t, v) => {
+    const yc = A1 * Math.sin(6.283 * f1 * t + p1) + A2 * Math.sin(6.283 * f2 * t + p2);
+    const W = W0 * (0.65 + 0.35 * Math.sin(Math.PI * t)) * (0.9 + 0.1 * Math.sin(9 * t + p1));
+    const y = yc + v * W + B * Math.sin(6.283 * (f3 * t + gv * v) + p3) * (1 - 2 * Math.abs(v)) ;
+    const x = t - 0.5;
+    return [0.5 + (x * ca - y * sa) * 1.18, 0.5 + (x * sa + y * ca) * 1.18, W];
   };
-  const width = (t) => fat * (0.55 + 0.45 * Math.sin(t * Math.PI)) * (0.85 + 0.15 * Math.sin(t * 11 + ph));
-  const twist = (t) => 0.18 + 0.82 * Math.abs(Math.cos(t * Math.PI * turns + ph));
-  const grad = g.createLinearGradient(0, 0, size, size);
-  P.stops.forEach((c, i) => grad.addColorStop(i / (P.stops.length - 1), c));
+  const pts = [];
+  for (let i = 0; i < M; i++) { const v = i / (M - 1) - 0.5, row = []; for (let k = 0; k <= N; k++) row.push(at(k / N, v)); pts.push(row); }
+  const S = size, lw = S / 900;
   g.lineCap = "round"; g.lineJoin = "round";
-  if (!light) { g.globalCompositeOperation = "lighter"; g.shadowBlur = P.glow; }
-  const N = 90;
-  for (let i = 0; i < lines; i++) {
-    const v = i / (lines - 1) - 0.5;
-    g.beginPath();
-    for (let k = 0; k <= N; k++) {
-      const t = k / N, [x, y, n] = spine(t), w = width(t) * twist(t);
-      const px = (x + Math.cos(n) * v * w) * size, py = (y + Math.sin(n) * v * w) * size;
-      k ? g.lineTo(px, py) : g.moveTo(px, py);
+  // two passes: a broad soft haze (the glow beneath), then the lines themselves
+  for (const pass of [0, 1]) {
+    g.globalCompositeOperation = light ? (pass ? "source-over" : "multiply") : "lighter";
+    for (let i = pass ? 0 : 2; i < M; i += pass ? 1 : 4) {
+      const v = i / (M - 1) - 0.5, edge = Math.pow(Math.max(0, 1 - Math.abs(v) * 2), 0.7);
+      const row = pts[i], nb = pts[Math.min(M - 1, i + 1)];
+      for (let k = 0; k < N; k++) {
+        const t = k / N, ends = Math.sin(Math.PI * Math.min(1, Math.max(0, (t - 0.02) / 0.96)));
+        // the fold: where neighbouring lines crowd together the band is turning edge-on, and catches the light
+        const gap = Math.hypot(nb[k][0] - row[k][0], nb[k][1] - row[k][1]) * M / Math.max(0.05, row[k][2]);
+        const fold = Math.max(0, Math.min(1, 1.25 - gap));
+        const c = cycle(cols, hc1 * t + hc2 * v + 0.25 * Math.sin(6 * t + 4 * v + p3) + hp);
+        const hi = fold * fold;
+        // towards white at a fold (in dark: a white-hot highlight; on white: a lighter, pearly line)
+        const mix = light ? hi * 0.22 : hi * 0.5;
+        const R = c[0] + (255 - c[0]) * mix, G = c[1] + (255 - c[1]) * mix, Bc = c[2] + (255 - c[2]) * mix;
+        const al = (pass ? (light ? 0.66 + 0.3 * fold : 0.5 + 0.4 * fold) : (light ? 0.055 : 0.09)) * edge * ends;
+        if (al < 0.01) continue;
+        g.strokeStyle = `rgba(${R | 0},${G | 0},${Bc | 0},${al.toFixed(3)})`;
+        g.lineWidth = pass ? lw * (light ? 1.5 : 1.3) * (1 + 0.25 * fold) : lw * 34;
+        g.beginPath(); g.moveTo(row[k][0] * S, row[k][1] * S); g.lineTo(row[k + 1][0] * S, row[k + 1][1] * S); g.stroke();
+      }
     }
-    // every seventh line is a bright highlight (white light caught on an edge); the rest take the ribbon's colours,
-    // fainter towards the ribbon's edges
-    const hi = i % 9 === 4, edge = 1 - Math.abs(v) * 1.6;
-    g.strokeStyle = hi ? (light ? "rgba(255,255,255,.95)" : P.bright) : grad;
-    if (!light) g.shadowColor = hi ? "rgba(255,255,255,.9)" : "rgba(255,40,80,.9)";
-    g.globalAlpha = Math.max(0.05, P.alpha[0] + (P.alpha[1] - P.alpha[0]) * edge) * (hi ? (light ? 0.9 : 1) : 1);
-    g.lineWidth = (hi ? 1.5 : light ? 1.35 : 1.15) * (size / 900);
-    g.stroke();
   }
   return cv;
 }
@@ -127,11 +156,11 @@ const allowed = () => {
   return true;
 };
 
-function imageFor(light, seed) {
-  const k = `${light ? "l" : "d"}${seed % 5}`;
+function imageFor(light, seed, tone) {
+  const k = `${light ? "l" : "d"}${tone}${seed % 5}`;
   if (!cache[k]) {
     const px = Math.round(Math.min(1.5, devicePixelRatio || 1) * 760);
-    cache[k] = drawRibbon(px, { light, seed: (seed % 5) + 1 }).toDataURL("image/png");
+    cache[k] = drawRibbon(px, { light, seed: (seed % 5) + 1, tone }).toDataURL("image/png");
   }
   return cache[k];
 }
@@ -153,9 +182,11 @@ function place() {
   lastKey = key;
   const seed = [...location.pathname].reduce((s, c) => s * 31 + c.charCodeAt(0), 7) >>> 0;
   const spots = placements({ vw, vh, docH, text, seed });
-  layer.innerHTML = spots.map((p) => {
+  const rr = rng(seed + 99), order = [...TONE_NAMES].sort(() => rr() - 0.5);
+  layer.innerHTML = spots.map((p, n) => {
+    const tone = order[n % order.length];
     const fade = p.side ? "radial-gradient(closest-side at 62% 50%, #000 38%, transparent 100%)" : "radial-gradient(closest-side at 38% 50%, #000 38%, transparent 100%)";
-    return `<i style="position:absolute;left:${p.x}px;top:${p.y}px;width:${p.size}px;height:${p.size}px;background:url(${imageFor(light, p.seed)}) center/cover no-repeat;-webkit-mask:${fade};mask:${fade};opacity:${light ? 0.9 : 0.85}"></i>`;
+    return `<i style="position:absolute;left:${p.x}px;top:${p.y}px;width:${p.size}px;height:${p.size}px;background:url(${imageFor(light, p.seed, tone)}) center/cover no-repeat;-webkit-mask:${fade};mask:${fade};opacity:${light ? 0.9 : 0.85}"></i>`;
   }).join("");
 }
 

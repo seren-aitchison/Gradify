@@ -3,6 +3,7 @@ import { icon, ICONS } from "../kit/core/icons.js";
 import { triple, mix, ink, tile } from "../kit/core/colour.js";
 import { pathOf, nameHtml } from "../kit/core/site.js";
 import { applyPrefs } from "../kit/data/profile.js";
+import { heroArt } from "../kit/ui/art.js";
 import { trackView } from "../kit/core/analytics.js";
 import { captureFirstTouch } from "../kit/core/attribution.js";
 import { hydrate as glassIcons, glassSymbol } from "../kit/core/glass-icons.js";
@@ -392,3 +393,9 @@ const spy = new IntersectionObserver((entries) => {
   }
 }, { rootMargin: "-45% 0px -50% 0px" });
 document.querySelectorAll(".group, #features, #lifeos, #organisations, #everywhere, #roadmap, #faq").forEach((s) => spy.observe(s));
+
+// the hero: two drawings either side of the headline on wide screens (notes in, flashcards out), in the lesson-diagram style
+for (const h of document.querySelectorAll(".hero-v2:not([data-art])")) {
+  h.dataset.art = "1";
+  h.insertAdjacentHTML("afterbegin", heroArt("upload", { cls: "hero-art l" }) + heroArt("cards", { cls: "hero-art r", accent: "#f055dd" }));
+}

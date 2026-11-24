@@ -585,3 +585,48 @@ html:root body, html:root body.sub-page { background: transparent; }
 @media (max-width: 520px) { .co-emptyart .g-art { width: 72px; } }
 .co-finish .co-finish-art { flex: none; width: 88px; height: auto; }
 @media (max-width: 520px) { .co-finish .co-finish-art { display: none; } }
+/* ---------- Hero illustrations (heroArt in kit/ui/art.js): a subject drawing, big, with smaller ones round it ---------- */
+.g-hero-art { width: 100%; height: auto; }
+/* a subject site's course banner: on the right of the banner, in white ink (the banner is the site's colour) */
+:root .sub-course { padding-right: clamp(30px, 30%, 380px); }
+.sub-course .sc-art { --art-ink: #fff; --art-bg: rgba(255, 255, 255, .12); position: absolute; right: clamp(8px, 3vw, 40px); top: 50%; transform: translateY(-50%);
+  width: clamp(200px, 26%, 340px); pointer-events: none; }
+@media (max-width: 760px) { :root .sub-course { padding-right: 24px; padding-top: 176px; } .sub-course .sc-art { top: 10px; right: auto; left: 18px; transform: none; width: 190px; } }
+/* a course page's header: beside the title */
+.co-head { position: relative; }
+.co-head .co-headart { flex: none; width: clamp(150px, 16vw, 230px); margin: -14px 0 -10px auto; order: 3; }
+@media (max-width: 760px) { .co-head .co-headart { position: absolute; top: 18px; right: -4px; width: 92px; margin: 0; } .co-head .co-title h1 { padding-right: 84px; } }
+/* the homepage hero: a drawing either side of the headline, on screens wide enough to have room */
+.hero-v2 { position: relative; }
+.hero-v2 .hero-art { display: none; position: absolute; top: clamp(40px, 6vw, 90px); width: clamp(180px, 15vw, 250px); pointer-events: none; }
+.hero-v2 .hero-art.l { left: 0; } .hero-v2 .hero-art.r { right: 0; }
+@media (min-width: 1320px) { .hero-v2 .hero-art { display: block; } }
+/* the app's Today: beside the greeting */
+.today-head { position: relative; }
+.today-head .today-art { flex: none; width: clamp(120px, 14vw, 200px); margin: -18px 0 -18px auto; }
+@media (max-width: 640px) { .today-head .today-art { display: none; } }
+
+/* ---------- The gleaming edge in a site's own colour: the action card's edge and glint, for the homepage's site
+   directory and a subject site's "Where to start" tiles. --gleam is the site's colour; the edge runs from it to a light
+   tint, the mode's contrast (black on white, white on black) and a deep shade, with a glint that travels round.
+   Start times are staggered so a grid of them doesn't flash in step; still when motion is reduced. ---------- */
+:root :is(#groups .card, .sub-page .sm-topic) { --gleam: var(--c, var(--accent, #4641ff)); position: relative; isolation: isolate; }
+:root .sub-page .sm-topic { --gleam: var(--accent, #4641ff); }
+:root :is(#groups .card, .sub-page .sm-topic)::before {
+  content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; padding: 2px; pointer-events: none;
+  background:
+    linear-gradient(115deg, transparent 38%, var(--g-glint) 48%, transparent 58%) 0 0 / 260% 100% no-repeat,
+    linear-gradient(115deg, var(--gleam) 0%, color-mix(in srgb, var(--gleam) 45%, #fff) 22%, var(--g-contrast) 46%, color-mix(in srgb, var(--gleam) 70%, #000) 68%, var(--gleam) 88%, color-mix(in srgb, var(--gleam) 45%, #fff) 100%) 0 0 / 220% 100%;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  animation: g-gleam 7s linear infinite;
+}
+:root :is(#groups .card, .sub-page .sm-topic):nth-child(3n + 1)::before { animation-delay: -1.6s; }
+:root :is(#groups .card, .sub-page .sm-topic):nth-child(3n + 2)::before { animation-delay: -4.1s; }
+:root :is(#groups .card, .sub-page .sm-topic):nth-child(4n)::before { animation-duration: 8.5s; }
+/* "coming soon" sites: the same edge, quieter */
+:root #groups .card.soon::before { opacity: .45; }
+:root :is(#groups .card, .sub-page .sm-topic) { border-color: transparent; }
+@media (prefers-reduced-motion: reduce) { :root :is(#groups .card, .sub-page .sm-topic)::before { animation: none; background-position: -60% 0, 30% 0; } }
+:root[data-motion="reduce"] :is(#groups .card, .sub-page .sm-topic)::before { animation: none; background-position: -60% 0, 30% 0; }
+@media print { :root :is(#groups .card, .sub-page .sm-topic)::before { content: none; } }
