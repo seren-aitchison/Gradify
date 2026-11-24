@@ -7,29 +7,29 @@
   "coursesWithPlan": 6,
   "lessons": 10112,
   "written": 9979,
-  "assessed": 2477,
-  "plannedVisual": 1334,
-  "plannedDiagram": 1201,
+  "assessed": 2510,
+  "plannedVisual": 1343,
+  "plannedDiagram": 1210,
   "plannedLab": 400,
-  "excluded": 1143,
-  "notAssessed": 7502,
-  "withDiagram": 1203,
+  "excluded": 1167,
+  "notAssessed": 7469,
+  "withDiagram": 1212,
   "withLab": 846,
   "withBoth": 280,
-  "withAny": 1769,
+  "withAny": 1778,
   "plannedNotDelivered": 0,
-  "placements": 1228,
+  "placements": 1237,
   "withInteractiveDiagram": 272,
   "withSimulation": 397,
   "withLabActivity": 198
  },
  "diagrams": {
-  "manifest": 1152,
-  "uniquePlaced": 1152,
-  "placements": 1228,
+  "manifest": 1161,
+  "uniquePlaced": 1161,
+  "placements": 1237,
   "reused": 69,
-  "byStatus": {"ai-reviewed":4,"approved":11,"validated":1137},
-  "placedByStatus": {"ai-reviewed":4,"approved":11,"validated":1137},
+  "byStatus": {"ai-reviewed":4,"approved":11,"validated":1146},
+  "placedByStatus": {"ai-reviewed":4,"approved":11,"validated":1146},
   "failing": [],
   "unplaced": []
  },
@@ -585,18 +585,18 @@
    "totals": {
     "lessons": 2159,
     "written": 2109,
-    "assessed": 1784,
-    "plannedVisual": 921,
-    "plannedDiagram": 820,
+    "assessed": 1817,
+    "plannedVisual": 930,
+    "plannedDiagram": 829,
     "plannedLab": 322,
-    "excluded": 863,
-    "notAssessed": 325,
-    "withDiagram": 821,
+    "excluded": 887,
+    "notAssessed": 292,
+    "withDiagram": 830,
     "withLab": 322,
     "withBoth": 222,
-    "withAny": 921,
+    "withAny": 930,
     "plannedNotDelivered": 0,
-    "placements": 842,
+    "placements": 851,
     "withInteractiveDiagram": 85,
     "withSimulation": 228,
     "withLabActivity": 9
@@ -22133,18 +22133,18 @@
    "totals": {
     "lessons": 1308,
     "written": 1308,
-    "assessed": 983,
-    "plannedVisual": 341,
-    "plannedDiagram": 287,
+    "assessed": 1016,
+    "plannedVisual": 350,
+    "plannedDiagram": 296,
     "plannedLab": 115,
-    "excluded": 642,
-    "notAssessed": 325,
-    "withDiagram": 287,
+    "excluded": 666,
+    "notAssessed": 292,
+    "withDiagram": 296,
     "withLab": 115,
     "withBoth": 61,
-    "withAny": 341,
+    "withAny": 350,
     "plannedNotDelivered": 0,
-    "placements": 289,
+    "placements": 298,
     "withInteractiveDiagram": 0,
     "withSimulation": 115,
     "withLabActivity": 0
@@ -26184,56 +26184,253 @@
      "totals": {
       "lessons": 33,
       "written": 33,
-      "assessed": 0,
-      "plannedVisual": 0,
-      "plannedDiagram": 0,
+      "assessed": 33,
+      "plannedVisual": 9,
+      "plannedDiagram": 9,
       "plannedLab": 0,
-      "excluded": 0,
-      "notAssessed": 33,
-      "withDiagram": 0,
+      "excluded": 24,
+      "notAssessed": 0,
+      "withDiagram": 9,
       "withLab": 0,
       "withBoth": 0,
-      "withAny": 0,
+      "withAny": 9,
       "plannedNotDelivered": 0,
-      "placements": 0,
+      "placements": 9,
       "withInteractiveDiagram": 0,
       "withSimulation": 0,
       "withLabActivity": 0
      },
      "lessons": [
-      {"id":"u24-01","title":"Fundamental particles","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-02","title":"Quarks and leptons","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-03","title":"Fermions and bosons","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-04","title":"Fundamental interactions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-05","title":"Electromagnetic interaction","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-06","title":"Weak interaction","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-07","title":"Strong interaction","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-08","title":"Gravitational interaction","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-09","title":"Standard Model","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-10","title":"Particle generations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-11","title":"Quark flavours and colour charge","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-12","title":"Hadrons, baryons and mesons","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-13","title":"Antimatter and antiparticles","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-14","title":"Particle decay","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-15","title":"Conservation laws in particle reactions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-16","title":"Feynman diagrams","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-17","title":"Quantum electrodynamics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-18","title":"Quantum chromodynamics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-19","title":"Electroweak theory","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-20","title":"Higgs mechanism","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-21","title":"Higgs boson","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-22","title":"Neutrino oscillations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-23","title":"CP violation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-24","title":"Symmetry breaking","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-25","title":"Particle accelerators","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-26","title":"Collider experiments","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-27","title":"Particle detectors","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-28","title":"Scattering experiments","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-29","title":"Beyond the Standard Model","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-30","title":"Supersymmetry","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-31","title":"Grand unified theories","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-32","title":"Dark matter candidates","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u24-33","title":"Open questions in particle physics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}}
+      {"id":"u24-01","title":"Fundamental particles","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a list or classification that a picture would not teach"}},
+      {
+       "id": "u24-02",
+       "title": "Quarks and leptons",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer particle-table: the fermions in three generations with charge, spin and mass, and the bosons that act on them (a labelled grid of cells)"}
+      },
+      {"id":"u24-03","title":"Fermions and bosons","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a list or classification that a picture would not teach"}},
+      {
+       "id": "u24-04",
+       "title": "Fundamental interactions",
+       "written": true,
+       "diagrams": [{"id":"phys-u24-interaction-strengths","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u24-interaction-strengths"]}
+      },
+      {
+       "id": "u24-05",
+       "title": "Electromagnetic interaction",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {
+        "verdict": "none",
+        "reason": "needs renderer feynman: Compton scattering and e⁺e⁻ → γγ: lines and vertices (fermion arrows, wavy photon or W, curly gluon, dashed Higgs) with charge and quantum numbers checked at each vertex"
+       }
+      },
+      {
+       "id": "u24-06",
+       "title": "Weak interaction",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {
+        "verdict": "none",
+        "reason": "needs renderer feynman: neutron beta decay at the quark level, d → u + W⁻ → e⁻ ν̄ₑ: lines and vertices (fermion arrows, wavy photon or W, curly gluon, dashed Higgs) with charge and quantum numbers checked at each vertex"
+       }
+      },
+      {
+       "id": "u24-07",
+       "title": "Strong interaction",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer string-breaking: a gluon flux tube stretching and snapping into a quark-antiquark pair, and a jet of hadrons (energy in the tube against separation)"}
+      },
+      {
+       "id": "u24-08",
+       "title": "Gravitational interaction",
+       "written": true,
+       "diagrams": [{"id":"phys-u24-energy-ladder","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u24-energy-ladder"]}
+      },
+      {
+       "id": "u24-09",
+       "title": "Standard Model",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer particle-table: the fermions in three generations with charge, spin and mass, and the bosons that act on them (a labelled grid of cells)"}
+      },
+      {
+       "id": "u24-10",
+       "title": "Particle generations",
+       "written": true,
+       "diagrams": [{"id":"phys-u24-fermion-masses","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u24-fermion-masses"]}
+      },
+      {
+       "id": "u24-11",
+       "title": "Quark flavours and colour charge",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"the worked example is the sum N_c Σq² = 2; the lesson gives no thresholds or other plateau values to draw, and the colour-factor argument is carried by the text"}
+      },
+      {
+       "id": "u24-12",
+       "title": "Hadrons, baryons and mesons",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer multiplet: the baryon octet and decuplet and the meson nonet as strangeness-charge weight diagrams with quark content"}
+      },
+      {
+       "id": "u24-13",
+       "title": "Antimatter and antiparticles",
+       "written": true,
+       "diagrams": [{"id":"phys-u24-annihilation","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u24-annihilation"]}
+      },
+      {"id":"u24-14","title":"Particle decay","written":true,"diagrams":[{"id":"phys-u24-pion-survival","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["phys-u24-pion-survival"]}},
+      {
+       "id": "u24-15",
+       "title": "Conservation laws in particle reactions",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer reaction-ledger: a reaction with charge, baryon number, lepton number and strangeness totalled on each side, flagging the one that fails"}
+      },
+      {
+       "id": "u24-16",
+       "title": "Feynman diagrams",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {
+        "verdict": "none",
+        "reason": "needs renderer feynman: Møller scattering, e⁺e⁻ → μ⁺μ⁻ and Compton scattering with the vertex count and amplitude order: lines and vertices (fermion arrows, wavy photon or W, curly gluon, dashed Higgs) with charge and quantum numbers checked at each vertex"
+       }
+      },
+      {
+       "id": "u24-17",
+       "title": "Quantum electrodynamics",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer feynman: the vacuum-polarisation loop that makes α run (and the electron-photon vertex); the numbers are in the text"}
+      },
+      {
+       "id": "u24-18",
+       "title": "Quantum chromodynamics",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer string-breaking: see u24-07; the text's confinement argument is about the energy stored in the flux tube"}
+      },
+      {
+       "id": "u24-19",
+       "title": "Electroweak theory",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a calculation method, carried by the worked example; a picture would not add to it"}
+      },
+      {
+       "id": "u24-20",
+       "title": "Higgs mechanism",
+       "written": true,
+       "diagrams": [{"id":"phys-u24-higgs-potential","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u24-higgs-potential"]}
+      },
+      {
+       "id": "u24-21",
+       "title": "Higgs boson",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer bars: the Higgs branching fractions bb̄ 58%, WW* 21%, ττ 6%, γγ 0.2% and the rest as bars summing to 100%"}
+      },
+      {
+       "id": "u24-22",
+       "title": "Neutrino oscillations",
+       "written": true,
+       "diagrams": [{"id":"phys-u24-oscillation-probability","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u24-oscillation-probability"]}
+      },
+      {
+       "id": "u24-23",
+       "title": "CP violation",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"CP violation is an argument about asymmetries (10⁻²⁰ against 10⁻¹⁰) with no geometry to draw; the Sakharov conditions are a list"}
+      },
+      {
+       "id": "u24-24",
+       "title": "Symmetry breaking",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"the symmetric-potential picture is drawn in u24-20; the pion-mass argument is carried by the text"}
+      },
+      {
+       "id": "u24-25",
+       "title": "Particle accelerators",
+       "written": true,
+       "diagrams": [{"id":"phys-u24-bending-radius","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u24-bending-radius"]}
+      },
+      {
+       "id": "u24-26",
+       "title": "Collider experiments",
+       "written": true,
+       "diagrams": [{"id":"phys-u24-collider-energy","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u24-collider-energy"]}
+      },
+      {
+       "id": "u24-27",
+       "title": "Particle detectors",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {
+        "verdict": "none",
+        "reason": "needs renderer detector-section: concentric tracker, calorimeters and muon chambers with the paths of an electron, photon, muon, hadron and neutrino; the p = 0.3BR example is a calculation"
+       }
+      },
+      {
+       "id": "u24-28",
+       "title": "Scattering experiments",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a calculation method, carried by the worked example; a picture would not add to it"}
+      },
+      {"id":"u24-29","title":"Beyond the Standard Model","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a list or classification that a picture would not teach"}},
+      {"id":"u24-30","title":"Supersymmetry","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"the coupling-unification plot is needed in u24-31 (renderer missing)"}},
+      {
+       "id": "u24-31",
+       "title": "Grand unified theories",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {
+        "verdict": "none",
+        "reason": "needs renderer running-couplings: the three inverse couplings against energy, nearly meeting near 10¹⁴–10¹⁶ GeV in the Standard Model and meeting in minimal supersymmetry (the lesson gives no coupling values, only the energies)"
+       }
+      },
+      {"id":"u24-32","title":"Dark matter candidates","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"an argument about backgrounds and underground depth, carried in the text"}},
+      {"id":"u24-33","title":"Open questions in particle physics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a list or classification that a picture would not teach"}}
      ]
     },
     {

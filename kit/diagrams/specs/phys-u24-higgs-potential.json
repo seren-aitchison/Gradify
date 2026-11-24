@@ -1,0 +1,89 @@
+{
+ "id": "phys-u24-higgs-potential",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u24",
+ "lesson": "Higgs mechanism",
+ "title": "The Mexican-hat potential",
+ "caption": "V = −μ²φ² + λφ⁴, drawn in units of λv⁴ against φ/v (so μ² = λv²): a hump at φ = 0 and minima at |φ| = v/√2 = 0.707 v, where V = −¼ λv⁴. The vacuum sits in one minimum, which breaks the symmetry.",
+ "alt": "A W-shaped curve: a hump at zero field and two equal minima at plus and minus 0.71 v, each at depth minus one quarter.",
+ "description": [
+  "V/(λv⁴) = −(φ/v)² + (φ/v)⁴.",
+  "Maximum at φ = 0, where V = 0.",
+  "Minima at φ/v = ±1/√2 = ±0.707, where V/(λv⁴) = −1/2 + 1/4 = −0.25.",
+  "The field takes one of the two minima: spontaneous symmetry breaking."
+ ],
+ "range": {
+  "x": [
+   -1.3,
+   1.3
+  ],
+  "y": [
+   -0.4,
+   0.5
+  ]
+ },
+ "ticks": [
+  [
+   -1,
+   -0.5,
+   0.5,
+   1
+  ],
+  [
+   -0.25,
+   0.25,
+   0.5
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "φ / v",
+  "V / λv⁴"
+ ],
+ "curves": [
+  {
+   "expr": "-x^2+x^4",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 0.7071067811865476,
+   "y": -0.25,
+   "colour": "a2",
+   "label": "−¼ at v/√2",
+   "dx": 8,
+   "dy": 18
+  },
+  {
+   "x": -0.7071067811865476,
+   "y": -0.25,
+   "colour": "a2"
+  }
+ ],
+ "checks": [
+  {
+   "type": "min",
+   "expr": "-x^2+x^4",
+   "domain": [
+    0.2,
+    1.3
+   ],
+   "x": 0.7071067811865476,
+   "y": -0.25,
+   "name": "minimum at φ = v/√2 with depth −¼"
+  },
+  {
+   "type": "point",
+   "expr": "-x^2+x^4",
+   "x": 0,
+   "y": 0,
+   "name": "V = 0 at φ = 0"
+  }
+ ]
+}
