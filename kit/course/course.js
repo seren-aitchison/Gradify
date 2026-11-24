@@ -113,6 +113,10 @@ const CHALLENGES = [
 ];
 
 export function mountCourse(root, cfg) {
+  // the page's static course overview (scripts/seo/coursepages.mjs) carries an h1 for readers without JavaScript;
+  // the app draws its own h1, so the overview's becomes an h2 and there's one h1 on the page
+  const staticH1 = document.querySelector("[data-static-h1]");
+  if (staticH1) { const h2 = document.createElement("h2"); h2.id = staticH1.id; h2.className = "co-ov-title"; h2.textContent = staticH1.textContent; staticH1.replaceWith(h2); }
   const KEY = `gradify.course.${cfg.slug}`;
   // what a course calls its units ("Unit" for physics, "School" for law and nursing)
   const U = cfg.unitWord || "Unit", u1 = U.toLowerCase();
@@ -2620,6 +2624,8 @@ export function mountCourse(root, cfg) {
     const [v0, arg, sec, how] = location.hash.replace(/^#\/?/, "").split("/"), v = v0 || home;
     const view = VIEWS.some(([id]) => id === v) || ["lesson", "quiz", "exam", "target"].includes(v) ? v : home;
     const tab = TAB_OF[view] || view;
+    // the static course overview below the app belongs to the course's front page, not to lessons, quizzes and the rest
+    document.querySelector(".course-overview")?.toggleAttribute("hidden", !["home", "overview"].includes(view));
     root.querySelectorAll(".co-tabs > a").forEach((a) => a.toggleAttribute("aria-current", a.dataset.v === tab));
     const inMore = MORE.some(([id]) => id === view) && !PRIMARY.some(([id]) => id === tab);
     moreBtn.classList.toggle("on", inMore); moreMenu.querySelectorAll("a").forEach((a) => a.toggleAttribute("aria-current", a.dataset.v === view));
