@@ -2762,3 +2762,13 @@ body:has(.co-modal) .cx-dock { visibility: hidden; }
 @media (max-width: 760px) { .co.co-reading .co-lhead .co-lart { width: 104px; } }
 @media (prefers-reduced-motion: reduce) { .co.co-reading :is(.co-read .co-notes, .cx-tree, .cx-widget)::before { animation: none; background-position: -60% 0, 30% 0; } }
 :root[data-motion="reduce"] .co.co-reading :is(.co-read .co-notes, .cx-tree, .cx-widget)::before { animation: none; background-position: -60% 0, 30% 0; }
+
+/* ---- reconciling the two lesson layers (#200's learning-experience layer and this one) ----
+   #200 draws each callout's header (icon and label) in the markup (.lx-h), so the label this layer drew with CSS goes;
+   the approved look wins where the two disagree: the sheet's gleaming edge, the goals box and section numbers in the
+   subject's colour */
+.co.co-reading .co-read .co-prose .lx-call.mv-key::before { content: none !important; }
+.co.co-reading .co-read .co-notes::before { display: block !important; content: "" !important; }
+.co.co-reading .co-read #co-top.co-frame { background: color-mix(in srgb, var(--accent, #4641ff) 10%, var(--g-tile)) !important; border: 1px solid color-mix(in srgb, var(--accent, #4641ff) 45%, transparent) !important; }
+.co.co-reading .co-read #co-top.co-frame li::before { -webkit-mask: none !important; mask: none !important; border: 1.5px solid var(--lc) !important; background: radial-gradient(circle, var(--lc) 0 3px, transparent 3.5px) !important; }
+.co.co-reading .co-read .co-prose section[id] h3::before { color: var(--lc-ink) !important; background: var(--lc-wash) !important; border: 1px solid var(--lc-line) !important; }
