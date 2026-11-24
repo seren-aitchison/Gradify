@@ -46,6 +46,7 @@ import { mountAssistant } from "./assistant.js";
 import { readLab, labState, labTry as nextLabTry, labLeave } from "./lab-state.js";
 import { SUPABASE_URL } from "../../gradify.config.js";
 import { buildExam, runExam, FORMATS } from "../assess/exam.js";
+import { papersFor } from "../papers/index.js";
 import { reviewLabel } from "./review.js";
 import { REVIEWS } from "./reviews.js";
 import { FINGERPRINTS } from "./ix-manifest.js";
@@ -389,6 +390,9 @@ export function mountCourse(root, cfg) {
   // Progress), and the rest under More. Every older address (#/review, #/paths, …) still works.
   const PRIMARY = [["home", "Home"], ["learn", "Syllabus"], ["revise", "Revise"], ...(cfg.workspace ? [[cfg.workspace.route, cfg.workspace.label]] : []), ...(cfg.exams ? [["exams", "Exams"]] : []), ...(cfg.interactives ? [["practice", PL]] : []), ["me", "Progress"]];
   const MORE = [...(cfg.overview ? [["overview", "About this course"]] : []), ["review", "Flashcard review"], ["problems", "Problem bank"], ...(cfg.authorities ? [["cases", cfg.authorities]] : []), ...(cfg.writing?.length ? [["write", "Written practice"]] : []), ...(cfg.revalidation ? [["revalidation", "Revalidation"]] : []), ["paths", "Paths"], ["tracks", `${TW}s`], ["leaderboard", "Leaderboard"], ["features", "Features"]];
+  // Past papers (kit/papers): a tab before Progress on a course with a question bank; free, like the rest of practice
+  const PAPERS = papersFor(cfg.slug);
+  if (PAPERS) PRIMARY.splice(PRIMARY.length - 1, 0, ["papers", "Past papers"]);
   const VIEWS = [...PRIMARY, ...MORE];
   // which tab a view belongs to
   const TAB_OF = { lesson: "learn", quiz: "learn", review: "revise", target: "revise", problems: "revise", exam: "exams", overview: "home" };
@@ -2161,6 +2165,17 @@ export function mountCourse(root, cfg) {
     paint();
   }
 
+  // ---------- past papers (kit/papers/view.js) ----------
+  async function viewPastPapers(arg, sec, how) {
+    main.innerHTML = `<div class="co-panel">${skeleton("list", 6, "Loading past papers")}</div>`;
+    const [{ default: bank }, { viewPapers }] = await Promise.all([PAPERS(), import("../papers/view.js")]);
+    await viewPapers(main, { bank, esc, inline,
+      lessonTitle: (id) => byId[id]?.title || id,
+      attempts: () => S.attempts || [],
+      record: (it, q, lessonId, res, meta) => record({ ...it, v: bank.version, l: byId[lessonId] }, "papers", q.id, res, meta),
+      go: (h) => { location.hash = h; } }, arg, sec, how);
+  }
+
   // ---------- leaderboard ----------
   function viewLeaderboard() {
     const wk = weekStart(), r = rng(Math.floor(wk / DAY)), mine = week().xp;
@@ -2610,6 +2625,7 @@ export function mountCourse(root, cfg) {
     showTab(); closeMore(); drawer(false);
     const wide = ["home", "me", "features", "leaderboard", "tracks", "paths", "exams", "exam", "practice", "overview", "target", cfg.workspace?.route].includes(view);
     side.hidden = wide; root.querySelector(".co-body").classList.toggle("wide", wide);
+    if (view === "papers") { side.hidden = true; root.querySelector(".co-body").classList.add("wide"); }
     // the course outline stays beside a lesson or a quiz (a drawer on smaller screens)
     showTree(view === "lesson" || view === "quiz");
     // reading a lesson: the course's header, progress and tabs fold away so the lesson starts at the top
@@ -2653,6 +2669,7 @@ export function mountCourse(root, cfg) {
     else if (view === "exams") await viewExams();
     else if (view === "exam") await viewExam(arg);
     else if (view === "practice") await viewPractice(arg);
+    else if (view === "papers") await viewPastPapers(arg, sec, how);
     else if (cfg.workspace && view === cfg.workspace.route) await viewWorkspace(arg);
     else if (view === "overview") viewOverview();
     else if (view === "leaderboard") viewLeaderboard();

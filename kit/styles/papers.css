@@ -1,0 +1,65 @@
+/* Past papers (#/papers, kit/papers/view.js): built from the course's tokens and its question styles (.aq), so it
+   follows the light and dark themes. Loaded by the view when a learner opens Past papers. */
+.pp-intro .pp-own { margin-top: 10px; font-size: 14px; }
+.pp-intro .pp-own a { color: var(--fg); }
+.pp-num { font: 600 12px var(--mono); color: var(--mute); letter-spacing: .02em; }
+.pp-thead { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 12px 20px; margin-bottom: 8px; }
+.pp-thead h3 { display: inline; margin: 0 0 0 8px; font-size: 22px; letter-spacing: -.02em; }
+.pp-thead p { margin: 4px 0 0; color: var(--mute); font-size: 14px; }
+.pp-acts { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.pp-group { margin: 20px 0 8px; font-size: 15px; }
+.pp-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.pp-list a { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 14px; padding: 12px 14px; min-height: 48px; border-radius: 12px; border: 1px solid var(--line); color: var(--fg); text-decoration: none; background: rgba(var(--ink-rgb), .025); }
+.pp-list a:hover { border-color: var(--line-strong, var(--fg)); }
+.pp-list a:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
+.pp-meta { color: var(--mute); font-size: 13.5px; } .pp-meta b { color: var(--fg); font-weight: 600; }
+.pp-crumbs { font-size: 13.5px; color: var(--mute); margin-bottom: 12px; } .pp-crumbs a { color: var(--fg); }
+/* a question, as on an exam paper: parts with their marks on the right */
+.pp-qhead h3 { margin: 0; font-size: 20px; display: flex; align-items: baseline; gap: 10px; } .pp-qhead h3 small { font: 500 13px var(--sans); color: var(--mute); }
+.pp-pts { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 0; }
+.pp-pt { display: inline-flex; gap: 6px; align-items: baseline; padding: 2px 10px; border-radius: 999px; border: 1px solid var(--line); font-size: 12.5px; color: var(--mute); }
+.pp-context { margin: 14px 0 0; padding: 10px 14px; border-left: 3px solid var(--line); background: rgba(var(--ink-rgb), .03); line-height: 1.55; }
+.pp-part { margin-top: 18px; padding-top: 16px; border-top: 1px dashed var(--line); }
+.pp-prompt { margin: 0 0 10px; line-height: 1.55; }
+.pp-marks { float: right; margin-left: 10px; font: 600 13px var(--mono); color: var(--mute); white-space: nowrap; }
+.pp-opts { display: grid; gap: 8px; }
+.pp-opt { display: flex; align-items: center; width: 100%; min-height: 48px; padding: 10px 14px; text-align: left; border-radius: 12px; border: 1px solid var(--line); background: rgba(var(--ink-rgb), .025); color: var(--fg); font: inherit; cursor: pointer; }
+.pp-opt:hover:not(:disabled) { border-color: var(--line-strong, var(--fg)); }
+.pp-opt[aria-pressed="true"] { border-color: var(--fg); background: rgba(var(--ink-rgb), .08); }
+.pp-opt:focus-visible, .pp-in:focus-visible, .pp-ticks input:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
+.pp-opt:disabled { cursor: default; }
+.pp-opt.right { border-color: #2ecc71; background: rgba(46, 204, 113, .12); }
+.pp-opt.wrong { border-color: #ff5a4d; background: rgba(255, 90, 77, .1); }
+.pp-in { width: 100%; padding: 10px 12px; border-radius: 10px; border: 1px solid var(--line); background: rgba(var(--sink-rgb, 0, 0, 0), .2); color: var(--fg); font: inherit; line-height: 1.5; }
+textarea.pp-in { resize: vertical; min-height: 84px; }
+.pp-numrow { display: flex; align-items: center; gap: 10px; } .pp-num-in { max-width: 200px; } .pp-unit { color: var(--mute); }
+.pp-result { margin-top: 8px; font-weight: 600; font-size: 14px; min-height: 1px; }
+.pp-result.ok { color: #2ecc71; color: light-dark(#13803f, #2ecc71); }
+.pp-result.part { color: #f5a35c; color: light-dark(#a04a00, #f5a35c); }
+.pp-result.no { color: #ff8a7a; color: light-dark(#b81600, #ff8a7a); }
+/* the mark scheme, revealed after marking */
+.pp-scheme { margin-top: 10px; }
+.pp-sch { padding: 14px 16px; border-radius: 12px; border: 1px solid var(--line); background: rgba(var(--ink-rgb), .035); }
+.pp-sch h4 { margin: 12px 0 4px; font: 600 12px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--mute); }
+.pp-sch h4:first-child, .pp-sch fieldset + h4 { margin-top: 0; }
+.pp-sch p { margin: 0; line-height: 1.55; }
+.pp-sch ul { margin: 0; padding-left: 20px; line-height: 1.5; }
+.pp-ticks { margin: 0 0 14px; padding: 0; border: 0; display: grid; gap: 6px; }
+.pp-ticks legend { font-weight: 600; margin-bottom: 6px; line-height: 1.45; }
+.pp-ticks label { display: flex; gap: 10px; align-items: flex-start; padding: 8px 10px; min-height: 44px; border-radius: 10px; border: 1px solid var(--line); cursor: pointer; line-height: 1.45; }
+.pp-ticks input { margin-top: 3px; width: 18px; height: 18px; flex: none; accent-color: var(--fg); }
+.pp-revise { margin-top: 12px !important; font-size: 14px; } .pp-revise span { color: var(--mute); } .pp-revise a { color: var(--fg); font-weight: 600; }
+/* the bar under a question: the total and the actions */
+.pp-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px; margin: 4px 0 18px; }
+.pp-total { margin-right: auto; font-size: 15px; }
+.pp-prov, .pp-note { font-size: 13px; color: var(--mute); }
+.pp-saved { margin-left: 6px; font-size: 13px; color: var(--mute); }
+.pp-pager { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 24px; }
+.pp-res h3 { margin: 0 0 8px; font-size: 22px; } .pp-res h3:focus { outline: none; }
+.pp-res h4 { margin: 16px 0 6px; }
+.pp-rlist, .pp-revlist { margin: 0; padding-left: 20px; line-height: 1.8; } .pp-rlist a, .pp-revlist a { color: var(--fg); }
+@media (max-width: 560px) {
+  .pp-thead h3 { font-size: 19px; }
+  .pp-marks { float: none; display: inline-block; margin: 2px 0 0; }
+  .pp-bar .btn { flex: 1 1 auto; }
+}
