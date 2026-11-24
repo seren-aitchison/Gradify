@@ -1067,8 +1067,8 @@ export function mountCourse(root, cfg) {
         return `<li><a class="cx-book" href="${fin ? `#/lesson/${l.id}` : resumeHref(l)}" style="--a:${t.from};--b:${t.to};--p:${d}" aria-label="${esc(l.title)}, ${fin ? "finished" : `${pct}% read`}, opened ${ago(r.t)}">
           <span class="cx-bcover" aria-hidden="true"><small>${U} ${l.unit.n}${l.module ? ` · ${esc(l.module)}` : ""}</small><b>${esc(l.title)}</b><em>${esc(cfg.name)}</em>${fin ? `<span class="cx-bdone">${ic("check")}</span>` : ""}</span>
           <span class="cx-bmeta" aria-hidden="true"><span class="cx-bbar"><i></i></span><small><b>${fin ? "Finished" : `${pct}%`}</b> · ${ago(r.t)}</small></span></a></li>`; }).join("")}</ul></section>` : "";
-    main.innerHTML = `${weekHtml}<section class="cx-hero" style="--a:${t0.from};--b:${t0.to}">
-        <div class="cx-herol">
+    main.innerHTML = `${weekHtml}<section class="cx-hero g-gleam" style="--a:${t0.from};--b:${t0.to}">
+        <div class="cx-herol">${heroArt(`${cfg.name} ${cfg.site}`, { cls: "co-heroart" })}
           <span class="co-kicker">${started ? `${hello} · pick up where you left off` : `Welcome to ${esc(cfg.name)}`}</span>
           ${nl ? `<p class="cx-path"><a href="#/learn/${nl.unit.id}">${U} ${nl.unit.n} · ${esc(nl.unit.title)}</a>${g?.title ? `<span>›</span><span>${nl.unit.n}.${gi + 1} ${esc(g.title)}</span>` : ""}</p>
           <h2>${esc(nl.title)}</h2>
@@ -2558,7 +2558,7 @@ export function mountCourse(root, cfg) {
     const mods = units.reduce((a, u) => a + (u.modules?.filter((m) => m.title).length || 0), 0);
     const started = st.lessons > 0 || st.xp > 0, feat = (O.featured || []).map((id) => ixById[id]).filter(Boolean);
     const count = (f) => units.filter(f).reduce((a, u) => a + u.lessons.length, 0);
-    main.innerHTML = `<section class="co-hero" style="--a:${t0.from};--b:${cfg.tracks.at(-1).to}">
+    main.innerHTML = `<section class="co-hero g-gleam" style="--a:${t0.from};--b:${cfg.tracks.at(-1).to}">${heroArt(`${cfg.name} ${cfg.site}`, { cls: "co-heroart" })}
         <div class="co-herotext"><h2>${esc(O.headline || cfg.name)}</h2><p>${esc(O.intro)}</p>
           <div class="co-row co-herogo">${(() => { const rl = started ? resumeLesson() || nl : nl; return rl ? `<a class="btn btn-light lg co-start1" href="${started ? resumeHref(rl) : `#/lesson/${rl.id}`}"><span>${ic("play")} ${started ? `Continue: ${esc(rl.title)}` : `Start the first lesson`}</span></a>` : ""; })()}<a class="co-link co-pathlink" href="#/paths">or choose a path</a></div>
           <p class="co-herosmall">${units.length} ${u1}s · ${lessons.length.toLocaleString()} lessons${ixs.length ? ` · ${ixs.length} interactives` : ""}${nl && !started ? ` · first lesson: ${esc(nl.title)}` : ""}</p></div>

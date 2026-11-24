@@ -29,7 +29,7 @@ export function actionCard({ kicker = "Your next best action", title, why = "", 
     const c = `g-act${a.soft ? " soft" : ""}`;
     return a.href ? `<a class="${c}" href="${esc(a.href)}" ${a.attrs || ""}>${inner}</a>` : `<button type="button" class="${c}" ${a.attrs || ""}>${inner}</button>`;
   };
-  const pic = art === false || /\bcompact\b/.test(cls) ? "" : drawArt(art || artFor(title, "") || artFor(`${kicker} ${why}`), { cls: "g-action-art" });
+  const pic = art === false || /\bcompact\b/.test(cls) ? "" : drawArt(art || artFor(title, "") || artFor(`${kicker} ${why}`), { cls: "g-action-art", gleam: true });
   const t = heading ? `<${heading} class="g-title">${esc(title)}</${heading}>` : `<b>${esc(title)}</b>`;
   return `<${tag} class="g-action${cls ? ` ${esc(cls)}` : ""}"><span class="g-sq">${iconSvg}</span><div class="g-action-text">${pic}<span class="g-kicker">${esc(kicker)}</span>${t}${why ? `<p>${esc(why)}</p>` : ""}${actions.length ? `<div class="g-action-buttons">${actions.map(btn).join("")}</div>` : ""}</div></${tag}>`;
 }

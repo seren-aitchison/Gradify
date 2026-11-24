@@ -9,11 +9,23 @@
 //
 // Styles: .g-art in kit/styles/base.css. Docs: docs/DESIGN-SYSTEM.md, "Spot illustrations".
 
-const C = { i: "#4641ff", p: "#f055dd", o: "#ff6a00", a: "#ffc400", t: "#22c4ad" };
+const C = { i: "#3c40d0", p: "#d6456b", o: "#e8601c", a: "#e3a21a", t: "#13957f" };
 // a tint (flat fill), an ink line, a filled dot
-const tint = (c, o = 0.22) => `fill="${c}" fill-opacity="${o}"`;
-const ink = 'fill="none" stroke="var(--art-ink, currentColor)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"';
-const line = (c) => `fill="none" stroke="${c}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"`;
+const tint = (c, o = 0.22) => `fill="${c}" fill-opacity="${Math.min(0.9, o * 1.5).toFixed(2)}"`;
+const ink = 'fill="none" stroke="var(--art-ink, currentColor)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
+// the gleam: a short glint of light that runs along the ink lines (CSS .g-glint in kit/styles/base.css; still when
+// motion is reduced). Each ink line gets a copy drawn as one short dash that travels its length.
+const GLINT = 'fill="none" stroke="var(--art-glint, #fff)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"';
+function glinted(d) {
+  let n = 0;
+  const copies = [];
+  d.replace(/<(path|rect|circle|ellipse)\b([^>]*?)fill="none" stroke="var\(--art-ink, currentColor\)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"([^>]*)\/>/g, (m, tag, a, b) => {
+    if (n < 6) copies.push(`<${tag}${a}${GLINT}${b} class="g-glint" pathLength="100" style="--gd:${(n++ * 0.7).toFixed(1)}s"/>`);
+    return m;
+  });
+  return d + copies.join("");
+}
+const line = (c) => `fill="none" stroke="${c}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"`;
 const ground = '<ellipse cx="60" cy="88" rx="38" ry="4.5" fill="var(--art-ink, currentColor)" fill-opacity=".08"/>';
 const spark = (x, y, c, s = 1) => `<path d="M${x} ${y - 5 * s}l${1.4 * s} ${3.6 * s} ${3.6 * s} ${1.4 * s}-${3.6 * s} ${1.4 * s}-${1.4 * s} ${3.6 * s}-${1.4 * s}-${3.6 * s}-${3.6 * s}-${1.4 * s} ${3.6 * s}-${1.4 * s}z" fill="${c}"/>`;
 
@@ -126,8 +138,8 @@ const DRAW = {
 export const ART = Object.keys(DRAW);
 
 /** One illustration as inline SVG. `size` is its width in CSS pixels (height follows, 120 × 96). */
-export function art(name, { size, cls = "" } = {}) {
-  const d = DRAW[name] || DRAW.lesson;
+export function art(name, { size, cls = "", gleam = false } = {}) {
+  const d = gleam ? glinted(DRAW[name] || DRAW.lesson) : DRAW[name] || DRAW.lesson;
   const wh = size ? ` width="${size}" height="${Math.round(size * 0.8)}"` : "";
   return `<svg class="g-art${cls ? ` ${cls}` : ""}" viewBox="0 0 120 96"${wh} aria-hidden="true" focusable="false">${d}</svg>`;
 }
@@ -182,11 +194,9 @@ export function heroArt(subject, { cls = "", accent = C.i } = {}) {
   const sat = (name, x, y, sc) => `<g transform="translate(${x} ${y}) scale(${sc})">${DRAW[name].replace(ground, "")}</g>`;
   const sats = { cards: ["cards", "lesson"], lesson: ["cards", "target"] }[k] || ["cards", "lesson"];
   return `<svg class="g-art g-hero-art${cls ? ` ${cls}` : ""}" viewBox="0 0 240 200" aria-hidden="true" focusable="false">
-    <path d="M120 22c46 0 92 24 96 70 4 50-40 88-96 88S20 150 24 98C28 50 74 22 120 22z" fill="${accent}" fill-opacity=".1"/>
-    <circle cx="206" cy="40" r="10" fill="${C.a}" fill-opacity=".55"/><circle cx="30" cy="160" r="7" fill="${C.p}" fill-opacity=".5"/><circle cx="218" cy="150" r="5" fill="${C.t}" fill-opacity=".6"/>
-    <ellipse cx="124" cy="182" rx="74" ry="7" fill="var(--art-ink, currentColor)" fill-opacity=".08"/>
-    <g transform="translate(46 34) scale(1.3)">${DRAW[k].replace(ground, "")}</g>
-    ${sat(sats[0], 0, 12, 0.62)}${sat(sats[1], 166, 112, 0.6)}
-    ${spark(214, 82, C.p, 1.5)}${spark(34, 104, C.a, 1.1)}${spark(152, 18, C.t, 1)}
+    <ellipse cx="122" cy="166" rx="76" ry="6.5" fill="var(--art-ink, currentColor)" fill-opacity=".1"/>
+    <g transform="translate(42 30) scale(1.32)">${glinted(DRAW[k].replace(ground, ""))}</g>
+    ${sat(sats[0], 168, 104, 0.58)}
+    ${spark(36, 40, accent === C.i ? C.a : accent, 1.1)}
   </svg>`;
 }

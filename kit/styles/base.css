@@ -610,9 +610,9 @@ html:root body, html:root body.sub-page { background: transparent; }
    directory and a subject site's "Where to start" tiles. --gleam is the site's colour; the edge runs from it to a light
    tint, the mode's contrast (black on white, white on black) and a deep shade, with a glint that travels round.
    Start times are staggered so a grid of them doesn't flash in step; still when motion is reduced. ---------- */
-:root :is(#groups .card, .sub-page .sm-topic) { --gleam: var(--c, var(--accent, #4641ff)); position: relative; isolation: isolate; }
+:root :is(#groups .card, .sub-page .sm-topic, .sub-page .sm-steps li, .g-tiles a, .g-gleam) { --gleam: var(--c, var(--accent, #4641ff)); position: relative; isolation: isolate; }
 :root .sub-page .sm-topic { --gleam: var(--accent, #4641ff); }
-:root :is(#groups .card, .sub-page .sm-topic)::before {
+:root :is(#groups .card, .sub-page .sm-topic, .sub-page .sm-steps li, .g-tiles a, .g-gleam)::before {
   content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; padding: 2px; pointer-events: none;
   background:
     linear-gradient(115deg, transparent 38%, var(--g-glint) 48%, transparent 58%) 0 0 / 260% 100% no-repeat,
@@ -621,12 +621,65 @@ html:root body, html:root body.sub-page { background: transparent; }
   mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
   animation: g-gleam 7s linear infinite;
 }
-:root :is(#groups .card, .sub-page .sm-topic):nth-child(3n + 1)::before { animation-delay: -1.6s; }
-:root :is(#groups .card, .sub-page .sm-topic):nth-child(3n + 2)::before { animation-delay: -4.1s; }
-:root :is(#groups .card, .sub-page .sm-topic):nth-child(4n)::before { animation-duration: 8.5s; }
+:root :is(#groups .card, .sub-page .sm-topic, .sub-page .sm-steps li, .g-tiles a, .g-gleam):nth-child(3n + 1)::before { animation-delay: -1.6s; }
+:root :is(#groups .card, .sub-page .sm-topic, .sub-page .sm-steps li, .g-tiles a, .g-gleam):nth-child(3n + 2)::before { animation-delay: -4.1s; }
+:root :is(#groups .card, .sub-page .sm-topic, .sub-page .sm-steps li, .g-tiles a, .g-gleam):nth-child(4n)::before { animation-duration: 8.5s; }
 /* "coming soon" sites: the same edge, quieter */
 :root #groups .card.soon::before { opacity: .45; }
-:root :is(#groups .card, .sub-page .sm-topic) { border-color: transparent; }
-@media (prefers-reduced-motion: reduce) { :root :is(#groups .card, .sub-page .sm-topic)::before { animation: none; background-position: -60% 0, 30% 0; } }
+:root :is(#groups .card, .sub-page .sm-topic, .sub-page .sm-steps li, .g-tiles a, .g-gleam) { border-color: transparent; }
+@media (prefers-reduced-motion: reduce) { :root :is(#groups .card, .sub-page .sm-topic, .sub-page .sm-steps li, .g-tiles a, .g-gleam)::before { animation: none; background-position: -60% 0, 30% 0; } }
 :root[data-motion="reduce"] :is(#groups .card, .sub-page .sm-topic)::before { animation: none; background-position: -60% 0, 30% 0; }
-@media print { :root :is(#groups .card, .sub-page .sm-topic)::before { content: none; } }
+@media print { :root :is(#groups .card, .sub-page .sm-topic, .sub-page .sm-steps li, .g-tiles a, .g-gleam)::before { content: none; } }
+/* the gleam on a drawing's lines: one short dash of light travels each ink line in turn, then rests */
+.g-art { --art-glint: rgba(255, 255, 255, .95); }
+:root:not([data-theme="light"]) .g-art { --art-glint: #ffd77a; }
+.sub-course .sc-art { --art-glint: #ffe39a; }
+.g-glint { stroke-dasharray: 10 90; stroke-dashoffset: 110; opacity: 0; animation: g-glint 6.5s cubic-bezier(.45, 0, .25, 1) infinite; animation-delay: var(--gd, 0s); }
+@keyframes g-glint { 0% { stroke-dashoffset: 110; opacity: 0; } 4% { opacity: 1; } 34% { stroke-dashoffset: 0; opacity: 1; } 38%, 100% { stroke-dashoffset: 0; opacity: 0; } }
+:root:not([data-theme="light"]) .g-glint { filter: drop-shadow(0 0 2px rgba(255, 215, 120, .8)); }
+@media (prefers-reduced-motion: reduce) { .g-glint { display: none; } }
+:root[data-motion="reduce"] .g-glint { display: none; }
+
+/* ---------- A course's hero box (the overview's .co-hero and course home's .cx-hero): opaque, with a soft frosted
+   sheen of the course's colour on the left that fades to the plain page (white, or black) on the right, where the
+   course's illustration sits; the edge gleams in the course's colour. The header's copy of the drawing steps aside. ---------- */
+:root .co :is(.co-hero, .cx-hero) {
+  --gleam: color-mix(in oklab, var(--a, #4641ff) 82%, var(--fg));
+  position: relative; border: 0; border-radius: 22px; overflow: hidden;
+  background:
+    linear-gradient(118deg, transparent 18%, rgba(255, 255, 255, .55) 27%, transparent 38%),
+    linear-gradient(100deg, color-mix(in srgb, var(--a, #4641ff) 13%, #fff) 0%, color-mix(in srgb, var(--b, #f055dd) 7%, #fff) 30%, #fff 56%, #fff 100%);
+  box-shadow: 0 1px 2px rgba(22, 22, 48, .06), 0 18px 44px -28px color-mix(in srgb, var(--a, #4641ff) 55%, transparent);
+}
+:root:not([data-theme="light"]) .co :is(.co-hero, .cx-hero) {
+  background:
+    linear-gradient(118deg, transparent 18%, rgba(255, 255, 255, .06) 27%, transparent 38%),
+    linear-gradient(100deg, color-mix(in srgb, var(--a, #4641ff) 22%, #0b0b10) 0%, color-mix(in srgb, var(--b, #f055dd) 10%, #070709) 30%, #000 56%, #000 100%);
+  box-shadow: 0 18px 44px -28px color-mix(in srgb, var(--a, #4641ff) 60%, transparent);
+}
+:root .co .co-hero .co-herotext { position: relative; z-index: 2; max-width: min(640px, 58%); }
+:root .co .co-hero .co-herotext p { color: var(--fg); opacity: .86; }
+:root .co .co-hero > .co-heroart { position: absolute; z-index: 1; right: clamp(12px, 4vw, 64px); top: 50%; transform: translateY(-50%); width: clamp(220px, 28vw, 400px); pointer-events: none; }
+:root .co .cx-herol { position: relative; }
+:root .co .cx-herol > .co-heroart { position: absolute; z-index: 0; right: 0; top: 50%; transform: translateY(-50%); width: clamp(180px, 22vw, 300px); pointer-events: none; }
+:root .co .cx-herol > :not(.co-heroart) { position: relative; z-index: 1; }
+:root .co:has(.co-hero, .cx-hero) .co-head .co-headart { display: none; }
+@media (max-width: 900px) {
+  :root .co .co-hero .co-herotext { max-width: none; }
+  :root .co .co-hero { padding-top: 190px; }
+  :root .co .co-hero > .co-heroart { top: 8px; right: 50%; transform: translateX(50%); width: 210px; }
+  :root .co .cx-herol { padding-top: 150px; }
+  :root .co .cx-herol > .co-heroart { top: -6px; right: 50%; transform: translateX(50%); width: 170px; }
+  :root .co .co-hero, :root .co .cx-hero { background: linear-gradient(180deg, color-mix(in srgb, var(--a, #4641ff) 12%, var(--page-bg)) 0%, var(--page-bg) 40%); }
+}
+
+/* the gleam's colour on the free-tools tiles is each tile's own (--k), on a site's steps the site's */
+:root .g-tiles > li > a { --gleam: var(--k); }
+:root .g-tiles > li:nth-child(4n+1) > a { --gleam: #4641ff; } :root .g-tiles > li:nth-child(4n+2) > a { --gleam: #c42a8c; } :root .g-tiles > li:nth-child(4n+3) > a { --gleam: #e1540f; } :root .g-tiles > li:nth-child(4n+4) > a { --gleam: #b97a00; }
+:root .g-tiles > li[style*="--k"] > a { --gleam: var(--k); }
+:root .sub-page .sm-steps li { --gleam: var(--accent, #4641ff); }
+/* the homepage: less air between "Everything that makes Gradify work" and "Find your Gradify" */
+:root body.ds #features { padding-bottom: clamp(28px, 4vw, 56px); }
+:root body.ds #find { padding-top: clamp(24px, 3vw, 48px); }
+:root .g-tiles > li:nth-child(3n + 2) > a::before { animation-delay: -2.4s; } :root .g-tiles > li:nth-child(3n) > a::before { animation-delay: -4.8s; }
+:root .sub-page .sm-steps li:nth-child(2)::before { animation-delay: -2.3s; } :root .sub-page .sm-steps li:nth-child(3)::before { animation-delay: -4.6s; }
