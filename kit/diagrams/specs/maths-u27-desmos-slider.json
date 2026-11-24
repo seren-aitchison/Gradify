@@ -1,0 +1,137 @@
+{
+ "id": "maths-u27-desmos-slider",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u27",
+ "lesson": "Desmos",
+ "title": "y = a(x − 2)² + 1 for three values of a",
+ "caption": "Every value of a gives a parabola with its vertex at (2, 1). Positive a opens upwards, negative a opens downwards, and a larger |a| makes the curve narrower: a = 2 is steeper than a = 1.",
+ "alt": "Three parabolas with the same vertex (2, 1): a = 1 and a = 2 opening upwards, a = −1 opening downwards.",
+ "description": [
+  "Type y = a(x − 2)² + 1 and accept the slider for a.",
+  "With a = 1 the parabola opens upwards from (2, 1).",
+  "With a = 2 it is narrower; with a = −1 it opens downwards.",
+  "The vertex stays at (2, 1) throughout."
+ ],
+ "range": {
+  "x": [
+   -1,
+   5
+  ],
+  "y": [
+   -6,
+   8
+  ]
+ },
+ "ticks": [
+  [
+   -1,
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  [
+   -6,
+   -4,
+   -2,
+   2,
+   4,
+   6,
+   8
+  ]
+ ],
+ "grid": [
+  2,
+  2
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "1*(x-2)^2+1",
+   "colour": "a1",
+   "label": "a = 1",
+   "labelAt": [
+    4.2,
+    4
+   ]
+  },
+  {
+   "expr": "2*(x-2)^2+1",
+   "colour": "a2",
+   "label": "a = 2",
+   "labelAt": [
+    1,
+    7
+   ]
+  },
+  {
+   "expr": "-1*(x-2)^2+1",
+   "colour": "a4",
+   "label": "a = −1",
+   "labelAt": [
+    4.2,
+    -1.2
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 2,
+   "y": 1,
+   "label": "vertex (2, 1)",
+   "colour": "ink",
+   "dx": 0,
+   "dy": -30,
+   "anchor": "middle"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "-1*(x-2)^2+1",
+   "x": 2,
+   "y": 1,
+   "name": "with a = -1 the vertex is (2, 1)"
+  },
+  {
+   "type": "point",
+   "expr": "1*(x-2)^2+1",
+   "x": 2,
+   "y": 1,
+   "name": "with a = 1 the vertex is (2, 1)"
+  },
+  {
+   "type": "point",
+   "expr": "2*(x-2)^2+1",
+   "x": 2,
+   "y": 1,
+   "name": "with a = 2 the vertex is (2, 1)"
+  },
+  {
+   "type": "slope",
+   "expr": "2*(x-2)^2+1",
+   "x": 3,
+   "value": 4,
+   "name": "a = 2: the gradient at x = 3 is 4"
+  },
+  {
+   "type": "slope",
+   "expr": "1*(x-2)^2+1",
+   "x": 3,
+   "value": 2,
+   "name": "a = 1: the gradient at x = 3 is only 2"
+  }
+ ],
+ "fromLesson": [
+  "vertex stays at (2, 1)"
+ ]
+}

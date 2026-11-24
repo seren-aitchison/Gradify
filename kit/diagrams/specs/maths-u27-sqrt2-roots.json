@@ -1,0 +1,102 @@
+{
+ "id": "maths-u27-sqrt2-roots",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u27",
+ "lesson": "Mathematica",
+ "title": "The roots of x² − 2",
+ "caption": "Solve[x^2 - 2 == 0, x] returns x = −√2 and x = √2. On the graph y = x² − 2 crosses the axis at ±1.414, and N[Sqrt[2], 10] gives the decimal 1.414213562.",
+ "alt": "The parabola y = x² − 2 with its minimum −2 at x = 0 and crossing the x-axis at −√2 and √2.",
+ "description": [
+  "Plot y = x² − 2.",
+  "It crosses y = 0 where x² = 2.",
+  "The exact roots are −√2 and √2.",
+  "Numerically √2 ≈ 1.414."
+ ],
+ "range": {
+  "x": [
+   -3,
+   3
+  ],
+  "y": [
+   -3,
+   7
+  ]
+ },
+ "ticks": [
+  [
+   -3,
+   -2,
+   -1,
+   1,
+   2,
+   3
+  ],
+  [
+   -2,
+   2,
+   4,
+   6
+  ]
+ ],
+ "grid": [
+  1,
+  4
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "x^2-2",
+   "colour": "a1",
+   "domain": [
+    -2.9,
+    2.9
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": -1.4142135623730951,
+   "y": 0,
+   "label": "−√2",
+   "colour": "a2",
+   "dx": -8,
+   "dy": 24,
+   "anchor": "end"
+  },
+  {
+   "x": 1.4142135623730951,
+   "y": 0,
+   "label": "√2 ≈ 1.414",
+   "colour": "a2",
+   "dx": 8,
+   "dy": 24
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "x^2-2",
+   "x": 1.4142135623730951,
+   "y": 0,
+   "name": "x = √2 is a root"
+  },
+  {
+   "type": "point",
+   "expr": "x^2-2",
+   "x": -1.4142135623730951,
+   "y": 0,
+   "name": "x = −√2 is a root"
+  }
+ ],
+ "fromLesson": [
+  "1.414213562"
+ ]
+}

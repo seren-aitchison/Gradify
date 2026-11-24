@@ -1,0 +1,203 @@
+{
+ "id": "maths-u27-solver-region",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u27",
+ "lesson": "Solver in Excel",
+ "title": "The feasible region and the best corner",
+ "caption": "Solver's answer x = 4, y = 0 is a corner of the feasible region. Profit 3x + 2y is 0 at the origin, 12 at (4, 0), 11 at (3, 1) and 4 at (0, 2), so the largest profit, 12, is at (4, 0).",
+ "alt": "A four-sided region with corners (0, 0), (4, 0), (3, 1) and (0, 2), bounded by x + y = 4 and x + 3y = 6.",
+ "description": [
+  "The constraints x + y ≤ 4, x + 3y ≤ 6, x ≥ 0 and y ≥ 0 bound a four-cornered region.",
+  "The corners are (0, 0), (4, 0), (3, 1) and (0, 2).",
+  "Profit 3x + 2y is 0, 12, 11 and 4 at them.",
+  "The largest is 12 at (4, 0): x = 4, y = 0."
+ ],
+ "also": [
+  {
+   "course": "maths",
+   "unit": "u27",
+   "lesson": "IBM ILOG CPLEX"
+  }
+ ],
+ "points": {
+  "O": [
+   0,
+   0
+  ],
+  "A": [
+   4,
+   0
+  ],
+  "B": [
+   3,
+   1
+  ],
+  "C": [
+   0,
+   2
+  ]
+ },
+ "labelAt": {
+  "O": [
+   -14,
+   14
+  ],
+  "A": [
+   14,
+   14
+  ],
+  "B": [
+   14,
+   -8
+  ],
+  "C": [
+   -16,
+   -4
+  ]
+ },
+ "grid": {
+  "step": 1,
+  "axes": false
+ },
+ "view": {
+  "x": [
+   -0.8,
+   5.5
+  ],
+  "y": [
+   -0.8,
+   3.5
+  ]
+ },
+ "height": [
+  340,
+  320
+ ],
+ "polygons": [
+  {
+   "pts": [
+    "O",
+    "A",
+    "B",
+    "C"
+   ],
+   "colour": "a1",
+   "opacity": 0.12
+  }
+ ],
+ "segments": [
+  {
+   "a": "O",
+   "b": "A",
+   "colour": "a1",
+   "w": 3
+  },
+  {
+   "a": "A",
+   "b": "B",
+   "colour": "a1",
+   "w": 3
+  },
+  {
+   "a": "B",
+   "b": "C",
+   "colour": "a1",
+   "w": 3
+  },
+  {
+   "a": "C",
+   "b": "O",
+   "colour": "a1",
+   "w": 3
+  }
+ ],
+ "notes": [
+  {
+   "at": [
+    4.25,
+    0.8
+   ],
+   "text": "x + y = 4",
+   "colour": "a1"
+  },
+  {
+   "at": [
+    1.2,
+    1.9
+   ],
+   "text": "x + 3y = 6",
+   "colour": "a1"
+  },
+  {
+   "at": [
+    3,
+    -0.5
+   ],
+   "text": "profit 12 at (4, 0)",
+   "colour": "a2"
+  },
+  {
+   "at": [
+    3.2,
+    1.45
+   ],
+   "text": "(3, 1): 11",
+   "colour": "a4"
+  }
+ ],
+ "checks": [
+  {
+   "type": "value",
+   "expr": "3*4+2*0",
+   "value": 12,
+   "name": "profit 3x + 2y at (4, 0) is 12"
+  },
+  {
+   "type": "value",
+   "expr": "3*3+2*1",
+   "value": 11,
+   "name": "profit at the corner (3, 1) is 11"
+  },
+  {
+   "type": "value",
+   "expr": "3*0+2*2",
+   "value": 4,
+   "name": "profit at the corner (0, 2) is 4"
+  },
+  {
+   "type": "value",
+   "expr": "4+0",
+   "value": 4,
+   "name": "(4, 0) satisfies x + y = 4"
+  },
+  {
+   "type": "value",
+   "expr": "4+3*0",
+   "value": 4,
+   "tol": 2,
+   "name": "(4, 0) satisfies x + 3y ≤ 6"
+  },
+  {
+   "type": "value",
+   "expr": "3+1",
+   "value": 4,
+   "name": "(3, 1) lies on x + y = 4"
+  },
+  {
+   "type": "value",
+   "expr": "3+3*1",
+   "value": 6,
+   "name": "(3, 1) lies on x + 3y = 6"
+  },
+  {
+   "type": "value",
+   "expr": "0+3*2",
+   "value": 6,
+   "name": "(0, 2) lies on x + 3y = 6"
+  }
+ ],
+ "fromLesson": [
+  "x = 4, y = 0"
+ ]
+}

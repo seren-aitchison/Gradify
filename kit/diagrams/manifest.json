@@ -72410,5 +72410,993 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "maths-u27-beta-posterior": {
+  "title": "The Beta(8, 4) posterior",
+  "caption": "With a uniform Beta(1, 1) prior and 7 heads in 10 tosses the posterior is Beta(8, 4), with density 1320 x⁷(1 − x)³. It has area 1 and mean 8/12 ≈ 0.67, which az.summary reports.",
+  "alt": "A single-humped curve over p from 0 to 1, peaking near 0.7 and centred near 0.67.",
+  "description": [
+   "Start from a flat prior on the coin's bias p.",
+   "Seven heads in ten tosses multiply by p⁷(1 − p)³.",
+   "The result is the Beta(8, 4) density 1320 p⁷(1 − p)³.",
+   "Its mean is 8/12 ≈ 0.67."
+  ],
+  "course": "maths",
+  "lesson": "PyMC",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u27.js: PyMC"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the posterior density has area 1",
+    "ok": true,
+    "detail": "area 1.0000"
+   },
+   {
+    "name": "its mean is 8/12 ≈ 0.67",
+    "ok": true,
+    "detail": "area 0.6667"
+   },
+   {
+    "name": "its peak is at p = 7/10",
+    "ok": true,
+    "detail": "found (0.7, 2.935)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u27-circumcentre": {
+  "title": "The circumcentre of a triangle",
+  "caption": "The perpendicular bisectors of the three sides of triangle ABC meet at one point O = (3, 1). A circle centred there passes through A, B and C. Dragging a vertex in GeoGebra moves everything but keeps this true.",
+  "alt": "A triangle ABC with a circle through its three vertices, centred at O where the perpendicular bisectors of the sides cross.",
+  "description": [
+   "Draw triangle ABC with A = (0, 0), B = (6, 0), C = (2, 4).",
+   "Mark the midpoint of each side and draw its perpendicular bisector.",
+   "All three bisectors pass through O = (3, 1).",
+   "The circle centred at O through A also passes through B and C."
+  ],
+  "course": "maths",
+  "lesson": "GeoGebra",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u27.js: GeoGebra"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "M is the midpoint of AB",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "N is the midpoint of AC",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "K is the midpoint of BC",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "OM is perpendicular to AB",
+    "ok": true,
+    "detail": "0"
+   },
+   {
+    "name": "ON is perpendicular to AC",
+    "ok": true,
+    "detail": "0"
+   },
+   {
+    "name": "OK is perpendicular to BC",
+    "ok": true,
+    "detail": "0"
+   },
+   {
+    "name": "the circle centred at O passes through A, B and C",
+    "ok": true,
+    "detail": "3.1623, 3.1623, 3.1623"
+   },
+   {
+    "name": "the lesson states \"circumcentre\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 640×380"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 380×298"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u27-damped-oscillation": {
+  "title": "The mass–spring–damper oscillation",
+  "caption": "For m = 1 kg, c = 2 N·s/m and k = 100 N/m, ẍ + 2ẋ + 100x = 0 gives x = e^{−t} cos(√99 t) from a start at x = 1: it oscillates at √99 ≈ 9.95 rad/s, close to √100 = 10, inside the decaying envelope e^{−t}.",
+  "alt": "A cosine wave of about ten radians per second starting at 1 and shrinking inside the dashed envelope e^{−t}.",
+  "description": [
+   "The model is ẍ + 2ẋ + 100x = 0 with the mass displaced to x = 1.",
+   "The solution is x = e^{−t} cos(√99 t).",
+   "The oscillation has angular frequency about 10 rad/s.",
+   "The amplitude decays like e^{−t}."
+  ],
+  "course": "maths",
+  "lesson": "MapleSim",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u27.js: MapleSim"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "x(0) = 1",
+    "ok": true,
+    "detail": "y(0) = 1"
+   },
+   {
+    "name": "one period 2π/√99 ≈ 0.631 s later the displacement is e^{−t}",
+    "ok": true,
+    "detail": "y(0.6314838833996552) = 0.5318"
+   },
+   {
+    "name": "at t = 2 s the oscillation is inside the envelope ±e^{−2}",
+    "ok": true,
+    "detail": "exp(-x)*cos(9.9498743710662*x) at 2 = 0.07; expected -0.1354–0.1354"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u27-derivative-check": {
+  "title": "Checking x² sin x against 2x sin x + x² cos x",
+  "caption": "Wolfram|Alpha returns 2x sin x + x² cos x. At x = 2 the product-rule formula gives 1.973, which is the slope of the curve there, and the second curve is that formula for every x.",
+  "alt": "The curve y = x² sin x and the curve of its derivative 2x sin x + x² cos x, with the point x = 2 marked.",
+  "description": [
+   "Plot f(x) = x² sin x.",
+   "Plot the returned derivative 2x sin x + x² cos x.",
+   "At x = 2 the derivative's value 1.973 equals the slope of f.",
+   "Where f has a turning point the derivative crosses zero."
+  ],
+  "course": "maths",
+  "lesson": "Wolfram Alpha",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u27.js: Wolfram Alpha"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the slope of x² sin x at x = 2 is 2x sin x + x² cos x = 1.973",
+    "ok": true,
+    "detail": "gradient 1.9726"
+   },
+   {
+    "name": "and at x = 1 it is 2 sin 1 + cos 1",
+    "ok": true,
+    "detail": "gradient 2.2232"
+   },
+   {
+    "name": "the derivative curve passes through (2, f′(2))",
+    "ok": true,
+    "detail": "y(2) = 1.9726"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u27-desmos-slider": {
+  "title": "y = a(x − 2)² + 1 for three values of a",
+  "caption": "Every value of a gives a parabola with its vertex at (2, 1). Positive a opens upwards, negative a opens downwards, and a larger |a| makes the curve narrower: a = 2 is steeper than a = 1.",
+  "alt": "Three parabolas with the same vertex (2, 1): a = 1 and a = 2 opening upwards, a = −1 opening downwards.",
+  "description": [
+   "Type y = a(x − 2)² + 1 and accept the slider for a.",
+   "With a = 1 the parabola opens upwards from (2, 1).",
+   "With a = 2 it is narrower; with a = −1 it opens downwards.",
+   "The vertex stays at (2, 1) throughout."
+  ],
+  "course": "maths",
+  "lesson": "Desmos",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u27.js: Desmos"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "with a = -1 the vertex is (2, 1)",
+    "ok": true,
+    "detail": "y(2) = 1"
+   },
+   {
+    "name": "with a = 1 the vertex is (2, 1)",
+    "ok": true,
+    "detail": "y(2) = 1"
+   },
+   {
+    "name": "with a = 2 the vertex is (2, 1)",
+    "ok": true,
+    "detail": "y(2) = 1"
+   },
+   {
+    "name": "a = 2: the gradient at x = 3 is 4",
+    "ok": true,
+    "detail": "gradient 4.0000"
+   },
+   {
+    "name": "a = 1: the gradient at x = 3 is only 2",
+    "ok": true,
+    "detail": "gradient 2.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u27-factor-360": {
+  "title": "factor(360) = 2³ × 3² × 5",
+  "caption": "GP returns the matrix [2, 3; 3, 2; 5, 1]: the primes of 360 with their exponents. The factor tree shows where they come from, and eulerphi(360) = 360 × (1/2)(2/3)(4/5) = 96 uses the same three primes.",
+  "alt": "A factor tree for 360 splitting into 2 and 180, then down to three 2s, two 3s and a 5.",
+  "description": [
+   "Split 360 = 2 × 180.",
+   "Keep splitting: 180 = 2 × 90, 90 = 2 × 45, 45 = 5 × 9, 9 = 3 × 3.",
+   "The prime leaves are 2, 2, 2, 5, 3, 3.",
+   "So 360 = 2³ × 3² × 5, as factor(360) reports."
+  ],
+  "course": "maths",
+  "lesson": "PARI/GP",
+  "also": [],
+  "renderer": "factor-tree",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u27.js: PARI/GP"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every branch multiplies to the number above it, and every leaf is prime",
+    "ok": true,
+    "detail": "leaves 2, 2, 2, 5, 3, 3"
+   },
+   {
+    "name": "360 = 2^{3} × 3^{2} × 5",
+    "ok": true,
+    "detail": "leaves 2 × 2 × 2 × 3 × 3 × 5"
+   },
+   {
+    "name": "the lesson states \"96\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "12 labels in 560×448"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "12 labels in 380×408"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "560px wide, shown at 126% (labels 18.9px)"
+   }
+  ]
+ },
+ "maths-u27-linear-system": {
+  "title": "2x + y = 5 and x + 3y = 10 meet at (1, 3)",
+  "caption": "Each equation is a straight line. MATLAB's A \\ b returns [1; 3], the one point where the lines cross, and A*x reproduces b.",
+  "alt": "Two straight lines, y = 5 − 2x and y = (10 − x)/3, crossing at the point (1, 3).",
+  "description": [
+   "Write each equation as a line: y = 5 − 2x and y = (10 − x)/3.",
+   "The solution is the point on both lines.",
+   "They cross at (1, 3), the output of A \\ b.",
+   "Check: 2 + 3 = 5 and 1 + 9 = 10."
+  ],
+  "course": "maths",
+  "lesson": "MATLAB",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u27.js: MATLAB"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the two lines meet at (1, 3)",
+    "ok": true,
+    "detail": "5-2*x → 3, (10-x)/3 → 3"
+   },
+   {
+    "name": "2(1) + 3 = 5",
+    "ok": true,
+    "detail": "y(1) = 3"
+   },
+   {
+    "name": "1 + 3(3) = 10",
+    "ok": true,
+    "detail": "y(1) = 3"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u27-maple-roots": {
+  "title": "solve(x^2 - 5*x + 6 = 0, x) gives 2, 3",
+  "caption": "The parabola y = x² − 5x + 6 crosses the x-axis at x = 2 and x = 3, the two values Maple's solve returns. Its minimum is below the axis halfway between them, at x = 2.5.",
+  "alt": "The parabola y = x² − 5x + 6 crossing the x-axis at (2, 0) and (3, 0).",
+  "description": [
+   "Plot y = x² − 5x + 6.",
+   "It crosses the axis where the quadratic is zero.",
+   "Those places are x = 2 and x = 3.",
+   "That is the output of solve."
+  ],
+  "course": "maths",
+  "lesson": "Maple",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u27.js: Maple"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "x = 2 is a root",
+    "ok": true,
+    "detail": "y(2) = 0"
+   },
+   {
+    "name": "x = 3 is a root",
+    "ok": true,
+    "detail": "y(3) = 0"
+   },
+   {
+    "name": "the minimum is at x = 2.5, halfway between the roots",
+    "ok": true,
+    "detail": "found (2.5, -0.25)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u27-maxima-cubic": {
+  "title": "(x + 1)³ and its gradient at x = 2",
+  "caption": "Maxima expands (x + 1)³ to x³ + 3x² + 3x + 1 and differentiates to 3x² + 6x + 3. Substituting x = 2 gives 27 for the gradient: the tangent at (2, 27) rises 27 units for every 1 across.",
+  "alt": "The cubic y = (x + 1)³ with its steep tangent line touching at the point (2, 27).",
+  "description": [
+   "The curve is y = (x + 1)³ = x³ + 3x² + 3x + 1.",
+   "Its derivative is 3x² + 6x + 3.",
+   "At x = 2 the derivative is 12 + 12 + 3 = 27.",
+   "The tangent at (2, 27) has gradient 27."
+  ],
+  "course": "maths",
+  "lesson": "Maxima",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u27.js: Maxima"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(2 + 1)³ = 27",
+    "ok": true,
+    "detail": "y(2) = 27"
+   },
+   {
+    "name": "the gradient at x = 2 is 3·4 + 6·2 + 3 = 27",
+    "ok": true,
+    "detail": "gradient 27.0000"
+   },
+   {
+    "name": "the tangent has gradient 27",
+    "ok": true,
+    "detail": "gradient 27.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u27-octave-squares": {
+  "title": "x = 1:4; y = x.^2",
+  "caption": "The squares of 1 to 4 are 1, 4, 9, 16, which total 30, so mean(y) = 30/4 = 7.5. The same lines run unchanged in MATLAB.",
+  "alt": "A bar chart of the four values 1, 4, 9 and 16 for x = 1 to 4.",
+  "description": [
+   "x = 1:4 gives the values 1, 2, 3, 4.",
+   "x.^2 squares each one: 1, 4, 9, 16.",
+   "The total is 30.",
+   "mean(y) = 30/4 = 7.5."
+  ],
+  "course": "maths",
+  "lesson": "GNU Octave",
+  "also": [],
+  "renderer": "barchart",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u27.js: GNU Octave"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "1 + 4 + 9 + 16 = 30, so the mean is 30/4 = 7.5",
+    "ok": true,
+    "detail": "computed 30"
+   },
+   {
+    "name": "the lesson states \"7.5\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "10 labels in 640×340"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "10 labels in 380×300"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u27-r-fit": {
+  "title": "lm(y ~ x): intercept 0, slope 2",
+  "caption": "The five points (1, 2) to (5, 10) lie exactly on y = 2x, so coef(fit) gives intercept 0 and slope 2 and R² is 1, a perfect fit.",
+  "alt": "Five points on the straight line y = 2x from (1, 2) to (5, 10), with the fitted line through them all.",
+  "description": [
+   "Plot the five points x = 1:5 against y = 2, 4, 6, 8, 10.",
+   "Every point lies on one straight line.",
+   "The fitted line has intercept 0 and slope 2.",
+   "The fit is perfect, so R² = 1."
+  ],
+  "course": "maths",
+  "lesson": "R",
+  "also": [],
+  "renderer": "scatter",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u27.js: R"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the line is the least-squares line y = 0 + 2x",
+    "ok": true,
+    "detail": "from the data y = 0 + 2x"
+   },
+   {
+    "name": "r = 1",
+    "ok": true,
+    "detail": "r = 1"
+   },
+   {
+    "name": "the lesson states \"intercept 0 and slope 2\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "15 labels in 640×380"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "15 labels in 380×340"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u27-scipy-minimum": {
+  "title": "The minimum of (x − 2)² + 1",
+  "caption": "The parabola f(x) = (x − 2)² + 1 has its lowest point at x = 2, where f = 1. These are the values res.x ≈ 2.0 and res.fun ≈ 1.0 that minimize_scalar reports.",
+  "alt": "The parabola y = (x − 2)² + 1 with its lowest point marked at (2, 1).",
+  "description": [
+   "Plot f(x) = (x − 2)² + 1.",
+   "The curve is lowest at x = 2.",
+   "There f(2) = 1.",
+   "minimize_scalar returns res.x ≈ 2.0 and res.fun ≈ 1.0."
+  ],
+  "course": "maths",
+  "lesson": "SciPy",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u27.js: SciPy"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the minimum of (x − 2)² + 1 is 1 at x = 2",
+    "ok": true,
+    "detail": "found (2, 1)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u27-solver-region": {
+  "title": "The feasible region and the best corner",
+  "caption": "Solver's answer x = 4, y = 0 is a corner of the feasible region. Profit 3x + 2y is 0 at the origin, 12 at (4, 0), 11 at (3, 1) and 4 at (0, 2), so the largest profit, 12, is at (4, 0).",
+  "alt": "A four-sided region with corners (0, 0), (4, 0), (3, 1) and (0, 2), bounded by x + y = 4 and x + 3y = 6.",
+  "description": [
+   "The constraints x + y ≤ 4, x + 3y ≤ 6, x ≥ 0 and y ≥ 0 bound a four-cornered region.",
+   "The corners are (0, 0), (4, 0), (3, 1) and (0, 2).",
+   "Profit 3x + 2y is 0, 12, 11 and 4 at them.",
+   "The largest is 12 at (4, 0): x = 4, y = 0."
+  ],
+  "course": "maths",
+  "lesson": "Solver in Excel",
+  "also": [
+   {
+    "course": "maths",
+    "unit": "u27",
+    "lesson": "IBM ILOG CPLEX"
+   }
+  ],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u27.js: Solver in Excel"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in maths: IBM ILOG CPLEX",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u27.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "profit 3x + 2y at (4, 0) is 12",
+    "ok": true,
+    "detail": "12"
+   },
+   {
+    "name": "profit at the corner (3, 1) is 11",
+    "ok": true,
+    "detail": "11"
+   },
+   {
+    "name": "profit at the corner (0, 2) is 4",
+    "ok": true,
+    "detail": "4"
+   },
+   {
+    "name": "(4, 0) satisfies x + y = 4",
+    "ok": true,
+    "detail": "4"
+   },
+   {
+    "name": "(4, 0) satisfies x + 3y ≤ 6",
+    "ok": true,
+    "detail": "4"
+   },
+   {
+    "name": "(3, 1) lies on x + y = 4",
+    "ok": true,
+    "detail": "4"
+   },
+   {
+    "name": "(3, 1) lies on x + 3y = 6",
+    "ok": true,
+    "detail": "6"
+   },
+   {
+    "name": "(0, 2) lies on x + 3y = 6",
+    "ok": true,
+    "detail": "6"
+   },
+   {
+    "name": "the lesson states \"x = 4, y = 0\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "8 labels in 640×340"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "8 labels in 380×276"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u27-sqrt2-roots": {
+  "title": "The roots of x² − 2",
+  "caption": "Solve[x^2 - 2 == 0, x] returns x = −√2 and x = √2. On the graph y = x² − 2 crosses the axis at ±1.414, and N[Sqrt[2], 10] gives the decimal 1.414213562.",
+  "alt": "The parabola y = x² − 2 with its minimum −2 at x = 0 and crossing the x-axis at −√2 and √2.",
+  "description": [
+   "Plot y = x² − 2.",
+   "It crosses y = 0 where x² = 2.",
+   "The exact roots are −√2 and √2.",
+   "Numerically √2 ≈ 1.414."
+  ],
+  "course": "maths",
+  "lesson": "Mathematica",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u27.js: Mathematica"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "x = √2 is a root",
+    "ok": true,
+    "detail": "y(1.4142135623730951) = 0"
+   },
+   {
+    "name": "x = −√2 is a root",
+    "ok": true,
+    "detail": "y(-1.4142135623730951) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u27-step-response": {
+  "title": "Step response of 1/(2s + 1)",
+  "caption": "A first-order system with time constant 2 s responds to a unit step with y = 1 − e^{−t/2}. At t = 2 s it has reached 1 − e^{−1} = 0.632 of the final value 1, about 63%.",
+  "alt": "A curve rising from 0 towards 1, passing the point (2, 0.63) marked by a dashed guide.",
+  "description": [
+   "A step input drives the transfer function 1/(2s + 1).",
+   "The output is y = 1 − e^{−t/2}.",
+   "At t = 2 s, y = 1 − e⁻¹ ≈ 0.632.",
+   "The response is about 63% of the way to its final value."
+  ],
+  "course": "maths",
+  "lesson": "Simulink",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u27.js: Simulink"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "y(2) = 1 − e⁻¹ ≈ 0.632",
+    "ok": true,
+    "detail": "y(2) = 0.6321"
+   },
+   {
+    "name": "the output starts at 0",
+    "ok": true,
+    "detail": "y(0) = 0"
+   },
+   {
+    "name": "the initial slope is 1/τ = 0.5",
+    "ok": true,
+    "detail": "gradient 0.5000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u27-sympy-antiderivative": {
+  "title": "x sin x and its antiderivative",
+  "caption": "SymPy gives ∫ x sin x dx = sin x − x cos x. Differentiating that returns x sin x: the slope of the antiderivative curve at each x equals the height of x sin x, which is the quick check.",
+  "alt": "The curve y = x sin x and its antiderivative y = sin x − x cos x, with the slope of the second at x = 2 equal to the height of the first.",
+  "description": [
+   "Plot f(x) = x sin x.",
+   "Plot SymPy's antiderivative sin x − x cos x.",
+   "At x = 2 the antiderivative's slope equals f(2) = 2 sin 2.",
+   "That is the check: differentiate the result."
+  ],
+  "course": "maths",
+  "lesson": "SymPy",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u27.js: SymPy"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the antiderivative's slope at x = 2 is 2 sin 2 = f(2)",
+    "ok": true,
+    "detail": "gradient 1.8186"
+   },
+   {
+    "name": "and at x = 4 it is 4 sin 4 = f(4)",
+    "ok": true,
+    "detail": "gradient -3.0272"
+   },
+   {
+    "name": "f(2) = 2 sin 2",
+    "ok": true,
+    "detail": "y(2) = 1.8186"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }
