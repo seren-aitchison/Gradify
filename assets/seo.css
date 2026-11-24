@@ -440,3 +440,27 @@ main.seo .optin .btn::before, main.seo .optin .btn::after { display: none; }
 main.seo .share-btn { background: var(--tile); border-color: var(--tile-edge); box-shadow: var(--tile-shadow); font-weight: 600; }
 @media (prefers-reduced-motion: reduce) { main.seo .cards > li, main.seo .faq-block summary::after { transition: none; } main.seo .cards > li:hover { transform: none; } }
 main.seo .mini { background: var(--tile); border-color: var(--tile-edge); box-shadow: var(--tile-shadow); color: var(--ink); font-weight: 600; }
+/* the tracker's University rules page (kit/data/uni-rules.js): one tile, a row per rule, the exact wording behind a
+   disclosure and a link to the university's own regulations */
+.uni-pick { margin: 0 4px 12px; } .uni-pick select { width: 100%; }
+.rule-card { background: var(--tile); border: 1px solid var(--tile-edge); box-shadow: var(--tile-shadow); border-radius: var(--tile-r); padding: 6px 18px 14px; color: var(--ink); }
+.rule-head { display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; padding: 12px 0; }
+.rule-head b { display: block; font-size: 18px; color: var(--ink); } .rule-head div > span { font-size: 13px; color: var(--sub); }
+.rule-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; color: var(--ok); background: color-mix(in srgb, var(--ok) 12%, transparent); padding: 5px 10px; border-radius: 99px; white-space: nowrap; }
+.rule-badge svg { width: 14px; height: 14px; }
+.rule-row { display: grid; grid-template-columns: auto 1fr; gap: 12px; padding: 14px 0; border-top: 1px solid var(--tile-edge); }
+.rule-row .sq { width: 34px; height: 34px; border-radius: 10px; } .rule-row .sq svg { width: 19px; height: 19px; }
+.rule-row b { color: var(--ink); font-size: 16px; }
+.rule-row p { margin: 4px 0 0; font-size: 15px; line-height: 1.5; color: var(--sub) !important; }
+.rule-row p.rule-note, .rule-foot { font-size: 13px !important; }
+.rule-warn { color: var(--ink) !important; } .rule-warn .chip, .rule-opts .chip { margin: 6px 6px 0 0; }
+.rule-opts .chip.on { color: #fff; background: var(--accent); }
+.rule-quote { margin-top: 8px; font-size: 14px; } .rule-quote summary { cursor: pointer; font-weight: 700; color: var(--accent); }
+.rule-quote blockquote { margin: 8px 0; padding: 10px 14px; border-radius: 14px; background: var(--group); color: var(--ink); font-size: 14px; line-height: 1.55; }
+.rule-quote a { font-size: 13px; color: var(--accent) !important; font-weight: 600; }
+.rule-check { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 6px; }
+.rule-check li { display: flex; gap: 8px; align-items: flex-start; font-size: 14px; color: var(--sub); } .rule-check svg { width: 18px; height: 18px; flex: none; margin-top: 1px; }
+.rule-check li.ok { color: var(--ink); } .rule-check li.ok svg { color: var(--ok); } .rule-check li.no svg { color: var(--bad); }
+.rule-foot { margin: 6px 0 0; padding-top: 12px; border-top: 1px solid var(--tile-edge); color: var(--sub) !important; }
+.rule-none p { color: var(--sub) !important; } .rule-none { padding: 14px 18px; }
+@media (max-width: 560px) { .rule-head { grid-template-columns: auto 1fr; } .rule-badge { grid-column: 1 / -1; justify-self: start; } }
