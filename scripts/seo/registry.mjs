@@ -1,16 +1,17 @@
-// The search identity of every specialist site, course and subject page: the title and description a search result
-// shows, and the structured data that says what the page is. These pages are hand-built apps (their visible content is
-// the site's own design), so scripts/build-seo.mjs rewrites only their <head> from here:
+// The search identity of every specialist site's home page (and a few other pages inside site folders): the title and
+// description a search result shows, and the structured data that says what the page is. These pages are hand-built
+// (their visible content is the site's own design), so scripts/build-seo.mjs rewrites only their <head> from here:
 //   - <title>, meta description, and the Open Graph / Twitter copies of both
-//   - one JSON-LD block (marked data-seo="registry"): CollectionPage for a site's home, Course for a course page
+//   - one JSON-LD block (marked data-seo="registry"): CollectionPage for a site's home
+// Course pages are NOT here: scripts/seo/coursepages.mjs gives them a crawlable overview, their own title and Course
+// data, from the same catalogue and the same coverage rules.
 //
 // Rules (tests/seo-registry.test.mjs checks them):
-//   - every live or beta site in kit/core/sites.js has an entry, and so does every course page in the catalogue. A new
-//     site or course fails CI until its search identity is written here: SEO is part of "done".
+//   - every live or beta site in kit/core/sites.js has an entry. A new site fails CI until its search identity is
+//     written here: SEO is part of "done".
 //   - titles ≤ 60 characters, descriptions ≤ 155, all unique, each naming what a student would search for
 //   - a qualification (GCSE, A level, SQE, MLA, NMC, GPhC, MPharm) is named only when kit/curriculum/coverage.js says a
 //     course on that page serves it. Constitution article 3: coverage is claimed only with evidence.
-//   - course descriptions and lesson counts come from the course catalogue (kit/api/v1/), counting written lessons only
 import { readFileSync } from "node:fs";
 import { SITES, slugOf } from "../../kit/core/site.js";
 import { COURSES as COVERAGE, QUALIFICATIONS } from "../../kit/curriculum/coverage.js";
@@ -54,29 +55,6 @@ export const SITE_HOME = {
   creategradify: ["Design Thinking Course & Creative Briefs | CreateGradify", "Learn design thinking, ideation, user research and prototyping in a free creativity course, then practise on real design briefs."],
 };
 
-// A course's search phrase: what goes before ": N Free Lessons" in its title (the catalogue name if not listed)
-const COURSE_PHRASE = {
-  biology: "Biology Revision", chemistry: "Chemistry Revision", physics: "Physics Revision", maths: "Maths Course", law: "Law & SQE Course",
-  medicine: "Medicine Course", nursing: "Nursing Course", pharmacy: "Pharmacy Course", gcse: "GCSE Revision Course", primary: "Primary Learning Course",
-  university: "University Study Skills Course", research: "Dissertation & Research Course", professional: "Professional Skills Course", teaching: "Teaching CPD Course",
-  careers: "Careers & Employability Course", investing: "Investing Course", spanish: "Learn Spanish", japanese: "Learn Japanese", literature: "English Literature Course",
-  design: "Design Thinking Course", finance: "Accounting & Finance Course", business: "Business & Management Course", sport: "Sport Science Course",
-  ecology: "Ecology Course", engineering: "Engineering Course", psychology: "Psychology Course", sociology: "Sociology Course", history: "History Course",
-  art: "Art & Design Course", music: "Music Theory Course", dentistry: "Dentistry Course", veterinary: "Veterinary Science Course", health: "Health & Wellbeing Course",
-};
-// Where a course page's own hand-written description says it better than the generated one (kept ≤ 155 characters;
-// {lessons} and {units} are filled in from the catalogue, so the numbers never go stale)
-const COURSE_DESC = {
-  biology: "Biology from cells to ecosystems: {lessons} free lessons with notes, interactive simulations, check questions, flashcards, quizzes and exams.",
-  chemistry: "Chemistry from atoms to drug design: {lessons} free lessons with notes, interactive simulations, check questions, flashcards, quizzes and exams.",
-  physics: "Physics from first principles to research: {units} units and {lessons} free lessons with full notes, check questions, flashcards and unit quizzes.",
-  psychology: "Psychology from neurones to cultures: {lessons} free lessons with interactive experiments, simulations, a data lab, flashcards, quizzes and exams.",
-  sociology: "Sociology from the sociological imagination to social data science: {lessons} free lessons with real-data explorers, flashcards, quizzes and exams.",
-  maths: "Maths from everyday numeracy, GCSE and A level to university, with worked examples, generated practice and a line-by-line step checker.",
-  pharmacy: "Pharmacy for UK practice: pharmacology, pharmacokinetics, therapeutics, calculations and law, for the MPharm and the GPhC registration assessment.",
-  nursing: "Nursing for UK practice: anatomy and physiology, assessment, pharmacology and clinical conditions, with flashcards and quizzes. Education only.",
-};
-
 // Other public pages inside a site's folder that need their own identity
 export const EXTRA = {
   "sportgradify/body.html": { title: "3D Muscle Map: Training, Recovery & Strength | SportGradify", description: "Your body in 3D, coloured by your own training: recent stimulus, estimated strength progression, recovery and measured fitness for every muscle group.", type: "WebApplication" },
@@ -118,30 +96,6 @@ export function registry() {
         isPartOf: { "@type": "WebSite", "@id": `${ORIGIN}/#site`, name: "Gradify", url: `${ORIGIN}/` }, publisher: { "@id": ORG["@id"] },
         audience: { "@type": "EducationalAudience", educationalRole: "student", audienceType: s.who },
         ...(courses.length ? { hasPart: courses.map((c) => ({ "@type": "Course", name: courseFacts(c.slug).name, url: `${ORIGIN}${c.page}` })) } : {}),
-      },
-    });
-  }
-  for (const c of cat.courses.filter((x) => ["live", "beta"].includes(x.status) && x.page?.startsWith("/"))) {
-    const p = `${c.page.replace(/^\//, "")}index.html`; if (out.has(p)) continue;
-    const f = courseFacts(c.slug), site = SITES.find((s) => c.page.startsWith(`/${slugOf(s)}/`));
-    const phrase = COURSE_PHRASE[c.slug] || `${f.name} Course`, brand = site ? site.n.split(" · ")[0] : "Gradify";
-    const title = [`${phrase}: ${f.lessons.toLocaleString("en-GB")} Free Lessons | ${brand}`, `${phrase}: Free Lessons | ${brand}`, `${phrase} | ${brand}`].find((t) => t.length <= 60);
-    // the first and last units it teaches (skipping any whose name would claim a qualification the course isn't mapped to)
-    const fair = f.titles.filter((t) => !CLAIM_WORDS.some(([re, q]) => re.test(t) && !claimable(c.slug).includes(q)));
-    const a = fair[0], z = fair.at(-1), size = `${plural(f.units, "topic area")} and ${plural(f.lessons, "free lesson")}`;
-    let description = [`${f.name}: ${size}, from ${a} to ${z}, with notes, check questions, flashcards and quizzes.`, `${f.name}: ${size}, from ${a} to ${z}, with flashcards and quizzes.`, `${f.name}: ${size}, starting with ${a}, with notes, check questions, flashcards and quizzes.`, `${f.name}: ${size}, with notes, check questions, flashcards and quizzes.`].find((d) => d.length <= 155);
-    if (COURSE_DESC[c.slug]) description = COURSE_DESC[c.slug].replace("{lessons}", f.lessons.toLocaleString("en-GB")).replace("{units}", f.units);
-    const quals = claimable(c.slug).map((q) => QUALIFICATIONS[q]?.name).filter(Boolean);
-    out.set(p, {
-      title, description, site: site?.n, courses: [c.slug],
-      schema: {
-        "@type": "Course", "@id": `${url(p)}#course`, url: url(p), name: f.name, description, inLanguage: "en-GB", isAccessibleForFree: true,
-        provider: { "@type": "EducationalOrganization", "@id": ORG["@id"], name: "Gradify", url: `${ORIGIN}/` },
-        offers: { "@type": "Offer", price: "0", priceCurrency: "GBP", category: "Free" },
-        // no courseWorkload: Gradify measures each learner's own time, but publishes no course-length estimate to quote
-        hasCourseInstance: { "@type": "CourseInstance", courseMode: "Online" },
-        syllabusSections: f.titles.map((t) => ({ "@type": "Syllabus", name: t })),
-        ...(quals.length ? { about: quals.map((n) => ({ "@type": "Thing", name: n })) } : {}),
       },
     });
   }

@@ -33,6 +33,7 @@ Score = demand × fit ÷ competition (high 3, medium 2, low 1; strong fit 2, par
 | 2 | 1 | linked notes with flashcards | remnote alternative; notes app with flashcards | [/features/notebook/](https://getgradify.com/features/notebook/) | do | low | medium | strong |
 | 2 | 1 | printable revision timetable | revision timetable template; printable revision timetable | [/templates/revision-timetable/](https://getgradify.com/templates/revision-timetable/) | get | high | high | partial |
 | 2 | 1 | medical school revision | medical school revision; medicine flashcards; med school notes | [/medgradify/](https://getgradify.com/medgradify/) | learn | medium | medium | partial |
+| 2 | 1 | 3d anatomy | 3d anatomy free; interactive human anatomy; 3d human body model | [/medgradify/3d.html](https://getgradify.com/medgradify/3d.html) | do | high | high | partial |
 | 2 | 0.7 | revision planner | revision planner app; time blocking for students; auto revision timetable | [/features/time-blocking/](https://getgradify.com/features/time-blocking/) | do | medium | high | partial |
 | 4 | 1 | biology revision | biology revision online; free biology lessons; biology flashcards | [/scigradify/biology/](https://getgradify.com/scigradify/biology/) | learn | high | high | partial |
 | 4 | 1 | chemistry revision | chemistry revision online; free chemistry lessons | [/scigradify/chemistry/](https://getgradify.com/scigradify/chemistry/) | learn | high | high | partial |
@@ -52,6 +53,6 @@ Score = demand × fit ÷ competition (high 3, medium 2, low 1; strong fit 2, par
 
 ## Gaps: searches with no good destination yet
 
-- **3D anatomy** ("3d anatomy free", "interactive human anatomy"): the 3D explorer (`3d.html`) is an app screen, not an indexable page. A public landing for it is the highest-demand gap found.
+- **3D anatomy** is now mapped to `/medgradify/3d.html` (made indexable in the crawlability sprint). Its page needs crawlable text around the model to compete: a short explanation of each body system it shows.
 - **Exam-board pages** ("AQA biology revision"): not built on purpose. A board-specific page needs a course verified against that board's specification first (`kit/curriculum/coverage.js`, constitution article 3).
 - **GCSE and A level biology, chemistry and physics**: the science courses are Gradify's own curriculum, not mapped to a specification, so their titles say "Biology Revision", not "GCSE Biology". Mapping them would unlock the highest-demand subject searches.

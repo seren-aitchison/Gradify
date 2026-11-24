@@ -1,6 +1,7 @@
 // The keyword opportunity database: every search Gradify could win, the one page that should win it, and why it's a
 // priority. Built from what Gradify knows, then sharpened by what Google measures:
-//   curriculum    every lesson in the learn library is a topic students search for (candidate: demand unvalidated)
+//   curriculum    lessons that clear the standalone-value floor in the top subjects (candidate: demand unvalidated);
+//                 their destination is the lesson's own page if it's in the pilot, otherwise its unit's topic page
 //   features      every feature page (candidate)
 //   intent map    the hand-made clusters in scripts/seo/keywords.mjs (demand and competition are estimates)
 //   Search Console  real queries with impressions, clicks, CTR and position (measured)
@@ -11,7 +12,7 @@ import { writeFileSync, mkdirSync, readFileSync } from "node:fs";
 import { CLUSTERS } from "../seo/keywords.mjs";
 import { FEATURE_PAGES } from "../seo/features.mjs";
 import { FEATURES, featureSlug } from "../../kit/data/features.js";
-import { learnLibrary, titleCase } from "../seo/learn.mjs";
+import { lessonsOf, titleCase, ORDER } from "./lesson-readiness.mjs";
 import { gscRows, keywordPlanner } from "./sources.mjs";
 import { seasonsOf } from "./seasons.mjs";
 
@@ -47,9 +48,9 @@ export function geographyOf(q) {
 }
 
 const DEST_KIND = (u) => /\/features\/|\/tools\/|\/(pdf-to-flashcards|lecture-notes-to-mind-map|notes-to-cheat-sheet|youtube-to-flashcards|notes-to-study-chant)\//.test(u) ? "tool or feature"
-  : /\/learn\//.test(u) ? "lesson" : /\/[a-z]+gradify\//.test(u) ? "site or course" : /\/(guides|vs|compare)\//.test(u) ? "guide" : "other";
+  : /\/lessons\//.test(u) ? "lesson" : /\/topics\//.test(u) ? "topic page" : /\/[a-z]+gradify\//.test(u) ? "site or course" : /\/(guides|vs|compare)\//.test(u) ? "guide" : "other";
 // how likely a visit from this page leads to a learner using Gradify (judgement, stated in the docs)
-const CONVERSION = { "tool or feature": 1, "site or course": 0.9, lesson: 0.8, guide: 0.6, other: 0.5 };
+const CONVERSION = { "tool or feature": 1, "site or course": 0.9, lesson: 0.8, "topic page": 0.7, guide: 0.6, other: 0.5 };
 const INTENT_VALUE = { do: 1, "learn: revise": 0.9, "learn: question": 0.8, compare: 0.8, "learn: topic": 0.6, navigational: 0.3 };
 const COMP = { low: 1, medium: 0.6, high: 0.3 };
 
@@ -70,11 +71,11 @@ export function score(o) {
 }
 
 export async function buildOpportunities({ gsc = gscRows(), kp = keywordPlanner() } = {}) {
-  const lib = await learnLibrary(), rows = new Map();
+  const lessons = (await lessonsOf(ORDER.slice(0, 10))).filter((x) => !x.m.missing.length), rows = new Map();
   const add = (phrase, o) => { const k = norm(phrase); if (!k) return; const prev = rows.get(k); if (!prev || (prev.origin !== "search-console" && o.origin === "search-console")) rows.set(k, { phrase: k, ...o }); };
   for (const c of CLUSTERS) for (const q of c.queries) add(q, { origin: "intent map", cluster: c.cluster, destination: `${ORIGIN}/${c.dest}`, demand: { value: c.demand, source: "estimate" }, competition: { value: c.competition, source: "estimate" } });
   for (const f of FEATURES) { const p = FEATURE_PAGES[featureSlug(f)]; if (p && !p.owner && f.plan !== "pro") add(p.title.replace(/\s*\(.*\)$/, ""), { origin: "feature", cluster: f.n, destination: `${ORIGIN}/features/${featureSlug(f)}/`, demand: { value: null, source: "unknown" }, competition: { value: null, source: "unknown" } }); }
-  for (const x of lib.live) add(titleCase(x.L.title), { origin: "curriculum", cluster: x.c.name, destination: `${ORIGIN}${x.href}`, demand: { value: null, source: "unknown" }, competition: { value: null, source: "unknown" } });
+  for (const x of lessons) add(titleCase(x.L.title), { origin: "curriculum", cluster: x.c.name, destination: x.inPilot ? `${ORIGIN}/lessons/${x.c.slug}/${x.id}/` : `${ORIGIN}/topics/${x.c.slug}/${x.u.id}/`, demand: { value: null, source: "unknown" }, competition: { value: null, source: "unknown" } });
   // measured queries: the page Google already shows for them is their destination unless a mapped one exists
   const byQuery = new Map();
   for (const r of gsc.filter((x) => x.query)) { const k = norm(r.query), cur = byQuery.get(k) || { impressions: 0, clicks: 0, posSum: 0, pages: new Map() }; cur.impressions += r.impressions || 0; cur.clicks += r.clicks || 0; cur.posSum += (r.position || 0) * (r.impressions || 0); if (r.page) cur.pages.set(r.page, (cur.pages.get(r.page) || 0) + (r.impressions || 0)); byQuery.set(k, cur); }
@@ -111,7 +112,7 @@ ${est.slice(0, 50).map(row).join("\n")}
 
 ## Unvalidated candidates: a sample of 50
 
-Every lesson in the learn library and every feature is a candidate. Validate the promising ones in Keyword Planner before writing anything new for them.
+Every floor-clearing lesson in the top subjects and every feature is a candidate. Validate the promising ones in Keyword Planner before writing anything new for them.
 
 ${head}
 ${cand.slice(0, 50).map(row).join("\n")}

@@ -66,5 +66,5 @@ In priority order, from what's known today:
 1. **Prepare for the season (before demand peaks):** New term: plans, habits, mocks, peaking from 2027-01-01 (6 weeks): refresh and link the pages it covers now.
 2. **In season now (watch, don't rewrite):** Coursework, modules, mocks, finals planning.
 3. **Funnel:** **Unavailable.** Needs the funnel row. Run query 10 in `docs/sql/growth-dashboard.sql` and save the result as `data/growth/inputs/db-funnel.csv`.
-4. **Grow the learn library:** 2496 lessons in released wave(s) 1 are below the quality floor (`docs/growth/CONTENT-BACKLOG.md`); most need practice questions. Wave 2 (medicine, sociology, history, literature, ecology) is ready to release once wave 1 is indexing well in Search Console.
+4. **Scale the lesson pages** once the pilot is indexing well (docs/SEO.md): the next batch is 11 units, 281 pages (`docs/growth/CONTENT-BACKLOG.md`). Most lessons that aren't ready lack explained practice questions.
 5. **Import Search Console data.** Everything above that says unavailable starts working with it; until then priorities rest on estimates.

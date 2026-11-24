@@ -303,6 +303,22 @@ main.seo .g-action, .tool .g-action { --g-tile: var(--tile); --g-ink: var(--ink)
 }
 @media (prefers-reduced-motion: reduce) { .hero-bar span, .ring-fg { transition: none; } }
 @media print { .sheet.docked { position: static; transform: none !important; box-shadow: none; } .sheet-handle .grip { display: none; } .sheet-spacer { display: none; } }
+/* pilot lesson pages (scripts/seo/lessons.mjs): the course notes' building blocks, readable without the app */
+.lesson-kicker { font-size: 13px; color: var(--faint) !important; margin: 0; }
+.lesson-notice { font-size: 13px; border: 1px solid var(--line); border-radius: 12px; padding: 10px 14px; }
+.lesson-notes section { margin: 8px 0; }
+.co-eq { display: grid; gap: 6px; margin: 12px 0; padding: 12px 14px; border-radius: 12px; background: var(--panel); border: 1px solid var(--line); }
+.co-eq code { font: 15px var(--mono); color: var(--fg); } .co-eq span { display: block; font-size: 14px; color: var(--mute); }
+.co-ex, .co-frame section, .co-auth { margin: 14px 0; padding: 12px 16px; border-radius: 12px; border: 1px solid var(--line); background: var(--panel); }
+.co-ex > b, .co-pit > b, .co-safe > b { display: block; color: var(--fg); margin-bottom: 4px; }
+.mv-key { border-left: 3px solid #ffc002; padding-left: 12px; color: var(--fg) !important; }
+.co-pit, .co-safe { margin: 14px 0; padding: 10px 14px; border-radius: 12px; border-left: 3px solid #ff6b6b; background: var(--panel); color: var(--mute); }
+.co-terms dt { font-weight: 600; color: var(--fg); } .co-terms dd { margin: 0 0 8px; }
+.co-auth-k { font: 600 11px var(--mono); text-transform: uppercase; letter-spacing: .1em; color: var(--faint); }
+.co-sources { font-size: 14px; }
+.lesson-dg { margin: 18px 0; } .lesson-dg img { width: 100%; height: auto; display: block; border-radius: 12px; background: #fff; }
+.lesson-dg figcaption { font-size: 14px; color: var(--mute); margin-top: 6px; }
+.co-frame h2 { margin-top: 4px !important; font-size: 18px; } .co-frame section { padding-top: 6px; }
 
 /* ---- the tracker's pages, toolbar and module grid ---- */
 .tool[data-layout="dash"] { display: flex; flex-direction: column; }
@@ -528,24 +544,3 @@ main.seo .mini { background: var(--tile); border-color: var(--tile-edge); box-sh
 .ask-note a { color: var(--accent) !important; font-weight: 700; }
 @keyframes ask-pulse { 50% { opacity: .45; } }
 @media (prefers-reduced-motion: reduce) { .ask-wait { animation: none; } }
-
-/* the learn library (scripts/seo/learn.mjs): lesson notes, diagrams and practice */
-main.seo .lr-meta { color: var(--faint); font-size: 14px; margin: -4px 0 18px; }
-main.seo .lr-fig { margin: 18px 0; }
-main.seo .lr-fig img { display: block; width: 100%; height: auto; max-width: 100%; background: #fff; border-radius: 12px; border: 1px solid var(--line-strong); }
-main.seo .lr-fig figcaption { font-size: 14px; color: var(--mute, var(--fg)); margin-top: 8px; }
-main.seo .co-ex, main.seo .co-pit, main.seo .co-safe { border: 1px solid var(--line-strong); border-left: 3px solid #1fae8c; border-radius: 12px; padding: 10px 14px; margin: 16px 0; }
-main.seo .co-pit { border-left-color: #ff5a4d; } main.seo .co-safe { border-left-color: #ffc002; }
-main.seo .co-ex > b, main.seo .co-pit > b, main.seo .co-safe > b { display: block; margin-bottom: 4px; }
-main.seo .co-ex p { margin: 0 0 6px; }
-main.seo .co-eq div { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; margin: 6px 0; }
-main.seo .lr-qs { padding-left: 0; list-style: none; counter-reset: q; }
-main.seo .lr-qs > li { counter-increment: q; }
-main.seo .lr-qs summary { list-style: none; }
-main.seo .lr-qs summary::-webkit-details-marker { display: none; }
-main.seo .lr-qs summary::before { content: counter(q) ". "; font-weight: 600; }
-main.seo .lr-opts { margin: 6px 0 4px; padding-left: 20px; list-style: lower-alpha; }
-main.seo .lr-qs .reveal { display: inline-block; margin: 4px 0 0; font-size: 13px; text-decoration: underline; }
-main.seo .lr-qs details[open] .reveal { display: none; }
-main.seo .lr-terms dt { font-weight: 600; margin-top: 10px; } main.seo .lr-terms dd { margin: 2px 0 0; }
-main.seo .lr-note { font-size: 13px; color: var(--faint); }

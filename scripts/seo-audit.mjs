@@ -17,16 +17,18 @@ const read = (p) => readFileSync(new URL(p, root), "utf8");
 const urlOf = (p) => `${ORIGIN}/${p.replace(/(^|\/)index\.html$/, "$1")}`;
 
 // pages that are app screens or tools for one person's own data: never meant for a search result
-export const PRIVATE = [/(^|\/)app\.html$/, /(^|\/)lifeos\.html$/, /(^|\/)map\.html$/, /(^|\/)3d\.html$/, /^status\.html$/, /^harness\.html$/, /^send\.html$/, /(^|\/)embed\.html$/, /^labs\//, /^kit\//, /^assets\//, /^campaign\//];
+// (each site's 3d.html is a public page: the 3D explorers are indexed, docs/SEO.md "Crawlability sprint")
+export const PRIVATE = [/(^|\/)app\.html$/, /(^|\/)lifeos\.html$/, /(^|\/)map\.html$/, /^status\.html$/, /^harness\.html$/, /^send\.html$/, /(^|\/)embed\.html$/, /^labs\//, /^kit\//, /^assets\//, /^campaign\//];
 // the public app landing is deliberately indexed: it is what "Gradify app" should find
 const PUBLIC_APP = new Set(["app.html"]);
 
 export function category(p) {
   const top = p.split("/")[0];
   if (p === "index.html") return "home";
+  if (/(^|\/)3d\.html$/.test(p)) return "3d explorer";
   if (/^[a-z]+gradify$/.test(top)) return p === `${top}/index.html` ? "site home" : /\/course\/index\.html$/.test(p) || /^scigradify\/[a-z]+\/index\.html$/.test(p) || /^languagegradify\/[a-z]+\/index\.html$/.test(p) ? "course" : "site page";
   if (!p.includes("/")) return "hub page";
-  return { features: "feature", tools: "tool", guides: "guide", topics: "topic", terms: "key term", questions: "practice questions", "exam-traps": "practice questions", "study-plan": "study plan", vs: "guide", compare: "comparison", checklists: "checklist", glossary: "glossary", templates: "template" }[top] || (sectionOf(urlOf(p)) === "tools" ? "tool" : "resource");
+  return { features: "feature", lessons: "lesson", tools: "tool", guides: "guide", topics: "topic", terms: "key term", questions: "practice questions", "exam-traps": "practice questions", "study-plan": "study plan", vs: "guide", compare: "comparison", checklists: "checklist", glossary: "glossary", templates: "template" }[top] || (sectionOf(urlOf(p)) === "tools" ? "tool" : "resource");
 }
 
 function robotsDisallowed() {

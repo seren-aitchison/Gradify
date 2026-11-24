@@ -42,6 +42,7 @@ export const CLUSTERS = [
   { cluster: "maths revision", queries: ["gcse maths revision", "a level maths revision", "university maths help"], dest: "mathgradify/", intent: "learn", demand: "high", competition: "high", fit: "partial", stage: 4 },
   { cluster: "sqe and law revision", queries: ["sqe1 revision", "law revision notes", "law flashcards"], dest: "lawgradify/", intent: "learn", demand: "medium", competition: "medium", fit: "strong", stage: 2 },
   { cluster: "medical school revision", queries: ["medical school revision", "medicine flashcards", "med school notes"], dest: "medgradify/", intent: "learn", demand: "medium", competition: "medium", fit: "partial", stage: 2 },
+  { cluster: "3d anatomy", queries: ["3d anatomy free", "interactive human anatomy", "3d human body model"], dest: "medgradify/3d.html", intent: "do", demand: "high", competition: "high", fit: "partial", stage: 2 },
   { cluster: "nursing revision", queries: ["nursing student revision", "nmc proficiencies revision"], dest: "nursegradify/", intent: "learn", demand: "medium", competition: "low", fit: "strong", stage: 2 },
   { cluster: "pharmacy revision", queries: ["gphc registration assessment revision", "mpharm revision"], dest: "pharmagradify/", intent: "learn", demand: "low", competition: "low", fit: "strong", stage: 2 },
   { cluster: "psychology revision", queries: ["psychology revision online", "research methods psychology"], dest: "psychgradify/", intent: "learn", demand: "medium", competition: "high", fit: "partial", stage: 4 },
@@ -77,7 +78,7 @@ ${rows.map((c) => `| ${c.stage} | ${score(c)} | ${c.cluster} | ${c.queries.join(
 
 ## Gaps: searches with no good destination yet
 
-- **3D anatomy** ("3d anatomy free", "interactive human anatomy"): the 3D explorer (\`3d.html\`) is an app screen, not an indexable page. A public landing for it is the highest-demand gap found.
+- **3D anatomy** is now mapped to \`/medgradify/3d.html\` (made indexable in the crawlability sprint). Its page needs crawlable text around the model to compete: a short explanation of each body system it shows.
 - **Exam-board pages** ("AQA biology revision"): not built on purpose. A board-specific page needs a course verified against that board's specification first (\`kit/curriculum/coverage.js\`, constitution article 3).
 - **GCSE and A level biology, chemistry and physics**: the science courses are Gradify's own curriculum, not mapped to a specification, so their titles say "Biology Revision", not "GCSE Biology". Mapping them would unlock the highest-demand subject searches.
 `;

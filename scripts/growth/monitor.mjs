@@ -6,7 +6,7 @@
 // It reports; it changes nothing. Ranking moves are not checked here on purpose: daily rank noise isn't a signal.
 import { appendFileSync } from "node:fs";
 
-export const KEY_PAGES = ["", "features/", "learn/", "learn/biology/dna-replication/", "tools/", "guides/active-recall/", "scigradify/biology/", "lawgradify/", "features/notes-studio/"];
+export const KEY_PAGES = ["", "features/", "lessons/biology/u02-01/", "medgradify/3d.html", "tools/", "guides/active-recall/", "scigradify/biology/", "lawgradify/", "features/notes-studio/"];
 
 /** problems on one key page's HTML (pure) */
 export function pageProblems(url, status, html) {

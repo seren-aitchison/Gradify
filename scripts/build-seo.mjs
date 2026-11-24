@@ -15,18 +15,19 @@
 import { readFile, writeFile, mkdir, rm, readdir } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { dirname } from "node:path";
-import { page, esc, fitDesc } from "./seo/shell.mjs";
+import { page, esc } from "./seo/shell.mjs";
 import { toolPages, TOOLS, LANDINGS, landingPages } from "./seo/tools.mjs";
 import { guidePages, GUIDES } from "./seo/guides.mjs";
 import { comparePages, COMPARE, glossaryPages, TERMS, templatePages, TEMPLATES, aboutPages } from "./seo/pages.mjs";
-import { programmaticPages } from "./seo/programmatic.mjs";
+import { programmaticPages, courses as courseData } from "./seo/programmatic.mjs";
+import { coursePageOutputs, coursePagePaths } from "./seo/coursepages.mjs";
+import { lessonPages } from "./seo/lessons.mjs";
 import { TOOLS2, tools2Pages } from "./seo/tools2.mjs";
 import { CHECKLISTS, checklistPages } from "./seo/checklists.mjs";
 import { GUIDES2, GROUPS, VS, ALTS, guides2Pages } from "./seo/guides2.mjs";
 import { hubPages, feedXml, CHANGES } from "./seo/hubs.mjs";
 import { registry, applySeo } from "./seo/registry.mjs";
 import { featurePages, FEATURE_PAGES } from "./seo/features.mjs";
-import { learnLibrary, learnLinks, backlogMd } from "./seo/learn.mjs";
 import { FEATURES, featureSlug } from "../kit/data/features.js";
 import { SITES, slugOf } from "../kit/core/site.js";
 import { withPreloads } from "./preload-modules.mjs";
@@ -36,7 +37,7 @@ const root = new URL("../", import.meta.url);
 import { SEO_FOLDERS, SEO_FILES, SEO_SUBSITE_FILES, INDEXNOW_KEY } from "./seo/folders.mjs";
 export { SEO_FOLDERS, SEO_FILES, SEO_SUBSITE_FILES, INDEXNOW_KEY };
 
-function siteMapPage(pages, courses, lib) {
+function siteMapPage(pages, courses) {
   const list = (items) => `<ul>${items.map(([h, l]) => `<li><a href="/${h}">${esc(l)}</a></li>`).join("")}</ul>`;
   const live = SITES.filter((s) => ["live", "beta"].includes(s.status) && s.built);
   return page({
@@ -44,7 +45,6 @@ function siteMapPage(pages, courses, lib) {
     body: `<h1>Site map</h1>
     <h2>Gradify</h2>${list([["", "Home"], ["app.html", "The Gradify app"], ["explore.html", "Explore"], ["journey.html", "Journey"], ["pricing.html", "Pricing"], ["about.html", "About"], ["quality.html", "Quality and coverage"], ["ambassadors.html", "Campus ambassadors"], ["privacy.html", "Privacy"], ["terms.html", "Terms"]])}
     <h2>Features</h2>${list([["features/", "Every Gradify feature"], ...FEATURES.filter((f) => FEATURE_PAGES[featureSlug(f)] && f.plan !== "pro").map((f) => [`features/${featureSlug(f)}/`, f.n])])}
-    <h2>Learn: lessons explained</h2>${list([["learn/", "Every subject in the learn library"], ...[...new Set(lib.live.map((x) => x.c.slug))].map((slug) => [`learn/${slug}/`, lib.live.find((x) => x.c.slug === slug).c.name])])}
     <h2>Subject sites</h2>${list(live.map((s) => [`${slugOf(s)}/`, s.n]))}
     <h2>Free study tools</h2>${list([...TOOLS.map((t) => [`tools/${t.slug}/`, t.name]), ...TOOLS2.map((t) => [`tools/${t.slug}/`, t.name]), ["tools/bookmarklet/", "Send to Gradify bookmarklet"], ["investorgradify/tools/", "Compound interest and fund fee calculator"], ...LANDINGS.map((l) => [`${l.slug}/`, l.name])])}
     <h2>Checklists</h2>${list(CHECKLISTS.map(([s, n]) => [`checklists/${s}/`, n]))}
@@ -101,7 +101,6 @@ ${[...COMPARE, ...ALTS].map((c) => l(`compare/${c.slug}/`, c.name, "")).join("\n
 
 ## Reference
 ${l("glossary/", "Study glossary", "active recall, spaced repetition, FSRS and more")}
-${l("learn/", "Learn: lessons explained", "full lessons with diagrams, worked examples, common mistakes and practice questions")}
 ${l("topics/", "Revision topics", `every unit of ${courses.length} free courses with key terms, sample flashcards, a quick quiz and a mind map`)}
 ${l("questions/", "Practice questions", "multiple-choice questions with answers and explanations, by subject")}
 ${l("exam-traps/", "Exam traps", "the common mistakes in each subject")}
@@ -146,12 +145,13 @@ export function withHeadTags(html, href) {
   if (!want.length) return html;
   return html.replace(/(\n?)(\s*)<title>[^<]*<\/title>/, (m, nl, sp) => `${m}\n${sp.replace(/^\n/, "") || "  "}<!-- head-tags: canonical and link previews, added by scripts/build-seo.mjs -->\n${want.map((t) => `${sp.replace(/^\n/, "") || "  "}${t}`).join("\n")}`);
 }
+const COURSE_PAGES = new Set(coursePagePaths());
 async function headTagged() {
   const { sitemapUrls } = await import("./build-sitemap.mjs");
   const out = new Map();
   for (const u of await sitemapUrls()) {
     let p = u.replace("https://getgradify.com/", ""); if (p === "" || p.endsWith("/")) p += "index.html";
-    if (SEO_FOLDERS.includes(p.split("/")[0]) || SEO_FILES.includes(p) || SEO_SUBSITE_FILES.includes(p)) continue;
+    if (SEO_FOLDERS.includes(p.split("/")[0]) || SEO_FILES.includes(p) || SEO_SUBSITE_FILES.includes(p) || COURSE_PAGES.has(p)) continue;
     const html = await readFile(new URL(p, root), "utf8").catch(() => null); if (html === null) continue;
     const next = withHeadTags(html, u); if (next !== html) out.set(p, next);
   }
@@ -222,32 +222,42 @@ ${pick(/^terms\/[^/]+\/index\.html$/).map(([p, h]) => `- ${text(h.match(/<p clas
 }
 
 export async function outputs() {
-  const prog = await programmaticPages(), lib = await learnLibrary();
-  // topic pages link each lesson to its readable page in the learn library, where there is one
-  const toLearn = learnLinks(lib.live);
-  for (const p of prog) if (/^topics\/[^/]+\/[^/]+\/index\.html$/.test(p.path) && p.body) p.body = p.body.replace(/(<section id="lessons">[\s\S]*?<\/section>)/, (sec) => sec.replace(/<a href="([^"]+)">(<b>[\s\S]*?<\/b>)<\/a>/g, (m, h, t) => (toLearn.has(h) ? `<a href="${toLearn.get(h)}">${t}</a> <a class="mini" href="${h}">Interactive lesson</a>` : m)));
-  const specs = [...lib.pages, ...featurePages(), ...hubPages(), ...toolPages(), ...tools2Pages(), ...landingPages(), ...checklistPages(), ...guidePages(), ...guides2Pages(), ...comparePages(), ...glossaryPages(), ...templatePages(), ...aboutPages(), ...prog];
-  // no two pages share a description: a learn page that would repeat another page's uses its own fallback
-  const descs = new Map();
-  for (const sp of specs.filter((x) => !x.altDescription && x.description)) descs.set(fitDesc(sp.description), sp.path);
-  for (const sp of specs.filter((x) => x.altDescription)) { const d = fitDesc(sp.description); if (descs.has(d)) sp.description = sp.altDescription; descs.set(fitDesc(sp.description), sp.path); }
+  const prog = await programmaticPages();
+  const lessons = await lessonPages();
+  const specs = [...lessons, ...featurePages(), ...hubPages(), ...toolPages(), ...tools2Pages(), ...landingPages(), ...checklistPages(), ...guidePages(), ...guides2Pages(), ...comparePages(), ...glossaryPages(), ...templatePages(), ...aboutPages(), ...prog];
   const files = new Map(specs.map((s) => [s.path, s.raw ? s.html : page(s)]));
   const courses = prog.filter((p) => /^topics\/[^/]+\/index\.html$/.test(p.path));
-  files.set("site-map.html", siteMapPage(specs, courses, lib));
+  files.set("site-map.html", siteMapPage(specs, courses));
   files.set("llms.txt", llmsTxt(courses));
   // the RSS feed: changelog entries, then every guide, tool and checklist (newest first)
   const feed = [...CHANGES.map(([d, h, items]) => ({ path: "changelog/", date: d, title: `What's new: ${h}`, description: items.join(". ") })),
     ...specs.filter((x) => !x.raw && /^(guides|tools|checklists|vs|compare)\/[^/]+\/index\.html$/.test(x.path)).map((x) => ({ path: x.path.replace(/index\.html$/, ""), date: x.updated || "2026-11-23", title: x.title.replace(/ · Gradify$/, ""), description: x.description }))];
   files.set("feed.xml", feedXml(feed.slice(0, 60)));
-  files.set("docs/growth/CONTENT-BACKLOG.md", backlogMd(lib.backlog));
+  // pilot lessons: topic, question and trap pages link to the lesson's own page instead of into the app
+  const LESSON_IDS = new Set(lessons.map((x) => x.path.replace(/^lessons\/|\/index\.html$/g, "")));
+  for (const [p, html] of files) {
+    if (!/^(topics|questions|exam-traps)\/[^/]+\//.test(p)) continue;
+    const slug = p.split("/")[1];
+    files.set(p, html.replace(/href="\/[^"#]+#\/lesson\/([a-z0-9-]+)"/g, (m, id) => (LESSON_IDS.has(`${slug}/${id}`) ? `href="/lessons/${slug}/${id}/"` : m)));
+  }
   for (const [p, html] of files) if (p.endsWith(".html") && html.includes("<main")) files.set(p, headingIds(html));
-  for (const [p, html] of files) if (/^(guides|topics|vs|checklists|terms|compare|learn)\/.+\.html$/.test(p) && !html.startsWith("<!doctype html>\n<html lang=\"en-GB\"><head><meta charset")) files.set(p, autoLink(html, `/${p.replace(/index\.html$/, "")}`));
+  for (const [p, html] of files) if (/^(guides|topics|vs|checklists|terms|compare)\/.+\.html$/.test(p) && !html.startsWith("<!doctype html>\n<html lang=\"en-GB\"><head><meta charset")) files.set(p, autoLink(html, `/${p.replace(/index\.html$/, "")}`));
   // each page lists the modules it loads, like every other page (scripts/preload-modules.mjs)
   for (const [p, html] of files) if (p.endsWith(".html")) files.set(p, withPreloads(fileURLToPath(new URL(p, root)), html));
   files.set(`${INDEXNOW_KEY}.txt`, `${INDEXNOW_KEY}\n`);
   files.set("llms-full.txt", llmsFull(files));
   for (const [p, html] of await headTagged()) files.set(p, html);
-  // the search identity of every site home, course and subject page (scripts/seo/registry.mjs)
+  // course pages: the crawlable course overview, title and description, then the same head tags as every page
+  const cd = await courseData();
+  const leads = new Map(cd.map((c) => [c.slug, new Map(c.units.flatMap((u) => u.lessons.map((l) => [l.id, l.lead])))]));
+  for (const [p, html] of await coursePageOutputs({
+    lessonPages: LESSON_IDS,
+    leadsFor: (slug) => leads.get(slug) || new Map(),
+    hubFor: (slug) => (files.has(`topics/${slug}/index.html`) ? `/topics/${slug}/` : null),
+    topicsFor: (slug, u) => (files.has(`topics/${slug}/${u.id}/index.html`) ? `/topics/${slug}/${u.id}/` : null),
+    plansFor: (slug) => [...files.keys()].filter((k) => k.startsWith(`study-plan/${slug}-`) && k.endsWith("/index.html") && !/noindex/.test(files.get(k).match(/<meta name="robots"[^>]*>/)?.[0] || "")).map((k) => [`/${k.replace(/index\.html$/, "")}`, files.get(k).match(/<h1[^>]*>([^<]*)/)?.[1].replace(/ study plan$/, "") || k]),
+  })) files.set(p, withHeadTags(html, `https://getgradify.com/${p.replace(/index\.html$/, "")}`));
+  // the search identity of every site home (after the course pages, which own their own titles) (scripts/seo/registry.mjs)
   for (const [p, entry] of registry()) {
     const html = files.get(p) ?? await readFile(new URL(p, root), "utf8").catch(() => null); if (html === null) continue;
     const next = applySeo(html, entry); if (next !== html || files.has(p)) files.set(p, next);

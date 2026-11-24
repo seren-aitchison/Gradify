@@ -15,12 +15,12 @@ const read = (p) => readFileSync(new URL(p, root), "utf8");
 const reg = registry();
 const cat = JSON.parse(read("kit/api/v1/catalogue.json"));
 
-test("every live site and every live course page has a search identity", () => {
+test("every live site has a search identity, and course pages are left to coursepages.mjs", () => {
   for (const s of SITES.filter((x) => x.built && ["live", "beta"].includes(x.status))) {
     assert.ok(SITE_HOME[slugOf(s)], `${s.n}: add its search title and description to SITE_HOME in scripts/seo/registry.mjs`);
     assert.ok(reg.has(`${slugOf(s)}/index.html`), `${s.n} home page is in the registry`);
   }
-  for (const c of cat.courses.filter((x) => ["live", "beta"].includes(x.status) && x.page?.startsWith("/"))) assert.ok(reg.has(`${c.page.slice(1)}index.html`), `${c.slug}: its course page is in the registry`);
+  for (const c of cat.courses.filter((x) => ["live", "beta"].includes(x.status) && x.page?.startsWith("/") && !SITES.some((st) => `/${slugOf(st)}/` === x.page))) assert.ok(!reg.has(`${c.page.slice(1)}index.html`) || reg.get(`${c.page.slice(1)}index.html`).noindex, `${c.slug}: course pages get their title from coursepages.mjs, not the registry`);
 });
 
 test("titles fit (≤ 60), descriptions fit (≤ 155), and none repeats", () => {
@@ -52,7 +52,6 @@ test("the pages on disk carry their registry title, description and valid struct
     const o = JSON.parse(ld[1]);
     assert.equal(o["@context"], "https://schema.org");
     assert.doesNotMatch(ld[1], /"(aggregateRating|review|ratingValue)"/, `${p}: no ratings`);
-    if (o["@type"] === "Course") { assert.ok(o.provider && o.name && o.description, `${p}: Course needs provider, name and description`); assert.equal(o.offers.price, "0"); }
     assert.equal((html.match(/<!-- head-tags: canonical and link previews/g) || []).length <= 1, true, `${p}: one head-tags comment`);
   }
 });

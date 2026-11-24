@@ -21,13 +21,13 @@ test("the sitemap lists exactly the indexable pages", () => {
 
 test("private app screens, embeds and redirects are never indexable", () => {
   for (const p of r.pages) {
-    if (/(^|\/)(lifeos|map|3d)\.html$|\/app\.html$|embed\.html$|^status\.html$/.test(p.path)) assert.equal(p.indexable, false, `${p.path} must not be indexable`);
+    if (/(^|\/)(lifeos|map)\.html$|\/app\.html$|embed\.html$|^status\.html$/.test(p.path)) assert.equal(p.indexable, false, `${p.path} must not be indexable`);
     if (p.category === "redirect") assert.equal(p.inSitemap, false, `${p.path} redirects, so it isn't in the sitemap`);
   }
 });
 
 test("every category of public page is covered", () => {
-  for (const c of ["home", "site home", "course", "feature", "tool", "guide", "topic", "key term", "study plan", "practice questions"]) assert.ok(r.summary.indexableByCategory[c] > 0, `indexable ${c} pages`);
+  for (const c of ["home", "site home", "course", "feature", "lesson", "3d explorer", "tool", "guide", "topic", "key term", "study plan", "practice questions"]) assert.ok(r.summary.indexableByCategory[c] > 0, `indexable ${c} pages`);
   assert.equal(category("features/notes-studio/index.html"), "feature");
   assert.equal(category("scigradify/biology/index.html"), "course");
   assert.equal(category("lawgradify/index.html"), "site home");

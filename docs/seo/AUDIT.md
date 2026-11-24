@@ -6,35 +6,37 @@ This says what is **eligible** to be indexed. It is not evidence that Google has
 
 | | Pages |
 |---|---|
-| Published HTML pages | 3587 |
-| Indexable (not noindex, not blocked, not an app screen) | 2492 |
-| In the sitemap | 2492 |
-| Indexable with complete metadata (title, description, canonical, link preview, valid JSON-LD) | 2492 |
-| Indexable with structured data | 2486 |
-| Indexable and passing every error check | 2492 |
+| Published HTML pages | 2583 |
+| Indexable (not noindex, not blocked, not an app screen) | 1505 |
+| In the sitemap | 1505 |
+| Indexable with complete metadata (title, description, canonical, link preview, valid JSON-LD) | 1505 |
+| Indexable with structured data | 1481 |
+| Indexable and passing every error check | 1505 |
 | Errors | 0 |
-| Warnings | 35 |
+| Warnings | 17 |
 
 ## Pages by category
 
 | Category | Published | Indexable |
 |---|---|---|
 | key term | 1345 | 376 |
-| resource | 1092 | 1092 |
 | topic | 519 | 519 |
 | study plan | 203 | 199 |
-| private / app | 114 | 0 |
+| private / app | 96 | 0 |
+| lesson | 85 | 84 |
 | practice questions | 68 | 68 |
 | guide | 43 | 43 |
 | tool | 42 | 42 |
 | feature | 40 | 37 |
 | course | 34 | 33 |
 | site home | 31 | 30 |
+| 3d explorer | 18 | 18 |
 | glossary | 16 | 16 |
 | hub page | 12 | 10 |
 | checklist | 10 | 10 |
 | comparison | 8 | 8 |
 | template | 5 | 5 |
+| resource | 3 | 3 |
 | site page | 3 | 3 |
 | home | 1 | 1 |
 | redirect | 1 | 0 |
@@ -45,4 +47,5 @@ This says what is **eligible** to be indexed. It is not evidence that Google has
 
 ## Warnings (worth fixing, don't fail CI)
 
-- 35 × its content is drawn by JavaScript: no hN in the HTML a crawler reads first
+- 15 × description is N characters
+- 2 × its content is drawn by JavaScript: no hN in the HTML a crawler reads first

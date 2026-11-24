@@ -5,7 +5,7 @@
 //   match: phrases and destinations the season covers
 export const SEASONS = [
   { id: "new-term", name: "New term: plans, habits, mocks", months: [1, 2], lead: 6, match: /timetable|planner|plan|habit|routine|mock|time.?block|study.?method|active.?recall|spaced|smart.?plan|freshers|semester|new.?year/i },
-  { id: "exam-revision", name: "GCSE and A level revision, past papers", months: [3, 4, 5], lead: 6, match: /gcse|a.?level|revision|revise|past.?paper|exam|flashcard|quiz|practice|biology|chemistry|physics|maths|psychology|history|literature|learn\//i },
+  { id: "exam-revision", name: "GCSE and A level revision, past papers", months: [3, 4, 5], lead: 6, match: /gcse|a.?level|revision|revise|past.?paper|exam|flashcard|quiz|practice|biology|chemistry|physics|maths|psychology|history|literature|lessons\/|topics\//i },
   { id: "exam-season", name: "Exams, results nerves, summer learning", months: [6, 7], lead: 4, match: /exam|countdown|cram|last.?minute|two.?weeks|results|resit|summer|focus|timer/i },
   { id: "results-and-uni", name: "Results, university prep, new routines", months: [8, 9], lead: 6, match: /results|resit|university|undergrad|freshers|degree|study.?skills|timetable|routine|notes|notebook|cornell|lecture/i },
   { id: "coursework-mocks", name: "Coursework, modules, mocks, finals planning", months: [10, 11, 12], lead: 6, match: /coursework|dissertation|essay|citation|module|mock|deadline|finals|reading|lit.?review|research|winter/i },

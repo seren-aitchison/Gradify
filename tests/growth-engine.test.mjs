@@ -17,13 +17,13 @@ const dir = mkdtempSync(join(tmpdir(), "growth-")), D = pathToFileURL(`${dir}/`)
 const W = (f, s, enc) => writeFileSync(join(dir, f), enc === "utf16" ? Buffer.concat([Buffer.from([0xff, 0xfe]), Buffer.from(s, "utf16le")]) : s);
 // Search Console API rows: five pages around position 2 clicked ~10%, one at position 2 clicked 1% (a low-CTR page)
 const rows = [];
-for (const [i, ctr] of [0.1, 0.11, 0.09, 0.1, 0.12, 0.01].entries()) rows.push({ keys: [`query ${i}`, `https://getgradify.com/learn/biology/page-${i}/`], clicks: Math.round(1000 * ctr), impressions: 1000, ctr, position: 2 });
-rows.push({ keys: ["dna replication", "https://getgradify.com/learn/biology/dna-replication/"], clicks: 5, impressions: 400, ctr: 0.0125, position: 8.4 });
+for (const [i, ctr] of [0.1, 0.11, 0.09, 0.1, 0.12, 0.01].entries()) rows.push({ keys: [`query ${i}`, `https://getgradify.com/lessons/biology/page-${i}/`], clicks: Math.round(1000 * ctr), impressions: 1000, ctr, position: 2 });
+rows.push({ keys: ["dna replication", "https://getgradify.com/lessons/biology/dna-replication/"], clicks: 5, impressions: 400, ctr: 0.0125, position: 8.4 });
 W("gsc-2026-11-20.json", JSON.stringify({ dimensions: ["query", "page"], rows }));
 W("Queries.csv", 'Top queries,Clicks,Impressions,CTR,Position\n"revision timetable, free",12,300,4%,9.2\n');
 W("keyword-planner-ideas.csv", "Keyword Stats 2026-11-20\nKeyword\tAvg. monthly searches\tCompetition\nmitosis\t12100\tLow\ndna replication\t9900\tLow\n", "utf16");
 W("trends-revision.csv", "Category: All categories\n\nWeek,revision: (United Kingdom)\n2026-01-04,40\n2026-04-05,100\n2026-05-03,90\n2026-08-02,10\n");
-W("db-signups-by-page.csv", "landing,signups,activated\n/learn/biology/page-0/,3,2\n");
+W("db-signups-by-page.csv", "landing,signups,activated\n/lessons/biology/page-0/,3,2\n");
 
 test("tables: quoted commas, percentages, title lines, and Keyword Planner's UTF-16 TSV", () => {
   assert.deepEqual(parseTable('a,b\n"x, y",2\n'), [{ a: "x, y", b: "2" }]);
@@ -55,7 +55,7 @@ test("searches are classified by intent, audience and geography from their words
 });
 
 test("priority: measured demand outranks an estimate, which outranks unknown; striking distance helps", () => {
-  const base = { intent: "learn: question", destination: "https://getgradify.com/learn/biology/x/", competition: { value: "low", source: "estimate" } };
+  const base = { intent: "learn: question", destination: "https://getgradify.com/lessons/biology/x/", competition: { value: "low", source: "estimate" } };
   const measured = score({ ...base, demand: { value: 5000, source: "search-console" } });
   const estimated = score({ ...base, demand: { value: "high", source: "estimate" } });
   const unknown = score({ ...base, demand: { value: null, source: "unknown" } });
@@ -73,7 +73,7 @@ test("CTR is judged against Gradify's own pages at the same position", () => {
   assert.ok(Math.abs(curve["2"] - 0.1) < 0.006, `own median at position 2 ≈ 10%: ${curve["2"]}`);
   assert.equal(curve["6–10"], undefined, "one page isn't enough for a benchmark");
   const low = lowCtr(pages, curve);
-  assert.deepEqual(low.map((p) => p.page), ["/learn/biology/page-5/"]);
+  assert.deepEqual(low.map((p) => p.page), ["/lessons/biology/page-5/"]);
   assert.equal(low[0].missedClicks, 90);
 });
 
@@ -95,15 +95,15 @@ test("the Search Console fetcher asks for 28 final days of query × page, and pa
 });
 
 test("the report answers from data, and says what's missing instead of showing zero", async () => {
-  const opportunities = [], lib = { backlog: [] };
-  const empty = await report({ gsc: [], db: () => null, date: new Date("2026-11-24"), opportunities, lib });
+  const opportunities = [], readiness = { next: [], pages: 0 };
+  const empty = await report({ gsc: [], db: () => null, date: new Date("2026-11-24"), opportunities, readiness });
   assert.equal((empty.match(/\*\*Unavailable\.\*\*/g) || []).length, 8);
   assert.doesNotMatch(empty, /\| 0 \|/, "no invented zeros");
   assert.match(empty, /New term: plans, habits, mocks, peaking from 2027-01-01/);
-  const full = await report({ gsc: gscRows(D), db: (n) => dbExport(n, D), date: new Date("2026-11-24"), opportunities, lib });
+  const full = await report({ gsc: gscRows(D), db: (n) => dbExport(n, D), date: new Date("2026-11-24"), opportunities, readiness });
   assert.match(full, /\| query 0 \| 100 \|/, "question 1 lists real queries");
-  assert.match(full, /\| \/learn\/biology\/page-5\/ \| 1,000 \| 1\.0% \|/, "question 3 finds the low-CTR page");
+  assert.match(full, /\| \/lessons\/biology\/page-5\/ \| 1,000 \| 1\.0% \|/, "question 3 finds the low-CTR page");
   assert.match(full, /\| dna replication \| 400 \| 5 \| 8\.4 \|/, "question 2 finds the striking-distance query");
-  assert.match(full, /\| \/learn\/biology\/page-0\/ \| 3 \| 2 \|/, "question 5 uses the database export");
+  assert.match(full, /\| \/lessons\/biology\/page-0\/ \| 3 \| 2 \|/, "question 5 uses the database export");
   assert.match(full, /db-retention-by-site\.csv/, "question 6 still says what it needs");
 });
