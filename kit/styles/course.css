@@ -2353,10 +2353,13 @@ body:has(.co-reading) { background-color: #eeeef5; background-color: light-dark(
 
 /* inline key terms (marked in the text): a clear, tappable underline */
 .co-read .co-prose :is(.co-term, .mv-term, [data-term]) { text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--c) 60%, transparent); text-decoration-thickness: 2px; text-underline-offset: 4px; border-bottom: 0 !important; }
-/* key terms in the recap: definition cards */
-.co-read .co-terms { display: grid !important; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px; }
-.co-read .co-terms dt { margin: 0; padding: 14px 16px 2px; border-radius: 14px 14px 0 0; background: var(--lx-sunk); border: 1px solid var(--lx-edge); border-bottom: 0; font-weight: 700; color: var(--lx-ink); }
-.co-read .co-terms dd { margin: 0 0 0; padding: 2px 16px 14px; border-radius: 0 0 14px 14px; background: var(--lx-sunk); border: 1px solid var(--lx-edge); border-top: 0; color: var(--lx-sub); font-size: 15px; line-height: 1.55; }
+/* key terms in the recap: a two-column glossary, term in ink, definition beside it */
+.co-read .co-terms { display: grid !important; grid-template-columns: minmax(120px, 30%) 1fr; gap: 0; margin: 0; border: 1px solid var(--lx-edge); border-radius: 16px; overflow: hidden; background: var(--lx-paper); }
+.co-read .co-terms :is(dt, dd) { margin: 0; padding: 13px 16px; border-top: 1px solid var(--lx-edge); line-height: 1.55; }
+.co-read .co-terms :is(dt:first-of-type, dt:first-of-type + dd) { border-top: 0; }
+.co-read .co-terms dt { font-weight: 700; color: var(--lx-ink); background: var(--lx-sunk); }
+.co-read .co-terms dd { color: var(--lx-sub); font-size: 15.5px; }
+@media (max-width: 560px) { .co-read .co-terms { grid-template-columns: 1fr; } .co-read .co-terms dd { border-top: 0; padding-top: 0; background: var(--lx-sunk); } }
 
 /* quick checks inside the notes (glass diagrams' "answer in your head" cards): solid, with a clear reveal band */
 .co-read .gd-mq { color: var(--lx-ink) !important; }
@@ -2388,3 +2391,24 @@ body:has(.co-reading) { background-color: #eeeef5; background-color: light-dark(
 .co-read figure.gd.gd-mini::before { background: linear-gradient(180deg, var(--a, #4641ff), var(--b, #e0409f)) !important; width: 4px !important; }
 .co-read figure.gd.gd-mini .gd-mhead { font: 700 12.5px var(--sans) !important; letter-spacing: .06em; color: var(--a, #4641ff) !important; }
 .co-read figure.gd.gd-mini :is(.gd-mq, .gd-nums li, .gd-gaps p) { color: var(--lx-ink) !important; font-size: 17px; }
+/* the lesson's parts (Recap, Practise this lesson, Check yourself, Go deeper): gradient icon squircles */
+:root .co-read .co-part .co-ic { color: #fff !important; background: var(--lx-grad) !important; width: 32px; height: 32px; padding: 7px; border-radius: 11px; box-shadow: 0 8px 18px -10px rgba(155, 60, 240, .9); }
+.co-read .co-part { color: var(--lx-ink); }
+.co-read :is(.co-qn::before) { color: var(--c); font-size: 12px !important; }
+.co-read .co-check :is(.aq-q small, .aq-kind) { font-family: var(--sans) !important; letter-spacing: .04em; }
+/* "Practise this lesson": solid tiles with a coloured icon, lifting slightly on hover */
+.co-read .cx-kc { background: var(--lx-paper) !important; border: 1px solid var(--lx-edge) !important; box-shadow: 0 1px 2px rgba(0, 0, 0, .04) !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; transition: transform .25s cubic-bezier(.32, .72, 0, 1), box-shadow .25s; }
+.co-read .cx-kc::before, .co-read .cx-kc::after { display: none !important; }
+.co-read .cx-kc:hover { transform: translateY(-2px); box-shadow: 0 14px 30px -20px rgba(20, 20, 60, .5) !important; }
+:root .co-read .cx-kc > span:first-child { color: #fff !important; background: var(--lx-grad) !important; box-shadow: none !important; }
+.co-read .cx-kc b { color: var(--lx-ink); } .co-read .cx-kc small { color: var(--lx-sub); }
+/* "On this page": sections you've read tick off */
+.co-toc a { position: relative; }
+.co-toc a.past { color: var(--fg); }
+.co-toc a.past::after { content: ""; position: absolute; right: 2px; top: 50%; width: 16px; height: 16px; margin-top: -8px; border-radius: 50%; background: #1fae8c url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5 10 17 19 7'/%3E%3C/svg%3E") center / 11px no-repeat; animation: lx-tick .45s cubic-bezier(.32, .72, 0, 1) both; }
+.co-toc a.past, .co-toc a.on { padding-right: 26px; }
+@keyframes lx-tick { from { transform: scale(0); } 60% { transform: scale(1.25); } to { transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) { .co-toc a.past::after { animation: none; } }
+/* the inserted Quick check panel isn't a numbered section of the notes: no number, and the count skips it */
+.co-read .co-prose section.co-quick h3 { counter-increment: none !important; }
+.co-read .co-prose section.co-quick h3::before { content: none !important; display: none !important; }

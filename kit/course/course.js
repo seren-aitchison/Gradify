@@ -1289,7 +1289,9 @@ export function mountCourse(root, cfg) {
         if (p >= 0.6) lightStep("read");
       }
       let cur = null; for (const [a, el] of targets()) { if (el.getBoundingClientRect().top < innerHeight * 0.3) cur = a; }
-      root.querySelectorAll(".co-toc a").forEach((a) => a.classList.toggle("on", a === cur));
+      // sections already read tick off as you pass them (a small, satisfying sign of progress)
+      const tocLinks = [...root.querySelectorAll(".co-toc a")], curAt = tocLinks.indexOf(cur);
+      tocLinks.forEach((a, k) => { a.classList.toggle("on", a === cur); a.classList.toggle("past", curAt > -1 && k < curAt); });
       if (cur && cur.dataset.jump !== lastPlace) {
         lastPlace = cur.dataset.jump; place(lastPlace);
         // the section you're in, kept in view in the lesson's sticky bar
