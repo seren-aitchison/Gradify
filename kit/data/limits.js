@@ -11,6 +11,9 @@
 // counts. The lessons themselves are public pages, so it's a commercial limit, not a security boundary.
 import { access } from "./plan.js";
 import { PLUS_ON_SALE, PLAN_PRICES } from "./billing.js";
+import { track } from "../core/analytics.js";
+// which Gradify site a page belongs to, for the funnel counts ("/medgradify/course/" → "medgradify")
+const siteOfPage = () => { try { return location.pathname.split("/").filter(Boolean)[0]?.replace(/\.html$/, "") || "Gradify"; } catch { return "Gradify"; } };
 
 export const FREE = { lesson: 10, flashcards: 5, map: 5, tool: 5 };
 export const TOOLS = { search: "Lesson search", map: "Mind map creator", cards: "Flashcard creator", convert: "Notes converter", explain: "Explainer videos", podcast: "Chant podcasts", audio: "Audio questions", poster: "Story posters", sheets: "Key-terms sheets", quiz: "Quizzes", games: "Key-term games", handwriting: "Handwriting to text", youtube: "YouTube to notes" };
@@ -98,6 +101,10 @@ export function banner({ kind, locked = true, pricing, tool } = {}) {
       <span>${locked ? "Gradify Pro opens every lesson, flashcard set, mind map and tool, with no limits." : "Go further with Gradify Pro: every lesson, flashcard set, mind map and tool, with no limits."} ${price} a month.</span></div>
     <a class="lim-cta" href="${esc(pricingUrl(pricing))}">Get Gradify Pro</a>
     <button type="button" class="lim-x" aria-label="Close">×</button>`;
+  // the funnel: shown, and pressed (anonymous counts; the path says which allowance)
+  const source = `/plus/${kind}${kind === "tool" && tool ? `/${Object.keys(TOOLS).find((k) => TOOLS[k] === tool) || "tool"}` : ""}`;
+  track("plus_prompt", siteOfPage(), { path: source });
+  el.querySelector(".lim-cta").addEventListener("click", () => track("plus_click", siteOfPage(), { path: source }));
   el.querySelector(".lim-x").addEventListener("click", () => { el.classList.add("out"); setTimeout(() => el.remove(), 250); });
   document.body.append(el);
   requestAnimationFrame(() => el.classList.add("in"));
