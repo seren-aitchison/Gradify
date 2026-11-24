@@ -9,6 +9,8 @@
 //
 // Every SPECS entry starts `confirmed: false`: its code, version and first teaching are written from general knowledge
 // and must be checked against the official document before anything is claimed. `code: null` means not yet known.
+// `confirmed: true` means only that the code and version were checked against the awarding body's own document
+// (`document`: its URL, SHA-1, version and date, which `engine.mjs fetch` verifies); it says nothing about coverage.
 // `statements` says whether the specification's statements are in data/curriculum/specs/ (see docs/curriculum/).
 // Nothing in this file is a coverage claim: claims come only from kit/curriculum/coverage.js, after verification.
 
@@ -43,7 +45,11 @@ const spec = (o) => ({ subject: "biology", confirmed: false, statements: "not-im
 /** Biology first: every specification a UK biology student might sit. */
 export const SPECS = [
   // England, GCSE
-  spec({ id: "aqa-gcse-biology", body: "aqa", qual: "gcse", title: "AQA GCSE Biology", code: "8461", firstTeaching: 2016 }),
+  // Confirmed 2026-11-24 against aqa.org.uk: the specification page lists version 1.0 (21 April 2016) and this file,
+  // whose SHA-1 matches the one AQA's page publishes for it. Statements imported; mapping proposed, not reviewed.
+  spec({ id: "aqa-gcse-biology", body: "aqa", qual: "gcse", title: "AQA GCSE Biology", code: "8461", firstTeaching: 2016, firstExams: 2018,
+    confirmed: true, version: "1.0", source: "https://www.aqa.org.uk/subjects/biology/gcse/biology-8461/specification", checkedOn: "2026-11-24", statements: "imported",
+    document: { url: "https://filestore.aqa.org.uk/resources/biology/specifications/AQA-8461-SP-2016.PDF", sha1: "510eb7c76df13be23292df4392de95eb32b0d30f", version: "1.0", versionDate: "2016-04-21", pages: 92, checkedOn: "2026-11-24" } }),
   spec({ id: "aqa-gcse-combined-trilogy", body: "aqa", qual: "gcse-combined", title: "AQA GCSE Combined Science: Trilogy (biology content)", code: "8464", firstTeaching: 2016, part: "biology" }),
   spec({ id: "pearson-gcse-biology", body: "pearson", qual: "gcse", title: "Pearson Edexcel GCSE Biology", code: "1BI0", firstTeaching: 2016 }),
   spec({ id: "pearson-gcse-combined", body: "pearson", qual: "gcse-combined", title: "Pearson Edexcel GCSE Combined Science (biology content)", code: "1SC0", firstTeaching: 2016, part: "biology" }),
@@ -80,6 +86,8 @@ export function checkRegistry(specs = SPECS) {
     if (!q) p.push(`${s.id}: unknown qualification ${s.qual}`);
     if (b && q && !b.nations.some((n) => q.nations.includes(n))) p.push(`${s.id}: ${b.name} doesn't award ${q.name}`);
     if (s.confirmed && !(s.code && s.version && s.source && s.checkedOn)) p.push(`${s.id}: confirmed needs code, version, the official source URL and the date it was checked`);
+    if (s.document && !(/^https:\/\//.test(s.document.url || "") && /^[0-9a-f]{40}$/.test(s.document.sha1 || "") && s.document.version === s.version)) p.push(`${s.id}: document needs an https url, a SHA-1 and the same version as the entry`);
+    if (s.statements === "imported" && !s.document && !s.confirmed) p.push(`${s.id}: statements imported from an unconfirmed specification`);
     if (!["not-imported", "imported"].includes(s.statements)) p.push(`${s.id}: statements must be not-imported or imported`);
   }
   return p;
