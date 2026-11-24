@@ -238,7 +238,11 @@ test("batch 5: cite this page, self-hosted fonts, speed buckets, deploy retry", 
   assert.doesNotMatch(files.get("tools/index.html"), /id="cite"/, "tools aren't cited");
   for (const [p, h] of files) if (p.endsWith(".html")) assert.doesNotMatch(h, /fonts\.googleapis\.com\/css2\?family=Geist/, `${p}: Geist is self-hosted`);
   assert.match(g, /rel="preload" href="\/assets\/fonts\/Geist-Variable\.woff2" as="font"/);
-  const { bucket } = await import("../kit/core/vitals.js");
+  const { bucket, clsOf } = await import("../kit/core/vitals.js");
+  // Google's session windows: the worst burst counts, not the sum over a long-open page
+  assert.equal(clsOf([{ startTime: 0, value: 0.05 }, { startTime: 500, value: 0.05 }, { startTime: 20000, value: 0.04 }, { startTime: 60000, value: 0.04 }]), 0.1);
+  assert.equal(clsOf([{ startTime: 0, value: 0.3, hadRecentInput: true }, { startTime: 100, value: 0.01 }]), 0.01, "shifts right after input don't count");
+  assert.equal(clsOf([0, 900, 1800, 2700, 3600, 4500, 5400].map((t) => ({ startTime: t, value: 0.02 }))).toFixed(2), "0.12", "a window closes after 5 s");
   assert.deepEqual([bucket("lcp", 2500), bucket("lcp", 2501), bucket("lcp", 4001), bucket("inp", 199), bucket("inp", 450), bucket("cls", 0.3)], ["good", "ni", "poor", "good", "ni", "poor"]);
   const { VITALS_EVENTS } = await import("../kit/core/analytics.js");
   const mig = await read("supabase/migrations/20261123140000_page_events_vitals.sql");
