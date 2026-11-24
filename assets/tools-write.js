@@ -235,7 +235,7 @@ const TOOLS = {
       const t = type?.value; for (const li of root.querySelectorAll("li[data-types]")) li.hidden = Boolean(t) && !li.dataset.types.split(" ").includes(t);
       const vis = boxes.filter((b) => !b.closest("li").hidden), done = vis.filter((b) => b.checked).length;
       save(id, Object.fromEntries(boxes.map((b) => [b.dataset.item, b.checked])));
-      out(root).innerHTML = `<span class="big">${done} / ${vis.length}</span>done${done === vis.length && vis.length ? ": ready. Good luck." : ""}<div class="bar"><span style="width:${vis.length ? Math.round((done / vis.length) * 100) : 0}%"></span></div>`;
+      out(root).innerHTML = `<span class="big">${done} / ${vis.length}</span>done${done === vis.length && vis.length ? ": ready. Good luck." : ""}<div class="tool-progress"><span style="width:${vis.length ? Math.round((done / vis.length) * 100) : 0}%"></span></div>`;
       if (done && done === vis.length) studied();
     };
     root.addEventListener("change", run); run();

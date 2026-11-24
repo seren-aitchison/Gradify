@@ -115,7 +115,7 @@ ul.check { list-style: none; padding: 0; } ul.check li { padding: 6px 0; border-
 ul.check li[hidden] { display: none; }
 ul.check label { display: flex; gap: 10px; align-items: flex-start; font-size: 16px; color: var(--fg); cursor: pointer; margin: 0; }
 ul.check input { width: 20px; height: 20px; flex: none; margin-top: 3px; accent-color: #f055dd; }
-.bar { height: 8px; border-radius: 99px; background: var(--line); margin-top: 8px; overflow: hidden; } .bar span { display: block; height: 100%; background: linear-gradient(90deg, #4641ff, #f055dd); }
+.tool-progress { height: 8px; border-radius: 99px; background: var(--line); margin-top: 8px; overflow: hidden; } .tool-progress span { display: block; height: 100%; background: linear-gradient(90deg, #4641ff, #f055dd); }
 .briefs { padding-left: 20px; } .briefs h2 { font-size: 19px; margin-top: 22px; }
 .bookmarklet a { cursor: grab; }
 /* topic pages */
