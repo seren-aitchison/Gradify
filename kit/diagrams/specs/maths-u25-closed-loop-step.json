@@ -1,0 +1,96 @@
+{
+ "id": "maths-u25-closed-loop-step",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u25",
+ "lesson": "Closed-Loop Control",
+ "title": "Proportional control leaves a steady-state error",
+ "caption": "With C = 4 the loop gain is L(0) = 8, so the closed-loop step response settles at 8/9 ≈ 0.889 and misses the reference 1 by 1/(1 + 8) = 1/9 ≈ 0.111.",
+ "alt": "A step response rising quickly and levelling at 0.889, below the dashed reference line at 1.",
+ "description": [
+  "The loop gain at zero frequency is L(0) = 2 × 4 = 8.",
+  "The closed loop is T(s) = 8/(s + 9), so T(0) = 8/9 ≈ 0.889.",
+  "The step ends short of the reference by 1/(1 + 8) = 1/9 ≈ 0.111."
+ ],
+ "range": {
+  "x": [
+   0,
+   0.8
+  ],
+  "y": [
+   0,
+   1.2
+  ]
+ },
+ "ticks": [
+  [
+   0.2,
+   0.4,
+   0.6,
+   0.8
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "grid": [
+  0.2,
+  0.25
+ ],
+ "axisLabels": [
+  "t (s)",
+  "y"
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "curves": [
+  {
+   "expr": "0.888888889*(1-exp(-9*x))",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "y": 1,
+   "label": "reference r = 1"
+  }
+ ],
+ "points": [
+  {
+   "x": 0.6,
+   "y": 0.8849,
+   "label": "0.889",
+   "dx": 0,
+   "dy": 20,
+   "anchor": "middle"
+  }
+ ],
+ "checks": [
+  {
+   "type": "value",
+   "expr": "0.888888889*(1-exp(-9*x))",
+   "x": 0.8,
+   "between": [
+    0.888,
+    0.8889
+   ],
+   "name": "the response settles at T(0) = 8/9 ≈ 0.889"
+  },
+  {
+   "type": "point",
+   "expr": "0.888888889*(1-exp(-9*x))",
+   "x": 0,
+   "y": 0,
+   "name": "y(0) = 0"
+  }
+ ],
+ "fromLesson": [
+  "8/9 ≈ 0.889",
+  "1/9 ≈ 0.111"
+ ]
+}

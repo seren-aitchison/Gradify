@@ -1,0 +1,90 @@
+{
+ "id": "phys-u44-tunnel-current",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u44",
+ "lesson": "Scanning probe microscopy",
+ "title": "The tunnelling current is exquisitely sensitive to the gap",
+ "caption": "For φ = 4.5 eV, κ = √(2mφ)/ħ ≈ 10.9 nm⁻¹ and I ∝ e^(−2κd). Retracting the tip by only 0.1 nm multiplies the current by e^(−2.2) ≈ 0.11: about 9× smaller. That sensitivity is what lets an STM feel individual atoms.",
+ "alt": "Relative tunnelling current against increase in gap from 0 to 0.3 nanometres: an exponential decay from 1 that has fallen to 0.11 at 0.1 nanometre and about 0.01 at 0.2.",
+ "description": [
+  "κ = √(2 × 9.11 × 10⁻³¹ × 7.2 × 10⁻¹⁹)/1.055 × 10⁻³⁴ ≈ 10.87 nm⁻¹ for φ = 4.5 eV.",
+  "Gap increase Δd = 0.1 nm: I/I₀ = e^(−2κΔd) = e^(−2.17) ≈ 0.11, about 9× smaller.",
+  "Δd = 0.2 nm: 0.013; each 0.1 nm costs about a factor of 9."
+ ],
+ "range": {
+  "x": [
+   0,
+   0.3
+  ],
+  "y": [
+   0,
+   1.05
+  ]
+ },
+ "ticks": [
+  [
+   0.1,
+   0.2,
+   0.3
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "increase in gap Δd / nm",
+  "current I/I₀"
+ ],
+ "curves": [
+  {
+   "expr": "exp(-2*10.867*x)",
+   "colour": "a1",
+   "label": "e^(−2κΔd)",
+   "labelAt": [
+    0.14,
+    0.5
+   ]
+  }
+ ],
+ "marks": [
+  {
+   "x": 0.1,
+   "to": 0.1138
+  }
+ ],
+ "points": [
+  {
+   "x": 0.1,
+   "y": 0.1138,
+   "colour": "a2",
+   "label": "0.11 at 0.1 nm",
+   "dx": 12,
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "exp(-2*10.867*x)",
+   "x": 0.1,
+   "y": 0.1138,
+   "name": "current falls to 0.11 for 0.1 nm"
+  },
+  {
+   "type": "point",
+   "expr": "exp(-2*10.867*x)",
+   "x": 0,
+   "y": 1,
+   "name": "I = I₀ at no change"
+  }
+ ]
+}

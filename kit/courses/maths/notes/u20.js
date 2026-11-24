@@ -62,6 +62,7 @@ X: Model a cooling cup of tea that starts at 90 °C in a 20 °C room.
 > Assume the rate of cooling is proportional to the temperature difference (Newton's law): dT/dt = −k(T − 20)
 > Solve: T(t) = 20 + 70e^{−kt}
 > Fit k from one measurement (say 60 °C at 10 minutes: k = ln(70/40)/10 ≈ 0.056 per minute), then test against later readings
+D: maths-u20-cooling-tea
 K: Modelling cycles through formulation, solution, interpretation and validation; models may be empirical or mechanistic, deterministic or stochastic; parsimony and predictive testing judge them.
 !: Fitting a model to all the data and then claiming it's validated by the same data.
 Q: Who said "all models are wrong, but some are useful"? | George Box.
@@ -238,6 +239,7 @@ X: Find the positive root of x^{2} + εx − 1 = 0 to first order in ε.
 > Substitute x = x₀ + εx₁: x₀^{2} + ε(2x₀x₁ + x₀) + O(ε^{2}) = 1
 > Order 1: x₀^{2} = 1, so x₀ = 1; order ε: 2x₁ + 1 = 0, so x₁ = −½
 > x ≈ 1 − ε/2 (for ε = 0.1: 0.95, exact 0.9512)
+D: maths-u20-perturbation-root
 K: Regular perturbations expand in powers of ε; singular perturbations need boundary layers and matched expansions; secular terms need multiple scales or Poincaré–Lindstedt.
 !: Setting ε = 0 in a singular problem and losing roots or boundary conditions.
 Q: What signals a singular perturbation in an ODE? | ε multiplying the highest derivative.
@@ -312,6 +314,7 @@ X: A bacterial culture grows logistically with r = 0.5 per hour and K = 10^{9} c
 > dN/dt = rN(1 − N/K)
 > = 0.5 × 5 × 10^{8} × (1 − 0.5)
 > = 1.25 × 10^{8} cells per hour, the maximum rate (at N = K/2)
+D: maths-u20-logistic-rate
 K: Biological models span molecules to ecosystems; ODEs, PDEs, stochastic and agent-based models suit different scales; parameter scarcity and variability are key challenges.
 !: Using deterministic ODEs where small numbers of molecules make randomness important.
 Q: At what population size is logistic growth fastest? | N = K/2.
@@ -457,6 +460,7 @@ X: In the Levins model dp/dt = cp(1 − p) − ep with colonisation c = 0.4 and 
 > Set dp/dt = 0 with p ≠ 0: c(1 − p) = e
 > 1 − p = e/c = 0.25
 > p* = 0.75: three-quarters of patches occupied
+D: maths-u20-levins
 K: Ecological models capture competition, predation and mutualism; functional responses shape dynamics; metapopulation and food-web models add space and community structure; they guide conservation and management.
 !: Ignoring spatial structure when habitats are fragmented.
 Q: What does the competitive exclusion principle say? | Two species on exactly the same limiting resource can't coexist indefinitely.
@@ -492,6 +496,7 @@ X: Measles has R₀ ≈ 15. Find the herd immunity threshold, and the vaccine co
 > Threshold = 1 − 1/15 ≈ 0.933
 > Coverage needed = 0.933/0.97
 > ≈ 0.96, so about 96% coverage
+D: maths-u20-herd-threshold
 K: R₀ and Rₜ summarise transmission; herd immunity needs 1 − 1/R₀ immune; models compare vaccination and distancing; fitting uses delayed data with uncertainty; projections depend on scenarios.
 !: Treating scenario projections as unconditional predictions.
 Q: What is R₀ in the SIR model? | β/γ.
@@ -527,6 +532,7 @@ X: Check numerically that z ≈ 0.8 satisfies the final size relation for R₀ =
 > 1 − e^{−2 × 0.8} = 1 − e^{−1.6} = 1 − 0.202 = 0.798
 > So z ≈ 0.797 (the exact solution)
 > About 80% are infected, more than the herd immunity threshold of 50%: overshoot
+D: maths-u20-final-size
 K: The threshold theorem says epidemics grow only when R₀S₀ > 1; the final size relation z = 1 − e^{−R₀z} shows overshoot; next-generation matrices give R₀ with heterogeneity; networks raise R₀ with degree variance.
 !: Thinking an unmitigated epidemic stops exactly at the herd immunity threshold.
 Q: What is the endemic susceptible fraction in SIR with births? | 1/R₀.
@@ -636,6 +642,7 @@ X: A 500 mg IV dose gives C₀ = 10 mg/L, and the half-life is 4 hours. Find V, 
 > V = 500/10 = 50 L
 > k = 0.693/4 ≈ 0.173 per hour
 > CL = kV ≈ 8.7 L/hour
+D: maths-u20-iv-decay
 K: PK models absorption, distribution and elimination; t_{½} = 0.693V/CL; AUC = D/CL; steady state takes 4–5 half-lives with C_{ss} = R/CL; repeated dosing accumulates.
 !: Expecting steady state after one half-life.
 Q: What is the steady-state concentration for infusion rate R? | R/CL.
@@ -673,6 +680,7 @@ X: A drug has E_{max} = 100%, EC₅₀ = 2 mg/L and Hill coefficient 1. Find the
 > E = 100 × 6/(2 + 6)
 > = 100 × 0.75
 > = 75%
+D: maths-u20-emax
 K: Emax and Hill models describe saturating concentration–effect relations; EC₅₀ gives half-maximal effect; effect compartments and indirect models explain delays; PK/PD linking guides dosing within the therapeutic window.
 !: Assuming doubling the dose doubles the effect when the response is near saturation.
 Q: At what concentration is the effect half-maximal? | EC₅₀.
@@ -709,6 +717,7 @@ X: A protein is produced at rate β = 10 nM/min and degraded at α = 0.1 per min
 > dx/dt = β − αx = 0 gives x* = β/α = 100 nM
 > The response time to reach half of steady state is ln 2/α
 > ≈ 6.9 minutes, set by the degradation rate
+D: maths-u20-protein-steady-state
 K: Systems biology models regulatory and metabolic networks; feedback creates switches and oscillators; network motifs have specific functions; FBA predicts fluxes by linear programming; synthetic circuits test designs.
 !: Thinking production rate sets response time, when it's the removal rate α.
 Q: What does positive feedback in gene regulation create? | Bistable switches.
@@ -1320,6 +1329,7 @@ X: For deep-water waves ω = √(gk), compare group and phase velocity.
 > Phase velocity v_{p} = ω/k = √(g/k)
 > Group velocity v_{g} = dω/dk = ½√(g/k)
 > v_{g} = v_{p}/2: individual crests move through a wave group twice as fast as the group itself
+D: maths-u20-deep-water-velocities
 K: Waves obey v = fλ; superposition gives interference, beats and standing waves; dispersion relations set phase and group velocities; deep-water waves have v_{g} = v_{p}/2.
 !: Confusing phase velocity with the speed at which energy travels.
 Q: What is the fundamental frequency of a string of length L with wave speed v? | v/(2L).
@@ -1612,6 +1622,7 @@ X: Find the photon energy for the hydrogen transition n = 2 → n = 1.
 > E₁ = −13.6 eV and E₂ = −13.6/4 = −3.4 eV
 > ΔE = −3.4 − (−13.6) = 10.2 eV
 > This is the Lyman-α line, at about 122 nm in the ultraviolet
+D: maths-u20-hydrogen-levels
 K: Quantum mechanics uses wavefunctions, operators and the Schrödinger equation; |ψ|^{2} gives probabilities; energy levels are quantised; uncertainty, spin and entanglement are distinctive features.
 !: Treating the wavefunction as a physical wave of matter rather than a probability amplitude.
 Q: What are the energy levels of a quantum harmonic oscillator? | ħω(n + ½).
@@ -1683,6 +1694,7 @@ X: Classify the fixed point at the origin of ẋ = y, ẏ = −x − y.
 > Jacobian [[0, 1], [−1, −1]] has trace −1 and determinant 1
 > Eigenvalues (−1 ± i√3)/2 have negative real part and non-zero imaginary part
 > The origin is a stable spiral
+D: maths-u20-stable-spiral
 K: Nonlinear dynamics analyses fixed points by linearisation, oscillations by limit cycles and qualitative changes by bifurcations; Poincaré–Bendixson rules out chaos in 2D flows.
 !: Trusting linearisation when an eigenvalue has zero real part.
 Q: What bifurcation creates a limit cycle from a fixed point? | A Hopf bifurcation.
@@ -1720,6 +1732,7 @@ X: Two weather states differ by 0.001 and λ = 0.5 per day. When does the differ
 > Separation grows as 0.001e^{0.5t}
 > Set 0.001e^{0.5t} = 1: e^{0.5t} = 1000
 > t = 2 ln 1000 ≈ 13.8 days
+D: maths-u20-error-growth
 K: Chaos is deterministic but sensitive, measured by positive Lyapunov exponents; strange attractors and period doubling are hallmarks; complex systems show emergence and self-organisation; predictability is limited.
 !: Thinking chaotic means random: chaotic systems follow deterministic rules.
 Q: What sign of Lyapunov exponent indicates chaos? | Positive.
@@ -1830,6 +1843,7 @@ X: A bath holds 100 L, fills at 10 L/min and drains at 6 L/min. How does the sto
 > Net flow = 10 − 6 = 4 L/min
 > dS/dt = 4, so after 10 minutes the bath holds 140 L
 > The stock keeps rising until the flows balance or it overflows
+D: maths-u20-bath-stock
 K: Systems theory uses stocks, flows and feedback; reinforcing and balancing loops shape behaviour; delays cause overshoot; system dynamics models policy problems; leverage lies in structure and goals.
 !: Expecting an immediate response from a system with significant delays.
 Q: What do balancing feedback loops do? | Push a system towards a goal or equilibrium.

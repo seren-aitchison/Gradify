@@ -1,0 +1,87 @@
+{
+ "id": "maths-u25-lqr-riccati",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u25",
+ "lesson": "Linear Quadratic Regulation",
+ "title": "The scalar Riccati equation 9 − P² = 0",
+ "caption": "With A = 0, B = 1, Q = 9 and R = 1 the Riccati equation is −P² + 9 = 0. The positive root P = 3 gives the gain K = 3 and the closed loop ẋ = −3x.",
+ "alt": "The downward parabola 9 − P² crossing the horizontal axis at P = 3, marked.",
+ "description": [
+  "For ẋ = u the Riccati equation reads −P² + Q = 0, that is 9 − P² = 0.",
+  "The positive root is P = 3.",
+  "K = R⁻¹BP = 3, and the closed loop is ẋ = −3x."
+ ],
+ "range": {
+  "x": [
+   0,
+   4
+  ],
+  "y": [
+   -2,
+   10
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4
+  ],
+  [
+   0,
+   2,
+   4,
+   6,
+   8,
+   10
+  ]
+ ],
+ "grid": [
+  1,
+  2
+ ],
+ "axisLabels": [
+  "P",
+  "9 − P²"
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "curves": [
+  {
+   "expr": "9-x^2",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 3,
+   "y": 0,
+   "label": "P = 3",
+   "dx": 10,
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "9-x^2",
+   "x": 3,
+   "y": 0,
+   "name": "P = 3 solves the Riccati equation"
+  },
+  {
+   "type": "point",
+   "expr": "9-x^2",
+   "x": 0,
+   "y": 9,
+   "name": "the constant term is Q = 9"
+  }
+ ],
+ "fromLesson": [
+  "P = 3"
+ ]
+}

@@ -1,0 +1,40 @@
+{
+ "id": "maths-u21-pension-accrual",
+ "renderer": "bar-model",
+ "course": "maths",
+ "unit": "u21",
+ "lesson": "Pension Mathematics",
+ "title": "Thirty sixtieths of final salary",
+ "caption": "Each year of service earns 1/60 of final salary. After 30 years the accrual is 30/60 = ½, so the pension is half of £45,000: £22,500 a year.",
+ "alt": "A bar of 60 equal cells with 30 shaded, showing one half.",
+ "description": [
+  "Each year of service earns one sixtieth.",
+  "Thirty years give 30 of the 60 sixtieths: ½.",
+  "The pension is ½ × £45,000 = £22,500 a year."
+ ],
+ "bars": [
+  {
+   "label": "30 of 60 sixtieths",
+   "cells": 60,
+   "shaded": 30
+  }
+ ],
+ "checks": [
+  {
+   "type": "fraction",
+   "bar": 0,
+   "value": "1/2",
+   "name": "30/60 = ½"
+  },
+  {
+   "type": "percent",
+   "of": 45000,
+   "percent": 50,
+   "value": 22500,
+   "name": "half of £45,000 is £22,500"
+  }
+ ],
+ "fromLesson": [
+  "£22,500"
+ ]
+}

@@ -1,0 +1,100 @@
+{
+ "id": "phys-u44-cryo-cost",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u44",
+ "lesson": "Cryogenic systems",
+ "title": "The cost of cold",
+ "caption": "The Carnot COP T_c/(T_h − T_c) means that removing 1 W at temperature T_c needs at least (300 − T_c)/T_c watts of work. At 77 K that is 2.9 W; at 4 K it is 74 W (COP 0.0135). Real refrigerators are far worse, needing about 1000 W per watt at 4 K.",
+ "alt": "Minimum work per watt of heat removed against cold temperature from 3 to 100 kelvin: a curve that climbs steeply as the temperature falls, passing 2.9 at 77 K and 74 at 4 K.",
+ "description": [
+  "Carnot: COP = T_c/(T_h − T_c) with T_h = 300 K, so work per watt removed = (T_h − T_c)/T_c.",
+  "T_c = 77 K: 2.9 W per watt.",
+  "T_c = 4 K: 296/4 = 74 W per watt, so COP ≈ 0.0135.",
+  "Real systems need about 1000 W/W at 4 K, far above this ideal limit."
+ ],
+ "range": {
+  "x": [
+   0,
+   100
+  ],
+  "y": [
+   0,
+   90
+  ]
+ },
+ "ticks": [
+  [
+   20,
+   40,
+   60,
+   80,
+   100
+  ],
+  [
+   20,
+   40,
+   60,
+   80
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "cold temperature T_{c} / K",
+  "minimum work per watt removed / W"
+ ],
+ "curves": [
+  {
+   "expr": "(300-x)/x",
+   "domain": [
+    3,
+    100
+   ],
+   "colour": "a1",
+   "label": "(T_{h} − T_{c})/T_{c}",
+   "labelAt": [
+    30,
+    38
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 4,
+   "y": 74,
+   "colour": "a2",
+   "label": "4 K: 74 W",
+   "dx": 12,
+   "dy": 6
+  },
+  {
+   "x": 77,
+   "y": 2.896,
+   "colour": "a2",
+   "label": "77 K: 2.9 W",
+   "dx": -6,
+   "dy": -14,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "(300-x)/x",
+   "x": 4,
+   "y": 74,
+   "name": "74 W per watt at 4 K"
+  },
+  {
+   "type": "point",
+   "expr": "(300-x)/x",
+   "x": 77,
+   "y": 2.896104,
+   "name": "2.9 W per watt at 77 K"
+  }
+ ]
+}

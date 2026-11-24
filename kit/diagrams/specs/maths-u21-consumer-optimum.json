@@ -1,0 +1,108 @@
+{
+ "id": "maths-u21-consumer-optimum",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u21",
+ "lesson": "Mathematical Economics",
+ "title": "The consumer's best bundle",
+ "caption": "The budget line 2x + 5y = 100 is tangent to the indifference curve xy = 250 at (25, 10): half of income, £50, goes on each good.",
+ "alt": "A downward budget line touching a curved indifference curve at the point (25, 10).",
+ "description": [
+  "Budget: 2x + 5y = 100, so y = 20 − 0.4x.",
+  "Cobb–Douglas spends half of income on each good: x = 50/2 = 25, y = 50/5 = 10.",
+  "The utility level there is 25 × 10 = 250.",
+  "The line touches the curve xy = 250 at that point (equal slopes)."
+ ],
+ "range": {
+  "x": [
+   0,
+   50
+  ],
+  "y": [
+   0,
+   25
+  ]
+ },
+ "ticks": [
+  [
+   10,
+   20,
+   30,
+   40,
+   50
+  ],
+  [
+   5,
+   10,
+   15,
+   20,
+   25
+  ]
+ ],
+ "grid": [
+  10,
+  5
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "good x",
+  "good y"
+ ],
+ "curves": [
+  {
+   "expr": "20-0.4*x",
+   "colour": "a1",
+   "label": "budget",
+   "labelAt": [
+    38,
+    3.4
+   ]
+  },
+  {
+   "expr": "250/x",
+   "colour": "a2",
+   "domain": [
+    10.5,
+    50
+   ],
+   "label": "xy = 250",
+   "labelAt": [
+    37,
+    8.6
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 25,
+   "y": 10,
+   "label": "(25, 10)",
+   "colour": "a4",
+   "dx": 12,
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "intersect",
+   "a": "20-0.4*x",
+   "b": "250/x",
+   "x": 25,
+   "y": 10,
+   "name": "the budget line and indifference curve meet at (25, 10)"
+  },
+  {
+   "type": "slope",
+   "expr": "250/x",
+   "x": 25,
+   "value": -0.4,
+   "name": "the indifference curve has the budget line's slope −0.4 there"
+  }
+ ],
+ "fromLesson": [
+  "y = 50/5"
+ ]
+}

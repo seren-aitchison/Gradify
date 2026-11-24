@@ -1,0 +1,112 @@
+{
+ "id": "maths-u27-maple-roots",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u27",
+ "lesson": "Maple",
+ "title": "solve(x^2 - 5*x + 6 = 0, x) gives 2, 3",
+ "caption": "The parabola y = x² − 5x + 6 crosses the x-axis at x = 2 and x = 3, the two values Maple's solve returns. Its minimum is below the axis halfway between them, at x = 2.5.",
+ "alt": "The parabola y = x² − 5x + 6 crossing the x-axis at (2, 0) and (3, 0).",
+ "description": [
+  "Plot y = x² − 5x + 6.",
+  "It crosses the axis where the quadratic is zero.",
+  "Those places are x = 2 and x = 3.",
+  "That is the output of solve."
+ ],
+ "range": {
+  "x": [
+   0,
+   5
+  ],
+  "y": [
+   -1,
+   7
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  [
+   -1,
+   2,
+   4,
+   6
+  ]
+ ],
+ "grid": [
+  1,
+  3
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "x^2-5*x+6",
+   "colour": "a1",
+   "domain": [
+    0.1,
+    4.9
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 2,
+   "y": 0,
+   "label": "2",
+   "colour": "a2",
+   "dx": -8,
+   "dy": -12,
+   "anchor": "end"
+  },
+  {
+   "x": 3,
+   "y": 0,
+   "label": "3",
+   "colour": "a2",
+   "dx": 8,
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "x^2-5*x+6",
+   "x": 2,
+   "y": 0,
+   "name": "x = 2 is a root"
+  },
+  {
+   "type": "point",
+   "expr": "x^2-5*x+6",
+   "x": 3,
+   "y": 0,
+   "name": "x = 3 is a root"
+  },
+  {
+   "type": "min",
+   "expr": "x^2-5*x+6",
+   "domain": [
+    0,
+    5
+   ],
+   "x": 2.5,
+   "y": -0.25,
+   "name": "the minimum is at x = 2.5, halfway between the roots"
+  }
+ ],
+ "fromLesson": [
+  "returns 2, 3"
+ ]
+}

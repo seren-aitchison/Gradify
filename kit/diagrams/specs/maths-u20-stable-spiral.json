@@ -1,0 +1,106 @@
+{
+ "id": "maths-u20-stable-spiral",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u20",
+ "lesson": "Nonlinear Dynamics",
+ "title": "Eigenvalues (−1 ± i√3)/2: a decaying oscillation",
+ "caption": "The Jacobian has trace −1 and determinant 1, so the eigenvalues are (−1 ± i√3)/2: the imaginary part makes x(t) oscillate and the negative real part makes the oscillation die away as e^(−t/2).",
+ "alt": "The position x against time for the system starting at x = 1: a wave that crosses zero repeatedly and shrinks inside the dashed decay envelope e to the minus t over 2.",
+ "description": [
+  "The Jacobian [[0, 1], [−1, −1]] has trace −1 and determinant 1.",
+  "Its eigenvalues (−1 ± i√3)/2 have real part −½ and imaginary part ±√3/2.",
+  "A solution from x(0) = 1, y(0) = 0 is x = e^(−t/2)(cos(√3t/2) + sin(√3t/2)/√3).",
+  "It oscillates (imaginary part) and decays (negative real part): a stable spiral."
+ ],
+ "range": {
+  "x": [
+   0,
+   12
+  ],
+  "y": [
+   -1.1,
+   1.2
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   4,
+   6,
+   8,
+   10,
+   12
+  ],
+  [
+   -1,
+   -0.5,
+   0.5,
+   1
+  ]
+ ],
+ "grid": [
+  2,
+  0.5
+ ],
+ "height": [
+  330,
+  300
+ ],
+ "axisLabels": [
+  "t",
+  "x"
+ ],
+ "curves": [
+  {
+   "expr": "exp(-0.5*x)",
+   "colour": "a4",
+   "dash": "6 4"
+  },
+  {
+   "expr": "-exp(-0.5*x)",
+   "colour": "a4",
+   "dash": "6 4"
+  },
+  {
+   "expr": "exp(-0.5*x)*(cos(0.8660254037844386*x)+sin(0.8660254037844386*x)/1.7320508075688772)",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 1,
+   "label": "x(0) = 1",
+   "colour": "a2",
+   "dx": 14,
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "exp(-0.5*x)*(cos(0.8660254037844386*x)+sin(0.8660254037844386*x)/1.7320508075688772)",
+   "x": 0,
+   "y": 1,
+   "name": "x(0) = 1"
+  },
+  {
+   "type": "slope",
+   "expr": "exp(-0.5*x)*(cos(0.8660254037844386*x)+sin(0.8660254037844386*x)/1.7320508075688772)",
+   "x": 0,
+   "value": 0,
+   "name": "x′(0) = y(0) = 0"
+  },
+  {
+   "type": "point",
+   "expr": "exp(-0.5*x)",
+   "x": 2,
+   "y": 0.36787944117144233,
+   "name": "the envelope decays at the real part −½: e^(−1) at t = 2"
+  }
+ ],
+ "fromLesson": [
+  "Eigenvalues (−1 ± i√3)/2"
+ ]
+}

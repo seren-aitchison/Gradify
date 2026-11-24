@@ -1,0 +1,110 @@
+{
+ "id": "maths-u27-sympy-antiderivative",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u27",
+ "lesson": "SymPy",
+ "title": "x sin x and its antiderivative",
+ "caption": "SymPy gives ∫ x sin x dx = sin x − x cos x. Differentiating that returns x sin x: the slope of the antiderivative curve at each x equals the height of x sin x, which is the quick check.",
+ "alt": "The curve y = x sin x and its antiderivative y = sin x − x cos x, with the slope of the second at x = 2 equal to the height of the first.",
+ "description": [
+  "Plot f(x) = x sin x.",
+  "Plot SymPy's antiderivative sin x − x cos x.",
+  "At x = 2 the antiderivative's slope equals f(2) = 2 sin 2.",
+  "That is the check: differentiate the result."
+ ],
+ "range": {
+  "x": [
+   0,
+   5
+  ],
+  "y": [
+   -5,
+   7
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  [
+   -4,
+   -2,
+   2,
+   4,
+   6
+  ]
+ ],
+ "grid": [
+  1,
+  2
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "x*sin(x)",
+   "colour": "a1",
+   "label": "x sin x",
+   "labelAt": [
+    3.7,
+    -1.4
+   ]
+  },
+  {
+   "expr": "sin(x)-x*cos(x)",
+   "colour": "a2",
+   "label": "sin x − x cos x",
+   "labelAt": [
+    3.6,
+    5.2
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 2,
+   "y": 1.8185948536513634,
+   "label": "f(2)",
+   "colour": "a1",
+   "dx": 10,
+   "dy": 20
+  }
+ ],
+ "checks": [
+  {
+   "type": "slope",
+   "expr": "sin(x)-x*cos(x)",
+   "x": 2,
+   "value": 1.8185948536513634,
+   "name": "the antiderivative's slope at x = 2 is 2 sin 2 = f(2)"
+  },
+  {
+   "type": "slope",
+   "expr": "sin(x)-x*cos(x)",
+   "x": 4,
+   "value": -3.027209981231713,
+   "name": "and at x = 4 it is 4 sin 4 = f(4)"
+  },
+  {
+   "type": "point",
+   "expr": "x*sin(x)",
+   "x": 2,
+   "y": 1.8185948536513634,
+   "name": "f(2) = 2 sin 2"
+  }
+ ],
+ "fromLesson": [
+  "-x*cos(x) + sin(x)"
+ ]
+}

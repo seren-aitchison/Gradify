@@ -1,0 +1,89 @@
+{
+ "id": "maths-u20-levins",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u20",
+ "lesson": "Ecological Modelling",
+ "title": "The Levins metapopulation model",
+ "caption": "dp/dt = 0.4p(1 − p) − 0.1p is positive for small p and negative beyond p* = 1 − e/c = 0.75, so the occupied fraction settles at three-quarters of the patches.",
+ "alt": "A downward parabola of the rate of change of the occupied fraction p against p, crossing zero at p = 0 and at the stable equilibrium p = 0.75.",
+ "description": [
+  "Set c = 0.4 and e = 0.1.",
+  "The rate of change is positive for 0 < p < 0.75 and negative for p > 0.75.",
+  "It is zero at p* = 1 − e/c = 0.75: three-quarters of the patches are occupied."
+ ],
+ "range": {
+  "x": [
+   0,
+   1
+  ],
+  "y": [
+   -0.06,
+   0.08
+  ]
+ },
+ "ticks": [
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ],
+  [
+   -0.05,
+   0.05
+  ]
+ ],
+ "grid": [
+  0.25,
+  0.05
+ ],
+ "height": [
+  330,
+  300
+ ],
+ "axisLabels": [
+  "p",
+  "dp/dt"
+ ],
+ "curves": [
+  {
+   "expr": "0.4*x*(1-x)-0.1*x",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 0.75,
+   "y": 0,
+   "label": "p* = 0.75",
+   "colour": "a2",
+   "dx": -10,
+   "dy": -14,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "0.4*x*(1-x)-0.1*x",
+   "x": 0.75,
+   "y": 0,
+   "name": "dp/dt = 0 at p = 0.75"
+  },
+  {
+   "type": "max",
+   "expr": "0.4*x*(1-x)-0.1*x",
+   "domain": [
+    0,
+    1
+   ],
+   "x": 0.375,
+   "y": 0.05625,
+   "name": "the rate peaks half-way between 0 and p*"
+  }
+ ],
+ "fromLesson": [
+  "p* = 0.75"
+ ]
+}

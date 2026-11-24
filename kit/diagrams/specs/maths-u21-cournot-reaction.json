@@ -1,0 +1,106 @@
+{
+ "id": "maths-u21-cournot-reaction",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u21",
+ "lesson": "Game-Theoretic Economics",
+ "title": "Best-response lines meeting at the Cournot equilibrium",
+ "caption": "Each firm's best response is half of what the market leaves: q₁ = (120 − q₂)/2 and q₂ = (120 − q₁)/2. They cross at (40, 40): total output 80 and price 120 − 80 = 40.",
+ "alt": "Two straight lines, firm 1's and firm 2's best responses, crossing at (40, 40).",
+ "description": [
+  "Firm 1 maximises q₁(120 − q₁ − q₂), giving q₁ = (120 − q₂)/2.",
+  "By symmetry q = (120 − q)/2, so q = 40.",
+  "Total output 80 and price 40, against a monopoly's Q = 60, P = 60."
+ ],
+ "range": {
+  "x": [
+   0,
+   120
+  ],
+  "y": [
+   0,
+   120
+  ]
+ },
+ "ticks": [
+  [
+   20,
+   40,
+   60,
+   80,
+   100,
+   120
+  ],
+  [
+   20,
+   40,
+   60,
+   80,
+   100,
+   120
+  ]
+ ],
+ "grid": [
+  20,
+  20
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "firm 1 output q₁",
+  "firm 2 output q₂"
+ ],
+ "curves": [
+  {
+   "expr": "120-2*x",
+   "colour": "a1",
+   "label": "firm 1's response",
+   "labelAt": [
+    4,
+    108
+   ]
+  },
+  {
+   "expr": "(120-x)/2",
+   "colour": "a2",
+   "label": "firm 2's response",
+   "labelAt": [
+    70,
+    28
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 40,
+   "y": 40,
+   "label": "(40, 40)",
+   "colour": "a4",
+   "dx": 12,
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "intersect",
+   "a": "120-2*x",
+   "b": "(120-x)/2",
+   "x": 40,
+   "y": 40,
+   "name": "the best responses cross at (40, 40)"
+  },
+  {
+   "type": "point",
+   "expr": "120-40-40",
+   "x": 0,
+   "y": 40,
+   "name": "the price at Q = 80 is 120 − 80 = 40"
+  }
+ ],
+ "fromLesson": [
+  "q = 40"
+ ]
+}

@@ -1,0 +1,58 @@
+{
+ "id": "maths-u21-smoothing-forecast",
+ "renderer": "bar-model",
+ "course": "maths",
+ "unit": "u21",
+ "lesson": "Forecasting",
+ "title": "A smoothed forecast is a weighted mix",
+ "caption": "With α = 0.3 the new forecast takes 30% of the latest actual (110) and 70% of the last forecast (100): 33 + 70 = 103.",
+ "alt": "One bar of two parts, 33 from the actual value and 70 from the old forecast, bracketed as 103.",
+ "description": [
+  "0.3 × 110 = 33 comes from the new observation.",
+  "0.7 × 100 = 70 comes from the last forecast.",
+  "The next forecast is 33 + 70 = 103."
+ ],
+ "bars": [
+  {
+   "label": "next forecast",
+   "parts": [
+    {
+     "value": 33,
+     "text": "33 actual"
+    },
+    {
+     "value": 70,
+     "text": "70 old forecast"
+    }
+   ]
+  }
+ ],
+ "braces": [
+  {
+   "bar": 0,
+   "from": 0,
+   "to": 1,
+   "value": 103,
+   "text": "103"
+  }
+ ],
+ "checks": [
+  {
+   "type": "percent",
+   "of": 110,
+   "percent": 30,
+   "value": 33,
+   "name": "0.3 × 110 = 33"
+  },
+  {
+   "type": "percent",
+   "of": 100,
+   "percent": 70,
+   "value": 70,
+   "name": "0.7 × 100 = 70"
+  }
+ ],
+ "fromLesson": [
+  "= 103"
+ ]
+}

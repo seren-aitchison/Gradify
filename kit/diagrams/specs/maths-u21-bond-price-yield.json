@@ -1,0 +1,104 @@
+{
+ "id": "maths-u21-bond-price-yield",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u21",
+ "lesson": "Bond Pricing",
+ "title": "Price falls as the yield rises",
+ "caption": "The 3-year 5% coupon bond is worth £100 (par) when the yield equals the coupon, 5%. At a 6% yield it is £97.33, below par; a lower yield would put it above par.",
+ "alt": "A downward-sloping curve of price against yield, passing through £100 at 5% and £97.33 at 6%.",
+ "description": [
+  "Price = 5/(1 + y) + 5/(1 + y)² + 105/(1 + y)³.",
+  "At y = 5% (the coupon) the price is exactly £100.",
+  "At y = 6% it is 4.717 + 4.450 + 88.160 = £97.33.",
+  "Higher yields discount the cash flows more, so the price falls."
+ ],
+ "range": {
+  "x": [
+   0.02,
+   0.1
+  ],
+  "y": [
+   88,
+   112
+  ]
+ },
+ "ticks": [
+  [
+   0.02,
+   0.04,
+   0.06,
+   0.08,
+   0.1
+  ],
+  [
+   90,
+   95,
+   100,
+   105,
+   110
+  ]
+ ],
+ "grid": [
+  0.02,
+  5
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "yield",
+  "price £"
+ ],
+ "curves": [
+  {
+   "expr": "5/(1+x)+5/(1+x)^2+105/(1+x)^3",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "y": 100,
+   "label": "par £100"
+  }
+ ],
+ "points": [
+  {
+   "x": 0.05,
+   "y": 100,
+   "label": "5%: £100",
+   "colour": "a4",
+   "dx": 10,
+   "dy": -14
+  },
+  {
+   "x": 0.06,
+   "y": 97.32698805053833,
+   "label": "6%: £97.33",
+   "colour": "a2",
+   "dx": -12,
+   "dy": 26,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "5/(1+x)+5/(1+x)^2+105/(1+x)^3",
+   "x": 0.06,
+   "y": 97.32698805053833,
+   "name": "at a 6% yield the price is £97.33"
+  },
+  {
+   "type": "point",
+   "expr": "5/(1+x)+5/(1+x)^2+105/(1+x)^3",
+   "x": 0.05,
+   "y": 100,
+   "name": "at a 5% yield (the coupon) the price is par"
+  }
+ ],
+ "fromLesson": [
+  "97.33"
+ ]
+}

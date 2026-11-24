@@ -1,2 +1,35 @@
-// Unit 25: not planned yet. Fill this per kit/diagrams/maths/UNIT-AGENT.md.
-export default [];
+// Unit 25, Control Theory and Systems. Rows: kit/diagrams/BUILDERS.md.
+const CALC = "a short calculation laid out in the notes' worked steps; a picture would only decorate it";
+const MAT = "a matrix-rank test shown in the notes' worked steps; no picture adds to it";
+export default [
+  ["u25-01", null, "needs renderer block diagram: plant, sensor, controller and actuator joined in a feedback loop with signals r, e, u, y"],
+  ["u25-02", "graph", "maths-u25-decay", "x = 5e^{−2t} with the time constant marked at 1.84"],
+  ["u25-03", "graph", "maths-u25-pendulum", "−sin θ with equilibria 0 and π and the slopes −1 and +1 there"],
+  ["u25-04", "graph", "maths-u25-poles", "λ² + 3λ + 2 crossing zero at the poles −1 and −2"],
+  ["u25-05", "graph", "maths-u25-step-4-over-s2", "the step response of 4/(s + 2) settling at the DC gain 2"],
+  ["u25-06", "sequence", "maths-u25-bounce-heights", "bounce heights 1, 0.25, 0.0625, … with ratio 0.25"],
+  ["u25-07", null, "needs renderer phase portrait: the two spiral trajectories and the switching path of the notes' example"],
+  ["u25-08", "graph", "maths-u25-open-loop-gain", "3 kW gives 15 °C at the assumed gain but 12 °C at the true gain"],
+  ["u25-09", "graph", "maths-u25-closed-loop-step", "closed-loop step settling at 8/9, short of the reference by 1/9"],
+  ["u25-10", "graph", "maths-u25-pole-placement", "open-loop e^{2t} against closed-loop e^{−3t} with K = 5"],
+  ["u25-11", null, "needs renderer block diagram: the parallel P, I and D paths of the PID controller (the Ziegler–Nichols numbers themselves are a short calculation)"],
+  ["u25-12", null, CALC + " (the Routh array)"],
+  ["u25-13", "graph", "maths-u25-lyapunov-v", "V = x² and V̇ = −2x⁴: V positive, V̇ negative away from 0"],
+  ["u25-14", null, MAT],
+  ["u25-15", null, MAT],
+  ["u25-16", "graph", "maths-u25-gain-first-order", "|G| = 10/√(100 + ω²) with 0.707 at ω = 10"],
+  ["u25-17", "graph", "maths-u25-bode-gain", "the Bode gain of 100/(s + 10): 20 dB, 17 dB and 0 dB at ω = 1, 10, 100"],
+  ["u25-18", "graph", "maths-u25-nyquist-gain-margin", "|L| for K = 8 crossing 1 at the −180° frequency ω = √3"],
+  ["u25-19", "graph", "maths-u25-root-locus-real", "real parts of the closed-loop poles meeting at −1 when K = 1"],
+  ["u25-20", "graph", "maths-u25-observer-error", "estimation error e^{−t} against e^{−5t} with L = 4"],
+  ["u25-21", "graph", "maths-u25-kalman-fixed-point", "P⁻ → P⁻/(P⁻ + 1) + 1 meeting y = x at 1.618"],
+  ["u25-22", "graph", "maths-u25-arx-step", "the ARX step response rising to the DC gain 10"],
+  ["u25-23", "graph", "maths-u25-lqr-riccati", "9 − P² crossing zero at P = 3"],
+  ["u25-24", null, CALC + " (a horizon length times a sample time)"],
+  ["u25-25", null, CALC + " (a bound |T| < 2)"],
+  ["u25-26", null, CALC + " (one evaluation of the MIT rule)"],
+  ["u25-27", null, "a statement that the LQR gain does not depend on the noise; there is no number to draw"],
+  ["u25-28", null, CALC + " (cancelling x² in the control law)"],
+  ["u25-29", "graph", "maths-u25-consensus-three", "three agents starting at 0, 3, 6 converging to the average 3"],
+  ["u25-30", null, CALC + " (log₂ 4 = 2 bits)"],
+];

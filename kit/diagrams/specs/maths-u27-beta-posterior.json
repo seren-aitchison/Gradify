@@ -1,0 +1,101 @@
+{
+ "id": "maths-u27-beta-posterior",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u27",
+ "lesson": "PyMC",
+ "title": "The Beta(8, 4) posterior",
+ "caption": "With a uniform Beta(1, 1) prior and 7 heads in 10 tosses the posterior is Beta(8, 4), with density 1320 x⁷(1 − x)³. It has area 1 and mean 8/12 ≈ 0.67, which az.summary reports.",
+ "alt": "A single-humped curve over p from 0 to 1, peaking near 0.7 and centred near 0.67.",
+ "description": [
+  "Start from a flat prior on the coin's bias p.",
+  "Seven heads in ten tosses multiply by p⁷(1 − p)³.",
+  "The result is the Beta(8, 4) density 1320 p⁷(1 − p)³.",
+  "Its mean is 8/12 ≈ 0.67."
+ ],
+ "range": {
+  "x": [
+   0,
+   1
+  ],
+  "y": [
+   0,
+   3.5
+  ]
+ },
+ "ticks": [
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ],
+  [
+   1,
+   2,
+   3
+  ]
+ ],
+ "grid": [
+  0.25,
+  1
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "p",
+  "density"
+ ],
+ "curves": [
+  {
+   "expr": "1320*x^7*(1-x)^3",
+   "colour": "a1",
+   "domain": [
+    0,
+    1
+   ]
+  }
+ ],
+ "marks": [
+  {
+   "x": 0.6666666666666666,
+   "label": "mean 0.67"
+  }
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "expr": "1320*x^7*(1-x)^3",
+   "from": 0,
+   "to": 1,
+   "value": 1,
+   "tol": 0.001,
+   "name": "the posterior density has area 1"
+  },
+  {
+   "type": "area",
+   "expr": "x*1320*x^7*(1-x)^3",
+   "from": 0,
+   "to": 1,
+   "value": 0.6666666666666666,
+   "tol": 0.001,
+   "name": "its mean is 8/12 ≈ 0.67"
+  },
+  {
+   "type": "max",
+   "expr": "1320*x^7*(1-x)^3",
+   "domain": [
+    0,
+    1
+   ],
+   "x": 0.7,
+   "y": 2.935107251999998,
+   "name": "its peak is at p = 7/10"
+  }
+ ],
+ "fromLesson": [
+  "8/12"
+ ]
+}

@@ -103,6 +103,7 @@ H: Thermal design
 P: Heat leaks arrive by conduction (supports, wires), radiation (σT^{4}, blocked by nested shields and multilayer insulation) and gas (removed by vacuum). Wiring uses low-conductivity materials (manganin, NbTi, stainless coax) and thermal anchoring at each stage. Materials change at low T: thermal contraction, brittleness, heat capacity falling as T^{3}. Hazards: asphyxiation from boil-off (1 L liquid He → ~750 L gas), cold burns, pressure build-up, magnet quenches.
 X: Carnot COP for removing heat at 4 K with rejection at 300 K?
 > 4/296 ≈ 0.0135: at least ~74 W of work per watt removed (real systems need ~1000 W/W)
+D: phys-u44-cryo-cost
 X: Radiation from 300 K to a 77 K shield of 1 m^{2} (ε = 0.05 effective)?
 > P ≈ 0.05 × 5.67 × 10^{-8} × (300^{4} − 77^{4}) ≈ 0.05 × 5.67 × 10^{-8} × 8.06 × 10^{9} ≈ 23 W
 K: Cryogenics trades huge work for tiny cooling power at low T, so heat leaks must be minimised by careful design.
@@ -160,6 +161,7 @@ P: Laser classes 1 (safe) to 4 (hazardous to eyes, skin, fire). Retinal damage f
 X: A HeNe (633 nm) beam has w_{0} = 0.5 mm. Rayleigh range and divergence?
 > z_{R} = π(5 × 10^{-4})^{2}/(6.33 × 10^{-7}) ≈ 1.24 m
 > θ = 6.33 × 10^{-7}/(π × 5 × 10^{-4}) ≈ 0.40 mrad
+D: phys-u44-gaussian-beam
 X: Mode spacing for a 30 cm cavity?
 > c/2L = 3 × 10^{8}/0.6 = 500 MHz
 K: A laser is gain plus feedback above threshold; Gaussian-beam optics and operating modes determine what it can do.
@@ -279,6 +281,7 @@ E: F_{total} = F_{1} + (F_{2} − 1)/G_{1} + … :: Friis formula
 X: A 75 Ω load on a 50 Ω line. Γ and VSWR?
 > Γ = 25/125 = 0.2
 > VSWR = 1.2/0.8 = 1.5; reflected power 4%
+D: phys-u44-reflection
 X: Noise floor in a 1 MHz bandwidth at 290 K?
 > −174 + 60 = −114 dBm
 K: Match impedances, calibrate fixtures, and keep the first amplifier low-noise; S-parameters describe RF components.
@@ -367,6 +370,7 @@ P: Magnetic force microscopy (MFM), Kelvin probe force microscopy (surface poten
 X: φ = 4.5 eV. Estimate κ and how much the current changes if the gap grows by 0.1 nm.
 > κ = √(2 × 9.11 × 10^{-31} × 7.2 × 10^{-19})/1.055 × 10^{-34} ≈ 1.09 × 10^{10} m^{-1}
 > Factor e^{−2 × 1.09 × 10^{10} × 10^{-10}} = e^{−2.2} ≈ 0.11: about 9× smaller
+D: phys-u44-tunnel-current
 X: A cantilever with k = 0.1 N m^{-1} deflects 2 nm. Force?
 > F = 0.1 × 2 × 10^{-9} = 0.2 nN
 K: STM uses tunnelling current, AFM uses force; both scan sharp tips to reach atomic resolution.
@@ -427,6 +431,7 @@ E: τ = Kλ/(β cos θ) :: Scherrer equation
 X: Copper (FCC, a = 0.3615 nm). Angle of the (111) peak with Cu Kα?
 > d = 0.3615/√3 = 0.2087 nm
 > sin θ = 0.15406/(2 × 0.2087) = 0.369 ⇒ θ = 21.7°, 2θ ≈ 43.3°
+D: phys-u44-bragg-peaks
 X: Which of (100), (110), (111), (200) appear for FCC?
 > (111) and (200) appear; (100) and (110) are absent (mixed parity)
 K: Bragg's law gives spacings from angles; structure factors explain intensities and absences.

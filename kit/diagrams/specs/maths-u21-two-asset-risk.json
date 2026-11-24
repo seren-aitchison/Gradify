@@ -1,0 +1,114 @@
+{
+ "id": "maths-u21-two-asset-risk",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u21",
+ "lesson": "Portfolio Theory",
+ "title": "Risk of a two-asset portfolio",
+ "caption": "With two assets of 20% risk and correlation 0.5, mixing them lowers the risk: a 50/50 split has σ = √0.03 ≈ 17.3%, the minimum on this curve. Holding all of either gives 20%.",
+ "alt": "A shallow U-shaped curve of portfolio risk against the weight in the first asset, from 20% at 0 and 1 down to 17.3% at 0.5.",
+ "description": [
+  "With weights w and 1 − w: σp² = 0.04(w² + (1 − w)² + w(1 − w)).",
+  "At w = 0.5 this is 0.01 + 0.01 + 0.01 = 0.03.",
+  "So σp = √0.03 ≈ 17.3%, below the 20% of either asset."
+ ],
+ "range": {
+  "x": [
+   0,
+   1
+  ],
+  "y": [
+   15,
+   22
+  ]
+ },
+ "ticks": [
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ],
+  [
+   16,
+   18,
+   20,
+   22
+  ]
+ ],
+ "grid": [
+  0.25,
+  2
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "weight in asset 1",
+  "risk σp (%)"
+ ],
+ "curves": [
+  {
+   "expr": "20*sqrt(x^2-x+1)",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 0.5,
+   "y": 17.32050807568877,
+   "label": "17.3%",
+   "colour": "a2",
+   "dx": 10,
+   "dy": 22
+  },
+  {
+   "x": 0,
+   "y": 20,
+   "label": "20%",
+   "colour": "a4",
+   "dx": 10,
+   "dy": -10
+  },
+  {
+   "x": 1,
+   "y": 20,
+   "label": "20%",
+   "colour": "a4",
+   "dx": -10,
+   "dy": -10,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "20*sqrt(x^2-x+1)",
+   "x": 0.5,
+   "y": 17.32050807568877,
+   "name": "the 50/50 portfolio has σ = √0.03 ≈ 17.3%"
+  },
+  {
+   "type": "min",
+   "expr": "20*sqrt(x^2-x+1)",
+   "domain": [
+    0,
+    1
+   ],
+   "x": 0.5,
+   "y": 17.32050807568877,
+   "name": "the minimum risk is at the 50/50 split"
+  },
+  {
+   "type": "point",
+   "expr": "20*sqrt(x^2-x+1)",
+   "x": 1,
+   "y": 20,
+   "name": "all in one asset has risk 20%"
+  }
+ ],
+ "fromLesson": [
+  "17.3%"
+ ]
+}

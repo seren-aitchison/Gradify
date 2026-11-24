@@ -1,0 +1,68 @@
+{
+ "id": "maths-u21-taylor-rule",
+ "renderer": "bar-model",
+ "course": "maths",
+ "unit": "u21",
+ "lesson": "Macroeconomic Modelling",
+ "title": "Building the Taylor-rule rate",
+ "caption": "The rule adds up: 2% neutral real rate, 4% inflation, 1% for inflation 2 points above target (0.5 × 2) and 0.5% for the 1% output gap (0.5 × 1): 7.5%.",
+ "alt": "One bar of four parts, 2, 4, 1 and 0.5, bracketed as 7.5%.",
+ "description": [
+  "Start with r* + π = 2 + 4 = 6.",
+  "Add 0.5 × (4 − 2) = 1 for the inflation gap.",
+  "Add 0.5 × 1 = 0.5 for the output gap.",
+  "The recommended rate is 7.5%."
+ ],
+ "suffix": "%",
+ "bars": [
+  {
+   "label": "policy rate",
+   "parts": [
+    {
+     "value": 2,
+     "text": "2 r*"
+    },
+    {
+     "value": 4,
+     "text": "4 π"
+    },
+    {
+     "value": 1,
+     "text": "1"
+    },
+    {
+     "value": 0.5,
+     "text": "½"
+    }
+   ]
+  }
+ ],
+ "braces": [
+  {
+   "bar": 0,
+   "from": 0,
+   "to": 3,
+   "value": 7.5,
+   "text": "7.5%"
+  }
+ ],
+ "checks": [
+  {
+   "type": "percent",
+   "of": 2,
+   "percent": 50,
+   "value": 1,
+   "name": "inflation gap: 0.5 × (4 − 2) = 1"
+  },
+  {
+   "type": "percent",
+   "of": 1,
+   "percent": 50,
+   "value": 0.5,
+   "name": "output gap: 0.5 × 1 = 0.5"
+  }
+ ],
+ "fromLesson": [
+  "7.5%"
+ ]
+}

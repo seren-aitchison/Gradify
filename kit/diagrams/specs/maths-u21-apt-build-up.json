@@ -1,0 +1,64 @@
+{
+ "id": "maths-u21-apt-build-up",
+ "renderer": "bar-model",
+ "course": "maths",
+ "unit": "u21",
+ "lesson": "Arbitrage Pricing Theory",
+ "title": "Building the expected return from factor premiums",
+ "caption": "The expected return is a stack: 3% risk-free, plus 1.0 × 4% for growth, plus 0.5 × 2% for inflation: 3 + 4 + 1 = 8%.",
+ "alt": "One bar made of three parts, 3 (risk-free), 4 (growth) and 1 (inflation), with a bracket for the 8% total.",
+ "description": [
+  "Start from the risk-free rate, 3%.",
+  "Add the growth exposure: 1.0 × 4% = 4%.",
+  "Add the inflation exposure: 0.5 × 2% = 1%.",
+  "The total expected return is 8%."
+ ],
+ "suffix": "%",
+ "bars": [
+  {
+   "label": "expected return",
+   "parts": [
+    {
+     "value": 3,
+     "text": "3 risk-free"
+    },
+    {
+     "value": 4,
+     "text": "4 growth"
+    },
+    {
+     "value": 1,
+     "text": "1"
+    }
+   ]
+  }
+ ],
+ "braces": [
+  {
+   "bar": 0,
+   "from": 0,
+   "to": 2,
+   "value": 8,
+   "text": "8%"
+  }
+ ],
+ "checks": [
+  {
+   "type": "percent",
+   "of": 1,
+   "percent": 4,
+   "value": 0.04,
+   "name": "growth part: 1.0 × 4% = 4%"
+  },
+  {
+   "type": "percent",
+   "of": 0.5,
+   "percent": 2,
+   "value": 0.01,
+   "name": "inflation part: 0.5 × 2% = 1%"
+  }
+ ],
+ "fromLesson": [
+  "= 8%"
+ ]
+}

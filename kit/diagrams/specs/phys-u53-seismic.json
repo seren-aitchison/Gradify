@@ -1,0 +1,122 @@
+{
+ "id": "phys-u53-seismic",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u53",
+ "lesson": "Physics and Earth science",
+ "title": "P and S arrival times",
+ "caption": "P-waves (7 km s⁻¹) arrive at t = d/7, S-waves (4 km s⁻¹) at t = d/4, so the delay grows with distance: d(1/4 − 1/7) = 30 s gives d ≈ 280 km. There P arrives after 40 s and S after 70 s.",
+ "alt": "Arrival time against distance for P and S waves: two straight lines from the origin, S steeper, with a 30 second gap between them at 280 kilometres.",
+ "description": [
+  "P: t = d/7. S: t = d/4 (d in km, t in s).",
+  "Delay = d(1/4 − 1/7) = 0.107d; for 30 s, d = 280 km.",
+  "At 280 km: P 40 s, S 70 s."
+ ],
+ "range": {
+  "x": [
+   0,
+   400
+  ],
+  "y": [
+   0,
+   100
+  ]
+ },
+ "ticks": [
+  [
+   100,
+   200,
+   300,
+   400
+  ],
+  [
+   20,
+   40,
+   60,
+   80,
+   100
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "distance / km",
+  "arrival time / s"
+ ],
+ "curves": [
+  {
+   "expr": "x/4",
+   "colour": "a1",
+   "label": "S",
+   "labelAt": [
+    330,
+    90
+   ],
+   "domain": [
+    0,
+    400
+   ]
+  },
+  {
+   "expr": "x/7",
+   "colour": "a2",
+   "label": "P",
+   "labelAt": [
+    360,
+    45
+   ],
+   "domain": [
+    0,
+    400
+   ]
+  }
+ ],
+ "series": [
+  {
+   "points": [
+    [
+     280,
+     40
+    ],
+    [
+     280,
+     70
+    ]
+   ],
+   "colour": "a4",
+   "width": 2,
+   "dots": true
+  }
+ ],
+ "points": [
+  {
+   "x": 280,
+   "y": 70,
+   "colour": "a4",
+   "label": "30 s gap at 280 km",
+   "anchor": "end",
+   "dx": -10,
+   "dy": -8
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "x/4-x/7",
+   "x": 280,
+   "y": 30,
+   "tol": 0.05,
+   "name": "S − P delay is 30 s at 280 km"
+  },
+  {
+   "type": "slope",
+   "expr": "x/4",
+   "x": 100,
+   "value": 0.25,
+   "name": "S slope 1/4"
+  }
+ ]
+}

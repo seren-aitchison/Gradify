@@ -1,0 +1,134 @@
+{
+ "id": "maths-u21-call-value-split",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u21",
+ "lesson": "Options Pricing",
+ "title": "Intrinsic value and time value of a call",
+ "caption": "At expiry the call pays max(S − 50, 0). With the stock at £53 that is £3 intrinsic value, but the option costs £6: the extra £3 is time value, for the chance of further gains.",
+ "alt": "The hockey-stick payoff of a call with strike 50, with a marked gap at S = 53 between the payoff £3 and the price £6.",
+ "description": [
+  "Intrinsic value = max(53 − 50, 0) = £3.",
+  "The option price is £6.",
+  "Time value = 6 − 3 = £3: what the market pays for the chance of a higher price before expiry."
+ ],
+ "range": {
+  "x": [
+   44,
+   60
+  ],
+  "y": [
+   0,
+   11
+  ]
+ },
+ "ticks": [
+  [
+   44,
+   48,
+   52,
+   56,
+   60
+  ],
+  [
+   2,
+   4,
+   6,
+   8,
+   10
+  ]
+ ],
+ "grid": [
+  4,
+  2
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "stock price £",
+  "£"
+ ],
+ "curves": [
+  {
+   "expr": "(abs(x-50)+(x-50))/2",
+   "colour": "a1",
+   "label": "payoff",
+   "labelAt": [
+    55.5,
+    7.4
+   ]
+  }
+ ],
+ "marks": [
+  {
+   "x": 50,
+   "label": "K = 50"
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    53,
+    3.15
+   ],
+   "to": [
+    53,
+    5.85
+   ],
+   "colour": "a2",
+   "label": "time value £3",
+   "labelAt": [
+    52.7,
+    4.6
+   ],
+   "anchor": "end"
+  }
+ ],
+ "points": [
+  {
+   "x": 53,
+   "y": 3,
+   "label": "intrinsic £3",
+   "colour": "a1",
+   "dx": 12,
+   "dy": 20
+  },
+  {
+   "x": 53,
+   "y": 6,
+   "label": "price £6",
+   "colour": "a2",
+   "dx": -12,
+   "dy": -10,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "(abs(x-50)+(x-50))/2",
+   "x": 53,
+   "y": 3,
+   "name": "the intrinsic value at S = 53 is £3"
+  },
+  {
+   "type": "point",
+   "expr": "(abs(x-50)+(x-50))/2",
+   "x": 50,
+   "y": 0,
+   "name": "the call is worth nothing at S = K"
+  },
+  {
+   "type": "point",
+   "expr": "6-(abs(x-50)+(x-50))/2",
+   "x": 53,
+   "y": 3,
+   "name": "time value = 6 − 3 = £3"
+  }
+ ],
+ "fromLesson": [
+  "time value"
+ ]
+}

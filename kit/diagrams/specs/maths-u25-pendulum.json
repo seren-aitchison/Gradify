@@ -1,0 +1,125 @@
+{
+ "id": "maths-u25-pendulum",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u25",
+ "lesson": "Nonlinear Systems",
+ "title": "Pendulum: the restoring term −sin θ",
+ "caption": "The restoring term −sin θ is zero at θ = 0 and θ = π. Its slope there is −1 (restoring: a centre) and +1 (pushing away: a saddle).",
+ "alt": "The curve −sin θ crosses zero at θ = 0 with slope −1 and at θ = π with slope +1; the two tangent lines are dashed.",
+ "description": [
+  "Plot the right-hand side −sin θ.",
+  "It is zero at θ = 0 and θ = π: the equilibria.",
+  "At 0 the slope is −1, so θ̈ ≈ −θ: eigenvalues ±i.",
+  "At π the slope is +1, so θ̈ ≈ +(θ − π): eigenvalues ±1, a saddle."
+ ],
+ "range": {
+  "x": [
+   -1,
+   4.5
+  ],
+  "y": [
+   -1.5,
+   1.5
+  ]
+ },
+ "ticks": [
+  [
+   0,
+   1,
+   2,
+   3,
+   4
+  ],
+  [
+   -1,
+   0,
+   1
+  ]
+ ],
+ "grid": [
+  1,
+  0.5
+ ],
+ "axisLabels": [
+  "θ",
+  "θ̈"
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "curves": [
+  {
+   "expr": "-sin(x)",
+   "colour": "a1"
+  },
+  {
+   "expr": "-x",
+   "colour": "a2",
+   "dash": "5 4",
+   "domain": [
+    -1,
+    1.2
+   ]
+  },
+  {
+   "expr": "x-3.141592653589793",
+   "colour": "a4",
+   "dash": "5 4",
+   "domain": [
+    2,
+    4.4
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 0,
+   "label": "θ = 0",
+   "dx": 10,
+   "dy": -12
+  },
+  {
+   "x": 3.141592653589793,
+   "y": 0,
+   "label": "θ = π",
+   "dx": 8,
+   "dy": -14
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "-sin(x)",
+   "x": 0,
+   "y": 0,
+   "name": "θ = 0 is an equilibrium"
+  },
+  {
+   "type": "point",
+   "expr": "-sin(x)",
+   "x": 3.141592653589793,
+   "y": 0,
+   "name": "θ = π is an equilibrium"
+  },
+  {
+   "type": "slope",
+   "expr": "-sin(x)",
+   "x": 0,
+   "value": -1,
+   "name": "slope −1 at 0 (a centre)"
+  },
+  {
+   "type": "slope",
+   "expr": "-sin(x)",
+   "x": 3.141592653589793,
+   "value": 1,
+   "name": "slope +1 at π (a saddle)"
+  }
+ ],
+ "fromLesson": [
+  "θ = 0 and θ = π"
+ ]
+}

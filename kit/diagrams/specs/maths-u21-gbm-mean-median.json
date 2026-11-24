@@ -1,0 +1,111 @@
+{
+ "id": "maths-u21-gbm-mean-median",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u21",
+ "lesson": "Geometric Brownian Motion",
+ "title": "Mean and median of a geometric Brownian motion",
+ "caption": "With μ = 8% and σ = 20%, the expected price grows as 100e^{0.08t} but the median as 100e^{0.06t}, because the volatility drag σ²/2 = 2% pulls the typical path below the mean. After one year: £108.33 against £106.18.",
+ "alt": "Two exponential curves from £100: the mean rising faster than the median, 108.33 and 106.18 at one year.",
+ "description": [
+  "E[S_t] = 100e^{0.08t}.",
+  "The median is 100e^{(μ − σ²/2)t} = 100e^{0.06t}.",
+  "At t = 1: mean £108.33, median £106.18.",
+  "The gap widens with time because the distribution is skewed."
+ ],
+ "range": {
+  "x": [
+   0,
+   5
+  ],
+  "y": [
+   90,
+   160
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  [
+   100,
+   120,
+   140,
+   160
+  ]
+ ],
+ "grid": [
+  1,
+  20
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "years",
+  "price £"
+ ],
+ "curves": [
+  {
+   "expr": "100*exp(0.08*x)",
+   "colour": "a1",
+   "label": "mean",
+   "labelAt": [
+    3.9,
+    146
+   ]
+  },
+  {
+   "expr": "100*exp(0.06*x)",
+   "colour": "a2",
+   "label": "median",
+   "labelAt": [
+    3.9,
+    124
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 108.32870676749586,
+   "label": "£108.33",
+   "colour": "a1",
+   "dx": -8,
+   "dy": -12,
+   "anchor": "end"
+  },
+  {
+   "x": 1,
+   "y": 106.18365465453596,
+   "label": "£106.18",
+   "colour": "a2",
+   "dx": 12,
+   "dy": 18
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "100*exp(0.08*x)",
+   "x": 1,
+   "y": 108.32870676749586,
+   "name": "the mean after a year is £108.33"
+  },
+  {
+   "type": "point",
+   "expr": "100*exp(0.06*x)",
+   "x": 1,
+   "y": 106.18365465453596,
+   "name": "the median after a year is £106.18"
+  }
+ ],
+ "fromLesson": [
+  "108.33"
+ ]
+}
