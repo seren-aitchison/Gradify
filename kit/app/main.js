@@ -3,6 +3,7 @@
 import { toast as uiToast } from "../ui/feedback.js";
 import { GROUPS } from "../core/sites.js";
 import { icon } from "../core/icons.js";
+import { actionCard } from "../core/action-card.js";
 import { tile, ink } from "../core/colour.js";
 import { SAMPLE, readFile } from "../notes/studio.js";
 import { renderJot, jotStripHtml, wireJotStrip, takePackDraft, exportJots, clearJots } from "../notes/jot.js";
@@ -753,7 +754,7 @@ async function renderNotes() {
       const m = masteryOf(d.id);
       return `<a class="doc panel glass" href="#/deck/${d.id}" style="--c:#${s.c};--tile:${tile(s.c)};--ink:${ink(s.c)}"><span class="doc-g3d" data-g3d="${esc(d.title)}" data-g3d-size="52" data-g3d-site="${esc(d.site || profile.site || "Gradify")}" data-g3d-unique></span><b>${esc(d.title)}</b>
         <span class="sub">${cs.length} cards · ${due ? `${due} due` : "nothing due"} · ${fmtDate(d.created_at)}</span><span class="goal-bar" title="${Math.round(m * 100)}% mastery"><i style="width:${Math.round(m * 100)}%"></i></span></a>`;
-    }).join("")}</div>` : `<div class="empty-state panel glass">${icon("upload")}<h3>No study packs yet</h3><p class="sub">Add a PDF or paste your notes, or turn a quick note into one, and Gradify makes flashcards from them.</p><a class="btn btn-primary lg" href="#/new"><span>Add notes</span></a></div>`}
+    }).join("")}</div>` : actionCard({ cls: "empty-action", kicker: "Start here", title: "No study packs yet", why: "Add a PDF or paste your notes, or turn a quick note into one, and Gradify makes flashcards from them.", iconSvg: icon("upload"), actions: [{ label: "Add notes", icon: "upload", href: "#/new" }] })}
   </section>`;
   wireJotStrip(view);
 }
@@ -815,7 +816,9 @@ async function renderStudy(arg) {
   if (queue.length) globalThis.gradifyConsent?.event("flashcard_session_start", { cards: queue.length, mode: practice ? "practice" : topicKey ? "topic" : "due" });   // Google Analytics, with consent (kit/core/consent.js)
   addEventListener("hashchange", () => { if (!finished && answeredSoFar) record(store, { event: "session_abandoned", site: profile.site, concept: topicKey, detail: { answered: answeredSoFar, of: queue.length } }); }, { once: true });
   if (!queue.length) {
-    view.innerHTML = `<div class="empty-state panel glass">${icon("check")}<h3>${topicKey ? "No cards in this topic" : "All caught up"}</h3><p class="sub">${kb ? "Nothing here is due right now. Practise all of them from the document's Practise button, or come back later." : "Nothing is due right now. Add more notes, or come back later."}</p><div class="row-actions"><a class="btn btn-primary lg" href="${kb ? kb.back : "#/new"}"><span>${kb ? "Back to your notes" : "Add notes"}</span></a><a class="btn btn-ghost lg" href="#/today"><span>Back to Today</span></a></div></div>`;
+    view.innerHTML = actionCard({ cls: "empty-action", kicker: "Nothing due", title: topicKey ? "No cards in this topic" : "All caught up", iconSvg: icon("check"),
+      why: kb ? "Nothing here is due right now. Practise all of them from the document's Practise button, or come back later." : "Nothing is due right now. Add more notes, or come back later.",
+      actions: [{ label: kb ? "Back to your notes" : "Add notes", icon: kb ? "book" : "upload", href: kb ? kb.back : "#/new" }, { label: "Back to Today", icon: "home", href: "#/today", soft: true }] });
     return;
   }
   const total = queue.length;
@@ -955,7 +958,7 @@ function heatmap(byDay, weeks = 16) {
 // Set-up, offered and never imposed: someone who hasn't said what they're working towards sees this card (on Today and
 // under a new study pack); nothing is put in front of the screen they asked for (route()).
 function setupNudgeHtml(why) {
-  return `<aside class="setup-nudge panel glass" role="note"><span class="sn-ico">${icon("calendar")}</span><div><b>Want Gradify to plan your revision?</b><span>${why}</span></div><a class="btn btn-primary lg btn-sm" href="#/start"><span>Plan my revision</span></a></aside>`;
+  return actionCard({ tag: "aside", cls: "setup-nudge", kicker: "Your next step", title: "Want Gradify to plan your revision?", why, iconSvg: icon("calendar"), actions: [{ label: "Plan my revision", icon: "calendar", href: "#/start" }] });
 }
 
 async function renderToday() {

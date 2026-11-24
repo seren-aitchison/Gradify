@@ -1434,13 +1434,10 @@ section[data-tab] { gap: 16px; }
    offer to plan revision once the first pack is made */
 .try-sample { margin: 4px 0 18px; }
 .try-sample .btn svg { width: 18px; height: 18px; vertical-align: -3px; margin-right: 4px; }
-.setup-nudge { display: flex; align-items: center; gap: 14px; margin: 12px 0 18px; padding: 16px 18px; }
-.setup-nudge .sn-ico { flex: none; display: grid; place-items: center; width: 42px; height: 42px; border-radius: 12px; background: var(--inset); }
-.setup-nudge .sn-ico svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; }
-.setup-nudge > div { flex: 1; min-width: 0; display: grid; gap: 2px; }
-.setup-nudge > div span { font-size: 14px; color: var(--mute); }
-.setup-nudge .btn { flex: none; }
-@media (max-width: 640px) { .setup-nudge { flex-wrap: wrap; } .setup-nudge .btn { width: 100%; justify-content: center; } }
+/* the set-up nudge and empty states are the Gradify action card (.g-action, kit/styles/base.css) */
+.setup-nudge.g-action { margin: 12px 0 18px; }
+.empty-action.g-action { margin: 8px 0 18px; }
+.app-body section.g-action { flex-direction: row; gap: 14px; } @media (max-width: 480px) { .app-body section.g-action { gap: 12px; } }   /* "section { flex-direction: column }" above is for page sections */
 .site-pick em small { display: block; margin-top: 2px; font-size: 11.5px; opacity: .8; }
 /* phones: the top bar grows to hold its tabs, instead of letting them spill over the page; a bare page name is
    left out there, since the dock along the bottom already shows where you are */
@@ -1455,3 +1452,12 @@ body.side-open body.side-open /* phones: set-up's Continue stays in reach at the
 @media (max-width: 860px) {
   .setup-form > button[type="submit"] { position: sticky; bottom: calc(92px + env(safe-area-inset-bottom, 0px)); z-index: 5; width: 100%; justify-content: center; box-shadow: 0 14px 30px -12px rgba(0, 0, 0, .55); }
 }
+
+/* ---------- The Gradify look in the study app: panels are solid white (dark: near-black) rounded tiles with a hairline
+   and a soft shadow, instead of frosted glass; the open screen in the sidebar is tinted in the accent. Panels with a
+   background of their own (study packs in their subject's colour, the welcome card) keep it. ---------- */
+#view { --gg-fill: var(--g-tile); --gg-shadow: var(--g-shadow); --gg-blur: none; --gg-rim: linear-gradient(var(--g-edge), var(--g-edge)); }
+:where(#view) .panel.glass { border-radius: 22px; }
+.lo-side { --gg-fill: var(--g-tile); --gg-shadow: var(--g-shadow); --gg-rim: linear-gradient(var(--g-edge), var(--g-edge)); }
+:root .lo-side a[aria-current="page"] { color: var(--g-accent); background: color-mix(in srgb, var(--g-accent) 12%, transparent); box-shadow: none; font-weight: 600; }
+:root .lo-side a[aria-current="page"] svg { color: var(--g-accent); }
