@@ -2315,7 +2315,7 @@ body:has(.co-reading) { background-color: #eeeef5; background-color: light-dark(
 .co-read .co-lhead .mv-lead { color: var(--lx-sub); }
 .co-read .co-prose p, .co-read .co-prose ul { color: var(--lx-ink); }
 .co-read .co-prose li::marker { color: var(--c); }
-.co-read :is(.co-frame h3, .co-qn::before, .co-checkn) { font-family: var(--sans) !important; font-weight: 700; letter-spacing: .06em; }
+.co-read :is(.co-frame h3, .co-checkn) { font-family: var(--sans) !important; font-weight: 700; letter-spacing: .06em; }
 
 /* section numbers: a Gradify-gradient squircle */
 :root .co-read .co-prose section[id] h3::before { font: 700 13px var(--sans) !important; letter-spacing: 0; color: #fff !important; background: var(--lx-grad) !important; border: 0 !important; padding: 0 !important; width: 30px !important; height: 30px !important; display: inline-grid !important; place-items: center; border-radius: 10px !important; box-shadow: 0 6px 16px -8px rgba(155, 60, 240, .8) !important; transform: translateY(-2px); }
@@ -2394,7 +2394,7 @@ body:has(.co-reading) { background-color: #eeeef5; background-color: light-dark(
 /* the lesson's parts (Recap, Practise this lesson, Check yourself, Go deeper): gradient icon squircles */
 :root .co-read .co-part .co-ic { color: #fff !important; background: var(--lx-grad) !important; width: 32px; height: 32px; padding: 7px; border-radius: 11px; box-shadow: 0 8px 18px -10px rgba(155, 60, 240, .9); }
 .co-read .co-part { color: var(--lx-ink); }
-.co-read :is(.co-qn::before) { color: var(--c); font-size: 12px !important; }
+.co-read .co-qn::before { font-family: var(--sans) !important; font-weight: 700; letter-spacing: .06em; font-size: 12px !important; color: var(--c); }
 .co-read .co-check :is(.aq-q small, .aq-kind) { font-family: var(--sans) !important; letter-spacing: .04em; }
 /* "Practise this lesson": solid tiles with a coloured icon, lifting slightly on hover */
 .co-read .cx-kc { background: var(--lx-paper) !important; border: 1px solid var(--lx-edge) !important; box-shadow: 0 1px 2px rgba(0, 0, 0, .04) !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; transition: transform .25s cubic-bezier(.32, .72, 0, 1), box-shadow .25s; }
@@ -2412,3 +2412,16 @@ body:has(.co-reading) { background-color: #eeeef5; background-color: light-dark(
 /* the inserted Quick check panel isn't a numbered section of the notes: no number, and the count skips it */
 .co-read .co-prose section.co-quick h3 { counter-increment: none !important; }
 .co-read .co-prose section.co-quick h3::before { content: none !important; display: none !important; }
+/* answering: strong, unmistakable right and wrong states (kit/assess/types.js adds .right / .wrong) */
+.co-read .co-check .aq-opts button { position: relative; }
+.co-read .co-check .aq-opts button.right { border: 2px solid #12a37f !important; background: color-mix(in srgb, #12a37f 12%, var(--lx-paper)) !important; color: var(--lx-ink) !important; font-weight: 600; animation: lx-right .5s cubic-bezier(.32, .72, 0, 1); }
+.co-read .co-check .aq-opts button.wrong { border: 2px solid #e5484d !important; background: color-mix(in srgb, #e5484d 10%, var(--lx-paper)) !important; color: var(--lx-ink) !important; animation: lx-wrong .4s ease; }
+.co-read .co-check .aq-opts button:is(.right, .wrong) { padding-right: 48px !important; }
+.co-read .co-check .aq-opts button:is(.right, .wrong)::after { content: ""; position: absolute; right: 14px; top: 50%; width: 24px; height: 24px; margin-top: -12px; border-radius: 50%; background: #12a37f url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5 10 17 19 7'/%3E%3C/svg%3E") center / 15px no-repeat; }
+.co-read .co-check .aq-opts button.wrong::after { background: #e5484d url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round'%3E%3Cpath d='M7 7l10 10M17 7 7 17'/%3E%3C/svg%3E") center / 13px no-repeat; }
+.co-read .co-check .aq.solved { border: 2px solid #12a37f !important; }
+@keyframes lx-right { 0% { transform: scale(1); } 40% { transform: scale(1.025); } 100% { transform: scale(1); } }
+@keyframes lx-wrong { 0%, 100% { transform: translateX(0); } 20% { transform: translateX(-6px); } 40% { transform: translateX(6px); } 60% { transform: translateX(-4px); } 80% { transform: translateX(3px); } }
+@media (prefers-reduced-motion: reduce) { .co-read .co-check .aq-opts button:is(.right, .wrong) { animation: none; } }
+/* XP: a solid gradient pill that springs up and floats away */
+:root .co-pop { color: #fff !important; font: 800 22px var(--sans) !important; letter-spacing: -.01em; text-shadow: none !important; padding: 10px 20px; border-radius: 999px; background: linear-gradient(135deg, #4641ff, #9b3cf0 45%, #e0409f 75%, #ff6a2b); box-shadow: 0 14px 34px -12px rgba(155, 60, 240, .8); }
