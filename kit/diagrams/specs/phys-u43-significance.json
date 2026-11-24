@@ -1,0 +1,116 @@
+{
+ "id": "phys-u43-significance",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u43",
+ "lesson": "Statistical significance of discoveries",
+ "title": "S/√B overstates the significance when S is large",
+ "caption": "For B = 16 the simple S/√B and the Asimov formula agree when S ≪ B but part company as S grows. At S = 25 they give 6.25 and 5.2: the Asimov result is the one to quote when S is comparable to B, because it accounts for the Poisson spread of the background.",
+ "alt": "Significance in sigma against signal counts S for background 16: a straight line S over root B and a lower curved Asimov line that separate as S grows, with 6.25 and 5.2 marked at S equal 25.",
+ "description": [
+  "Simple: Z = S/√B = S/4 for B = 16, a straight line.",
+  "Asimov: Z = √(2[(S + B)ln(1 + S/B) − S]); at S = 25, √(2[41 × 0.941 − 25]) ≈ 5.2.",
+  "At S = 25 the simple formula gives 6.25σ, about 20% too high.",
+  "For small S the two curves coincide."
+ ],
+ "range": {
+  "x": [
+   0,
+   40
+  ],
+  "y": [
+   0,
+   10
+  ]
+ },
+ "ticks": [
+  [
+   10,
+   20,
+   30,
+   40
+  ],
+  [
+   2,
+   4,
+   6,
+   8,
+   10
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "signal events S (B = 16)",
+  "significance Z / σ"
+ ],
+ "curves": [
+  {
+   "expr": "x/4",
+   "colour": "a2",
+   "dash": "6 5",
+   "label": "S/√B",
+   "labelAt": [
+    30,
+    8.2
+   ]
+  },
+  {
+   "expr": "sqrt(2*((x+16)*log(1+x/16)-x))",
+   "colour": "a1",
+   "label": "Asimov",
+   "labelAt": [
+    32,
+    5.6
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 25,
+   "y": 6.25,
+   "colour": "a2",
+   "label": "6.25",
+   "dx": -10,
+   "dy": -10,
+   "anchor": "end"
+  },
+  {
+   "x": 25,
+   "y": 5.2116,
+   "colour": "a1",
+   "label": "5.2",
+   "dx": 10,
+   "dy": 20
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "x/4",
+   "x": 25,
+   "y": 6.25,
+   "name": "S/√B = 6.25 at S = 25"
+  },
+  {
+   "type": "point",
+   "expr": "sqrt(2*((x+16)*log(1+x/16)-x))",
+   "x": 25,
+   "y": 5.211587,
+   "name": "Asimov Z = 5.2 at S = 25"
+  },
+  {
+   "type": "value",
+   "expr": "sqrt(2*((x+16)*log(1+x/16)-x))",
+   "x": 40,
+   "between": [
+    0,
+    10
+   ],
+   "name": "stays below S/√B (10 at S = 40)"
+  }
+ ]
+}
