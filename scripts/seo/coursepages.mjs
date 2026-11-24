@@ -61,7 +61,9 @@ export function overviewHtml(api, { leads = new Map(), lessonHref = (l) => `#/le
 /** a page with its overview, title and description (and link-preview titles) updated */
 export function withOverview(html, api, opts) {
   const block = overviewHtml(api, opts);
-  if (html.includes(START)) html = html.replace(new RegExp(`${START}[\\s\\S]*?${END}`), block);
+  // replace an earlier overview by plain string positions (the marker contains regex characters)
+  const i = html.indexOf(START), j = html.indexOf(END, i);
+  if (i !== -1 && j !== -1) html = html.slice(0, i) + block + html.slice(j + END.length);
   else html = html.replace('<div id="course"></div>', `<div id="course"></div>\n    ${block}`);
   const lessons = api.units.reduce((s, u) => s + u.lessons.length, 0);
   const title = fitTitle(`${api.name} Course: Free Lessons and Flashcards · ${api.site}`);
