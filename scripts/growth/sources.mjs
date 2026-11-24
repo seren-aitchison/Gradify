@@ -63,6 +63,17 @@ export function gscRows(dir = INPUTS) {
   return out;
 }
 
+/**
+ * Keyword Planner's monthly searches: an exact figure (accounts with ad spend) or a range ("1K – 10K", "100 – 1K",
+ * accounts without). A range gives [low, high] and, for ranking only, its geometric midpoint.
+ */
+export function plannerVolume(s) {
+  if (s == null || s === "") return null;
+  const unit = (x) => { const m = String(x).trim().match(/^([\d.,]+)\s*([KM])?$/i); if (!m) return null; return Number(m[1].replace(/,/g, "")) * ({ k: 1e3, m: 1e6 }[(m[2] || "").toLowerCase()] || 1); };
+  const parts = String(s).split(/\s*[–-]\s*/);
+  if (parts.length === 2) { const lo = unit(parts[0]), hi = unit(parts[1]); return lo != null && hi != null ? { value: Math.round(Math.sqrt(Math.max(lo, 1) * hi)), range: [lo, hi] } : null; }
+  const v = unit(s); return v == null ? null : { value: v, range: null };
+}
 /** Keyword Planner ideas: Google's monthly-search RANGES and competition label (planning data, not measured traffic) */
 export function keywordPlanner(dir = INPUTS) {
   if (!existsSync(dir)) return [];
@@ -70,7 +81,8 @@ export function keywordPlanner(dir = INPUTS) {
   for (const f of readdirSync(dir).filter((x) => /^keyword-planner.*\.(csv|tsv)$/i.test(x))) {
     for (const r of parseTable(readText(readFileSync(new URL(f, dir))))) {
       const kw = pick(r, "Keyword"); if (!kw) continue;
-      out.push({ phrase: kw.toLowerCase(), monthly: num(pick(r, "Avg. monthly searches")), competition: (pick(r, "Competition") || "").toLowerCase() || null, competitionIndex: num(pick(r, "Competition (indexed value)")), source: "keyword-planner" });
+      const vol = plannerVolume(pick(r, "Avg. monthly searches"));
+      out.push({ phrase: kw.toLowerCase(), monthly: vol?.value ?? null, monthlyRange: vol?.range ?? null, competition: (pick(r, "Competition") || "").toLowerCase() || null, competitionIndex: num(pick(r, "Competition (indexed value)")), source: "keyword-planner" });
     }
   }
   return out;

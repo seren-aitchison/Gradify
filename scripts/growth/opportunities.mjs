@@ -65,7 +65,7 @@ export function score(o) {
     : d.source === "estimate" ? { high: 0.6, medium: 0.4, low: 0.2 }[d.value] * 0.5 : 0.08;
   let win = COMP[o.competition.value] ?? 0.5;
   // already ranking just off page one: the quickest wins there are
-  if (o.ranking?.position >= 4 && o.ranking.position <= 20) win = Math.min(1, win * 1.5);
+  if (o.ranking?.position >= 5 && o.ranking.position <= 20) win = Math.min(1, win * 1.5);
   const readiness = o.destination ? 1 : 0.5;
   return Math.round(demand * win * (INTENT_VALUE[o.intent] ?? 0.6) * (CONVERSION[DEST_KIND(o.destination || "")] ?? 0.5) * readiness * 1000) / 10;
 }
@@ -84,7 +84,8 @@ export async function buildOpportunities({ gsc = gscRows(), kp = keywordPlanner(
     rows.set(k, { ...(prev || { phrase: k, cluster: null, competition: { value: null, source: "unknown" } }), origin: prev ? `${prev.origin} + search-console` : "search-console", destination: prev?.destination || top,
       demand: { value: m.impressions, source: "search-console", unit: "impressions / 28 days" }, ranking: { page: top, position: m.impressions ? Math.round((m.posSum / m.impressions) * 10) / 10 : null, clicks: m.clicks, impressions: m.impressions, ctr: m.impressions ? m.clicks / m.impressions : null, source: "search-console" } });
   }
-  for (const r of kp) { const o = rows.get(norm(r.phrase)); if (!o) continue; if (o.demand.source !== "search-console") o.demand = { value: r.monthly, source: "keyword-planner", unit: "avg monthly searches (Google's range)" }; if (r.competition) o.competition = { value: r.competition, source: "keyword-planner (advertiser competition)" }; }
+  for (const r of kp) { if (!rows.has(norm(r.phrase)) && r.monthly) rows.set(norm(r.phrase), { phrase: norm(r.phrase), origin: "keyword-planner", cluster: null, destination: null, demand: { value: r.monthly, source: "keyword-planner", unit: r.monthlyRange ? `avg monthly searches: Google's range ${r.monthlyRange.join("–")} (midpoint used to rank)` : "avg monthly searches" }, competition: { value: r.competition || null, source: r.competition ? "keyword-planner (advertiser competition)" : "unknown" } }); }
+  for (const r of kp) { const o = rows.get(norm(r.phrase)); if (!o || o.origin === "keyword-planner") continue; if (o.demand.source !== "search-console") o.demand = { value: r.monthly, source: "keyword-planner", unit: r.monthlyRange ? `avg monthly searches: Google's range ${r.monthlyRange.join("–")} (midpoint used to rank)` : "avg monthly searches" }; if (r.competition) o.competition = { value: r.competition, source: "keyword-planner (advertiser competition)" }; }
   const out = [...rows.values()].map((o) => ({
     ...o, intent: intentOf(o.phrase), audience: audienceOf(`${o.phrase} ${o.cluster || ""}`), geography: geographyOf(o.phrase), seasons: seasonsOf(`${o.phrase} ${o.destination || ""}`),
     conversionPotential: DEST_KIND(o.destination || ""), measured: o.demand.source === "search-console" || o.demand.source === "keyword-planner",

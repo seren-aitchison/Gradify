@@ -17,6 +17,9 @@ The north star is **Weekly Active Learning Students (WALS)**: accounts with at l
 | Growth report | Answers the eight dashboard questions from data, or says what's missing | `scripts/growth/report.mjs` → `docs/growth/REPORT.md` |
 | Seasons | The academic year as search demand, with preparation windows | `scripts/growth/seasons.mjs` |
 | Lesson readiness | Which units to add to the lesson pilot next, and what other lessons lack | `scripts/growth/lesson-readiness.mjs` → `docs/growth/CONTENT-BACKLOG.md` |
+| Pilot audit | The 85 pilot pages, page by page, and the evidence that decides the next batch | `scripts/growth/pilot-audit.mjs` → `docs/growth/PILOT-AUDIT.md` |
+| Curriculum | UK specifications, statement-level mapping, coverage, where a learner stands | `kit/curriculum/`, `scripts/curriculum/engine.mjs`, `docs/curriculum/README.md` |
+| Previews | Search and social images for features, subjects and lessons; real feature screenshots | `scripts/og/build-og.mjs`, `scripts/og/screenshots.mjs` |
 | Change control | Title and description changes are logged with evidence, one per page per 28 days | `scripts/growth/serp-changes.mjs`, `data/growth/serp-changes.json` |
 | Experiments | Pre-registered A/B tests for consenting visitors, read only when the plan is met | `kit/core/experiments.js` |
 | Monitoring | Daily production check; weekly report as an artifact | `scripts/growth/monitor.mjs`, `.github/workflows/growth.yml` |
@@ -36,7 +39,7 @@ The north star is **Weekly Active Learning Students (WALS)**: accounts with at l
 1. Open the workflow's weekly **growth report** artifact (or run `npm run growth` with fresh exports).
 2. Pick **at most three** changes, in this order:
    - **Low-CTR pages** (question 3): shown often, clicked less than Gradify's own pages at that position. Rewrite the title or description to match what the searcher wants (use the query list), then log it.
-   - **Striking-distance queries** (question 2): positions 4–20. Put the phrase in an `h2` on the ranking page, answer it in the first two sentences, add two internal links.
+   - **Striking-distance queries** (question 2): positions 5–20. Put the phrase in an `h2` on the ranking page, answer it in the first two sentences, add two internal links.
    - **Clicks but no sign-ups** (question 4): check the page's next step. Can a visitor try the thing without signing up?
 3. **Log every title or description change** in `data/growth/serp-changes.json` (date, pages, field, reason, evidence), then `node scripts/growth/serp-changes.mjs --accept`. CI refuses unlogged changes and a second change to the same page within 28 days.
 4. Check the **seasonal** line in question 8: anything in its preparation window gets refreshed and linked now, not when the peak arrives.
@@ -66,7 +69,7 @@ The north star is **Weekly Active Learning Students (WALS)**: accounts with at l
 `priority = demand × winnability × intent × conversion × readiness` (0–100, `scripts/growth/opportunities.mjs`):
 
 - **Demand:** Search Console impressions (measured), else Keyword Planner's monthly range, else an estimate tier at half weight, else a small floor. Measured always outranks guessed.
-- **Winnability:** low competition 1, medium 0.6, high 0.3, unknown 0.5; ×1.5 when Gradify already ranks 4–20.
+- **Winnability:** low competition 1, medium 0.6, high 0.3, unknown 0.5; ×1.5 when Gradify already ranks 5–20.
 - **Intent:** doing something (a tool) 1; revising 0.9; a question or comparison 0.8; a bare topic 0.6; navigational 0.3.
 - **Conversion:** how directly the destination leads to learning in Gradify: tool or feature 1, site or course 0.9, lesson 0.8, topic page 0.7, guide 0.6.
 - **Readiness:** a page exists 1; a gap (needs building) 0.5.
@@ -96,6 +99,8 @@ Already in place: crawlable static pages, answer-first summaries, honest structu
 - **Next:** a link-preview image per feature page and per subject, in the house style (`docs/DESIGN-SYSTEM.md`), and real product screenshots on the feature pages. Raster previews (PNG) are needed for social cards: the diagrams are SVG.
 
 ## One-time setup (needs the owner)
+
+The exact steps are in **`docs/growth/DATA-ACCESS.md`**. In short:
 
 1. **Search Console API:** create a Google Cloud service account, add its email as a *restricted* user on the getgradify.com Search Console property, and save its JSON key as the repository secret `GSC_SERVICE_ACCOUNT`. The weekly workflow then fetches Search Console data itself. (Or export Performance as CSV into `data/growth/inputs/` by hand.)
 2. **Keyword Planner:** a free Google Ads account (no campaign). Keyword ideas › Download for the clusters in `docs/seo/KEYWORD-MAP.md` → `data/growth/inputs/keyword-planner-*.csv`.

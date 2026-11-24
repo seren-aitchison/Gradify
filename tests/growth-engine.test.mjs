@@ -97,13 +97,14 @@ test("the Search Console fetcher asks for 28 final days of query × page, and pa
 test("the report answers from data, and says what's missing instead of showing zero", async () => {
   const opportunities = [], readiness = { next: [], pages: 0 };
   const empty = await report({ gsc: [], db: () => null, date: new Date("2026-11-24"), opportunities, readiness });
-  assert.equal((empty.match(/\*\*Unavailable\.\*\*/g) || []).length, 8);
+  assert.equal((empty.match(/\*\*Unavailable\.\*\*/g) || []).length, 11, "the eight questions and the three added sections");
   assert.doesNotMatch(empty, /\| 0 \|/, "no invented zeros");
   assert.match(empty, /New term: plans, habits, mocks, peaking from 2027-01-01/);
   const full = await report({ gsc: gscRows(D), db: (n) => dbExport(n, D), date: new Date("2026-11-24"), opportunities, readiness });
   assert.match(full, /\| query 0 \| 100 \|/, "question 1 lists real queries");
   assert.match(full, /\| \/lessons\/biology\/page-5\/ \| 1,000 \| 1\.0% \|/, "question 3 finds the low-CTR page");
-  assert.match(full, /\| dna replication \| 400 \| 5 \| 8\.4 \|/, "question 2 finds the striking-distance query");
+  assert.match(full, /\| dna replication \| \/lessons\/biology\/dna-replication\/ \| 400 \| 5 \| 8\.4 \|/, "question 2 finds the striking-distance query (positions 5–20) and its page");
+  assert.match(full, /Ranked by expected activated students/, "with the activation export, recommendations rank by activated students");
   assert.match(full, /\| \/lessons\/biology\/page-0\/ \| 3 \| 2 \|/, "question 5 uses the database export");
   assert.match(full, /db-retention-by-site\.csv/, "question 6 still says what it needs");
 });
@@ -123,4 +124,29 @@ test("the daily monitor catches what stops pages being found, and only that fail
   assert.ok(m.warnings.some((w) => /features\/: HTTP 404/.test(w)), "a missing key page other than home is a warning");
   site["/robots.txt"] = "User-agent: *\nDisallow: /\n";
   assert.ok((await monitor({ origin: O, fetchImpl: fake })).critical.some((c) => /blocks the whole site/.test(c)));
+});
+
+import { activationRates, suits, groupOf } from "../scripts/growth/report.mjs";
+import { buildOpportunities } from "../scripts/growth/opportunities.mjs";
+test("recommendations rank by expected activated students; destinations and groups are recognised", async () => {
+  const pages = [{ page: "/a/", clicks: 100 }, { page: "/b/", clicks: 10 }, { page: "/c/", clicks: 90 }];
+  const rate = activationRates(pages, [{ landing: "/a/", activated: "10" }, { landing: "/c/", activated: "0" }]);
+  assert.equal(rate("/a/"), 0.1, "a page with 30+ clicks uses its own rate");
+  assert.equal(rate("/b/"), 0.05, "a small page uses Gradify's average (10 activated / 200 clicks)");
+  assert.equal(activationRates(pages, null), null, "no export, no rate: rank by clicks and say so");
+  assert.equal(suits("dna replication explained", "/lessons/biology/u04-03/"), false);
+  assert.equal(suits("dna replication", "/learn/biology/dna-replication/"), true);
+  assert.deepEqual(groupOf("/lessons/chemistry/u01-02/"), ["subject", "chemistry"]);
+  assert.deepEqual(groupOf("/features/notes-studio/"), ["feature", "notes-studio"]);
+  const ops = await buildOpportunities({ gsc: [], kp: [{ phrase: "krebs cycle explained", monthly: 2400, competition: "low", source: "keyword-planner" }] });
+  const k = ops.find((o) => o.phrase === "krebs cycle explained");
+  assert.ok(k && k.measured && k.destination === null && k.demand.source === "keyword-planner", "a Keyword Planner idea Gradify has no page for is a measured gap");
+});
+
+import { plannerVolume } from "../scripts/growth/sources.mjs";
+test("Keyword Planner volumes: exact figures, and the ranges shown to accounts without ad spend", () => {
+  assert.deepEqual(plannerVolume("12100"), { value: 12100, range: null });
+  assert.deepEqual(plannerVolume("1K – 10K"), { value: 3162, range: [1000, 10000] });
+  assert.deepEqual(plannerVolume("100K - 1M"), { value: 316228, range: [100000, 1000000] });
+  assert.equal(plannerVolume(""), null);
 });

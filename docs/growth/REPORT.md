@@ -35,6 +35,14 @@ Until measured data exists, the estimated priorities (judgements, `docs/growth/O
 - med school notes → /medgradify/ (priority 9.7, estimate)
 - medical school revision → /medgradify/ (priority 9.7, estimate)
 
+## 2a. Searches with no suitable Gradify page
+
+**Unavailable.** Needs Search Console query data. Export Search Console › Performance (Queries and Pages) into `data/growth/inputs/`, or run `scripts/growth/gsc-fetch.mjs` with a token.
+
+## 2b. New opportunities with measured demand
+
+**Unavailable.** Needs measured demand. Export Search Console › Performance (Queries and Pages) into `data/growth/inputs/`, or run `scripts/growth/gsc-fetch.mjs` with a token. For searches Gradify doesn't rank for yet, add a Keyword Planner export (`docs/growth/DATA-ACCESS.md`).
+
 ## 3. Which pages appear but don't get clicked?
 
 **Unavailable.** Needs Search Console page data. Export Search Console › Performance (Queries and Pages) into `data/growth/inputs/`, or run `scripts/growth/gsc-fetch.mjs` with a token.
@@ -48,6 +56,10 @@ Note: sign-ups are counted only where the browser kept its first-touch record, s
 ## 5. Which pages bring the most activated students?
 
 **Unavailable.** Needs activation by first landing page. Run query 11 in `docs/sql/growth-dashboard.sql` and save the result as `data/growth/inputs/db-signups-by-page.csv`.
+
+## 5a. Best-performing subjects and features in search
+
+**Unavailable.** Needs Search Console page data. Export Search Console › Performance (Queries and Pages) into `data/growth/inputs/`, or run `scripts/growth/gsc-fetch.mjs` with a token.
 
 ## 6. Which subjects bring students back most?
 

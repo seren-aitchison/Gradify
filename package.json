@@ -34,7 +34,8 @@
     "growth:lessons": "node scripts/growth/lesson-readiness.mjs",
     "curriculum": "node scripts/curriculum/engine.mjs",
     "og": "node scripts/og/build-og.mjs",
-    "screens": "node scripts/og/screenshots.mjs"
+    "screens": "node scripts/og/screenshots.mjs",
+    "growth:pilot": "node scripts/growth/pilot-audit.mjs"
   },
   "devDependencies": {
     "@anthropic-ai/sdk": "0.133.0",
