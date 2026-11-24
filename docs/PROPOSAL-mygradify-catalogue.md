@@ -1,7 +1,9 @@
 # Proposal: MyGradify academic intelligence layer and education catalogue
 
-**Status: architecture approved in principle by the owner (24 November 2026), with Addendum A. Implementation not
-authorised:** each stage needs its own approval (Addendum A, A4). Revision 3 + Addendum A.
+**Proposal 5.** The architecture was approved in principle by the owner (24 November 2026), with Addendum A. **Stage 1
+research is reported in [`docs/STAGE1-RESEARCH-REPORT.md`](STAGE1-RESEARCH-REPORT.md)**, which supersedes section 6
+and section 11 below where they differ. Stage 2 isn't started; it needs G2. Each stage needs its own approval
+(Addendum A, A4).
 
 - No code, migration, change to production data, merge, branch deletion or deployment follows from this document.
 - Authentication, Stripe, payments, existing progress data and Stage 5's outstanding production tasks are out of
@@ -246,31 +248,23 @@ Where a record came from (`source_type`) is separate from whether it was checked
 
 ---
 
-## 6. Sources (Stage 1: **incomplete**)
+## 6. Sources
 
-**Rule:** no source is ingested until its own licence or terms have been read and permit Gradify's commercial use,
-modification and redistribution of derived data. An allowed network host is not permission.
+See the Stage 1 report for the full rights and coverage matrix, quoted terms and measurements. In summary (24
+November 2026):
 
-**Confirmed** means read from the source on 24 November 2026; **Assumption** means not yet confirmed; **Open** means
-an unresolved question.
+- **Cleared:** GIAS (England), with conditions: no personal-data fields, downloads only, OGL attribution.
+- **Likely usable, one confirmation each:** NCES CCD, PSS and IPEDS (does the IES public-domain statement cover
+  nces.ed.gov?); NI institution search (does DE's OGL statement cover the separate apps host?); OfS Register (read
+  its download notice).
+- **Needs permission or the licence read:** Discover Uni (D1; draft request prepared, not sent); College Scorecard.
+- **Blocked:** UKRLP, and the Scottish and Welsh registers. A person needs to read them because of bot protection or
+  an unreachable host.
 
-| # | Source | Coverage | Licence and terms | Cadence and identifiers | Status |
-|---|---|---|---|---|---|
-| S1 | **Discover Uni dataset** (UK funding bodies; collected by HESA/Jisc) | **Confirmed:** "eligible undergraduate courses" from providers in all four UK nations. The site shows the 2026 dataset, for "courses that will run in the 2027-28 academic year" ([information for providers](https://discoveruni.gov.uk/information-providers/)). **Open:** the coverage statement (on hesa.ac.uk) | **Confirmed, website terms** ([terms of use](https://discoveruni.gov.uk/terms-and-conditions-use/)): data may be reproduced "provided that the source is acknowledged, the text is not altered and it is not used, wholly or in part, for commercial gain. Use for commercial gain requires the prior written permission of the copyright holders". **Open:** the dataset's own licence (hesa.ac.uk returns 403 from this environment) | **Confirmed:** "updated weekly"; provider names from UKRLP. **Assumption:** KISCOURSEID and UKPRN fields (spec unread) | **Blocked (D1).** No ingestion |
-| S2 | **UKRLP** | Learning provider register (UKPRN) | **Open** (host not allowed yet) | **Open** | Not researched |
-| S3 | **Get Information About Schools (GIAS)**, DfE | **Assumption:** schools and colleges in England (to confirm from the download notes) | **Confirmed:** footer: "All content is available under the Open Government Licence v3.0, except where otherwise stated". [Acceptable use](https://get-information-schools.service.gov.uk/AcceptableUsePolicy): bulk download "for offline analysis or system ingestion, observing the Open Government Licence (OGL) where stated"; no scraping of the website. [OGL v3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/) allows you to "exploit the Information commercially", adapt it and redistribute it, with attribution. **Open:** each chosen download's own notice | **Open:** release cadence; URN and UKPRN fields to confirm | **Promising;** not cleared until the download notices are read |
-| S4 | Scottish, Welsh and Northern Ireland school registers | — | **Open** | **Open** | Not identified |
-| S5 | **NCES Common Core of Data (CCD)** | **Confirmed:** "a comprehensive, annual, national database of all public elementary and secondary schools and school districts" ([About CCD](https://nces.ed.gov/ccd/aboutccd.asp)); directory data for schools, districts and state agencies; releases up to the 2024-25 school year ([files](https://nces.ed.gov/ccd/files.asp)) | **Open:** no reuse statement on the pages read. **Assumption (unconfirmed):** public domain as a US federal work | **Confirmed:** annual. **Assumption:** NCES school and district IDs | Not cleared |
-| S6 | **NCES Private School Universe Survey (PSS)** | **Confirmed:** private elementary and secondary schools; aims "to build an accurate and complete list of private schools"; "conducted every two years"; 2023-24 public-use data released September 2026 ([PSS](https://nces.ed.gov/surveys/pss/)) | **Open:** no reuse statement read | **Confirmed:** every two years | Not cleared |
-| S7 | **IPEDS** | **Confirmed:** "every college, university, and technical and vocational institution that participates in the federal student financial aid programs"; completions by programme type (CIP) and award level ([About IPEDS](https://nces.ed.gov/ipeds/about-ipeds)). **Gap:** institutions outside federal student aid | **Open:** no reuse statement read | **Confirmed:** annual. **Assumption:** UNITID | Not cleared |
-| S8 | **College Scorecard** | **Confirmed:** institution, field-of-study and raw-data bulk downloads (dated 2 Nov 2026 and 15 Oct 2026), an API, a data dictionary and documentation ([data](https://collegescorecard.ed.gov/data/)). **Assumption:** fields of study are CIP × credential level, not each college's own course titles | **Open:** no licence wording on the data or documentation pages; API terms unread | **Confirmed:** dated releases | Not cleared |
-| S9 | Universities' programme specifications and module catalogues | Structures and units | Per university; **Open** for each | Per university | Five universities' regulation pages read for Stage 2 rules only |
-| S10 | Awarding bodies' specifications | Curriculum elements | **Assumption:** usually restrictive (link, not copy) | Per specification | Later stage |
-| — | UCAS | — | No open API; not used | — | Excluded |
+**Measured:** IPEDS HD2024 has 6,072 institutions (1.09 MB zipped); the GIAS "All establishment" CSV is 61.75 MB; the NI
+search returned 1,116 institutions under default criteria.
 
-**Not yet measured:** record counts, download sizes and coverage gaps for each source. These are Stage 1 deliverables.
-
----
+**Rule unchanged:** no source is ingested until it is cleared for the rights it uses.
 
 ## 7. Catalogue files, search and performance at national scale
 
@@ -420,14 +414,7 @@ explicitly approved the release.**
 
 ## 11. Outstanding blockers
 
-1. **hesa.ac.uk returns 403 from this environment's proxy.** It's needed for the Discover Uni dataset licence, the
-   specification and the coverage statement (D1).
-2. **Hosts not yet allowed:** UKRLP, the registers for Scotland, Wales and Northern Ireland, www.ed.gov (federal
-   notices) and api.data.gov (Scorecard API terms).
-3. **No reuse statement read** for CCD, PSS, IPEDS or College Scorecard.
-4. **GIAS:** each chosen download's own notice is unread.
-5. **Record counts, sizes and coverage gaps** are unmeasured for every source.
-6. **The live `profiles` RLS** hasn't been checked against the migrations (no Supabase access in this session).
+See section 5 of the Stage 1 report (B1–B9), with the exact action for each.
 
 ## 12. Decisions still needed from the owner
 
