@@ -1,7 +1,7 @@
 # Proposal: MyGradify academic intelligence layer and education catalogue
 
-**Status: proposal and research only. Architecture not yet approved; implementation not authorised.**
-Revision 3, 24 November 2026.
+**Status: architecture approved in principle by the owner (24 November 2026), with Addendum A. Implementation not
+authorised:** each stage needs its own approval (Addendum A, A4). Revision 3 + Addendum A.
 
 - No code, migration, change to production data, merge, branch deletion or deployment follows from this document.
 - Authentication, Stripe, payments, existing progress data and Stage 5's outstanding production tasks are out of
@@ -431,6 +431,110 @@ explicitly approved the release.**
 
 ## 12. Decisions still needed from the owner
 
-1. **Names of the first reviewers (D6)**, and whether review frequencies in section 5 are acceptable as defaults.
-2. **Permission to request a Discover Uni re-use licence (D1)**: who should send it, and on Gradify's behalf as which
-   legal entity. Only if the dataset's own licence (once readable) doesn't already permit commercial use.
+Both were resolved on 24 November 2026; see Addendum A, A2.
+
+---
+
+# Addendum A: final architecture requirements (24 November 2026)
+
+The owner approved the core architecture in principle. These requirements bind the implementation specification and
+take precedence over anything in sections 1–11 that conflicts with them.
+
+## A1. Implementation requirements
+
+**1. Evidence and copyright.** There are three separate categories, each with its own rules:
+
+| Category | Examples | Rule |
+|---|---|---|
+| **Publishable catalogue data** | Provider names, offering titles, identifiers, lengths | Published only where the source's licence permits redistribution and derived data (for example, OGL v3.0 with attribution) |
+| **Internal review evidence** | Short quoted extracts, content hashes, retrieval records, reviewer notes | Kept only where the source's licence or another lawful basis (for example, a statutory exception, assessed case by case) covers keeping it. Not published. Kept to the minimum extract needed and given a retention period |
+| **Link-only material** | Copyright documents with no reuse grant: most university handbooks and module pages, awarding-body specifications | Referenced by URL, title, version and hash only. No copies and no extensive extracts |
+
+- Each `sources/<src>.json` records **separately** what is permitted for ingestion, publication, retention of
+  extracts and archiving.
+- Permission for one never implies another.
+- The build refuses to publish fields from a source whose publication right isn't recorded.
+
+**2. Field-level verification.**
+- Verification is recorded **per field** (`provenance.fields: { title: { status, review }, length: { … } }`). Facts
+  that are verified on their own (a structure, a rule) are separate linked records with their own status.
+- A record's overall status is derived as the **lowest** status of the fields shown. The UI labels the specific fact
+  it shows (for example, "Title checked; course structure not yet checked"). A verified title never makes a programme
+  read as verified.
+
+**3. Source changes.**
+- A changed content hash opens a review and **diffs the fields**.
+- Only the changed fields move to `outdated`; the unchanged fields keep their status and evidence.
+- The **last verified version** stays stored and addressable (`versions[]`).
+- Until a reviewer accepts the change, calculations (rules, weightings, structures used by the tracker or Smart Plan)
+  keep using the last verified version, or nothing, never the unreviewed value. The UI says a change is pending review.
+
+**4. Performance and accessibility.** The shard and search targets stay: each region's index under 300 KB gzipped, and
+first results within 100 ms. They become reproducible tests:
+
+| Area | Requirement |
+|---|---|
+| Data | Synthetic and real shards at the **measured** UK and US volumes from Stage 1, including the largest regions (for example, England, California, Texas) |
+| Devices | A throttled mid-range phone profile (4× CPU slowdown, as in the existing performance guard `scripts/perf-check.cjs`), plus a desktop baseline. Run in CI, with results recorded per build |
+| Network | Slow 3G and offline: cached shards work offline through the service worker; the first search on a slow connection shows progress and stays usable, never a blank screen |
+| Accessibility | A combobox following the WAI-ARIA authoring pattern; full keyboard use (arrows, Enter, Escape, Home/End); results announced to screen readers; visible focus; reduced motion; checked with axe and by hand with VoiceOver and NVDA |
+
+**5. Custom entries.**
+- A student-typed institution, programme or module **never inherits** catalogue data or rules through name matching.
+- Matching may **suggest** catalogue records ("Did you mean MChem Medicinal Chemistry, University of Bristol?"). It
+  links only when the student confirms.
+- Even after a link, a record's rules apply only if the record itself meets the verification requirements (only
+  `verified` rules change numbers).
+- Unconfirmed custom entries stay `id: null`.
+
+## A2. Decision register
+
+| # | Decision | Status |
+|---|---|---|
+| 1 | Catalogue in static, version-controlled JSON, with a route to Supabase behind `kit/data/catalogue.js` | Decided |
+| 2 | Student choices in `profiles.learner.academic`, with the section 3.3 safeguards | Decided |
+| 3 | UK and US together, all stages, then CA/AU/NZ, Europe, the rest of the world | Decided |
+| 4 | Exactly eight student-entered fields in the first release; `history` dropped | Decided |
+| 5 | The owner's release checklist and explicit approval for every release | Decided |
+| 6 | The full calendar roadmap kept; calendar data per-user, never in the catalogue | Decided |
+| D1 | **Discover Uni:** first find out whether the dataset's own licence permits commercial reuse. If not, prepare a written permission request **for the owner's approval**. Don't send it. Don't present Gradify as an incorporated company ("Gradify Ltd" doesn't exist yet); the request names the actual individual or business seeking the rights and describes the intended commercial use accurately. **No ingestion until permission is established** | Decided; action pending (licence unread, hesa.ac.uk blocked) |
+| D2 | Schools in catalogue research and architecture; no collection of children's academic profiles until the separate legal and child-safety assessment is complete | Decided |
+| D3 | Unverified records may be shown, labelled, where the licence permits publication; never used as authoritative rules | Decided |
+| D4 | Server-side validate-and-merge function for `academic` | Decided; migration needs approval at Stage 4 |
+| D5 | Separate append-only `agreements` table | Decided; migration needs approval at Stage 4 |
+| D6 | **Reviewer register.** The owner approves each appointment. Reviewers need relevant subject or regulatory competence for the record. Two-person review for important academic rules and programme structures. **With no suitable reviewer, a record can't be marked verified.** The section 5 review frequencies are initial defaults: configurable, and reviewed after the first year | Decided; no reviewers appointed yet |
+| A1.1–A1.5 | Evidence and copyright categories; field-level verification; field-diff source changes; reproducible performance and accessibility tests; no inheritance by custom entries | Decided |
+
+## A3. Product acceptance vision (long-term direction, not first-release scope)
+
+MyGradify should eventually let Gradify answer, from the student's actual programme and curriculum:
+
+- What qualification or programme am I studying, and under which rules?
+- What should I be learning at this stage, and which specification points or learning outcomes apply to me?
+- Which of my modules cover each outcome, and which assessments count towards my result?
+- What should I revise next, and which Gradify lessons, diagrams, flashcards and past-paper questions match my
+  course?
+- How am I progressing against my programme's requirements?
+
+The many-to-many model (offering → structure → unit → curriculum element ← assessment, with `aligned_to` edges to
+Gradify content) is the foundation that connects the degree tracker, Smart Plan, Specification Mastery, lessons,
+diagrams and past papers. Each capability is approved and released as its own feature.
+
+## A4. Staged implementation plan and approval gates
+
+Nothing starts until its gate is passed. Each gate needs the owner's explicit approval; a gate is never inferred from
+an earlier one.
+
+| Stage | Scope | Depends on | Gate to start | Gate to finish (release) |
+|---|---|---|---|---|
+| **1. Research completion** | Every source's licence (ingestion, publication, retention, archiving), coverage, counts, sizes, identifiers and cadence; the devolved school registers; the Discover Uni dataset licence (D1); a check of the live `profiles` RLS; a permission-request draft if needed | Network access (hesa.ac.uk, UKRLP, devolved registers, ed.gov, api.data.gov); Supabase read access for the RLS check | **G1:** owner approves the research scope and the hosts to allow | Owner accepts the research report; any D1 letter is approved by the owner (not sent by Claude) |
+| **2. Schema and validation** | JSON Schemas (entities, edges, aliases, tombstones, per-field provenance, sources with separate rights, reviewers, evidence, versions); `catalogue.js` over fixtures; validators; performance and accessibility test harness. No student data, no ingestion | Stage 1 accepted | **G2:** owner approves the specification | Owner approves the release (repo-only; no production change) |
+| **3. Ingestion** | Build scripts for **cleared** sources only; alias matching; coverage reports; change detection with field diffs; performance tests at measured volumes | Stage 2; each source cleared for the rights it uses | **G3:** owner approves the list of cleared sources and the rights used | Owner approves publishing the catalogue files |
+| **4. Profile, privacy and legal** | D4 function and D5 table (migrations); privacy policy and notices; legal review; post-16 and HE only (D2) | Stage 3; legal review | **G4:** owner approves each migration's SQL and the legal review is done | The full release checklist; owner approval |
+| **5. Onboarding and profile** | Adaptive onboarding with the "never blocked" fallback; profile editing; unit selection; handbook import; accessible search | Stage 4 live | **G5:** owner approves the designs | Release checklist; owner approval |
+| **6. Tracker and Smart Plan** | Offering and cohort feed the tracker; units become rows after review; only verified rules apply; pending changes never feed calculations | Stage 5 live; at least one verified rule set with two reviewers (D6) | **G6:** owner approves the integration plan | Release checklist; owner approval |
+| **7. Expansion and the A3 vision** | CA/AU/NZ, Europe, the rest of the world; curriculum alignment; Specification Mastery and content links | Stage 6 | **G7:** one gate per country or capability | Per release |
+
+**Kept separate:** Stage 5 (calendar) production tasks, which are retiring the deployed `calendar-sync` function and
+running `docs/sql/retire-calendar-links.sql` (backup, inspect, preview, verify). They are operations for the owner, not
+part of MyGradify.
