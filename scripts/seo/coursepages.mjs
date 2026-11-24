@@ -13,10 +13,17 @@ import { COURSES as COVERAGE, QUALIFICATIONS, STATUS } from "../../kit/curriculu
 
 const root = new URL("../../", import.meta.url);
 const START = "<!-- course-overview: written by scripts/build-seo.mjs (scripts/seo/coursepages.mjs); edit it there -->", END = "<!-- /course-overview -->";
+// x^{2} and v_{0} (the notes' notation) as real superscripts and subscripts where Unicode has them, else ^(…) and _(…),
+// so "3^{x} = 20" never reads as "3x = 20"
+const SUP = { 0: "⁰", 1: "¹", 2: "²", 3: "³", 4: "⁴", 5: "⁵", 6: "⁶", 7: "⁷", 8: "⁸", 9: "⁹", "+": "⁺", "-": "⁻", "−": "⁻", "=": "⁼", "(": "⁽", ")": "⁾", n: "ⁿ", i: "ⁱ", x: "ˣ", y: "ʸ" };
+const SUB = { 0: "₀", 1: "₁", 2: "₂", 3: "₃", 4: "₄", 5: "₅", 6: "₆", 7: "₇", 8: "₈", 9: "₉", "+": "₊", "-": "₋", "−": "₋", "=": "₌", "(": "₍", ")": "₎", a: "ₐ", e: "ₑ", o: "ₒ", x: "ₓ", h: "ₕ", k: "ₖ", l: "ₗ", m: "ₘ", n: "ₙ", p: "ₚ", s: "ₛ", t: "ₜ", i: "ᵢ", r: "ᵣ" };
+const script = (t, map, mark) => ([...t].every((c) => map[c]) ? [...t].map((c) => map[c]).join("") : [...t].length === 1 ? `${mark}${t}` : `${mark}(${t})`);
+// subscripts first, so a superscript that contains one (e^{−E/k_{B}T}) is whole when it's converted
+export const notation = (s) => String(s ?? "").replace(/_\{([^{}]*)\}/g, (m, t) => script(t, SUB, "_")).replace(/\^\{([^{}]*)\}/g, (m, t) => script(t, SUP, "^")).replace(/[{}]/g, "");
 // strips markup but keeps a literal "<" or ">" (the notes say "the signs <, > or =")
-const plain = (s) => String(s ?? "").replace(/\*\*|`|\{|\}|\^|_(?=\{)/g, "").replace(/\*(\S[^*]*)\*/g, "$1").replace(/<\/?[a-z][^<>]*>/gi, "").trim();
+const plain = (s) => notation(s).replace(/\*\*|`/g, "").replace(/\*(\S[^*]*)\*/g, "$1").replace(/<\/?[a-z][^<>]*>/gi, "").trim();
 // a sentence never ends after an initial ("C. difficile", "H. pylori") or a common abbreviation
-const NOT_END = /(?:^|[\s(])(?:[A-Z]|e\.g|i\.e|etc|vs|Dr|Mr|Mrs|Ms|St|No|approx|c)\.$/;
+const NOT_END = /(?:^|[\s(])(?:[A-Z]|e\.g|i\.e|etc|vs|Dr|Mr|Mrs|Ms|St|No|Jr|Sr|approx|c)\.$/;
 /** the lead's first sentence (20 to 220 characters), else cut at a word boundary with an ellipsis */
 export function first(s) {
   const t = plain(s), re = /[.!?](?=\s|$)/g;

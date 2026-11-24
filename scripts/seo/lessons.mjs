@@ -7,6 +7,7 @@
 // rest wait until the pilot has been inspected and indexed. Thin pages are noindexed (MIN_WORDS).
 import { readFile } from "node:fs/promises";
 import { esc, related } from "./shell.mjs";
+import { notation } from "./coursepages.mjs";
 import { parseNotes, lessonHtml, lessonFrame, lessonText, inline } from "../../kit/course/notes.js";
 
 const root = new URL("../../", import.meta.url);
@@ -14,7 +15,7 @@ const root = new URL("../../", import.meta.url);
 // cases and statutes)
 export const PILOT = { biology: ["u02"], chemistry: ["u01"], law: ["u01"] };
 export const MIN_WORDS = 250;
-const plain = (s) => String(s ?? "").replace(/\*\*|`|\{|\}|\^|_(?=\{)/g, "").replace(/\*(\S[^*]*)\*/g, "$1").replace(/<\/?[a-z][^<>]*>/gi, "").trim();
+const plain = (s) => notation(s).replace(/\*\*|`/g, "").replace(/\*(\S[^*]*)\*/g, "$1").replace(/<\/?[a-z][^<>]*>/gi, "").trim();
 const json = async (p) => JSON.parse(await readFile(new URL(p, root), "utf8"));
 
 // a lesson's notes for a standalone page: section headings one level up (the page's h1 is the lesson), diagrams as
