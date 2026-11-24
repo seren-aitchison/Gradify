@@ -18,10 +18,17 @@ export const TONES = {
   yellow: { light: ["#d9a400", "#e3b800", "#e08a00", "#c99600", "#efb000", "#d27f00"], dark: ["#ffd60a", "#fff06a", "#ffab1f", "#fff6c2", "#ffc83d", "#ffe14d"] },
   orange: { light: ["#e85a00", "#f08a1c", "#e0304f", "#e39a36", "#d94a10", "#f07a2a"], dark: ["#ff6a00", "#ffa040", "#ff3d5e", "#ffcf80", "#ff5020", "#ffb35c"] },
   iris:   { light: ["#2fa8f5", "#8a6bff", "#f25aa8", "#ff9a4d", "#22c4ad", "#5468ff"], dark: ["#ff2d8a", "#b44cff", "#3fc5ff", "#2effb0", "#ffd400", "#ff6a00"] },
+  teal:    { light: ["#0e8f86", "#16a7a0", "#0f6fb0", "#2bb39a", "#0a7d74", "#3aa6c9"], dark: ["#19e3cf", "#5cffe4", "#2aa8ff", "#b8fff2", "#12c9b6", "#7ae7ff"] },
+  violet:  { light: ["#6a3fe0", "#8a4ff0", "#4b3bd0", "#a35ae6", "#5a2fc4", "#7c6cf0"], dark: ["#9b6cff", "#c79bff", "#6f5cff", "#e3d2ff", "#b07cff", "#8a8cff"] },
+  magenta: { light: ["#c4157f", "#e0279f", "#9a1fb8", "#ea4ca8", "#b0126c", "#d43cc4"], dark: ["#ff2fb2", "#ff7ad8", "#d23cff", "#ffc2ec", "#ff4fa0", "#f07cff"] },
+  coral:   { light: ["#e2503b", "#f06a4f", "#d9365f", "#f0866a", "#c9432e", "#ee5c7a"], dark: ["#ff6b55", "#ff9a80", "#ff4f7a", "#ffd0c2", "#ff7d5c", "#ff8aa8"] },
+  emerald: { light: ["#118a4f", "#1fa864", "#0c7a6a", "#3cb878", "#0a6e43", "#29a38c"], dark: ["#21e38a", "#7dffb8", "#14d6b0", "#c8ffe0", "#3cf08f", "#5cf0d0"] },
+  gold:    { light: ["#b8860b", "#d19a10", "#a86a00", "#c9a227", "#9c7400", "#d4a531"], dark: ["#ffc62e", "#ffe27a", "#ffae2e", "#fff1c2", "#ffd24f", "#f5c56a"] },
+  cyan:    { light: ["#0a86c2", "#1aa3d9", "#0b65b8", "#22b7d6", "#086f9e", "#3b8ff0"], dark: ["#21c8ff", "#8be6ff", "#3d8bff", "#d2f6ff", "#3fdcff", "#6fb0ff"] },
   red:    { light: ["#e8173a", "#f2457e", "#c4124b", "#ff7a8f", "#d8204a", "#f06a8c"], dark: ["#ff1f45", "#ff4f8b", "#e8173a", "#ff9fb8", "#ff3d7f", "#ffb3c4"] },
 };
 export const TONE_NAMES = Object.keys(TONES);
-const MAX = 6;          // at most this many on a page
+const MAX = 7;          // at most this many on a page
 const EVERY = 1.7;      // one per this many screen heights, at most
 const TEXT = "h1,h2,h3,h4,h5,h6,p,li,dt,dd,label,blockquote,figcaption,td,th,summary,a,button,small,b,strong,em,span,input,textarea,select";
 
@@ -78,10 +85,10 @@ export function drawRibbon(size, { light = true, seed = 1, tone = light ? "iris"
         // towards white at a fold (in dark: a white-hot highlight; on white: a lighter, pearly line)
         const mix = light ? hi * 0.22 : hi * 0.5;
         const R = c[0] + (255 - c[0]) * mix, G = c[1] + (255 - c[1]) * mix, Bc = c[2] + (255 - c[2]) * mix;
-        const al = (pass ? (light ? 0.66 + 0.3 * fold : 0.5 + 0.4 * fold) : (light ? 0.055 : 0.09)) * edge * ends;
+        const al = Math.min(1, (pass ? (light ? 0.8 + 0.25 * fold : 0.62 + 0.4 * fold) : (light ? 0.075 : 0.12)) * edge * ends * 1.08);
         if (al < 0.01) continue;
         g.strokeStyle = `rgba(${R | 0},${G | 0},${Bc | 0},${al.toFixed(3)})`;
-        g.lineWidth = pass ? lw * (light ? 1.5 : 1.3) * (1 + 0.25 * fold) : lw * 34;
+        g.lineWidth = pass ? lw * (light ? 1.9 : 1.6) * (1 + 0.3 * fold) : lw * 40;
         g.beginPath(); g.moveTo(row[k][0] * S, row[k][1] * S); g.lineTo(row[k + 1][0] * S, row[k + 1][1] * S); g.stroke();
       }
     }
@@ -129,7 +136,7 @@ const hits = (a, list, pad) => list.some((b) => a.l < b.r + pad && a.r > b.l - p
 /** Where the motifs go: page-coordinate squares, at most MAX, alternating sides, clear of bare text. */
 export function placements({ vw, vh, docH, text, seed = 1 }) {
   const phone = vw < 700, S = Math.round(phone ? vw * 0.95 : Math.min(760, Math.max(380, vw * 0.4)));
-  const show = phone ? 0.34 : 0.55;            // how much of the square is on screen
+  const show = phone ? 0.38 : 0.6;            // how much of the square is on screen
   const out = [], r = rng(seed);
   let side = r() < 0.5 ? 0 : 1, y = vh * (0.35 + r() * 0.3);
   while (y < docH - S * 0.4 && out.length < MAX) {
@@ -186,7 +193,7 @@ function place() {
   layer.innerHTML = spots.map((p, n) => {
     const tone = order[n % order.length];
     const fade = p.side ? "radial-gradient(closest-side at 62% 50%, #000 38%, transparent 100%)" : "radial-gradient(closest-side at 38% 50%, #000 38%, transparent 100%)";
-    return `<i style="position:absolute;left:${p.x}px;top:${p.y}px;width:${p.size}px;height:${p.size}px;background:url(${imageFor(light, p.seed, tone)}) center/cover no-repeat;-webkit-mask:${fade};mask:${fade};opacity:${light ? 0.9 : 0.85}"></i>`;
+    return `<i style="position:absolute;left:${p.x}px;top:${p.y}px;width:${p.size}px;height:${p.size}px;background:url(${imageFor(light, p.seed, tone)}) center/cover no-repeat;-webkit-mask:${fade};mask:${fade};opacity:1"></i>`;
   }).join("");
 }
 

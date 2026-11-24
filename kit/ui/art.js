@@ -10,10 +10,12 @@
 // Styles: .g-art in kit/styles/base.css. Docs: docs/DESIGN-SYSTEM.md, "Spot illustrations".
 
 // a muted, grown-up palette: slate indigo, dusty rose, copper, brass and sage (one family, never candy)
-const C = { i: "#4b56a6", p: "#b45a72", o: "#c0703f", a: "#c19a46", t: "#3e8c7c" };
+// duotone: the page's accent (--art-a, set to the site's colour by the CSS) and a warm neutral, with one quiet second
+// tone (--art-c). Five names, so every drawing keeps its structure, but only two colour families on screen.
+const C = { i: "var(--art-a, #4b56a6)", p: "var(--art-n, #8d8a86)", o: "var(--art-a, #4b56a6)", a: "var(--art-c, #b8935a)", t: "var(--art-n, #8d8a86)" };
 // a tint (flat fill), an ink line, a filled dot
-const tint = (c, o = 0.22) => `fill="${c}" fill-opacity="${Math.min(0.72, o * 1.25).toFixed(2)}"`;
-const ink = 'fill="none" stroke="var(--art-ink, currentColor)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"';
+const tint = (c, o = 0.22) => `fill="${c}" fill-opacity="${Math.min(0.5, 0.12 + o * 0.7).toFixed(2)}"`;
+const ink = 'fill="none" stroke="var(--art-ink, currentColor)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"';
 // the gleam: a short glint of light that runs along the ink lines (CSS .g-glint in kit/styles/base.css; still when
 // motion is reduced). Each ink line gets a copy drawn as one short dash that travels its length.
 const GLINT = 'fill="none" stroke="var(--art-glint, #fff)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
@@ -26,7 +28,7 @@ function glinted(d) {
   });
   return d + copies.join("");
 }
-const line = (c) => `fill="none" stroke="${c}" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"`;
+const line = (c) => `fill="none" stroke="${c}" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"`;
 const ground = '<ellipse cx="60" cy="88" rx="38" ry="4.5" fill="var(--art-ink, currentColor)" fill-opacity=".08"/>';
 const spark = () => "";   // no confetti or sparkles: the drawings stay calm
 

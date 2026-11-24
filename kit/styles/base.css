@@ -548,9 +548,9 @@ html:root body, html:root body.sub-page { background: transparent; }
 :root { --g-contrast: #fff; --g-glint: rgba(255, 255, 255, .95); }
 :root[data-theme="light"] { --g-contrast: #0d0d18; --g-glint: rgba(255, 255, 255, .95); }
 :root .g-action::before {
-  padding: 2px;
+  padding: 3px;
   background:
-    linear-gradient(115deg, transparent 38%, var(--g-glint) 48%, transparent 58%) 0 0 / 260% 100% no-repeat,
+    linear-gradient(115deg, transparent 34%, var(--g-glint) 48%, transparent 62%) 0 0 / 260% 100% no-repeat,
     linear-gradient(115deg, #ff2e88 0%, #ffc400 22%, #ff6a00 44%, var(--g-contrast) 66%, #ff2e88 88%, #ffc400 100%) 0 0 / 220% 100%;
   animation: g-gleam 7s linear infinite;
 }
@@ -613,10 +613,10 @@ html:root body, html:root body.sub-page { background: transparent; }
 :root :is(#groups .card, .sub-page .sm-topic, .sub-page .sm-steps li, .g-tiles a, .g-gleam) { --gleam: var(--c, var(--accent, #4641ff)); position: relative; isolation: isolate; }
 :root .sub-page .sm-topic { --gleam: var(--accent, #4641ff); }
 :root :is(#groups .card, .sub-page .sm-topic, .sub-page .sm-steps li, .g-tiles a, .g-gleam)::before {
-  content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; padding: 2px; pointer-events: none;
+  content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; padding: 3px; pointer-events: none;
   background:
-    linear-gradient(115deg, transparent 38%, var(--g-glint) 48%, transparent 58%) 0 0 / 260% 100% no-repeat,
-    linear-gradient(115deg, var(--gleam) 0%, color-mix(in srgb, var(--gleam) 45%, #fff) 22%, var(--g-contrast) 46%, color-mix(in srgb, var(--gleam) 70%, #000) 68%, var(--gleam) 88%, color-mix(in srgb, var(--gleam) 45%, #fff) 100%) 0 0 / 220% 100%;
+    linear-gradient(115deg, transparent 34%, var(--g-glint) 48%, transparent 62%) 0 0 / 260% 100% no-repeat,
+    linear-gradient(115deg, var(--gleam) 0%, color-mix(in srgb, var(--gleam) 68%, #fff) 22%, var(--g-contrast) 46%, color-mix(in srgb, var(--gleam) 70%, #000) 68%, var(--gleam) 88%, color-mix(in srgb, var(--gleam) 68%, #fff) 100%) 0 0 / 220% 100%;
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
   mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
   animation: g-gleam 7s linear infinite;
@@ -693,20 +693,20 @@ html:root body, html:root body.sub-page { background: transparent; }
 :root body.ds :is(#chips, #bubble-filter) { --gleam: #4641ff; position: relative; background: var(--g-tile); border-color: transparent; box-shadow: var(--g-shadow); }
 :root body.ds #find .search { --gleam: #4641ff; border-color: transparent; background: var(--g-tile); }
 :root body.ds :is(#bubbles .bubble, #chips, #bubble-filter)::before {
-  content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; padding: 2px; pointer-events: none;
+  content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; padding: 3px; pointer-events: none;
   background:
-    linear-gradient(115deg, transparent 38%, var(--g-glint) 48%, transparent 58%) 0 0 / 260% 100% no-repeat,
-    linear-gradient(115deg, var(--gleam) 0%, color-mix(in srgb, var(--gleam) 45%, #fff) 22%, var(--g-contrast) 46%, color-mix(in srgb, var(--gleam) 70%, #000) 68%, var(--gleam) 88%, color-mix(in srgb, var(--gleam) 45%, #fff) 100%) 0 0 / 220% 100%;
+    linear-gradient(115deg, transparent 34%, var(--g-glint) 48%, transparent 62%) 0 0 / 260% 100% no-repeat,
+    linear-gradient(115deg, var(--gleam) 0%, color-mix(in srgb, var(--gleam) 68%, #fff) 22%, var(--g-contrast) 46%, color-mix(in srgb, var(--gleam) 70%, #000) 68%, var(--gleam) 88%, color-mix(in srgb, var(--gleam) 68%, #fff) 100%) 0 0 / 220% 100%;
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
   mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
   animation: g-gleam 7s linear infinite;
 }
 :root body.ds #find .search::after {
   display: block; top: 0; right: 0; bottom: 0; left: 0; width: auto; height: auto; transform: none; filter: none; opacity: 1; margin: 0;
-  content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; padding: 2px; pointer-events: none;
+  content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; padding: 3px; pointer-events: none;
   background:
-    linear-gradient(115deg, transparent 38%, var(--g-glint) 48%, transparent 58%) 0 0 / 260% 100% no-repeat,
-    linear-gradient(115deg, var(--gleam) 0%, color-mix(in srgb, var(--gleam) 45%, #fff) 22%, var(--g-contrast) 46%, color-mix(in srgb, var(--gleam) 70%, #000) 68%, var(--gleam) 88%, color-mix(in srgb, var(--gleam) 45%, #fff) 100%) 0 0 / 220% 100%;
+    linear-gradient(115deg, transparent 34%, var(--g-glint) 48%, transparent 62%) 0 0 / 260% 100% no-repeat,
+    linear-gradient(115deg, var(--gleam) 0%, color-mix(in srgb, var(--gleam) 68%, #fff) 22%, var(--g-contrast) 46%, color-mix(in srgb, var(--gleam) 70%, #000) 68%, var(--gleam) 88%, color-mix(in srgb, var(--gleam) 68%, #fff) 100%) 0 0 / 220% 100%;
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
   mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
   animation: g-gleam 7s linear infinite;
@@ -719,3 +719,23 @@ html:root body, html:root body.sub-page { background: transparent; }
 @media (prefers-reduced-motion: reduce) { :root body.ds :is(#bubbles .bubble, #chips, #bubble-filter)::before, :root body.ds #find .search::after { animation: none; background-position: -60% 0, 30% 0; } }
 :root[data-motion="reduce"] body.ds :is(#bubbles .bubble, #chips, #bubble-filter)::before, :root[data-motion="reduce"] body.ds #find .search::after { animation: none; background-position: -60% 0, 30% 0; }
 :root body.ds #find .search.lg::before { content: none; }
+
+/* the drawings' duotone: the site's or course's colour, a warm neutral and a quiet brass (kit/ui/art.js) */
+.g-art { --art-a: color-mix(in oklab, var(--accent, #4b56a6) 85%, #1b1b26); --art-n: #8d8a86; --art-c: #b8935a; }
+:root:not([data-theme="light"]) .g-art { --art-a: color-mix(in oklab, var(--accent, #6d74d6) 80%, #fff); --art-n: #a9a59f; --art-c: #cfa96a; }
+.sub-course .sc-art { --art-a: #fff; --art-n: rgba(255, 255, 255, .7); --art-c: #ffe2a8; }
+#groups ~ * .g-art, .g-action .g-art { --art-a: color-mix(in oklab, var(--g-accent, #4641ff) 85%, #1b1b26); }
+
+/* lesson pages, contrast pass: secondary text, the outline and the rail's small type all darker (light) or brighter
+   (dark); the goals card's tint and edge firmer */
+.co.co-reading { --mute: rgba(var(--ink-rgb), .84); --faint: rgba(var(--ink-rgb), .72); }
+.co.co-reading .cx-tree :is(a, summary, li, span, p) { color: rgba(var(--ink-rgb), .86); }
+.co.co-reading .cx-tree :is([aria-current="page"], .here) { color: var(--fg); font-weight: 650; }
+.co.co-reading .cx-tree .cx-tg, .co.co-reading .cx-tree .cx-mt { color: var(--fg); }
+.co.co-reading .cx-widget :is(small, p, li, a, span):not(.btn, .btn *) { color: rgba(var(--ink-rgb), .86); }
+.co.co-reading .cx-widget b { color: var(--fg); }
+.co.co-reading .co-read #co-top.co-frame { background: color-mix(in srgb, var(--accent, #4641ff) 10%, var(--g-tile)); border-color: color-mix(in srgb, var(--accent, #4641ff) 45%, transparent); }
+.co.co-reading .co-read #co-top.co-frame li { color: var(--fg); }
+.co.co-reading .co-read .co-lhead .mv-lead { color: rgba(var(--ink-rgb), .86); }
+.co.co-reading .co-read .co-builds { color: rgba(var(--ink-rgb), .84); }
+.co.co-reading .co-read { --lc-ink: color-mix(in oklab, var(--lc) 48%, var(--fg)); }
