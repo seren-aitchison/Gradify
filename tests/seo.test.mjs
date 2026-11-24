@@ -55,7 +55,25 @@ test("topic pages come from the real course notes, with sample flashcards", () =
   assert.ok(p, "chemistry unit 1 has a topic page");
   assert.match(p, /Matter and its classification/);
   assert.match(p, /Five sample flashcards/);
-  assert.match(p, /href="\/scigradify\/chemistry\/#\/lesson\/u01-02"/);
+  // a pilot lesson: the topic page links to its own page, which links into the lesson in the course app
+  assert.match(p, /href="\/lessons\/chemistry\/u01-02\/"/);
+  assert.match(files.get("lessons/chemistry/u01-02/index.html"), /href="\/scigradify\/chemistry\/#\/lesson\/u01-02"/);
+});
+
+test("pilot lesson pages: the lesson's own notes, one h1, canonical to itself, only thin ones noindexed, linked from course and topic pages", async () => {
+  const { PILOT, MIN_WORDS } = await import("../scripts/seo/lessons.mjs");
+  const pages = [...files].filter(([p]) => /^lessons\/[^/]+\/[^/]+\/index\.html$/.test(p));
+  assert.equal(pages.length, 85, "Biology u02, Chemistry u01 and Law u01: the pilot only");
+  assert.deepEqual(Object.keys(PILOT), ["biology", "chemistry", "law"]);
+  for (const [p, h] of pages) {
+    assert.equal((h.match(/<h1[\s>]/g) || []).length, 1, p);
+    assert.match(h, /class="lesson-notes"><section/, `${p}: notes rendered`);
+    assert.match(h, /Open this lesson in the course/, p);
+  }
+  assert.match(files.get("lessons/biology/u02-04/index.html"), /<img src="\/kit\/diagrams\/svg\/bio-animal-cell\.wide\.svg" alt="[^"]{20,}"/);
+  assert.ok(pages.filter(([, h]) => /noindex/.test(h)).length <= 3, "the quality floor only catches the odd short lesson");
+  assert.match(files.get("scigradify/biology/index.html"), /href="\/lessons\/biology\/u02-04\/"/);
+  assert.ok(MIN_WORDS >= 200);
 });
 
 test("every indexed page outside the generator has a canonical URL and link previews", async () => {

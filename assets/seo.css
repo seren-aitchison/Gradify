@@ -320,3 +320,19 @@ html.focus main.seo { padding-top: 16px; }
 }
 @media (prefers-reduced-motion: reduce) { .hero-bar span, .ring-fg { transition: none; } }
 @media print { .sheet.docked { position: static; transform: none !important; box-shadow: none; } .sheet-handle .grip { display: none; } .sheet-spacer { display: none; } }
+/* pilot lesson pages (scripts/seo/lessons.mjs): the course notes' building blocks, readable without the app */
+.lesson-kicker { font-size: 13px; color: var(--faint) !important; margin: 0; }
+.lesson-notice { font-size: 13px; border: 1px solid var(--line); border-radius: 12px; padding: 10px 14px; }
+.lesson-notes section { margin: 8px 0; }
+.co-eq { display: grid; gap: 6px; margin: 12px 0; padding: 12px 14px; border-radius: 12px; background: var(--panel); border: 1px solid var(--line); }
+.co-eq code { font: 15px var(--mono); color: var(--fg); } .co-eq span { display: block; font-size: 14px; color: var(--mute); }
+.co-ex, .co-frame section, .co-auth { margin: 14px 0; padding: 12px 16px; border-radius: 12px; border: 1px solid var(--line); background: var(--panel); }
+.co-ex > b, .co-pit > b, .co-safe > b { display: block; color: var(--fg); margin-bottom: 4px; }
+.mv-key { border-left: 3px solid #ffc002; padding-left: 12px; color: var(--fg) !important; }
+.co-pit, .co-safe { margin: 14px 0; padding: 10px 14px; border-radius: 12px; border-left: 3px solid #ff6b6b; background: var(--panel); color: var(--mute); }
+.co-terms dt { font-weight: 600; color: var(--fg); } .co-terms dd { margin: 0 0 8px; }
+.co-auth-k { font: 600 11px var(--mono); text-transform: uppercase; letter-spacing: .1em; color: var(--faint); }
+.co-sources { font-size: 14px; }
+.lesson-dg { margin: 18px 0; } .lesson-dg img { width: 100%; height: auto; display: block; border-radius: 12px; background: #fff; }
+.lesson-dg figcaption { font-size: 14px; color: var(--mute); margin-top: 6px; }
+.co-frame h2 { margin-top: 4px !important; font-size: 18px; } .co-frame section { padding-top: 6px; }

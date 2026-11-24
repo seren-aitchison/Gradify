@@ -21,6 +21,7 @@ import { guidePages, GUIDES } from "./seo/guides.mjs";
 import { comparePages, COMPARE, glossaryPages, TERMS, templatePages, TEMPLATES, aboutPages } from "./seo/pages.mjs";
 import { programmaticPages, courses as courseData } from "./seo/programmatic.mjs";
 import { coursePageOutputs, coursePagePaths } from "./seo/coursepages.mjs";
+import { lessonPages } from "./seo/lessons.mjs";
 import { TOOLS2, tools2Pages } from "./seo/tools2.mjs";
 import { CHECKLISTS, checklistPages } from "./seo/checklists.mjs";
 import { GUIDES2, GROUPS, VS, ALTS, guides2Pages } from "./seo/guides2.mjs";
@@ -214,7 +215,8 @@ ${pick(/^terms\/[^/]+\/index\.html$/).map(([p, h]) => `- ${text(h.match(/<p clas
 
 export async function outputs() {
   const prog = await programmaticPages();
-  const specs = [...hubPages(), ...toolPages(), ...tools2Pages(), ...landingPages(), ...checklistPages(), ...guidePages(), ...guides2Pages(), ...comparePages(), ...glossaryPages(), ...templatePages(), ...aboutPages(), ...prog];
+  const lessons = await lessonPages();
+  const specs = [...lessons, ...hubPages(), ...toolPages(), ...tools2Pages(), ...landingPages(), ...checklistPages(), ...guidePages(), ...guides2Pages(), ...comparePages(), ...glossaryPages(), ...templatePages(), ...aboutPages(), ...prog];
   const files = new Map(specs.map((s) => [s.path, s.raw ? s.html : page(s)]));
   const courses = prog.filter((p) => /^topics\/[^/]+\/index\.html$/.test(p.path));
   files.set("site-map.html", siteMapPage(specs, courses));
@@ -223,6 +225,13 @@ export async function outputs() {
   const feed = [...CHANGES.map(([d, h, items]) => ({ path: "changelog/", date: d, title: `What's new: ${h}`, description: items.join(". ") })),
     ...specs.filter((x) => !x.raw && /^(guides|tools|checklists|vs|compare)\/[^/]+\/index\.html$/.test(x.path)).map((x) => ({ path: x.path.replace(/index\.html$/, ""), date: x.updated || "2026-11-23", title: x.title.replace(/ · Gradify$/, ""), description: x.description }))];
   files.set("feed.xml", feedXml(feed.slice(0, 60)));
+  // pilot lessons: topic, question and trap pages link to the lesson's own page instead of into the app
+  const LESSON_IDS = new Set(lessons.map((x) => x.path.replace(/^lessons\/|\/index\.html$/g, "")));
+  for (const [p, html] of files) {
+    if (!/^(topics|questions|exam-traps)\/[^/]+\//.test(p)) continue;
+    const slug = p.split("/")[1];
+    files.set(p, html.replace(/href="\/[^"#]+#\/lesson\/([a-z0-9-]+)"/g, (m, id) => (LESSON_IDS.has(`${slug}/${id}`) ? `href="/lessons/${slug}/${id}/"` : m)));
+  }
   for (const [p, html] of files) if (p.endsWith(".html") && html.includes("<main")) files.set(p, headingIds(html));
   for (const [p, html] of files) if (/^(guides|topics|vs|checklists|terms|compare)\/.+\.html$/.test(p) && !html.startsWith("<!doctype html>\n<html lang=\"en-GB\"><head><meta charset")) files.set(p, autoLink(html, `/${p.replace(/index\.html$/, "")}`));
   // each page lists the modules it loads, like every other page (scripts/preload-modules.mjs)
@@ -234,6 +243,7 @@ export async function outputs() {
   const cd = await courseData();
   const leads = new Map(cd.map((c) => [c.slug, new Map(c.units.flatMap((u) => u.lessons.map((l) => [l.id, l.lead])))]));
   for (const [p, html] of await coursePageOutputs({
+    lessonPages: LESSON_IDS,
     leadsFor: (slug) => leads.get(slug) || new Map(),
     hubFor: (slug) => (files.has(`topics/${slug}/index.html`) ? `/topics/${slug}/` : null),
     topicsFor: (slug, u) => (files.has(`topics/${slug}/${u.id}/index.html`) ? `/topics/${slug}/${u.id}/` : null),
