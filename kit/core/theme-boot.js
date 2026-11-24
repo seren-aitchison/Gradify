@@ -119,6 +119,16 @@ document.addEventListener("click", function (e) {
   if (document.readyState === "complete") later(); else addEventListener("load", later);
 })();
 
+// Gradify motifs (kit/ui/motifs.js): a few line ribbons at the page's edges, behind everything and never under bare text.
+// Loaded once the page is quiet; nothing on the page waits for them.
+(function () {
+  var src = (document.currentScript && document.currentScript.src) || "";
+  if (!src || !("noModule" in HTMLScriptElement.prototype)) return;
+  var go = function () { import(src.replace(/core\/theme-boot\.js(\?.*)?$/, "ui/motifs.js")).then(function (m) { m.mountMotifs(); }).catch(function () { /* the plain page is fine */ }); };
+  var later = function () { "requestIdleCallback" in window ? requestIdleCallback(go, { timeout: 2000 }) : setTimeout(go, 400); };
+  if (document.readyState === "complete") later(); else addEventListener("load", later);
+})();
+
 // Analytics consent and Google Analytics (kit/core/consent.js): the cookie banner, and Google Analytics only after
 // "Accept analytics". Loaded from here so every page that has this script gets it.
 (function () {

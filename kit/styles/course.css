@@ -1785,7 +1785,7 @@ html.cx-focus .co.co-reading .co-body, html.cx-focus .co.co-reading .co-body.has
 .cx-fbtn .co-ic { width: 16px; height: 16px; }
 .cx-fsum:hover .cx-fpaper { transform: translateY(-10px); }
 .cx-fsum:hover .cx-ffront { transform: translateY(3px); }
-.cx-folder.open .cx-fpaper { transform: translateY(-16px) rotate(-1.5deg); }
+.cx-folder.open .cx-fpaper { transform: translateY(-16px); }
 .cx-folder.open .cx-ffront { transform: translateY(5px); }
 .cx-folder.open .cx-fbtn { transform: rotate(90deg); }
 .cx-folder.full .cx-fbar i { background: var(--s-mastered); }
@@ -2290,6 +2290,255 @@ body:has(> .co-modal) .cx-rings { display: none !important; }
 .mx-lines li.shown .mx-mark { color: var(--mute); font-weight: 500; }
 .mx-solution .mx-rule { margin: 2px 0 6px; }
 
+/* ==============================================================================================================   Lesson reading layer (November 2026). The last word on how a lesson reads, for every course on every subject site.
+   The page is paper, not glass: one solid sheet, the subject's own colour, one typeface, and four callout kinds that
+   look related (key idea, worked example, common mistake, safety) so a learner can tell them apart at a glance.
+   Scoped to .co.co-reading .co-read so the 3D model pages (model.css .mv-page) keep their own look.
+   ===================================================================================================================== */
+.co.co-reading .co-read {
+  /* the subject's colour, mixed towards the ink so text in it always reads (AA in both themes) */
+  --lc: var(--accent, #4641ff);
+  --lc-ink: color-mix(in oklab, var(--lc) 58%, var(--fg));
+  --lc-wash: color-mix(in srgb, var(--lc) 7%, transparent);
+  --lc-line: color-mix(in srgb, var(--lc) 26%, transparent);
+  --ls-sheet: rgb(var(--surface-rgb));
+  --ls-raise: light-dark(#ffffff, #1b1b1f);
+  --ls-ok: light-dark(#0f7b47, #5fd39a);
+  --ls-warn: light-dark(#8a5300, #f0b24a);
+  --ls-bad: light-dark(#b4233c, #ff7b93);
+  --ls-label: 650 13px/1.3 var(--sans);
+  --c: var(--lc);
+}
+/* the sheet: solid, a hairline, a soft shadow, a faint wash of the subject's colour behind the title */
+.co.co-reading .co-read .co-notes {
+  background: radial-gradient(110% 340px at 0% 0%, var(--lc-wash), transparent 70%), var(--ls-sheet);
+  border: 1px solid var(--line); box-shadow: 0 1px 2px rgba(0, 0, 0, .04), 0 24px 60px -40px rgba(0, 0, 0, .35);
+  -webkit-backdrop-filter: none; backdrop-filter: none;
+}
+.co.co-reading .co-read .co-notes::before, .co.co-reading .co-read .co-notes::after { content: none; }
+
+/* title block */
+.co.co-reading .co-read .co-lhead h1 { font-size: clamp(32px, 4.2vw, 50px); line-height: 1.06; letter-spacing: -.035em; text-wrap: balance; }
+.co.co-reading .co-read .co-lhead .kicker { color: var(--lc-ink); }
+.co.co-reading .co-read .co-lhead .mv-lead { font-size: clamp(17.5px, 1.6vw, 20px); line-height: 1.55; color: var(--mute); max-width: 62ch; text-wrap: pretty; }
+.co.co-reading .co-read .co-builds > span { font: 500 13.5px var(--sans); color: var(--mute); }
+
+/* one label style for every eyebrow in a lesson: sans, sentence case, no tracking (was a mix of mono capitals) */
+.co.co-reading .co-read :is(.co-frame h3, .co-ex > b, .mv-clin > b, .co-safe > b) { font: var(--ls-label); letter-spacing: 0; text-transform: none; }
+.co.co-reading .co-read .aq-q small { font: 500 12.5px/1.4 var(--sans); letter-spacing: 0; text-transform: none; color: var(--faint); margin-top: 6px; }
+.co.co-reading .co-read .co-qn::before { font: var(--ls-label); letter-spacing: 0; text-transform: none; color: var(--lc-ink); margin-left: 2px; }
+.co.co-reading .co-read .co-checkn { font: 500 13px var(--sans); letter-spacing: 0; }
+
+/* "By the end of this lesson you can": a goals card in the subject's colour */
+.co.co-reading .co-read #co-top.co-frame { background: var(--lc-wash); border: 1px solid var(--lc-line); box-shadow: none; }
+.co.co-reading .co-read #co-top.co-frame h3 { color: var(--lc-ink); }
+.co.co-reading .co-read #co-top.co-frame li::before { border-color: var(--lc); background: radial-gradient(circle, var(--lc) 0 3px, transparent 3.5px); }
+
+/* reading rhythm: a comfortable measure, more air between ideas than between lines */
+.co.co-reading .co-read .co-prose :is(p, ul, ol) { max-width: 70ch; }
+.co.co-reading .co-read .co-prose ul { font-size: 17px; line-height: 1.62; display: grid; gap: 12px; padding-left: 20px; }
+.co.co-reading .co-read .co-prose ul > li::marker { color: var(--lc); font-size: .9em; }
+.co.co-reading .co-read .co-prose section[id] { margin-top: 8px; }
+.co.co-reading .co-read .co-prose section[id] + section[id] { margin-top: 44px; }
+.co.co-reading .co-read .co-prose section[id] h3 { font-size: clamp(22px, 2.2vw, 27px); letter-spacing: -.022em; line-height: 1.2; margin-bottom: 16px; }
+.co.co-reading .co-read .co-prose section[id] h3::before { color: var(--lc-ink); background: var(--lc-wash); border: 1px solid var(--lc-line); font-weight: 650; }
+.co.co-reading .co-read .co-prose .co-term { text-decoration-color: color-mix(in srgb, var(--lc) 55%, transparent); }
+
+/* ---- callouts: the same shape, a coloured rail, a labelled icon, and body text always in the ink colour ---- */
+.co.co-reading .co-read .co-prose :is(.mv-key, .co-ex, .mv-clin, .co-safe) {
+  --tone: var(--lc); position: relative; max-width: 70ch; margin: 24px 0; padding: 18px 20px 18px 22px; border-radius: 16px;
+  border: 1px solid color-mix(in srgb, var(--tone) 24%, transparent); border-left: 4px solid var(--tone);
+  background: color-mix(in srgb, var(--tone) 6%, var(--ls-sheet)); color: var(--fg); font-size: 16.5px; line-height: 1.62; font-weight: 400;
+}
+.co.co-reading .co-read .co-prose .co-ex { --tone: var(--ls-ok); }
+.co.co-reading .co-read .co-prose .mv-clin { --tone: var(--ls-warn); }
+.co.co-reading .co-read .co-prose .co-safe { --tone: var(--ls-bad); }
+/* the label, with a small icon drawn from a mask so it takes the tone's colour */
+.co.co-reading .co-read .co-prose .mv-key::before,
+.co.co-reading .co-read .co-prose :is(.co-ex > b, .mv-clin > b, .co-safe > b) {
+  display: flex; align-items: center; gap: 8px; margin: 0 0 8px; font: var(--ls-label); color: color-mix(in oklab, var(--tone) 80%, var(--fg));
+}
+.co.co-reading .co-read .co-prose :is(.co-ex > b, .mv-clin > b, .co-safe > b)::before {
+  content: ""; flex: none; width: 18px; height: 18px; background: currentColor;
+  -webkit-mask: var(--ico) center / contain no-repeat; mask: var(--ico) center / contain no-repeat;
+}
+.co.co-reading .co-read .co-prose .co-ex > b { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 20h9'/%3E%3Cpath d='M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z'/%3E%3C/svg%3E"); }
+.co.co-reading .co-read .co-prose :is(.mv-clin, .co-safe) > b { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z'/%3E%3Cpath d='M12 9v4'/%3E%3Cpath d='M12 17h.01'/%3E%3C/svg%3E"); }
+.co.co-reading .co-read .co-prose .mv-key { font-weight: 500; font-size: 17px; }
+.co.co-reading .co-read .co-prose .mv-key::before { content: "Key idea"; padding-left: 26px; min-height: 18px;
+  background: no-repeat left center / 18px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 18h6'/%3E%3Cpath d='M10 22h4'/%3E%3Cpath d='M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2Z'/%3E%3C/svg%3E"); }
+.co.co-reading .co-read .co-prose :is(.co-ex p, .co-ex ol, .mv-clin, .co-safe) { color: var(--fg); }
+.co.co-reading .co-read .co-prose .co-ex p { font-size: 16.5px; font-weight: 550; }
+/* worked example: the steps are a numbered timeline, joined by a line, so the order of reasoning is visible */
+.co.co-reading .co-read .co-prose .co-ex ol { gap: 0; margin-top: 12px; }
+.co.co-reading .co-read .co-prose .co-ex ol li { padding: 0 0 14px 40px; font-size: 16px; line-height: 1.55; color: var(--fg); }
+.co.co-reading .co-read .co-prose .co-ex ol li:last-child { padding-bottom: 0; }
+.co.co-reading .co-read .co-prose .co-ex ol li::before { width: 26px; height: 26px; top: -1px; font: 700 12.5px var(--sans); color: var(--ls-sheet); background: var(--ls-ok); }
+.co.co-reading .co-read .co-prose .co-ex ol li:not(:last-child)::after { content: ""; position: absolute; left: 12px; top: 28px; bottom: 2px; width: 2px; border-radius: 2px; background: color-mix(in srgb, var(--ls-ok) 30%, transparent); }
+.co.co-reading .co-read .co-prose .co-ex b:not(:first-child) { color: var(--fg); }
+
+/* diagrams: a quiet figure, not a floating card */
+.co.co-reading .co-read .co-prose figure.vx { border: 1px solid var(--line); box-shadow: none; background: var(--ls-raise); }
+
+/* recap cards: keep the cover-and-reveal, lose the tilted slab and the rainbow rim */
+.co.co-reading .co-read .gd { padding: 0; margin: 18px 0; }
+.co.co-reading .co-read .gd-back { display: none; }
+.co.co-reading .co-read .gd-card { border: 1px solid var(--line); border-top: 3px solid var(--a); background: var(--ls-raise); box-shadow: 0 14px 30px -26px rgba(0, 0, 0, .5); }
+.co.co-reading .co-read .gd-card::after { content: none; }
+.co.co-reading .co-read :is(.gd-kind, .gd-num) { font-family: var(--sans); letter-spacing: .01em; }
+.co.co-reading .co-read .gd-kind { text-transform: none; font-size: 12.5px; font-weight: 650; }
+.co.co-reading .co-read .gd-btn:disabled { opacity: 1; color: var(--faint); background: rgba(var(--ink-rgb), .05); border-color: var(--line); }
+
+/* check questions: white answer rows with a letter, a clear hover and a clear choice */
+.co.co-reading .co-read .co-qn > .aq { padding: 22px; border-radius: 20px; background: var(--ls-raise); border: 1px solid var(--line); }
+.co.co-reading .co-read .aq-q { font-size: 18px; font-weight: 600; line-height: 1.4; letter-spacing: -.01em; }
+.co.co-reading .co-read .aq-opts { counter-reset: opt; gap: 10px; }
+.co.co-reading .co-read .aq-opts > button { counter-increment: opt; min-height: 54px; padding: 12px 16px 12px 12px; gap: 14px; border-radius: 14px;
+  border: 1.5px solid rgba(var(--ink-rgb), .13); background: var(--ls-raise); font-size: 16px; line-height: 1.4;
+  transition: border-color .15s, background-color .15s, transform .15s; }
+.co.co-reading .co-read .aq-opts > button::before { content: counter(opt, upper-alpha); flex: none; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 9px;
+  font: 650 13px var(--sans); color: var(--mute); background: rgba(var(--ink-rgb), .06); transition: background-color .15s, color .15s; }
+.co.co-reading .co-read .aq-opts > button:hover:not(:disabled) { border-color: var(--lc); background: color-mix(in srgb, var(--lc) 5%, var(--ls-raise)); }
+.co.co-reading .co-read .aq-opts > button:hover:not(:disabled)::before { color: var(--lc-ink); background: var(--lc-wash); }
+.co.co-reading .co-read .aq-opts > button:active:not(:disabled) { transform: scale(.99); }
+.co.co-reading .co-read .aq-opts > :is(button.picked, button[aria-pressed="true"])::before { color: var(--ls-sheet); background: var(--fg); }
+.co.co-reading .co-read .aq-opts > button.right::before { content: "✓"; color: var(--ls-sheet); background: var(--ls-ok); }
+.co.co-reading .co-read .aq-opts > button.wrong::before { content: "✕"; color: var(--ls-sheet); background: var(--ls-bad); }
+.co.co-reading .co-read .aq .right { border-color: var(--ls-ok) !important; background: color-mix(in srgb, var(--ls-ok) 9%, var(--ls-raise)) !important; }
+.co.co-reading .co-read .aq .wrong { border-color: var(--ls-bad) !important; background: color-mix(in srgb, var(--ls-bad) 8%, var(--ls-raise)) !important; }
+.co.co-reading .co-read .aq-result.ok { color: var(--ls-ok); }
+.co.co-reading .co-read .aq-conf label { min-height: 36px; font-size: 13.5px; }
+
+@media (max-width: 760px) {
+  .co.co-reading .co-read .co-prose :is(.mv-key, .co-ex, .mv-clin, .co-safe) { margin: 20px 0; padding: 16px 16px 16px 18px; font-size: 16px; }
+  .co.co-reading .co-read .co-prose ul { font-size: 16.5px; gap: 10px; }
+  .co.co-reading .co-read .co-qn > .aq { padding: 16px; }
+  .co.co-reading .co-read .aq-q { font-size: 17px; }
+}
+@media (prefers-reduced-motion: reduce) { .co.co-reading .co-read .aq-opts > button { transition: none; } .co.co-reading .co-read .aq-opts > button:active { transform: none; } }
+:root[data-motion="reduce"] .co.co-reading .co-read .aq-opts > button { transition: none; }
+
+/* ---- the end of a lesson: where it sits in its topic, and the way on ---- */
+/* the topic strip: one segment per lesson in the topic; the one just finished fills in */
+.cx-tstrip { display: grid; gap: 8px; width: 100%; margin: 4px 0 12px; text-align: left; }
+.cx-tstrip p { display: flex; justify-content: space-between; gap: 12px; margin: 0; font-size: 13.5px; color: var(--mute); }
+.cx-tstrip p span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cx-tstrip p b { flex: none; color: var(--fg); font-weight: 650; }
+.cx-tstrip ol { display: flex; gap: 4px; margin: 0; padding: 0; list-style: none; }
+.cx-tstrip li { position: relative; flex: 1; height: 8px; border-radius: 99px; overflow: hidden; background: rgba(var(--ink-rgb), .1); }
+.cx-tstrip li::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: var(--s-mastered, #2ecc71); transform: scaleX(0); transform-origin: left; }
+.cx-tstrip li.d::after { transform: none; }
+.cx-tstrip li.here:not(.d) { box-shadow: inset 0 0 0 2px var(--accent, var(--fg)); }
+.cx-tstrip.fresh li.here.d::after { animation: cx-fill .7s cubic-bezier(.2, .8, .2, 1) .35s both; }
+@keyframes cx-fill { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.co-finish .cx-tstrip { flex: 1 0 100%; margin: 0 0 4px; }
+/* the check mark arrives with a small spring */
+.cx-donecheck { animation: cx-pop .5s cubic-bezier(.2, 1.4, .4, 1) both; }
+@keyframes cx-pop { from { transform: scale(.4); opacity: 0; } to { transform: none; opacity: 1; } }
+/* stats in a 2 × 2 on phones rather than three and an orphan */
+@media (max-width: 520px) { .cx-donestats { grid-template-columns: 1fr 1fr; } }
+/* a dialog is the only thing on screen: the phone dock steps aside while one is open */
+body:has(.co-modal) .cx-dock { visibility: hidden; }
+@media (prefers-reduced-motion: reduce) { .cx-tstrip.fresh li.here.d::after, .cx-donecheck { animation: none; } }
+:root[data-motion="reduce"] :is(.cx-tstrip.fresh li.here.d::after, .cx-donecheck) { animation: none; }
+
+/* previous / up / next: three even cards, labels in the sans, the next lesson carries the subject's colour */
+.co.co-reading .co-lesson .co-pn.cx-pn3 { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 20px; }
+.co.co-reading .co-lesson .co-pn.cx-pn3 > span:empty { display: none; }
+.co.co-reading .co-lesson .co-pn.cx-pn3:has(> span:empty) { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); }
+.co.co-reading .co-lesson .co-pn.cx-pn3:has(> span:empty) .co-pncard.up { grid-column: 1; }
+.co.co-reading .co-lesson .co-pn.cx-pn3:has(> span:empty) .co-pncard.next { grid-column: 2; }
+.co.co-reading .co-lesson .co-pncard { justify-content: center; gap: 4px; min-height: 92px; padding: 16px 20px; text-align: left; align-items: flex-start;
+  background: rgb(var(--surface-rgb)); border: 1px solid var(--line); box-shadow: 0 10px 30px -26px rgba(0, 0, 0, .5); }
+.co.co-reading .co-lesson .co-pncard::before, .co.co-reading .co-lesson .co-pncard::after { content: none; }
+.co.co-reading .co-lesson .co-pncard small { font: 600 13px var(--sans); letter-spacing: 0; text-transform: none; color: var(--mute); }
+.co.co-reading .co-lesson .co-pncard.next { align-items: flex-end; text-align: right;
+  background: color-mix(in srgb, var(--accent, #4641ff) 7%, rgb(var(--surface-rgb))); border-color: color-mix(in srgb, var(--accent, #4641ff) 35%, transparent); }
+.co.co-reading .co-lesson .co-pncard.next small { color: color-mix(in oklab, var(--accent, #4641ff) 58%, var(--fg)); }
+.co.co-reading .co-lesson .co-pncard:hover { border-color: var(--accent, var(--line-strong)); transform: translateY(-2px); }
+.co.co-reading .co-lesson .co-pncard.prev small::after, .co.co-reading .co-lesson .co-pncard.next small::before { content: none; }
+@media (max-width: 760px) {
+  .co.co-reading .co-lesson .co-pn.cx-pn3, .co.co-reading .co-lesson .co-pn.cx-pn3:has(> span:empty) { grid-template-columns: 1fr; }
+  .co.co-reading .co-lesson .co-pn.cx-pn3 .co-pncard { grid-column: 1; }
+  .co.co-reading .co-lesson .co-pncard.next { grid-row: 1; align-items: flex-start; text-align: left; }
+}
+@media (prefers-reduced-motion: reduce) { .co.co-reading .co-lesson .co-pncard:hover { transform: none; } }
+
+/* the shared "What would you like to do next?" kicker, in the sans like every other label */
+.gx-switch .gx-kicker { font: 600 13px var(--sans); letter-spacing: 0; text-transform: none; }
+/* the in-lesson quick checks (gd-mini) and their labels, in the same sans; a section whose heading has its own icon
+   (the generated "Quick check") doesn't also need a number */
+.co.co-reading .co-read .gd-mhead, .co.co-reading .co-read .gd-mhead * { font-family: var(--sans); letter-spacing: 0; text-transform: none; }
+.co.co-reading .co-read .gd-mhead { font-size: 13px; font-weight: 650; }
+.co.co-reading .co-read .co-prose section[id] h3:has(> svg)::before { content: none; }
+
+/* ---- navigation labels in the sans: the outline, the lesson bar, course home and the "what next" switcher.
+   Mono stays where it means something (code, maths working, keys, timers). Tabular figures keep numbers aligned. ---- */
+.co :is(.cx-un, .cx-up, .cx-mt small, .cx-n, .cx-pn small, .cx-sess em, .cx-tqxp, .cx-uprog b, .cx-tg, .cx-stages a span:first-child, .cx-rr b, .cx-wday small, .cx-bcover small, .cx-chips button small),
+.co .gx-switch .gx-res em {
+  font-family: var(--sans); letter-spacing: 0; font-variant-numeric: tabular-nums;
+}
+.co :is(.cx-up, .cx-mt small, .cx-pn small, .cx-sess em, .cx-tqxp) { font-size: 12.5px; }
+.co .gx-switch .gx-res em { font-style: normal; font-size: 12.5px; }
+/* XP rewards on quests and missions: a small pill with AA text (was pale amber on white) */
+.co .cx-q em { font: 650 12px var(--sans); font-variant-numeric: tabular-nums; padding: 3px 9px; border-radius: 99px;
+  color: light-dark(#8a5300, #f0b24a); background: light-dark(#fdf1dc, #2c2210); }
+.co .cx-stages small { font-family: var(--sans); font-variant-numeric: tabular-nums; }
+/* "Your course" counts: the status dot now sits inside its dt (valid definition list), so the row is two columns */
+.co .cx-course dl div { grid-template-columns: 1fr auto; }
+.co .cx-course dt { display: flex; align-items: center; gap: 8px; }
+/* locked sessions stay readable: the tile is quieter (dashed, no fill), the words keep AA contrast */
+.co .cx-sess.off { opacity: 1; background: transparent; border-style: dashed; box-shadow: none; }
+.co .cx-sess.off > :is(b, em) { color: var(--mute); }
+.co .cx-sess.off > small { color: var(--faint); }
+.co .cx-sess.off .cx-sessi { opacity: .55; filter: grayscale(.6); }
+/* phones: the study-material notice stays, but as a compact note rather than a block above every view */
+@media (max-width: 760px) {
+  .co > .co-notice, .co-notice { padding: 10px 12px; font-size: 12.5px; line-height: 1.45; border-radius: 12px; margin-block: 8px 12px; }
+}
+
+
+/* =====================================================================================================================
+   Lesson pages, premium pass: the sheet, the outline and the rail's cards are solid surfaces (white, or near-black),
+   minimal, with one hairline-thin gleaming edge in the course's colour (deepened towards the ink so it holds its
+   contrast), and the lesson's subject drawing in its header. The glass rims, sheens and tints of these panels are off.
+   ===================================================================================================================== */
+.co.co-reading :is(.co-read .co-notes, .cx-tree, .cx-widget) {
+  --gleam: color-mix(in oklab, var(--accent, #4641ff) 78%, var(--fg));
+  /* on panels this big the contrast stretch of the edge is softened, so it reads as a sheen, not a black line */
+  --g-contrast: color-mix(in srgb, var(--fg) 72%, var(--g-tile));
+  background: var(--g-tile) !important; border: 0 !important;
+  -webkit-backdrop-filter: none !important; backdrop-filter: none !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .05), 0 18px 40px -30px rgba(0, 0, 0, .4) !important;
+}
+.co.co-reading :is(.cx-tree, .cx-widget) { position: relative; }
+.co.co-reading :is(.co-read .co-notes, .cx-tree, .cx-widget)::after { content: none !important; }
+.co.co-reading :is(.co-read .co-notes, .cx-tree, .cx-widget)::before {
+  content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; padding: 2.5px; pointer-events: none;
+  background:
+    linear-gradient(115deg, transparent 34%, var(--g-glint) 48%, transparent 62%) 0 0 / 260% 100% no-repeat,
+    linear-gradient(115deg, var(--gleam) 0%, color-mix(in srgb, var(--gleam) 68%, #fff) 22%, var(--g-contrast) 46%, color-mix(in srgb, var(--gleam) 70%, #000) 68%, var(--gleam) 88%, color-mix(in srgb, var(--gleam) 68%, #fff) 100%) 0 0 / 220% 100%;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  animation: g-gleam 12s linear infinite;
+}
+.co.co-reading .cx-tree::before { animation-delay: -3s; } .co.co-reading .cx-widget:nth-child(2)::before { animation-delay: -6s; } .co.co-reading .cx-widget:nth-child(3)::before { animation-delay: -9s; }
+/* the rail's cards: calm type, no tinted fills inside */
+.co.co-reading .cx-widget :is(.co-kicker, .cx-w-k) { font: 600 12.5px var(--sans); letter-spacing: 0; text-transform: none; color: var(--mute); }
+.co.co-reading .cx-widget :is(button:not(.btn), a.cx-kc, .co-checkn) { background: rgba(var(--ink-rgb), .035); border: 1px solid var(--line); box-shadow: none; }
+.co.co-reading .cx-widget :is(button:not(.btn), a.cx-kc):hover { background: rgba(var(--ink-rgb), .07); }
+/* the lesson bar: plain frost in the mode's colour, a hairline, no rim */
+.co.co-reading .cx-lbar { background: var(--bar-frost) !important; border: 1px solid var(--bar-edge) !important; box-shadow: 0 10px 30px -22px rgba(0, 0, 0, .4) !important; }
+.co.co-reading .cx-lbar::before, .co.co-reading .cx-lbar::after { content: none !important; }
+/* the outline's current lesson: a quiet wash of the course's colour, not a glowing pill */
+.co.co-reading .cx-tree [aria-current="page"], .co.co-reading .cx-tree .here { background: color-mix(in srgb, var(--accent, #4641ff) 9%, transparent) !important; box-shadow: none !important; }
+/* the lesson's drawing, in the header's corner (in place of the glossy 3D icon) */
+.co.co-reading .co-lhead .co-lart { display: block; width: clamp(130px, 15vw, 190px); height: auto; background: none; box-shadow: none; }
+.co.co-reading .co-lhead .co-lart .g-hero-art { width: 100%; }
+@media (max-width: 760px) { .co.co-reading .co-lhead .co-lart { width: 104px; } }
+@media (prefers-reduced-motion: reduce) { .co.co-reading :is(.co-read .co-notes, .cx-tree, .cx-widget)::before { animation: none; background-position: -60% 0, 30% 0; } }
+:root[data-motion="reduce"] .co.co-reading :is(.co-read .co-notes, .cx-tree, .cx-widget)::before { animation: none; background-position: -60% 0, 30% 0; }
+=======
 /* the static course overview under the app (scripts/seo/coursepages.mjs): the course's syllabus as plain, readable HTML */
 .course-overview { max-width: 860px; margin: 48px auto 24px; padding: 0 4px; line-height: 1.6; }
 .course-overview[hidden] { display: none; }

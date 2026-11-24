@@ -6,6 +6,7 @@
 import { icon } from "../core/icons.js";
 import { LEVELS } from "../learning/mastery.js";
 import { haptic } from "../core/haptics.js";
+import { art } from "../ui/art.js";
 
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 const n = (x) => Number(x || 0).toLocaleString("en-GB");
@@ -287,6 +288,7 @@ export function wireCockpit(view, ctx) {
 /** Klerio's welcome, for a learner with nothing yet: two ways to start, and quick jobs. */
 export function welcomeHtml(name) {
   return `<div class="cp-welcome">
+    ${art("upload", { cls: "cp-welcome-art" })}
     <div class="cp-welcome-copy">
       <span class="kicker">Welcome to Gradify</span>
       <h2>${name ? `Let's make your first study pack, ${esc(name)}.` : "Let's make your first study pack."}</h2>
