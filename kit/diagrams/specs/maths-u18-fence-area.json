@@ -1,0 +1,106 @@
+{
+ "id": "maths-u18-fence-area",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u18",
+ "lesson": "Mathematical Optimisation",
+ "title": "Area against width for 100 m of fencing",
+ "caption": "With the wall as one side, the area is A = x(100 − 2x). The curve peaks where dA/dx = 100 − 4x = 0, at x = 25 m (so y = 50 m), giving the maximum area 1250 m².",
+ "alt": "A downward parabola A = x(100 − 2x) for x from 0 to 50 with its maximum 1250 at x = 25 marked.",
+ "description": [
+  "Two sides of width x and one of length y use 2x + y = 100 m of fence, so y = 100 − 2x.",
+  "The area is A = x(100 − 2x).",
+  "At the top of the curve dA/dx = 100 − 4x = 0, so x = 25 and y = 50.",
+  "The maximum area is 25 × 50 = 1250 m²."
+ ],
+ "range": {
+  "x": [
+   0,
+   50
+  ],
+  "y": [
+   0,
+   1400
+  ]
+ },
+ "ticks": [
+  [
+   10,
+   20,
+   30,
+   40,
+   50
+  ],
+  [
+   250,
+   500,
+   750,
+   1000,
+   1250
+  ]
+ ],
+ "grid": [
+  10,
+  250
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "width x (m)",
+  "area A (m²)"
+ ],
+ "curves": [
+  {
+   "expr": "x*(100-2*x)",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 25,
+   "to": 1250
+  }
+ ],
+ "points": [
+  {
+   "x": 25,
+   "y": 1250,
+   "label": "(25, 1250)",
+   "colour": "a2",
+   "dx": 12,
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "x*(100-2*x)",
+   "domain": [
+    0,
+    50
+   ],
+   "x": 25,
+   "y": 1250,
+   "name": "the maximum area is 1250 m² at x = 25"
+  },
+  {
+   "type": "slope",
+   "expr": "x*(100-2*x)",
+   "x": 25,
+   "value": 0,
+   "name": "the gradient is 0 at x = 25"
+  },
+  {
+   "type": "point",
+   "expr": "x*(100-2*x)",
+   "x": 25,
+   "y": 1250,
+   "name": "25 × (100 − 50) = 1250"
+  }
+ ],
+ "fromLesson": [
+  "1250"
+ ]
+}
