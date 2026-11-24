@@ -31,7 +31,8 @@
     "growth": "node scripts/growth/opportunities.mjs && node scripts/growth/report.mjs",
     "growth:changes": "node scripts/growth/serp-changes.mjs",
     "growth:monitor": "node scripts/growth/monitor.mjs",
-    "growth:lessons": "node scripts/growth/lesson-readiness.mjs"
+    "growth:lessons": "node scripts/growth/lesson-readiness.mjs",
+    "curriculum": "node scripts/curriculum/engine.mjs"
   },
   "devDependencies": {
     "@anthropic-ai/sdk": "0.133.0",
