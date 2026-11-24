@@ -343,65 +343,74 @@ export async function planWeek(m, store, cards) {
 }
 export { reschedule, INTEL_DEFAULTS };
 
-// ---------- Your calendars: outside calendars in, Gradify's plan out ----------
+// ---------- Your calendars: a calendar file in, Gradify's plan out ----------
+// Files only: a calendar's feed link works like a password, so Gradify doesn't take links (links saved before
+// November 2026 were removed; see retiredIntel in kit/intel/calsync.js). The file is read on this device and only busy
+// time is kept, plus the exams and deadlines the learner ticks.
 const PROVIDERS = [
-  ["Google Calendar", "On a computer: Settings → pick the calendar → Integrate calendar → copy “Secret address in iCal format”."],
-  ["Apple Calendar (iCloud)", "Calendar app → right-click the calendar → Sharing settings → Public calendar → copy the link (it starts webcal://)."],
-  ["Outlook", "Outlook on the web → Settings → Calendar → Shared calendars → Publish a calendar → copy the ICS link."],
-  ["University timetable, Moodle, Canvas, Blackboard", "Look for “Export calendar” or “Subscribe” and copy the .ics link. Exams and “due” dates in it become deadlines."],
+  ["Google Calendar", "On a computer: Settings → Import & export → Export. Unzip the download and choose the calendar's .ics file."],
+  ["Apple Calendar", "On a Mac: choose the calendar, then File → Export → Export…"],
+  ["Outlook", "Outlook on the web can't export a file; in Outlook for Windows, File → Save Calendar saves an .ics file."],
+  ["University timetable, Moodle, Canvas, Blackboard", "Look for “Export calendar” or “Download .ics”. Download the file rather than copying a link."],
 ];
-export function calendarPanelHtml(m, { signedIn }) {
-  const feeds = m.intel.calendars || [];
+const RETIRED_TEXT = (n) => `Gradify no longer keeps calendar links, because a link works like a password to your calendar. ${n === 1 ? "The link you added has" : `The ${n} links you added have`} been removed from Gradify and ${n === 1 ? "isn't" : "aren't"} syncing any more. Events already imported are still in your plan. To bring your calendar up to date, import a fresh .ics file.`;
+export function calendarPanelHtml(m) {
   const imported = m.blocks.filter((b) => ["external", "away", "allday", "ext-exam", "ext-deadline"].includes(b.cal) && b.day >= m.today).length;
+  const retired = m.intel.calendars_retired;
   return `<article class="panel glass cal-sync" id="calendars">
-    <div class="panel-head"><div><h3>${icon("calendar")} Your calendars</h3><p class="sub">Bring in your lectures, shifts and plans, and Gradify plans around them. They're never moved. Exams and deadlines in them are picked up automatically.</p></div><span class="pill-dark">${imported} upcoming ${imported === 1 ? "event" : "events"}</span></div>
-    ${feeds.length ? `<ul class="feeds">${feeds.map((f, i) => `<li><span class="feed-dot ${f.ok === false ? "bad" : "ok"}"></span><span><b>${esc(f.name || "Calendar")}</b><em>${f.ok === false ? esc(f.error || "Couldn't sync") : f.at ? `Synced ${ago(f.at)} · ${f.events ?? 0} events` : "Not synced yet"}</em></span><button type="button" class="icon-btn" data-feed-del="${i}" aria-label="Remove ${esc(f.name || "calendar")}">${icon("x")}</button></li>`).join("")}</ul>` : ""}
-    <form class="feed-form" id="feed-form">
-      <label class="grow"><span>Calendar link (.ics or webcal://)</span><input name="url" type="url" inputmode="url" placeholder="https://calendar.google.com/calendar/ical/…/basic.ics" required></label>
-      <label><span>Name</span><input name="name" placeholder="e.g. Lectures" maxlength="40"></label>
-      <button class="cp-pill dark" type="submit">Connect</button>
-    </form>
-    ${signedIn ? "" : `<p class="small muted">Most calendar links need you to be <a href="#/account">signed in</a>, so Gradify can fetch them for you. Importing a file works now.</p>`}
+    <div class="panel-head"><div><h3>${icon("calendar")} Your calendars</h3><p class="sub">Import a calendar file and Gradify plans around your lectures, shifts and plans. They're never moved.</p></div><span class="pill-dark">${imported} upcoming ${imported === 1 ? "event" : "events"}</span></div>
+    ${retired?.count && !retired.seen ? `<div class="cal-retired" role="status"><span class="sq">${icon("shield")}</span><div><b>Calendar links have stopped syncing</b><p>${RETIRED_TEXT(retired.count)}</p><button type="button" class="cp-pill" data-retired-ok>Got it</button></div></div>` : ""}
     <div class="row-actions">
-      ${feeds.length ? `<button type="button" class="cp-pill" data-sync>↻ Sync now</button>` : ""}
       <label class="cp-pill file-pill">${icon("upload")} Import an .ics file<input type="file" accept=".ics,text/calendar" data-ics-file hidden></label>
-      <button type="button" class="cp-pill" data-export>Export my Gradify plan</button>
+      <button type="button" class="cp-pill dark" data-export>Export my Gradify plan</button>
+      ${imported ? `<button type="button" class="cp-pill dark" data-cal-clear>Remove imported events</button>` : ""}
     </div>
-    <details class="howto"><summary>Where do I find my calendar link?</summary><ul>${PROVIDERS.map(([n, d]) => `<li><b>${n}</b><span>${d}</span></li>`).join("")}</ul>
+    <div data-cal-review></div>
+    <p class="small muted cal-keep">Your file is read on this device and isn't uploaded. Gradify keeps only when you're busy, labelled “Busy”, plus the exams and deadlines you tick. Titles of other events, locations, notes and guests aren't kept, and you can remove imported events at any time.</p>
+    <details class="howto"><summary>Where do I find my calendar file?</summary><ul>${PROVIDERS.map(([n, d]) => `<li><b>${n}</b><span>${d}</span></li>`).join("")}</ul>
       <p class="small muted">To see Gradify's plan in your own calendar, export it and open the file: Apple Calendar, Outlook and Google Calendar (Settings → Import) all accept it.</p></details>
   </article>`;
 }
 export function wireCalendar(view, m, ctx) {
-  const save = async (calendars) => ctx.saveIntel({ calendars });
-  const run = async (feeds, btn) => {
-    if (btn) { btn.disabled = true; btn.textContent = "Syncing…"; }
-    const { syncCalendars } = await import("../intel/calsync.js");
-    const res = await syncCalendars(ctx.store, feeds);
-    await save(res.map(({ name, url, ok, events, error, at }) => ({ name, url, ok, events, error, at })));
-    const ok = res.filter((r) => r.ok);
-    if (ok.length) ctx.complete?.(`Synced ${ok.reduce((a, r) => a + r.events, 0)} events. Your plan now works around them.`);
-    else ctx.toast(esc(res[0]?.error || "Couldn't sync."));
+  const box = view.querySelector("[data-cal-review]");
+  let pending = null;
+  const fmtWhen = (c) => c.start.toLocaleString("en-GB", c.allDay ? { weekday: "short", day: "numeric", month: "short" } : { weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
+  const finish = async (confirmed) => {
+    const { importIcsText } = await import("../intel/calsync.js");
+    const r = await importIcsText(ctx.store, pending.text, { confirmed });
+    const name = pending.name; pending = null; box.innerHTML = "";
+    ctx.complete?.(r.added ? `Imported ${r.added} busy ${r.added === 1 ? "time" : "times"} from ${esc(name)}.` : "Nothing new in that file.");
     ctx.rerender();
   };
-  view.querySelector("#feed-form")?.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const f = new FormData(e.target), url = String(f.get("url")).trim();
-    const { isFeedUrl } = await import("../intel/calsync.js");
-    if (!isFeedUrl(url)) { ctx.toast("Use the calendar's https:// or webcal:// link."); return; }
-    const feeds = [...(m.intel.calendars || []).filter((x) => x.url !== url), { name: String(f.get("name") || "").trim() || new URL(url.replace(/^webcal/i, "https")).hostname.replace(/^www\./, ""), url }];
-    await run(feeds, e.target.querySelector("button"));
+  view.querySelector("[data-retired-ok]")?.addEventListener("click", async () => {
+    await ctx.saveIntel({ calendars_retired: { ...m.intel.calendars_retired, seen: true } }); ctx.rerender();
   });
-  view.querySelector("[data-sync]")?.addEventListener("click", (e) => run(m.intel.calendars || [], e.currentTarget));
-  view.querySelectorAll("[data-feed-del]").forEach((b) => b.addEventListener("click", async () => {
-    const feeds = (m.intel.calendars || []).filter((_, i) => i !== Number(b.dataset.feedDel));
-    await save(feeds);
-    if (feeds.length) await run(feeds); else { const { syncCalendars } = await import("../intel/calsync.js"); await syncCalendars(ctx.store, []); ctx.toast("Removed."); ctx.rerender(); }
-  }));
   view.querySelector("[data-ics-file]")?.addEventListener("change", async (e) => {
-    const file = e.target.files[0]; if (!file) return;
-    const { importIcsText } = await import("../intel/calsync.js");
-    try { const r = await importIcsText(ctx.store, await file.text()); ctx.complete?.(r.added ? `Imported ${r.added} events from ${esc(file.name)}.` : "Nothing new in that file."); ctx.rerender(); }
-    catch { ctx.toast("That file couldn't be read as a calendar."); }
+    const file = e.target.files[0]; e.target.value = ""; if (!file) return;
+    const { readIcsFile, previewIcs } = await import("../intel/calsync.js");
+    let text;
+    try { text = await readIcsFile(file); } catch (err) { ctx.toast(esc(err.message)); return; }
+    const { candidates } = previewIcs(text);
+    pending = { text, name: file.name, candidates };
+    if (!candidates.length) { await finish(new Map()); return; }
+    // possible exams and deadlines: the learner ticks the ones that are (nothing is decided on a keyword alone)
+    box.innerHTML = `<div class="cal-review"><p><b>Are any of these exams or deadlines?</b> Tick the ones that are, and Gradify keeps their names and plans revision before them. Anything unticked is kept as “Busy”.</p>
+      <ul>${candidates.slice(0, 40).map((c, i) => `<li><label><input type="checkbox" data-cand="${i}"><span><b>${esc(c.title)}</b><em>${esc(fmtWhen(c))}</em></span></label><select data-cand-kind="${i}" aria-label="What is ${esc(c.title)}?"><option value="ext-deadline"${c.kind === "ext-deadline" ? " selected" : ""}>Deadline</option><option value="ext-exam"${c.kind === "ext-exam" ? " selected" : ""}>Exam</option></select></li>`).join("")}</ul>
+      ${candidates.length > 40 ? `<p class="small muted">Showing the first 40. The rest are kept as “Busy”.</p>` : ""}
+      <div class="row-actions"><button type="button" class="cp-pill" data-cand-go>Import</button><button type="button" class="cp-pill dark" data-cand-cancel>Cancel</button></div></div>`;
+  });
+  box?.addEventListener("click", async (e) => {
+    if (e.target.closest("[data-cand-cancel]")) { pending = null; box.innerHTML = ""; ctx.toast("Nothing was imported."); return; }
+    if (!e.target.closest("[data-cand-go]") || !pending) return;
+    const confirmed = new Map();
+    box.querySelectorAll("[data-cand]").forEach((cb) => { if (cb.checked) { const i = Number(cb.dataset.cand); confirmed.set(pending.candidates[i].id, box.querySelector(`[data-cand-kind="${i}"]`).value); } });
+    await finish(confirmed);
+  });
+  view.querySelector("[data-cal-clear]")?.addEventListener("click", async () => {
+    if (!confirm("Remove every event imported from a calendar file? Gradify's own sessions stay.")) return;
+    const { removeImported } = await import("../intel/calsync.js");
+    const n = await removeImported(ctx.store);
+    ctx.toast(`Removed ${n} imported ${n === 1 ? "event" : "events"}.`); ctx.rerender();
   });
   view.querySelector("[data-export]")?.addEventListener("click", async () => {
     const { toICS } = await import("../intel/ical.js");
