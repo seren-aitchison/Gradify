@@ -9,6 +9,7 @@
 // POST { mode: "connect", subject, lesson, candidates: [{ id, title }] }                 → { links }
 // POST { mode: "director", subject, course, summary, candidates }                        → { message, steps }
 // POST { mode: "coach", subject, question, profile, turns? }                            → { answer, actions }
+// POST { mode: "degree", question, degree, turns? }                                     → { answer, facts, estimates, action }
 // Every reply also carries { usage: { feature, plan, used, allowance, resetsAt, counted } }; a refusal carries
 // { error, reason, feature, plan, used, allowance, resetsAt, upgrade } (docs/APP-API.md). The website and the iOS app
 // call this same function, so a learner's allowance is shared across them.
@@ -101,7 +102,9 @@ Deno.serve(async (req) => {
       const text = msg.content.filter((b) => b.type === "text").map((b) => (b as { text: string }).text).join("").trim();
       if (!r.schema) { if (!text) fail(502, "The tutor didn't reply. Please try again.", "empty"); return { reply: text, model: msg.model }; }
       // lesson ids must be ones the request offered, choice questions need one right answer (checkReply)
-      const data = checkReply(r.mode, JSON.parse(text), body);
+      let data;
+      try { data = checkReply(r.mode, JSON.parse(text), body); }
+      catch (e) { if ((e as { unverified?: string[] }).unverified) fail(502, (e as Error).message, "unverified_number"); throw e; }
       return FEEDBACK_MODES.includes(r.mode) ? { feedback: data, model: msg.model } : { ...data, model: msg.model };
     },
   }).catch((e) => { console.error("course-tutor", e); return { status: 503, body: { error: "Gradify AI isn't available right now." } }; });

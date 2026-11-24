@@ -9,6 +9,37 @@ import { parseHandbook, toRow } from "../kit/data/handbook.js";
 import { UNI_RULES, CHECKED, ruleById, ruleW3, boundariesOf, effectiveMark, threshold, zoneOf, borderlineCheck, describeTest } from "../kit/data/uni-rules.js";
 
 // ---------- UK degree classification ----------
+/**
+ * What Gradify AI is told about a degree (kit/assess/tutor.js, mode "degree"): the tracker's own results as short
+ * sentences, every number already worked out here, so the AI explains them and never calculates. Module marks are
+ * summarised, not listed; no files or notes are included. `intel` is degreeIntel's result.
+ */
+export function degreeBrief(intel, w3, rule = null) {
+  const t = intel?.t; if (!t || t.average === null) return null;
+  const f1 = (n) => `${Math.round(n * 10) / 10}`;
+  const goal = (g) => `${g.short} (${g.boundary}% boundary): ${{ secured: "secured, even with 0% on everything left", met: "achieved", missed: "not reached", out: `out of reach (would need ${f1(g.need)}% on everything left)`, reachable: `needs an average of ${f1(g.need)}% on everything left` }[g.status]}`;
+  const year = (y) => `${y.year === 3 ? "Final year" : "Year 2"}: ${y.avg === null ? "no marks yet" : `average ${f1(y.avg)}%`}, ${Math.round(y.done * 100)}% of its credits marked, ${Math.round(y.weight * 100)}% of the degree`;
+  const due = (p) => (p.days === null ? "no due date" : p.days < 0 ? `${-p.days} days overdue` : `due in ${p.days} days`);
+  const top = intel.priorities[0];
+  return {
+    average: `${f1(t.average)}%`, cls: intel.cls.short, marked: `${Math.round(t.complete * 100)}%`, headline: intel.headline,
+    weighting: `year 2 ${f1(100 - w3)}%, final year ${f1(w3)}%`,
+    university: rule ? `${rule.name} (${rule.year}). Weighting: ${rule.weights ? (rule.weights.label || "by faculty") : "set by each programme"}. Rounding: ${rule.rounding ? (rule.rounding.kind === "integer" ? "the final mark is rounded to a whole number" : "averages within 0.5 of a boundary are lifted to it") : "not stated"}. Borderline: ${rule.borderline ? `within ${rule.borderline.from} marks under ${rule.borderline.at.join("%, ")}%, the higher class with ${rule.borderline.tests.map(describeTest).join(rule.borderline.combine === "any" ? " or " : " and ")}` : "no separate zone"}.` : "",
+    goals: t.goals.map(goal), years: t.years.filter((y) => y.weight > 0).map(year),
+    priorities: intel.priorities.map((p) => `${p.name}: ${f1(p.share)}% of the degree, ${due(p)}. ${p.reason}`),
+    insights: intel.insights.map((i) => i.text),
+    estimate: intel.projection ? `if the rest goes like the ${intel.projection.basis} so far, about ${f1(intel.projection.avg)}%, a ${intel.projection.short}` : "",
+    next: intel.next ? `${intel.next.text} ${intel.next.why}` : "",
+    actions: [
+      { id: "plan", label: "See your priorities, ranked by impact and due date" },
+      { id: "goals", label: "See what each class needs, and each year's progress" },
+      { id: "modules", label: "Add or update your module marks" },
+      { id: "rules", label: "Check your university's own rules" },
+      ...(top ? [{ id: "cards", label: `Turn your ${top.name} notes into flashcards` }] : []),
+    ],
+  };
+}
+
 export const CLASSES = [[70, "First-class honours (1st)"], [60, "Upper second (2:1)"], [50, "Lower second (2:2)"], [40, "Third-class honours (3rd)"], [0, "Below honours (fail)"]];
 /** credit-weighted mean of [{ mark, credits }] (rows with no mark or credits are skipped), or null */
 export function creditMean(rows) {
@@ -283,7 +314,7 @@ const TOOLS = {
     const subjectByName = new Map();
 
     // pages: Overview, Plan, Goals and Modules, switched from the toolbar (assets/sheet.js docks it on phones)
-    const PAGES = ["overview", "plan", "goals", "modules", "rules", "import"];
+    const PAGES = ["overview", "plan", "goals", "modules", "rules", "import", "ask"];
     let page = (() => { try { return sessionStorage.getItem("gradify.degree.page"); } catch { return null; } })();
     const show = (p, scroll) => {
       if (!PAGES.includes(p)) return;
@@ -396,6 +427,43 @@ const TOOLS = {
         why: "Gradify now ranks them by how much they move your degree and how soon they're due. Add each mark when you get it back.",
         actions: [{ label: "See your plan", icon: "route", attrs: 'data-go="plan"' }, { label: "Check your modules", icon: "checklist", attrs: 'data-go="modules"', soft: true }] });
     });
+
+    // Ask Gradify AI about your degree (kit/assess/tutor.js, mode "degree"): sends degreeBrief, the tracker's own
+    // results, to the course-tutor function. Needs a Gradify account (sign-in happens in the app).
+    const askOut = root.querySelector("[data-ask-out]"), askIn = root.querySelector("[data-ask-q]"), askBtn = root.querySelector("[data-ask-send]");
+    let askStore = null; const turns = [];
+    const supa = () => askStore || (askStore = (async () => {
+      const cfg = await import("../gradify.config.js");
+      if (!cfg.SUPABASE_URL) return null;
+      if (!window.supabase) await new Promise((ok, no) => { const sc = document.createElement("script"); sc.src = "/kit/vendor/supabase/supabase.js"; sc.onload = ok; sc.onerror = no; document.head.appendChild(sc); });
+      const client = window.supabase.createClient(cfg.SUPABASE_URL, cfg.SUPABASE_ANON_KEY);
+      return { mode: "cloud", async session() { return (await client.auth.getSession()).data.session; }, async refreshSession() { const { data, error } = await client.auth.refreshSession(); return error ? null : data.session; } };
+    })());
+    const ACT = { plan: { icon: "route", attrs: 'data-go="plan"' }, goals: { icon: "trophy", attrs: 'data-go="goals"' }, modules: { icon: "checklist", attrs: 'data-go="modules"' }, rules: { icon: "landmark", attrs: 'data-go="rules"' }, cards: { icon: "layers", href: "/app.html#/new" } };
+    const ask = async (q) => {
+      q = String(q || "").trim(); if (!q) return;
+      const brief = intel ? degreeBrief(intel, Number(w.value), rule()) : null;
+      if (!brief) { askOut.innerHTML = `<p class="ask-note">Add at least one module mark first: Gradify AI explains your tracker's numbers, so it needs some to explain.</p>`; return; }
+      askBtn.disabled = true; askOut.insertAdjacentHTML("afterbegin", `<div class="ask-turn"><p class="ask-q">${esc(q)}</p><p class="ask-wait" role="status">Gradify AI is reading your tracker…</p></div>`);
+      const slot = askOut.firstElementChild;
+      try {
+        const store = await supa();
+        const { callFunction } = await import("../kit/data/functions.js");
+        const r = await callFunction(store, "course-tutor", { mode: "degree", question: q, degree: brief, turns: turns.slice(-4) });
+        turns.push({ role: "student", text: q }, { role: "ai", text: r.answer });
+        const a = r.action && brief.actions.find((x) => x.id === r.action.id);
+        slot.innerHTML = `<p class="ask-q">${esc(q)}</p><div class="ask-a"><p>${esc(r.answer)}</p>
+          ${r.facts?.length ? `<p class="ask-h">From your tracker</p><ul class="ask-facts">${r.facts.map((f) => `<li>${ICON.tick}<span>${esc(f)}</span></li>`).join("")}</ul>` : ""}
+          ${r.estimates?.length ? `<p class="ask-h">Estimate</p><ul class="ask-facts est">${r.estimates.map((f) => `<li>${ICON.target}<span>${esc(f)}</span></li>`).join("")}</ul>` : ""}
+          ${a ? actionCard({ kicker: "Your next step", title: a.label, why: r.action.why, actions: [{ label: "Go", icon: ACT[a.id]?.icon || "route", ...(ACT[a.id]?.href ? { href: ACT[a.id].href } : { attrs: ACT[a.id]?.attrs || "" }) }] }) : ""}
+          <p class="ask-foot">Gradify AI explains your tracker's numbers; it doesn't calculate new ones. Check anything important against your university's regulations.</p></div>`;
+      } catch (e) {
+        slot.querySelector(".ask-wait").outerHTML = `<p class="ask-note">${esc(e.message)}${e.signin ? ` <a href="/app.html#/account">Sign in or create a free account</a>, then come back: your tracker stays on this device.` : ""}</p>`;
+      } finally { askBtn.disabled = false; }
+    };
+    askBtn.addEventListener("click", () => { ask(askIn.value); askIn.value = ""; });
+    askIn.addEventListener("keydown", (e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); askBtn.click(); } });
+    root.querySelector("[data-ask-suggest]").addEventListener("click", (e) => { const c = e.target.closest("button"); if (c) ask(c.textContent); });
 
     rowsTool(root, "degree", row, val, (rows) => {
       intel = degreeIntel(rows, Number(w.value), new Date(), 120, rule());
