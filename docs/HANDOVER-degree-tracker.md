@@ -87,7 +87,29 @@ Written 24 November 2026 for whoever picks this up next. Read this first, then `
 
 ## Remaining stages, in the order the owner asked for
 
-### Stage 2: roll the new UI out across the whole site
+### Done since (24 November 2026, later session)
+
+- **The new UI across the whole site** (PRs 186, 188, 189, 190): search pages (`assets/seo.css`, tokens now on
+  `main.seo`), the homepage, Pricing and Journey, the subject sites (end of `kit/styles/subsite.css`) and the study app
+  (end of `kit/app/app.css`). New shared pieces: link tiles `.g-tiles`, `actionCard({ tag, heading })`,
+  `.g-action.compact`, `--g-btn`. See "The Gradify look" in `docs/DESIGN-SYSTEM.md`.
+- **University rules** (Stage 3 below): `kit/data/uni-rules.js`, the tracker's "University rules" page
+  (`data-page="rules"`, in the More sheet), and `tests/uni-rules.test.mjs`. Five universities so far: Birmingham,
+  Bristol, King's College London, Leeds (Iteration B) and Nottingham, each rule quoted word for word with its source.
+  - Not added, because their pages couldn't be read and checked: **UCL** (its site blocks automated reading),
+    **Warwick** (the current Rules for Award need a staff sign-in) and **Manchester** (only older regulation PDFs were
+    found). Add them only after reading the current regulations by hand.
+  - Reading regulations needs each university's host in the environment's allowed network hosts (Settings → the
+    environment → Network). Allowed so far: www.ucl.ac.uk, secretariat.leeds.ac.uk, students.leeds.ac.uk,
+    www.nottingham.ac.uk, www.bristol.ac.uk, warwick.ac.uk, documents.manchester.ac.uk, www.manchester.ac.uk,
+    intranet.birmingham.ac.uk, www.birmingham.ac.uk, www.ed.ac.uk, www.kcl.ac.uk.
+  - How a rule feeds the maths: `degreeTracker(rows, w3, perYear, rule)` and `degreeIntel(rows, w3, today, perYear,
+    rule)`. Rounding moves each class's threshold (Bristol 69.5, Leeds 69.45); a borderline zone triggers
+    `borderlineCheck`, which tests the module marks against the university's own criteria and says what it can't
+    check (Birmingham's dissertation mark). The year-2/final-year split is set from the rule. Every rule so far has
+    year 1 at 0; a university that counts year 1 needs a year-1 weight in `degreeTracker` first.
+
+### Stage 2: roll the new UI out across the whole site (done, see above)
 Apply the same visual language: tokens like `.tool` in `assets/seo.css` (`--tile`, `--group`, `--tile-edge`,
 `--tile-shadow`, `--brand`, `--c70`…), white tiles, 22–30px radii, coloured squircle icons, and `.g-action` for next
 steps. Go in stages, with screenshots of each:
@@ -100,7 +122,7 @@ steps. Go in stages, with screenshots of each:
 
 Run `scripts/theme-tokens.mjs` and the full tests after each step.
 
-### Stage 3: university rules, with a source for every rule
+### Stage 3: university rules, with a source for every rule (first five done, see above)
 - A data file (for example `kit/data/uni-rules.js`) with, for each university: classification boundaries, year
   weightings (or the "best of" or exit-velocity rule), borderline and preponderance policy, rounding, and
   compensation if relevant.

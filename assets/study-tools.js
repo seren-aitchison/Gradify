@@ -5,6 +5,7 @@ import { subjectsFor } from "../kit/core/subject-match.js";
 import { icon } from "../kit/core/icons.js";
 import { accentOf, accentOnLight } from "../kit/core/accent.js";
 import { actionCard, SPARK } from "../kit/core/action-card.js";
+import { UNI_RULES, CHECKED, ruleById, ruleW3, boundariesOf, effectiveMark, threshold, zoneOf, borderlineCheck, describeTest } from "../kit/data/uni-rules.js";
 
 // ---------- UK degree classification ----------
 export const CLASSES = [[70, "First-class honours (1st)"], [60, "Upper second (2:1)"], [50, "Lower second (2:2)"], [40, "Third-class honours (3rd)"], [0, "Below honours (fail)"]];
@@ -36,9 +37,11 @@ export function degreeAverage(y2, y3, w3 = 60) {
  *   goals     [{ boundary, short, need, status }] the average needed on the credits still to come for each class:
  *             status "secured" (reached even with 0 on the rest), "reachable", "out" (needs more than 100%),
  *             "met" / "missed" once everything is marked
+ * `rule` (optional) is a university's rules from kit/data/uni-rules.js: its rounding moves where each class starts
+ * (Bristol rounds 69.5 up to 70, Leeds lifts 69.5 to 70.0), so "need" is the average needed under that rule.
  */
 export const GOALS = [[70, "First"], [60, "2:1"], [50, "2:2"], [40, "Third"]];
-export function degreeTracker(rows, w3 = 60, perYear = 120) {
+export function degreeTracker(rows, w3 = 60, perYear = 120, rule = null) {
   const wt = { 2: w3 >= 100 ? 0 : (100 - w3) / 100, 3: w3 >= 100 ? 1 : w3 / 100 };
   const years = [2, 3].map((y) => {
     let sum = 0, cr = 0;
@@ -55,8 +58,9 @@ export function degreeTracker(rows, w3 = 60, perYear = 120) {
   const banked = counted.reduce((a, y) => a + (y.avg === null ? 0 : y.weight * y.avg * y.done), 0);
   const rest = counted.reduce((a, y) => a + y.weight * (1 - y.done), 0);
   const goals = GOALS.map(([boundary, short]) => {
-    if (rest < 1e-9) return { boundary, short, need: null, status: average !== null && average >= boundary ? "met" : "missed" };
-    const need = (boundary - banked) / rest;
+    const at = threshold(boundary, rule);
+    if (rest < 1e-9) return { boundary, short, need: null, status: average !== null && average >= at - 1e-9 ? "met" : "missed" };
+    const need = (at - banked) / rest;
     return { boundary, short, need, status: need <= 0 ? "secured" : need > 100 ? "out" : "reachable" };
   });
   return { years, average, complete, goals };
@@ -76,19 +80,22 @@ export function degreeTracker(rows, w3 = 60, perYear = 120) {
  *   unlisted   share of the degree (%) still to come that isn't in the list
  *   insights   [{ kind: "risk"|"chance"|"trend"|"weak"|"border"|"gap", text }]
  *   next       the next best action: { text, why, priority } (priority is one of `priorities`, or null)
+ *   border     with a university rule: its borderline check (kit/data/uni-rules.js borderlineCheck), or null
+ * `rule` (optional): a university's rules (kit/data/uni-rules.js). The class is then read from the mark that rule
+ * classifies on, and the borderline insight states that university's own rule and whether your marks meet it.
  */
-export function degreeIntel(rows, w3 = 60, today = new Date(), perYear = 120) {
-  const t = degreeTracker(rows, w3, perYear);
-  if (t.average === null) return { t, cls: null, headline: "", up: null, keep: null, projection: null, priorities: [], unlisted: 0, insights: [], next: null };
+export function degreeIntel(rows, w3 = 60, today = new Date(), perYear = 120, rule = null) {
+  const t = degreeTracker(rows, w3, perYear, rule);
+  if (t.average === null) return { t, cls: null, headline: "", up: null, keep: null, projection: null, priorities: [], unlisted: 0, insights: [], next: null, border: null };
   const wt = (y) => t.years.find((x) => x.year === Number(y))?.weight ?? 0;
-  const c = classify(t.average), cls = { boundary: c.boundary, short: SHORT_CLASS[c.boundary] };
+  const eff = effectiveMark(t.average, rule), c = classify(eff), cls = { boundary: c.boundary, short: SHORT_CLASS[c.boundary] };
   const goal = (b) => t.goals.find((g) => g.boundary === b) || null;
   const up = c.boundary < 70 ? goal(c.next ?? 40) : null, keep = c.boundary >= 40 ? goal(c.boundary) : null;
   const banked = t.years.reduce((a, y) => a + (y.avg === null ? 0 : y.weight * y.avg * y.done), 0);
   const rest = 1 - t.complete;
   // an estimate: the rest of the degree at the average of the most recent year with marks
   const recent = [...t.years].reverse().find((y) => y.avg !== null && y.weight > 0);
-  const projection = rest > 1e-9 && recent ? (() => { const avg = banked + rest * recent.avg; return Math.abs(avg - t.average) < 0.5 ? null : { avg, short: SHORT_CLASS[classify(avg).boundary], basis: recent.year === 3 ? "final-year" : "year 2" }; })() : null;
+  const projection = rest > 1e-9 && recent ? (() => { const avg = banked + rest * recent.avg; return Math.abs(avg - t.average) < 0.5 ? null : { avg, short: SHORT_CLASS[classify(effectiveMark(avg, rule)).boundary], basis: recent.year === 3 ? "final-year" : "year 2" }; })() : null;
 
   // the modules still to come, ranked by how much of the degree they carry and how soon they're due
   const day0 = Date.UTC(today.getFullYear(), today.getMonth(), today.getDate());
@@ -114,7 +121,13 @@ export function degreeIntel(rows, w3 = 60, today = new Date(), perYear = 120) {
   if (keep && keep.status === "reachable" && keep.need > t.average + 0.5) insights.push({ kind: "risk", text: `Holding your ${cls.short} needs ${f1(keep.need)}% across what's left, above your ${f1(t.average)}% average so far. This is the one to protect.` });
   if (up && up.status === "reachable") insights.push({ kind: "chance", text: up.need <= t.average + 5 ? `A ${up.short} is within reach: you need ${f1(up.need)}% across what's left, close to your current ${f1(t.average)}%.` : `A ${up.short} is still possible, but needs ${f1(up.need)}% across what's left, ${f1(up.need - t.average)} points above your average so far.` });
   if (up && up.status === "out") insights.push({ kind: "gap", text: `A ${up.short} is no longer reachable on these numbers, so put your effort into making your ${cls.short} safe.` });
-  if (c.borderline) insights.push({ kind: "border", text: `You're ${f1(c.next - t.average)} marks under the ${c.next}% boundary. Many universities look again at borderline marks, often by how many of your final-year credits are in the higher class. Check your regulations.` });
+  const border = rule ? borderlineCheck(rows, t.average, w3, rule) : null;
+  if (rule && eff !== t.average && eff >= cls.boundary && t.average < cls.boundary) insights.push({ kind: "chance", text: `${rule.short} ${rule.rounding.kind === "lift" ? "lifts averages within 0.5 of a boundary" : "rounds your average to a whole number"}, so your ${f1(t.average)}% counts as ${f1(eff)}%, a ${cls.short}. Keep it there: a small dip would lose it.` });
+  if (border) {
+    const z = border.zone, tests = rule.borderline.tests.map(describeTest), joiner = rule.borderline.combine === "any" ? " or " : " and ";
+    const state = border.met === true ? `On the marks you've entered, you meet it${rule.borderline.automatic ? `, so ${rule.short} would give you a ${SHORT_CLASS[z.next]}` : ""}.` : border.met === false ? "On the marks you've entered, you don't meet it yet." : "Add your marks to see whether you meet it.";
+    insights.push({ kind: "border", text: `You're in ${rule.short.endsWith("'s") ? rule.short : `${rule.short}'s`} borderline zone for a ${SHORT_CLASS[z.next]}. ${rule.borderline.automatic ? "You get" : "Examiners consider"} the higher class with ${tests.join(joiner)}. ${state}${border.unchecked ? ` ${border.unchecked}` : ""}` });
+  } else if (!rule && c.borderline) insights.push({ kind: "border", text: `You're ${f1(c.next - t.average)} marks under the ${c.next}% boundary. Many universities look again at borderline marks, often by how many of your final-year credits are in the higher class. Check your regulations.` });
   const y2 = t.years.find((y) => y.year === 2), y3 = t.years.find((y) => y.year === 3);
   if (y2?.avg != null && y3?.avg != null && y2.weight > 0) {
     const d = y3.avg - y2.avg;
@@ -137,7 +150,7 @@ export function degreeIntel(rows, w3 = 60, today = new Date(), perYear = 120) {
   const next = top
     ? { text: `Spend ${top.minutes} minutes on ${top.name} today.`, why: top.reason, priority: top }
     : { text: "Add the modules you still have to do.", why: "Give each one its credits and due date and leave the mark blank. Gradify will rank them by how much they move your degree and tell you where to start.", priority: null };
-  return { t, cls, headline, up, keep, projection, priorities: upcoming.slice(0, 3), unlisted, insights, next };
+  return { t, cls, headline, up, keep, projection, priorities: upcoming.slice(0, 3), unlisted, insights, next, border };
 }
 const SHORT_CLASS = { 70: "First", 60: "2:1", 50: "2:2", 40: "Third", 0: "fail" };
 
@@ -269,7 +282,7 @@ const TOOLS = {
     const subjectByName = new Map();
 
     // pages: Overview, Plan, Goals and Modules, switched from the toolbar (assets/sheet.js docks it on phones)
-    const PAGES = ["overview", "plan", "goals", "modules"];
+    const PAGES = ["overview", "plan", "goals", "modules", "rules"];
     let page = (() => { try { return sessionStorage.getItem("gradify.degree.page"); } catch { return null; } })();
     const show = (p, scroll) => {
       if (!PAGES.includes(p)) return;
@@ -296,8 +309,45 @@ const TOOLS = {
       tabs[n].focus(); show(tabs[n].dataset.page);
     });
 
+    // University rules (kit/data/uni-rules.js): choosing a university sets its weighting and feeds its rounding and
+    // borderline rule into degreeIntel. The choice and the weighting are kept on this device.
+    const uniSel = root.querySelector("[data-uni]"), uniOut = root.querySelector("[data-uni-out]");
+    uniSel.insertAdjacentHTML("beforeend", UNI_RULES.map((r) => `<option value="${r.id}">${esc(r.name)}</option>`).join(""));
+    const setW = (v) => { if (v == null) return; if (![...w.options].some((o) => Number(o.value) === Number(v))) w.insertAdjacentHTML("beforeend", `<option value="${v}">${fmt(100 - v)} / ${fmt(v)}</option>`); w.value = [...w.options].find((o) => Number(o.value) === Number(v)).value; };
+    const settings = load("degree-settings") || {};
+    let opt = Number(settings.opt) || 0;
+    if (settings.uni && ruleById(settings.uni)) uniSel.value = settings.uni;
+    if (settings.w3 != null) setW(Number(settings.w3));
+    const keep = () => save("degree-settings", { uni: uniSel.value, w3: w.value, opt });
+    const rule = () => ruleById(uniSel.value);
+    uniSel.addEventListener("change", () => { opt = 0; setW(ruleW3(rule(), 0)); keep(); });
+    uniOut.addEventListener("click", (e) => {
+      const b = e.target.closest("[data-w3-opt], [data-w3-use]"); if (!b) return;
+      if (b.dataset.w3Opt != null) opt = Number(b.dataset.w3Opt);
+      setW(ruleW3(rule(), opt)); keep(); root.dispatchEvent(new Event("input"));
+    });
+    const quote = (q, src) => `<details class="rule-quote"><summary>Exact wording</summary><blockquote>“${esc(q)}”</blockquote><a href="${esc(src.url)}" rel="noopener" target="_blank">${esc(src.title)}</a></details>`;
+    const ruleRow = (ic, title, body, q, src) => `<div class="rule-row"><span class="sq">${icon(ic)}</span><div><b>${title}</b>${body}${q && src ? quote(q, src) : ""}</div></div>`;
+    const renderRules = (r) => {
+      if (!r) { uniOut.innerHTML = `<div class="rule-card rule-none"><p>Gradify adds a university only once its rules have been checked against the university's own regulations, with a link to them. Until yours is here, set your weighting on the Modules page: your programme handbook or specification gives it.</p><p class="rule-list">Checked so far: ${UNI_RULES.map((x) => esc(x.short)).join(", ")}.</p></div>`; return; }
+      const W = r.weights, used = Number(w.value), want = ruleW3(r, opt);
+      const wBody = W ? `${W.options ? `<p>${esc(W.scope.charAt(0).toUpperCase() + W.scope.slice(1))}.</p><div class="rule-opts">${W.options.map((o, i) => `<button type="button" class="chip${i === opt && Number(o.w3) === used ? " on" : ""}" data-w3-opt="${i}" aria-pressed="${i === opt && Number(o.w3) === used}">${esc(o.label)}</button>`).join("")}</div>` : `<p>${esc(W.label)}${W.scope ? `, ${esc(W.scope)}` : ""}. Year 1 doesn't count.</p>`}${want != null && Number(want) !== used ? `<p class="rule-warn">You're using ${fmt(100 - used)} / ${fmt(used)} instead. <button type="button" class="chip" data-w3-use>Use ${esc(r.short.endsWith("'s") ? r.short : `${r.short}'s`)} weighting</button></p>` : ""}`
+        : `<p>Set by each programme, so choose yours on the Modules page.</p>`;
+      const B = r.borderline, chk = intel?.border;
+      const bBody = B ? `<p>${B.automatic ? "Automatic" : "Considered by examiners"}: within ${fmt(B.from)} marks under ${B.at.map((x) => `${x}%`).join(", ")}${B.to ? ` (up to ${fmt(B.to)} under)` : ""}${B.on === "rounded" ? ", on the rounded mark" : ""}, you get the higher class with ${B.tests.map(describeTest).join(B.combine === "any" ? " or " : " and ")}.${B.unchecked ? ` ${esc(B.unchecked)}` : ""}</p>${B.note ? `<p class="rule-note">${esc(B.note)}</p>` : ""}${chk ? `<ul class="rule-check">${chk.results.map((x) => `<li class="${x.met === true ? "ok" : x.met === false ? "no" : ""}">${x.met === true ? ICON.tick : x.met === false ? ICON.cross : ICON.gap}<span>${esc(describeTest(x.test))}</span></li>`).join("")}</ul>` : ""}`
+        : `<p>${r.rounding?.kind === "lift" ? "No separate borderline zone: the automatic lift above is the borderline rule." : "Not stated in the regulations Gradify read."}</p>`;
+      uniOut.innerHTML = `<div class="rule-card">
+        <div class="rule-head"><span class="sq grad">${icon("landmark")}</span><div><b>${esc(r.name)}</b><span>${esc(r.applies)} · ${esc(r.year)}</span></div><span class="rule-badge">${icon("check")}Checked ${new Date(r.checked).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}</span></div>
+        ${ruleRow("scales", "Year weighting", wBody, W?.quote || r.weightsNote?.quote, W?.source || r.weightsNote?.source)}
+        ${ruleRow("checklist", "Class boundaries", r.boundaries ? `<p>${boundariesOf(r).map((b) => `${SHORT_CLASS[b]} ${b}%`).join(" · ")}</p>` : `<p>Not stated separately; the standard UK boundaries are used (First 70%, 2:1 60%, 2:2 50%, Third 40%).</p>`, r.boundaries?.quote, r.boundaries?.source)}
+        ${ruleRow("trend", "Rounding", r.rounding ? `<p>${r.rounding.kind === "integer" ? "The final mark is rounded to a whole number before it's classified, so 69.5 counts as 70." : "Averages within 0.5 of a boundary are lifted to it, so 69.5 counts as 70.0."}${r.rounding.note ? ` ${esc(r.rounding.note)}` : ""}</p>` : `<p>Not stated in the regulations Gradify read, so Gradify doesn't round your average.</p>`, r.rounding?.quote, r.rounding?.source)}
+        ${ruleRow("shield", "Borderline rule", bBody, B?.quote, B?.source)}
+        <p class="rule-foot">Your own programme can differ, for example professional, accredited or joint-honours degrees and years abroad. Your programme specification has the final word.</p>
+      </div>`;
+    };
+
     rowsTool(root, "degree", row, val, (rows) => {
-      intel = degreeIntel(rows, Number(w.value));
+      intel = degreeIntel(rows, Number(w.value), new Date(), 120, rule());
       const t = intel.t;
       subs = subjectsFor(rows.map((r) => r.name || ""));
       subjectByName.clear(); rows.forEach((r, i) => subjectByName.set(String(r.name || "").trim(), subs[i]?.site));
@@ -311,7 +361,7 @@ const TOOLS = {
       }).join("") + `<button type="button" class="mod-tile add" data-go="modules" data-focus="new"><span class="sq grad">${ICON.gap}</span><b>Add a module</b><small>Its icon and colour come from its name</small></button>`;
       if (t.average === null) {
         out.innerHTML = ["overview", "plan", "goals"].map((p) => `<section class="tracker-page" role="tabpanel" id="panel-${p}" aria-labelledby="tab-${p}" data-panel="${p}"><div class="dash-empty"><span class="sq grad">${ICON.g}</span><b>Start with one module mark</b><span>Gradify shows where your degree stands, what's at risk, and exactly what to work on next.</span><button type="button" class="dash-cta" data-go="modules" data-focus="0">Add a module</button></div></section>`).join("");
-        root.dataset.summary = ""; if (live) live.textContent = ""; setNext(root, ""); show(page || "modules"); return;
+        root.dataset.summary = ""; if (live) live.textContent = ""; setNext(root, ""); renderRules(rule()); show(page || "modules"); return;
       }
       const { cls, next } = intel, pct = Math.round(t.complete * 100);
       const summary = `${intel.headline} Average so far ${pct1(t.average)}, ${pct}% of the degree marked. Next: ${next.text}`;
@@ -352,9 +402,10 @@ const TOOLS = {
           <div class="goals">${t.goals.map(goal).join("")}</div>
           <h3 class="dash-h">Years</h3>
           <div class="years">${t.years.filter((y) => y.weight > 0).map((y) => `<div class="year-row">${ring(y.done, y.year === 3 ? "F" : String(y.year))}<span class="year-avg"><b>${y.avg === null ? "–" : pct1(y.avg)}</b>${y.year === 3 ? "Final year" : "Year 2"} average</span><span class="year-meta">${fmt(y.credits, 0)} / 120 credits marked<br>${fmt(y.weight * 100, 0)}% of your degree</span></div>`).join("")}</div>`);
+      renderRules(rule());
       show(page || "overview");
     });
-    w.addEventListener("change", () => root.dispatchEvent(new Event("input")));
+    w.addEventListener("change", () => { keep(); root.dispatchEvent(new Event("input")); });
     // "Plan": revision sessions from tomorrow up to the due date, spaced out, as a calendar file
     root.addEventListener("click", (e) => {
       const b = e.target.closest("[data-ics]"); if (!b || !intel) return;
