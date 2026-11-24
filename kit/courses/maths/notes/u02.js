@@ -911,7 +911,7 @@ Q: What do sieve methods estimate? | How many numbers avoid small prime factors.
 Q: Which method attacks additive problems such as Goldbach's? | The circle method.
 
 ## Algebraic Number Theory
-S: Algebraic number theory studies number systems such as the Gaussian integers, where unique factorisation can fail. Repairing it with ideals, as Kummer and Dedekind did, created much of modern algebra and was needed for the proof of Fermat's Last Theorem.
+S: Algebraic number theory studies number systems such as the Gaussian integers and ℤ[√−5]. In some of them, such as ℤ[√−5], unique factorisation fails. Repairing it with ideals, as Kummer and Dedekind did, created much of modern algebra and was needed for the proof of Fermat's Last Theorem.
 O: Work with Gaussian integers and norms
 O: Explain the failure of unique factorisation and the role of ideals
 T: Gaussian integers | Numbers a + bi with a and b integers; their norm is N(a + bi) = a^{2} + b^{2}

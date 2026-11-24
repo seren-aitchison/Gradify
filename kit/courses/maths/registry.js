@@ -50,7 +50,7 @@ export const LESSONS = {
   "u02-18":{"v":3,"hash":"c5fe3e4f15e0","updated":"2026-11-21"},
   "u02-19":{"v":4,"hash":"d9a71415ead2","updated":"2026-11-21"},
   "u02-20":{"v":2,"hash":"7a9f1c5f4b13","updated":"2026-11-21"},
-  "u02-21":{"v":3,"hash":"8e18d8f9d9a5","updated":"2026-11-21"},
+  "u02-21":{"v":4,"hash":"f6e92cdf6c2c","updated":"2026-11-24"},
   "u02-22":{"v":3,"hash":"86054242bb7e","updated":"2026-11-21"},
   "u02-23":{"v":3,"hash":"35df162fdc18","updated":"2026-11-21"},
   "u02-24":{"v":5,"hash":"d6466427f187","updated":"2026-11-21"},

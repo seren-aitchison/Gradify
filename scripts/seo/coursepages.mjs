@@ -18,8 +18,9 @@ const START = "<!-- course-overview: written by scripts/build-seo.mjs (scripts/s
 const SUP = { 0: "⁰", 1: "¹", 2: "²", 3: "³", 4: "⁴", 5: "⁵", 6: "⁶", 7: "⁷", 8: "⁸", 9: "⁹", "+": "⁺", "-": "⁻", "−": "⁻", "=": "⁼", "(": "⁽", ")": "⁾", n: "ⁿ", i: "ⁱ", x: "ˣ", y: "ʸ" };
 const SUB = { 0: "₀", 1: "₁", 2: "₂", 3: "₃", 4: "₄", 5: "₅", 6: "₆", 7: "₇", 8: "₈", 9: "₉", "+": "₊", "-": "₋", "−": "₋", "=": "₌", "(": "₍", ")": "₎", a: "ₐ", e: "ₑ", o: "ₒ", x: "ₓ", h: "ₕ", k: "ₖ", l: "ₗ", m: "ₘ", n: "ₙ", p: "ₚ", s: "ₛ", t: "ₜ", i: "ᵢ", r: "ᵣ" };
 const script = (t, map, mark) => ([...t].every((c) => map[c]) ? [...t].map((c) => map[c]).join("") : [...t].length === 1 ? `${mark}${t}` : `${mark}(${t})`);
-// subscripts first, so a superscript that contains one (e^{−E/k_{B}T}) is whole when it's converted
-export const notation = (s) => String(s ?? "").replace(/_\{([^{}]*)\}/g, (m, t) => script(t, SUB, "_")).replace(/\^\{([^{}]*)\}/g, (m, t) => script(t, SUP, "^")).replace(/[{}]/g, "");
+// subscripts first, so a superscript that contains one (e^{−E/k_{B}T}) is whole when it's converted. Other braces
+// (set notation, "{1, 2}") are text and stay, as in the app
+export const notation = (s) => String(s ?? "").replace(/_\{([^{}]*)\}/g, (m, t) => script(t, SUB, "_")).replace(/\^\{([^{}]*)\}/g, (m, t) => script(t, SUP, "^"));
 // strips markup but keeps a literal "<" or ">" (the notes say "the signs <, > or =")
 const plain = (s) => notation(s).replace(/\*\*|`/g, "").replace(/\*(\S[^*]*)\*/g, "$1").replace(/<\/?[a-z][^<>]*>/gi, "").trim();
 // a sentence never ends after an initial ("C. difficile", "H. pylori") or a common abbreviation
