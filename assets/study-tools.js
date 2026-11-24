@@ -22,6 +22,41 @@ export function degreeAverage(y2, y3, w3 = 60) {
   return (y2 * (100 - w3) + y3 * w3) / 100;
 }
 
+/**
+ * The degree tracker: where a degree stands part-way through. `rows` are [{ mark, credits, year: "2" | "3" }], `w3` the
+ * final year's weight (0 to 100), `perYear` the credits in a full year (120 at most UK universities).
+ *   years     [{ year, weight, avg, credits, done }]  done = share of that year's credits with a mark (0 to 1)
+ *   average   the weighted average so far, over the years that have marks (null before any)
+ *   complete  how much of the degree's weighting has marks (0 to 1)
+ *   goals     [{ boundary, short, need, status }] the average needed on the credits still to come for each class:
+ *             status "secured" (reached even with 0 on the rest), "reachable", "out" (needs more than 100%),
+ *             "met" / "missed" once everything is marked
+ */
+export const GOALS = [[70, "First"], [60, "2:1"], [50, "2:2"], [40, "Third"]];
+export function degreeTracker(rows, w3 = 60, perYear = 120) {
+  const wt = { 2: w3 >= 100 ? 0 : (100 - w3) / 100, 3: w3 >= 100 ? 1 : w3 / 100 };
+  const years = [2, 3].map((y) => {
+    let sum = 0, cr = 0;
+    for (const r of rows) { const m = Number(r.mark), c = Number(r.credits); if (String(r.year) === String(y) && r.mark !== "" && r.mark != null && Number.isFinite(m) && c > 0) { sum += m * c; cr += c; } }
+    const avg = cr ? sum / cr : null;
+    return { year: y, weight: wt[y], avg, credits: cr, done: Math.min(cr, perYear) / perYear };
+  });
+  const counted = years.filter((y) => y.weight > 0);
+  const marked = counted.filter((y) => y.avg !== null);
+  const wSum = marked.reduce((a, y) => a + y.weight, 0);
+  const average = wSum ? marked.reduce((a, y) => a + y.weight * y.avg, 0) / wSum : null;
+  const complete = counted.reduce((a, y) => a + y.weight * y.done, 0);
+  // points already banked towards the final average, and how much weight is still to be marked
+  const banked = counted.reduce((a, y) => a + (y.avg === null ? 0 : y.weight * y.avg * y.done), 0);
+  const rest = counted.reduce((a, y) => a + y.weight * (1 - y.done), 0);
+  const goals = GOALS.map(([boundary, short]) => {
+    if (rest < 1e-9) return { boundary, short, need: null, status: average !== null && average >= boundary ? "met" : "missed" };
+    const need = (boundary - banked) / rest;
+    return { boundary, short, need, status: need <= 0 ? "secured" : need > 100 ? "out" : "reachable" };
+  });
+  return { years, average, complete, goals };
+}
+
 // ---------- what you need in the final ----------
 /** the final exam mark needed to reach `target`, given your current mark and the final's weight (all %) */
 export function neededOnFinal(current, weight, target) {
@@ -120,17 +155,44 @@ export function rowsTool(root, id, makeRow, read, compute) {
 export const val = (r) => Object.fromEntries([...r.querySelectorAll("[name]")].map((el) => [el.name, el.type === "checkbox" ? el.checked : el.value]));
 export const del = '<button type="button" class="icon" data-del aria-label="Remove this row">✕</button>';
 
+const SHORT = { 70: "First", 60: "2:1", 50: "2:2", 40: "Third", 0: "Below honours" };
+const svg = (d) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
+const ICON = {
+  tick: svg('<path d="M5 12.5 10 17 19 7"/>'), cross: svg('<path d="M6 6l12 12M18 6 6 18"/>'),
+  target: svg('<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".8" fill="currentColor"/>'),
+  equals: svg('<path d="M7 9.5h10M7 14.5h10"/>'), flag: svg('<path d="M6 20V4.5M6 5h10.5l-2 3.5 2 3.5H6"/>'),
+};
+
 const TOOLS = {
   degree(root) {
-    const out = root.querySelector(".result"), w = root.querySelector("[name=w3]");
+    const out = root.querySelector(".result"), w = root.querySelector("[name=w3]"), live = root.querySelector("[data-live]"), sum = root.querySelector("[data-sum]");
     const row = () => `<div class="row"><div><label>Module mark %</label><input name="mark" type="number" min="0" max="100" step="0.1" inputmode="decimal"></div><div><label>Credits</label><input name="credits" type="number" min="0" step="5" value="20" inputmode="numeric"></div><div><label>Year</label><select name="year"><option value="2">Year 2</option><option value="3">Final year</option></select></div>${del}</div>`;
     rowsTool(root, "degree", row, val, (rows) => {
-      const y2 = creditMean(rows.filter((r) => r.year === "2")), y3 = creditMean(rows.filter((r) => r.year === "3"));
-      const avg = degreeAverage(y2, y3, Number(w.value));
-      if (avg === null) { out.innerHTML = "Add at least one final-year module mark to see your classification."; return; }
-      const c = classify(avg);
-      setNext(root, c.borderline || avg < 70 ? `you're ${fmt((c.next ?? 70) - avg)} marks off the next class. <a href="/tools/module-grade-calculator/">Work out the exam mark each module needs</a>, then ${NOTES}.` : `protect it: <a href="/guides/active-recall-schedule-before-finals/">use the 6-week schedule before finals</a>.`);
-      out.innerHTML = `<span class="big">${fmt(avg)}%</span>${esc(c.label)}<br><small>Year 2 average: ${y2 === null ? "none entered" : `${fmt(y2)}%`} · Final year average: ${fmt(y3)}%</small>${c.borderline ? `<br><b>Borderline:</b> you're within ${fmt(c.next - avg)} marks of the ${c.next}% boundary. Many universities review borderline cases (often 1 to 2 marks), for example by the share of your credits above the boundary. Check your own regulations.` : ""}`;
+      const t = degreeTracker(rows, Number(w.value));
+      const n = rows.filter((r) => r.mark !== "" && Number(r.credits) > 0).length;
+      if (sum) sum.textContent = n ? `${n} module${n === 1 ? "" : "s"}` : "Add your marks";
+      if (t.average === null) {
+        out.innerHTML = `<div class="dash-empty"><span class="tile-ico">${ICON.target}</span><button type="button" class="dash-cta" data-open-sheet>Add a module mark</button><span>Your average, how much of your degree is marked and what you need for each class appear here.</span></div>`;
+        root.dataset.summary = ""; if (live) live.textContent = ""; setNext(root, ""); return;
+      }
+      const c = classify(t.average), short = SHORT[c.boundary], pct = Math.round(t.complete * 100);
+      const reach = t.goals.find((g) => g.status === "reachable");
+      const summary = `Degree so far: ${fmt(t.average)}% (${short}), ${pct}% marked.${reach ? ` Needs ${fmt(reach.need)}% on the rest for a ${reach.short}.` : ""}`;
+      root.dataset.summary = summary; if (live) live.textContent = summary;
+      setNext(root, c.borderline || t.average < 70 ? `you're ${fmt((c.next ?? 70) - t.average)} marks off the next class. <a href="/tools/module-grade-calculator/">Work out the exam mark each module needs</a>, then ${NOTES}.` : `protect it: <a href="/guides/active-recall-schedule-before-finals/">use the 6-week schedule before finals</a>.`);
+      const goal = (g) => {
+        const [mark, text] = { secured: [ICON.tick, "Secured"], met: [ICON.tick, "Achieved"], out: [ICON.cross, "Out of reach"], missed: [ICON.cross, "Not reached"], reachable: [ICON.target, `Need ${fmt(g.need)}%`] }[g.status];
+        return `<div class="goal ${g.status}"><span class="goal-top"><span class="goal-name">${g.short} <small>${g.boundary}%</small></span><span class="goal-mark">${mark}</span></span><span class="goal-need">${text}</span></div>`;
+      };
+      const ring = (y) => { const C = 2 * Math.PI * 22; return `<svg class="ring" viewBox="0 0 54 54" aria-hidden="true"><circle cx="27" cy="27" r="22" class="ring-bg"/><circle cx="27" cy="27" r="22" class="ring-fg" stroke-dasharray="${(C * y.done).toFixed(1)} ${C.toFixed(1)}" transform="rotate(-90 27 27)"/><text x="27" y="32" text-anchor="middle">${y.year === 3 ? "F" : y.year}</text></svg>`; };
+      out.innerHTML = `<div class="dash-progress" role="img" aria-label="${pct}% of your degree is marked"><span style="width:${pct}%"></span></div>
+        <div class="tiles"><div class="tile"><span class="tile-ico cls-${c.boundary}">${ICON.equals}</span><span class="tile-num">${fmt(t.average)}%</span><span class="tile-label">Average · ${short}</span></div>
+        <div class="tile"><span class="tile-ico done">${ICON.flag}</span><span class="tile-num">${pct}%</span><span class="tile-label">Marked</span></div></div>
+        <h3 class="dash-h">Goals</h3><p class="dash-sub">The average you need across the rest of your degree.</p>
+        <div class="goals">${t.goals.map(goal).join("")}</div>
+        <h3 class="dash-h">Years</h3>
+        <div class="years">${t.years.filter((y) => y.weight > 0).map((y) => `<div class="year-row">${ring(y)}<span class="year-avg"><b>${y.avg === null ? "–" : `${fmt(y.avg)}%`}</b>${y.year === 3 ? "Final year" : "Year 2"} average</span><span class="year-meta">${fmt(y.credits, 0)} / 120 credits<br>${fmt(y.weight * 100, 0)}% of degree</span></div>`).join("")}</div>
+        ${c.borderline ? `<p class="dash-note"><b>Borderline:</b> you're within ${fmt(c.next - t.average)} marks of the ${c.next}% boundary. Many universities review borderline cases (often 1 to 2 marks), for example by the share of your credits above the boundary. Check your own regulations.</p>` : ""}`;
     });
     w.addEventListener("change", () => root.dispatchEvent(new Event("input")));
   },

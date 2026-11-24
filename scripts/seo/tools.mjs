@@ -23,12 +23,18 @@ export const TOOLS = [
     title: "UK Degree Classification Calculator (1st, 2:1, 2:2) · Free · Gradify",
     description: "Free UK degree calculator: enter your module marks and credits for year 2 and your final year, choose the weighting, and see your classification, with borderline cases flagged.",
     body: () => `<h1>UK degree classification calculator</h1>
-    <p class="answer">Enter your module marks and credits, choose how your university weights year 2 against your final year, and the calculator shows your degree average and classification. In most UK universities 70%+ is a First, 60–69% a 2:1, 50–59% a 2:2 and 40–49% a Third.</p>
-    <div class="tool" data-tool="degree">
-      <div class="grid"><div><label for="w3">Final-year weighting</label><select id="w3" name="w3"><option value="50">50 / 50</option><option value="60" selected>40 / 60 (year 2 / final)</option><option value="67">33 / 67</option><option value="70">30 / 70</option><option value="75">25 / 75</option><option value="80">20 / 80</option><option value="100">Final year only</option></select></div></div>
-      <div class="rows"></div>
-      <div class="actions"><button type="button" class="ghost" data-add>Add a module</button></div>
-      <div class="result" role="status" aria-live="polite">Add your marks above.</div>
+    <p class="answer">Enter your module marks and credits, choose how your university weights year 2 against your final year, and the calculator shows your degree average so far, how much of your degree is marked, and the average you need on the rest for a First, 2:1 or 2:2. In most UK universities 70%+ is a First, 60–69% a 2:1, 50–59% a 2:2 and 40–49% a Third.</p>
+    <div class="tool" data-tool="degree" data-layout="dash">
+      <div class="result dash">Add your marks to see your degree so far.</div>
+      <p class="sr-only" role="status" aria-live="polite" data-live></p>
+      <section class="sheet" data-sheet aria-label="Your modules">
+        <button type="button" class="sheet-handle" aria-expanded="true" aria-controls="degree-modules"><span class="grip" aria-hidden="true"></span><b>Your modules</b><span class="sheet-sum" data-sum></span></button>
+        <div class="sheet-body" id="degree-modules">
+          <div class="grid"><div><label for="w3">Final-year weighting</label><select id="w3" name="w3"><option value="50">50 / 50</option><option value="60" selected>40 / 60 (year 2 / final)</option><option value="67">33 / 67</option><option value="70">30 / 70</option><option value="75">25 / 75</option><option value="80">20 / 80</option><option value="100">Final year only</option></select></div></div>
+          <div class="rows"></div>
+          <div class="actions"><button type="button" class="ghost" data-add>+ Add a module</button></div>
+        </div>
+      </section>
       <noscript><p>This calculator needs JavaScript. The method is below if you'd rather work it out by hand.</p></noscript>
     </div>
     <h2>How UK degree classifications are calculated</h2>

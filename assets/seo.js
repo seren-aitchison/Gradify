@@ -125,6 +125,8 @@ async function mountTools() {
     const mod = await import(`/assets/${root.dataset.mod || "study-tools"}.js`);
     mod.mount?.(root);
     const shared = params.get("s") && dec(params.get("s")); if (shared) applyState(root, shared);
+    // a drag-up sheet for the tool's inputs (assets/sheet.js), once its rows are in
+    for (const s of $$("[data-sheet]", root)) import("/assets/sheet.js").then((m) => m.mount(s)).catch(() => {});
     for (const b of $$("[data-load-example]")) b.addEventListener("click", () => { applyState(root, JSON.parse(root.dataset.example)); root.scrollIntoView({ behavior: "smooth", block: "start" }); });
     if (root.dataset.bar === "off") continue;
     const bar = document.createElement("div"); bar.className = "tool-bar no-print";
@@ -136,7 +138,7 @@ async function mountTools() {
       const x = e.target.closest("[data-x]")?.dataset.x; if (!x) return;
       if (x === "example") { applyState(root, JSON.parse(root.dataset.example)); msg.textContent = "Example loaded: change any number to try your own."; }
       if (x === "reset") { try { localStorage.removeItem(`gradify.tool.${root.dataset.tool}`); } catch { /* storage blocked */ } applyState(root, { f: initial.f, r: [{}, {}, {}] }); history.replaceState(null, "", location.pathname); msg.textContent = "Reset."; }
-      if (x === "copy") { act("share"); copy(`${title()}\n${(root.querySelector(".result")?.innerText || "").trim()}\n\nOpen it: ${link()}`, msg, "Summary copied. Paste it into your notes or group chat."); }
+      if (x === "copy") { act("share"); copy(`${title()}\n${(root.dataset.summary || root.querySelector(".result")?.innerText || "").trim()}\n\nOpen it: ${link()}`, msg, "Summary copied. Paste it into your notes or group chat."); }
       if (x === "link") { act("share"); copy(link(), msg, "Link copied: it opens this tool with your numbers filled in."); }
       if (x === "print") { act("print"); print(); }
       if (x === "embed") { code.hidden = false; code.value = `<iframe src="${link("&embed=1")}" title="${esc(title())}" width="100%" height="560" style="border:0;border-radius:14px;max-width:720px" loading="lazy"></iframe>\n<p style="font:12px sans-serif">${esc(title())} by <a href="${location.origin}${location.pathname}">Gradify</a></p>`; code.select(); copy(code.value, msg, "Embed code copied: paste it into your site, blog or Notion (/embed)."); }

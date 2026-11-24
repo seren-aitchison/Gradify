@@ -10,7 +10,7 @@ import { existsSync } from "node:fs";
 import { SEO_FOLDERS, SEO_FILES, INDEXNOW_KEY } from "../scripts/seo/folders.mjs";
 import { PUBLISH } from "../scripts/build-site.mjs";
 import { sitemapUrls } from "../scripts/build-sitemap.mjs";
-import { creditMean, classify, degreeAverage, neededOnFinal, weighted, gpa, countdown, reviewDates, ics } from "../assets/study-tools.js";
+import { creditMean, classify, degreeAverage, degreeTracker, neededOnFinal, weighted, gpa, countdown, reviewDates, ics } from "../assets/study-tools.js";
 import { aiSource, touchFrom } from "../kit/core/attribution.js";
 
 const read = (f) => readFile(new URL(`../${f}`, import.meta.url), "utf8");
@@ -97,6 +97,37 @@ test("degree classification: credit-weighted years, the weighting and the bounda
   assert.equal(classify(68.5).borderline, true);
   assert.equal(classify(65).borderline, false);
   assert.equal(classify(39).label, "Below honours (fail)");
+});
+
+test("degree tracker: average so far, how much is marked, and what each class needs on the rest", () => {
+  const near = (a, b, msg) => assert.ok(Math.abs(a - b) < 1e-9, `${msg}: ${a} vs ${b}`);
+  // all of year 2 marked at 55%, 70 of 120 final-year credits marked at 75%, weighted 40/60
+  const t = degreeTracker([{ mark: 55, credits: 120, year: "2" }, { mark: 75, credits: 70, year: "3" }], 60);
+  near(t.years[0].done, 1, "year 2 complete"); near(t.years[1].done, 70 / 120, "final year part-marked");
+  near(t.average, 0.4 * 55 + 0.6 * 75, "average over the marked years");
+  near(t.complete, 0.4 + 0.6 * 70 / 120, "share of the weighting marked");
+  // banked = 0.4×55 + 0.6×75×70/120 = 22 + 26.25; rest = 0.6×50/120 = 0.25
+  const first = t.goals.find((g) => g.short === "First");
+  near(first.need, 87, "First needs 87% on the rest"); assert.equal(first.status, "reachable");
+  // 30% in year 2 and 40% on 50 final-year credits: a First would need more than 100% on what's left
+  const low = degreeTracker([{ mark: 30, credits: 120, year: "2" }, { mark: 40, credits: 50, year: "3" }], 60);
+  assert.equal(low.goals.find((g) => g.short === "First").status, "out");
+  const twoOne = t.goals.find((g) => g.short === "2:1");
+  near(twoOne.need, (60 - 48.25) / 0.25, "2:1 need"); assert.equal(twoOne.status, "reachable");
+  assert.equal(t.goals.find((g) => g.short === "Third").status, "secured", "already above 40 even with zeros");
+
+  const empty = degreeTracker([], 60);
+  assert.equal(empty.average, null); assert.equal(empty.complete, 0);
+  near(empty.goals[0].need, 70, "nothing marked: the boundary itself");
+
+  const done = degreeTracker([{ mark: 62, credits: 120, year: "2" }, { mark: 68, credits: 120, year: "3" }], 60);
+  near(done.average, 65.6, "all marked matches the classic calculation"); near(done.complete, 1, "all marked");
+  assert.equal(done.goals.find((g) => g.short === "2:1").status, "met");
+  assert.equal(done.goals.find((g) => g.short === "First").status, "missed");
+
+  const finalOnly = degreeTracker([{ mark: 50, credits: 120, year: "2" }, { mark: 72, credits: 60, year: "3" }], 100);
+  near(finalOnly.average, 72, "year 2 doesn't count"); near(finalOnly.complete, 0.5, "half the final year");
+  near(degreeTracker([{ mark: 80, credits: 200, year: "3" }], 100).complete, 1, "more than a year's credits caps at complete");
 });
 
 test("final grade needed, weighted grade and GPA", () => {
