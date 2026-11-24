@@ -777,7 +777,7 @@ Q: What are the primitive roots mod 7? | 3 and 5.
 Q: What is the order of 2 mod 7? | 3, since its powers are 2, 4, 1.
 
 ## Pell's Equation
-S: Pell's equation x^{2} − Dy^{2} = 1, for a non-square D, always has infinitely many integer solutions, all generated from the smallest one. Ancient Indian mathematicians (Brahmagupta, Bhāskara II) solved it centuries before Europe, and continued fractions explain why.
+S: Pell's equation x^{2} − Dy^{2} = 1, for a positive non-square integer D, always has infinitely many integer solutions: every positive solution is a power of the smallest (fundamental) one, and sign changes give the rest. Ancient Indian mathematicians (Brahmagupta, Bhāskara II) solved it centuries before Europe, and continued fractions explain why.
 O: Find the fundamental solution of Pell's equation for small D
 O: Generate further solutions from the fundamental one
 T: Pell's equation | x^{2} − Dy^{2} = 1 with D a positive non-square integer
