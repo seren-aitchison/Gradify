@@ -68738,5 +68738,150 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "phys-u51-incline-fbd": {
+  "title": "Free-body diagram of a box on an incline",
+  "caption": "Three forces only: weight (9.8 N per kg, straight down), the normal force 8.49 N perpendicular to the slope, and friction up the slope. At rest friction balances the slope component of the weight, mg sin 30° = 4.9 N; there is no separate \"downhill force\" arrow.",
+  "alt": "Free-body diagram for 1 kilogram on a 30 degree slope: weight down, normal force perpendicular to the slope, friction up the slope.",
+  "description": [
+   "Weight 9.8 N per kg, vertically down.",
+   "Normal force mg cos 30° = 8.49 N, perpendicular to the slope.",
+   "Friction up the slope, equal to mg sin 30° = 4.9 N while the box stays at rest.",
+   "The three forces sum to zero."
+  ],
+  "course": "physics",
+  "lesson": "Scientific diagrams and representations",
+  "also": [],
+  "renderer": "vectors",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u51.js: Scientific diagrams and representations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the forces balance (equilibrium)",
+    "ok": true,
+    "detail": "sum of components (-2.45 × 10^{-5}, -4.24 × 10^{-5})"
+   },
+   {
+    "name": "every force has a stated source",
+    "ok": true,
+    "detail": "W: Earth's gravity; N: the slope; f: friction"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "660px wide, shown at 107% (labels 16.1px)"
+   }
+  ]
+ },
+ "phys-u51-loglog": {
+  "title": "A log–log gradient of 1.5",
+  "caption": "If log T = 1.5 log r + c, then T = 10^c r^1.5: a power law. Planets (r in AU, T in years) lie on a straight line of gradient 1.5 through the origin, since Earth has r = T = 1. Squaring gives T² ∝ r³, Kepler's third law.",
+  "alt": "Straight line of log T against log r with gradient 1.5 through the origin, with points for Earth, Mars and Jupiter.",
+  "description": [
+   "Plot log₁₀ T against log₁₀ r.",
+   "Gradient 1.5 means T ∝ r^1.5.",
+   "Mars: log r = 0.183, log T = 0.2745 (T = 1.88 years). Jupiter: log r = 0.7163, log T = 1.0744 (T = 11.9 years).",
+   "T² ∝ r³."
+  ],
+  "course": "physics",
+  "lesson": "Interpreting graphs and experimental data",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u51.js: Interpreting graphs and experimental data"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "gradient 1.5",
+    "ok": true,
+    "detail": "gradient 1.5000"
+   },
+   {
+    "name": "Jupiter on the line",
+    "ok": true,
+    "detail": "y(0.7163) = 1.0745"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u51-skydiver": {
+  "title": "A skydiver approaches terminal velocity",
+  "caption": "Setting weight equal to drag, mg = ½ρC_dAv², gives v_t = √(2mg/ρC_dA) = √1869 ≈ 43 m s⁻¹. The speed starts with slope g and flattens towards v_t; after about 10 s it is within 2% of it.",
+  "alt": "Speed against time for a skydiver, rising from zero with slope g and levelling off at a dashed line at 43 metres per second.",
+  "description": [
+   "v_t = √(2 × 80 × 9.81 / (1.2 × 1 × 0.7)) = 43.2 m s⁻¹.",
+   "With drag, v(t) = v_t tanh(gt/v_t); at t = 10 s v = 42.3 m s⁻¹.",
+   "At first drag is negligible and v ≈ gt."
+  ],
+  "course": "physics",
+  "lesson": "Translating physical situations into mathematical models",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u51.js: Translating physical situations into mathematical models"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "approaches but stays below v_t",
+    "ok": true,
+    "detail": "43.227*(exp(0.4538829897980429*x)-1)/(exp(0.4538829897980429*x)+1) at 20 = 43.22; expected 42.36–43.23"
+   },
+   {
+    "name": "v_t = 43.2 m s⁻¹",
+    "ok": true,
+    "detail": "y(0) = 43.227"
+   },
+   {
+    "name": "initial slope g",
+    "ok": true,
+    "detail": "gradient 9.8100"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }
