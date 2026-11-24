@@ -2289,3 +2289,102 @@ body:has(> .co-modal) .cx-rings { display: none !important; }
 .mx-lines li.shown { border-color: rgba(255, 192, 2, .7); border-left-style: dashed; }
 .mx-lines li.shown .mx-mark { color: var(--mute); font-weight: 500; }
 .mx-solution .mx-rule { margin: 2px 0 6px; }
+
+/* =====================================================================================================================
+   Learning experience, November 2026: one premium reading surface for every subject's lessons.
+   Solid paper instead of glass behind text; full-contrast ink in every callout (colour goes in icons, labels and rails,
+   never in body text); Gradify-gradient section numbers; sans labels instead of monospace; a calmer page backdrop
+   while reading; compact controls on phones. Callout markup: kit/course/notes.js (lx-call, lx-h, lx-ic, lx-b).
+   ===================================================================================================================== */
+.co-read {
+  --lx-paper: #ffffff; --lx-paper: light-dark(#ffffff, #131319);
+  --lx-sunk: #f5f5fa; --lx-sunk: light-dark(#f5f5fa, #1b1b23);
+  --lx-edge: #e3e3ec; --lx-edge: light-dark(#e3e3ec, #2c2c38);
+  --lx-ink: #0b0b14; --lx-ink: light-dark(#0b0b14, #f3f3f8);
+  --lx-sub: #4a4a5c; --lx-sub: light-dark(#4a4a5c, #b4b4c6);
+  --lx-grad: linear-gradient(135deg, #4641ff, #9b3cf0 45%, #e0409f 75%, #ff6a2b);
+}
+/* a calmer page while reading: the ambient colour stays at the edges, not behind the text */
+body:has(.co-reading) { background-color: #eeeef5; background-color: light-dark(#eeeef5, #08080c); }
+.co-reading .co-read .co-notes { background: var(--lx-paper) !important; border: 1px solid var(--lx-edge) !important; box-shadow: 0 1px 2px rgba(0, 0, 0, .04), 0 24px 60px -36px rgba(20, 20, 60, .35) !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; color: var(--lx-ink); }
+.co-reading .co-read .co-notes::before, .co-reading .co-read .co-notes::after { display: none !important; }
+.co-reading :is(.co-side .co-card, .cx-widget, .co-pncard) { background: var(--lx-paper, rgb(var(--surface-rgb))) !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+
+/* type: sans labels with a little tracking, the lead in ink, generous reading measure */
+.co-read .co-lhead .kicker { font: 700 12.5px var(--sans); letter-spacing: .06em; text-transform: uppercase; color: var(--c); }
+.co-read .co-lhead .mv-lead { color: var(--lx-sub); }
+.co-read .co-prose p, .co-read .co-prose ul { color: var(--lx-ink); }
+.co-read .co-prose li::marker { color: var(--c); }
+.co-read :is(.co-frame h3, .co-qn::before, .co-checkn) { font-family: var(--sans) !important; font-weight: 700; letter-spacing: .06em; }
+
+/* section numbers: a Gradify-gradient squircle */
+:root .co-read .co-prose section[id] h3::before { font: 700 13px var(--sans) !important; letter-spacing: 0; color: #fff !important; background: var(--lx-grad) !important; border: 0 !important; padding: 0 !important; width: 30px !important; height: 30px !important; display: inline-grid !important; place-items: center; border-radius: 10px !important; box-shadow: 0 6px 16px -8px rgba(155, 60, 240, .8) !important; transform: translateY(-2px); }
+.co-read .co-prose section[id] h3 { color: var(--lx-ink); }
+
+/* "before you start": a solid, clearly framed objectives card */
+.co-read .co-frame:not(.co-end):not(.co-refs) { background: var(--lx-sunk) !important; border: 1px solid var(--lx-edge) !important; }
+.co-read .co-frame:not(.co-end):not(.co-refs) li::before { border: 0 !important; background: var(--lx-grad) !important; -webkit-mask: radial-gradient(circle, transparent 3.5px, #000 4px); mask: radial-gradient(circle, transparent 3.5px, #000 4px); }
+
+/* ---------- callouts: an icon squircle and a label in colour; the text itself always in full-contrast ink ---------- */
+.co-read .co-prose .lx-call { --k: #4641ff; position: relative; margin: 22px 0; padding: 18px 20px 18px 22px; border-radius: 18px; border: 1px solid color-mix(in srgb, var(--k) 28%, var(--lx-edge)); background: color-mix(in srgb, var(--k) 6%, var(--lx-paper)); color: var(--lx-ink) !important; font-size: 16.5px; line-height: 1.65; overflow: hidden; }
+.co-read .co-prose .lx-call::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 4px; background: var(--k); }
+.co-read .co-prose .lx-h { display: flex; align-items: center; gap: 10px; margin: 0 0 10px; }
+.co-read .co-prose .lx-h b { font: 700 12.5px var(--sans) !important; letter-spacing: .06em; text-transform: uppercase; color: var(--k) !important; margin: 0 !important; }
+.co-read .co-prose .lx-ic { width: 30px; height: 30px; flex: none; border-radius: 10px; display: grid; place-items: center; color: var(--fg); background: var(--k); box-shadow: 0 6px 14px -8px var(--k); }
+.co-read .co-prose .lx-ic svg { width: 17px; height: 17px; }
+.co-read .co-prose .lx-b, .co-read .co-prose .lx-b :is(p, li, ol) { color: var(--lx-ink) !important; font-size: 16.5px; line-height: 1.65; margin: 0; }
+.co-read .co-prose .lx-ex { --k: #0f9d7a; --k: light-dark(#0b8a6b, #2fd4a8); }
+.co-read .co-prose .lx-pit { --k: #d9620b; --k: light-dark(#c25200, #ff9a4d); }
+.co-read .co-prose .lx-key { --k: #4641ff; --k: light-dark(#4641ff, #8f8cff); border-left-width: 1px !important; border-radius: 18px !important; font-weight: 500; }
+.co-read .co-prose .lx-safe { --k: #b88a00; --k: light-dark(#946f00, #ffd23f); }
+.co-read .co-prose .lx-ic { background: var(--k); }
+:root .co-read .co-prose .lx-ic { color: #fff; }
+/* worked example: numbered steps joined by a line, like a solution written out */
+.co-read .co-prose .lx-ex .lx-b > p { font-weight: 600; }
+.co-read .co-prose .lx-ex ol { list-style: none; margin: 12px 0 0 !important; padding: 0 !important; display: grid; gap: 0 !important; counter-reset: step; }
+.co-read .co-prose .lx-ex ol li { counter-increment: step; position: relative; padding: 6px 0 12px 42px !important; }
+.co-read .co-prose .lx-ex ol li::before { content: counter(step) !important; position: absolute; left: 0; top: 4px !important; width: 28px !important; height: 28px !important; border-radius: 50%; display: grid; place-items: center; font: 700 13px var(--sans) !important; color: var(--fg) !important; background: var(--k) !important; box-shadow: none !important; }
+.co-read .co-prose .lx-ex ol li:not(:last-child)::after { content: ""; position: absolute; left: 13px; top: 34px; bottom: -2px; width: 2px; border-radius: 2px; background: color-mix(in srgb, var(--k) 35%, transparent); }
+/* equations: set large on a sunk panel with a gradient rail */
+.co-read .co-prose .lx-eq { --k: #9b3cf0; background: var(--lx-sunk); border-color: var(--lx-edge); }
+.co-read .co-prose .lx-eq::before { background: var(--lx-grad); }
+.co-read .co-prose .lx-eq code { color: var(--lx-ink) !important; font-size: 19px !important; }
+.co-read .co-prose .lx-eq span { color: var(--lx-sub) !important; }
+
+/* inline key terms (marked in the text): a clear, tappable underline */
+.co-read .co-prose :is(.co-term, .mv-term, [data-term]) { text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--c) 60%, transparent); text-decoration-thickness: 2px; text-underline-offset: 4px; border-bottom: 0 !important; }
+/* key terms in the recap: definition cards */
+.co-read .co-terms { display: grid !important; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px; }
+.co-read .co-terms dt { margin: 0; padding: 14px 16px 2px; border-radius: 14px 14px 0 0; background: var(--lx-sunk); border: 1px solid var(--lx-edge); border-bottom: 0; font-weight: 700; color: var(--lx-ink); }
+.co-read .co-terms dd { margin: 0 0 0; padding: 2px 16px 14px; border-radius: 0 0 14px 14px; background: var(--lx-sunk); border: 1px solid var(--lx-edge); border-top: 0; color: var(--lx-sub); font-size: 15px; line-height: 1.55; }
+
+/* quick checks inside the notes (glass diagrams' "answer in your head" cards): solid, with a clear reveal band */
+.co-read .gd-mq { color: var(--lx-ink) !important; }
+.co-read .gd-ma { background: repeating-linear-gradient(135deg, color-mix(in srgb, var(--c) 16%, var(--lx-sunk)) 0 10px, color-mix(in srgb, var(--c) 9%, var(--lx-sunk)) 10px 20px) !important; border: 1px dashed color-mix(in srgb, var(--c) 45%, transparent) !important; min-height: 54px; border-radius: 12px !important; }
+.co-read .gd-mhint { color: var(--lx-sub) !important; }
+
+/* check yourself: solid question cards */
+.co-read .co-check .aq { background: var(--lx-paper) !important; border: 1px solid var(--lx-edge) !important; }
+.co-read .co-check .aq-opts button, .co-read .co-check .aq-checks label { background: var(--lx-sunk) !important; color: var(--lx-ink) !important; border: 1px solid var(--lx-edge) !important; }
+
+/* the lesson toolbar: solid, and compact on phones so the lesson starts higher */
+.co-reading .cx-lbar { background: var(--lx-paper, rgb(var(--surface-rgb))) !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; border: 1px solid var(--lx-edge, var(--line)) !important; }
+@media (max-width: 640px) {
+  .co-reading .cx-lbar { padding: 6px 8px 8px !important; border-radius: 18px !important; }
+  .co-reading .cx-lbar :is(.cx-ib, .cx-ob) { width: 40px !important; height: 40px !important; min-height: 0 !important; padding: 0 !important; }
+  .co-reading .cx-lbar :is(.cx-ib, .cx-ob) svg { width: 19px; height: 19px; }
+  .co-reading .cx-lbar .co-steps { gap: 3px; }
+  .co-read .co-notes { padding: 22px 18px 28px !important; border-radius: 22px !important; }
+  .co-read .co-lhead .mv-lead { font-size: 17px !important; line-height: 1.6; }
+  .co-read .co-prose p, .co-read .co-prose ul, .co-read .co-prose .lx-b, .co-read .co-prose .lx-b :is(p, li) { font-size: 16.5px !important; }
+  .co-read .co-prose .lx-call { padding: 16px 16px 16px 18px; margin: 18px -4px; }
+  .co-read .co-lhead .co-licon { transform: scale(.8); transform-origin: top right; }
+  /* keep the last lines clear of the bottom dock */
+  .co-reading .co-read { padding-bottom: 96px; }
+}
+@media (prefers-contrast: more) { .co-read .co-prose .lx-call { border-width: 2px; } }
+/* the small quiz cards in the notes (Quick check, Fill the gap, Numbers to know: kit/core/glass-diagrams.js) */
+.co-read figure.gd.gd-mini { background: var(--lx-paper) !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; border: 1px solid color-mix(in srgb, var(--a, #4641ff) 30%, var(--lx-edge)) !important; box-shadow: 0 16px 36px -28px rgba(20, 20, 60, .45) !important; border-radius: 18px !important; }
+.co-read figure.gd.gd-mini::before { background: linear-gradient(180deg, var(--a, #4641ff), var(--b, #e0409f)) !important; width: 4px !important; }
+.co-read figure.gd.gd-mini .gd-mhead { font: 700 12.5px var(--sans) !important; letter-spacing: .06em; color: var(--a, #4641ff) !important; }
+.co-read figure.gd.gd-mini :is(.gd-mq, .gd-nums li, .gd-gaps p) { color: var(--lx-ink) !important; font-size: 17px; }
