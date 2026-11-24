@@ -2,7 +2,7 @@
 // function's reply check (checkReply) keeps only lesson ids it offered and well-formed questions.
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { readFile, readdir } from "node:fs/promises";
 import { buildRequest, checkReply, DAILY, FEEDBACK_MODES } from "../kit/assess/tutor.js";
 
 const lesson = { id: "u01-01", title: "What is law?", text: "Law is a system of enforceable rules. Moral rules are not legally enforceable on their own." };
@@ -10,9 +10,15 @@ const NEW = ["diagnose", "socratic", "challenge", "connect", "examiner", "direct
 
 test("every mode has a daily limit, and the usage table accepts every mode", async () => {
   for (const m of NEW) assert.ok(DAILY[m] > 0, m);
-  // the latest migration that sets the usage table's allowed modes
-  const sql = await readFile(new URL("../supabase/migrations/20261124150000_degree_mode.sql", import.meta.url), "utf8");
-  for (const m of Object.keys(DAILY)) assert.match(sql, new RegExp(`'${m}'`), `${m} missing from the migration`);
+  // the latest migration that sets the usage table's allowed modes: each one replaces the whole list, so it must keep
+  // every mode, or applying the migrations in order would silently refuse one (two branches adding a mode each)
+  const dir = new URL("../supabase/migrations/", import.meta.url), files = (await readdir(dir)).filter((f) => f.endsWith(".sql")).sort();
+  const setting = []; for (const f of files) if ((await readFile(new URL(f, dir), "utf8")).includes("add constraint tutor_usage_mode_check")) setting.push(f);
+  const latest = setting.at(-1), sql = await readFile(new URL(latest, dir), "utf8");
+  const allowed = sql.match(/add constraint tutor_usage_mode_check\s+check \(mode in \(([^)]*)\)\)/)?.[1] || "";
+  const feature = sql.match(/when mode in \(([^)]*)\) then 'tutor'/)?.[1] || "";
+  for (const m of Object.keys(DAILY)) assert.match(allowed, new RegExp(`'${m}'`), `${m} missing from ${latest}'s allowed modes`);
+  for (const m of Object.keys(DAILY).filter((x) => !["explain"].includes(x))) assert.match(feature, new RegExp(`'${m}'`), `${m} isn't counted as tutor use in ${latest}`);
 });
 
 test("lesson modes carry the notes and the subject's safety rules", () => {
@@ -78,4 +84,63 @@ test("coach answers from the learner summary and can only point to actions it wa
   assert.deepEqual(out.actions.map((a) => a.id), ["fix:d1|Systole"]);
   assert.throws(() => buildRequest({ mode: "coach", subject: "law", profile }), /Ask a question/);
   assert.throws(() => buildRequest({ mode: "coach", subject: "law", question: "hi" }), /learner summary/);
+});
+
+// ---------- the Organic Chemistry Lab's tutor (mode "chemistry") ----------
+import { chemistryAuthority, CHEM_INTENTS } from "../kit/assess/tutor.js";
+import * as P from "../kit/labs/chemistry/reactions/predictor.js";
+
+const chem = (smiles, reagent) => ({ kind: "prediction", ...P.explainContext(P.drawSmiles(smiles), P.predict(P.drawSmiles(smiles), reagent)) });
+
+test("chemistry tutor: it receives the engine's own verdict and may only explain it", () => {
+  const ctx = chem("C=CC", "hbr"), r = buildRequest({ mode: "chemistry", subject: "chemistry", intent: "compare", context: ctx });
+  assert.equal(r.mode, "chemistry"); assert.equal(r.schema, null);
+  assert.match(r.system, /2-bromopropane/); assert.match(r.system, /"role":"minor"/, "major/minor labels are in the data");
+  assert.match(r.system, /Never change, contradict or add to its verdict/);
+  assert.match(r.system, /Never invent a reference/);
+  assert.match(r.system, /CONFIDENCE: provisional/); assert.match(r.system, /hasn't yet been reviewed by an independent chemist/);
+  for (const k of Object.keys(CHEM_INTENTS)) assert.ok(CHEM_INTENTS[k].length > 40, k);
+});
+
+test("chemistry tutor: declined, no-reaction, reviewed and disputed evidence each change what it may say", () => {
+  const declined = chemistryAuthority(chem("CC=O", "naoh-aq"));
+  assert.match(declined, /OUTCOME: unsupported/); assert.match(declined, /never say or imply that there is no reaction/); assert.match(declined, /do NOT give, guess or hint at a product/);
+  assert.match(chemistryAuthority(chem("CCC", "naoh-aq")), /OUTCOME: no reaction/);
+  assert.match(chemistryAuthority({ kind: "prediction", outcome: "reaction", rule: { confidence: "reviewed" }, products: [] }), /independent chemist has reviewed this rule/);
+  const disputed = chemistryAuthority({ kind: "prediction", outcome: "reaction", rule: { confidence: "disputed", disputes: [{ note: "x" }] }, products: [] });
+  assert.match(disputed, /A reviewer has disagreed/); assert.doesNotMatch(disputed, /has reviewed this rule/);
+  assert.match(chemistryAuthority({ kind: "prediction", outcome: "reaction", rule: { confidence: "provisional" }, products: [{ role: "major" }, { role: "major" }] }), /Several main products/);
+  assert.match(chemistryAuthority({ kind: "mechanism", confidence: "provisional" }), /verdict on each arrow .* is final/);
+});
+
+test("chemistry tutor: the engine's stereochemistry is sent with the products, and only the engine assigns it", () => {
+  const ctx = chem("C/C=C/C", "br2"), p = ctx.products[0];
+  assert.equal(p.configuration.form, "meso"); assert.match(p.configuration.descriptor, /^\(2[RS],3[RS]\)$/);
+  assert.match(chemistryAuthority(ctx), /STEREOCHEMISTRY: .*never assign or change a descriptor yourself/);
+  assert.equal(chem("CC[C@H](C)Br", "naoh-aq").start.configuration, "(S)");
+  assert.doesNotMatch(chemistryAuthority(chem("CCC=O", "cr-reflux")), /STEREOCHEMISTRY/, "only when there is stereochemistry to explain");
+});
+
+test("chemistry tutor: requests are checked, conversations alternate, diagnosis needs the learner's answer", () => {
+  const ctx = chem("CCBr", "naoh-aq");
+  assert.throws(() => buildRequest({ mode: "chemistry", intent: "lecture", context: ctx }), /Unknown chemistry/);
+  assert.throws(() => buildRequest({ mode: "chemistry", intent: "explain" }), /Missing the lab's data/);
+  assert.throws(() => buildRequest({ mode: "chemistry", intent: "explain", context: { kind: "essay" } }), /Unknown kind/);
+  assert.throws(() => buildRequest({ mode: "chemistry", intent: "explain", context: { ...ctx, rule: { confidence: "certain" } } }), /Unknown confidence/);
+  assert.throws(() => buildRequest({ mode: "chemistry", intent: "explain", context: { kind: "prediction", outcome: "reaction", junk: "x".repeat(10000) } }), /too long/);
+  assert.throws(() => buildRequest({ mode: "chemistry", intent: "diagnose", context: ctx }), /learner's answer/);
+  const g = buildRequest({ mode: "chemistry", intent: "guide", context: ctx, turns: [{ role: "tutor", text: "What is δ+ here?" }, { role: "learner", text: "The carbon" }], learner: { mistakes: [{ topic: "Nucleophilic substitution", count: 3 }] } });
+  assert.deepEqual(g.messages.map((m) => m.role), ["user", "assistant", "user"]); assert.equal(g.effort, "low");
+  assert.match(g.system, /Nucleophilic substitution \(3 wrong\)/, "the learner's mistake patterns are passed on");
+  assert.throws(() => buildRequest({ mode: "chemistry", intent: "guide", context: ctx, turns: [{ role: "tutor", text: "Q?" }] }), /learner's turn/);
+});
+
+test("disputed rules: a reviewer's disagreement reaches the rule record the tutor is given", async () => {
+  const R = await import("../kit/labs/chemistry/reactions/reviews.js");
+  R.REVIEWS["C=CC|hbr"] = { verdict: "disagree", reviewer: "T", date: "2026-11-22", correction: "test", note: "a test dispute" };
+  try {
+    const rule = P.predict(P.drawSmiles("C=CC"), "hbr").rule;
+    assert.equal(rule.confidence, "disputed"); assert.equal(rule.disputes[0].note, "a test dispute");
+    assert.equal(P.predict(P.drawSmiles("C=CC"), "steam").rule.confidence, "provisional", "other rules unaffected");
+  } finally { delete R.REVIEWS["C=CC|hbr"]; }
 });

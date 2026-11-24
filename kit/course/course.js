@@ -2497,7 +2497,10 @@ export function mountCourse(root, cfg) {
     solved: (task) => Boolean(S.solved[`ix:${x.id}:${task}`]),
     // which challenge the learner says they're working on (only for labs whose challenges count as evidence)
     focus: x.evidence ? (task, label) => { endTry(x); if (task && x.evidence[task]) labTry.set(x.id, { task, label, moves: 0, last: 0, at: Date.now() }); } : undefined,
-    report: (text) => { labNow.set(x.id, String(text || "").slice(0, 800)); } });
+    report: (text) => { labNow.set(x.id, String(text || "").slice(0, 800)); },
+    // a lab with its own tutor (the Organic Chemistry Lab) asks Gradify AI through the course page, so sign-in,
+    // allowances and usage work as everywhere else; once used, the lab's challenges count as met with help
+    ask: SUPABASE_URL ? async (body) => { const out = await askTutor(body); labHelped.add(x.id); return out; } : null });
   const labFor = (id) => {
     const el = id && main.querySelector(`.co-lab[data-ix="${id}"] .co-labstage`);
     if (!el || !ixById[id]) return null;
