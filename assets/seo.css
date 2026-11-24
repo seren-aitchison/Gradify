@@ -544,3 +544,8 @@ main.seo .mini { background: var(--tile); border-color: var(--tile-edge); box-sh
 .ask-note a { color: var(--accent) !important; font-weight: 700; }
 @keyframes ask-pulse { 50% { opacity: .45; } }
 @media (prefers-reduced-motion: reduce) { .ask-wait { animation: none; } }
+
+/* feature pages: a real screenshot of the feature (scripts/og/screenshots.mjs) */
+main.seo .feature-shot { margin: 18px 0 8px; }
+main.seo .feature-shot img { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line-strong); box-shadow: 0 18px 50px rgba(0,0,0,.18); }
+main.seo .feature-shot figcaption { font-size: 13px; color: var(--faint); margin-top: 8px; }

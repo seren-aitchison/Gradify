@@ -11,6 +11,16 @@ import { CATS, FEATURES, featureSlug } from "../../kit/data/features.js";
 import { FREE, TOOLS as LIMITED } from "../../kit/data/limits.js";
 import { PLUS_ON_SALE, PRO_ON_SALE, PLAN_PRICES } from "../../kit/data/billing.js";
 import { SITES } from "../../kit/core/site.js";
+import { readFileSync, existsSync } from "node:fs";
+import { screenFile } from "../og/screenshots.mjs";
+
+// a real screenshot of the feature (scripts/og/screenshots.mjs), with its size so the page doesn't jump as it loads
+function screenshot(slug, name) {
+  const f = new URL(`../../${screenFile(slug)}`, import.meta.url); if (!existsSync(f)) return "";
+  const b = readFileSync(f); let w = 0, h = 0;
+  for (let i = 2; i < b.length;) { const m = b[i + 1], len = b.readUInt16BE(i + 2); if (m >= 0xc0 && m <= 0xcf && ![0xc4, 0xc8, 0xcc].includes(m)) { h = b.readUInt16BE(i + 5); w = b.readUInt16BE(i + 7); break; } i += 2 + len; }
+  return `<figure class="feature-shot"><img src="/${screenFile(slug)}" alt="${esc(`${name} in the Gradify app`)}" width="${w}" height="${h}" loading="lazy" decoding="async"><figcaption>${esc(name)} in Gradify, as a visitor sees it today.</figcaption></figure>`;
+}
 
 const pounds = (p) => `£${(p / 100).toFixed(p % 100 ? 2 : 0)}`;
 const PRO = `Gradify Pro (${pounds(PLAN_PRICES.plus.month)} a month)`;
@@ -290,6 +300,7 @@ export function featurePages() {
     ${live ? `<p class="row-actions"><a class="btn btn-primary lg" href="${esc(href)}" data-cta="feature"><span>Open ${esc(f.n)}</span> <span aria-hidden="true">→</span></a></p>` : ""}
     <h2>What it does</h2>
     <p>${esc(p.what)}</p>
+    ${screenshot(slug, f.n)}
     <h2>How to use it</h2>
     <ol>${p.steps.map((s) => `<li>${esc(s)}</li>`).join("")}</ol>
     <h2>Best for</h2>

@@ -2,6 +2,7 @@
 // Graph and Twitter cards for link previews in group chats, visible breadcrumbs with matching BreadcrumbList structured
 // data, any other JSON-LD the page needs, a "Last updated" date, and the "Share with your study group" button.
 // Everything is static HTML, so search engines and AI crawlers read the whole page without running JavaScript.
+import { readFileSync } from "node:fs";
 import { hubHeader, hubFooter } from "../sync-headers.mjs";
 import { actionCard } from "../../kit/core/action-card.js";
 
@@ -42,7 +43,16 @@ export function fitDesc(d, max = 155) {
 
 // a link-preview image per section, so a shared tool, topic or guide doesn't look like every other page
 const OG_SECTIONS = ["tools", "topics", "guides", "checklists", "compare", "vs", "terms", "questions", "study-plan"];
-export const ogFor = (path) => { const s = String(path).split("/")[0]; const k = s === "vs" ? "compare" : s === "exam-traps" ? "questions" : s; return OG_SECTIONS.includes(k) ? `${ORIGIN}/assets/og/${k}.png` : `${ORIGIN}/assets/og.png`; };
+// the most specific preview image a page has (scripts/og/build-og.mjs): its feature, its lesson's diagram, its subject;
+// then its section's image; then the site's. Alt text comes from the images' manifest.
+const OG = (() => { try { return JSON.parse(readFileSync(new URL("../../assets/og/manifest.json", import.meta.url), "utf8")).alt || {}; } catch { return {}; } })();
+const ogFile = (path) => {
+  const p = String(path), m = p.match(/^features\/([^/]+)\//) , l = p.match(/^lessons\/([^/]+)\/([^/]+)\//), t = p.match(/^(?:topics|questions|exam-traps|lessons)\/([^/]+)\//);
+  for (const f of [m && `assets/og/features/${m[1]}.jpg`, l && `assets/og/lessons/${l[1]}-${l[2]}.jpg`, t && `assets/og/subjects/${t[1]}.jpg`]) if (f && OG[f]) return f;
+  return null;
+};
+export const ogFor = (path) => { const f = ogFile(path); if (f) return `${ORIGIN}/${f}`; const s = String(path).split("/")[0]; const k = s === "vs" ? "compare" : s === "exam-traps" ? "questions" : s; return OG_SECTIONS.includes(k) ? `${ORIGIN}/assets/og/${k}.png` : `${ORIGIN}/assets/og.png`; };
+export const ogAltFor = (path) => OG[ogFile(path)] || "Gradify: turn your notes into flashcards checked against what you wrote.";
 /** "Cite this page": a ready-made link and APA 7 / Harvard references, so people who quote a page link back to it */
 export function citeBlock(name, href, date) {
   const d = new Date(`${date.length === 7 ? `${date}-01` : date}T12:00:00Z`), year = d.getUTCFullYear(), md = d.toLocaleDateString("en-GB", { month: "long", day: "numeric", timeZone: "UTC" }).split(" ").reverse().join(" ");
@@ -85,7 +95,7 @@ export function page({ path, title: rawTitle, description: rawDesc, crumbs = [],
   <meta property="og:image" content="${ogFor(path)}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Gradify: turn your notes into flashcards checked against what you wrote.">
+  <meta property="og:image:alt" content="${esc(ogAltFor(path))}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${esc(title)}">
   <meta name="twitter:description" content="${esc(description)}">
