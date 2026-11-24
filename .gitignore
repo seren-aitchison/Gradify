@@ -8,3 +8,6 @@ department/__pycache__/
 department/state/
 department/worktrees/
 scripts/quality/.work/
+
+# search data exports (may contain the queries people typed): scripts/growth/sources.mjs
+data/growth/inputs/

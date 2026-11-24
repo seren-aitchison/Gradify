@@ -50,8 +50,10 @@ export function eventRow(event, site, env = globalThis) {
 export const GOOGLE_EVENTS = ["lesson_complete", "exam_finish", "tutor", "tool_use", "quiz_finish", "cta_click", "share", "print", "export"];
 export function googleEvent(name, params, env = globalThis) { try { env.gradifyConsent?.event(name, params); } catch { /* never breaks the page */ } }
 
-export function track(event, site) {
-  if (GOOGLE_EVENTS.includes(event)) googleEvent(event === "tutor" ? "tutor_open" : event);
+// params go to Google Analytics only (short strings and numbers, e.g. the page type a click came from); the anonymous
+// count stays exactly the row eventRow() describes
+export function track(event, site, params) {
+  if (GOOGLE_EVENTS.includes(event)) googleEvent(event === "tutor" ? "tutor_open" : event, params);
   if (!(EVENTS.includes(event) || (RHYTHM_LIVE && RHYTHM_EVENTS.includes(event)) || (ACTIONS_LIVE && ACTION_EVENTS.includes(event)) || (VITALS_LIVE && VITALS_EVENTS.includes(event))) || !analyticsAllowed()) return;
   const headers = { apikey: SUPABASE_ANON_KEY, "Content-Type": "application/json", Prefer: "return=minimal" };
   if (SUPABASE_ANON_KEY.startsWith("eyJ")) headers.Authorization = `Bearer ${SUPABASE_ANON_KEY}`;
