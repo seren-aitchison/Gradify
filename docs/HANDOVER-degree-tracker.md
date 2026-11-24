@@ -1,5 +1,7 @@
 # Handover: degree tracker, consent and analytics, and the next stages
 
+> **Next session:** read `docs/HANDOVER-stage5-and-mygradify.md` first (Stage 5 connections and MyGradify personalisation).
+
 Written 24 November 2026 for whoever picks this up next. Read this first, then `docs/DESIGN-SYSTEM.md`,
 `docs/ANALYTICS.md` and `README.md`.
 
