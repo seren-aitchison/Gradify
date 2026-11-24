@@ -83,6 +83,10 @@ const settle = (page) => page.waitForTimeout(700);
     await page.evaluate(() => window.gradifyConsent.event("lesson_start", { email: "a@b.c", plan: "x@y", ok: 1 }));
     const last = await page.evaluate(() => Array.from(window.dataLayer[window.dataLayer.length - 1]));
     check("events: personal-looking fields dropped", last[0] === "event" && last[1] === "lesson_start" && !("email" in last[2]) && !("plan" in last[2]) && last[2].ok === 1, JSON.stringify(last));
+    // activation: the first finished learning action sends first_learning_action once, never for a sign-up
+    await page.evaluate(() => { localStorage.removeItem("gradify.firstvalue"); window.gradifyConsent.event("sign_up", { method: "email" }); window.gradifyConsent.event("quiz_complete", { passed: true }); window.gradifyConsent.event("lesson_complete"); });
+    const fv = await page.evaluate(() => Array.from(window.dataLayer).map((x) => Array.from(x)).filter((x) => x[0] === "event" && x[1] === "first_learning_action").map((x) => x[2]));
+    check("activation: first_learning_action once, for the first learning action", fv.length === 1 && fv[0].kind === "quiz_complete", JSON.stringify(fv));
 
     // returning visitor, another page with a query string and a sign-in hash
     hits.length = 0;

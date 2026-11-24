@@ -15,7 +15,10 @@ const title = () => (document.querySelector("h1")?.textContent || document.title
 // ---------- counts (kit/core/analytics.js): anonymous, and only where allowed ----------
 let analytics = null;
 const counts = () => (analytics ||= import("/kit/core/analytics.js").catch(() => null));
-export const act = (event) => counts().then((m) => m?.track(event, "Gradify"));
+// the kind of free page this is (its first folder: features, tools, guides, topics …), sent with actions to Google
+// Analytics so conversion can be compared by page type
+const pageType = location.pathname.split("/")[1] || "home";
+export const act = (event) => counts().then((m) => m?.track(event, "Gradify", { page_type: pageType }));
 counts().then((m) => m?.trackView("Gradify"));
 // start fetching the drag-up sheet now, in parallel with the tool's own code, so it's ready the moment the tool is
 if (document.querySelector("[data-sheet]")) import("/assets/sheet.js").catch(() => {});
@@ -43,7 +46,7 @@ document.addEventListener("click", (e) => {
 });
 
 // ---------- calls to action into the app (counted, so we can see which pages send people to study) ----------
-document.addEventListener("click", (e) => { const a = e.target.closest('a[href^="/app.html"], a[href*="lifeos.html"]'); if (a) act("cta_click"); });
+document.addEventListener("click", (e) => { const a = e.target.closest('a[href^="/app.html"], a[href*="lifeos.html"], a[data-cta]'); if (a) act("cta_click"); });
 
 // ---------- share with a study group ----------
 for (const b of $$("[data-share]")) b.addEventListener("click", async () => {

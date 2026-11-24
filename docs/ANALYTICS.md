@@ -56,8 +56,8 @@ If you'd rather use a Google Ads conversion tag directly (an `AW-…` ID and con
 - Admin › Data streams › Web › Enhanced measurement: page views on; **turn off "Page changes based on browser history events"** if lesson routes (`#/lesson/…`) double-count page views; turn off form interactions (they can capture field names on sign-in forms).
 - Admin › Data filters: activate the **Internal traffic** filter (`traffic_type = internal`). Testers mark their own browsers with `localStorage.setItem("gradify.internal", "1")` in the console on getgradify.com.
 - Admin › Product links: no Google Ads link until advertising consent is added to the banner.
-- Key events: mark `sign_up`, `begin_checkout` and `purchase`.
-- Admin › Custom definitions: add event-scoped dimensions for `gradify_site`, `method`, `plan`, `billing_interval`, `mode` and `passed`, and metrics for `cards` and `minutes`, to see them in reports.
+- Key events: mark `sign_up`, `first_learning_action`, `begin_checkout` and `purchase`.
+- Admin › Custom definitions: add event-scoped dimensions for `gradify_site`, `method`, `plan`, `billing_interval`, `mode`, `passed`, `page_type` and `kind`, and metrics for `cards` and `minutes`, to see them in reports.
 
 ## Events
 
@@ -70,7 +70,8 @@ Sent only after consent, through `window.gradifyConsent.event(name, params)`, as
 | `lesson_complete`, `exam_finish`, `tutor_open` | forwarded by `track()` in `kit/core/analytics.js` | |
 | `quiz_complete` | `kit/course/course.js` unit quiz | `passed` (never the score) |
 | `flashcard_session_start` / `_complete` | `kit/app/main.js` | `cards`, `mode` / `practice` |
-| `tool_use`, `quiz_finish`, `cta_click`, `share`, `print`, `export` | free tools, guides, topics and study plans, via `track()` | |
+| `tool_use`, `quiz_finish`, `cta_click`, `share`, `print`, `export` | free tools, guides, topics, study plans and feature pages, via `track()`; `cta_click` also counts each feature page's "Open" button (`data-cta`) | `page_type` (the page's first folder: `features`, `tools`, `guides`, `topics` …) |
+| `first_learning_action` | `kit/core/consent.js`, once per browser, after the first `lesson_complete`, `quiz_complete`, `quiz_finish`, `exam_finish`, `flashcard_session_complete` or `study_plan_block_done` (activation: a sign-up alone never counts) | `kind` (which of those it was) |
 | `study_plan_block_done` | `kit/lifeos/calendar.js` | `minutes` |
 | `sign_up` / `login` | `kit/data/store.js`, once, on return from an email link or Google | `method` |
 | `begin_checkout` | `kit/data/billing.js` | `plan`, `billing_interval`, `currency` |
