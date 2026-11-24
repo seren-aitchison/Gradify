@@ -69988,5 +69988,484 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "maths-u26-area-uncertainty": {
+  "title": "Area 50 ± 1.1 cm²",
+  "caption": "The relative uncertainties 1% and 2% combine to 2.24%, so δA ≈ 1.1 cm². The area 50.0 cm² could lie anywhere from 48.9 to 51.1 cm², which the lesson reports as 50 ± 1 cm².",
+  "alt": "A number line from 47 to 53 with the point 50 and the interval from 48.9 to 51.1 marked.",
+  "description": [
+   "Area = 10.0 × 5.0 = 50.0 cm².",
+   "Relative uncertainties 1% and 2% combine to √(1² + 2²) ≈ 2.24%.",
+   "That is 0.0224 × 50 ≈ 1.1 cm².",
+   "So the area lies between 48.9 and 51.1 cm²."
+  ],
+  "course": "maths",
+  "lesson": "Error Propagation",
+  "also": [],
+  "renderer": "number-line",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u26.js: Error Propagation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the interval drawn is 48.9 <= x <= 51.1",
+    "ok": true,
+    "detail": "drawn 48.9]…51.1; inequality gives {\"from\":48.9,\"to\":51.1,\"closed\":[true,true]}"
+   },
+   {
+    "name": "√(1² + 2²)% of 50 = 1.1 cm²",
+    "ok": true,
+    "detail": "1.118034"
+   },
+   {
+    "name": "the lesson states \"2.24%\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "9 labels in 680×134"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "9 labels in 380×134"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u26-circle-regions": {
+  "title": "Regions made by chords: 1, 2, 4, 8, 16, 31",
+  "caption": "Joining n points on a circle gives 1, 2, 4, 8, 16 regions, which suggests 32 for n = 6. Counting carefully gives 31: the differences 1, 2, 4, 8 are doubling, then the next one is 15, and the pattern fails.",
+  "alt": "The six terms 1, 2, 4, 8, 16, 31 with their differences 1, 2, 4, 8, 15 underneath.",
+  "description": [
+   "For n = 1 to 5 the regions are 1, 2, 4, 8, 16.",
+   "The pattern suggests 2⁵ = 32 for n = 6.",
+   "A careful count gives 31, and the last difference is 15, not 16.",
+   "A pattern from five cases is not a proof."
+  ],
+  "course": "maths",
+  "lesson": "Inductive Reasoning",
+  "also": [],
+  "renderer": "sequence",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u26.js: Inductive Reasoning"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every term follows the rule (nth (n^4-6*n^3+23*n^2-18*n+24)/24)",
+    "ok": true,
+    "detail": "1, 2, 4, 8, 16, 31"
+   },
+   {
+    "name": "term 6 is 31",
+    "ok": true,
+    "detail": "31"
+   },
+   {
+    "name": "the lesson states \"31\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "17 labels in 680×154"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "17 labels in 380×154"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u26-four-sides": {
+  "title": "Four sides does not make a square",
+  "caption": "Every square has four sides, so the squares sit inside the four-sided shapes. But a rectangle or a rhombus is also inside the four-sided set and outside the squares: knowing a shape has four sides cannot tell you it is a square.",
+  "alt": "A small set of squares drawn inside a larger set of four-sided shapes, with the rectangle and the rhombus in the larger set only.",
+  "description": [
+   "Draw the set of four-sided shapes.",
+   "Every square lies inside it: if square then four sides.",
+   "A rectangle and a rhombus are four-sided but not squares.",
+   "So 'four sides, therefore square' is invalid."
+  ],
+  "course": "maths",
+  "lesson": "Deductive Reasoning",
+  "also": [],
+  "renderer": "venn",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u26.js: Deductive Reasoning"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every square has four sides",
+    "ok": true,
+    "detail": "counted 0"
+   },
+   {
+    "name": "the rectangle and the rhombus have four sides without being squares",
+    "ok": true,
+    "detail": "counted 2"
+   },
+   {
+    "name": "the lesson states \"rectangle or rhombus\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 620×290"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 380×260"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "620px wide, shown at 114% (labels 17.1px)"
+   }
+  ]
+ },
+ "maths-u26-log-log-line": {
+  "title": "y = 3x² becomes a straight line on log axes",
+  "caption": "Taking logs of y = 3x² gives log y = log 3 + 2 log x. Plotting log y against log x gives a straight line of slope 2 (the exponent) and intercept log 3 ≈ 0.477 (the constant).",
+  "alt": "A straight line rising with slope 2 from intercept 0.477 on the vertical axis, plotted against log x.",
+  "description": [
+   "Take logs of both sides: log y = log 3 + 2 log x.",
+   "Plot log y against log x.",
+   "The graph is a straight line.",
+   "Its slope 2 is the exponent and its intercept log 3 gives the constant 3."
+  ],
+  "course": "maths",
+  "lesson": "Mathematical Visualisation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u26.js: Mathematical Visualisation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the slope is the exponent 2",
+    "ok": true,
+    "detail": "gradient 2.0000"
+   },
+   {
+    "name": "the intercept is log 3 ≈ 0.477",
+    "ok": true,
+    "detail": "y(0) = 0.4771"
+   },
+   {
+    "name": "x = 10 gives y = 300: log 300 = log 3 + 2",
+    "ok": true,
+    "detail": "y(1) = 2.4771"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u26-odd-sums": {
+  "title": "Sums of the first odd numbers",
+  "caption": "1, 1 + 3, 1 + 3 + 5, … give 1, 4, 9, 16, 25. The differences are the odd numbers being added, and the dot squares show each total is a square: the conjecture is that the sum of the first n odd numbers is n².",
+  "alt": "The terms 1, 4, 9, 16, 25 drawn as square arrays of dots, with the differences 3, 5, 7, 9 between them.",
+  "description": [
+   "Add the first n odd numbers for n = 1 to 5: 1, 4, 9, 16, 25.",
+   "Each total is a perfect square, drawn here as an n by n array of dots.",
+   "The differences 3, 5, 7, 9 are the next odd number added each time.",
+   "Conjecture: the sum is n². It still needs proving."
+  ],
+  "course": "maths",
+  "lesson": "Mathematical Reasoning",
+  "also": [],
+  "renderer": "sequence",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u26.js: Mathematical Reasoning"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every term follows the rule (nth n^2)",
+    "ok": true,
+    "detail": "1, 4, 9, 16, 25"
+   },
+   {
+    "name": "each square figure has exactly the term's dots",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "term 10 is 100",
+    "ok": true,
+    "detail": "100"
+   },
+   {
+    "name": "the lesson states \"1, 4, 9, 16, 25\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "16 labels in 680×284"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "16 labels in 380×264"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u26-order-of-accuracy": {
+  "title": "Halving h divides the error by 4",
+  "caption": "The errors 0.016 at h = 0.1 and 0.004 at h = 0.05 both lie on e = 1.6h². Their ratio is 0.016/0.004 = 4 = 2², so the observed order is p = 2, as theory predicts.",
+  "alt": "The curve e = 1.6h² rising from the origin, with marked points (0.05, 0.004) and (0.1, 0.016).",
+  "description": [
+   "Record the error at two step sizes: 0.016 and 0.004.",
+   "Both points lie on the curve e = 1.6h².",
+   "Their ratio is 4, and 4 = 2^p gives p = 2.",
+   "The observed order matches the expected second order."
+  ],
+  "course": "maths",
+  "lesson": "Model Verification",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u26.js: Model Verification"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "at h = 0.1 the error is 0.016",
+    "ok": true,
+    "detail": "y(0.1) = 0.016"
+   },
+   {
+    "name": "at h = 0.05 the error is 0.004",
+    "ok": true,
+    "detail": "y(0.05) = 0.004"
+   },
+   {
+    "name": "the ratio 0.016/0.004 is 4 = 2²",
+    "ok": true,
+    "detail": "1.6*x^2/(1.6*(x/2)^2) at 0.1 = 4; expected 4–4"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u26-screening-tree": {
+  "title": "Most positives are false",
+  "caption": "Of 1000 people 9 are ill and test positive, but 98.99999999999997 healthy people also test positive (10% of 990). Only 9 of 107.99999999999997 positives are true: 8.3%, about 8%.",
+  "alt": "A probability tree: ill with probability 1/100 or healthy 99/100, then positive or negative on each branch, listing the four outcomes.",
+  "description": [
+   "Split by prevalence: 1/100 ill, 99/100 healthy.",
+   "Ill people test positive with probability 9/10.",
+   "Healthy people test positive with probability 1/10.",
+   "True positives 9/1000 against false positives 99/1000: 9 out of 108 positives are true."
+  ],
+  "course": "maths",
+  "lesson": "Quantitative Reasoning",
+  "also": [],
+  "renderer": "prob-tree",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u26.js: Quantitative Reasoning"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the branches from every point add up to 1",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "P(ill, +) = 9/1000",
+    "ok": true,
+    "detail": "multiplied: 9/1000"
+   },
+   {
+    "name": "P(healthy, +) = 99/1000",
+    "ok": true,
+    "detail": "multiplied: 99/1000"
+   },
+   {
+    "name": "P = 108/1000",
+    "ok": true,
+    "detail": "added: 27/250"
+   },
+   {
+    "name": "the lesson states \"9/(9 + 99)\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "18 labels in 680×218"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "18 labels in 380×202"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }
