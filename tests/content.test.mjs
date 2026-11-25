@@ -715,3 +715,18 @@ test("background lines: BG facts are parsed and sourced like F lines", () => {
   assert.deepEqual(S.parseVerdicts("REV new#1 OK C1=L23 C2=none c3=OPEN")[0].conf, { 1: "L23", 2: "none", 3: "open" });
   assert.deepEqual(S.parseVerdicts("REV new#1 FAIL FACT L3 C1=L23 wrong")[0].conf, {});
 });
+
+test("reused lessons are named by their locked ids, not their position in the notes file, in every course", async () => {
+  const { lessonTitles } = await import("../scripts/content/queue.mjs");
+  const { readdirSync, existsSync } = await import("node:fs");
+  const key = (t) => String(t).toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+  const wrong = [];
+  for (const c of readdirSync(new URL("../kit/courses/", import.meta.url))) {
+    if (!existsSync(new URL(`../kit/courses/${c}/ids.js`, import.meta.url))) continue;
+    const { IDS } = await import(`../kit/courses/${c}/ids.js`);
+    for (const [id, title] of lessonTitles(c)) if (key(IDS[id]) !== key(title)) wrong.push(`${c} ${id}: "${title}" is locked as "${IDS[id]}"`);
+  }
+  // borrowed units (teaching, professional, gcse…) start after their retired ids, so position names the wrong lesson
+  assert.deepEqual(wrong.slice(0, 5), []);
+  assert.equal(lessonTitles("teaching").size > 0, true);
+});

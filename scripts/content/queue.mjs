@@ -6,6 +6,7 @@ import { SPECS, QUAL_TYPES } from "../../kit/curriculum/uk.js";
 import { loadIndex, loadStatements, loadMap, tokens, checkIndex } from "../curriculum/engine.mjs";
 import { CONFIG, at, out, load, slug, loadLedger, briefPath } from "./lib.mjs";
 import { staleness, targetKey } from "./build.mjs";
+import { titleKey } from "../../kit/course/syllabus.js";
 
 const LEVEL = { gcse: "GCSE", "a-level": "A level", "as-level": "AS level", n5: "National 5", higher: "Higher" };
 export const TYPE = (s) => (s.kind === "practical" ? "prac" : s.kind === "skill" ? (s.skills || []).some((k) => /math|calc/i.test(k)) ? "method" : "data" : "concept");
@@ -14,9 +15,24 @@ const lessonRef = (subject, id) => { const m = String(id).match(/^(u\d+)-(\d+)$/
 /** a course's lesson ids (u02-26: unit u02, its 26th lesson) → titles, from its notes files */
 export function lessonTitles(subject) {
   const dir = at(`kit/courses/${subject}/notes/`), out = new Map(); if (!existsSync(dir)) return out;
+  // ids are locked by title in ids.js, not by position: a borrowed or reordered unit starts after its retired ids
+  const locked = lockedIds(subject);
   for (const f of readdirSync(dir).filter((x) => /^u\d+\.js$/.test(x))) {
-    let n = 0; for (const m of readFileSync(new URL(f, dir), "utf8").matchAll(/^## (.+)$/gm)) out.set(`${f.slice(0, -3)}-${String(++n).padStart(2, "0")}`, m[1].trim());
+    const unit = f.slice(0, -3); let n = 0;
+    for (const m of readFileSync(new URL(f, dir), "utf8").matchAll(/^## (.+)$/gm)) {
+      const title = m[1].trim(); n++;
+      // a course with no ids.js numbers lessons in order, as its syllabus does; otherwise an unlocked title has no id yet
+      const id = locked ? locked.get(`${unit}|${titleKey(title)}`) : `${unit}-${String(n).padStart(2, "0")}`;
+      if (id) out.set(id, title);
+    }
   }
+  return out;
+}
+/** a course's ids.js as "<unit>|<title key>" → id, or null when it has none */
+export function lockedIds(subject) {
+  const f = at(`kit/courses/${subject}/ids.js`); if (!existsSync(f)) return null;
+  const body = readFileSync(f, "utf8").split(/export const RETIRED/)[0], out = new Map();
+  for (const m of body.matchAll(/"(u\d+-\d+)":\s*"((?:[^"\\]|\\.)*)"/g)) out.set(`${m[1].slice(0, 3)}|${titleKey(JSON.parse(`"${m[2]}"`))}`, m[1]);
   return out;
 }
 
