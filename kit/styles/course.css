@@ -1644,7 +1644,7 @@ html.cx-focus .co.co-reading .co-body, html.cx-focus .co.co-reading .co-body.has
   inset: -2px; padding: 2px;
   background: conic-gradient(from var(--lg-ang), var(--la), color-mix(in srgb, var(--la) 40%, #fff) 10%, var(--lb) 22%, #fff 27%, var(--lb) 32%, var(--la) 55%, color-mix(in srgb, var(--lb) 50%, #fff) 70%, #fff 76%, var(--la) 82%, var(--la));
   filter: saturate(1.3); opacity: .95;
-  animation: lg-gleam 24s cubic-bezier(.45, .05, .55, .95) 1s;
+  animation: lg-gleam 14s linear 1s;
 }
 /* one sweep round the rim just after the lesson opens (not while it's loading), ending where it started (480deg is
    120deg). Turning a gradient's angle repaints the whole page-sized rim every frame, so it doesn't run on for as long
