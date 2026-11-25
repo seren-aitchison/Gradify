@@ -5,7 +5,8 @@ import { execFileSync } from "node:child_process";
 import { CONFIG, at, out, load, save, today, fp, loadLedger, saveLedger } from "./lib.mjs";
 import { splitUnit } from "./shorthand.mjs";
 import { topicsFor, frameworksFor, subjectsInRun, nextTopics, staleLessons } from "./queue.mjs";
-import { mapCandidates, loadMapping } from "./agent.mjs";
+import { mapCandidates } from "./agent.mjs";
+import { loadStore, decisionOf } from "./mapstore.mjs";
 import { SPECS } from "../../kit/curriculum/uk.js";
 import { loadIndex, loadMap } from "../curriculum/engine.mjs";
 import { parentOf } from "./shorthand.mjs";
@@ -35,9 +36,8 @@ export function ladder() {
     const rung = new Map(idx.statements.map((x) => [x.ref, "spec imported"])), set = (ref, r) => { if (rung.has(ref) && LADDER.indexOf(r) > LADDER.indexOf(rung.get(ref))) rung.set(ref, r); };
     const ids = new Set(idx.statements.map((x) => `${s.id}:${x.ref}`)), refOf = (id) => parentOf(id, ids)?.slice(s.id.length + 1);
     // mapped: an existing course lesson teaches it (confirmed in a session, or reviewed by a person)
-    const map = loadMap(s.id) || { links: {} }, conf = loadMapping(s.id).confirmed, hash = new Map(idx.statements.map((x) => [x.ref, x.hash]));
-    for (const [ref, c] of Object.entries(conf)) if (c.ok && (!c.hash || c.hash === hash.get(ref))) set(ref, "mapped");
-    for (const [ref, l] of Object.entries(map.links)) if (l.status === "verified" && l.hash === hash.get(ref) && (l.lessons || []).length) set(ref, "mapped");
+    const map = loadStore(s.id), hash = new Map(idx.statements.map((x) => [x.ref, x.hash]));
+    for (const ref of Object.keys(map.links)) { const d = decisionOf(map, ref, hash.get(ref)); if (d && d.status !== "rejected" && (d.lessons || []).length) set(ref, "mapped"); }
     // drafted: a topic in flight has the Writer's lessons
     const q = out(`content/queue/${s.subject}/`);
     if (existsSync(q)) for (const d of readdirSync(q)) { const st = load(new URL(`${d}/state.json`, q)); if (st?.lessons?.length) for (const t of topicsFor(s.id)) if (t.id === st.topic) for (const r of t.reqs) set(r.ref, "drafted"); }
@@ -122,7 +122,7 @@ export function writeHandover(s = status()) {
 export function prBody(spend, { subjects = subjectsInRun() } = {}) {
   const records = subjects.map((sub) => checkTiers(sub, { withLedger: true }).led).flatMap((led) => Object.entries(led.topics).map(([topic, e]) => ({ topic, lessons: e.lessons || [], failures: e.failures || [], uncovered: e.uncovered || [], gaps: e.gaps || [], needs: e.needs || [] })));
   const passed = records.flatMap((r) => r.lessons.map((l) => ({ ...l, topic: r.topic })));
-  const line = (l) => `- **${l.title}** (${l.topic}) · ${l.tier}${l.disagreed ? " · reviewer disagreed first" : ""}${l.conflict ? " · sources conflict" : ""} · ${l.reqs.length} requirement${l.reqs.length === 1 ? "" : "s"}`;
+  const line = (l) => `- **${l.title}** (${l.topic}) · ${l.tier}${l.disagreed ? " · reviewer disagreed first" : ""}${l.conflict ? " · sources conflict" : l.conflictsExplained?.length ? " · source conflict explained" : ""} · ${l.reqs.length} requirement${l.reqs.length === 1 ? "" : "s"}`;
   const fails = records.flatMap((r) => r.failures.map((f) => `- ${r.topic} · **${f.title}** stopped at \`${f.gate}\`: ${f.issues.slice(0, 3).map((i) => `${i.code}${i.line ? ` L${i.line}` : ""} ${i.note}`).join("; ")}`));
   const byGate = {}; for (const r of records) for (const f of r.failures) byGate[f.gate] = (byGate[f.gate] || 0) + 1;
   const systematic = Object.entries(byGate).filter(([, n]) => n >= 5);

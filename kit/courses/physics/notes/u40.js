@@ -26,8 +26,8 @@ K: Write T − V in convenient coordinates and the Euler–Lagrange equations gi
 !: L = T − V, not T + V; the total energy is a different quantity.
 Q: What is a cyclic coordinate? | A coordinate absent from the Lagrangian; its conjugate momentum is conserved.
 Q: Why don't constraint forces appear in Lagrangian mechanics? | Generalised coordinates satisfy the constraints automatically, and ideal constraint forces do no work.
-M1: For L = ½mẋ^{2} − ½kx^{2}, the equation of motion is: | mẍ = −kx | mẍ = kx | mẋ = −kx | ẍ = 0 | Simple harmonic.
-M2: Generalised momentum is defined as: | ∂L/∂q̇ | ∂L/∂q | L/q̇ | mq̈ | Conjugate to q.
+M1#physics-u40-01-q1: For L = ½mẋ^{2} − ½kx^{2}, the equation of motion is: | mẍ = −kx | mẍ = kx | mẋ = −kx | ẍ = 0 | Simple harmonic.
+M2#physics-u40-01-q2: Generalised momentum is defined as: | ∂L/∂q̇ | ∂L/∂q | L/q̇ | mq̈ | Conjugate to q.
 
 ## Hamiltonian mechanics
 S: Hamiltonian mechanics describes motion with coordinates and momenta treated as equal partners. Hamilton's first-order equations reveal the geometry of phase space and lead directly to statistical mechanics, chaos theory and quantum mechanics.
@@ -54,8 +54,8 @@ K: Hamilton's equations are first-order in (q, p); Poisson brackets encode dynam
 !: H equals total energy only when coordinates are time-independent and the potential doesn't depend on velocity.
 Q: How is the Hamiltonian obtained from the Lagrangian? | By a Legendre transform: H = Σpq̇ − L.
 Q: What does {f, H} = 0 mean? | f is a constant of motion (if it has no explicit time dependence).
-M1: Hamilton's equations are: | First-order ODEs in q and p | Second-order in q only | Algebraic | PDEs always | 2n first-order equations.
-M2: The Poisson bracket {p, q} equals: | −1 | 1 | 0 | iħ | Antisymmetry.
+M1#physics-u40-02-q1: Hamilton's equations are: | First-order ODEs in q and p | Second-order in q only | Algebraic | PDEs always | 2n first-order equations.
+M2#physics-u40-02-q2: The Poisson bracket {p, q} equals: | −1 | 1 | 0 | iħ | Antisymmetry.
 
 ## Principle of least action
 S: The principle of least (stationary) action says a system follows the path that makes the action S = ∫L dt stationary. This single variational principle underlies classical mechanics, optics, electromagnetism, relativity and quantum field theory.
@@ -79,8 +79,8 @@ K: Nature makes the action stationary; from this one principle come the laws of 
 !: "Least" action is a misnomer; the action is stationary and may be a saddle point.
 Q: What curve is the brachistochrone? | A cycloid.
 Q: How does quantum mechanics explain the principle of stationary action? | Paths near the stationary one interfere constructively, while others cancel.
-M1: Fermat's principle states light takes the path of: | Stationary time | Shortest distance always | Maximum energy | Least momentum | It explains refraction.
-M2: The relativistic free-particle action is proportional to: | Proper time | Coordinate distance | Energy | Mass squared | S = −mc^{2}∫dτ.
+M1#physics-u40-03-q1: Fermat's principle states light takes the path of: | Stationary time | Shortest distance always | Maximum energy | Least momentum | It explains refraction.
+M2#physics-u40-03-q2: The relativistic free-particle action is proportional to: | Proper time | Coordinate distance | Energy | Mass squared | S = −mc^{2}∫dτ.
 
 ## Generalised coordinates
 S: Generalised coordinates are any set of independent variables that fully specify a system's configuration. Choosing them well, matching the symmetries and constraints, turns hard problems into easy ones.
@@ -106,8 +106,8 @@ K: Pick generalised coordinates matching the constraints and symmetry; use multi
 !: Rolling without slipping on a plane is non-holonomic; you cannot simply eliminate a coordinate.
 Q: What is a holonomic constraint? | A constraint expressible as an equation among coordinates (and time).
 Q: How many generalised coordinates does a double pendulum need? | Two angles.
-M1: N particles with k holonomic constraints have: | 3N − k degrees of freedom | 3N + k | N − k | 3k | Each constraint removes one.
-M2: Lagrange multipliers give: | Constraint forces | Kinetic energy | Cyclic coordinates | Phase space volume | Like string tension.
+M1#physics-u40-04-q1: N particles with k holonomic constraints have: | 3N − k degrees of freedom | 3N + k | N − k | 3k | Each constraint removes one.
+M2#physics-u40-04-q2: Lagrange multipliers give: | Constraint forces | Kinetic energy | Cyclic coordinates | Phase space volume | Like string tension.
 
 ## Canonical transformations
 S: Canonical transformations change phase-space variables (q, p) to new ones (Q, P) while preserving the form of Hamilton's equations. Choosing them cleverly can make a Hamiltonian trivial to solve, and they reveal deep structure in mechanics.
@@ -132,8 +132,8 @@ K: Canonical transformations reshape phase space without changing physics; actio
 !: Not every change of variables is canonical; check that Poisson brackets are preserved.
 Q: What is an adiabatic invariant? | A quantity, such as the action, that stays nearly constant when parameters change slowly.
 Q: What generates time evolution as a canonical transformation? | The Hamiltonian.
-M1: The oscillator in action–angle form has H equal to: | ωJ | J^{2} | ω/J | Jθ | Linear in action.
-M2: A canonical transformation preserves: | Poisson brackets and phase-space volume | Lagrangian form only | Kinetic energy | Coordinates | Symplectic structure.
+M1#physics-u40-05-q1: The oscillator in action–angle form has H equal to: | ωJ | J^{2} | ω/J | Jθ | Linear in action.
+M2#physics-u40-05-q2: A canonical transformation preserves: | Poisson brackets and phase-space volume | Lagrangian form only | Kinetic energy | Coordinates | Symplectic structure.
 
 ## Hamilton–Jacobi theory
 S: Hamilton–Jacobi theory seeks a canonical transformation that makes the new Hamiltonian zero, so all new variables are constant. The resulting partial differential equation for Hamilton's principal function is the classical bridge to wave mechanics.
@@ -157,8 +157,8 @@ K: Hamilton–Jacobi theory turns mechanics into a wave-like PDE; its solution i
 !: The HJ equation is nonlinear and usually only solvable by separation in special coordinates.
 Q: What is Hamilton's principal function? | The action S as a function of endpoints, solving the Hamilton–Jacobi equation.
 Q: How does the Schrödinger equation relate to the HJ equation? | With ψ = Ae^{iS/ħ} and ħ → 0, Schrödinger's equation reduces to the HJ equation.
-M1: For time-independent H, S equals: | W(q) − Et | Et | W(q) + Et | H × t | Separation of time.
-M2: The optical analogue of the HJ equation is the: | Eikonal equation | Wave equation | Maxwell's equations | Diffusion equation | Geometrical optics.
+M1#physics-u40-06-q1: For time-independent H, S equals: | W(q) − Et | Et | W(q) + Et | H × t | Separation of time.
+M2#physics-u40-06-q2: The optical analogue of the HJ equation is the: | Eikonal equation | Wave equation | Maxwell's equations | Diffusion equation | Geometrical optics.
 
 ## Symplectic geometry
 S: Symplectic geometry is the mathematical language of Hamiltonian mechanics. Phase space carries a symplectic form that measures oriented areas, Hamiltonian flows preserve it, and this structure explains conservation of phase-space volume and the behaviour of good numerical integrators.
@@ -183,8 +183,8 @@ K: Hamiltonian dynamics preserves a symplectic structure; respecting it gives vo
 !: Volume preservation alone (det = 1) equals symplecticity only in 2D phase space; in higher dimensions symplecticity is stronger.
 Q: What does non-squeezing say? | A phase-space ball cannot be symplectically mapped into a cylinder of smaller radius in one conjugate plane.
 Q: Why do symplectic integrators avoid energy drift? | They exactly conserve a slightly modified Hamiltonian.
-M1: Eigenvalues of a symplectic matrix come in pairs: | λ and 1/λ | λ and −λ | λ and λ^{2} | Only real | Reciprocal pairs.
-M2: Liouville's theorem follows from: | Preservation of the symplectic form | Energy conservation alone | Friction | Linearity | Volume is a power of ω.
+M1#physics-u40-07-q1: Eigenvalues of a symplectic matrix come in pairs: | λ and 1/λ | λ and −λ | λ and λ^{2} | Only real | Reciprocal pairs.
+M2#physics-u40-07-q2: Liouville's theorem follows from: | Preservation of the symplectic form | Energy conservation alone | Friction | Linearity | Volume is a power of ω.
 
 ## Noether's theorem
 S: Noether's theorem states that every continuous symmetry of the action gives a conserved quantity. It explains why energy, momentum and angular momentum are conserved, and why charge is conserved, connecting symmetry to the most fundamental laws of physics.
@@ -209,8 +209,8 @@ K: Continuous symmetries ⇔ conservation laws; this is the deepest reason behin
 !: Noether's theorem needs a continuous symmetry of the action; discrete symmetries don't give currents.
 Q: Which symmetry gives energy conservation? | Invariance under time translation.
 Q: Which symmetry gives charge conservation? | Global U(1) phase invariance of the fields.
-M1: Space translation symmetry gives conservation of: | Linear momentum | Energy | Angular momentum | Charge | Homogeneity of space.
-M2: In an expanding universe, energy is: | Not globally conserved | Always conserved | Doubled | Zero | No time-translation symmetry.
+M1#physics-u40-08-q1: Space translation symmetry gives conservation of: | Linear momentum | Energy | Angular momentum | Charge | Homogeneity of space.
+M2#physics-u40-08-q2: In an expanding universe, energy is: | Not globally conserved | Always conserved | Doubled | Zero | No time-translation symmetry.
 
 ## Continuous and discrete symmetries
 S: Symmetries are transformations that leave physical laws unchanged. Continuous symmetries (rotations, translations, phases) give conservation laws and gauge forces; discrete symmetries (parity, charge conjugation, time reversal) give selection rules and revealed surprising violations in the weak interaction.
@@ -235,8 +235,8 @@ K: Symmetries constrain physics: continuous ones give conservation laws, discret
 !: Spin and angular momentum are axial vectors; they do not change sign under parity.
 Q: What did the Wu experiment show? | Parity is violated in weak interactions.
 Q: What does the CPT theorem state? | Any local, Lorentz-invariant quantum field theory is invariant under combined C, P and T.
-M1: Spontaneous breaking of a continuous global symmetry gives: | Goldstone bosons | Photons | Gravitons | Monopoles always | Massless excitations.
-M2: CP violation is needed to explain: | The matter–antimatter asymmetry | Gravity | Superconductivity | Blackbody radiation | Sakharov conditions.
+M1#physics-u40-09-q1: Spontaneous breaking of a continuous global symmetry gives: | Goldstone bosons | Photons | Gravitons | Monopoles always | Massless excitations.
+M2#physics-u40-09-q2: CP violation is needed to explain: | The matter–antimatter asymmetry | Gravity | Superconductivity | Blackbody radiation | Sakharov conditions.
 
 ## Lie groups and Lie algebras
 S: Lie groups are continuous symmetry groups, like rotations, whose elements depend smoothly on parameters. Their infinitesimal generators form Lie algebras, defined by commutation relations, which are the language of angular momentum, particle physics and gauge theory.
@@ -263,8 +263,8 @@ K: Lie groups describe continuous symmetries; their algebras of generators, with
 !: SU(2) and SO(3) have the same algebra but different global structure; spin-½ needs SU(2), a 360° rotation gives −1.
 Q: What is a Casimir operator? | An operator commuting with all generators, used to label irreducible representations.
 Q: How many generators does SU(N) have? | N^{2} − 1.
-M1: SU(2) is a double cover of: | SO(3) | U(1) | SU(3) | SO(2) | Two SU(2) elements per rotation.
-M2: The structure constants of SU(2) are: | ε_{ijk} | δ_{ij} | Zero | Gell-Mann matrices | Angular momentum algebra.
+M1#physics-u40-10-q1: SU(2) is a double cover of: | SO(3) | U(1) | SU(3) | SO(2) | Two SU(2) elements per rotation.
+M2#physics-u40-10-q2: The structure constants of SU(2) are: | ε_{ijk} | δ_{ij} | Zero | Gell-Mann matrices | Angular momentum algebra.
 
 ## Representation theory
 S: A representation assigns matrices to group elements so that the group's multiplication is preserved. In physics, particles and states transform in representations of symmetry groups, so representation theory explains multiplets, quantum numbers and selection rules.
@@ -290,8 +290,8 @@ K: Physical states organise into irreducible representations; their dimensions p
 !: Tensor products are reducible in general; decompose them before interpreting states.
 Q: What does Wigner's classification say? | Elementary particles correspond to irreducible representations of the Poincaré group, labelled by mass and spin.
 Q: How did the Eightfold Way predict the Ω^{−}? | The baryon decuplet had one missing member, whose properties were predicted from SU(3).
-M1: The dimension of the spin-3/2 irrep is: | 4 | 3 | 2 | 6 | 2j + 1.
-M2: 3 ⊗ 3̄ in SU(3) gives: | 1 ⊕ 8 | 3 ⊕ 6 | 10 | 1 ⊕ 1 | Mesons: singlet plus octet.
+M1#physics-u40-11-q1: The dimension of the spin-3/2 irrep is: | 4 | 3 | 2 | 6 | 2j + 1.
+M2#physics-u40-11-q2: 3 ⊗ 3̄ in SU(3) gives: | 1 ⊕ 8 | 3 ⊕ 6 | 10 | 1 ⊕ 1 | Mesons: singlet plus octet.
 
 ## Tensor calculus
 S: Tensors are quantities that transform in a definite way under coordinate changes, so equations written with them hold in every coordinate system. Index notation and the Einstein summation convention make tensor calculus the working language of relativity, continuum mechanics and field theory.
@@ -317,8 +317,8 @@ K: Tensors make physics coordinate-independent; index notation and the metric ha
 !: Only indices in opposite positions (one up, one down) are summed; ordinary partial derivatives of tensors are not tensors in curved coordinates.
 Q: What does the metric tensor do? | Defines distances and raises or lowers indices.
 Q: Why is the covariant derivative needed? | Ordinary derivatives of tensor components don't transform as tensors in curvilinear or curved spaces.
-M1: Contracting a rank-3 tensor gives rank: | 1 | 2 | 3 | 0 | Contraction removes two indices.
-M2: The Levi-Civita symbol is: | Totally antisymmetric | Symmetric | Diagonal | Zero | Used in cross products.
+M1#physics-u40-12-q1: Contracting a rank-3 tensor gives rank: | 1 | 2 | 3 | 0 | Contraction removes two indices.
+M2#physics-u40-12-q2: The Levi-Civita symbol is: | Totally antisymmetric | Symmetric | Diagonal | Zero | Used in cross products.
 
 ## Differential geometry
 S: Differential geometry studies curves, surfaces and higher-dimensional spaces using calculus. It provides the mathematics of general relativity, gauge theory and continuum mechanics, describing how spaces bend and how quantities change as they move around.
@@ -343,8 +343,8 @@ K: Curvature measures how parallel transport fails to return vectors unchanged; 
 !: A cylinder has zero Gaussian curvature: it is intrinsically flat even though it looks curved in 3D.
 Q: What does the Theorema Egregium state? | Gaussian curvature is intrinsic, determined by the surface's metric alone.
 Q: In gauge theory, what plays the role of curvature? | The field strength (e.g. F_{μν} in electromagnetism).
-M1: A sphere's Euler characteristic is: | 2 | 0 | 1 | −2 | Gauss–Bonnet gives 4π/2π.
-M2: Geodesics on a sphere are: | Great circles | Lines of latitude | Spirals | Points | Shortest paths.
+M1#physics-u40-13-q1: A sphere's Euler characteristic is: | 2 | 0 | 1 | −2 | Gauss–Bonnet gives 4π/2π.
+M2#physics-u40-13-q2: Geodesics on a sphere are: | Great circles | Lines of latitude | Spirals | Points | Shortest paths.
 
 ## Manifolds and curvature
 S: A manifold is a space that looks flat locally but may be curved or twisted globally, like the Earth's surface. Spacetime in general relativity is a four-dimensional curved manifold, and the Riemann curvature tensor measures how it bends.
@@ -370,8 +370,8 @@ K: Manifolds are locally flat but globally curved; the Riemann tensor measures c
 !: Coordinates can make flat space look curved (polar coordinates); only tensors like Riemann reveal true curvature.
 Q: What does the Riemann tensor measure? | The failure of parallel transport around small loops to return vectors unchanged.
 Q: What part of curvature carries gravitational waves in vacuum? | The Weyl tensor.
-M1: In 2D, the Riemann tensor has how many independent components? | 1 | 6 | 20 | 0 | Just the Gaussian curvature.
-M2: Geodesic deviation describes: | Tidal forces | Electromagnetic waves | Friction | Thermal motion | Relative acceleration of free-falling particles.
+M1#physics-u40-14-q1: In 2D, the Riemann tensor has how many independent components? | 1 | 6 | 20 | 0 | Just the Gaussian curvature.
+M2#physics-u40-14-q2: Geodesic deviation describes: | Tidal forces | Electromagnetic waves | Friction | Thermal motion | Relative acceleration of free-falling particles.
 
 ## Classical field theory
 S: Classical field theory treats physical quantities as continuous fields spread through space and time, such as electromagnetic, gravitational and fluid fields. Field equations follow from a Lagrangian density and the principle of stationary action.
@@ -395,8 +395,8 @@ K: Fields have Lagrangian densities; the Euler–Lagrange equations give wave eq
 !: Field theories have infinitely many degrees of freedom: one (or more) at each point in space.
 Q: What equation does a free relativistic scalar field obey? | The Klein–Gordon equation (□ + m^{2})φ = 0.
 Q: What does ∂_{μ}T^{μν} = 0 express? | Local conservation of energy and momentum.
-M1: The Maxwell Lagrangian is: | −¼F_{μν}F^{μν} | ½m^{2}A^{2} | ψ̄γψ | R√(−g) | Gauge-invariant kinetic term.
-M2: The energy density of an EM field is: | ½(ε_{0}E^{2} + B^{2}/μ_{0}) | E·B | qV | ½mv^{2} | T^{00}.
+M1#physics-u40-15-q1: The Maxwell Lagrangian is: | −¼F_{μν}F^{μν} | ½m^{2}A^{2} | ψ̄γψ | R√(−g) | Gauge-invariant kinetic term.
+M2#physics-u40-15-q2: The energy density of an EM field is: | ½(ε_{0}E^{2} + B^{2}/μ_{0}) | E·B | qV | ½mv^{2} | T^{00}.
 
 ## Quantum field theory
 S: Quantum field theory combines quantum mechanics and special relativity by treating particles as excitations of underlying fields. It is the framework of the Standard Model, explaining particle creation and annihilation, antiparticles and the spin–statistics connection.
@@ -424,8 +424,8 @@ K: In QFT, particles are quanta of fields; creation and annihilation operators m
 !: The vacuum is not empty: it has zero-point fluctuations, though only energy differences are usually observable.
 Q: What is the spin–statistics theorem? | Particles with integer spin are bosons and half-integer spin are fermions.
 Q: Why are all electrons identical in QFT? | They are excitations of the same electron field.
-M1: Fermion fields are quantised with: | Anticommutators | Commutators | Poisson brackets | No rules | Pauli exclusion.
-M2: The Casimir effect demonstrates: | Vacuum fluctuations | Gravity waves | Proton decay | Superconductivity | Force between neutral plates.
+M1#physics-u40-16-q1: Fermion fields are quantised with: | Anticommutators | Commutators | Poisson brackets | No rules | Pauli exclusion.
+M2#physics-u40-16-q2: The Casimir effect demonstrates: | Vacuum fluctuations | Gravity waves | Proton decay | Superconductivity | Force between neutral plates.
 
 ## Path integrals
 S: Feynman's path integral says a quantum amplitude is the sum over every possible path, each weighted by e^{iS/ħ}. This formulation makes symmetries manifest, connects quantum mechanics to statistical physics, and is the foundation of modern quantum field theory.
@@ -449,8 +449,8 @@ K: Sum over all paths with phase e^{iS/ħ}; classical physics emerges where the 
 !: The path-integral "measure" Dx is mathematically subtle; physicists define it by time slicing or other regularisations.
 Q: What does Wick rotation do? | It converts real time to imaginary time, turning quantum amplitudes into statistical weights e^{−S_{E}/ħ}.
 Q: How does lattice QCD use path integrals? | It evaluates Euclidean path integrals numerically on a spacetime lattice.
-M1: In the path integral, each path's weight is: | e^{iS/ħ} | e^{−E/k_{B}T} only | S^{2} | 1/S | Phase from the action.
-M2: Imaginary time of period ħ/k_{B}T corresponds to: | Finite temperature | Zero temperature | Infinite mass | Relativity | Thermal field theory.
+M1#physics-u40-17-q1: In the path integral, each path's weight is: | e^{iS/ħ} | e^{−E/k_{B}T} only | S^{2} | 1/S | Phase from the action.
+M2#physics-u40-17-q2: Imaginary time of period ħ/k_{B}T corresponds to: | Finite temperature | Zero temperature | Infinite mass | Relativity | Thermal field theory.
 
 ## Feynman diagrams
 S: Feynman diagrams are pictorial shorthand for terms in perturbative calculations of particle interactions. Lines represent propagating particles and vertices represent interactions, and each diagram translates into a precise mathematical expression.
@@ -476,8 +476,8 @@ K: Feynman diagrams organise perturbation theory: lines are propagators, vertice
 !: Virtual particles in internal lines are not real particles; they are terms in an expansion and can be off-shell.
 Q: What does each vertex contribute in QED? | A factor of the coupling e (with a γ matrix), so amplitudes scale with powers of e.
 Q: What is a tree-level diagram? | A lowest-order diagram with no closed loops.
-M1: Adding a loop to a QED diagram multiplies amplitude roughly by: | α/π | α^{2} | 1/α | 137 | Small correction.
-M2: Crossing symmetry relates: | Different processes using the same diagram | Different couplings | Gravity and EM | Time reversal only | Turn incoming to outgoing antiparticles.
+M1#physics-u40-18-q1: Adding a loop to a QED diagram multiplies amplitude roughly by: | α/π | α^{2} | 1/α | 137 | Small correction.
+M2#physics-u40-18-q2: Crossing symmetry relates: | Different processes using the same diagram | Different couplings | Gravity and EM | Time reversal only | Turn incoming to outgoing antiparticles.
 
 ## Renormalisation
 S: Renormalisation handles infinities that appear in quantum field theory loop calculations by absorbing them into measurable parameters like mass and charge. Its modern understanding, through the renormalisation group, explains how physics changes with scale.
@@ -505,8 +505,8 @@ K: Renormalisation absorbs divergences into measured parameters; the renormalisa
 !: Running couplings don't mean the "charge changes" arbitrarily; they reflect screening or antiscreening by virtual particles at different distances.
 Q: What is asymptotic freedom? | The strong coupling decreases at high energies (short distances), so quarks interact weakly there.
 Q: What does dimensional regularisation do? | Computes loop integrals in d = 4 − ε dimensions to make divergences appear as poles in ε.
-M1: The QED coupling at higher energy is: | Larger | Smaller | Unchanged | Zero | Less screening.
-M2: Wilson's RG approach involves: | Integrating out short-distance modes | Adding infinities | Ignoring loops | Fixing the cutoff to zero | Coarse-graining.
+M1#physics-u40-19-q1: The QED coupling at higher energy is: | Larger | Smaller | Unchanged | Zero | Less screening.
+M2#physics-u40-19-q2: Wilson's RG approach involves: | Integrating out short-distance modes | Adding infinities | Ignoring loops | Fixing the cutoff to zero | Coarse-graining.
 
 ## Gauge theories
 S: Gauge theories describe forces arising from local symmetries: demanding that a phase or internal rotation can vary from point to point forces the existence of gauge fields. Electromagnetism, the weak force and the strong force are all gauge theories.
@@ -530,8 +530,8 @@ K: Local symmetry requires gauge fields; non-abelian groups give self-interactin
 !: Gauge symmetry is a redundancy in description, not a physical transformation of the state; only gauge-invariant quantities are observable.
 Q: Why must the photon be massless in unbroken QED? | A mass term A_{μ}A^{μ} would violate gauge invariance.
 Q: What distinguishes non-abelian gauge theories? | Gauge bosons carry charge and interact with each other.
-M1: The gauge group of QCD is: | SU(3) | U(1) | SU(2) | SO(3) | Eight gluons.
-M2: The Higgs mechanism gives mass to: | W and Z bosons | The photon | Gluons | Gravitons | Electroweak symmetry breaking.
+M1#physics-u40-20-q1: The gauge group of QCD is: | SU(3) | U(1) | SU(2) | SO(3) | Eight gluons.
+M2#physics-u40-20-q2: The Higgs mechanism gives mass to: | W and Z bosons | The photon | Gluons | Gravitons | Electroweak symmetry breaking.
 
 ## Effective field theories
 S: Effective field theories describe physics at a given energy scale using only the relevant degrees of freedom, with unknown high-energy effects packaged into a few parameters. They explain why physics works at each scale without knowing the ultimate theory.
@@ -556,8 +556,8 @@ K: Effective theories keep what matters at a given scale and encode the rest in 
 !: An EFT breaks down as energies approach the scale of new physics; its expansion parameter E/M must stay small.
 Q: Why does Fermi's theory work at low energy? | W exchange looks like a point interaction when momentum transfer is far below M_{W}.
 Q: What is SMEFT? | The Standard Model extended with higher-dimension operators to parametrise unknown heavy new physics.
-M1: Higher-dimension operators are suppressed by: | Powers of 1/M | Powers of M | Nothing | The fine-structure constant only | Heavy scale.
-M2: Pions are described by: | Chiral perturbation theory | QED | General relativity | Fermi-liquid theory | Low-energy QCD.
+M1#physics-u40-21-q1: Higher-dimension operators are suppressed by: | Powers of 1/M | Powers of M | Nothing | The fine-structure constant only | Heavy scale.
+M2#physics-u40-21-q2: Pions are described by: | Chiral perturbation theory | QED | General relativity | Fermi-liquid theory | Low-energy QCD.
 
 ## Scattering theory
 S: Scattering theory describes what happens when particles collide and fly apart. Cross-sections, phase shifts and the S-matrix connect theoretical interactions to the measured rates and angular distributions in experiments, from Rutherford's gold foil to the LHC.
@@ -583,8 +583,8 @@ K: Scattering measures cross-sections; theory computes amplitudes via Born, part
 !: Cross-section is an effective area for a process, not the physical size of the target.
 Q: What does the optical theorem relate? | The total cross-section to the imaginary part of the forward scattering amplitude.
 Q: What does the Born approximation give? | A scattering amplitude proportional to the Fourier transform of the potential.
-M1: Rutherford scattering scales with angle as: | 1/sin^{4}(θ/2) | sin^{2}θ | Constant | cos θ | Steep forward peak.
-M2: A resonance's width relates to its: | Lifetime | Mass only | Charge | Spin only | Γ = ħ/τ.
+M1#physics-u40-22-q1: Rutherford scattering scales with angle as: | 1/sin^{4}(θ/2) | sin^{2}θ | Constant | cos θ | Steep forward peak.
+M2#physics-u40-22-q2: A resonance's width relates to its: | Lifetime | Mass only | Charge | Spin only | Γ = ħ/τ.
 
 ## Green's functions
 S: A Green's function is the response of a linear system to a point source. Once you know it, the solution for any source follows by superposition, making Green's functions central to electrostatics, wave propagation, quantum mechanics and field theory.
@@ -610,8 +610,8 @@ K: Solve once for a point source, then superpose; boundary conditions and causal
 !: Different boundary conditions (retarded, advanced, Feynman) give different Green's functions for the same operator.
 Q: What is the Green's function of the 3D Laplacian? | −1/(4π|r − r'|) (or +1/(4π|r − r'|) for −∇^{2}).
 Q: What is the retarded Green's function? | The causal response that is zero before the source acts.
-M1: The method of images helps construct Green's functions that: | Satisfy boundary conditions | Are always zero | Ignore sources | Are nonlinear | Mirror charges enforce boundaries.
-M2: In QFT, propagators are: | Green's functions of field equations | Classical paths | Lagrangians | Cross-sections | 1/(p^{2} − m^{2}).
+M1#physics-u40-23-q1: The method of images helps construct Green's functions that: | Satisfy boundary conditions | Are always zero | Ignore sources | Are nonlinear | Mirror charges enforce boundaries.
+M2#physics-u40-23-q2: In QFT, propagators are: | Green's functions of field equations | Classical paths | Lagrangians | Cross-sections | 1/(p^{2} − m^{2}).
 
 ## Perturbative and non-perturbative methods
 S: Perturbation theory expands answers in powers of a small parameter, giving most of physics' precise predictions. But some phenomena, like confinement, tunnelling and phase transitions, are invisible at any order and need non-perturbative methods.
@@ -637,8 +637,8 @@ K: Perturbation theory is powerful when couplings are small; non-perturbative ef
 !: Adding more perturbative orders doesn't always improve accuracy; asymptotic series must be truncated optimally.
 Q: What is an asymptotic series? | A series whose terms first decrease then grow, giving best accuracy when truncated near the smallest term.
 Q: Name a non-perturbative method for QCD. | Lattice QCD (also large-N, effective theories, dualities).
-M1: Effects like e^{−1/g} are: | Invisible to perturbation theory | Large perturbative corrections | First-order | Classical | Zero Taylor series.
-M2: The variational principle gives: | An upper bound on the ground-state energy | Exact excited states | Lower bounds | Scattering lengths | E_{trial} ≥ E_{0}.
+M1#physics-u40-24-q1: Effects like e^{−1/g} are: | Invisible to perturbation theory | Large perturbative corrections | First-order | Classical | Zero Taylor series.
+M2#physics-u40-24-q2: The variational principle gives: | An upper bound on the ground-state energy | Exact excited states | Lower bounds | Scattering lengths | E_{trial} ≥ E_{0}.
 
 ## Solvable models
 S: Exactly solvable models are idealised systems whose behaviour can be computed completely. They anchor physical understanding, test approximations and reveal phenomena, such as phase transitions and fractional excitations, that approximate methods might miss.
@@ -664,8 +664,8 @@ K: Solvable models give exact benchmarks and reveal phenomena approximations mis
 !: Exactly solvable models are often special (fine-tuned); real systems may differ qualitatively when the special structure is broken.
 Q: Who solved the 2D Ising model exactly? | Lars Onsager, in 1944.
 Q: What is the Bethe ansatz? | A method of exactly solving certain 1D quantum many-body systems with a special wavefunction form.
-M1: The Kitaev chain hosts: | Majorana edge modes | Photons | Gravitons | Free electrons only | Topological superconductor model.
-M2: Hydrogen's extra degeneracy comes from: | Hidden SO(4) symmetry | Spin only | Relativity | Nuclear size | The Runge–Lenz vector.
+M1#physics-u40-25-q1: The Kitaev chain hosts: | Majorana edge modes | Photons | Gravitons | Free electrons only | Topological superconductor model.
+M2#physics-u40-25-q2: Hydrogen's extra degeneracy comes from: | Hidden SO(4) symmetry | Spin only | Relativity | Nuclear size | The Runge–Lenz vector.
 
 ## Integrable systems
 S: Integrable systems have as many independent conserved quantities as degrees of freedom, so their motion is regular and solvable rather than chaotic. They range from the Kepler problem to solitons and quantum spin chains.
@@ -688,8 +688,8 @@ K: Integrable systems have enough conserved quantities to make motion regular; p
 !: Having many conserved quantities isn't enough; they must be independent and Poisson-commute.
 Q: What does the KAM theorem state? | Under small perturbations, most invariant tori of an integrable system survive, deformed.
 Q: What is a Lax pair? | Operators L and M with L̇ = [M, L], whose spectrum of L gives conserved quantities.
-M1: Integrable motion lies on: | Invariant tori | Strange attractors | Fixed points only | Random walks | n-dimensional tori.
-M2: Quantum integrable systems relax to: | Generalised Gibbs ensembles | Ordinary thermal states always | Chaos | Zero temperature | Extra conserved quantities matter.
+M1#physics-u40-26-q1: Integrable motion lies on: | Invariant tori | Strange attractors | Fixed points only | Random walks | n-dimensional tori.
+M2#physics-u40-26-q2: Quantum integrable systems relax to: | Generalised Gibbs ensembles | Ordinary thermal states always | Chaos | Zero temperature | Extra conserved quantities matter.
 
 ## Mathematical methods for boundary-value problems
 S: Boundary-value problems ask for solutions of differential equations that satisfy conditions on the edges of a region. Separation of variables, eigenfunction expansions, special functions and transforms solve the standard problems of heat, waves, electrostatics and quantum mechanics.
@@ -714,6 +714,6 @@ K: Separate variables, apply boundary conditions to get eigenvalues, and expand 
 !: Separation works only when the equation and boundaries suit the chosen coordinates; otherwise use transforms or numerics.
 Q: What does Sturm–Liouville theory guarantee? | Real eigenvalues and a complete set of orthogonal eigenfunctions.
 Q: Which special functions solve Laplace's equation in cylindrical coordinates? | Bessel functions.
-M1: Higher modes in the heat equation decay: | Faster | Slower | At the same rate | Never | Rate ∝ n^{2}.
-M2: Legendre polynomials arise in problems with: | Spherical symmetry | Rectangular boxes only | Time dependence only | No boundaries | Angular part of Laplace's equation.
+M1#physics-u40-27-q1: Higher modes in the heat equation decay: | Faster | Slower | At the same rate | Never | Rate ∝ n^{2}.
+M2#physics-u40-27-q2: Legendre polynomials arise in problems with: | Spherical symmetry | Rectangular boxes only | Time dependence only | No boundaries | Angular part of Laplace's equation.
 `;

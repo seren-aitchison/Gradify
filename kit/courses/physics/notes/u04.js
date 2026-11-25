@@ -16,8 +16,8 @@ X: A runner completes one lap of a 400 m track in 80 s.
 !: Displacement can be zero or negative even when an object has moved a long way.
 Q: What is the difference between distance and displacement? | Distance is total path length (scalar); displacement is the straight-line change in position with direction (vector).
 Q: What does the gradient of a position–time graph give? | Velocity.
-M1: A car drives 3 km east then 4 km north. What is the size of its displacement? | 5 km | 7 km | 1 km | 12 km | √(3^{2} + 4^{2}) = 5 km, at 53° north of east; the distance travelled is 7 km.
-M2: An object moves from x = +4 m to x = −2 m. Its displacement is: | −6 m | 6 m | 2 m | −2 m | Δx = −2 − 4.
+M1#physics-u04-01-q1: A car drives 3 km east then 4 km north. What is the size of its displacement? | 5 km | 7 km | 1 km | 12 km | √(3^{2} + 4^{2}) = 5 km, at 53° north of east; the distance travelled is 7 km.
+M2#physics-u04-01-q2: An object moves from x = +4 m to x = −2 m. Its displacement is: | −6 m | 6 m | 2 m | −2 m | Δx = −2 − 4.
 Q: What is position in kinematics? | The location of an object relative to a chosen origin.
 Q: What is the formula for displacement? | Δr = r_{2} − r_{1}, which depends only on the start and end points.
 Q: Is distance a scalar or a vector? | A scalar: the total path length travelled.
@@ -45,8 +45,8 @@ X: A cyclist rides 10 km at 20 km h^{-1} and returns at 30 km h^{-1}. Average sp
 !: Speedometers show speed, not velocity: a car going round a bend at a steady 50 km h^{-1} is accelerating.
 Q: How is instantaneous velocity defined? | v = dr/dt, the derivative of position with respect to time.
 Q: Can an object have constant speed but changing velocity? | Yes: in circular motion the direction changes.
-M1: Which is a vector? | Velocity | Speed | Distance | Time | Velocity has direction.
-M2: The average speed for equal distances at 40 and 60 km h^{-1} is: | 48 km h^{-1} | 50 km h^{-1} | 45 km h^{-1} | 52 km h^{-1} | 2 × 40 × 60/100 = 48.
+M1#physics-u04-02-q1: Which is a vector? | Velocity | Speed | Distance | Time | Velocity has direction.
+M2#physics-u04-02-q2: The average speed for equal distances at 40 and 60 km h^{-1} is: | 48 km h^{-1} | 50 km h^{-1} | 45 km h^{-1} | 52 km h^{-1} | 2 × 40 × 60/100 = 48.
 Q: What is speed? | The rate of change of distance.
 Q: What is velocity? | The rate of change of displacement, including direction.
 Q: How is average velocity defined? | v̄ = Δr/Δt.
@@ -74,8 +74,8 @@ D: phys-u04-braking-vt
 !: Zero velocity doesn't mean zero acceleration: a ball at the top of its flight has v = 0 but a = g downward.
 Q: What does the area under a velocity–time graph represent? | Displacement.
 Q: What are the tangential and normal components of acceleration? | Tangential dv/dt changes speed; normal v^{2}/r changes direction.
-M1: At the top of a vertical throw, the ball's acceleration is: | 9.8 m s^{-2} downward | Zero | 9.8 m s^{-2} upward | Undefined | Gravity still acts.
-M2: An object's velocity changes from (3, 0) to (0, 4) m s^{-1} in 2 s. Average acceleration magnitude? | 2.5 m s^{-2} | 0.5 m s^{-2} | 3.5 m s^{-2} | 1 m s^{-2} | Δv = (−3, 4), |Δv| = 5, divided by 2.
+M1#physics-u04-03-q1: At the top of a vertical throw, the ball's acceleration is: | 9.8 m s^{-2} downward | Zero | 9.8 m s^{-2} upward | Undefined | Gravity still acts.
+M2#physics-u04-03-q2: An object's velocity changes from (3, 0) to (0, 4) m s^{-1} in 2 s. Average acceleration magnitude? | 2.5 m s^{-2} | 0.5 m s^{-2} | 3.5 m s^{-2} | 1 m s^{-2} | Δv = (−3, 4), |Δv| = 5, divided by 2.
 Q: What is acceleration? | The rate of change of velocity: a = dv/dt.
 Q: What can acceleration change about a motion? | The speed, the direction, or both.
 Q: According to Newton's second law, what always causes acceleration? | A net force.
@@ -103,8 +103,8 @@ D: phys-u04-displacement-distance
 !: Area under the time axis on a v–t graph is negative displacement; add magnitudes only when you want distance.
 Q: When is a = v dv/dx useful? | When acceleration is given as a function of position rather than time.
 Q: How do you find when an object reverses direction? | Find when v = 0 (and changes sign).
-M1: The area under an acceleration–time graph gives: | Change in velocity | Displacement | Speed | Jerk | ∫a dt = Δv.
-M2: x = t^{3} − 3t. When is the object momentarily at rest? | t = 1 s | t = 0 | t = 3 s | t = √3 s | v = 3t^{2} − 3 = 0.
+M1#physics-u04-04-q1: The area under an acceleration–time graph gives: | Change in velocity | Displacement | Speed | Jerk | ∫a dt = Δv.
+M2#physics-u04-04-q2: x = t^{3} − 3t. When is the object momentarily at rest? | t = 1 s | t = 0 | t = 3 s | t = √3 s | v = 3t^{2} − 3 = 0.
 Q: How is displacement found from velocity using calculus? | x = x_{0} + ∫v dt.
 Q: How is velocity found from acceleration using calculus? | v = v_{0} + ∫a dt.
 Q: What does the area under an acceleration-time graph give? | The change in velocity, Δv.
@@ -134,9 +134,9 @@ P: **Investigate with the lab.** Watch the velocity arrows during a drag-free fl
 IX: projectile
 Q: Why can perpendicular components of motion be treated separately? | They obey independent equations of motion linked only by time.
 Q: Which way does acceleration point on a curved path at constant speed? | Towards the centre of curvature, perpendicular to the velocity.
-M1: r(t) = (2t^{2}, 3t). What is the acceleration? | (4, 0) | (4t, 3) | (2, 3) | (0, 0) | Differentiate twice.
-M2: A particle moves in a circle at constant speed. Which is true? | Velocity changes, speed doesn't | Velocity is constant | Acceleration is zero | Acceleration is tangential | The direction keeps changing.
-M2: In drag-free projectile motion, which part of the velocity stays constant? | The horizontal component | The vertical component | The speed | Both components | Gravity acts only vertically, so with no air resistance nothing changes the horizontal velocity.
+M1#physics-u04-05-q1: r(t) = (2t^{2}, 3t). What is the acceleration? | (4, 0) | (4t, 3) | (2, 3) | (0, 0) | Differentiate twice.
+M2#physics-u04-05-q2: A particle moves in a circle at constant speed. Which is true? | Velocity changes, speed doesn't | Velocity is constant | Acceleration is zero | Acceleration is tangential | The direction keeps changing.
+M2#physics-u04-05-q3: In drag-free projectile motion, which part of the velocity stays constant? | The horizontal component | The vertical component | The speed | Both components | Gravity acts only vertically, so with no air resistance nothing changes the horizontal velocity.
 Q: How is position written as a vector in three dimensions? | r(t) = x(t)i + y(t)j + z(t)k.
 Q: What links the separate components of a 2D motion? | They share the same time t.
 Q: What shape is a projectile's path with constant acceleration (0, −g)? | A parabola.
@@ -171,9 +171,9 @@ P: **Investigate with the lab.** With air resistance off, launch horizontally fr
 IX: projectile
 Q: Which suvat equation has no time? | v^{2} = u^{2} + 2as.
 Q: When are the suvat equations valid? | Only for constant acceleration.
-M1: A stone dropped from rest falls for 3.0 s (g = 9.8). How far? | 44 m | 29 m | 88 m | 15 m | s = ½ × 9.8 × 9.
-M2: Stopping distance at speed u with fixed deceleration scales as: | u^{2} | u | √u | u^{3} | s = u^{2}/(2a): double speed, four times the distance.
-M2: A ball is thrown horizontally from a 20 m cliff (g = 9.8 m/s²). Roughly how long is it in the air? | About 2.0 s | About 4.1 s | About 1.0 s | It depends on the throwing speed | Vertical motion is independent: t = √(2h/g) = √(40/9.8) ≈ 2.0 s.
+M1#physics-u04-06-q1: A stone dropped from rest falls for 3.0 s (g = 9.8). How far? | 44 m | 29 m | 88 m | 15 m | s = ½ × 9.8 × 9.
+M2#physics-u04-06-q2: Stopping distance at speed u with fixed deceleration scales as: | u^{2} | u | √u | u^{3} | s = u^{2}/(2a): double speed, four times the distance.
+M2#physics-u04-06-q3: A ball is thrown horizontally from a 20 m cliff (g = 9.8 m/s²). Roughly how long is it in the air? | About 2.0 s | About 4.1 s | About 1.0 s | It depends on the throwing speed | Vertical motion is independent: t = √(2h/g) = √(40/9.8) ≈ 2.0 s.
 Q: What five quantities do the suvat equations link? | Displacement s, initial velocity u, final velocity v, acceleration a and time t.
 Q: Which suvat equation has no displacement? | v = u + at.
 Q: Which suvat equation has no final velocity? | s = ut + ½at^{2}.
@@ -206,10 +206,10 @@ P: **Investigate with the lab.** Turn air resistance off and launch at several a
 IX: projectile
 Q: What angle gives maximum range on level ground (no drag)? | 45°.
 Q: What is the velocity at the top of the trajectory? | Horizontal, equal to u cos θ.
-M1: A ball rolls off a 1.25 m high table at 2.0 m s^{-1} (g = 10). How far from the table does it land? | 1.0 m | 0.5 m | 2.0 m | 2.5 m | Fall time 0.5 s; 2.0 × 0.5 = 1.0 m.
-M2: Two projectiles are launched at the same speed at 20° and 70°. Which lands farther? | Same range | 20° | 70° | Depends on mass | sin 40° = sin 140°.
-M3: A monkey drops from a branch at the instant a dart is fired straight at it. The dart: | Hits the monkey (both fall the same distance in the same time) | Passes above | Passes below | Hits only if fired at 45° | Gravity deflects both equally.
-M2: Without air resistance, which pair of launch angles gives the same range at the same speed? | 30° and 60° | 30° and 45° | 20° and 40° | 45° and 90° | Range depends on sin 2θ, and sin 60° = sin 120°, so complementary angles give equal ranges.
+M1#physics-u04-07-q1: A ball rolls off a 1.25 m high table at 2.0 m s^{-1} (g = 10). How far from the table does it land? | 1.0 m | 0.5 m | 2.0 m | 2.5 m | Fall time 0.5 s; 2.0 × 0.5 = 1.0 m.
+M2#physics-u04-07-q2: Two projectiles are launched at the same speed at 20° and 70°. Which lands farther? | Same range | 20° | 70° | Depends on mass | sin 40° = sin 140°.
+M3#physics-u04-07-q3: A monkey drops from a branch at the instant a dart is fired straight at it. The dart: | Hits the monkey (both fall the same distance in the same time) | Passes above | Passes below | Hits only if fired at 45° | Gravity deflects both equally.
+M2#physics-u04-07-q4: Without air resistance, which pair of launch angles gives the same range at the same speed? | 30° and 60° | 30° and 45° | 20° and 40° | 45° and 90° | Range depends on sin 2θ, and sin 60° = sin 120°, so complementary angles give equal ranges.
 Q: What forces act on an ideal projectile? | Gravity alone.
 Q: What is the horizontal position of a projectile launched at speed u and angle θ? | x = u cos θ t.
 Q: What is the time of flight of a projectile on level ground? | T = 2u sin θ/g.
@@ -238,8 +238,8 @@ D: phys-u04-swimmer-river
 !: Galilean addition fails near c: no object can be seen moving faster than light. Use relativistic velocity addition there.
 Q: State the Galilean velocity addition rule. | v_{AC} = v_{AB} + v_{BC}.
 Q: To cross a river in the shortest time, which way should you aim? | Straight across (perpendicular to the bank).
-M1: Two cars approach each other at 20 and 30 m s^{-1}. Their relative speed is: | 50 m s^{-1} | 10 m s^{-1} | 25 m s^{-1} | 600 m s^{-1} | Opposite directions add.
-M2: A plane flies at 200 m s^{-1} relative to air in a 50 m s^{-1} crosswind. Its ground speed (heading perpendicular to wind) is: | 206 m s^{-1} | 250 m s^{-1} | 150 m s^{-1} | 200 m s^{-1} | √(200^{2} + 50^{2}).
+M1#physics-u04-08-q1: Two cars approach each other at 20 and 30 m s^{-1}. Their relative speed is: | 50 m s^{-1} | 10 m s^{-1} | 25 m s^{-1} | 600 m s^{-1} | Opposite directions add.
+M2#physics-u04-08-q2: A plane flies at 200 m s^{-1} relative to air in a 50 m s^{-1} crosswind. Its ground speed (heading perpendicular to wind) is: | 206 m s^{-1} | 250 m s^{-1} | 150 m s^{-1} | 200 m s^{-1} | √(200^{2} + 50^{2}).
 Q: Why are velocities always relative? | They are measured relative to a chosen frame.
 Q: How is the velocity of A seen from B found? | v_{A} − v_{B}.
 Q: How are v_{AB} and v_{BA} related? | v_{AB} = −v_{BA}.
@@ -268,8 +268,8 @@ X: In the centre-of-mass frame, analyse a 2 kg ball at 3 m s^{-1} hitting a stat
 !: Energies are frame-dependent (kinetic energy differs between frames), but energy conservation holds in each inertial frame.
 Q: What is the Galilean principle of relativity? | The laws of mechanics are the same in every inertial frame.
 Q: Why is the centre-of-mass frame useful for collisions? | Total momentum is zero there, so the analysis is symmetric and simple.
-M1: Which quantity is the same in all inertial frames (Galilean)? | Acceleration | Velocity | Kinetic energy | Momentum | Constant relative velocity doesn't change acceleration.
-M2: A ball dropped in a train moving at constant velocity lands: | Directly below the release point (in the train's frame) | Behind it | In front of it | Depends on the train's speed | Galilean relativity.
+M1#physics-u04-09-q1: Which quantity is the same in all inertial frames (Galilean)? | Acceleration | Velocity | Kinetic energy | Momentum | Constant relative velocity doesn't change acceleration.
+M2#physics-u04-09-q2: A ball dropped in a train moving at constant velocity lands: | Directly below the release point (in the train's frame) | Behind it | In front of it | Depends on the train's speed | Galilean relativity.
 Q: What is a reference frame? | A viewpoint with its own clocks and rulers from which motion is measured.
 Q: What is an inertial frame? | A frame that is not accelerating, in which Newton's first law holds.
 Q: What appears in a non-inertial frame? | Fictitious forces.
@@ -299,8 +299,8 @@ D: phys-u04-second-law-block
 !: Third-law pairs act on different bodies, so they never cancel each other in one body's free-body diagram. Weight and the normal force on a book are not a third-law pair.
 Q: State Newton's second law in terms of momentum. | The net force equals the rate of change of momentum, F = dp/dt.
 Q: What is the third-law partner of the Earth's gravitational pull on you? | Your gravitational pull on the Earth.
-M1: A 1000 kg car accelerates at 2 m s^{-2}. The net force is: | 2000 N | 500 N | 1000 N | 4000 N | F = ma.
-M2: A horse pulls a cart forward. Why can they accelerate if the cart pulls the horse back equally? | The forces act on different bodies; the ground pushes the horse forward more than the cart pulls back | They can't | The horse's force is larger | Friction is zero | Consider each body's net force separately.
+M1#physics-u04-10-q1: A 1000 kg car accelerates at 2 m s^{-2}. The net force is: | 2000 N | 500 N | 1000 N | 4000 N | F = ma.
+M2#physics-u04-10-q2: A horse pulls a cart forward. Why can they accelerate if the cart pulls the horse back equally? | The forces act on different bodies; the ground pushes the horse forward more than the cart pulls back | They can't | The horse's force is larger | Friction is zero | Consider each body's net force separately.
 Q: State Newton's first law. | An object stays at rest or moves at constant velocity unless a net external force acts.
 Q: What does Newton's first law define? | Inertial frames.
 Q: What is Newton's second law for constant mass? | F_{net} = ma.
@@ -330,8 +330,8 @@ D: phys-u04-lift-scales
 !: In an inertial frame, "centrifugal force" doesn't exist: an object in circular motion is pulled inward and has no outward force acting on it.
 Q: What is a fictitious force? | An apparent force needed to apply Newton's laws in a non-inertial frame; it has no physical source or reaction partner.
 Q: What do scales read in a freely falling lift? | Zero (apparent weightlessness).
-M1: In a lift accelerating downward at g/2, your apparent weight is: | mg/2 | mg | 3mg/2 | 0 | R = m(g − a).
-M2: Which shows the Earth is a rotating (non-inertial) frame? | Foucault's pendulum precessing | Tides | Ocean waves | The Moon's phases | The swing plane rotates relative to the ground.
+M1#physics-u04-11-q1: In a lift accelerating downward at g/2, your apparent weight is: | mg/2 | mg | 3mg/2 | 0 | R = m(g − a).
+M2#physics-u04-11-q2: Which shows the Earth is a rotating (non-inertial) frame? | Foucault's pendulum precessing | Tides | Ocean waves | The Moon's phases | The swing plane rotates relative to the ground.
 Q: What is the fictitious force in a frame accelerating at A? | F_{fict} = −mA.
 Q: What is the centrifugal force in a frame rotating at ω? | mω^{2}r outward.
 Q: Do fictitious forces have third-law partners? | No. They are not interactions.
@@ -362,8 +362,8 @@ D: phys-fbd-slope
 !: "Centripetal force" isn't an extra force to draw; it's the net inward force supplied by real forces (tension, gravity, friction).
 Q: What forces go on a free-body diagram? | All external forces acting on the chosen body, and nothing else.
 Q: Why is "ma" never drawn as a force? | It's the result of the net force, not a separate force.
-M1: A ball hangs from a string at rest. Its free-body diagram has: | Weight and tension | Weight, tension and the ball's pull on the string | Tension only | Weight only | Only forces on the ball.
-M2: A car rounds a flat bend. What provides the centripetal force? | Friction from the road | Centrifugal force | The engine | Air resistance | Sideways static friction on the tyres.
+M1#physics-u04-12-q1: A ball hangs from a string at rest. Its free-body diagram has: | Weight and tension | Weight, tension and the ball's pull on the string | Tension only | Weight only | Only forces on the ball.
+M2#physics-u04-12-q2: A car rounds a flat bend. What provides the centripetal force? | Friction from the road | Centrifugal force | The engine | Air resistance | Sideways static friction on the tyres.
 Q: What is a free-body diagram? | A diagram of one isolated object showing every external force on it as an arrow from its point of action.
 Q: When should a body be drawn to shape rather than as a dot? | When torques matter.
 Q: Name four contact forces that may appear on a free-body diagram. | Normal force, friction, tension, drag or a push.
@@ -392,8 +392,8 @@ D: phys-u04-atwood-light-mass
 !: Ropes can't push; if a calculation gives negative tension, the string has gone slack and the model changes.
 Q: What is the normal force on a block on a slope of angle θ? | mg cos θ (if no other forces have perpendicular components).
 Q: When does a car lose contact going over a hump of radius r? | When v^{2}/r ≥ g, so N would have to be negative.
-M1: A 5 kg mass hangs from a rope in a lift accelerating up at 2 m s^{-2} (g = 10). Tension? | 60 N | 50 N | 40 N | 10 N | T = m(g + a).
-M2: In the Atwood machine, if m_{1} = m_{2}, then: | a = 0 and T = mg | a = g | T = 0 | T = 2mg | Balanced.
+M1#physics-u04-13-q1: A 5 kg mass hangs from a rope in a lift accelerating up at 2 m s^{-2} (g = 10). Tension? | 60 N | 50 N | 40 N | 10 N | T = m(g + a).
+M2#physics-u04-13-q2: In the Atwood machine, if m_{1} = m_{2}, then: | a = 0 and T = mg | a = g | T = 0 | T = 2mg | Balanced.
 Q: What is the normal force? | The perpendicular push a surface exerts to stop objects passing through it.
 Q: What is tension? | The pull transmitted along a rope or string.
 Q: Why are normal force and tension called constraint forces? | They take whatever value the motion requires.
@@ -426,9 +426,9 @@ P: **Investigate with the lab.** Switch air resistance on and off for the same l
 IX: projectile
 Q: Why does ABS braking stop cars faster? | Wheels keep rolling, using static friction (higher than kinetic) instead of skidding.
 Q: How does high-speed drag depend on speed? | It's proportional to v^{2}.
-M1: A 10 kg block is pushed with 20 N; μ_{s} = 0.5 (g = 10). The friction force is: | 20 N | 50 N | 0 | 30 N | Static friction matches the push until it exceeds 50 N.
-M2: Doubling a car's speed multiplies the power needed to overcome drag by: | 8 | 2 | 4 | 16 | P = Fv ∝ v^{3}.
-M2: With air resistance, why is the best launch angle below 45°? | Drag shortens long, high flights most, so a flatter path loses less range | Drag adds a forward force on the ball at high angles | Gravity is weaker at higher angles of launch | Drag only acts on the way down, so lower is safer | The longer and faster the flight, the more energy drag removes, favouring flatter trajectories.
+M1#physics-u04-14-q1: A 10 kg block is pushed with 20 N; μ_{s} = 0.5 (g = 10). The friction force is: | 20 N | 50 N | 0 | 30 N | Static friction matches the push until it exceeds 50 N.
+M2#physics-u04-14-q2: Doubling a car's speed multiplies the power needed to overcome drag by: | 8 | 2 | 4 | 16 | P = Fv ∝ v^{3}.
+M2#physics-u04-14-q3: With air resistance, why is the best launch angle below 45°? | Drag shortens long, high flights most, so a flatter path loses less range | Drag adds a forward force on the ball at high angles | Gravity is weaker at higher angles of launch | Drag only acts on the way down, so lower is safer | The longer and faster the flight, the more energy drag removes, favouring flatter trajectories.
 Q: What does friction oppose? | Relative sliding between surfaces.
 Q: How large can static friction be? | As large as needed, up to a maximum μ_{s}N.
 Q: How is kinetic friction calculated? | f_{k} = μ_{k}N, usually with μ_{k} less than μ_{s}.
@@ -456,8 +456,8 @@ P: Tilt the slope until the block just slips: μ_{s} = tan θ_{c}. Then find the
 !: The normal force on a slope isn't mg; it's mg cos θ (plus any other perpendicular forces).
 Q: What component of weight acts down a slope? | mg sin θ.
 Q: How can you measure μ_{s} with a tilting ramp? | Increase the angle until the block just slips; μ_{s} = tan θ.
-M1: A block is at rest on a 20° slope. What is the friction force for m = 5 kg (g = 10)? | 17 N | 47 N | 50 N | 0 | mg sin 20° = 50 × 0.342.
-M2: On a frictionless slope, a heavier block's acceleration is: | The same as a lighter block's | Larger | Smaller | Zero | a = g sin θ, independent of mass.
+M1#physics-u04-15-q1: A block is at rest on a 20° slope. What is the friction force for m = 5 kg (g = 10)? | 17 N | 47 N | 50 N | 0 | mg sin 20° = 50 × 0.342.
+M2#physics-u04-15-q2: On a frictionless slope, a heavier block's acceleration is: | The same as a lighter block's | Larger | Smaller | Zero | a = g sin θ, independent of mass.
 Q: What is the acceleration down a frictionless slope? | a = g sin θ.
 Q: What is the acceleration of a block sliding down a slope with friction? | a = g(sin θ − μ_{k} cos θ).
 Q: What is the acceleration of a block sliding up a rough slope? | a = −g(sin θ + μ_{k} cos θ) while it moves up.
@@ -488,8 +488,8 @@ D: phys-u04-vertical-circle-bottom
 !: Circular motion at constant speed is still accelerated motion; there must be a net force.
 Q: What is the minimum speed at the top of a vertical circle of radius r? | √(gr).
 Q: How are v and ω related? | v = ωr.
-M1: A wheel turns at 600 rpm. Its angular velocity is: | 63 rad s^{-1} | 10 rad s^{-1} | 600 rad s^{-1} | 3770 rad s^{-1} | 10 rev/s × 2π.
-M2: In a loop-the-loop, the normal force is largest at: | The bottom | The top | The sides | It's constant | At the bottom N must exceed mg to provide the inward force.
+M1#physics-u04-16-q1: A wheel turns at 600 rpm. Its angular velocity is: | 63 rad s^{-1} | 10 rad s^{-1} | 600 rad s^{-1} | 3770 rad s^{-1} | 10 rev/s × 2π.
+M2#physics-u04-16-q2: In a loop-the-loop, the normal force is largest at: | The bottom | The top | The sides | It's constant | At the bottom N must exceed mg to provide the inward force.
 Q: Why does an object in uniform circular motion accelerate? | Its direction constantly changes, so its velocity changes.
 Q: What is angular velocity? | ω = dθ/dt = 2π/T = 2πf.
 Q: What is centripetal acceleration in terms of ω? | a = ω^{2}r.
@@ -518,8 +518,8 @@ D: phys-u04-banked-curve
 !: Don't add mv^{2}/r as an extra force on the free-body diagram; set the sum of real inward forces equal to mv^{2}/r.
 Q: What provides the centripetal force for a satellite? | Gravity.
 Q: What is the design speed of a frictionless banked curve? | v = √(rg tan θ).
-M1: A 1000 kg car takes a 50 m radius bend at 10 m s^{-1}. The friction needed is: | 2000 N | 200 N | 500 N | 20 000 N | mv^{2}/r = 1000 × 100/50.
-M2: Doubling the speed on a bend multiplies the required centripetal force by: | 4 | 2 | √2 | 8 | ∝ v^{2}.
+M1#physics-u04-17-q1: A 1000 kg car takes a 50 m radius bend at 10 m s^{-1}. The friction needed is: | 2000 N | 200 N | 500 N | 20 000 N | mv^{2}/r = 1000 × 100/50.
+M2#physics-u04-17-q2: Doubling the speed on a bend multiplies the required centripetal force by: | 4 | 2 | √2 | 8 | ∝ v^{2}.
 Q: What does centripetal mean? | Centre-seeking.
 Q: What is the centripetal force in terms of ω? | F_{c} = mω^{2}r.
 Q: How is a = v^{2}/r derived? | The velocity turns through Δθ = vΔt/r, so Δv = v^{2}Δt/r towards the centre; divide by Δt.
@@ -546,8 +546,8 @@ X: A 1500 kg car accelerates from 10 to 20 m s^{-1}. How much net work is done?
 !: Holding a heavy bag still does no mechanical work on it (no displacement), even though your muscles use chemical energy.
 Q: Why does a centripetal force do no work? | It is perpendicular to the velocity at every instant.
 Q: State the work–energy theorem. | The net work done on an object equals its change in kinetic energy.
-M1: A 50 N force pulls a sledge 10 m at 60° to the ground. Work done: | 250 J | 500 J | 433 J | 0 | 50 × 10 × cos 60°.
-M2: Friction does −200 J of work on a sliding box. This means: | 200 J of kinetic energy is transferred away (mostly to heating) | The box gains 200 J | No energy is transferred | Momentum is lost but not energy | Negative work removes energy from the box.
+M1#physics-u04-18-q1: A 50 N force pulls a sledge 10 m at 60° to the ground. Work done: | 250 J | 500 J | 433 J | 0 | 50 × 10 × cos 60°.
+M2#physics-u04-18-q2: Friction does −200 J of work on a sliding box. This means: | 200 J of kinetic energy is transferred away (mostly to heating) | The box gains 200 J | No energy is transferred | Momentum is lost but not energy | Negative work removes energy from the box.
 Q: What is work? | Energy transferred by a force acting through a displacement.
 Q: How is work calculated for a constant force? | W = F·s = Fs cos θ.
 Q: How is work found for a varying force? | W = ∫F·dr, the area under the force-displacement graph.
@@ -576,8 +576,8 @@ D: phys-u04-energy-exchange
 !: Only changes in potential energy matter; the zero point is a free choice, but use the same one throughout a problem.
 Q: How is force related to the potential energy curve? | F = −dU/dx: force points downhill on the U(x) curve.
 Q: What is the elastic energy stored in a spring stretched by x? | ½kx^{2}.
-M1: Doubling a car's speed multiplies its kinetic energy by: | 4 | 2 | √2 | 8 | ∝ v^{2}.
-M2: A spring (k = 200 N m^{-1}) is compressed 0.1 m and launches a 0.05 kg ball. Launch speed? | 6.3 m s^{-1} | 20 m s^{-1} | 2 m s^{-1} | 40 m s^{-1} | ½kx^{2} = 1 J = ½mv^{2} ⇒ v = √40.
+M1#physics-u04-19-q1: Doubling a car's speed multiplies its kinetic energy by: | 4 | 2 | √2 | 8 | ∝ v^{2}.
+M2#physics-u04-19-q2: A spring (k = 200 N m^{-1}) is compressed 0.1 m and launches a 0.05 kg ball. Launch speed? | 6.3 m s^{-1} | 20 m s^{-1} | 2 m s^{-1} | 40 m s^{-1} | ½kx^{2} = 1 J = ½mv^{2} ⇒ v = √40.
 Q: What is kinetic energy in terms of momentum? | KE = p^{2}/(2m).
 Q: What is the change in gravitational PE near Earth's surface? | ΔU = mgΔh.
 Q: What is the general gravitational potential energy? | U = −GMm/r, zero at infinity.
@@ -605,8 +605,8 @@ P: Even friction is conservative at the atomic level; mechanical energy isn't lo
 !: Magnetic forces do no work (F ⊥ v) but aren't described by a potential energy in the usual sense; "zero work" and "conservative" are different properties.
 Q: How can you tell if a force is conservative? | The work round any closed path is zero (equivalently its curl is zero).
 Q: Why can't friction have a potential energy? | The work it does depends on the path taken, not just the end points.
-M1: Which force is non-conservative? | Air resistance | Gravity | Spring force | Electrostatic force | Drag depends on path and speed.
-M2: A ball thrown up returns to your hand slower than it left. This shows: | A non-conservative force (drag) acted | Gravity is non-conservative | Energy isn't conserved | Momentum was conserved | Drag removed mechanical energy.
+M1#physics-u04-20-q1: Which force is non-conservative? | Air resistance | Gravity | Spring force | Electrostatic force | Drag depends on path and speed.
+M2#physics-u04-20-q2: A ball thrown up returns to your hand slower than it left. This shows: | A non-conservative force (drag) acted | Gravity is non-conservative | Energy isn't conserved | Momentum was conserved | Drag removed mechanical energy.
 Q: What is a conservative force? | One whose work depends only on the start and end points, so a potential energy can be defined.
 Q: Give three conservative forces. | Gravity, electrostatic forces and ideal springs.
 Q: Give three non-conservative forces. | Friction, drag and a motor's push.
@@ -634,8 +634,8 @@ P: No device is 100% efficient for converting heat to work; the Carnot limit 1 �
 !: Efficiency can't exceed 100%. Heat pumps quoting "300%" use a coefficient of performance, moving heat rather than creating it.
 Q: How is the power delivered by a force on a moving object found? | P = F·v.
 Q: What happens to the "wasted" energy in machines? | Mostly it's transferred to thermal energy in the surroundings.
-M1: A 60 kg person climbs 3.0 m of stairs in 4.0 s. Power? | 441 W | 45 W | 180 W | 1764 W | mgh/t = 60 × 9.8 × 3/4.
-M2: A motor takes 500 W and lifts 20 kg at 2.0 m s^{-1}. Efficiency? | 78% | 40% | 100% | 92% | Useful power mgv = 392 W.
+M1#physics-u04-21-q1: A 60 kg person climbs 3.0 m of stairs in 4.0 s. Power? | 441 W | 45 W | 180 W | 1764 W | mgh/t = 60 × 9.8 × 3/4.
+M2#physics-u04-21-q2: A motor takes 500 W and lifts 20 kg at 2.0 m s^{-1}. Efficiency? | 78% | 40% | 100% | 92% | Useful power mgv = 392 W.
 Q: What is power? | The rate of transferring energy or doing work.
 Q: What is efficiency? | The fraction of input energy that ends up in the useful form.
 Q: How many joules are in 1 kWh? | 3.6 MJ.
@@ -664,9 +664,9 @@ P: **Investigate with the lab.** Run a sticky collision and read the momentum of
 IX: collisions
 Q: What is impulse? | The product of force and time (∫F dt), equal to the change in momentum.
 Q: How do crumple zones reduce injury? | They increase the collision time, reducing the average force for the same momentum change.
-M1: A 0.1 kg ball hits a wall at 10 m s^{-1} and rebounds at 10 m s^{-1}. Momentum change? | 2 kg m s^{-1} | 0 | 1 kg m s^{-1} | 20 kg m s^{-1} | 0.1 × (10 − (−10)).
-M2: A force–time graph is a triangle of peak 400 N and duration 0.02 s. Impulse? | 4 N s | 8 N s | 400 N s | 2 N s | Area = ½ × 0.02 × 400.
-M2: Glider A's momentum changes by −0.6 kg m/s in a collision. What is the change in glider B's momentum? | +0.6 kg m/s | −0.6 kg m/s | 0 kg m/s | It can't be known without the masses | By Newton's third law the impulses are equal and opposite, so B gains what A loses.
+M1#physics-u04-22-q1: A 0.1 kg ball hits a wall at 10 m s^{-1} and rebounds at 10 m s^{-1}. Momentum change? | 2 kg m s^{-1} | 0 | 1 kg m s^{-1} | 20 kg m s^{-1} | 0.1 × (10 − (−10)).
+M2#physics-u04-22-q2: A force–time graph is a triangle of peak 400 N and duration 0.02 s. Impulse? | 4 N s | 8 N s | 400 N s | 2 N s | Area = ½ × 0.02 × 400.
+M2#physics-u04-22-q3: Glider A's momentum changes by −0.6 kg m/s in a collision. What is the change in glider B's momentum? | +0.6 kg m/s | −0.6 kg m/s | 0 kg m/s | It can't be known without the masses | By Newton's third law the impulses are equal and opposite, so B gains what A loses.
 Q: What is momentum? | p = mv, the quantity of motion.
 Q: What is the impulse-momentum theorem? | J = ∫F dt = Δp.
 Q: How is average force found from a momentum change? | F_{avg} = Δp/Δt.
@@ -695,9 +695,9 @@ P: **Investigate with the lab.** Try every challenge, and in each one compare th
 IX: collisions
 Q: When is the total momentum of a system conserved? | When the net external force on it is zero.
 Q: Why does a gun recoil? | Total momentum stays zero, so the gun gains backward momentum equal to the bullet's forward momentum.
-M1: A 2 kg cart at 3 m s^{-1} couples to a stationary 4 kg cart. Final speed? | 1 m s^{-1} | 1.5 m s^{-1} | 3 m s^{-1} | 2 m s^{-1} | 6 = 6v.
-M2: An astronaut throws a tool to move back towards the ship. This uses: | Conservation of momentum | Conservation of energy only | Air resistance | Gravity | Throwing the tool away gives the astronaut opposite momentum.
-M2: In which collisions on a frictionless track is total momentum conserved? | All of them: elastic, sticky and explosions | Only elastic collisions | Only collisions where the gliders stick | Only collisions between equal masses | With no external horizontal force, total momentum is always conserved.
+M1#physics-u04-23-q1: A 2 kg cart at 3 m s^{-1} couples to a stationary 4 kg cart. Final speed? | 1 m s^{-1} | 1.5 m s^{-1} | 3 m s^{-1} | 2 m s^{-1} | 6 = 6v.
+M2#physics-u04-23-q2: An astronaut throws a tool to move back towards the ship. This uses: | Conservation of momentum | Conservation of energy only | Air resistance | Gravity | Throwing the tool away gives the astronaut opposite momentum.
+M2#physics-u04-23-q3: In which collisions on a frictionless track is total momentum conserved? | All of them: elastic, sticky and explosions | Only elastic collisions | Only collisions where the gliders stick | Only collisions between equal masses | With no external horizontal force, total momentum is always conserved.
 Q: State the law of conservation of momentum. | If no net external force acts on a system, its total momentum stays constant.
 Q: Which of Newton's laws leads to momentum conservation? | The third law, because internal forces cancel in pairs.
 Q: What is the deeper reason momentum is conserved? | Noether's theorem: the laws of physics are the same everywhere in space.
@@ -728,9 +728,9 @@ P: **Investigate with the lab.** Start both gliders at rest and set off the expl
 IX: collisions
 Q: In an explosion from rest, which fragment gets more kinetic energy? | The lighter one.
 Q: What is a perfectly inelastic collision? | One in which the bodies stick together, losing the maximum kinetic energy.
-M1: In which type of collision is KE conserved? | Elastic | Inelastic | Perfectly inelastic | Explosion | By definition.
-M2: A uranium-238 nucleus at rest emits an alpha particle (mass 4). The daughter's KE is roughly what fraction of the total? | 2% | 50% | 98% | 0 | KE ratio = mass ratio inverted: 4/234 of the alpha's.
-M2: Two gliders at rest push apart. Glider A (1 kg) moves at 3 m/s. How fast does glider B (2 kg) move? | 1.5 m/s the other way | 3 m/s the other way | 6 m/s the other way | 1.5 m/s the same way | Total momentum stays zero: 1 × 3 = 2 × v, so v = 1.5 m/s in the opposite direction.
+M1#physics-u04-24-q1: In which type of collision is KE conserved? | Elastic | Inelastic | Perfectly inelastic | Explosion | By definition.
+M2#physics-u04-24-q2: A uranium-238 nucleus at rest emits an alpha particle (mass 4). The daughter's KE is roughly what fraction of the total? | 2% | 50% | 98% | 0 | KE ratio = mass ratio inverted: 4/234 of the alpha's.
+M2#physics-u04-24-q3: Two gliders at rest push apart. Glider A (1 kg) moves at 3 m/s. How fast does glider B (2 kg) move? | 1.5 m/s the other way | 3 m/s the other way | 6 m/s the other way | 1.5 m/s the same way | Total momentum stays zero: 1 × 3 = 2 × v, so v = 1.5 m/s in the opposite direction.
 Q: What is an elastic collision? | One in which kinetic energy is conserved.
 Q: What is an inelastic collision? | One where some kinetic energy turns into heat, sound or deformation.
 Q: What happens to energy in an explosion? | Stored chemical or elastic energy becomes kinetic energy.
@@ -762,9 +762,9 @@ P: **Investigate with the lab.** Set restitution to 1, then to 0, with the same 
 IX: collisions
 Q: What is the coefficient of restitution? | The ratio of relative speed of separation to relative speed of approach.
 Q: What happens when equal masses collide elastically, one at rest? | They exchange velocities.
-M1: A ball with e = 0.5 is dropped from 4 m. It rebounds to: | 1 m | 2 m | 0.5 m | 3 m | h = e^{2} × 4.
-M2: A neutron collides elastically head-on with a stationary carbon-12 nucleus. What fraction of its speed does it keep? | 11/13 | 1/12 | 1/2 | 0 | v_{1} = (1 − 12)/(1 + 12) u: magnitude 11/13. This is why moderators use light nuclei.
-M2: What is conserved in a perfectly inelastic collision? | Momentum, but not kinetic energy | Kinetic energy, but not momentum | Both momentum and kinetic energy | Neither momentum nor kinetic energy | Momentum is always conserved; when objects stick, the most kinetic energy possible is lost.
+M1#physics-u04-25-q1: A ball with e = 0.5 is dropped from 4 m. It rebounds to: | 1 m | 2 m | 0.5 m | 3 m | h = e^{2} × 4.
+M2#physics-u04-25-q2: A neutron collides elastically head-on with a stationary carbon-12 nucleus. What fraction of its speed does it keep? | 11/13 | 1/12 | 1/2 | 0 | v_{1} = (1 − 12)/(1 + 12) u: magnitude 11/13. This is why moderators use light nuclei.
+M2#physics-u04-25-q3: What is conserved in a perfectly inelastic collision? | Momentum, but not kinetic energy | Kinetic energy, but not momentum | Both momentum and kinetic energy | Neither momentum nor kinetic energy | Momentum is always conserved; when objects stick, the most kinetic energy possible is lost.
 Q: What is the formula for the coefficient of restitution? | e = (v_{2} − v_{1})/(u_{1} − u_{2}).
 Q: What is e for an elastic collision? | 1.
 Q: What is e for a perfectly inelastic collision? | 0.
@@ -793,9 +793,9 @@ P: **Investigate with the lab.** Watch the centre-of-mass marker during an explo
 IX: collisions
 Q: How does the centre of mass of a system move? | As if all the mass were there and all external forces acted there.
 Q: When is an object resting on a base stable? | When the vertical line through its centre of mass passes within its base.
-M1: A uniform 4 m plank has a 20 kg child at one end; the plank is 10 kg. CM from that end? | 0.67 m | 2 m | 1 m | 1.33 m | (20 × 0 + 10 × 2)/30.
-M2: A firework explodes mid-air. The CM of the fragments: | Continues on the original trajectory | Stops | Moves straight down | Moves upward | Only external forces (gravity) affect CM motion.
-M2: Two gliders collide on a frictionless track. What happens to the velocity of their centre of mass? | It stays the same throughout | It drops to zero at the moment of impact | It reverses direction after the collision | It doubles during the collision | With no external force, the centre of mass moves at constant velocity.
+M1#physics-u04-26-q1: A uniform 4 m plank has a 20 kg child at one end; the plank is 10 kg. CM from that end? | 0.67 m | 2 m | 1 m | 1.33 m | (20 × 0 + 10 × 2)/30.
+M2#physics-u04-26-q2: A firework explodes mid-air. The CM of the fragments: | Continues on the original trajectory | Stops | Moves straight down | Moves upward | Only external forces (gravity) affect CM motion.
+M2#physics-u04-26-q3: Two gliders collide on a frictionless track. What happens to the velocity of their centre of mass? | It stays the same throughout | It drops to zero at the moment of impact | It reverses direction after the collision | It doubles during the collision | With no external force, the centre of mass moves at constant velocity.
 Q: What is the centre of mass? | The mass-weighted average position of a system.
 Q: What is the formula for the centre of mass of particles? | R = Σm_{i}r_{i}/M.
 Q: What equation governs the motion of the centre of mass? | MA_{cm} = ΣF_{ext}.
@@ -823,8 +823,8 @@ P: Earth and Moon orbit their common CM (about 4700 km from Earth's centre, insi
 !: Kinetic energy isn't just ½MV_{cm}^{2}; the internal part (rotation, vibration, relative motion) can be most of it.
 Q: What is the reduced mass of two bodies? | μ = m_{1}m_{2}/(m_{1} + m_{2}).
 Q: Can internal forces change a system's total momentum? | No, only external forces can.
-M1: A system's internal forces can change its: | Kinetic energy | Total momentum | Centre-of-mass velocity | Total mass | Explosions create KE without changing P.
-M2: The Earth–Moon CM lies: | Inside the Earth, ~4700 km from its centre | At the Earth's centre | Halfway between them | At the Moon | Mass ratio ~81:1 over 384 000 km.
+M1#physics-u04-27-q1: A system's internal forces can change its: | Kinetic energy | Total momentum | Centre-of-mass velocity | Total mass | Explosions create KE without changing P.
+M2#physics-u04-27-q2: The Earth–Moon CM lies: | Inside the Earth, ~4700 km from its centre | At the Earth's centre | Halfway between them | At the Moon | Mass ratio ~81:1 over 384 000 km.
 Q: What is the total momentum of a system in terms of its centre of mass? | P = MV_{cm}.
 Q: What changes a system's total momentum? | Only external forces: dP/dt = F_{ext}.
 Q: How can a system's kinetic energy be split? | KE of the centre of mass plus KE relative to the centre of mass.
@@ -852,8 +852,8 @@ D: phys-u04-rocket-equation
 !: F = d(mv)/dt = m dv/dt + v dm/dt only applies when the added or lost mass is at rest in your frame; in general, use momentum conservation directly.
 Q: State the Tsiolkovsky rocket equation. | Δv = u ln(m_{0}/m_{f}).
 Q: What is rocket thrust? | Exhaust speed (relative to the rocket) times mass flow rate.
-M1: Rocket exhaust speed 2500 m s^{-1}, mass flow 400 kg s^{-1}. Thrust? | 1.0 MN | 10 kN | 6.25 kN | 100 kN | 2500 × 400.
-M2: Why do rockets use stages? | Dropping empty tanks improves the mass ratio of later stages | Each stage burns faster | To reduce drag only | Engines can't run long | Less dead mass to accelerate.
+M1#physics-u04-28-q1: Rocket exhaust speed 2500 m s^{-1}, mass flow 400 kg s^{-1}. Thrust? | 1.0 MN | 10 kN | 6.25 kN | 100 kN | 2500 × 400.
+M2#physics-u04-28-q2: Why do rockets use stages? | Dropping empty tanks improves the mass ratio of later stages | Each stage burns faster | To reduce drag only | Engines can't run long | Less dead mass to accelerate.
 Q: Why is F = ma not enough for a rocket? | Its mass changes, so momentum conservation must include the ejected mass.
 Q: What is the rocket's equation of motion? | M dv/dt = u dm/dt, where thrust is exhaust speed times mass flow rate.
 Q: How much must the mass ratio change to double a rocket's Δv? | It must be squared.
@@ -883,9 +883,9 @@ P: **Investigate with the lab.** Launch with drag on and watch the horizontal ve
 IX: projectile
 Q: What is the time constant for linear drag? | τ = m/b.
 Q: Does a body coasting under quadratic drag ever stop? | Not in finite time in the ideal model; its speed falls as 1/t.
-M1: With linear drag, after one time constant a falling object reaches: | 63% of terminal velocity | 37% | 100% | 50% | 1 − 1/e.
-M2: Terminal velocity under quadratic drag scales with mass as: | √m | m | m^{2} | 1/m | v_{t} = √(mg/c).
-M2: With quadratic drag, how does the descending half of a trajectory compare with the rising half? | It is steeper, because the ball has lost horizontal speed | It is a mirror image, as in drag-free motion | It is flatter, because drag pushes the ball forward | It is identical, since drag cancels out over a flight | Drag steadily removes horizontal speed, so the ball falls more steeply than it rose.
+M1#physics-u04-29-q1: With linear drag, after one time constant a falling object reaches: | 63% of terminal velocity | 37% | 100% | 50% | 1 − 1/e.
+M2#physics-u04-29-q2: Terminal velocity under quadratic drag scales with mass as: | √m | m | m^{2} | 1/m | v_{t} = √(mg/c).
+M2#physics-u04-29-q3: With quadratic drag, how does the descending half of a trajectory compare with the rising half? | It is steeper, because the ball has lost horizontal speed | It is a mirror image, as in drag-free motion | It is flatter, because drag pushes the ball forward | It is identical, since drag cancels out over a flight | Drag steadily removes horizontal speed, so the ball falls more steeply than it rose.
 Q: Why does motion with drag approach a steady state? | Drag grows with speed until it balances the driving force.
 Q: What is the velocity of a body falling from rest with linear drag? | v = v_{t}(1 − e^{−t/τ}).
 Q: What is the terminal velocity with linear drag? | v_{t} = mg/b.
@@ -914,9 +914,9 @@ P: **Investigate with the lab.** Launch straight down from a height with drag on
 IX: projectile
 Q: What is the condition for terminal velocity? | Drag (plus buoyancy) balances weight, so the net force is zero.
 Q: How did Millikan use terminal velocity? | Stokes' law gave each drop's radius and hence mass from its terminal speed.
-M1: At terminal velocity, a skydiver's acceleration is: | Zero | g | g/2 | Increasing | Forces balance.
-M2: Under Stokes' law, doubling a sphere's radius changes v_{t} by: | ×4 | ×2 | ×8 | ×√2 | v_{t} ∝ r^{2}.
-M2: What happens at terminal velocity? | Drag equals weight, so the acceleration is zero | The ball stops accelerating because gravity switches off | The speed keeps rising at a constant rate | Drag becomes larger than weight forever | When drag balances weight, the resultant force and so the acceleration are zero.
+M1#physics-u04-30-q1: At terminal velocity, a skydiver's acceleration is: | Zero | g | g/2 | Increasing | Forces balance.
+M2#physics-u04-30-q2: Under Stokes' law, doubling a sphere's radius changes v_{t} by: | ×4 | ×2 | ×8 | ×√2 | v_{t} ∝ r^{2}.
+M2#physics-u04-30-q3: What happens at terminal velocity? | Drag equals weight, so the acceleration is zero | The ball stops accelerating because gravity switches off | The speed keeps rising at a constant rate | Drag becomes larger than weight forever | When drag balances weight, the resultant force and so the acceleration are zero.
 Q: What is terminal velocity? | The constant speed reached when drag equals weight, so the net force is zero.
 Q: What is the terminal velocity at high Reynolds number? | v_{t} = √(2mg/(ρC_{d}A)).
 Q: What is the Stokes terminal velocity of a small sphere? | v_{t} = 2r^{2}(ρ_{s} − ρ_{f})g/(9η).
@@ -944,8 +944,8 @@ X: A 4.0 m uniform beam (200 N) rests on supports at its ends. A 600 N person st
 !: Zero net force isn't enough: a couple (two equal, opposite, offset forces) has zero net force but makes things rotate.
 Q: What are the two conditions for static equilibrium? | Zero net force and zero net torque.
 Q: Why take moments about an unknown force's point of action? | Its moment is zero there, eliminating it from the equation.
-M1: A uniform 2 m seesaw pivoted at its centre has a 30 kg child 0.8 m from the pivot. Where must a 40 kg child sit? | 0.6 m on the other side | 0.8 m | 1.07 m | 0.4 m | 30 × 0.8 = 40 × d.
-M2: A ladder leaning on a smooth wall slips at the floor. Which force prevents slipping? | Friction at the floor | Friction at the wall | The weight | The normal force at the wall | The smooth wall exerts only a horizontal normal force.
+M1#physics-u04-31-q1: A uniform 2 m seesaw pivoted at its centre has a 30 kg child 0.8 m from the pivot. Where must a 40 kg child sit? | 0.6 m on the other side | 0.8 m | 1.07 m | 0.4 m | 30 × 0.8 = 40 × d.
+M2#physics-u04-31-q2: A ladder leaning on a smooth wall slips at the floor. Which force prevents slipping? | Friction at the floor | Friction at the wall | The weight | The normal force at the wall | The smooth wall exerts only a horizontal normal force.
 Q: When is a body in static equilibrium? | When it neither translates nor rotates.
 Q: How many equations does 2D equilibrium give? | Three: two force components and torque.
 Q: What must be true of three non-parallel forces in equilibrium? | They must meet at a point.
@@ -977,8 +977,8 @@ D: phys-u04-pulley-efficiency
 !: A large mechanical advantage means you move the effort through a large distance; the work is never less than the useful work out.
 Q: What is velocity ratio? | Distance moved by the effort divided by distance moved by the load.
 Q: How are MA, VR and efficiency related? | η = MA/VR.
-M1: A lever has effort arm 1.5 m and load arm 0.3 m. Ideal MA? | 5 | 0.2 | 1.8 | 4.5 | 1.5/0.3.
-M2: A hydraulic jack has pistons of area 2 cm^{2} and 100 cm^{2}. A 50 N push gives: | 2500 N | 50 N | 1 N | 5000 N | Pressure is equal: force scales with area ratio 50.
+M1#physics-u04-32-q1: A lever has effort arm 1.5 m and load arm 0.3 m. Ideal MA? | 5 | 0.2 | 1.8 | 4.5 | 1.5/0.3.
+M2#physics-u04-32-q2: A hydraulic jack has pistons of area 2 cm^{2} and 100 cm^{2}. A 50 N push gives: | 2500 N | 50 N | 1 N | 5000 N | Pressure is equal: force scales with area ratio 50.
 Q: What is mechanical advantage? | The ratio of output force to input force: MA = F_{out}/F_{in}.
 Q: What do machines trade? | Force for distance.
 Q: What is the formula for velocity ratio? | VR = d_{in}/d_{out}.
@@ -1007,8 +1007,8 @@ P: Screws and wedges usually have efficiency below 50%, which makes them self-lo
 !: Third-class levers (like your forearm, where the biceps attaches near the elbow) have MA < 1; they trade force for speed and range of movement.
 Q: Name the six simple machines. | Lever, wheel and axle, pulley, inclined plane, wedge, screw.
 Q: Why is a screw jack self-locking? | Its efficiency is below 50%, so friction prevents the load driving it backwards.
-M1: A ramp is 6 m long and rises 1.5 m. Ideal MA? | 4 | 1.5 | 6 | 0.25 | Length/height.
-M2: Your forearm is a lever of which class? | Third | First | Second | It's not a lever | The effort (biceps) is between the pivot (elbow) and the load (hand).
+M1#physics-u04-33-q1: A ramp is 6 m long and rises 1.5 m. Ideal MA? | 4 | 1.5 | 6 | 0.25 | Length/height.
+M2#physics-u04-33-q2: Your forearm is a lever of which class? | Third | First | Second | It's not a lever | The effort (biceps) is between the pivot (elbow) and the load (hand).
 Q: What is a first-class lever? | One with the pivot between effort and load, like a seesaw or crowbar.
 Q: What is a second-class lever? | One with the load between pivot and effort, like a wheelbarrow.
 Q: What is a third-class lever? | One with the effort between pivot and load, like tweezers or your forearm.

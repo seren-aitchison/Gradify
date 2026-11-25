@@ -17,8 +17,8 @@ One unit file: lessons separated by `## Title` lines, using the tags in `docs/CU
 - `T:` key terms, `term | definition`, at least two
 - at least two `H:` sections, at least one `K:` key point, `!:` lines for the misconceptions in the brief
 - `X:` worked examples with `> ` steps for any method or calculation
-- `D: <diagram-id>` for a listed library diagram, or `DIA: <renderer-id> | <json spec>` for a new one using a listed renderer, or `DNEED: <what the diagram must show>` if none fits. Mechanisms, processes, structures and cycles need a diagram
-- `Q:` flashcards, `question | answer`, one thing each, answer under 40 words
+- at least three distinct diagrams in every lesson, each one teaching something: `D: <diagram-id>` for a listed library diagram, `DIA: <renderer-id> | <json spec>` for a new one using a listed renderer, or `DNEED: <what the diagram must show and label>` if none fits (it is drawn before the lesson is published). Mechanisms, processes, structures and cycles always need one. Don't count the same diagram twice
+- `Q:` flashcards, `question | answer`, one thing each, answer under 40 words. The topic's lessons together need at least 20 distinct flashcards, covering definitions, explanations, comparisons, processes, applications and exam knowledge, with no question asked twice
 - check questions `M1@n:`, `M2@n:`, `M3@n:` (and `NUM`, `SEQ`, `MS`, `SA` where they fit), each tagged with the objectives it assesses. Every objective has at least one question
 - `SUM:` full-sentence summary points
 - `SRC:` the brief's sources you relied on, `citation | kind | date | link`
@@ -27,7 +27,8 @@ One unit file: lessons separated by `## Title` lines, using the tags in `docs/CU
 ## Rules
 
 - Use only what the brief supports. If the brief lacks something a requirement needs, end the lesson with `GAP: <what's missing>` instead of guessing.
-- If the brief has a `CONFLICT:` line affecting a point, teach the point the official specification uses and add a `!:` line noting the difference.
+- `F:` lines are what the lesson teaches. `BG:` lines are sourced background you may use to explain it, such as why a cell needs oxygen. Don't make a background point an objective, a check question or a key point, and don't add background the brief doesn't give, however standard it is.
+- If the brief has a `CONFLICT:` line affecting a point, teach the version the official specification uses and add one `!:` line for that conflict which (1) says the sources disagree, (2) states each account accurately and names whose it is, (3) says why they differ, or that it isn't settled, and (4) says which version exams expect. Never state a disputed point as plain fact anywhere in the lesson. Cite each source the `!:` line names in an `SRC:` line. A lesson that explains a low-stakes conflict this way can be published without an expert.
 - Never copy wording from the requirement text or any source. Eight words in a row matching the specification fails the lesson.
 - Size follows the topic (see the sizing guide). Don't write to a template.
 - Check-question options: every wrong option is a real misconception; the right answer is not the longest by more than about 20%; at least three wrong options and an explanation.

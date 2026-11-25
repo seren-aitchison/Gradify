@@ -24,8 +24,8 @@ K: Fields are classified by how they transform; scalars, vectors and tensors kee
 !: The magnetic field is a pseudovector: under a mirror reflection it does not flip like velocity does.
 Q: Give an example of a tensor field. | Stress in a material, the metric of spacetime, or the electromagnetic field tensor.
 Q: What does Helmholtz's theorem state? | A well-behaved vector field is determined by its divergence and curl.
-M1: Which is a scalar field? | Air pressure | Wind velocity | Magnetic field | Stress | One number per point.
-M2: ∇·(∇ × A) equals: | 0 | ∇^{2}A | 1 | A | Divergence of a curl vanishes.
+M1#physics-u41-01-q1: Which is a scalar field? | Air pressure | Wind velocity | Magnetic field | Stress | One number per point.
+M2#physics-u41-01-q2: ∇·(∇ × A) equals: | 0 | ∇^{2}A | 1 | A | Divergence of a curl vanishes.
 
 ## Field equations
 S: Field equations are partial differential equations that determine how fields vary in space and time, given their sources. Maxwell's equations, Poisson's equation, the wave equation and Einstein's equations all have this form.
@@ -52,8 +52,8 @@ K: Field equations connect fields to their sources; linear ones allow superposit
 !: Gauss's law is a constraint, not an evolution equation; initial data must satisfy it.
 Q: What makes Einstein's equations nonlinear? | Gravitational field energy itself gravitates; the metric appears in products in the curvature.
 Q: What does the d'Alembertian □ represent? | The relativistic wave operator (1/c^{2})∂_{t}^{2} − ∇^{2}.
-M1: The Klein–Gordon dispersion relation corresponds to: | E^{2} = p^{2}c^{2} + m^{2}c^{4} | E = pc only | E = p^{2}/2m | E = mc^{2} only | Relativistic energy.
-M2: Superposition holds for: | Linear field equations | All field equations | Only Einstein's equations | Turbulent flows | Fields add.
+M1#physics-u41-02-q1: The Klein–Gordon dispersion relation corresponds to: | E^{2} = p^{2}c^{2} + m^{2}c^{4} | E = pc only | E = p^{2}/2m | E = mc^{2} only | Relativistic energy.
+M2#physics-u41-02-q2: Superposition holds for: | Linear field equations | All field equations | Only Einstein's equations | Turbulent flows | Fields add.
 
 ## Lagrangian field theory
 S: Lagrangian field theory derives field equations from a Lagrangian density integrated over spacetime. This compact formulation guarantees consistency with relativity when ℒ is a Lorentz scalar, and it makes symmetries and conservation laws easy to find.
@@ -78,8 +78,8 @@ K: A Lagrangian density encodes a field theory; vary the action to get field equ
 !: ℒ is a density; the Lagrangian is its integral over space.
 Q: What is the Lagrangian density of a vibrating string? | ½μ(∂y/∂t)^{2} − ½T(∂y/∂x)^{2}.
 Q: Why must ℒ be a Lorentz scalar? | So the action and hence the field equations are the same in all inertial frames.
-M1: The φ^{4} theory with negative m^{2} shows: | Spontaneous symmetry breaking | No vacuum | Free particles only | Gauge fields | Double-well potential.
-M2: Each field in a Lagrangian gives: | Its own Euler–Lagrange equation | No equations | A conserved charge only | A gauge boson | One equation per field.
+M1#physics-u41-03-q1: The φ^{4} theory with negative m^{2} shows: | Spontaneous symmetry breaking | No vacuum | Free particles only | Gauge fields | Double-well potential.
+M2#physics-u41-03-q2: Each field in a Lagrangian gives: | Its own Euler–Lagrange equation | No equations | A conserved charge only | A gauge boson | One equation per field.
 
 ## Hamiltonian field theory
 S: Hamiltonian field theory treats a field and its conjugate momentum density as canonical variables at every point. It gives the energy density, leads to Poisson brackets of fields, and is the starting point for canonical quantisation.
@@ -105,8 +105,8 @@ K: Fields become canonical variables at every point; ℋ gives energy density, a
 !: In gauge theories not every field component has a conjugate momentum; constraints must be handled carefully.
 Q: What is the conjugate momentum density of a scalar field? | π = ∂ℒ/∂φ̇ = φ̇ for a standard kinetic term.
 Q: What does canonical quantisation impose on fields? | [φ(x), π(y)] = iħδ^{3}(x − y).
-M1: The scalar-field Hamiltonian density includes: | ½π^{2} + ½(∇φ)^{2} + V | ½π^{2} − V | Only V | π^{2}φ^{2} | Kinetic, gradient and potential.
-M2: The ADM formalism is a Hamiltonian version of: | General relativity | QED | Fluid dynamics | Thermodynamics | Used in numerical relativity.
+M1#physics-u41-04-q1: The scalar-field Hamiltonian density includes: | ½π^{2} + ½(∇φ)^{2} + V | ½π^{2} − V | Only V | π^{2}φ^{2} | Kinetic, gradient and potential.
+M2#physics-u41-04-q2: The ADM formalism is a Hamiltonian version of: | General relativity | QED | Fluid dynamics | Thermodynamics | Used in numerical relativity.
 
 ## Field symmetries
 S: Symmetries of a field theory are transformations of the fields or spacetime that leave the action unchanged. They organise fields into multiplets, fix allowed interactions, give conservation laws and, when broken, explain masses and phases of matter.
@@ -129,8 +129,8 @@ K: Symmetries constrain theories; how they are broken explains much of the struc
 !: A spontaneously broken symmetry is still a symmetry of the laws; only the ground state isn't symmetric.
 Q: What does Goldstone's theorem predict? | A massless boson for each spontaneously broken continuous global symmetry generator.
 Q: Give an example of explicit symmetry breaking. | Small quark masses breaking chiral symmetry, making pions light but not massless.
-M1: A φ → −φ symmetry is: | Discrete Z_{2} | Continuous U(1) | Gauge | Conformal | Two-element group.
-M2: Domain walls form from breaking: | Discrete symmetries | Gauge symmetries only | No symmetry | Time translations | Separating different vacua.
+M1#physics-u41-05-q1: A φ → −φ symmetry is: | Discrete Z_{2} | Continuous U(1) | Gauge | Conformal | Two-element group.
+M2#physics-u41-05-q2: Domain walls form from breaking: | Discrete symmetries | Gauge symmetries only | No symmetry | Time translations | Separating different vacua.
 
 ## Noether currents
 S: Each continuous symmetry of a field theory gives a Noether current, a four-vector j^{μ} whose divergence vanishes. Integrating its time component over space gives a conserved charge, such as electric charge, energy or momentum.
@@ -155,8 +155,8 @@ K: Each continuous symmetry yields a locally conserved current; integrating give
 !: Conservation is local: charges flow continuously, they cannot teleport.
 Q: What is the Noether current for the Dirac field's U(1) symmetry? | ψ̄γ^{μ}ψ, the probability (or charge) current.
 Q: What equation expresses local conservation? | ∂ρ/∂t + ∇·j = 0, or ∂_{μ}j^{μ} = 0.
-M1: Spacetime translation symmetry gives: | The energy–momentum tensor | Electric charge | Isospin | Parity | T^{μν}.
-M2: Anomalies can: | Break classical conservation laws quantum-mechanically | Create charge | Remove gauge fields | Make fields classical | E.g. axial current.
+M1#physics-u41-06-q1: Spacetime translation symmetry gives: | The energy–momentum tensor | Electric charge | Isospin | Parity | T^{μν}.
+M2#physics-u41-06-q2: Anomalies can: | Break classical conservation laws quantum-mechanically | Create charge | Remove gauge fields | Make fields classical | E.g. axial current.
 
 ## Conservation laws
 S: Conservation laws state that certain quantities, such as energy, momentum, angular momentum and charge, stay constant in isolated systems. In field theory they take the form of continuity equations linking densities to fluxes, and they come from symmetries.
@@ -183,8 +183,8 @@ K: Conservation laws are continuity equations: what flows out of a region must r
 !: Local conservation (continuity) is stronger than global conservation; it forbids instantaneous jumps between distant places.
 Q: What is the Poynting vector? | S = E × H, the energy flux of the electromagnetic field.
 Q: Is baryon number exactly conserved? | No known violation, but it's not protected by a gauge symmetry and may be violated at extreme energies.
-M1: The continuity equation for mass in fluids is: | ∂ρ/∂t + ∇·(ρv) = 0 | ∇·v = ρ | ρ = const always | ∂v/∂t = 0 | Mass flows.
-M2: Radiation pressure on an absorber is: | I/c | 2I/c | Ic | I/c^{2} | Momentum flux.
+M1#physics-u41-07-q1: The continuity equation for mass in fluids is: | ∂ρ/∂t + ∇·(ρv) = 0 | ∇·v = ρ | ρ = const always | ∂v/∂t = 0 | Mass flows.
+M2#physics-u41-07-q2: Radiation pressure on an absorber is: | I/c | 2I/c | Ic | I/c^{2} | Momentum flux.
 
 ## Electromagnetic field theory
 S: Electromagnetism is the prototype classical field theory: a gauge field A_{μ}, a Lagrangian, Maxwell's equations as field equations, and conservation of energy, momentum and charge. Writing it covariantly reveals that E and B are parts of one tensor.
@@ -209,8 +209,8 @@ K: E and B are components of one tensor F_{μν}; Maxwell's equations are its fi
 !: Whether a field is "electric" or "magnetic" depends on the observer's frame.
 Q: What are the two Lorentz invariants of the EM field? | B^{2} − E^{2}/c^{2} and E·B.
 Q: What does the Aharonov–Bohm effect show? | Electromagnetic potentials affect quantum phases even in regions with zero field.
-M1: The homogeneous Maxwell equations follow from: | F = dA (Bianchi identity) | Charge conservation | Gauss's law | Lenz's law | No monopoles, Faraday's law.
-M2: If E·B = 0 and |E| < c|B| in one frame, then: | There is a frame with only B | E vanishes everywhere | B vanishes | No frame changes it | Invariants determine this.
+M1#physics-u41-08-q1: The homogeneous Maxwell equations follow from: | F = dA (Bianchi identity) | Charge conservation | Gauss's law | Lenz's law | No monopoles, Faraday's law.
+M2#physics-u41-08-q2: If E·B = 0 and |E| < c|B| in one frame, then: | There is a frame with only B | E vanishes everywhere | B vanishes | No frame changes it | Invariants determine this.
 
 ## Stress-energy tensors
 S: The stress-energy tensor T^{μν} collects energy density, momentum density, energy flux and stress (pressure and shear) into one symmetric object. It is the conserved current of spacetime translations and the source of gravity in general relativity.
@@ -237,8 +237,8 @@ K: T^{μν} packages energy, momentum and stress; it is conserved and sources sp
 !: In relativity pressure contributes to gravity; for radiation it doubles the gravitational effect of energy density.
 Q: What does T^{00} represent? | Energy density.
 Q: Why is the electromagnetic stress-energy tensor traceless? | Electromagnetism is scale (conformally) invariant; massless radiation has p = ρc^{2}/3.
-M1: For dark energy (cosmological constant), w equals: | −1 | 0 | 1/3 | 1 | p = −ρc^{2}.
-M2: T^{ij} components represent: | Stress (momentum flux) | Energy density | Charge | Spin | Pressure and shear.
+M1#physics-u41-09-q1: For dark energy (cosmological constant), w equals: | −1 | 0 | 1/3 | 1 | p = −ρc^{2}.
+M2#physics-u41-09-q2: T^{ij} components represent: | Stress (momentum flux) | Energy density | Charge | Spin | Pressure and shear.
 
 ## Classical wave fields
 S: Wave fields carry energy and information through space as oscillations of a field. Sound, water waves, light and gravitational waves share common mathematics: wave equations, dispersion relations, interference and diffraction.
@@ -264,8 +264,8 @@ K: Wave fields obey wave equations; their dispersion relation sets speeds, and s
 !: Energy and information travel at the group velocity, which can differ greatly from the phase velocity.
 Q: What is the group velocity of deep-water waves relative to phase velocity? | Half the phase velocity.
 Q: How many polarisations do gravitational waves have? | Two, + and ×.
-M1: A non-dispersive wave has: | v_{g} = v_{p} | v_{g} = 0 | v_{g} = 2v_{p} | No phase velocity | ω ∝ k.
-M2: Below the plasma frequency, EM waves are: | Evanescent (reflected) | Transmitted unchanged | Amplified | Turned into sound | Imaginary k.
+M1#physics-u41-10-q1: A non-dispersive wave has: | v_{g} = v_{p} | v_{g} = 0 | v_{g} = 2v_{p} | No phase velocity | ω ∝ k.
+M2#physics-u41-10-q2: Below the plasma frequency, EM waves are: | Evanescent (reflected) | Transmitted unchanged | Amplified | Turned into sound | Imaginary k.
 
 ## Gauge invariance
 S: Gauge invariance means that certain changes to the potentials leave all physical fields and predictions unchanged. It shows that potentials contain redundant information, constrains how fields can interact, and is the organising principle behind all fundamental forces.
@@ -290,8 +290,8 @@ K: Potentials are redundant; gauge invariance keeps physics independent of that 
 !: Different gauges give different-looking potentials but the same E, B and observable predictions.
 Q: Why is gauge invariance linked to charge conservation? | The coupling J_{μ}A^{μ} is gauge-invariant only if ∂_{μ}J^{μ} = 0.
 Q: What is the Lorenz gauge condition? | ∂_{μ}A^{μ} = 0, i.e. ∇·A + (1/c^{2})∂φ/∂t = 0.
-M1: The Coulomb gauge sets: | ∇·A = 0 | φ = 0 | A = 0 | ∂_{μ}A^{μ} = 0 | Transverse vector potential.
-M2: Gauge invariance forbids: | A photon mass term | Charge | Electric fields | Radiation | m^{2}A^{2} is not invariant.
+M1#physics-u41-11-q1: The Coulomb gauge sets: | ∇·A = 0 | φ = 0 | A = 0 | ∂_{μ}A^{μ} = 0 | Transverse vector potential.
+M2#physics-u41-11-q2: Gauge invariance forbids: | A photon mass term | Charge | Electric fields | Radiation | m^{2}A^{2} is not invariant.
 
 ## Green's functions for field equations
 S: Green's functions solve field equations for point sources, so any source distribution can be handled by superposition. For wave equations, causal Green's functions build in the finite speed of propagation and give retarded potentials.
@@ -316,8 +316,8 @@ K: Green's functions turn field equations into integrals over sources; the retar
 !: Static Coulomb fields seem instantaneous only in the Coulomb gauge's φ; physical fields E and B always propagate causally.
 Q: What is the retarded time? | t_{r} = t − |r − r'|/c, the time a signal left the source to arrive now.
 Q: What does Yukawa's Green's function describe? | A screened or short-range interaction with range 1/μ.
-M1: In 3D, wave Green's functions are sharp (no tail) because: | Huygens' principle holds in odd dimensions ≥ 3 | Waves are slow | Light has mass | Space is flat only | Clean wavefronts.
-M2: Liénard–Wiechert potentials describe fields of: | A moving point charge | A static dipole | Gravity | Magnetic monopoles | From the retarded Green's function.
+M1#physics-u41-12-q1: In 3D, wave Green's functions are sharp (no tail) because: | Huygens' principle holds in odd dimensions ≥ 3 | Waves are slow | Light has mass | Space is flat only | Clean wavefronts.
+M2#physics-u41-12-q2: Liénard–Wiechert potentials describe fields of: | A moving point charge | A static dipole | Gravity | Magnetic monopoles | From the retarded Green's function.
 
 ## Boundary conditions
 S: Boundary conditions specify how fields behave at edges and interfaces, completing a field problem. They determine standing-wave modes, reflection and transmission, and the forces at material boundaries, from waveguides to drumheads.
@@ -343,8 +343,8 @@ K: Boundary conditions complete field problems; they quantise modes and fix refl
 !: Applying the wrong boundary condition (Dirichlet vs Neumann) changes mode frequencies and solutions completely.
 Q: What is a Neumann boundary condition? | The normal derivative of the field is specified at the boundary.
 Q: What happens to tangential E at a perfect conductor? | It is zero.
-M1: Which EM component is always continuous across an interface? | Tangential E | Normal D always | Tangential H always | Normal E | No surface magnetic charge.
-M2: Perfectly matched layers are used to: | Absorb outgoing waves in simulations | Reflect waves | Add sources | Fix temperature | Mimic infinite space.
+M1#physics-u41-13-q1: Which EM component is always continuous across an interface? | Tangential E | Normal D always | Tangential H always | Normal E | No surface magnetic charge.
+M2#physics-u41-13-q2: Perfectly matched layers are used to: | Absorb outgoing waves in simulations | Reflect waves | Add sources | Fix temperature | Mimic infinite space.
 
 ## Radiation from sources
 S: Accelerating charges radiate electromagnetic waves, and oscillating masses radiate gravitational waves. Multipole expansions show how radiated power depends on the source's size, frequency and motion, explaining antennas, synchrotron light and the sky's colour.
@@ -370,8 +370,8 @@ K: Accelerating charges radiate; dipole radiation ∝ ω^{4}, and gravitational 
 !: Uniform motion doesn't radiate; acceleration (including circular motion) does.
 Q: Why is there no gravitational dipole radiation? | Conservation of momentum keeps the mass dipole's second derivative zero.
 Q: What is the radiation resistance of a half-wave dipole? | About 73 Ω.
-M1: Synchrotron radiation is beamed into a cone of angle about: | 1/γ | γ | 90° | 1 rad | Relativistic beaming.
-M2: Far-zone radiation fields fall off as: | 1/r | 1/r^{2} | 1/r^{3} | Constant | Power ∝ 1/r^{2}, constant through spheres.
+M1#physics-u41-14-q1: Synchrotron radiation is beamed into a cone of angle about: | 1/γ | γ | 90° | 1 rad | Relativistic beaming.
+M2#physics-u41-14-q2: Far-zone radiation fields fall off as: | 1/r | 1/r^{2} | 1/r^{3} | Constant | Power ∝ 1/r^{2}, constant through spheres.
 
 ## Continuum field models
 S: Continuum models treat matter as smooth fields rather than discrete atoms: density, velocity, displacement and order parameters. Fluid dynamics, elasticity, liquid crystals and Ginzburg–Landau theory describe vast ranges of behaviour this way.
@@ -398,6 +398,6 @@ K: Continuum fields average over atoms; constitutive laws supply material behavi
 !: Continuum descriptions break down when the system size approaches microscopic lengths such as the mean free path.
 Q: What is the Knudsen number? | The ratio of mean free path to system size; continuum models need Kn ≪ 1.
 Q: What field describes a nematic liquid crystal? | The director field n(x), giving the local average molecular orientation.
-M1: S-waves cannot travel through liquids because: | Liquids have zero shear modulus | Liquids are too dense | They are too fast | Liquids are opaque | μ = 0.
-M2: Ginzburg–Landau theory uses: | An order parameter field | Individual atoms | Feynman diagrams only | Rigid bodies | Phenomenological free energy.
+M1#physics-u41-15-q1: S-waves cannot travel through liquids because: | Liquids have zero shear modulus | Liquids are too dense | They are too fast | Liquids are opaque | μ = 0.
+M2#physics-u41-15-q2: Ginzburg–Landau theory uses: | An order parameter field | Individual atoms | Feynman diagrams only | Rigid bodies | Phenomenological free energy.
 `;

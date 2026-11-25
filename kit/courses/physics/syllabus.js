@@ -1,5 +1,6 @@
 // SciGradify Physics: the full syllabus, 54 units and every topic in them. Each "* topic" becomes a
 // lesson on the unit's path; its notes are in notes/uNN.js. Units are grouped into tracks below.
+import { IDS, RETIRED } from "./ids.js";
 export const SYLLABUS = `
 1. Foundations of Physics
 * Scope and aims of physics
@@ -1393,9 +1394,16 @@ export const PATHS = [
   { id: "research", name: "Research-ready", sub: "Skills for projects, dissertations and a career in physics.", units: [3, 39, 51, 52, 54] },
 ];
 
-// the syllabus as units and lessons; lesson ids are u01-01 style
+// the syllabus as units and lessons; lesson ids are u01-01 style, locked by title in ids.js: a lesson keeps its id when
+// lessons are added, moved or renamed (rename it in ids.js too), and a new lesson takes the next number never used in
+// its unit, locked or retired
+const key = (t) => t.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+const LOCKED = new Map(Object.entries(IDS).map(([id, title]) => [`${id.slice(0, 3)}|${key(title)}`, id]));
 export const UNITS = SYLLABUS.trim().split(/\n(?=\d+\. )/).map((block) => {
   const [head, ...rest] = block.split("\n");
   const n = Number(head.match(/^(\d+)\./)[1]), id = `u${String(n).padStart(2, "0")}`;
-  return { n, id, title: head.replace(/^\d+\.\s*/, ""), lessons: rest.filter((l) => l.startsWith("* ")).map((l, i) => ({ id: `${id}-${String(i + 1).padStart(2, "0")}`, title: l.slice(2).trim() })) };
+  const used = new Set([...Object.keys(IDS), ...Object.keys(RETIRED)].filter((x) => x.startsWith(`${id}-`)).map((x) => Number(x.slice(4))));
+  const next = () => { let i = 1; while (used.has(i)) i++; used.add(i); return `${id}-${String(i).padStart(2, "0")}`; };
+  const titles = rest.filter((l) => l.startsWith("* ")).map((l) => l.slice(2).trim());
+  return { n, id, title: head.replace(/^\d+\.\s*/, ""), lessons: titles.map((title) => ({ id: LOCKED.get(`${id}|${key(title)}`) || next(), title })) };
 });

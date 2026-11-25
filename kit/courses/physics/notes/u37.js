@@ -24,8 +24,8 @@ K: A qubit's power is not that it "is both 0 and 1", but that complex amplitudes
 !: You cannot read out all 2^{n} amplitudes; measurement gives only n bits. Algorithms must use interference to make the right answer likely.
 Q: What normalisation condition must a qubit's amplitudes satisfy? | |α|^{2} + |β|^{2} = 1.
 Q: What is the dimension of the state space of n qubits? | 2^{n}.
-M1: For |ψ⟩ = 0.6|0⟩ + 0.8|1⟩, P(1) is: | 0.64 | 0.8 | 0.36 | 0.6 | |0.8|^{2}.
-M2: Which has no measurable effect? | Global phase | Relative phase | Amplitude magnitude | Basis choice | Overall factors cancel in probabilities.
+M1#physics-u37-01-q1: For |ψ⟩ = 0.6|0⟩ + 0.8|1⟩, P(1) is: | 0.64 | 0.8 | 0.36 | 0.6 | |0.8|^{2}.
+M2#physics-u37-01-q2: Which has no measurable effect? | Global phase | Relative phase | Amplitude magnitude | Basis choice | Overall factors cancel in probabilities.
 
 ## Bloch sphere
 S: The Bloch sphere represents any pure single-qubit state as a point on a unit sphere. The poles are |0⟩ and |1⟩, the equator holds equal superpositions with different phases, and single-qubit gates become rotations, giving a powerful geometric picture.
@@ -52,8 +52,8 @@ K: Every pure qubit state is a point on the Bloch sphere; every single-qubit gat
 !: Orthogonal states are opposite on the sphere, at 180°, not at 90° as in ordinary vector space.
 Q: Which state sits at the south pole? | |1⟩.
 Q: Where do mixed states lie? | Inside the sphere; the maximally mixed state is at the centre.
-M1: |+⟩ lies on the Bloch sphere at: | +x on the equator | North pole | South pole | +y on the equator | Equal superposition, zero relative phase.
-M2: A Z gate rotates the Bloch vector by: | π about z | π/2 about x | π about y | 2π about z | It flips the relative phase.
+M1#physics-u37-02-q1: |+⟩ lies on the Bloch sphere at: | +x on the equator | North pole | South pole | +y on the equator | Equal superposition, zero relative phase.
+M2#physics-u37-02-q2: A Z gate rotates the Bloch vector by: | π about z | π/2 about x | π about y | 2π about z | It flips the relative phase.
 
 ## Quantum gates
 S: Quantum gates are unitary operations that transform qubit states reversibly. A small universal set, a few single-qubit rotations plus one entangling two-qubit gate, can approximate any quantum computation.
@@ -82,8 +82,8 @@ K: Quantum gates are reversible unitary operations; single-qubit rotations plus 
 !: Clifford circuits alone, however large, offer no quantum speed-up; non-Clifford gates like T are needed.
 Q: What does CNOT do? | It flips the target qubit if and only if the control qubit is |1⟩.
 Q: Why must quantum gates be unitary? | To preserve total probability and allow reversible evolution.
-M1: H|1⟩ equals: | |−⟩ | |+⟩ | |0⟩ | |1⟩ | (|0⟩ − |1⟩)/√2.
-M2: Which set is universal? | {H, T, CNOT} | {H, S, CNOT} | {X, Z} | {CNOT only} | Cliffords plus T.
+M1#physics-u37-03-q1: H|1⟩ equals: | |−⟩ | |+⟩ | |0⟩ | |1⟩ | (|0⟩ − |1⟩)/√2.
+M2#physics-u37-03-q2: Which set is universal? | {H, T, CNOT} | {H, S, CNOT} | {X, Z} | {CNOT only} | Cliffords plus T.
 
 ## Quantum circuits
 S: Quantum circuits are the standard language for describing quantum computations: qubits are wires, gates act on them in time order from left to right, and measurements read out results. Circuit depth, width and gate counts measure an algorithm's cost.
@@ -111,8 +111,8 @@ K: Circuits make quantum algorithms concrete; depth and two-qubit gate counts de
 !: Mathematically, a circuit A then B is the operator BA, written in reverse order.
 Q: What is phase kickback? | When a controlled operation's target is an eigenstate, the eigenvalue's phase appears on the control qubit.
 Q: Why does circuit depth matter? | Qubits decohere over time; deep circuits accumulate more errors.
-M1: n Hadamards on |0…0⟩ give: | An equal superposition of 2^{n} states | |1…1⟩ | An entangled GHZ state | No change | Each qubit becomes |+⟩.
-M2: A quantum oracle maps |x⟩|y⟩ to: | |x⟩|y ⊕ f(x)⟩ | |f(x)⟩|y⟩ | |x⟩|f(y)⟩ | |0⟩|0⟩ | Reversible encoding of f.
+M1#physics-u37-04-q1: n Hadamards on |0…0⟩ give: | An equal superposition of 2^{n} states | |1…1⟩ | An entangled GHZ state | No change | Each qubit becomes |+⟩.
+M2#physics-u37-04-q2: A quantum oracle maps |x⟩|y⟩ to: | |x⟩|y ⊕ f(x)⟩ | |f(x)⟩|y⟩ | |x⟩|f(y)⟩ | |0⟩|0⟩ | Reversible encoding of f.
 
 ## Quantum measurement
 S: Measurement is how quantum information becomes classical. It gives random outcomes with probabilities set by the Born rule, and it changes the state. The choice of measurement basis, and gentler generalised measurements, are tools in their own right.
@@ -138,8 +138,8 @@ K: Measurement gives probabilistic classical outcomes and disturbs the state; ch
 !: Measuring a qubit in superposition does not reveal the amplitudes; it gives a single outcome each time.
 Q: How do you measure a qubit in the X basis on hardware that measures Z? | Apply a Hadamard first, then measure in Z.
 Q: What does the no-cloning theorem forbid? | Making an identical copy of an unknown quantum state.
-M1: After measuring |+⟩ in the Z basis and getting 1, the state is: | |1⟩ | |+⟩ | |−⟩ | |0⟩ | Collapse to the eigenstate.
-M2: Statistical error after N shots scales as: | 1/√N | 1/N | N | √N | Binomial sampling.
+M1#physics-u37-05-q1: After measuring |+⟩ in the Z basis and getting 1, the state is: | |1⟩ | |+⟩ | |−⟩ | |0⟩ | Collapse to the eigenstate.
+M2#physics-u37-05-q2: Statistical error after N shots scales as: | 1/√N | 1/N | N | √N | Binomial sampling.
 
 ## Entanglement
 S: Entanglement is a correlation between quantum systems so strong that the state of the whole cannot be described by states of the parts. It is the key resource for teleportation, quantum cryptography, sensing beyond classical limits and quantum speed-ups.
@@ -165,8 +165,8 @@ K: Entangled states are wholes that cannot be split into parts; each part alone 
 !: Entanglement cannot transmit information faster than light; classical communication is still needed.
 Q: Write the Bell state |Φ^{+}⟩. | (|00⟩ + |11⟩)/√2.
 Q: What does monogamy of entanglement mean? | Maximal entanglement between two systems excludes entanglement with a third.
-M1: Which is entangled? | (|01⟩ − |10⟩)/√2 | |0⟩|+⟩ | |+⟩|+⟩ | |11⟩ | It cannot be factorised.
-M2: Entanglement entropy of a product state is: | 0 | 1 | 2 | Infinite | Each part is pure.
+M1#physics-u37-06-q1: Which is entangled? | (|01⟩ − |10⟩)/√2 | |0⟩|+⟩ | |+⟩|+⟩ | |11⟩ | It cannot be factorised.
+M2#physics-u37-06-q2: Entanglement entropy of a product state is: | 0 | 1 | 2 | Infinite | Each part is pure.
 
 ## Bell inequalities
 S: Bell inequalities test whether nature can be explained by local hidden variables, pre-existing values with no faster-than-light influences. Quantum mechanics predicts violations, and experiments since the 1970s, culminating in loophole-free tests in 2015, confirm them.
@@ -189,8 +189,8 @@ K: Bell violations rule out local hidden variables: quantum correlations are str
 !: Violating Bell's inequality does not allow faster-than-light signalling; it rules out local realism, not relativity.
 Q: What is the classical CHSH bound? | 2.
 Q: What is Tsirelson's bound? | 2√2, the maximum quantum value of the CHSH expression.
-M1: The detection loophole arises when: | Detector efficiency is too low | Settings are chosen too slowly | Clocks drift | Photons are too bright | A biased subsample could fake violation.
-M2: In 2022 the Nobel Prize recognised: | Bell tests with entangled photons | Discovery of the qubit | Shor's algorithm | Quantum dots | Aspect, Clauser and Zeilinger.
+M1#physics-u37-07-q1: The detection loophole arises when: | Detector efficiency is too low | Settings are chosen too slowly | Clocks drift | Photons are too bright | A biased subsample could fake violation.
+M2#physics-u37-07-q2: In 2022 the Nobel Prize recognised: | Bell tests with entangled photons | Discovery of the qubit | Shor's algorithm | Quantum dots | Aspect, Clauser and Zeilinger.
 
 ## Quantum teleportation
 S: Quantum teleportation transfers an unknown quantum state from one place to another using a shared entangled pair and two bits of classical communication. The original is destroyed, no matter moves, and nothing travels faster than light.
@@ -214,8 +214,8 @@ K: Teleportation = entanglement + Bell measurement + 2 classical bits + correcti
 !: Teleportation transfers quantum information, not matter or energy, and never faster than the classical message.
 Q: What resources are needed to teleport one qubit? | One shared Bell pair and two classical bits.
 Q: Why doesn't teleportation violate no-cloning? | Alice's original state is destroyed by her measurement.
-M1: Before receiving Alice's bits, Bob's qubit is: | Maximally mixed | Already |ψ⟩ | |0⟩ | Entangled with |ψ⟩ only | No information yet.
-M2: The longest teleportation demonstrations used: | A satellite | Copper wires | Ultrasound | Radio telescopes | Micius, over 1200 km.
+M1#physics-u37-08-q1: Before receiving Alice's bits, Bob's qubit is: | Maximally mixed | Already |ψ⟩ | |0⟩ | Entangled with |ψ⟩ only | No information yet.
+M2#physics-u37-08-q2: The longest teleportation demonstrations used: | A satellite | Copper wires | Ultrasound | Radio telescopes | Micius, over 1200 km.
 
 ## Quantum cryptography
 S: Quantum cryptography uses the laws of physics, rather than the difficulty of maths problems, to secure communication. Measuring a quantum state disturbs it, so eavesdropping can be detected, and quantum computers also threaten today's public-key codes.
@@ -237,8 +237,8 @@ K: Quantum cryptography's security comes from physics: observation leaves traces
 !: Practical security depends on real devices; side channels such as detector blinding have broken commercial systems.
 Q: What is post-quantum cryptography? | Classical algorithms believed secure against quantum computers, such as lattice-based schemes.
 Q: Which quantum algorithm threatens RSA? | Shor's algorithm.
-M1: Quantum cryptography relies on: | Measurement disturbance and no-cloning | Large prime numbers | Faster computers | Secret algorithms | Physics, not complexity.
-M2: "Harvest now, decrypt later" refers to: | Storing intercepted data for future quantum decryption | Farming qubits | Key rotation | Hash functions | Long-term risk to secrets.
+M1#physics-u37-09-q1: Quantum cryptography relies on: | Measurement disturbance and no-cloning | Large prime numbers | Faster computers | Secret algorithms | Physics, not complexity.
+M2#physics-u37-09-q2: "Harvest now, decrypt later" refers to: | Storing intercepted data for future quantum decryption | Farming qubits | Key rotation | Hash functions | Long-term risk to secrets.
 
 ## Quantum key distribution
 S: Quantum key distribution (QKD) lets two parties share a secret random key over an insecure channel, with any eavesdropping revealed by errors. BB84, the first protocol, uses single photons in two bases, and real networks now run in China, Europe and elsewhere.
@@ -265,8 +265,8 @@ K: QKD makes eavesdropping visible: unexpected errors mean the key is discarded 
 !: QKD needs an authenticated classical channel; without authentication, a man-in-the-middle can impersonate either side.
 Q: What fraction of BB84 photons survive sifting? | About half, where Alice's and Bob's bases match.
 Q: What QBER does an intercept–resend attack cause? | 25%.
-M1: Privacy amplification: | Shortens the key to remove Eve's partial information | Increases photon number | Adds noise | Changes bases | Hashing reduces leaked information.
-M2: Decoy states defend against: | Photon-number-splitting attacks | Fibre loss | Detector cooling | Thermal noise | Weak pulses sometimes contain several photons.
+M1#physics-u37-10-q1: Privacy amplification: | Shortens the key to remove Eve's partial information | Increases photon number | Adds noise | Changes bases | Hashing reduces leaked information.
+M2#physics-u37-10-q2: Decoy states defend against: | Photon-number-splitting attacks | Fibre loss | Detector cooling | Thermal noise | Weak pulses sometimes contain several photons.
 
 ## Quantum algorithms
 S: Quantum algorithms use superposition, interference and entanglement to solve certain problems faster than any known classical method. They fall into families: oracle-based algorithms, Fourier-based algorithms like Shor's, amplitude amplification like Grover's, and simulation and variational methods.
@@ -292,8 +292,8 @@ K: Quantum algorithms win by engineering interference, and only for problems wit
 !: Quantum computers are not universally faster; for most everyday tasks they offer no advantage.
 Q: What is amplitude amplification? | Repeatedly boosting the amplitude of marked states, the technique behind Grover's algorithm.
 Q: Which family of quantum algorithms gives exponential speed-ups for factoring? | Algorithms based on the quantum Fourier transform and phase estimation.
-M1: Grover's algorithm gives: | A quadratic speed-up | An exponential speed-up | No speed-up | A linear slow-down | O(√N) vs O(N).
-M2: VQE is designed for: | Near-term noisy hardware | Classical supercomputers only | Fault-tolerant machines only | Photography | Short circuits plus classical optimisation.
+M1#physics-u37-11-q1: Grover's algorithm gives: | A quadratic speed-up | An exponential speed-up | No speed-up | A linear slow-down | O(√N) vs O(N).
+M2#physics-u37-11-q2: VQE is designed for: | Near-term noisy hardware | Classical supercomputers only | Fault-tolerant machines only | Photography | Short circuits plus classical optimisation.
 
 ## Deutsch–Jozsa algorithm
 S: The Deutsch–Jozsa algorithm decides with a single query whether a function is constant or balanced, where a deterministic classical algorithm may need exponentially many queries. It was the first clear example of quantum interference giving an algorithmic advantage.
@@ -319,8 +319,8 @@ K: Deutsch–Jozsa uses phase kickback and interference so a single query reveal
 !: Its advantage over randomised classical algorithms is small; it is a teaching example rather than a practical speed-up.
 Q: What outcome indicates a constant function? | All zeros on the input register.
 Q: Why is the target qubit prepared in |−⟩? | So the oracle produces a phase (−1)^{f(x)} by phase kickback.
-M1: The deterministic classical worst case for n input bits is: | 2^{n−1} + 1 queries | 1 query | n queries | 2^{n} + 1 queries | Need over half the inputs.
-M2: For balanced f, the amplitude of |0…0⟩ is: | 0 | 1 | 1/2 | −1 | Equal positive and negative terms cancel.
+M1#physics-u37-12-q1: The deterministic classical worst case for n input bits is: | 2^{n−1} + 1 queries | 1 query | n queries | 2^{n} + 1 queries | Need over half the inputs.
+M2#physics-u37-12-q2: For balanced f, the amplitude of |0…0⟩ is: | 0 | 1 | 1/2 | −1 | Equal positive and negative terms cancel.
 
 ## Grover's algorithm
 S: Grover's algorithm searches an unstructured list of N items for a marked one using about √N queries instead of N. It repeatedly reflects the state to grow the marked amplitude, a technique called amplitude amplification with many applications.
@@ -348,8 +348,8 @@ K: Grover rotates the state towards the answer with two reflections per step, ne
 !: Iterating past the optimum reduces success; you must know (or estimate) the number of marked items.
 Q: What does the diffusion operator do? | It reflects every amplitude about the mean amplitude.
 Q: How does Grover affect AES key security? | It halves the effective key length; AES-256 gives ~128-bit quantum security.
-M1: Grover's speed-up for search is: | Quadratic | Exponential | Cubic | None | √N vs N.
-M2: Doubling iterations past the optimum: | Lowers success probability | Guarantees success | Has no effect | Measures twice | The rotation overshoots.
+M1#physics-u37-13-q1: Grover's speed-up for search is: | Quadratic | Exponential | Cubic | None | √N vs N.
+M2#physics-u37-13-q2: Doubling iterations past the optimum: | Lowers success probability | Guarantees success | Has no effect | Measures twice | The rotation overshoots.
 
 ## Shor's algorithm
 S: Shor's algorithm factors large integers in polynomial time on a quantum computer, exponentially faster than the best known classical algorithms. It reduces factoring to finding the period of modular exponentiation, which the quantum Fourier transform does efficiently.
@@ -375,8 +375,8 @@ K: Shor turns factoring into period finding, which the QFT solves exponentially 
 !: Shor's algorithm needs large-scale fault-tolerant hardware; small demonstrations factoring 15 or 21 used shortcuts that assumed the answer.
 Q: What does Shor's algorithm find quantum-mechanically? | The period r of a^{x} mod N.
 Q: Which cryptosystems does Shor break? | RSA and elliptic-curve cryptography (discrete logarithms).
-M1: For N = 21, a = 2, the period is: | 6 | 3 | 7 | 2 | 2^{6} = 64 ≡ 1 mod 21.
-M2: The quantum step in Shor uses the: | Quantum Fourier transform | Grover diffusion | Bell measurement | Teleportation | QFT extracts the period.
+M1#physics-u37-14-q1: For N = 21, a = 2, the period is: | 6 | 3 | 7 | 2 | 2^{6} = 64 ≡ 1 mod 21.
+M2#physics-u37-14-q2: The quantum step in Shor uses the: | Quantum Fourier transform | Grover diffusion | Bell measurement | Teleportation | QFT extracts the period.
 
 ## Quantum error correction
 S: Quantum error correction protects fragile quantum information by spreading one logical qubit across many physical qubits. It detects errors through syndrome measurements without measuring the encoded data, overcoming the obstacles of no-cloning and continuous errors.
@@ -403,8 +403,8 @@ K: QEC measures error syndromes, not data, and works only if physical errors are
 !: Adding more qubits makes things worse if physical errors are above threshold.
 Q: What is a stabiliser measurement? | Measuring a multi-qubit parity that reveals errors without disturbing the encoded information.
 Q: What is the surface code threshold, roughly? | About 1% error per operation.
-M1: A distance-5 code can correct: | 2 errors | 5 errors | 1 error | 4 errors | ⌊(5−1)/2⌋.
-M2: Shor's 9-qubit code corrects: | Any single-qubit error | Only bit flips | Only phase flips | Any number of errors | It combines bit-flip and phase-flip codes.
+M1#physics-u37-15-q1: A distance-5 code can correct: | 2 errors | 5 errors | 1 error | 4 errors | ⌊(5−1)/2⌋.
+M2#physics-u37-15-q2: Shor's 9-qubit code corrects: | Any single-qubit error | Only bit flips | Only phase flips | Any number of errors | It combines bit-flip and phase-flip codes.
 
 ## Quantum noise and decoherence
 S: Decoherence is the loss of quantum behaviour as a qubit becomes entangled with its environment. Noise sets the main limit on today's quantum computers, and characterising it through T_{1}, T_{2}, gate fidelities and error models guides both hardware and algorithms.
@@ -431,8 +431,8 @@ K: Decoherence is entanglement with the environment; T_{1} and T_{2} time-limit 
 !: T_{2} can never exceed 2T_{1}.
 Q: What does a Hahn echo do? | A π pulse halfway refocuses slow dephasing, measuring T_{2} rather than T_{2}*.
 Q: What is randomised benchmarking? | Running random Clifford sequences of increasing length to extract average gate fidelity.
-M1: If T_{1} = 80 μs, T_{2} can be at most: | 160 μs | 80 μs | 40 μs | Infinite | T_{2} ≤ 2T_{1}.
-M2: Zero-noise extrapolation is a form of: | Error mitigation | Error correction | Cryptography | Teleportation | It extrapolates results to zero noise.
+M1#physics-u37-16-q1: If T_{1} = 80 μs, T_{2} can be at most: | 160 μs | 80 μs | 40 μs | Infinite | T_{2} ≤ 2T_{1}.
+M2#physics-u37-16-q2: Zero-noise extrapolation is a form of: | Error mitigation | Error correction | Cryptography | Teleportation | It extrapolates results to zero noise.
 
 ## Fault-tolerant quantum computing
 S: Fault-tolerant quantum computing performs arbitrarily long computations reliably using error-corrected logical qubits, even though every physical component is imperfect. The threshold theorem says this is possible if physical error rates are below a constant threshold.
@@ -456,8 +456,8 @@ K: Fault tolerance turns imperfect hardware into reliable computers, at the cost
 !: Being below threshold is necessary but not sufficient; the overhead depends on how far below threshold you are.
 Q: What is magic state distillation? | Producing high-fidelity non-Clifford resource states from many noisy copies.
 Q: What does the Eastin–Knill theorem state? | No quantum code can implement a universal gate set transversally.
-M1: Lattice surgery is used in: | Surface code logical operations | Optical fibre splicing | Classical compilers | Photolithography | Merging and splitting code patches.
-M2: The threshold theorem requires physical errors: | Below a constant threshold | Exactly zero | Above 50% | To increase with time | Below p_{th}.
+M1#physics-u37-17-q1: Lattice surgery is used in: | Surface code logical operations | Optical fibre splicing | Classical compilers | Photolithography | Merging and splitting code patches.
+M2#physics-u37-17-q2: The threshold theorem requires physical errors: | Below a constant threshold | Exactly zero | Above 50% | To increase with time | Below p_{th}.
 
 ## Quantum complexity
 S: Quantum complexity theory classifies problems by the resources a quantum computer needs to solve them. It defines classes like BQP and asks how they relate to classical classes like P, NP and BPP, setting realistic expectations for quantum speed-ups.
@@ -482,8 +482,8 @@ K: BQP captures efficient quantum computation; it likely includes factoring but 
 !: Quantum computers are not expected to solve NP-complete problems like travelling salesman efficiently.
 Q: What is BQP? | Bounded-error quantum polynomial time: problems a quantum computer solves efficiently with high probability.
 Q: What kind of problem did Google's 2019 advantage experiment solve? | Random circuit sampling.
-M1: The quantum analogue of NP is: | QMA | BQP | BPP | P | Quantum Merlin–Arthur.
-M2: Which inclusion is known? | BPP ⊆ BQP | BQP ⊆ P | NP ⊆ BQP | PSPACE ⊆ BQP | Quantum computers can simulate randomised ones.
+M1#physics-u37-18-q1: The quantum analogue of NP is: | QMA | BQP | BPP | P | Quantum Merlin–Arthur.
+M2#physics-u37-18-q2: Which inclusion is known? | BPP ⊆ BQP | BQP ⊆ P | NP ⊆ BQP | PSPACE ⊆ BQP | Quantum computers can simulate randomised ones.
 
 ## Quantum simulation
 S: Quantum simulation uses controllable quantum systems to model other quantum systems, such as molecules, materials and field theories, that are exponentially hard for classical computers. It was Feynman's original motivation and is the most promising near-term application.
@@ -506,8 +506,8 @@ K: Quantum simulators use quantum hardware to model quantum physics directly, av
 !: VQE energies are upper bounds; a poor ansatz gives a wrong answer that looks converged.
 Q: Who proposed quantum simulation in 1981–82? | Richard Feynman.
 Q: What does the Jordan–Wigner transform do? | Maps fermionic operators to qubit (spin) operators.
-M1: Analog quantum simulation means: | Building a system whose Hamiltonian mimics the target | Using classical analog circuits | Gate-based Trotterisation | Measuring only once | Direct engineering of interactions.
-M2: VQE finds: | Approximate ground-state energies | Prime factors | Search results | Random numbers | Variational energy minimisation.
+M1#physics-u37-19-q1: Analog quantum simulation means: | Building a system whose Hamiltonian mimics the target | Using classical analog circuits | Gate-based Trotterisation | Measuring only once | Direct engineering of interactions.
+M2#physics-u37-19-q2: VQE finds: | Approximate ground-state energies | Prime factors | Search results | Random numbers | Variational energy minimisation.
 
 ## Quantum communication
 S: Quantum communication sends quantum states between distant parties, enabling secure key distribution, teleportation and distributed quantum computing. Photons are the natural carriers, but loss and no-cloning mean quantum signals cannot simply be amplified.
@@ -532,8 +532,8 @@ K: Quantum communication is limited by loss and no-cloning; repeaters, memories 
 !: You cannot use optical amplifiers on quantum signals; they add noise that destroys quantum correlations.
 Q: What is superdense coding? | Sending two classical bits by transmitting one qubit of a shared entangled pair.
 Q: Why are satellites useful for quantum communication? | Most of the path is vacuum, so loss grows more slowly than in fibre.
-M1: The PLOB bound limits: | Repeaterless quantum key rates | Classical bandwidth | Photon energy | Satellite speed | Rate ∝ transmission.
-M2: Quantum repeaters work by: | Entanglement swapping and storage | Amplifying photons | Cloning qubits | Increasing laser power | They extend entanglement link by link.
+M1#physics-u37-20-q1: The PLOB bound limits: | Repeaterless quantum key rates | Classical bandwidth | Photon energy | Satellite speed | Rate ∝ transmission.
+M2#physics-u37-20-q2: Quantum repeaters work by: | Entanglement swapping and storage | Amplifying photons | Cloning qubits | Increasing laser power | They extend entanglement link by link.
 
 ## Quantum networks
 S: Quantum networks connect quantum processors and sensors by distributing entanglement between nodes. Like the early internet, they are being built in stages, from trusted-node QKD links towards a full quantum internet able to teleport qubits anywhere.
@@ -558,8 +558,8 @@ K: Quantum networks distribute entanglement, using swapping and purification to 
 !: Each swap multiplies errors; without purification and good memories, long chains lose fidelity rapidly.
 Q: What does entanglement swapping achieve? | It entangles two distant qubits that never interacted, by a Bell measurement on their partners.
 Q: What is entanglement purification? | Using several imperfect entangled pairs to distil fewer higher-fidelity pairs.
-M1: Quantum network nodes need: | Quantum memories | Classical amplifiers only | X-ray sources | Radio antennas | To store entanglement while links are built.
-M2: A trusted-node network requires: | Every intermediate node to be secure | No classical channels | Entangled photons only | Satellites | Keys are relayed through nodes.
+M1#physics-u37-21-q1: Quantum network nodes need: | Quantum memories | Classical amplifiers only | X-ray sources | Radio antennas | To store entanglement while links are built.
+M2#physics-u37-21-q2: A trusted-node network requires: | Every intermediate node to be secure | No classical channels | Entangled photons only | Satellites | Keys are relayed through nodes.
 
 ## Physical implementations of qubits
 S: Many physical systems can act as qubits, each with distinct strengths in coherence, speed, connectivity and scalability. DiVincenzo's criteria list what any platform must achieve to build a useful quantum computer.
@@ -589,8 +589,8 @@ K: Every qubit platform balances coherence, speed, connectivity and scalability;
 !: Raw qubit count is a poor measure of progress; fidelity and connectivity matter just as much.
 Q: List two DiVincenzo criteria. | Any two of: scalable qubits, initialisation, long coherence, universal gates, qubit-specific measurement.
 Q: Which platform operates at room temperature naturally? | Photonic qubits (and NV centres for sensing).
-M1: Spin qubits in silicon are attractive because they are: | Small and CMOS-compatible | Room-temperature | Made of photons | Topologically protected | Use semiconductor manufacturing.
-M2: Topological qubits aim to provide: | Intrinsic protection from local errors | Faster lasers | Higher temperatures only | Larger ions | Information stored non-locally.
+M1#physics-u37-22-q1: Spin qubits in silicon are attractive because they are: | Small and CMOS-compatible | Room-temperature | Made of photons | Topologically protected | Use semiconductor manufacturing.
+M2#physics-u37-22-q2: Topological qubits aim to provide: | Intrinsic protection from local errors | Faster lasers | Higher temperatures only | Larger ions | Information stored non-locally.
 
 ## Superconducting qubits
 S: Superconducting qubits are tiny electrical circuits cooled near absolute zero that behave like artificial atoms. Built with chip-fabrication methods and controlled by microwaves, they power processors from Google, IBM and others.
@@ -614,8 +614,8 @@ K: A transmon is an anharmonic LC oscillator made with a Josephson junction, con
 !: Without anharmonicity, a pulse would drive all levels equally and the system would not act as a qubit.
 Q: What component provides the nonlinearity in a superconducting qubit? | A Josephson junction.
 Q: How are superconducting qubits read out? | Dispersively, via a frequency shift in a coupled microwave resonator.
-M1: Typical transmon frequencies are: | 4–8 GHz | 4–8 THz | 4–8 kHz | 4–8 MHz | Microwave range.
-M2: The transmon reduces sensitivity to: | Charge noise | Magnetic fields completely | Temperature | Gravity | Large shunt capacitance flattens charge dispersion.
+M1#physics-u37-23-q1: Typical transmon frequencies are: | 4–8 GHz | 4–8 THz | 4–8 kHz | 4–8 MHz | Microwave range.
+M2#physics-u37-23-q2: The transmon reduces sensitivity to: | Charge noise | Magnetic fields completely | Temperature | Gravity | Large shunt capacitance flattens charge dispersion.
 
 ## Trapped-ion systems
 S: Trapped-ion quantum computers store qubits in the internal states of individual ions held by electromagnetic fields in vacuum. Every ion of a species is identical, coherence is long and gates are the most accurate of any platform, though gates are slower.
@@ -639,8 +639,8 @@ K: Trapped ions offer identical qubits, record fidelities and full connectivity,
 !: Gate speed matters: an algorithm needing 10^{9} gates at 100 μs each would take over a day.
 Q: What mediates two-qubit gates in ion traps? | Shared collective motion (phonons) of the ion chain.
 Q: How are trapped-ion qubits read out? | State-dependent fluorescence: one state scatters laser light, the other stays dark.
-M1: Paul traps confine ions using: | Oscillating RF electric fields | Static magnetic fields alone | Gravity | Optical tweezers only | A static field cannot trap a charge (Earnshaw).
-M2: QCCD architectures scale by: | Shuttling ions between zones | Adding more lasers to one long chain | Cooling to 1 K | Photons only | Ions are moved between processing regions.
+M1#physics-u37-24-q1: Paul traps confine ions using: | Oscillating RF electric fields | Static magnetic fields alone | Gravity | Optical tweezers only | A static field cannot trap a charge (Earnshaw).
+M2#physics-u37-24-q2: QCCD architectures scale by: | Shuttling ions between zones | Adding more lasers to one long chain | Cooling to 1 K | Photons only | Ions are moved between processing regions.
 
 ## Neutral-atom quantum computing
 S: Neutral-atom quantum computers hold individual atoms in arrays of tightly focused laser beams called optical tweezers. Exciting atoms to giant Rydberg states makes them interact strongly, enabling fast entangling gates in reconfigurable arrays of hundreds to thousands of qubits.
@@ -662,8 +662,8 @@ K: Neutral atoms combine scale and reconfigurability, using Rydberg blockade for
 !: Atoms can be lost from traps during operation; architectures must detect and replace them.
 Q: What is Rydberg blockade? | Strong interactions shift the doubly excited state, so only one atom within the blockade radius can be excited.
 Q: How are defect-free atom arrays made? | Image the randomly loaded tweezers and move atoms with steerable tweezers to fill gaps.
-M1: Rydberg interactions scale with distance as: | 1/r^{6} | 1/r | 1/r^{2} | r^{6} | Van der Waals.
-M2: Neutral-atom connectivity is flexible because: | Atoms can be moved mid-circuit | They are charged | Photons link all pairs | They have no spin | Tweezers transport atoms.
+M1#physics-u37-25-q1: Rydberg interactions scale with distance as: | 1/r^{6} | 1/r | 1/r^{2} | r^{6} | Van der Waals.
+M2#physics-u37-25-q2: Neutral-atom connectivity is flexible because: | Atoms can be moved mid-circuit | They are charged | Photons link all pairs | They have no spin | Tweezers transport atoms.
 
 ## Photonic quantum computing
 S: Photonic quantum computing encodes qubits in single photons or squeezed light, which travel at the speed of light, barely decohere and work at room temperature. The challenge is making photons interact, solved with measurement and clever circuit designs.
@@ -685,6 +685,6 @@ K: Photons are excellent carriers of quantum information; the hard part is effic
 !: Probabilistic gates need multiplexing or resource-state architectures; naively chaining them gives vanishing success.
 Q: Why are photonic qubits attractive? | Little decoherence, room-temperature operation and natural compatibility with networks.
 Q: What is measurement-based quantum computing? | Computing by single-qubit measurements on a large pre-entangled cluster state.
-M1: Two-photon gates in linear optics are: | Probabilistic | Deterministic | Impossible | Thermal | Measurement-induced nonlinearity.
-M2: The dominant error in photonic quantum computing is: | Photon loss | Thermal relaxation | Magnetic noise | Charge noise | Every lost photon is an error.
+M1#physics-u37-26-q1: Two-photon gates in linear optics are: | Probabilistic | Deterministic | Impossible | Thermal | Measurement-induced nonlinearity.
+M2#physics-u37-26-q2: The dominant error in photonic quantum computing is: | Photon loss | Thermal relaxation | Magnetic noise | Charge noise | Every lost photon is an error.
 `;

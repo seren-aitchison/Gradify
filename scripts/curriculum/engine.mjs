@@ -207,14 +207,15 @@ export function propose(statements, lessons, { top = 3, k1 = 1.2, b = 0.75, cont
   });
 }
 /**
- * Add proposals to a map for statements that aren't verified; verified links are never touched. Proposed lessons
+ * Add proposals to a map for statements nobody has decided on; verified links and AI decisions are never touched. Proposed lessons
  * are the strong and moderate candidates within 70% of the best score; every proposed lesson is "partial" until a
  * reviewer decides, so nothing proposed can read as covered. A statement with only weak candidates is a likely gap.
  */
 export function mergeProposals(map, proposals, { keep = 0.7 } = {}) {
   const out = { ...map, links: { ...(map.links || {}) } };
   for (const p of proposals) {
-    if (out.links[p.ref]?.status === "verified") continue;
+    // a person's review and an AI reviewer's decision are never replaced by a proposal (their candidates are kept)
+    if (["verified", "ai-confirmed", "rejected"].includes(out.links[p.ref]?.status)) continue;
     const best = p.candidates[0], use = p.candidates.filter((c) => c.band !== "weak" && c.score >= keep * (best?.score || 0));
     const evidence = (c) => ({ id: c.id, coverage: "partial", confidence: c.band, score: c.score, share: c.share, matched: c.matched.slice(0, 8) });
     out.links[p.ref] = use.length

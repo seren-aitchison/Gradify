@@ -52,7 +52,28 @@ M3@1: An antibiotic damages a structure found only in cells without a nucleus. W
 TF2@2: A typical animal cell is larger than a typical bacterium. | true | Most bacteria are 1 to 10 micrometres long, while animal cells are usually 10 to 30 micrometres across.
 SUM: Prokaryotic cells have no nucleus and keep their DNA in a single loop.
 SUM: They are much smaller than eukaryotic cells.
-SRC: Open biology text | secondary | 2026-11-25 | https://openstax.org/books/biology-2e`;
+SRC: Open biology text | secondary | 2026-11-25 | https://openstax.org/books/biology-2e
+Q: Which kind of cell has no nucleus? | A prokaryotic cell
+Q: What is a plasmid? | A small ring of DNA found in many bacteria
+Q: Name a eukaryotic cell type. | An animal cell, a plant cell or a fungal cell
+Q: About how long is a typical bacterium? | Between 1 and 10 micrometres
+Q: About how wide is a typical animal cell? | Between 10 and 30 micrometres
+Q: What does the cell membrane control? | What enters and leaves the cell
+Q: What is the cytoplasm? | The jelly-like fluid where most cell reactions happen
+Q: Do bacteria have mitochondria? | No: they have no membrane-bound organelles
+Q: Where are ribosomes found in a bacterium? | Free in the cytoplasm
+Q: What is a micrometre? | One millionth of a metre
+Q: Is a bacterium a eukaryote? | No, it is a prokaryote
+Q: What surrounds the bacterial cell membrane? | A cell wall
+Q: What does a eukaryotic nucleus contain? | The cell's genetic material
+Q: Give one difference between prokaryotes and eukaryotes. | Prokaryotes have no nucleus
+Q: How many times larger is a 30 micrometre cell than a 3 micrometre bacterium? | Ten times larger
+Q: Which organisms are prokaryotes? | Bacteria
+Q: What is a flagellum used for? | Movement
+Q: Why can antibiotics target bacteria? | Bacterial cells have structures human cells lack
+D: bio-animal-cell
+D: bio-active-transport-gut
+D: bio-amino-acids`;
 
 test("notes tags: REQ with objectives, DIA spec, DNEED and GAP", () => {
   const [L] = parseNotes(`## T\nO: a\nO: b\nREQ: aqa-gcse-biology:4.1.1.1.b @1,2\nREQ: ocr-gcse-biology:2.1\nDIA: graph | {"range":{"x":[0,1]}}\nDIA: graph | not json\nDNEED: a labelled bacterium\nGAP: no source for plasmid size`);
@@ -426,7 +447,8 @@ test("publish: titles differing only in case share an identity, and one TIER lab
 
 test("review fixes after #208 merged: mapping replies, publish wiring and duplicates, verified links, spend", async () => {
   const { writeFileSync, mkdirSync, cpSync } = await import("node:fs");
-  const { applyMapping, mapCandidates, loadMapping } = await import("../scripts/content/agent.mjs");
+  const { applyMapping, mapCandidates } = await import("../scripts/content/agent.mjs");
+  const { loadStore } = await import("../scripts/content/mapstore.mjs");
   const { loadIndex, applyReview } = await import("../scripts/curriculum/engine.mjs");
   const fw = "aqa-gcse-biology", hash = new Map(loadIndex(fw).statements.map((x) => [x.ref, x.hash]));
   // a mapping reply is stored only against the statement text it was asked about
@@ -434,9 +456,9 @@ test("review fixes after #208 merged: mapping replies, publish wiring and duplic
   mkdirSync(dir, { recursive: true });
   writeFileSync(join(dir, "map.req.txt"), `MAPREQ ${fw}:${c} #${hash.get(c)} | x\nMAPREQ ${fw}:${d} #0000stale0000000 | x\nEND\n`);
   writeFileSync(join(dir, "map.out.txt"), `MAP ${fw}:${c} NO not taught\nMAP ${fw}:${d} NO not taught\nEND\n`);
-  const res = await applyMapping("biology"), M = loadMapping(fw);
-  assert.equal(M.confirmed[c]?.hash, hash.get(c), "a current reply is recorded with its hash");
-  assert.ok(!M.confirmed[d] && res.some((x) => x.includes(d) && /dropped/.test(x)), "a reply about changed text is dropped and asked again");
+  const res = await applyMapping("biology"), M = loadStore(fw);
+  assert.equal(M.links[c]?.status, "rejected"); assert.equal(M.links[c]?.hash, hash.get(c), "a current reply is recorded with its hash");
+  assert.equal(M.links[d]?.status, "proposed"); assert.ok(res.some((x) => x.includes(d) && /dropped/.test(x)), "a reply about changed text is dropped and asked again");
   assert.ok(mapCandidates(fw).some((x) => x.ref === d));
   // a course file that imports published.js without its hook is refused, not accepted as wired
   const { installHooks, publish } = await import("../scripts/content/publish.mjs");
@@ -569,4 +591,255 @@ test("a new lesson can't take a title the course already uses; the engine's publ
   assert.equal(taken("How specialised cells are adapted to their jobs"), null);
   const g = await G.runGates(LESSON("3 × 4 = 12").replace("## Prokaryotes up close", "## Cell specialisation"), { reqs: [REQ], allowed: new Set([REQ.id]), taken });
   assert.equal(g.failed?.gate, "coverage"); assert.ok(g.failed.issues.some((i) => /already has a lesson titled/.test(i.note)));
+});
+
+test("high-risk keywords match at a word start, and molecule names like amino acids aren't hazards", async () => {
+  const { riskKeywords } = await import("../scripts/content/loop.mjs");
+  assert.deepEqual(riskKeywords("Ribosomes join amino acids into proteins; DNA is a nucleic acid."), []);
+  assert.deepEqual(riskKeywords("A placid dog."), []);
+  assert.deepEqual(riskKeywords("Wear eye protection: the acid is corrosive."), ["acid"]);
+  assert.deepEqual(riskKeywords("Hydrochloric acid in the stomach kills bacteria."), ["acid"]);
+  assert.deepEqual(riskKeywords("Hormones in pregnancy"), ["pregnan"]);
+});
+
+test("filed lessons take the current high-risk rules: a keyword misfire is cleared, a new hit is raised, edited text is left", async () => {
+  const { writeFileSync, mkdirSync } = await import("node:fs");
+  const { retier } = await import("../scripts/content/loop.mjs");
+  const { fp } = await import("../scripts/content/lib.mjs");
+  const S0 = await import("../scripts/content/shorthand.mjs");
+  const file = "content/drafts/retier/aqa-gcse-biology/t.txt", dir = join(process.env.GRADIFY_OUT, "content/drafts/retier/aqa-gcse-biology");
+  mkdirSync(dir, { recursive: true });
+  const A = "## Lesson A\nLV: GCSE\nS: Ribosomes join amino acids.", B = "## Lesson B\nLV: GCSE\nS: Never taste an acid.", C = "## Lesson C\nLV: GCSE\nS: Amino acids again.";
+  writeFileSync(join(process.env.GRADIFY_OUT, file), `# head\n\n${A}\n\n${B}\n\n${C}\n`);
+  const h = (t) => fp(S0.splitUnit(`${t}\n`)[0].text);
+  const L = (title, tier, hash, x = {}) => ({ title, tier, hash, reqs: ["aqa-gcse-biology:4.1.1.3.a"], ...x });
+  mkdirSync(join(process.env.GRADIFY_OUT, "content/ledger"), { recursive: true });
+  writeFileSync(join(process.env.GRADIFY_OUT, "content/ledger/retier.json"), JSON.stringify({ subject: "retier", topics: { "retier/t": { file, lessons: [
+    L("Lesson A", "expert-required", h(A), { highRisk: true }), L("Lesson B", "ai-verified", h(B)), L("Lesson C", "expert-required", "edited", { highRisk: true }),
+  ] } } }));
+  const changed = retier("retier", { date: "2026-11-25" });
+  assert.deepEqual(changed.map((c) => [c.title, c.to]), [["Lesson A", "ai-verified"], ["Lesson B", "expert-required"]]);
+  const led = JSON.parse(readFileSync(join(process.env.GRADIFY_OUT, "content/ledger/retier.json"), "utf8")).topics["retier/t"].lessons;
+  assert.equal(led[0].highRisk, undefined); assert.equal(led[0].retiered.from, "expert-required");
+  assert.equal(led[1].highRisk, true); assert.match(led[1].retiered.why, /acid/);
+  assert.equal(led[2].tier, "expert-required");
+  assert.deepEqual(retier("retier"), []);
+});
+
+test("a NUM problem is reported on its own line, not on a worked example that opens with the same words", async () => {
+  const shared = "A cell image is 20 mm wide under a magnification of";
+  const base = LESSON("3 × 4 = 12");
+  const text = base.replace(/\n(?=M1@)/, `\nX: ${shared} ×400. Real size = 20 ÷ 400 = 0.05 mm.\nNUM1@1: ${shared} ×100. What is the real width in mm? | 0.5 | 0 | mm | Real size = 20 ÷ 100 = 0.2 mm.\n`);
+  const lines = text.split("\n"), numAt = lines.findIndex((l) => l.startsWith("NUM1@")) + 1, exAt = lines.findIndex((l) => l.startsWith(`X: ${shared}`)) + 1;
+  assert.ok(numAt > exAt && exAt > 0);
+  const { parseNotes: P } = await import("../kit/course/notes.js");
+  const L = P(text)?.[0] || P(text);
+  const r = await G.mathsDiagramGate(L.lessons ? L.lessons[0] : L, text);
+  const hit = r.issues.find((i) => /isn't what the working gives/.test(i.note));
+  assert.ok(hit, JSON.stringify(r.issues)); assert.equal(hit.line, numAt);
+});
+
+test("the specification gate doesn't ask for command words like 'demonstrate an understanding'", () => {
+  const L = { reqs: [{ id: "x:1" }] }, req = { id: "x:1", title: "Osmosis", text: "Demonstrate an understanding of osmosis across a partially permeable membrane." };
+  const lesson = "REQ: x:1 @1\nWater moves by osmosis across a partially permeable membrane.";
+  assert.ok(G.specGate(L, lesson, [req]).ok);
+  assert.ok(!G.specGate(L, "REQ: x:1 @1\nWater moves.", [req]).ok);
+});
+
+test("a fraction shown as a result is checked as a fraction", () => {
+  assert.deepEqual(G.checkArithmetic("> Area: 2 ÷ 50 = 1/25 of the cell"), []);
+  assert.equal(G.checkArithmetic("> Area: 2 ÷ 50 = 1/20 of the cell").length, 1);
+  assert.equal(G.checkArithmetic("> 3 × 4 = 13").length, 1);
+});
+
+test("a research request carries a requirement's whole text, not the 400-character asks", async () => {
+  const { researchRequest } = await import("../scripts/content/loop.mjs");
+  const long = "Gas exchange surfaces have features that help them work. ".repeat(10).trim();
+  const t = { ...TOPIC, reqs: [{ ...REQ, asks: long.slice(0, 400), text: long }] };
+  assert.ok(researchRequest(t).includes(long));
+});
+
+test("reused lessons are named by their course titles, not bare ids", async () => {
+  const { lessonTitles } = await import("../scripts/content/queue.mjs");
+  const t = lessonTitles("biology");
+  assert.equal(t.get("u02-26"), "Stem cells"); assert.equal(t.get("u02-20"), "Diffusion");
+  const reuse = topicsFor("aqa-gcse-biology").flatMap((x) => x.reuse);
+  assert.ok(reuse.length && reuse.every((r) => !/^u\d+-\d+$/.test(r.title)), JSON.stringify(reuse.slice(0, 3)));
+});
+
+test("a requirement's asks is its whole statement, so write and review requests aren't cut off", () => {
+  const r = topicsFor("aqa-gcse-biology").flatMap((t) => t.reqs).find((x) => x.text && x.text.length > 400);
+  if (!r) return; // specification text not imported here
+  assert.equal(r.asks, r.text);
+});
+
+test("a graph diagram without an id still renders", async () => {
+  const { graph } = await import("../kit/diagrams/renderers.js");
+  const { readFileSync: rf } = await import("node:fs");
+  const { id, ...spec } = JSON.parse(rf(new URL("../kit/diagrams/specs/bio-accuracy-precision.json", import.meta.url), "utf8"));
+  assert.ok(id); const out = graph(spec, 680, 380);
+  assert.match(out, /clipPath id="vx\d+680"/);
+});
+
+test("filing: a practical elsewhere in the topic doesn't make a lesson high-risk; one the lesson teaches does", async () => {
+  // a minimal two-requirement topic: the lesson teaches only the concept, and a required practical sits beside it
+  const PRAC = { ...REQ, id: "aqa-gcse-biology:4.1.1.1.c", ref: "4.1.1.1.c", asks: "a required practical", text: "Use a light microscope to look at cells.", type: "prac", hash: "h2" };
+  const run = async (name, lesson) => {
+    const topic = { ...TOPIC, id: `biology/${name}`, title: name, reqs: [REQ, PRAC] };
+    const ask = async (job) => (job === "research" ? BRIEF.replace("test-prokaryotes", name) : `${lesson}\nEND`);
+    return runTopic(topic, { ask, askMany: async (job, items) => new Map(items.map((it) => [it.key, `REV ${it.key} OK`])) });
+  };
+  const own = await run("test-own-reqs", LESSON("3 × 4 = 12"));
+  assert.deepEqual(own.lessons[0].reqs, [REQ.id]);
+  assert.equal(own.lessons[0].tier, "ai-verified"); assert.ok(!own.lessons[0].highRisk);
+  // naming the practical, or one part of it, makes the lesson high-risk
+  const part = await run("test-prac-part", LESSON("3 × 4 = 12").replace(`REQ: ${REQ.id} @1,2`, `REQ: ${REQ.id} @1,2\nREQ: ${PRAC.id}.ii @1`));
+  assert.equal(part.lessons[0].tier, "expert-required"); assert.ok(part.lessons[0].highRisk);
+});
+
+test("source conflicts: an explained, low-stakes, cited conflict is AI-checked; anything less goes to an expert", async () => {
+  const CONFL = (extra = " | stakes=low", what = "bacterium lengths differ by source (1 to 10 or 0.5 to 5 micrometres)") => `CONFLICT: ${what} | s1,s2${extra}`;
+  const withSrc = LESSON("3 × 4 = 12").replace(/\nSRC:[^\n]*/, (m) => `${m}\nSRC: Cell structure | secondary | 2026-11-25 | https://www.bbc.co.uk/bitesize/x`);
+  const bang = withSrc.split("\n").findIndex((l) => l.startsWith("!:")) + 1;
+  const run = async (name, { conflict = CONFL(), verdict = `C1=L${bang}`, lesson = withSrc } = {}) => {
+    const topic = { ...TOPIC, id: `biology/${name}`, title: name };
+    const brief = BRIEF.replace("test-prokaryotes", name).replace("\nSRC: s1", `\n${conflict}\nSRC: s1`);
+    const ask = async (job) => (job === "research" ? brief : `${lesson}\nEND`);
+    let req = "";
+    const r = await runTopic(topic, { ask, askMany: async (job, items) => new Map(items.map((it) => { req = it.user; return [it.key, `REV ${it.key} OK ${verdict}`]; })) });
+    return { l: r.lessons[0], req };
+  };
+  const ok = await run("test-conf-ok");
+  assert.equal(ok.l.tier, "ai-verified"); assert.deepEqual(ok.l.conflictsExplained, [`C1@L${bang}`]); assert.ok(!ok.l.conflict);
+  assert.match(ok.req, /^CONF C1 \| bacterium lengths differ .* \| src=s1,s2 \| stakes=low$/m, "the reviewer sees the conflicts numbered");
+  assert.equal((await run("test-conf-none", { verdict: "C1=none" })).l.tier, "ai-verified", "a conflict the lesson doesn't rely on doesn't need an expert");
+  const cases = {
+    "test-conf-noverdict": [{ verdict: "" }, /no reviewer verdict/],
+    "test-conf-open": [{ verdict: "C1=open" }, /left it open/],
+    "test-conf-unmarked": [{ conflict: CONFL("") }, /high stakes/],
+    "test-conf-high": [{ conflict: CONFL(" | stakes=high") }, /high stakes/],
+    "test-conf-keyword": [{ conflict: CONFL(" | stakes=low", "the safe dose differs by source") }, /high-risk keyword \(dose\)/],
+    "test-conf-notbang": [{ verdict: "C1=L2" }, /L2 isn't a !: line/],
+    "test-conf-onecite": [{ lesson: LESSON("3 × 4 = 12") }, /cites 1 of its 2 sources/],
+  };
+  for (const [name, [opts, why]] of Object.entries(cases)) {
+    const { l } = await run(name, opts);
+    assert.equal(l.tier, "expert-required", name); assert.ok(l.conflict, name); assert.match(l.conflictsOpen.join(";"), why, name);
+  }
+});
+
+test("background lines: BG facts are parsed and sourced like F lines", () => {
+  const b = S.parseBrief(BRIEF.replace("\nDEF:", "\nBG: Cells release energy from glucose in respiration | s1,s2 | conf=high\nDEF:"));
+  assert.deepEqual(b.problems, []); assert.equal(b.background.length, 1); assert.equal(b.background[0][0], "Cells release energy from glucose in respiration");
+  assert.match(S.parseBrief(BRIEF.replace("\nDEF:", "\nBG: Meiosis makes gametes | s9\nDEF:")).problems.join(";"), /background line cites an unknown source/);
+  assert.match(S.parseBrief(BRIEF.replace("\nDEF:", "\nBG: Meiosis makes gametes\nDEF:")).problems.join(";"), /background line cites no source/);
+  // verdict conflict tokens are read only from an OK
+  assert.deepEqual(S.parseVerdicts("REV new#1 OK C1=L23 C2=none c3=OPEN")[0].conf, { 1: "L23", 2: "none", 3: "open" });
+  assert.deepEqual(S.parseVerdicts("REV new#1 FAIL FACT L3 C1=L23 wrong")[0].conf, {});
+});
+
+test("reused lessons are named by their locked ids, not their position in the notes file, in every course", async () => {
+  const { lessonTitles } = await import("../scripts/content/queue.mjs");
+  const { readdirSync, existsSync } = await import("node:fs");
+  const key = (t) => String(t).toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+  const wrong = [];
+  for (const c of readdirSync(new URL("../kit/courses/", import.meta.url))) {
+    if (!existsSync(new URL(`../kit/courses/${c}/ids.js`, import.meta.url))) continue;
+    const { IDS } = await import(`../kit/courses/${c}/ids.js`);
+    for (const [id, title] of lessonTitles(c)) if (key(IDS[id]) !== key(title)) wrong.push(`${c} ${id}: "${title}" is locked as "${IDS[id]}"`);
+  }
+  // borrowed units (teaching, professional, gcse…) start after their retired ids, so position names the wrong lesson
+  assert.deepEqual(wrong.slice(0, 5), []);
+  assert.equal(lessonTitles("teaching").size > 0, true);
+});
+
+test("the mapping store: one status per statement, a person's check is never replaced, stale decisions are undecided, legacy decisions fold in once", async () => {
+  const { decide, decisionOf, candidatesOf, consolidate, loadStore, legacyPath, storePath } = await import("../scripts/content/mapstore.mjs");
+  const { mergeProposals } = await import("../scripts/curriculum/engine.mjs");
+  const { existsSync, writeFileSync, mkdirSync } = await import("node:fs");
+  const m = { spec: "t", links: { A: { status: "proposed", confidence: "strong", lessons: [{ id: "u1", coverage: "partial" }] }, V: { status: "verified", reviewer: "A. Teacher", reviewedOn: "2026-11-30", hash: "hv", lessons: [] } } };
+  decide(m, "A", { ok: true, lesson: "u1", objectives: [1, 2], hash: "h1", by: "agent:haiku", on: "2026-11-25" });
+  assert.equal(m.links.A.status, "ai-confirmed"); assert.deepEqual(m.links.A.lessons, [{ id: "u1", coverage: "full", objectives: [1, 2] }]);
+  assert.deepEqual(candidatesOf(m.links.A), [{ id: "u1", coverage: "partial" }], "the matcher's candidates are kept as evidence");
+  decide(m, "V", { ok: false, why: "x", hash: "hv", by: "agent:haiku", on: "2026-11-25" });
+  assert.equal(m.links.V.status, "verified", "an AI decision never replaces a person's check");
+  assert.ok(decisionOf(m, "A", "h1")); assert.equal(decisionOf(m, "A", "changed"), null, "a decision on older text is no decision");
+  const merged = mergeProposals(m, [{ ref: "A", candidates: [{ id: "u7", band: "strong", score: 9, share: 1, matched: [] }] }]);
+  assert.equal(merged.links.A.status, "ai-confirmed", "rerunning the matcher keeps decisions");
+  // a legacy content/mapping decision is folded into the store, and the legacy file goes once the store is saved
+  const fw = "aqa-gcse-biology", ref = Object.entries(loadStore(fw).links).find(([, l]) => l.status === "proposed" && l.lessons.length)[0];
+  mkdirSync(new URL("./", legacyPath(fw)), { recursive: true });
+  writeFileSync(legacyPath(fw), JSON.stringify({ confirmed: { [ref]: { ok: false, why: "osmosis practical not taught", by: "agent:haiku", on: "2026-11-25" } } }));
+  const r = consolidate(fw);
+  assert.ok(r.folded); assert.ok(!existsSync(legacyPath(fw))); assert.ok(existsSync(storePath(fw)));
+  assert.deepEqual(loadStore(fw).links[ref].missing, ["osmosis practical not taught"]);
+  assert.equal(consolidate(fw).folded, false, "running it again changes nothing");
+});
+
+test("production standard: 3+ distinct diagrams per lesson to file, all drawn to publish; 20+ distinct flashcards per topic", async () => {
+  const { diagramsOf, flashcardsOf, standardsGate, topicFlashcards, drawnEnough } = await import("../scripts/content/gates.mjs");
+  const base = LESSON("3 × 4 = 12");
+  assert.deepEqual([diagramsOf(base).drawn, diagramsOf(base).total], [3, 3]); assert.ok(drawnEnough(base));
+  const twoAndSpec = base.replace("\nD: bio-amino-acids", "\nDNEED: A prokaryotic and a eukaryotic cell side by side, to scale");
+  assert.ok(standardsGate(null, twoAndSpec).ok, "a DNEED specification counts towards filing"); assert.ok(!drawnEnough(twoAndSpec), "but not towards publishing");
+  const repeated = base.replace("\nD: bio-amino-acids", "\nD: bio-animal-cell");
+  assert.equal(diagramsOf(repeated).total, 2, "the same diagram twice counts once"); assert.match(standardsGate(null, repeated).issues[0].note, /2 distinct diagrams; every lesson needs at least 3/);
+  assert.equal(flashcardsOf(base).length, 20);
+  assert.equal(flashcardsOf(`${base}\nQ: Which kind of cell has no nucleus?  | Prokaryotic`).length, 20, "a repeated question counts once");
+  assert.deepEqual(topicFlashcards([base.replace(/^Q: About.*\n/gm, "")]).ok, false);
+  // a topic short of flashcards files nothing, and says what's missing
+  const thin = base.split("\n").filter((l) => !/^Q: (About|What is a|Is a|Do bacteria)/.test(l)).join("\n");
+  const topic = { ...TOPIC, id: "biology/test-thin", title: "Test thin" };
+  const r = await runTopic(topic, { ask: async (job) => (job === "research" ? BRIEF.replace("test-prokaryotes", "test-thin") : `${thin}\nEND`), askMany: async (job, items) => new Map(items.map((it) => [it.key, `REV ${it.key} OK`])) });
+  assert.equal(r.lessons.length, 0); assert.equal(r.failures[0].gate, "standards"); assert.match(r.failures[0].issues[0].note, /distinct flashcards across the topic; it needs at least 20/);
+});
+
+test("diagram references are file names, not teaching text: D: bio-amino-acids doesn't raise the 'acid' keyword", async () => {
+  const { riskKeywords } = await import("../scripts/content/loop.mjs");
+  assert.deepEqual(riskKeywords("P: Proteins are chains.\nD: bio-amino-acids\nDIA: graph | {\"title\":\"acid strength\"}"), []);
+  assert.deepEqual(riskKeywords("P: Hydrochloric acid is corrosive."), ["acid"]);
+});
+
+test("the content factory: a template carries everything an external model needs; returned Markdown is checked, installed once, or rejected with a report", async () => {
+  const { writeTemplate, researchTemplate, readSubmission, ingestFile, ingestAll } = await import("../scripts/content/factory.mjs");
+  const { currentBrief } = await import("../scripts/content/loop.mjs");
+  const { readFileSync, existsSync, writeFileSync, mkdirSync } = await import("node:fs");
+  const topic = { ...TOPIC, id: "biology/test-factory", title: "Test factory" };
+  // no brief yet: a research template; the returned brief is checked and stored
+  assert.match(researchTemplate(topic), /^RESEARCH biology\/test-factory \| levels=GCSE/m);
+  const briefMd = "Here is the brief:\n\n```\n" + BRIEF.replace("test-prokaryotes", "test-factory") + "\n```\n";
+  const b = await ingestFile("test-factory.brief.md", briefMd, { all: [topic] });
+  assert.ok(b.ok, b.report); assert.ok(currentBrief(topic), "the brief is stored, stamped for its inputs");
+  assert.match((await ingestFile("x.brief.md", BRIEF.replace("test-prokaryotes", "test-factory").replace(/^SRC: s3.*$/m, ""), { all: [topic] })).report, /Rejected:.*problem/);
+  // the write template: instructions, format, standard, examples, minimums and the packet, in one file
+  const t = writeTemplate(topic, currentBrief(topic));
+  for (const re of [/at least 20 distinct `Q:` flashcards/, /at least 3 distinct diagrams/, /^PKT aqa-gcse-biology\/4\.1\.1\.1/m, /^# Writer prompt/m, /^# Curriculum content standard/m, /^### Example: gcse--/m, /content\/inbox\/test-factory\.md/]) assert.match(t, re);
+  // a chat reply with a preamble and a fence is read as its unit file
+  assert.equal(readSubmission("Sure! Here you go:\n```markdown\n## A\nS: x\n```\nThanks").text, "## A\nS: x");
+  assert.equal(readSubmission("just chat").kind, "unknown");
+  // short of the topic's flashcard minimum: rejected with the reason, nothing filed
+  const thin = LESSON("3 × 4 = 12").split("\n").filter((l) => !/^Q: (About|What is a|Is a|Do bacteria)/.test(l)).join("\n");
+  const r1 = await ingestFile("test-factory.md", `${thin}\nEND`, { all: [topic] });
+  assert.equal(r1.ok, false); assert.match(r1.report, /failed `standards`/); assert.match(r1.report, /it needs at least 20/); assert.equal(r1.filed.length, 0);
+  // a valid file is installed (gates only: claims no review), and resubmitting it doesn't duplicate the lesson
+  const r2 = await ingestFile("test-factory.md", `${LESSON("3 × 4 = 12")}\nEND`, { all: [topic] });
+  assert.ok(r2.ok, r2.report); assert.equal(r2.filed[0].tier, "gates-passed"); assert.match(r2.report, /can't be published until reviewed/);
+  await ingestFile("test-factory.md", `${LESSON("3 × 4 = 12")}\nEND`, { all: [topic] });
+  const draft = readFileSync(join(process.env.GRADIFY_OUT, "content/drafts/biology/aqa-gcse-biology/test-factory.txt"), "utf8");
+  assert.equal(draft.match(/^## Prokaryotes up close$/gm).length, 1, "resubmitting replaces by title");
+  // a lesson for no queued requirement, and a file with no lessons, are rejected
+  assert.match((await ingestFile("y.md", LESSON().replace(/^REQ: .*$/m, "REQ: aqa-gcse-biology:9.9.9"), { all: [topic] })).report, /No `REQ:` line names a queued requirement/);
+  // the inbox: each file moves to done/ or rejected/ with its report beside it
+  const inbox = join(process.env.GRADIFY_OUT, "content/inbox"); mkdirSync(inbox, { recursive: true });
+  writeFileSync(join(inbox, "nonsense.md"), "hello");
+  const all = await ingestAll([], { all: [topic] });
+  assert.equal(all[0].ok, false); assert.ok(existsSync(join(inbox, "rejected/nonsense.md")) && existsSync(join(inbox, "rejected/nonsense.report.md")));
+});
+
+test("the library's standard is measured per course and per lesson, without changing anything", async () => {
+  const { measure, table } = await import("../scripts/content/standards.mjs");
+  const m = await measure({ courses: ["biology"] });
+  assert.equal(m.rows[0].lessons, 391); assert.equal(m.lessons.length, 391);
+  assert.ok(m.rows[0].topicsMet <= m.rows[0].topics && m.rows[0].lessonsMet <= m.rows[0].lessons);
+  assert.match(table(m), /^\| Course \| Lessons \| Flashcards/);
 });

@@ -23,9 +23,9 @@ P: **Investigate with the lab.** Shine red light of rising brightness on zinc: n
 IX: photoelectric
 Q: What did Planck assume to explain blackbody radiation? | That energy is exchanged in discrete quanta E = hf.
 Q: What sets the scale at which quantum effects become important? | Planck's constant: when actions are comparable to h.
-M1: Who proposed that matter has wave properties? | de Broglie | Bohr | Planck | Einstein | 1924.
-M2: Quantum mechanics was formulated as matrix mechanics and wave mechanics by: | Heisenberg and Schrödinger | Newton and Leibniz | Bohr and Rutherford | Maxwell and Faraday | 1925–26.
-M2: Which observation could classical wave theory not explain? | Low-intensity UV frees electrons while bright red light frees none | Brighter light makes more electrons flow | Light travels at a fixed speed | Light can be refracted | Wave theory predicted that enough intensity at any frequency would free electrons.
+M1#physics-u20-01-q1: Who proposed that matter has wave properties? | de Broglie | Bohr | Planck | Einstein | 1924.
+M2#physics-u20-01-q2: Quantum mechanics was formulated as matrix mechanics and wave mechanics by: | Heisenberg and Schrödinger | Newton and Leibniz | Bohr and Rutherford | Maxwell and Faraday | 1925–26.
+M2#physics-u20-01-q3: Which observation could classical wave theory not explain? | Low-intensity UV frees electrons while bright red light frees none | Brighter light makes more electrons flow | Light travels at a fixed speed | Light can be refracted | Wave theory predicted that enough intensity at any frequency would free electrons.
 
 ## Blackbody radiation
 S: Classical physics predicted a hot cavity would radiate infinite energy at short wavelengths. Planck's assumption that oscillators exchange energy only in units of hf gave a formula matching experiment perfectly, launching quantum physics.
@@ -46,8 +46,8 @@ D: phys-u20-planck-vs-rayleigh-jeans
 !: Planck initially viewed quantisation as a mathematical trick; Einstein took it physically, as quanta of light.
 Q: What was the ultraviolet catastrophe? | The classical prediction of infinite emitted energy at high frequencies.
 Q: Why does Planck's law avoid the catastrophe? | High-frequency modes need large quanta hf ≫ k_{B}T, which are exponentially unlikely to be excited.
-M1: At low frequencies, Planck's law reduces to: | The Rayleigh–Jeans law | Wien's law | Zero | Stefan's law | Classical limit.
-M2: Planck's law corresponds to photons obeying: | Bose–Einstein statistics | Fermi–Dirac | Maxwell–Boltzmann | No statistics | Photons are bosons.
+M1#physics-u20-02-q1: At low frequencies, Planck's law reduces to: | The Rayleigh–Jeans law | Wien's law | Zero | Stefan's law | Classical limit.
+M2#physics-u20-02-q2: Planck's law corresponds to photons obeying: | Bose–Einstein statistics | Fermi–Dirac | Maxwell–Boltzmann | No statistics | Photons are bosons.
 
 ## Photoelectric effect
 S: When light shines on a metal, electrons are emitted only if the light's frequency exceeds a threshold, however intense it is. Einstein explained this with photons: each delivers energy hf to one electron.
@@ -72,9 +72,9 @@ P: **Investigate with the lab.** Find the threshold wavelength for sodium, then 
 IX: photoelectric
 Q: State Einstein's photoelectric equation. | hf = φ + KE_{max}.
 Q: What does the intensity of light affect in the photoelectric effect? | The number of emitted electrons, not their maximum energy.
-M1: Increasing frequency above threshold increases: | Maximum KE of electrons | Number of electrons only | Work function | Nothing | KE = hf − φ.
-M2: A V_{s}–f graph has gradient: | h/e | e/h | h | φ | eV_{s} = hf − φ.
-M2: What does the stopping voltage measure? | The maximum kinetic energy of the photoelectrons | The number of electrons emitted | The intensity of the light | The work function directly | eV_s equals the maximum kinetic energy of the emitted electrons.
+M1#physics-u20-03-q1: Increasing frequency above threshold increases: | Maximum KE of electrons | Number of electrons only | Work function | Nothing | KE = hf − φ.
+M2#physics-u20-03-q2: A V_{s}–f graph has gradient: | h/e | e/h | h | φ | eV_{s} = hf − φ.
+M2#physics-u20-03-q3: What does the stopping voltage measure? | The maximum kinetic energy of the photoelectrons | The number of electrons emitted | The intensity of the light | The work function directly | eV_s equals the maximum kinetic energy of the emitted electrons.
 
 ## Compton scattering
 S: When X-rays scatter off electrons, their wavelength increases by an amount depending on the scattering angle. Compton (1923) explained it as a collision between a photon carrying momentum h/λ and an electron: strong evidence that light quanta are particles.
@@ -95,8 +95,8 @@ D: phys-u20-compton-shift
 !: The Compton shift is independent of the incident wavelength; only its relative size changes.
 Q: What does Compton scattering demonstrate? | Photons carry momentum and scatter like particles.
 Q: What is the Compton wavelength of the electron? | h/(m_{e}c) ≈ 2.43 pm.
-M1: The maximum Compton shift occurs at scattering angle: | 180° | 90° | 0° | 45° | 1 − cos θ = 2.
-M2: Compton shifts are hard to see with visible light because: | Δλ (pm) is tiny compared with λ (hundreds of nm) | Visible photons have no momentum | Electrons don't scatter visible light | It doesn't occur | Relative shift negligible.
+M1#physics-u20-04-q1: The maximum Compton shift occurs at scattering angle: | 180° | 90° | 0° | 45° | 1 − cos θ = 2.
+M2#physics-u20-04-q2: Compton shifts are hard to see with visible light because: | Δλ (pm) is tiny compared with λ (hundreds of nm) | Visible photons have no momentum | Electrons don't scatter visible light | It doesn't occur | Relative shift negligible.
 
 ## Wave-particle duality
 S: Light and matter both show wave and particle behaviour. Which appears depends on the experiment: interference reveals waves, detection at points reveals particles. Quantum mechanics describes both with one mathematical object, the wavefunction.
@@ -118,9 +118,9 @@ P: **Investigate with the lab.** Measure stopping voltages at three wavelengths 
 IX: photoelectric
 Q: Give evidence that electrons behave as waves. | Electron diffraction from crystals and interference in double slits.
 Q: What is complementarity? | Bohr's idea that wave and particle aspects are both needed but can't be observed simultaneously in one experiment.
-M1: The photoelectric effect is evidence of light's: | Particle nature | Wave nature | Polarisation | Speed | Photons.
-M2: The largest objects shown to interfere include: | Molecules of ~2000 atoms | Bacteria | Dust grains | Footballs | Matter-wave interferometry.
-M2: What does the photoelectric effect show about light? | It arrives in quanta (photons) with energy hf | It is purely a wave | Its energy depends only on intensity | It cannot interact with metals | Each photon's energy depends on frequency, which explains the threshold.
+M1#physics-u20-05-q1: The photoelectric effect is evidence of light's: | Particle nature | Wave nature | Polarisation | Speed | Photons.
+M2#physics-u20-05-q2: The largest objects shown to interfere include: | Molecules of ~2000 atoms | Bacteria | Dust grains | Footballs | Matter-wave interferometry.
+M2#physics-u20-05-q3: What does the photoelectric effect show about light? | It arrives in quanta (photons) with energy hf | It is purely a wave | Its energy depends only on intensity | It cannot interact with metals | Each photon's energy depends on frequency, which explains the threshold.
 
 ## de Broglie wavelength
 S: De Broglie proposed that every particle has a wavelength inversely proportional to its momentum. For electrons it's comparable to atomic spacings, making electron microscopes and diffraction possible.
@@ -140,8 +140,8 @@ D: phys-u20-electron-wavelength-voltage
 !: Use relativistic momentum for fast particles; at 200 kV electrons move at 0.7c.
 Q: State de Broglie's relation. | λ = h/p.
 Q: Why can electron microscopes resolve atoms? | Fast electrons have wavelengths of picometres, far shorter than light.
-M1: Doubling a particle's momentum makes its wavelength: | Half | Double | Unchanged | Four times | λ ∝ 1/p.
-M2: Neutron diffraction is useful because thermal neutrons have wavelengths: | Comparable to atomic spacings | Much larger than atoms | Of metres | Zero | ~0.1–0.2 nm.
+M1#physics-u20-06-q1: Doubling a particle's momentum makes its wavelength: | Half | Double | Unchanged | Four times | λ ∝ 1/p.
+M2#physics-u20-06-q2: Neutron diffraction is useful because thermal neutrons have wavelengths: | Comparable to atomic spacings | Much larger than atoms | Of metres | Zero | ~0.1–0.2 nm.
 
 ## Double-slit experiments
 S: Sending particles one at a time through two slits builds up an interference pattern dot by dot. Each particle's quantum amplitude passes through both slits; trying to learn which slit it took destroys the pattern. Feynman called it the central mystery of quantum mechanics.
@@ -163,9 +163,9 @@ P: **Investigate with the lab.** Make a double-slit pattern and change the separ
 IX: interference
 Q: What happens to the interference pattern if which-path information is available? | It disappears.
 Q: How is probability computed for two indistinguishable paths? | Add the amplitudes first, then square: |ψ_{1} + ψ_{2}|^{2}.
-M1: With single electrons sent one at a time, the screen shows: | An interference pattern building up dot by dot | Two bands only | A uniform blur | Nothing | Each electron interferes with itself.
-M2: A quantum eraser shows that: | Removing which-path information can restore interference | Particles go backwards in time | Measurement is impossible | Light has mass | Coherence depends on available information.
-M2: What does the double-slit experiment with light show? | Light behaves as a wave and interferes | Light travels only in straight lines | Light is made only of particles | Light has no wavelength | Interference fringes are evidence of wave behaviour.
+M1#physics-u20-07-q1: With single electrons sent one at a time, the screen shows: | An interference pattern building up dot by dot | Two bands only | A uniform blur | Nothing | Each electron interferes with itself.
+M2#physics-u20-07-q2: A quantum eraser shows that: | Removing which-path information can restore interference | Particles go backwards in time | Measurement is impossible | Light has mass | Coherence depends on available information.
+M2#physics-u20-07-q3: What does the double-slit experiment with light show? | Light behaves as a wave and interferes | Light travels only in straight lines | Light is made only of particles | Light has no wavelength | Interference fringes are evidence of wave behaviour.
 
 ## Heisenberg uncertainty principle
 S: The uncertainty principle states that certain pairs of quantities, like position and momentum, can't both have precisely defined values. It's a property of waves and of quantum states, not just a limitation of measurement equipment.
@@ -187,8 +187,8 @@ D: phys-u20-confinement-energy
 !: The uncertainty principle isn't about clumsy instruments; it would hold for perfect ones.
 Q: State the position–momentum uncertainty relation. | Δx Δp ≥ ħ/2.
 Q: How does the uncertainty principle explain zero-point energy? | Confining a particle forces a momentum spread, so its kinetic energy can't be zero.
-M1: An excited state with lifetime 10^{-8} s has energy width about: | 3 × 10^{-8} eV | 1 eV | 10^{-3} eV | 0 | ħ/τ ≈ 6.6 × 10^{-8} eV.
-M2: Which pair obeys an uncertainty relation? | x and p_{x} | x and p_{y} | E and m | p and λ | Non-commuting observables.
+M1#physics-u20-08-q1: An excited state with lifetime 10^{-8} s has energy width about: | 3 × 10^{-8} eV | 1 eV | 10^{-3} eV | 0 | ħ/τ ≈ 6.6 × 10^{-8} eV.
+M2#physics-u20-08-q2: Which pair obeys an uncertainty relation? | x and p_{x} | x and p_{y} | E and m | p and λ | Non-commuting observables.
 
 ## Wavefunctions
 S: The wavefunction ψ is the mathematical object describing a quantum system's state. It's generally complex, evolves by the Schrödinger equation, and its squared magnitude gives probabilities.
@@ -211,9 +211,9 @@ P: **Investigate with the lab.** Look at the wavefunctions in the infinite well 
 IX: quantum
 Q: What does |ψ|^{2} represent? | Probability density of finding the particle at a position.
 Q: Why must wavefunctions be normalised? | Total probability of finding the particle somewhere must be 1.
-M1: Multiplying ψ by e^{iθ} (a global phase): | Changes nothing observable | Changes probabilities | Flips the spin | Doubles energy | Global phase is unobservable.
-M2: An acceptable wavefunction must be: | Normalisable, single-valued and continuous | Real | Positive | Constant | Physical requirements.
-M2: How many nodes inside the well does the third energy level's wavefunction have? | Two | Three | One | None | The nth level has n − 1 nodes inside the well.
+M1#physics-u20-09-q1: Multiplying ψ by e^{iθ} (a global phase): | Changes nothing observable | Changes probabilities | Flips the spin | Doubles energy | Global phase is unobservable.
+M2#physics-u20-09-q2: An acceptable wavefunction must be: | Normalisable, single-valued and continuous | Real | Positive | Constant | Physical requirements.
+M2#physics-u20-09-q3: How many nodes inside the well does the third energy level's wavefunction have? | Two | Three | One | None | The nth level has n − 1 nodes inside the well.
 
 ## Probability amplitudes
 S: In quantum mechanics, each way an event can happen has a complex probability amplitude. Amplitudes for indistinguishable alternatives add before squaring; this is the source of interference and all quantum weirdness.
@@ -235,8 +235,8 @@ D: phys-u20-amplitude-interference
 !: You can't add probabilities for indistinguishable paths; doing so misses interference entirely.
 Q: When do you add amplitudes rather than probabilities? | When the alternatives are indistinguishable (no record of which occurred).
 Q: What does the path integral sum over? | Amplitudes e^{iS/ħ} for all possible paths.
-M1: Two indistinguishable paths each with amplitude 1/2, in phase. Probability: | 1 | 1/2 | 1/4 | 0 | |1/2 + 1/2|^{2}.
-M2: In Dirac notation, the amplitude to find state ψ in state φ is: | ⟨φ|ψ⟩ | |ψ⟩⟨φ| | ⟨ψ|ψ⟩ | |φ⟩ | Inner product.
+M1#physics-u20-10-q1: Two indistinguishable paths each with amplitude 1/2, in phase. Probability: | 1 | 1/2 | 1/4 | 0 | |1/2 + 1/2|^{2}.
+M2#physics-u20-10-q2: In Dirac notation, the amplitude to find state ψ in state φ is: | ⟨φ|ψ⟩ | |ψ⟩⟨φ| | ⟨ψ|ψ⟩ | |φ⟩ | Inner product.
 
 ## Born rule
 S: The Born rule connects quantum theory to experiment: the probability of a measurement outcome is the squared magnitude of the corresponding amplitude. Max Born proposed it in 1926 (Nobel 1954).
@@ -257,9 +257,9 @@ P: **Investigate with the lab.** Compare the wavefunction with its square: the s
 IX: quantum
 Q: State the Born rule. | The probability of an outcome is the squared magnitude of its amplitude.
 Q: What does Gleason's theorem show? | The Born rule is the only consistent way to assign probabilities to quantum measurements (in dimension ≥ 3).
-M1: ψ = (3|a⟩ + 4i|b⟩)/5. P(b) = | 0.64 | 0.8 | 0.36 | 0.16 | |4i/5|^{2}.
-M2: Who proposed the probabilistic interpretation of ψ? | Max Born | Schrödinger | Heisenberg | Bohr | 1926.
-M2: What does the square of a wavefunction give? | The probability density of finding the particle | The particle's energy | The particle's exact position | The particle's momentum | The Born rule: the squared modulus of ψ is a probability density.
+M1#physics-u20-11-q1: ψ = (3|a⟩ + 4i|b⟩)/5. P(b) = | 0.64 | 0.8 | 0.36 | 0.16 | |4i/5|^{2}.
+M2#physics-u20-11-q2: Who proposed the probabilistic interpretation of ψ? | Max Born | Schrödinger | Heisenberg | Bohr | 1926.
+M2#physics-u20-11-q3: What does the square of a wavefunction give? | The probability density of finding the particle | The particle's energy | The particle's exact position | The particle's momentum | The Born rule: the squared modulus of ψ is a probability density.
 
 ## Schrödinger equation
 S: The Schrödinger equation governs how quantum states evolve in time. It's the quantum analogue of Newton's second law: given the potential and the initial wavefunction, it determines the wavefunction at all later times.
@@ -283,9 +283,9 @@ P: **Investigate with the lab.** Switch between the four potentials and see how 
 IX: quantum
 Q: What is the Hamiltonian? | The operator for total energy, kinetic plus potential.
 Q: Why is the Schrödinger equation called linear? | Any superposition of solutions is also a solution.
-M1: The momentum operator in position representation is: | −iħ∇ | iħ∂/∂t | ħk | mv | Canonical quantisation.
-M2: Schrödinger's equation fails for: | Particles near the speed of light | Electrons in atoms | Tunnelling | Molecules | Non-relativistic.
-M2: What does solving the time-independent Schrödinger equation give for a bound particle? | Its allowed energy levels and wavefunctions | Its exact trajectory | Its speed at every moment | Only its mass | Bound states exist only at particular energies, each with its wavefunction.
+M1#physics-u20-12-q1: The momentum operator in position representation is: | −iħ∇ | iħ∂/∂t | ħk | mv | Canonical quantisation.
+M2#physics-u20-12-q2: Schrödinger's equation fails for: | Particles near the speed of light | Electrons in atoms | Tunnelling | Molecules | Non-relativistic.
+M2#physics-u20-12-q3: What does solving the time-independent Schrödinger equation give for a bound particle? | Its allowed energy levels and wavefunctions | Its exact trajectory | Its speed at every moment | Only its mass | Bound states exist only at particular energies, each with its wavefunction.
 
 ## Time-dependent and time-independent Schrödinger equations
 S: For potentials that don't change in time, the Schrödinger equation separates. The time-independent equation finds the allowed energies and stationary states; the time dependence is then just a rotating phase for each.
@@ -309,9 +309,9 @@ P: **Investigate with the lab.** Note that each energy level shown is a stationa
 IX: quantum
 Q: What is a stationary state? | An energy eigenstate whose probability density doesn't change in time.
 Q: Why do superpositions of energy eigenstates evolve? | Each component has a different phase rotation rate, so their interference changes in time.
-M1: The time dependence of an energy eigenstate is: | e^{−iEt/ħ} | e^{−Et/ħ} | cos(Et) only | None at all | Phase factor.
-M2: For a bound particle, discrete energies come from: | Boundary conditions on φ | The time-dependent part | Measurement | Relativity | Normalisable solutions only for certain E.
-M2: When is the time-independent Schrödinger equation enough? | For stationary states of definite energy | For every possible quantum situation | Only for free particles | Only for particles moving at light speed | Stationary states have probability densities that don't change with time.
+M1#physics-u20-13-q1: The time dependence of an energy eigenstate is: | e^{−iEt/ħ} | e^{−Et/ħ} | cos(Et) only | None at all | Phase factor.
+M2#physics-u20-13-q2: For a bound particle, discrete energies come from: | Boundary conditions on φ | The time-dependent part | Measurement | Relativity | Normalisable solutions only for certain E.
+M2#physics-u20-13-q3: When is the time-independent Schrödinger equation enough? | For stationary states of definite energy | For every possible quantum situation | Only for free particles | Only for particles moving at light speed | Stationary states have probability densities that don't change with time.
 
 ## Quantum states and observables
 S: A quantum state contains everything that can be predicted about a system. Observables, the measurable quantities, are represented by operators; their eigenvalues are the possible results, and the state gives each result's probability.
@@ -331,8 +331,8 @@ X: A spin-½ particle is in |↑_{x}⟩ = (|↑_{z}⟩ + |↓_{z}⟩)/√2. Meas
 !: A state isn't a list of definite values for all observables; incompatible observables don't have simultaneous definite values.
 Q: What are the possible results of measuring an observable? | The eigenvalues of its operator.
 Q: What is the Heisenberg picture? | A formulation where operators evolve in time and states are fixed.
-M1: Observables are represented by: | Hermitian operators | Any matrices | Real numbers | Wavefunctions | Real eigenvalues.
-M2: Measuring S_{z} on |↑_{z}⟩ gives: | +ħ/2 with certainty | ±ħ/2 equally | 0 | ħ | Eigenstate.
+M1#physics-u20-14-q1: Observables are represented by: | Hermitian operators | Any matrices | Real numbers | Wavefunctions | Real eigenvalues.
+M2#physics-u20-14-q2: Measuring S_{z} on |↑_{z}⟩ gives: | +ħ/2 with certainty | ±ħ/2 equally | 0 | ħ | Eigenstate.
 
 ## Operators and eigenvalues
 S: Operators act on quantum states to produce new states. An eigenstate of an operator is unchanged except for scaling by its eigenvalue; for observables, eigenvalues are the possible measurement outcomes.
@@ -353,8 +353,8 @@ X: Find the eigenvalues of σ_{x} = [[0, 1], [1, 0]].
 !: Operators generally don't commute: ÂB̂ ≠ B̂Â, and order matters in quantum calculations.
 Q: Why are observables Hermitian? | Hermitian operators have real eigenvalues and orthogonal, complete eigenstates.
 Q: What property do time-evolution operators have? | They're unitary, preserving normalisation.
-M1: The eigenvalues of a Hermitian operator are: | Real | Complex | Imaginary | Zero | Guaranteed real.
-M2: Eigenstates of a Hermitian operator with different eigenvalues are: | Orthogonal | Parallel | Identical | Undefined | Spectral theorem.
+M1#physics-u20-15-q1: The eigenvalues of a Hermitian operator are: | Real | Complex | Imaginary | Zero | Guaranteed real.
+M2#physics-u20-15-q2: Eigenstates of a Hermitian operator with different eigenvalues are: | Orthogonal | Parallel | Identical | Undefined | Spectral theorem.
 
 ## Expectation values
 S: The expectation value of an observable is the average of many measurements on identically prepared systems. It's what classical physics sees, and Ehrenfest's theorem shows expectation values often obey classical equations of motion.
@@ -372,8 +372,8 @@ D: phys-u20-expectation-x
 !: An expectation value needn't be a possible measurement result: for a spin in an equal superposition of ±ħ/2, ⟨S_{z}⟩ = 0, which is never measured.
 Q: What is an expectation value? | The average result of many measurements on identically prepared systems: ⟨ψ|Â|ψ⟩.
 Q: What does Ehrenfest's theorem show? | Expectation values obey equations resembling classical equations of motion.
-M1: A state has 30% chance of energy 2 eV and 70% of 4 eV. ⟨E⟩ = | 3.4 eV | 3 eV | 6 eV | 2.6 eV | 0.3 × 2 + 0.7 × 4.
-M2: ⟨p⟩ for a real, stationary bound-state wavefunction is: | 0 | ħk | Infinite | Undefined | Real ψ gives zero mean momentum.
+M1#physics-u20-16-q1: A state has 30% chance of energy 2 eV and 70% of 4 eV. ⟨E⟩ = | 3.4 eV | 3 eV | 6 eV | 2.6 eV | 0.3 × 2 + 0.7 × 4.
+M2#physics-u20-16-q2: ⟨p⟩ for a real, stationary bound-state wavefunction is: | 0 | ħk | Infinite | Undefined | Real ψ gives zero mean momentum.
 
 ## Hilbert spaces
 S: A Hilbert space is the complete vector space with an inner product in which quantum states live. Its structure, including superposition, orthogonality and dimension, is the mathematical backbone of quantum mechanics.
@@ -395,8 +395,8 @@ D: phys-u20-hilbert-dimension
 !: Hilbert space dimension grows exponentially with the number of particles, not linearly.
 Q: What is the tensor product used for? | Combining Hilbert spaces of subsystems into the space of the composite system.
 Q: How are position and momentum wavefunctions related? | By Fourier transformation.
-M1: The Hilbert space of a qubit has dimension: | 2 | 1 | 4 | Infinite | Two basis states.
-M2: Ten qubits have a state space of dimension: | 1024 | 20 | 100 | 10 | 2^{10}.
+M1#physics-u20-17-q1: The Hilbert space of a qubit has dimension: | 2 | 1 | 4 | Infinite | Two basis states.
+M2#physics-u20-17-q2: Ten qubits have a state space of dimension: | 1024 | 20 | 100 | 10 | 2^{10}.
 
 ## Superposition
 S: The superposition principle says that if two states are possible, any normalised complex combination of them is also a possible state. It allows interference, entanglement and quantum computing.
@@ -416,8 +416,8 @@ X: A qubit (|0⟩ + i|1⟩)/√2 is measured in the basis (|0⟩ ± |1⟩)/√2.
 !: A superposition isn't the same as a statistical mixture: superpositions can interfere; mixtures can't.
 Q: State the superposition principle. | Any linear combination of allowed quantum states is also an allowed state.
 Q: How does a superposition differ from a mixture? | A superposition has definite relative phases and can interfere; a mixture is classical uncertainty with no interference.
-M1: The relative phase in a superposition: | Affects interference and measurement outcomes in other bases | Is irrelevant | Must be zero | Is the global phase | Observable.
-M2: Why don't we see cats in superposition? | Decoherence rapidly destroys macroscopic coherence | Cats aren't quantum | Superposition is forbidden for large objects | Gravity collapses it always | Environmental entanglement.
+M1#physics-u20-18-q1: The relative phase in a superposition: | Affects interference and measurement outcomes in other bases | Is irrelevant | Must be zero | Is the global phase | Observable.
+M2#physics-u20-18-q2: Why don't we see cats in superposition? | Decoherence rapidly destroys macroscopic coherence | Cats aren't quantum | Superposition is forbidden for large objects | Gravity collapses it always | Environmental entanglement.
 
 ## Quantum measurement
 S: Measurement in quantum mechanics gives a definite outcome with Born-rule probabilities and leaves the system in a corresponding state. How and why a definite result emerges from superposition is the measurement problem.
@@ -437,8 +437,8 @@ X: A spin in |↑_{z}⟩ is measured along x, then z. Probability of finding ↑
 !: Measurement isn't passive observation; it generally changes the state.
 Q: What is the measurement problem? | Explaining how definite single outcomes arise from linear, unitary quantum evolution.
 Q: What is the quantum Zeno effect? | Frequent measurement inhibits a system's evolution.
-M1: After a projective measurement giving a_{n}, the state is: | The eigenstate |a_{n}⟩ | Unchanged | Random | Zero | Projection.
-M2: Which interpretation has no collapse but branching worlds? | Many-worlds | Copenhagen | GRW | Pilot-wave | Everett.
+M1#physics-u20-19-q1: After a projective measurement giving a_{n}, the state is: | The eigenstate |a_{n}⟩ | Unchanged | Random | Zero | Projection.
+M2#physics-u20-19-q2: Which interpretation has no collapse but branching worlds? | Many-worlds | Copenhagen | GRW | Pilot-wave | Everett.
 
 ## Commutators
 S: The commutator of two operators measures whether the order of applying them matters. Non-commuting observables can't be simultaneously sharp, and the canonical commutator [x, p] = iħ is the heart of quantum mechanics.
@@ -459,8 +459,8 @@ X: Show [x̂, p̂]f = iħf.
 !: Commuting observables can be measured together sharply; non-commuting ones can't, however good the apparatus.
 Q: What is the canonical commutation relation? | [x̂, p̂] = iħ.
 Q: How do you tell if a quantity is conserved? | If its operator commutes with the Hamiltonian.
-M1: [L̂_{z}, L̂_{x}] = | iħL̂_{y} | 0 | −iħL̂_{y} | iħL̂_{z} | Cyclic.
-M2: If [Ĥ, Â] = 0 then: | ⟨A⟩ is constant in time | A is zero | H is zero | A is unobservable | Conserved quantity.
+M1#physics-u20-20-q1: [L̂_{z}, L̂_{x}] = | iħL̂_{y} | 0 | −iħL̂_{y} | iħL̂_{z} | Cyclic.
+M2#physics-u20-20-q2: If [Ĥ, Â] = 0 then: | ⟨A⟩ is constant in time | A is zero | H is zero | A is unobservable | Conserved quantity.
 
 ## Compatible and incompatible observables
 S: Compatible observables can have definite values at the same time and share a set of eigenstates; incompatible observables can't. This is why quantum states are labelled by a maximal set of compatible quantum numbers.
@@ -480,8 +480,8 @@ X: Can a hydrogen atom have definite L^{2} and L_{z}? L_{z} and L_{x}?
 !: Incompatibility isn't measurement clumsiness: there's no state with definite values for both.
 Q: When are two observables compatible? | When their operators commute.
 Q: What labels hydrogen's states? | Eigenvalues of a complete set of commuting observables: n, l, m_{l}, m_{s}.
-M1: Which pair is compatible? | x and p_{y} | x and p_{x} | S_{x} and S_{y} | L_{x} and L_{y} | Different directions commute.
-M2: A complete set of commuting observables: | Uniquely labels basis states | Must include x and p | Has one operator | Doesn't exist | CSCO.
+M1#physics-u20-21-q1: Which pair is compatible? | x and p_{y} | x and p_{x} | S_{x} and S_{y} | L_{x} and L_{y} | Different directions commute.
+M2#physics-u20-21-q2: A complete set of commuting observables: | Uniquely labels basis states | Must include x and p | Has one operator | Doesn't exist | CSCO.
 
 ## Infinite and finite potential wells
 S: A particle confined in a potential well can only have certain energies. The infinite square well is the simplest example; finite wells allow the wavefunction to leak into the walls, lowering energies and permitting tunnelling.
@@ -505,9 +505,9 @@ P: **Investigate with the lab.** In the infinite well, halve the width and see e
 IX: quantum
 Q: How do infinite-well energies depend on n and L? | E ∝ n^{2}/L^{2}.
 Q: Why do smaller quantum dots emit bluer light? | Stronger confinement raises the energy levels and gap.
-M1: The ratio E_{3}/E_{1} in an infinite well is: | 9 | 3 | 6 | 27 | n^{2}.
-M2: Compared with an infinite well, a finite well's energies are: | Lower | Higher | The same | Zero | Wavefunction spreads out.
-M2: An infinite well's width is halved. What happens to the ground-state energy? | It increases four times | It doubles | It halves | It stays the same | E ∝ 1/L², so halving L multiplies every level by four.
+M1#physics-u20-22-q1: The ratio E_{3}/E_{1} in an infinite well is: | 9 | 3 | 6 | 27 | n^{2}.
+M2#physics-u20-22-q2: Compared with an infinite well, a finite well's energies are: | Lower | Higher | The same | Zero | Wavefunction spreads out.
+M2#physics-u20-22-q3: An infinite well's width is halved. What happens to the ground-state energy? | It increases four times | It doubles | It halves | It stays the same | E ∝ 1/L², so halving L multiplies every level by four.
 
 ## Quantum tunnelling
 S: A quantum particle can pass through a barrier higher than its energy, because its wavefunction decays inside the barrier but doesn't vanish. Tunnelling powers the Sun, alpha decay, flash memory and the scanning tunnelling microscope.
@@ -530,9 +530,9 @@ P: **Investigate with the lab.** Get more than 10% of electrons through a barrie
 IX: quantum
 Q: Why does the STM have atomic resolution? | Tunnelling current depends exponentially on gap width, changing about 10 times per ångström.
 Q: How does tunnelling explain alpha decay? | Alpha particles tunnel through the Coulomb barrier; tiny changes in energy change the rate enormously.
-M1: Tunnelling probability increases if the barrier is: | Thinner or lower | Thicker | Higher | Heavier particle | e^{−2κd}.
-M2: Which technology relies on tunnelling? | Flash memory | Incandescent lamps | Transformers | Solar thermal panels | Floating gate.
-M2: How does tunnelling probability depend on barrier width? | It falls roughly exponentially as the barrier widens | It rises as the barrier widens | It doesn't depend on width | It is zero for any finite barrier | The wavefunction decays exponentially inside the barrier.
+M1#physics-u20-23-q1: Tunnelling probability increases if the barrier is: | Thinner or lower | Thicker | Higher | Heavier particle | e^{−2κd}.
+M2#physics-u20-23-q2: Which technology relies on tunnelling? | Flash memory | Incandescent lamps | Transformers | Solar thermal panels | Floating gate.
+M2#physics-u20-23-q3: How does tunnelling probability depend on barrier width? | It falls roughly exponentially as the barrier widens | It rises as the barrier widens | It doesn't depend on width | It is zero for any finite barrier | The wavefunction decays exponentially inside the barrier.
 
 ## Quantum harmonic oscillator
 S: The quantum harmonic oscillator has evenly spaced energy levels and a nonzero ground-state energy. Because small vibrations are harmonic, it describes molecular vibrations, phonons, photons in a cavity and quantum fields.
@@ -559,9 +559,9 @@ P: **Investigate with the lab.** Choose the harmonic potential and see the level
 IX: quantum
 Q: What are the energy levels of the quantum harmonic oscillator? | E_{n} = (n + ½)ħω.
 Q: What do ladder operators do? | Raise or lower the oscillator's state by one quantum ħω.
-M1: The energy spacing in the quantum harmonic oscillator is: | ħω, constant | Increasing with n | Decreasing with n | Zero | Evenly spaced.
-M2: The ground state wavefunction is: | A Gaussian | A sine wave | A step | Zero | e^{−αx^{2}}.
-M2: What is the ground-state energy of a quantum harmonic oscillator? | ½ħω | 0 | ħω | 2ħω | The zero-point energy is ½ħω, and levels are spaced by ħω.
+M1#physics-u20-24-q1: The energy spacing in the quantum harmonic oscillator is: | ħω, constant | Increasing with n | Decreasing with n | Zero | Evenly spaced.
+M2#physics-u20-24-q2: The ground state wavefunction is: | A Gaussian | A sine wave | A step | Zero | e^{−αx^{2}}.
+M2#physics-u20-24-q3: What is the ground-state energy of a quantum harmonic oscillator? | ½ħω | 0 | ħω | 2ħω | The zero-point energy is ½ħω, and levels are spaced by ħω.
 
 ## Quantum barriers and scattering
 S: Quantum scattering describes how particles bounce off or pass through potentials. Unlike classical particles, quantum ones can reflect from drops as well as steps, tunnel through barriers, and show resonances.
@@ -586,9 +586,9 @@ P: **Investigate with the lab.** Change the barrier height and electron energy a
 IX: quantum
 Q: What is the Ramsauer–Townsend effect? | Low-energy electrons pass almost unscattered through noble gas atoms because of resonant transmission.
 Q: What does a scattering cross-section measure? | The effective target area for a scattering process.
-M1: A particle with E > V_{0} at a step: | Can still partly reflect | Always transmits | Always reflects | Stops | Wave mismatch.
-M2: At low energies, scattering is dominated by: | s-waves (l = 0) | High-l partial waves | Magnetic forces | Gravity | Centrifugal barrier suppresses higher l.
-M2: An electron has more energy than a barrier's height. Is it certain to pass? | No: some of the wave can still be reflected | Yes: it always passes | No: it is always reflected | Only if the barrier is wide | Quantum particles can reflect even from barriers lower than their energy.
+M1#physics-u20-25-q1: A particle with E > V_{0} at a step: | Can still partly reflect | Always transmits | Always reflects | Stops | Wave mismatch.
+M2#physics-u20-25-q2: At low energies, scattering is dominated by: | s-waves (l = 0) | High-l partial waves | Magnetic forces | Gravity | Centrifugal barrier suppresses higher l.
+M2#physics-u20-25-q3: An electron has more energy than a barrier's height. Is it certain to pass? | No: some of the wave can still be reflected | Yes: it always passes | No: it is always reflected | Only if the barrier is wide | Quantum particles can reflect even from barriers lower than their energy.
 
 ## Angular momentum
 S: In quantum mechanics angular momentum is quantised in both magnitude and direction. Only one component can be known at a time, and allowed values come in steps of ħ.
@@ -613,8 +613,8 @@ D: phys-u20-l2-vector
 !: The vector model's "cone" is a picture; L_{x} and L_{y} aren't definite while L_{z} is.
 Q: What are the eigenvalues of L^{2}? | l(l + 1)ħ^{2}.
 Q: How many m values are there for a given l? | 2l + 1.
-M1: For l = 1, the magnitude of L is: | √2 ħ | ħ | 2ħ | 0 | √(1 × 2).
-M2: The selection rule for electric dipole transitions is: | Δl = ±1 | Δl = 0 | Δl = ±2 | Any Δl | Photon spin 1.
+M1#physics-u20-26-q1: For l = 1, the magnitude of L is: | √2 ħ | ħ | 2ħ | 0 | √(1 × 2).
+M2#physics-u20-26-q2: The selection rule for electric dipole transitions is: | Δl = ±1 | Δl = 0 | Δl = ±2 | Any Δl | Photon spin 1.
 
 ## Spin
 S: Spin is an intrinsic angular momentum carried by particles, with no classical analogue as literal rotation. Electrons have spin ½: measured along any axis it's always +ħ/2 or −ħ/2. Spin explains magnetism, the periodic table and MRI.
@@ -637,8 +637,8 @@ X: A spin in state (|↑⟩ + |↓⟩)/√2 is in a field along z. What happens 
 !: Spin isn't literally a spinning ball; a point electron spinning fast enough to give ħ/2 would need surface speeds far above c.
 Q: What values can an electron's spin component along any axis take? | ±ħ/2.
 Q: What is the spin–statistics theorem? | Half-integer spin particles are fermions; integer spin particles are bosons.
-M1: The Pauli matrix σ_{z} has eigenvalues: | ±1 | ±½ | 0 and 1 | ±ħ | Then S_{z} = ±ħ/2.
-M2: A photon has spin: | 1 | ½ | 0 | 2 | Vector boson.
+M1#physics-u20-27-q1: The Pauli matrix σ_{z} has eigenvalues: | ±1 | ±½ | 0 and 1 | ±ħ | Then S_{z} = ±ħ/2.
+M2#physics-u20-27-q2: A photon has spin: | 1 | ½ | 0 | 2 | Vector boson.
 
 ## Addition of angular momentum
 S: When two angular momenta combine (orbital and spin, or two particles' spins), the total takes a range of quantum numbers. Working out the combined states, using Clebsch–Gordan coefficients, explains atomic fine structure and multiplets.
@@ -660,8 +660,8 @@ X: An electron with l = 1 and s = ½. Possible j values and state counts?
 !: Total angular momentum quantum numbers don't simply add; they range from the difference to the sum.
 Q: What total spins can two spin-½ particles have? | S = 1 (triplet) or S = 0 (singlet).
 Q: What causes fine structure? | Spin–orbit coupling between the electron's spin and orbital angular momentum.
-M1: Combining j_{1} = 1 and j_{2} = 1 gives j = : | 0, 1, 2 | 2 only | 1 only | 0 and 2 | |1 − 1| to 1 + 1.
-M2: The hydrogen 21 cm line comes from: | Hyperfine flip between electron and proton spins | Fine structure | Lyman alpha | Rotational states | F = 1 ↔ 0.
+M1#physics-u20-28-q1: Combining j_{1} = 1 and j_{2} = 1 gives j = : | 0, 1, 2 | 2 only | 1 only | 0 and 2 | |1 − 1| to 1 + 1.
+M2#physics-u20-28-q2: The hydrogen 21 cm line comes from: | Hyperfine flip between electron and proton spins | Fine structure | Lyman alpha | Rotational states | F = 1 ↔ 0.
 
 ## Identical particles
 S: Identical quantum particles are truly indistinguishable: swapping two can't change any measurable result. So the total wavefunction must be symmetric (bosons) or antisymmetric (fermions) under exchange, with dramatic physical consequences.
@@ -682,8 +682,8 @@ X: Build an antisymmetric spatial state of two particles in single-particle stat
 !: Indistinguishability isn't about our lack of labels; it's a fundamental symmetry with observable effects.
 Q: What symmetry must fermion wavefunctions have? | Antisymmetric under exchange of any two particles.
 Q: What is the Hong–Ou–Mandel effect? | Two identical photons entering a 50:50 beam splitter from opposite sides always exit together.
-M1: Bosons have wavefunctions that are: | Symmetric under exchange | Antisymmetric | Zero | Unchanged in sign only for one particle | +.
-M2: Anyons can exist in: | Two dimensions | Three dimensions | One dimension only | Vacuum | Exchange paths differ topologically.
+M1#physics-u20-29-q1: Bosons have wavefunctions that are: | Symmetric under exchange | Antisymmetric | Zero | Unchanged in sign only for one particle | +.
+M2#physics-u20-29-q2: Anyons can exist in: | Two dimensions | Three dimensions | One dimension only | Vacuum | Exchange paths differ topologically.
 
 ## Bosons and fermions
 S: All particles are either bosons (integer spin, sociable: any number can share a state) or fermions (half-integer spin, antisocial: one per state). This split shapes matter (fermions) and forces (bosons).
@@ -706,8 +706,8 @@ X: Is a deuterium atom (1p, 1n, 1e) a boson or fermion?
 !: Whether a composite particle behaves as a boson holds only when probed at energies too low to resolve its internal structure.
 Q: How do you tell if a composite particle is a boson or fermion? | Count its constituent fermions: even means boson, odd means fermion.
 Q: Why does superconductivity involve bosons? | Electrons form Cooper pairs, which act as bosons and condense.
-M1: Which is a fermion? | Neutrino | Photon | Gluon | Higgs boson | Spin ½.
-M2: ^{4}He is a: | Boson | Fermion | Anyon | Neither | 6 fermions.
+M1#physics-u20-30-q1: Which is a fermion? | Neutrino | Photon | Gluon | Higgs boson | Spin ½.
+M2#physics-u20-30-q2: ^{4}He is a: | Boson | Fermion | Anyon | Neither | 6 fermions.
 
 ## Pauli exclusion principle
 S: No two identical fermions can occupy the same quantum state. This simple rule, a consequence of antisymmetric wavefunctions, builds the periodic table, makes matter rigid and holds up white dwarfs and neutron stars.
@@ -729,8 +729,8 @@ D: phys-u20-shell-capacity
 !: The exclusion principle isn't a force; it's a symmetry constraint whose effects look like a strong repulsion.
 Q: State the Pauli exclusion principle. | No two identical fermions can occupy the same quantum state.
 Q: How many electrons can a shell n hold? | 2n^{2}.
-M1: An atomic orbital holds at most: | 2 electrons | 1 | 8 | 18 | Opposite spins.
-M2: Pauli exclusion is essential for: | The stability and size of matter | Superconductivity only | Photons | Gravity | Lieb–Thirring.
+M1#physics-u20-31-q1: An atomic orbital holds at most: | 2 electrons | 1 | 8 | 18 | Opposite spins.
+M2#physics-u20-31-q2: Pauli exclusion is essential for: | The stability and size of matter | Superconductivity only | Photons | Gravity | Lieb–Thirring.
 
 ## Hydrogen atom
 S: Hydrogen, one electron bound to a proton, is the only atom the Schrödinger equation solves exactly. Its energy levels, orbitals and spectrum underpin all of atomic physics and chemistry.
@@ -756,8 +756,8 @@ D: phys-u20-hydrogen-balmer
 !: Electrons don't orbit in neat circles; orbitals are probability clouds.
 Q: What are hydrogen's energy levels? | E_{n} = −13.6 eV/n^{2}.
 Q: Which series of hydrogen lines is visible? | The Balmer series (transitions to n = 2).
-M1: Ionisation energy of hydrogen from the ground state: | 13.6 eV | 3.4 eV | 10.2 eV | 1 eV | E_{∞} − E_{1}.
-M2: The number of states (ignoring spin) for n = 3 is: | 9 | 3 | 6 | 18 | n^{2}.
+M1#physics-u20-32-q1: Ionisation energy of hydrogen from the ground state: | 13.6 eV | 3.4 eV | 10.2 eV | 1 eV | E_{∞} − E_{1}.
+M2#physics-u20-32-q2: The number of states (ignoring spin) for n = 3 is: | 9 | 3 | 6 | 18 | n^{2}.
 
 ## Orbital angular momentum
 S: An electron moving around a nucleus has orbital angular momentum, quantised by l and m. Its value fixes an orbital's shape (s, p, d, f) and orientation, and governs which spectral transitions are allowed.
@@ -778,8 +778,8 @@ D: phys-u20-zeeman-levels
 !: Orbital shapes are |ψ|^{2} plots of real combinations of Y_{lm}; the m = ±1 complex states are doughnut-shaped.
 Q: What functions describe the angular part of orbitals? | Spherical harmonics Y_{lm}.
 Q: Why does 4s fill before 3d? | s electrons penetrate closer to the nucleus, experiencing less shielding and lower energy.
-M1: A d orbital has l = : | 2 | 1 | 0 | 3 | s, p, d, f.
-M2: The normal Zeeman effect splits a level into: | 2l + 1 components | 2 components | l components | n components | m_{l} values.
+M1#physics-u20-33-q1: A d orbital has l = : | 2 | 1 | 0 | 3 | s, p, d, f.
+M2#physics-u20-33-q2: The normal Zeeman effect splits a level into: | 2l + 1 components | 2 components | l components | n components | m_{l} values.
 
 ## Approximation methods
 S: Most quantum problems can't be solved exactly. Approximation methods (perturbation theory, the variational method, WKB, numerical methods) give accurate answers by building on solvable problems or clever guesses.
@@ -798,8 +798,8 @@ X: Why can the Born–Oppenheimer approximation treat nuclei as fixed?
 !: Approximations have domains of validity; perturbation series can diverge when the "small" term isn't small.
 Q: What is the Born–Oppenheimer approximation? | Separating fast electron motion from slow nuclear motion in molecules.
 Q: What is DFT used for? | Calculating electronic structure of molecules and materials from the electron density.
-M1: Which method gives an upper bound on the ground-state energy? | Variational method | Perturbation theory | WKB | Born approximation | Any trial ψ.
-M2: WKB is most accurate for: | Slowly varying potentials | Rapidly varying potentials | Low quantum numbers only | Free particles | Semiclassical.
+M1#physics-u20-34-q1: Which method gives an upper bound on the ground-state energy? | Variational method | Perturbation theory | WKB | Born approximation | Any trial ψ.
+M2#physics-u20-34-q2: WKB is most accurate for: | Slowly varying potentials | Rapidly varying potentials | Low quantum numbers only | Free particles | Semiclassical.
 
 ## Perturbation theory
 S: Perturbation theory finds approximate energies and states when a small extra term is added to a Hamiltonian we can solve. It explains the Stark and Zeeman effects, fine structure and transition rates.
@@ -823,8 +823,8 @@ X: A particle in a box gets a small uniform potential V_{0} across the whole box
 !: Perturbation theory fails when the matrix elements are comparable to energy differences; near-degenerate levels need special treatment.
 Q: What is the first-order energy correction? | The expectation value of the perturbation in the unperturbed state.
 Q: State Fermi's golden rule. | Transition rate = (2π/ħ)|matrix element|^{2} × density of final states.
-M1: The second-order correction to the ground-state energy is: | Always negative | Always positive | Zero | Undefined | Denominators all negative.
-M2: Selection rules arise when: | Matrix elements vanish by symmetry | Energies are large | States are degenerate | Perturbations are strong | ⟨f|Ĥ′|i⟩ = 0.
+M1#physics-u20-35-q1: The second-order correction to the ground-state energy is: | Always negative | Always positive | Zero | Undefined | Denominators all negative.
+M2#physics-u20-35-q2: Selection rules arise when: | Matrix elements vanish by symmetry | Energies are large | States are degenerate | Perturbations are strong | ⟨f|Ĥ′|i⟩ = 0.
 
 ## Variational method
 S: The variational method estimates a ground-state energy by guessing a trial wavefunction with adjustable parameters and minimising its energy. The result is always an upper bound on the true value.
@@ -846,8 +846,8 @@ D: phys-u20-variational-gaussian
 !: The variational method gives an upper bound to the energy but doesn't guarantee the wavefunction itself is accurate for other properties.
 Q: State the variational principle. | The expectation value of H in any trial state is at least the true ground-state energy.
 Q: Why do variational energies converge faster than wavefunctions? | Energy errors are second order in wavefunction errors.
-M1: A variational estimate of the ground-state energy is: | Always ≥ the true value | Always ≤ | Exact | Random | Upper bound.
-M2: Helium's variational effective charge 27/16 shows: | Each electron partly screens the nucleus from the other | Helium has fractional protons | Electrons don't interact | Z_{eff} > 2 | Screening.
+M1#physics-u20-36-q1: A variational estimate of the ground-state energy is: | Always ≥ the true value | Always ≤ | Exact | Random | Upper bound.
+M2#physics-u20-36-q2: Helium's variational effective charge 27/16 shows: | Each electron partly screens the nucleus from the other | Helium has fractional protons | Electrons don't interact | Z_{eff} > 2 | Screening.
 
 ## WKB approximation
 S: The WKB approximation solves the Schrödinger equation when the potential varies slowly compared with the wavelength. It gives semiclassical quantisation rules and tunnelling rates, bridging quantum and classical physics.
@@ -868,8 +868,8 @@ D: phys-u20-wkb-phase-space
 !: WKB breaks down where the classical momentum is zero (turning points) and in rapidly varying potentials.
 Q: When is WKB valid? | When the potential varies slowly over the local de Broglie wavelength.
 Q: What does the WKB tunnelling formula explain in nuclear physics? | The enormous range of alpha-decay half-lives (Geiger–Nuttall law).
-M1: WKB quantisation gives exact energies for: | The harmonic oscillator | Hydrogen | All potentials | No potentials | Special case.
-M2: WKB fails near: | Classical turning points | Potential minima | Free regions | Infinity | p → 0 there.
+M1#physics-u20-37-q1: WKB quantisation gives exact energies for: | The harmonic oscillator | Hydrogen | All potentials | No potentials | Special case.
+M2#physics-u20-37-q2: WKB fails near: | Classical turning points | Potential minima | Free regions | Infinity | p → 0 there.
 
 ## Density matrices
 S: The density matrix describes quantum states including classical uncertainty about which state a system is in. It's essential for open systems, thermal states, entanglement and quantum information.
@@ -890,8 +890,8 @@ X: Density matrix for a qubit that's |0⟩ with probability 0.7 and |1⟩ with 0
 !: Different ensembles of pure states can give the same density matrix; ρ captures everything measurable, not the "true" preparation.
 Q: How do you find an expectation value from a density matrix? | ⟨A⟩ = Tr(ρÂ).
 Q: What do off-diagonal density-matrix elements represent? | Quantum coherences between basis states.
-M1: The trace of any density matrix equals: | 1 | 0 | The number of states | Its purity | Normalisation.
-M2: The reduced state of one particle from a Bell pair is: | Maximally mixed | Pure | Zero | Undefined | ρ = I/2.
+M1#physics-u20-38-q1: The trace of any density matrix equals: | 1 | 0 | The number of states | Its purity | Normalisation.
+M2#physics-u20-38-q2: The reduced state of one particle from a Bell pair is: | Maximally mixed | Pure | Zero | Undefined | ρ = I/2.
 
 ## Mixed and pure states
 S: A pure state is a single quantum state vector; a mixed state is a statistical mixture, arising from classical ignorance or from entanglement with something else. Purity and entropy quantify how mixed a state is.
@@ -909,8 +909,8 @@ X: Purity of ρ = [[0.5, 0.5], [0.5, 0.5]]?
 !: A 50:50 mixture of |0⟩ and |1⟩ is not the same as the superposition (|0⟩ + |1⟩)/√2, though both give 50:50 in the z basis.
 Q: How can you tell if a state is pure from ρ? | Tr(ρ^{2}) = 1.
 Q: Where are mixed states on the Bloch sphere? | Inside the sphere, not on the surface.
-M1: The von Neumann entropy of a pure state is: | 0 | 1 | ln 2 | Infinite | No uncertainty.
-M2: A maximally mixed qubit has Bloch vector: | Zero length | Length 1 | Length 2 | Along z | Centre of sphere.
+M1#physics-u20-39-q1: The von Neumann entropy of a pure state is: | 0 | 1 | ln 2 | Infinite | No uncertainty.
+M2#physics-u20-39-q2: A maximally mixed qubit has Bloch vector: | Zero length | Length 1 | Length 2 | Along z | Centre of sphere.
 
 ## Quantum entanglement
 S: Entangled particles share a joint quantum state that can't be written as separate states for each. Measurements on them are correlated more strongly than any local classical theory allows, as Bell's theorem proves and experiments confirm.
@@ -930,8 +930,8 @@ X: Measure both qubits of |Φ^{+}⟩ in the z basis. Possible outcomes?
 !: Entanglement can't be used to send messages faster than light.
 Q: What did Bell's theorem show? | No local hidden-variable theory can reproduce all predictions of quantum mechanics.
 Q: Why can't entanglement send signals faster than light? | Each local outcome is random; correlations only appear when results are compared via a classical channel.
-M1: The maximum quantum value of the CHSH quantity is: | 2√2 | 2 | 4 | 1 | Tsirelson's bound.
-M2: The 2022 Nobel Prize in Physics recognised: | Experiments with entangled photons testing Bell inequalities | Gravitational waves | Exoplanets | Graphene | Aspect, Clauser, Zeilinger.
+M1#physics-u20-40-q1: The maximum quantum value of the CHSH quantity is: | 2√2 | 2 | 4 | 1 | Tsirelson's bound.
+M2#physics-u20-40-q2: The 2022 Nobel Prize in Physics recognised: | Experiments with entangled photons testing Bell inequalities | Gravitational waves | Exoplanets | Graphene | Aspect, Clauser, Zeilinger.
 
 ## Decoherence
 S: Decoherence is the loss of quantum coherence when a system interacts with its environment, which effectively measures it. It explains why superpositions of macroscopic objects are never seen and is the main obstacle to building quantum computers.
@@ -952,8 +952,8 @@ D: phys-u20-coherence-decay
 !: Decoherence explains why interference disappears, but not why we see one particular outcome; the measurement problem remains.
 Q: What is decoherence? | The loss of quantum coherence through entanglement with an environment.
 Q: What do T_{1} and T_{2} measure? | Energy relaxation time and dephasing (coherence) time.
-M1: Decoherence affects which density matrix elements? | Off-diagonal coherences | Diagonal populations only | The trace | None | Coherences decay.
-M2: Why do quantum computers need cooling and isolation? | To slow decoherence | To speed gates | To reduce mass | For safety only | Environment destroys coherence.
+M1#physics-u20-41-q1: Decoherence affects which density matrix elements? | Off-diagonal coherences | Diagonal populations only | The trace | None | Coherences decay.
+M2#physics-u20-41-q2: Why do quantum computers need cooling and isolation? | To slow decoherence | To speed gates | To reduce mass | For safety only | Environment destroys coherence.
 
 ## Quantum information fundamentals
 S: Quantum information theory studies how information is stored, processed and transmitted using quantum systems. Its basic unit, the qubit, can be in superposition and entangled, enabling tasks impossible classically.
@@ -974,6 +974,6 @@ X: Apply a Hadamard gate to |0⟩.
 !: Quantum computers aren't faster at everything; speedups exist only for specific problems.
 Q: What is the no-cloning theorem? | It's impossible to make an exact copy of an unknown quantum state.
 Q: What does quantum teleportation transfer? | A quantum state, using shared entanglement and two classical bits; nothing travels faster than light.
-M1: Shor's algorithm efficiently solves: | Integer factorisation | Sorting | Searching unsorted lists exponentially faster | NP-complete problems | Breaks RSA.
-M2: A CNOT gate: | Flips the target qubit if the control is 1 | Measures both qubits | Copies a qubit | Applies a Hadamard | Two-qubit entangling gate.
+M1#physics-u20-42-q1: Shor's algorithm efficiently solves: | Integer factorisation | Sorting | Searching unsorted lists exponentially faster | NP-complete problems | Breaks RSA.
+M2#physics-u20-42-q2: A CNOT gate: | Flips the target qubit if the control is 1 | Measures both qubits | Copies a qubit | Applies a Hadamard | Two-qubit entangling gate.
 `;

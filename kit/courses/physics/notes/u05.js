@@ -14,8 +14,8 @@ D: phys-u05-fan-spin-up
 !: Rotational formulas need radians; using degrees in v = ωr or s = rθ gives wrong answers.
 Q: What are the rotational equivalents of v = u + at and s = ut + ½at^{2}? | ω = ω_{0} + αt and θ = ω_{0}t + ½αt^{2}.
 Q: Which way does the angular velocity vector point? | Along the axis, given by the right-hand rule (fingers curl with the rotation, thumb points along ω).
-M1: 300 rpm in rad s^{-1} is about: | 31.4 | 5 | 300 | 1885 | 300 × 2π/60.
-M2: A wheel decelerates uniformly from 20 rad s^{-1} to rest in 10 revolutions. α = ? | −3.2 rad s^{-2} | −2 rad s^{-2} | −20 rad s^{-2} | −1 rad s^{-2} | ω^{2} = ω_{0}^{2} + 2αθ with θ = 20π: α = −400/(40π).
+M1#physics-u05-01-q1: 300 rpm in rad s^{-1} is about: | 31.4 | 5 | 300 | 1885 | 300 × 2π/60.
+M2#physics-u05-01-q2: A wheel decelerates uniformly from 20 rad s^{-1} to rest in 10 revolutions. α = ? | −3.2 rad s^{-2} | −2 rad s^{-2} | −20 rad s^{-2} | −1 rad s^{-2} | ω^{2} = ω_{0}^{2} + 2αθ with θ = 20π: α = −400/(40π).
 Q: What is angular displacement in terms of arc length? | θ = s/r, in radians.
 Q: What is angular velocity? | The rate of change of angle: ω = dθ/dt.
 Q: What is angular acceleration? | The rate of change of angular velocity: α = dω/dt.
@@ -42,8 +42,8 @@ X: A bicycle's 22 cm-radius chainring (pedals at 1.5 rev s^{-1}) drives a 5.5 cm
 !: For a wheel rolling along the ground, the contact point is momentarily at rest; v = ωr gives the speed of the centre, not of every point.
 Q: How do the linear speeds of two meshing gears compare? | They're equal at the point of contact.
 Q: What is the tangential acceleration of a point at radius r? | a_{t} = αr.
-M1: A disc spins at 10 rad s^{-1}. A point 0.3 m from the axis moves at: | 3 m s^{-1} | 30 m s^{-1} | 0.03 m s^{-1} | 33 m s^{-1} | v = ωr.
-M2: A 10-tooth gear drives a 40-tooth gear at 400 rpm. The large gear turns at: | 100 rpm | 1600 rpm | 400 rpm | 40 rpm | Speed ratio is the inverse of the teeth ratio.
+M1#physics-u05-02-q1: A disc spins at 10 rad s^{-1}. A point 0.3 m from the axis moves at: | 3 m s^{-1} | 30 m s^{-1} | 0.03 m s^{-1} | 33 m s^{-1} | v = ωr.
+M2#physics-u05-02-q2: A 10-tooth gear drives a 40-tooth gear at 400 rpm. The large gear turns at: | 100 rpm | 1600 rpm | 400 rpm | 40 rpm | Speed ratio is the inverse of the teeth ratio.
 Q: What angular quantities do all points on a rigid rotating body share? | The same θ, ω and α.
 Q: How does linear speed vary across a rotating rigid body? | It grows with radius: v = ωr.
 Q: What is the centripetal acceleration of a point on a rotating body? | a_{c} = ω^{2}r = v^{2}/r.
@@ -71,8 +71,8 @@ D: phys-u05-torque-angle
 !: Torque depends on where the axis is; always say about which point you take moments.
 Q: What is the moment arm? | The perpendicular distance from the axis to the line of action of the force.
 Q: What is a couple? | Two equal and opposite parallel forces with different lines of action, giving pure torque.
-M1: A 20 N force acts 0.5 m from a pivot along a line through the pivot. Torque? | 0 | 10 N m | 40 N m | 20 N m | The moment arm is zero.
-M2: Why is a door handle placed far from the hinges? | A larger moment arm gives more torque for the same force | It's easier to see | The door is lighter there | It reduces friction | τ = Fd_{⊥}.
+M1#physics-u05-03-q1: A 20 N force acts 0.5 m from a pivot along a line through the pivot. Torque? | 0 | 10 N m | 40 N m | 20 N m | The moment arm is zero.
+M2#physics-u05-03-q2: Why is a door handle placed far from the hinges? | A larger moment arm gives more torque for the same force | It's easier to see | The door is lighter there | It reduces friction | τ = Fd_{⊥}.
 Q: What is torque? | The turning effect of a force: force times its perpendicular distance from the axis.
 Q: What is the vector definition of torque? | τ = r × F.
 Q: What is the magnitude of torque at angle θ? | τ = rF sin θ.
@@ -101,8 +101,8 @@ P: Flywheels put mass at the rim to maximise I for their mass; figure skaters re
 !: I depends on the axis chosen. The same rod has I = ML^{2}/12 about its centre and ML^{2}/3 about an end.
 Q: What is the moment of inertia of a solid disc about its axis? | ½MR^{2}.
 Q: Why does a hoop have a larger I than a disc of the same mass and radius? | All its mass is at the maximum radius.
-M1: Which has the largest I for equal M and R? | Hoop | Solid disc | Solid sphere | Spherical shell | MR^{2} > (2/3) > ½ > (2/5).
-M2: Two 1 kg masses sit 0.5 m either side of an axis on a light rod. I = ? | 0.5 kg m^{2} | 0.25 kg m^{2} | 1 kg m^{2} | 2 kg m^{2} | 2 × 1 × 0.25.
+M1#physics-u05-04-q1: Which has the largest I for equal M and R? | Hoop | Solid disc | Solid sphere | Spherical shell | MR^{2} > (2/3) > ½ > (2/5).
+M2#physics-u05-04-q2: Two 1 kg masses sit 0.5 m either side of an axis on a light rod. I = ? | 0.5 kg m^{2} | 0.25 kg m^{2} | 1 kg m^{2} | 2 kg m^{2} | 2 × 1 × 0.25.
 Q: What does moment of inertia measure? | How hard it is to change an object's rotation.
 Q: What is the definition of moment of inertia? | I = Σm_{i}r_{i}^{2} = ∫r^{2} dm.
 Q: What is the radius of gyration? | The distance k defined by I = Mk^{2}.
@@ -128,8 +128,8 @@ X: A 50 kg solid-disc flywheel of radius 0.4 m spins at 3000 rpm. Find its energ
 !: For rolling objects, don't forget the rotational term; ignoring it makes them seem faster than they are.
 Q: What is the power delivered by a torque? | P = τω.
 Q: What is the total KE of a rolling object? | ½Mv^{2} + ½Iω^{2}.
-M1: Doubling a flywheel's ω multiplies its stored energy by: | 4 | 2 | 8 | √2 | ∝ ω^{2}.
-M2: A motor exerts 50 N m at 100 rad s^{-1}. Power? | 5 kW | 50 W | 500 W | 2 W | P = τω.
+M1#physics-u05-05-q1: Doubling a flywheel's ω multiplies its stored energy by: | 4 | 2 | 8 | √2 | ∝ ω^{2}.
+M2#physics-u05-05-q2: A motor exerts 50 N m at 100 rad s^{-1}. Power? | 5 kW | 50 W | 500 W | 2 W | P = τω.
 Q: What is the kinetic energy of a body rotating about a fixed axis? | KE_{rot} = ½Iω^{2}.
 Q: How is work done by a torque calculated? | W = ∫τ dθ.
 Q: Give two uses of flywheel energy storage. | Grid frequency stabilisers, KERS in racing cars, or smoothing steam engine power strokes.
@@ -157,8 +157,8 @@ X: Find the angular momentum of the Earth's orbit (m = 6.0 × 10^{24} kg, r = 1.
 !: L = Iω is only parallel to ω for rotation about a principal axis; for a lopsided body, L and ω point in different directions (see rigid-body dynamics).
 Q: How is torque related to angular momentum? | τ = dL/dt.
 Q: What is the angular momentum of a particle about a point? | L = r × p, magnitude mvd_{⊥}.
-M1: A 2 kg disc (r = 0.5 m) spins at 4 rad s^{-1}. L = ? | 1 kg m^{2} s^{-1} | 2 kg m^{2} s^{-1} | 4 kg m^{2} s^{-1} | 0.5 kg m^{2} s^{-1} | I = ½ × 2 × 0.25 = 0.25; L = 1.
-M2: A 10 N m torque acts for 3 s on a stationary wheel. Its angular momentum becomes: | 30 kg m^{2} s^{-1} | 3.3 kg m^{2} s^{-1} | 10 kg m^{2} s^{-1} | 0 | ΔL = τΔt.
+M1#physics-u05-06-q1: A 2 kg disc (r = 0.5 m) spins at 4 rad s^{-1}. L = ? | 1 kg m^{2} s^{-1} | 2 kg m^{2} s^{-1} | 4 kg m^{2} s^{-1} | 0.5 kg m^{2} s^{-1} | I = ½ × 2 × 0.25 = 0.25; L = 1.
+M2#physics-u05-06-q2: A 10 N m torque acts for 3 s on a stationary wheel. Its angular momentum becomes: | 30 kg m^{2} s^{-1} | 3.3 kg m^{2} s^{-1} | 10 kg m^{2} s^{-1} | 0 | ΔL = τΔt.
 Q: What is angular momentum? | The rotational counterpart of linear momentum.
 Q: What is the angular momentum of a rigid body about a symmetry axis? | L = Iω.
 Q: What are the units of angular momentum? | kg m^{2} s^{-1}, or J s, the same as Planck's constant.
@@ -183,8 +183,8 @@ X: A star of radius 7 × 10^{8} m rotating once per 30 days collapses to a 10 km
 !: KE isn't conserved when a skater pulls in her arms; it increases. Angular momentum is the conserved quantity.
 Q: Why do planets move faster near the Sun? | Gravity exerts no torque about the Sun, so L = mvr is constant; smaller r means larger v.
 Q: Where does the extra kinetic energy come from when a skater pulls in her arms? | The work she does pulling her arms inward.
-M1: A skater halves her moment of inertia. Her angular velocity: | Doubles | Halves | Quadruples | Stays the same | L constant.
-M2: A child jumps onto the edge of a spinning roundabout. The roundabout: | Slows down | Speeds up | Keeps the same speed | Stops | Total I increases, so ω decreases.
+M1#physics-u05-07-q1: A skater halves her moment of inertia. Her angular velocity: | Doubles | Halves | Quadruples | Stays the same | L constant.
+M2#physics-u05-07-q2: A child jumps onto the edge of a spinning roundabout. The roundabout: | Slows down | Speeds up | Keeps the same speed | Stops | Total I increases, so ω decreases.
 Q: When is angular momentum conserved? | When there is no net external torque.
 Q: What is the conservation equation when I changes? | I_{1}ω_{1} = I_{2}ω_{2}.
 Q: What happens to ω when I decreases with no external torque? | ω increases.
@@ -212,8 +212,8 @@ D: phys-u05-unwinding-mass
 !: With a massive pulley, the tension isn't the same on both sides; treating it as equal ignores the pulley's inertia.
 Q: What is Newton's second law for rotation about a fixed axis? | Στ = Iα.
 Q: How does a pulley's inertia enter an Atwood machine? | As an extra effective mass I/R^{2} in the denominator.
-M1: A 6 N m torque acts on a body with I = 2 kg m^{2}. α = ? | 3 rad s^{-2} | 12 rad s^{-2} | 0.33 rad s^{-2} | 6 rad s^{-2} | α = τ/I.
-M2: A yo-yo released from rest falls with acceleration: | Less than g | Equal to g | Greater than g | Zero | Some energy goes into rotation; tension acts upward.
+M1#physics-u05-08-q1: A 6 N m torque acts on a body with I = 2 kg m^{2}. α = ? | 3 rad s^{-2} | 12 rad s^{-2} | 0.33 rad s^{-2} | 6 rad s^{-2} | α = τ/I.
+M2#physics-u05-08-q2: A yo-yo released from rest falls with acceleration: | Less than g | Equal to g | Greater than g | Zero | Some energy goes into rotation; tension acts upward.
 Q: What is rotational dynamics? | Using τ = Iα to find how torques change rotation.
 Q: What equation describes the centre of mass's translation? | ΣF = Ma_{cm}.
 Q: What constraint links a string unwinding without slipping to the rotation? | a = αr.
@@ -242,8 +242,8 @@ D: phys-u05-rolling-race
 !: Friction is needed for rolling, but for pure rolling it's static and wastes no energy. (Rolling resistance from deformation is a separate effect.)
 Q: Which reaches the bottom of a slope first: a solid sphere or a hoop? | The solid sphere (smaller I/MR^{2}).
 Q: How fast does the top of a rolling wheel move? | 2v, twice the speed of the centre.
-M1: For a hoop rolling down a slope, a = ? | ½g sin θ | g sin θ | (5/7)g sin θ | (2/3)g sin θ | I/MR^{2} = 1.
-M2: What fraction of a rolling solid cylinder's KE is rotational? | 1/3 | 1/2 | 2/5 | 2/7 | Rotational ¼Mv^{2}, total ¾Mv^{2}.
+M1#physics-u05-09-q1: For a hoop rolling down a slope, a = ? | ½g sin θ | g sin θ | (5/7)g sin θ | (2/3)g sin θ | I/MR^{2} = 1.
+M2#physics-u05-09-q2: What fraction of a rolling solid cylinder's KE is rotational? | 1/3 | 1/2 | 2/5 | 2/7 | Rotational ¼Mv^{2}, total ¾Mv^{2}.
 Q: What is the condition for rolling without slipping? | v_{cm} = ωR.
 Q: What is the acceleration condition for rolling without slipping? | a_{cm} = αR.
 Q: What kind of friction acts on a wheel rolling without slipping? | Static friction at the contact point.
@@ -271,8 +271,8 @@ X: A uniform ladder (length 5 m, weight 200 N) leans against a smooth wall at 60
 !: In equilibrium, net torque is zero about every point, so pick whichever point makes the algebra easiest.
 Q: Why can you choose any point as the pivot in an equilibrium problem? | If net force and net torque are zero, the torque is zero about every point.
 Q: How can you find the centre of gravity of an irregular sheet? | Hang it from two points; the vertical lines through the suspension points cross at the CG.
-M1: A 1 m metre rule balances at 50 cm. A 100 g mass at 10 cm needs what mass at 90 cm to balance? | 100 g | 50 g | 200 g | 10 g | Equal arms.
-M2: In the forearm, the biceps attaches 4 cm from the elbow; a 30 N load is held 35 cm away. Biceps force (ignoring the arm's weight)? | 262 N | 30 N | 3.4 N | 1050 N | 30 × 35/4.
+M1#physics-u05-10-q1: A 1 m metre rule balances at 50 cm. A 100 g mass at 10 cm needs what mass at 90 cm to balance? | 100 g | 50 g | 200 g | 10 g | Equal arms.
+M2#physics-u05-10-q2: In the forearm, the biceps attaches 4 cm from the elbow; a 30 N load is held 35 cm away. Biceps force (ignoring the arm's weight)? | 262 N | 30 N | 3.4 N | 1050 N | 30 × 35/4.
 Q: When is a body in rotational equilibrium? | When the net torque on it is zero about every point.
 Q: What two conditions solve for unknown forces in beams and ladders? | Zero net torque and zero net force.
 Q: How should a pivot point be chosen in an equilibrium problem? | So that it eliminates unknown forces, whose torque about it is zero.
@@ -299,8 +299,8 @@ X: Find I for a solid disc (M = 2 kg, R = 0.2 m) about an axis through its rim, 
 !: The theorem needs one of the two axes to pass through the centre of mass.
 Q: State the parallel-axis theorem. | I = I_{cm} + Md^{2}.
 Q: About which of a family of parallel axes is I smallest? | The one through the centre of mass.
-M1: A rod's I about its centre is ML^{2}/12. About its end: | ML^{2}/3 | ML^{2}/4 | ML^{2}/12 | ML^{2} | Add M(L/2)^{2}.
-M2: A solid sphere's I about a tangent axis is: | (7/5)MR^{2} | (2/5)MR^{2} | MR^{2} | (3/5)MR^{2} | (2/5) + 1.
+M1#physics-u05-11-q1: A rod's I about its centre is ML^{2}/12. About its end: | ML^{2}/3 | ML^{2}/4 | ML^{2}/12 | ML^{2} | Add M(L/2)^{2}.
+M2#physics-u05-11-q2: A solid sphere's I about a tangent axis is: | (7/5)MR^{2} | (2/5)MR^{2} | MR^{2} | (3/5)MR^{2} | (2/5) + 1.
 Q: What does the parallel-axis theorem do? | Gives the moment of inertia about any axis from that about a parallel axis through the centre of mass.
 Q: What is d in the parallel-axis theorem? | The distance between the two parallel axes.
 Q: How do you move between two axes that don't pass through the centre of mass? | Go via the centre-of-mass axis.
@@ -327,8 +327,8 @@ P: Proof: I_{z} = ∫(x^{2} + y^{2})dm = ∫x^{2}dm + ∫y^{2}dm = I_{y} + I_{x}
 !: Don't apply the perpendicular-axis theorem to 3D bodies like spheres or thick cylinders; it fails because z ≠ 0.
 Q: State the perpendicular-axis theorem. | For a lamina, I_{z} = I_{x} + I_{y} about perpendicular axes meeting at a point, with z perpendicular to the plane.
 Q: What is the moment of inertia of a thin disc about a diameter? | ¼MR^{2}.
-M1: A square plate has I = A about each in-plane axis through its centre parallel to the sides. About the perpendicular axis: | 2A | A | A/2 | 4A | I_{z} = I_{x} + I_{y}.
-M2: The perpendicular-axis theorem applies to: | Thin flat objects | Any solid | Spheres only | Rods only | It requires the mass to lie in a plane.
+M1#physics-u05-12-q1: A square plate has I = A about each in-plane axis through its centre parallel to the sides. About the perpendicular axis: | 2A | A | A/2 | 4A | I_{z} = I_{x} + I_{y}.
+M2#physics-u05-12-q2: The perpendicular-axis theorem applies to: | Thin flat objects | Any solid | Spheres only | Rods only | It requires the mass to lie in a plane.
 Q: To which objects does the perpendicular-axis theorem apply? | Only thin flat objects (laminae).
 Q: How does symmetry help with the perpendicular-axis theorem? | If I_{x} = I_{y}, each in-plane moment is half of I_{z}.
 Q: What is the moment of inertia of a thin ring about a diameter? | MR^{2}/2.
@@ -357,8 +357,8 @@ X: Why is a moving bicycle easier to balance than a stationary one?
 !: A gyroscope doesn't defy gravity; gravity's torque is what drives the precession, and friction eventually lets it fall.
 Q: Why does a torque on a spinning gyroscope cause precession rather than toppling? | The torque changes L in its own direction, which is perpendicular to L, so L rotates sideways.
 Q: Name two uses of gyroscopes. | Inertial navigation, gyrocompasses, spacecraft attitude control, phone motion sensing.
-M1: Spinning a bullet makes it: | Stable in direction | Faster | Heavier | Less affected by gravity | Its angular momentum resists tumbling.
-M2: How do phones measure rotation? | MEMS gyroscopes sensing Coriolis forces on vibrating masses | Tiny spinning wheels | GPS | Magnetometers only | Vibrating structures deflect under rotation.
+M1#physics-u05-13-q1: Spinning a bullet makes it: | Stable in direction | Faster | Heavier | Less affected by gravity | Its angular momentum resists tumbling.
+M2#physics-u05-13-q2: How do phones measure rotation? | MEMS gyroscopes sensing Coriolis forces on vibrating masses | Tiny spinning wheels | GPS | Magnetometers only | Vibrating structures deflect under rotation.
 Q: What does a spinning gyroscope resist? | Changes in the direction of its axis.
 Q: What does a torque do to a spinning gyroscope? | Makes its axis swing sideways (precess) instead of tipping over.
 Q: Why does a fast-spinning wheel change direction only slowly under a small torque? | It has a large angular momentum.
@@ -385,8 +385,8 @@ X: A gyroscope wheel (I = 0.002 kg m^{2}) spins at 300 rad s^{-1}, supported 0.0
 !: The simple Ω formula assumes spin angular momentum dominates; at low spin the top nutates strongly and then falls.
 Q: What causes the precession of Earth's axis? | Torques from the Sun and Moon on the Earth's equatorial bulge.
 Q: What is Larmor precession? | The precession of a magnetic moment about a magnetic field at ω = γB, used in MRI.
-M1: Doubling a gyroscope's spin rate changes its precession rate by: | ×1/2 | ×2 | ×4 | No change | Ω ∝ 1/ω.
-M2: The period of Earth's axial precession is about: | 26 000 years | 1 year | 18.6 years | 100 000 years | The precession of the equinoxes.
+M1#physics-u05-14-q1: Doubling a gyroscope's spin rate changes its precession rate by: | ×1/2 | ×2 | ×4 | No change | Ω ∝ 1/ω.
+M2#physics-u05-14-q2: The period of Earth's axial precession is about: | 26 000 years | 1 year | 18.6 years | 100 000 years | The precession of the equinoxes.
 Q: What is precession? | The slow circling of a spinning body's axis under a torque.
 Q: What is nutation? | A nodding wobble superimposed on precession.
 Q: What is the precession rate of a gyroscope supported at one end? | Ω = Mgd/(Iω).
@@ -413,8 +413,8 @@ X: A dumbbell (two masses m at ±a along a rod) spins about an axis through its 
 !: Treating L as Iω with a scalar I only works for rotation about a principal (symmetry) axis.
 Q: What are principal axes? | Axes about which angular momentum is parallel to angular velocity; the inertia tensor is diagonal in them.
 Q: What is dynamic balancing? | Making the rotation axis a principal axis so no wobbling torque is needed.
-M1: A rigid body's general motion can be described as: | Translation of the CM plus rotation about the CM | Rotation only | Translation only | Vibration | Chasles' theorem.
-M2: Why do unbalanced car wheels vibrate? | L isn't parallel to ω, so the bearings must supply a varying torque | Friction on the road | Air resistance | The tyre is too hard | Non-principal rotation.
+M1#physics-u05-15-q1: A rigid body's general motion can be described as: | Translation of the CM plus rotation about the CM | Rotation only | Translation only | Vibration | Chasles' theorem.
+M2#physics-u05-15-q2: Why do unbalanced car wheels vibrate? | L isn't parallel to ω, so the bearings must supply a varying torque | Friction on the road | Air resistance | The tyre is too hard | Non-principal rotation.
 Q: How can a rigid body's motion be split? | Translation of its centre of mass plus rotation about it.
 Q: What relates angular momentum to angular velocity in general? | The inertia tensor: L_{i} = I_{ij}ω_{j}.
 Q: How many principal axes does a rigid body have? | Three, mutually perpendicular.
@@ -442,8 +442,8 @@ X: Why did the Explorer 1 satellite (1958) go from spinning about its long axis 
 !: Stability predicted for a rigid body can fail for a flexible one: with energy loss, only the maximum-I axis is stable.
 Q: Which axes give stable rotation for a rigid body? | The axes of largest and smallest moment of inertia (in the rigid, no-dissipation case).
 Q: What is the Chandler wobble? | The free nutation of the Earth's rotation axis, with a period of about 433 days.
-M1: A book spun about its intermediate axis: | Flips over unstably | Spins steadily | Stops | Speeds up | Intermediate-axis instability.
-M2: Euler's equations are written in: | The body's principal-axis frame | The lab frame | The CM frame only | Polar coordinates | The body frame makes I constant.
+M1#physics-u05-16-q1: A book spun about its intermediate axis: | Flips over unstably | Spins steadily | Stops | Speeds up | Intermediate-axis instability.
+M2#physics-u05-16-q2: Euler's equations are written in: | The body's principal-axis frame | The lab frame | The CM frame only | Polar coordinates | The body frame makes I constant.
 Q: What do Euler's equations describe? | The rotational dynamics of a rigid body in its own rotating principal-axis frame.
 Q: Why are Euler's equations written in the body frame? | The inertia tensor is constant there.
 Q: What is conserved for a torque-free rigid body? | Its energy and the magnitude of its angular momentum.
@@ -472,8 +472,8 @@ X: How much does the centrifugal effect reduce apparent g at the equator?
 !: In the rotating frame, a ball thrown on a merry-go-round curves; in the ground frame it goes straight. Both descriptions agree once the frame's motion is accounted for.
 Q: Which fictitious forces appear in a uniformly rotating frame? | Centrifugal and Coriolis.
 Q: Why is effective g smaller at the equator? | Centrifugal effects and the equatorial bulge (greater distance from the centre).
-M1: The Coriolis force on a stationary object in a rotating frame is: | Zero | mω^{2}r | 2mωv | mg | It depends on velocity in the rotating frame.
-M2: The Earth's angular velocity is about: | 7.3 × 10^{-5} rad s^{-1} | 2π rad s^{-1} | 1 rad s^{-1} | 4 × 10^{-3} rad s^{-1} | 2π per sidereal day (86 164 s).
+M1#physics-u05-17-q1: The Coriolis force on a stationary object in a rotating frame is: | Zero | mω^{2}r | 2mωv | mg | It depends on velocity in the rotating frame.
+M2#physics-u05-17-q2: The Earth's angular velocity is about: | 7.3 × 10^{-5} rad s^{-1} | 2π rad s^{-1} | 1 rad s^{-1} | 4 × 10^{-3} rad s^{-1} | 2π per sidereal day (86 164 s).
 Q: Which fictitious force appears if the rotation rate changes? | The Euler force, −m ω̇ × r.
 Q: How are time derivatives transformed between inertial and rotating frames? | (dA/dt)_{inertial} = (dA/dt)_{rot} + ω × A.
 Q: What is the centrifugal force in a rotating frame? | −mω × (ω × r), outward from the axis with size mω^{2}r_{⊥}.
@@ -501,8 +501,8 @@ X: Find the Coriolis acceleration on a 300 m s^{-1} aircraft flying north at 45�
 !: Sinks and toilets don't drain the other way across the equator because of Coriolis; their swirl comes from the basin's shape and leftover motion.
 Q: Which way does the Coriolis force deflect moving air in the northern hemisphere? | To the right of its motion.
 Q: Why doesn't Coriolis set the direction of a sink's swirl? | The Rossby number is huge: the effect is far too weak at that size and timescale.
-M1: At the equator, the horizontal Coriolis effect on horizontal motion is: | Zero | Maximum | The same as at the poles | Reversed | ∝ sin(latitude).
-M2: Hurricanes in the northern hemisphere rotate: | Anticlockwise | Clockwise | Either, randomly | Not at all | Air flowing in is deflected right, producing anticlockwise circulation around the low.
+M1#physics-u05-18-q1: At the equator, the horizontal Coriolis effect on horizontal motion is: | Zero | Maximum | The same as at the poles | Reversed | ∝ sin(latitude).
+M2#physics-u05-18-q2: Hurricanes in the northern hemisphere rotate: | Anticlockwise | Clockwise | Either, randomly | Not at all | Air flowing in is deflected right, producing anticlockwise circulation around the low.
 Q: What is the formula for the Coriolis force? | F_{Cor} = −2mω × v.
 Q: Which way does Coriolis deflect moving objects in the southern hemisphere? | To the left.
 Q: How does the horizontal Coriolis effect depend on latitude? | It is proportional to sin(latitude): zero at the equator, strongest at the poles.
@@ -532,8 +532,8 @@ X: Why must a top be spun fast?
 !: Without friction at the tip there's no rising or tippe-top flip; energy-losing contact forces drive these effects.
 Q: What is a sleeping top? | A top spinning upright, fast enough to be stable against small tilts.
 Q: What makes a tippe top flip? | Sliding friction torque at the contact, which raises its centre of mass.
-M1: As friction slows a top, its precession rate: | Increases | Decreases | Stays constant | Becomes zero | Ω ∝ 1/ω.
-M2: A sleeping top is stable if: | Its spin exceeds a critical value | It is perfectly balanced | Its mass is large | It's on a smooth surface | Gyroscopic stability needs enough angular momentum.
+M1#physics-u05-19-q1: As friction slows a top, its precession rate: | Increases | Decreases | Stays constant | Becomes zero | Ω ∝ 1/ω.
+M2#physics-u05-19-q2: A sleeping top is stable if: | Its spin exceeds a critical value | It is perfectly balanced | Its mass is large | It's on a smooth surface | Gyroscopic stability needs enough angular momentum.
 Q: What three motions combine in a spinning top? | Spin, precession and nutation.
 Q: What is the stability condition for a sleeping top? | ω^{2} > 4MgdI_{1}/I_{3}^{2}.
 Q: Why does a top eventually fall? | Friction slows it below the stability threshold, so its tilt grows.
@@ -563,8 +563,8 @@ P: Hitting the cue ball above centre gives topspin (follow); below centre gives 
 !: Don't assume rolling without slipping from the start; check whether v = ωR, and if not, kinetic friction acts until it is.
 Q: Why is angular momentum about the contact point conserved for a skidding ball? | Friction acts at that point, so it has no torque about it (and gravity and normal force cancel).
 Q: At what height should a ball be struck to roll immediately? | 7R/5 above the table (2R/5 above the centre), for a solid sphere.
-M1: A solid ball sliding with no spin ends up rolling at what fraction of its initial speed? | 5/7 | 2/7 | 1/2 | 1 | From conservation of angular momentum about the contact point.
-M2: Backspin on a cue ball makes it, after hitting another ball head-on: | Move backwards | Stop dead | Follow through | Jump | Its spin makes friction pull it back.
+M1#physics-u05-20-q1: A solid ball sliding with no spin ends up rolling at what fraction of its initial speed? | 5/7 | 2/7 | 1/2 | 1 | From conservation of angular momentum about the contact point.
+M2#physics-u05-20-q2: Backspin on a cue ball makes it, after hitting another ball head-on: | Move backwards | Stop dead | Follow through | Jump | Its spin makes friction pull it back.
 Q: What two equations are written for coupled translation and rotation? | F = Ma_{cm} and τ_{cm} = I_{cm}α.
 Q: Which friction acts while a ball is slipping? | Kinetic friction.
 Q: When does a skidding ball begin rolling? | When v_{cm} = ωR; then static friction applies.

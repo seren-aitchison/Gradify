@@ -18,8 +18,8 @@ X: How many neutrons in ^{238}_{92}U?
 !: The nucleus isn't a static bag of balls; nucleons move rapidly (~0.25c) in quantum orbits.
 Q: What are magic numbers? | Numbers of protons or neutrons (2, 8, 20, 28, 50, 82, 126) giving closed shells and extra stability.
 Q: Which model explains nuclear fission well? | The liquid-drop model.
-M1: Doubly magic lead-208 has: | 82 protons and 126 neutrons | 82 neutrons | 126 protons | 208 protons | Both magic.
-M2: Isotopes have the same: | Number of protons | Number of neutrons | Mass number | Number of nucleons | Same element.
+M1#physics-u23-01-q1: Doubly magic lead-208 has: | 82 protons and 126 neutrons | 82 neutrons | 126 protons | 208 protons | Both magic.
+M2#physics-u23-01-q2: Isotopes have the same: | Number of protons | Number of neutrons | Mass number | Number of nucleons | Same element.
 
 ## Protons, neutrons and nucleons
 S: Protons and neutrons, together called nucleons, are the building blocks of nuclei. They're nearly identical in mass and strong interaction, differing mainly in charge, and each is made of three quarks.
@@ -41,8 +41,8 @@ X: Why can a free neutron decay but a proton can't (in vacuum)?
 !: Neutrons are stable inside most nuclei, because decay there would leave the nucleus in a higher energy state.
 Q: What is a nucleon? | A proton or neutron.
 Q: Why is the neutron's magnetic moment evidence of structure? | A neutral point particle wouldn't have one; it comes from its charged quarks.
-M1: The neutron's quark content is: | udd | uud | uuu | ddd | Charge 0.
-M2: The free neutron lifetime is about: | 15 minutes | 1 second | 1 year | 10^{34} years | ~880 s.
+M1#physics-u23-02-q1: The neutron's quark content is: | udd | uud | uuu | ddd | Charge 0.
+M2#physics-u23-02-q2: The free neutron lifetime is about: | 15 minutes | 1 second | 1 year | 10^{34} years | ~880 s.
 
 ## Nuclear size and density
 S: Nuclei are a few femtometres across, and their radius grows as the cube root of the number of nucleons. This means all nuclei have roughly the same density, about 2 × 10^{17} kg m^{-3}.
@@ -60,8 +60,8 @@ X: Radius of ^{208}Pb?
 !: Nuclear "size" depends on what's probed: charge radius and matter radius can differ (neutron skins in heavy nuclei).
 Q: How does nuclear radius depend on mass number? | R = r_{0}A^{1/3}.
 Q: Why is nuclear density roughly constant? | The strong force saturates: nucleons interact only with near neighbours, packing like a liquid.
-M1: A nucleus with 8 times the nucleons has radius: | 2 times larger | 8 times | 4 times | The same | Cube root.
-M2: Nuclear density is about: | 2 × 10^{17} kg m^{-3} | 10^{3} kg m^{-3} | 10^{10} kg m^{-3} | 10^{30} kg m^{-3} | Same for all nuclei.
+M1#physics-u23-03-q1: A nucleus with 8 times the nucleons has radius: | 2 times larger | 8 times | 4 times | The same | Cube root.
+M2#physics-u23-03-q2: Nuclear density is about: | 2 × 10^{17} kg m^{-3} | 10^{3} kg m^{-3} | 10^{10} kg m^{-3} | 10^{30} kg m^{-3} | Same for all nuclei.
 
 ## Nuclear binding energy
 S: Binding energy is the energy needed to pull a nucleus apart into separate protons and neutrons. Its value per nucleon peaks near iron, which is why fusing light nuclei and splitting heavy ones both release energy.
@@ -81,8 +81,8 @@ D: phys-u23-binding-curve
 !: Binding energy is energy released when a nucleus forms, so more binding means less mass, not more.
 Q: Where does binding energy per nucleon peak? | Near iron and nickel (A ≈ 56–62).
 Q: What do the terms of the semi-empirical mass formula represent? | Volume, surface, Coulomb repulsion, neutron–proton asymmetry and pairing effects.
-M1: Fission releases energy because: | Products have higher binding energy per nucleon | Neutrons gain mass | Electrons are released | Mass increases | Moving towards iron.
-M2: The Coulomb term reduces binding because: | Protons repel each other | Neutrons attract | Electrons screen | Surface is curved | Electrostatic energy.
+M1#physics-u23-04-q1: Fission releases energy because: | Products have higher binding energy per nucleon | Neutrons gain mass | Electrons are released | Mass increases | Moving towards iron.
+M2#physics-u23-04-q2: The Coulomb term reduces binding because: | Protons repel each other | Neutrons attract | Electrons screen | Surface is curved | Electrostatic energy.
 
 ## Mass defect
 S: A nucleus weighs less than the sum of its separate protons and neutrons. The missing mass, the mass defect, is the binding energy divided by c^{2}: direct evidence that E = mc^{2}.
@@ -103,8 +103,8 @@ D: phys-u23-dt-fusion
 !: The mass defect isn't missing matter; the energy was released when the nucleus formed, and mass and energy are equivalent.
 Q: What is the mass defect? | The difference between the mass of separated nucleons and the nucleus.
 Q: How much energy is 1 u? | About 931.5 MeV.
-M1: The D–T fusion reaction releases about: | 17.6 MeV | 200 MeV | 4 eV | 1 GeV | Fusion Q.
-M2: Nuclear fuels release ~how many times more energy per kg than chemical? | ~10^{6} | ~10 | ~10^{12} | ~2 | MeV vs eV.
+M1#physics-u23-05-q1: The D–T fusion reaction releases about: | 17.6 MeV | 200 MeV | 4 eV | 1 GeV | Fusion Q.
+M2#physics-u23-05-q2: Nuclear fuels release ~how many times more energy per kg than chemical? | ~10^{6} | ~10 | ~10^{12} | ~2 | MeV vs eV.
 
 ## Nuclear forces
 S: The nuclear force binds protons and neutrons despite the electric repulsion of protons. It's very strong at around 1 fm, repulsive at shorter distances and negligible beyond about 3 fm. It's a residual effect of the strong force between quarks.
@@ -124,8 +124,8 @@ X: Estimate the range of a force carried by a 140 MeV particle.
 !: The nuclear force isn't a fundamental force itself; it's the leftover of the strong force between colour-neutral nucleons, like van der Waals forces between neutral molecules.
 Q: What sets the range of the nuclear force in Yukawa's theory? | The mass of the exchanged particle (pion): r ≈ ħ/(mc).
 Q: Why is there no bound diproton? | The nuclear force isn't strong enough in the spin-0 pp state to overcome repulsion and kinetic energy.
-M1: The nuclear force is: | Short-range and strong | Long-range | Weaker than gravity | Only repulsive | ~fm range.
-M2: Yukawa predicted which particle? | The pion | The muon | The neutrino | The photon | Meson.
+M1#physics-u23-06-q1: The nuclear force is: | Short-range and strong | Long-range | Weaker than gravity | Only repulsive | ~fm range.
+M2#physics-u23-06-q2: Yukawa predicted which particle? | The pion | The muon | The neutrino | The photon | Meson.
 
 ## Nuclear stability
 S: Only certain combinations of protons and neutrons are stable. Light stable nuclei have equal numbers; heavier ones need extra neutrons to dilute proton repulsion. Nuclei off this "valley of stability" decay towards it.
@@ -145,8 +145,8 @@ X: Is carbon-14 (6p, 8n) stable? Which way does it decay?
 !: "Stable" means no observed decay; some long-lived nuclei (like bismuth-209) were once thought stable.
 Q: Why do heavy stable nuclei have more neutrons than protons? | Extra neutrons add nuclear binding without adding Coulomb repulsion.
 Q: How do neutron-rich nuclei decay? | By β^{−} decay, turning a neutron into a proton.
-M1: The heaviest element with a practically stable isotope is: | Lead | Uranium | Iron | Bismuth (very long-lived) | Pb-208.
-M2: The island of stability is predicted near: | Z ≈ 114–120, N ≈ 184 | Iron | Helium | Z = 1 | Superheavy shell closures.
+M1#physics-u23-07-q1: The heaviest element with a practically stable isotope is: | Lead | Uranium | Iron | Bismuth (very long-lived) | Pb-208.
+M2#physics-u23-07-q2: The island of stability is predicted near: | Z ≈ 114–120, N ≈ 184 | Iron | Helium | Z = 1 | Superheavy shell closures.
 
 ## Radioactive decay
 S: Unstable nuclei spontaneously transform into more stable ones, emitting radiation. Each nucleus decays randomly, but large numbers follow a precise exponential law, characterised by a half-life.
@@ -167,9 +167,9 @@ P: **Investigate with the lab.** Run the same settings twice: the curves differ,
 IX: decay
 Q: State the radioactive decay law. | N = N_{0}e^{−λt}.
 Q: How is half-life related to the decay constant? | t_{1/2} = ln 2/λ.
-M1: After 3 half-lives, the fraction remaining is: | 1/8 | 1/3 | 1/6 | 1/9 | (1/2)^{3}.
-M2: Heating a radioactive sample changes its half-life: | Essentially not at all | By doubling | By halving | Dramatically | Nuclear processes are insensitive.
-M2: Why is radioactive decay described as random? | We can't predict when a particular nucleus will decay | Every nucleus decays at the same moment | The half-life changes from one run to the next | Decay depends on temperature | Only the probability per unit time is fixed; individual decays are unpredictable.
+M1#physics-u23-08-q1: After 3 half-lives, the fraction remaining is: | 1/8 | 1/3 | 1/6 | 1/9 | (1/2)^{3}.
+M2#physics-u23-08-q2: Heating a radioactive sample changes its half-life: | Essentially not at all | By doubling | By halving | Dramatically | Nuclear processes are insensitive.
+M2#physics-u23-08-q3: Why is radioactive decay described as random? | We can't predict when a particular nucleus will decay | Every nucleus decays at the same moment | The half-life changes from one run to the next | Decay depends on temperature | Only the probability per unit time is fixed; individual decays are unpredictable.
 
 ## Alpha, beta and gamma decay
 S: The three classic types of radioactive decay emit helium nuclei (alpha), electrons or positrons (beta) or high-energy photons (gamma). They differ in what changes in the nucleus, in their energies and in how penetrating they are.
@@ -195,9 +195,9 @@ P: **Investigate with the lab.** Watch the nuclei change as they decay and note 
 IX: decay
 Q: Why does beta decay need a neutrino? | Electron energies are continuous; a third particle must carry the missing energy and momentum.
 Q: What stops alpha particles? | Paper, skin or a few centimetres of air.
-M1: In β^{−} decay, Z: | Increases by 1 | Decreases by 1 | Stays the same | Decreases by 2 | n → p.
-M2: Technetium-99m is useful in medicine because it: | Emits gamma rays with a short half-life | Emits alphas | Is stable | Emits neutrons | 140 keV gamma, 6 h.
-M2: Which type of decay doesn't change the proton number? | Gamma decay | Alpha decay | Beta-minus decay | Beta-plus decay | Gamma emission releases energy without changing the nucleus's composition.
+M1#physics-u23-09-q1: In β^{−} decay, Z: | Increases by 1 | Decreases by 1 | Stays the same | Decreases by 2 | n → p.
+M2#physics-u23-09-q2: Technetium-99m is useful in medicine because it: | Emits gamma rays with a short half-life | Emits alphas | Is stable | Emits neutrons | 140 keV gamma, 6 h.
+M2#physics-u23-09-q3: Which type of decay doesn't change the proton number? | Gamma decay | Alpha decay | Beta-minus decay | Beta-plus decay | Gamma emission releases energy without changing the nucleus's composition.
 
 ## Decay chains and half-life
 S: Many radioactive nuclei decay into products that are themselves radioactive, forming decay chains that end at a stable isotope. Their behaviour depends on the relative half-lives and enables radiometric dating of rocks, bones and the Earth itself.
@@ -223,9 +223,9 @@ P: **Investigate with the lab.** Mark the moment half the nuclei are left, then 
 IX: decay
 Q: What is secular equilibrium? | When a long-lived parent and short-lived daughter have equal activities.
 Q: Why is uranium–lead dating so reliable? | Two independent decay chains (U-238 and U-235) cross-check ages, and zircons exclude initial lead.
-M1: Carbon-14 dating works up to about: | 50 000 years | 5 billion years | 100 years | 1 million years | ~10 half-lives.
-M2: A Tc-99m generator relies on: | The decay of Mo-99 parent | Fission | Neutron capture in the hospital | Alpha decay | Transient equilibrium.
-M2: A sample has a half-life of 2 hours. What fraction remains after 6 hours? | One eighth | One sixth | One third | One quarter | Six hours is three half-lives: ½ × ½ × ½ = ⅛.
+M1#physics-u23-10-q1: Carbon-14 dating works up to about: | 50 000 years | 5 billion years | 100 years | 1 million years | ~10 half-lives.
+M2#physics-u23-10-q2: A Tc-99m generator relies on: | The decay of Mo-99 parent | Fission | Neutron capture in the hospital | Alpha decay | Transient equilibrium.
+M2#physics-u23-10-q3: A sample has a half-life of 2 hours. What fraction remains after 6 hours? | One eighth | One sixth | One third | One quarter | Six hours is three half-lives: ½ × ½ × ½ = ⅛.
 
 ## Nuclear reaction equations
 S: Nuclear reactions are written like chemical equations, but must conserve mass number, charge, energy and momentum. Balancing them predicts products, and mass differences give the energy released.
@@ -249,8 +249,8 @@ D: phys-u23-fission-reaction
 !: Particles' kinetic energies count in energy conservation; mass number and charge balancing alone don't guarantee a reaction is energetically possible.
 Q: What must be conserved in a nuclear reaction equation? | Nucleon number, charge, energy, momentum (and lepton and baryon numbers).
 Q: What was Rutherford's first artificial transmutation? | Nitrogen-14 bombarded by alphas producing oxygen-17 and a proton.
-M1: ^{27}Al(n, α)? produces: | ^{24}Na | ^{24}Mg | ^{28}Al | ^{23}Ne | A: 27 + 1 − 4 = 24; Z: 13 − 2 = 11.
-M2: A reaction with Q < 0: | Needs a minimum kinetic energy to occur | Releases energy | Is impossible | Has no products | Endothermic threshold.
+M1#physics-u23-11-q1: ^{27}Al(n, α)? produces: | ^{24}Na | ^{24}Mg | ^{28}Al | ^{23}Ne | A: 27 + 1 − 4 = 24; Z: 13 − 2 = 11.
+M2#physics-u23-11-q2: A reaction with Q < 0: | Needs a minimum kinetic energy to occur | Releases energy | Is impossible | Has no products | Endothermic threshold.
 
 ## Nuclear cross-sections
 S: A cross-section measures how likely a nuclear reaction is, expressed as an effective target area. Cross-sections vary enormously with energy and determine reactor design, shielding and astrophysical reaction rates.
@@ -271,8 +271,8 @@ X: Thermal neutrons in water (hydrogen n = 6.7 × 10^{28} m^{-3}, σ_{capture} =
 !: A cross-section isn't the physical size of the nucleus; quantum effects make it much larger or smaller depending on energy.
 Q: What is a barn? | A unit of cross-section, 10^{-28} m^{2}.
 Q: Why do slow neutrons often have larger absorption cross-sections? | They spend more time near the nucleus (1/v law).
-M1: Xenon-135 matters in reactors because: | Its huge neutron absorption cross-section poisons the chain reaction | It's a fuel | It moderates neutrons | It's stable | Reactor poison.
-M2: Reaction rate is proportional to: | Cross-section × flux × number of targets | Mass only | Temperature only | Half-life | R = σΦN.
+M1#physics-u23-12-q1: Xenon-135 matters in reactors because: | Its huge neutron absorption cross-section poisons the chain reaction | It's a fuel | It moderates neutrons | It's stable | Reactor poison.
+M2#physics-u23-12-q2: Reaction rate is proportional to: | Cross-section × flux × number of targets | Mass only | Temperature only | Half-life | R = σΦN.
 
 ## Nuclear scattering
 S: Scattering particles off nuclei reveals nuclear sizes, shapes, forces and excited states. Elastic scattering maps the nucleus's shape; inelastic scattering excites it, and knockout reactions probe individual nucleons.
@@ -292,8 +292,8 @@ X: Electrons of what energy have a de Broglie wavelength ~ 1 fm?
 !: To see small structures you need short wavelengths, so high energies: nuclear physics needs MeV–GeV probes.
 Q: What does the form factor reveal? | The spatial distribution of charge inside a nucleus (its Fourier transform).
 Q: Why are neutrons good probes of nuclei? | They have no charge, so no Coulomb barrier.
-M1: Electron scattering is good for measuring: | Charge distributions | Neutron spins | Half-lives | Fission yields | Electromagnetic probe.
-M2: In the optical model, absorption represents: | Flux lost to reactions | Light absorption | Electron capture | Gamma emission | Imaginary potential.
+M1#physics-u23-13-q1: Electron scattering is good for measuring: | Charge distributions | Neutron spins | Half-lives | Fission yields | Electromagnetic probe.
+M2#physics-u23-13-q2: In the optical model, absorption represents: | Flux lost to reactions | Light absorption | Electron capture | Gamma emission | Imaginary potential.
 
 ## Nuclear fission
 S: In fission, a heavy nucleus such as uranium-235 splits into two medium nuclei plus neutrons, releasing about 200 MeV. The extra neutrons can trigger further fissions, enabling reactors and nuclear weapons.
@@ -312,8 +312,8 @@ X: Energy from fissioning 1 kg of U-235?
 !: Fission fragments are neutron-rich and highly radioactive; that's the origin of most nuclear waste.
 Q: Why does U-235 fission with slow neutrons but U-238 doesn't? | U-235 gains extra pairing energy on absorbing a neutron, exceeding its fission barrier.
 Q: Why are delayed neutrons important? | They slow the reactor's response enough to make it controllable.
-M1: Energy released per U-235 fission is about: | 200 MeV | 17.6 MeV | 2 MeV | 1 GeV | Typical.
-M2: Who explained fission theoretically? | Meitner and Frisch | Hahn alone | Fermi | Bohr only | 1939.
+M1#physics-u23-14-q1: Energy released per U-235 fission is about: | 200 MeV | 17.6 MeV | 2 MeV | 1 GeV | Typical.
+M2#physics-u23-14-q2: Who explained fission theoretically? | Meitner and Frisch | Hahn alone | Fermi | Bohr only | 1939.
 
 ## Nuclear fusion
 S: Fusion joins light nuclei into heavier ones, releasing energy because the products are more tightly bound. It powers the Sun and stars and could provide abundant clean energy on Earth, if the plasma can be confined long enough.
@@ -335,8 +335,8 @@ X: What fraction of D–T fusion energy goes to the neutron, and why?
 !: Fusion in stars is slow precisely because it relies on rare tunnelling; that's why the Sun lasts 10 billion years.
 Q: What is the Lawson criterion? | The minimum product of density, confinement time and temperature needed for fusion ignition.
 Q: How do nuclei in the Sun overcome the Coulomb barrier? | Quantum tunnelling, aided by the high-energy tail of the Maxwell distribution.
-M1: The easiest fusion reaction for power plants is: | D–T | p–p | D–D | He–He | Highest cross-section at lower T.
-M2: NIF achieved ignition in: | 2022 | 1958 | 2005 | 2035 | December 2022.
+M1#physics-u23-15-q1: The easiest fusion reaction for power plants is: | D–T | p–p | D–D | He–He | Highest cross-section at lower T.
+M2#physics-u23-15-q2: NIF achieved ignition in: | 2022 | 1958 | 2005 | 2035 | December 2022.
 
 ## Chain reactions
 S: In a chain reaction, each fission releases neutrons that cause more fissions. Whether the chain dies out, stays steady or grows depends on the multiplication factor k, which reactors keep exactly at 1.
@@ -357,8 +357,8 @@ D: phys-u23-reactor-growth
 !: A critical reactor (k = 1) isn't dangerous; it simply means a steady chain reaction.
 Q: What does k = 1 mean? | Each generation has the same number of neutrons: a steady chain reaction.
 Q: Why are delayed neutrons essential for reactor control? | They lengthen the effective generation time from ~0.1 ms to ~0.1 s.
-M1: A subcritical assembly has: | k < 1 | k = 1 | k > 1 | k = 0 | Dies out.
-M2: Neutron reflectors reduce critical mass by: | Returning escaping neutrons | Absorbing neutrons | Heating fuel | Adding fuel | Less leakage.
+M1#physics-u23-16-q1: A subcritical assembly has: | k < 1 | k = 1 | k > 1 | k = 0 | Dies out.
+M2#physics-u23-16-q2: Neutron reflectors reduce critical mass by: | Returning escaping neutrons | Absorbing neutrons | Heating fuel | Adding fuel | Less leakage.
 
 ## Nuclear reactors
 S: A nuclear reactor sustains a controlled fission chain reaction, using the heat to make steam and generate electricity. Its core contains fuel, a moderator, control rods and coolant, surrounded by shielding and containment.
@@ -382,8 +382,8 @@ X: A 1 GW(e) reactor at 33% efficiency. Fissions per second?
 !: A reactor can't explode like a nuclear bomb; fuel enrichment is far too low. The hazards are overheating, steam or hydrogen explosions and radioactive release.
 Q: What does a moderator do? | Slows fast neutrons to thermal energies where U-235 fission is likely.
 Q: Why must cooling continue after shutdown? | Radioactive fission products keep producing decay heat.
-M1: Most commercial reactors are: | Pressurised water reactors | Fast breeders | Fusion reactors | Molten salt | PWRs.
-M2: Control rods contain: | Neutron absorbers like boron | Uranium | Water | Graphite | Absorb neutrons.
+M1#physics-u23-17-q1: Most commercial reactors are: | Pressurised water reactors | Fast breeders | Fusion reactors | Molten salt | PWRs.
+M2#physics-u23-17-q2: Control rods contain: | Neutron absorbers like boron | Uranium | Water | Graphite | Absorb neutrons.
 
 ## Neutron moderation
 S: Fission neutrons are born fast (~2 MeV) but U-235 fissions far more readily with slow (thermal, ~0.025 eV) neutrons. A moderator slows them through elastic collisions with light nuclei.
@@ -405,8 +405,8 @@ X: Maximum fractional energy a neutron can lose hitting a carbon-12 nucleus head
 !: Heavy nuclei make poor moderators: a neutron bounces off them like a ball off a wall, losing little energy.
 Q: Why are light nuclei good moderators? | Elastic collisions with similar-mass nuclei transfer the most energy.
 Q: Why can heavy-water reactors use natural uranium? | Heavy water absorbs very few neutrons while still moderating well.
-M1: The best slowing per collision is with: | Hydrogen | Carbon | Lead | Uranium | Equal masses.
-M2: Thermal neutrons at room temperature have energy about: | 0.025 eV | 2 MeV | 1 keV | 1 eV | k_{B}T.
+M1#physics-u23-18-q1: The best slowing per collision is with: | Hydrogen | Carbon | Lead | Uranium | Equal masses.
+M2#physics-u23-18-q2: Thermal neutrons at room temperature have energy about: | 0.025 eV | 2 MeV | 1 keV | 1 eV | k_{B}T.
 
 ## Nuclear energy and power
 S: Nuclear power generates about 10% of the world's electricity with very low carbon emissions. Its strengths are reliability and energy density; its challenges are cost, waste, proliferation and public perception.
@@ -427,8 +427,8 @@ X: A 1 GW(e) reactor running at 90% for a year produces how much electricity?
 !: Radiation risk from normally operating plants is tiny compared with natural background; the debate centres on accidents, waste and cost.
 Q: Why is nuclear power low-carbon? | Fission produces no CO_{2}; lifecycle emissions come mainly from construction and mining.
 Q: What fraction of world electricity is nuclear? | About 10%.
-M1: Uranium enrichment increases the fraction of: | U-235 | U-238 | Pu-239 | Thorium | 0.7% → 3–5%.
-M2: A key advantage of nuclear power is: | High energy density and steady output | Zero waste | Low capital cost | Instant construction | Baseload.
+M1#physics-u23-19-q1: Uranium enrichment increases the fraction of: | U-235 | U-238 | Pu-239 | Thorium | 0.7% → 3–5%.
+M2#physics-u23-19-q2: A key advantage of nuclear power is: | High energy density and steady output | Zero waste | Low capital cost | Instant construction | Baseload.
 
 ## Radiation detection
 S: Radiation detectors turn invisible ionising radiation into measurable signals by collecting the charge or light it produces. Different detectors suit different radiations, energies and purposes, from Geiger counters to giant neutrino observatories.
@@ -452,8 +452,8 @@ X: A Geiger counter registers 4500 counts per minute with dead time 100 μs. Tru
 !: A Geiger counter counts events but can't tell their energy or type without additional shielding tests.
 Q: Why can't a Geiger counter measure particle energy? | Every event triggers a full avalanche of the same size.
 Q: Which detector gives the best gamma-ray energy resolution? | High-purity germanium.
-M1: Scintillators detect radiation by: | Emitting light when excited | Collecting gas ions | Changing colour permanently | Heating | Fluorescence.
-M2: Background radiation should be measured because: | It must be subtracted from source counts | It's zero | It's dangerous | It calibrates energy | Correction.
+M1#physics-u23-20-q1: Scintillators detect radiation by: | Emitting light when excited | Collecting gas ions | Changing colour permanently | Heating | Fluorescence.
+M2#physics-u23-20-q2: Background radiation should be measured because: | It must be subtracted from source counts | It's zero | It's dangerous | It calibrates energy | Correction.
 
 ## Radiation shielding
 S: Shielding reduces radiation exposure by placing material between the source and people. The right material depends on the radiation: thin layers stop alphas and betas, dense materials attenuate gamma rays, and hydrogen-rich materials slow neutrons.
@@ -475,8 +475,8 @@ D: phys-u23-lead-shielding
 !: Shielding beta emitters with lead can increase dose by generating bremsstrahlung X-rays; use plastic first.
 Q: What are the three principles of radiation protection? | Time, distance and shielding (under ALARA).
 Q: Why are hydrogen-rich materials used for neutron shielding? | Hydrogen nuclei slow neutrons efficiently by elastic collisions.
-M1: The best shield for alpha particles is: | Paper | Lead | Concrete | Water | Short range.
-M2: Doubling distance from a point source reduces dose rate by: | 4 | 2 | 8 | 1 | Inverse square.
+M1#physics-u23-21-q1: The best shield for alpha particles is: | Paper | Lead | Concrete | Water | Short range.
+M2#physics-u23-21-q2: Doubling distance from a point source reduces dose rate by: | 4 | 2 | 8 | 1 | Inverse square.
 
 ## Nuclear spectroscopy
 S: Nuclear spectroscopy measures the energies of radiation emitted by nuclei to map their energy levels, spins and shapes. It identifies isotopes in everything from reactor fuel to meteorites and reveals how nuclear structure changes far from stability.
@@ -496,8 +496,8 @@ X: A spectrum shows peaks at 1173 and 1332 keV. Source?
 !: A gamma peak's energy identifies the transition, but its intensity depends on detector efficiency and geometry, which must be calibrated.
 Q: Why are germanium detectors used in gamma spectroscopy? | Their excellent energy resolution separates closely spaced lines.
 Q: What is neutron activation analysis? | Irradiating a sample with neutrons and identifying elements from the gamma rays of the resulting isotopes.
-M1: The 662 keV gamma line identifies: | Caesium-137 | Cobalt-60 | Potassium-40 | Radium-226 | Common calibration source.
-M2: Coincidence measurements help: | Build nuclear level schemes | Reduce resolution | Measure half-life only | Detect alphas | Cascades.
+M1#physics-u23-22-q1: The 662 keV gamma line identifies: | Caesium-137 | Cobalt-60 | Potassium-40 | Radium-226 | Common calibration source.
+M2#physics-u23-22-q2: Coincidence measurements help: | Build nuclear level schemes | Reduce resolution | Measure half-life only | Detect alphas | Cascades.
 
 ## Nuclear magnetic resonance
 S: Nuclei with spin behave like tiny magnets that precess in a magnetic field. NMR detects radio waves absorbed and emitted as they flip, revealing molecular structure in chemistry and creating detailed images of the body in MRI.
@@ -517,8 +517,8 @@ X: Proton Larmor frequency in a 3 T MRI scanner?
 !: MRI signal comes mainly from hydrogen nuclei in water and fat, not from electrons or ionising radiation.
 Q: What is the Larmor frequency? | The precession frequency of nuclear spins in a field, f = γB/(2π).
 Q: How does MRI locate signals in space? | Magnetic field gradients make the resonance frequency depend on position.
-M1: T_{2} relaxation describes: | Loss of phase coherence among spins | Return of longitudinal magnetisation | Heating | Field strength | Spin–spin dephasing.
-M2: Chemical shifts in NMR come from: | Electron shielding of nuclei | Nuclear mass | Temperature | Gravity | Local electronic environment.
+M1#physics-u23-23-q1: T_{2} relaxation describes: | Loss of phase coherence among spins | Return of longitudinal magnetisation | Heating | Field strength | Spin–spin dephasing.
+M2#physics-u23-23-q2: Chemical shifts in NMR come from: | Electron shielding of nuclei | Nuclear mass | Temperature | Gravity | Local electronic environment.
 
 ## Nuclear astrophysics
 S: Nuclear astrophysics explains how stars shine and how the chemical elements were made. Hydrogen and helium came from the Big Bang; heavier elements were forged in stars, supernovae and neutron-star mergers.
@@ -541,8 +541,8 @@ X: Why do the Sun's core reactions need 15 million K but bombs need different co
 !: Stars can't make elements heavier than iron by fusion for energy; heavier elements need neutron capture.
 Q: Where were most elements heavier than iron made? | By neutron capture: the s-process in giant stars and the r-process in neutron-star mergers and some supernovae.
 Q: What did Big Bang nucleosynthesis produce? | Mostly hydrogen and helium-4, with traces of deuterium, helium-3 and lithium-7.
-M1: The triple-alpha process produces: | Carbon-12 | Iron-56 | Gold | Helium-4 | 3 ⁴He → ¹²C.
-M2: GW170817 confirmed that neutron-star mergers make: | r-process elements like gold | Helium only | Hydrogen | Nothing | Kilonova.
+M1#physics-u23-24-q1: The triple-alpha process produces: | Carbon-12 | Iron-56 | Gold | Helium-4 | 3 ⁴He → ¹²C.
+M2#physics-u23-24-q2: GW170817 confirmed that neutron-star mergers make: | r-process elements like gold | Helium only | Hydrogen | Nothing | Kilonova.
 
 ## Nuclear waste and radiation safety
 S: Nuclear technology produces radioactive waste and exposes people to radiation, so it's governed by strict safety principles. Understanding doses, risks and waste management lets these be weighed honestly against the benefits.
@@ -568,6 +568,6 @@ X: A worker receives 0.5 mGy from gamma rays and 0.05 mGy from alphas. Equivalen
 !: Becquerels (activity) and sieverts (dose) measure different things; a high-activity source may give little dose if shielded or distant.
 Q: What is the difference between gray and sievert? | Gray measures absorbed energy per kg; sievert weights it for biological effect.
 Q: How is high-level waste to be disposed of long term? | Deep geological repositories that isolate it for tens of thousands of years.
-M1: Typical annual natural background dose is about: | 2–3 mSv | 2 Sv | 0.02 mSv | 200 mSv | Radon dominates.
-M2: Alpha radiation has a high weighting factor because: | It deposits energy densely, damaging DNA heavily | It penetrates deeply | It's a photon | It's uncharged | High LET.
+M1#physics-u23-25-q1: Typical annual natural background dose is about: | 2–3 mSv | 2 Sv | 0.02 mSv | 200 mSv | Radon dominates.
+M2#physics-u23-25-q2: Alpha radiation has a high weighting factor because: | It deposits energy densely, damaging DNA heavily | It penetrates deeply | It's a photon | It's uncharged | High LET.
 `;

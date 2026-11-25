@@ -6,11 +6,20 @@ import { parseNotes, norm } from "../../kit/course/notes.js";
 import { longestSharedRun } from "../knowledge/lib.mjs";
 import { tokens } from "../curriculum/engine.mjs";
 import { parentOf } from "./shorthand.mjs";
+import { CONFIG } from "./lib.mjs";
 
 const KNOWN = new Set(["S", "H", "P", "E", "X", "K", "!", "Q", "O", "PRE", "T", "SUM", "SAFE", "SRC", "READ", "IX", "D", "EV", "LV", "CASE", "LAW", "DRUG", "REQ", "DIA", "DNEED", "GAP"]);
 const QTAG = /^(M|TF|MS|SEQ|MATCH|SA|NUM)[123]?(#[a-z0-9-]+)?(@[\d,]+)?:/;
 const lineOf = (text, re) => { const i = text.split("\n").findIndex((l) => re.test(l)); return i < 0 ? null : i + 1; };
 const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+// the line of a question or flashcard: a task line (NUM#…@1:, M2:, SA1:, Q:) whose text starts with the whole question,
+// so a worked example or another question that opens with the same words isn't taken for it; else the first mention
+const TASK = /^\s*(?:[A-Z]{1,4}\d*(?:#[^\s:@]*)?(?:@[\d,]+)?|Q):\s*/;
+const questionLine = (text, q) => {
+  const want = String(q).trim(), lines = text.split("\n");
+  const i = lines.findIndex((l) => TASK.test(l) && l.replace(TASK, "").startsWith(want));
+  return i >= 0 ? i + 1 : lineOf(text, new RegExp(esc(want.slice(0, 40))));
+};
 const issue = (code, line, note) => ({ code, line, note });
 const SRC_KINDS = ["legislation", "case", "rule", "guidance", "standard", "primary", "secondary"];
 const result = (gate, issues) => ({ gate, ok: !issues.length, issues });
@@ -64,7 +73,7 @@ export function coverageGate(L, text, { allowed = null, prereq = null, taken = n
 
 // ---------- 3. the course QA rules (scripts/qa-courses.mjs), applied to the one lesson ----------
 export function qaGate(L, text) {
-  const issues = [], at = (q) => lineOf(text, new RegExp(esc(q.slice(0, 40))));
+  const issues = [], at = (q) => questionLine(text, q);
   if (L.blocks.filter((b) => b.t === "h").length < 2) issues.push(issue("QA", null, "fewer than two H: sections"));
   if (!L.blocks.some((b) => b.t === "key")) issues.push(issue("QA", null, "no K: key point"));
   if (L.cards.length < 2) issues.push(issue("QA", lineOf(text, /^Q:/), "fewer than two Q: flashcards"));
@@ -98,6 +107,9 @@ export function qaGate(L, text) {
 }
 
 // ---------- 4. no 8-word run of the specification; its key terms appear ----------
+// a specification's command and skill words ("demonstrate an understanding of") say what learners do, not what a lesson
+// teaches, so they aren't key terms: requiring them only pushes writers to pad lessons with exam wording
+export const SKILL_WORDS = new Set(tokens("demonstrate demonstrating demonstration understanding recognise recognising recognize recognizing outline outlining define defining appreciate appreciation aware awareness consider considering develop developing developed skills skill knowledge"));
 /** reqs: [{ id, text, title }] with the specification's text (local only, never committed) */
 export function specGate(L, text, reqs) {
   const issues = [], lessonWords = new Set(tokens(text));
@@ -107,7 +119,7 @@ export function specGate(L, text, reqs) {
     if (!req?.text) { issues.push(issue("SPEC", at, `${r.id}: specification text not imported here, can't check copying`)); continue; }
     const run = longestSharedRun(text, req.text);
     if (run.words >= 8) issues.push(issue("COPY", lineOf(text, new RegExp(esc(run.run.split(" ").slice(0, 3).join(" ")), "i")), `${run.words} words copied from the specification`));
-    const terms = [...new Set(tokens(`${req.title || ""} ${req.text}`))], missing = terms.filter((t) => !lessonWords.has(t));
+    const terms = [...new Set(tokens(`${req.title || ""} ${req.text}`))].filter((t) => !SKILL_WORDS.has(t)), missing = terms.filter((t) => !lessonWords.has(t));
     // a part teaches some of its requirement, so it needs some of the terms; the whole requirement needs most of them
     if (part ? terms.length && missing.length === terms.length : terms.length && missing.length / terms.length > 0.4) issues.push(issue("COV", at, `${r.id}: specification terms missing: ${missing.slice(0, 6).join(", ")}`));
   }
@@ -141,6 +153,9 @@ export function checkArithmetic(line) {
   for (let i = 0; i < parts.length - 1; i++) {
     const v = evalExpr(parts[i]), rhs = parts[i + 1].trim().match(NUMRE)?.[0];
     if (v == null || !rhs || !/^\s*[-−]?\d/.test(parts[i + 1])) continue;
+    // a fraction shown as the result ("2 ÷ 50 = 1/25") is compared as its value, not as its numerator
+    const frac = parts[i + 1].match(/^\s*([-−]?\d+(?:\.\d+)?)\s*\/\s*(\d+(?:\.\d+)?)(?![\d.])/);
+    if (frac) { const f = toNum(frac[1]) / Number(frac[2]); if (Math.abs(v - f) > Math.abs(f) * 0.005 + 1e-12) bad.push(`${parts[i].trim().slice(-40)} = ${frac[1]}/${frac[2]} (recomputes to ${+v.toPrecision(6)})`); continue; }
     if (!close(v, rhs.replace(/\s+/g, ""))) bad.push(`${parts[i].trim().slice(-40)} = ${rhs} (recomputes to ${+v.toPrecision(6)})`);
   }
   return bad;
@@ -149,7 +164,7 @@ export async function mathsDiagramGate(L, text, { render = null, legible = null 
   const issues = [];
   text.split("\n").forEach((l, i) => { if (/^(X:|> |E:|NUM|P:|- )/.test(l.trim())) for (const b of checkArithmetic(l)) issues.push(issue("NUM", i + 1, b)); });
   for (const q of L.tasks.filter((t) => t.type === "num")) {
-    const at = lineOf(text, new RegExp(esc(q.q.slice(0, 40))));
+    const at = questionLine(text, q.q);
     const steps = (q.why || "").split(/[;.](?=\s)/).flatMap((s) => { const parts = s.split(/\s=\s|=(?=\s*[-−\d])/); return parts.slice(0, -1).map((p, k) => [evalExpr(p), parts[k + 1].trim().match(NUMRE)?.[0]]).filter(([v]) => v != null); });
     if (!steps.length) issues.push(issue("NUM", at, "NUM explanation shows no working (expr = value) to recompute"));
     else if (!steps.some(([v]) => Math.abs(v - q.answer) <= (q.tol.rel ? Math.abs(q.answer) * q.tol.rel : q.tol.abs) + Math.abs(q.answer) * 0.005 + 1e-9)) issues.push(issue("NUM", at, `answer ${q.answer} isn't what the working gives`));
@@ -169,10 +184,35 @@ export async function mathsDiagramGate(L, text, { render = null, legible = null 
 }
 
 /** all deterministic gates in order, stopping at the first failure */
+// ---------- the production standard (owner, 25 Nov 2026; config.standards) ----------
+const normLine = (x) => String(x).toLowerCase().replace(/\s+/g, " ").replace(/[^a-z0-9 ]/g, "").trim();
+/** a lesson's diagrams, each counted once: library (D:), new rendered (DIA:) and specified but not yet drawn (DNEED:) */
+export function diagramsOf(text) {
+  const pick = (re) => [...new Set([...String(text).matchAll(re)].map((m) => normLine(m[1])).filter(Boolean))];
+  const library = pick(/^D:\s*(.+)$/gm), rendered = pick(/^DIA:\s*(.+)$/gm), needed = pick(/^DNEED:\s*(.+)$/gm);
+  return { library, rendered, needed, drawn: library.length + rendered.length, total: library.length + rendered.length + needed.length };
+}
+/** a lesson's flashcards (Q: lines), by question, each counted once */
+export const flashcardsOf = (text) => [...new Set([...String(text).matchAll(/^Q:\s*([^|]+)\|/gm)].map((m) => normLine(m[1])).filter(Boolean))];
+const STD = () => ({ flashcardsPerTopic: 20, diagramsPerLesson: 3, ...(CONFIG.standards || {}) });
+/** every lesson: at least N distinct diagrams (a DNEED: specification counts here; publishing needs them drawn) */
+export function standardsGate(L, text) {
+  const need = STD().diagramsPerLesson, d = diagramsOf(text);
+  if (d.total >= need) return { gate: "standards", ok: true };
+  return { gate: "standards", ok: false, issues: [{ code: "STD", line: null, note: `${d.total} distinct diagram${d.total === 1 ? "" : "s"}; every lesson needs at least ${need}: use a listed D: diagram, a DIA: spec for a listed renderer, or a DNEED: line saying exactly what to draw` }] };
+}
+/** a topic: at least N distinct flashcards across its lessons (texts: every lesson of the topic, filed or new) */
+export function topicFlashcards(texts) {
+  const need = STD().flashcardsPerTopic, n = new Set(texts.flatMap(flashcardsOf)).size;
+  return { ok: n >= need, n, need, note: `${n} distinct flashcards across the topic; it needs at least ${need}` };
+}
+/** whether a filed lesson may be published: its diagrams must be drawn, not only specified */
+export const drawnEnough = (text) => diagramsOf(text).drawn >= STD().diagramsPerLesson;
+
 export async function runGates(text, { reqs = [], allowed = null, render = null, legible = null, prereq = null, taken = null } = {}) {
   const p = parseGate(text); if (!p.ok) return { ok: false, failed: p, results: [p] };
   const L = p.lesson, results = [p];
-  for (const g of [() => coverageGate(L, text, { allowed, prereq, taken }), () => qaGate(L, text), () => specGate(L, text, reqs), () => mathsDiagramGate(L, text, { render, legible })]) {
+  for (const g of [() => coverageGate(L, text, { allowed, prereq, taken }), () => qaGate(L, text), () => standardsGate(L, text), () => specGate(L, text, reqs), () => mathsDiagramGate(L, text, { render, legible })]) {
     const r = await g(); results.push(r); if (!r.ok) return { ok: false, failed: r, results, lesson: L };
   }
   return { ok: true, results, lesson: L };

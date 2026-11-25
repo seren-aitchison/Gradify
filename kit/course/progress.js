@@ -81,3 +81,18 @@ export function confirmAttempts(S, ids) {
   S.outbox = (S.outbox || []).filter((id) => !done.has(id) && have.has(id));
   return S;
 }
+
+/**
+ * A question that gained a permanent id keeps the learner's solved mark: a mark saved under its legacy key
+ * ("<lesson id>#<index>", "<lesson id>#t<index>") moves to the id, and the legacy key is removed, so the question is
+ * never counted twice. A mark already under the id wins, and the leftover legacy mark is removed. items: [{ key, legacy }]. Returns whether anything moved.
+ */
+export function carrySolved(items, solved) {
+  let moved = false;
+  for (const it of items) if (it.key !== it.legacy && solved[it.legacy]) {
+    // a leftover legacy mark beside the id's own would count the question twice: the id's mark is kept
+    if (!solved[it.key]) solved[it.key] = solved[it.legacy];
+    delete solved[it.legacy]; moved = true;
+  }
+  return moved;
+}

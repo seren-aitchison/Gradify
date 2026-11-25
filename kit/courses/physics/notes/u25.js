@@ -21,8 +21,8 @@ X: Expected Michelson–Morley fringe shift for v = 30 km s^{-1}, L = 11 m, λ =
 !: Einstein didn't need the Michelson–Morley result specifically; his reasoning started from the symmetry of electromagnetism.
 Q: Why were Maxwell's equations a problem for Newtonian mechanics? | They aren't invariant under Galilean transformations and imply a fixed speed of light.
 Q: What did the Michelson–Morley experiment show? | No detectable motion through an ether.
-M1: Who first proposed length contraction to explain Michelson–Morley? | FitzGerald and Lorentz | Einstein | Newton | Maxwell | 1889–92.
-M2: Einstein's 1905 paper was titled: | On the Electrodynamics of Moving Bodies | The Theory of Relativity | Space and Time | Gravitation | Annus mirabilis.
+M1#physics-u25-01-q1: Who first proposed length contraction to explain Michelson–Morley? | FitzGerald and Lorentz | Einstein | Newton | Maxwell | 1889–92.
+M2#physics-u25-01-q2: Einstein's 1905 paper was titled: | On the Electrodynamics of Moving Bodies | The Theory of Relativity | Space and Time | Gravitation | Annus mirabilis.
 
 ## Galilean transformations
 S: Galilean transformations convert positions and times between frames moving at constant velocity, assuming time is absolute. They work at everyday speeds but fail near the speed of light.
@@ -43,8 +43,8 @@ X: A train moves at 30 m s^{-1}; a passenger walks forward at 2 m s^{-1}. Speed 
 !: Galilean relativity isn't "wrong" for everyday use; its errors are far below anything measurable at normal speeds.
 Q: What does the Galilean transformation assume about time? | That it's absolute: t′ = t.
 Q: When do Galilean transformations fail? | At speeds comparable to light; they can't keep c the same in all frames.
-M1: In Galilean relativity, which is invariant? | Acceleration | Velocity | Position | Momentum | Constant relative velocity.
-M2: Under Galilean transformations, Maxwell's equations: | Change form | Stay the same | Become Newton's laws | Disappear | Not invariant.
+M1#physics-u25-02-q1: In Galilean relativity, which is invariant? | Acceleration | Velocity | Position | Momentum | Constant relative velocity.
+M2#physics-u25-02-q2: Under Galilean transformations, Maxwell's equations: | Change form | Stay the same | Become Newton's laws | Disappear | Not invariant.
 
 ## Inertial reference frames
 S: An inertial frame is one in which a free object moves in a straight line at constant speed. Special relativity says the laws of physics are the same in all inertial frames, and none is special.
@@ -63,8 +63,8 @@ X: Is a satellite in orbit an inertial frame?
 !: "Observing" in relativity isn't seeing; seeing includes light-travel delays, which produce different visual effects from length contraction (Terrell rotation).
 Q: What is an inertial frame? | One in which free objects move in straight lines at constant speed.
 Q: How are clocks synchronised in a frame? | By exchanging light signals and accounting for travel time (Einstein synchronisation).
-M1: A frame accelerating at 2 m s^{-2} is: | Non-inertial | Inertial | Inertial if slow | Undefined | Fictitious forces appear.
-M2: The principle of relativity says: | Laws of physics are the same in all inertial frames | All motion is relative including acceleration | Light is slow | Time is absolute | Einstein's first postulate.
+M1#physics-u25-03-q1: A frame accelerating at 2 m s^{-2} is: | Non-inertial | Inertial | Inertial if slow | Undefined | Fictitious forces appear.
+M2#physics-u25-03-q2: The principle of relativity says: | Laws of physics are the same in all inertial frames | All motion is relative including acceleration | Light is slow | Time is absolute | Einstein's first postulate.
 
 ## Postulates of special relativity
 S: Special relativity rests on two postulates: the laws of physics are the same in every inertial frame, and the speed of light in vacuum is the same for every inertial observer. Everything else, including time dilation and E = mc^{2}, follows logically.
@@ -86,9 +86,9 @@ P: **Investigate with the lab.** Run the light clock on the moving train and see
 IX: relativity
 Q: State the two postulates of special relativity. | The laws of physics are the same in all inertial frames, and the speed of light is the same for all inertial observers.
 Q: What does the second postulate imply about simultaneity? | Events simultaneous in one frame need not be in another.
-M1: The speed of light from a moving source is: | c in all inertial frames | c + v | c − v | Depends on frequency | Postulate.
-M2: Which quantity is the same for all observers in relativity? | The spacetime interval | Time intervals | Lengths | Simultaneity | Invariant.
-M2: Which is a postulate of special relativity? | The laws of physics are the same in all inertial frames | Time passes at the same rate for all observers | Mass is always conserved | The speed of light depends on the source | Einstein's postulates are the principle of relativity and the invariance of c.
+M1#physics-u25-04-q1: The speed of light from a moving source is: | c in all inertial frames | c + v | c − v | Depends on frequency | Postulate.
+M2#physics-u25-04-q2: Which quantity is the same for all observers in relativity? | The spacetime interval | Time intervals | Lengths | Simultaneity | Invariant.
+M2#physics-u25-04-q3: Which is a postulate of special relativity? | The laws of physics are the same in all inertial frames | Time passes at the same rate for all observers | Mass is always conserved | The speed of light depends on the source | Einstein's postulates are the principle of relativity and the invariance of c.
 
 ## Speed of light invariance
 S: The speed of light in vacuum is the same for every inertial observer, whatever their motion or the source's motion. Countless experiments confirm it, and it's built into the SI definition of the metre.
@@ -111,9 +111,9 @@ P: **Investigate with the lab.** Throw a ball forward on the train and compare w
 IX: relativity
 Q: What evidence shows light's speed is independent of the source's motion? | Pion decay photons, binary star observations and modern cavity experiments.
 Q: How is the metre defined? | The distance light travels in vacuum in 1/299 792 458 of a second.
-M1: The speed of light in vacuum is: | Exactly 299 792 458 m s^{-1} | Approximately 3 × 10^{8} only | Different for each frame | Infinite | Defined.
-M2: Light from π^{0} mesons moving at 0.99975c was measured to travel at: | c | 2c | 0.5c | 1.99975c | 1964 test.
-M2: A train moves at 0.5c and shines a light forwards. What speed does a platform observer measure for the light? | c | 1.5c | 0.5c | 2c | The speed of light is the same for all inertial observers.
+M1#physics-u25-05-q1: The speed of light in vacuum is: | Exactly 299 792 458 m s^{-1} | Approximately 3 × 10^{8} only | Different for each frame | Infinite | Defined.
+M2#physics-u25-05-q2: Light from π^{0} mesons moving at 0.99975c was measured to travel at: | c | 2c | 0.5c | 1.99975c | 1964 test.
+M2#physics-u25-05-q3: A train moves at 0.5c and shines a light forwards. What speed does a platform observer measure for the light? | c | 1.5c | 0.5c | 2c | The speed of light is the same for all inertial observers.
 
 ## Lorentz transformations
 S: The Lorentz transformations convert space and time coordinates between inertial frames moving relative to each other, keeping the speed of light the same in both. They replace the Galilean transformations and contain all the effects of special relativity.
@@ -136,9 +136,9 @@ P: **Investigate with the lab.** Change the train's speed and watch γ grow, slo
 IX: relativity
 Q: What is the Lorentz factor? | γ = 1/√(1 − v^{2}/c^{2}).
 Q: What quantity do Lorentz transformations preserve? | The spacetime interval.
-M1: γ at v = 0.8c is: | 1.67 | 1.25 | 0.6 | 5 | 1/√0.36.
-M2: Lorentz transformations reduce to Galilean ones when: | v ≪ c | v = c | v > c | Always | γ → 1.
-M2: What is γ at a speed of 0.6c? | 1.25 | 1.6 | 0.8 | 2.5 | γ = 1/√(1 − 0.36) = 1/0.8 = 1.25.
+M1#physics-u25-06-q1: γ at v = 0.8c is: | 1.67 | 1.25 | 0.6 | 5 | 1/√0.36.
+M2#physics-u25-06-q2: Lorentz transformations reduce to Galilean ones when: | v ≪ c | v = c | v > c | Always | γ → 1.
+M2#physics-u25-06-q3: What is γ at a speed of 0.6c? | 1.25 | 1.6 | 0.8 | 2.5 | γ = 1/√(1 − 0.36) = 1/0.8 = 1.25.
 
 ## Relativity of simultaneity
 S: Events that happen at the same time in one inertial frame generally happen at different times in another. There's no universal "now": simultaneity depends on the observer's motion.
@@ -158,9 +158,9 @@ P: **Investigate with the lab.** Above 0.5c, see on the spacetime diagram that t
 IX: relativity
 Q: Why isn't simultaneity absolute? | The Lorentz transformation mixes space and time: Δt′ depends on Δx.
 Q: Can the time order of causally connected events change? | No; only events with spacelike separation can appear in different orders.
-M1: Two events simultaneous in S and separated in x will, in a frame moving along x, be: | Not simultaneous | Simultaneous | Reversed in causality | At the same place | Δt′ ∝ Δx.
-M2: The relativity of simultaneity arises from the term: | vx/c^{2} | γ | c | v^{2} | In t′.
-M2: Two flashes are simultaneous on the platform. What does an observer on a fast train find? | They happen at different times | They are still simultaneous | They don't happen at all | They happen at the same place | Simultaneity is relative: observers in relative motion disagree.
+M1#physics-u25-07-q1: Two events simultaneous in S and separated in x will, in a frame moving along x, be: | Not simultaneous | Simultaneous | Reversed in causality | At the same place | Δt′ ∝ Δx.
+M2#physics-u25-07-q2: The relativity of simultaneity arises from the term: | vx/c^{2} | γ | c | v^{2} | In t′.
+M2#physics-u25-07-q3: Two flashes are simultaneous on the platform. What does an observer on a fast train find? | They happen at different times | They are still simultaneous | They don't happen at all | They happen at the same place | Simultaneity is relative: observers in relative motion disagree.
 
 ## Time dilation
 S: A clock moving relative to you ticks more slowly than one at rest beside you, by the factor γ. The effect is tiny at everyday speeds but large near c, and it's confirmed by particle decays and atomic clocks in aircraft and satellites.
@@ -184,9 +184,9 @@ P: **Investigate with the lab.** Find the speed at which moving clocks run at ha
 IX: relativity
 Q: What is proper time? | Time measured by a clock moving with the object, in its rest frame.
 Q: Give evidence for time dilation. | Cosmic-ray muons reaching the ground; muon lifetimes in storage rings; atomic clocks on aircraft; GPS.
-M1: A clock moving at 0.6c runs slow by factor: | 1.25 | 0.8 | 1.67 | 0.6 | γ.
-M2: Time dilation affects: | All physical processes in the moving frame | Only light clocks | Only electronic clocks | Nothing real | Universal.
-M2: At what speed does a moving clock run at half rate? | About 0.87c | 0.5c | 0.25c | Exactly c | γ = 2 when v = √(3)/2 c ≈ 0.87c.
+M1#physics-u25-08-q1: A clock moving at 0.6c runs slow by factor: | 1.25 | 0.8 | 1.67 | 0.6 | γ.
+M2#physics-u25-08-q2: Time dilation affects: | All physical processes in the moving frame | Only light clocks | Only electronic clocks | Nothing real | Universal.
+M2#physics-u25-08-q3: At what speed does a moving clock run at half rate? | About 0.87c | 0.5c | 0.25c | Exactly c | γ = 2 when v = √(3)/2 c ≈ 0.87c.
 
 ## Length contraction
 S: An object moving relative to you is shorter along its direction of motion than when measured at rest, by the factor γ. Its dimensions perpendicular to the motion are unchanged.
@@ -209,9 +209,9 @@ P: **Investigate with the lab.** At 0.6c, check that a 1 m rod measures 0.8 m. T
 IX: relativity
 Q: In which direction does length contraction occur? | Only along the direction of relative motion.
 Q: How is the muon paradox explained in the muon's frame? | The atmosphere's thickness is length-contracted.
-M1: A rod of proper length 2 m moving at 0.6c has length: | 1.6 m | 2.5 m | 2 m | 1.2 m | L_{0}/γ = 2/1.25.
-M2: The perpendicular dimensions of a moving object are: | Unchanged | Contracted | Expanded | Doubled | Only longitudinal.
-M2: A 1 m rod moves at 0.6c along its length. How long is it in the platform frame? | 0.8 m | 1.25 m | 0.6 m | 1 m | L = L₀/γ = 1/1.25 = 0.8 m.
+M1#physics-u25-09-q1: A rod of proper length 2 m moving at 0.6c has length: | 1.6 m | 2.5 m | 2 m | 1.2 m | L_{0}/γ = 2/1.25.
+M2#physics-u25-09-q2: The perpendicular dimensions of a moving object are: | Unchanged | Contracted | Expanded | Doubled | Only longitudinal.
+M2#physics-u25-09-q3: A 1 m rod moves at 0.6c along its length. How long is it in the platform frame? | 0.8 m | 1.25 m | 0.6 m | 1 m | L = L₀/γ = 1/1.25 = 0.8 m.
 
 ## Relativistic velocity addition
 S: Velocities don't simply add in relativity. Combining speeds below c always gives a speed below c, and adding anything to the speed of light still gives c.
@@ -234,9 +234,9 @@ P: **Investigate with the lab.** Add 0.9c to 0.9c: the result is still below c. 
 IX: relativity
 Q: State the relativistic velocity addition formula. | u = (u′ + v)/(1 + u′v/c^{2}).
 Q: What do you get adding v to the speed of light? | c.
-M1: 0.6c + 0.6c (relativistically) = | 0.88c | 1.2c | 0.6c | 0.36c | 1.2/1.36.
-M2: The Fizeau experiment showed light in moving water is: | Only partially dragged | Fully dragged | Not affected | Slowed to zero | Consistent with velocity addition.
-M2: What is 0.5c added to 0.5c relativistically? | 0.8c | 1.0c | 0.25c | 0.5c | u = (0.5 + 0.5)/(1 + 0.25) c = 0.8c.
+M1#physics-u25-10-q1: 0.6c + 0.6c (relativistically) = | 0.88c | 1.2c | 0.6c | 0.36c | 1.2/1.36.
+M2#physics-u25-10-q2: The Fizeau experiment showed light in moving water is: | Only partially dragged | Fully dragged | Not affected | Slowed to zero | Consistent with velocity addition.
+M2#physics-u25-10-q3: What is 0.5c added to 0.5c relativistically? | 0.8c | 1.0c | 0.25c | 0.5c | u = (0.5 + 0.5)/(1 + 0.25) c = 0.8c.
 
 ## Spacetime diagrams
 S: Spacetime diagrams plot time against position, showing events as points and objects' histories as worldlines. They make relativity visual: light travels on 45° lines, and frames are skewed coordinate grids.
@@ -261,9 +261,9 @@ P: **Investigate with the lab.** Use the spacetime diagram and see how the train
 IX: relativity
 Q: What angle do light rays make on a spacetime diagram? | 45° (with ct and x in the same units).
 Q: How do a moving frame's axes appear? | The ct′ and x′ axes tilt towards the light line, closing like scissors.
-M1: A vertical worldline represents an object: | At rest | Moving at c | Accelerating | Moving left | Δx = 0.
-M2: A worldline at less than 45° to the x-axis would represent: | Faster-than-light motion | Rest | Light | Normal motion | Spacelike.
-M2: On a spacetime diagram, what is a light ray's worldline? | A line at 45° | A vertical line | A horizontal line | A curve | With ct on one axis and x on the other, light travels one unit of x per unit of ct.
+M1#physics-u25-11-q1: A vertical worldline represents an object: | At rest | Moving at c | Accelerating | Moving left | Δx = 0.
+M2#physics-u25-11-q2: A worldline at less than 45° to the x-axis would represent: | Faster-than-light motion | Rest | Light | Normal motion | Spacelike.
+M2#physics-u25-11-q3: On a spacetime diagram, what is a light ray's worldline? | A line at 45° | A vertical line | A horizontal line | A curve | With ct on one axis and x on the other, light travels one unit of x per unit of ct.
 
 ## Minkowski spacetime
 S: Minkowski spacetime is the four-dimensional geometry of special relativity, combining three dimensions of space and one of time. Its "distance", the interval, is the same for all observers, making spacetime the absolute stage of physics.
@@ -282,8 +282,8 @@ X: Two events: Δt = 5 μs, Δx = 900 m. Type of interval?
 !: The minus sign in the metric means spacetime "distances" can be zero between distinct events; it's not Euclidean geometry.
 Q: What is the spacetime interval? | s^{2} = c^{2}Δt^{2} − Δx^{2} − Δy^{2} − Δz^{2}, invariant for all inertial observers.
 Q: What does a spacelike interval mean? | The events can't be causally connected; some frame sees them as simultaneous.
-M1: Two events connected by a light signal have interval: | Zero | Positive | Negative | Infinite | Lightlike.
-M2: Proper time between timelike events is: | √(s^{2})/c | s^{2} | Δt | Δx/c | Invariant.
+M1#physics-u25-12-q1: Two events connected by a light signal have interval: | Zero | Positive | Negative | Infinite | Lightlike.
+M2#physics-u25-12-q2: Proper time between timelike events is: | √(s^{2})/c | s^{2} | Δt | Δx/c | Invariant.
 
 ## Proper time
 S: Proper time is the time measured by a clock carried along a worldline. It's the same for all observers, and it's maximised by straight (unaccelerated) worldlines between two events: the key to the twin paradox.
@@ -302,8 +302,8 @@ X: A traveller moves at 0.8c for 10 years of Earth time. Proper time elapsed?
 !: Proper time isn't the time in "the proper frame" of observation; it's the time along a particular object's own worldline.
 Q: What is proper time? | The time measured by a clock moving along a given worldline.
 Q: Which worldline between two events has the most proper time? | The straight (inertial) one.
-M1: A particle at γ = 2 for 1 s of lab time ages: | 0.5 s | 2 s | 1 s | 0.25 s | dτ = dt/γ.
-M2: A photon's proper time between emission and absorption is: | Zero | Infinite | c | Equal to coordinate time | Lightlike.
+M1#physics-u25-13-q1: A particle at γ = 2 for 1 s of lab time ages: | 0.5 s | 2 s | 1 s | 0.25 s | dτ = dt/γ.
+M2#physics-u25-13-q2: A photon's proper time between emission and absorption is: | Zero | Infinite | c | Equal to coordinate time | Lightlike.
 
 ## Four-vectors
 S: Four-vectors combine a time-like component and three space components into objects that transform by Lorentz transformations. Writing physics with four-vectors makes relativistic invariance automatic.
@@ -325,8 +325,8 @@ X: A particle of mass m moves at 0.6c. Four-velocity components?
 !: Ordinary three-velocity isn't part of a four-vector by itself; the four-velocity includes the factor γ.
 Q: What is four-momentum? | P^{μ} = (E/c, p), with invariant P·P = m^{2}c^{2}.
 Q: Why are four-vector dot products useful? | They're the same in all frames, so they can be evaluated in the easiest one.
-M1: The magnitude of four-velocity is always: | c | v | γc | 0 | Normalised.
-M2: Charge density and current density form: | A four-vector | Two scalars | A tensor of rank 2 | Nothing relativistic | J^{μ}.
+M1#physics-u25-14-q1: The magnitude of four-velocity is always: | c | v | γc | 0 | Normalised.
+M2#physics-u25-14-q2: Charge density and current density form: | A four-vector | Two scalars | A tensor of rank 2 | Nothing relativistic | J^{μ}.
 
 ## Relativistic momentum
 S: Momentum in relativity is p = γmv, which grows without limit as an object approaches c. With this definition, momentum is conserved in all inertial frames.
@@ -346,8 +346,8 @@ X: Momentum of an electron with γ = 10?
 !: "Relativistic mass increase" is an outdated way of describing p = γmv; inertia in different directions isn't simply γm.
 Q: What is relativistic momentum? | p = γmv.
 Q: Why can't a massive object reach c? | Its momentum and energy would become infinite.
-M1: At v = 0.6c, p/mv (Newtonian) = | 1.25 | 1 | 0.8 | 1.6 | γ.
-M2: Particle physicists quote momentum in: | MeV/c or GeV/c | kg m s^{-1} only | Joules | Newtons | Natural units.
+M1#physics-u25-15-q1: At v = 0.6c, p/mv (Newtonian) = | 1.25 | 1 | 0.8 | 1.6 | γ.
+M2#physics-u25-15-q2: Particle physicists quote momentum in: | MeV/c or GeV/c | kg m s^{-1} only | Joules | Newtons | Natural units.
 
 ## Mass-energy equivalence
 S: Mass and energy are equivalent: any system's rest mass corresponds to an energy E = mc^{2}. Adding energy to a system increases its mass; releasing energy decreases it. This powers stars, nuclear energy and particle creation.
@@ -369,8 +369,8 @@ X: How much mass becomes energy when a reactor delivers 1 MW for a year (3.15 ×
 !: E = mc^{2} isn't only about nuclear reactions; chemical reactions also change mass, just by amounts too small to weigh.
 Q: What does E = mc^{2} mean? | A system's rest mass is equivalent to energy; adding energy increases mass.
 Q: How much energy is the rest mass of an electron? | 0.511 MeV.
-M1: The Sun's mass loss rate to radiation is about: | 4 × 10^{9} kg s^{-1} | 4 kg s^{-1} | 4 × 10^{20} kg s^{-1} | 0 | L/c^{2}.
-M2: In chemical reactions, mass: | Changes very slightly | Never changes | Changes a lot | Doubles | ~eV per atom.
+M1#physics-u25-16-q1: The Sun's mass loss rate to radiation is about: | 4 × 10^{9} kg s^{-1} | 4 kg s^{-1} | 4 × 10^{20} kg s^{-1} | 0 | L/c^{2}.
+M2#physics-u25-16-q2: In chemical reactions, mass: | Changes very slightly | Never changes | Changes a lot | Doubles | ~eV per atom.
 
 ## Relativistic energy
 S: A moving object's total energy is its rest energy multiplied by γ. Kinetic energy is the difference between total and rest energy, reducing to ½mv^{2} at low speed but growing without limit as v approaches c.
@@ -392,8 +392,8 @@ D: phys-u25-kinetic-energy
 !: Don't use ½mv^{2} at speeds above about 0.1c; errors exceed ~1%.
 Q: What is relativistic kinetic energy? | KE = (γ − 1)mc^{2}.
 Q: Why does speed barely increase for very high-energy particles? | γ grows enormously as v approaches c; energy rises while v stays just below c.
-M1: An electron accelerated through 511 kV has γ = | 2 | 1.5 | 511 | 0.5 | KE = mc^{2}.
-M2: At low speed, (γ − 1)mc^{2} approaches: | ½mv^{2} | mc^{2} | mv | 0 always | Binomial expansion.
+M1#physics-u25-17-q1: An electron accelerated through 511 kV has γ = | 2 | 1.5 | 511 | 0.5 | KE = mc^{2}.
+M2#physics-u25-17-q2: At low speed, (γ − 1)mc^{2} approaches: | ½mv^{2} | mc^{2} | mv | 0 always | Binomial expansion.
 
 ## Energy-momentum relation
 S: The energy–momentum relation links a particle's total energy, momentum and mass, valid at any speed. It applies to massless particles too, which carry momentum E/c.
@@ -415,8 +415,8 @@ X: Two photons of 60 GeV each, at 180° to each other. Invariant mass?
 !: Mass isn't additive in relativity: two photons, each massless, can together have a large invariant mass.
 Q: State the energy–momentum relation. | E^{2} = (pc)^{2} + (mc^{2})^{2}.
 Q: How do physicists discover short-lived particles in colliders? | As peaks in the invariant mass distribution of their decay products.
-M1: A photon of energy 3 eV has momentum: | 3 eV/c | 0 | 3 eV | 1.5 eV/c | E = pc.
-M2: Two 5 GeV photons moving in the same direction have invariant mass: | 0 | 10 GeV | 5 GeV | 25 GeV | Σp = ΣE/c.
+M1#physics-u25-18-q1: A photon of energy 3 eV has momentum: | 3 eV/c | 0 | 3 eV | 1.5 eV/c | E = pc.
+M2#physics-u25-18-q2: Two 5 GeV photons moving in the same direction have invariant mass: | 0 | 10 GeV | 5 GeV | 25 GeV | Σp = ΣE/c.
 
 ## Relativistic collisions
 S: In high-energy collisions, energy and momentum are conserved as four-vectors, but rest mass isn't: kinetic energy can turn into new particles. Analysing collisions with invariants tells you threshold energies and what can be produced.
@@ -438,8 +438,8 @@ X: Minimum proton beam energy to produce an antiproton on a stationary proton ta
 !: In fixed-target collisions most energy goes into moving the centre of mass, not into creating particles.
 Q: What is √s? | The total energy in the centre-of-mass frame, available for producing particles.
 Q: Why are colliders more efficient than fixed targets? | All the beam energy is available in the centre-of-mass frame.
-M1: Kinetic energy threshold to make an antiproton on a fixed proton target: | 5.6 GeV | 1.9 GeV | 938 MeV | 100 GeV | Bevatron.
-M2: The GZK limit arises from cosmic rays interacting with: | CMB photons | Earth's atmosphere | Magnetic fields | Dark matter | Pion production.
+M1#physics-u25-19-q1: Kinetic energy threshold to make an antiproton on a fixed proton target: | 5.6 GeV | 1.9 GeV | 938 MeV | 100 GeV | Bevatron.
+M2#physics-u25-19-q2: The GZK limit arises from cosmic rays interacting with: | CMB photons | Earth's atmosphere | Magnetic fields | Dark matter | Pion production.
 
 ## Relativistic Doppler effect
 S: The relativistic Doppler effect is the change in frequency of light from a moving source, including time dilation. Unlike sound, it depends only on the relative velocity, and it measures speeds of stars, galaxies and quasars.
@@ -460,8 +460,8 @@ X: A galaxy's Hα (656 nm) is seen at 788 nm. Recession speed (special-relativis
 !: Cosmological redshifts aren't strictly Doppler shifts; they arise from the expansion of space, and z can exceed 1 without implying faster-than-light motion through space.
 Q: What is the transverse Doppler effect? | A redshift from time dilation of a source moving perpendicular to the line of sight.
 Q: How is redshift z defined? | 1 + z = λ_{observed}/λ_{emitted}.
-M1: A source receding at 0.6c has frequency reduced by factor: | 0.5 | 0.6 | 0.8 | 0.4 | √(0.4/1.6).
-M2: Relativistic Doppler depends on: | Only the relative velocity | Source and observer velocities separately | The medium | Wind | No medium for light.
+M1#physics-u25-20-q1: A source receding at 0.6c has frequency reduced by factor: | 0.5 | 0.6 | 0.8 | 0.4 | √(0.4/1.6).
+M2#physics-u25-20-q2: Relativistic Doppler depends on: | Only the relative velocity | Source and observer velocities separately | The medium | Wind | No medium for light.
 
 ## Relativistic electromagnetism
 S: Electricity and magnetism are two aspects of one electromagnetic field that transforms between frames. What one observer calls a magnetic force, another calls an electric force; relativity was born from this unity.
@@ -480,8 +480,8 @@ X: A charge q moves at v parallel to a wire carrying current I, distance r away.
 !: Maxwell's equations were already relativistic; it was Newtonian mechanics that needed to change.
 Q: Which quantities are invariant for electromagnetic fields? | E^{2} − c^{2}B^{2} and E·B.
 Q: How can magnetism be seen as a relativistic effect? | Length contraction changes charge densities in a moving frame, so a magnetic force in one frame is an electric force in another.
-M1: A pure electric field in one frame appears, in a moving frame, as: | Electric plus magnetic fields | Only magnetic | Zero | Gravitational | Field transformation.
-M2: Maxwell's equations are invariant under: | Lorentz transformations | Galilean transformations | Neither | Both | Relativistic.
+M1#physics-u25-21-q1: A pure electric field in one frame appears, in a moving frame, as: | Electric plus magnetic fields | Only magnetic | Zero | Gravitational | Field transformation.
+M2#physics-u25-21-q2: Maxwell's equations are invariant under: | Lorentz transformations | Galilean transformations | Neither | Both | Relativistic.
 
 ## Causality and light cones
 S: The light cone of an event divides spacetime into its causal future, causal past and the elsewhere region it can never influence. Since nothing travels faster than light, cause must precede effect in every frame.
@@ -502,8 +502,8 @@ D: phys-u25-light-cone
 !: Apparent faster-than-light effects never carry information or causes; check whether anything physical travels.
 Q: What is the elsewhere region of an event? | Spacelike-separated events that can't be causally connected to it.
 Q: Why does faster-than-light signalling threaten causality? | It would allow effects before causes in some frames, and messages into the past.
-M1: Events inside an event's future light cone: | Can be influenced by it | Can't be influenced | Are simultaneous | Are in its past | Timelike future.
-M2: Apparent superluminal jet motion is caused by: | Light-travel-time effects for jets moving towards us | Real faster-than-light motion | Lensing | Errors | Geometry.
+M1#physics-u25-22-q1: Events inside an event's future light cone: | Can be influenced by it | Can't be influenced | Are simultaneous | Are in its past | Timelike future.
+M2#physics-u25-22-q2: Apparent superluminal jet motion is caused by: | Light-travel-time effects for jets moving towards us | Real faster-than-light motion | Lensing | Errors | Geometry.
 
 ## Twin paradox
 S: One twin travels to a distant star at high speed and returns younger than the twin who stayed home. It seems paradoxical because each sees the other's clock run slow, but the situation isn't symmetric: the traveller changes inertial frames.
@@ -527,9 +527,9 @@ P: **Investigate with the lab.** Find the speed for γ = 2 and use it to work ou
 IX: relativity
 Q: Why isn't the twin paradox symmetric? | Only the travelling twin changes inertial frames; her worldline is bent.
 Q: Which worldline between two events has the longest proper time? | The straight, inertial one.
-M1: A twin travels at 0.6c for 8 years (Earth time) round trip. She ages: | 6.4 years | 8 years | 10 years | 4.8 years | 8/1.25.
-M2: The twin effect has been confirmed with: | Atomic clocks on aircraft | Real twins | Only thought experiments | Light only | Hafele–Keating.
-M2: A twin travels at γ = 2 for 20 years of Earth time. How much does the travelling twin age? | 10 years | 20 years | 40 years | 5 years | The travelling clock runs at half rate, so 20/2 = 10 years pass for the traveller.
+M1#physics-u25-23-q1: A twin travels at 0.6c for 8 years (Earth time) round trip. She ages: | 6.4 years | 8 years | 10 years | 4.8 years | 8/1.25.
+M2#physics-u25-23-q2: The twin effect has been confirmed with: | Atomic clocks on aircraft | Real twins | Only thought experiments | Light only | Hafele–Keating.
+M2#physics-u25-23-q3: A twin travels at γ = 2 for 20 years of Earth time. How much does the travelling twin age? | 10 years | 20 years | 40 years | 5 years | The travelling clock runs at half rate, so 20/2 = 10 years pass for the traveller.
 
 ## Relativistic particle dynamics
 S: Relativistic dynamics describes how forces change momentum and energy at any speed. It underlies accelerator design, cosmic-ray physics, plasma physics and astrophysical jets.
@@ -552,6 +552,6 @@ X: Time for a ship at 1g proper acceleration to reach 0.99c (ship time)?
 !: Constant force doesn't give constant acceleration in the lab frame at relativistic speeds; acceleration falls as γ^{−3}.
 Q: State the relativistic form of Newton's second law. | F = dp/dt with p = γmv.
 Q: Why is synchrotron radiation emitted in a narrow cone? | Relativistic beaming concentrates radiation into an angle ~1/γ around the velocity.
-M1: Under constant proper acceleration, speed: | Approaches c asymptotically | Exceeds c | Stays constant | Falls | Hyperbolic motion.
-M2: Synchrotron radiation power for circular motion scales as: | γ^{4} | γ | γ^{2} | γ^{−1} | Strong γ dependence.
+M1#physics-u25-24-q1: Under constant proper acceleration, speed: | Approaches c asymptotically | Exceeds c | Stays constant | Falls | Hyperbolic motion.
+M2#physics-u25-24-q2: Synchrotron radiation power for circular motion scales as: | γ^{4} | γ | γ^{2} | γ^{−1} | Strong γ dependence.
 `;

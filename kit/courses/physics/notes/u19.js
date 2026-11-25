@@ -21,9 +21,9 @@ P: **Investigate with the lab.** Trace rays through the lens and mirror and chec
 IX: optics
 Q: State Fermat's principle. | Light travels between two points along the path of stationary optical path length.
 Q: When does geometrical optics fail? | When apertures or features are comparable to the wavelength, so diffraction matters.
-M1: A pool 2 m deep (n = 1.33) appears about: | 1.5 m deep | 2.7 m | 2 m | 1 m | Real/n.
-M2: The paraxial approximation assumes: | Small angles to the axis | Large apertures | Short wavelengths only | No refraction | sin θ ≈ θ.
-M2: What does geometrical optics assume about light? | It travels in straight-line rays | It always diffracts | It is made only of particles | It has no speed | Ray optics works when objects are much larger than the wavelength.
+M1#physics-u19-01-q1: A pool 2 m deep (n = 1.33) appears about: | 1.5 m deep | 2.7 m | 2 m | 1 m | Real/n.
+M2#physics-u19-01-q2: The paraxial approximation assumes: | Small angles to the axis | Large apertures | Short wavelengths only | No refraction | sin θ ≈ θ.
+M2#physics-u19-01-q3: What does geometrical optics assume about light? | It travels in straight-line rays | It always diffracts | It is made only of particles | It has no speed | Ray optics works when objects are much larger than the wavelength.
 
 ## Reflection and refraction
 S: At a boundary, light partly reflects and partly refracts. Reflection follows equal angles; refraction follows Snell's law; the proportions depend on the refractive indices, angle and polarisation.
@@ -46,9 +46,9 @@ P: **Investigate with the lab.** Change the angle of incidence and compare the r
 IX: optics
 Q: What is the difference between specular and diffuse reflection? | Specular: smooth surface, ordered reflection forming images. Diffuse: rough surface scattering light in all directions.
 Q: What happens to wavelength when light enters glass? | It shortens by a factor of n; frequency is unchanged.
-M1: Reflection angle when incidence is 30°: | 30° | 60° | 15° | 90° | Equal angles.
-M2: Why does a still lake reflect strongly at low viewing angles? | Reflectance rises sharply towards grazing incidence | Water is a metal | Lakes are coated | Refraction stops | Fresnel equations.
-M2: When light enters glass from air at an angle, which way does it bend? | Towards the normal | Away from the normal | It doesn't bend | Along the surface | Light slows in glass and bends towards the normal.
+M1#physics-u19-02-q1: Reflection angle when incidence is 30°: | 30° | 60° | 15° | 90° | Equal angles.
+M2#physics-u19-02-q2: Why does a still lake reflect strongly at low viewing angles? | Reflectance rises sharply towards grazing incidence | Water is a metal | Lakes are coated | Refraction stops | Fresnel equations.
+M2#physics-u19-02-q3: When light enters glass from air at an angle, which way does it bend? | Towards the normal | Away from the normal | It doesn't bend | Along the surface | Light slows in glass and bends towards the normal.
 
 ## Snell's law
 S: Snell's law gives the angle of a refracted ray: the product of refractive index and the sine of the angle is the same on both sides of an interface. It follows from the change in wave speed, via Huygens' or Fermat's principle.
@@ -69,9 +69,9 @@ P: **Investigate with the lab.** Measure the angles of incidence and refraction 
 IX: optics
 Q: State Snell's law. | n_{1} sin θ_{1} = n_{2} sin θ_{2}.
 Q: How does Fermat's principle explain Snell's law? | The refracted path minimises the travel time when speeds differ in the two media.
-M1: Light goes from water (1.33) to glass (1.5) at 30°. Refraction angle: | 26° | 30° | 34° | 45° | sin θ_{2} = 1.33 × 0.5/1.5.
-M2: A graph of sin i against sin r for light entering a block has gradient: | n of the block | 1/n | Critical angle | Zero | sin i = n sin r.
-M2: Light enters glass (n = 1.5) at 30°. What is sin r? | About 0.33 | 0.75 | 0.5 | 1.5 | sin r = sin 30°/1.5 = 0.5/1.5 ≈ 0.33.
+M1#physics-u19-03-q1: Light goes from water (1.33) to glass (1.5) at 30°. Refraction angle: | 26° | 30° | 34° | 45° | sin θ_{2} = 1.33 × 0.5/1.5.
+M2#physics-u19-03-q2: A graph of sin i against sin r for light entering a block has gradient: | n of the block | 1/n | Critical angle | Zero | sin i = n sin r.
+M2#physics-u19-03-q3: Light enters glass (n = 1.5) at 30°. What is sin r? | About 0.33 | 0.75 | 0.5 | 1.5 | sin r = sin 30°/1.5 = 0.5/1.5 ≈ 0.33.
 
 ## Total internal reflection
 S: When light travelling in a dense medium meets a less dense one at an angle above the critical angle, none refracts out: it's totally reflected. This traps light in optical fibres and makes diamonds sparkle.
@@ -96,9 +96,9 @@ P: **Investigate with the lab.** With light leaving glass, increase the angle un
 IX: optics
 Q: What is the critical angle? | The angle of incidence (in the denser medium) beyond which there's no refracted ray.
 Q: Why do diamonds sparkle? | Their small critical angle traps light by total internal reflection until it exits through the top facets, and dispersion splits colours.
-M1: Total internal reflection requires light to travel: | From higher to lower n above θ_{c} | From lower to higher n | At normal incidence | In a vacuum | Condition.
-M2: Binoculars use prisms rather than mirrors because: | TIR gives near-100% reflection without coatings | Prisms magnify | Mirrors absorb light | It's cheaper | Better reflection.
-M2: What is the critical angle for glass with n = 1.5? | About 42° | About 30° | About 60° | 90° | sin c = 1/n = 0.67, so c ≈ 42°.
+M1#physics-u19-04-q1: Total internal reflection requires light to travel: | From higher to lower n above θ_{c} | From lower to higher n | At normal incidence | In a vacuum | Condition.
+M2#physics-u19-04-q2: Binoculars use prisms rather than mirrors because: | TIR gives near-100% reflection without coatings | Prisms magnify | Mirrors absorb light | It's cheaper | Better reflection.
+M2#physics-u19-04-q3: What is the critical angle for glass with n = 1.5? | About 42° | About 30° | About 60° | 90° | sin c = 1/n = 0.67, so c ≈ 42°.
 
 ## Mirrors and image formation
 S: Mirrors form images by reflection. Plane mirrors give upright, same-size virtual images; curved mirrors can magnify, focus light and form real images, used in telescopes, headlamps and solar furnaces.
@@ -120,9 +120,9 @@ P: **Investigate with the lab.** Switch to a curved mirror and move the object t
 IX: optics
 Q: Where is the image in a plane mirror? | As far behind the mirror as the object is in front.
 Q: Why are convex mirrors used on cars? | They give a wide field of view with upright images.
-M1: A concave mirror's focal length is: | Half its radius of curvature | Equal to its radius | Twice its radius | Zero | f = R/2.
-M2: An object inside the focal point of a concave mirror gives: | A virtual, upright, magnified image | A real inverted image | No image | A smaller real image | Shaving mirror.
-M2: When does a concave mirror form a virtual image? | When the object is closer than the focal point | When the object is beyond the centre of curvature | When the object is at infinity | Never | Inside the focal length, reflected rays diverge and appear to come from behind the mirror.
+M1#physics-u19-05-q1: A concave mirror's focal length is: | Half its radius of curvature | Equal to its radius | Twice its radius | Zero | f = R/2.
+M2#physics-u19-05-q2: An object inside the focal point of a concave mirror gives: | A virtual, upright, magnified image | A real inverted image | No image | A smaller real image | Shaving mirror.
+M2#physics-u19-05-q3: When does a concave mirror form a virtual image? | When the object is closer than the focal point | When the object is beyond the centre of curvature | When the object is at infinity | Never | Inside the focal length, reflected rays diverge and appear to come from behind the mirror.
 
 ## Thin lenses
 S: A thin lens refracts light at two curved surfaces to bring rays to a focus (converging) or spread them (diverging). Lenses form images in eyes, cameras, projectors and glasses.
@@ -148,9 +148,9 @@ P: **Investigate with the lab.** Make a real, inverted image the same size as th
 IX: optics
 Q: What is lens power? | P = 1/f, in dioptres (m^{-1}).
 Q: Why does vision blur underwater? | The cornea's refractive power drops because water's index is close to the eye's.
-M1: A −4 D lens has focal length: | −25 cm | 4 m | −4 cm | 25 cm | f = 1/P.
-M2: Two lenses of +3 D and +2 D in contact have power: | +5 D | +6 D | +1 D | +1.2 D | Powers add.
-M2: Where must the object be for a converging lens to form a real image the same size? | At twice the focal length | At the focal point | Inside the focal length | At infinity | At u = 2f, the image forms at v = 2f with magnification 1.
+M1#physics-u19-06-q1: A −4 D lens has focal length: | −25 cm | 4 m | −4 cm | 25 cm | f = 1/P.
+M2#physics-u19-06-q2: Two lenses of +3 D and +2 D in contact have power: | +5 D | +6 D | +1 D | +1.2 D | Powers add.
+M2#physics-u19-06-q3: Where must the object be for a converging lens to form a real image the same size? | At twice the focal length | At the focal point | Inside the focal length | At infinity | At u = 2f, the image forms at v = 2f with magnification 1.
 
 ## Lens equations
 S: The thin lens equation relates object distance, image distance and focal length; magnification gives image size. With them you can predict where and how large any lens forms an image.
@@ -176,9 +176,9 @@ P: **Investigate with the lab.** Set the focal length and object distance, predi
 IX: optics
 Q: State the thin lens equation. | 1/f = 1/u + 1/v.
 Q: What image does a magnifying glass form? | Virtual, upright and magnified, with the object inside the focal length.
-M1: An object at 2f from a converging lens gives an image at: | 2f, same size | f | Infinity | Between f and 2f | Symmetric.
-M2: A lens (f = 5 cm) with object 4 cm away forms an image at: | 20 cm, virtual | 20 cm, real | 2.2 cm | 9 cm | 1/v = 1/5 − 1/4 = −1/20.
-M2: A lens has f = 10 cm and the object is 30 cm away. Where is the image? | 15 cm from the lens | 20 cm from the lens | 30 cm from the lens | 7.5 cm from the lens | 1/v = 1/10 − 1/30 = 2/30, so v = 15 cm.
+M1#physics-u19-07-q1: An object at 2f from a converging lens gives an image at: | 2f, same size | f | Infinity | Between f and 2f | Symmetric.
+M2#physics-u19-07-q2: A lens (f = 5 cm) with object 4 cm away forms an image at: | 20 cm, virtual | 20 cm, real | 2.2 cm | 9 cm | 1/v = 1/5 − 1/4 = −1/20.
+M2#physics-u19-07-q3: A lens has f = 10 cm and the object is 30 cm away. Where is the image? | 15 cm from the lens | 20 cm from the lens | 30 cm from the lens | 7.5 cm from the lens | 1/v = 1/10 − 1/30 = 2/30, so v = 15 cm.
 
 ## Optical instruments
 S: Optical instruments combine lenses and mirrors to see things too small, too far or too faint for the eye. Understanding the eye itself is the starting point: cameras, glasses, magnifiers and projectors all extend it.
@@ -200,9 +200,9 @@ P: **Investigate with the lab.** Move the object inside the focal length to make
 IX: optics
 Q: How does the eye focus on near objects? | Ciliary muscles let the lens become more curved (accommodation), increasing its power.
 Q: What corrects short sight? | A diverging lens.
-M1: A camera at f/8 compared with f/4 lets in: | 1/4 the light | 1/2 | Twice | The same | ∝ 1/N^{2}.
-M2: A magnifying glass of f = 5 cm gives angular magnification (image at infinity) of: | 5 | 25 | 0.2 | 125 | 25/5.
-M2: How does a simple magnifying glass work? | The object is inside the focal length, giving a virtual, magnified, upright image | The object is beyond 2f, giving a real image | It uses total internal reflection | It uses a diverging lens | Inside f, a converging lens forms a magnified virtual image.
+M1#physics-u19-08-q1: A camera at f/8 compared with f/4 lets in: | 1/4 the light | 1/2 | Twice | The same | ∝ 1/N^{2}.
+M2#physics-u19-08-q2: A magnifying glass of f = 5 cm gives angular magnification (image at infinity) of: | 5 | 25 | 0.2 | 125 | 25/5.
+M2#physics-u19-08-q3: How does a simple magnifying glass work? | The object is inside the focal length, giving a virtual, magnified, upright image | The object is beyond 2f, giving a real image | It uses total internal reflection | It uses a diverging lens | Inside f, a converging lens forms a magnified virtual image.
 
 ## Microscopes and telescopes
 S: Microscopes magnify small, near objects; telescopes magnify the angular size of distant ones and collect their faint light. Both use an objective to form an image and an eyepiece (or sensor) to view it.
@@ -224,8 +224,8 @@ X: A telescope with f_{o} = 1.2 m and f_{e} = 25 mm. Magnification? Resolution i
 !: Telescope magnification is less important than aperture; a high-magnification small telescope just shows a dim, blurry view.
 Q: Why are large telescopes reflectors? | Large mirrors can be supported from behind and have no chromatic aberration.
 Q: What limits an optical microscope's resolution? | Diffraction: about 0.61λ/NA.
-M1: A telescope's light-gathering power depends on: | Aperture area | Magnification | Eyepiece | Length | ∝ D^{2}.
-M2: Oil immersion improves microscope resolution by: | Increasing numerical aperture | Shortening λ in air | Brightening the lamp | Reducing magnification | NA = n sin θ.
+M1#physics-u19-09-q1: A telescope's light-gathering power depends on: | Aperture area | Magnification | Eyepiece | Length | ∝ D^{2}.
+M2#physics-u19-09-q2: Oil immersion improves microscope resolution by: | Increasing numerical aperture | Shortening λ in air | Brightening the lamp | Reducing magnification | NA = n sin θ.
 
 ## Aberrations
 S: Aberrations are departures from perfect imaging in real lenses and mirrors. They blur, distort and colour images, and much of optical design is about correcting them.
@@ -247,8 +247,8 @@ X: Why does stopping a lens down (higher f-number) sharpen images, up to a point
 !: Aberrations and diffraction trade off; the sharpest aperture is usually two or three stops below maximum.
 Q: What causes chromatic aberration? | Dispersion: refractive index varies with wavelength, so colours focus differently.
 Q: How was Hubble's spherical aberration fixed? | Corrective optics (COSTAR and new instruments) with equal and opposite aberration.
-M1: Which optical element has no chromatic aberration? | Mirror | Single lens | Prism | Achromat | Reflection is wavelength-independent.
-M2: Barrel distortion makes straight lines: | Curve outward | Curve inward | Disappear | Colour-fringed | Bulging.
+M1#physics-u19-10-q1: Which optical element has no chromatic aberration? | Mirror | Single lens | Prism | Achromat | Reflection is wavelength-independent.
+M2#physics-u19-10-q2: Barrel distortion makes straight lines: | Curve outward | Curve inward | Disappear | Colour-fringed | Bulging.
 
 ## Dispersion and prisms
 S: A prism refracts different colours by different amounts because glass's refractive index depends on wavelength. Newton used prisms to show white light is a mixture of colours, founding spectroscopy.
@@ -267,8 +267,8 @@ X: A 60° prism gives minimum deviation 39°. Refractive index?
 !: Prisms separate colours by dispersion; gratings by diffraction. They spread colours in opposite orders (prisms bend violet most; gratings bend red most).
 Q: How did Newton show white light is a mixture? | Separated it with a prism and recombined the colours into white with a second prism.
 Q: Why is the secondary rainbow's colour order reversed? | An extra internal reflection inverts the order.
-M1: Which colour does a glass prism deviate most? | Violet | Red | Green | Yellow | Highest n.
-M2: The primary rainbow appears at about: | 42° from the anti-solar point | 90° | 10° | 180° | Minimum deviation in water drops.
+M1#physics-u19-11-q1: Which colour does a glass prism deviate most? | Violet | Red | Green | Yellow | Highest n.
+M2#physics-u19-11-q2: The primary rainbow appears at about: | 42° from the anti-solar point | 90° | 10° | 180° | Minimum deviation in water drops.
 
 ## Physical optics
 S: Physical (wave) optics treats light as a wave to explain what rays can't: interference, diffraction, coherence and polarisation. It sets the ultimate limits of optical instruments.
@@ -290,8 +290,8 @@ X: Why does a laser beam on a wall look grainy (speckle)?
 !: Wave optics doesn't replace ray optics; ray optics is the short-wavelength limit of wave optics.
 Q: What is optical path length? | The physical path length times refractive index, Σnl.
 Q: What is speckle? | A granular interference pattern from coherent light scattered by a rough surface.
-M1: Fraunhofer diffraction patterns are: | Fourier transforms of the aperture | Images of the aperture | Random | Always circular | Far-field.
-M2: Which phenomenon requires wave optics? | Thin-film colours | Shadows | Mirror images | Snell's law | Interference.
+M1#physics-u19-12-q1: Fraunhofer diffraction patterns are: | Fourier transforms of the aperture | Images of the aperture | Random | Always circular | Far-field.
+M2#physics-u19-12-q2: Which phenomenon requires wave optics? | Thin-film colours | Shadows | Mirror images | Snell's law | Interference.
 
 ## Young's double-slit experiment
 S: Young's double-slit experiment sends light through two narrow slits and shows bright and dark fringes on a screen: interference of waves from the two slits. It proved light is a wave and, done one particle at a time, revealed quantum superposition.
@@ -314,9 +314,9 @@ P: **Investigate with the lab.** In double-slit mode, halve the slit separation 
 IX: interference
 Q: What's the fringe spacing in Young's experiment? | x = λD/d.
 Q: What happens to the pattern if you detect which slit each electron passes through? | The interference fringes disappear.
-M1: Using blue light instead of red makes fringes: | Closer together | Farther apart | Disappear | Brighter only | x ∝ λ.
-M2: Young's experiment with single electrons shows: | Interference builds up from single detections | Electrons are classical | No pattern | Only two bands | Wave–particle duality.
-M2: In Young's experiment, what happens to the fringe spacing if the slit separation is halved? | It doubles | It halves | It stays the same | It quadruples | Fringe spacing w = λD/s, so halving s doubles w.
+M1#physics-u19-13-q1: Using blue light instead of red makes fringes: | Closer together | Farther apart | Disappear | Brighter only | x ∝ λ.
+M2#physics-u19-13-q2: Young's experiment with single electrons shows: | Interference builds up from single detections | Electrons are classical | No pattern | Only two bands | Wave–particle duality.
+M2#physics-u19-13-q3: In Young's experiment, what happens to the fringe spacing if the slit separation is halved? | It doubles | It halves | It stays the same | It quadruples | Fringe spacing w = λD/s, so halving s doubles w.
 
 ## Interference and coherence
 S: Interference needs coherence: a stable phase relationship between waves. Temporal coherence describes how long a wave stays in phase with itself; spatial coherence describes how phase is correlated across a beam.
@@ -339,9 +339,9 @@ P: **Investigate with the lab.** Compare the fringes for different slit separati
 IX: interference
 Q: What is coherence length? | The path difference over which a wave stays correlated with itself, l_{c} ≈ λ^{2}/Δλ.
 Q: Why can thin films show colours in white light? | Their path differences are shorter than white light's tiny coherence length.
-M1: A narrower spectral linewidth gives: | Longer coherence length | Shorter coherence length | No change | Lower intensity | l_{c} ∝ 1/Δλ.
-M2: Fringe visibility of 0 means: | No interference fringes | Perfect fringes | Maximum intensity | Monochromatic light | Incoherent.
-M2: Why must the two sources in an interference experiment be coherent? | They need a constant phase difference for a stable pattern | They must have different frequencies | They must be very bright | They must be at different distances from the screen | Without a constant phase difference, the fringes move too fast to see.
+M1#physics-u19-14-q1: A narrower spectral linewidth gives: | Longer coherence length | Shorter coherence length | No change | Lower intensity | l_{c} ∝ 1/Δλ.
+M2#physics-u19-14-q2: Fringe visibility of 0 means: | No interference fringes | Perfect fringes | Maximum intensity | Monochromatic light | Incoherent.
+M2#physics-u19-14-q3: Why must the two sources in an interference experiment be coherent? | They need a constant phase difference for a stable pattern | They must have different frequencies | They must be very bright | They must be at different distances from the screen | Without a constant phase difference, the fringes move too fast to see.
 
 ## Diffraction
 S: Diffraction is the spreading and bending of light around obstacles and through apertures, producing patterns of light and dark. It's why light can't be focused to an arbitrarily small spot and why fine detail has a limit.
@@ -365,9 +365,9 @@ P: **Investigate with the lab.** Switch to single-slit mode and narrow the slit:
 IX: interference
 Q: What is the Airy disc? | The central bright spot of the diffraction pattern from a circular aperture.
 Q: Why does chip lithography use ever-shorter wavelengths? | Diffraction limits feature size to roughly the wavelength.
-M1: Halving an aperture's diameter makes the Airy disc: | Twice as wide | Half as wide | The same | Four times wider | ∝ λ/D.
-M2: Fraunhofer diffraction applies when: | Source and screen are effectively at infinity | The screen is very close | Light is incoherent | The aperture is large | Far field.
-M2: What happens to the diffraction pattern when the slit is made narrower? | The central maximum gets wider | The central maximum gets narrower | The pattern disappears | The colours separate | The spread of the central maximum is roughly λ/a, so a narrower slit spreads the light more.
+M1#physics-u19-15-q1: Halving an aperture's diameter makes the Airy disc: | Twice as wide | Half as wide | The same | Four times wider | ∝ λ/D.
+M2#physics-u19-15-q2: Fraunhofer diffraction applies when: | Source and screen are effectively at infinity | The screen is very close | Light is incoherent | The aperture is large | Far field.
+M2#physics-u19-15-q3: What happens to the diffraction pattern when the slit is made narrower? | The central maximum gets wider | The central maximum gets narrower | The pattern disappears | The colours separate | The spread of the central maximum is roughly λ/a, so a narrower slit spreads the light more.
 
 ## Single-slit and multiple-slit diffraction
 S: A single slit produces a broad central maximum with weaker side fringes. Adding more slits keeps that envelope but sharpens the bright fringes inside it, until many slits give the narrow lines of a diffraction grating.
@@ -389,9 +389,9 @@ P: **Investigate with the lab.** Set the slit separation to three times the slit
 IX: interference
 Q: Why does adding slits sharpen the fringes? | More slits must all be in phase for a maximum; small angle changes destroy the agreement, narrowing peaks.
 Q: What causes missing orders? | A principal maximum coinciding with a single-slit diffraction minimum.
-M1: The central maximum of a single slit is: | Twice as wide as the others | The same width | Half as wide | Absent | Between the ±1 minima.
-M2: Principal maxima intensity for N slits scales as: | N^{2} | N | √N | 1/N | Amplitudes add.
-M2: In a double-slit pattern with d = 3a, which interference order is missing? | The third order | The first order | The second order | No order is missing | The third bright fringe falls exactly on the first diffraction minimum, so it vanishes.
+M1#physics-u19-16-q1: The central maximum of a single slit is: | Twice as wide as the others | The same width | Half as wide | Absent | Between the ±1 minima.
+M2#physics-u19-16-q2: Principal maxima intensity for N slits scales as: | N^{2} | N | √N | 1/N | Amplitudes add.
+M2#physics-u19-16-q3: In a double-slit pattern with d = 3a, which interference order is missing? | The third order | The first order | The second order | No order is missing | The third bright fringe falls exactly on the first diffraction minimum, so it vanishes.
 
 ## Diffraction gratings
 S: A diffraction grating has thousands of closely spaced slits or grooves. It produces very sharp, bright maxima at angles depending on wavelength, so it's the heart of most spectrometers.
@@ -417,9 +417,9 @@ P: **Investigate with the lab.** Use a grating with 600 lines per mm and find ho
 IX: interference
 Q: State the grating equation. | d sin θ = nλ.
 Q: What is a grating's resolving power? | R = λ/Δλ = nN, order times number of illuminated lines.
-M1: A grating with 500 lines per mm can show orders up to (λ = 500 nm): | 3 | 4 | 2 | 10 | d/λ = 4, so n < 4.
-M2: CD rainbow colours come from: | Diffraction from closely spaced tracks | Thin-film interference | Dispersion | Fluorescence | A natural reflection grating.
-M2: A grating has 600 lines per mm. What is the highest order visible for 700 nm light? | The second order | The first order | The third order | The fifth order | d = 1/600 mm ≈ 1.67 μm; n_max = d/λ ≈ 2.4, so the second order is the highest.
+M1#physics-u19-17-q1: A grating with 500 lines per mm can show orders up to (λ = 500 nm): | 3 | 4 | 2 | 10 | d/λ = 4, so n < 4.
+M2#physics-u19-17-q2: CD rainbow colours come from: | Diffraction from closely spaced tracks | Thin-film interference | Dispersion | Fluorescence | A natural reflection grating.
+M2#physics-u19-17-q3: A grating has 600 lines per mm. What is the highest order visible for 700 nm light? | The second order | The first order | The third order | The fifth order | d = 1/600 mm ≈ 1.67 μm; n_max = d/λ ≈ 2.4, so the second order is the highest.
 
 ## Michelson interferometer
 S: A Michelson interferometer splits a beam, sends the halves along two arms, and recombines them. Tiny changes in arm length shift the fringes, measuring distances to a fraction of a wavelength.
@@ -439,8 +439,8 @@ D: phys-u19-michelson-fringes
 !: Each fringe corresponds to a mirror movement of λ/2, not λ, because light travels the arm twice.
 Q: How much must a Michelson mirror move to shift one fringe? | λ/2.
 Q: What did the Michelson–Morley experiment find? | No evidence for motion through an ether.
-M1: FTIR spectrometers are based on: | Michelson interferometers | Prisms | Gratings | Fabry–Pérot only | Interferogram → spectrum.
-M2: OCT imaging of the retina uses: | Low-coherence interferometry | X-rays | Ultrasound | MRI | Coherence gating.
+M1#physics-u19-18-q1: FTIR spectrometers are based on: | Michelson interferometers | Prisms | Gratings | Fabry–Pérot only | Interferogram → spectrum.
+M2#physics-u19-18-q2: OCT imaging of the retina uses: | Low-coherence interferometry | X-rays | Ultrasound | MRI | Coherence gating.
 
 ## Fabry–Pérot interferometer
 S: A Fabry–Pérot interferometer is two parallel, highly reflective surfaces. Light bounces between them many times, and only wavelengths that fit a whole number of half-wavelengths are transmitted, giving extremely sharp resonances.
@@ -463,8 +463,8 @@ D: phys-u19-fabry-perot-peaks
 !: High finesse requires both high reflectivity and very flat, parallel surfaces; imperfect surfaces limit the achievable finesse.
 Q: What is the free spectral range? | The frequency spacing between successive transmission peaks, c/(2nd).
 Q: What does finesse measure? | The ratio of free spectral range to peak width; set by mirror reflectivity.
-M1: Increasing mirror reflectivity in a Fabry–Pérot makes peaks: | Narrower | Wider | Disappear | Shift in frequency | Higher finesse.
-M2: LIGO uses Fabry–Pérot cavities in its arms to: | Increase the effective arm length | Filter colours | Polarise light | Reduce laser power | Many round trips.
+M1#physics-u19-19-q1: Increasing mirror reflectivity in a Fabry–Pérot makes peaks: | Narrower | Wider | Disappear | Shift in frequency | Higher finesse.
+M2#physics-u19-19-q2: LIGO uses Fabry–Pérot cavities in its arms to: | Increase the effective arm length | Filter colours | Polarise light | Reduce laser power | Many round trips.
 
 ## Polarisation
 S: Polarisation describes the orientation of light's electric field oscillation. Natural light is unpolarised, but reflection, scattering, dichroic filters and birefringent crystals can polarise it, and many technologies depend on controlling it.
@@ -489,8 +489,8 @@ D: phys-u19-malus-analyser
 !: A polariser doesn't "rotate" light into its axis; it removes the perpendicular component.
 Q: How does an LCD use polarisation? | Liquid crystals rotate light's polarisation between crossed polarisers; voltage controls how much passes.
 Q: Why does skylight show polarisation? | Rayleigh scattering polarises light, most strongly at 90° from the Sun.
-M1: Polarised sunglasses block: | Horizontally polarised glare | All light | Vertical polarisation | UV only | Reflected glare is horizontal.
-M2: Photoelasticity reveals: | Stress patterns in transparent materials | Temperature | Magnetic fields | Composition | Stress-induced birefringence.
+M1#physics-u19-20-q1: Polarised sunglasses block: | Horizontally polarised glare | All light | Vertical polarisation | UV only | Reflected glare is horizontal.
+M2#physics-u19-20-q2: Photoelasticity reveals: | Stress patterns in transparent materials | Temperature | Magnetic fields | Composition | Stress-induced birefringence.
 
 ## Brewster's angle
 S: At Brewster's angle, light polarised in the plane of incidence (p) isn't reflected at all, so reflected light is perfectly polarised. The reflected and refracted rays are then at right angles.
@@ -511,8 +511,8 @@ D: phys-u19-brewster-diamond
 !: Only p-polarised light has zero reflection at Brewster's angle; s-polarised light still reflects.
 Q: State Brewster's law. | tan θ_{B} = n_{2}/n_{1}.
 Q: Why do gas lasers with Brewster windows emit polarised light? | The windows have no loss for p-polarisation, so it dominates lasing.
-M1: At Brewster's angle the reflected and refracted rays are: | Perpendicular | Parallel | At 45° | Opposite | θ_{B} + θ_{t} = 90°.
-M2: Brewster's angle for water (n = 1.33) is about: | 53° | 37° | 49° | 45° | tan^{-1} 1.33.
+M1#physics-u19-21-q1: At Brewster's angle the reflected and refracted rays are: | Perpendicular | Parallel | At 45° | Opposite | θ_{B} + θ_{t} = 90°.
+M2#physics-u19-21-q2: Brewster's angle for water (n = 1.33) is about: | 53° | 37° | 49° | 45° | tan^{-1} 1.33.
 
 ## Birefringence
 S: Birefringent crystals have two refractive indices depending on the polarisation of light. A ray entering them splits in two, and the different speeds for the two polarisations let engineers build wave plates and polarisers.
@@ -534,8 +534,8 @@ D: phys-u19-quartz-retardation
 !: A wave plate works properly only at its design wavelength; at other wavelengths its retardation is wrong.
 Q: What is birefringence? | Having different refractive indices for two polarisations of light.
 Q: What does a half-wave plate do to linear polarisation? | Rotates it by twice the angle between the polarisation and the plate's axis.
-M1: Calcite produces: | Double images | No refraction | Total reflection | Fluorescence | Two rays.
-M2: A Pockels cell changes birefringence using: | An electric field | Heat | Pressure only | Magnetism only | Electro-optic effect.
+M1#physics-u19-22-q1: Calcite produces: | Double images | No refraction | Total reflection | Fluorescence | Two rays.
+M2#physics-u19-22-q2: A Pockels cell changes birefringence using: | An electric field | Heat | Pressure only | Magnetism only | Electro-optic effect.
 
 ## Optical activity
 S: Optically active materials rotate the plane of polarised light as it passes through. Many biological molecules are chiral (handed), so optical activity identifies and measures them, from sugars to drugs.
@@ -557,8 +557,8 @@ D: phys-u19-sucrose-rotation
 !: Faraday rotation (magnetic) and optical activity both rotate polarisation, but Faraday rotation doubles on reflection back through the medium while optical activity cancels.
 Q: What causes optical activity? | Chiral molecules with different refractive indices for left- and right-circular polarisation.
 Q: How is optical activity used in industry? | Polarimeters measure concentrations of sugars and check the chirality of drugs.
-M1: Optical activity requires: | Chiral molecules or structures | Magnetic fields | Metals | Lasers | Handedness.
-M2: Rotation angle is proportional to: | Path length and concentration | Only temperature | Wavelength only | Intensity | θ = [α]lc.
+M1#physics-u19-23-q1: Optical activity requires: | Chiral molecules or structures | Magnetic fields | Metals | Lasers | Handedness.
+M2#physics-u19-23-q2: Rotation angle is proportional to: | Path length and concentration | Only temperature | Wavelength only | Intensity | θ = [α]lc.
 
 ## Lasers
 S: A laser produces intense, coherent, highly directional, nearly monochromatic light by stimulated emission in a gain medium inside an optical cavity. Since 1960 lasers have transformed communications, medicine, manufacturing and science.
@@ -577,8 +577,8 @@ X: How many photons per second from a 1 W, 1064 nm laser?
 !: Laser light isn't necessarily very powerful; its distinctive features are coherence, directionality and spectral purity.
 Q: What is population inversion? | A state with more atoms in a higher energy level than a lower one, needed for net stimulated emission.
 Q: Why can't a two-level system lase? | Pumping can at best equalise the populations; inversion needs three or more levels.
-M1: LASER stands for: | Light Amplification by Stimulated Emission of Radiation | Light Absorption by Spontaneous Emission | Linear Amplified Source | None | Acronym.
-M2: Stimulated emission produces a photon that is: | Identical to the stimulating photon | Random in phase | Lower in frequency | Opposite in direction | Coherent copy.
+M1#physics-u19-24-q1: LASER stands for: | Light Amplification by Stimulated Emission of Radiation | Light Absorption by Spontaneous Emission | Linear Amplified Source | None | Acronym.
+M2#physics-u19-24-q2: Stimulated emission produces a photon that is: | Identical to the stimulating photon | Random in phase | Lower in frequency | Opposite in direction | Coherent copy.
 
 ## Optical cavities
 S: An optical cavity (resonator) traps light between mirrors so it circulates many times. It determines a laser's frequencies (modes), beam shape and linewidth, and high-quality cavities enable ultra-precise measurements.
@@ -602,8 +602,8 @@ D: phys-u19-cavity-modes
 !: A laser's linewidth is much narrower than its gain medium's bandwidth because the cavity selects discrete modes.
 Q: What sets the frequency spacing of longitudinal modes? | The cavity length: c/(2nL).
 Q: What is cavity ring-down spectroscopy? | Measuring how fast light leaks from a high-finesse cavity; absorbing gases shorten the ring-down time.
-M1: Doubling cavity length makes mode spacing: | Half | Double | Unchanged | Quadruple | ∝ 1/L.
-M2: The cleanest laser beam profile is: | TEM_{00} Gaussian | TEM_{11} | Multimode | Top-hat | Lowest-order mode.
+M1#physics-u19-25-q1: Doubling cavity length makes mode spacing: | Half | Double | Unchanged | Quadruple | ∝ 1/L.
+M2#physics-u19-25-q2: The cleanest laser beam profile is: | TEM_{00} Gaussian | TEM_{11} | Multimode | Top-hat | Lowest-order mode.
 
 ## Fibre optics
 S: Optical fibres guide light along thin glass strands by total internal reflection. They carry almost all long-distance internet traffic, and also illuminate, sense and image in medicine and industry.
@@ -628,9 +628,9 @@ P: **Investigate with the lab.** Find the critical angle for light leaving glass
 IX: optics
 Q: What limits the distance of multimode fibres? | Modal dispersion: different modes travel different path lengths.
 Q: Why is 1550 nm used for long-haul fibre? | It's the lowest-loss window, where erbium amplifiers work.
-M1: Optical fibres guide light by: | Total internal reflection | Mirrors | Diffraction | Absorption | Core n > cladding n.
-M2: A 30 dB loss means the power received is: | 0.1% | 1% | 3% | 30% | 10^{-3}.
-M2: Why does light stay inside an optical fibre? | Total internal reflection at the core's boundary | Refraction out of the fibre at each bend | Absorption by the cladding | The fibre is a mirror | Light hits the boundary above the critical angle, so it is totally reflected.
+M1#physics-u19-26-q1: Optical fibres guide light by: | Total internal reflection | Mirrors | Diffraction | Absorption | Core n > cladding n.
+M2#physics-u19-26-q2: A 30 dB loss means the power received is: | 0.1% | 1% | 3% | 30% | 10^{-3}.
+M2#physics-u19-26-q3: Why does light stay inside an optical fibre? | Total internal reflection at the core's boundary | Refraction out of the fibre at each bend | Absorption by the cladding | The fibre is a mirror | Light hits the boundary above the critical angle, so it is totally reflected.
 
 ## Nonlinear optics
 S: At high intensities, a material's response to light is no longer proportional to the field. New frequencies appear and light can control light: the field of nonlinear optics, made possible by lasers.
@@ -653,8 +653,8 @@ X: SHG from a 1550 nm telecom laser gives what wavelength?
 !: Nonlinear effects need high intensity and phase matching; ordinary light is far too weak to show them.
 Q: What is second-harmonic generation? | Conversion of light at frequency ω into light at 2ω in a nonlinear crystal.
 Q: Why is phase matching needed? | So that light generated along the crystal adds in phase instead of cancelling.
-M1: Green laser pointers usually use: | Frequency doubling of infrared light | Green diodes only | Fluorescence | Filters | 1064 → 532 nm.
-M2: Entangled photon pairs are commonly made by: | Spontaneous parametric down-conversion | Lasers directly | Fluorescent lamps | Mirrors | χ^{(2)} process.
+M1#physics-u19-27-q1: Green laser pointers usually use: | Frequency doubling of infrared light | Green diodes only | Fluorescence | Filters | 1064 → 532 nm.
+M2#physics-u19-27-q2: Entangled photon pairs are commonly made by: | Spontaneous parametric down-conversion | Lasers directly | Fluorescent lamps | Mirrors | χ^{(2)} process.
 
 ## Ultrafast optics
 S: Ultrafast optics creates and uses light pulses lasting femtoseconds to attoseconds. These pulses freeze the motion of molecules and electrons, cut materials with precision and reach extreme peak powers.
@@ -673,8 +673,8 @@ X: Peak power of a 1 mJ, 30 fs pulse?
 !: Short pulses can't be monochromatic: the shorter the pulse, the broader its spectrum.
 Q: What is mode-locking? | Fixing the phases of many laser cavity modes so they add into a train of ultrashort pulses.
 Q: What is chirped pulse amplification? | Stretching a pulse in time, amplifying it, then compressing it, avoiding damage from high peak powers.
-M1: Attosecond pulses are made by: | High-harmonic generation | Mode-locked diodes only | LEDs | Q-switching | Nobel 2023.
-M2: A frequency comb is used to: | Measure optical frequencies precisely | Comb hair | Amplify radio | Heat samples | Optical ruler.
+M1#physics-u19-28-q1: Attosecond pulses are made by: | High-harmonic generation | Mode-locked diodes only | LEDs | Q-switching | Nobel 2023.
+M2#physics-u19-28-q2: A frequency comb is used to: | Measure optical frequencies precisely | Comb hair | Amplify radio | Heat samples | Optical ruler.
 
 ## Integrated photonics
 S: Integrated photonics puts optical components (waveguides, modulators, detectors, lasers) on chips, as electronics did for circuits. It's transforming data centres, sensing and quantum computing.
@@ -693,8 +693,8 @@ X: Why can silicon waveguides bend in a few micrometres while fibres need centim
 !: Silicon doesn't emit light efficiently (indirect band gap), so silicon photonics usually integrates lasers made of III–V semiconductors.
 Q: Why is silicon photonics attractive? | It uses existing CMOS fabrication for large-scale, low-cost optical chips.
 Q: What is a Mach–Zehnder modulator? | An interferometer where a phase shift in one arm switches light between output states.
-M1: Silicon photonics usually operates at: | 1.3–1.55 μm | 400 nm | 10 μm | 1 mm | Silicon transparent in near-IR.
-M2: Ring resonators on chips act as: | Wavelength-selective filters | Lasers only | Detectors | Polarisers | Resonant at particular wavelengths.
+M1#physics-u19-29-q1: Silicon photonics usually operates at: | 1.3–1.55 μm | 400 nm | 10 μm | 1 mm | Silicon transparent in near-IR.
+M2#physics-u19-29-q2: Ring resonators on chips act as: | Wavelength-selective filters | Lasers only | Detectors | Polarisers | Resonant at particular wavelengths.
 
 ## Adaptive optics
 S: Adaptive optics corrects in real time for distortions in light, mainly from atmospheric turbulence, using a deformable mirror controlled by a wavefront sensor. It lets ground-based telescopes see nearly as sharply as space telescopes.
@@ -714,6 +714,6 @@ D: phys-u19-seeing-limit
 !: Adaptive optics works best at longer (infrared) wavelengths; visible correction needs many more actuators and faster updates.
 Q: What limits ground-based telescope resolution without adaptive optics? | Atmospheric turbulence (seeing).
 Q: What is a laser guide star? | An artificial reference star made by a laser exciting atoms high in the atmosphere.
-M1: The device that corrects the wavefront is: | A deformable mirror | A prism | A grating | A filter | Hundreds of actuators.
-M2: Adaptive optics helped prove: | A supermassive black hole at the Milky Way's centre | Dark energy | Exoplanet atmospheres only | Cosmic inflation | Stellar orbits around Sgr A*.
+M1#physics-u19-30-q1: The device that corrects the wavefront is: | A deformable mirror | A prism | A grating | A filter | Hundreds of actuators.
+M2#physics-u19-30-q2: Adaptive optics helped prove: | A supermassive black hole at the Milky Way's centre | Dark energy | Exoplanet atmospheres only | Cosmic inflation | Stellar orbits around Sgr A*.
 `;

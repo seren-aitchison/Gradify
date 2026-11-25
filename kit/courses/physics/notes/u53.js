@@ -26,8 +26,8 @@ K: Quantum mechanics explains bonding, thermodynamics governs reactions, and spe
 !: Chemical intuition (octet rule, hybridisation) is a useful model, not fundamental physics; it breaks down for many molecules.
 Q: What explains the structure of the periodic table? | Quantum numbers, orbital energies and the Pauli exclusion principle.
 Q: What does the Arrhenius equation describe? | Temperature dependence of reaction rates via an activation energy.
-M1: Density functional theory won a Nobel Prize in: | Chemistry (1998) | Physics | Medicine | Peace | Walter Kohn.
-M2: A reaction is spontaneous when: | ΔG < 0 | ΔH > 0 | ΔS < 0 always | ΔG > 0 | Gibbs criterion.
+M1#physics-u53-01-q1: Density functional theory won a Nobel Prize in: | Chemistry (1998) | Physics | Medicine | Peace | Walter Kohn.
+M2#physics-u53-01-q2: A reaction is spontaneous when: | ΔG < 0 | ΔH > 0 | ΔS < 0 always | ΔG > 0 | Gibbs criterion.
 
 ## Physical chemistry
 S: Physical chemistry applies physics to chemical systems: thermodynamics, kinetics, quantum chemistry and spectroscopy. It explains why reactions happen, how fast they go and what molecules look like, providing the quantitative core of chemistry.
@@ -54,8 +54,8 @@ K: Physical chemistry quantifies reactions through thermodynamics, kinetics, qua
 !: Thermodynamics tells you if a reaction can occur, not how fast; kinetics determines the rate.
 Q: What does the Nernst equation give? | The electrode potential under non-standard concentrations.
 Q: What does transition state theory describe? | Reaction rates via a high-energy activated complex at the barrier top.
-M1: For first-order kinetics, the half-life is: | ln 2/k | k/2 | 1/k^{2} | Depends on concentration | Constant.
-M2: A large K means ΔG° is: | Strongly negative | Positive | Zero | Undefined | Products favoured.
+M1#physics-u53-02-q1: For first-order kinetics, the half-life is: | ln 2/k | k/2 | 1/k^{2} | Depends on concentration | Constant.
+M2#physics-u53-02-q2: A large K means ΔG° is: | Strongly negative | Positive | Zero | Undefined | Products favoured.
 
 ## Chemical physics
 S: Chemical physics studies chemical processes with the tools and concepts of physics: molecular dynamics, quantum scattering, laser spectroscopy and statistical mechanics. It probes reactions at the level of individual molecules and quantum states.
@@ -81,8 +81,8 @@ K: Chemical physics resolves reactions in time, space and quantum state, using l
 !: The Born–Oppenheimer approximation fails near conical intersections, where electronic and nuclear motions couple strongly.
 Q: What is a potential energy surface? | Energy of a molecular system as a function of nuclear coordinates.
 Q: What did Zewail's femtochemistry achieve? | Real-time observation of chemical bonds breaking and forming using femtosecond lasers.
-M1: Crossed molecular beam experiments study: | Reaction dynamics | Crystal growth | Plasma | Gravity | Herschbach and Lee.
-M2: Conical intersections enable: | Ultrafast non-radiative transitions | Slow reactions | Ionisation | Fusion | E.g. vision.
+M1#physics-u53-03-q1: Crossed molecular beam experiments study: | Reaction dynamics | Crystal growth | Plasma | Gravity | Herschbach and Lee.
+M2#physics-u53-03-q2: Conical intersections enable: | Ultrafast non-radiative transitions | Slow reactions | Ionisation | Fusion | E.g. vision.
 
 ## Physics and biology
 S: Physics brings quantitative tools and principles to biology: from the mechanics of cells and the thermodynamics of metabolism to imaging and the information processing of neurons. Biology, in turn, poses new problems for physics, such as active matter far from equilibrium.
@@ -110,8 +110,8 @@ K: Physics explains biological processes through fluctuations, diffusion, mechan
 !: Intuition from everyday inertia fails for microorganisms; at low Reynolds number, motion stops instantly when propulsion stops.
 Q: What is k_{B}T at body temperature in pN nm? | About 4.3 pN nm.
 Q: What is active matter? | Systems whose components consume energy to move or exert forces, like bacteria or cytoskeletal filaments.
-M1: Bacteria swim at Reynolds numbers around: | 10^{-5} | 10^{5} | 1 | 10^{10} | Viscous regime.
-M2: Optical tweezers measure: | Piconewton forces on molecules | Light speed | Temperature | Radiation dose | Molecular motors.
+M1#physics-u53-04-q1: Bacteria swim at Reynolds numbers around: | 10^{-5} | 10^{5} | 1 | 10^{10} | Viscous regime.
+M2#physics-u53-04-q2: Optical tweezers measure: | Piconewton forces on molecules | Light speed | Temperature | Radiation dose | Molecular motors.
 
 ## Biomechanics
 S: Biomechanics applies mechanics to living bodies: how bones bear loads, muscles generate force, joints move and organisms walk, swim and fly. It underpins sports science, orthopaedics, prosthetics, ergonomics and bio-inspired robotics.
@@ -138,8 +138,8 @@ K: Biomechanics treats bodies as mechanical systems of levers, springs and pendu
 !: Muscle forces are often far larger than the loads they lift, because of short lever arms.
 Q: What is Wolff's law? | Bone remodels to adapt its structure to the loads placed on it.
 Q: What does the Froude number predict in locomotion? | The speed at which animals switch from walking to running (Fr ≈ 0.5).
-M1: Most human limb levers are: | Third-class | First-class | Second-class | Not levers | Muscle between pivot and load.
-M2: Running is often modelled as: | A spring-mass system | An inverted pendulum only | A rigid body | A fluid | Elastic tendons.
+M1#physics-u53-05-q1: Most human limb levers are: | Third-class | First-class | Second-class | Not levers | Muscle between pivot and load.
+M2#physics-u53-05-q2: Running is often modelled as: | A spring-mass system | An inverted pendulum only | A rigid body | A fluid | Elastic tendons.
 
 ## Physics and medicine
 S: Physics transforms medicine through imaging, radiation therapy, diagnostics and devices. Medical physicists ensure that X-rays, MRI, ultrasound, lasers and radioactive treatments are safe, accurate and effective.
@@ -163,8 +163,8 @@ K: Physics provides medicine's imaging, therapy and devices; medical physicists 
 !: Different imaging modalities see different properties; no single modality is best for everything.
 Q: What is the advantage of proton therapy? | The Bragg peak deposits dose at a precise depth with little exit dose.
 Q: What does a pulse oximeter measure? | Blood oxygen saturation via red and infrared light absorption.
-M1: Ultrasound imaging relies on: | Acoustic impedance differences | Ionising radiation | Magnetic resonance | Radioactive tracers | Echoes.
-M2: PET detects: | Pairs of 511 keV photons | X-ray shadows | Sound echoes | Radio waves | Positron annihilation.
+M1#physics-u53-06-q1: Ultrasound imaging relies on: | Acoustic impedance differences | Ionising radiation | Magnetic resonance | Radioactive tracers | Echoes.
+M2#physics-u53-06-q2: PET detects: | Pairs of 511 keV photons | X-ray shadows | Sound echoes | Radio waves | Positron annihilation.
 
 ## Physics and neuroscience
 S: The brain is an electrical, chemical and computational system that physics helps measure and model. From the biophysics of neurons to imaging brain activity and modelling networks, physics provides key tools for understanding the brain.
@@ -191,8 +191,8 @@ K: Neuroscience uses physics to model neural electricity, measure brain activity
 !: fMRI measures blood oxygenation changes, an indirect and slow proxy for neural activity.
 Q: What does the Hodgkin–Huxley model describe? | Generation of action potentials through voltage-gated sodium and potassium channels.
 Q: Why does myelin speed nerve conduction? | It insulates axons so signals jump between nodes (saltatory conduction).
-M1: EEG has excellent: | Time resolution | Spatial resolution | Chemical specificity | Depth resolution | Milliseconds.
-M2: The resting membrane potential is about: | −70 mV | +70 mV | 0 V | −700 mV | Inside negative.
+M1#physics-u53-07-q1: EEG has excellent: | Time resolution | Spatial resolution | Chemical specificity | Depth resolution | Milliseconds.
+M2#physics-u53-07-q2: The resting membrane potential is about: | −70 mV | +70 mV | 0 V | −700 mV | Inside negative.
 
 ## Physics and materials science
 S: Materials science and physics together explain and design materials: metals, semiconductors, polymers, ceramics and composites. Solid-state physics provides the theory; materials science adds processing, microstructure and engineering performance.
@@ -218,8 +218,8 @@ K: Physics explains materials' properties at the atomic and electronic level; ma
 !: Ideal-crystal physics often fails to predict real properties dominated by defects and microstructure.
 Q: What won the 2010 Nobel Prize in Physics? | Experiments on graphene (Geim and Novoselov).
 Q: What is computational materials science? | Using simulations like DFT and MD to predict material properties.
-M1: Blue LEDs earned a Nobel Prize in: | 2014 | 2010 | 2000 | 1956 | Akasaki, Amano, Nakamura.
-M2: High-throughput screening uses: | Computation to evaluate many candidate materials | Only experiments | Microscopes | Telescopes | Materials genome.
+M1#physics-u53-08-q1: Blue LEDs earned a Nobel Prize in: | 2014 | 2010 | 2000 | 1956 | Akasaki, Amano, Nakamura.
+M2#physics-u53-08-q2: High-throughput screening uses: | Computation to evaluate many candidate materials | Only experiments | Microscopes | Telescopes | Materials genome.
 
 ## Physics and computer science
 S: Physics and computer science are deeply linked: physics provides the hardware (transistors, lasers, magnetic storage), computation powers simulation and data analysis, and ideas flow both ways in information theory, quantum computing and machine learning.
@@ -245,8 +245,8 @@ K: Physics builds computers; computers advance physics; information theory, quan
 !: Information is physical: processing and erasing it has energy costs and physical limits.
 Q: What is Landauer's principle? | Erasing one bit of information dissipates at least k_{B}T ln 2 of heat.
 Q: What physics discovery enabled high-capacity hard drives? | Giant magnetoresistance.
-M1: Shannon entropy is measured in: | Bits | Joules | Kelvin | Metres | Information.
-M2: Moore's law scaling is limited by: | Quantum tunnelling and heat | Gravity | Light pollution | Magnetism | Physical limits.
+M1#physics-u53-09-q1: Shannon entropy is measured in: | Bits | Joules | Kelvin | Metres | Information.
+M2#physics-u53-09-q2: Moore's law scaling is limited by: | Quantum tunnelling and heat | Gravity | Light pollution | Magnetism | Physical limits.
 
 ## Physics and mathematics
 S: Mathematics is the language of physics, and physics has inspired some of the deepest mathematics. From calculus invented for mechanics to modern geometry and topology inspired by quantum field theory, the two fields have grown together.
@@ -273,8 +273,8 @@ K: Mathematics and physics co-evolve: physics inspires new mathematics, and math
 !: Physical arguments can be powerful but non-rigorous; mathematical proofs sometimes reveal subtleties physicists missed.
 Q: Who wrote about the "unreasonable effectiveness of mathematics"? | Eugene Wigner, in 1960.
 Q: What physics inspired new knot invariants? | Topological quantum field theory (Witten's work on Chern–Simons theory).
-M1: Fourier analysis originated in the study of: | Heat conduction | Planetary motion | Electricity | Optics | Fourier, 1807.
-M2: The Dirac delta was formalised as a: | Distribution | Function in the classical sense | Matrix | Group | Generalised function.
+M1#physics-u53-10-q1: Fourier analysis originated in the study of: | Heat conduction | Planetary motion | Electricity | Optics | Fourier, 1807.
+M2#physics-u53-10-q2: The Dirac delta was formalised as a: | Distribution | Function in the classical sense | Matrix | Group | Generalised function.
 
 ## Physics and engineering
 S: Engineering applies physics to design and build: bridges, engines, circuits, aircraft, power grids and communication systems. Engineers turn principles into reliable, efficient and safe technology, often driving new physics questions in return.
@@ -301,8 +301,8 @@ K: Engineering applies physics to build reliable technology under constraints, a
 !: An idealised physics solution is rarely enough for engineering; real materials, tolerances, costs and safety margins matter.
 Q: What is a safety factor? | The ratio of failure load to design load, providing a margin against uncertainty.
 Q: What is engineering physics? | A field applying advanced physics to design technologies like lasers, sensors and accelerators.
-M1: Thermodynamics developed partly from: | Steam engine engineering | Astronomy | Biology | Music | Carnot.
-M2: MEMS devices are: | Micro-electromechanical systems | Magnetic storage | Medical scanners | Fusion devices | In phones and cars.
+M1#physics-u53-11-q1: Thermodynamics developed partly from: | Steam engine engineering | Astronomy | Biology | Music | Carnot.
+M2#physics-u53-11-q2: MEMS devices are: | Micro-electromechanical systems | Magnetic storage | Medical scanners | Fusion devices | In phones and cars.
 
 ## Physics and environmental science
 S: Environmental science relies on physics to understand the atmosphere, oceans, pollution, energy flows and climate. Radiative transfer, fluid dynamics and thermodynamics explain how Earth's environment works and how human activity changes it.
@@ -329,8 +329,8 @@ K: Physics explains energy and mass flows in the environment, from radiation bal
 !: Weather and climate differ: climate is long-term statistics, so a cold day doesn't contradict global warming.
 Q: What is radiative forcing? | A change in Earth's energy balance (W m^{-2}) caused by factors such as greenhouse gases.
 Q: Who won the 2021 physics Nobel for climate modelling? | Syukuro Manabe and Klaus Hasselmann (with Giorgio Parisi).
-M1: Doubling CO_{2} gives forcing of about: | 3.7 W m^{-2} | 37 W m^{-2} | 0.37 W m^{-2} | 340 W m^{-2} | Logarithmic.
-M2: Argo floats measure: | Ocean temperature and salinity | Air pollution | Cosmic rays | Earthquakes | Global ocean profiles.
+M1#physics-u53-12-q1: Doubling CO_{2} gives forcing of about: | 3.7 W m^{-2} | 37 W m^{-2} | 0.37 W m^{-2} | 340 W m^{-2} | Logarithmic.
+M2#physics-u53-12-q2: Argo floats measure: | Ocean temperature and salinity | Air pollution | Cosmic rays | Earthquakes | Global ocean profiles.
 
 ## Physics and Earth science
 S: Geophysics applies physics to the Earth: its interior, gravity, magnetism, earthquakes, tectonics and resources. Physical measurements reveal structures and processes far below the surface that can't be seen directly.
@@ -359,8 +359,8 @@ K: Geophysics uses seismic waves, gravity, magnetism and geodesy to probe Earth'
 !: Geophysical inversions are non-unique: different structures can produce similar data, so multiple methods are combined.
 Q: How do seismic waves reveal Earth's liquid outer core? | S-waves cannot pass through liquid, creating a shadow zone.
 Q: What does InSAR measure? | Ground deformation to millimetre precision using radar interferometry.
-M1: Plate motions are measured mainly by: | GPS geodesy | Telescopes | Thermometers | Barometers | cm per year.
-M2: Radiometric dating relies on: | Radioactive decay rates | Erosion rates | Magnetism | Gravity | Half-lives.
+M1#physics-u53-13-q1: Plate motions are measured mainly by: | GPS geodesy | Telescopes | Thermometers | Barometers | cm per year.
+M2#physics-u53-13-q2: Radiometric dating relies on: | Radioactive decay rates | Erosion rates | Magnetism | Gravity | Half-lives.
 
 ## Physics and economics
 S: Econophysics applies tools from statistical physics to economic and financial systems: random walks, power laws, network models and agent-based simulations. It offers new perspectives on markets, inequality and crises, alongside traditional economics.
@@ -386,8 +386,8 @@ K: Statistical physics tools reveal fat tails, power laws and network effects in
 !: Physical analogies must respect human behaviour; markets have feedback from expectations unlike molecules.
 Q: Who first modelled stock prices as a random walk? | Louis Bachelier, in 1900.
 Q: Why are Gaussian models risky in finance? | They underestimate the frequency of extreme events, since real returns have fat tails.
-M1: The Black–Scholes equation is a form of: | Diffusion equation | Wave equation | Schrödinger equation | Maxwell's equations | Heat equation.
-M2: The Pareto distribution describes: | Power-law tails (e.g. top wealth) | Normal distributions | Uniform wealth | Prices only | 80/20 rule.
+M1#physics-u53-14-q1: The Black–Scholes equation is a form of: | Diffusion equation | Wave equation | Schrödinger equation | Maxwell's equations | Heat equation.
+M2#physics-u53-14-q2: The Pareto distribution describes: | Power-law tails (e.g. top wealth) | Normal distributions | Uniform wealth | Prices only | 80/20 rule.
 
 ## Complex systems
 S: Complex systems contain many interacting parts whose collective behaviour can't be predicted easily from the parts alone. Physics tools, including nonlinear dynamics, statistical mechanics and network theory, help understand phenomena from ecosystems and brains to cities and economies.
@@ -417,8 +417,8 @@ K: Complex systems show emergence, nonlinearity and scaling; physics provides mo
 !: Complex doesn't mean complicated; simple rules can create complex behaviour, and complicated machines can be simple systems.
 Q: What is emergence? | Collective behaviour arising from interactions that individual parts don't show.
 Q: What did Giorgio Parisi study? | Spin glasses and disordered complex systems.
-M1: Phantom traffic jams are an example of: | Emergent behaviour | Engineering failure | Random noise | Gravity | Collective dynamics.
-M2: Superlinear urban scaling means larger cities have: | More output per person | Less output per person | Equal output | No output | β > 1.
+M1#physics-u53-15-q1: Phantom traffic jams are an example of: | Emergent behaviour | Engineering failure | Random noise | Gravity | Collective dynamics.
+M2#physics-u53-15-q2: Superlinear urban scaling means larger cities have: | More output per person | Less output per person | Equal output | No output | β > 1.
 
 ## Network science
 S: Network science studies systems as nodes connected by links: social networks, the internet, power grids, food webs, neurons and proteins. Physics tools reveal universal features like small worlds, hubs and cascading failures.
@@ -443,8 +443,8 @@ K: Networks are described by degree distributions, path lengths and clustering; 
 !: Average degree can mislead in scale-free networks; the variance (hubs) dominates dynamics like epidemics.
 Q: What is a small-world network? | One with high clustering and short average path lengths.
 Q: What mechanism produces scale-free networks? | Preferential attachment: new nodes link preferentially to well-connected nodes.
-M1: A giant component in random networks appears at average degree: | 1 | 0 | 10 | 100 | Percolation threshold.
-M2: PageRank is a measure of: | Centrality | Clustering | Path length | Degree only | Google's algorithm.
+M1#physics-u53-16-q1: A giant component in random networks appears at average degree: | 1 | 0 | 10 | 100 | Percolation threshold.
+M2#physics-u53-16-q2: PageRank is a measure of: | Centrality | Clustering | Path length | Degree only | Google's algorithm.
 
 ## Statistical modelling of social systems
 S: Statistical physics models help understand social phenomena: opinion formation, segregation, crowd motion, voting and cultural spread. Simple interaction rules can produce surprising collective outcomes, though human behaviour adds complexity beyond physics analogies.
@@ -469,8 +469,8 @@ K: Simple social interaction rules can create strong collective patterns; physic
 !: Model outcomes aren't destiny; real societies have policies, institutions and diverse behaviours that change outcomes.
 Q: What does Schelling's model show? | Mild individual preferences can produce strong collective segregation.
 Q: What is the social force model? | A model treating pedestrians as particles with forces representing goals and avoidance.
-M1: Bounded confidence models often produce: | Opinion clusters | Instant consensus always | No interaction | Random noise | Interact only with similar views.
-M2: Crowd models help design: | Safe evacuation routes | Engines | Telescopes | Batteries | Flow and density.
+M1#physics-u53-17-q1: Bounded confidence models often produce: | Opinion clusters | Instant consensus always | No interaction | Random noise | Interact only with similar views.
+M2#physics-u53-17-q2: Crowd models help design: | Safe evacuation routes | Engines | Telescopes | Batteries | Flow and density.
 
 ## Climate and energy systems
 S: Climate and energy are tightly linked: burning fossil fuels emits greenhouse gases, while low-carbon energy systems need careful design to keep power reliable. Physics underpins both climate science and the technologies of the energy transition.
@@ -496,8 +496,8 @@ K: Climate change follows from energy physics, and physics-based energy systems 
 !: Thermodynamic limits make carbon removal energy-intensive; preventing emissions is usually far cheaper than removing them later.
 Q: What is the TCRE? | Warming per unit cumulative CO_{2} emissions, roughly 0.45 K per 1000 Gt CO_{2}.
 Q: Why is the ice–albedo feedback positive? | Melting ice reveals darker surfaces that absorb more sunlight, causing further warming.
-M1: IPCC AR6's best estimate of climate sensitivity is: | 3 K | 0.3 K | 10 K | 1 K | Per CO_{2} doubling.
-M2: Variable renewables require: | Storage and flexibility | No grid changes | More coal | Lower demand only | System integration.
+M1#physics-u53-18-q1: IPCC AR6's best estimate of climate sensitivity is: | 3 K | 0.3 K | 10 K | 1 K | Per CO_{2} doubling.
+M2#physics-u53-18-q2: Variable renewables require: | Storage and flexibility | No grid changes | More coal | Lower demand only | System integration.
 
 ## Nanotechnology
 S: Nanotechnology manipulates matter at scales of 1–100 nm, where quantum effects and surfaces dominate. It combines physics, chemistry, biology and engineering to make faster chips, better medicines, stronger materials and new sensors.
@@ -522,8 +522,8 @@ K: At the nanoscale, quantum effects and surfaces dominate; nanotechnology explo
 !: Scaling down isn't just shrinking; new physics (tunnelling, confinement, stiction) changes behaviour.
 Q: What is DNA origami? | Folding long DNA strands with short staples to build designed nanoscale shapes.
 Q: Why do nanoparticles make good catalysts? | Their high surface-to-volume ratio exposes many active surface atoms.
-M1: Lipid nanoparticles are used in: | mRNA vaccines | Lasers | Batteries only | Telescopes | Drug delivery.
-M2: At the nanoscale, gravity is: | Negligible compared with surface forces | Dominant | Zero | Reversed | Van der Waals dominate.
+M1#physics-u53-19-q1: Lipid nanoparticles are used in: | mRNA vaccines | Lasers | Batteries only | Telescopes | Drug delivery.
+M2#physics-u53-19-q2: At the nanoscale, gravity is: | Negligible compared with surface forces | Dominant | Zero | Reversed | Van der Waals dominate.
 
 ## Quantum technologies
 S: Quantum technologies exploit superposition, entanglement and quantum measurement for practical uses: computing, secure communication, ultra-precise sensing and timing. This "second quantum revolution" builds on decades of physics research.
@@ -548,8 +548,8 @@ K: Quantum technologies harness quantum effects for computing, communication, se
 !: Quantum computers won't speed up everything; advantages exist only for specific problems.
 Q: What is the Heisenberg limit? | The ultimate quantum precision limit scaling as 1/N, beating the standard 1/√N.
 Q: Which quantum technology is already widely used? | Atomic clocks (e.g. in GPS) and quantum sensors.
-M1: The Micius satellite demonstrated: | Space-based quantum communication | Quantum computing | Dark matter | Fusion | Entanglement distribution.
-M2: The main obstacle to large quantum computers is: | Decoherence and error rates | Lack of interest | Gravity | Cost of electricity only | Fragile qubits.
+M1#physics-u53-20-q1: The Micius satellite demonstrated: | Space-based quantum communication | Quantum computing | Dark matter | Fusion | Entanglement distribution.
+M2#physics-u53-20-q2: The main obstacle to large quantum computers is: | Decoherence and error rates | Lack of interest | Gravity | Cost of electricity only | Fragile qubits.
 
 ## Scientific machine learning
 S: Scientific machine learning combines data-driven methods with physical knowledge. It accelerates simulations, discovers patterns and equations, and analyses vast datasets, while physics constraints make models more reliable and interpretable.
@@ -577,8 +577,8 @@ K: Scientific ML blends data and physics for faster simulation, discovery and an
 !: ML models can fail silently outside their training range; physical checks and uncertainty estimates are essential.
 Q: What is a surrogate model? | A fast approximation (often a neural network) trained to emulate an expensive simulation.
 Q: What does symbolic regression do? | Searches for mathematical expressions that fit data, potentially discovering governing equations.
-M1: AlphaFold predicts: | Protein structures | Weather | Particle masses | Galaxy shapes | Nobel Chemistry 2024.
-M2: Equivariant networks: | Respect physical symmetries | Ignore symmetry | Are slower always | Use no data | Built-in invariance.
+M1#physics-u53-21-q1: AlphaFold predicts: | Protein structures | Weather | Particle masses | Galaxy shapes | Nobel Chemistry 2024.
+M2#physics-u53-21-q2: Equivariant networks: | Respect physical symmetries | Ignore symmetry | Are slower always | Use no data | Built-in invariance.
 
 ## Cross-disciplinary research design
 S: Cross-disciplinary research tackles problems no single field can solve alone, such as climate change, pandemics, energy and brain science. Designing such research requires shared goals, mutual understanding of methods, clear communication and fair credit.
@@ -605,6 +605,6 @@ K: Good cross-disciplinary design aligns goals, methods, communication and credi
 !: Simply placing experts in the same room isn't integration; deliberate design and trust-building are needed.
 Q: What is transdisciplinary research? | Research integrating academic disciplines with non-academic stakeholders.
 Q: Name a successful cross-disciplinary project. | LIGO, the Human Genome Project or IPCC assessments.
-M1: Interdisciplinary research means: | Integrating methods and concepts across fields | Working in parallel only | Single-field work | Avoiding collaboration | Integration.
-M2: A common pitfall is: | Misaligned incentives and jargon | Too much communication | Shared goals | Clear authorship | Barriers to integration.
+M1#physics-u53-22-q1: Interdisciplinary research means: | Integrating methods and concepts across fields | Working in parallel only | Single-field work | Avoiding collaboration | Integration.
+M2#physics-u53-22-q2: A common pitfall is: | Misaligned incentives and jargon | Too much communication | Shared goals | Clear authorship | Barriers to integration.
 `;

@@ -6,10 +6,10 @@ import { readFileSync, existsSync, readdirSync } from "node:fs";
 import { titleKey } from "../../kit/course/syllabus.js";
 import { SPECS } from "../../kit/curriculum/uk.js";
 import { loadIndex } from "../curriculum/engine.mjs";
-import { CONFIG, at, fp, save, slug, today, briefPath, draftPath, loadLedger, saveLedger } from "./lib.mjs";
-import { packet, parseBrief, parseVerdicts, fixList, parseRepairs, applyRepair, splitUnit, numbered, parentOf } from "./shorthand.mjs";
-import { runGates } from "./gates.mjs";
-import { diagramsFor, reqHash } from "./queue.mjs";
+import { CONFIG, at, out, fp, save, slug, today, briefPath, draftPath, loadLedger, saveLedger } from "./lib.mjs";
+import { packet, parseBrief, parseVerdicts, fixList, parseRepairs, applyRepair, splitUnit, numbered, parentOf, conflictStakes } from "./shorthand.mjs";
+import { runGates, topicFlashcards } from "./gates.mjs";
+import { diagramsFor, reqHash, TYPE } from "./queue.mjs";
 import { longestSharedRun } from "../knowledge/lib.mjs";
 import { SOURCES, sourceFor, classOf } from "../../kit/curriculum/sources.js";
 
@@ -72,7 +72,8 @@ export function currentBrief(topic) {
   const c = checkBrief(text); return c.problems.length ? null : { brief: text, parsed: c.parsed, key: briefKey(topic) };
 }
 export const researchRequest = (topic, { old = null, problems = [] } = {}) => [`RESEARCH ${topic.id} | levels=${topic.level} | reqs=${topic.reqs.map((r) => r.id).join(",")} | ctry=${topic.country}`,
-  ...topic.reqs.map((r) => `REQ ${r.id} | ${String(r.asks).replace(/\s+/g, " ")}`),
+  // the whole statement (asks is cut at 400 characters): a researcher given half a requirement researches half of it
+  ...topic.reqs.map((r) => `REQ ${r.id} | ${String(r.text || r.asks).replace(/\s+/g, " ")}`),
   // only these publications may be cited: the brief is refused if any SRC isn't one of them (allowlistProblems)
   ...allowLines(), "ALLOWED ONLY: cite only sources under these URL prefixes; licence= comes from this list", ...(old ? ["EXISTING", old.replace(/^#.*\n/, "")] : []), ...(problems.length ? [`PROBLEMS ${problems.join("; ")}`, "Fix these and return the whole brief."] : []), "END"].join("\n");
 
@@ -91,7 +92,9 @@ export function packetFor(topic, brief) {
   const { diagrams, renderers } = diagramsFor(topic);
   return packet({ id: `${topic.fw}/${topic.section}`, subject: topic.subject, level: topic.level, country: topic.country, framework: topic.fw, reqs: topic.reqs, reuse: topic.reuse, diagrams, renderers, brief: brief.replace(/^#.*\n/, "") });
 }
-export const reviewRequest = (s, topic, brief) => [`LESSON ${s.key}`, numbered(s.text), ...topic.reqs.map((r) => `REQ ${r.id} | ${String(r.asks).replace(/\s+/g, " ")}`), `BRIEF ${topic.id}`, brief.replace(/^#.*\n/, "").trim()].join("\n");
+export const reviewRequest = (s, topic, brief) => [`LESSON ${s.key}`, numbered(s.text), ...topic.reqs.map((r) => `REQ ${r.id} | ${String(r.asks).replace(/\s+/g, " ")}`), `BRIEF ${topic.id}`, brief.replace(/^#.*\n/, "").trim(),
+  // the brief's conflicts, numbered as the verdict's Cn= names them
+  ...parseBrief(brief).conflicts.map((c, i) => `CONF C${i + 1} | ${c[0]} | src=${c[1] || ""} | stakes=${conflictStakes(c)}`)].join("\n");
 export const repairRequest = (s, pkt) => [fixList(s.key, s.issues), `LESSON ${s.key}`, numbered(s.text), pkt].join("\n");
 export const gateOptions = (topic, { siblings = [], ...extra } = {}) => ({ reqs: topic.reqs, allowed: new Set(topic.reqs.map((x) => x.id)), prereq: prereqResolver(topic.subject, siblings), taken: takenTitle(topic.subject), ...extra });
 /** the course's own lesson titles, keyed as the syllabus keys them; the engine's published unit is left out, since a
@@ -123,9 +126,49 @@ export function applyRepairReply(s, reply) {
 /** a reviewer's reply → verdict */
 export const verdictOf = (reply) => (reply instanceof Error ? { ok: false, issues: [{ code: "CLR", line: null, note: `review call failed: ${reply.message}` }] } : parseVerdicts(reply)[0] || { ok: false, issues: [{ code: "CLR", line: null, note: "reviewer returned no verdict" }] });
 
-const isHighRisk = (topic, s, parsedBrief) => {
-  const t = s.text.toLowerCase(), hr = CONFIG.highRisk;
-  return { conflict: parsedBrief.conflicts.length > 0, risk: topic.reqs.some((r) => hr.types.includes(r.type)) || /^NUM/m.test(s.text) || hr.keywords.some((k) => t.includes(k)) };
+const escRe = (x) => x.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+/** the high-risk keywords found in a lesson's text (not its D:/DIA: diagram references). A keyword matches at the start of a word
+ * (so the stem "pregnan" finds "pregnancy", but "acid" no longer fires inside "placid"), and
+ * phrases in `notKeywords` ("amino acid") are removed first, so molecule names aren't hazards. */
+export function riskKeywords(text, hr = CONFIG.highRisk) {
+  // diagram references are file names and render specs, not teaching text ("D: bio-amino-acids" isn't about acids)
+  let t = String(text).split("\n").filter((l) => !/^(D|DIA):/.test(l)).join("\n").toLowerCase();
+  for (const n of hr.notKeywords || []) t = t.replace(new RegExp(`\\b${escRe(n.toLowerCase())}`, "g"), " ");
+  return hr.keywords.filter((k) => new RegExp(`\\b${escRe(k.toLowerCase())}`).test(t));
+}
+const normUrl = (u) => String(u || "").trim().toLowerCase().replace(/^https?:\/\//, "").replace(/^www\./, "").replace(/[/#?]+$/, "");
+/**
+ * How a lesson handles each of its brief's CONFLICT lines (decision G). A conflict stops a lesson being AI-checked
+ * unless the reviewer says the lesson doesn't rely on it (Cn=none), or says it's explained at a `!:` line (Cn=L<n>)
+ * and the engine confirms all of: the Researcher marked it stakes=low, it names no high-risk keyword, that line of
+ * the lesson really is a `!:` line, and the lesson's SRC lines cite at least two of the conflict's sources. Anything
+ * missing (no verdict, open, high stakes) leaves it open, which sends the lesson to an expert.
+ */
+export function conflictsOf(s, parsedBrief, hr = CONFIG.highRisk) {
+  const srcUrl = new Map((parsedBrief.sources || []).map((x) => [x.id, normUrl(x.url)]));
+  const lines = String(s.text || "").split("\n"), cited = new Set(lines.filter((l) => /^SRC:/.test(l)).map((l) => normUrl(l.split("|").pop())));
+  const explained = [], open = [];
+  (parsedBrief.conflicts || []).forEach((row, i) => {
+    const n = i + 1, v = s.conf?.[n], label = `C${n} ${String(row[0]).slice(0, 60)}`;
+    if (v === "none") return;
+    if (!v || v === "open") return open.push(`${label}: ${v ? "reviewer left it open" : "no reviewer verdict"}`);
+    const at = Number(v.slice(1)), ids = String(row[1] || "").split(/[ ,]+/).filter((x) => srcUrl.has(x));
+    const hits = ids.filter((id) => cited.has(srcUrl.get(id))).length, need = Math.min(2, Math.max(ids.length, 1));
+    const why = conflictStakes(row) !== "low" ? "high stakes" : riskKeywords(row[0], hr).length ? `high-risk keyword (${riskKeywords(row[0], hr).join(", ")})`
+      : !/^!:/.test(lines[at - 1] || "") ? `L${at} isn't a !: line` : hits < need ? `the lesson cites ${hits} of its ${ids.length} sources` : null;
+    if (why) open.push(`${label}: ${why}`); else explained.push(`C${n}@L${at}`);
+  });
+  return { explained, open };
+}
+/** a lesson's tier flags: `risk` from its own requirements (a practical elsewhere in the topic doesn't count), NUM
+ * questions and keywords; `conflict` when a brief conflict it relies on isn't resolved (conflictsOf) */
+export const lessonRisk = (topic, s, parsedBrief) => {
+  const hr = CONFIG.highRisk;
+  // only the requirements this lesson teaches: a practical elsewhere in the topic doesn't make every lesson high-risk
+  const own = new Set(s.lesson?.reqs?.map((x) => x.id) || []), ids = new Set(topic.reqs.map((r) => r.id));
+  const mine = topic.reqs.filter((r) => [...own].some((id) => parentOf(id, ids) === r.id));
+  const c = conflictsOf(s, parsedBrief, hr);
+  return { conflict: c.open.length > 0, conflicts: c, risk: (own.size ? mine : topic.reqs).some((r) => hr.types.includes(r.type)) || /^NUM/m.test(s.text) || riskKeywords(s.text, hr).length > 0 };
 };
 
 /** write, check, review and repair one topic's lessons; file what passes; return the record for the ledger and PR */
@@ -147,8 +190,8 @@ export async function runTopic(topic, { ask, askMany, render = null, legible = n
       if (toReview.length) {
         const out = await askMany("review", toReview.map((s) => ({ key: s.key, user: reviewRequest(s, topic, r.brief) })));
         // a batch that timed out was cancelled: its unanswered reviews aren't failures, and no further paid round starts
-        if (out.timedOut) { for (const s of toReview) { const res = out.get(s.key); if (res && !(res instanceof Error) && verdictOf(res).ok) s.done = true; } log(`  ${out.timedOut}: stopping this topic`); break; }
-        for (const s of toReview) { const v = verdictOf(out.get(s.key)); if (v.ok) s.done = true; else { s.issues = v.issues; s.failedAt = "review"; s.reviewFails++; fix.push(s); } }
+        if (out.timedOut) { for (const s of toReview) { const res = out.get(s.key); if (res && !(res instanceof Error) && verdictOf(res).ok) { s.done = true; s.conf = verdictOf(res).conf; } } log(`  ${out.timedOut}: stopping this topic`); break; }
+        for (const s of toReview) { const v = verdictOf(out.get(s.key)); if (v.ok) { s.done = true; s.conf = v.conf; } else { s.issues = v.issues; s.failedAt = "review"; s.reviewFails++; fix.push(s); } }
       }
       log(`  round ${round}: ${states.filter((s) => s.done).length}/${states.length} pass${fix.length ? `, ${fix.length} to repair` : ""}`);
       if (round === CONFIG.repairs || !fix.length) break;
@@ -174,10 +217,18 @@ export async function runTopic(topic, { ask, askMany, render = null, legible = n
  */
 export function fileTopic(topic, states, { brief = null, failures = [], reviewed = true } = {}) {
   const rec = { topic: topic.id, fw: topic.fw, section: topic.section, title: topic.title, date: today(), lessons: [], failures: [...failures], uncovered: [], gaps: [], needs: [], brief: brief ? (brief.cached ? "reused" : "new") : null };
-  const passed = states.filter((s) => s.done && s.lesson);
+  let passed = states.filter((s) => s.done && s.lesson);
+  // the topic's flashcard minimum (config.standards), over every lesson its draft will hold: the ones filed before and
+  // the ones passing now. Short of it, nothing new is filed; the lessons are listed with what's missing
+  if (passed.length) {
+    const file = draftPath(topic.subject, topic.fw, slug(topic.title)), prior = existsSync(file) ? splitUnit(readFileSync(file, "utf8")) : [];
+    const merged = new Map(prior.map((l) => [l.title, l.text])); for (const s of passed) merged.set(s.lesson.title, s.text);
+    const f = topicFlashcards([...merged.values()]);
+    if (!f.ok) { for (const s of passed) { s.done = false; s.failedAt = "standards"; s.issues = [{ code: "STD", line: null, note: f.note }]; } passed = []; }
+  }
   for (const s of passed) {
-    const flags = isHighRisk(topic, s, brief.parsed), title = s.lesson.title;
-    rec.lessons.push({ title, tier: !reviewed ? "gates-passed" : flags.risk || flags.conflict ? "expert-required" : "ai-verified", reqs: s.lesson.reqs.map((x) => x.id), disagreed: s.reviewFails > 0, repairs: s.gateFails + s.reviewFails, ...(flags.conflict ? { conflict: true } : {}), ...(flags.risk ? { highRisk: true } : {}), hash: fp(s.text),
+    const flags = lessonRisk(topic, s, brief.parsed), title = s.lesson.title;
+    rec.lessons.push({ title, tier: !reviewed ? "gates-passed" : flags.risk || flags.conflict ? "expert-required" : "ai-verified", reqs: s.lesson.reqs.map((x) => x.id), disagreed: s.reviewFails > 0, repairs: s.gateFails + s.reviewFails, ...(flags.conflict ? { conflict: true, conflictsOpen: flags.conflicts.open } : {}), ...(flags.conflicts.explained.length ? { conflictsExplained: flags.conflicts.explained } : {}), ...(flags.risk ? { highRisk: true } : {}), hash: fp(s.text),
       // the build record: everything this lesson was made from, so a change to any of them lists it for rebuilding
       built: buildRecord(topic, brief, { models: s.models || currentModels(), reqs: topic.reqs.filter((x) => s.lesson.reqs.some((y) => parentOf(y.id, new Set([x.id])))).map((x) => `${x.id}@${x.hash}`) }) });
     rec.gaps.push(...s.lesson.gaps.map((g) => `${title}: ${g}`)); rec.needs.push(...s.lesson.needs.map((g) => `${title}: ${g}`));
@@ -191,6 +242,40 @@ export function fileTopic(topic, states, { brief = null, failures = [], reviewed
     save(file, `${head}\n\n${[...merged.values()].join("\n\n")}\n`);
   }
   return finish(topic, rec);
+}
+
+/**
+ * Re-apply the current high-risk rules to lessons already filed and not yet approved, so a fix to the rules (or a new
+ * keyword) reaches them without a rewrite. Only a lesson whose draft text still has its filed hash is changed; a
+ * conflict, a gates-only lesson, an approved one or a superseded one keeps its tier. Each change is recorded on the
+ * lesson as `retiered`. Returns [{ topic, title, from, to }].
+ */
+export function retier(subject, { date = today() } = {}) {
+  const led = loadLedger(subject), changed = [], types = new Map();
+  const typeOf = (id) => {
+    const [fw, ref] = String(id).split(":");
+    if (!types.has(fw)) types.set(fw, new Map((loadIndex(fw)?.statements || []).map((x) => [x.ref, TYPE(x)])));
+    const m = types.get(fw); let r = ref;
+    while (r && !m.has(r)) r = r.includes(".") ? r.slice(0, r.lastIndexOf(".")) : "";
+    return m.get(r);
+  };
+  for (const [id, e] of Object.entries(led.topics || {})) {
+    if (!e.file || !existsSync(out(e.file))) continue;
+    const texts = new Map(splitUnit(readFileSync(out(e.file), "utf8")).map((l) => [l.title, l.text]));
+    for (const l of e.lessons || []) {
+      if (!["ai-verified", "expert-required"].includes(l.tier) || l.conflict || l.superseded) continue;
+      const text = texts.get(l.title); if (!text || fp(text) !== l.hash) continue;
+      const hr = CONFIG.highRisk, risk = l.reqs.some((r) => hr.types.includes(typeOf(r))) || /^NUM/m.test(text) || riskKeywords(text, hr).length > 0;
+      const tier = risk ? "expert-required" : "ai-verified";
+      if (tier === l.tier) continue;
+      changed.push({ topic: id, title: l.title, from: l.tier, to: tier });
+      l.retiered = { from: l.tier, date, why: risk ? `high-risk: ${riskKeywords(text, hr).join(", ") || "requirement type or NUM"}` : "high-risk rules no longer match" };
+      l.tier = tier;
+      if (risk) l.highRisk = true; else delete l.highRisk;
+    }
+  }
+  if (changed.length) saveLedger(led);
+  return changed;
 }
 
 /** record the topic in its subject's ledger: filed, partial (some requirements left), failed, or blocked */

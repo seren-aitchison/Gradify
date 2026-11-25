@@ -19,8 +19,8 @@ D: phys-u22-n2-modes
 !: Vibrational and rotational energies aren't independent exactly; vibration changes the bond length and so the rotational constant.
 Q: Why are molecular rotational energies so much smaller than electronic ones? | They scale with the electron-to-nucleus mass ratio; nuclei are heavy and rotate slowly.
 Q: What is the Born–Oppenheimer approximation? | Treating electron motion separately from the much slower nuclear motion.
-M1: Vibrational transitions occur mainly in the: | Infrared | Ultraviolet | Radio | X-ray | ~0.1 eV.
-M2: The ratio E_{el}:E_{vib}:E_{rot} is roughly: | 1 : 10^{-2} : 10^{-4} | 1 : 1 : 1 | 1 : 10^{2} : 10^{4} | 1 : 0.5 : 0.25 | Mass ratio scaling.
+M1#physics-u22-01-q1: Vibrational transitions occur mainly in the: | Infrared | Ultraviolet | Radio | X-ray | ~0.1 eV.
+M2#physics-u22-01-q2: The ratio E_{el}:E_{vib}:E_{rot} is roughly: | 1 : 10^{-2} : 10^{-4} | 1 : 1 : 1 | 1 : 10^{2} : 10^{4} | 1 : 0.5 : 0.25 | Mass ratio scaling.
 
 ## Rotational spectra
 S: Molecules with a permanent electric dipole moment absorb and emit microwaves as they change rotational state. The spacing of the lines gives the molecule's moment of inertia and hence its bond length very precisely.
@@ -43,8 +43,8 @@ D: phys-u22-co-rotation
 !: Homonuclear molecules (N_{2}, O_{2}, H_{2}) have no permanent dipole, so no pure rotational absorption spectrum; they're seen by Raman spectroscopy.
 Q: What is the rotational energy of a rigid rotor? | E_{J} = BJ(J + 1), with B = ħ^{2}/(2I).
 Q: Why can't N_{2} show a pure rotational absorption spectrum? | It has no permanent electric dipole moment.
-M1: Rotational absorption lines are spaced by: | 2B | B | B/2 | Increasing amounts | f ∝ 2B(J + 1).
-M2: The main molecule used to trace cold molecular clouds is: | CO | H_{2} | N_{2} | O_{2} | Bright rotational lines.
+M1#physics-u22-02-q1: Rotational absorption lines are spaced by: | 2B | B | B/2 | Increasing amounts | f ∝ 2B(J + 1).
+M2#physics-u22-02-q2: The main molecule used to trace cold molecular clouds is: | CO | H_{2} | N_{2} | O_{2} | Bright rotational lines.
 
 ## Vibrational spectra
 S: Molecules vibrate like masses on springs. Transitions between vibrational levels absorb infrared light, and each molecule's pattern of vibrational frequencies is a fingerprint used in chemistry, medicine and climate science.
@@ -65,8 +65,8 @@ X: HCl absorbs at 2886 cm^{-1}. Force constant?
 !: Not every vibration absorbs infrared light; symmetric vibrations with no dipole change are IR-inactive (but often Raman-active).
 Q: What determines a vibration's frequency? | The bond's force constant and the reduced mass: ω = √(k/μ).
 Q: How many vibrational modes does CO_{2} have? | Four (3N − 5): symmetric stretch, asymmetric stretch and a doubly degenerate bend.
-M1: Which CO_{2} vibration is IR-inactive? | Symmetric stretch | Bend | Asymmetric stretch | All are active | No dipole change.
-M2: Replacing H by D in a bond lowers the vibrational frequency because: | The reduced mass increases | The bond is stiffer | Charge changes | Temperature changes | ω ∝ 1/√μ.
+M1#physics-u22-03-q1: Which CO_{2} vibration is IR-inactive? | Symmetric stretch | Bend | Asymmetric stretch | All are active | No dipole change.
+M2#physics-u22-03-q2: Replacing H by D in a bond lowers the vibrational frequency because: | The reduced mass increases | The bond is stiffer | Charge changes | Temperature changes | ω ∝ 1/√μ.
 
 ## Electronic molecular transitions
 S: Electronic transitions move a molecule's electrons between molecular orbitals, absorbing UV or visible light. They give dyes, pigments, chlorophyll and our eyes' photoreceptors their colours, and they drive photochemistry.
@@ -85,8 +85,8 @@ X: Retinal absorbs at ~500 nm. Energy of the transition?
 !: The colour we see is complementary to what's absorbed: chlorophyll absorbs red and blue, so leaves look green.
 Q: State the Franck–Condon principle. | Electronic transitions occur without change in nuclear positions; intensities depend on vibrational wavefunction overlap.
 Q: Why does longer conjugation shift absorption to the red? | The electrons' "box" is longer, so energy gaps are smaller.
-M1: Leaves look green because chlorophyll: | Absorbs red and blue | Emits green | Absorbs green | Reflects all | Complementary colour.
-M2: Electronic transitions are drawn as vertical lines because: | Nuclei don't move during the fast transition | Energy is conserved | Molecules don't vibrate | Spin flips | Franck–Condon.
+M1#physics-u22-04-q1: Leaves look green because chlorophyll: | Absorbs red and blue | Emits green | Absorbs green | Reflects all | Complementary colour.
+M2#physics-u22-04-q2: Electronic transitions are drawn as vertical lines because: | Nuclei don't move during the fast transition | Energy is conserved | Molecules don't vibrate | Spin flips | Franck–Condon.
 
 ## Molecular bonding from a physical perspective
 S: Chemical bonds form because sharing or transferring electrons lowers the total energy of nuclei and electrons. Physics explains bond types through electrostatics, quantum kinetic energy and the Pauli principle.
@@ -108,8 +108,8 @@ D: phys-u22-lennard-jones
 !: Covalent bonds aren't "two electrons sitting between atoms"; they're delocalised quantum states with lower total energy.
 Q: Why does sharing electrons lower energy in a covalent bond? | Delocalisation lowers kinetic energy and electrons attract both nuclei.
 Q: How do van der Waals forces depend on distance? | Attractive potential ∝ 1/r^{6}.
-M1: Hydrogen bonds have typical energies of: | 0.1–0.3 eV | 5 eV | 10 keV | 0.001 eV | Intermediate strength.
-M2: The repulsive part of interatomic potentials comes mainly from: | Pauli exclusion | Gravity | Magnetism | Nuclear force | Overlapping electron clouds.
+M1#physics-u22-05-q1: Hydrogen bonds have typical energies of: | 0.1–0.3 eV | 5 eV | 10 keV | 0.001 eV | Intermediate strength.
+M2#physics-u22-05-q2: The repulsive part of interatomic potentials comes mainly from: | Pauli exclusion | Gravity | Magnetism | Nuclear force | Overlapping electron clouds.
 
 ## Molecular symmetry
 S: A molecule's symmetry (its rotations, reflections and inversions that leave it unchanged) determines which vibrations are infrared or Raman active, which orbitals can mix and which transitions are allowed. Group theory turns symmetry into predictions.
@@ -129,8 +129,8 @@ X: Is the symmetric stretch of CO_{2} IR-active?
 !: Symmetry predicts which transitions are zero, not how strong the allowed ones are.
 Q: What is the mutual exclusion rule? | In molecules with an inversion centre, vibrations can't be both IR and Raman active.
 Q: What makes a molecule chiral? | Lacking any improper rotation symmetry (no mirror plane or inversion centre).
-M1: Water belongs to point group: | C_{2v} | D_{6h} | T_{d} | C_{∞v} | Two mirror planes and a C_{2} axis.
-M2: Group theory in spectroscopy predicts: | Which transitions are allowed | Exact intensities | Bond energies | Temperatures | Selection by symmetry.
+M1#physics-u22-06-q1: Water belongs to point group: | C_{2v} | D_{6h} | T_{d} | C_{∞v} | Two mirror planes and a C_{2} axis.
+M2#physics-u22-06-q2: Group theory in spectroscopy predicts: | Which transitions are allowed | Exact intensities | Bond energies | Temperatures | Selection by symmetry.
 
 ## Molecular orbitals
 S: Molecular orbitals are one-electron wavefunctions spread over a whole molecule, built from combinations of atomic orbitals. Filling them with electrons predicts bond strength, magnetism and spectra.
@@ -151,8 +151,8 @@ X: Bond order of O_{2}^{+}?
 !: Antibonding electrons cancel bonding ones; adding electrons doesn't always strengthen a bond.
 Q: What is bond order? | Half the difference between bonding and antibonding electrons.
 Q: Why is O_{2} paramagnetic? | It has two unpaired electrons in degenerate π* antibonding orbitals.
-M1: He_{2} doesn't form a stable bond because its bond order is: | 0 | 1 | 2 | ½ | Equal bonding and antibonding.
-M2: OLED colours are tuned by: | The HOMO–LUMO gap | The bond order only | Nuclear spin | Pressure | Frontier orbitals.
+M1#physics-u22-07-q1: He_{2} doesn't form a stable bond because its bond order is: | 0 | 1 | 2 | ½ | Equal bonding and antibonding.
+M2#physics-u22-07-q2: OLED colours are tuned by: | The HOMO–LUMO gap | The bond order only | Nuclear spin | Pressure | Frontier orbitals.
 
 ## Raman spectroscopy
 S: Raman spectroscopy shines monochromatic light on a sample and detects the tiny fraction scattered at shifted frequencies. The shifts equal vibrational (and rotational) energies, giving a fingerprint complementary to infrared spectroscopy.
@@ -174,8 +174,8 @@ X: A 532 nm laser; a Raman line at 1000 cm^{-1} shift. Scattered wavelength (Sto
 !: Raman shifts are independent of the laser wavelength; quote them in wavenumbers from the laser line.
 Q: What is the difference between Stokes and anti-Stokes Raman lines? | Stokes photons lose energy to the molecule; anti-Stokes photons gain energy from it.
 Q: What makes a vibration Raman active? | A change in the molecule's polarisability during the vibration.
-M1: Anti-Stokes lines are weaker at low temperature because: | Few molecules are vibrationally excited | The laser is weaker | They're forbidden | Water absorbs them | Boltzmann population.
-M2: SERS enhances Raman signals using: | Metal nanostructures | Strong magnets | Low temperatures | X-rays | Plasmonic field enhancement.
+M1#physics-u22-08-q1: Anti-Stokes lines are weaker at low temperature because: | Few molecules are vibrationally excited | The laser is weaker | They're forbidden | Water absorbs them | Boltzmann population.
+M2#physics-u22-08-q2: SERS enhances Raman signals using: | Metal nanostructures | Strong magnets | Low temperatures | X-rays | Plasmonic field enhancement.
 
 ## Infrared spectroscopy
 S: Infrared spectroscopy measures which infrared wavelengths a substance absorbs, revealing its molecular vibrations. Each functional group absorbs at characteristic frequencies, so IR spectra identify molecules quickly and non-destructively.
@@ -198,8 +198,8 @@ X: A strong band appears at 1715 cm^{-1}. Wavelength and likely group?
 !: Water and CO_{2} in the air absorb strongly in the IR; instruments subtract background spectra.
 Q: Why is FTIR faster than scanning spectrometers? | It measures all wavelengths simultaneously using an interferometer.
 Q: What is the fingerprint region? | 500–1500 cm^{-1}, where complex vibrations give each molecule a unique pattern.
-M1: A broad band near 3300 cm^{-1} indicates: | O–H (hydrogen-bonded) | C=O | C≡N | C–Cl | Hydroxyl.
-M2: JWST detects exoplanet atmospheric molecules by: | Infrared absorption features | X-rays | Radio | Gravitational waves | Transmission spectroscopy.
+M1#physics-u22-09-q1: A broad band near 3300 cm^{-1} indicates: | O–H (hydrogen-bonded) | C=O | C≡N | C–Cl | Hydroxyl.
+M2#physics-u22-09-q2: JWST detects exoplanet atmospheric molecules by: | Infrared absorption features | X-rays | Radio | Gravitational waves | Transmission spectroscopy.
 
 ## Fluorescence and phosphorescence
 S: After absorbing light, a molecule can re-emit it. Fast emission between states of the same spin is fluorescence (nanoseconds); slow emission involving a spin flip is phosphorescence (milliseconds to hours), as in glow-in-the-dark materials.
@@ -222,8 +222,8 @@ X: A dye absorbs at 490 nm and fluoresces at 520 nm. Stokes shift energy?
 !: Fluorescence is always at equal or longer wavelength than the absorbed light (except multiphoton processes).
 Q: What distinguishes phosphorescence from fluorescence? | Phosphorescence involves a spin-forbidden triplet-to-singlet transition, so it's much slower.
 Q: What is the Stokes shift? | The red-shift of emission relative to absorption due to vibrational relaxation.
-M1: Fluorescence lifetimes are typically: | Nanoseconds | Seconds | Hours | Femtoseconds | Spin-allowed.
-M2: White LEDs use: | A blue LED plus a yellow phosphor | Three white chips | Incandescence | Phosphorescence only | Down-conversion.
+M1#physics-u22-10-q1: Fluorescence lifetimes are typically: | Nanoseconds | Seconds | Hours | Femtoseconds | Spin-allowed.
+M2#physics-u22-10-q2: White LEDs use: | A blue LED plus a yellow phosphor | Three white chips | Incandescence | Phosphorescence only | Down-conversion.
 
 ## Molecular collisions
 S: Molecules constantly collide in gases and liquids, exchanging energy and sometimes reacting. Collision physics sets reaction rates, transport properties and the conditions for chemistry in flames, atmospheres and space.
@@ -244,8 +244,8 @@ X: How often does an N_{2} molecule collide at STP?
 !: Most collisions don't cause reactions: the energy and orientation must be right.
 Q: What does the Arrhenius factor represent? | The fraction of collisions with enough energy to overcome the activation barrier.
 Q: What is the steric factor? | The fraction of collisions with suitable orientation to react.
-M1: In an elastic collision: | Total kinetic energy is conserved | Molecules always react | Vibrations are excited | Mass changes | Definition.
-M2: Crossed molecular beams study: | Single-collision reaction dynamics | Bulk viscosity | Crystal structure | Nuclear decay | Controlled collisions.
+M1#physics-u22-11-q1: In an elastic collision: | Total kinetic energy is conserved | Molecules always react | Vibrations are excited | Mass changes | Definition.
+M2#physics-u22-11-q2: Crossed molecular beams study: | Single-collision reaction dynamics | Bulk viscosity | Crystal structure | Nuclear decay | Controlled collisions.
 
 ## Molecular dynamics
 S: Molecular dynamics (MD) simulates the motion of atoms by solving Newton's equations with forces from interatomic potentials. It predicts properties of liquids, proteins, materials and drugs from the bottom up.
@@ -266,8 +266,8 @@ X: Why is the time step ~1 fs?
 !: MD is only as good as its force field; results for situations the potential wasn't fitted to can be wrong.
 Q: What does molecular dynamics simulate? | The motion of atoms by integrating Newton's equations with interatomic forces.
 Q: What limits MD time steps? | The fastest molecular vibrations (~10 fs periods).
-M1: Periodic boundary conditions are used to: | Mimic an infinite bulk system | Speed up computers | Remove forces | Fix temperature | Avoid surface effects.
-M2: Ab initio MD computes forces from: | Quantum mechanical electronic structure | Empirical springs | Gravity | Experiments | First principles.
+M1#physics-u22-12-q1: Periodic boundary conditions are used to: | Mimic an infinite bulk system | Speed up computers | Remove forces | Fix temperature | Avoid surface effects.
+M2#physics-u22-12-q2: Ab initio MD computes forces from: | Quantum mechanical electronic structure | Empirical springs | Gravity | Experiments | First principles.
 
 ## Energy transfer
 S: Energy moves between molecules, and within them, through collisions, radiation and near-field coupling. Energy transfer powers photosynthesis, OLEDs and lasers, and controls how fast molecules cool.
@@ -289,8 +289,8 @@ D: phys-u22-fret
 !: FRET doesn't involve emitting and reabsorbing a photon; it's a direct near-field coupling.
 Q: How does FRET efficiency depend on distance? | As 1/(1 + (r/R_{0})^{6}), falling steeply beyond the Förster radius.
 Q: How does nitrogen help a CO_{2} laser? | Excited N_{2} vibrations transfer energy efficiently to the CO_{2} upper laser level.
-M1: FRET is used as a: | Molecular ruler at nanometre scales | Thermometer | Magnetometer | Clock | Distance-sensitive.
-M2: Dexter energy transfer requires: | Orbital overlap (very short range) | Long distances | Photons | Magnetic fields | Electron exchange.
+M1#physics-u22-13-q1: FRET is used as a: | Molecular ruler at nanometre scales | Thermometer | Magnetometer | Clock | Distance-sensitive.
+M2#physics-u22-13-q2: Dexter energy transfer requires: | Orbital overlap (very short range) | Long distances | Photons | Magnetic fields | Electron exchange.
 
 ## Non-radiative transitions
 S: Excited molecules often return to lower states without emitting light, turning the energy into heat through vibrations. These non-radiative processes compete with fluorescence and decide how bright, efficient or photostable a material is.
@@ -310,8 +310,8 @@ X: A molecule has radiative lifetime 10 ns and observed fluorescence lifetime 2 
 !: Low fluorescence doesn't mean low absorption; the energy may simply go into heat.
 Q: What is Kasha's rule? | Emission occurs from the lowest excited state of a given multiplicity.
 Q: Why is DNA relatively resistant to UV damage? | Conical intersections convert absorbed UV energy to heat within picoseconds.
-M1: Heavy atoms increase: | Intersystem crossing | Fluorescence lifetime | Vibrational frequency | Absorption only | Spin–orbit coupling.
-M2: The energy gap law says non-radiative decay is slower for: | Larger energy gaps | Smaller gaps | Heavier molecules only | Higher temperatures | More quanta needed.
+M1#physics-u22-14-q1: Heavy atoms increase: | Intersystem crossing | Fluorescence lifetime | Vibrational frequency | Absorption only | Spin–orbit coupling.
+M2#physics-u22-14-q2: The energy gap law says non-radiative decay is slower for: | Larger energy gaps | Smaller gaps | Heavier molecules only | Higher temperatures | More quanta needed.
 
 ## Photodissociation
 S: Photodissociation is the breaking of a molecule by absorbing a photon. It drives atmospheric chemistry, creates and destroys ozone, shapes interstellar chemistry and is a tool for studying how chemical bonds break.
@@ -332,8 +332,8 @@ X: The O_{2} bond energy is 5.1 eV. Longest wavelength that can break it?
 !: Absorbing enough energy isn't always sufficient; the molecule must reach a dissociative state.
 Q: What is predissociation? | Dissociation after excitation to a bound state that couples to a repulsive one.
 Q: How does the ozone layer absorb UV? | Ozone molecules photodissociate on absorbing UVB and UVC.
-M1: Photons that break O_{2} must be shorter than about: | 243 nm | 500 nm | 1 μm | 10 nm | 5.1 eV.
-M2: Velocity map imaging measures: | Fragment velocity distributions | Bond lengths only | Temperatures | Magnetic moments | Photofragment imaging.
+M1#physics-u22-15-q1: Photons that break O_{2} must be shorter than about: | 243 nm | 500 nm | 1 μm | 10 nm | 5.1 eV.
+M2#physics-u22-15-q2: Velocity map imaging measures: | Fragment velocity distributions | Bond lengths only | Temperatures | Magnetic moments | Photofragment imaging.
 
 ## Molecular beams
 S: A molecular beam is a stream of molecules travelling in one direction through a vacuum with few collisions. Beams let physicists study isolated molecules, their collisions and their quantum states precisely.
@@ -353,8 +353,8 @@ X: Why do supersonic beams cool molecules' rotations?
 !: In a supersonic beam the lab-frame speed is high, but the molecules' relative motion and internal states are very cold.
 Q: Why are supersonic beams useful for spectroscopy? | They cool molecules' internal states to a few kelvin, simplifying spectra.
 Q: What did Rabi's molecular beam experiments lead to? | Magnetic resonance methods, including NMR and atomic clocks.
-M1: An effusive beam has a speed distribution that is: | Maxwellian (flux-weighted) | Narrow | Zero | Monoenergetic | Thermal leak.
-M2: Stark decelerators slow molecules that have: | Electric dipole moments | No charge or moment | Only spin | Large mass only | Electric field gradients.
+M1#physics-u22-16-q1: An effusive beam has a speed distribution that is: | Maxwellian (flux-weighted) | Narrow | Zero | Monoenergetic | Thermal leak.
+M2#physics-u22-16-q2: Stark decelerators slow molecules that have: | Electric dipole moments | No charge or moment | Only spin | Large mass only | Electric field gradients.
 
 ## Ultrafast molecular dynamics
 S: Ultrafast lasers with femtosecond pulses let scientists watch molecules vibrate, bonds break and electrons move in real time. This field reveals the fundamental steps of chemical reactions and biological processes.
@@ -374,8 +374,8 @@ X: A C–C vibration has a period of ~30 fs. What pulse duration resolves it?
 !: Femtosecond resolution needs broad-bandwidth pulses; energy resolution is correspondingly limited.
 Q: How does pump–probe spectroscopy work? | A pump pulse triggers a process and a time-delayed probe measures it.
 Q: What is "diffract before destroy"? | Using femtosecond X-ray pulses to record diffraction before the sample is destroyed by the radiation.
-M1: Femtochemistry was recognised by the Nobel Prize to: | Ahmed Zewail | Linus Pauling | Marie Curie | Richard Feynman | 1999.
-M2: X-ray free-electron lasers provide: | Ultrashort, very bright X-ray pulses | Continuous visible light | Radio waves | Neutrons | XFELs.
+M1#physics-u22-17-q1: Femtochemistry was recognised by the Nobel Prize to: | Ahmed Zewail | Linus Pauling | Marie Curie | Richard Feynman | 1999.
+M2#physics-u22-17-q2: X-ray free-electron lasers provide: | Ultrashort, very bright X-ray pulses | Continuous visible light | Radio waves | Neutrons | XFELs.
 
 ## Quantum molecular physics
 S: Molecules are quantum systems with rich internal structure: electronic, vibrational, rotational and spin states. Controlling molecules quantum mechanically opens new frontiers in chemistry, precision measurement and quantum computing.
@@ -396,8 +396,8 @@ X: Why does deuterium substitution slow some reactions (kinetic isotope effect)?
 !: Quantum effects in chemistry aren't limited to electrons; nuclei show zero-point motion and tunnelling too.
 Q: What is the kinetic isotope effect? | Reaction rate changes when an atom is replaced by an isotope, mainly due to zero-point energy and tunnelling differences.
 Q: Why are polar molecules interesting for quantum computing? | Long-range dipolar interactions and many controllable internal states.
-M1: The ammonia maser used: | Tunnelling inversion of NH_{3} | Hydrogen fine structure | Electron spin | Nuclear fission | 24 GHz.
-M2: Ortho- and para-hydrogen differ in: | Total nuclear spin | Number of protons | Electron spin | Bond length | Nuclear spin isomers.
+M1#physics-u22-18-q1: The ammonia maser used: | Tunnelling inversion of NH_{3} | Hydrogen fine structure | Electron spin | Nuclear fission | 24 GHz.
+M2#physics-u22-18-q2: Ortho- and para-hydrogen differ in: | Total nuclear spin | Number of protons | Electron spin | Bond length | Nuclear spin isomers.
 
 ## Spectroscopic selection rules
 S: Molecular selection rules determine which transitions between electronic, vibrational and rotational states absorb or emit light. They follow from symmetry and angular momentum conservation and decide what each spectroscopic technique can see.
@@ -420,6 +420,6 @@ X: Which spectroscopy sees H_{2}'s vibration?
 !: Selection rules tell you what's forbidden in the leading approximation; weak "forbidden" lines often appear through higher-order effects.
 Q: Why aren't N_{2} and O_{2} greenhouse gases? | Their vibrations don't change the dipole moment, so they don't absorb infrared.
 Q: What is the Laporte rule? | In centrosymmetric systems, electric dipole transitions must change parity (g ↔ u).
-M1: Rotational Raman transitions obey: | ΔJ = 0, ±2 | ΔJ = ±1 | ΔJ = ±3 | Any ΔJ | Two-photon process.
-M2: d–d transitions in octahedral complexes are weak because: | They're Laporte-forbidden | They're spin-allowed | They're in the X-ray region | They don't exist | g → g.
+M1#physics-u22-19-q1: Rotational Raman transitions obey: | ΔJ = 0, ±2 | ΔJ = ±1 | ΔJ = ±3 | Any ΔJ | Two-photon process.
+M2#physics-u22-19-q2: d–d transitions in octahedral complexes are weak because: | They're Laporte-forbidden | They're spin-allowed | They're in the X-ray region | They don't exist | g → g.
 `;

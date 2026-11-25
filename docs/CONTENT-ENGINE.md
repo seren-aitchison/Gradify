@@ -34,7 +34,7 @@ A topic is one section of a specification (AQA 4.1.1.1 *Eukaryotes and prokaryot
    |---|---|---|
    | **ai-verified** (gates and review passed) | **AI-checked**: "Written and checked by AI against cited sources. A subject expert hasn't reviewed it yet." | Yes |
    | **expert-approved** (`gradify approve … --by "<name>"`) | **Expert-reviewed** | Yes |
-   | **expert-required** (practicals, calculations, safety or health keywords, or a brief with a `CONFLICT:`) | none | Not until approved |
+   | **expert-required** (practicals, calculations, safety or health keywords, or a brief `CONFLICT:` the lesson relies on and doesn't resolve: decision G) | none | Not until approved |
    | **gates-passed** (a hand ingest with no review) | none | No |
    | **unchecked** (the text changed after it was checked: rule 14) | none | No; its earlier published version stays |
 

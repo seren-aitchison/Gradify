@@ -14,8 +14,8 @@ X: A heart beats 72 times a minute. Find f, T and ω.
 !: Frequency f and angular frequency ω differ by 2π; mixing them is one of the commonest errors.
 Q: What two ingredients does an oscillator need? | A restoring force and inertia.
 Q: Why are small oscillations about equilibrium usually simple harmonic? | Near a minimum the potential energy is approximately quadratic.
-M1: A pendulum makes 20 swings in 30 s. Its period is: | 1.5 s | 0.67 s | 30 s | 600 s | T = 30/20.
-M2: ω = 50 rad s^{-1} corresponds to f = ? | 8.0 Hz | 50 Hz | 314 Hz | 0.13 Hz | f = ω/2π.
+M1#physics-u06-01-q1: A pendulum makes 20 swings in 30 s. Its period is: | 1.5 s | 0.67 s | 30 s | 600 s | T = 30/20.
+M2#physics-u06-01-q2: ω = 50 rad s^{-1} corresponds to f = ? | 8.0 Hz | 50 Hz | 314 Hz | 0.13 Hz | f = ω/2π.
 Q: What is periodic motion? | Motion that repeats itself after a fixed time, the period.
 Q: What is the period of an oscillation? | The time for one complete cycle.
 Q: What is frequency? | The number of cycles per second, f = 1/T, measured in hertz.
@@ -47,9 +47,9 @@ P: **Investigate with the lab.** Set damping to zero, pull the mass and release 
 IX: oscillator
 Q: State the defining condition for SHM. | Acceleration is proportional to displacement and opposite in direction: a = −ω^{2}x.
 Q: Where is the speed greatest in SHM? | At the equilibrium position.
-M1: In SHM, acceleration is greatest: | At maximum displacement | At equilibrium | Halfway | It is constant | |a| = ω^{2}|x|.
-M2: An oscillator has A = 4 cm, ω = 10 rad s^{-1}. Its speed at x = 2 cm is: | 0.35 m s^{-1} | 0.4 m s^{-1} | 0.2 m s^{-1} | 0 | ω√(A^{2} − x^{2}) = 10√(0.0016 − 0.0004).
-M2: What defines simple harmonic motion? | Acceleration proportional to displacement and directed towards equilibrium | Constant acceleration towards the equilibrium point | Velocity proportional to displacement at all times | Constant speed around a circle of fixed radius | In SHM, a = −ω²x: the restoring acceleration is proportional to displacement.
+M1#physics-u06-02-q1: In SHM, acceleration is greatest: | At maximum displacement | At equilibrium | Halfway | It is constant | |a| = ω^{2}|x|.
+M2#physics-u06-02-q2: An oscillator has A = 4 cm, ω = 10 rad s^{-1}. Its speed at x = 2 cm is: | 0.35 m s^{-1} | 0.4 m s^{-1} | 0.2 m s^{-1} | 0 | ω√(A^{2} − x^{2}) = 10√(0.0016 − 0.0004).
+M2#physics-u06-02-q3: What defines simple harmonic motion? | Acceleration proportional to displacement and directed towards equilibrium | Constant acceleration towards the equilibrium point | Velocity proportional to displacement at all times | Constant speed around a circle of fixed radius | In SHM, a = −ω²x: the restoring acceleration is proportional to displacement.
 Q: What is the displacement equation of SHM? | x = A cos(ωt + φ).
 Q: What is the velocity of an SHM oscillator in terms of displacement? | v = ±ω√(A^{2} − x^{2}).
 Q: What is the maximum speed in SHM? | Aω, at equilibrium.
@@ -80,9 +80,9 @@ P: **Investigate with the lab.** Change the amplitude and check that the period 
 IX: oscillator
 Q: What determines the amplitude and phase of an oscillator? | Its initial conditions (initial displacement and velocity).
 Q: What does a phase difference of π mean? | The oscillations are in antiphase: one is at a maximum when the other is at a minimum.
-M1: x = 0.2 cos(5t + π/3). The amplitude and ω are: | 0.2 m, 5 rad s^{-1} | 5 m, 0.2 rad s^{-1} | 0.2 m, π/3 | 0.4 m, 5 | Read from the standard form.
-M2: An oscillator released from rest at x = A has φ = ? | 0 | π/2 | π | −π/2 | x = A cos(ωt) at t = 0 gives A.
-M2: For an ideal mass-spring oscillator, what happens to the period if you double the amplitude? | It stays the same | It doubles | It halves | It increases by √2 | The period of SHM is independent of amplitude.
+M1#physics-u06-03-q1: x = 0.2 cos(5t + π/3). The amplitude and ω are: | 0.2 m, 5 rad s^{-1} | 5 m, 0.2 rad s^{-1} | 0.2 m, π/3 | 0.4 m, 5 | Read from the standard form.
+M2#physics-u06-03-q2: An oscillator released from rest at x = A has φ = ? | 0 | π/2 | π | −π/2 | x = A cos(ωt) at t = 0 gives A.
+M2#physics-u06-03-q3: For an ideal mass-spring oscillator, what happens to the period if you double the amplitude? | It stays the same | It doubles | It halves | It increases by √2 | The period of SHM is independent of amplitude.
 Q: What is amplitude? | The maximum displacement from equilibrium.
 Q: What sets the angular frequency of an oscillator? | The system's physics.
 Q: What is the phase of an oscillation? | The angle ωt + φ in the cycle.
@@ -113,9 +113,9 @@ P: **Investigate with the lab.** Double the mass and see the period grow by √2
 IX: oscillator
 Q: What is the period of a mass–spring oscillator? | T = 2π√(m/k).
 Q: Does gravity change the period of a vertical spring oscillator? | No, it only shifts the equilibrium position.
-M1: Two identical springs (k each) in series have combined constant: | k/2 | 2k | k | k/4 | 1/k_{tot} = 2/k.
-M2: To halve the period of a mass–spring system, the mass must be: | Quartered | Halved | Doubled | Unchanged | T ∝ √m.
-M2: A mass-spring system has period 2.0 s. The mass is quadrupled. What is the new period? | 4.0 s | 8.0 s | 2.8 s | 1.0 s | T = 2π√(m/k), so four times the mass doubles the period.
+M1#physics-u06-04-q1: Two identical springs (k each) in series have combined constant: | k/2 | 2k | k | k/4 | 1/k_{tot} = 2/k.
+M2#physics-u06-04-q2: To halve the period of a mass–spring system, the mass must be: | Quartered | Halved | Doubled | Unchanged | T ∝ √m.
+M2#physics-u06-04-q3: A mass-spring system has period 2.0 s. The mass is quadrupled. What is the new period? | 4.0 s | 8.0 s | 2.8 s | 1.0 s | T = 2π√(m/k), so four times the mass doubles the period.
 Q: Why does a mass on a spring perform SHM? | Hooke's law gives a restoring force proportional to extension.
 Q: What is the angular frequency of a mass-spring system? | ω = √(k/m).
 Q: By how much does gravity shift the equilibrium of a vertical spring? | By mg/k.
@@ -146,9 +146,9 @@ P: **Investigate with the lab.** Release from 10° or less and check that the ex
 IX: pendulum
 Q: What is the period of a physical pendulum? | T = 2π√(I/(Mgd)).
 Q: What is the centre of percussion? | The point where an impact produces no reaction at the pivot (the sweet spot).
-M1: A pendulum's period on the Moon (g = 1.6) compared with Earth (9.8): | About 2.5 times longer | The same | 6 times longer | Shorter | T ∝ 1/√g: √6.1 ≈ 2.5.
-M2: Doubling the mass of a simple pendulum's bob changes its period: | Not at all | ×2 | ×√2 | ×1/2 | Mass cancels.
-M2: A pendulum's length is quadrupled. What happens to its small-angle period? | It doubles | It quadruples | It halves | It stays the same | T = 2π√(L/g), so four times the length doubles the period.
+M1#physics-u06-05-q1: A pendulum's period on the Moon (g = 1.6) compared with Earth (9.8): | About 2.5 times longer | The same | 6 times longer | Shorter | T ∝ 1/√g: √6.1 ≈ 2.5.
+M2#physics-u06-05-q2: Doubling the mass of a simple pendulum's bob changes its period: | Not at all | ×2 | ×√2 | ×1/2 | Mass cancels.
+M2#physics-u06-05-q3: A pendulum's length is quadrupled. What happens to its small-angle period? | It doubles | It quadruples | It halves | It stays the same | T = 2π√(L/g), so four times the length doubles the period.
 Q: What is a simple pendulum? | A point mass on a light string.
 Q: What is a physical pendulum? | Any rigid body swinging about a pivot.
 Q: What is the period of a simple pendulum at small angles? | T = 2π√(l/g).
@@ -178,9 +178,9 @@ P: **Investigate with the lab.** Watch the kinetic and potential energy bars swa
 IX: oscillator
 Q: How does an oscillator's energy depend on its amplitude? | E ∝ A^{2}.
 Q: At what frequency do KE and PE oscillate in SHM? | Twice the oscillation frequency.
-M1: At x = A/2 in SHM, what fraction of the energy is kinetic? | 3/4 | 1/2 | 1/4 | 1/√2 | PE = ¼ of max; KE = ¾.
-M2: An oscillator's amplitude is tripled. Its energy: | ×9 | ×3 | ×√3 | ×27 | E ∝ A^{2}.
-M2: In undamped SHM, where is the kinetic energy greatest? | At the equilibrium position | At maximum displacement | Halfway to maximum displacement | It is the same everywhere | Speed is greatest at equilibrium, where all the energy is kinetic.
+M1#physics-u06-06-q1: At x = A/2 in SHM, what fraction of the energy is kinetic? | 3/4 | 1/2 | 1/4 | 1/√2 | PE = ¼ of max; KE = ¾.
+M2#physics-u06-06-q2: An oscillator's amplitude is tripled. Its energy: | ×9 | ×3 | ×√3 | ×27 | E ∝ A^{2}.
+M2#physics-u06-06-q3: In undamped SHM, where is the kinetic energy greatest? | At the equilibrium position | At maximum displacement | Halfway to maximum displacement | It is the same everywhere | Speed is greatest at equilibrium, where all the energy is kinetic.
 Q: What happens to energy in an undamped oscillator? | It continually exchanges between kinetic and potential while the total stays constant.
 Q: What is the total energy of a mass-spring oscillator? | E = ½kA^{2} = ½mω^{2}A^{2}.
 Q: What is the kinetic energy at displacement x in SHM? | KE = ½k(A^{2} − x^{2}).
@@ -212,9 +212,9 @@ P: **Investigate with the lab.** Add a little damping and watch the amplitude de
 IX: oscillator
 Q: How does amplitude decay for viscous damping? | Exponentially, as e^{−γt/2}.
 Q: What is the logarithmic decrement? | The natural log of the ratio of successive amplitudes.
-M1: Light damping makes the oscillation frequency: | Slightly lower | Slightly higher | Unchanged exactly | Zero | ω_{d} < ω_{0}.
-M2: Friction (constant force) damping makes amplitude decrease: | Linearly with time | Exponentially | Not at all | Quadratically | Each cycle loses a fixed amount.
-M2: How does the amplitude of a lightly damped oscillator decrease? | Exponentially, by the same fraction each cycle | Linearly, by the same amount each cycle | It stays constant until the motion stops suddenly | It drops to zero after one cycle | Viscous damping removes a fixed fraction of the amplitude per cycle, giving exponential decay.
+M1#physics-u06-07-q1: Light damping makes the oscillation frequency: | Slightly lower | Slightly higher | Unchanged exactly | Zero | ω_{d} < ω_{0}.
+M2#physics-u06-07-q2: Friction (constant force) damping makes amplitude decrease: | Linearly with time | Exponentially | Not at all | Quadratically | Each cycle loses a fixed amount.
+M2#physics-u06-07-q3: How does the amplitude of a lightly damped oscillator decrease? | Exponentially, by the same fraction each cycle | Linearly, by the same amount each cycle | It stays constant until the motion stops suddenly | It drops to zero after one cycle | Viscous damping removes a fixed fraction of the amplitude per cycle, giving exponential decay.
 Q: What causes damping in real oscillators? | Energy loss to friction, air resistance or electrical resistance.
 Q: What is the equation of a damped oscillator? | mẍ + bẋ + kx = 0.
 Q: What is the damped angular frequency? | ω_{d} = √(ω_{0}^{2} − γ^{2}/4).
@@ -244,9 +244,9 @@ P: **Investigate with the lab.** Increase the damping until the mass returns fas
 IX: oscillator
 Q: What is critical damping? | The damping that returns a system to equilibrium fastest without oscillating.
 Q: What is the critical damping coefficient for a mass–spring system? | b_{c} = 2√(km).
-M1: A system with damping ratio 3 is: | Overdamped | Underdamped | Critically damped | Undamped | ζ > 1.
-M2: Why are car suspensions slightly underdamped rather than overdamped? | Overdamped suspensions react too slowly to bumps | Underdamping removes all bounce | It's cheaper | Critical damping is impossible | They need to respond quickly while settling in about a cycle.
-M2: Which damping returns a displaced system to equilibrium fastest without overshooting? | Critical damping | Heavy overdamping | Light underdamping | No damping at all | Critical damping gives the quickest return with no oscillation; overdamping is slower.
+M1#physics-u06-08-q1: A system with damping ratio 3 is: | Overdamped | Underdamped | Critically damped | Undamped | ζ > 1.
+M2#physics-u06-08-q2: Why are car suspensions slightly underdamped rather than overdamped? | Overdamped suspensions react too slowly to bumps | Underdamping removes all bounce | It's cheaper | Critical damping is impossible | They need to respond quickly while settling in about a cycle.
+M2#physics-u06-08-q3: Which damping returns a displaced system to equilibrium fastest without overshooting? | Critical damping | Heavy overdamping | Light underdamping | No damping at all | Critical damping gives the quickest return with no oscillation; overdamping is slower.
 Q: What is the damping ratio ζ? | ζ = γ/(2ω_{0}).
 Q: How does an underdamped system behave? | It oscillates with decaying amplitude (ζ < 1).
 Q: What is the motion of a critically damped system? | x = (A + Bt)e^{−ω_{0}t}.
@@ -275,9 +275,9 @@ P: **Investigate with the lab.** Switch on the driving force and set a frequency
 IX: oscillator
 Q: At what frequency does a driven oscillator vibrate in steady state? | The driving frequency.
 Q: What is the phase lag at resonance? | 90° (displacement lags force; velocity is in phase with it).
-M1: Driving far above resonance, the displacement is: | Small and in antiphase with the force | Large and in phase | Zero | At the natural frequency | Mass-controlled, 180° lag.
-M2: At very low driving frequency, the amplitude is about: | F_{0}/k | F_{0}/b | 0 | Infinite | The spring just follows the slowly varying force.
-M2: A system is driven far below its natural frequency. How does its displacement compare with the driving force? | Nearly in phase, with small amplitude | Exactly 90° out of phase | In antiphase, with large amplitude | It has no steady motion at all | At low driving frequency the system follows the force closely, nearly in phase.
+M1#physics-u06-09-q1: Driving far above resonance, the displacement is: | Small and in antiphase with the force | Large and in phase | Zero | At the natural frequency | Mass-controlled, 180° lag.
+M2#physics-u06-09-q2: At very low driving frequency, the amplitude is about: | F_{0}/k | F_{0}/b | 0 | Infinite | The spring just follows the slowly varying force.
+M2#physics-u06-09-q3: A system is driven far below its natural frequency. How does its displacement compare with the driving force? | Nearly in phase, with small amplitude | Exactly 90° out of phase | In antiphase, with large amplitude | It has no steady motion at all | At low driving frequency the system follows the force closely, nearly in phase.
 Q: What is the equation of a driven damped oscillator? | mẍ + bẋ + kx = F_{0} cos ωt.
 Q: What is the steady-state amplitude of a driven oscillator? | A = (F_{0}/m)/√[(ω_{0}^{2} − ω^{2})^{2} + γ^{2}ω^{2}].
 Q: How does a driven oscillator behave well below its natural frequency? | It follows the force in phase with A ≈ F_{0}/k: stiffness-controlled.
@@ -313,9 +313,9 @@ P: **Investigate with the lab.** Tune the driving frequency to within 2% of reso
 IX: oscillator
 Q: What is resonance? | A large-amplitude response when a system is driven at or near its natural frequency.
 Q: How does damping affect a resonance peak? | More damping makes the peak lower and broader, and shifts it slightly to lower frequency.
-M1: Soldiers break step crossing bridges to avoid: | Driving a resonance | Friction | Noise | Overloading | Synchronised steps could drive a natural mode.
-M2: Reducing damping in a resonant system makes the peak: | Taller and narrower | Shorter and wider | Move to higher frequency | Disappear | A ∝ 1/γ at resonance; width ∝ γ.
-M2: What does increasing the damping do to a resonance peak? | Lowers it and makes it broader | Raises it and makes it sharper | Moves it to a much higher frequency | Has no effect on its height | More damping removes energy faster, so the peak amplitude falls and the resonance broadens.
+M1#physics-u06-10-q1: Soldiers break step crossing bridges to avoid: | Driving a resonance | Friction | Noise | Overloading | Synchronised steps could drive a natural mode.
+M2#physics-u06-10-q2: Reducing damping in a resonant system makes the peak: | Taller and narrower | Shorter and wider | Move to higher frequency | Disappear | A ∝ 1/γ at resonance; width ∝ γ.
+M2#physics-u06-10-q3: What does increasing the damping do to a resonance peak? | Lowers it and makes it broader | Raises it and makes it sharper | Moves it to a much higher frequency | Has no effect on its height | More damping removes energy faster, so the peak amplitude falls and the resonance broadens.
 Q: At what frequency is the amplitude peak of a damped driven oscillator? | ω_{res} = √(ω_{0}^{2} − γ^{2}/2), close to ω_{0} for light damping.
 Q: How does the resonance peak height depend on damping? | It is proportional to 1/γ.
 Q: Why does energy build up at resonance? | Each push adds energy in phase over many cycles.
@@ -345,9 +345,9 @@ P: **Investigate with the lab.** Make a sharp resonance with a quality factor ab
 IX: oscillator
 Q: Give two definitions of Q. | ω_{0}/Δω (resonance sharpness) and 2π × energy stored / energy lost per cycle.
 Q: Why do atomic clocks need high-Q resonances? | A narrow resonance defines the frequency very precisely.
-M1: An oscillator with f_{0} = 1000 Hz has a half-power bandwidth of 10 Hz. Q = ? | 100 | 10 | 1000 | 0.01 | Q = f_{0}/Δf.
-M2: Increasing Q makes a system ring for: | Longer | Shorter | The same time | Zero time | Less energy lost per cycle.
-M2: A resonance has a natural frequency of 50 Hz and a width of 2 Hz. What is its quality factor? | 25 | 100 | 52 | 0.04 | Q = f₀/Δf = 50/2 = 25.
+M1#physics-u06-11-q1: An oscillator with f_{0} = 1000 Hz has a half-power bandwidth of 10 Hz. Q = ? | 100 | 10 | 1000 | 0.01 | Q = f_{0}/Δf.
+M2#physics-u06-11-q2: Increasing Q makes a system ring for: | Longer | Shorter | The same time | Zero time | Less energy lost per cycle.
+M2#physics-u06-11-q3: A resonance has a natural frequency of 50 Hz and a width of 2 Hz. What is its quality factor? | 25 | 100 | 52 | 0.04 | Q = f₀/Δf = 50/2 = 25.
 Q: What does the quality factor Q measure? | How lightly damped an oscillator is.
 Q: How is Q related to the damping constant? | Q = ω_{0}/γ.
 Q: In how many cycles does amplitude fall by 1/e? | About Q/π cycles.
@@ -377,8 +377,8 @@ X: Two identical pendulums (l = 1.0 m) are coupled so that ω_{2} = 1.05ω_{1}. 
 !: Each normal mode, on its own, oscillates at a single frequency with a fixed shape; energy transfer happens only when modes are mixed.
 Q: Why does energy pass back and forth between two weakly coupled pendulums? | The motion is a superposition of two normal modes with slightly different frequencies, which beat.
 Q: In the in-phase mode of two pendulums coupled by a spring, why is the frequency √(g/l)? | The spring isn't stretched, so it has no effect.
-M1: Stronger coupling makes energy transfer: | Faster | Slower | Stop | Unchanged | The mode frequencies separate more, so beats are faster.
-M2: How many normal modes do N coupled oscillators (1D) have? | N | 1 | 2N | N^{2} | One per degree of freedom.
+M1#physics-u06-12-q1: Stronger coupling makes energy transfer: | Faster | Slower | Stop | Unchanged | The mode frequencies separate more, so beats are faster.
+M2#physics-u06-12-q2: How many normal modes do N coupled oscillators (1D) have? | N | 1 | 2N | N^{2} | One per degree of freedom.
 Q: What happens when oscillators are linked? | Energy flows between them.
 Q: What are normal modes of coupled oscillators? | Special patterns, each oscillating at its own frequency.
 Q: What is the frequency of the antiphase mode of two spring-coupled pendulums? | ω_{2} = √(g/l + 2k/m).
@@ -407,8 +407,8 @@ X: How many vibrational modes does H_{2}O have?
 !: Real systems have many modes; a structure's lowest mode isn't the only one that can be excited.
 Q: What is a normal mode? | A motion in which all parts oscillate at one frequency with fixed relative amplitude and phase.
 Q: How many vibrational modes does a linear molecule of N atoms have? | 3N − 5.
-M1: The modes of a string fixed at both ends have frequencies: | f_{n} = nf_{1} | f_{n} = n^{2}f_{1} | All the same | f_{n} = f_{1}/n | Harmonic series.
-M2: Why does a bell sound different from a guitar? | Its mode frequencies aren't harmonics of a fundamental | It has no modes | It is louder | It's lightly damped | 2D shells have inharmonic modes.
+M1#physics-u06-13-q1: The modes of a string fixed at both ends have frequencies: | f_{n} = nf_{1} | f_{n} = n^{2}f_{1} | All the same | f_{n} = f_{1}/n | Harmonic series.
+M2#physics-u06-13-q2: Why does a bell sound different from a guitar? | Its mode frequencies aren't harmonics of a fundamental | It has no modes | It is louder | It's lightly damped | 2D shells have inharmonic modes.
 Q: What can any small motion of a linear system be written as? | A superposition of its normal modes.
 Q: What equation gives normal mode frequencies? | det(K − ω^{2}M) = 0.
 Q: What do the eigenvectors of the normal mode problem give? | The mode shapes.
@@ -440,9 +440,9 @@ P: **Investigate with the lab.** Tune two nearly equal notes and watch the loudn
 IX: waves
 Q: What is the beat frequency of two tones? | The difference of their frequencies.
 Q: How do musicians use beats to tune? | They adjust until the beats between two notes disappear.
-M1: Tones of 256 Hz and 260 Hz produce beats at: | 4 Hz | 258 Hz | 2 Hz | 516 Hz | Difference.
-M2: A heterodyne receiver mixes a 100.0 MHz signal with a 89.3 MHz oscillator. The difference frequency is: | 10.7 MHz | 189.3 MHz | 100 MHz | 5.35 MHz | Standard FM IF.
-M2: As two notes are tuned closer together, what happens to the beats? | They become slower | They become faster | They disappear immediately | The pitch doubles | Beat frequency equals the frequency difference, so it falls as the notes converge.
+M1#physics-u06-14-q1: Tones of 256 Hz and 260 Hz produce beats at: | 4 Hz | 258 Hz | 2 Hz | 516 Hz | Difference.
+M2#physics-u06-14-q2: A heterodyne receiver mixes a 100.0 MHz signal with a 89.3 MHz oscillator. The difference frequency is: | 10.7 MHz | 189.3 MHz | 100 MHz | 5.35 MHz | Standard FM IF.
+M2#physics-u06-14-q3: As two notes are tuned closer together, what happens to the beats? | They become slower | They become faster | They disappear immediately | The pitch doubles | Beat frequency equals the frequency difference, so it falls as the notes converge.
 Q: What are beats? | The swelling and fading of two added oscillations of slightly different frequency.
 Q: What is the sum cos ω_{1}t + cos ω_{2}t? | 2 cos(½Δω t) cos(ω̄t).
 Q: Why is the heard beat rate twice the envelope frequency? | Loudness peaks twice per envelope cycle.
@@ -473,9 +473,9 @@ P: **Investigate with the lab.** Release from 90° or more and compare the exact
 IX: pendulum
 Q: Why do solids expand when heated? | The interatomic potential is asymmetric (anharmonic), so the average separation increases with vibration amplitude.
 Q: How does a large-amplitude pendulum's period compare with the small-angle value? | It's longer.
-M1: An anharmonic oscillator's motion contains: | Harmonics of the fundamental | Only the fundamental | No periodic motion | Only lower frequencies | Non-linear forces generate harmonics.
-M2: The Morse potential describes: | Diatomic molecular bonds | Springs | Planets | Pendulums | It captures bond stretching and dissociation.
-M2: Why does a pendulum released from 90° take longer per swing than 2π√(L/g) predicts? | The restoring force grows more slowly than the angle, so the motion isn't SHM | Air resistance always slows larger swings | Gravity is weaker at large angles | The string stretches more at large angles | The restoring force is proportional to sin θ, which falls below θ at large angles.
+M1#physics-u06-15-q1: An anharmonic oscillator's motion contains: | Harmonics of the fundamental | Only the fundamental | No periodic motion | Only lower frequencies | Non-linear forces generate harmonics.
+M2#physics-u06-15-q2: The Morse potential describes: | Diatomic molecular bonds | Springs | Planets | Pendulums | It captures bond stretching and dissociation.
+M2#physics-u06-15-q3: Why does a pendulum released from 90° take longer per swing than 2π√(L/g) predicts? | The restoring force grows more slowly than the angle, so the motion isn't SHM | Air resistance always slows larger swings | Gravity is weaker at large angles | The string stretches more at large angles | The restoring force is proportional to sin θ, which falls below θ at large angles.
 Q: What is an anharmonic oscillator? | One whose restoring force isn't exactly proportional to displacement.
 Q: Name three signs of anharmonicity. | Amplitude-dependent period, harmonics in the motion, and an average position that shifts with amplitude.
 Q: What is the general potential expansion for an anharmonic oscillator? | U(x) = ½kx^{2} + ⅓αx^{3} + ¼βx^{4}.
@@ -505,9 +505,9 @@ P: **Investigate with the lab.** Compare small and large release angles: at larg
 IX: pendulum
 Q: What is a limit cycle? | An isolated closed trajectory in phase space that nearby motions approach: a self-sustained oscillation.
 Q: What does the Duffing oscillator's bent resonance curve cause? | Multiple stable amplitudes, jumps and hysteresis when the frequency is swept.
-M1: Which is a self-sustained oscillator? | Van der Pol oscillator | Mass on a spring | Simple pendulum | Damped LC circuit | It settles on a limit cycle without a periodic drive.
-M2: Superposition fails for nonlinear systems because: | The equations aren't linear in the variables | They have no solutions | They are always chaotic | They're undamped | Sums of solutions aren't solutions.
-M2: What distinguishes a nonlinear oscillator from a simple harmonic one? | Its period depends on its amplitude | Its period is always exactly constant | It cannot oscillate at all | Its energy is never conserved | In a nonlinear oscillator the restoring force isn't proportional to displacement, so the period changes with amplitude.
+M1#physics-u06-16-q1: Which is a self-sustained oscillator? | Van der Pol oscillator | Mass on a spring | Simple pendulum | Damped LC circuit | It settles on a limit cycle without a periodic drive.
+M2#physics-u06-16-q2: Superposition fails for nonlinear systems because: | The equations aren't linear in the variables | They have no solutions | They are always chaotic | They're undamped | Sums of solutions aren't solutions.
+M2#physics-u06-16-q3: What distinguishes a nonlinear oscillator from a simple harmonic one? | Its period depends on its amplitude | Its period is always exactly constant | It cannot oscillate at all | Its energy is never conserved | In a nonlinear oscillator the restoring force isn't proportional to displacement, so the period changes with amplitude.
 Q: What fails for nonlinear oscillators that works for linear ones? | Superposition.
 Q: Name three behaviours unique to nonlinear oscillators. | Amplitude-dependent frequencies, jumps and hysteresis, limit cycles, synchronisation or chaos.
 Q: What is the Duffing oscillator? | An oscillator with a cubic stiffening or softening spring term βx^{3}.
@@ -536,8 +536,8 @@ X: A swing has a natural period of 3.0 s. At what rate should you stand and squa
 !: Parametric resonance can't start from exactly zero amplitude; it needs a small initial disturbance to amplify, unlike ordinary forced resonance.
 Q: At what frequency is parametric resonance strongest? | At twice the natural frequency.
 Q: How does a child pump a swing without a push? | By shifting their centre of mass up and down twice per cycle, changing the effective length.
-M1: Parametric resonance varies: | A parameter like length or stiffness | The driving force directly | Only the mass | Only the damping | It's a modulation of the system itself.
-M2: Faraday waves on a vibrating liquid oscillate at: | Half the drive frequency | The drive frequency | Twice the drive frequency | Unrelated frequencies | Parametric response at Ω/2.
+M1#physics-u06-17-q1: Parametric resonance varies: | A parameter like length or stiffness | The driving force directly | Only the mass | Only the damping | It's a modulation of the system itself.
+M2#physics-u06-17-q2: Faraday waves on a vibrating liquid oscillate at: | Half the drive frequency | The drive frequency | Twice the drive frequency | Unrelated frequencies | Parametric response at Ω/2.
 Q: What is parametric resonance? | Growing oscillations by periodically varying a system parameter, such as length or stiffness.
 Q: What equation describes parametric resonance? | The Mathieu equation, ẍ + ω_{0}^{2}[1 + h cos(Ωt)]x = 0.
 Q: What threshold does damping set for parametric resonance? | h must exceed about 2γ/ω_{0}.
@@ -567,8 +567,8 @@ D: phys-u06-transmissibility
 !: Soft mounts amplify vibration when passing through resonance during start-up; add damping or pass through quickly.
 Q: Above what frequency ratio does a spring mount isolate vibration? | ω/ω_{0} > √2.
 Q: What does a peak at twice running speed in a vibration spectrum often indicate? | Shaft misalignment.
-M1: A tuned mass damper works by: | Absorbing energy at a target frequency with its own resonance | Stiffening the building | Adding friction everywhere | Changing gravity | Its resonance opposes the structure's motion.
-M2: To isolate a machine running at 50 Hz, the mount's natural frequency should be: | Well below 35 Hz, e.g. 10 Hz | 50 Hz | Above 50 Hz | Exactly 35 Hz | Need ω/ω_{0} ≫ √2.
+M1#physics-u06-18-q1: A tuned mass damper works by: | Absorbing energy at a target frequency with its own resonance | Stiffening the building | Adding friction everywhere | Changing gravity | Its resonance opposes the structure's motion.
+M2#physics-u06-18-q2: To isolate a machine running at 50 Hz, the mount's natural frequency should be: | Well below 35 Hz, e.g. 10 Hz | 50 Hz | Above 50 Hz | Exactly 35 Hz | Need ω/ω_{0} ≫ √2.
 Q: Why is vibration analysis used? | To prevent fatigue, noise and failure and diagnose faults early.
 Q: What instruments measure vibration? | Piezoelectric or MEMS accelerometers and laser vibrometers.
 Q: What does a spectrum peak at running speed indicate? | Imbalance.
@@ -600,9 +600,9 @@ P: **Investigate with the lab.** Sweep the driving frequency and watch the reson
 IX: oscillator
 Q: What does a Bode plot show? | Gain (in dB) and phase against log frequency.
 Q: What is the cut-off frequency of an RC filter? | f_{c} = 1/(2πRC).
-M1: A gain of −20 dB in amplitude means: | One tenth | One hundredth | Half | Doubled | 20 log_{10}(0.1) = −20.
-M2: A first-order low-pass filter rolls off at: | −20 dB per decade | −40 dB per decade | −6 dB per decade | 0 | Gain ∝ 1/f above cut-off.
-M2: What does a frequency response curve show? | Steady-state amplitude against driving frequency | Displacement against time for one cycle | Energy against amplitude | Period against mass | It plots how strongly the system responds at each driving frequency.
+M1#physics-u06-19-q1: A gain of −20 dB in amplitude means: | One tenth | One hundredth | Half | Doubled | 20 log_{10}(0.1) = −20.
+M2#physics-u06-19-q2: A first-order low-pass filter rolls off at: | −20 dB per decade | −40 dB per decade | −6 dB per decade | 0 | Gain ∝ 1/f above cut-off.
+M2#physics-u06-19-q3: What does a frequency response curve show? | Steady-state amplitude against driving frequency | Displacement against time for one cycle | Energy against amplitude | Period against mass | It plots how strongly the system responds at each driving frequency.
 Q: What is a system's frequency response? | How it amplifies or attenuates and phase-shifts sinusoidal inputs at each frequency.
 Q: Why does frequency response fully characterise a linear system? | Any input is a sum of sinusoids.
 Q: What is the transfer function H(ω)? | The complex ratio of output to input; its size is the gain and its argument the phase.
@@ -633,8 +633,8 @@ X: You record a vibration for 2.0 s at 10 kHz sampling. What are the frequency r
 !: A short record can't resolve close frequencies, however fast you sample; resolution depends on duration.
 Q: Why do a flute and a violin sound different playing the same note? | Different harmonic content (and attack and decay).
 Q: What limits the frequency resolution of an FFT? | The length of the recording: Δf = 1/T.
-M1: A square wave contains: | Odd harmonics | Even harmonics only | Only the fundamental | No harmonics | Fourier series of a symmetric square wave.
-M2: A rapidly decaying oscillation has a spectral peak that is: | Broad | Narrow | Absent | At zero frequency | Short duration ⇒ wide bandwidth.
+M1#physics-u06-20-q1: A square wave contains: | Odd harmonics | Even harmonics only | Only the fundamental | No harmonics | Fourier series of a symmetric square wave.
+M2#physics-u06-20-q2: A rapidly decaying oscillation has a spectral peak that is: | Broad | Narrow | Absent | At zero frequency | Short duration ⇒ wide bandwidth.
 Q: What does Fourier analysis do? | Breaks any oscillation into a sum of pure sinusoids.
 Q: What spectrum does a periodic signal have? | A line spectrum: the fundamental and its harmonics.
 Q: What spectral shape does a decaying oscillation give? | A Lorentzian peak of width about γ.

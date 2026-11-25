@@ -17,8 +17,8 @@ X: A balloon gains −5 nC by rubbing. How many extra electrons?
 !: Rubbing doesn't create charge; it transfers electrons from one material to the other.
 Q: What is the charge on an electron? | −1.602 × 10^{-19} C.
 Q: How does charging by induction work? | A nearby charged object pushes charges within a conductor; earthing removes one kind, leaving the conductor charged.
-M1: A rod rubbed with silk becomes positive because: | Electrons moved from the rod to the silk | Protons moved to the rod | Charge was created | Neutrons moved | Only electrons transfer.
-M2: Like charges: | Repel | Attract | Don't interact | Neutralise | Basic rule.
+M1#physics-u15-01-q1: A rod rubbed with silk becomes positive because: | Electrons moved from the rod to the silk | Protons moved to the rod | Charge was created | Neutrons moved | Only electrons transfer.
+M2#physics-u15-01-q2: Like charges: | Repel | Attract | Don't interact | Neutralise | Basic rule.
 
 ## Conservation and quantisation of charge
 S: Electric charge is conserved: the total in an isolated system never changes. It's also quantised: every free particle's charge is a whole-number multiple of e. Both facts are deep features of nature.
@@ -35,8 +35,8 @@ X: A drop's measured charges: 3.2, 4.8, 8.0, 6.4 × 10^{-19} C. What's the basic
 !: Quarks have fractional charge but are never seen free; observed charges remain integer multiples of e.
 Q: What did Millikan's experiment show? | Charge comes in whole-number multiples of the elementary charge e.
 Q: Is charge conserved in pair production? | Yes: the electron and positron charges sum to zero.
-M1: In β^{+} decay, a proton becomes a neutron plus: | A positron and neutrino | An electron | A photon only | Two neutrons | Charge +1 → 0 + 1.
-M2: Which charge is impossible for an isolated particle? | 2.4 × 10^{-19} C | 3.2 × 10^{-19} C | 1.6 × 10^{-19} C | 0 | Not a multiple of e.
+M1#physics-u15-02-q1: In β^{+} decay, a proton becomes a neutron plus: | A positron and neutrino | An electron | A photon only | Two neutrons | Charge +1 → 0 + 1.
+M2#physics-u15-02-q2: Which charge is impossible for an isolated particle? | 2.4 × 10^{-19} C | 3.2 × 10^{-19} C | 1.6 × 10^{-19} C | 0 | Not a multiple of e.
 
 ## Conductors, insulators and dielectrics
 S: In conductors, charges move freely; in insulators, they're bound. Dielectrics are insulators whose bound charges shift slightly in a field (polarise), reducing the field inside and increasing a capacitor's capacitance.
@@ -57,8 +57,8 @@ X: Why does a charged balloon stick to a neutral wall?
 !: Dielectrics don't conduct, but they still respond to fields; that response is what makes capacitors and microwave heating work.
 Q: What is relative permittivity? | The factor by which a material reduces the electric field (and increases capacitance) compared with vacuum.
 Q: What is dielectric strength? | The maximum field a material can withstand before breakdown.
-M1: Water has high relative permittivity because: | Its polar molecules align with fields | It's a metal | It has free electrons | It's dense | Orientational polarisation.
-M2: Air breaks down (sparks) at about: | 3 MV m^{-1} | 3 kV m^{-1} | 300 V m^{-1} | 3 GV m^{-1} | Dielectric strength.
+M1#physics-u15-03-q1: Water has high relative permittivity because: | Its polar molecules align with fields | It's a metal | It has free electrons | It's dense | Orientational polarisation.
+M2#physics-u15-03-q2: Air breaks down (sparks) at about: | 3 MV m^{-1} | 3 kV m^{-1} | 300 V m^{-1} | 3 GV m^{-1} | Dielectric strength.
 
 ## Coulomb's law
 S: Coulomb's law gives the force between two point charges: proportional to the product of the charges and inversely proportional to the square of the distance. Electric forces are immensely stronger than gravity.
@@ -78,9 +78,9 @@ P: **Investigate with the lab.** Place two charges and move them closer together
 IX: efield
 Q: State Coulomb's law. | F = q_{1}q_{2}/(4πε_{0}r^{2}).
 Q: How much stronger is electric than gravitational force between two protons? | About 10^{36} times.
-M1: Two charges' separation is halved. The force: | Quadruples | Doubles | Halves | Stays the same | Inverse square.
-M2: Two 1 μC charges 1 m apart experience: | 9 mN | 9 N | 9 × 10^{9} N | 1 N | k × 10^{-12}.
-M2: The distance between two point charges is halved. What happens to the force between them? | It increases four times | It doubles | It halves | It stays the same | Coulomb's law is an inverse square law.
+M1#physics-u15-04-q1: Two charges' separation is halved. The force: | Quadruples | Doubles | Halves | Stays the same | Inverse square.
+M2#physics-u15-04-q2: Two 1 μC charges 1 m apart experience: | 9 mN | 9 N | 9 × 10^{9} N | 1 N | k × 10^{-12}.
+M2#physics-u15-04-q3: The distance between two point charges is halved. What happens to the force between them? | It increases four times | It doubles | It halves | It stays the same | Coulomb's law is an inverse square law.
 
 ## Electric fields
 S: An electric field is the force per unit charge that a test charge would feel at a point. It lets us describe how charges affect the space around them, and fields carry energy and momentum in their own right.
@@ -107,9 +107,9 @@ P: **Investigate with the lab.** Move the test charge around a single charge and
 IX: efield
 Q: Define electric field strength. | Force per unit positive charge, E = F/q.
 Q: What is the field between charged parallel plates? | Uniform, E = V/d = σ/ε_{0}.
-M1: The field of a point charge falls with distance as: | 1/r^{2} | 1/r | 1/r^{3} | Constant | Coulomb.
-M2: A proton is released in a uniform field. It moves: | Along the field, accelerating | Against the field | In a circle | Not at all | Force qE along E.
-M2: Which way does the electric field point near a positive charge? | Away from the charge | Towards the charge | Around the charge in circles | It has no direction | The field shows the force on a positive test charge, which is repelled.
+M1#physics-u15-05-q1: The field of a point charge falls with distance as: | 1/r^{2} | 1/r | 1/r^{3} | Constant | Coulomb.
+M2#physics-u15-05-q2: A proton is released in a uniform field. It moves: | Along the field, accelerating | Against the field | In a circle | Not at all | Force qE along E.
+M2#physics-u15-05-q3: Which way does the electric field point near a positive charge? | Away from the charge | Towards the charge | Around the charge in circles | It has no direction | The field shows the force on a positive test charge, which is repelled.
 
 ## Electric field lines
 S: Field lines map an electric field: their direction gives the field's direction, and their density gives its strength. They start on positive charges and end on negative ones, never crossing.
@@ -134,9 +134,9 @@ P: **Investigate with the lab.** Draw the field lines for two like charges and f
 IX: efield
 Q: Why can't field lines cross? | The field has a unique direction at each point.
 Q: How do field lines meet a conductor's surface in equilibrium? | At right angles.
-M1: Closely spaced field lines indicate: | A strong field | A weak field | Zero field | High potential | Line density ∝ |E|.
-M2: Equipotentials and field lines are: | Perpendicular | Parallel | The same | Unrelated | E = −∇V.
-M2: What does the spacing of electric field lines show? | The field strength: closer lines mean a stronger field | The direction of the charge's motion | The potential at each point | Nothing about the field | Field line density indicates field strength.
+M1#physics-u15-06-q1: Closely spaced field lines indicate: | A strong field | A weak field | Zero field | High potential | Line density ∝ |E|.
+M2#physics-u15-06-q2: Equipotentials and field lines are: | Perpendicular | Parallel | The same | Unrelated | E = −∇V.
+M2#physics-u15-06-q3: What does the spacing of electric field lines show? | The field strength: closer lines mean a stronger field | The direction of the charge's motion | The potential at each point | Nothing about the field | Field line density indicates field strength.
 
 ## Electric potential
 S: Electric potential is the potential energy per unit charge at a point, measured relative to a reference (often infinity or earth). It's a scalar, so potentials from many charges simply add, and the field is its downhill slope.
@@ -161,9 +161,9 @@ P: **Investigate with the lab.** Turn on the equipotentials and check that they 
 IX: efield
 Q: How is field related to potential? | E = −∇V: the field points down the potential gradient.
 Q: What is an electronvolt? | The energy an electron gains moving through 1 V: 1.6 × 10^{-19} J.
-M1: The potential 0.3 m from a 3 nC charge is: | 90 V | 300 V | 30 V | 9 V | kQ/r = 8.99 × 10^{9} × 3 × 10^{-9}/0.3.
-M2: Electrons naturally move towards: | Higher potential | Lower potential | Zero potential | Equipotentials | Negative charge, lower PE at higher V.
-M2: How do equipotential lines relate to field lines? | They are always perpendicular | They are always parallel | They never meet | They are the same lines | No work is done moving along an equipotential, so it must be perpendicular to the field.
+M1#physics-u15-07-q1: The potential 0.3 m from a 3 nC charge is: | 90 V | 300 V | 30 V | 9 V | kQ/r = 8.99 × 10^{9} × 3 × 10^{-9}/0.3.
+M2#physics-u15-07-q2: Electrons naturally move towards: | Higher potential | Lower potential | Zero potential | Equipotentials | Negative charge, lower PE at higher V.
+M2#physics-u15-07-q3: How do equipotential lines relate to field lines? | They are always perpendicular | They are always parallel | They never meet | They are the same lines | No work is done moving along an equipotential, so it must be perpendicular to the field.
 
 ## Electric potential energy
 S: Electric potential energy is the energy stored in a configuration of charges because of their positions. It's the work needed to assemble them from far apart, and it drives chemistry, batteries and nuclear stability.
@@ -186,9 +186,9 @@ P: **Investigate with the lab.** Move the test charge towards a like charge and 
 IX: efield
 Q: What is the potential energy of two point charges? | U = q_{1}q_{2}/(4πε_{0}r).
 Q: Why do fission fragments fly apart energetically? | Their mutual Coulomb repulsion converts electric potential energy into kinetic energy.
-M1: An alpha particle (2e) accelerated through 1000 V gains: | 2000 eV | 1000 eV | 500 eV | 4000 eV | qV.
-M2: The potential energy of two unlike charges is: | Negative | Positive | Zero | Infinite | Attractive ⇒ bound.
-M2: A positive charge is pushed towards another positive charge. What happens to its potential energy? | It increases | It decreases | It stays the same | It becomes negative | Work is done against repulsion, so electric potential energy rises.
+M1#physics-u15-08-q1: An alpha particle (2e) accelerated through 1000 V gains: | 2000 eV | 1000 eV | 500 eV | 4000 eV | qV.
+M2#physics-u15-08-q2: The potential energy of two unlike charges is: | Negative | Positive | Zero | Infinite | Attractive ⇒ bound.
+M2#physics-u15-08-q3: A positive charge is pushed towards another positive charge. What happens to its potential energy? | It increases | It decreases | It stays the same | It becomes negative | Work is done against repulsion, so electric potential energy rises.
 
 ## Voltage and potential difference
 S: Voltage, or potential difference, is the energy transferred per unit charge between two points. It drives current through circuits and tells you how much energy each coulomb delivers.
@@ -208,9 +208,9 @@ P: **Investigate with the lab.** Check the uniform field between the plates and 
 IX: efield
 Q: Define potential difference. | The work done (energy transferred) per unit charge moving between two points.
 Q: Why is a van de Graaff shock usually harmless despite high voltage? | It stores little charge, so it can't sustain a dangerous current.
-M1: How much energy does 3 C gain crossing 12 V? | 36 J | 4 J | 0.25 J | 15 J | W = QV.
-M2: Voltmeters are connected: | In parallel | In series | Either | Neither | They measure across components.
-M2: Two plates 2 cm apart have 100 V across them. What is the field between them? | 5000 V/m | 50 V/m | 200 V/m | 2 V/m | E = V/d = 100/0.02 = 5000 V/m.
+M1#physics-u15-09-q1: How much energy does 3 C gain crossing 12 V? | 36 J | 4 J | 0.25 J | 15 J | W = QV.
+M2#physics-u15-09-q2: Voltmeters are connected: | In parallel | In series | Either | Neither | They measure across components.
+M2#physics-u15-09-q3: Two plates 2 cm apart have 100 V across them. What is the field between them? | 5000 V/m | 50 V/m | 200 V/m | 2 V/m | E = V/d = 100/0.02 = 5000 V/m.
 
 ## Electric dipoles
 S: An electric dipole is a pair of equal and opposite charges separated by a small distance. Many molecules are dipoles; their behaviour in fields explains dielectrics, microwave heating and the structure of water.
@@ -231,9 +231,9 @@ P: **Investigate with the lab.** Put the test charge on the line between the dip
 IX: efield
 Q: What is the electric dipole moment? | p = qd, pointing from the negative to the positive charge.
 Q: Why do dipole fields fall faster than point-charge fields? | The opposite charges' fields largely cancel at large distances (E ∝ 1/r^{3}).
-M1: The energy of a dipole is lowest when p is: | Parallel to E | Antiparallel | Perpendicular | Zero | U = −pE cos θ.
-M2: In a uniform field a dipole experiences: | Torque but no net force | Net force only | Neither | Both equally | Equal opposite forces.
-M2: What is an electric dipole? | Equal and opposite charges a small distance apart | Two equal positive charges | A single charge in a uniform field | A charge moving in a circle | A dipole is a pair of equal and opposite charges separated by a small distance.
+M1#physics-u15-10-q1: The energy of a dipole is lowest when p is: | Parallel to E | Antiparallel | Perpendicular | Zero | U = −pE cos θ.
+M2#physics-u15-10-q2: In a uniform field a dipole experiences: | Torque but no net force | Net force only | Neither | Both equally | Equal opposite forces.
+M2#physics-u15-10-q3: What is an electric dipole? | Equal and opposite charges a small distance apart | Two equal positive charges | A single charge in a uniform field | A charge moving in a circle | A dipole is a pair of equal and opposite charges separated by a small distance.
 
 ## Electric flux
 S: Electric flux measures how much electric field passes through a surface: field strength times area, counting only the component perpendicular to the surface. Gauss's law relates the flux through a closed surface to the charge inside.
@@ -250,8 +250,8 @@ X: A uniform field 500 N C^{-1} crosses a 0.1 m^{2} disc at 30° to its surface.
 !: θ in Φ = EA cos θ is measured from the surface's normal, not from the surface.
 Q: Define electric flux. | Φ = ∫E·dA, the field component normal to a surface integrated over it.
 Q: What is the net flux through a closed surface with no charge inside? | Zero.
-M1: A field parallel to a surface gives flux: | 0 | EA | Maximum | Negative | cos 90°.
-M2: The flux through a closed sphere around charge Q depends on: | Q only | The sphere's radius | The charge's position inside | Both radius and Q | Gauss's law.
+M1#physics-u15-11-q1: A field parallel to a surface gives flux: | 0 | EA | Maximum | Negative | cos 90°.
+M2#physics-u15-11-q2: The flux through a closed sphere around charge Q depends on: | Q only | The sphere's radius | The charge's position inside | Both radius and Q | Gauss's law.
 
 ## Gauss's law
 S: Gauss's law states that the electric flux out of any closed surface equals the enclosed charge divided by ε_{0}. With symmetry, it finds fields in one line, and it's one of Maxwell's four equations.
@@ -274,8 +274,8 @@ D: phys-u15-sphere-field
 !: Gauss's law is always true, but it only gives the field easily when symmetry makes E constant over the surface.
 Q: State Gauss's law. | The net electric flux through a closed surface equals the enclosed charge divided by ε_{0}.
 Q: What Gaussian surface suits a long charged wire? | A coaxial cylinder.
-M1: The field just outside a conductor with surface charge density σ is: | σ/ε_{0} | σ/2ε_{0} | 0 | 2σ/ε_{0} | Only one side has field.
-M2: The field inside a uniformly charged hollow sphere is: | Zero | Q/(4πε_{0}r^{2}) | Constant non-zero | Infinite | No enclosed charge.
+M1#physics-u15-12-q1: The field just outside a conductor with surface charge density σ is: | σ/ε_{0} | σ/2ε_{0} | 0 | 2σ/ε_{0} | Only one side has field.
+M2#physics-u15-12-q2: The field inside a uniformly charged hollow sphere is: | Zero | Q/(4πε_{0}r^{2}) | Constant non-zero | Infinite | No enclosed charge.
 
 ## Charge distributions
 S: Real charges are spread over lines, surfaces and volumes. Their fields come from integrating Coulomb's law over the distribution, or from Gauss's law when there's enough symmetry.
@@ -294,8 +294,8 @@ D: phys-u15-ring-axis
 !: Integrate field vectors component by component; symmetry often cancels components but don't assume it without checking.
 Q: What is the field on the axis of a charged ring at its centre? | Zero, by symmetry.
 Q: What is the multipole expansion? | Writing a distribution's distant potential as monopole, dipole, quadrupole… terms falling as successively higher powers of 1/r.
-M1: Far from a neutral molecule with a dipole moment, the potential falls as: | 1/r^{2} | 1/r | 1/r^{3} | Constant | Dipole term.
-M2: Linear charge density has units: | C m^{-1} | C m^{-2} | C m^{-3} | C | Charge per length.
+M1#physics-u15-13-q1: Far from a neutral molecule with a dipole moment, the potential falls as: | 1/r^{2} | 1/r | 1/r^{3} | Constant | Dipole term.
+M2#physics-u15-13-q2: Linear charge density has units: | C m^{-1} | C m^{-2} | C m^{-3} | C | Charge per length.
 
 ## Conductors in electrostatic equilibrium
 S: In electrostatic equilibrium, charges in a conductor have stopped moving. This forces the field inside to be zero, all excess charge to sit on the surface, and the surface to be an equipotential.
@@ -316,8 +316,8 @@ X: Two connected metal spheres, radii 1 cm and 10 cm, share charge. Compare surf
 !: Equilibrium means no current; once current flows (in a circuit), there is a field inside the wire.
 Q: Why is the field zero inside a conductor in equilibrium? | Otherwise free charges would move, contradicting equilibrium.
 Q: Why does charge concentrate at sharp points? | Equal potential requires higher surface charge density where curvature is greater.
-M1: Excess charge on an isolated conductor resides: | On its outer surface | Uniformly through it | At its centre | Only at points | Gauss's law inside.
-M2: Corona discharge occurs at: | Sharp points of high-voltage conductors | Flat surfaces | Inside conductors | Insulators | Intense local fields.
+M1#physics-u15-14-q1: Excess charge on an isolated conductor resides: | On its outer surface | Uniformly through it | At its centre | Only at points | Gauss's law inside.
+M2#physics-u15-14-q2: Corona discharge occurs at: | Sharp points of high-voltage conductors | Flat surfaces | Inside conductors | Insulators | Intense local fields.
 
 ## Capacitance
 S: Capacitance is the ability of a conductor arrangement to store charge per volt. Capacitors store energy in electric fields and are essential in electronics for timing, filtering, smoothing and quick bursts of power.
@@ -340,9 +340,9 @@ P: **Investigate with the lab.** Change the capacitance and watch how much charg
 IX: transients
 Q: Define capacitance. | Charge stored per unit potential difference, C = Q/V.
 Q: How do touchscreens detect a finger? | The finger changes the capacitance of electrodes under the screen.
-M1: A 100 μF capacitor at 9 V holds: | 900 μC | 11 μC | 9 μC | 0.9 μC | Q = CV.
-M2: Capacitance depends on: | Geometry and dielectric | Charge stored | Voltage applied | Current | Q ∝ V.
-M2: A 470 μF capacitor is charged to 10 V. How much charge does it store? | 4.7 mC | 47 C | 4.7 C | 0.047 mC | Q = CV = 470 × 10⁻⁶ × 10 = 4.7 × 10⁻³ C.
+M1#physics-u15-15-q1: A 100 μF capacitor at 9 V holds: | 900 μC | 11 μC | 9 μC | 0.9 μC | Q = CV.
+M2#physics-u15-15-q2: Capacitance depends on: | Geometry and dielectric | Charge stored | Voltage applied | Current | Q ∝ V.
+M2#physics-u15-15-q3: A 470 μF capacitor is charged to 10 V. How much charge does it store? | 4.7 mC | 47 C | 4.7 C | 0.047 mC | Q = CV = 470 × 10⁻⁶ × 10 = 4.7 × 10⁻³ C.
 
 ## Parallel-plate and spherical capacitors
 S: Simple geometries give simple formulas for capacitance. Parallel plates are the standard model; spherical and cylindrical capacitors describe cables and isolated conductors.
@@ -363,9 +363,9 @@ P: **Investigate with the lab.** Use the parallel plates and check the field bet
 IX: efield
 Q: What is the capacitance of a parallel-plate capacitor? | C = ε_{0}ε_{r}A/d.
 Q: Why does reducing the plate gap have a limit? | The breakdown voltage falls in proportion to the gap.
-M1: Doubling plate area and halving the separation multiplies C by: | 4 | 2 | 1 | 1/4 | A/d.
-M2: Coaxial cable capacitance per metre depends on: | ln(b/a) and ε_{r} | Length only | Current | Frequency only | C/L = 2πε/ln(b/a).
-M2: Why is the field between parallel plates uniform? | The field lines are parallel and evenly spaced away from the edges | The plates carry no charge | The voltage is zero between the plates | The plates are infinitely far apart | Away from the edges, the field is perpendicular to the plates and of constant strength.
+M1#physics-u15-16-q1: Doubling plate area and halving the separation multiplies C by: | 4 | 2 | 1 | 1/4 | A/d.
+M2#physics-u15-16-q2: Coaxial cable capacitance per metre depends on: | ln(b/a) and ε_{r} | Length only | Current | Frequency only | C/L = 2πε/ln(b/a).
+M2#physics-u15-16-q3: Why is the field between parallel plates uniform? | The field lines are parallel and evenly spaced away from the edges | The plates carry no charge | The voltage is zero between the plates | The plates are infinitely far apart | Away from the edges, the field is perpendicular to the plates and of constant strength.
 
 ## Capacitors in series and parallel
 S: Capacitors combine opposite to resistors: in parallel their capacitances add; in series their reciprocals add. Parallel capacitors share voltage; series capacitors share charge.
@@ -382,8 +382,8 @@ X: 2 μF and 3 μF in series across 10 V. Charge and voltages?
 !: Series capacitors rated for a voltage don't share it equally unless they're identical; use balancing resistors in high-voltage banks.
 Q: How do capacitors combine in parallel? | Their capacitances add.
 Q: In series, what's the same for each capacitor? | The charge.
-M1: Two 10 μF capacitors in series give: | 5 μF | 20 μF | 10 μF | 100 μF | Reciprocal sum.
-M2: In series, the capacitor with the smallest C has: | The largest voltage | The smallest voltage | The same voltage | Zero charge | V = Q/C.
+M1#physics-u15-17-q1: Two 10 μF capacitors in series give: | 5 μF | 20 μF | 10 μF | 100 μF | Reciprocal sum.
+M2#physics-u15-17-q2: In series, the capacitor with the smallest C has: | The largest voltage | The smallest voltage | The same voltage | Zero charge | V = Q/C.
 
 ## Energy stored in electric fields
 S: Charging a capacitor stores energy, and that energy lives in the electric field between the plates. Every electric field holds energy, with a density proportional to the field squared.
@@ -402,8 +402,8 @@ X: A 2000 μF capacitor at 400 V. Stored energy?
 !: Large capacitors can stay charged long after power is removed; discharge them safely.
 Q: What is the energy stored in a capacitor? | U = ½CV^{2}.
 Q: What is the energy density of an electric field? | u = ½ε_{0}E^{2} (in vacuum).
-M1: Doubling the voltage on a capacitor multiplies its energy by: | 4 | 2 | 8 | √2 | ∝ V^{2}.
-M2: Charging a capacitor from a battery through a resistor wastes: | Half the energy supplied | None | All of it | A quarter | Independent of R.
+M1#physics-u15-18-q1: Doubling the voltage on a capacitor multiplies its energy by: | 4 | 2 | 8 | √2 | ∝ V^{2}.
+M2#physics-u15-18-q2: Charging a capacitor from a battery through a resistor wastes: | Half the energy supplied | None | All of it | A quarter | Independent of R.
 
 ## Dielectric polarisation
 S: In an electric field, a dielectric's bound charges shift, creating tiny dipoles throughout the material. Their combined effect reduces the field inside and increases the charge a capacitor can store at a given voltage.
@@ -426,8 +426,8 @@ X: Inserting a dielectric (ε_{r} = 4) into an isolated charged capacitor. What 
 !: Dielectric "constants" depend on frequency and temperature; a value for DC can be badly wrong for light.
 Q: What is the electric displacement D? | D = ε_{0}E + P; its divergence equals free charge density.
 Q: Why does water's permittivity fall at optical frequencies? | Molecules can't reorient fast enough; only electronic polarisation remains.
-M1: A piezoelectric material: | Polarises when strained | Conducts perfectly | Is magnetic | Has ε_{r} = 1 | Mechanical ↔ electrical coupling.
-M2: Refractive index is related to permittivity by: | n = √ε_{r} | n = ε_{r} | n = 1/ε_{r} | n = ε_{r}^{2} | For non-magnetic materials.
+M1#physics-u15-19-q1: A piezoelectric material: | Polarises when strained | Conducts perfectly | Is magnetic | Has ε_{r} = 1 | Mechanical ↔ electrical coupling.
+M2#physics-u15-19-q2: Refractive index is related to permittivity by: | n = √ε_{r} | n = ε_{r} | n = 1/ε_{r} | n = ε_{r}^{2} | For non-magnetic materials.
 
 ## Boundary conditions for electric fields
 S: At the boundary between two materials, electric fields obey simple matching rules derived from Maxwell's equations. They determine how fields bend at interfaces and how charge builds up on surfaces.
@@ -447,8 +447,8 @@ X: A capacitor has air (ε = 1) and glass (ε = 5) layers in series. Ratio of fi
 !: It's D that's continuous across a dielectric boundary with no free charge, not E.
 Q: Which component of E is continuous across any boundary? | The tangential component.
 Q: Why are air bubbles in insulation dangerous? | The field in the air is higher (lower ε), and air's breakdown strength is low.
-M1: At a perfect conductor's surface, the tangential electric field is: | Zero | σ/ε_{0} | Maximum | Equal to the normal field | Charges move to cancel it.
-M2: Normal D changes across a boundary by: | The free surface charge density | The bound charge | Nothing ever | The potential | Gauss's law.
+M1#physics-u15-20-q1: At a perfect conductor's surface, the tangential electric field is: | Zero | σ/ε_{0} | Maximum | Equal to the normal field | Charges move to cancel it.
+M2#physics-u15-20-q2: Normal D changes across a boundary by: | The free surface charge density | The bound charge | Nothing ever | The potential | Gauss's law.
 
 ## Electrostatic shielding
 S: A closed conducting shell blocks external static electric fields from its interior: a Faraday cage. Charges on the shell rearrange to cancel the outside field inside, protecting sensitive electronics and people.
@@ -469,8 +469,8 @@ X: Why is it safe to sit in a car during a lightning strike (not because of the 
 !: A Faraday cage protects only if it's continuous and well connected; gaps larger than the wavelength leak radiation.
 Q: What is a Faraday cage? | A conducting enclosure that blocks external electric fields from its interior.
 Q: Why does a microwave oven door's mesh block microwaves but not light? | Its holes are much smaller than microwave wavelengths but much larger than light wavelengths.
-M1: A car protects you from lightning because: | Its metal body acts as a Faraday cage | The tyres insulate it | It's grounded through the engine | Glass blocks current | Current flows over the shell.
-M2: Static magnetic fields are best shielded by: | High-permeability materials | Thin copper | Plastic | Glass | Mu-metal diverts flux.
+M1#physics-u15-21-q1: A car protects you from lightning because: | Its metal body acts as a Faraday cage | The tyres insulate it | It's grounded through the engine | Glass blocks current | Current flows over the shell.
+M2#physics-u15-21-q2: Static magnetic fields are best shielded by: | High-permeability materials | Thin copper | Plastic | Glass | Mu-metal diverts flux.
 
 ## Method of images
 S: The method of images solves electrostatics problems near conductors by replacing the conductor with imaginary charges that reproduce the same boundary conditions. By uniqueness, the resulting field is the right one in the real region.
@@ -490,8 +490,8 @@ X: An electron 1 nm from a flat metal surface. Image force?
 !: Image charges are fictional and only valid outside the conductor (in the real region); don't use them to find fields inside.
 Q: What image charge represents an earthed plane? | An equal and opposite charge at the mirror position.
 Q: Why does the method of images give the correct answer? | By the uniqueness theorem, a solution satisfying the boundary conditions is the only one.
-M1: A charge q at distance d above an earthed plane is attracted with force: | q^{2}/(16πε_{0}d^{2}) | q^{2}/(4πε_{0}d^{2}) | 0 | q^{2}/(8πε_{0}d) | Distance to image 2d.
-M2: The total induced charge on an earthed plane near charge q is: | −q | 0 | +q | −2q | Image charge equals induced total.
+M1#physics-u15-22-q1: A charge q at distance d above an earthed plane is attracted with force: | q^{2}/(16πε_{0}d^{2}) | q^{2}/(4πε_{0}d^{2}) | 0 | q^{2}/(8πε_{0}d) | Distance to image 2d.
+M2#physics-u15-22-q2: The total induced charge on an earthed plane near charge q is: | −q | 0 | +q | −2q | Image charge equals induced total.
 
 ## Poisson's equation
 S: Poisson's equation relates the electric potential to the charge density producing it. Together with boundary conditions, it determines the potential everywhere: the master equation of electrostatics.
@@ -513,8 +513,8 @@ D: phys-u15-poisson-slab
 !: Poisson's equation alone has infinitely many solutions; it's the boundary conditions that make the answer unique.
 Q: State Poisson's equation. | ∇^{2}V = −ρ/ε_{0}.
 Q: Where does Poisson's equation appear in semiconductor devices? | In finding the potential across depletion regions of p–n junctions.
-M1: Poisson's equation reduces to Laplace's equation when: | ρ = 0 | V = 0 | E = 0 | ε = 0 | No charge in the region.
-M2: The gravitational analogue of Poisson's equation is: | ∇^{2}Φ = 4πGρ | F = ma | ∇·B = 0 | E = mc^{2} | Same mathematics.
+M1#physics-u15-23-q1: Poisson's equation reduces to Laplace's equation when: | ρ = 0 | V = 0 | E = 0 | ε = 0 | No charge in the region.
+M2#physics-u15-23-q2: The gravitational analogue of Poisson's equation is: | ∇^{2}Φ = 4πGρ | F = ma | ∇·B = 0 | E = mc^{2} | Same mathematics.
 
 ## Laplace's equation
 S: In regions without charge, the electric potential obeys Laplace's equation. Its solutions, harmonic functions, are smooth, have no local maxima or minima inside the region, and are fixed entirely by the boundary values.
@@ -534,6 +534,6 @@ X: Relaxation on a grid: one interior point with neighbours 10, 20, 30 and 40 V.
 !: Earnshaw's theorem rules out stable electrostatic levitation of charges, but diamagnetic and dynamic (oscillating-field) traps get around it.
 Q: State Earnshaw's theorem. | A charge can't be held in stable equilibrium by electrostatic forces alone.
 Q: What is the mean-value property of harmonic functions? | The value at a point equals the average over any surrounding sphere.
-M1: Solutions of Laplace's equation have maxima: | Only on boundaries | At the centre | Anywhere | At charges | No interior extrema.
-M2: Ion traps get around Earnshaw's theorem by using: | Oscillating or magnetic fields | Larger static charges | Gravity | Dielectrics | Paul and Penning traps.
+M1#physics-u15-24-q1: Solutions of Laplace's equation have maxima: | Only on boundaries | At the centre | Anywhere | At charges | No interior extrema.
+M2#physics-u15-24-q2: Ion traps get around Earnshaw's theorem by using: | Oscillating or magnetic fields | Larger static charges | Gravity | Dielectrics | Paul and Penning traps.
 `;

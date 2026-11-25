@@ -24,8 +24,8 @@ K: Fields are fundamental; particles are quantised ripples, all identical becaus
 !: The particle concept is observer-dependent in general; the field is the more basic object.
 Q: What is a particle in QFT? | A quantised excitation of a field mode.
 Q: What is the Unruh effect? | An accelerating observer perceives the vacuum as a thermal bath at T = ħa/(2πck_{B}).
-M1: Each free-field momentum mode behaves like: | A harmonic oscillator | A free particle | A spin-½ system | A rigid rotor | Quantised amplitudes.
-M2: Microcausality means field operators: | Commute at spacelike separation | Never commute | Are classical | Vanish | No faster-than-light signalling.
+M1#physics-u42-01-q1: Each free-field momentum mode behaves like: | A harmonic oscillator | A free particle | A spin-½ system | A rigid rotor | Quantised amplitudes.
+M2#physics-u42-01-q2: Microcausality means field operators: | Commute at spacelike separation | Never commute | Are classical | Vanish | No faster-than-light signalling.
 
 ## Creation and annihilation operators
 S: Creation and annihilation operators add or remove a quantum of a field mode. They build every multi-particle state from the vacuum, encode statistics through their commutation rules, and make interactions look like particles being absorbed and emitted.
@@ -52,8 +52,8 @@ K: Creation and annihilation operators build Fock space; commutators give bosons
 !: Using commutators for fermion fields leads to inconsistencies (negative energies or acausality); spin and statistics are tied.
 Q: What does the number operator a^{†}a measure? | The number of quanta in that mode.
 Q: Why are fermion states antisymmetric? | Fermion creation operators anticommute.
-M1: a|0⟩ equals: | 0 | |1⟩ | |0⟩ | √2|0⟩ | Annihilating the vacuum gives zero.
-M2: Second quantisation is used in: | Condensed matter and quantum optics | Only cosmology | Classical mechanics | Thermodynamics only | Same Fock-space tools.
+M1#physics-u42-02-q1: a|0⟩ equals: | 0 | |1⟩ | |0⟩ | √2|0⟩ | Annihilating the vacuum gives zero.
+M2#physics-u42-02-q2: Second quantisation is used in: | Condensed matter and quantum optics | Only cosmology | Classical mechanics | Thermodynamics only | Same Fock-space tools.
 
 ## Canonical quantisation
 S: Canonical quantisation turns a classical field theory into a quantum one by promoting fields and conjugate momenta to operators with equal-time commutation relations. Expanding in modes then reveals particles as quanta.
@@ -80,8 +80,8 @@ K: Promote fields to operators with canonical commutators; mode expansions then 
 !: The infinite zero-point energy is removed by normal ordering; only differences in vacuum energy are observable (except perhaps in gravity).
 Q: What is normal ordering? | Placing all annihilation operators to the right of creation operators, removing the zero-point constant.
 Q: Why does a complex scalar field have antiparticles? | Its two independent real components give two particle types with opposite charge.
-M1: The photon field after quantisation has how many physical polarisations? | 2 | 4 | 3 | 1 | Transverse only.
-M2: The Dirac field is quantised using: | Anticommutators | Commutators | Poisson brackets | No rules | Fermions.
+M1#physics-u42-03-q1: The photon field after quantisation has how many physical polarisations? | 2 | 4 | 3 | 1 | Transverse only.
+M2#physics-u42-03-q2: The Dirac field is quantised using: | Anticommutators | Commutators | Poisson brackets | No rules | Fermions.
 
 ## Path-integral quantisation
 S: Path-integral quantisation computes quantum amplitudes by integrating over all possible field configurations, each weighted by e^{iS/ħ}. It keeps Lorentz invariance manifest, handles gauge theories elegantly and connects QFT to statistical mechanics.
@@ -104,8 +104,8 @@ K: Path integrals sum over all field histories; derivatives of Z[J] give correla
 !: Gauge theories need gauge fixing; without it, the path integral overcounts and diverges.
 Q: What are Grassmann variables used for? | Representing fermion fields in path integrals; they anticommute.
 Q: What are Faddeev–Popov ghosts? | Unphysical fields introduced by gauge fixing in non-abelian path integrals.
-M1: Correlation functions are obtained by: | Differentiating Z[J] with respect to J | Integrating over J | Setting J to infinity | Squaring Z | Functional derivatives.
-M2: Euclidean path integrals relate QFT to: | Statistical mechanics | Classical optics | Celestial mechanics | Chemistry | Partition functions.
+M1#physics-u42-04-q1: Correlation functions are obtained by: | Differentiating Z[J] with respect to J | Integrating over J | Setting J to infinity | Squaring Z | Functional derivatives.
+M2#physics-u42-04-q2: Euclidean path integrals relate QFT to: | Statistical mechanics | Classical optics | Celestial mechanics | Chemistry | Partition functions.
 
 ## Propagators
 S: A propagator gives the amplitude for a particle to travel from one spacetime point to another. It is the Green's function of the field equation with Feynman boundary conditions, and it forms the internal lines of every Feynman diagram.
@@ -131,8 +131,8 @@ K: Propagators are Green's functions with causal boundary conditions; their pole
 !: Virtual particles in propagators don't satisfy E^{2} = p^{2}c^{2} + m^{2}c^{4}; they are mathematical terms, not observable particles.
 Q: What sets the range of a force mediated by a massive particle? | The Compton wavelength ħ/(mc).
 Q: What does the iε in the propagator do? | Selects causal (Feynman) boundary conditions.
-M1: Massless exchange produces a potential: | ∝ 1/r | ∝ e^{−mr}/r | Constant | ∝ r | Long range.
-M2: The pole of a propagator is at: | p^{2} = m^{2} (physical mass) | p = 0 | Infinite momentum | Negative energy only | Physical particle.
+M1#physics-u42-05-q1: Massless exchange produces a potential: | ∝ 1/r | ∝ e^{−mr}/r | Constant | ∝ r | Long range.
+M2#physics-u42-05-q2: The pole of a propagator is at: | p^{2} = m^{2} (physical mass) | p = 0 | Infinite momentum | Negative energy only | Physical particle.
 
 ## Feynman rules
 S: Feynman rules translate diagrams into mathematical expressions for scattering amplitudes. Each line, vertex and loop contributes a specific factor derived from the Lagrangian, so computing a process becomes systematic bookkeeping.
@@ -158,8 +158,8 @@ K: Feynman rules turn diagrams into amplitudes: propagators for lines, couplings
 !: Relative signs between diagrams with identical fermions matter; missing a minus sign breaks the Pauli principle.
 Q: What is the QED vertex factor? | −ieγ^{μ}.
 Q: What extra factor does a closed fermion loop carry? | −1.
-M1: The cross-section for e^{+}e^{−} → μ^{+}μ^{−} scales with energy as: | 1/s | s | Constant | e^{−s} | Dimensional analysis.
-M2: Loop momenta are: | Integrated over | Fixed by external momenta | Always zero | Infinite | Undetermined internal momentum.
+M1#physics-u42-06-q1: The cross-section for e^{+}e^{−} → μ^{+}μ^{−} scales with energy as: | 1/s | s | Constant | e^{−s} | Dimensional analysis.
+M2#physics-u42-06-q2: Loop momenta are: | Integrated over | Fixed by external momenta | Always zero | Infinite | Undetermined internal momentum.
 
 ## Scattering amplitudes
 S: Scattering amplitudes are the central predictions of QFT: complex numbers whose squared magnitudes give probabilities of particles scattering into particular final states. Their study has revealed hidden simplicity and new structures beyond Feynman diagrams.
@@ -184,8 +184,8 @@ K: Amplitudes encode all scattering predictions; symmetry, analyticity and unita
 !: Feynman diagrams are one way to compute amplitudes, not the amplitude itself; gauge-dependent pieces cancel in the sum.
 Q: What does unitarity of the S-matrix guarantee? | Probabilities sum to one; it implies the optical theorem.
 Q: What is the Parke–Taylor formula? | A compact expression for maximally helicity-violating gluon amplitudes.
-M1: The Mandelstam variable s is: | The squared centre-of-mass energy | Momentum transfer | Spin | Scattering angle | (p_{1} + p_{2})^{2}.
-M2: Double copy relates: | Gravity amplitudes to gauge-theory amplitudes squared | QED to QCD | Leptons to quarks | Bosons to fermions | Gravity ~ (gauge)^{2}.
+M1#physics-u42-07-q1: The Mandelstam variable s is: | The squared centre-of-mass energy | Momentum transfer | Spin | Scattering angle | (p_{1} + p_{2})^{2}.
+M2#physics-u42-07-q2: Double copy relates: | Gravity amplitudes to gauge-theory amplitudes squared | QED to QCD | Leptons to quarks | Bosons to fermions | Gravity ~ (gauge)^{2}.
 
 ## Perturbation theory
 S: Perturbation theory in QFT expands amplitudes in powers of small couplings, with each order corresponding to Feynman diagrams with more vertices and loops. It has given the most precise agreement between theory and experiment in all of science.
@@ -210,8 +210,8 @@ K: Perturbation theory organises QFT calculations by powers of coupling, giving 
 !: Perturbative series are asymptotic; adding terms beyond an optimal order makes predictions worse.
 Q: What does Wick's theorem do? | Expresses time-ordered products of free fields as sums of products of propagators.
 Q: What does the LSZ formula connect? | Correlation functions to scattering amplitudes.
-M1: Schwinger's one-loop result for a_{e} is: | α/2π | α | α^{2} | 2π/α | ~0.00116.
-M2: Perturbative QCD fails at: | Low energies (~1 GeV) | High energies | All energies | Only in QED | Coupling becomes large.
+M1#physics-u42-08-q1: Schwinger's one-loop result for a_{e} is: | α/2π | α | α^{2} | 2π/α | ~0.00116.
+M2#physics-u42-08-q2: Perturbative QCD fails at: | Low energies (~1 GeV) | High energies | All energies | Only in QED | Coupling becomes large.
 
 ## Divergences and regularisation
 S: Loop diagrams in QFT often give infinite integrals because virtual particles can have arbitrarily large momenta. Regularisation temporarily makes these integrals finite so they can be handled consistently, before renormalisation removes dependence on the regulator.
@@ -237,8 +237,8 @@ K: Regulate divergences to compute consistently; dimensional regularisation is p
 !: Infrared divergences cancel only when soft real emissions are included; virtual corrections alone give nonsense.
 Q: What is dimensional regularisation? | Evaluating loop integrals in d = 4 − 2ε dimensions so divergences appear as poles in ε.
 Q: Why do IR divergences cancel? | Virtual loop divergences cancel against real emission of unresolvable soft or collinear particles.
-M1: A momentum cutoff breaks: | Gauge and Lorentz invariance | Nothing | Unitarity only | Charge conservation always | Hence dim reg is preferred.
-M2: The QED vertex (3 external lines: 1 photon, 2 electrons) has D equal to: | 0 | 1 | 2 | −1 | 4 − 1 − 3.
+M1#physics-u42-09-q1: A momentum cutoff breaks: | Gauge and Lorentz invariance | Nothing | Unitarity only | Charge conservation always | Hence dim reg is preferred.
+M2#physics-u42-09-q2: The QED vertex (3 external lines: 1 photon, 2 electrons) has D equal to: | 0 | 1 | 2 | −1 | 4 − 1 − 3.
 
 ## Renormalisation
 S: Renormalisation turns divergent loop calculations into finite predictions by expressing results in terms of measured quantities. It shows that physics at accessible energies depends on short-distance details only through a few parameters, and it predicts how couplings change with scale.
@@ -263,8 +263,8 @@ K: Renormalisation expresses predictions in physical parameters; couplings run w
 !: The running coupling depends on scheme; physical observables do not.
 Q: What is a renormalisable theory? | One needing only finitely many counterterms, with couplings of non-negative mass dimension.
 Q: What sign is QCD's β function? | Negative (for n_{f} ≤ 16), giving asymptotic freedom.
-M1: Newton's constant G has: | Negative mass dimension | Zero mass dimension | Positive mass dimension | No units | Gravity non-renormalisable.
-M2: In QED the coupling at high energy: | Increases | Decreases | Is zero | Unchanged | Positive β.
+M1#physics-u42-10-q1: Newton's constant G has: | Negative mass dimension | Zero mass dimension | Positive mass dimension | No units | Gravity non-renormalisable.
+M2#physics-u42-10-q2: In QED the coupling at high energy: | Increases | Decreases | Is zero | Unchanged | Positive β.
 
 ## Gauge invariance
 S: In quantum field theory, gauge invariance is the principle that fixes how matter couples to force carriers. It guarantees consistency, unitarity and renormalisability, and it ensures that unphysical polarisations of gauge bosons never appear in physical results.
@@ -289,8 +289,8 @@ K: Gauge invariance dictates couplings, protects massless photons and, via Ward 
 !: Individual Feynman diagrams can be gauge-dependent; only the sum for a physical process is gauge-invariant.
 Q: What is a Ward identity? | A relation from gauge invariance, e.g. q_{μ}M^{μ} = 0, constraining amplitudes.
 Q: What is a Wilson loop? | The trace of the path-ordered exponential of the gauge field around a closed loop, a gauge-invariant observable.
-M1: Elitzur's theorem states that local gauge symmetry: | Cannot be spontaneously broken | Is always broken | Is global | Has no observables | Only global symmetries break.
-M2: BRST symmetry ensures: | Only physical states contribute | Ghosts are physical | Charge is not conserved | Gauge bosons are massive | Unitarity in gauge theories.
+M1#physics-u42-11-q1: Elitzur's theorem states that local gauge symmetry: | Cannot be spontaneously broken | Is always broken | Is global | Has no observables | Only global symmetries break.
+M2#physics-u42-11-q2: BRST symmetry ensures: | Only physical states contribute | Ghosts are physical | Charge is not conserved | Gauge bosons are massive | Unitarity in gauge theories.
 
 ## Quantum electrodynamics
 S: Quantum electrodynamics is the quantum field theory of electrons, positrons and photons. Developed by Feynman, Schwinger, Tomonaga and Dyson, it is the most precisely tested theory in physics, predicting magnetic moments and atomic energy levels to many decimal places.
@@ -313,8 +313,8 @@ K: QED's single coupling and vertex explain all electromagnetic phenomena of ele
 !: A free electron cannot emit or absorb a single real photon; processes need a third body or a second photon.
 Q: What is the Lamb shift? | A small splitting of hydrogen's 2S and 2P levels caused by QED vacuum effects.
 Q: What is the fine-structure constant's value? | α ≈ 1/137.036.
-M1: Bhabha scattering is: | e^{+}e^{−} → e^{+}e^{−} | e^{−}e^{−} → e^{−}e^{−} | eγ → eγ | γγ → γγ | Electron–positron elastic scattering.
-M2: The electron g − 2 is used to determine: | The fine-structure constant | Electron mass | Proton radius | Speed of light | Most precise α.
+M1#physics-u42-12-q1: Bhabha scattering is: | e^{+}e^{−} → e^{+}e^{−} | e^{−}e^{−} → e^{−}e^{−} | eγ → eγ | γγ → γγ | Electron–positron elastic scattering.
+M2#physics-u42-12-q2: The electron g − 2 is used to determine: | The fine-structure constant | Electron mass | Proton radius | Speed of light | Most precise α.
 
 ## Quantum chromodynamics
 S: Quantum chromodynamics is the SU(3) gauge theory of quarks and gluons, describing the strong force that binds quarks into protons, neutrons and other hadrons. It shows asymptotic freedom at high energies and confinement at low energies.
@@ -339,8 +339,8 @@ K: QCD is asymptotically free at short distances and confining at long distances
 !: Hadrons are not just three quarks; they are seething with gluons and quark–antiquark pairs.
 Q: What is confinement? | Quarks and gluons cannot be isolated; only colour-neutral hadrons exist freely.
 Q: What fraction of proton mass comes from Higgs-generated quark masses? | About 1%; the rest is QCD energy.
-M1: Gluons interact with each other because: | SU(3) is non-abelian | They are massive | They carry electric charge | QCD is abelian | f^{abc} ≠ 0.
-M2: Quark–gluon plasma forms at temperatures around: | 150 MeV (~2 × 10^{12} K) | 1 eV | 1 keV | 1 TeV only | Lattice QCD crossover.
+M1#physics-u42-13-q1: Gluons interact with each other because: | SU(3) is non-abelian | They are massive | They carry electric charge | QCD is abelian | f^{abc} ≠ 0.
+M2#physics-u42-13-q2: Quark–gluon plasma forms at temperatures around: | 150 MeV (~2 × 10^{12} K) | 1 eV | 1 keV | 1 TeV only | Lattice QCD crossover.
 
 ## Electroweak theory
 S: Electroweak theory unifies electromagnetism and the weak force in an SU(2) × U(1) gauge theory. Developed by Glashow, Weinberg and Salam, it predicted neutral currents and the W and Z bosons, all confirmed experimentally.
@@ -367,8 +367,8 @@ K: Electroweak theory unites EM and weak forces; mixing of W^{3} and B gives the
 !: Right-handed neutrinos (if they exist) have no SU(2) × U(1) charges; they are "sterile".
 Q: What is the weak mixing angle? | θ_{W}, describing how W^{3} and B mix into Z and γ; sin^{2}θ_{W} ≈ 0.231.
 Q: How did LEP show there are three light neutrinos? | From the Z boson's invisible decay width.
-M1: Weak charged currents couple only to: | Left-handed fermions (and right-handed antifermions) | Right-handed fermions | Photons | Gluons | V − A structure.
-M2: Neutral currents were discovered in: | 1973 | 1983 | 2012 | 1956 | Gargamelle at CERN.
+M1#physics-u42-14-q1: Weak charged currents couple only to: | Left-handed fermions (and right-handed antifermions) | Right-handed fermions | Photons | Gluons | V − A structure.
+M2#physics-u42-14-q2: Neutral currents were discovered in: | 1973 | 1983 | 2012 | 1956 | Gargamelle at CERN.
 
 ## Spontaneous symmetry breaking
 S: Spontaneous symmetry breaking occurs when the laws are symmetric but the lowest-energy state is not. It explains magnetism, superconductivity, the masses of W and Z bosons and light pions, and gives rise to massless Goldstone bosons.
@@ -392,8 +392,8 @@ K: Symmetric laws can have asymmetric ground states; broken continuous symmetrie
 !: Spontaneous breaking doesn't remove the symmetry; it constrains low-energy physics through Goldstone theorems.
 Q: Why are pions so light? | They are approximate Goldstone bosons of spontaneously broken chiral symmetry.
 Q: What does the Mermin–Wagner theorem state? | Continuous symmetries can't be spontaneously broken at finite temperature in 2D systems with short-range interactions.
-M1: The number of Goldstone bosons equals: | Number of broken generators | Number of unbroken generators | Always one | Zero | dim G − dim H.
-M2: SSB requires: | Infinitely many degrees of freedom | A single particle | Zero temperature only | Gauge fields | No tunnelling between vacua.
+M1#physics-u42-15-q1: The number of Goldstone bosons equals: | Number of broken generators | Number of unbroken generators | Always one | Zero | dim G − dim H.
+M2#physics-u42-15-q2: SSB requires: | Infinitely many degrees of freedom | A single particle | Zero temperature only | Gauge fields | No tunnelling between vacua.
 
 ## Higgs mechanism
 S: The Higgs mechanism gives mass to the W and Z bosons through spontaneous breaking of electroweak gauge symmetry by the Higgs field. It also gives quarks and charged leptons their masses, and its remaining excitation, the Higgs boson, was discovered at CERN in 2012.
@@ -418,8 +418,8 @@ K: Electroweak symmetry breaking gives W and Z masses via eaten Goldstones; Yuka
 !: The Higgs gives mass to elementary particles, not to most of the mass of ordinary matter (that's QCD binding).
 Q: What is the Higgs vacuum expectation value? | v ≈ 246 GeV.
 Q: What happens to the three would-be Goldstone bosons? | They become the longitudinal polarisations of W^{+}, W^{−} and Z.
-M1: The Higgs couples most strongly to: | The top quark | The electron | The photon | Neutrinos | Coupling ∝ mass.
-M2: The Higgs was discovered in: | 2012 | 1983 | 1995 | 2016 | ATLAS and CMS.
+M1#physics-u42-16-q1: The Higgs couples most strongly to: | The top quark | The electron | The photon | Neutrinos | Coupling ∝ mass.
+M2#physics-u42-16-q2: The Higgs was discovered in: | 2012 | 1983 | 1995 | 2016 | ATLAS and CMS.
 
 ## Effective field theory
 S: Effective field theory describes physics at a chosen energy scale using only the relevant fields, with heavier physics summarised by higher-dimension operators. It systematises approximation, makes predictions with controlled errors, and is now the standard way to interpret precision measurements.
@@ -443,8 +443,8 @@ K: EFTs keep only light physics and organise unknown heavy effects by power coun
 !: An EFT is only valid well below Λ; near the cutoff the expansion fails and new particles appear.
 Q: What does the Weinberg operator explain? | Small neutrino masses from new physics at a very high scale.
 Q: What is matching? | Fixing EFT coefficients by requiring agreement with the full theory at the heavy scale.
-M1: A dimension-8 operator is suppressed by: | 1/Λ^{4} | 1/Λ^{2} | 1/Λ | Λ^{4} | d − 4 = 4.
-M2: SMEFT is a: | Bottom-up EFT for new physics beyond the Standard Model | Lattice method | Gravity theory | Fermi theory | Parametrises unknown heavy physics.
+M1#physics-u42-17-q1: A dimension-8 operator is suppressed by: | 1/Λ^{4} | 1/Λ^{2} | 1/Λ | Λ^{4} | d − 4 = 4.
+M2#physics-u42-17-q2: SMEFT is a: | Bottom-up EFT for new physics beyond the Standard Model | Lattice method | Gravity theory | Fermi theory | Parametrises unknown heavy physics.
 
 ## Renormalisation group
 S: The renormalisation group describes how a theory's couplings and effective description change with the scale at which it is probed. It explains asymptotic freedom, universality of critical phenomena and why low-energy physics is insensitive to short-distance details.
@@ -469,8 +469,8 @@ K: The RG tracks how theories change with scale; fixed points govern universalit
 !: "Irrelevant" operators are not unimportant: they set small but measurable corrections and can encode new physics.
 Q: What is a relevant operator? | One whose effect grows at long distances (low energies).
 Q: What explains universality in critical phenomena? | Different systems flow to the same RG fixed point.
-M1: Asymptotic freedom corresponds to: | A UV fixed point at zero coupling | An IR fixed point | No fixed point | Infinite coupling | Coupling → 0 at high energy.
-M2: The Wilson–Fisher fixed point describes: | Critical phenomena in d < 4 | QED | Black holes | Fermi liquids | ε-expansion.
+M1#physics-u42-18-q1: Asymptotic freedom corresponds to: | A UV fixed point at zero coupling | An IR fixed point | No fixed point | Infinite coupling | Coupling → 0 at high energy.
+M2#physics-u42-18-q2: The Wilson–Fisher fixed point describes: | Critical phenomena in d < 4 | QED | Black holes | Fermi liquids | ε-expansion.
 
 ## Anomalies
 S: An anomaly is a classical symmetry broken by quantum effects. Anomalies explain why the neutral pion decays into two photons, constrain which particles can exist in the Standard Model, and underpin topological phenomena in condensed matter.
@@ -493,8 +493,8 @@ K: Anomalies are quantum breakings of classical symmetries; global ones are phys
 !: Anomaly cancellation in the Standard Model works only with complete generations of quarks and leptons.
 Q: What does the chiral anomaly explain? | The decay π^{0} → γγ and its rate, which confirms three quark colours.
 Q: What is the trace anomaly? | Quantum breaking of scale invariance, related to running couplings.
-M1: Gauge anomalies must: | Cancel | Be large | Be ignored | Give mass | Otherwise the theory is inconsistent.
-M2: Weyl semimetals show the chiral anomaly as: | Negative longitudinal magnetoresistance | Superconductivity | Ferromagnetism | Optical transparency | Charge pumping between Weyl nodes.
+M1#physics-u42-19-q1: Gauge anomalies must: | Cancel | Be large | Be ignored | Give mass | Otherwise the theory is inconsistent.
+M2#physics-u42-19-q2: Weyl semimetals show the chiral anomaly as: | Negative longitudinal magnetoresistance | Superconductivity | Ferromagnetism | Optical transparency | Charge pumping between Weyl nodes.
 
 ## Non-Abelian gauge theories
 S: Non-Abelian gauge theories, or Yang–Mills theories, use symmetry groups whose transformations don't commute. Their gauge bosons carry charge and interact with each other, producing the rich behaviour of the strong and weak forces, including asymptotic freedom and confinement.
@@ -519,8 +519,8 @@ K: Non-abelian gauge bosons self-interact; this leads to asymptotic freedom, con
 !: Yang–Mills theory has massless gauge fields classically, but the quantum theory is believed to have a mass gap.
 Q: What is the Yang–Mills mass gap problem? | Proving that quantum Yang–Mills theory has a positive lower bound on particle masses; a Millennium Prize problem.
 Q: What do instantons describe? | Tunnelling between topologically distinct gauge vacua.
-M1: Gluon self-interaction vertices include: | Three- and four-gluon vertices | Only quark–gluon | No vertices | Photon–gluon | From the commutator term.
-M2: Large-N expansions organise diagrams by: | Topology (genus) | Energy only | Spin | Charge | 't Hooft's insight.
+M1#physics-u42-20-q1: Gluon self-interaction vertices include: | Three- and four-gluon vertices | Only quark–gluon | No vertices | Photon–gluon | From the commutator term.
+M2#physics-u42-20-q2: Large-N expansions organise diagrams by: | Topology (genus) | Energy only | Spin | Charge | 't Hooft's insight.
 
 ## Lattice field theory
 S: Lattice field theory discretises spacetime into a grid so quantum field theories can be computed numerically from first principles. Lattice QCD computes hadron masses, decay constants and the properties of hot quark matter, where perturbation theory fails.
@@ -546,8 +546,8 @@ K: Discretising spacetime lets QFTs be simulated numerically, giving non-perturb
 !: Lattice results need continuum, infinite-volume and physical-mass extrapolations; raw numbers at one spacing aren't final.
 Q: What is the fermion doubling problem? | Naive lattice fermions produce extra unwanted species (16 in 4D).
 Q: What blocks lattice simulations of dense quark matter? | The sign problem: the path-integral weight becomes complex.
-M1: Lattice gauge fields live on: | Links | Sites only | Nowhere | Plaquette centres | Parallel transporters.
-M2: Lattice QCD shows the finite-temperature transition is: | A crossover around 155 MeV | First-order at 1 GeV | Absent | At 1 MeV | For physical quark masses.
+M1#physics-u42-21-q1: Lattice gauge fields live on: | Links | Sites only | Nowhere | Plaquette centres | Parallel transporters.
+M2#physics-u42-21-q2: Lattice QCD shows the finite-temperature transition is: | A crossover around 155 MeV | First-order at 1 GeV | Absent | At 1 MeV | For physical quark masses.
 
 ## Quantum field theory in curved spacetime
 S: Quantum field theory in curved spacetime studies quantum fields on a classical, curved background geometry. It predicts that black holes emit Hawking radiation, that expanding universes create particles, and that the notion of a particle depends on the observer.
@@ -572,6 +572,6 @@ K: Curved spacetime makes the vacuum observer-dependent, leading to particle cre
 !: Astrophysical black holes absorb more CMB than they emit; Hawking radiation dominates only for tiny or very old black holes.
 Q: What is a Bogoliubov transformation? | A linear relation between different observers' creation and annihilation operators that mixes particles and antiparticles.
 Q: How does inflation seed galaxies? | Quantum fluctuations of fields are stretched to cosmic scales, becoming density perturbations.
-M1: Hawking temperature is inversely proportional to: | Black hole mass | Surface area | Spin squared | Charge | T ∝ 1/M.
-M2: The information paradox concerns: | Whether black hole evaporation preserves unitarity | Light speed | Dark matter | Neutrino mass | Page curve.
+M1#physics-u42-22-q1: Hawking temperature is inversely proportional to: | Black hole mass | Surface area | Spin squared | Charge | T ∝ 1/M.
+M2#physics-u42-22-q2: The information paradox concerns: | Whether black hole evaporation preserves unitarity | Light speed | Dark matter | Neutrino mass | Page curve.
 `;

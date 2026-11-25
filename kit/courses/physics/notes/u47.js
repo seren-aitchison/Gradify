@@ -24,8 +24,8 @@ K: Natural frequency and damping ratio describe vibration; driving near resonanc
 !: Light damping makes resonance peaks sharp and dangerous; small changes in speed can produce large vibrations.
 Q: What is the damping ratio? | The ratio of actual damping to critical damping, ζ = c/(2√(km)).
 Q: What does vibration at 1× running speed usually indicate? | Imbalance of a rotor.
-M1: At resonance with ζ = 0.05, amplification is about: | 10 | 1 | 100 | 0.05 | 1/(2ζ).
-M2: Critically damped systems: | Return fastest without oscillating | Oscillate forever | Never return | Resonate strongly | ζ = 1.
+M1#physics-u47-01-q1: At resonance with ζ = 0.05, amplification is about: | 10 | 1 | 100 | 0.05 | 1/(2ζ).
+M2#physics-u47-01-q2: Critically damped systems: | Return fastest without oscillating | Oscillate forever | Never return | Resonate strongly | ζ = 1.
 
 ## Structural dynamics
 S: Structural dynamics analyses how buildings, bridges, aircraft and towers respond to time-varying loads such as wind, traffic, earthquakes and machinery. It predicts natural frequencies, mode shapes and dynamic stresses to keep structures safe and comfortable.
@@ -52,8 +52,8 @@ K: Structures have many modes; dynamic loads near those frequencies must be avoi
 !: A structure strong enough statically can still fail dynamically through resonance or flutter.
 Q: What caused the Tacoma Narrows Bridge collapse? | Aeroelastic flutter, a self-excited torsional oscillation driven by wind.
 Q: What is a tuned mass damper? | An auxiliary mass–spring–damper tuned to a structure's mode to absorb vibration energy.
-M1: Vortex shedding frequency increases with: | Wind speed | Diameter | Damping | Height only | f = St·v/D.
-M2: Beam natural frequency scales with length as: | 1/L^{2} | L | 1/L | L^{2} | Euler–Bernoulli beam.
+M1#physics-u47-02-q1: Vortex shedding frequency increases with: | Wind speed | Diameter | Damping | Height only | f = St·v/D.
+M2#physics-u47-02-q2: Beam natural frequency scales with length as: | 1/L^{2} | L | 1/L | L^{2} | Euler–Bernoulli beam.
 
 ## Resonance and damping
 S: Resonance occurs when a system is driven at its natural frequency, building large amplitudes from small inputs. Damping removes energy, limiting resonance. Both are exploited in instruments, filters and clocks, and both must be managed in machines and structures.
@@ -80,8 +80,8 @@ K: Resonance amplifies response by ~Q; damping lowers Q and broadens the peak.
 !: Adding damping reduces peak response but also reduces the efficiency of resonant devices like sensors and clocks.
 Q: What is the quality factor Q? | A measure of resonance sharpness: centre frequency divided by bandwidth.
 Q: Name a material damping technique for panels. | Constrained-layer damping with a viscoelastic layer.
-M1: High-Q systems have: | Narrow resonance peaks and slow decay | Broad peaks | Fast decay | No resonance | Little energy loss per cycle.
-M2: Coulomb damping force is: | Constant in magnitude | Proportional to velocity | Proportional to displacement | Zero | Dry friction.
+M1#physics-u47-03-q1: High-Q systems have: | Narrow resonance peaks and slow decay | Broad peaks | Fast decay | No resonance | Little energy loss per cycle.
+M2#physics-u47-03-q2: Coulomb damping force is: | Constant in magnitude | Proportional to velocity | Proportional to displacement | Zero | Dry friction.
 
 ## Modal analysis
 S: Modal analysis identifies the natural frequencies, mode shapes and damping of a structure. It is used to validate computer models, troubleshoot vibration problems and design products, from car bodies and guitars to aircraft wings and wind turbine blades.
@@ -107,8 +107,8 @@ K: Modal analysis extracts frequencies, damping and shapes from FRFs, and valida
 !: Accelerometer mass and poor boundary conditions can shift measured frequencies; light sensors and realistic supports matter.
 Q: What is a frequency response function? | The ratio of response to input force as a function of frequency.
 Q: What is operational modal analysis? | Identifying modes from ambient vibration without measuring the input.
-M1: MAC = 1 means: | Identical mode shapes | Orthogonal modes | No data | Different frequencies | Perfect correlation.
-M2: Impact hammers excite: | A broad frequency range | One frequency | Only static loads | Light | Short pulse, broad spectrum.
+M1#physics-u47-04-q1: MAC = 1 means: | Identical mode shapes | Orthogonal modes | No data | Different frequencies | Perfect correlation.
+M2#physics-u47-04-q2: Impact hammers excite: | A broad frequency range | One frequency | Only static loads | Light | Short pulse, broad spectrum.
 
 ## Noise control
 S: Noise control reduces unwanted sound at its source, along its path or at the receiver. It protects hearing, improves comfort and meets regulations in workplaces, cities, vehicles and buildings, using absorption, insulation, enclosures and active cancellation.
@@ -135,8 +135,8 @@ K: Use dB arithmetic correctly and tackle noise at source first, then path, then
 !: Decibels don't add arithmetically; two 80 dB sources give 83 dB, not 160 dB.
 Q: What does A-weighting do? | Adjusts levels to match human hearing sensitivity, reducing low and very high frequencies.
 Q: How does active noise control work? | It generates anti-phase sound to cancel unwanted noise, mainly at low frequencies.
-M1: Ten equal sources compared with one increase the level by: | 10 dB | 3 dB | 20 dB | 100 dB | 10 log 10.
-M2: A line source (busy road) attenuates per doubling of distance by: | 3 dB | 6 dB | 10 dB | 0 dB | Cylindrical spreading.
+M1#physics-u47-05-q1: Ten equal sources compared with one increase the level by: | 10 dB | 3 dB | 20 dB | 100 dB | 10 log 10.
+M2#physics-u47-05-q2: A line source (busy road) attenuates per doubling of distance by: | 3 dB | 6 dB | 10 dB | 0 dB | Cylindrical spreading.
 
 ## Acoustic materials
 S: Acoustic materials control sound by absorbing, reflecting, transmitting or diffusing it. Porous absorbers, resonators, heavy barriers and engineered metamaterials shape the acoustics of concert halls, offices, vehicles and machinery.
@@ -164,8 +164,8 @@ K: Absorbers reduce reflections and reverberation; heavy, decoupled, airtight co
 !: Absorbent foam does little to stop sound passing through walls; insulation needs mass and airtightness.
 Q: What does the Sabine equation predict? | Reverberation time from room volume and total absorption.
 Q: What is the mass law? | Transmission loss rises ~6 dB per doubling of surface mass or frequency.
-M1: Porous absorbers work best at: | Mid to high frequencies | Very low frequencies | DC | Infrasound only | Thickness vs wavelength.
-M2: A small gap in a wall: | Greatly reduces sound insulation | Has no effect | Improves insulation | Adds mass | Sound leaks through openings.
+M1#physics-u47-06-q1: Porous absorbers work best at: | Mid to high frequencies | Very low frequencies | DC | Infrasound only | Thickness vs wavelength.
+M2#physics-u47-06-q2: A small gap in a wall: | Greatly reduces sound insulation | Has no effect | Improves insulation | Adds mass | Sound leaks through openings.
 
 ## Sound propagation in structures
 S: Sound also travels through solids as structure-borne vibration, carried by longitudinal, shear and bending waves. Footsteps, machinery and plumbing transmit noise through floors and frames, radiating sound far from the source.
@@ -190,8 +190,8 @@ K: Structure-borne sound travels as bending and other waves; isolation and dampi
 !: Above the critical frequency, panels radiate sound very efficiently; thin, stiff panels have high critical frequencies.
 Q: Why are bending waves important for noise? | They produce out-of-plane surface motion that radiates sound.
 Q: What is statistical energy analysis? | A high-frequency method modelling average vibrational energy flow between coupled subsystems.
-M1: Bending waves are: | Dispersive | Non-dispersive | Only in fluids | Faster than light | Speed depends on frequency.
-M2: Floating floors reduce: | Impact and structure-borne sound | Light | Heat loss only | Air pressure | Resilient layer isolates.
+M1#physics-u47-07-q1: Bending waves are: | Dispersive | Non-dispersive | Only in fluids | Faster than light | Speed depends on frequency.
+M2#physics-u47-07-q2: Floating floors reduce: | Impact and structure-borne sound | Light | Heat loss only | Air pressure | Resilient layer isolates.
 
 ## Aeroacoustics
 S: Aeroacoustics studies sound generated by moving air: jet noise, fan and propeller noise, turbulence around wings and wind noise on cars. Lighthill's theory shows that turbulent flow acts like a distribution of acoustic quadrupoles, whose power rises steeply with speed.
@@ -217,8 +217,8 @@ K: Flow noise rises steeply with speed (U^{6}–U^{8}); reducing velocities and 
 !: Small speed reductions give large noise reductions; doubling speed can raise jet noise by 24 dB.
 Q: What is Lighthill's eighth-power law? | Jet noise power scales with the eighth power of jet velocity.
 Q: Why are high-bypass turbofans quieter? | They move more air at lower exhaust velocity, greatly reducing jet noise.
-M1: Fan blade-passing tones occur at: | NB/60 Hz | N/60 Hz | B Hz | 1 kHz always | Blades passing per second.
-M2: Owl-inspired serrated edges reduce: | Trailing-edge noise | Engine power | Lift | Weight | Smoother flow mixing.
+M1#physics-u47-08-q1: Fan blade-passing tones occur at: | NB/60 Hz | N/60 Hz | B Hz | 1 kHz always | Blades passing per second.
+M2#physics-u47-08-q2: Owl-inspired serrated edges reduce: | Trailing-edge noise | Engine power | Lift | Weight | Smoother flow mixing.
 
 ## Underwater acoustics
 S: Sound travels far in water where light and radio cannot, making acoustics the main way to sense and communicate underwater. Sonar, ocean science, marine animals and submarines all depend on how sound propagates in the sea.
@@ -244,8 +244,8 @@ K: Water carries sound far, especially at low frequencies; sonar uses echoes and
 !: Underwater decibels use a 1 μPa reference, not 20 μPa; comparing directly with in-air levels is misleading.
 Q: What is the SOFAR channel? | A depth layer of minimum sound speed that traps and guides sound over long distances.
 Q: Why use low frequencies for long-range sonar? | Absorption increases strongly with frequency.
-M1: Sound speed in seawater is about: | 1500 m s^{-1} | 343 m s^{-1} | 5000 m s^{-1} | 3 × 10^{8} m s^{-1} | ~4.4× faster than air.
-M2: Passive sonar: | Listens without transmitting | Sends pings | Uses light | Uses radar | Covert detection.
+M1#physics-u47-09-q1: Sound speed in seawater is about: | 1500 m s^{-1} | 343 m s^{-1} | 5000 m s^{-1} | 3 × 10^{8} m s^{-1} | ~4.4× faster than air.
+M2#physics-u47-09-q2: Passive sonar: | Listens without transmitting | Sends pings | Uses light | Uses radar | Covert detection.
 
 ## Vibration isolation
 S: Vibration isolation prevents vibrations passing between a source and its surroundings, protecting sensitive instruments or keeping machinery vibrations out of buildings. Springs and dampers that make the mounted system's natural frequency well below the disturbing frequency are the basic tool.
@@ -272,8 +272,8 @@ K: Isolate by making the mount's natural frequency much lower than the disturban
 !: Mounts tuned near the disturbing frequency amplify vibration; poorly chosen isolators make things worse.
 Q: Above what frequency ratio does isolation begin? | r = √2.
 Q: How does static deflection relate to natural frequency? | f_{n} ≈ 15.76/√δ_{st} Hz, with δ in mm.
-M1: Softer mounts give: | Lower natural frequency and better isolation | Higher frequency | No change | Worse isolation always | f_{n} ∝ √k.
-M2: Active isolation is used in: | Lithography tools and LIGO | Car tyres only | Kitchen tables | Speakers | Sensors plus actuators.
+M1#physics-u47-10-q1: Softer mounts give: | Lower natural frequency and better isolation | Higher frequency | No change | Worse isolation always | f_{n} ∝ √k.
+M2#physics-u47-10-q2: Active isolation is used in: | Lithography tools and LIGO | Car tyres only | Kitchen tables | Speakers | Sensors plus actuators.
 
 ## Seismic engineering physics
 S: Seismic engineering applies wave physics and structural dynamics to design buildings and infrastructure that survive earthquakes. It combines knowledge of ground motion, soil behaviour and structural response to protect lives.
@@ -299,8 +299,8 @@ K: Seismic design avoids resonance, adds ductility, and uses isolation and dampi
 !: Soft soils can amplify shaking dramatically; site conditions matter as much as magnitude.
 Q: What does base isolation do? | Lengthens a building's natural period to reduce earthquake accelerations transmitted to it.
 Q: Why do S-waves cause more damage than P-waves? | They have larger amplitudes and shear motion that structures resist poorly.
-M1: Each unit of moment magnitude corresponds to about how much more energy? | 32× | 10× | 2× | 1000× | 10^{1.5}.
-M2: Liquefaction occurs in: | Saturated loose sands | Solid granite | Dry clay | Concrete | Pore pressure builds up.
+M1#physics-u47-11-q1: Each unit of moment magnitude corresponds to about how much more energy? | 32× | 10× | 2× | 1000× | 10^{1.5}.
+M2#physics-u47-11-q2: Liquefaction occurs in: | Saturated loose sands | Solid granite | Dry clay | Concrete | Pore pressure builds up.
 
 ## Shock waves
 S: Shock waves are abrupt, nearly discontinuous jumps in pressure, density and temperature that travel faster than sound. They arise from supersonic aircraft, explosions, lightning and supernovae, and they are used in medicine and materials science.
@@ -327,8 +327,8 @@ K: Shocks are thin, irreversible jumps governed by conservation laws; their stre
 !: Density can't increase without limit across a shock; for air the maximum ratio is 6.
 Q: What are the Rankine–Hugoniot relations? | Conservation of mass, momentum and energy across a shock.
 Q: What is lithotripsy? | Breaking kidney stones with focused shock waves.
-M1: The Mach cone angle shrinks as speed: | Increases | Decreases | Stays constant | Is subsonic | sin μ = 1/M.
-M2: Flow behind a normal shock is: | Subsonic | Supersonic | Static | At light speed | Always.
+M1#physics-u47-12-q1: The Mach cone angle shrinks as speed: | Increases | Decreases | Stays constant | Is subsonic | sin μ = 1/M.
+M2#physics-u47-12-q2: Flow behind a normal shock is: | Subsonic | Supersonic | Static | At light speed | Always.
 
 ## Impact mechanics
 S: Impact mechanics studies collisions where large forces act over short times: car crashes, sports, bird strikes, ballistic protection and dropped phones. It combines momentum, energy, contact stresses and stress waves.
@@ -354,8 +354,8 @@ K: Lengthening impact time reduces force; stress waves and material rate effects
 !: Peak forces can far exceed averages; short impacts with stiff materials create very high stresses.
 Q: What is the coefficient of restitution? | Ratio of relative separation speed to approach speed in a collision.
 Q: How do crumple zones protect passengers? | They extend the collision time, reducing average force.
-M1: A perfectly inelastic collision has e equal to: | 0 | 1 | 0.5 | −1 | Objects stick.
-M2: Impact stress in a bar is proportional to: | Impact velocity | Velocity squared | Length | Temperature | σ = ρcv.
+M1#physics-u47-13-q1: A perfectly inelastic collision has e equal to: | 0 | 1 | 0.5 | −1 | Objects stick.
+M2#physics-u47-13-q2: Impact stress in a bar is proportional to: | Impact velocity | Velocity squared | Length | Temperature | σ = ρcv.
 
 ## Tribology and friction
 S: Tribology is the science of friction, wear and lubrication of surfaces in contact. It matters enormously: friction and wear consume about a fifth of the world's energy, and every engine, bearing, joint and brake depends on tribology.
@@ -383,8 +383,8 @@ K: Friction comes from real asperity contacts; lubrication regimes and wear mech
 !: Friction doesn't depend on apparent contact area because real contact area scales with load, not size.
 Q: What does the Stribeck curve show? | How friction varies across boundary, mixed and hydrodynamic lubrication regimes.
 Q: What is stick–slip? | Alternating sticking and sliding causing jerky motion and noise.
-M1: Archard's law says wear volume is proportional to: | Load × sliding distance / hardness | Hardness | Speed only | Temperature | V = kNs/H.
-M2: Hydrodynamic lubrication means: | A fluid film fully separates the surfaces | Dry contact | Solid lubricant only | Molecular layers only | Lowest wear.
+M1#physics-u47-14-q1: Archard's law says wear volume is proportional to: | Load × sliding distance / hardness | Hardness | Speed only | Temperature | V = kNs/H.
+M2#physics-u47-14-q2: Hydrodynamic lubrication means: | A fluid film fully separates the surfaces | Dry contact | Solid lubricant only | Molecular layers only | Lowest wear.
 
 ## Fluid-structure interaction
 S: Fluid–structure interaction describes how flowing fluids and flexible structures affect each other: wind making bridges sway, blood flow deforming arteries, flags flapping and pipes vibrating. Coupled effects can cause dangerous instabilities like flutter.
@@ -411,8 +411,8 @@ K: Fluids and structures can feed back on each other; resonance with flow phenom
 !: Ignoring added mass overestimates natural frequencies of submerged structures.
 Q: What is added mass? | The extra effective inertia from fluid that must accelerate with a body.
 Q: What causes water hammer? | Sudden changes in flow velocity create pressure waves in pipes.
-M1: Helical strakes on chimneys reduce: | Vortex-induced vibration | Weight | Heat loss | Corrosion | Disrupt coherent shedding.
-M2: Flutter is a: | Self-excited aeroelastic instability | Forced resonance only | Material fatigue | Thermal effect | Coupled bending and torsion.
+M1#physics-u47-15-q1: Helical strakes on chimneys reduce: | Vortex-induced vibration | Weight | Heat loss | Corrosion | Disrupt coherent shedding.
+M2#physics-u47-15-q2: Flutter is a: | Self-excited aeroelastic instability | Forced resonance only | Material fatigue | Thermal effect | Coupled bending and torsion.
 
 ## Engineering measurement systems
 S: Engineering measurement systems monitor strain, displacement, force, pressure, temperature, flow and vibration in tests and operating equipment. Choosing transducers, conditioning signals and estimating uncertainty ensure the data can be trusted for design and safety decisions.
@@ -440,8 +440,8 @@ K: Match sensors to measurand, range and bandwidth; avoid loading effects and qu
 !: Heavy sensors change lightweight structures' behaviour; the act of measuring can alter the result.
 Q: What is digital image correlation? | A camera-based method tracking surface patterns to give full-field displacement and strain.
 Q: What is a loading effect? | Distortion of the measured quantity caused by the sensor itself.
-M1: LVDTs measure: | Displacement | Temperature | Pressure | Light | Linear variable differential transformer.
-M2: Coriolis flowmeters measure: | Mass flow directly | Temperature | Voltage | Density only | Tube twist from flow.
+M1#physics-u47-16-q1: LVDTs measure: | Displacement | Temperature | Pressure | Light | Linear variable differential transformer.
+M2#physics-u47-16-q2: Coriolis flowmeters measure: | Mass flow directly | Temperature | Voltage | Density only | Tube twist from flow.
 
 ## Failure analysis
 S: Failure analysis investigates why components and structures break, using physics, materials science and detective work. Identifying root causes, such as fatigue, overload, corrosion or design flaws, prevents repeat failures and improves safety.
@@ -471,8 +471,8 @@ K: Read fracture surfaces, test materials and analyse stresses to find root caus
 !: The obvious broken part may be a victim, not the cause; trace the failure sequence before concluding.
 Q: What are beach marks? | Macroscopic bands on fatigue fracture surfaces marking crack-front positions.
 Q: What caused the Comet airliner failures? | Fatigue cracking at stress concentrations near window corners.
-M1: Chevron marks on brittle fractures point: | Back towards the origin | Away from the origin | Randomly | Downward only | Indicate crack start.
-M2: The Paris law describes: | Fatigue crack growth rate | Creep | Yield stress | Thermal expansion | da/dN = C(ΔK)^{m}.
+M1#physics-u47-17-q1: Chevron marks on brittle fractures point: | Back towards the origin | Away from the origin | Randomly | Downward only | Indicate crack start.
+M2#physics-u47-17-q2: The Paris law describes: | Fatigue crack growth rate | Creep | Yield stress | Thermal expansion | da/dN = C(ΔK)^{m}.
 
 ## Reliability and physical modelling
 S: Reliability engineering predicts and improves how long systems work before failing. Combining physical models of degradation with statistics lets engineers set maintenance intervals, warranties and safety margins for everything from chips to aircraft.
@@ -501,6 +501,6 @@ K: Reliability combines statistics (Weibull, bathtub) with physics of failure (A
 !: Accelerated tests can introduce failure mechanisms that don't occur in normal use; validate the acceleration model.
 Q: What does a Weibull shape parameter β > 1 indicate? | Wear-out failures with increasing failure rate.
 Q: What is Miner's rule? | Cumulative fatigue damage: failure when Σ(n_{i}/N_{i}) reaches 1.
-M1: Series systems are: | Less reliable than any component | More reliable | Equally reliable | Unaffected | R = ΠR_{i}.
-M2: The bathtub curve's middle section shows: | Constant random failure rate | Infant mortality | Wear-out | Zero failures | Useful life.
+M1#physics-u47-18-q1: Series systems are: | Less reliable than any component | More reliable | Equally reliable | Unaffected | R = ΠR_{i}.
+M2#physics-u47-18-q2: The bathtub curve's middle section shows: | Constant random failure rate | Infant mortality | Wear-out | Zero failures | Useful life.
 `;

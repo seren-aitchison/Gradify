@@ -1,42 +1,69 @@
 // What to write next: topics from the requirement map, in wave order, skipping what is filed or blocked.
 // A topic is one section of a specification (AQA 4.1.1.1 "Eukaryotes and prokaryotes"). Its requirements are the
 // statements in that section that no existing lesson covers strongly: existing lessons are reused, never rewritten.
-import { readFileSync, existsSync } from "node:fs";
+import { readFileSync, existsSync, readdirSync } from "node:fs";
 import { SPECS, QUAL_TYPES } from "../../kit/curriculum/uk.js";
 import { loadIndex, loadStatements, loadMap, tokens, checkIndex } from "../curriculum/engine.mjs";
 import { CONFIG, at, out, load, slug, loadLedger, briefPath } from "./lib.mjs";
 import { staleness, targetKey } from "./build.mjs";
+import { titleKey } from "../../kit/course/syllabus.js";
+import { loadStore, decisionOf, candidatesOf } from "./mapstore.mjs";
 
 const LEVEL = { gcse: "GCSE", "a-level": "A level", "as-level": "AS level", n5: "National 5", higher: "Higher" };
-const TYPE = (s) => (s.kind === "practical" ? "prac" : s.kind === "skill" ? (s.skills || []).some((k) => /math|calc/i.test(k)) ? "method" : "data" : "concept");
+export const TYPE = (s) => (s.kind === "practical" ? "prac" : s.kind === "skill" ? (s.skills || []).some((k) => /math|calc/i.test(k)) ? "method" : "data" : "concept");
 const lessonRef = (subject, id) => { const m = String(id).match(/^(u\d+)-(\d+)$/); return m ? `${subject}/${m[1]}#${Number(m[2])}` : `${subject}/${id}`; };
 
-/** every topic of a framework with requirements still to write */
-export function topicsFor(fwId, { titles = new Map() } = {}) {
+/** a course's lesson ids (u02-26: unit u02, its 26th lesson) → titles, from its notes files */
+export function lessonTitles(subject) {
+  const dir = at(`kit/courses/${subject}/notes/`), out = new Map(); if (!existsSync(dir)) return out;
+  // ids are locked by title in ids.js, not by position: a borrowed or reordered unit starts after its retired ids
+  const locked = lockedIds(subject);
+  for (const f of readdirSync(dir).filter((x) => /^u\d+\.js$/.test(x))) {
+    const unit = f.slice(0, -3); let n = 0;
+    for (const m of readFileSync(new URL(f, dir), "utf8").matchAll(/^## (.+)$/gm)) {
+      const title = m[1].trim(); n++;
+      // a course with no ids.js numbers lessons in order, as its syllabus does; otherwise an unlocked title has no id yet
+      const id = locked ? locked.get(`${unit}|${titleKey(title)}`) : `${unit}-${String(n).padStart(2, "0")}`;
+      if (id) out.set(id, title);
+    }
+  }
+  return out;
+}
+/** a course's ids.js as "<unit>|<title key>" → id, or null when it has none */
+export function lockedIds(subject) {
+  const f = at(`kit/courses/${subject}/ids.js`); if (!existsSync(f)) return null;
+  const body = readFileSync(f, "utf8").split(/export const RETIRED/)[0], out = new Map();
+  for (const m of body.matchAll(/"(u\d+-\d+)":\s*"((?:[^"\\]|\\.)*)"/g)) out.set(`${m[1].slice(0, 3)}|${titleKey(JSON.parse(`"${m[2]}"`))}`, m[1]);
+  return out;
+}
+
+/** every topic of a framework with requirements still to write; reused lessons are named by title (read from the course
+ * when no titles are passed), so a Writer can tell what each one already teaches */
+export function topicsFor(fwId, { titles = null } = {}) {
   const s = SPECS.find((x) => x.id === fwId); if (!s) throw new Error(`no framework ${fwId} in the registry (kit/curriculum/uk.js)`);
+  titles ||= lessonTitles(s.subject);
   const idx = loadIndex(fwId); if (!idx) throw new Error(`${fwId} has no statement index (kit/curriculum/specs/${fwId}.json): import it first`);
   // nothing is queued from an index that doesn't say what kind of requirement each statement is, or when it applies
   const bad = checkIndex(idx); if (bad.length) throw new Error(`${fwId}: ${bad.join("; ")}`);
-  const st = loadStatements(fwId), text = new Map((st.statements || []).map((x) => [x.ref, x])), map = loadMap(fwId) || { links: {} };
+  const st = loadStatements(fwId), text = new Map((st.statements || []).map((x) => [x.ref, x])), map = loadStore(fwId);
   const sections = new Map((idx.sections || []).map((x) => [x.ref, x]));
   // strong matches are confirmed in a session first (scripts/content/agent.mjs, mapping): confirmed ones are taught
-  // already and get REQ: lines; rejected ones are written like any gap; unconfirmed ones wait for their check
-  const confirmed = load(out(`content/mapping/${fwId}.json`), { confirmed: {} }).confirmed;
+  // already and get REQ: lines; rejected ones are written like any gap; unconfirmed ones wait for their check.
+  // Every decision is in the mapping store (scripts/content/mapstore.mjs)
   const byTopic = new Map();
   for (const x of idx.statements) {
     const link = map.links[x.ref];
-    // a decision holds for the statement text it was made on; one recorded before hashes were stored still counts
-    const m0 = confirmed[x.ref], m = m0 && (!m0.hash || m0.hash === x.hash) ? m0 : null;
-    // a reviewed link holds only for the statement text it was reviewed on; a changed statement is written or re-reviewed
-    const verified = link?.status === "verified" && link.hash === x.hash;
-    if (verified || m?.ok) continue;                                                // already taught: mapped, not written
+    // a decision holds for the statement text it was made on (a person's review, or an AI reviewer's); a changed
+    // statement is undecided again, so it's checked or written afresh
+    const m = decisionOf(map, x.ref, x.hash);
+    if (m && m.status !== "rejected") continue;                                     // already taught: mapped, not written
     if (link?.confidence === "strong" && !m) continue;                             // waiting for its mapping check
     const sec = sections.get(x.section) || { ref: x.section, title: x.section };
     const id = `${s.subject}/${slug(sec.title)}`;
     if (!byTopic.has(id)) byTopic.set(id, { id, subject: s.subject, fw: fwId, section: sec.ref, title: sec.title, level: LEVEL[s.qual] || QUAL_TYPES[s.qual]?.name || s.qual, country: "uk", reqs: [], reuse: new Map() });
     const t = byTopic.get(id), full = text.get(x.ref);
-    t.reqs.push({ id: `${fwId}:${x.ref}`, ref: x.ref, asks: full?.text ? full.text.slice(0, 400) : `${sec.title} (${x.ref})`, text: full?.text || null, title: sec.title, type: TYPE(x), status: x.status, reqType: x.type, spec: { version: idx.version, published: idx.published }, hash: x.hash, ...(x.higherTier ? { higherTier: true } : {}) });
-    for (const l of link?.lessons || []) t.reuse.set(lessonRef(s.subject, l.id), titles.get(l.id) || l.id);
+    t.reqs.push({ id: `${fwId}:${x.ref}`, ref: x.ref, asks: full?.text || `${sec.title} (${x.ref})`, text: full?.text || null, title: sec.title, type: TYPE(x), status: x.status, reqType: x.type, spec: { version: idx.version, published: idx.published }, hash: x.hash, ...(x.higherTier ? { higherTier: true } : {}) });
+    for (const l of candidatesOf(link)) t.reuse.set(lessonRef(s.subject, l.id), titles.get(l.id) || l.id);
   }
   return [...byTopic.values()].map((t) => ({ ...t, reuse: [...t.reuse].map(([id, title]) => ({ id, title })) }));
 }
