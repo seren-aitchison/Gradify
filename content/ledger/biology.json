@@ -98,6 +98,55 @@
     "Required practical: observing cells with a light microscope: A labelled light microscope showing the eyepiece, objective lenses, stage and focusing knobs, with an arrow showing the move from low to high power"
    ],
    "status": "partial"
+  },
+  "biology/cell-specialisation": {
+   "runs": 1,
+   "lessons": [
+    {
+     "title": "How specialised cells are adapted to their jobs",
+     "tier": "expert-required",
+     "reqs": [
+      "aqa-gcse-biology:4.1.1.3.a"
+     ],
+     "disagreed": false,
+     "repairs": 0,
+     "highRisk": true,
+     "hash": "c3d6fcc57922850d",
+     "built": {
+      "brief": "be145ad5bde2b41c",
+      "briefText": "56b24e1076e4f988",
+      "prompts": {
+       "writer.md": "039b0d1a1231c541",
+       "review.md": "39c9e8942654b904",
+       "shorthand.md": "006b44f00ec9cfb3"
+      },
+      "models": {
+       "write": "agent:opus",
+       "review": "agent:sonnet"
+      },
+      "template": {
+       "level": "gcse",
+       "fp": "85c6fdf2282e30a1"
+      },
+      "reqs": [
+       "aqa-gcse-biology:4.1.1.3.a@8ee99e188b9bd7de"
+      ]
+     }
+    }
+   ],
+   "lastRun": "2026-11-25",
+   "reqHash": "aqa-gcse-biology:4.1.1.3.a:8ee99e188b9bd7de",
+   "file": "content/drafts/biology/aqa-gcse-biology/cell-specialisation.txt",
+   "title": "Cell specialisation",
+   "fw": "aqa-gcse-biology",
+   "section": "4.1.1.3",
+   "failures": [],
+   "uncovered": [],
+   "gaps": [],
+   "needs": [
+    "How specialised cells are adapted to their jobs: Six labelled specialised cells side by side (sperm, nerve, muscle, root hair, xylem vessel, phloem sieve tube with companion cell), each adaptation labelled beside the structure it belongs to and its job"
+   ],
+   "status": "filed"
   }
  }
 }

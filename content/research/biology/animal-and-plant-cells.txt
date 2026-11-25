@@ -1,30 +1,47 @@
-# fp=921196447f2219c9 · 2026-11-25
+# fp=832dfd37c24a6f7b · 2026-11-25
 TOPIC biology/animal-and-plant-cells | levels=GCSE | checked=2026-11-25
-# NOTE: only s1 was opened in full. Network blocked every other host on fetch (savemyexams, openstax, opentextbc, myedspace). s2-s4 were seen only as search-result snippets, so facts resting on them are conf=low. Fewer than three independent sources opened: needs a re-run once hosts are allowed.
-F: AQA 8461 asks GCSE students to estimate the size of sub-cellular structures and say what such estimates show about relative size or area | s1 | conf=high
-F: The AQA microscopy required practical (apparatus and technique skills 1 and 7) is to observe, draw and label plant and animal cells under a light microscope, with a magnification scale included | s1,s2 | conf=high
-F: Students may compare their own drawings with micrographs, photographs or video of the same cells | s1 | conf=med
-F: Maths skills expected: order-of-magnitude reasoning, standard form where suitable, and the prefixes centi, milli, micro and nano | s1 | conf=high
-F: Magnification is the size of the image divided by the size of the real object; the relation can be rearranged to find either missing quantity | s1,s3 | conf=high
-F: Image size and real size must be in the same unit before dividing; convert between mm and micrometres (1 mm = 1000 micrometres) first | s3,s4 | conf=low
-F: Start observation on the lowest-power objective lens, then move to higher power | s2 | conf=low
-F: Biological drawings are scientific, not artistic: clear single lines, large on the page, labelled, with a scale or magnification | s2 | conf=low
-F: Estimating relative size: count how many of one structure would fit across another, or use the field of view as a ruler, then state the answer as a rough ratio | s4 | conf=low
-DEF: magnification | how many times bigger an image appears than the real object, found as image size over real size | GCSE
-DEF: order of magnitude | size comparison to the nearest power of ten, used for rough estimates | GCSE
-DEF: standard form | number written as a value between 1 and 10 times a power of ten, suited to very small real sizes | GCSE
-DEF: field of view | the circular area visible through the eyepiece | GCSE
-MIS: Magnification and resolution are the same thing | Magnification makes an image bigger; resolution is how clearly two close points are told apart
-MIS: Drawings should be shaded and artistic | Use clear continuous lines and labels, no shading
-EXAM: Marks are lost for not converting units before the magnification calculation | s3
-EXAM: Answers for very small real sizes may be expected in standard form | s1,s3
-EXAM: A magnification scale must appear on the drawing for the required practical | s1
-VAR: Specification reference for the microscopy practical differs between resources (4.1.1.2 in the request, 4.1.1.5 in some third-party material); confirm in the current AQA document | s1,s2
-NUM: Worked example type: image 50 mm, real size 2000 micrometres = 2 mm, so magnification x25 | s3
-NUM: Example from a resource: onion cell at x400 with image 14.8 mm, solve for real size | s2
-CONFLICT: Specification point numbering for the microscopy practical varies (4.1.1.2 vs 4.1.1.5) | s1,s2
-SRC: s1 | AQA GCSE Biology 8461 specification, Cell biology content | https://www.aqa.org.uk/subjects/science/gcse/biology-8461/specification/subject-content/cell-biology | AQA | licence=facts | 2026-11-25
-SRC: s2 | Required Practical: Microscopy (AQA GCSE Biology) revision note [snippet only] | https://www.savemyexams.com/gcse/biology/aqa/18/revision-notes/1-cell-biology/1-1-cell-structure/1-1-6-required-practical-microscopy | Save My Exams | licence=facts | 2026-11-25
-SRC: s3 | Microscopy (AQA GCSE Biology) revision note [snippet only] | https://www.savemyexams.com/gcse/biology/aqa/18/revision-notes/1-cell-biology/1-1-cell-structure/1-1-5-microscopy/ | Save My Exams | licence=facts | 2026-11-25
-SRC: s4 | Calculations of magnification, real size and image size [snippet only] | https://myedspace.co.uk/myresources/gcse/biology/aqa/revision-notes/calculations-of-magnification-real-size-and-image-size | MyEdSpace | licence=facts | 2026-11-25
+F: Most animal cells contain a nucleus, cytoplasm, cell membrane, mitochondria and ribosomes | s1,s3 | conf=high
+F: Plant cells often add chloroplasts and a permanent vacuole filled with cell sap; plant and algal cells also have a cellulose cell wall that strengthens the cell | s1,s3 | conf=high
+F: Students must explain how nucleus, cell membrane, mitochondria, chloroplasts (plant) and plasmids (bacterial) relate to their functions | s1 | conf=high
+F: Nucleus holds the DNA and so directs cell activity; it is a membrane-bound compartment, which is what defines a eukaryote | s1,s3,s4 | conf=high
+F: Cell membrane is selective, controlling which substances move in and out | s4,s3 | conf=high
+F: Mitochondria hold the enzymes for aerobic respiration, where most energy is released; they make ATP | s4,s3 | conf=high
+F: Chloroplasts contain chlorophyll that absorbs light, plus the enzymes for photosynthesis; they have their own DNA and ribosomes and stacked thylakoid membranes | s4,s3 | conf=high
+F: Ribosomes are the tiny sites of protein synthesis, seen only with an electron microscope | s4,s3 | conf=high
+F: Permanent vacuole of cell sap helps keep plant cells turgid; animal cells may have small temporary vacuoles for storing or moving substances | s4,s3 | conf=med
+F: Cytoplasm is a jelly-like medium holding dissolved nutrients and organelles where many reactions occur | s4,s3 | conf=high
+F: Bacterial cells are much smaller, lack a nucleus, have a single DNA loop plus possibly small DNA rings called plasmids, and a cell wall | s1 | conf=high
+F: Typical animal cells are about 0.01 to 0.05 mm and plant cells 0.01 to 0.10 mm; the naked eye resolves about 0.05 mm | s4 | conf=med
+F: Micrometre (1/1000 mm, 1 x 10^-6 m) is the sensible unit for cells; nanometre (1 x 10^-9 m) for ribosomes and viruses | s4 | conf=high
+F: AQA expects order-of-magnitude calculations, standard form, and the prefixes centi, milli, micro, nano | s1 | conf=high
+F: Students must be able to make rough size estimates for structures inside cells, and say when a rough figure is good enough to compare how big or how much area one structure takes against another; micrographs and photographs can be compared with own drawings | s1 | conf=high
+F: Relative size is found by dividing one size by the other after converting both to one unit; an order of magnitude is a factor of 10 | s4 | conf=high
+F: Magnification = size of image / size of real object; answers in standard form where suitable | s1 | conf=high
+F: Microscope total magnification = eyepiece magnification x objective magnification | s4 | conf=high
+F: Light microscope tops out near x1500 and resolves about 0.2 micrometres; TEM goes to about x1 000 000 and resolves under 1 nm | s4,s1 | conf=med
+F: Electron microscopes revealed many more sub-cellular structures; AQA limits this to differences in magnification and resolution | s1,s4 | conf=high
+F: Required practical 1: observe, draw and label plant and animal cells with a light microscope; magnification scale must be included; covers AT 1 and AT 7 | s1,s2 | conf=high
+F: Practical method: start on low power (eg x10), coarse focus then fine focus, thin specimen under a coverslip lowered gently to avoid air bubbles, stain for contrast, then move to high power (eg x40) | s4,s2 | conf=high
+F: Typical specimens are onion epidermis (plant) and cheek cells (animal) | s4,s2 | conf=med
+F: Drawings: a low-power plan shows tissue regions; a high-power drawing shows detail of a single cell; all must be labelled | s4 | conf=high
+F: An eyepiece graticule is calibrated against a stage micrometer for each objective; one division's length differs between objectives | s4,s2 | conf=high
+F: Risks to note: too-bright illumination, stains, glass coverslips and slides, mounted needles | s4 | conf=high
+DEF: magnification | how many times larger an image is than the real object | GCSE
+DEF: resolution | ability to see two close points as separate; more detail at higher resolution | GCSE
+DEF: order of magnitude | difference in size expressed as a factor of ten | GCSE
+DEF: standard form | A x 10^n with A between 1 and 10 | GCSE
+DEF: eyepiece graticule | scale in the eyepiece, calibrated with a stage micrometer, used to measure cells | GCSE
+MIS: Magnification and resolution are the same | Magnification enlarges; resolution is how much fine detail shows, and limits the useful magnification | s4
+MIS: Only plant cells have mitochondria | Plant and animal cells both respire, so both have mitochondria; plants have chloroplasts as well | s4,s3
+MIS: Cell wall and cell membrane are the same | Wall is rigid cellulose outside; membrane is thin and selective | s4,s1
+EXAM: Convert image and real size to the same unit before dividing | s4
+EXAM: Include a magnification scale and full labels on drawings for the required practical | s1,s4
+NUM: Graticule worked example: 250 micrometres spans 51 divisions, so 1 division = 4.9 micrometres; a 12-division cell is about 59 micrometres | s4
+NUM: Leaf cell 70 micrometres vs red blood cell 7 micrometres = 10 times; cheek cell 70 micrometres vs bacterium 0.5 micrometres = 140 times | s4
+VAR: AQA numbers microscopy content 4.1.1.5 and the practical under 4.1.1.2; check the current spec if a resource disagrees | s1
+CONFLICT: BBC Bitesize lists mitochondria as visible but not detailed under a light microscope, whereas AQA only states electron microscopes see more detail | s4,s1
+SRC: s1 | GCSE Biology 8461 Specification (2016, v1.0) | https://filestore.aqa.org.uk/resources/biology/specifications/AQA-8461-SP-2016.PDF | AQA | licence=facts | 2026-11-25
+SRC: s2 | AQA GCSE Biology 8461 required practicals | https://filestore.aqa.org.uk/resources/biology/AQA-8461-PRACTICALS.PDF | AQA | licence=facts | 2026-11-25
+SRC: s3 | 4.3 Eukaryotic Cells, Biology 2e | https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells | OpenStax | licence=facts | 2026-11-25
+SRC: s4 | Cell structure - AQA (BBC Bitesize guide, pages 1-10) | https://www.bbc.co.uk/bitesize/guides/z84jtv4/revision/1 | BBC Bitesize | licence=facts | 2026-11-25
 END

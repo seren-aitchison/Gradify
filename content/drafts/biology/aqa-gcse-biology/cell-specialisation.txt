@@ -1,0 +1,68 @@
+# draft · aqa-gcse-biology 4.1.1.3 Cell specialisation · written by the content engine (scripts/gradify.mjs) · not yet published
+# tiers and review history: content/ledger/biology.json
+
+## How specialised cells are adapted to their jobs
+LV: GCSE
+S: A specialised cell has a shape and a set of sub-cellular structures that suit one job, and that job helps the tissue, organ or body it belongs to work. Seeing how structure matches function lets you explain cells you have never met before.
+PRE: Cell differentiation
+O: Describe how sperm, nerve and muscle cells are adapted to the jobs they do
+O: Describe how root hair, xylem and phloem cells are adapted to the jobs they do
+O: Use information you are given about an unfamiliar cell to explain how its features help it, and the organism, work
+REQ: aqa-gcse-biology:4.1.1.3.a @1,2,3
+T: Specialised cell | A cell whose structure is adapted to carry out one particular function
+T: Differentiation | The process in which a cell gains the sub-cellular structures it needs for a specific job
+T: Stem cell | An undifferentiated cell that can produce other kinds of cell by differentiation
+T: Mitochondria | Sub-cellular structures where aerobic respiration releases energy, as ATP, for the cell
+H: How cells become specialised
+P: In a developing organism, cells become different from one another by **differentiation**. As a cell differentiates it gains the sub-cellular structures suited to one task, and it is then a **specialised cell**. Genes in the nucleus control these differences. Cells taken early, before they have specialised, can still turn into many kinds of cell, which is the basis of stem cell technology.
+- Most kinds of animal cell differentiate early in development. In a mature animal, cell division is mainly for repair and replacement.
+- Many kinds of plant cell keep the ability to differentiate for the whole of the plant's life.
+K: Structure matches function: the shape of a specialised cell and the sub-cellular structures it contains tell you what job it does.
+H: Specialised animal cells
+- **Sperm cell**: the head contains the genetic material and an **acrosome**, which holds enzymes that let the sperm get into the egg. The middle piece is packed with **mitochondria**, which release the energy for swimming. The tail moves the sperm towards the egg.
+- **Nerve cell**: long, so it can carry impulses over large distances, with branched endings that connect to other nerve cells, to muscles and to glands. A fatty insulating sheath makes the impulse travel faster. Together, nerve cells link every part of the body with the central nervous system.
+- **Muscle cell**: contains protein filaments that slide past each other to make the cell shorter, and many mitochondria to provide the energy for contraction. In skeletal muscle, cells merge into long fibres that contract together, so the whole muscle shortens as one.
+DNEED: Six labelled specialised cells side by side (sperm, nerve, muscle, root hair, xylem vessel, phloem sieve tube with companion cell), each adaptation labelled beside the structure it belongs to and its job
+H: Specialised plant cells
+- **Root hair cell**: its hair-shaped extension gives a large surface area in contact with the water in the soil, and its thin wall does not hold back water moving into the cell.
+- **Xylem**: the cells have no end walls between them, so they form continuous tubes and water flows through them as an unbroken column. Their thick, woody walls help support the plant.
+- **Phloem**: sieve tubes carry dissolved sugars and amino acids both up and down the stem. **Companion cells** next to the sieve tubes supply the energy this transport needs.
+!: Mixing up xylem and phloem. Xylem carries water in a continuous column; phloem carries dissolved sugars and amino acids, both up and down the stem.
+!: Thinking every cell in an adult animal can still become a different type. Most animal cells differentiate early in development, while many plant cells keep this ability throughout life.
+H: Explaining a cell you have not met
+P: A question may describe a cell that is not on your list. Look for clues in its structure, then link each clue to a job.
+- **Many mitochondria** mean the cell needs a lot of energy, released by aerobic respiration, as in muscle cells and sperm.
+- **Many ribosomes** mean the cell makes a lot of protein, such as the enzymes made by some cells in the pancreas.
+- **A large surface area**, from folds or extensions, means the cell absorbs a lot, as in root hair cells and the cells lining the small intestine.
+X: Cells lining the small intestine have tiny finger-like folds of membrane called microvilli. Explain how this helps the organism.
+> Name the feature: microvilli are folds of the cell membrane.
+> State what it does: the folds greatly increase the cell's surface area.
+> Link it to the cell's job: a larger surface area means more digested nutrients can be absorbed at once.
+> Link it to the organism: the small intestine absorbs nutrients quickly, so they can reach the rest of the body.
+X: An enzyme-secreting cell in the pancreas contains a very large number of ribosomes. Suggest why.
+> Ribosomes are where the cell makes proteins.
+> Enzymes are proteins.
+> So many ribosomes let the cell make the large amounts of enzyme it secretes.
+!: Naming a feature without saying how it helps. "It has many mitochondria" is only half an answer; "its many mitochondria release energy for contraction" links the structure to the function.
+K: To explain any specialised cell, name the feature, say what it does, then say how that helps the cell's job and the organism as a whole.
+Q: Why does the middle piece of a sperm cell contain many mitochondria? | They release the energy the tail needs to swim to the egg.
+Q: What does the acrosome of a sperm cell do? | It holds enzymes that let the sperm get into the egg.
+Q: How is a nerve cell adapted to link parts of the body? | It is long, with branched endings that connect to other nerve cells, muscles and glands; a fatty sheath speeds the impulse.
+Q: How does a muscle cell shorten? | Protein filaments inside it slide past each other, using energy released by its many mitochondria.
+Q: Why does a root hair cell have a large surface area? | To give more contact with soil water, so the cell can take in more water.
+Q: Why are there no end walls between xylem cells? | So water can flow through them as a continuous column.
+Q: What do companion cells do? | They sit beside phloem sieve tubes and supply the energy for moving dissolved sugars and amino acids.
+Q: What does a cell with very many ribosomes probably do? | Make a lot of protein, such as enzymes.
+M1@1: Why does the middle piece of a sperm cell contain many mitochondria? | To release energy for the tail to swim | To store the genetic material for the egg | To make enzymes that digest the egg's outer layer | To insulate the cell as it travels | Mitochondria carry out aerobic respiration, releasing the energy the tail needs; the head holds the genetic material and the acrosome holds the enzymes.
+M1@2: Which feature helps xylem carry water through a plant? | No end walls between cells, forming a continuous tube | Companion cells that supply energy for transport | A thin wall that lets water in more easily | Many chloroplasts that make sugar for the stem | With no end walls, water moves as an unbroken column; companion cells belong to phloem, and a thin wall is a root hair cell feature.
+M2@1: A nerve cell's fatty sheath is damaged. What is the most likely effect? | Impulses travel more slowly along the cell | The cell can no longer link to any muscle | The cell runs out of energy for contraction | The cell loses all of its branched endings | The fatty sheath insulates the cell and speeds the impulse, so losing it slows impulses; the branched endings are a separate feature.
+M2@2: Phloem moves dissolved sugars around a plant. Which structure supplies the energy for this? | Companion cells beside the sieve tubes | Thick woody walls around the vessels | Root hair cells taking in soil water | Open ends between the xylem vessels | Companion cells sit next to the sieve tubes and provide the energy for transport; woody walls and open ends are features of xylem.
+M3@3: An unfamiliar cell has far more mitochondria than most cells. Which conclusion is best supported? | It uses a lot of energy, released by aerobic respiration | It makes a lot of protein, such as digestive enzymes | It absorbs a lot, as its surface area is very large | It holds extra genetic material to control other cells | Mitochondria release energy by aerobic respiration, so many of them point to a high energy demand, as in muscle; making protein is linked to ribosomes.
+M3@3: Cells lining the small intestine have microvilli. How does this help the whole organism? | More surface area lets more digested nutrients be absorbed for the body | More mitochondria give energy to push food along the intestine | More ribosomes let the cells make the enzymes that digest food | No end walls let food flow through the cells in a column | Microvilli are membrane folds that raise the surface area, so nutrients are absorbed faster and reach the rest of the body; the other options describe different structures.
+SUM: A specialised cell has a structure adapted to one job, and it gains that structure by differentiation, which genes in the nucleus control.
+SUM: Sperm, nerve and muscle cells are adapted by features such as many mitochondria, long branched extensions, an insulating sheath and sliding protein filaments.
+SUM: Root hair cells have a large surface area, xylem forms continuous woody tubes for water, and phloem relies on companion cells to move dissolved sugars.
+SUM: To explain an unfamiliar cell, link each feature, such as many mitochondria, many ribosomes or a large surface area, to the job it makes possible.
+SRC: AQA, GCSE Biology 8461 specification, sections 4.1.1.3 and 4.1.1.4 | standard | 2026-11-25 | https://filestore.aqa.org.uk/resources/biology/specifications/AQA-8461-SP-2016.PDF
+SRC: BBC Bitesize, "Plant and animal cells", Cell structure (AQA GCSE Biology) | secondary | 2026-11-25 | https://www.bbc.co.uk/bitesize/guides/z84jtv4/revision/12
+SRC: OpenStax, Biology 2e, section 4.3 "Eukaryotic Cells" | secondary | 2026-11-25 | https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells

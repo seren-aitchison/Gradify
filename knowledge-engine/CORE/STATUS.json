@@ -210,12 +210,12 @@
   ],
   "requirements": {
    "aqa-gcse-biology": {
-    "spec imported": 420,
+    "spec imported": 401,
     "mapped": 54,
-    "drafted": 0,
+    "drafted": 18,
     "gates passed": 0,
     "AI-verified": 0,
-    "expert-required": 0,
+    "expert-required": 1,
     "expert-approved": 0,
     "published": 0,
     "needs update": 1
@@ -234,10 +234,10 @@
   }
  },
  "branch": "content/rolling",
- "commit": "f46b21212",
+ "commit": "58129ddba",
  "dirty": true,
- "briefs": 1,
- "drafts": 1,
+ "briefs": 6,
+ "drafts": 2,
  "mode": "fast",
  "budgetUsd": 25,
  "subjects": [
@@ -249,16 +249,16 @@
    "topicsToWrite": 97,
    "requirementsToWrite": 421,
    "topics": {
-    "filed": 0,
+    "filed": 1,
     "partial": 1,
     "filed-with-gaps": 0,
     "failed": 1,
     "blocked": 0
    },
    "lessons": {
-    "total": 1,
+    "total": 2,
     "aiVerified": 0,
-    "expertRequired": 1,
+    "expertRequired": 2,
     "expertApproved": 0,
     "disagreements": 1
    },
