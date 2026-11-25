@@ -623,3 +623,9 @@ test("the specification gate doesn't ask for command words like 'demonstrate an 
   assert.ok(G.specGate(L, lesson, [req]).ok);
   assert.ok(!G.specGate(L, "REQ: x:1 @1\nWater moves.", [req]).ok);
 });
+
+test("a fraction shown as a result is checked as a fraction", () => {
+  assert.deepEqual(G.checkArithmetic("> Area: 2 ÷ 50 = 1/25 of the cell"), []);
+  assert.equal(G.checkArithmetic("> Area: 2 ÷ 50 = 1/20 of the cell").length, 1);
+  assert.equal(G.checkArithmetic("> 3 × 4 = 13").length, 1);
+});

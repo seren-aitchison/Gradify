@@ -152,6 +152,9 @@ export function checkArithmetic(line) {
   for (let i = 0; i < parts.length - 1; i++) {
     const v = evalExpr(parts[i]), rhs = parts[i + 1].trim().match(NUMRE)?.[0];
     if (v == null || !rhs || !/^\s*[-−]?\d/.test(parts[i + 1])) continue;
+    // a fraction shown as the result ("2 ÷ 50 = 1/25") is compared as its value, not as its numerator
+    const frac = parts[i + 1].match(/^\s*([-−]?\d+(?:\.\d+)?)\s*\/\s*(\d+(?:\.\d+)?)(?![\d.])/);
+    if (frac) { const f = toNum(frac[1]) / Number(frac[2]); if (Math.abs(v - f) > Math.abs(f) * 0.005 + 1e-12) bad.push(`${parts[i].trim().slice(-40)} = ${frac[1]}/${frac[2]} (recomputes to ${+v.toPrecision(6)})`); continue; }
     if (!close(v, rhs.replace(/\s+/g, ""))) bad.push(`${parts[i].trim().slice(-40)} = ${rhs} (recomputes to ${+v.toPrecision(6)})`);
   }
   return bad;
