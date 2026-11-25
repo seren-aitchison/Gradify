@@ -1,0 +1,72 @@
+// What to write next: topics from the requirement map, in wave order, skipping what is filed or blocked.
+// A topic is one section of a specification (AQA 4.1.1.1 "Eukaryotes and prokaryotes"). Its requirements are the
+// statements in that section that no existing lesson covers strongly: existing lessons are reused, never rewritten.
+import { readFileSync, existsSync } from "node:fs";
+import { SPECS, QUAL_TYPES } from "../../kit/curriculum/uk.js";
+import { loadIndex, loadStatements, loadMap, tokens } from "../curriculum/engine.mjs";
+import { CONFIG, at, load, slug, loadLedger, briefPath } from "./lib.mjs";
+
+const LEVEL = { gcse: "GCSE", "a-level": "A level", "as-level": "AS level", n5: "National 5", higher: "Higher" };
+const TYPE = (s) => (s.kind === "practical" ? "prac" : s.kind === "skill" ? (s.skills || []).some((k) => /math|calc/i.test(k)) ? "method" : "data" : "concept");
+const lessonRef = (subject, id) => { const m = String(id).match(/^(u\d+)-(\d+)$/); return m ? `${subject}/${m[1]}#${Number(m[2])}` : `${subject}/${id}`; };
+
+/** every topic of a framework with requirements still to write */
+export function topicsFor(fwId, { titles = new Map() } = {}) {
+  const s = SPECS.find((x) => x.id === fwId); if (!s) throw new Error(`no framework ${fwId} in the registry (kit/curriculum/uk.js)`);
+  const idx = loadIndex(fwId); if (!idx) throw new Error(`${fwId} has no statement index (kit/curriculum/specs/${fwId}.json): import it first`);
+  const st = loadStatements(fwId), text = new Map((st.statements || []).map((x) => [x.ref, x])), map = loadMap(fwId) || { links: {} };
+  const sections = new Map((idx.sections || []).map((x) => [x.ref, x]));
+  const out = new Map();
+  for (const x of idx.statements) {
+    const link = map.links[x.ref];
+    if (link?.status === "verified" || link?.confidence === "strong") continue;      // already taught: map, don't write
+    const sec = sections.get(x.section) || { ref: x.section, title: x.section };
+    const id = `${s.subject}/${slug(sec.title)}`;
+    if (!out.has(id)) out.set(id, { id, subject: s.subject, fw: fwId, section: sec.ref, title: sec.title, level: LEVEL[s.qual] || QUAL_TYPES[s.qual]?.name || s.qual, country: "uk", reqs: [], reuse: new Map() });
+    const t = out.get(id), full = text.get(x.ref);
+    t.reqs.push({ id: `${fwId}:${x.ref}`, ref: x.ref, asks: full?.text ? full.text.slice(0, 400) : `${sec.title} (${x.ref})`, text: full?.text || null, title: sec.title, type: TYPE(x), status: "official", hash: x.hash, ...(x.higherTier ? { higherTier: true } : {}) });
+    for (const l of link?.lessons || []) t.reuse.set(lessonRef(s.subject, l.id), titles.get(l.id) || l.id);
+  }
+  return [...out.values()].map((t) => ({ ...t, reuse: [...t.reuse].map(([id, title]) => ({ id, title })) }));
+}
+
+/** the subjects in wave order, and the frameworks in the run (config.frameworks) */
+export function waveOrder(subjects) {
+  const rank = (sub) => { for (const w of CONFIG.waves) if (w.subjects.includes(sub) || w.subjects.includes("*")) return w.wave * 100 + Math.max(0, w.subjects.indexOf(sub)); return 999; };
+  return [...subjects].sort((a, b) => rank(a) - rank(b));
+}
+export const frameworksFor = (subject) => CONFIG.frameworks.filter((id) => SPECS.find((s) => s.id === id)?.subject === subject);
+export const subjectsInRun = () => waveOrder([...new Set(CONFIG.frameworks.map((id) => SPECS.find((s) => s.id === id)?.subject).filter(Boolean))]);
+
+/** the next topics to work on for a subject: not filed, not blocked (failed in `repairs` runs), document order */
+export function nextTopics(subject, { limit = CONFIG.topicsPerRun, titles } = {}) {
+  const led = loadLedger(subject), out = [];
+  for (const fw of frameworksFor(subject)) for (const t of topicsFor(fw, { titles })) {
+    const e = led.topics[t.id];
+    if (e?.status === "filed" && e.reqHash === reqHash(t)) continue;
+    if (e?.status === "blocked") continue;
+    out.push(t); if (out.length >= limit) return out;
+  }
+  return out;
+}
+export const reqHash = (t) => t.reqs.map((r) => `${r.id}:${r.hash}`).join(",");
+
+// ---------- what a packet offers the Writer: library diagrams on the topic, and the renderers they use ----------
+export function diagramsFor(topic, { max = 6 } = {}) {
+  const man = load(at("kit/diagrams/manifest.json"), {}), want = new Set(tokens(`${topic.title} ${topic.reqs.map((r) => r.asks).join(" ")}`));
+  const prefix = { biology: "bio-", chemistry: "chem-", physics: "phys-", maths: "maths-" }[topic.subject] || `${topic.subject}-`;
+  const scored = Object.entries(man).filter(([id, d]) => id.startsWith(prefix) && d.status !== "failed")
+    .map(([id, d]) => ({ id, shows: d.caption || d.title || id, score: tokens(`${d.title} ${d.title} ${d.caption}`).filter((w) => [...want].some((x) => stemMatch(x, w))).length }))
+    .filter((d) => d.score >= (want.size > 4 ? 2 : 1)).sort((a, b) => b.score - a.score).slice(0, max);
+  const renderers = new Map([["graph", '{"range":{"x":[0,10],"y":[0,10]},"axisLabels":["x (unit)","y (unit)"],"points":[{"x":1,"y":2}],"curves":[{"expr":"2*x"}],"title":"…","caption":"…","alt":"…"}']]);
+  for (const d of scored) {
+    const f = at(`kit/diagrams/specs/${d.id}.json`); if (!existsSync(f)) continue;
+    const spec = JSON.parse(readFileSync(f, "utf8")); if (!spec.renderer || renderers.has(spec.renderer)) continue;
+    const { id, course, renderer, ...rest } = spec, ex = JSON.stringify(rest);
+    if (ex.length <= 900) renderers.set(spec.renderer, ex);
+  }
+  return { diagrams: scored.map(({ id, shows }) => ({ id, shows: shows.slice(0, 140) })), renderers: [...renderers].map(([id, schema]) => ({ id, schema })) };
+}
+// shared stems: "prokaryot" matches "prokaryotic"
+const stemMatch = (a, b) => { const n = Math.min(a.length, b.length); return n >= 5 ? a.slice(0, n - 1) === b.slice(0, n - 1) && Math.abs(a.length - b.length) <= 3 : a === b; };
+export const hasBrief = (topic) => existsSync(briefPath(topic.id));

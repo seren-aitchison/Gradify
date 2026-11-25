@@ -1,0 +1,45 @@
+# example · level: primary · from kit/courses/primary/notes/u09.js · selected by a structure score, not yet expert-approved
+## Everyday materials
+LV: Year 1 to Year 2 · Foundation
+S: Everything around us is made from materials such as wood, plastic, metal and glass. This lesson explains the difference between an object and the material it is made from, and why we choose particular materials for particular jobs.
+O: Distinguish between an object and the material it is made from
+O: Identify and name everyday materials
+O: Explain why a material is suitable for a particular use
+H: Objects and materials
+P: An **object** is a thing, such as a spoon, a window or a chair. A **material** is what the object is made from, such as **wood**, **plastic**, **glass**, **metal**, **fabric**, **paper**, **rubber**, **rock** or **water**. The same object can be made from different materials: a spoon could be metal, plastic or wood. And the same material can make lots of different objects: wood can become a table, a pencil or a door. In Year 1 the national curriculum asks children to tell an object apart from the material it is made from and to name everyday materials. In Year 2 they compare how suitable materials are for different uses, and learn about people such as **John McAdam**, who developed a new way of building roads, and **Charles Macintosh**, who invented a waterproof fabric.
+H: Common materials
+- **Wood**: comes from trees; used for furniture, doors and pencils.
+- **Metal**: strong and shiny; used for keys, pans and cars.
+- **Plastic**: can be made in any shape and colour; used for bottles and toys.
+- **Glass**: transparent; used for windows and jars.
+- **Fabric**: soft and bendy; used for clothes and curtains.
+- **Rubber**: stretchy and waterproof; used for tyres and wellies.
+H: Choosing the right material
+- Ask what the object needs to do.
+- A window needs to be **transparent** so we can see through it.
+- An umbrella needs to be **waterproof**.
+- A saucepan needs to be strong and not melt on the hob.
+- A teapot made of chocolate would be a poor choice: it would melt.
+X: Testing materials for a raincoat.
+> A class wants to find the best material for a teddy's raincoat.
+> They drip the same amount of water onto paper, cotton, foil and plastic.
+> The paper and cotton soak it up; the water runs off the foil and plastic.
+> Plastic is chosen because it is waterproof and also bendy enough to wear.
+K: An object is a thing and a material is what it is made from, and we choose materials whose properties suit the object's job.
+!: Calling an object a material, such as saying "the material is a chair". The chair is the object; wood or plastic is the material.
+EV: established | Charles Macintosh patented a waterproof fabric in 1823, made by sandwiching rubber between layers of cloth.
+T: Object | A thing, such as a cup, chair or door
+T: Material | What an object is made from, such as wood, metal or plastic
+T: Waterproof | Does not let water through
+SUM: Objects are made from materials.
+SUM: Name everyday materials.
+SUM: Choose materials to suit the job.
+SRC: Department for Education, National curriculum in England: science programmes of study | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-science-programmes-of-study
+SRC: Ashby M. F. and Johnson K., Materials and Design: The Art and Science of Material Selection in Product Design, 3rd edition, Butterworth-Heinemann | secondary | 2013
+Q: What is the difference between an object and a material? | An object is a thing; a material is what it is made from.
+Q: Why are windows made of glass? | Glass is transparent, so we can see through it.
+M1#primary-u09-01-q1@1: Which of these is a material? | Wood | Table | Spoon | Window | Wood is what things are made from, while a table, spoon and window are objects.
+M2#primary-u09-01-q2@2: Which material would be best for a pair of wellies? | Rubber | Paper | Cotton wool | Glass | Rubber is waterproof and bendy, so it keeps feet dry and can be worn comfortably.
+MATCH1#primary-u09-01-q3@1: Match each object to a material it is often made from. | window = glass ; tyre = rubber ; book = paper ; key = metal | Each object is made from a material with properties that suit its job.
+M3#primary-u09-01-q4@3: Why would a chocolate teapot be a bad idea? | Hot tea would melt it | Chocolate is too heavy to lift | Chocolate is transparent | Teapots must be magnetic | A teapot must hold hot liquid without changing shape, and chocolate melts when heated.
+SA2#primary-u09-01-q5@2,3: Explain which material you would choose for the roof of a dog kennel and why. | I would choose metal or plastic sheeting, or wood covered with waterproof felt. The roof must be waterproof so the dog stays dry, and strong enough not to break in wind or rain. It should also be rigid so it keeps its shape. Paper or fabric would be poor choices because they soak up water and tear easily. | Names a suitable material ; Waterproof ; Strong and rigid ; Rejects an unsuitable material

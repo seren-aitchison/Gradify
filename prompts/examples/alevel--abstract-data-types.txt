@@ -1,0 +1,50 @@
+# example · level: alevel · from kit/courses/computing/notes/u05.js · selected by a structure score, not yet expert-approved
+## Abstract data types
+LV: A level · Foundation
+S: An abstract data type (ADT) defines a collection of data by the operations it supports, not by how it is stored. This lesson explains the idea, why separating interface from implementation matters, and the ADTs studied in this school.
+O: Define an abstract data type and distinguish it from a data structure
+O: Describe an ADT by listing its operations and their behaviour
+O: Evaluate the benefits of separating an interface from its implementation
+H: Interface, not implementation
+P: An **abstract data type** specifies what data is held and which **operations** can be performed on it, with their expected behaviour, but says nothing about how they are carried out. A stack ADT, for example, offers push, pop, peek and is_empty. A **data structure** is a concrete way of storing data in memory, such as an array or a linked list, used to **implement** an ADT.
+P: The idea comes from Barbara Liskov and Stephen Zilles (1974): programs should use data only through its operations. Then the implementation can change, for example from an array to a linked list, without any code that uses the ADT having to change.
+H: The ADTs in this school
+- **Stack**: last in, first out.
+- **Queue**: first in, first out; circular and priority variants.
+- **List**: ordered items accessed by position, implemented as an array or a linked list.
+- **Tree** and **binary search tree**: hierarchical data and fast ordered search.
+- **Graph**: vertices joined by edges.
+- **Dictionary** (map): values looked up by key, usually implemented as a hash table.
+X: Specify a queue ADT for a printer.
+> enqueue(job): add a job to the back.
+> dequeue(): remove and return the job at the front.
+> is_empty(): return True if no jobs are waiting; size(): return the number of jobs.
+> Whether it uses a Python list, a circular array or a linked list is hidden from the code that sends print jobs.
+K: An ADT is a contract (operations and behaviour); a data structure is one way of fulfilling it. Code that uses only the contract survives a change of implementation.
+!: Treating "stack" and "array" as the same kind of thing. A stack is an ADT; an array is one data structure that can implement it.
+EV: established | Data abstraction, introduced by Liskov and Zilles in 1974, underpins modules, classes and interfaces in modern languages.
+EV: established | The same ADT can have implementations with very different performance, so choosing the implementation remains an engineering decision.
+T: Abstract data type | A model of data defined by its operations and their behaviour, independent of implementation
+T: Data structure | A concrete arrangement of data in memory used to implement an abstract data type
+T: Interface | The set of operations through which other code uses an ADT or module
+SUM: An ADT defines operations and behaviour; a data structure implements them.
+SUM: Separating interface from implementation lets the implementation change without affecting users.
+SRC: Liskov B. and Zilles S., "Programming with abstract data types", ACM SIGPLAN Notices 9(4), 50–59 | primary | 1974 | https://doi.org/10.1145/942572.807045
+SRC: AQA, A-level Computer Science 7517 specification, section 4.2.1 "Data structures and abstract data types" | standard | 2015
+Q: What is an abstract data type? | A model of data defined by the operations it supports and their behaviour, without saying how it is stored.
+Q: What is the difference between an ADT and a data structure? | An ADT specifies operations and behaviour; a data structure is a concrete storage method used to implement it.
+M1#computing-u05-01-q1@1: What does an abstract data type define? | The operations on the data and how they behave | The exact layout of the data in memory | The programming language that must be used | The speed of each operation in seconds | An ADT is about behaviour; layout is the implementation's concern.
+M2#computing-u05-01-q2@2: A team replaces the array inside its stack with a linked list. Code elsewhere that only calls push and pop is unchanged. Which principle does this show? | Separating an ADT's interface from its implementation | Recursion replacing iteration | Static memory allocation | Normalisation of data | Because other code uses only the operations, the implementation can change freely.
+TF1#computing-u05-01-q3@1: A stack is an example of an abstract data type. | true | A stack is defined by its operations (push, pop, peek, is_empty), and can be implemented with an array or a linked list.
+M3#computing-u05-01-q4@3: Why is it risky for code to read a stack's internal array directly instead of calling pop and peek? | The code breaks if the stack's implementation changes, and it may bypass rules such as last in, first out | Arrays can't be read once they are inside a stack | It makes the stack hold items in the wrong data type | Reading an array always causes a syntax error | Depending on internals ties code to one implementation and can violate the ADT's behaviour.
+SA3#computing-u05-01-q5@2,3: Explain the difference between an abstract data type and a data structure, using a queue as an example, and evaluate why the distinction matters. | A queue ADT is defined by enqueue, dequeue, is_empty and size, with first-in, first-out behaviour. It can be implemented with data structures such as a Python list, a circular array or a linked list. The distinction matters because code using only the operations doesn't depend on the implementation, so a slow implementation (list with removal from the front, O(n)) can be replaced by a faster one (a deque or circular array, O(1)) without changing the rest of the program. It also makes the code easier to understand and test. | Defines ADT by operations ; Lists queue operations ; Names implementations ; Explains replaceable implementation ; Gives a concrete benefit such as speed or testing
+Q: Which operations does a stack ADT offer? | Push, pop, peek and is_empty.
+Q: Who introduced the idea that programs should use data only through its operations, and when? | Barbara Liskov and Stephen Zilles, in 1974.
+Q: What is an interface in the context of abstract data types? | The set of operations through which other code uses an ADT or module.
+Q: Why can an ADT's implementation change without breaking the code that uses it? | That code relies only on the operations and their behaviour, not on how the data is stored.
+Q: What is the common mistake of treating "stack" and "array" as the same kind of thing? | A stack is an ADT; an array is one data structure that can implement it.
+Q: Which ADT orders items last in, first out? | The stack.
+Q: How is a dictionary (map) ADT usually implemented? | As a hash table, with values looked up by key.
+Q: What operations would a queue ADT for a printer provide? | Enqueue to add a job at the back, dequeue to remove the front job, plus is_empty and size.
+Q: Name two data structures that could implement a list ADT. | An array or a linked list.
+Q: Which ADT models vertices joined by edges? | The graph.

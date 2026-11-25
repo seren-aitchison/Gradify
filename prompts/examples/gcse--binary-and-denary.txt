@@ -1,0 +1,39 @@
+# example · level: gcse · from kit/courses/computing/notes/u06.js · selected by a structure score, not yet expert-approved
+## Binary and denary
+LV: GCSE · Foundation
+S: Computers store all data as binary: patterns of 0s and 1s. This lesson explains why, how the binary place-value system works and how to convert between binary and denary (base 10).
+O: Explain why computers use binary to represent data
+O: Convert whole numbers between binary and denary, up to at least 8 bits
+O: State the range of values that n bits can represent and apply it to a problem
+H: Why binary?
+P: A computer's processor and memory are built from billions of transistors, each of which acts as a switch that is either off or on. Two states are easy to make, store and tell apart reliably, even with electrical noise, so data is represented with two symbols: 0 and 1. One binary digit is a **bit**; 8 bits make a **byte**.
+P: **Denary** (decimal) is base 10: each place is worth 10 times the one to its right (units, tens, hundreds). **Binary** is base 2: each place is worth twice the one to its right. For 8 bits the place values are 128, 64, 32, 16, 8, 4, 2, 1.
+E: n bits represent 2^{n} different values :: 0 to 2^{n} − 1 for unsigned whole numbers
+X: Convert binary 10110110 to denary, then denary 75 to binary.
+> Under the place values 128 64 32 16 8 4 2 1, the bits are 1 0 1 1 0 1 1 0.
+> Add the place values with a 1: 128 + 32 + 16 + 4 + 2 = 182.
+> For 75: 64 fits (11 left), 32 doesn't, 16 doesn't, 8 fits (3 left), 4 doesn't, 2 fits (1 left), 1 fits.
+> So 75 = 01001011. Check: 64 + 8 + 2 + 1 = 75. In Python, \`bin(75)\` gives \`"0b1001011"\` and \`int("1001011", 2)\` gives 75.
+K: In binary each place is worth double the one to its right; n bits give 2^{n} values, so 8 bits store whole numbers from 0 to 255.
+H: Ranges and leading zeros
+- 4 bits (a nibble): 0 to 15. 8 bits: 0 to 255. 16 bits: 0 to 65,535.
+- Leading zeros don't change a value: 00001011 is 11.
+- The rightmost bit is the **least significant bit**; the leftmost is the **most significant bit**.
+- An odd number always has a least significant bit of 1.
+!: Thinking 8 bits can store 256 as the largest number. 2^{8} = 256 is the number of different values; because one of them is 0, the largest is 255.
+EV: established | All data in a digital computer, including text, images, sound and instructions, is ultimately stored and processed as binary.
+EV: established | Two-state devices are used because they are cheap to manufacture and distinguish reliably in the presence of electrical noise.
+T: Bit | A binary digit, 0 or 1: the smallest unit of data
+T: Denary | The base-10 number system, using digits 0 to 9
+T: Binary | The base-2 number system, using digits 0 and 1
+SUM: Computers use binary because two-state switches are reliable; each binary place is worth twice the next.
+SUM: n bits give 2^{n} values: 8 bits store 0 to 255.
+SRC: AQA, GCSE Computer Science 8525 specification, section 3.3.1 "Number bases" | standard | 2020
+SRC: Python Software Foundation, The Python Standard Library, "Built-in Functions": bin() and int() | standard | 2024 | https://docs.python.org/3/library/functions.html
+Q: How many different values can 8 bits represent? | 256 (2^{8}), from 0 to 255 for unsigned whole numbers.
+Q: Why do computers use binary? | Their components are two-state switches (off or on), which are easy to make and distinguish reliably.
+M1#computing-u06-01-q1@1: What is the denary value of binary 00001101? | 13 | 11 | 15 | 26 | The 1s are in the 8, 4 and 1 columns, so the value is 8 + 4 + 1 = 13.
+M2#computing-u06-01-q2@2: What is denary 150 in 8-bit binary? | 10010110 | 10010011 | 01101001 | 11000110 | 150 = 128 + 16 + 4 + 2, giving 1 0 0 1 0 1 1 0.
+TF1#computing-u06-01-q3@2: The largest unsigned whole number that 6 bits can store is 64. | false | 2^{6} = 64 values, from 0 to 63, so the largest is 63.
+M3#computing-u06-01-q4@3: A sensor must report values from 0 to 1,000. What is the fewest number of bits that can store every value? | 10 | 9 | 8 | 1,000 | 9 bits reach only 511; 10 bits give 1,024 values, 0 to 1,023.
+SA3#computing-u06-01-q5@2,3: Explain why computers use binary rather than denary, and show how to convert 201 into 8-bit binary. | Electronic components such as transistors have two stable states, off and on, which can be made cheaply and told apart reliably despite electrical noise; ten distinct voltage levels would be far harder to distinguish. To convert 201: 128 fits (73 left), 64 fits (9 left), 32 and 16 don't, 8 fits (1 left), 4 and 2 don't, 1 fits. So 201 = 11001001. Check: 128 + 64 + 8 + 1 = 201. | Two-state components ; Reliability or noise argument ; Uses place values to convert ; Correct answer 11001001 ; Shows a check

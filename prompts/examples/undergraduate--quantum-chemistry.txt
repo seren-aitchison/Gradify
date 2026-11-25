@@ -1,0 +1,48 @@
+# example · level: undergraduate · from kit/courses/chemistry/notes/u16.js · selected by a structure score, not yet expert-approved
+## Quantum chemistry
+LV: Year 1 · Chemical reasoning
+S: Quantum chemistry applies quantum mechanics to chemical systems. This lesson introduces its key ideas and approximations.
+O: Explain why quantum mechanics is needed in chemistry
+O: Describe the Born-Oppenheimer approximation
+O: Describe the main computational approaches
+H: Key ideas
+- Electrons behave as **waves**, described by **wavefunctions**.
+- Energy is **quantised**.
+- |ψ|² gives the **probability density** of finding an electron.
+- Classical physics cannot explain atomic stability or spectra.
+D: chem-mo-n2
+H: Approximations
+- **Born-Oppenheimer**: nuclei are much heavier and slower than electrons, so they are treated as fixed.
+- **Hartree-Fock**: each electron moves in the average field of the others.
+- **Density functional theory (DFT)**: uses electron density instead of the full wavefunction.
+- Higher-level methods include electron correlation more fully.
+P: Exact solutions exist only for one-electron systems such as the hydrogen atom, so approximations are essential. DFT, recognised by the 1998 Nobel Prize, balances accuracy and cost and is used for most molecular calculations today.
+X: Why Born-Oppenheimer works.
+> A proton is about 1,836 times heavier than an electron.
+> Electrons adjust almost instantly to nuclear positions.
+> Electronic energy is calculated for fixed nuclei.
+> This gives a potential energy surface for nuclear motion.
+H: The main computational approaches
+- **Ab initio** methods start from the Schrödinger equation with no fitted data: Hartree-Fock, then more accurate methods such as Møller-Plesset perturbation theory and coupled cluster, which add electron correlation at a much higher computational cost.
+- **Density functional theory** works from the electron density with an approximate exchange-correlation functional: the usual choice for molecules of tens to hundreds of atoms.
+- **Semi-empirical** methods simplify the equations using parameters fitted to experiment: fast enough for large molecules, but less reliable outside the data they were fitted to.
+- **Molecular mechanics** leaves out electrons and treats atoms as balls joined by springs (a force field): it handles proteins and materials with many thousands of atoms but cannot describe bonds breaking or forming.
+- Choosing between these **approaches** is a trade-off between accuracy and computational cost, which rises steeply with the number of electrons.
+K: Quantum chemistry describes electrons as wavefunctions with quantised energy; the Born-Oppenheimer approximation separates electronic and nuclear motion and methods such as Hartree-Fock and DFT approximate many-electron systems.
+!: Thinking quantum chemistry solves molecules exactly. Only one-electron systems have exact solutions.
+EV: established | Density functional theory is the most widely used quantum chemistry method (Kohn, 1999).
+T: Wavefunction | A mathematical function describing a quantum system
+T: Born-Oppenheimer approximation | Treating nuclei as fixed while solving for electrons
+T: Density functional theory | A method based on electron density
+SUM: Electrons as waves.
+SUM: Born-Oppenheimer.
+SUM: Hartree-Fock and DFT.
+SRC: Kohn W., "Nobel lecture: Electronic structure of matter—wave functions and density functionals", Reviews of Modern Physics 71(5), 1253–1266 | primary | 1999
+SRC: Born M. and Oppenheimer R., "Zur Quantentheorie der Molekeln", Annalen der Physik 389(20), 457–484 | primary | 1927
+Q: What does |ψ|² represent? | The probability density of finding a particle.
+Q: What does the Born-Oppenheimer approximation assume? | Nuclei are fixed while electrons move.
+M1#chemistry-u16-03-q1@1: Which method uses electron density rather than the full wavefunction? | Density functional theory | Hartree-Fock theory | Classical mechanics | Molecular mechanics | DFT builds energy from the electron density.
+M2#chemistry-u16-03-q2@2: Why can the Born-Oppenheimer approximation be used? | Nuclei are much heavier and slower than electrons | Electrons are heavier than nuclei | Nuclei have no mass | Electrons do not move | Electrons adjust almost instantly to nuclear positions.
+MATCH1#chemistry-u16-03-q3@2: Match each idea to its description. | Wavefunction = Describes the quantum state ; Hartree-Fock = Average field method ; DFT = Uses electron density ; Born-Oppenheimer = Fixed nuclei | Quantum chemistry uses several approximations.
+M3#chemistry-u16-03-q4@3: Why are approximations essential in quantum chemistry? | Exact solutions exist only for one-electron systems | All molecules can be solved exactly by hand | Electrons do not interact | Computers cannot do arithmetic | Electron-electron repulsion makes exact solution impossible.
+SA2#chemistry-u16-03-q5@1,3: Explain the key ideas and approximations of quantum chemistry. | Quantum chemistry treats electrons as waves described by wavefunctions, with quantised energies and |ψ|² giving probability density, explaining atomic stability and spectra that classical physics cannot. Exact solutions exist only for one-electron systems. The Born-Oppenheimer approximation treats heavy nuclei as fixed while solving for electrons. Hartree-Fock places each electron in the average field of others, and DFT uses electron density, balancing accuracy and cost. Higher methods include electron correlation more fully. | Wavefunctions ; Quantisation ; Born-Oppenheimer ; Hartree-Fock ; DFT

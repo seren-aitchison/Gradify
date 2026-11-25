@@ -1,0 +1,49 @@
+# example · level: gcse · from kit/courses/history/notes/u01.js · selected by a structure score, not yet expert-approved
+## What is history?
+LV: GCSE and A level · Foundation
+S: History is the study of the human past through the evidence it left behind. This lesson separates "the past" (everything that happened) from "history" (the accounts historians build from evidence), and shows why those accounts are arguments rather than lists of facts.
+O: Distinguish between the past and history as an account of it
+O: Explain why historians select and interpret facts rather than simply recording them
+O: Evaluate the claim that history is "just facts and dates"
+H: The past and history
+P: **The past** is everything that has ever happened. **History** is the account we make of it, built from the traces the past left behind: documents, buildings, objects, images, landscapes and memories. Most of the past left no trace at all, so every history is partial.
+P: History is therefore an act of **enquiry**. A historian asks a question (why did the English Civil War break out in 1642?), searches for evidence, interprets it and argues for an answer. Two careful historians can reach different answers from the same evidence, because they weigh it differently or ask slightly different questions.
+H: Facts, selection and interpretation
+P: Facts matter: Charles I was executed on 30 January 1649, and no serious account can deny it. But facts alone don't make history. The historian E. H. Carr argued in **What is History?** (1961) that "the facts speak only when the historian calls on them": the historian decides which facts are significant and how they connect.
+P: Carr's own example was Julius Caesar crossing the Rubicon in 49 BCE. Millions of people crossed that small river; Caesar's crossing became a "historical fact" because historians judged it significant, since it began a civil war.
+X: Is "the Battle of Hastings was fought in 1066" history, or only a fact?
+> On its own it is a fact: a dated event that the evidence firmly supports.
+> It becomes history when it is used to answer a question, for example "Why did William of Normandy win?" or "How far did 1066 change England?"
+> Answering those questions means selecting further facts, judging their importance and arguing for an explanation.
+K: History is not the past itself but an evidence-based argument about it: historians select, interpret and explain, so their accounts can differ while still respecting the facts.
+!: Thinking that because historians disagree, any opinion about the past is as good as any other. Interpretations must be supported by evidence and can be judged by how well they account for it.
+H: Why study history?
+- It explains how the present came to be: institutions, borders, laws and identities all have histories.
+- It trains judgement: weighing evidence, spotting bias and building an argument transfer to law, journalism, policy and everyday life.
+- It widens perspective: people in the past thought and lived differently, and understanding them on their own terms is a discipline in itself.
+EV: established | Historical accounts are built from surviving evidence and are always selective.
+EV: contested | How far historians can be objective is debated: Carr stressed the historian's role in shaping facts, while Richard Evans defended the possibility of reliable knowledge about the past.
+T: The past | Everything that happened before now, whether or not it left any trace
+T: History | An evidence-based account of the past, built by asking questions and interpreting sources
+T: Historical enquiry | Investigating a question about the past by gathering and interpreting evidence to reach a supported answer
+SUM: History is an evidence-based account of the past, not the past itself.
+SUM: Historians select and interpret facts to answer questions, so accounts can differ but must fit the evidence.
+SRC: Carr E. H., What is History?, Macmillan | secondary | 1961
+SRC: Evans R. J., In Defence of History, Granta | secondary | 1997
+Q: What is the difference between the past and history? | The past is everything that happened; history is an account of it built from surviving evidence.
+Q: What did E. H. Carr mean by "the facts speak only when the historian calls on them"? | Facts don't explain themselves: historians choose which are significant and how they connect.
+M1#history-u01-01-q1@1: Which statement best describes history as a discipline? | An evidence-based account of the past that answers questions | A complete record of everything that happened | A list of important dates to be memorised | Opinions about the past, all equally valid | History is enquiry: questions answered with evidence. It is selective, not complete, and interpretations are judged by evidence.
+M2#history-u01-01-q2@2: Two historians use the same documents but reach different conclusions about why a war began. What is the most likely reason? | They weigh the evidence and its significance differently | One of them must have invented evidence | Historical evidence is always forged | Only one of them read the documents | Interpretation involves judging which evidence matters most, so careful historians can disagree without either being dishonest.
+TF1#history-u01-01-q3@1: Most of what happened in the past left no surviving evidence. | true | Only a fraction of past events left traces, so every history is partial.
+M3#history-u01-01-q4@3: Which is the strongest reply to the claim that history is "just facts and dates"? | Facts matter, but history selects and explains them to answer questions, which involves argument | History is mostly opinion, since every historian has a different view of events | Dates matter more than explanations, because they can't be disputed | Historians now agree on the main facts, so argument is no longer needed | Facts constrain history, but explaining and judging significance requires argument; the reply that keeps both is strongest.
+SA3#history-u01-01-q5@2,3: "History is just facts and dates." How far do you agree? | Facts such as the execution of Charles I in 1649 are essential and not open to opinion, but history is an enquiry: historians choose questions, select relevant facts and argue about causes and significance. Carr's example of Caesar crossing the Rubicon shows that a fact becomes historical when judged significant. Disagreement between historians is constrained by evidence, so history is neither mere facts nor mere opinion. | Recognises that facts matter and constrain accounts ; Explains selection and interpretation ; Uses an example such as Carr's Rubicon ; Explains that interpretations are judged by evidence ; Reaches a supported judgement
+Q: Why is every history partial? | Most of the past left no trace at all, so accounts can only be built from the evidence that survives.
+Q: What kinds of traces does the past leave for historians? | Documents, buildings, objects, images, landscapes and memories.
+Q: Why is history described as an act of enquiry? | A historian asks a question, searches for evidence, interprets it and argues for an answer.
+Q: Why can two careful historians reach different answers from the same evidence? | They weigh the evidence differently or ask slightly different questions.
+Q: When was Charles I executed? | On 30 January 1649.
+Q: In which book and year did E. H. Carr discuss the nature of historical facts? | What is History?, published in 1961.
+Q: Why, according to Carr, did Caesar's crossing of the Rubicon become a historical fact? | Historians judged it significant because it began a civil war, while millions of other crossings were ignored.
+Q: When does a fact such as "the Battle of Hastings was fought in 1066" become history? | When it is used to answer a question, with further facts selected, weighed and explained.
+Q: Does disagreement between historians mean any opinion about the past is as good as another? | No. Interpretations must be supported by evidence and can be judged by how well they account for it.
+Q: Give two reasons for studying history. | It explains how the present came to be, trains judgement about evidence and argument, and widens perspective on how people lived and thought.
