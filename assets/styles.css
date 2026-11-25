@@ -536,7 +536,7 @@ body.ds { overflow-x: clip; }
 body.ds .aurora { display: none; }
 /* the bar: slim and quiet, a hairline under translucent page colour */
 body.ds .hub-bar { background: color-mix(in srgb, var(--ds-bg) 78%, transparent) !important; border: 0 !important; box-shadow: 0 0 0 1px var(--ds-line) !important; -webkit-backdrop-filter: saturate(1.8) blur(20px); backdrop-filter: saturate(1.8) blur(20px); }
-body.ds .hub-bar::before, body.ds .hub-bar::after { display: none !important; }
+body.ds .hub-bar::after { display: none !important; }   /* ::before is the Gradify edge (kit/styles/base.css) */
 /* the hero */
 body.ds .ds-hero-sec { display: block; padding: clamp(72px, 10vw, 132px) 0 0; text-align: center; }
 body.ds .ds-hero-sec .hero-copy { max-width: none; }

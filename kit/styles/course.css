@@ -2918,3 +2918,40 @@ body:has(.co-modal) .cx-dock { visibility: hidden; }
 .co-wstep b { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--invert-bg); color: var(--invert-fg); font-size: 12px; }
 .co-reveal { margin-left: 6px; padding: 2px 10px; border-radius: 99px; border: 1px solid var(--line-strong); background: transparent; color: var(--fg); font: inherit; font-size: 12px; cursor: pointer; }
 .co-wayvis .gd { max-width: 480px; }
+
+/* ---------- lessons at 1021–1280px: the outline is a drawer there. The gleaming-panel rule above
+   (.co.co-reading :is(.cx-tree, .cx-widget) { position: relative }) outranked the drawer's position: fixed, so the
+   hidden outline kept the wide grid column and the lesson was squeezed into the 248px rail ---------- */
+@media (max-width: 1280px) { .co.co-reading .cx-tree { position: fixed; } }
+
+/* ---------- course pages: minimal, high contrast, the Gradify edge on the main surfaces ---------- */
+/* contrast: secondary text, kickers and tabs firmer; the current tab a solid pill in the mode's contrast */
+.co { --mute: #dcdce4; }
+:root[data-theme="light"] .co { --mute: #2f2f40; }
+.co .co-kicker { color: var(--fg); font-weight: 650; letter-spacing: .06em; }
+.co .co-tabs > a { color: var(--fg); font-weight: 550; }
+.co .co-tabs > a[aria-current] { color: var(--bg, #000); background: var(--fg); box-shadow: none; }
+:root[data-theme="light"] .co .co-tabs > a[aria-current] { color: #fff; background: #0d0d18; }
+.co .co-hero p, .co .cx-hero p { color: var(--fg); }
+/* the Gradify edge (base.css's action card ring) on the hero, the tab bar and the specification's measures */
+.co :is(.co-hero, .cx-hero, .co-tabs, .sm-measure, .sm-note, .co-school, .co-pcard) { position: relative; isolation: isolate; border-color: transparent !important; }
+/* (:root and #g-edge, which matches nothing, lift this past base.css's site-colour gleam, whose list includes an id) */
+:root .co :is(.co-hero, .cx-hero, .co-tabs, .sm-measure, .sm-note, .co-school, .co-pcard, #g-edge)::before {
+  content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; padding: 2.5px; pointer-events: none;
+  background:
+    linear-gradient(115deg, transparent 34%, var(--g-glint) 48%, transparent 62%) 0 0 / 260% 100% no-repeat,
+    linear-gradient(115deg, #ff2e88 0%, #ffc400 22%, #ff6a00 44%, var(--g-contrast) 66%, #ff2e88 88%, #ffc400 100%) 0 0 / 220% 100%;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  animation: g-gleam 8s linear infinite;
+}
+.co :is(.co-school, .co-pcard, .sm-measure):nth-child(3n + 2)::before { animation-delay: -2.7s; }
+.co :is(.co-school, .co-pcard, .sm-measure):nth-child(3n)::before { animation-delay: -5.3s; }
+.co :is(.co-school, .co-pcard, .sm-note)::before { padding: 1.5px; }
+@media (prefers-reduced-motion: reduce) { .co :is(.co-hero, .cx-hero, .co-tabs, .sm-measure, .sm-note, .co-school, .co-pcard)::before { animation: none; background-position: -60% 0, 30% 0; } }
+:root[data-motion="reduce"] .co :is(.co-hero, .cx-hero, .co-tabs, .sm-measure, .sm-note, .co-school, .co-pcard)::before { animation: none; background-position: -60% 0, 30% 0; }
+@media print { .co :is(.co-hero, .cx-hero, .co-tabs, .sm-measure, .sm-note, .co-school, .co-pcard)::before { content: none; } }
+/* fewer words: a unit's blurb is one line, and the hero is its headline and one button */
+.co .co-school p { display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
+.co .co-hero .co-herotext > p:first-of-type { display: none; }   /* the headline says it; the intro stays in the static overview */
+.co .sm-note a { white-space: nowrap; }

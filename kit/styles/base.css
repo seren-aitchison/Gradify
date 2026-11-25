@@ -784,3 +784,27 @@ body.ds { font-family: var(--ds-font-text); }
 /* small labels */
 :root :is(.co-kicker, .g-kicker, .gx-kicker, .kicker, .eyebrow, .ds-eyebrow, small) { font-weight: 500; }
 :root :is(.g-kicker, .co-read .co-frame h3, .co-read .co-qn::before) { font-weight: 600; }
+
+/* ---------- The Gradify edge on the top bar, on every page: the action card's gleaming border (pink, amber, orange and
+   the mode's contrast, with a glint that runs round it), drawn as a ::before ring so the GPU glass (kit/ui/liquid-gl.js),
+   which blanks a glass surface's own border and background, leaves it alone. Still when motion is reduced. ---------- */
+:root header.bar.glass, :root header.sub-nav.glass { border-color: transparent !important; isolation: isolate; }
+:root header.sub-nav.glass { position: relative; }
+:root header.bar.glass::before, :root header.sub-nav.glass::before {
+  content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; padding: 2px; pointer-events: none;
+  background:
+    linear-gradient(115deg, transparent 34%, var(--g-glint) 48%, transparent 62%) 0 0 / 260% 100% no-repeat,
+    linear-gradient(115deg, #ff2e88 0%, #ffc400 22%, #ff6a00 44%, var(--g-contrast) 66%, #ff2e88 88%, #ffc400 100%) 0 0 / 220% 100%;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  animation: g-gleam 9s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) { :root :is(header.bar.glass, header.sub-nav.glass)::before { animation: none; background-position: -60% 0, 30% 0; } }
+:root[data-motion="reduce"] :is(header.bar.glass, header.sub-nav.glass)::before { animation: none; background-position: -60% 0, 30% 0; }
+@media print { :root :is(header.bar.glass, header.sub-nav.glass)::before { content: none; } }
+
+/* the drawings, in colour: the five Gradify tints at full strength (kit/ui/art.js), the site's colour leading */
+.g-art { --art-p: #ec3f8c; --art-o: #ff7a1a; --art-c: #f5b400; --art-t: #12b5a5; }
+:root:not([data-theme="light"]) .g-art { --art-p: #ff6aa8; --art-o: #ff9a4d; --art-c: #ffcc33; --art-t: #3fd6c6; }
+.g-art { --art-a: color-mix(in oklab, var(--accent, #4641ff) 92%, #1b1b26); }
+:root:not([data-theme="light"]) .g-art { --art-a: color-mix(in oklab, var(--accent, #6d74d6) 85%, #fff); }
