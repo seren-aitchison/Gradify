@@ -16,9 +16,9 @@ P: **Investigate with the lab.** Launch the planet from different distances and 
 IX: orbits
 Q: State Newton's law of gravitation. | F = Gm_{1}m_{2}/r^{2}, attractive, along the line between centres.
 Q: What does the shell theorem say? | A spherically symmetric mass attracts outside bodies as if all its mass were at its centre (and exerts no net force inside a hollow shell).
-M1: If the distance between two masses triples, the force: | Falls to 1/9 | Falls to 1/3 | Triples | Is unchanged | Inverse square.
-M2: Who first measured G in the laboratory? | Cavendish (1798) | Newton | Kepler | Einstein | Using a torsion balance.
-M2: The distance between two masses is doubled. What happens to the gravitational force? | It falls to a quarter | It halves | It doubles | It stays the same | Newton's law is an inverse square law: F ∝ 1/r².
+M1#physics-u07-01-q1: If the distance between two masses triples, the force: | Falls to 1/9 | Falls to 1/3 | Triples | Is unchanged | Inverse square.
+M2#physics-u07-01-q2: Who first measured G in the laboratory? | Cavendish (1798) | Newton | Kepler | Einstein | Using a torsion balance.
+M2#physics-u07-01-q3: The distance between two masses is doubled. What happens to the gravitational force? | It falls to a quarter | It halves | It doubles | It stays the same | Newton's law is an inverse square law: F ∝ 1/r².
 Q: What is the value of G? | 6.674 × 10^{-11} N m^{2} kg^{-2}.
 Q: Is gravity ever repulsive? | No. It is always attractive.
 Q: How weak is gravity compared with electromagnetism between two protons? | About 10^{-36} as strong.
@@ -46,8 +46,8 @@ D: phys-u07-g-inside-outside
 !: The real Earth isn't uniform: its dense core makes g increase slightly with depth at first, peaking at the core–mantle boundary.
 Q: How does g vary inside a uniform solid sphere? | Proportionally to distance from the centre.
 Q: What is the gravitational field inside a hollow spherical shell? | Zero.
-M1: Gravitational field lines near Earth's surface are: | Nearly parallel and evenly spaced | Circular | Radiating outward | Absent | A small region of a radial field looks uniform.
-M2: Gauss's law for gravity has a minus sign because: | Gravity attracts, so the field points inward | G is negative | Mass is negative | It's a convention only | Field lines end on masses.
+M1#physics-u07-02-q1: Gravitational field lines near Earth's surface are: | Nearly parallel and evenly spaced | Circular | Radiating outward | Absent | A small region of a radial field looks uniform.
+M2#physics-u07-02-q2: Gauss's law for gravity has a minus sign because: | Gravity attracts, so the field points inward | G is negative | Mass is negative | It's a convention only | Field lines end on masses.
 Q: What is a gravitational field? | The region around a mass where other masses feel a force.
 Q: What do the density of field lines show? | The strength of the field.
 Q: What is the field pattern around a spherical mass? | Radial lines pointing inward, with strength proportional to 1/r^{2}.
@@ -76,8 +76,8 @@ X: Find g on Mars (M = 6.42 × 10^{23} kg, R = 3.39 × 10^{6} m).
 !: Weightlessness in orbit doesn't mean zero g; it means everything around you falls with the same acceleration.
 Q: Why are astronauts on the ISS weightless? | They and the station are in free fall together; g there is still about 90% of surface g.
 Q: Where on Earth's surface is g largest? | At the poles.
-M1: At a height equal to Earth's radius, g is: | g_{0}/4 | g_{0}/2 | g_{0} | 0 | Distance from centre doubles.
-M2: A planet has twice Earth's mass and twice its radius. Surface g is: | g_{0}/2 | 2g_{0} | g_{0} | g_{0}/4 | g ∝ M/R^{2} = 2/4.
+M1#physics-u07-03-q1: At a height equal to Earth's radius, g is: | g_{0}/4 | g_{0}/2 | g_{0} | 0 | Distance from centre doubles.
+M2#physics-u07-03-q2: A planet has twice Earth's mass and twice its radius. Surface g is: | g_{0}/2 | 2g_{0} | g_{0} | g_{0}/4 | g ∝ M/R^{2} = 2/4.
 Q: What is gravitational field strength? | The force per unit mass at a point: g = F/m.
 Q: What are the units of g? | N kg^{-1}, equivalent to m s^{-2}.
 Q: What factors make g vary on Earth? | Latitude, altitude and local geology.
@@ -106,8 +106,8 @@ D: phys-u07-potential-well
 !: Potential is negative and becomes less negative (increases) with height. "Higher potential" means closer to zero.
 Q: Why is gravitational potential negative? | Zero is defined at infinity, and gravity is attractive, so work must be done to move away.
 Q: How is field related to potential? | g = −dV/dr: the field points down the potential gradient.
-M1: Earth's surface potential is about −62.5 MJ kg^{-1}. The energy to fully escape for 1 kg is: | 62.5 MJ | 9.8 J | 0 | 125 MJ | You must raise V to zero.
-M2: Moving a mass along an equipotential requires: | No work | Positive work | Negative work | Infinite work | ΔV = 0.
+M1#physics-u07-04-q1: Earth's surface potential is about −62.5 MJ kg^{-1}. The energy to fully escape for 1 kg is: | 62.5 MJ | 9.8 J | 0 | 125 MJ | You must raise V to zero.
+M2#physics-u07-04-q2: Moving a mass along an equipotential requires: | No work | Positive work | Negative work | Infinite work | ΔV = 0.
 Q: What is gravitational potential? | The work done per unit mass to bring a mass from infinity to a point.
 Q: What is the formula for gravitational potential? | V = −GM/r.
 Q: What is the gravitational potential energy of mass m? | U = −GMm/r.
@@ -137,9 +137,9 @@ P: **Investigate with the lab.** Increase the launch speed until the planet neve
 IX: orbits
 Q: What is the escape velocity from Earth's surface? | About 11.2 km s^{-1}.
 Q: What is the Schwarzschild radius? | R_{s} = 2GM/c^{2}, the radius at which escape speed equals c.
-M1: Escape velocity depends on the projectile's: | Nothing about the projectile | Mass | Shape | Charge | v_{esc} = √(2GM/R).
-M2: A planet has the same density as Earth but twice its radius. Its escape velocity: | Doubles | Is the same | Halves | Quadruples | M ∝ R^{3}, so √(M/R) ∝ R.
-M2: How does escape velocity compare with circular orbital speed at the same distance? | It is √2 times larger | It is the same | It is twice as large | It is half as large | v_esc = √(2GM/r) and v_orb = √(GM/r), so v_esc = √2 × v_orb.
+M1#physics-u07-05-q1: Escape velocity depends on the projectile's: | Nothing about the projectile | Mass | Shape | Charge | v_{esc} = √(2GM/R).
+M2#physics-u07-05-q2: A planet has the same density as Earth but twice its radius. Its escape velocity: | Doubles | Is the same | Halves | Quadruples | M ∝ R^{3}, so √(M/R) ∝ R.
+M2#physics-u07-05-q3: How does escape velocity compare with circular orbital speed at the same distance? | It is √2 times larger | It is the same | It is twice as large | It is half as large | v_esc = √(2GM/r) and v_orb = √(GM/r), so v_esc = √2 × v_orb.
 Q: What is escape velocity? | The minimum launch speed for an unpowered object to escape a body's gravity completely.
 Q: What is the formula for escape velocity? | v_{esc} = √(2GM/R) = √(2gR).
 Q: Does escape velocity depend on the projectile's mass? | No, nor on its launch direction.
@@ -169,9 +169,9 @@ P: **Investigate with the lab.** Put the planet in a circular orbit (eccentricit
 IX: orbits
 Q: What is the orbital speed of a circular orbit of radius r? | v = √(GM/r).
 Q: How do orbital and escape speeds at the same radius compare? | v_{esc} = √2 v_{orb}.
-M1: A satellite moves to an orbit 4 times larger in radius. Its speed: | Halves | Doubles | Quarters | Stays the same | v ∝ 1/√r.
-M2: The period of a geostationary orbit is: | One sidereal day (23 h 56 min) | 24 h exactly | 12 h | 90 min | It matches Earth's rotation relative to the stars.
-M2: How does circular orbital speed change with distance from the star? | It decreases as 1/√r | It increases as √r | It is the same at every distance | It increases as r² | v = √(GM/r), so more distant orbits are slower.
+M1#physics-u07-06-q1: A satellite moves to an orbit 4 times larger in radius. Its speed: | Halves | Doubles | Quarters | Stays the same | v ∝ 1/√r.
+M2#physics-u07-06-q2: The period of a geostationary orbit is: | One sidereal day (23 h 56 min) | 24 h exactly | 12 h | 90 min | It matches Earth's rotation relative to the stars.
+M2#physics-u07-06-q3: How does circular orbital speed change with distance from the star? | It decreases as 1/√r | It increases as √r | It is the same at every distance | It increases as r² | v = √(GM/r), so more distant orbits are slower.
 Q: What supplies the centripetal force for a satellite in circular orbit? | Gravity.
 Q: What is the period of a circular orbit? | T = 2π√(r^{3}/GM).
 Q: What are the speed and period in low Earth orbit at about 400 km? | About 7.7 km s^{-1} and 92 minutes.
@@ -204,9 +204,9 @@ P: **Investigate with the lab.** Make an ellipse with eccentricity above 0.6 and
 IX: orbits
 Q: What is the vis-viva equation? | v^{2} = GM(2/r − 1/a).
 Q: What decides whether an orbit is bound? | Its total energy: negative energy means a bound ellipse.
-M1: An orbit with e = 0 is: | A circle | A parabola | A hyperbola | A straight line | Zero eccentricity.
-M2: Where is an orbiting body fastest? | At periapsis | At apoapsis | Everywhere the same | At the end of the minor axis | Angular momentum conservation.
-M2: Where is a planet on an elliptical orbit moving fastest? | At closest approach to the star | At its furthest point from the star | Halfway along the orbit | It moves at constant speed | Angular momentum is conserved, so the planet moves fastest where it is closest.
+M1#physics-u07-07-q1: An orbit with e = 0 is: | A circle | A parabola | A hyperbola | A straight line | Zero eccentricity.
+M2#physics-u07-07-q2: Where is an orbiting body fastest? | At periapsis | At apoapsis | Everywhere the same | At the end of the minor axis | Angular momentum conservation.
+M2#physics-u07-07-q3: Where is a planet on an elliptical orbit moving fastest? | At closest approach to the star | At its furthest point from the star | Halfway along the orbit | It moves at constant speed | Angular momentum is conserved, so the planet moves fastest where it is closest.
 Q: What shape are bound orbits under an inverse-square force? | Ellipses with the central body at one focus.
 Q: What is the equation of an elliptical orbit? | r = a(1 − e^{2})/(1 + e cos θ).
 Q: What is the periapsis distance of an ellipse? | r_{peri} = a(1 − e).
@@ -236,9 +236,9 @@ P: **Investigate with the lab.** Try orbits of two sizes and compare T² with a�
 IX: orbits
 Q: What does Kepler's second law express physically? | Conservation of angular momentum.
 Q: How can Kepler's third law measure a star's mass? | From a planet's period and orbit size: M = 4π^{2}a^{3}/(GT^{2}).
-M1: A planet at 4 AU has a period of: | 8 years | 4 years | 16 years | 2 years | T = a^{3/2}.
-M2: Kepler's laws were derived from observations by: | Tycho Brahe | Galileo | Copernicus | Ptolemy | Kepler analysed Tycho's precise data.
-M2: One planet's orbit has four times the semi-major axis of another's. How do their periods compare? | Eight times longer | Four times longer | Sixteen times longer | Twice as long | Kepler's third law: T² ∝ a³, so T ∝ a^{1.5} = 4^{1.5} = 8.
+M1#physics-u07-08-q1: A planet at 4 AU has a period of: | 8 years | 4 years | 16 years | 2 years | T = a^{3/2}.
+M2#physics-u07-08-q2: Kepler's laws were derived from observations by: | Tycho Brahe | Galileo | Copernicus | Ptolemy | Kepler analysed Tycho's precise data.
+M2#physics-u07-08-q3: One planet's orbit has four times the semi-major axis of another's. How do their periods compare? | Eight times longer | Four times longer | Sixteen times longer | Twice as long | Kepler's third law: T² ∝ a³, so T ∝ a^{1.5} = 4^{1.5} = 8.
 Q: What is Kepler's first law? | Planets move in ellipses with the Sun at one focus.
 Q: What is Kepler's second law? | The Sun-planet line sweeps equal areas in equal times.
 Q: What is Kepler's third law? | T^{2} is proportional to a^{3}, with the same constant for all planets of one star.
@@ -270,9 +270,9 @@ P: **Investigate with the lab.** Find the circular orbit for a satellite close i
 IX: orbits
 Q: Why are Earth observation satellites often sun-synchronous? | So they pass over each place at the same local solar time, giving consistent lighting.
 Q: What happens to a LEO satellite's speed as drag lowers its orbit? | It increases.
-M1: GPS satellites orbit in: | Medium Earth orbit (~20 000 km) | Geostationary orbit | LEO | Polar LEO only | About 12-hour orbits.
-M2: The net relativistic clock offset for GPS satellites is about: | +38 μs per day | −7 μs per day | 0 | +1 s per day | Gravitational blueshift exceeds velocity time dilation.
-M2: Why must a geostationary satellite orbit at one particular height? | Its period must be exactly one day, which fixes its orbital radius | It must be beyond the reach of Earth's gravity | It must avoid the Moon's orbit | Its speed must be zero relative to the stars | T² ∝ r³ means only one radius gives a 24-hour period.
+M1#physics-u07-09-q1: GPS satellites orbit in: | Medium Earth orbit (~20 000 km) | Geostationary orbit | LEO | Polar LEO only | About 12-hour orbits.
+M2#physics-u07-09-q2: The net relativistic clock offset for GPS satellites is about: | +38 μs per day | −7 μs per day | 0 | +1 s per day | Gravitational blueshift exceeds velocity time dilation.
+M2#physics-u07-09-q3: Why must a geostationary satellite orbit at one particular height? | Its period must be exactly one day, which fixes its orbital radius | It must be beyond the reach of Earth's gravity | It must avoid the Moon's orbit | Its speed must be zero relative to the stars | T² ∝ r³ means only one radius gives a 24-hour period.
 Q: What altitudes count as low Earth orbit? | About 160 to 2000 km.
 Q: Why do LEO orbits decay? | Atmospheric drag.
 Q: How does a sun-synchronous orbit stay in step with the Sun? | It is near-polar and precesses once a year using Earth's bulge.
@@ -304,9 +304,9 @@ P: **Investigate with the lab.** On an eccentric orbit, watch the kinetic and po
 IX: orbits
 Q: State the virial theorem for circular gravitational orbits. | 2KE = −U, so E = −KE = U/2.
 Q: What sets the shape of an orbit at fixed energy? | Its angular momentum (larger L means less eccentric).
-M1: For a circular orbit, if KE = 5 GJ, the total energy is: | −5 GJ | 5 GJ | −10 GJ | 10 GJ | E = −KE.
-M2: The L^{2}/(2mr^{2}) term in the effective potential: | Prevents the orbit reaching r = 0 | Represents drag | Is the gravitational PE | Is always zero | It's a centrifugal barrier.
-M2: What is the sign of the total energy of a bound orbit? | Negative | Positive | Zero | It changes sign each orbit | A bound orbit has total energy below zero; at escape velocity it reaches zero.
+M1#physics-u07-10-q1: For a circular orbit, if KE = 5 GJ, the total energy is: | −5 GJ | 5 GJ | −10 GJ | 10 GJ | E = −KE.
+M2#physics-u07-10-q2: The L^{2}/(2mr^{2}) term in the effective potential: | Prevents the orbit reaching r = 0 | Represents drag | Is the gravitational PE | Is always zero | It's a centrifugal barrier.
+M2#physics-u07-10-q3: What is the sign of the total energy of a bound orbit? | Negative | Positive | Zero | It changes sign each orbit | A bound orbit has total energy below zero; at escape velocity it reaches zero.
 Q: What fixes an orbit's size? | Its total energy, through the semi-major axis.
 Q: What is the kinetic energy of a circular orbit? | KE = GMm/(2r).
 Q: What is the total energy of a circular orbit? | E = −GMm/(2r) = −KE.
@@ -335,8 +335,8 @@ X: Two stars of 2 and 1 solar masses orbit with separation 3 AU. Find the period
 !: Kepler's third law with only the central mass, M, is an approximation; use M + m when the companion isn't negligible.
 Q: What is the reduced mass? | μ = m_{1}m_{2}/(m_{1} + m_{2}).
 Q: How do the orbits of two stars about their CM compare in size? | In inverse proportion to their masses.
-M1: The Sun wobbles around the Solar System's CM mainly due to: | Jupiter | Earth | Mercury | Comets | Jupiter has most of the planetary mass.
-M2: Two equal-mass stars orbit their CM. Their orbits are: | The same size, on opposite sides | Different sizes | One star is stationary | Circular only | Equal masses ⇒ symmetric orbits.
+M1#physics-u07-11-q1: The Sun wobbles around the Solar System's CM mainly due to: | Jupiter | Earth | Mercury | Comets | Jupiter has most of the planetary mass.
+M2#physics-u07-11-q2: Two equal-mass stars orbit their CM. Their orbits are: | The same size, on opposite sides | Different sizes | One star is stationary | Circular only | Equal masses ⇒ symmetric orbits.
 Q: What do two bodies under mutual gravity orbit? | Their common centre of mass.
 Q: How is the two-body problem simplified? | Into one body of reduced mass orbiting a fixed centre.
 Q: What is the period of a two-body orbit? | T^{2} = 4π^{2}a^{3}/(G(m_{1} + m_{2})).
@@ -363,8 +363,8 @@ X: Compare the Moon's and Sun's tidal effects on Earth.
 !: Tides aren't caused by the Moon "pulling the water up" on the near side only; the far-side bulge comes from the Earth being pulled away from the water there.
 Q: Why are there two tidal bulges? | Gravity is stronger on the near side and weaker on the far side than at Earth's centre, stretching the Earth–ocean system.
 Q: How does tidal force depend on distance? | As 1/r^{3}.
-M1: Spring tides occur at: | New and full moon | First and last quarter | Only in spring | Equinoxes only | Sun and Moon aligned.
-M2: Tidal friction is making the Moon: | Recede from Earth | Approach Earth | Speed up its orbit | Stop rotating | Angular momentum moves from Earth's spin to the Moon's orbit.
+M1#physics-u07-12-q1: Spring tides occur at: | New and full moon | First and last quarter | Only in spring | Equinoxes only | Sun and Moon aligned.
+M2#physics-u07-12-q2: Tidal friction is making the Moon: | Recede from Earth | Approach Earth | Speed up its orbit | Stop rotating | Angular momentum moves from Earth's spin to the Moon's orbit.
 Q: What causes tidal forces? | Gravity varying across an extended body, so the near side is pulled more than the far side.
 Q: What is the tidal acceleration across a size d? | Δg ≈ 2GMd/r^{3}.
 Q: How does the Moon's tidal effect compare with the Sun's? | About 2.2 times larger.
@@ -393,8 +393,8 @@ X: Estimate the fluid Roche limit for an icy moon (ρ = 1000 kg m^{-3}) around S
 !: The Roche limit applies to gravitationally bound bodies; your body falling towards Earth isn't torn apart, because chemical bonds are far stronger than its self-gravity.
 Q: What is the Roche limit? | The distance inside which tidal forces disrupt a body held together by its own gravity.
 Q: Why can't Saturn's rings form a moon? | They lie inside the Roche limit, where tides prevent clumping.
-M1: A denser satellite's Roche limit is: | Closer to the planet | Farther from the planet | The same | Undefined | d ∝ (ρ_{p}/ρ_{s})^{1/3}.
-M2: Shoemaker–Levy 9 broke apart because: | It passed inside Jupiter's Roche limit | It hit an asteroid | Solar heating | Its rotation was too fast | Tidal disruption.
+M1#physics-u07-13-q1: A denser satellite's Roche limit is: | Closer to the planet | Farther from the planet | The same | Undefined | d ∝ (ρ_{p}/ρ_{s})^{1/3}.
+M2#physics-u07-13-q2: Shoemaker–Levy 9 broke apart because: | It passed inside Jupiter's Roche limit | It hit an asteroid | Solar heating | Its rotation was too fast | Tidal disruption.
 Q: What is the fluid Roche limit? | d ≈ 2.44 R_{p}(ρ_{p}/ρ_{s})^{1/3}.
 Q: What is the rigid Roche limit? | d ≈ 1.26 R_{p}(ρ_{p}/ρ_{s})^{1/3}.
 Q: Can denser satellites orbit closer or further in? | Closer.
@@ -422,8 +422,8 @@ X: Find the distance of Sun–Earth L2 from Earth.
 !: Lagrange points are equilibria in the rotating frame; in an inertial frame objects there are orbiting the larger body.
 Q: Why is JWST at L2? | It keeps Sun, Earth and Moon on one side for shielding and cooling, with constant geometry and continuous communications.
 Q: Which Lagrange points are stable? | L4 and L5 (when the mass ratio exceeds about 25).
-M1: The Trojan asteroids are at Jupiter's: | L4 and L5 | L1 | L2 | L3 | Stable triangle points.
-M2: Spacecraft at L1 need station-keeping because: | L1 is an unstable equilibrium | Drag is large there | The Sun's gravity is zero there | It's inside Earth's atmosphere | Small displacements grow.
+M1#physics-u07-14-q1: The Trojan asteroids are at Jupiter's: | L4 and L5 | L1 | L2 | L3 | Stable triangle points.
+M2#physics-u07-14-q2: Spacecraft at L1 need station-keeping because: | L1 is an unstable equilibrium | Drag is large there | The Sun's gravity is zero there | It's inside Earth's atmosphere | Small displacements grow.
 Q: How many Lagrange points does a two-body system have? | Five.
 Q: Where is L1? | Between the two bodies.
 Q: Which spacecraft sit at Sun-Earth L1? | Solar monitors such as SOHO and DSCOVR.
@@ -452,8 +452,8 @@ X: Why can a comet be captured temporarily by Jupiter?
 !: The restricted problem assumes the small body has negligible mass; for comparable masses (three stars) the full problem is needed.
 Q: What is the Jacobi constant? | The conserved energy-like quantity of the circular restricted three-body problem in the rotating frame.
 Q: Who discovered chaos while studying the three-body problem? | Henri Poincaré.
-M1: The general three-body problem: | Has no general closed-form solution | Is always periodic | Reduces to Kepler's laws | Was solved by Newton | It can be chaotic.
-M2: Kirkwood gaps in the asteroid belt are due to: | Orbital resonances with Jupiter | Collisions | Solar radiation | Mars's gravity | Resonant perturbations clear orbits.
+M1#physics-u07-15-q1: The general three-body problem: | Has no general closed-form solution | Is always periodic | Reduces to Kepler's laws | Was solved by Newton | It can be chaotic.
+M2#physics-u07-15-q2: Kirkwood gaps in the asteroid belt are due to: | Orbital resonances with Jupiter | Collisions | Solar radiation | Mars's gravity | Resonant perturbations clear orbits.
 Q: Does the general three-body problem have a closed-form solution? | No, and it can be chaotic.
 Q: What is the restricted three-body problem? | A tiny mass moving in the field of two massive bodies in circular orbits.
 Q: What is the formula for the Jacobi constant? | C = 2U_{eff} − v^{2}.
@@ -482,8 +482,8 @@ X: How much Δv to change a 7.7 km s^{-1} circular orbit's inclination by 10°?
 !: A gravity assist doesn't break energy conservation: the spacecraft gains energy from the planet, which slows imperceptibly in its orbit.
 Q: Why are plane changes expensive? | They need a velocity change proportional to orbital speed: Δv = 2v sin(Δi/2).
 Q: How does a gravity assist work? | Flying past a moving planet, the spacecraft's velocity in the Sun's frame changes while its speed relative to the planet is unchanged.
-M1: Firing a rocket prograde at periapsis raises: | Apoapsis | Periapsis | Inclination | Nothing | It raises the far side of the orbit.
-M2: Ion engines are efficient because: | Their exhaust speed is very high | Their thrust is very large | They use no propellant | They work only in atmospheres | High exhaust velocity means more Δv per kg of propellant.
+M1#physics-u07-16-q1: Firing a rocket prograde at periapsis raises: | Apoapsis | Periapsis | Inclination | Nothing | It raises the far side of the orbit.
+M2#physics-u07-16-q2: Ion engines are efficient because: | Their exhaust speed is very high | Their thrust is very large | They use no propellant | They work only in atmospheres | High exhaust velocity means more Δv per kg of propellant.
 Q: Why does mission design minimise total Δv? | The fuel needed grows exponentially with Δv.
 Q: What does a prograde burn do? | Raises the opposite side of the orbit.
 Q: What is a retrograde burn used for? | Lowering the opposite side of the orbit, such as for de-orbiting.
@@ -510,8 +510,8 @@ X: Earth (1 AU) to Mars (1.52 AU) transfer time.
 !: Hohmann transfers are efficient but slow; when r_{2}/r_{1} > ~11.9, a three-burn bi-elliptic transfer uses less Δv.
 Q: What is a Hohmann transfer orbit? | An ellipse tangent to both the initial and final circular orbits, needing one burn at each.
 Q: How often do Earth–Mars Hohmann launch windows occur? | About every 26 months (the synodic period).
-M1: The semi-major axis of a Hohmann transfer from r_{1} to r_{2} is: | (r_{1} + r_{2})/2 | r_{2} − r_{1} | √(r_{1}r_{2}) | r_{1}r_{2} | Periapsis r_{1}, apoapsis r_{2}.
-M2: An Earth–Mars Hohmann transfer takes about: | 8.5 months | 3 days | 3 years | 1 month | Half the period of the transfer ellipse.
+M1#physics-u07-17-q1: The semi-major axis of a Hohmann transfer from r_{1} to r_{2} is: | (r_{1} + r_{2})/2 | r_{2} − r_{1} | √(r_{1}r_{2}) | r_{1}r_{2} | Periapsis r_{1}, apoapsis r_{2}.
+M2#physics-u07-17-q2: An Earth–Mars Hohmann transfer takes about: | 8.5 months | 3 days | 3 years | 1 month | Half the period of the transfer ellipse.
 Q: How many burns does a Hohmann transfer use? | Two.
 Q: What is the semi-major axis of a Hohmann transfer orbit? | a_{t} = (r_{1} + r_{2})/2.
 Q: How long does a Hohmann transfer take? | Half the transfer orbit's period: t = π√(a_{t}^{3}/GM).
@@ -539,8 +539,8 @@ X: How do you choose a sun-synchronous orbit's inclination?
 !: Perturbations add up over many orbits; an effect too small to matter in one orbit can dominate over years.
 Q: How was Neptune discovered? | By predicting its position from unexplained perturbations in Uranus's orbit.
 Q: What is J_{2}? | The coefficient describing a planet's oblateness, the main perturbation on low satellite orbits.
-M1: Io, Europa and Ganymede are in a: | 1:2:4 orbital resonance | 1:1 resonance | Random pattern | 2:3 resonance | The Laplace resonance.
-M2: Solar radiation pressure matters most for: | Light, large-area spacecraft | Planets | Dense small satellites | Rockets during launch | Force ∝ area, acceleration ∝ area/mass.
+M1#physics-u07-18-q1: Io, Europa and Ganymede are in a: | 1:2:4 orbital resonance | 1:1 resonance | Random pattern | 2:3 resonance | The Laplace resonance.
+M2#physics-u07-18-q2: Solar radiation pressure matters most for: | Light, large-area spacecraft | Planets | Dense small satellites | Rockets during launch | Force ∝ area, acceleration ∝ area/mass.
 Q: What is a gravitational perturbation? | A small correction to an orbit from other bodies, planet shapes, drag or radiation pressure.
 Q: How does perturbation theory treat these effects? | As small corrections that slowly change the orbital elements.
 Q: What does Earth's oblateness do to satellite orbits? | Makes their planes precess and their ellipses rotate.
@@ -569,8 +569,8 @@ X: Calculate Mercury's GR precession per orbit.
 !: Most of Mercury's precession is Newtonian (from other planets); only the 43″ residue needed new physics.
 Q: How much of Mercury's perihelion precession is due to GR? | About 43 arcseconds per century.
 Q: Why does an orbit precess if the force isn't exactly inverse-square? | Only the 1/r^{2} force (and the harmonic force) give closed orbits (Bertrand's theorem).
-M1: The Moon's orbital plane precesses with a period of: | 18.6 years | 1 month | 26 000 years | 1 year | Nodal precession.
-M2: GR precession is largest for orbits that are: | Close and eccentric around massive bodies | Distant and circular | Around light bodies | Retrograde | ∝ M/(a(1 − e^{2})).
+M1#physics-u07-19-q1: The Moon's orbital plane precesses with a period of: | 18.6 years | 1 month | 26 000 years | 1 year | Nodal precession.
+M2#physics-u07-19-q2: GR precession is largest for orbits that are: | Close and eccentric around massive bodies | Distant and circular | Around light bodies | Retrograde | ∝ M/(a(1 − e^{2})).
 Q: What is apsidal precession? | The slow rotation of an orbit's ellipse.
 Q: Does an orbit precess under a pure inverse-square force from a point mass? | No. The ellipse stays fixed.
 Q: What is Mercury's total perihelion precession? | About 574 arcseconds per century.
@@ -600,8 +600,8 @@ X: How much faster does a clock 1 km higher run per day?
 !: GR corrections aren't "tiny so irrelevant": in GPS and precise timekeeping they're essential engineering.
 Q: How much does light bend passing the edge of the Sun? | 1.75 arcseconds (twice the Newtonian prediction).
 Q: What is gravitational redshift? | The decrease in frequency of light climbing out of a gravitational potential well.
-M1: Which experiment first confirmed light bending? | Eddington's 1919 eclipse expedition | Michelson–Morley | Pound–Rebka | LIGO | Star positions near the eclipsed Sun shifted.
-M2: A clock at a lower altitude runs: | Slower | Faster | At the same rate | Backwards | Deeper in the potential well.
+M1#physics-u07-20-q1: Which experiment first confirmed light bending? | Eddington's 1919 eclipse expedition | Michelson–Morley | Pound–Rebka | LIGO | Star positions near the eclipsed Sun shifted.
+M2#physics-u07-20-q2: A clock at a lower altitude runs: | Slower | Faster | At the same rate | Backwards | Deeper in the potential well.
 Q: How does general relativity describe gravity? | As curved spacetime.
 Q: What is gravitational time dilation near Earth? | Δt/t ≈ gh/c^{2}: clocks deeper in gravity run slower.
 Q: What is the formula for light bending past a mass? | θ = 4GM/(c^{2}b).
@@ -630,8 +630,8 @@ X: Why do lensed images of the same quasar flicker at different times?
 !: Gravitational lenses aren't like glass lenses: they have no single focal point, producing arcs and rings rather than sharp images.
 Q: What is an Einstein ring? | A ring image formed when a source, lens and observer are exactly aligned.
 Q: How does weak lensing reveal dark matter? | It measures the total mass from distortions of background galaxies, including mass that emits no light.
-M1: Microlensing has been used to discover: | Exoplanets | Black hole spins | Neutrinos | Cosmic rays | Planets add brief features to lensing light curves.
-M2: The Bullet Cluster is evidence for dark matter because: | Lensing mass is separated from the visible gas | It is very bright | It has no galaxies | Its light isn't bent | Most mass doesn't follow the baryons.
+M1#physics-u07-21-q1: Microlensing has been used to discover: | Exoplanets | Black hole spins | Neutrinos | Cosmic rays | Planets add brief features to lensing light curves.
+M2#physics-u07-21-q2: The Bullet Cluster is evidence for dark matter because: | Lensing mass is separated from the visible gas | It is very bright | It has no galaxies | Its light isn't bent | Most mass doesn't follow the baryons.
 Q: What is gravitational lensing? | The bending of light by a mass in front of a distant source, distorting, magnifying and multiplying its images.
 Q: What is strong lensing? | Multiple images, arcs and Einstein rings when source, lens and observer align.
 Q: What is weak lensing? | Small statistical distortions of many background galaxy shapes.
@@ -662,8 +662,8 @@ X: Estimate the arm-length change for h = 10^{-21} in LIGO.
 !: Gravitational waves are not "gravity waves" in fluids (waves on water restored by gravity); they're oscillations of spacetime itself.
 Q: What was the first direct detection of gravitational waves? | GW150914 by LIGO in 2015, from two merging black holes.
 Q: What is gravitational-wave strain? | The fractional change in length, h = ΔL/L.
-M1: Gravitational waves travel at: | The speed of light | Faster than light | The speed of sound | 0.1c | Confirmed by GW170817.
-M2: The Hulse–Taylor binary pulsar provided evidence of gravitational waves because: | Its orbit shrinks at the rate GR predicts for wave emission | It emits radio waves | It's very massive | It's rotating fast | Indirect evidence via energy loss.
+M1#physics-u07-22-q1: Gravitational waves travel at: | The speed of light | Faster than light | The speed of sound | 0.1c | Confirmed by GW170817.
+M2#physics-u07-22-q2: The Hulse–Taylor binary pulsar provided evidence of gravitational waves because: | Its orbit shrinks at the rate GR predicts for wave emission | It emits radio waves | It's very massive | It's rotating fast | Indirect evidence via energy loss.
 Q: What are gravitational waves? | Ripples in spacetime travelling at the speed of light, produced by accelerating masses.
 Q: When did Einstein predict gravitational waves? | 1916.
 Q: How many polarisations do gravitational waves have? | Two, + and ×, which stretch and squeeze space at 90°.

@@ -26,8 +26,8 @@ K: Design the whole chain from transducer physics to digitisation, specifying se
 !: High resolution means nothing without accuracy; a precise sensor can still be badly calibrated.
 Q: What is a transducer? | A device converting one physical quantity into another, usually an electrical signal.
 Q: Why use a Wheatstone bridge with strain gauges? | It converts tiny resistance changes into a measurable voltage and cancels common-mode effects like temperature.
-M1: Hysteresis means the output: | Depends on whether input is rising or falling | Is perfectly linear | Has no noise | Drifts with time only | Path dependence.
-M2: A platinum RTD's resistance changes by about: | 0.385% per K | 40 μV per K | 10% per K | Nothing | Pt100 standard.
+M1#physics-u44-01-q1: Hysteresis means the output: | Depends on whether input is rising or falling | Is perfectly linear | Has no noise | Drifts with time only | Path dependence.
+M2#physics-u44-01-q2: A platinum RTD's resistance changes by about: | 0.385% per K | 40 μV per K | 10% per K | Nothing | Pt100 standard.
 
 ## Precision measurement
 S: Precision measurement pushes uncertainties down to the limits set by noise and fundamental physics. It has tested relativity to parts in 10^{15}, measured the electron's magnetic moment to parts in 10^{13} and redefined the SI units on fundamental constants.
@@ -55,8 +55,8 @@ K: Reduce random error by averaging and modulation, hunt systematics with null a
 !: Averaging doesn't reduce systematic errors; past a point, more data only makes a wrong answer more precise.
 Q: What is the Allan deviation used for? | Characterising frequency or signal stability versus averaging time, showing when drift dominates.
 Q: Which constant defines the kilogram since 2019? | The Planck constant h.
-M1: Systematic errors are reduced by: | Changing methods and calibrating | Averaging more readings | Ignoring them | Adding noise | Not statistical.
-M2: A Kibble balance relates mass to: | Planck's constant | The speed of sound | Gravity only | Avogadro only | Electrical power and h.
+M1#physics-u44-02-q1: Systematic errors are reduced by: | Changing methods and calibrating | Averaging more readings | Ignoring them | Adding noise | Not statistical.
+M2#physics-u44-02-q2: A Kibble balance relates mass to: | Planck's constant | The speed of sound | Gravity only | Avogadro only | Electrical power and h.
 
 ## Vacuum technology
 S: Vacuum technology removes gas from enclosed volumes so particles can travel freely, surfaces stay clean and heat doesn't conduct away. It underpins electron microscopes, particle accelerators, semiconductor fabs, space simulation and surface science.
@@ -83,8 +83,8 @@ K: Vacuum quality is set by pumping speed, conductance and gas load; UHV needs c
 !: A big pump behind a narrow tube is wasted; conductance often limits the effective pumping speed.
 Q: Why bake a UHV system? | To drive water and other adsorbed gases off surfaces so they can be pumped away.
 Q: How does a turbomolecular pump work? | Fast-spinning angled blades transfer momentum to gas molecules, directing them towards the exhaust.
-M1: Monolayer formation time at 10^{-4} Pa is about: | 3 s | 3 ms | 3 hours | 3 years | 3 × 10^{-4}/P.
-M2: Helium is used for leak detection because it: | Is light, inert and rare in air | Is heavy | Is reactive | Is cheap only | Penetrates small leaks, easy to detect.
+M1#physics-u44-03-q1: Monolayer formation time at 10^{-4} Pa is about: | 3 s | 3 ms | 3 hours | 3 years | 3 × 10^{-4}/P.
+M2#physics-u44-03-q2: Helium is used for leak detection because it: | Is light, inert and rare in air | Is heavy | Is reactive | Is cheap only | Penetrates small leaks, easy to detect.
 
 ## Cryogenic systems
 S: Cryogenic systems cool apparatus to temperatures from 77 K down to microkelvin, where superconductivity, quantum effects and ultra-low noise appear. They are essential for MRI magnets, particle accelerators, quantum computers and sensitive detectors.
@@ -110,8 +110,8 @@ K: Cryogenics trades huge work for tiny cooling power at low T, so heat leaks mu
 !: Liquid helium boil-off expands ~750× in volume; confined spaces can become asphyxiation hazards.
 Q: How does a dilution refrigerator reach millikelvin temperatures? | ^{3}He crossing a phase boundary into a ^{3}He–^{4}He mixture absorbs heat, like evaporation.
 Q: What is multilayer insulation? | Many thin reflective layers that reduce radiative heat transfer.
-M1: Liquid nitrogen boils at: | 77 K | 4.2 K | 20 K | 273 K | Common first-stage cryogen.
-M2: A pulse-tube cryocooler is a "dry" system because it: | Needs no liquid helium bath | Uses no gas | Works at room temperature | Uses water | Closed-cycle helium gas.
+M1#physics-u44-04-q1: Liquid nitrogen boils at: | 77 K | 4.2 K | 20 K | 273 K | Common first-stage cryogen.
+M2#physics-u44-04-q2: A pulse-tube cryocooler is a "dry" system because it: | Needs no liquid helium bath | Uses no gas | Works at room temperature | Uses water | Closed-cycle helium gas.
 
 ## High-field magnets
 S: High-field magnets create intense magnetic fields for MRI, particle accelerators, fusion reactors and materials research. Superconducting magnets deliver steady fields to ~45 T, while pulsed magnets briefly exceed 100 T, constrained by forces, heat and superconductor limits.
@@ -139,8 +139,8 @@ K: Higher fields need better superconductors and stronger structures; magnetic p
 !: Superconducting magnets store enormous energy; an unprotected quench can destroy the magnet.
 Q: What is a quench? | Sudden loss of superconductivity, converting stored magnetic energy into heat.
 Q: Why are REBCO superconductors exciting for fusion? | They carry high currents in very strong fields at higher temperatures, enabling compact high-field magnets.
-M1: Iron-core electromagnets are limited to ~2 T because: | Iron saturates | Copper melts | Superconductors fail | Air breaks down | Magnetisation maximum.
-M2: Magnetic pressure scales as: | B^{2} | B | 1/B | B^{3} | B^{2}/2μ_{0}.
+M1#physics-u44-05-q1: Iron-core electromagnets are limited to ~2 T because: | Iron saturates | Copper melts | Superconductors fail | Air breaks down | Magnetisation maximum.
+M2#physics-u44-05-q2: Magnetic pressure scales as: | B^{2} | B | 1/B | B^{3} | B^{2}/2μ_{0}.
 
 ## Laser systems
 S: Lasers produce intense, directional, coherent light by stimulated emission in a gain medium inside an optical cavity. Laser systems, from milliwatt diodes to petawatt facilities, are tools for spectroscopy, cutting, surgery, communication, metrology and fusion.
@@ -168,8 +168,8 @@ K: A laser is gain plus feedback above threshold; Gaussian-beam optics and opera
 !: Never look into a beam path; reflections from shiny tools or jewellery can be as dangerous as the direct beam.
 Q: What does M^{2} describe? | Beam quality relative to an ideal Gaussian beam (M^{2} = 1).
 Q: What is Q-switching? | Holding off lasing to store energy, then releasing it as an intense nanosecond pulse.
-M1: Rayleigh range scales as: | w_{0}^{2}/λ | λ/w_{0} | w_{0} | λ^{2} | πw_{0}^{2}/λ.
-M2: Class 4 lasers can: | Damage eyes and skin and start fires | Never harm | Only affect cameras | Be viewed safely | Highest hazard class.
+M1#physics-u44-06-q1: Rayleigh range scales as: | w_{0}^{2}/λ | λ/w_{0} | w_{0} | λ^{2} | πw_{0}^{2}/λ.
+M2#physics-u44-06-q2: Class 4 lasers can: | Damage eyes and skin and start fires | Never harm | Only affect cameras | Be viewed safely | Highest hazard class.
 
 ## Optical benches and alignment
 S: Optical benches provide stable, vibration-isolated platforms where lenses, mirrors and lasers are mounted and aligned. Careful alignment techniques make interferometers, microscopes and laser systems work at their theoretical limits.
@@ -197,8 +197,8 @@ K: Stable mounts, isolation and systematic two-mirror alignment are the foundati
 !: Thermal drift and air currents misalign sensitive setups; let systems equilibrate and enclose them.
 Q: What is beam walking? | Iteratively adjusting two mirrors to make a beam travel along a desired axis.
 Q: What does a spatial filter do? | Removes high-spatial-frequency noise from a laser beam using a focusing lens and a pinhole.
-M1: A Keplerian beam expander has lens spacing: | f_{1} + f_{2} | f_{1} − f_{2} | f_{1}f_{2} | 2f_{1} | Focal points coincide.
-M2: Optical isolators protect lasers from: | Back-reflections | Heat | Vibration | Dust | Faraday rotation one-way.
+M1#physics-u44-07-q1: A Keplerian beam expander has lens spacing: | f_{1} + f_{2} | f_{1} − f_{2} | f_{1}f_{2} | 2f_{1} | Focal points coincide.
+M2#physics-u44-07-q2: Optical isolators protect lasers from: | Back-reflections | Heat | Vibration | Dust | Faraday rotation one-way.
 
 ## Spectroscopy
 S: Spectroscopy measures how matter absorbs, emits or scatters light as a function of wavelength. Each atom and molecule has a unique spectral fingerprint, so spectroscopy reveals composition, temperature, motion and structure from the lab bench to distant galaxies.
@@ -230,8 +230,8 @@ K: Spectra are fingerprints: line positions identify species, widths and shifts 
 !: Beer–Lambert fails at high concentrations and with scattering samples; stay within the linear range.
 Q: What does Raman spectroscopy measure? | Inelastic light scattering shifted by molecular vibration energies.
 Q: Why are FTIR spectrometers advantageous? | They record all wavelengths simultaneously with high throughput (Fellgett and Jacquinot advantages).
-M1: Doppler broadening increases with: | Temperature | Mass | Pressure only | Lifetime | ∝ √(T/m).
-M2: Grating resolving power equals: | mN | λN | d sin θ | m/N | Order × illuminated lines.
+M1#physics-u44-08-q1: Doppler broadening increases with: | Temperature | Mass | Pressure only | Lifetime | ∝ √(T/m).
+M2#physics-u44-08-q2: Grating resolving power equals: | mN | λN | d sin θ | m/N | Order × illuminated lines.
 
 ## Interferometry
 S: Interferometry splits light (or matter waves) into paths, recombines them, and reads tiny path differences from the resulting fringes. It measures distances, surface shapes, refractive indices, rotations and gravitational waves with exquisite sensitivity.
@@ -257,8 +257,8 @@ K: Interferometers convert phase differences into intensity changes, measuring l
 !: Interferometers are extremely sensitive to vibration and air turbulence; isolation and enclosures are essential.
 Q: What does finesse describe? | The sharpness of Fabry–Pérot resonances: free spectral range divided by linewidth.
 Q: How long must path differences be to see fringes? | Within the coherence length λ^{2}/Δλ.
-M1: Fringe visibility of 1 means: | Perfect coherence and equal intensities | No interference | Half intensity | Incoherent light | Full contrast.
-M2: Surface flatness is tested with: | Fizeau interferometers | Geiger counters | Spectrometers | Thermocouples | Fringe patterns map height.
+M1#physics-u44-09-q1: Fringe visibility of 1 means: | Perfect coherence and equal intensities | No interference | Half intensity | Incoherent light | Full contrast.
+M2#physics-u44-09-q2: Surface flatness is tested with: | Fizeau interferometers | Geiger counters | Spectrometers | Thermocouples | Fringe patterns map height.
 
 ## Microwave and radio-frequency measurement
 S: RF and microwave measurements characterise signals and components from kilohertz to hundreds of gigahertz. They are vital for communications, radar, accelerators, quantum computing and radio astronomy, using tools like vector network analysers and spectrum analysers.
@@ -288,8 +288,8 @@ K: Match impedances, calibrate fixtures, and keep the first amplifier low-noise;
 !: Unmatched connections cause reflections and standing waves; always calibrate a VNA at the measurement plane.
 Q: What does S_{21} measure? | Forward transmission from port 1 to port 2.
 Q: Why does the first amplifier dominate system noise? | Later stages' noise is divided by the first stage's gain (Friis formula).
-M1: 0 dBm corresponds to: | 1 mW | 1 W | 0 W | 1 μW | Reference power.
-M2: A perfect match has: | Γ = 0, VSWR = 1 | Γ = 1 | VSWR = ∞ | Γ = −1 | No reflection.
+M1#physics-u44-10-q1: 0 dBm corresponds to: | 1 mW | 1 W | 0 W | 1 μW | Reference power.
+M2#physics-u44-10-q2: A perfect match has: | Γ = 0, VSWR = 1 | Γ = 1 | VSWR = ∞ | Γ = −1 | No reflection.
 
 ## Electronics and signal processing
 S: Electronics amplify, filter and digitise signals from sensors, while signal processing extracts information from noise. Op-amps, filters, ADCs and digital techniques like lock-in detection and Fourier analysis are core tools for every experimentalist.
@@ -317,8 +317,8 @@ K: Amplify early with low noise, filter to the needed bandwidth, sample above Ny
 !: Ground loops inject mains hum; use a single ground point and differential inputs.
 Q: How does a lock-in amplifier work? | It multiplies the signal by a reference at the modulation frequency and low-pass filters, isolating the component at that frequency.
 Q: What is the gain–bandwidth product? | For an op-amp, gain times bandwidth is roughly constant.
-M1: Johnson noise is reduced by: | Cooling and narrowing bandwidth | Increasing resistance | Raising temperature | Adding gain | ∝ √(TRB).
-M2: A 16-bit ADC has ideal SNR of about: | 98 dB | 16 dB | 48 dB | 160 dB | 6.02 × 16 + 1.76.
+M1#physics-u44-11-q1: Johnson noise is reduced by: | Cooling and narrowing bandwidth | Increasing resistance | Raising temperature | Adding gain | ∝ √(TRB).
+M2#physics-u44-11-q2: A 16-bit ADC has ideal SNR of about: | 98 dB | 16 dB | 48 dB | 160 dB | 6.02 × 16 + 1.76.
 
 ## Materials characterisation
 S: Materials characterisation measures a material's structure, composition and properties, linking how atoms are arranged to how the material behaves. Techniques span optical, electrical, mechanical, thermal and microscopic methods across many length scales.
@@ -346,8 +346,8 @@ K: Characterisation links structure to properties; combine complementary techniq
 !: Surface techniques (XPS, AFM) may not represent the bulk; contamination and oxide layers can mislead.
 Q: What does the Hall effect measure? | Carrier type, density and (with resistivity) mobility.
 Q: What does DSC detect? | Heat flow changes from phase transitions, melting, crystallisation and heat capacity.
-M1: Four-point probes avoid errors from: | Contact resistance | Temperature | Light | Magnetic fields | Separate current and voltage contacts.
-M2: XPS mainly probes: | The top few nanometres | Bulk centimetres | Nuclear spins | Grain size | Short photoelectron escape depth.
+M1#physics-u44-12-q1: Four-point probes avoid errors from: | Contact resistance | Temperature | Light | Magnetic fields | Separate current and voltage contacts.
+M2#physics-u44-12-q2: XPS mainly probes: | The top few nanometres | Bulk centimetres | Nuclear spins | Grain size | Short photoelectron escape depth.
 
 ## Scanning probe microscopy
 S: Scanning probe microscopes image surfaces by scanning a sharp tip just above or on them, measuring currents, forces or other interactions. They resolve individual atoms, manipulate molecules and map electrical, magnetic and mechanical properties at the nanoscale.
@@ -377,8 +377,8 @@ K: STM uses tunnelling current, AFM uses force; both scan sharp tips to reach at
 !: Images reflect tip–sample interaction, not pure topography; blunt or double tips create artefacts.
 Q: Why is STM so sensitive to height? | Tunnelling current depends exponentially on the gap.
 Q: Why can AFM image insulators? | It measures forces rather than electrical current.
-M1: STS measures: | Local density of electronic states | Mass | Temperature | Magnetic moment only | dI/dV spectra.
-M2: Tapping mode reduces: | Lateral forces that damage soft samples | Resolution | Scan speed | Noise only | Intermittent contact.
+M1#physics-u44-13-q1: STS measures: | Local density of electronic states | Mass | Temperature | Magnetic moment only | dI/dV spectra.
+M2#physics-u44-13-q2: Tapping mode reduces: | Lateral forces that damage soft samples | Resolution | Scan speed | Noise only | Intermittent contact.
 
 ## Electron microscopy
 S: Electron microscopes use beams of electrons, with wavelengths thousands of times shorter than light, to image materials and biological specimens down to individual atoms. SEM images surfaces; TEM looks through thin samples; cryo-EM determines protein structures.
@@ -409,8 +409,8 @@ K: Short electron wavelengths give atomic resolution; SEM images surfaces, TEM/S
 !: Electron beams damage samples; dose must be limited, especially for organics and beam-sensitive materials.
 Q: What do backscattered electrons reveal? | Atomic-number (composition) contrast.
 Q: Why must TEM samples be thin? | Electrons must pass through without excessive scattering or absorption.
-M1: Aberration correctors allow resolution near: | 50 pm | 1 μm | 1 mm | 1 nm only | Sub-ångström.
-M2: EDX analysis uses: | Characteristic X-rays | Secondary electrons | Light | Neutrons | Elemental fingerprint.
+M1#physics-u44-14-q1: Aberration correctors allow resolution near: | 50 pm | 1 μm | 1 mm | 1 nm only | Sub-ångström.
+M2#physics-u44-14-q2: EDX analysis uses: | Characteristic X-rays | Secondary electrons | Light | Neutrons | Elemental fingerprint.
 
 ## X-ray diffraction
 S: X-ray diffraction reveals how atoms are arranged in crystals by measuring the angles and intensities of X-rays scattered from lattice planes. It determined the structures of DNA, proteins and countless materials, and it identifies phases in everyday labs.
@@ -438,8 +438,8 @@ K: Bragg's law gives spacings from angles; structure factors explain intensities
 !: Peak broadening comes from both small crystallite size and strain, as well as instrument effects; separate them before quoting sizes.
 Q: What is the phase problem in crystallography? | Measured intensities give structure-factor magnitudes but not phases.
 Q: Which reflections appear for BCC lattices? | Those with h + k + l even.
-M1: Bragg's law is: | nλ = 2d sin θ | λ = d sin θ | nλ = d cos θ | λ = 2d | Path difference between planes.
-M2: Scherrer's equation estimates: | Crystallite size | Lattice type | Atomic number | Density | From peak width.
+M1#physics-u44-15-q1: Bragg's law is: | nλ = 2d sin θ | λ = d sin θ | nλ = d cos θ | λ = 2d | Path difference between planes.
+M2#physics-u44-15-q2: Scherrer's equation estimates: | Crystallite size | Lattice type | Atomic number | Density | From peak width.
 
 ## Neutron scattering
 S: Neutron scattering probes materials with neutrons from reactors or spallation sources. Neutrons penetrate deeply, see light atoms like hydrogen, distinguish isotopes and carry a magnetic moment, making them unique for studying magnetism, dynamics and soft matter.
@@ -468,8 +468,8 @@ K: Neutrons see nuclei and magnetism, penetrate deeply and match atomic energies
 !: Neutron flux is limited; experiments need large samples and long counting, and some isotopes (Cd, B, Gd) absorb strongly.
 Q: Why is deuteration useful in neutron scattering? | H and D scatter very differently, allowing contrast matching to highlight parts of a sample.
 Q: What does inelastic neutron scattering measure? | Excitation spectra such as phonons and magnons, S(Q, ω).
-M1: Neutrons are sensitive to magnetism because they: | Have a magnetic moment | Are charged | Are massless | Emit light | Spin ½ moment.
-M2: The European Spallation Source is in: | Sweden | France | USA | Japan | Lund.
+M1#physics-u44-16-q1: Neutrons are sensitive to magnetism because they: | Have a magnetic moment | Are charged | Are massless | Emit light | Spin ½ moment.
+M2#physics-u44-16-q2: The European Spallation Source is in: | Sweden | France | USA | Japan | Lund.
 
 ## Synchrotron methods
 S: Synchrotrons accelerate electrons around rings to produce extremely bright, tunable X-rays and other light. Thousands of scientists use them for diffraction, spectroscopy and imaging in materials science, chemistry, biology, medicine and cultural heritage.
@@ -497,8 +497,8 @@ K: Synchrotrons and XFELs provide tunable, brilliant X-rays enabling diffraction
 !: Intense X-rays damage samples; dose management, cryo-cooling or ultra-short pulses are needed.
 Q: What does EXAFS reveal? | Local atomic structure around an absorbing element: neighbour distances and numbers.
 Q: What makes fourth-generation synchrotrons special? | Very low emittance from multi-bend achromat lattices, giving highly coherent, brilliant beams.
-M1: Undulators produce: | Narrow intense harmonics | Broad continuous spectra only | Neutrons | Visible light only | Constructive interference.
-M2: XFEL pulses last about: | Femtoseconds | Seconds | Milliseconds | Nanoseconds only | Ultra-short.
+M1#physics-u44-17-q1: Undulators produce: | Narrow intense harmonics | Broad continuous spectra only | Neutrons | Visible light only | Constructive interference.
+M2#physics-u44-17-q2: XFEL pulses last about: | Femtoseconds | Seconds | Milliseconds | Nanoseconds only | Ultra-short.
 
 ## Particle accelerator operation
 S: Operating a particle accelerator means injecting, accelerating, focusing, steering and colliding or extracting beams reliably for hours at a time. Operators balance beam quality, intensity and machine protection, using diagnostics and feedback systems.
@@ -523,8 +523,8 @@ K: Accelerators chain stages of acceleration; magnets focus and steer, RF accele
 !: Integer and half-integer tunes cause resonances that blow up the beam; tunes are kept at carefully chosen values.
 Q: What is the tune of an accelerator? | The number of betatron oscillations per revolution.
 Q: Why do quadrupoles alternate in focusing direction? | A quadrupole focuses in one plane and defocuses in the other; alternating gives net focusing in both.
-M1: Magnetic rigidity Bρ is proportional to: | Momentum | Energy only | Charge squared | Mass only | p = 0.3Bρ.
-M2: Sextupoles correct: | Chromaticity | Orbit | Beam energy | Vacuum | Momentum-dependent focusing.
+M1#physics-u44-18-q1: Magnetic rigidity Bρ is proportional to: | Momentum | Energy only | Charge squared | Mass only | p = 0.3Bρ.
+M2#physics-u44-18-q2: Sextupoles correct: | Chromaticity | Orbit | Beam energy | Vacuum | Momentum-dependent focusing.
 
 ## Radiation measurement
 S: Radiation measurement quantifies activity, dose and contamination to protect people and support research, medicine and industry. Choosing the right detector and understanding counting statistics are essential for reliable results.
@@ -555,8 +555,8 @@ K: Pick detectors for the radiation type, subtract background with proper Poisso
 !: A GM counter calibrated for Cs-137 can misread dose rates at very different energies.
 Q: What is the uncertainty in N counts? | √N.
 Q: Why use thin-window probes? | To let short-range alpha and low-energy beta particles reach the detector.
-M1: 2500 counts gives relative uncertainty: | 2% | 0.04% | 50% | 25% | 1/√2500.
-M2: He-3 tubes detect: | Thermal neutrons | Alpha only | Gamma only | Muons | n + ^{3}He → p + t.
+M1#physics-u44-19-q1: 2500 counts gives relative uncertainty: | 2% | 0.04% | 50% | 25% | 1/√2500.
+M2#physics-u44-19-q2: He-3 tubes detect: | Thermal neutrons | Alpha only | Gamma only | Muons | n + ^{3}He → p + t.
 
 ## Experimental control systems
 S: Control systems keep experiments at their set points: temperatures, positions, laser frequencies, beam orbits. Feedback loops measure, compare with targets and correct, while supervisory software coordinates instruments, interlocks and safety.
@@ -580,8 +580,8 @@ K: Feedback measures and corrects; PID tuning balances speed, accuracy and stabi
 !: Delays in a loop limit achievable gain; adding gain to a slow loop causes oscillation.
 Q: What does the integral term in PID do? | It eliminates steady-state error by accumulating past error.
 Q: What is EPICS? | A distributed control software framework used at accelerators and large experiments.
-M1: Derivative action: | Damps overshoot | Removes offset | Increases noise sensitivity only | Has no effect | Responds to rate of change.
-M2: Safety interlocks should be: | Independent of the control system | Software-only | Disabled during runs | Shared with PID loops | Fail-safe, separate.
+M1#physics-u44-20-q1: Derivative action: | Damps overshoot | Removes offset | Increases noise sensitivity only | Has no effect | Responds to rate of change.
+M2#physics-u44-20-q2: Safety interlocks should be: | Independent of the control system | Software-only | Disabled during runs | Shared with PID loops | Fail-safe, separate.
 
 ## Automation and data acquisition
 S: Data acquisition (DAQ) systems capture signals from instruments, timestamp and store them, while automation runs experiments without constant human intervention. Good DAQ design ensures no important data are lost and every measurement is traceable.
@@ -607,8 +607,8 @@ K: DAQ systems must capture, timestamp and store data reliably with full metadat
 !: Without metadata (settings, calibration, time) raw data quickly become useless.
 Q: Why synchronise clocks across a DAQ system? | So events from different channels can be correlated in time.
 Q: What is HDF5? | A hierarchical data format for storing large scientific datasets with metadata.
-M1: Doubling sample rate doubles: | Data rate | ADC resolution | Signal amplitude | Noise floor | Throughput.
-M2: Bayesian optimisation in experiments helps: | Choose informative next measurements | Remove noise | Store data | Calibrate clocks | Efficient exploration.
+M1#physics-u44-21-q1: Doubling sample rate doubles: | Data rate | ADC resolution | Signal amplitude | Noise floor | Throughput.
+M2#physics-u44-21-q2: Bayesian optimisation in experiments helps: | Choose informative next measurements | Remove noise | Store data | Calibrate clocks | Efficient exploration.
 
 ## Laboratory safety and risk assessment
 S: Laboratory safety protects people, equipment and the environment from hazards such as lasers, high voltage, radiation, cryogens, chemicals and magnetic fields. Risk assessment identifies hazards, estimates risks and puts controls in place before work begins.
@@ -644,6 +644,6 @@ K: Assess risks before work, apply the hierarchy of controls with PPE last, and 
 !: PPE is the last line of defence, not the first; engineering controls should do most of the work.
 Q: What is the hierarchy of controls? | Elimination, substitution, engineering controls, administrative controls, then PPE.
 Q: Why must capacitors be discharged before maintenance? | They can store lethal energy long after power is switched off.
-M1: The most effective control is: | Elimination | PPE | Signage | Training | Remove the hazard entirely.
-M2: Oxygen depletion monitors are used near: | Cryogen stores | Laser tables | Computers | Microscopes only | Boil-off displaces oxygen.
+M1#physics-u44-22-q1: The most effective control is: | Elimination | PPE | Signage | Training | Remove the hazard entirely.
+M2#physics-u44-22-q2: Oxygen depletion monitors are used near: | Cryogen stores | Laser tables | Computers | Microscopes only | Boil-off displaces oxygen.
 `;

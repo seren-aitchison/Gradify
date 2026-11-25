@@ -14,8 +14,8 @@ X: 4 coins: how many microstates in each macrostate?
 !: The equal-probability postulate applies to microstates, not macrostates; macrostates differ enormously in probability.
 Q: What is the fundamental postulate of statistical mechanics? | All accessible microstates of an isolated system in equilibrium are equally probable.
 Q: Why does the most probable macrostate dominate for large systems? | Its number of microstates vastly exceeds all others', so relative fluctuations scale as 1/√N.
-M1: With 10 coins, the macrostate with most microstates is: | 5 heads | 10 heads | 0 heads | 1 head | C(10, 5) = 252.
-M2: A macrostate is specified by: | Bulk variables like E, V, N | Every particle's position | One particle | Its entropy only | Coarse description.
+M1#physics-u13-01-q1: With 10 coins, the macrostate with most microstates is: | 5 heads | 10 heads | 0 heads | 1 head | C(10, 5) = 252.
+M2#physics-u13-01-q2: A macrostate is specified by: | Bulk variables like E, V, N | Every particle's position | One particle | Its entropy only | Coarse description.
 
 ## Statistical ensembles
 S: An ensemble is an imagined collection of many copies of a system, each in a different microstate consistent with the macroscopic constraints. Averages over the ensemble give thermodynamic quantities.
@@ -36,8 +36,8 @@ X: Why use the canonical ensemble for a cup of coffee in a room?
 !: Ensembles can disagree for small systems or near phase transitions with long-range forces (like self-gravitating systems).
 Q: What is the ergodic hypothesis? | That time averages over a single system's evolution equal averages over the ensemble.
 Q: Which ensemble describes a system exchanging energy and particles with a reservoir? | The grand canonical ensemble.
-M1: The canonical ensemble fixes: | N, V and T | N, V and E | μ, V and T | N, p and T | Heat bath.
-M2: Relative energy fluctuations in the canonical ensemble scale as: | 1/√N | N | 1/N^{2} | Constant | Large N ⇒ sharp energy.
+M1#physics-u13-02-q1: The canonical ensemble fixes: | N, V and T | N, V and E | μ, V and T | N, p and T | Heat bath.
+M2#physics-u13-02-q2: Relative energy fluctuations in the canonical ensemble scale as: | 1/√N | N | 1/N^{2} | Constant | Large N ⇒ sharp energy.
 
 ## Microcanonical, canonical and grand canonical ensembles
 S: The three main ensembles each have their own probability rule and their own link to thermodynamics. Knowing which to use, and how to get thermodynamic quantities from each, is the core technique of statistical mechanics.
@@ -59,8 +59,8 @@ D: phys-u13-two-level-energy
 !: The partition function sums over states, not energy levels; degenerate levels count once per state.
 Q: How is free energy obtained from the canonical partition function? | F = −k_{B}T ln Z.
 Q: Why is the grand canonical ensemble convenient for quantum gases? | Particle number fluctuates, so occupation of each state can be treated independently.
-M1: In the microcanonical ensemble, temperature is defined by: | 1/T = ∂S/∂E | T = ∂E/∂N | T = Z | T = −k_{B} ln Ω | From entropy.
-M2: The high-T limit of a two-level system's mean energy is: | ε/2 | ε | 0 | ∞ | Both levels equally occupied.
+M1#physics-u13-03-q1: In the microcanonical ensemble, temperature is defined by: | 1/T = ∂S/∂E | T = ∂E/∂N | T = Z | T = −k_{B} ln Ω | From entropy.
+M2#physics-u13-03-q2: The high-T limit of a two-level system's mean energy is: | ε/2 | ε | 0 | ∞ | Both levels equally occupied.
 
 ## Boltzmann distribution
 S: In thermal equilibrium at temperature T, the probability of finding a system in a state of energy E is proportional to e^{−E/k_{B}T}. Higher energy states are exponentially less populated, unless k_{B}T is comparable to the energy gap.
@@ -80,8 +80,8 @@ D: phys-u13-boltzmann-balmer
 !: The Boltzmann factor compares individual states; with degeneracies, higher levels can hold more particles if they have many more states.
 Q: What is k_{B}T at room temperature in eV? | About 0.025 eV (1/40 eV).
 Q: Why can't lasers work in thermal equilibrium? | The Boltzmann distribution always has fewer particles in higher levels; lasing needs population inversion.
-M1: As T → ∞, populations of all non-degenerate states become: | Equal | Zero | Concentrated in the ground state | Inverted | e^{−E/k_{B}T} → 1.
-M2: A rate doubles for a 10 K rise near room temperature. This suggests activation energy of roughly: | 0.5 eV | 0.005 eV | 5 eV | 50 eV | ln 2 = E_{a}ΔT/(k_{B}T^{2}) ⇒ E_{a} ≈ 0.53 eV.
+M1#physics-u13-04-q1: As T → ∞, populations of all non-degenerate states become: | Equal | Zero | Concentrated in the ground state | Inverted | e^{−E/k_{B}T} → 1.
+M2#physics-u13-04-q2: A rate doubles for a 10 K rise near room temperature. This suggests activation energy of roughly: | 0.5 eV | 0.005 eV | 5 eV | 50 eV | ln 2 = E_{a}ΔT/(k_{B}T^{2}) ⇒ E_{a} ≈ 0.53 eV.
 
 ## Maxwell–Boltzmann distribution
 S: The Maxwell–Boltzmann distribution gives the spread of molecular speeds in a gas at temperature T. Most molecules move near a typical speed, but a long tail of fast molecules drives evaporation, chemical reactions and atmospheric escape.
@@ -104,9 +104,9 @@ P: **Investigate with the lab.** Start every particle at the same speed and watc
 IX: gas
 Q: What is the rms speed of gas molecules? | v_{rms} = √(3k_{B}T/m).
 Q: Why does the distribution start at zero for v = 0? | The number of velocity states grows as v^{2} (shells in velocity space).
-M1: Doubling the absolute temperature multiplies v_{rms} by: | √2 | 2 | 4 | 1/√2 | ∝ √T.
-M2: Which is largest? | v_{rms} | v_{p} | ⟨v⟩ | All equal | 1.22 vs 1 and 1.13.
-M2: What does the Maxwell–Boltzmann distribution describe? | The spread of molecular speeds in a gas at one temperature | The pressure of a gas at different volumes | The speed of sound in a gas | The number of molecules in a mole | Collisions spread molecular speeds into a characteristic distribution.
+M1#physics-u13-05-q1: Doubling the absolute temperature multiplies v_{rms} by: | √2 | 2 | 4 | 1/√2 | ∝ √T.
+M2#physics-u13-05-q2: Which is largest? | v_{rms} | v_{p} | ⟨v⟩ | All equal | 1.22 vs 1 and 1.13.
+M2#physics-u13-05-q3: What does the Maxwell–Boltzmann distribution describe? | The spread of molecular speeds in a gas at one temperature | The pressure of a gas at different volumes | The speed of sound in a gas | The number of molecules in a mole | Collisions spread molecular speeds into a characteristic distribution.
 
 ## Partition functions
 S: The partition function Z is a weighted sum over all states. Once you have it, every thermodynamic quantity follows by differentiation: it encodes everything about a system in equilibrium.
@@ -128,8 +128,8 @@ D: phys-u13-oscillator-energy
 !: The N! for indistinguishable particles is essential: without it, entropy isn't extensive (the Gibbs paradox).
 Q: How do you get mean energy from Z? | ⟨E⟩ = −∂ln Z/∂β.
 Q: Why divide by N! for identical particles? | Swapping identical particles doesn't create a new state; omitting it gives the Gibbs paradox.
-M1: For independent subsystems, partition functions: | Multiply | Add | Subtract | Are equal | Energies add, exponentials multiply.
-M2: At very low T, Z approaches: | The ground-state degeneracy times e^{−βE_{0}} | Infinity | Zero always | The number of states | Only the ground state contributes.
+M1#physics-u13-06-q1: For independent subsystems, partition functions: | Multiply | Add | Subtract | Are equal | Energies add, exponentials multiply.
+M2#physics-u13-06-q2: At very low T, Z approaches: | The ground-state degeneracy times e^{−βE_{0}} | Infinity | Zero always | The number of states | Only the ground state contributes.
 
 ## Entropy and probability
 S: Entropy measures how probable a macrostate is: the logarithm of its number of microstates. The second law is then simply the statement that systems move to more probable states.
@@ -149,8 +149,8 @@ X: Gas in a box: probability all N molecules are in the left half?
 !: Entropy depends on what you count as distinguishable; the choice of macrostate variables matters.
 Q: How is the second law explained statistically? | Systems evolve towards macrostates with more microstates, which are overwhelmingly more probable.
 Q: What distribution maximises entropy at fixed mean energy? | The Boltzmann distribution.
-M1: For two independent systems, total entropy is: | S_{1} + S_{2} | S_{1}S_{2} | max(S_{1}, S_{2}) | ln(S_{1}S_{2}) | ln(Ω_{1}Ω_{2}).
-M2: Gibbs entropy is largest when: | All states are equally probable | One state is certain | T = 0 | Energy is minimal | Uniform distribution.
+M1#physics-u13-07-q1: For two independent systems, total entropy is: | S_{1} + S_{2} | S_{1}S_{2} | max(S_{1}, S_{2}) | ln(S_{1}S_{2}) | ln(Ω_{1}Ω_{2}).
+M2#physics-u13-07-q2: Gibbs entropy is largest when: | All states are equally probable | One state is certain | T = 0 | Energy is minimal | Uniform distribution.
 
 ## Multiplicity and state counting
 S: Multiplicity is the number of microstates in a macrostate. Counting states, with combinatorics or phase-space volumes, is how statistical mechanics turns microscopic models into entropy and temperature.
@@ -169,8 +169,8 @@ X: Einstein solid with N = 3 oscillators and q = 3 quanta. Multiplicity?
 !: Stirling's approximation is excellent for large N but poor for small numbers; use exact factorials for small systems.
 Q: What is Stirling's approximation? | ln N! ≈ N ln N − N for large N.
 Q: Why is phase space divided into cells of size h^{3} per particle? | Quantum mechanics (uncertainty) sets the minimum distinguishable volume, giving absolute entropies.
-M1: Number of ways to choose 2 heads from 5 coins: | 10 | 5 | 20 | 25 | C(5, 2).
-M2: Thermal equilibrium between two solids corresponds to: | Maximum total multiplicity | Equal energies | Equal numbers of oscillators | Minimum multiplicity | Equal ∂ln Ω/∂E.
+M1#physics-u13-08-q1: Number of ways to choose 2 heads from 5 coins: | 10 | 5 | 20 | 25 | C(5, 2).
+M2#physics-u13-08-q2: Thermal equilibrium between two solids corresponds to: | Maximum total multiplicity | Equal energies | Equal numbers of oscillators | Minimum multiplicity | Equal ∂ln Ω/∂E.
 
 ## Equipartition theorem
 S: In classical thermal equilibrium, every quadratic term in a system's energy has an average value of ½k_{B}T. This quickly gives heat capacities of gases and solids, and its failures revealed the need for quantum theory.
@@ -191,9 +191,9 @@ P: **Investigate with the lab.** Double the temperature and see the mean kinetic
 IX: gas
 Q: State the equipartition theorem. | Each quadratic degree of freedom has average energy ½k_{B}T in classical equilibrium.
 Q: Why don't diatomic molecules' vibrations contribute to C_{V} at room temperature? | The vibrational quantum ħω is much larger than k_{B}T, so the mode is frozen out.
-M1: C_{V} of a monatomic ideal gas per mole: | (3/2)R | (5/2)R | 3R | R | Three translational terms.
-M2: The ultraviolet catastrophe came from applying equipartition to: | Cavity radiation modes | Gas molecules | Solids | Electrons in metals | Infinitely many modes each with k_{B}T.
-M2: How is the mean kinetic energy of ideal gas molecules related to temperature? | It is proportional to the absolute temperature | It is proportional to the square of temperature | It is independent of temperature | It is proportional to the temperature in °C | Mean translational kinetic energy = (3/2)kT.
+M1#physics-u13-09-q1: C_{V} of a monatomic ideal gas per mole: | (3/2)R | (5/2)R | 3R | R | Three translational terms.
+M2#physics-u13-09-q2: The ultraviolet catastrophe came from applying equipartition to: | Cavity radiation modes | Gas molecules | Solids | Electrons in metals | Infinitely many modes each with k_{B}T.
+M2#physics-u13-09-q3: How is the mean kinetic energy of ideal gas molecules related to temperature? | It is proportional to the absolute temperature | It is proportional to the square of temperature | It is independent of temperature | It is proportional to the temperature in °C | Mean translational kinetic energy = (3/2)kT.
 
 ## Classical ideal gases
 S: An ideal gas is a collection of non-interacting point particles. Statistical mechanics derives its equation of state, its internal energy and its absolute entropy from first principles.
@@ -215,9 +215,9 @@ P: **Investigate with the lab.** Halve the volume at fixed temperature and see t
 IX: gas
 Q: What is the Sackur–Tetrode equation? | The absolute entropy of a classical monatomic ideal gas.
 Q: What is the criterion for a gas to be treated classically? | nλ^{3} ≪ 1.
-M1: The ideal gas internal energy depends on: | Temperature only | Volume only | Pressure only | Both V and T | U = (3/2)Nk_{B}T.
-M2: The thermal de Broglie wavelength grows when: | Temperature falls | Temperature rises | Mass increases | Density rises | λ ∝ 1/√(mT).
-M2: A gas is compressed to half its volume at constant temperature. What happens to its pressure? | It doubles | It halves | It stays the same | It quadruples | Boyle's law: pV is constant at fixed temperature.
+M1#physics-u13-10-q1: The ideal gas internal energy depends on: | Temperature only | Volume only | Pressure only | Both V and T | U = (3/2)Nk_{B}T.
+M2#physics-u13-10-q2: The thermal de Broglie wavelength grows when: | Temperature falls | Temperature rises | Mass increases | Density rises | λ ∝ 1/√(mT).
+M2#physics-u13-10-q3: A gas is compressed to half its volume at constant temperature. What happens to its pressure? | It doubles | It halves | It stays the same | It quadruples | Boyle's law: pV is constant at fixed temperature.
 
 ## Mean free path
 S: The mean free path is the average distance a molecule travels between collisions. It controls diffusion, viscosity and thermal conduction in gases, and decides when continuum fluid mechanics breaks down.
@@ -236,8 +236,8 @@ X: Find λ for N_{2} (d = 0.37 nm) at 300 K and 1 atm.
 !: Mean free path doesn't depend on molecular speed; it's geometric (density and size).
 Q: How does mean free path depend on pressure? | Inversely: λ ∝ 1/p at fixed T.
 Q: Why is gas viscosity independent of pressure? | More molecules carry momentum, but each travels proportionally less far between collisions.
-M1: Halving gas pressure at constant T changes λ by: | ×2 | ×1/2 | ×4 | Unchanged | λ ∝ 1/n.
-M2: The Knudsen number compares: | Mean free path to system size | Viscosity to inertia | Speed to sound speed | Heat to work | Kn = λ/L.
+M1#physics-u13-11-q1: Halving gas pressure at constant T changes λ by: | ×2 | ×1/2 | ×4 | Unchanged | λ ∝ 1/n.
+M2#physics-u13-11-q2: The Knudsen number compares: | Mean free path to system size | Viscosity to inertia | Speed to sound speed | Heat to work | Kn = λ/L.
 
 ## Molecular speed distributions
 S: Molecular speeds in a gas follow the Maxwell–Boltzmann distribution, but what a measurement sees depends on how it samples them: molecules effusing through a hole, hitting a wall, or colliding are weighted towards faster ones.
@@ -258,9 +258,9 @@ P: **Investigate with the lab.** Heat the gas and see the peak of the speed dist
 IX: gas
 Q: What is the molecular flux on a wall? | Φ = ¼n⟨v⟩.
 Q: Why are escaping molecules on average more energetic than those in the gas? | Faster molecules reach the hole more often (flux weighting).
-M1: Graham's law says effusion rate is proportional to: | 1/√m | m | √m | 1/m | Lighter effuse faster.
-M2: Doppler broadening of a spectral line increases with: | Temperature | Mass | Density only | Magnetic field | Width ∝ √(T/m).
-M2: As a gas is heated, what happens to the peak of its speed distribution? | It moves to higher speed and gets lower | It moves to lower speed and gets higher | It stays in the same place | It splits into two peaks | Higher temperature means faster molecules spread over a wider range of speeds.
+M1#physics-u13-12-q1: Graham's law says effusion rate is proportional to: | 1/√m | m | √m | 1/m | Lighter effuse faster.
+M2#physics-u13-12-q2: Doppler broadening of a spectral line increases with: | Temperature | Mass | Density only | Magnetic field | Width ∝ √(T/m).
+M2#physics-u13-12-q3: As a gas is heated, what happens to the peak of its speed distribution? | It moves to higher speed and gets lower | It moves to lower speed and gets higher | It stays in the same place | It splits into two peaks | Higher temperature means faster molecules spread over a wider range of speeds.
 
 ## Chemical potential
 S: The chemical potential is the energy cost of adding one particle to a system. Particles flow from high to low chemical potential, so it governs diffusion, phase equilibrium, chemical reactions and the occupation of quantum states.
@@ -280,8 +280,8 @@ X: Derive the barometric formula from equal chemical potential.
 !: Chemical potential isn't just chemical; it's the "pressure" for particle number in any system.
 Q: Which way do particles flow in terms of chemical potential? | From high to low μ.
 Q: Why is the chemical potential of photons zero? | Photon number isn't conserved; they're freely created and absorbed.
-M1: In equilibrium between liquid and vapour: | μ_{liquid} = μ_{vapour} | Densities are equal | Pressures differ | Energies are equal | Equal chemical potential.
-M2: The electron chemical potential in a semiconductor is called: | The Fermi level | The band gap | The work function | The donor level | Same concept.
+M1#physics-u13-13-q1: In equilibrium between liquid and vapour: | μ_{liquid} = μ_{vapour} | Densities are equal | Pressures differ | Energies are equal | Equal chemical potential.
+M2#physics-u13-13-q2: The electron chemical potential in a semiconductor is called: | The Fermi level | The band gap | The work function | The donor level | Same concept.
 
 ## Fermi–Dirac statistics
 S: Fermions (electrons, protons, neutrons, ^{3}He) obey the Pauli exclusion principle: no two can share a quantum state. Their average occupation follows the Fermi–Dirac distribution, which explains metals, semiconductors, white dwarfs and neutron stars.
@@ -303,8 +303,8 @@ D: phys-u13-fermi-sodium
 !: Electrons at the Fermi level move fast (~10^{6} m s^{-1}) even at T = 0; "cold" fermions are far from still.
 Q: What is the Fermi energy? | The energy of the highest occupied state at absolute zero.
 Q: Why is the electronic heat capacity of metals small? | Only electrons within ~k_{B}T of the Fermi energy can be excited.
-M1: At T = 0, the Fermi–Dirac occupation above E_{F} is: | 0 | 1 | ½ | e^{−1} | Step function.
-M2: Electron degeneracy pressure supports: | White dwarfs | Main-sequence stars | Planets' atmospheres | Black holes | Pauli exclusion.
+M1#physics-u13-14-q1: At T = 0, the Fermi–Dirac occupation above E_{F} is: | 0 | 1 | ½ | e^{−1} | Step function.
+M2#physics-u13-14-q2: Electron degeneracy pressure supports: | White dwarfs | Main-sequence stars | Planets' atmospheres | Black holes | Pauli exclusion.
 
 ## Bose–Einstein statistics
 S: Bosons (photons, phonons, ^{4}He atoms, many other atoms) can pile into the same quantum state. Their occupation follows the Bose–Einstein distribution, which enhances crowding and leads to lasers, superfluidity and Bose–Einstein condensation.
@@ -326,8 +326,8 @@ X: Why do photons in a cavity have μ = 0?
 !: Not every boson system shows BEC; in 2D at finite T there's no true condensate, and interacting systems are more complex.
 Q: What is Bose–Einstein condensation? | A macroscopic occupation of the lowest quantum state by bosons below a critical temperature.
 Q: What sign must E − μ have for bosons? | Positive for all states, so μ < lowest energy.
-M1: The Planck distribution is Bose–Einstein with: | μ = 0 | μ = E_{F} | μ → ∞ | μ = k_{B}T | Photons.
-M2: The first gaseous BEC was made in: | 1995 | 1925 | 1938 | 2010 | Rubidium at JILA.
+M1#physics-u13-15-q1: The Planck distribution is Bose–Einstein with: | μ = 0 | μ = E_{F} | μ → ∞ | μ = k_{B}T | Photons.
+M2#physics-u13-15-q2: The first gaseous BEC was made in: | 1995 | 1925 | 1938 | 2010 | Rubidium at JILA.
 
 ## Quantum gases
 S: When particles are close compared with their thermal de Broglie wavelength, quantum statistics take over and gases behave very differently from classical ones. Ultracold atomic gases let physicists create and control such quantum gases precisely.
@@ -350,8 +350,8 @@ X: At what temperature does a gas of ^{87}Rb at n = 10^{20} m^{-3} reach nλ^{3}
 !: Ultracold gases are extremely dilute (a million times thinner than air); it's the low temperature, not high density, that makes them quantum.
 Q: What is the condition for quantum degeneracy? | nλ^{3} ≳ 1: interparticle spacing comparable to the thermal de Broglie wavelength.
 Q: What is a Feshbach resonance used for? | Tuning the interaction strength between ultracold atoms with a magnetic field.
-M1: Optical lattices are made with: | Standing waves of laser light | Crystals | Magnets only | Electric wires | Periodic light potentials.
-M2: Ultracold gases are quantum because: | Their temperature is very low, making λ large | They're very dense | They're charged | They're hot | λ ∝ 1/√T.
+M1#physics-u13-16-q1: Optical lattices are made with: | Standing waves of laser light | Crystals | Magnets only | Electric wires | Periodic light potentials.
+M2#physics-u13-16-q2: Ultracold gases are quantum because: | Their temperature is very low, making λ large | They're very dense | They're charged | They're hot | λ ∝ 1/√T.
 
 ## Degenerate matter
 S: Degenerate matter is so dense that the Pauli exclusion principle, not temperature, provides most of its pressure. It makes up white dwarfs and neutron stars and sets limits on how massive they can be.
@@ -373,8 +373,8 @@ X: Estimate a white dwarf's density (0.6 M_{⊙}, R = 6000 km).
 !: Electrons in metals are degenerate too; degeneracy isn't exotic, only its extreme densities are.
 Q: What is the Chandrasekhar limit? | About 1.4 solar masses, the maximum mass of a white dwarf supported by electron degeneracy pressure.
 Q: Why do more massive white dwarfs have smaller radii? | Greater gravity compresses them until the higher degeneracy pressure balances it.
-M1: Degeneracy pressure arises from: | The Pauli exclusion principle | Thermal motion | Radiation | Magnetic fields | Fermions can't share states.
-M2: Neutron stars have radii of about: | 12 km | 6000 km | 1 km | 700 000 km | Extremely compact.
+M1#physics-u13-17-q1: Degeneracy pressure arises from: | The Pauli exclusion principle | Thermal motion | Radiation | Magnetic fields | Fermions can't share states.
+M2#physics-u13-17-q2: Neutron stars have radii of about: | 12 km | 6000 km | 1 km | 700 000 km | Extremely compact.
 
 ## Blackbody radiation
 S: A blackbody absorbs all radiation and emits a spectrum fixed only by its temperature. Planck's explanation (1900), that energy is exchanged in quanta hf, launched quantum physics.
@@ -396,8 +396,8 @@ D: phys-u13-planck-sun
 !: A blackbody isn't black when hot: it glows. "Black" refers to perfect absorption.
 Q: What problem did Planck's quantum hypothesis solve? | The ultraviolet catastrophe in the classical theory of blackbody radiation.
 Q: State Wien's displacement law. | λ_{max}T = 2.9 × 10^{-3} m K.
-M1: Doubling a blackbody's temperature multiplies its emitted power by: | 16 | 2 | 4 | 8 | T^{4}.
-M2: The CMB peaks in the: | Microwave region | Visible | X-ray | Radio below 1 MHz | 2.7 K ⇒ ~1 mm.
+M1#physics-u13-18-q1: Doubling a blackbody's temperature multiplies its emitted power by: | 16 | 2 | 4 | 8 | T^{4}.
+M2#physics-u13-18-q2: The CMB peaks in the: | Microwave region | Visible | X-ray | Radio below 1 MHz | 2.7 K ⇒ ~1 mm.
 
 ## Fluctuations and correlations
 S: Thermodynamic quantities fluctuate about their averages. The size of fluctuations is linked to response functions like heat capacity and compressibility, and correlations between distant points reveal how ordered a system is.
@@ -417,8 +417,8 @@ X: Energy fluctuation of 1 mol of monatomic gas at 300 K, relative to its mean?
 !: Fluctuations don't violate thermodynamics; they're part of it, and they matter at small scales (molecular motors, nanoelectronics).
 Q: What does the fluctuation–dissipation theorem relate? | Spontaneous fluctuations in equilibrium to the dissipative response of the system.
 Q: What happens to the correlation length at a critical point? | It diverges.
-M1: Einstein's relation D = μk_{B}T links: | Diffusion and mobility | Energy and mass | Pressure and volume | Heat and work | Fluctuation–dissipation.
-M2: Johnson noise increases with: | Temperature and resistance | Current | Capacitance | Frequency only | ⟨V^{2}⟩ = 4k_{B}TRΔf.
+M1#physics-u13-19-q1: Einstein's relation D = μk_{B}T links: | Diffusion and mobility | Energy and mass | Pressure and volume | Heat and work | Fluctuation–dissipation.
+M2#physics-u13-19-q2: Johnson noise increases with: | Temperature and resistance | Current | Capacitance | Frequency only | ⟨V^{2}⟩ = 4k_{B}TRΔf.
 
 ## Phase transitions
 S: Statistical mechanics explains phase transitions as collective behaviour: interactions between many particles produce sudden changes in macroscopic order. Mean-field theories capture the basics; fluctuations make critical behaviour subtle.
@@ -438,8 +438,8 @@ X: In Landau theory, how does magnetisation grow just below T_{c}?
 !: Mean-field theory works better in higher dimensions; above 4 dimensions it gives exact exponents.
 Q: What is mean-field theory? | Approximating interactions by an average field produced by all other particles.
 Q: What is the Landau free energy? | An expansion of free energy in powers of the order parameter, consistent with symmetry.
-M1: Mean-field theory predicts the magnetisation exponent β = : | 1/2 | 1/3 | 1 | 0 | m ∝ (T_{c} − T)^{1/2}.
-M2: The 1D Ising model has a phase transition at: | No finite temperature | T = 1 K | Any T | Only in a field | Fluctuations destroy order in 1D.
+M1#physics-u13-20-q1: Mean-field theory predicts the magnetisation exponent β = : | 1/2 | 1/3 | 1 | 0 | m ∝ (T_{c} − T)^{1/2}.
+M2#physics-u13-20-q2: The 1D Ising model has a phase transition at: | No finite temperature | T = 1 K | Any T | Only in a field | Fluctuations destroy order in 1D.
 
 ## Critical phenomena
 S: Near a continuous phase transition, physical quantities follow power laws in the distance from the critical point, with exponents that are the same for whole classes of different systems. This universality is one of the deepest results of statistical physics.
@@ -458,8 +458,8 @@ X: Near water's critical point, why do the liquid and vapour densities converge 
 !: Universal exponents don't imply identical critical temperatures; T_{c} depends on microscopic details.
 Q: What is universality? | Different systems with the same dimension and symmetry share the same critical exponents.
 Q: Which universality class contains the liquid–gas critical point? | The 3D Ising class.
-M1: At a critical point the correlation length is: | Infinite | Zero | One lattice spacing | Constant | Scale invariance.
-M2: Critical exponents depend on: | Dimension and order-parameter symmetry | The material's chemistry | The critical temperature | The sample size | Universality.
+M1#physics-u13-21-q1: At a critical point the correlation length is: | Infinite | Zero | One lattice spacing | Constant | Scale invariance.
+M2#physics-u13-21-q2: Critical exponents depend on: | Dimension and order-parameter symmetry | The material's chemistry | The critical temperature | The sample size | Universality.
 
 ## Ising model
 S: The Ising model places spins that can point up or down on a lattice, with neighbouring spins preferring to align. It's the simplest model of a phase transition and a workhorse for studying magnets, alloys, neural networks and opinion dynamics.
@@ -479,8 +479,8 @@ X: Mean-field vs exact T_{c} for the 2D square lattice.
 !: The Ising model's simplicity is deceptive: its 3D exact solution remains unknown after a century.
 Q: Who solved the 2D Ising model exactly? | Lars Onsager (1944).
 Q: Why is there no phase transition in the 1D Ising model at T > 0? | A domain wall costs finite energy but gains entropy ∝ ln N, so thermal fluctuations always destroy long-range order.
-M1: The lattice gas model is equivalent to: | The Ising model | The ideal gas | The Einstein solid | The Debye model | Occupied/empty ↔ up/down.
-M2: Mean-field theory gives a T_{c} that is: | Too high | Exact | Too low | Zero | It ignores fluctuations.
+M1#physics-u13-22-q1: The lattice gas model is equivalent to: | The Ising model | The ideal gas | The Einstein solid | The Debye model | Occupied/empty ↔ up/down.
+M2#physics-u13-22-q2: Mean-field theory gives a T_{c} that is: | Too high | Exact | Too low | Zero | It ignores fluctuations.
 
 ## Renormalisation group
 S: The renormalisation group (RG) studies how a system's description changes as you zoom out, averaging over small-scale details. It explains universality and critical exponents, and the same ideas underpin quantum field theory.
@@ -501,8 +501,8 @@ X: 1D Ising RG (decimation): summing out every other spin gives tanh K′ = tanh
 !: RG doesn't directly give T_{c} accurately; its strength is exponents and universality.
 Q: What is a fixed point in RG? | A set of couplings unchanged by coarse-graining: a scale-invariant state, like a critical point.
 Q: How does the RG explain universality? | Microscopic differences are irrelevant perturbations that shrink under coarse-graining, so different systems flow to the same fixed point.
-M1: Asymptotic freedom means the strong coupling: | Weakens at high energy | Strengthens at high energy | Is constant | Vanishes at low energy | QCD's running coupling.
-M2: An irrelevant perturbation under RG: | Shrinks as you zoom out | Grows | Stays constant | Creates a phase transition | It doesn't affect critical behaviour.
+M1#physics-u13-23-q1: Asymptotic freedom means the strong coupling: | Weakens at high energy | Strengthens at high energy | Is constant | Vanishes at low energy | QCD's running coupling.
+M2#physics-u13-23-q2: An irrelevant perturbation under RG: | Shrinks as you zoom out | Grows | Stays constant | Creates a phase transition | It doesn't affect critical behaviour.
 
 ## Statistical field theory
 S: Statistical field theory describes systems near critical points by continuous fields instead of individual particles. Its mathematics is the same as quantum field theory in imaginary time, so ideas flow between condensed matter and particle physics.
@@ -522,8 +522,8 @@ X: Why is d = 4 the upper critical dimension for φ^{4} theory?
 !: Continuous field descriptions apply only on scales much larger than the lattice spacing; they describe universal, not microscopic, behaviour.
 Q: What connects statistical field theory to quantum field theory? | Wick rotation to imaginary time maps quantum amplitudes to Boltzmann weights.
 Q: What is the upper critical dimension for the Ising universality class? | Four.
-M1: Lattice QCD calculations use: | Monte Carlo on a Euclidean (imaginary-time) lattice | Perturbation theory only | Experiment only | Classical mechanics | Statistical-mechanics methods.
-M2: The φ^{4} term represents: | Interactions between field fluctuations | Kinetic energy | External field | Temperature | Non-Gaussian coupling.
+M1#physics-u13-24-q1: Lattice QCD calculations use: | Monte Carlo on a Euclidean (imaginary-time) lattice | Perturbation theory only | Experiment only | Classical mechanics | Statistical-mechanics methods.
+M2#physics-u13-24-q2: The φ^{4} term represents: | Interactions between field fluctuations | Kinetic energy | External field | Temperature | Non-Gaussian coupling.
 
 ## Monte Carlo methods
 S: Monte Carlo methods use random sampling to estimate averages in systems with too many states to enumerate. The Metropolis algorithm samples states with Boltzmann probabilities, making it the standard tool for simulating thermal systems.
@@ -545,8 +545,8 @@ D: phys-u13-metropolis-acceptance
 !: A Monte Carlo run that hasn't equilibrated, or whose samples are strongly correlated, gives misleadingly small error bars.
 Q: What is the Metropolis acceptance rule? | Accept downhill moves; accept uphill moves with probability e^{−ΔE/k_{B}T}.
 Q: What is critical slowing down? | The divergence of correlation times near critical points, making local Monte Carlo updates inefficient.
-M1: Metropolis Monte Carlo samples states according to: | The Boltzmann distribution | A uniform distribution | Energy order | Time evolution | By detailed balance.
-M2: Monte Carlo integration error scales with sample number N as: | 1/√N | 1/N | 1/N^{2} | Independent of N | Central limit theorem.
+M1#physics-u13-25-q1: Metropolis Monte Carlo samples states according to: | The Boltzmann distribution | A uniform distribution | Energy order | Time evolution | By detailed balance.
+M2#physics-u13-25-q2: Monte Carlo integration error scales with sample number N as: | 1/√N | 1/N | 1/N^{2} | Independent of N | Central limit theorem.
 
 ## Nonequilibrium statistical mechanics
 S: Nonequilibrium statistical mechanics describes systems driven away from equilibrium: how they relax, transport heat and particles, and fluctuate. It connects microscopic dynamics to transport laws and the arrow of time.
@@ -569,6 +569,6 @@ D: phys-u13-brownian-msd
 !: The H-theorem's irreversibility comes from the molecular chaos assumption, not from the reversible microscopic laws themselves (Loschmidt's paradox).
 Q: What is the Langevin equation? | An equation of motion with a friction force plus a random fluctuating force, describing Brownian motion.
 Q: What do Green–Kubo relations give? | Transport coefficients from time integrals of equilibrium correlation functions.
-M1: Boltzmann's H-theorem shows: | Entropy increases in a dilute gas | Energy decreases | Momentum is not conserved | Temperature is constant | With molecular chaos.
-M2: Mean square displacement in diffusion grows: | Linearly with time | Quadratically | Exponentially | Not at all | ⟨x^{2}⟩ = 2Dt.
+M1#physics-u13-26-q1: Boltzmann's H-theorem shows: | Entropy increases in a dilute gas | Energy decreases | Momentum is not conserved | Temperature is constant | With molecular chaos.
+M2#physics-u13-26-q2: Mean square displacement in diffusion grows: | Linearly with time | Quadratically | Exponentially | Not at all | ⟨x^{2}⟩ = 2Dt.
 `;

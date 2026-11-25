@@ -15,8 +15,8 @@ X: Thunder arrives 6 s after lightning. How far away is the storm?
 !: Sound travels faster in warm air, not in "thicker" air; humidity raises it slightly too.
 Q: Why is sound faster in helium than in air? | Helium's molar mass is much lower, so v = √(γRT/M) is larger.
 Q: How are pressure and displacement waves related in sound? | They're 90° out of phase: pressure extremes occur where displacement is zero.
-M1: Sound travels fastest in: | Steel | Air | Water | Vacuum | High stiffness.
-M2: The speed of sound in air at 0 °C is about 331 m s^{-1}. At 30 °C it's about: | 349 m s^{-1} | 331 m s^{-1} | 361 m s^{-1} | 300 m s^{-1} | +0.6 m s^{-1} per °C.
+M1#physics-u11-01-q1: Sound travels fastest in: | Steel | Air | Water | Vacuum | High stiffness.
+M2#physics-u11-01-q2: The speed of sound in air at 0 °C is about 331 m s^{-1}. At 30 °C it's about: | 349 m s^{-1} | 331 m s^{-1} | 361 m s^{-1} | 300 m s^{-1} | +0.6 m s^{-1} per °C.
 
 ## Sound pressure and intensity
 S: Sound can be measured by its pressure amplitude (what microphones detect) or its intensity (power per unit area). The two are related through the medium's acoustic impedance.
@@ -34,8 +34,8 @@ X: A loudspeaker radiates 1 W uniformly. Find the intensity and pressure amplitu
 !: Microphones measure pressure; intensity also needs the particle velocity (or an assumption of plane waves).
 Q: What is the threshold of hearing in intensity? | About 10^{-12} W m^{-2}.
 Q: How does sound intensity relate to pressure amplitude? | I = p_{0}^{2}/(2ρv), proportional to pressure amplitude squared.
-M1: Doubling pressure amplitude multiplies intensity by: | 4 | 2 | √2 | 8 | I ∝ p^{2}.
-M2: At the threshold of hearing, air molecules move about: | 10^{-11} m | 1 mm | 1 μm | 1 cm | Tiny displacements.
+M1#physics-u11-02-q1: Doubling pressure amplitude multiplies intensity by: | 4 | 2 | √2 | 8 | I ∝ p^{2}.
+M2#physics-u11-02-q2: At the threshold of hearing, air molecules move about: | 10^{-11} m | 1 mm | 1 μm | 1 cm | Tiny displacements.
 
 ## Decibel scale
 S: The decibel scale measures sound level logarithmically, matching the ear's roughly logarithmic response and compressing a trillion-fold range into 0–120 dB.
@@ -56,8 +56,8 @@ D: phys-u11-adding-decibels
 !: Decibels don't add arithmetically: 80 dB + 80 dB = 83 dB.
 Q: What intensity change does +10 dB represent? | A tenfold increase.
 Q: What does two equal sources add to the level? | 3 dB.
-M1: A sound at 70 dB has an intensity of: | 10^{-5} W m^{-2} | 70 W m^{-2} | 10^{-7} W m^{-2} | 7 × 10^{-12} W m^{-2} | I = 10^{-12} × 10^{7}.
-M2: Moving from 1 m to 10 m from a point source changes the level by: | −20 dB | −10 dB | −3 dB | −100 dB | Intensity falls 100 times.
+M1#physics-u11-03-q1: A sound at 70 dB has an intensity of: | 10^{-5} W m^{-2} | 70 W m^{-2} | 10^{-7} W m^{-2} | 7 × 10^{-12} W m^{-2} | I = 10^{-12} × 10^{7}.
+M2#physics-u11-03-q2: Moving from 1 m to 10 m from a point source changes the level by: | −20 dB | −10 dB | −3 dB | −100 dB | Intensity falls 100 times.
 
 ## Pitch, loudness and timbre
 S: Pitch, loudness and timbre are how we perceive sound. They correspond roughly, but not exactly, to frequency, intensity and spectrum, because the ear and brain interpret sound in complex ways.
@@ -77,8 +77,8 @@ X: A 440 Hz A, an octave up, and a perfect fifth (ratio 3/2) above it?
 !: Doubling intensity doesn't double perceived loudness; you need about 10 times the intensity.
 Q: What sets the timbre of a note? | Its spectrum of harmonics and how it changes over time, especially the attack.
 Q: What is the missing fundamental effect? | Perceiving the pitch of a fundamental that isn't present, from the spacing of its harmonics.
-M1: An octave above 300 Hz is: | 600 Hz | 450 Hz | 900 Hz | 150 Hz | Ratio 2.
-M2: The ear is most sensitive around: | 2–5 kHz | 50 Hz | 15 kHz | 200 Hz | Ear canal resonance.
+M1#physics-u11-04-q1: An octave above 300 Hz is: | 600 Hz | 450 Hz | 900 Hz | 150 Hz | Ratio 2.
+M2#physics-u11-04-q2: The ear is most sensitive around: | 2–5 kHz | 50 Hz | 15 kHz | 200 Hz | Ear canal resonance.
 
 ## Frequency spectra
 S: A frequency spectrum shows how much of each frequency a sound contains. Musical notes have line spectra of harmonics; noises have broad, continuous spectra; speech has formant peaks that make vowels recognisable.
@@ -98,8 +98,8 @@ X: Why does a voice on helium sound high?
 !: Spectra and waveforms are two views of the same signal; very different-looking waveforms can sound identical if only the phases differ.
 Q: What are formants? | Resonance peaks of the vocal tract that shape vowel sounds.
 Q: What is pink noise? | Noise with equal power per octave.
-M1: A click has a spectrum that is: | Broad and continuous | A single line | Harmonics only | Zero | Short in time.
-M2: Breathing helium mainly changes: | Formant frequencies | Vocal-fold pitch greatly | Loudness | Nothing | Resonances of the tract shift.
+M1#physics-u11-05-q1: A click has a spectrum that is: | Broad and continuous | A single line | Harmonics only | Zero | Short in time.
+M2#physics-u11-05-q2: Breathing helium mainly changes: | Formant frequencies | Vocal-fold pitch greatly | Loudness | Nothing | Resonances of the tract shift.
 
 ## Harmonics and overtones
 S: Most musical sounds contain a fundamental plus higher frequencies. When these are whole-number multiples of the fundamental they're harmonics; the general term for frequencies above the fundamental is overtones.
@@ -121,8 +121,8 @@ D: phys-u11-open-pipe-harmonics
 !: For a closed pipe, the first overtone is the 3rd harmonic, not the 2nd.
 Q: What is the difference between a harmonic and an overtone? | Harmonics are integer multiples of the fundamental; overtones are any resonances above it.
 Q: Why are octaves and fifths consonant? | Their harmonics coincide frequently (ratios 2:1 and 3:2).
-M1: A closed pipe with fundamental 100 Hz has first overtone at: | 300 Hz | 200 Hz | 150 Hz | 400 Hz | Odd harmonics only.
-M2: Bells sound less "pitched" because: | Their overtones aren't harmonic | They have no overtones | They're too loud | They're metal | Inharmonic spectra.
+M1#physics-u11-06-q1: A closed pipe with fundamental 100 Hz has first overtone at: | 300 Hz | 200 Hz | 150 Hz | 400 Hz | Odd harmonics only.
+M2#physics-u11-06-q2: Bells sound less "pitched" because: | Their overtones aren't harmonic | They have no overtones | They're too loud | They're metal | Inharmonic spectra.
 
 ## Resonance in air columns
 S: Air in a tube resonates at frequencies where standing sound waves fit its length. Open ends are displacement antinodes, closed ends are nodes, and these conditions set the notes of flutes, clarinets, organ pipes and bottles.
@@ -141,8 +141,8 @@ X: Resonances at 17.0 cm and 52.0 cm with a 512 Hz fork. Find v and the end corr
 !: The end correction makes the effective length longer than the physical tube, so resonances are slightly lower than the simple formula gives.
 Q: Why use two resonances to measure the speed of sound? | The difference removes the unknown end correction.
 Q: What is a Helmholtz resonator? | A cavity with a neck, where air in the neck oscillates on the "spring" of the cavity air.
-M1: An open pipe 0.5 m long (v = 340) has fundamental: | 340 Hz | 170 Hz | 680 Hz | 85 Hz | v/2L.
-M2: Closing one end of an open pipe changes its fundamental to: | Half | Double | The same | A third | v/4L vs v/2L.
+M1#physics-u11-07-q1: An open pipe 0.5 m long (v = 340) has fundamental: | 340 Hz | 170 Hz | 680 Hz | 85 Hz | v/2L.
+M2#physics-u11-07-q2: Closing one end of an open pipe changes its fundamental to: | Half | Double | The same | A third | v/4L vs v/2L.
 
 ## Musical instruments and acoustics
 S: Every instrument couples a vibrating source to a resonator and a radiator. Physics explains why each sounds as it does and how players change pitch, loudness and tone.
@@ -161,8 +161,8 @@ X: A violin string (L = 0.33 m) plays 440 Hz. Where must you press it to play 66
 !: A piano's loudness comes from how hard the hammer hits, which also changes timbre (louder notes are brighter).
 Q: Why does a clarinet sound an octave lower than a flute of similar length? | It acts as a pipe closed at one end, with fundamental v/4L instead of v/2L.
 Q: How does a guitarist raise a string's pitch? | Shorten its vibrating length, increase tension, or use a lighter string.
-M1: Tightening a guitar string makes its pitch: | Higher | Lower | Unchanged | Disappear | f ∝ √T.
-M2: Opening a tone hole in a flute: | Shortens the effective air column, raising pitch | Lengthens it | Stops the sound | Lowers pitch | The open hole acts as the end.
+M1#physics-u11-08-q1: Tightening a guitar string makes its pitch: | Higher | Lower | Unchanged | Disappear | f ∝ √T.
+M2#physics-u11-08-q2: Opening a tone hole in a flute: | Shortens the effective air column, raising pitch | Lengthens it | Stops the sound | Lowers pitch | The open hole acts as the end.
 
 ## Doppler effect
 S: The Doppler effect is the change in observed frequency when the source and observer move relative to each other. Approaching sounds are higher-pitched; receding ones lower. The same effect for light measures stellar velocities and the expansion of the universe.
@@ -186,8 +186,8 @@ D: phys-u11-doppler-pass
 !: The pitch heard from an approaching source is constant (higher), not rising; it drops as the source passes.
 Q: Why is the Doppler formula for sound asymmetric between moving source and moving observer? | Sound travels through a medium, so motion relative to the medium matters.
 Q: How is the Doppler effect used in medicine? | Doppler ultrasound measures blood flow speed from frequency shifts of echoes.
-M1: A source moves away. The observed frequency is: | Lower | Higher | Unchanged | Zero | Wavelengths stretched.
-M2: A star's spectral line at 500 nm is observed at 500.1 nm. Its radial velocity is: | 60 km s^{-1} away | 60 km s^{-1} toward | 600 km s^{-1} away | 6 km s^{-1} away | v = cΔλ/λ.
+M1#physics-u11-09-q1: A source moves away. The observed frequency is: | Lower | Higher | Unchanged | Zero | Wavelengths stretched.
+M2#physics-u11-09-q2: A star's spectral line at 500 nm is observed at 500.1 nm. Its radial velocity is: | 60 km s^{-1} away | 60 km s^{-1} toward | 600 km s^{-1} away | 6 km s^{-1} away | v = cΔλ/λ.
 
 ## Beats and interference
 S: Sound waves interfere like all waves: overlapping coherent sounds reinforce or cancel at different places, and nearly equal frequencies beat. These effects are used in tuning, noise cancellation and speaker design.
@@ -207,8 +207,8 @@ D: phys-u11-path-difference
 !: Noise cancellation removes energy at your ear by redirecting it, not by destroying it; other places get louder.
 Q: Why does active noise cancellation work best at low frequencies? | Long wavelengths make the anti-noise easy to align in time and space.
 Q: What happens if stereo speakers are wired out of phase? | Bass cancels, especially between them.
-M1: Two speakers in phase; path difference 2λ. At that point: | Constructive interference | Destructive | Beats | Silence | Whole number of wavelengths.
-M2: A 256 Hz fork and a string produce 4 beats per second. The string could be: | 252 or 260 Hz | 256 Hz | 1024 Hz | 64 Hz | ±4 Hz.
+M1#physics-u11-10-q1: Two speakers in phase; path difference 2λ. At that point: | Constructive interference | Destructive | Beats | Silence | Whole number of wavelengths.
+M2#physics-u11-10-q2: A 256 Hz fork and a string produce 4 beats per second. The string could be: | 252 or 260 Hz | 256 Hz | 1024 Hz | 64 Hz | ±4 Hz.
 
 ## Acoustic impedance
 S: Acoustic impedance is a medium's resistance to sound: the product of its density and sound speed. The difference in impedance between two media decides how much sound reflects at the boundary, which is the basis of ultrasound imaging.
@@ -229,8 +229,8 @@ X: What fraction of ultrasound reflects at a fat–muscle boundary?
 !: Impedance matching isn't about making materials identical, just their Z; quarter-wave matching layers with Z = √(Z_{1}Z_{2}) maximise transmission.
 Q: Define acoustic impedance. | Z = ρv, density times speed of sound.
 Q: Why does the middle ear need to match impedance? | Air and cochlear fluid differ hugely in impedance; without matching most sound would reflect.
-M1: Sound passing from air to water mostly: | Reflects | Transmits | Is absorbed | Speeds up without reflection | Huge impedance mismatch.
-M2: An ideal quarter-wave matching layer has impedance: | √(Z_{1}Z_{2}) | Z_{1} + Z_{2} | (Z_{1} + Z_{2})/2 | 0 | Geometric mean.
+M1#physics-u11-11-q1: Sound passing from air to water mostly: | Reflects | Transmits | Is absorbed | Speeds up without reflection | Huge impedance mismatch.
+M2#physics-u11-11-q2: An ideal quarter-wave matching layer has impedance: | √(Z_{1}Z_{2}) | Z_{1} + Z_{2} | (Z_{1} + Z_{2})/2 | 0 | Geometric mean.
 
 ## Reflection and absorption of sound
 S: When sound hits a surface, some reflects, some is absorbed, and some is transmitted. Hard smooth surfaces reflect strongly; soft porous materials absorb, especially high frequencies. Managing these processes is the core of noise control.
@@ -251,8 +251,8 @@ X: How far away must a cliff be to hear a distinct echo of a clap?
 !: Foam on a wall improves a room's acoustics but does little to stop sound passing through to the neighbours.
 Q: What is the absorption coefficient? | The fraction of incident sound energy absorbed by a surface.
 Q: What is the mass law? | Sound transmission loss through a wall increases about 6 dB per doubling of its mass per area.
-M1: Which absorbs high frequencies best? | Thick porous foam | Concrete | Glass | Steel | Porous absorbers.
-M2: To stop noise passing through a wall, the most important factor is: | Mass and airtightness | Soft surface | Colour | Foam on the surface | Mass law.
+M1#physics-u11-12-q1: Which absorbs high frequencies best? | Thick porous foam | Concrete | Glass | Steel | Porous absorbers.
+M2#physics-u11-12-q2: To stop noise passing through a wall, the most important factor is: | Mass and airtightness | Soft surface | Colour | Foam on the surface | Mass law.
 
 ## Reverberation
 S: Reverberation is the persistence of sound in a room after the source stops, as countless reflections decay. Its duration shapes how a space sounds: long for cathedrals and organ music, short for lecture rooms and studios.
@@ -273,8 +273,8 @@ D: phys-u11-reverberation
 !: People absorb sound: an empty hall can sound very different from a full one, so seats are designed to absorb like audiences.
 Q: What does RT_{60} measure? | The time for sound to decay by 60 dB after the source stops.
 Q: State Sabine's formula. | RT_{60} = 0.161V/A.
-M1: Adding carpets and curtains to a room: | Reduces reverberation time | Increases it | Has no effect | Makes echoes | More absorption.
-M2: Ideal reverberation for a lecture room is about: | 0.6–1.0 s | 5 s | 3 s | 0.01 s | Speech clarity.
+M1#physics-u11-13-q1: Adding carpets and curtains to a room: | Reduces reverberation time | Increases it | Has no effect | Makes echoes | More absorption.
+M2#physics-u11-13-q2: Ideal reverberation for a lecture room is about: | 0.6–1.0 s | 5 s | 3 s | 0.01 s | Speech clarity.
 
 ## Architectural acoustics
 S: Architectural acoustics designs spaces so sound is clear, balanced and free of defects, and so unwanted noise is kept out. It balances reverberation, reflections, diffusion, background noise and insulation.
@@ -297,8 +297,8 @@ X: Why is St Paul's Cathedral's whispering gallery famous?
 !: Adding absorption isn't always the answer; a good concert hall needs reflective surfaces placed correctly.
 Q: What is a flutter echo? | A rapid series of echoes between parallel reflective surfaces.
 Q: Why are early lateral reflections valued in concert halls? | They increase clarity and a sense of envelopment.
-M1: Concave surfaces in a hall tend to: | Focus sound into hot spots | Spread it evenly | Absorb it | Reduce reverberation | Like a curved mirror.
-M2: Shoebox-shaped concert halls are prized for: | Strong lateral reflections | Long echoes | Low cost only | Absorbing all sound | Narrow, tall halls give side reflections.
+M1#physics-u11-14-q1: Concave surfaces in a hall tend to: | Focus sound into hot spots | Spread it evenly | Absorb it | Reduce reverberation | Like a curved mirror.
+M2#physics-u11-14-q2: Shoebox-shaped concert halls are prized for: | Strong lateral reflections | Long echoes | Low cost only | Absorbing all sound | Narrow, tall halls give side reflections.
 
 ## Ultrasound
 S: Ultrasound is sound above the range of human hearing (> 20 kHz). Its short wavelengths make it ideal for imaging inside the body, testing materials, cleaning, and even breaking kidney stones.
@@ -320,8 +320,8 @@ X: An echo returns 65 μs after a 5 MHz pulse. How deep is the boundary? What's 
 !: Ultrasound can't image through air or bone well: huge impedance mismatches reflect nearly everything (lungs and brain are hard to scan).
 Q: How is depth found in ultrasound imaging? | From the echo time: d = vt/2.
 Q: What trade-off sets ultrasound frequency choice? | Higher frequency gives better resolution but less penetration.
-M1: Ultrasound is sound above: | 20 kHz | 20 Hz | 2 MHz | 200 kHz | Upper limit of hearing.
-M2: Why is ultrasound preferred to X-rays in pregnancy? | It is non-ionising | It's higher resolution | It sees through bone | It's faster | No ionising radiation.
+M1#physics-u11-15-q1: Ultrasound is sound above: | 20 kHz | 20 Hz | 2 MHz | 200 kHz | Upper limit of hearing.
+M2#physics-u11-15-q2: Why is ultrasound preferred to X-rays in pregnancy? | It is non-ionising | It's higher resolution | It sees through bone | It's faster | No ionising radiation.
 
 ## Infrasound
 S: Infrasound is sound below about 20 Hz, too low to hear as a tone. It travels enormous distances with little absorption and is produced by volcanoes, storms, earthquakes, meteors, wind turbines and explosions, and used by elephants and whales.
@@ -340,8 +340,8 @@ X: Why could Hunga Tonga's eruption be detected worldwide by barometers?
 !: Infrasound isn't inaudible because it's quiet; the ear's sensitivity drops sharply below 20 Hz.
 Q: Why does infrasound travel so far? | Atmospheric absorption is very low at low frequencies.
 Q: Give a use of infrasound monitoring. | Detecting nuclear tests, volcanic eruptions or meteors.
-M1: Infrasound is sound below about: | 20 Hz | 20 kHz | 200 Hz | 2 Hz | Lower limit of hearing.
-M2: Elephants communicate over long distances using: | Infrasound | Ultrasound | Radio waves | Light | Low-frequency rumbles.
+M1#physics-u11-16-q1: Infrasound is sound below about: | 20 Hz | 20 kHz | 200 Hz | 2 Hz | Lower limit of hearing.
+M2#physics-u11-16-q2: Elephants communicate over long distances using: | Infrasound | Ultrasound | Radio waves | Light | Low-frequency rumbles.
 
 ## Sonar
 S: Sonar (sound navigation and ranging) uses sound in water to detect, locate and image objects. Because light and radio waves are absorbed quickly in seawater, sound is the ocean's main sensing tool.
@@ -360,8 +360,8 @@ X: A ping returns from the seabed in 2.4 s. How deep is it?
 !: Sound speed in seawater varies with temperature, salinity and depth (1450–1550 m s^{-1}); accurate ranging needs the profile.
 Q: Why is sound used underwater rather than radio or light? | Seawater absorbs EM waves strongly but transmits sound over long distances.
 Q: What is passive sonar? | Listening for sounds emitted by targets, without transmitting.
-M1: An echo from a submarine returns in 4 s. Distance (v = 1500)? | 3 km | 6 km | 1.5 km | 12 km | d = vt/2.
-M2: Low-frequency sonar is used for long range because: | Absorption is lower | It's quieter | Resolution is better | It's cheaper | Absorption rises with frequency.
+M1#physics-u11-17-q1: An echo from a submarine returns in 4 s. Distance (v = 1500)? | 3 km | 6 km | 1.5 km | 12 km | d = vt/2.
+M2#physics-u11-17-q2: Low-frequency sonar is used for long range because: | Absorption is lower | It's quieter | Resolution is better | It's cheaper | Absorption rises with frequency.
 
 ## Acoustic levitation
 S: Intense standing sound waves can hold small objects suspended in air at their pressure nodes. Acoustic radiation pressure balances gravity, letting scientists handle droplets and particles without touching them.
@@ -380,8 +380,8 @@ X: For a 40 kHz levitator in air, what's the spacing between trapping positions?
 !: Acoustic levitation needs very high sound levels (~150–160 dB), mostly ultrasonic so it's inaudible but still needs care.
 Q: Where are particles trapped in an acoustic levitator? | Near pressure nodes of the standing wave.
 Q: Why is containerless processing useful? | It avoids contamination and nucleation from container walls.
-M1: Trapping positions in an acoustic standing wave are separated by: | λ/2 | λ | λ/4 | 2λ | Node spacing.
-M2: Acoustic levitation relies on: | Acoustic radiation pressure | Magnetism | Electrostatics | Buoyancy | Time-averaged force of sound.
+M1#physics-u11-18-q1: Trapping positions in an acoustic standing wave are separated by: | λ/2 | λ | λ/4 | 2λ | Node spacing.
+M2#physics-u11-18-q2: Acoustic levitation relies on: | Acoustic radiation pressure | Magnetism | Electrostatics | Buoyancy | Time-averaged force of sound.
 
 ## Noise pollution
 S: Noise is unwanted sound. Long-term exposure damages hearing and is linked to stress, sleep disturbance and heart disease, making noise one of the largest environmental health problems in cities.
@@ -403,8 +403,8 @@ D: phys-u11-noise-exposure
 !: Hearing damage is cumulative and painless at first; by the time it's noticed, it's permanent.
 Q: What is the 3 dB exchange rate? | Each 3 dB increase halves the permissible exposure time.
 Q: Name non-auditory effects of chronic noise. | Sleep disturbance, stress, raised blood pressure, cardiovascular disease, learning impairment.
-M1: Which reduces traffic noise at the receiver? | A noise barrier | A louder engine | A smaller window | Faster driving | Path control.
-M2: Hearing loss from noise is due to damage to: | Cochlear hair cells | The eardrum only | The ear canal | The auditory nerve only | Hair cells don't regrow in humans.
+M1#physics-u11-19-q1: Which reduces traffic noise at the receiver? | A noise barrier | A louder engine | A smaller window | Faster driving | Path control.
+M2#physics-u11-19-q2: Hearing loss from noise is due to damage to: | Cochlear hair cells | The eardrum only | The ear canal | The auditory nerve only | Hair cells don't regrow in humans.
 
 ## Psychoacoustics
 S: Psychoacoustics studies how we perceive sound. The ear and brain aren't a neutral microphone: they compress loudness, mask quiet sounds, locate sources, and fill in missing information, and audio compression exploits all of this.
@@ -424,8 +424,8 @@ X: Why is it hard to tell whether a low hum comes from in front or behind?
 !: Perceived loudness, pitch and timbre aren't simple physical measurements; they depend on context and listener.
 Q: What is auditory masking? | A loud sound making quieter sounds at nearby frequencies inaudible.
 Q: How does lossy audio compression exploit psychoacoustics? | It discards sounds masked by louder ones.
-M1: The cochlea separates frequencies: | Along the basilar membrane | In the eardrum | In the ear canal | In the brain only | Place coding.
-M2: For low-frequency sounds we localise mainly using: | Interaural time differences | Pinna reflections | Colour | Level differences | ITD dominates below ~1.5 kHz.
+M1#physics-u11-20-q1: The cochlea separates frequencies: | Along the basilar membrane | In the eardrum | In the ear canal | In the brain only | Place coding.
+M2#physics-u11-20-q2: For low-frequency sounds we localise mainly using: | Interaural time differences | Pinna reflections | Colour | Level differences | ITD dominates below ~1.5 kHz.
 
 ## Bioacoustics
 S: Bioacoustics studies sound production, hearing and communication in animals, and how sound is used to study them. Animals use sound to navigate, hunt, attract mates and warn each other, over frequencies from infrasound to ultrasound.
@@ -446,6 +446,6 @@ X: A bat calls at 50 kHz. What's the smallest prey it can detect well?
 !: Animals perceive sound very differently from us; "silent" environments can be noisy at frequencies we can't hear.
 Q: How do bats judge the distance to prey? | From the delay between their call and the returning echo.
 Q: What is passive acoustic monitoring? | Using recordings of animal sounds to study populations and ecosystems without disturbing them.
-M1: Which animal echolocates? | Dolphin | Elephant | Cricket | Humpback whale (song) | Toothed whales use clicks.
-M2: Blue whale calls are around: | 10–40 Hz | 2 kHz | 50 kHz | 200 kHz | Very low frequency.
+M1#physics-u11-21-q1: Which animal echolocates? | Dolphin | Elephant | Cricket | Humpback whale (song) | Toothed whales use clicks.
+M2#physics-u11-21-q2: Blue whale calls are around: | 10–40 Hz | 2 kHz | 50 kHz | 200 kHz | Very low frequency.
 `;

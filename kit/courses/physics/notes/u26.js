@@ -18,8 +18,8 @@ X: Light crosses a 3 m lift accelerating at g. How far does it "fall"?
 !: The equivalence is only local: over large regions tidal forces (differences in gravity) reveal true curvature.
 Q: State the weak equivalence principle. | All bodies fall with the same acceleration in a gravitational field, regardless of their composition.
 Q: Why must light bend in gravity, by the equivalence principle? | In an accelerating frame light appears to curve; by equivalence it must curve in gravity too.
-M1: Astronauts on the ISS float because: | They're in free fall with the station | There's no gravity at that height | They're above the atmosphere | Magnetism | Equivalence.
-M2: Tidal forces show that equivalence is only: | Local | Global | Exact everywhere | False | Gravity gradients.
+M1#physics-u26-01-q1: Astronauts on the ISS float because: | They're in free fall with the station | There's no gravity at that height | They're above the atmosphere | Magnetism | Equivalence.
+M2#physics-u26-01-q2: Tidal forces show that equivalence is only: | Local | Global | Exact everywhere | False | Gravity gradients.
 
 ## Accelerated reference frames
 S: Accelerated frames experience inertial forces that mimic gravity. Studying them in special relativity shows how clocks and light behave under acceleration, a stepping stone to general relativity.
@@ -38,8 +38,8 @@ X: Fractional clock-rate difference between the top and bottom of a 10 m rocket 
 !: Special relativity handles acceleration perfectly well; general relativity is needed for gravity (curved spacetime), not for acceleration itself.
 Q: What is the Sagnac effect? | A time difference for light travelling opposite ways round a rotating loop, used in optical gyroscopes.
 Q: What is the Unruh effect? | An accelerating observer perceives the vacuum as thermal radiation at a temperature proportional to acceleration.
-M1: A uniformly accelerating observer has a horizon at distance: | c^{2}/a | c/a | a/c^{2} | Infinite | Rindler horizon.
-M2: Ring-laser gyroscopes use: | The Sagnac effect | The Doppler effect | Lenz's law | Hall effect | Rotation sensing.
+M1#physics-u26-02-q1: A uniformly accelerating observer has a horizon at distance: | c^{2}/a | c/a | a/c^{2} | Infinite | Rindler horizon.
+M2#physics-u26-02-q2: Ring-laser gyroscopes use: | The Sagnac effect | The Doppler effect | Lenz's law | Hall effect | Rotation sensing.
 
 ## Gravity as spacetime curvature
 S: General relativity describes gravity not as a force but as the curvature of spacetime caused by mass and energy. Objects in free fall follow the straightest possible paths through curved spacetime, which look like orbits and falling motion.
@@ -59,8 +59,8 @@ X: Fractional clock-rate difference between Earth's surface and a GPS satellite 
 !: The "rubber sheet" picture of curved space shows spatial curvature, but in reality it's mostly time curvature that makes things fall.
 Q: How does general relativity describe gravity? | As the curvature of spacetime by mass and energy, with free particles following geodesics.
 Q: How does curvature show up physically? | As tidal forces: relative accelerations between nearby free-falling objects.
-M1: In GR, a planet orbits the Sun because it: | Follows a geodesic in curved spacetime | Is pulled by a force | Is pushed by the ether | Is magnetic | Free fall.
-M2: What sources spacetime curvature? | Energy, momentum, pressure and stress | Mass only | Charge only | Light only | Stress–energy tensor.
+M1#physics-u26-03-q1: In GR, a planet orbits the Sun because it: | Follows a geodesic in curved spacetime | Is pulled by a force | Is pushed by the ether | Is magnetic | Free fall.
+M2#physics-u26-03-q2: What sources spacetime curvature? | Energy, momentum, pressure and stress | Mass only | Charge only | Light only | Stress–energy tensor.
 
 ## Metric tensors
 S: The metric tensor defines distances and times in spacetime, determining its geometry. Given the metric, you can calculate proper times, light paths, curvature and orbits.
@@ -81,8 +81,8 @@ X: In the weak-field metric, how much slower does a clock at Earth's surface run
 !: The metric's components depend on coordinates; curvature (computed from them) is what's physically meaningful.
 Q: What does the metric tensor determine? | Spacetime intervals: distances, times and the geometry of spacetime.
 Q: How is the Newtonian potential related to the metric in weak fields? | g_{00} ≈ 1 + 2Φ/c^{2}.
-M1: The metric tensor has how many independent components in 4D? | 10 | 16 | 4 | 6 | Symmetric.
-M2: A coordinate singularity is: | An artefact of coordinates removable by changing them | A true infinity in curvature | Always at r = 0 | Physical | E.g. Schwarzschild horizon.
+M1#physics-u26-04-q1: The metric tensor has how many independent components in 4D? | 10 | 16 | 4 | 6 | Symmetric.
+M2#physics-u26-04-q2: A coordinate singularity is: | An artefact of coordinates removable by changing them | A true infinity in curvature | Always at r = 0 | Physical | E.g. Schwarzschild horizon.
 
 ## Geodesics
 S: A geodesic is the straightest possible path in curved spacetime. Freely falling particles follow timelike geodesics; light follows null geodesics. Planetary orbits, light bending and falling apples are all geodesic motion.
@@ -105,8 +105,8 @@ X: Why does a thrown ball follow a parabola if it's moving "straight"?
 !: Geodesics in spacetime aren't geodesics in space; a straight spacetime path can look like an orbit in space.
 Q: What path does a freely falling object follow in GR? | A timelike geodesic.
 Q: What is the photon sphere? | The radius (1.5r_{s} for a non-rotating black hole) where light can orbit.
-M1: Great circles are geodesics on: | A sphere | A plane | A cylinder only | A cone | Shortest paths.
-M2: The ISCO for a non-rotating black hole is at: | 3r_{s} | r_{s} | 1.5r_{s} | 10r_{s} | Innermost stable orbit.
+M1#physics-u26-05-q1: Great circles are geodesics on: | A sphere | A plane | A cylinder only | A cone | Shortest paths.
+M2#physics-u26-05-q2: The ISCO for a non-rotating black hole is at: | 3r_{s} | r_{s} | 1.5r_{s} | 10r_{s} | Innermost stable orbit.
 
 ## Curvature and the Riemann tensor
 S: The Riemann curvature tensor measures how spacetime is curved: how much a vector changes when carried around a small loop, and how nearby geodesics converge or diverge. It contains all the information about tidal gravity.
@@ -127,8 +127,8 @@ X: Parallel-transport a vector around a triangle on a sphere with three 90° ang
 !: Curvature isn't the same as non-zero Christoffel symbols; those can appear in flat space with curvilinear coordinates.
 Q: What does the Riemann tensor measure? | Spacetime curvature: tidal effects and the change in vectors carried around loops.
 Q: What is the Weyl tensor? | The part of curvature not determined locally by matter: tidal fields and gravitational waves in vacuum.
-M1: Spacetime is flat if and only if: | The Riemann tensor vanishes | The metric is diagonal | Christoffel symbols vanish | Mass is zero nearby | Coordinate-independent test.
-M2: The Riemann tensor in 4D has how many independent components? | 20 | 10 | 256 | 6 | Symmetries reduce it.
+M1#physics-u26-06-q1: Spacetime is flat if and only if: | The Riemann tensor vanishes | The metric is diagonal | Christoffel symbols vanish | Mass is zero nearby | Coordinate-independent test.
+M2#physics-u26-06-q2: The Riemann tensor in 4D has how many independent components? | 20 | 10 | 256 | 6 | Symmetries reduce it.
 
 ## Einstein field equations
 S: Einstein's field equations relate spacetime curvature to the energy and momentum within it. They're ten coupled nonlinear equations whose solutions describe everything from planetary orbits to black holes and the expanding universe.
@@ -149,8 +149,8 @@ X: Show the weak-field limit gives Newton's law (outline).
 !: The field equations don't just apply to "mass"; pressure contributes to gravity too, important inside neutron stars and in cosmology.
 Q: State Einstein's field equations. | G_{μν} + Λg_{μν} = (8πG/c^{4})T_{μν}.
 Q: Why are the field equations nonlinear? | Gravitational field energy itself gravitates.
-M1: The cosmological constant represents: | Vacuum energy (dark energy) | Dark matter | Black holes | Photons | Λ.
-M2: In the weak-field limit, Einstein's equations reduce to: | Poisson's equation for gravity | Maxwell's equations | Schrödinger's equation | Hooke's law | Newtonian gravity.
+M1#physics-u26-07-q1: The cosmological constant represents: | Vacuum energy (dark energy) | Dark matter | Black holes | Photons | Λ.
+M2#physics-u26-07-q2: In the weak-field limit, Einstein's equations reduce to: | Poisson's equation for gravity | Maxwell's equations | Schrödinger's equation | Hooke's law | Newtonian gravity.
 
 ## Stress-energy tensor
 S: The stress–energy tensor describes the density and flow of energy and momentum in spacetime. It's the source term in Einstein's equations: not just mass but energy, momentum, pressure and stress all curve spacetime.
@@ -171,8 +171,8 @@ X: Effective gravitating density of radiation with energy density ρc^{2}?
 !: Negative pressure isn't negative energy; vacuum energy has positive energy density but negative pressure.
 Q: What does the stress–energy tensor describe? | The density and flux of energy and momentum, including pressure and stress.
 Q: Why does dark energy accelerate expansion? | Its negative pressure makes ρ + 3p/c^{2} negative, giving repulsive gravity.
-M1: For radiation, pressure is: | ρc^{2}/3 | 0 | −ρc^{2} | ρc^{2} | Equation of state w = 1/3.
-M2: The T^{00} component is: | Energy density | Pressure | Momentum flux | Shear | Time–time.
+M1#physics-u26-08-q1: For radiation, pressure is: | ρc^{2}/3 | 0 | −ρc^{2} | ρc^{2} | Equation of state w = 1/3.
+M2#physics-u26-08-q2: The T^{00} component is: | Energy density | Pressure | Momentum flux | Shear | Time–time.
 
 ## Schwarzschild solution
 S: The Schwarzschild solution describes spacetime outside a spherical, non-rotating, uncharged mass. Found in 1916 within months of Einstein's equations, it predicts perihelion precession, light bending and black holes.
@@ -193,8 +193,8 @@ D: phys-u26-schwarzschild-radius
 !: Outside a spherical star, spacetime is the same as for a black hole of the same mass; you wouldn't be sucked in if the Sun became a black hole.
 Q: What is the Schwarzschild radius? | r_{s} = 2GM/c^{2}, the event horizon radius of a non-rotating black hole.
 Q: What does Birkhoff's theorem state? | Any spherically symmetric vacuum solution is Schwarzschild (static).
-M1: The Sun's Schwarzschild radius is about: | 3 km | 3 m | 300 km | 3 mm | r_{s} ∝ M.
-M2: At r = r_{s}, Schwarzschild coordinates show a: | Coordinate singularity | True curvature singularity | Photon sphere | Wormhole | Removable.
+M1#physics-u26-09-q1: The Sun's Schwarzschild radius is about: | 3 km | 3 m | 300 km | 3 mm | r_{s} ∝ M.
+M2#physics-u26-09-q2: At r = r_{s}, Schwarzschild coordinates show a: | Coordinate singularity | True curvature singularity | Photon sphere | Wormhole | Removable.
 
 ## Kerr black holes
 S: The Kerr solution describes a rotating black hole, defined by just mass and spin. Real astrophysical black holes rotate, and their spin drives jets, shapes accretion discs and imprints gravitational waves from mergers.
@@ -215,8 +215,8 @@ D: phys-u26-kerr-horizon
 !: Rotating black holes don't spin like solid objects; frame dragging forces everything near them to co-rotate.
 Q: What is the ergosphere? | The region outside a rotating black hole's horizon where nothing can remain stationary relative to distant stars.
 Q: What does the no-hair theorem say? | Black holes are fully described by their mass, spin and charge.
-M1: Black hole spin parameter χ ranges from: | 0 to 1 | 0 to infinity | −1 to 0 | 1 to 10 | Kerr bound.
-M2: The Penrose process extracts energy from: | A black hole's rotation | Its charge | Hawking radiation | Its mass only | Ergosphere.
+M1#physics-u26-10-q1: Black hole spin parameter χ ranges from: | 0 to 1 | 0 to infinity | −1 to 0 | 1 to 10 | Kerr bound.
+M2#physics-u26-10-q2: The Penrose process extracts energy from: | A black hole's rotation | Its charge | Hawking radiation | Its mass only | Ergosphere.
 
 ## Gravitational time dilation
 S: Clocks deeper in a gravitational potential run slower than clocks higher up. The effect is tiny on Earth but measurable with atomic clocks over a single centimetre, and enormous near black holes.
@@ -238,8 +238,8 @@ X: A clock 1 km higher than another runs fast by what fraction? Per year?
 !: Gravitational time dilation depends on potential, not on the local strength of gravity: a clock at the centre of a hollow shell runs slow though it feels no gravity.
 Q: Do clocks run faster or slower lower in a gravitational field? | Slower.
 Q: What did the Pound–Rebka experiment measure? | The gravitational frequency shift of gamma rays over a 22.5 m height.
-M1: Optical clocks have detected gravitational time dilation over: | Centimetres | Kilometres only | Light-years | Never | Height differences ~1 cm.
-M2: GPS satellite clocks run fast mainly because of: | Weaker gravity at altitude | Their speed | Temperature | Solar wind | Gravitational effect dominates.
+M1#physics-u26-11-q1: Optical clocks have detected gravitational time dilation over: | Centimetres | Kilometres only | Light-years | Never | Height differences ~1 cm.
+M2#physics-u26-11-q2: GPS satellite clocks run fast mainly because of: | Weaker gravity at altitude | Their speed | Temperature | Solar wind | Gravitational effect dominates.
 
 ## Gravitational redshift
 S: Light climbing out of a gravitational well loses energy and is shifted to longer wavelengths. Gravitational redshift is seen from white dwarfs, neutron stars, black-hole surroundings and in precise laboratory measurements.
@@ -260,8 +260,8 @@ X: Gravitational redshift of light from Sirius B (M = 1.0 M_{⊙}, R = 5800 km)?
 !: Gravitational redshift isn't a Doppler shift; it occurs even when source and observer are at rest relative to each other.
 Q: What is gravitational redshift? | The increase in wavelength of light escaping a gravitational potential well.
 Q: Where has gravitational redshift been measured in astronomy? | White dwarfs, the Sun, stars orbiting Sgr A*, and accretion discs near black holes.
-M1: Light from a neutron star's surface has redshift around: | 0.2–0.3 | 10^{-6} | 10 | 0 | Compact object.
-M2: Gravitational redshift and time dilation are: | Two views of the same effect | Unrelated | Opposite | Only in Newtonian gravity | Equivalent descriptions.
+M1#physics-u26-12-q1: Light from a neutron star's surface has redshift around: | 0.2–0.3 | 10^{-6} | 10 | 0 | Compact object.
+M2#physics-u26-12-q2: Gravitational redshift and time dilation are: | Two views of the same effect | Unrelated | Opposite | Only in Newtonian gravity | Equivalent descriptions.
 
 ## Perihelion precession
 S: General relativity predicts that orbits around a massive body aren't closed ellipses: the point of closest approach slowly advances. It explained Mercury's anomalous 43″ per century, GR's first triumph.
@@ -282,8 +282,8 @@ X: Precession per orbit of Mercury (a = 5.79 × 10^{10} m, e = 0.206)?
 !: Most of Mercury's observed precession (~531″ per century) is Newtonian, caused by other planets; only the 43″ residue needs GR.
 Q: How much of Mercury's perihelion precession does GR explain? | About 43 arcseconds per century.
 Q: Why do GR orbits precess? | An extra term in the effective potential makes radial and angular periods differ slightly.
-M1: The hypothetical planet proposed to explain Mercury's precession was: | Vulcan | Nemesis | Planet X | Neptune | Le Verrier.
-M2: Precession is largest for orbits that are: | Close and eccentric | Far and circular | Around light stars | Retrograde | ∝ 1/(a(1 − e^{2})).
+M1#physics-u26-13-q1: The hypothetical planet proposed to explain Mercury's precession was: | Vulcan | Nemesis | Planet X | Neptune | Le Verrier.
+M2#physics-u26-13-q2: Precession is largest for orbits that are: | Close and eccentric | Far and circular | Around light stars | Retrograde | ∝ 1/(a(1 − e^{2})).
 
 ## Light bending and gravitational lensing
 S: Light follows curved paths near massive objects. GR predicts twice the deflection Newtonian reasoning gives, first confirmed during the 1919 eclipse, and now used to weigh galaxies and find planets.
@@ -307,8 +307,8 @@ X: Deflection of starlight grazing a white dwarf (M = M_{⊙}, R = 7000 km)?
 !: GR's light bending is twice the naive Newtonian value; the factor of 2 is a key test distinguishing the theories.
 Q: How much does light bend grazing the Sun? | 1.75 arcseconds.
 Q: What is the Shapiro delay? | The extra time for signals passing near a massive body due to spacetime curvature.
-M1: The 1919 eclipse expedition was led by: | Eddington and Dyson | Einstein | Hubble | Michelson | Confirmed light bending.
-M2: Microlensing can detect: | Planets around distant stars | Black hole spins | Neutrinos | Dark energy directly | Brightening light curves.
+M1#physics-u26-14-q1: The 1919 eclipse expedition was led by: | Eddington and Dyson | Einstein | Hubble | Michelson | Confirmed light bending.
+M2#physics-u26-14-q2: Microlensing can detect: | Planets around distant stars | Black hole spins | Neutrinos | Dark energy directly | Brightening light curves.
 
 ## Black holes and event horizons
 S: A black hole is a region of spacetime where gravity is so strong that nothing, not even light, can escape. Its boundary, the event horizon, is a one-way membrane; black holes form from collapsing massive stars and grow at galaxy centres.
@@ -331,8 +331,8 @@ D: phys-u26-clock-rate-horizon
 !: Black holes don't suck things in; at a distance, they attract exactly like any other object of the same mass.
 Q: What is an event horizon? | The boundary beyond which nothing can escape to infinity.
 Q: What did the Event Horizon Telescope image? | The shadows of the black holes M87* and Sgr A*.
-M1: The supermassive black hole at the Milky Way's centre has about: | 4 million solar masses | 4 solar masses | 4 billion | 400 | Sgr A*.
-M2: Black hole entropy is proportional to: | Horizon area | Volume | Mass only | Temperature | Bekenstein–Hawking.
+M1#physics-u26-15-q1: The supermassive black hole at the Milky Way's centre has about: | 4 million solar masses | 4 solar masses | 4 billion | 400 | Sgr A*.
+M2#physics-u26-15-q2: Black hole entropy is proportional to: | Horizon area | Volume | Mass only | Temperature | Bekenstein–Hawking.
 
 ## Singularities
 S: Singularities are places where general relativity predicts infinite curvature and the theory breaks down. The Penrose–Hawking theorems show they're generic: inside black holes and at the Big Bang, classical GR can't be the full story.
@@ -353,8 +353,8 @@ X: Tidal acceleration across a 2 m person at r_{s} of a 10 M_{⊙} black hole?
 !: A singularity isn't a point of infinite density "sitting" inside the black hole; for Schwarzschild it's a moment in time that infallers inevitably reach.
 Q: What do the Penrose–Hawking theorems show? | Under general conditions, GR predicts singularities in gravitational collapse and the Big Bang.
 Q: What is cosmic censorship? | The conjecture that singularities from collapse are hidden behind event horizons.
-M1: The Kerr singularity is shaped like: | A ring | A point | A sphere | A plane | Rotating black holes.
-M2: Singularities signal: | The breakdown of classical GR | Infinite mass | Wormholes | White holes always | Need quantum gravity.
+M1#physics-u26-16-q1: The Kerr singularity is shaped like: | A ring | A point | A sphere | A plane | Rotating black holes.
+M2#physics-u26-16-q2: Singularities signal: | The breakdown of classical GR | Infinite mass | Wormholes | White holes always | Need quantum gravity.
 
 ## Gravitational waves
 S: Gravitational waves are ripples in spacetime curvature that travel at the speed of light, produced by accelerating masses. Predicted in 1916 and detected in 2015, they've opened a new window on black holes, neutron stars and gravity itself.
@@ -374,8 +374,8 @@ X: Peak power of GW150914 (≈ 3.6 × 10^{49} W) compared with the Sun (3.8 × 1
 !: Gravitational waves stretch the detector arms but also the light's wavelength; the measurement works because the light spends time in the arms while the strain changes.
 Q: How were gravitational waves first directly detected? | By LIGO in 2015 (GW150914), from merging black holes.
 Q: Why do gravitational waves carry information so cleanly? | They interact very weakly with matter, passing through it unaltered.
-M1: Gravitational-wave strain from distant mergers at Earth is about: | 10^{-21} | 10^{-6} | 1 | 10^{-50} | Tiny.
-M2: LISA will detect gravitational waves at: | Millihertz frequencies | Kilohertz | Nanohertz | Gigahertz | Space-based.
+M1#physics-u26-17-q1: Gravitational-wave strain from distant mergers at Earth is about: | 10^{-21} | 10^{-6} | 1 | 10^{-50} | Tiny.
+M2#physics-u26-17-q2: LISA will detect gravitational waves at: | Millihertz frequencies | Kilohertz | Nanohertz | Gigahertz | Space-based.
 
 ## Binary systems and gravitational radiation
 S: Two compact objects orbiting each other emit gravitational waves, losing energy and spiralling together. This inspiral, ending in a merger and ringdown, has been measured precisely in binary pulsars and gravitational-wave detectors.
@@ -396,8 +396,8 @@ X: Two 30 M_{⊙} black holes: chirp mass?
 !: A binary's gravitational-wave frequency is twice its orbital frequency, since the mass quadrupole repeats twice per orbit.
 Q: What did the Hulse–Taylor binary pulsar demonstrate? | Orbital decay matching energy loss to gravitational waves predicted by GR.
 Q: What is the chirp mass? | The mass combination controlling a binary's frequency evolution during inspiral.
-M1: The three phases of a merger signal are: | Inspiral, merger, ringdown | Rise, fall, rise | Pulse, pause, pulse | Inflation, collapse, bounce | Waveform.
-M2: Standard sirens measure: | Distances (for the Hubble constant) | Masses only | Spin only | Temperatures | Amplitude gives distance.
+M1#physics-u26-18-q1: The three phases of a merger signal are: | Inspiral, merger, ringdown | Rise, fall, rise | Pulse, pause, pulse | Inflation, collapse, bounce | Waveform.
+M2#physics-u26-18-q2: Standard sirens measure: | Distances (for the Hubble constant) | Masses only | Spin only | Temperatures | Amplitude gives distance.
 
 ## Cosmological solutions
 S: Applying general relativity to the whole universe, assuming it's uniform on large scales, gives expanding or contracting models. These Friedmann–Lemaître–Robertson–Walker solutions are the foundation of modern cosmology.
@@ -420,8 +420,8 @@ X: Light emitted at z = 3: how much smaller was the universe?
 !: The Big Bang wasn't an explosion at a point in space; it happened everywhere, as space itself expanded.
 Q: What does the FLRW metric assume? | A homogeneous, isotropic universe (the cosmological principle).
 Q: How is redshift related to the scale factor? | 1 + z = a_{now}/a_{then}.
-M1: Observations indicate the universe's spatial curvature is: | Nearly flat | Strongly closed | Strongly open | Undefined | k ≈ 0.
-M2: Who first linked cosmic expansion to galaxy redshifts? | Lemaître | Einstein | Newton | Eddington | 1927.
+M1#physics-u26-19-q1: Observations indicate the universe's spatial curvature is: | Nearly flat | Strongly closed | Strongly open | Undefined | k ≈ 0.
+M2#physics-u26-19-q2: Who first linked cosmic expansion to galaxy redshifts? | Lemaître | Einstein | Newton | Eddington | 1927.
 
 ## Friedmann equations
 S: The Friedmann equations govern how the universe's expansion rate changes over time, given its contents: matter, radiation, dark energy and curvature. They show how the universe evolved from a hot dense start to today's accelerating expansion.
@@ -443,8 +443,8 @@ X: Critical density for H_{0} = 70 km s^{-1} Mpc^{-1} (2.27 × 10^{-18} s^{-1})?
 !: The Hubble "constant" changes over time; H_{0} is its value today.
 Q: How does radiation energy density scale with the scale factor? | As a^{−4} (dilution plus redshift).
 Q: What is the Hubble tension? | Disagreement between early-universe and local measurements of the Hubble constant.
-M1: Today the largest component of the universe's energy is: | Dark energy | Dark matter | Ordinary matter | Radiation | ~69%.
-M2: In the matter-dominated era, a grows as: | t^{2/3} | t^{1/2} | e^{Ht} | t | Friedmann solution.
+M1#physics-u26-20-q1: Today the largest component of the universe's energy is: | Dark energy | Dark matter | Ordinary matter | Radiation | ~69%.
+M2#physics-u26-20-q2: In the matter-dominated era, a grows as: | t^{2/3} | t^{1/2} | e^{Ht} | t | Friedmann solution.
 
 ## Tests of general relativity
 S: General relativity has passed every experimental test for over a century, from the solar system to merging black holes. Physicists keep testing it because any deviation would point to quantum gravity, dark energy or new fields.
@@ -468,8 +468,8 @@ X: Why are binary pulsars such good laboratories?
 !: Passing tests doesn't prove GR final; it constrains how any new theory must agree with it in tested regimes.
 Q: Name three classic tests of general relativity. | Mercury's perihelion precession, light deflection and gravitational redshift.
 Q: What did Gravity Probe B measure? | The geodetic effect and frame dragging around Earth.
-M1: In GR, the PPN parameter γ equals: | 1 | 0 | 2 | ½ | Space curvature.
-M2: Lunar laser ranging uses: | Retroreflectors left by Apollo | Radio telescopes | Gravitational waves | Satellites only | Measures Earth–Moon distance to mm.
+M1#physics-u26-21-q1: In GR, the PPN parameter γ equals: | 1 | 0 | 2 | ½ | Space curvature.
+M2#physics-u26-21-q2: Lunar laser ranging uses: | Retroreflectors left by Apollo | Radio telescopes | Gravitational waves | Satellites only | Measures Earth–Moon distance to mm.
 
 ## Numerical relativity
 S: Numerical relativity solves Einstein's equations on supercomputers when no exact solution exists, most famously for merging black holes and neutron stars. Its waveforms made gravitational-wave detection and interpretation possible.
@@ -489,8 +489,8 @@ X: Why can't LIGO searches simply use numerical waveforms for every possible bin
 !: Numerical relativity is exact GR within numerical accuracy; approximate waveform models are fitted to it, not the other way round.
 Q: What was achieved in 2005 in numerical relativity? | The first stable simulations of binary black hole mergers.
 Q: How do numerical simulations help gravitational-wave astronomy? | They provide accurate merger waveforms for searching and interpreting data.
-M1: Merging black holes can give the remnant a recoil "kick" of up to: | Thousands of km s^{-1} | 1 m s^{-1} | The speed of light | Zero always | Asymmetric emission.
-M2: Neutron-star merger simulations must include: | Magnetohydrodynamics and nuclear physics | Only vacuum GR | Quantum gravity | Nothing beyond Newton | Matter physics.
+M1#physics-u26-22-q1: Merging black holes can give the remnant a recoil "kick" of up to: | Thousands of km s^{-1} | 1 m s^{-1} | The speed of light | Zero always | Asymmetric emission.
+M2#physics-u26-22-q2: Neutron-star merger simulations must include: | Magnetohydrodynamics and nuclear physics | Only vacuum GR | Quantum gravity | Nothing beyond Newton | Matter physics.
 
 ## Quantum gravity challenges
 S: Quantum mechanics and general relativity are both spectacularly successful but don't fit together. A quantum theory of gravity is needed to understand black hole interiors, the Big Bang and the nature of spacetime, but none is yet established.
@@ -510,6 +510,6 @@ X: Hawking temperature of a black hole with the Moon's mass (7 × 10^{22} kg)?
 !: Quantum gravity isn't needed for everyday gravitational physics; it matters at extreme curvatures and energies.
 Q: What is Hawking radiation? | Thermal radiation emitted by black holes due to quantum effects near the horizon.
 Q: What is the black hole information paradox? | Whether information falling into a black hole is lost when it evaporates, conflicting with quantum unitarity.
-M1: The Planck length is about: | 10^{-35} m | 10^{-15} m | 10^{-10} m | 10^{-20} m | √(ħG/c^{3}).
-M2: AdS/CFT is an example of: | Holography relating gravity to quantum field theory | A particle collider | A gravitational-wave detector | Classical GR | String theory duality.
+M1#physics-u26-23-q1: The Planck length is about: | 10^{-35} m | 10^{-15} m | 10^{-10} m | 10^{-20} m | √(ħG/c^{3}).
+M2#physics-u26-23-q2: AdS/CFT is an example of: | Holography relating gravity to quantum field theory | A particle collider | A gravitational-wave detector | Classical GR | String theory duality.
 `;

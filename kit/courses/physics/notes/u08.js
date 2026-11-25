@@ -16,8 +16,8 @@ X: A 60 kg person stands on one stiletto heel of area 1 cm^{2}. Find the pressur
 !: Pressure isn't a vector; force on a surface is p times area, directed along the surface normal.
 Q: What is gauge pressure? | Pressure measured relative to atmospheric pressure.
 Q: Why does pressure act in all directions in a fluid at rest? | A fluid can't sustain shear stress at rest, so the force on any small surface is normal and the same whatever its orientation.
-M1: 1 bar is approximately: | 10^{5} Pa | 10^{3} Pa | 1 Pa | 10^{6} Pa | By definition.
-M2: A 2 m^{3} block of 5400 kg has density: | 2700 kg m^{-3} | 10 800 kg m^{-3} | 5400 kg m^{-3} | 0.37 kg m^{-3} | Aluminium.
+M1#physics-u08-01-q1: 1 bar is approximately: | 10^{5} Pa | 10^{3} Pa | 1 Pa | 10^{6} Pa | By definition.
+M2#physics-u08-01-q2: A 2 m^{3} block of 5400 kg has density: | 2700 kg m^{-3} | 10 800 kg m^{-3} | 5400 kg m^{-3} | 0.37 kg m^{-3} | Aluminium.
 
 ## Hydrostatic equilibrium
 S: In a fluid at rest, pressure increases with depth because each layer supports the weight of the fluid above it. The same balance between pressure gradient and gravity holds up oceans, atmospheres and stars.
@@ -36,8 +36,8 @@ D: phys-u08-pressure-depth
 !: The pressure on a dam depends on the water depth, not on how far the reservoir stretches behind it.
 Q: Why does pressure in a liquid not depend on the container's shape? | Pressure at a depth is set by ρgh plus surface pressure; walls supply whatever extra force balance is needed.
 Q: What is the scale height of Earth's atmosphere? | About 8 km.
-M1: Pressure 20 m below a lake surface (ρ = 1000, g = 10, p_{0} = 10^{5} Pa) is: | 3 × 10^{5} Pa | 2 × 10^{5} Pa | 10^{5} Pa | 2 × 10^{4} Pa | 10^{5} + 2 × 10^{5}.
-M2: A star is in hydrostatic equilibrium when: | Pressure gradient balances gravity | Fusion stops | It rotates | Its temperature is uniform | dp/dr = −ρg.
+M1#physics-u08-02-q1: Pressure 20 m below a lake surface (ρ = 1000, g = 10, p_{0} = 10^{5} Pa) is: | 3 × 10^{5} Pa | 2 × 10^{5} Pa | 10^{5} Pa | 2 × 10^{4} Pa | 10^{5} + 2 × 10^{5}.
+M2#physics-u08-02-q2: A star is in hydrostatic equilibrium when: | Pressure gradient balances gravity | Fusion stops | It rotates | Its temperature is uniform | dp/dr = −ρg.
 
 ## Pascal's principle
 S: Pascal's principle states that a pressure change applied to an enclosed incompressible fluid is transmitted undiminished to every part of the fluid and its container walls. It's the basis of hydraulic machines.
@@ -54,8 +54,8 @@ X: A car brake pedal applies 300 N to a 2 cm^{2} master cylinder. The four wheel
 !: Hydraulics don't give free energy: the large piston moves a much smaller distance.
 Q: State Pascal's principle. | A pressure change in an enclosed fluid is transmitted equally to all parts of the fluid.
 Q: Why does air in brake lines reduce braking? | Air compresses, so pedal movement compresses gas instead of transmitting pressure.
-M1: A hydraulic lift has pistons of 0.01 m^{2} and 0.5 m^{2}. To lift 10 000 N you need: | 200 N | 500 N | 10 000 N | 50 N | Ratio 50.
-M2: If the small piston moves 25 cm, the large one (area ratio 50) moves: | 0.5 cm | 25 cm | 12.5 m | 5 cm | Volume conserved.
+M1#physics-u08-03-q1: A hydraulic lift has pistons of 0.01 m^{2} and 0.5 m^{2}. To lift 10 000 N you need: | 200 N | 500 N | 10 000 N | 50 N | Ratio 50.
+M2#physics-u08-03-q2: If the small piston moves 25 cm, the large one (area ratio 50) moves: | 0.5 cm | 25 cm | 12.5 m | 5 cm | Volume conserved.
 
 ## Buoyancy and Archimedes' principle
 S: A body immersed in a fluid feels an upward buoyant force equal to the weight of fluid it displaces. Whether it floats or sinks depends on whether its average density is less or more than the fluid's.
@@ -76,8 +76,8 @@ D: phys-u08-crown-forces
 !: Buoyant force depends on the displaced volume, not on the object's weight or depth (for incompressible fluids).
 Q: State Archimedes' principle. | The buoyant force equals the weight of fluid displaced.
 Q: What fraction of a floating object is submerged? | The ratio of its density to the fluid's density.
-M1: A block of density 600 kg m^{-3} floats in water. Fraction submerged: | 0.6 | 0.4 | 1 | 0.06 | ρ_{obj}/ρ_{water}.
-M2: An ice cube floats in a glass of water. When it melts the water level: | Stays the same | Rises | Falls | Overflows | Melted ice exactly fills the volume it displaced.
+M1#physics-u08-04-q1: A block of density 600 kg m^{-3} floats in water. Fraction submerged: | 0.6 | 0.4 | 1 | 0.06 | ρ_{obj}/ρ_{water}.
+M2#physics-u08-04-q2: An ice cube floats in a glass of water. When it melts the water level: | Stays the same | Rises | Falls | Overflows | Melted ice exactly fills the volume it displaced.
 
 ## Fluid statics
 S: Fluid statics covers fluids at rest: pressure distributions, forces on submerged surfaces, manometers and the stability of floating bodies. Because fluids at rest can't resist shear, every problem reduces to pressure balance.
@@ -98,8 +98,8 @@ D: phys-u08-gate-pressure
 !: The force on a vertical wall isn't ρghA with the full depth; use the centroid depth.
 Q: What does a U-tube manometer measure? | A pressure difference, Δp = ρgΔh.
 Q: When is a floating ship stable? | When its metacentre is above its centre of gravity.
-M1: A water barometer would need a column about: | 10 m | 76 cm | 1 m | 100 m | 13.6 × 0.76 m.
-M2: The centre of pressure on a vertical submerged wall is: | Below the centroid | At the centroid | Above the centroid | At the surface | Pressure increases with depth.
+M1#physics-u08-05-q1: A water barometer would need a column about: | 10 m | 76 cm | 1 m | 100 m | 13.6 × 0.76 m.
+M2#physics-u08-05-q2: The centre of pressure on a vertical submerged wall is: | Below the centroid | At the centroid | Above the centroid | At the surface | Pressure increases with depth.
 
 ## Fluid dynamics
 S: Fluid dynamics studies fluids in motion: rivers, blood, weather, aircraft, stars. Flows are described by velocity fields v(r, t), and governed by conservation of mass, momentum and energy.
@@ -120,8 +120,8 @@ X: Why does water in a steady river speed up where it narrows?
 !: "Steady" flow doesn't mean no acceleration; fluid particles can accelerate as they move to places of different velocity.
 Q: What is a streamline? | A line everywhere tangent to the flow velocity.
 Q: What is the material derivative? | The rate of change following a fluid particle: ∂/∂t + v·∇.
-M1: In steady flow, streamlines: | Are the paths of fluid particles | Cross each other | Change with time | Are always straight | Steady ⇒ pathlines = streamlines.
-M2: An ideal fluid is: | Incompressible and inviscid | Highly viscous | Compressible | Turbulent | The simplest model.
+M1#physics-u08-06-q1: In steady flow, streamlines: | Are the paths of fluid particles | Cross each other | Change with time | Are always straight | Steady ⇒ pathlines = streamlines.
+M2#physics-u08-06-q2: An ideal fluid is: | Incompressible and inviscid | Highly viscous | Compressible | Turbulent | The simplest model.
 
 ## Continuity equation
 S: The continuity equation expresses conservation of mass in a flow. For an incompressible fluid in a pipe, the volume flow rate is the same everywhere, so the fluid speeds up where the pipe narrows.
@@ -139,8 +139,8 @@ X: Water flows at 2 m s^{-1} through a 4 cm diameter pipe into a 2 cm diameter p
 !: Speed scales with the inverse of area, which goes as diameter squared: halving the diameter quadruples the speed.
 Q: What is the continuity equation for incompressible pipe flow? | A_{1}v_{1} = A_{2}v_{2}.
 Q: Why does blood slow down in capillaries? | Their total cross-sectional area is far larger than the aorta's.
-M1: A pipe's diameter triples. The flow speed: | Falls to 1/9 | Falls to 1/3 | Triples | Is unchanged | v ∝ 1/d^{2}.
-M2: For incompressible flow, ∇·v = ? | 0 | 1 | ρ | −∂ρ/∂t | No net outflow from any volume.
+M1#physics-u08-07-q1: A pipe's diameter triples. The flow speed: | Falls to 1/9 | Falls to 1/3 | Triples | Is unchanged | v ∝ 1/d^{2}.
+M2#physics-u08-07-q2: For incompressible flow, ∇·v = ? | 0 | 1 | ρ | −∂ρ/∂t | No net outflow from any volume.
 
 ## Conservation of mass in fluid flow
 S: Mass can't be created or destroyed in a flow; it can only move. Writing this for a fixed control volume gives a balance between what flows in, what flows out and what accumulates, the template for all conservation laws in continuum physics.
@@ -159,8 +159,8 @@ X: A cylindrical tank (A = 1 m^{2}) fills at 20 L s^{-1} and drains at 12 L s^{-
 !: For compressible flows (gases), volume flow rate isn't conserved; mass flow rate is.
 Q: What is mass flow rate? | ṁ = ρAv, the mass passing a cross-section per second.
 Q: Why is the integral form of mass conservation useful? | It works for any control volume, including unsteady flows with accumulation.
-M1: Air enters a duct at 2 kg s^{-1} and leaves at 1.5 kg s^{-1}. The mass inside: | Increases at 0.5 kg s^{-1} | Decreases | Stays constant | Can't be determined | Accumulation = in − out.
-M2: For a gas heated as it flows through a constant-area pipe, the velocity: | Increases (density falls) | Decreases | Stays constant | Becomes zero | ρv = constant.
+M1#physics-u08-08-q1: Air enters a duct at 2 kg s^{-1} and leaves at 1.5 kg s^{-1}. The mass inside: | Increases at 0.5 kg s^{-1} | Decreases | Stays constant | Can't be determined | Accumulation = in − out.
+M2#physics-u08-08-q2: For a gas heated as it flows through a constant-area pipe, the velocity: | Increases (density falls) | Decreases | Stays constant | Becomes zero | ρv = constant.
 
 ## Bernoulli's equation
 S: Along a streamline in steady, incompressible, frictionless flow, pressure energy, kinetic energy and potential energy per unit volume add to a constant. Where fluid speeds up, its pressure falls.
@@ -178,8 +178,8 @@ X: Air at 1.2 kg m^{-3} speeds up from 20 to 40 m s^{-1} over a surface. What's 
 !: The "equal transit time" explanation of lift (air over the top must meet air underneath) is wrong; lift comes from the wing turning the flow downward, with Bernoulli describing the pressure field that results.
 Q: State Bernoulli's equation. | p + ½ρv^{2} + ρgh is constant along a streamline (steady, incompressible, inviscid flow).
 Q: How does a Pitot tube measure airspeed? | From the difference between stagnation and static pressure, ½ρv^{2}.
-M1: Water leaves a hole 5 m below the surface at (g = 9.8): | 9.9 m s^{-1} | 5 m s^{-1} | 49 m s^{-1} | 98 m s^{-1} | √(2 × 9.8 × 5).
-M2: Bernoulli's equation assumes: | Steady, incompressible, inviscid flow | Turbulent flow | Compressible gas | High viscosity | It neglects friction.
+M1#physics-u08-09-q1: Water leaves a hole 5 m below the surface at (g = 9.8): | 9.9 m s^{-1} | 5 m s^{-1} | 49 m s^{-1} | 98 m s^{-1} | √(2 × 9.8 × 5).
+M2#physics-u08-09-q2: Bernoulli's equation assumes: | Steady, incompressible, inviscid flow | Turbulent flow | Compressible gas | High viscosity | It neglects friction.
 
 ## Viscosity
 S: Viscosity is a fluid's internal friction: its resistance to layers sliding past each other. Honey is viscous, air barely so, but viscosity governs everything from blood flow to the drag on a bacterium.
@@ -199,8 +199,8 @@ X: A plate of area 0.1 m^{2} slides at 0.2 m s^{-1} on a 1 mm oil film (η = 0.1
 !: Viscosity isn't density. Olive oil is about 80 times more viscous than water but less dense, so it floats; mercury is 13.6 times denser than water but only about 1.5 times as viscous.
 Q: Define dynamic viscosity. | The ratio of shear stress to velocity gradient in a Newtonian fluid.
 Q: How does gas viscosity change with temperature? | It increases (faster molecules transfer more momentum between layers).
-M1: Ketchup flowing more easily when shaken is: | Shear-thinning | Shear-thickening | Newtonian | Inviscid | Viscosity falls with shear rate.
-M2: The SI unit of dynamic viscosity is: | Pa s | Pa | m^{2} s^{-1} | N | Stress over shear rate.
+M1#physics-u08-10-q1: Ketchup flowing more easily when shaken is: | Shear-thinning | Shear-thickening | Newtonian | Inviscid | Viscosity falls with shear rate.
+M2#physics-u08-10-q2: The SI unit of dynamic viscosity is: | Pa s | Pa | m^{2} s^{-1} | N | Stress over shear rate.
 
 ## Laminar and turbulent flow
 S: In laminar flow, fluid moves in smooth parallel layers; in turbulent flow, it churns in irregular eddies at many scales. Which one occurs depends on the balance between inertia and viscosity, measured by the Reynolds number.
@@ -220,8 +220,8 @@ X: Smoke rising from a candle starts smooth then breaks into swirls. Why?
 !: Turbulent doesn't mean random noise added to laminar flow; it's a different, deterministic but chaotic regime.
 Q: What distinguishes laminar from turbulent flow? | Laminar flow moves in smooth layers; turbulent flow has chaotic eddies and strong mixing.
 Q: What is the energy cascade in turbulence? | Energy passes from large eddies to ever smaller ones until viscosity dissipates it as heat.
-M1: Flow in a pipe at Re = 500 is most likely: | Laminar | Turbulent | Supersonic | Inviscid | Below ~2000.
-M2: Turbulence increases: | Mixing and drag | Laminar stability | Viscosity of the fluid | Density | Eddies transfer momentum and heat.
+M1#physics-u08-11-q1: Flow in a pipe at Re = 500 is most likely: | Laminar | Turbulent | Supersonic | Inviscid | Below ~2000.
+M2#physics-u08-11-q2: Turbulence increases: | Mixing and drag | Laminar stability | Viscosity of the fluid | Density | Eddies transfer momentum and heat.
 
 ## Reynolds number
 S: The Reynolds number is the ratio of inertial to viscous forces in a flow. It predicts whether flow is laminar or turbulent and lets engineers test scale models: flows with the same Re (and shape) behave the same way.
@@ -239,8 +239,8 @@ X: Find Re for water (ν = 10^{-6} m^{2} s^{-1}) at 1 m s^{-1} in a 2 cm pipe.
 !: Re depends on the chosen length scale; quote which L you used, and compare only with critical values defined the same way.
 Q: What does the Reynolds number compare? | Inertial forces to viscous forces.
 Q: Why can't bacteria coast? | At Re ~ 10^{-5}, viscous forces dominate completely and stop them almost instantly.
-M1: Increasing pipe diameter at the same speed makes Re: | Larger | Smaller | Unchanged | Zero | Re ∝ L.
-M2: To test a car in a wind tunnel with a 1/4 scale model in air, matching Re needs: | 4 times the speed | 1/4 the speed | The same speed | 16 times the speed | vL constant.
+M1#physics-u08-12-q1: Increasing pipe diameter at the same speed makes Re: | Larger | Smaller | Unchanged | Zero | Re ∝ L.
+M2#physics-u08-12-q2: To test a car in a wind tunnel with a 1/4 scale model in air, matching Re needs: | 4 times the speed | 1/4 the speed | The same speed | 16 times the speed | vL constant.
 
 ## Poiseuille flow
 S: Poiseuille flow is steady laminar flow through a pipe. The velocity profile is parabolic, and the flow rate depends on the fourth power of the radius, which is why narrowed arteries matter so much.
@@ -259,8 +259,8 @@ D: phys-u08-poiseuille-profile
 !: Poiseuille's law only holds for laminar, fully developed flow of a Newtonian fluid; blood in large arteries is pulsatile and non-Newtonian.
 Q: How does flow rate depend on pipe radius in laminar flow? | Q ∝ R^{4}.
 Q: What is the velocity profile in Poiseuille flow? | Parabolic, maximum at the centre, zero at the wall.
-M1: Halving a pipe's radius (same Δp) changes Q by: | ×1/16 | ×1/2 | ×1/4 | ×1/8 | R^{4}.
-M2: In Poiseuille flow, the speed at the wall is: | Zero | Maximum | Half maximum | Equal to the mean | No-slip condition.
+M1#physics-u08-13-q1: Halving a pipe's radius (same Δp) changes Q by: | ×1/16 | ×1/2 | ×1/4 | ×1/8 | R^{4}.
+M2#physics-u08-13-q2: In Poiseuille flow, the speed at the wall is: | Zero | Maximum | Half maximum | Equal to the mean | No-slip condition.
 
 ## Drag and lift
 S: A body moving through a fluid feels a force with two components: drag, opposing the relative motion, and lift, perpendicular to it. They come from pressure differences around the body and from viscous shear on its surface.
@@ -282,8 +282,8 @@ X: A 70 000 kg airliner lands at 70 m s^{-1}, wing area 120 m^{2}, sea-level air
 !: Lift isn't always upward: it's perpendicular to the relative airflow. Racing car wings make downforce.
 Q: What are the main types of drag? | Form (pressure) drag, skin friction, induced drag and wave drag.
 Q: What causes a wing to stall? | At high angle of attack the boundary layer separates, so lift falls and drag rises.
-M1: Doubling airspeed multiplies lift (same C_{L}) by: | 4 | 2 | √2 | 8 | ∝ v^{2}.
-M2: Golf-ball dimples reduce drag by: | Making the boundary layer turbulent, delaying separation | Making the ball smoother | Reducing mass | Increasing lift only | Smaller wake, less form drag.
+M1#physics-u08-14-q1: Doubling airspeed multiplies lift (same C_{L}) by: | 4 | 2 | √2 | 8 | ∝ v^{2}.
+M2#physics-u08-14-q2: Golf-ball dimples reduce drag by: | Making the boundary layer turbulent, delaying separation | Making the ball smoother | Reducing mass | Increasing lift only | Smaller wake, less form drag.
 
 ## Boundary layers
 S: At a solid surface a real fluid sticks (no-slip), so a thin boundary layer forms in which the velocity rises from zero to the free-stream value. Prandtl's insight (1904) that viscosity matters only in this layer made aerodynamics calculable.
@@ -300,8 +300,8 @@ X: Find the laminar boundary-layer thickness 0.5 m along a plate in air at 10 m 
 !: The no-slip condition holds even for "slippery" fluids like air; it's the velocity gradient in the thin layer that creates skin friction.
 Q: What is the no-slip condition? | A viscous fluid in contact with a solid surface moves with the surface (zero relative velocity).
 Q: What causes boundary-layer separation? | An adverse pressure gradient slows near-wall fluid until it reverses.
-M1: Outside the boundary layer, the flow can often be treated as: | Inviscid | Highly viscous | Stationary | Supersonic | Prandtl's division.
-M2: Vortex generators on wings: | Delay separation by mixing faster air into the boundary layer | Increase weight | Generate thrust | Reduce lift deliberately | They re-energise the boundary layer.
+M1#physics-u08-15-q1: Outside the boundary layer, the flow can often be treated as: | Inviscid | Highly viscous | Stationary | Supersonic | Prandtl's division.
+M2#physics-u08-15-q2: Vortex generators on wings: | Delay separation by mixing faster air into the boundary layer | Increase weight | Generate thrust | Reduce lift deliberately | They re-energise the boundary layer.
 
 ## Surface tension
 S: Molecules at a liquid's surface are pulled inward by their neighbours, so the surface behaves like a stretched membrane. Surface tension lets insects walk on water, shapes droplets and bubbles, and drives capillary rise.
@@ -321,8 +321,8 @@ X: Find the excess pressure inside a 1 μm radius water droplet.
 !: Soap bubbles have two surfaces, so their excess pressure is 4γ/R, twice that of a droplet.
 Q: Why are small droplets spherical? | Surface tension minimises surface area, and a sphere has the least area for its volume.
 Q: What is the excess pressure inside a soap bubble? | 4γ/R.
-M1: Adding soap to water: | Lowers its surface tension | Raises it | Has no effect | Makes it zero | Surfactants accumulate at the surface.
-M2: Two connected soap bubbles of different sizes will: | The smaller empties into the larger | The larger empties into the smaller | They equalise in size | Nothing happens | Smaller R ⇒ higher pressure.
+M1#physics-u08-16-q1: Adding soap to water: | Lowers its surface tension | Raises it | Has no effect | Makes it zero | Surfactants accumulate at the surface.
+M2#physics-u08-16-q2: Two connected soap bubbles of different sizes will: | The smaller empties into the larger | The larger empties into the smaller | They equalise in size | Nothing happens | Smaller R ⇒ higher pressure.
 
 ## Capillary action
 S: Capillary action is the rise or fall of a liquid in a narrow tube because of the balance between adhesion to the walls, cohesion within the liquid and surface tension. It moves water in soil, paper towels and plants.
@@ -341,8 +341,8 @@ X: How high does water rise in a 0.1 mm radius glass capillary (θ ≈ 0)?
 !: Capillary rise in a tube doesn't create perpetual motion: water won't drip from the top, because the meniscus that lifts it also holds it there.
 Q: State Jurin's law. | h = 2γ cos θ/(ρgr).
 Q: Why does mercury fall in a glass capillary? | Its contact angle exceeds 90° (it doesn't wet glass).
-M1: Halving a capillary tube's radius makes the rise: | Twice as high | Half as high | Four times higher | Unchanged | h ∝ 1/r.
-M2: How do tall trees lift water? | Transpiration pull with cohesion–tension | Capillary rise alone | Root pressure alone | Atmospheric pressure | Capillarity gives under a metre.
+M1#physics-u08-17-q1: Halving a capillary tube's radius makes the rise: | Twice as high | Half as high | Four times higher | Unchanged | h ∝ 1/r.
+M2#physics-u08-17-q2: How do tall trees lift water? | Transpiration pull with cohesion–tension | Capillary rise alone | Root pressure alone | Atmospheric pressure | Capillarity gives under a metre.
 
 ## Compressible and incompressible fluids
 S: Liquids barely change volume under pressure; gases compress easily. But what matters for flow is the Mach number: gas flows slower than about 0.3 of the speed of sound can be treated as incompressible.
@@ -364,8 +364,8 @@ X: Is airflow around a car at 30 m s^{-1} compressible?
 !: Incompressible doesn't mean absolutely rigid: sound still travels through it at a finite speed.
 Q: When can a gas flow be treated as incompressible? | When the Mach number is below about 0.3.
 Q: What is water hammer? | A pressure surge when flow in a pipe is stopped suddenly, Δp = ρcΔv.
-M1: An aircraft at Mach 0.85 is in which regime? | Transonic | Incompressible | Hypersonic | Supersonic | Local supersonic regions form on the wing.
-M2: Sound travels faster in water than in air mainly because: | Water's bulk modulus is much higher | Water is denser | Water is warmer | Air is compressible only at high speed | c = √(K/ρ): K is ~15 000 times larger.
+M1#physics-u08-18-q1: An aircraft at Mach 0.85 is in which regime? | Transonic | Incompressible | Hypersonic | Supersonic | Local supersonic regions form on the wing.
+M2#physics-u08-18-q2: Sound travels faster in water than in air mainly because: | Water's bulk modulus is much higher | Water is denser | Water is warmer | Air is compressible only at high speed | c = √(K/ρ): K is ~15 000 times larger.
 
 ## Navier–Stokes equations
 S: The Navier–Stokes equations are Newton's second law for a viscous fluid. They describe almost all fluid flow, from blood to weather to galaxies, yet whether smooth solutions always exist in 3D is one of the Millennium Prize problems.
@@ -386,8 +386,8 @@ X: Derive Stokes' drag on a small sphere (outline).
 !: Navier–Stokes assumes a continuum; in very rarefied gases (mean free path comparable to the size), it breaks down and kinetic theory is needed.
 Q: What does the (v·∇)v term represent? | Convective (inertial) acceleration, the nonlinear term responsible for turbulence.
 Q: What is the Navier–Stokes Millennium problem? | To prove or disprove that smooth solutions of the 3D equations always exist for smooth initial conditions.
-M1: The Navier–Stokes equations express conservation of: | Momentum | Charge | Entropy | Energy only | Newton's second law for fluids.
-M2: At very low Reynolds number they reduce to: | Stokes flow | Euler equations | Bernoulli's equation | The wave equation | Inertial terms negligible.
+M1#physics-u08-19-q1: The Navier–Stokes equations express conservation of: | Momentum | Charge | Entropy | Energy only | Newton's second law for fluids.
+M2#physics-u08-19-q2: At very low Reynolds number they reduce to: | Stokes flow | Euler equations | Bernoulli's equation | The wave equation | Inertial terms negligible.
 
 ## Euler equations for fluids
 S: The Euler equations describe an inviscid fluid: Navier–Stokes without viscosity. They govern fast flows away from walls, sound waves, shock waves and much of astrophysical and atmospheric dynamics.
@@ -405,8 +405,8 @@ X: What is the pressure at the front stagnation point of a cylinder in a 50 m s^
 !: Inviscid models predict lift reasonably (with the Kutta condition) but fail completely for drag.
 Q: What is d'Alembert's paradox? | Inviscid, irrotational flow predicts zero drag on any body, contradicting observation.
 Q: What equation does the velocity potential satisfy in incompressible potential flow? | Laplace's equation, ∇^{2}φ = 0.
-M1: The Euler equations neglect: | Viscosity | Pressure | Inertia | Gravity | They're the inviscid limit.
-M2: Integrating Euler's equation along a streamline in steady flow gives: | Bernoulli's equation | Poiseuille's law | Stokes' law | The continuity equation | Energy per unit volume conserved.
+M1#physics-u08-20-q1: The Euler equations neglect: | Viscosity | Pressure | Inertia | Gravity | They're the inviscid limit.
+M2#physics-u08-20-q2: Integrating Euler's equation along a streamline in steady flow gives: | Bernoulli's equation | Poiseuille's law | Stokes' law | The continuity equation | Energy per unit volume conserved.
 
 ## Vorticity and circulation
 S: Vorticity measures local spinning of a fluid; circulation measures the total rotation around a loop. Vortices, from whirlpools to tornadoes to wingtip trails, are the "sinews" of fluid motion.
@@ -426,8 +426,8 @@ D: phys-u08-free-vortex
 !: A fluid moving in circles needn't have vorticity, and a fluid moving in straight lines can (shear flow has vorticity).
 Q: What is vorticity? | The curl of the velocity field, measuring local rotation of fluid elements.
 Q: What does Kelvin's circulation theorem state? | In an ideal barotropic fluid, circulation around a material loop is conserved.
-M1: Lift on a wing is related to: | Circulation around it (Kutta–Joukowski) | Its vorticity being zero | Its weight | Viscosity alone | L′ = ρvΓ.
-M2: Stretching a vortex makes it: | Spin faster | Spin slower | Disappear | Reverse | Conservation of circulation with a smaller core.
+M1#physics-u08-21-q1: Lift on a wing is related to: | Circulation around it (Kutta–Joukowski) | Its vorticity being zero | Its weight | Viscosity alone | L′ = ρvΓ.
+M2#physics-u08-21-q2: Stretching a vortex makes it: | Spin faster | Spin slower | Disappear | Reverse | Conservation of circulation with a smaller core.
 
 ## Flow instabilities
 S: A steady flow is unstable if small disturbances grow instead of dying out. Instabilities create waves, vortices, convection cells and eventually turbulence; they shape clouds, ocean currents and stars.
@@ -445,8 +445,8 @@ X: Why does a thin stream of water from a tap break into drops?
 !: An instability's linear growth eventually saturates through nonlinear effects; linear theory predicts onset, not the final state.
 Q: What causes Kelvin–Helmholtz instability? | Velocity shear across an interface between fluid layers.
 Q: What is Rayleigh–Taylor instability? | The instability of a dense fluid above a lighter one in a gravitational field (or accelerating frame).
-M1: Convection cells in a pan of heated oil come from: | Rayleigh–Bénard instability | Kelvin–Helmholtz | Plateau–Rayleigh | Taylor–Couette | Heating from below.
-M2: In linear stability analysis, a flow is unstable if: | Some mode has a positive growth rate | All modes decay | The flow is steady | Re = 0 | Re σ > 0 for some k.
+M1#physics-u08-22-q1: Convection cells in a pan of heated oil come from: | Rayleigh–Bénard instability | Kelvin–Helmholtz | Plateau–Rayleigh | Taylor–Couette | Heating from below.
+M2#physics-u08-22-q2: In linear stability analysis, a flow is unstable if: | Some mode has a positive growth rate | All modes decay | The flow is steady | Re = 0 | Re σ > 0 for some k.
 
 ## Shock waves
 S: When a disturbance moves through a fluid faster than sound, pressure waves can't get ahead of it and pile up into a shock: an extremely thin jump in pressure, density, temperature and velocity. Shocks produce sonic booms and heat supernova remnants.
@@ -465,8 +465,8 @@ X: Find the Mach cone angle at Ma = 2.
 !: A sonic boom isn't heard only when an aircraft "breaks the sound barrier"; it's dragged continuously along the ground for as long as the plane flies supersonically.
 Q: What is the Mach angle? | The half-angle of the shock cone: sin μ = 1/Ma.
 Q: What happens to entropy across a shock? | It increases: shocks are irreversible.
-M1: Behind a normal shock, flow is: | Subsonic | Supersonic | Stationary | At Mach 1 exactly | A normal shock decelerates flow to subsonic.
-M2: A bullet's shock cone is narrower when it travels: | Faster | Slower | At Mach 1 | It doesn't depend on speed | sin μ = 1/Ma.
+M1#physics-u08-23-q1: Behind a normal shock, flow is: | Subsonic | Supersonic | Stationary | At Mach 1 exactly | A normal shock decelerates flow to subsonic.
+M2#physics-u08-23-q2: A bullet's shock cone is narrower when it travels: | Faster | Slower | At Mach 1 | It doesn't depend on speed | sin μ = 1/Ma.
 
 ## Turbulence modelling
 S: Turbulence spans a huge range of scales, so simulating every eddy is usually impossible. Turbulence models represent the effect of unresolved eddies on the resolved flow, trading accuracy for computational cost.
@@ -485,8 +485,8 @@ X: Estimate the smallest eddies in a room where a fan dissipates ε = 0.01 W kg^
 !: RANS models give time-averaged results; they can't predict individual eddies, noise or unsteady loads well.
 Q: What is Kolmogorov's −5/3 law? | In the inertial range, turbulent kinetic energy per wavenumber scales as k^{−5/3}.
 Q: What is the turbulence closure problem? | Averaging Navier–Stokes creates unknown Reynolds stresses that must be modelled.
-M1: Which approach resolves all scales of turbulence? | DNS | RANS | LES | k–ε model | Direct numerical simulation.
-M2: LES models: | Only the smallest eddies | All eddies | Only the mean flow | Nothing; it's exact | Large eddies resolved, subgrid modelled.
+M1#physics-u08-24-q1: Which approach resolves all scales of turbulence? | DNS | RANS | LES | k–ε model | Direct numerical simulation.
+M2#physics-u08-24-q2: LES models: | Only the smallest eddies | All eddies | Only the mean flow | Nothing; it's exact | Large eddies resolved, subgrid modelled.
 
 ## Computational fluid dynamics
 S: Computational fluid dynamics (CFD) solves the equations of fluid flow numerically. It's used to design aircraft, cars, turbines, heart valves and buildings, and to forecast weather, but its results are only as good as the mesh, models and validation behind them.
@@ -506,6 +506,6 @@ X: How do you check a CFD drag prediction is mesh-independent?
 !: Colourful CFD plots aren't evidence. Without verification and validation, a converged simulation can be precisely wrong.
 Q: What is the CFL condition? | For explicit schemes, information mustn't travel more than one cell per time step: vΔt/Δx ≤ 1.
 Q: What is a mesh-independence study? | Refining the mesh until results stop changing significantly.
-M1: The most common CFD discretisation in industry is: | Finite volume | Analytical solution | Monte Carlo | Lattice gauge | It conserves fluxes cell by cell.
-M2: Validation in CFD means: | Comparing results with experimental data | Checking the code compiles | Making plots | Refining the mesh | Verification checks the maths; validation checks the physics.
+M1#physics-u08-25-q1: The most common CFD discretisation in industry is: | Finite volume | Analytical solution | Monte Carlo | Lattice gauge | It conserves fluxes cell by cell.
+M2#physics-u08-25-q2: Validation in CFD means: | Comparing results with experimental data | Checking the code compiles | Making plots | Refining the mesh | Verification checks the maths; validation checks the physics.
 `;

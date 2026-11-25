@@ -24,8 +24,8 @@ K: Clear explanation starts from the audience, uses examples and precise languag
 !: Simplifying is good; saying something false is not. Avoid explanations that create misconceptions to be unlearned later.
 Q: What is the Feynman technique? | Explaining a concept simply to reveal gaps in your own understanding, then studying to fill them.
 Q: Why do astronauts float on the ISS? | They are in continuous free fall with the station, not because gravity is absent.
-M1: A good explanation usually starts with: | The big idea and the audience's prior knowledge | Advanced equations | Jargon | Historical footnotes | Context first.
-M2: The rubber-sheet analogy for gravity is flawed because: | It uses gravity to explain gravity | It is too accurate | It is mathematical | It shows time dilation | Circular explanation.
+M1#physics-u51-01-q1: A good explanation usually starts with: | The big idea and the audience's prior knowledge | Advanced equations | Jargon | Historical footnotes | Context first.
+M2#physics-u51-01-q2: The rubber-sheet analogy for gravity is flawed because: | It uses gravity to explain gravity | It is too accurate | It is mathematical | It shows time dilation | Circular explanation.
 
 ## Scientific diagrams and representations
 S: Diagrams turn physical situations into visual models: free-body diagrams, field lines, ray diagrams, circuit diagrams, energy-level diagrams and graphs. Good diagrams clarify reasoning, reveal errors and communicate results quickly.
@@ -54,8 +54,8 @@ K: Diagrams encode physics visually; correct, labelled, uncluttered diagrams mak
 !: Don't include forces that don't exist (like a separate "centripetal force" alongside tension); centripetal force is the net inward force.
 Q: What goes on a free-body diagram? | Only the forces acting on the chosen object, each from a real interaction.
 Q: Why should circuit diagrams use standard symbols? | So anyone can read them unambiguously, independent of physical layout.
-M1: Field-line density represents: | Field strength | Charge | Time | Energy only | Closer lines, stronger field.
-M2: In a circular-motion free-body diagram, centripetal force: | Is the net inward force, not an extra arrow | Should be drawn separately | Points outward | Doesn't exist | Provided by real forces.
+M1#physics-u51-02-q1: Field-line density represents: | Field strength | Charge | Time | Energy only | Closer lines, stronger field.
+M2#physics-u51-02-q2: In a circular-motion free-body diagram, centripetal force: | Is the net inward force, not an extra arrow | Should be drawn separately | Points outward | Doesn't exist | Provided by real forces.
 
 ## Deriving equations from first principles
 S: Deriving equations from first principles means starting with fundamental laws and logically building to a result. It reveals the assumptions behind formulas, helps you remember and adapt them, and builds confidence in using physics in new situations.
@@ -82,8 +82,8 @@ K: Start from fundamental laws, state assumptions, build step by step, then chec
 !: Every derived formula has assumptions; using it outside them gives wrong answers.
 Q: What assumption gives the simple pendulum formula? | Small angles, so sin θ ≈ θ.
 Q: Why is deriving better than memorising? | It reveals assumptions and lets you adapt results to new situations.
-M1: Escape velocity is derived from: | Energy conservation | Momentum conservation only | Hooke's law | Ohm's law | ½mv^{2} = GMm/R.
-M2: v^{2} = u^{2} + 2as assumes: | Constant acceleration | Variable acceleration | No motion | Circular motion | SUVAT conditions.
+M1#physics-u51-03-q1: Escape velocity is derived from: | Energy conservation | Momentum conservation only | Hooke's law | Ohm's law | ½mv^{2} = GMm/R.
+M2#physics-u51-03-q2: v^{2} = u^{2} + 2as assumes: | Constant acceleration | Variable acceleration | No motion | Circular motion | SUVAT conditions.
 
 ## Translating physical situations into mathematical models
 S: Modelling turns a real situation into mathematics: deciding what matters, what can be neglected, which laws apply and which variables describe the system. Good models are as simple as possible but no simpler.
@@ -110,8 +110,8 @@ K: Modelling means idealising wisely, applying laws, solving and validating; com
 !: A model is only as good as its assumptions; always check whether neglected effects really are small.
 Q: What is the first step in modelling? | Understanding the situation and identifying what's being asked.
 Q: How can dimensionless numbers guide modelling? | They compare competing effects, showing which can be neglected.
-M1: Terminal velocity occurs when: | Drag equals weight | Acceleration is maximum | Speed is zero | Drag is zero | Net force zero.
-M2: A good model is: | As simple as possible but captures essential physics | As complicated as possible | Always exact | Never validated | Occam's razor with care.
+M1#physics-u51-04-q1: Terminal velocity occurs when: | Drag equals weight | Acceleration is maximum | Speed is zero | Drag is zero | Net force zero.
+M2#physics-u51-04-q2: A good model is: | As simple as possible but captures essential physics | As complicated as possible | Always exact | Never validated | Occam's razor with care.
 
 ## Estimation and order-of-magnitude reasoning
 S: Order-of-magnitude estimation gives quick, approximate answers using rough numbers and simple physics. Famous as "Fermi problems", it builds intuition, checks calculations and helps decide whether an idea is feasible before doing detailed work.
@@ -140,8 +140,8 @@ K: Break problems into estimable factors, use powers of ten, and check that the 
 !: Estimation is about the order of magnitude, not precision; state that results are rough.
 Q: What is a Fermi problem? | An estimation problem solved by breaking it into rough, guessable factors.
 Q: About how many seconds are in a year? | π × 10^{7} ≈ 3.15 × 10^{7}.
-M1: The resting power of a human is about: | 100 W | 1 W | 10 kW | 1 MW | Food intake ~2000 kcal per day.
-M2: Estimation errors often partly cancel because: | Factors are independent | They're always exact | Physics is linear | Units cancel | Some over, some under.
+M1#physics-u51-05-q1: The resting power of a human is about: | 100 W | 1 W | 10 kW | 1 MW | Food intake ~2000 kcal per day.
+M2#physics-u51-05-q2: Estimation errors often partly cancel because: | Factors are independent | They're always exact | Physics is linear | Units cancel | Some over, some under.
 
 ## Solving multi-step problems
 S: Real physics problems usually need several steps, combining principles in sequence. A systematic strategy, from understanding the problem to planning, executing and checking, turns intimidating problems into manageable pieces.
@@ -166,8 +166,8 @@ K: Break complex problems into steps, choose the right principle for each, solve
 !: Mixing up which principle applies where (e.g. using energy conservation through an inelastic collision) is a common error.
 Q: Why solve symbolically before substituting numbers? | It reduces arithmetic errors, shows structure and allows checking units and limits.
 Q: When is energy conservation not valid in a collision? | In inelastic collisions where kinetic energy is lost to heat, sound or deformation.
-M1: Pólya's first step is: | Understand the problem | Plug numbers in | Check units | Guess the answer | Then plan, execute, check.
-M2: Momentum is conserved in collisions because: | External forces are negligible during the brief impact | Energy is conserved | Friction is large | Objects stick | Isolated system.
+M1#physics-u51-06-q1: Pólya's first step is: | Understand the problem | Plug numbers in | Check units | Guess the answer | Then plan, execute, check.
+M2#physics-u51-06-q2: Momentum is conserved in collisions because: | External forces are negligible during the brief impact | Energy is conserved | Friction is large | Objects stick | Isolated system.
 
 ## Interpreting graphs and experimental data
 S: Graphs reveal relationships hidden in tables of numbers. Interpreting them means reading gradients and areas, recognising linear and non-linear trends, linearising data and judging uncertainties, core skills for experimental physics.
@@ -194,8 +194,8 @@ K: Gradients and areas carry physical meaning; linearise data to extract constan
 !: Correlation in a graph doesn't prove causation; physical reasoning must support the relationship.
 Q: How do you find displacement from a velocity–time graph? | Calculate the area under the graph.
 Q: How do you find the exponent of a power law from data? | Plot log y against log x; the gradient is the exponent.
-M1: Plotting ln N against t for decay gives a gradient of: | −λ | λ | T_{1/2} | N_{0} | ln N = ln N_{0} − λt.
-M2: A non-zero intercept where theory predicts zero suggests: | A systematic error | Perfect data | Random error only | Wrong units always | Check the setup.
+M1#physics-u51-07-q1: Plotting ln N against t for decay gives a gradient of: | −λ | λ | T_{1/2} | N_{0} | ln N = ln N_{0} − λt.
+M2#physics-u51-07-q2: A non-zero intercept where theory predicts zero suggests: | A systematic error | Perfect data | Random error only | Wrong units always | Check the setup.
 
 ## Demonstrations and practical investigations
 S: Demonstrations and hands-on investigations make physics tangible, letting learners see principles in action and practise scientific methods. Well-designed practical work builds both understanding and skills in measurement, control of variables and analysis.
@@ -221,8 +221,8 @@ K: Predict–observe–explain demonstrations engage thinking; well-planned inve
 !: A demonstration that fails without explanation can reinforce misconceptions; always discuss unexpected results.
 Q: What is Predict–Observe–Explain? | A teaching strategy where learners predict an outcome, observe the demonstration, then explain any differences.
 Q: Why time many oscillations rather than one? | It reduces the relative uncertainty from reaction time.
-M1: Control variables are: | Kept constant to ensure a fair test | Changed deliberately | Measured as results | Ignored | Fair test.
-M2: A magnet falls slowly through a copper tube because of: | Eddy currents opposing its motion | Air resistance | Magnetism of copper | Friction | Lenz's law.
+M1#physics-u51-08-q1: Control variables are: | Kept constant to ensure a fair test | Changed deliberately | Measured as results | Ignored | Fair test.
+M2#physics-u51-08-q2: A magnet falls slowly through a copper tube because of: | Eddy currents opposing its motion | Air resistance | Magnetism of copper | Friction | Lenz's law.
 
 ## Laboratory report writing
 S: A laboratory report communicates what you did, what you found and what it means, clearly enough that someone else could reproduce and judge your work. Good reports follow a standard structure and present data and uncertainties honestly.
@@ -251,8 +251,8 @@ K: A clear structure, honest uncertainties and specific error analysis make repo
 !: "Human error" isn't a useful explanation; identify the specific source and its size.
 Q: What should an abstract contain? | The aim, method in brief, main result with uncertainty and conclusion.
 Q: How many significant figures should a result have? | Consistent with its uncertainty, usually quoting uncertainty to one or two significant figures.
-M1: The method section should allow: | Someone to reproduce the experiment | Readers to skip results | Only diagrams | Conclusions | Replicability.
-M2: A result within one uncertainty of the expected value is: | Consistent | Proven correct | Wrong | Systematic error | Agreement.
+M1#physics-u51-09-q1: The method section should allow: | Someone to reproduce the experiment | Readers to skip results | Only diagrams | Conclusions | Replicability.
+M2#physics-u51-09-q2: A result within one uncertainty of the expected value is: | Consistent | Proven correct | Wrong | Systematic error | Agreement.
 
 ## Scientific presentations
 S: Scientific presentations, from class talks to conference posters, communicate results to audiences quickly. Effective talks tell a clear story, use simple visuals and respect time, while answering questions with honesty and confidence.
@@ -279,8 +279,8 @@ K: Tell a clear story with simple visuals, practise timing, and answer questions
 !: Too much text on slides splits attention; audiences read rather than listen.
 Q: What is the "take-home message"? | The single main point the audience should remember.
 Q: How should you handle a question you can't answer? | Admit it honestly and suggest how it could be investigated.
-M1: A rule of thumb for slides is about: | One per minute | Ten per minute | One per talk | Fifty per minute | Pace.
-M2: Good figures in talks have: | Large labels and clear highlights | Tiny text | No axes | Many colours randomly | Readability.
+M1#physics-u51-10-q1: A rule of thumb for slides is about: | One per minute | Ten per minute | One per talk | Fifty per minute | Pace.
+M2#physics-u51-10-q2: Good figures in talks have: | Large labels and clear highlights | Tiny text | No axes | Many colours randomly | Readability.
 
 ## Peer review and research critique
 S: Peer review is how scientists evaluate each other's work before publication, checking methods, analysis and conclusions. Learning to critique research constructively helps you judge claims and improve your own work.
@@ -308,8 +308,8 @@ K: Peer review evaluates methods, evidence and conclusions; constructive critiqu
 !: Peer-reviewed doesn't mean proven true; single studies can be wrong.
 Q: What is a preprint? | A paper shared publicly (e.g. on arXiv) before formal peer review.
 Q: What should a good review be? | Specific, constructive, polite and focused on evidence and reasoning.
-M1: The Schön scandal involved: | Fabricated data | Honest errors | Peer review success | A Nobel Prize | Retracted papers.
-M2: Major revision means: | Substantial changes are needed before acceptance | Immediate acceptance | Rejection | No changes | Revise and resubmit.
+M1#physics-u51-11-q1: The Schön scandal involved: | Fabricated data | Honest errors | Peer review success | A Nobel Prize | Retracted papers.
+M2#physics-u51-11-q2: Major revision means: | Substantial changes are needed before acceptance | Immediate acceptance | Rejection | No changes | Revise and resubmit.
 
 ## Communicating uncertainty
 S: Every measurement and prediction has uncertainty, and communicating it well is essential for honest science and good decisions. Too little shows false confidence; too much jargon confuses. Clear expression of uncertainty builds trust.
@@ -335,8 +335,8 @@ K: Report values with clear uncertainties, separate statistical and systematic e
 !: Uncertainty in details doesn't undermine well-established conclusions; avoid creating false doubt.
 Q: What does "very likely" mean in IPCC language? | 90–100% probability.
 Q: Why separate statistical and systematic uncertainties? | They have different origins and behave differently with more data.
-M1: Overprecision means: | Quoting more digits than the uncertainty justifies | Too much uncertainty | Rounding properly | Using SI units | False confidence.
-M2: Natural frequencies are: | Expressions like "1 in 10" | Resonant frequencies | Percentages only | Error bars | Easier to understand.
+M1#physics-u51-12-q1: Overprecision means: | Quoting more digits than the uncertainty justifies | Too much uncertainty | Rounding properly | Using SI units | False confidence.
+M2#physics-u51-12-q2: Natural frequencies are: | Expressions like "1 in 10" | Resonant frequencies | Percentages only | Error bars | Easier to understand.
 
 ## Public engagement with physics
 S: Public engagement shares physics with society through talks, festivals, museums, media and citizen science, and listens to public concerns. It inspires future scientists, supports informed decisions and builds trust between science and the public.
@@ -363,8 +363,8 @@ K: Engagement shares physics, listens to society and builds trust; dialogue, sto
 !: Talking down to audiences or overloading them with jargon undermines engagement.
 Q: What is citizen science? | Public participation in real research, such as classifying galaxies or collecting data.
 Q: What is the deficit model? | The view that public scepticism is due to lack of knowledge, fixed by providing information.
-M1: Galaxy Zoo is an example of: | Citizen science | A telescope | A museum | A TV show | Volunteers classify galaxies.
-M2: Effective engagement emphasises: | Two-way dialogue | One-way lectures only | Technical jargon | Avoiding questions | Listening as well as telling.
+M1#physics-u51-13-q1: Galaxy Zoo is an example of: | Citizen science | A telescope | A museum | A TV show | Volunteers classify galaxies.
+M2#physics-u51-13-q2: Effective engagement emphasises: | Two-way dialogue | One-way lectures only | Technical jargon | Avoiding questions | Listening as well as telling.
 
 ## Science communication and misinformation
 S: Misinformation about physics, such as claims about radiation, 5G, climate or free energy, spreads quickly online. Physicists can help by understanding why misinformation spreads and responding with clear, trustworthy, evidence-based communication.
@@ -391,8 +391,8 @@ K: Counter misinformation with clear physics, prebunking, truth sandwiches and r
 !: Repeating a myth in a headline can strengthen it; lead with the fact instead.
 Q: What is prebunking? | Warning people about misinformation techniques before they encounter them, building resistance.
 Q: Why is non-ionising radiation unable to damage DNA directly? | Its photons have too little energy to break chemical bonds or ionise atoms.
-M1: A "truth sandwich" starts with: | The fact | The myth | An insult | A question | Fact, myth warning, fallacy, fact.
-M2: Ionisation typically requires photon energies of about: | 10 eV or more | 10^{-5} eV | 1 meV | 0.1 eV | UV and above.
+M1#physics-u51-14-q1: A "truth sandwich" starts with: | The fact | The myth | An insult | A question | Fact, myth warning, fallacy, fact.
+M2#physics-u51-14-q2: Ionisation typically requires photon energies of about: | 10 eV or more | 10^{-5} eV | 1 meV | 0.1 eV | UV and above.
 
 ## Teaching and assessing conceptual understanding
 S: Understanding physics means more than plugging numbers into formulas: it means grasping concepts deeply enough to explain and apply them in new situations. Research-based teaching methods and concept tests reveal and build this understanding.
@@ -418,8 +418,8 @@ K: Active learning and concept-focused assessment build and reveal genuine under
 !: High scores on routine calculations don't guarantee conceptual understanding.
 Q: What is peer instruction? | A method where students answer concept questions, discuss with peers, then answer again.
 Q: What does the Force Concept Inventory test? | Conceptual understanding of Newtonian mechanics and common misconceptions.
-M1: Hake's normalised gain for traditional lecture courses is about: | 0.2 | 0.8 | 1.0 | 0 | Interactive ~0.5.
-M2: Retrieval practice means: | Recalling information from memory | Rereading notes | Highlighting | Listening only | Testing effect.
+M1#physics-u51-15-q1: Hake's normalised gain for traditional lecture courses is about: | 0.2 | 0.8 | 1.0 | 0 | Interactive ~0.5.
+M2#physics-u51-15-q2: Retrieval practice means: | Recalling information from memory | Rereading notes | Highlighting | Listening only | Testing effect.
 
 ## Identifying misconceptions
 S: Learners bring intuitive ideas about the physical world, many of them reasonable but incorrect. Identifying these misconceptions and helping learners reconstruct their understanding is one of the most effective ways to teach physics.
@@ -449,8 +449,8 @@ K: Misconceptions are natural; elicit them, create conflict with evidence, and b
 !: Simply telling students the right answer rarely changes deep misconceptions; they need to confront and resolve them.
 Q: What causes Earth's seasons? | The 23.4° tilt of Earth's axis, changing the angle and duration of sunlight.
 Q: What is a bridging analogy? | Using an intuitive correct case to help understand a related counterintuitive case.
-M1: Electron drift velocity in wires is about: | 10^{-4} m s^{-1} | 3 × 10^{8} m s^{-1} | 1000 m s^{-1} | 1 m s^{-1} | Very slow.
-M2: The Aristotelian misconception is that: | Motion requires continuous force | Forces cause acceleration | Mass resists acceleration | Momentum is conserved | Newton's first law contradicts it.
+M1#physics-u51-16-q1: Electron drift velocity in wires is about: | 10^{-4} m s^{-1} | 3 × 10^{8} m s^{-1} | 1000 m s^{-1} | 1 m s^{-1} | Very slow.
+M2#physics-u51-16-q2: The Aristotelian misconception is that: | Motion requires continuous force | Forces cause acceleration | Mass resists acceleration | Momentum is conserved | Newton's first law contradicts it.
 
 ## Interdisciplinary communication
 S: Physicists increasingly work with biologists, engineers, clinicians, economists, data scientists and policymakers. Communicating across disciplines means bridging different vocabularies, methods and priorities to solve complex problems together.
@@ -478,6 +478,6 @@ K: Interdisciplinary work succeeds with shared vocabulary, mutual respect and cl
 !: Words like "significant", "model" and "energy" mean different things in different fields; check meanings.
 Q: Why can "significant" cause confusion across fields? | It can mean statistically significant at different thresholds, or simply "important".
 Q: Name a field depending on physicist–clinician collaboration. | Medical physics, such as radiotherapy and imaging.
-M1: Particle physics discovery standards are typically: | 5σ | p < 0.05 | 1σ | 10σ | Very stringent.
-M2: A shared glossary helps: | Avoid misunderstandings over terms | Increase jargon | Replace experiments | Prove theories | Common language.
+M1#physics-u51-17-q1: Particle physics discovery standards are typically: | 5σ | p < 0.05 | 1σ | 10σ | Very stringent.
+M2#physics-u51-17-q2: A shared glossary helps: | Avoid misunderstandings over terms | Increase jargon | Replace experiments | Prove theories | Common language.
 `;

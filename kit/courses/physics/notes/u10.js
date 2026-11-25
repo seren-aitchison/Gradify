@@ -20,8 +20,8 @@ X: A stadium "Mexican wave" travels round but nobody moves sideways. What's trav
 !: Particles of the medium oscillate about fixed points; only energy and the pattern travel.
 Q: What does a wave transfer? | Energy and momentum (and information), not the medium itself.
 Q: What sets the speed of a mechanical wave? | The properties of the medium (elastic restoring force and inertia).
-M1: Which wave can travel through a vacuum? | Light | Sound | Seismic P-wave | Water wave | EM waves need no medium.
-M2: Which property of a wave is set by the source rather than the medium? | Frequency | Speed | Wavelength | Both speed and wavelength | f stays constant across boundaries.
+M1#physics-u10-01-q1: Which wave can travel through a vacuum? | Light | Sound | Seismic P-wave | Water wave | EM waves need no medium.
+M2#physics-u10-01-q2: Which property of a wave is set by the source rather than the medium? | Frequency | Speed | Wavelength | Both speed and wavelength | f stays constant across boundaries.
 
 ## Transverse and longitudinal waves
 S: In a transverse wave the oscillation is perpendicular to the direction of travel; in a longitudinal wave it's along it, forming compressions and rarefactions. Some waves are a mix of both.
@@ -40,8 +40,8 @@ D: phys-u10-slinky-compressions
 !: Don't confuse a graph of displacement against position with a picture of the wave; for sound, the "peaks" are where molecules are displaced most, not where pressure is highest (pressure peaks are 90° out of phase).
 Q: What is a longitudinal wave? | A wave in which the oscillations are parallel to the direction of energy transfer.
 Q: Why can't sound waves be polarised? | They're longitudinal: there's only one direction of oscillation.
-M1: Which waves are transverse? | Light waves | Sound in air | P-waves | Ultrasound in water | EM oscillations are perpendicular to travel.
-M2: Water surface particles move in: | Circles or ellipses | Straight lines vertically | Straight lines horizontally | No motion | Mixed transverse and longitudinal.
+M1#physics-u10-02-q1: Which waves are transverse? | Light waves | Sound in air | P-waves | Ultrasound in water | EM oscillations are perpendicular to travel.
+M2#physics-u10-02-q2: Water surface particles move in: | Circles or ellipses | Straight lines vertically | Straight lines horizontally | No motion | Mixed transverse and longitudinal.
 
 ## Wavelength, frequency, period and speed
 S: For any periodic wave, the speed equals frequency times wavelength. Frequency is set by the source; speed by the medium; so wavelength adjusts when a wave enters a new medium.
@@ -62,9 +62,9 @@ P: **Investigate with the lab.** Change the tension and mass per metre of the st
 IX: waves
 Q: What happens to frequency when a wave enters a new medium? | It stays the same.
 Q: What is the wavenumber? | k = 2π/λ, radians per metre.
-M1: A wave with f = 50 Hz and λ = 4 m has speed: | 200 m s^{-1} | 12.5 m s^{-1} | 54 m s^{-1} | 0.08 m s^{-1} | v = fλ.
-M2: Sound at 1000 Hz moves from air (343 m s^{-1}) into water (1480 m s^{-1}). Its wavelength: | Increases to 1.48 m | Decreases | Stays at 0.34 m | Becomes zero | λ = v/f.
-M2: A wave has frequency 50 Hz and wavelength 0.4 m. What is its speed? | 20 m/s | 125 m/s | 0.008 m/s | 50.4 m/s | v = fλ = 50 × 0.4 = 20 m/s.
+M1#physics-u10-03-q1: A wave with f = 50 Hz and λ = 4 m has speed: | 200 m s^{-1} | 12.5 m s^{-1} | 54 m s^{-1} | 0.08 m s^{-1} | v = fλ.
+M2#physics-u10-03-q2: Sound at 1000 Hz moves from air (343 m s^{-1}) into water (1480 m s^{-1}). Its wavelength: | Increases to 1.48 m | Decreases | Stays at 0.34 m | Becomes zero | λ = v/f.
+M2#physics-u10-03-q3: A wave has frequency 50 Hz and wavelength 0.4 m. What is its speed? | 20 m/s | 125 m/s | 0.008 m/s | 50.4 m/s | v = fλ = 50 × 0.4 = 20 m/s.
 
 ## Wave equations
 S: The one-dimensional wave equation says the acceleration of each bit of medium is proportional to the curvature of the wave there. Any function of (x − vt) solves it, so shapes travel unchanged at speed v.
@@ -84,8 +84,8 @@ X: A guitar string has T = 70 N and μ = 0.5 g m^{-1}. Find the wave speed.
 !: kx − ωt moves right; kx + ωt moves left. Sign errors reverse the direction of travel.
 Q: What is the speed of a wave on a string? | v = √(T/μ).
 Q: What does d'Alembert's solution show? | Any shape travelling unchanged in either direction at speed v solves the wave equation.
-M1: y = 0.02 sin(4x − 200t) travels at: | 50 m s^{-1} | 200 m s^{-1} | 800 m s^{-1} | 4 m s^{-1} | v = ω/k.
-M2: Quadrupling a string's tension changes the wave speed by: | ×2 | ×4 | ×16 | ×1/2 | v ∝ √T.
+M1#physics-u10-04-q1: y = 0.02 sin(4x − 200t) travels at: | 50 m s^{-1} | 200 m s^{-1} | 800 m s^{-1} | 4 m s^{-1} | v = ω/k.
+M2#physics-u10-04-q2: Quadrupling a string's tension changes the wave speed by: | ×2 | ×4 | ×16 | ×1/2 | v ∝ √T.
 
 ## Wave propagation
 S: As waves travel they spread out, lose energy to the medium, and may change speed and shape. Understanding propagation explains why sound fades, why radio reaches round the Earth, and why earthquakes are felt far away.
@@ -105,8 +105,8 @@ D: phys-u10-spreading-loss
 !: Inverse-square spreading assumes a point source and no reflections; indoors or near large sources it doesn't hold.
 Q: How does intensity fall with distance from a point source? | As 1/r^{2}.
 Q: What is the SOFAR channel? | A layer in the ocean where sound speed is lowest, trapping and guiding low-frequency sound over huge distances.
-M1: Moving three times farther from a point source reduces intensity by: | 9 | 3 | 27 | √3 | Inverse square.
-M2: Why does distant thunder sound like a low rumble? | High frequencies are absorbed more over distance | Thunder is only low frequency | Sound speeds up | The ear adapts | Frequency-dependent attenuation.
+M1#physics-u10-05-q1: Moving three times farther from a point source reduces intensity by: | 9 | 3 | 27 | √3 | Inverse square.
+M2#physics-u10-05-q2: Why does distant thunder sound like a low rumble? | High frequencies are absorbed more over distance | Thunder is only low frequency | Sound speeds up | The ear adapts | Frequency-dependent attenuation.
 
 ## Phase and group velocity
 S: The phase velocity is how fast individual wave crests move; the group velocity is how fast the envelope of a wave packet, and hence energy and information, moves. They differ whenever the wave speed depends on frequency.
@@ -126,8 +126,8 @@ X: In a waveguide ω^{2} = ω_{c}^{2} + c^{2}k^{2}. Show v_{p}v_{g} = c^{2}.
 !: Phase velocity can exceed c without breaking relativity; no information travels with the crests. Signal speed is bounded by c.
 Q: What is group velocity? | dω/dk: the speed of the envelope of a wave packet, which carries energy.
 Q: Why can phase velocity exceed c? | Crests carry no information; only the group (signal) velocity is limited.
-M1: For deep-water waves, group velocity is: | Half the phase velocity | Equal to it | Twice it | Zero | ω ∝ √k.
-M2: A medium is non-dispersive when: | ω is proportional to k | v_{g} = 0 | ω is constant | k is constant | All frequencies travel at the same speed.
+M1#physics-u10-06-q1: For deep-water waves, group velocity is: | Half the phase velocity | Equal to it | Twice it | Zero | ω ∝ √k.
+M2#physics-u10-06-q2: A medium is non-dispersive when: | ω is proportional to k | v_{g} = 0 | ω is constant | k is constant | All frequencies travel at the same speed.
 
 ## Superposition
 S: When waves overlap in a linear medium, the total displacement at each point is the sum of the individual displacements. Waves pass through each other unchanged; superposition explains interference, standing waves, beats and Fourier analysis.
@@ -150,9 +150,9 @@ P: **Investigate with the lab.** Add two waves with equal amplitude and set the 
 IX: waves
 Q: State the principle of superposition. | When waves overlap, the resultant displacement is the sum of the individual displacements.
 Q: When does superposition fail? | In nonlinear media, typically at large amplitudes.
-M1: Two waves of amplitude 4 cm meet in antiphase. The resultant amplitude is: | 0 | 8 cm | 4 cm | 16 cm | They cancel.
-M2: Frequency doubling of laser light shows: | A nonlinear medium | Superposition | Diffraction | Polarisation | Nonlinear optics.
-M2: Two equal waves meet exactly out of phase. What is the result? | They cancel to zero displacement | They double in amplitude | They reflect off each other | They change frequency | By superposition, displacements add; equal and opposite displacements cancel.
+M1#physics-u10-07-q1: Two waves of amplitude 4 cm meet in antiphase. The resultant amplitude is: | 0 | 8 cm | 4 cm | 16 cm | They cancel.
+M2#physics-u10-07-q2: Frequency doubling of laser light shows: | A nonlinear medium | Superposition | Diffraction | Polarisation | Nonlinear optics.
+M2#physics-u10-07-q3: Two equal waves meet exactly out of phase. What is the result? | They cancel to zero displacement | They double in amplitude | They reflect off each other | They change frequency | By superposition, displacements add; equal and opposite displacements cancel.
 
 ## Interference
 S: Interference is the pattern of reinforcement and cancellation when coherent waves overlap. It's the signature of wave behaviour, and it measures wavelengths, distances and surface flatness to a fraction of a wavelength.
@@ -179,10 +179,10 @@ P: **Investigate with the lab.** Look at the double-slit pattern and identify wh
 IX: interference
 Q: What is coherence? | A constant phase relationship between waves.
 Q: What is the fringe spacing in Young's experiment? | λD/d.
-M1: Increasing the slit separation in Young's experiment makes fringes: | Closer together | Further apart | Brighter | Disappear | x ∝ 1/d.
-M2: Interference of single electrons shows: | Each electron behaves as a wave going through both slits | Electrons are classical particles | Electrons interact with each other | The experiment is faulty | Quantum superposition.
-M2: What phase difference gives maximum constructive interference? | 0° or a whole number of cycles | 90° | 180° | 270° | Waves in phase add to give the largest amplitude.
-M2: On the screen of a double-slit experiment, what makes a dark fringe? | Waves from the two slits arriving in antiphase | Light being absorbed by the screen | No light passing through either slit | Waves arriving exactly in phase | A path difference of half a wavelength, or an odd number of half wavelengths, gives cancellation.
+M1#physics-u10-08-q1: Increasing the slit separation in Young's experiment makes fringes: | Closer together | Further apart | Brighter | Disappear | x ∝ 1/d.
+M2#physics-u10-08-q2: Interference of single electrons shows: | Each electron behaves as a wave going through both slits | Electrons are classical particles | Electrons interact with each other | The experiment is faulty | Quantum superposition.
+M2#physics-u10-08-q3: What phase difference gives maximum constructive interference? | 0° or a whole number of cycles | 90° | 180° | 270° | Waves in phase add to give the largest amplitude.
+M2#physics-u10-08-q4: On the screen of a double-slit experiment, what makes a dark fringe? | Waves from the two slits arriving in antiphase | Light being absorbed by the screen | No light passing through either slit | Waves arriving exactly in phase | A path difference of half a wavelength, or an odd number of half wavelengths, gives cancellation.
 
 ## Constructive and destructive interference
 S: Waves interfere constructively where they arrive in phase (path difference a whole number of wavelengths) and destructively where they arrive in antiphase (an odd number of half wavelengths).
@@ -202,9 +202,9 @@ P: **Investigate with the lab.** Set the phase difference to 0°, 180° and 360�
 IX: waves
 Q: What path difference gives destructive interference for in-phase sources? | An odd number of half wavelengths.
 Q: What phase change occurs on reflection from a denser medium? | π (half a wavelength).
-M1: Two speakers in phase are 3.0 m and 3.5 m from you; λ = 1.0 m. You hear: | A quiet spot (destructive) | A loud spot | No sound change | Beats | Δ = 0.5λ.
-M2: Two equal waves interfering constructively give intensity: | 4 times one wave's | 2 times | The same | Zero | Amplitude doubles, intensity ∝ A^{2}.
-M2: Two waves arrive with a path difference of 1.5 wavelengths. What kind of interference occurs? | Destructive | Constructive | Neither, they don't interact | It depends only on amplitude | A path difference of a whole number plus a half wavelength puts the waves in antiphase.
+M1#physics-u10-09-q1: Two speakers in phase are 3.0 m and 3.5 m from you; λ = 1.0 m. You hear: | A quiet spot (destructive) | A loud spot | No sound change | Beats | Δ = 0.5λ.
+M2#physics-u10-09-q2: Two equal waves interfering constructively give intensity: | 4 times one wave's | 2 times | The same | Zero | Amplitude doubles, intensity ∝ A^{2}.
+M2#physics-u10-09-q3: Two waves arrive with a path difference of 1.5 wavelengths. What kind of interference occurs? | Destructive | Constructive | Neither, they don't interact | It depends only on amplitude | A path difference of a whole number plus a half wavelength puts the waves in antiphase.
 
 ## Standing waves
 S: A standing wave forms when two identical waves travel in opposite directions, usually a wave and its reflection. Some points (nodes) never move; others (antinodes) oscillate with maximum amplitude, and energy stays trapped between them.
@@ -228,9 +228,9 @@ P: **Investigate with the lab.** Send two equal waves in opposite directions and
 IX: waves
 Q: How far apart are adjacent nodes? | Half a wavelength.
 Q: How does a standing wave differ from a travelling wave? | Its amplitude varies with position, points between nodes oscillate in phase, and it transfers no net energy.
-M1: The fundamental of a 0.6 m string with v = 240 m s^{-1} is: | 200 Hz | 400 Hz | 100 Hz | 144 Hz | f = v/2L.
-M2: Points on either side of a node oscillate: | In antiphase | In phase | Not at all | At different frequencies | sin kx changes sign at a node.
-M2: What is the distance between two neighbouring nodes in a standing wave? | Half a wavelength | One wavelength | A quarter of a wavelength | Two wavelengths | Nodes occur every half wavelength.
+M1#physics-u10-10-q1: The fundamental of a 0.6 m string with v = 240 m s^{-1} is: | 200 Hz | 400 Hz | 100 Hz | 144 Hz | f = v/2L.
+M2#physics-u10-10-q2: Points on either side of a node oscillate: | In antiphase | In phase | Not at all | At different frequencies | sin kx changes sign at a node.
+M2#physics-u10-10-q3: What is the distance between two neighbouring nodes in a standing wave? | Half a wavelength | One wavelength | A quarter of a wavelength | Two wavelengths | Nodes occur every half wavelength.
 
 ## Reflection and transmission
 S: When a wave meets a boundary between two media, part is reflected and part transmitted. The fractions and phases depend on how different the media's impedances are.
@@ -250,8 +250,8 @@ X: What fraction of light reflects at normal incidence from water (n = 1.33)?
 !: Reflection depends on the contrast between media, not on either medium alone: matched media reflect nothing.
 Q: When is a reflected pulse on a string inverted? | When it reflects from a fixed end or a denser (higher impedance) medium.
 Q: Why is gel used in ultrasound scanning? | It removes air between probe and skin, reducing a large impedance mismatch that would reflect almost all the sound.
-M1: A wave passes from a light string to a heavy string. The reflected pulse is: | Inverted | Upright | Absent | Doubled | Higher impedance.
-M2: At normal incidence, about how much light reflects from one air–glass surface (n = 1.5)? | 4% | 50% | 0.4% | 96% | ((0.5)/(2.5))^{2}.
+M1#physics-u10-11-q1: A wave passes from a light string to a heavy string. The reflected pulse is: | Inverted | Upright | Absent | Doubled | Higher impedance.
+M2#physics-u10-11-q2: At normal incidence, about how much light reflects from one air–glass surface (n = 1.5)? | 4% | 50% | 0.4% | 96% | ((0.5)/(2.5))^{2}.
 
 ## Refraction
 S: Refraction is the change in direction of a wave when it enters a medium where its speed is different, at an angle. Snell's law gives the new direction, and it explains lenses, rainbows, mirages and fibre optics.
@@ -273,8 +273,8 @@ D: phys-u10-refraction-water
 !: Angles in Snell's law are measured from the normal, not from the surface.
 Q: State Snell's law. | n_{1} sin θ_{1} = n_{2} sin θ_{2}.
 Q: When does total internal reflection occur? | When light goes from a higher to a lower index medium at an angle greater than the critical angle.
-M1: The critical angle for glass (n = 1.5) to air is about: | 42° | 48° | 30° | 90° | sin^{-1}(1/1.5).
-M2: Ocean waves approaching a beach turn to become: | Nearly parallel to the shore | Perpendicular to it | Unchanged | Faster | They slow in shallow water and refract.
+M1#physics-u10-12-q1: The critical angle for glass (n = 1.5) to air is about: | 42° | 48° | 30° | 90° | sin^{-1}(1/1.5).
+M2#physics-u10-12-q2: Ocean waves approaching a beach turn to become: | Nearly parallel to the shore | Perpendicular to it | Unchanged | Faster | They slow in shallow water and refract.
 
 ## Diffraction
 S: Diffraction is the spreading of waves when they pass through gaps or around obstacles. It's strongest when the gap is comparable to the wavelength, and it limits the resolution of every optical instrument.
@@ -297,9 +297,9 @@ P: **Investigate with the lab.** Narrow and widen a single slit and watch the ce
 IX: interference
 Q: When is diffraction most noticeable? | When the gap or obstacle size is comparable to the wavelength.
 Q: State the Rayleigh criterion. | Two point sources are just resolved when θ ≈ 1.22λ/D.
-M1: A grating with 500 lines per mm and 600 nm light gives a first order at: | 17.5° | 30° | 0.3° | 60° | d = 2 μm; sin θ = 0.3.
-M2: Narrowing a single slit makes the central maximum: | Wider | Narrower | Brighter | Disappear | Width ∝ λ/a.
-M2: When is diffraction through a gap most noticeable? | When the gap is about the same size as the wavelength | When the gap is much larger than the wavelength | When the light is very bright | Only when the wave is sound | Diffraction is greatest when the gap width is comparable to the wavelength.
+M1#physics-u10-13-q1: A grating with 500 lines per mm and 600 nm light gives a first order at: | 17.5° | 30° | 0.3° | 60° | d = 2 μm; sin θ = 0.3.
+M2#physics-u10-13-q2: Narrowing a single slit makes the central maximum: | Wider | Narrower | Brighter | Disappear | Width ∝ λ/a.
+M2#physics-u10-13-q3: When is diffraction through a gap most noticeable? | When the gap is about the same size as the wavelength | When the gap is much larger than the wavelength | When the light is very bright | Only when the wave is sound | Diffraction is greatest when the gap width is comparable to the wavelength.
 
 ## Dispersion
 S: Dispersion is the dependence of wave speed on frequency. It splits white light into colours, spreads pulses in optical fibres, and shapes water waves and seismic signals.
@@ -319,8 +319,8 @@ X: Why is the rainbow's red on the outside?
 !: Dispersion isn't the same as diffraction or scattering; it's about speed varying with frequency.
 Q: What causes a prism to split white light? | Dispersion: the refractive index varies with wavelength.
 Q: Why does dispersion limit data rates in fibres? | Different frequency components travel at different speeds, spreading pulses.
-M1: In glass, which colour travels slowest? | Violet | Red | Green | All equal | Highest n.
-M2: Swell from a distant storm arrives as long waves first because: | Deep-water waves with longer λ travel faster | Short waves are absorbed | Wind speeds them | Tides | v ∝ √λ.
+M1#physics-u10-14-q1: In glass, which colour travels slowest? | Violet | Red | Green | All equal | Highest n.
+M2#physics-u10-14-q2: Swell from a distant storm arrives as long waves first because: | Deep-water waves with longer λ travel faster | Short waves are absorbed | Wind speeds them | Tides | v ∝ √λ.
 
 ## Polarisation
 S: Polarisation describes the direction of oscillation of a transverse wave. Light can be polarised by filters, reflection, scattering and certain crystals, and polarisation is used in sunglasses, screens, 3D cinema and stress analysis.
@@ -345,8 +345,8 @@ D: phys-u10-malus-law
 !: Only transverse waves can be polarised; polarisation of light was key evidence that light is transverse.
 Q: State Malus's law. | I = I_{0} cos^{2}θ.
 Q: What is Brewster's angle? | The angle of incidence at which reflected light is completely polarised: tan θ_{B} = n_{2}/n_{1}.
-M1: Two crossed polarisers transmit: | No light | Half | A quarter | All | cos^{2}90° = 0.
-M2: Brewster's angle for glass (n = 1.5) is about: | 56° | 42° | 34° | 90° | tan^{-1}(1.5).
+M1#physics-u10-15-q1: Two crossed polarisers transmit: | No light | Half | A quarter | All | cos^{2}90° = 0.
+M2#physics-u10-15-q2: Brewster's angle for glass (n = 1.5) is about: | 56° | 42° | 34° | 90° | tan^{-1}(1.5).
 
 ## Wave packets
 S: A wave packet is a localised wave made by superposing many waves with a range of wavelengths. Its width and its spread in wavenumber are inversely related, which is the root of the quantum uncertainty principle.
@@ -367,8 +367,8 @@ X: A laser pulse lasts 10 fs. Estimate its frequency spread.
 !: A wave packet isn't a particle; it has a definite group velocity but no single wavelength.
 Q: Why must a short pulse contain many frequencies? | Because Δt Δω ≳ 1: localising in time requires spreading in frequency.
 Q: At what speed does a wave packet travel? | The group velocity.
-M1: Making a wave packet narrower in space makes its range of wavenumbers: | Larger | Smaller | Zero | Unchanged | Δx Δk ≳ 1.
-M2: The uncertainty principle Δx Δp ≥ ħ/2 follows from: | Fourier properties of wave packets with p = ħk | Measurement disturbance only | Classical mechanics | Relativity | It's a property of waves.
+M1#physics-u10-16-q1: Making a wave packet narrower in space makes its range of wavenumbers: | Larger | Smaller | Zero | Unchanged | Δx Δk ≳ 1.
+M2#physics-u10-16-q2: The uncertainty principle Δx Δp ≥ ħ/2 follows from: | Fourier properties of wave packets with p = ħk | Measurement disturbance only | Classical mechanics | Relativity | It's a property of waves.
 
 ## Beats
 S: Beats are the slow periodic swelling and fading of loudness when two waves of slightly different frequencies combine. The beat frequency equals the difference of the two frequencies.
@@ -389,9 +389,9 @@ P: **Investigate with the lab.** Tune two notes until you hear and see 2 beats p
 IX: waves
 Q: What is the beat frequency? | The difference between the two frequencies.
 Q: Why do beats disappear when two strings are in tune? | Their frequency difference is zero.
-M1: Two sources at 500 Hz and 506 Hz produce: | 6 beats per second | 3 beats per second | 1006 beats | 503 beats | Difference.
-M2: The perceived pitch during beating is: | The average of the two frequencies | The difference | The sum | The lower frequency | The carrier is f̄.
-M2: Two notes of 440 Hz and 443 Hz sound together. What is the beat frequency? | 3 Hz | 441.5 Hz | 883 Hz | 1.5 Hz | The beat frequency is the difference between the two frequencies.
+M1#physics-u10-17-q1: Two sources at 500 Hz and 506 Hz produce: | 6 beats per second | 3 beats per second | 1006 beats | 503 beats | Difference.
+M2#physics-u10-17-q2: The perceived pitch during beating is: | The average of the two frequencies | The difference | The sum | The lower frequency | The carrier is f̄.
+M2#physics-u10-17-q3: Two notes of 440 Hz and 443 Hz sound together. What is the beat frequency? | 3 Hz | 441.5 Hz | 883 Hz | 1.5 Hz | The beat frequency is the difference between the two frequencies.
 
 ## Boundary conditions
 S: Boundary conditions specify what a wave must do at the edges of its medium: fixed, free, or matched to another medium. They determine reflection, the allowed standing-wave patterns, and therefore the resonant frequencies.
@@ -415,9 +415,9 @@ P: **Investigate with the lab.** Make standing waves on the string and check tha
 IX: waves
 Q: What boundary condition does an open pipe end impose on displacement? | An antinode (approximately, with an end correction).
 Q: Why does a pipe closed at one end have only odd harmonics? | A node at one end and an antinode at the other fit only odd quarter-wavelengths.
-M1: A string fixed at both ends supports wavelengths: | 2L/n | 4L/n odd n | L/n | 4L | Nodes at both ends.
-M2: At the surface of a perfect conductor, the tangential electric field is: | Zero | Maximum | Equal to the normal field | Undefined | Charges move to cancel it.
-M2: For a string fixed at both ends, what must the length be? | A whole number of half wavelengths | A whole number of quarter wavelengths | Exactly one wavelength | Any length at all | Both ends must be nodes, so L = nλ/2.
+M1#physics-u10-18-q1: A string fixed at both ends supports wavelengths: | 2L/n | 4L/n odd n | L/n | 4L | Nodes at both ends.
+M2#physics-u10-18-q2: At the surface of a perfect conductor, the tangential electric field is: | Zero | Maximum | Equal to the normal field | Undefined | Charges move to cancel it.
+M2#physics-u10-18-q3: For a string fixed at both ends, what must the length be? | A whole number of half wavelengths | A whole number of quarter wavelengths | Exactly one wavelength | Any length at all | Both ends must be nodes, so L = nλ/2.
 
 ## Resonant modes
 S: A bounded system can only sustain standing waves whose shapes fit its boundary conditions: its resonant modes. Each mode has a particular frequency, and the set of them gives instruments their sound, cavities their colours and atoms their energy levels.
@@ -438,9 +438,9 @@ P: **Investigate with the lab.** Show the third harmonic and count its nodes. Pr
 IX: waves
 Q: Why do drums have less definite pitch than strings? | Their mode frequencies aren't integer multiples of a fundamental.
 Q: What is the spacing between longitudinal modes in a laser cavity? | c/(2L).
-M1: The second harmonic of a 100 Hz fundamental string is: | 200 Hz | 150 Hz | 50 Hz | 400 Hz | 2f_{1}.
-M2: Why do small rooms have uneven bass? | Low-frequency room modes are widely spaced | Bass is absorbed | Walls are too hard | Speakers can't produce bass | Few modes, separated in frequency.
-M2: A string's fundamental frequency is 100 Hz. What is the frequency of its third harmonic? | 300 Hz | 150 Hz | 900 Hz | 33 Hz | For a string fixed at both ends, the nth harmonic is n times the fundamental.
+M1#physics-u10-19-q1: The second harmonic of a 100 Hz fundamental string is: | 200 Hz | 150 Hz | 50 Hz | 400 Hz | 2f_{1}.
+M2#physics-u10-19-q2: Why do small rooms have uneven bass? | Low-frequency room modes are widely spaced | Bass is absorbed | Walls are too hard | Speakers can't produce bass | Few modes, separated in frequency.
+M2#physics-u10-19-q3: A string's fundamental frequency is 100 Hz. What is the frequency of its third harmonic? | 300 Hz | 150 Hz | 900 Hz | 33 Hz | For a string fixed at both ends, the nth harmonic is n times the fundamental.
 
 ## Coupled waves
 S: When two wave systems are linked, energy can pass between them. Coupled waves explain directional couplers in optics, energy exchange between pendulum chains, and mode conversion in seismology, plasmas and the ocean.
@@ -459,8 +459,8 @@ X: Two identical fibres have coupling κ = 100 m^{-1}. What length splits power 
 !: Coupling only transfers energy efficiently when the waves are phase-matched (similar wave speeds).
 Q: What is an avoided crossing? | When coupled modes' frequencies approach, they repel and exchange character instead of crossing.
 Q: What condition maximises energy transfer between coupled waves? | Phase matching (equal propagation constants).
-M1: A 3 dB fibre coupler: | Splits power equally | Doubles power | Blocks light | Reverses light | 3 dB = half.
-M2: Polaritons are: | Coupled states of light and matter excitations | Particles of sound | Electrons | Polarised photons only | Avoided crossing between photon and, e.g., phonon or exciton modes.
+M1#physics-u10-20-q1: A 3 dB fibre coupler: | Splits power equally | Doubles power | Blocks light | Reverses light | 3 dB = half.
+M2#physics-u10-20-q2: Polaritons are: | Coupled states of light and matter excitations | Particles of sound | Electrons | Polarised photons only | Avoided crossing between photon and, e.g., phonon or exciton modes.
 
 ## Nonlinear waves
 S: In nonlinear media, a wave's speed depends on its amplitude, so waves steepen, break, generate harmonics and interact with each other. Ocean waves breaking on a beach, sonic booms and frequency-doubling lasers are all nonlinear wave effects.
@@ -480,8 +480,8 @@ X: Why do waves break on a beach?
 !: Linear theory works only for small amplitudes; extreme events like rogue waves need nonlinear models.
 Q: Why do large-amplitude waves steepen? | Higher-amplitude parts travel faster and catch up with lower parts.
 Q: What does the KdV equation balance? | Nonlinear steepening against dispersion.
-M1: Second-harmonic generation requires: | A nonlinear medium | A vacuum | Low intensity | Linear superposition | χ^{(2)} nonlinearity.
-M2: Rogue waves may arise from: | Modulational instability | Linear superposition only | Tides | Earthquakes only | Nonlinear focusing of energy.
+M1#physics-u10-21-q1: Second-harmonic generation requires: | A nonlinear medium | A vacuum | Low intensity | Linear superposition | χ^{(2)} nonlinearity.
+M2#physics-u10-21-q2: Rogue waves may arise from: | Modulational instability | Linear superposition only | Tides | Earthquakes only | Nonlinear focusing of energy.
 
 ## Solitons
 S: A soliton is a solitary wave that keeps its shape while travelling at constant speed, because nonlinear steepening exactly balances dispersive spreading. Solitons even pass through each other and emerge intact.
@@ -502,8 +502,8 @@ X: A KdV soliton has speed c = 4. How do its amplitude and width compare with a 
 !: Not every solitary wave is a soliton in the strict mathematical sense; true solitons survive collisions unchanged.
 Q: What balance creates a soliton? | Nonlinear steepening balanced by dispersion.
 Q: What happens when two solitons collide? | They pass through each other and emerge with their shapes and speeds unchanged, apart from a phase shift.
-M1: For KdV solitons, taller solitons travel: | Faster | Slower | At the same speed | Backward | Speed ∝ amplitude.
-M2: Who first observed a soliton? | John Scott Russell | Newton | Huygens | Fourier | On the Union Canal, 1834.
+M1#physics-u10-22-q1: For KdV solitons, taller solitons travel: | Faster | Slower | At the same speed | Backward | Speed ∝ amplitude.
+M2#physics-u10-22-q2: Who first observed a soliton? | John Scott Russell | Newton | Huygens | Fourier | On the Union Canal, 1834.
 
 ## Wave energy and intensity
 S: Waves carry energy at a rate set by their amplitude, frequency and medium. Intensity, the power per unit area, grows with the square of amplitude, which is why doubling the amplitude of a sound quadruples its power.
@@ -524,8 +524,8 @@ X: Find the electric field amplitude of sunlight at Earth (I = 1360 W m^{-2}).
 !: Intensity scales with amplitude squared, not amplitude: halving amplitude quarters intensity.
 Q: How does wave intensity depend on amplitude? | I ∝ A^{2}.
 Q: What radiation pressure does light exert on a perfect absorber? | I/c.
-M1: Tripling a wave's amplitude increases its intensity by: | 9 | 3 | 27 | √3 | Square.
-M2: The solar constant is about: | 1360 W m^{-2} | 1 W m^{-2} | 13 600 W m^{-2} | 136 W m^{-2} | Above the atmosphere.
+M1#physics-u10-23-q1: Tripling a wave's amplitude increases its intensity by: | 9 | 3 | 27 | √3 | Square.
+M2#physics-u10-23-q2: The solar constant is about: | 1360 W m^{-2} | 1 W m^{-2} | 13 600 W m^{-2} | 136 W m^{-2} | Above the atmosphere.
 
 ## Huygens' principle
 S: Huygens' principle says every point on a wavefront acts as a source of secondary wavelets; the new wavefront is the envelope of these wavelets. It predicts reflection, refraction and, with Fresnel's addition of interference, diffraction.
@@ -545,8 +545,8 @@ X: Use Huygens' construction to explain why a straight wave bends round a harbou
 !: Huygens' principle is a geometric tool; the full justification comes from the wave equation (Kirchhoff's diffraction formula).
 Q: State Huygens' principle. | Every point on a wavefront acts as a source of secondary wavelets; their envelope forms the new wavefront.
 Q: What is the Poisson–Arago spot? | A bright spot at the centre of the shadow of a circular obstacle, predicted by wave theory.
-M1: Huygens–Fresnel theory explains: | Diffraction | Photoelectric effect | Radioactivity | Nuclear fission | Interference of wavelets.
-M2: Huygens' construction derives Snell's law from: | Different wave speeds in the two media | Particle collisions | Gravity | Polarisation | Wavelet radii differ.
+M1#physics-u10-24-q1: Huygens–Fresnel theory explains: | Diffraction | Photoelectric effect | Radioactivity | Nuclear fission | Interference of wavelets.
+M2#physics-u10-24-q2: Huygens' construction derives Snell's law from: | Different wave speeds in the two media | Particle collisions | Gravity | Polarisation | Wavelet radii differ.
 
 ## Fourier decomposition of waves
 S: Any wave can be written as a sum (or integral) of sinusoidal waves of different frequencies, amplitudes and phases. Treating each component separately is often the easiest way to understand how complex waves travel, disperse and interact with systems.
@@ -570,6 +570,6 @@ D: phys-u10-plucked-harmonics
 !: A Fourier spectrum shows which frequencies are present over the whole record; it hides when they occur. Use a spectrogram for changing signals.
 Q: Why does plucking a string at its middle remove even harmonics? | Even harmonics have a node at the midpoint, so they can't be excited there.
 Q: How does Fourier decomposition help with dispersion? | Each frequency component travels at its own speed; recombining them shows how the wave changes shape.
-M1: A sawtooth wave contains: | All harmonics | Only odd harmonics | Only the fundamental | No harmonics | Amplitudes 1/n for all n.
-M2: The far-field diffraction pattern of an aperture is: | Its Fourier transform | Its image | A uniform patch | Its derivative | Fraunhofer diffraction.
+M1#physics-u10-25-q1: A sawtooth wave contains: | All harmonics | Only odd harmonics | Only the fundamental | No harmonics | Amplitudes 1/n for all n.
+M2#physics-u10-25-q2: The far-field diffraction pattern of an aperture is: | Its Fourier transform | Its image | A uniform patch | Its derivative | Fraunhofer diffraction.
 `;

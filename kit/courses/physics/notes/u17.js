@@ -22,9 +22,9 @@ P: **Investigate with the lab.** With no electric field, increase B and watch th
 IX: lorentz
 Q: What are the sources of magnetic fields? | Moving charges (currents), intrinsic magnetic moments (spin) and changing electric fields.
 Q: Why do magnetic field lines form closed loops? | There are no magnetic monopoles (∇·B = 0).
-M1: The SI unit of magnetic flux density is: | Tesla | Weber | Henry | Gauss | T = N A^{-1} m^{-1}.
-M2: Earth's magnetic field strength at the surface is about: | 50 μT | 1 T | 5 mT | 50 nT | Tens of microtesla.
-M2: A charged particle moves at right angles to a magnetic field. What is its path? | A circle | A straight line | A parabola | A spiral outwards | The magnetic force is always perpendicular to the velocity, giving circular motion.
+M1#physics-u17-01-q1: The SI unit of magnetic flux density is: | Tesla | Weber | Henry | Gauss | T = N A^{-1} m^{-1}.
+M2#physics-u17-01-q2: Earth's magnetic field strength at the surface is about: | 50 μT | 1 T | 5 mT | 50 nT | Tens of microtesla.
+M2#physics-u17-01-q3: A charged particle moves at right angles to a magnetic field. What is its path? | A circle | A straight line | A parabola | A spiral outwards | The magnetic force is always perpendicular to the velocity, giving circular motion.
 
 ## Magnetic forces on charges
 S: A magnetic field exerts a force on a moving charge, perpendicular to both its velocity and the field. Because the force is always sideways, it changes the direction of motion but never the speed.
@@ -44,9 +44,9 @@ P: **Investigate with the lab.** Watch the particle move in a circle at constant
 IX: lorentz
 Q: Why does the magnetic force do no work? | It's always perpendicular to the velocity.
 Q: When is the magnetic force on a moving charge zero? | When the charge moves parallel (or antiparallel) to B, or is at rest.
-M1: An electron moving east in a field pointing north is pushed: | Up (out of the ground) | Down | West | North | F = −e(v × B): v × B is down, so force is up.
-M2: The magnetic force on a charge depends on: | Its charge, speed and angle to B | Its mass | Only B | Its position only | qvB sin θ.
-M2: Why does a magnetic field do no work on a moving charge? | The force is always perpendicular to the velocity | The force is always zero | The charge stops moving | Magnetic fields store no energy | Work needs a force component along the motion; the magnetic force has none.
+M1#physics-u17-02-q1: An electron moving east in a field pointing north is pushed: | Up (out of the ground) | Down | West | North | F = −e(v × B): v × B is down, so force is up.
+M2#physics-u17-02-q2: The magnetic force on a charge depends on: | Its charge, speed and angle to B | Its mass | Only B | Its position only | qvB sin θ.
+M2#physics-u17-02-q3: Why does a magnetic field do no work on a moving charge? | The force is always perpendicular to the velocity | The force is always zero | The charge stops moving | Magnetic fields store no energy | Work needs a force component along the motion; the magnetic force has none.
 
 ## Lorentz force
 S: The Lorentz force is the total electromagnetic force on a charged particle: the electric force plus the magnetic force. With Maxwell's equations it completes classical electromagnetism.
@@ -68,9 +68,9 @@ P: **Investigate with the lab.** Turn on an electric field as well as B and watc
 IX: lorentz
 Q: State the Lorentz force law. | F = q(E + v × B).
 Q: How does a velocity selector work? | Crossed E and B fields balance for particles with v = E/B, which pass undeflected.
-M1: Thomson measured the electron's: | Charge-to-mass ratio | Charge alone | Mass alone | Spin | e/m using crossed fields.
-M2: In a frame moving with a charge, its magnetic force appears as: | An electric force | No force | A gravitational force | A stronger magnetic force | Fields transform.
-M2: In a velocity selector, which particles pass straight through? | Those with v = E/B | Those with v = B/E | All particles at any speed | Only uncharged particles | The electric and magnetic forces balance when qE = qvB.
+M1#physics-u17-03-q1: Thomson measured the electron's: | Charge-to-mass ratio | Charge alone | Mass alone | Spin | e/m using crossed fields.
+M2#physics-u17-03-q2: In a frame moving with a charge, its magnetic force appears as: | An electric force | No force | A gravitational force | A stronger magnetic force | Fields transform.
+M2#physics-u17-03-q3: In a velocity selector, which particles pass straight through? | Those with v = E/B | Those with v = B/E | All particles at any speed | Only uncharged particles | The electric and magnetic forces balance when qE = qvB.
 
 ## Magnetic forces on current-carrying wires
 S: A current-carrying wire in a magnetic field feels a force because the moving charges in it do. This force drives electric motors, loudspeakers and electromagnetic rail guns.
@@ -90,8 +90,8 @@ X: A 0.2 m wire carries 5 A perpendicular to 0.3 T. Force?
 !: A wire parallel to the field feels no force however large the current.
 Q: What is the force on a current in a magnetic field? | F = BIL sin θ.
 Q: Do parallel currents attract or repel? | Attract.
-M1: Two wires 1 m apart each carry 1 A in the same direction. Force per metre: | 2 × 10^{-7} N, attractive | 2 × 10^{-7} N, repulsive | 1 N | 0 | μ_{0}/(2π).
-M2: The torque on a current loop is maximum when its plane is: | Parallel to B | Perpendicular to B | At 45° | Irrelevant | m ⊥ B.
+M1#physics-u17-04-q1: Two wires 1 m apart each carry 1 A in the same direction. Force per metre: | 2 × 10^{-7} N, attractive | 2 × 10^{-7} N, repulsive | 1 N | 0 | μ_{0}/(2π).
+M2#physics-u17-04-q2: The torque on a current loop is maximum when its plane is: | Parallel to B | Perpendicular to B | At 45° | Irrelevant | m ⊥ B.
 
 ## Motion of charged particles in magnetic fields
 S: In a uniform magnetic field a charged particle moves in a circle (or helix), with a radius set by its momentum and a frequency independent of its speed. This underlies cyclotrons, mass spectrometers and particle detectors.
@@ -113,9 +113,9 @@ P: **Investigate with the lab.** Double the speed and check the radius doubles. 
 IX: lorentz
 Q: What is the radius of a charged particle's path in a magnetic field? | r = mv/(qB).
 Q: Why does the cyclotron frequency not depend on speed (non-relativistically)? | Faster particles move on proportionally larger circles, taking the same time per orbit.
-M1: Doubling a particle's speed in a fixed field changes its orbit radius by: | ×2 | ×4 | ×1/2 | No change | r ∝ v.
-M2: In a bubble chamber, an electron and positron with equal speeds curve: | Equally, in opposite directions | The same way | Only the electron curves | Not at all | Opposite charges.
-M2: A proton circling in a magnetic field has its speed doubled. What happens to its period? | It stays the same | It doubles | It halves | It quadruples | r = mv/qB grows with v, but T = 2πm/qB doesn't depend on speed.
+M1#physics-u17-05-q1: Doubling a particle's speed in a fixed field changes its orbit radius by: | ×2 | ×4 | ×1/2 | No change | r ∝ v.
+M2#physics-u17-05-q2: In a bubble chamber, an electron and positron with equal speeds curve: | Equally, in opposite directions | The same way | Only the electron curves | Not at all | Opposite charges.
+M2#physics-u17-05-q3: A proton circling in a magnetic field has its speed doubled. What happens to its period? | It stays the same | It doubles | It halves | It quadruples | r = mv/qB grows with v, but T = 2πm/qB doesn't depend on speed.
 
 ## Biot–Savart law
 S: The Biot–Savart law gives the magnetic field produced by a small element of current. Adding up (integrating) the contributions from all elements gives the field of any current distribution.
@@ -134,8 +134,8 @@ X: Field at the centre of a 50-turn coil of radius 0.1 m carrying 2 A?
 !: The Biot–Savart law is for steady currents; for time-varying fields, retardation effects (Jefimenko's equations) matter.
 Q: What is the field of a long straight wire? | B = μ_{0}I/(2πd), circling the wire.
 Q: Why are Helmholtz coils useful? | They produce a very uniform field in the region between them.
-M1: The field of a long straight wire falls with distance as: | 1/d | 1/d^{2} | 1/d^{3} | Constant | From Biot–Savart or Ampère.
-M2: Doubling the radius of a loop (same current) changes the field at its centre by: | ×1/2 | ×2 | ×1/4 | No change | B ∝ 1/R.
+M1#physics-u17-06-q1: The field of a long straight wire falls with distance as: | 1/d | 1/d^{2} | 1/d^{3} | Constant | From Biot–Savart or Ampère.
+M2#physics-u17-06-q2: Doubling the radius of a loop (same current) changes the field at its centre by: | ×1/2 | ×2 | ×1/4 | No change | B ∝ 1/R.
 
 ## Ampère's law
 S: Ampère's law relates the magnetic field circulating around a closed loop to the current passing through it. With symmetry it finds fields quickly, and with Maxwell's correction it's one of the four fundamental equations.
@@ -156,8 +156,8 @@ X: Field inside a 20 cm solenoid with 400 turns carrying 3 A?
 !: Ampère's law always holds (with displacement current), but is only useful for finding B when symmetry makes B constant along the loop.
 Q: State Ampère's law (steady currents). | The line integral of B round a closed loop equals μ_{0} times the enclosed current.
 Q: What is the field outside an ideal long solenoid? | Approximately zero.
-M1: The field inside a long solenoid depends on: | Turns per length and current | Its radius | Its total length only | Position inside | B = μ_{0}nI.
-M2: Why is there no field outside a coaxial cable? | The enclosed net current is zero | The insulation blocks it | Copper is non-magnetic | It's AC | Equal and opposite currents.
+M1#physics-u17-07-q1: The field inside a long solenoid depends on: | Turns per length and current | Its radius | Its total length only | Position inside | B = μ_{0}nI.
+M2#physics-u17-07-q2: Why is there no field outside a coaxial cable? | The enclosed net current is zero | The insulation blocks it | Copper is non-magnetic | It's AC | Equal and opposite currents.
 
 ## Magnetic dipoles
 S: A current loop, a bar magnet, and an electron all behave as magnetic dipoles: they produce a characteristic field and twist to align with external fields. The magnetic moment measures their strength.
@@ -179,8 +179,8 @@ D: phys-u17-coil-torque
 !: A magnetic dipole in a uniform field feels only torque; a net force needs a field gradient.
 Q: What is the magnetic moment of a current loop? | m = NIA, perpendicular to the loop by the right-hand rule.
 Q: What did the Stern–Gerlach experiment show? | Spin angular momentum is quantised: atoms split into discrete beams.
-M1: The Bohr magneton is about: | 9.3 × 10^{-24} J T^{-1} | 1.6 × 10^{-19} J T^{-1} | 5.1 × 10^{-27} J T^{-1} | 1 J T^{-1} | eħ/2m_{e}.
-M2: A dipole's energy is lowest when m is: | Parallel to B | Antiparallel | Perpendicular | Zero | U = −m·B.
+M1#physics-u17-08-q1: The Bohr magneton is about: | 9.3 × 10^{-24} J T^{-1} | 1.6 × 10^{-19} J T^{-1} | 5.1 × 10^{-27} J T^{-1} | 1 J T^{-1} | eħ/2m_{e}.
+M2#physics-u17-08-q2: A dipole's energy is lowest when m is: | Parallel to B | Antiparallel | Perpendicular | Zero | U = −m·B.
 
 ## Magnetic flux
 S: Magnetic flux measures the total magnetic field passing through a surface. Changes in flux through a circuit induce EMFs, which makes flux the central quantity of electromagnetic induction.
@@ -202,8 +202,8 @@ D: phys-u17-flux-linkage
 !: θ is measured between B and the normal to the surface, not the surface itself.
 Q: Define magnetic flux. | Φ = BA cos θ, the field component normal to a surface times its area.
 Q: What is the flux quantum? | Φ_{0} = h/(2e) ≈ 2.07 × 10^{-15} Wb.
-M1: The unit of magnetic flux is: | Weber | Tesla | Henry | Ampere | T m^{2}.
-M2: A coil's plane is parallel to B. The flux through it is: | Zero | Maximum | BA/2 | Negative | Normal ⊥ B.
+M1#physics-u17-09-q1: The unit of magnetic flux is: | Weber | Tesla | Henry | Ampere | T m^{2}.
+M2#physics-u17-09-q2: A coil's plane is parallel to B. The flux through it is: | Zero | Maximum | BA/2 | Negative | Normal ⊥ B.
 
 ## Electromagnetic induction
 S: Electromagnetic induction is the production of an EMF by a changing magnetic flux. Discovered by Faraday in 1831, it powers generators, transformers, induction cooktops, wireless chargers and electric guitars.
@@ -222,8 +222,8 @@ X: A 0.5 m rod moves at 4 m s^{-1} perpendicular to 0.2 T. EMF?
 !: A steady magnetic field through a stationary loop induces nothing; only change does.
 Q: What is electromagnetic induction? | The generation of an EMF by a change in magnetic flux.
 Q: What is the motional EMF of a rod? | ε = BLv.
-M1: An induction hob heats: | Metal pans via eddy currents | The glass surface | Any material | Water directly | Changing B induces currents in the pan.
-M2: A magnet held still inside a coil induces: | No EMF | A steady EMF | AC EMF | A large current | No flux change.
+M1#physics-u17-10-q1: An induction hob heats: | Metal pans via eddy currents | The glass surface | Any material | Water directly | Changing B induces currents in the pan.
+M2#physics-u17-10-q2: A magnet held still inside a coil induces: | No EMF | A steady EMF | AC EMF | A large current | No flux change.
 
 ## Faraday's law
 S: Faraday's law states that the EMF induced in a circuit equals the rate of change of magnetic flux linkage through it. It's one of Maxwell's equations and the basis of electric power generation.
@@ -243,8 +243,8 @@ D: phys-u17-generator-emf
 !: EMF depends on the rate of change of flux, not on how large the flux is.
 Q: State Faraday's law. | The induced EMF equals the negative rate of change of flux linkage.
 Q: What is the peak EMF of a rotating coil generator? | NBAω.
-M1: Flux through a 10-turn coil falls from 0.3 to 0.1 Wb in 0.5 s. EMF: | 4 V | 0.4 V | 2 V | 40 V | 10 × 0.2/0.5.
-M2: Doubling a generator's rotation speed changes peak EMF by: | ×2 | ×4 | ×1/2 | No change | ∝ ω.
+M1#physics-u17-11-q1: Flux through a 10-turn coil falls from 0.3 to 0.1 Wb in 0.5 s. EMF: | 4 V | 0.4 V | 2 V | 40 V | 10 × 0.2/0.5.
+M2#physics-u17-11-q2: Doubling a generator's rotation speed changes peak EMF by: | ×2 | ×4 | ×1/2 | No change | ∝ ω.
 
 ## Lenz's law
 S: Lenz's law says an induced current flows in the direction that opposes the change that caused it. It's energy conservation in disguise: if induced currents helped the change, you'd get energy for nothing.
@@ -262,8 +262,8 @@ X: A bar magnet's north pole is pushed towards a coil. Which pole does the coil 
 !: Lenz's law opposes the change in flux, not the flux itself; if flux is decreasing, the induced current tries to maintain it.
 Q: State Lenz's law. | The induced current flows so as to oppose the change in flux that produced it.
 Q: Why does a magnet fall slowly through a copper pipe? | Eddy currents induced in the pipe produce fields opposing its motion.
-M1: Lenz's law is a consequence of: | Conservation of energy | Conservation of charge | Newton's first law | Ohm's law | Otherwise perpetual motion.
-M2: A generator becomes harder to turn when: | More current is drawn from it | It's disconnected | It spins slower | The magnets are removed | Induced current opposes motion.
+M1#physics-u17-12-q1: Lenz's law is a consequence of: | Conservation of energy | Conservation of charge | Newton's first law | Ohm's law | Otherwise perpetual motion.
+M2#physics-u17-12-q2: A generator becomes harder to turn when: | More current is drawn from it | It's disconnected | It spins slower | The magnets are removed | Induced current opposes motion.
 
 ## Inductance
 S: Inductance is the property of a circuit that opposes changes in current, by producing an EMF proportional to the rate of change. It measures how much flux a current links, per ampere.
@@ -287,9 +287,9 @@ P: **Investigate with the lab.** Increase the inductance and see the current tak
 IX: transients
 Q: Define inductance. | Flux linkage per unit current, L = NΦ/I; the back EMF per rate of change of current.
 Q: How does an iron core change inductance? | It multiplies it by the relative permeability.
-M1: The unit of inductance is: | Henry | Farad | Tesla | Weber | V s A^{-1}.
-M2: Current changes at 200 A s^{-1} in a 50 mH coil. Back EMF: | 10 V | 4 V | 250 V | 0.25 V | L dI/dt.
-M2: What does an inductor oppose? | Changes in current | Steady current | Voltage across a resistor | Charge stored on a plate | Self-inductance produces a back emf whenever the current changes.
+M1#physics-u17-13-q1: The unit of inductance is: | Henry | Farad | Tesla | Weber | V s A^{-1}.
+M2#physics-u17-13-q2: Current changes at 200 A s^{-1} in a 50 mH coil. Back EMF: | 10 V | 4 V | 250 V | 0.25 V | L dI/dt.
+M2#physics-u17-13-q3: What does an inductor oppose? | Changes in current | Steady current | Voltage across a resistor | Charge stored on a plate | Self-inductance produces a back emf whenever the current changes.
 
 ## Self-induction and mutual induction
 S: Self-induction is a changing current inducing an EMF in its own circuit; mutual induction is a changing current in one circuit inducing an EMF in another nearby. Transformers, wireless chargers and many sensors depend on mutual induction.
@@ -310,9 +310,9 @@ P: **Investigate with the lab.** Switch the RL circuit on and watch the inductor
 IX: transients
 Q: What is mutual inductance? | The EMF induced in one circuit per unit rate of change of current in another.
 Q: Why do twisted-pair cables reduce interference? | Each twist reverses the loop's orientation, cancelling induced EMFs.
-M1: Coupling coefficient k = 1 means: | All flux from one coil links the other | No coupling | Half the flux links | Infinite inductance | Perfect coupling.
-M2: NFC payment uses: | Mutual induction between coils | Radio broadcast only | Light | Sound | Near-field magnetic coupling.
-M2: When is the back emf across an inductor largest? | When the current is changing fastest | When the current is largest | When the current is zero and steady | It is constant at all times | Back emf = L × dI/dt, so it is largest when the current changes fastest.
+M1#physics-u17-14-q1: Coupling coefficient k = 1 means: | All flux from one coil links the other | No coupling | Half the flux links | Infinite inductance | Perfect coupling.
+M2#physics-u17-14-q2: NFC payment uses: | Mutual induction between coils | Radio broadcast only | Light | Sound | Near-field magnetic coupling.
+M2#physics-u17-14-q3: When is the back emf across an inductor largest? | When the current is changing fastest | When the current is largest | When the current is zero and steady | It is constant at all times | Back emf = L × dI/dt, so it is largest when the current changes fastest.
 
 ## Energy stored in magnetic fields
 S: Building up a current in an inductor stores energy in its magnetic field. Every magnetic field holds energy, with density proportional to B squared, and releasing it can be violent.
@@ -335,8 +335,8 @@ X: Energy in an MRI magnet: 3 T over ~1 m^{3}?
 !: Interrupting current in a large inductor releases all its stored energy quickly; protection circuits are essential.
 Q: What is the energy density of a magnetic field? | u = B^{2}/(2μ_{0}).
 Q: What is a magnet quench? | A sudden loss of superconductivity that converts stored magnetic energy to heat.
-M1: Doubling B multiplies the field's energy density by: | 4 | 2 | 8 | √2 | ∝ B^{2}.
-M2: Energy in a 0.2 H inductor at 5 A: | 2.5 J | 1 J | 5 J | 0.5 J | ½ × 0.2 × 25.
+M1#physics-u17-15-q1: Doubling B multiplies the field's energy density by: | 4 | 2 | 8 | √2 | ∝ B^{2}.
+M2#physics-u17-15-q2: Energy in a 0.2 H inductor at 5 A: | 2.5 J | 1 J | 5 J | 0.5 J | ½ × 0.2 × 25.
 
 ## Magnetic materials
 S: Materials respond to magnetic fields because their atoms carry magnetic moments from electron orbits and spins. Depending on how those moments interact, a material is diamagnetic, paramagnetic, ferromagnetic, antiferromagnetic or ferrimagnetic.
@@ -360,8 +360,8 @@ X: Liquid oxygen is drawn between the poles of a strong magnet; liquid nitrogen 
 !: Every material is diamagnetic; paramagnetism or ferromagnetism only dominate when unpaired spins are present.
 Q: What is magnetic susceptibility? | χ = M/H, how strongly a material magnetises in a field.
 Q: What distinguishes ferromagnets from paramagnets? | Ferromagnets have spontaneous alignment of moments in domains due to exchange interaction.
-M1: Which is ferrimagnetic? | Magnetite | Iron | Copper | Oxygen | Unequal antiparallel sublattices.
-M2: Diamagnetic materials are: | Weakly repelled by fields | Strongly attracted | Permanently magnetised | Superconductors only | χ < 0.
+M1#physics-u17-16-q1: Which is ferrimagnetic? | Magnetite | Iron | Copper | Oxygen | Unequal antiparallel sublattices.
+M2#physics-u17-16-q2: Diamagnetic materials are: | Weakly repelled by fields | Strongly attracted | Permanently magnetised | Superconductors only | χ < 0.
 
 ## Diamagnetism
 S: Diamagnetism is a weak repulsion from magnetic fields shown by all materials. An applied field changes electron orbits so they produce a small opposing moment, a quantum version of Lenz's law.
@@ -380,8 +380,8 @@ X: Why is pyrolytic graphite used for desk-toy levitation over magnets?
 !: Diamagnetism is present in all materials but is usually masked by stronger paramagnetic or ferromagnetic effects.
 Q: Why are all materials diamagnetic? | Applied fields alter all electron orbits to produce opposing moments.
 Q: What is the Meissner effect? | A superconductor's expulsion of magnetic field: perfect diamagnetism.
-M1: Diamagnetic susceptibility depends on temperature: | Hardly at all | Strongly, as 1/T | Only above T_{c} | Exponentially | It's orbital, not thermal alignment.
-M2: A frog was levitated using: | Diamagnetism in a strong field gradient | Superconductivity | Electrostatics | Air jets | Water is diamagnetic.
+M1#physics-u17-17-q1: Diamagnetic susceptibility depends on temperature: | Hardly at all | Strongly, as 1/T | Only above T_{c} | Exponentially | It's orbital, not thermal alignment.
+M2#physics-u17-17-q2: A frog was levitated using: | Diamagnetism in a strong field gradient | Superconductivity | Electrostatics | Air jets | Water is diamagnetic.
 
 ## Paramagnetism
 S: Paramagnetic materials have atoms with unpaired electrons whose moments align partly with an applied field, giving weak attraction. Thermal motion fights the alignment, so paramagnetism weakens as temperature rises.
@@ -403,8 +403,8 @@ D: phys-u17-curie-law
 !: Paramagnets don't retain magnetisation when the field is removed (unlike ferromagnets).
 Q: State Curie's law. | Paramagnetic susceptibility is inversely proportional to temperature: χ = C/T.
 Q: How does adiabatic demagnetisation cool a sample? | Reducing the field at constant entropy lets spins disorder, absorbing energy from the lattice.
-M1: Paramagnetism arises from: | Unpaired electron spins | Paired electrons | Superconductivity | Nuclear forces only | Permanent atomic moments.
-M2: Gadolinium contrast agents work in MRI because they are: | Strongly paramagnetic | Diamagnetic | Radioactive | Superconducting | They shorten relaxation times.
+M1#physics-u17-18-q1: Paramagnetism arises from: | Unpaired electron spins | Paired electrons | Superconductivity | Nuclear forces only | Permanent atomic moments.
+M2#physics-u17-18-q2: Gadolinium contrast agents work in MRI because they are: | Strongly paramagnetic | Diamagnetic | Radioactive | Superconducting | They shorten relaxation times.
 
 ## Ferromagnetism
 S: In ferromagnets, a quantum-mechanical exchange interaction makes neighbouring spins align, producing strong spontaneous magnetisation in regions called domains. Above the Curie temperature, thermal motion destroys the order and the material becomes paramagnetic.
@@ -422,8 +422,8 @@ X: Why does heating a permanent magnet above its Curie temperature ruin it?
 !: A ferromagnet's strength comes from the exchange interaction, not from magnetic attraction between atoms, which is a thousand times too weak.
 Q: What causes ferromagnetism? | The quantum exchange interaction aligning neighbouring electron spins.
 Q: What happens above the Curie temperature? | Spontaneous magnetisation vanishes; the material becomes paramagnetic.
-M1: Domains form in ferromagnets to: | Reduce magnetostatic (stray field) energy | Increase energy | Conduct electricity | Absorb heat | Closure domains minimise external field.
-M2: Iron's Curie temperature is about: | 1043 K | 300 K | 77 K | 2000 K | 770 °C.
+M1#physics-u17-19-q1: Domains form in ferromagnets to: | Reduce magnetostatic (stray field) energy | Increase energy | Conduct electricity | Absorb heat | Closure domains minimise external field.
+M2#physics-u17-19-q2: Iron's Curie temperature is about: | 1043 K | 300 K | 77 K | 2000 K | 770 °C.
 
 ## Hysteresis
 S: Hysteresis is the lagging of a ferromagnet's magnetisation behind the applied field. Its loop shows how hard a material is to magnetise and demagnetise, and the loop's area is energy lost each cycle.
@@ -443,8 +443,8 @@ X: A transformer core loses 50 J m^{-3} per cycle at 50 Hz; core volume 0.002 m^
 !: A wide hysteresis loop is good for permanent magnets but bad for transformer cores.
 Q: What is coercivity? | The reverse field needed to reduce a ferromagnet's magnetisation to zero.
 Q: What does the area of a hysteresis loop represent? | Energy dissipated per unit volume per cycle.
-M1: Transformer cores should have: | Narrow hysteresis loops | Wide loops | High coercivity | High remanence | Low losses.
-M2: The best commercial permanent magnets are made of: | NdFeB | Copper | Soft iron | Aluminium | Highest energy product.
+M1#physics-u17-20-q1: Transformer cores should have: | Narrow hysteresis loops | Wide loops | High coercivity | High remanence | Low losses.
+M2#physics-u17-20-q2: The best commercial permanent magnets are made of: | NdFeB | Copper | Soft iron | Aluminium | Highest energy product.
 
 ## Electromagnets
 S: An electromagnet is a coil of wire, usually around an iron core, that becomes magnetic when current flows. Its strength can be controlled and switched, making electromagnets essential in motors, relays, cranes and MRI.
@@ -466,8 +466,8 @@ X: A 1000-turn, 0.1 m solenoid with an iron core (μ_{r} = 500) carries 0.2 A. E
 !: Iron saturates around 2 T; adding more current then barely increases the field.
 Q: Why do electromagnets usually have iron cores? | Iron's high permeability multiplies the field.
 Q: Why do MRI scanners use superconducting magnets? | Iron saturates near 2 T, and resistive coils would need enormous power; superconductors carry large currents without loss.
-M1: An electromagnet's field can be increased by: | More turns or current, or an iron core | A plastic core | Shorter wire only | Reversing current | B ∝ nIμ_{r}.
-M2: A relay uses an electromagnet to: | Switch a large current with a small one | Measure voltage | Store energy | Generate AC | Control circuit.
+M1#physics-u17-21-q1: An electromagnet's field can be increased by: | More turns or current, or an iron core | A plastic core | Shorter wire only | Reversing current | B ∝ nIμ_{r}.
+M2#physics-u17-21-q2: A relay uses an electromagnet to: | Switch a large current with a small one | Measure voltage | Store energy | Generate AC | Control circuit.
 
 ## Solenoids and toroids
 S: A solenoid is a long helical coil; a toroid is a coil wound around a ring. Both produce well-defined, nearly uniform fields inside and little outside, making them standard sources of magnetic fields and inductors.
@@ -488,8 +488,8 @@ X: A toroid with 600 turns, mean radius 0.1 m, current 2 A. Field at the mean ra
 !: The ideal-solenoid formula assumes length ≫ radius; short coils have weaker, less uniform fields.
 Q: What is the field inside a long solenoid? | B = μ_{0}nI.
 Q: Why do toroids have little stray field? | The field is confined inside the ring by its closed geometry.
-M1: Halving the length of a solenoid but keeping the same turns: | Doubles the internal field | Halves it | Leaves it unchanged | Quadruples it | n doubles.
-M2: Tokamaks use which coil shape to confine plasma? | Toroidal | Straight solenoid | Single loop | Helmholtz | Plasma in a doughnut.
+M1#physics-u17-22-q1: Halving the length of a solenoid but keeping the same turns: | Doubles the internal field | Halves it | Leaves it unchanged | Quadruples it | n doubles.
+M2#physics-u17-22-q2: Tokamaks use which coil shape to confine plasma? | Toroidal | Straight solenoid | Single loop | Helmholtz | Plasma in a doughnut.
 
 ## Electric motors and generators
 S: Motors turn electrical energy into motion using the force on currents in magnetic fields; generators do the reverse using induction. They're the same machine run in opposite directions.
@@ -511,8 +511,8 @@ D: phys-u17-motor-back-emf
 !: A stalled motor has no back EMF, so current is maximal and windings can burn out.
 Q: What is back EMF in a motor? | The EMF induced in the spinning coils, opposing the supply and limiting current.
 Q: How does an induction motor work? | A rotating field induces currents in the rotor, which then experience a force, following the field with slight slip.
-M1: A commutator in a DC motor: | Reverses the coil current every half turn | Smooths voltage | Increases speed | Generates AC | Keeps torque in one direction.
-M2: Electric car regenerative braking works by: | Using the motor as a generator | Friction pads | Releasing magnets | Air resistance | Induction converts KE to electrical.
+M1#physics-u17-23-q1: A commutator in a DC motor: | Reverses the coil current every half turn | Smooths voltage | Increases speed | Generates AC | Keeps torque in one direction.
+M2#physics-u17-23-q2: Electric car regenerative braking works by: | Using the motor as a generator | Friction pads | Releasing magnets | Air resistance | Induction converts KE to electrical.
 
 ## Maxwell's equations
 S: Maxwell's four equations describe all classical electric and magnetic phenomena: how charges and currents create fields, how changing fields create each other, and therefore how light propagates.
@@ -533,8 +533,8 @@ X: Compute c from μ_{0} and ε_{0}.
 !: Maxwell's equations are linear in the fields; superposition of electromagnetic fields holds exactly in vacuum.
 Q: Which Maxwell equation says there are no magnetic monopoles? | ∇·B = 0.
 Q: What did Maxwell's equations predict about light? | It's an electromagnetic wave travelling at c = 1/√(μ_{0}ε_{0}).
-M1: Faraday's law in Maxwell's equations is: | ∇ × E = −∂B/∂t | ∇·E = ρ/ε_{0} | ∇·B = 0 | ∇ × B = μ_{0}J | Changing B induces E.
-M2: Who first produced and detected radio waves? | Hertz | Maxwell | Marconi | Faraday | 1887.
+M1#physics-u17-24-q1: Faraday's law in Maxwell's equations is: | ∇ × E = −∂B/∂t | ∇·E = ρ/ε_{0} | ∇·B = 0 | ∇ × B = μ_{0}J | Changing B induces E.
+M2#physics-u17-24-q2: Who first produced and detected radio waves? | Hertz | Maxwell | Marconi | Faraday | 1887.
 
 ## Displacement current
 S: Displacement current is Maxwell's addition to Ampère's law: a changing electric field produces a magnetic field just as a real current does. It made electromagnetism consistent and predicted electromagnetic waves.
@@ -552,8 +552,8 @@ X: A parallel-plate capacitor (A = 0.01 m^{2}) has field changing at 10^{12} V m
 !: Displacement current isn't a flow of charge; it's a changing electric field that acts as a source of magnetic field.
 Q: What is displacement current? | ε_{0} times the rate of change of electric flux; it produces magnetic fields like a real current.
 Q: Why did Maxwell add displacement current? | To make Ampère's law consistent with charge conservation (the capacitor paradox).
-M1: Displacement current between capacitor plates equals: | The conduction current in the wires | Zero | Twice the current | The charge | Continuity.
-M2: Displacement current was essential for predicting: | Electromagnetic waves | Electrostatics | Ohm's law | Coulomb's law | Changing E creates B in vacuum.
+M1#physics-u17-25-q1: Displacement current between capacitor plates equals: | The conduction current in the wires | Zero | Twice the current | The charge | Continuity.
+M2#physics-u17-25-q2: Displacement current was essential for predicting: | Electromagnetic waves | Electrostatics | Ohm's law | Coulomb's law | Changing E creates B in vacuum.
 
 ## Electromagnetic potentials
 S: Instead of working with E and B directly, electromagnetism can be written in terms of a scalar potential V and a vector potential A. The potentials simplify calculations, are essential in quantum mechanics, and combine into a relativistic four-vector.
@@ -573,8 +573,8 @@ X: Vector potential outside a long solenoid of flux Φ?
 !: V and A aren't unique; only gauge-invariant combinations (E, B, loop integrals) are measurable.
 Q: How are E and B obtained from the potentials? | B = ∇ × A; E = −∇V − ∂A/∂t.
 Q: What is the Aharonov–Bohm effect? | Charged particles are affected by electromagnetic potentials even in regions with zero field.
-M1: The vector potential outside an ideal solenoid is: | Non-zero, circulating | Zero | Radial | Uniform | ∮A·dl = Φ.
-M2: Retarded potentials account for: | The finite speed of propagation | Gauge freedom | Static charges only | Magnetic monopoles | Signals travel at c.
+M1#physics-u17-26-q1: The vector potential outside an ideal solenoid is: | Non-zero, circulating | Zero | Radial | Uniform | ∮A·dl = Φ.
+M2#physics-u17-26-q2: Retarded potentials account for: | The finite speed of propagation | Gauge freedom | Static charges only | Magnetic monopoles | Signals travel at c.
 
 ## Gauge transformations
 S: The electromagnetic potentials can be changed by a gauge transformation without altering the physical fields. This freedom, gauge symmetry, turns out to be the organising principle behind all the fundamental forces.
@@ -594,8 +594,8 @@ X: Show B is unchanged under A → A + ∇χ.
 !: Choosing a gauge is a calculational convenience; physical predictions must not depend on it.
 Q: What is a gauge transformation? | A change of the potentials (A → A + ∇χ, V → V − ∂χ/∂t) that leaves E and B unchanged.
 Q: Which gauge is manifestly Lorentz invariant? | The Lorenz gauge.
-M1: Gauge symmetry of electromagnetism is related to conservation of: | Charge | Energy | Momentum | Mass | Noether's theorem.
-M2: The strong force is described by a gauge theory based on: | SU(3) | U(1) | SU(2) | SO(3) | Quantum chromodynamics.
+M1#physics-u17-27-q1: Gauge symmetry of electromagnetism is related to conservation of: | Charge | Energy | Momentum | Mass | Noether's theorem.
+M2#physics-u17-27-q2: The strong force is described by a gauge theory based on: | SU(3) | U(1) | SU(2) | SO(3) | Quantum chromodynamics.
 
 ## Electromagnetic boundary conditions
 S: At the boundary between two materials, Maxwell's equations require particular components of E, D, B and H to match. These conditions determine reflection and refraction of light, waveguide modes and how fields behave at conductor surfaces.
@@ -617,8 +617,8 @@ D: phys-u17-skin-depth-copper
 !: The normal component of B and tangential E are always continuous; D_{⊥} and H_{∥} jump only with free surface charge or current.
 Q: What is the skin depth? | The depth at which an AC field in a conductor falls to 1/e: δ = √(2/(μσω)).
 Q: Which field components are continuous across any boundary? | Normal B and tangential E.
-M1: At a perfect conductor surface, tangential E is: | Zero | Maximum | Equal to normal E | Infinite | Charges cancel it.
-M2: Skin depth decreases when frequency: | Increases | Decreases | Is constant | It doesn't depend on frequency | δ ∝ 1/√f.
+M1#physics-u17-28-q1: At a perfect conductor surface, tangential E is: | Zero | Maximum | Equal to normal E | Infinite | Charges cancel it.
+M2#physics-u17-28-q2: Skin depth decreases when frequency: | Increases | Decreases | Is constant | It doesn't depend on frequency | δ ∝ 1/√f.
 
 ## Electromagnetic momentum and energy
 S: Electromagnetic fields carry energy and momentum. The Poynting vector gives the energy flow, and light exerts pressure when absorbed or reflected; conservation laws must include the fields as well as the charges.
@@ -642,6 +642,6 @@ X: Energy flows from a battery into a resistor. Where does the Poynting vector p
 !: Energy in circuits flows through the fields around the wires, not as electrons carrying it.
 Q: What does the Poynting vector represent? | The rate of energy flow per unit area in an electromagnetic field.
 Q: What is the radiation pressure of light on a perfect reflector? | 2I/c.
-M1: The Poynting vector is: | (1/μ_{0})E × B | E·B | ε_{0}E^{2} | qE | Energy flux.
-M2: Optical tweezers hold particles using: | Radiation pressure and gradient forces of light | Magnetism | Electrostatics | Sound | Focused laser beams.
+M1#physics-u17-29-q1: The Poynting vector is: | (1/μ_{0})E × B | E·B | ε_{0}E^{2} | qE | Energy flux.
+M2#physics-u17-29-q2: Optical tweezers hold particles using: | Radiation pressure and gradient forces of light | Magnetism | Electrostatics | Sound | Focused laser beams.
 `;

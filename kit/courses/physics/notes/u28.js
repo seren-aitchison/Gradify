@@ -18,8 +18,8 @@ X: Cut-off wavelength of a silicon photodetector?
 !: The band gap isn't a gap in space; it's a range of energies with no allowed electron states.
 Q: Why do semiconductors have band gaps? | Atomic levels broaden into bands, and the periodic lattice leaves energy ranges with no states.
 Q: Why is GaAs better than silicon for LEDs? | It has a direct band gap, allowing efficient radiative recombination.
-M1: The band gap of silicon is about: | 1.12 eV | 5.5 eV | 0.01 eV | 3.4 eV | Room temperature.
-M2: Wide-band-gap semiconductors like GaN suit: | High-power, high-temperature and blue-light devices | Infrared detectors only | Superconductors | Thermistors | Large E_{g}.
+M1#physics-u28-01-q1: The band gap of silicon is about: | 1.12 eV | 5.5 eV | 0.01 eV | 3.4 eV | Room temperature.
+M2#physics-u28-01-q2: Wide-band-gap semiconductors like GaN suit: | High-power, high-temperature and blue-light devices | Infrared detectors only | Superconductors | Thermistors | Large E_{g}.
 
 ## Intrinsic and extrinsic semiconductors
 S: An intrinsic semiconductor is pure: its few carriers come from electrons thermally excited across the gap. Extrinsic semiconductors are deliberately doped with impurities, which provide far more carriers and control whether electrons or holes dominate.
@@ -41,8 +41,8 @@ X: Silicon doped with 10^{16} cm^{-3} phosphorus at 300 K. Electron and hole den
 !: Doped semiconductors are electrically neutral overall; ionised dopants balance the free carriers.
 Q: What is an intrinsic semiconductor? | A pure semiconductor whose carriers come only from thermal excitation across the gap.
 Q: Why do silicon devices fail at high temperature? | Intrinsic carriers swamp the dopant-controlled carriers.
-M1: Boron in silicon acts as: | An acceptor (p-type) | A donor | An insulator | A metal | Group III.
-M2: Intrinsic carrier density rises with temperature: | Exponentially | Linearly | Not at all | Falls | e^{−E_{g}/2k_{B}T}.
+M1#physics-u28-02-q1: Boron in silicon acts as: | An acceptor (p-type) | A donor | An insulator | A metal | Group III.
+M2#physics-u28-02-q2: Intrinsic carrier density rises with temperature: | Exponentially | Linearly | Not at all | Falls | e^{−E_{g}/2k_{B}T}.
 
 ## Doping
 S: Doping adds tiny amounts of impurity atoms to a semiconductor to control its conductivity and carrier type. It's what turns silicon into diodes, transistors and solar cells.
@@ -62,8 +62,8 @@ X: Estimate the donor ionisation energy in silicon (m* ≈ 0.26m_{e}, ε_{r} = 1
 !: A dopant concentration of 1 part per million can raise silicon's conductivity by a factor of ~10^{5}.
 Q: Why are donor electrons easily freed? | The semiconductor's high permittivity and small effective mass make their binding very weak (tens of meV).
 Q: What is ion implantation? | Accelerating dopant ions into a wafer to place them at controlled doses and depths.
-M1: Phosphorus in silicon has how many valence electrons? | 5 | 3 | 4 | 6 | Group V.
-M2: A heavily doped, degenerate semiconductor behaves like: | A metal | An insulator | A superconductor | A dielectric | Fermi level in band.
+M1#physics-u28-03-q1: Phosphorus in silicon has how many valence electrons? | 5 | 3 | 4 | 6 | Group V.
+M2#physics-u28-03-q2: A heavily doped, degenerate semiconductor behaves like: | A metal | An insulator | A superconductor | A dielectric | Fermi level in band.
 
 ## Electrons and holes
 S: In semiconductors current is carried by electrons in the conduction band and by holes in the valence band. A hole is the absence of an electron, behaving like a positive particle with its own effective mass and mobility.
@@ -83,8 +83,8 @@ X: Silicon p-type with N_{A} = 10^{17} cm^{-3}. Electron density?
 !: A hole isn't a positron or a real particle; it's a collective description of many electrons' behaviour in a nearly full band.
 Q: What is a hole? | The absence of an electron in the valence band, behaving as a positive charge carrier.
 Q: State the mass action law. | np = n_{i}^{2} in thermal equilibrium.
-M1: In n-type silicon, holes are: | Minority carriers | Majority carriers | Absent | Equal to electrons | Few holes.
-M2: The dominant recombination in silicon is usually via: | Defect levels (SRH) | Photon emission | Auger always | Phonons alone | Indirect gap.
+M1#physics-u28-04-q1: In n-type silicon, holes are: | Minority carriers | Majority carriers | Absent | Equal to electrons | Few holes.
+M2#physics-u28-04-q2: The dominant recombination in silicon is usually via: | Defect levels (SRH) | Photon emission | Auger always | Phonons alone | Indirect gap.
 
 ## Carrier concentration
 S: The number of free electrons and holes in a semiconductor depends on temperature, band gap and doping. Calculating it from the density of states and Fermi–Dirac statistics is the starting point for every device model.
@@ -103,8 +103,8 @@ X: Ratio of n_{i} in silicon at 400 K vs 300 K (E_{g} ≈ 1.1 eV, ignoring T^{3/
 !: Formulas using Boltzmann statistics fail when the Fermi level gets within ~3k_{B}T of a band edge (degenerate doping).
 Q: What is the effective density of states? | The equivalent number of states at a band edge for carrier statistics, ∝ T^{3/2}.
 Q: What does charge neutrality require? | Free carriers and ionised dopants balance: n + N_{A}^{−} = p + N_{D}^{+}.
-M1: In the extrinsic region, n ≈: | N_{D} | n_{i} | N_{c} | 0 | Full ionisation.
-M2: The slope of ln n_{i} vs 1/T gives: | −E_{g}/(2k_{B}) | E_{g} | Mobility | Doping | Arrhenius.
+M1#physics-u28-05-q1: In the extrinsic region, n ≈: | N_{D} | n_{i} | N_{c} | 0 | Full ionisation.
+M2#physics-u28-05-q2: The slope of ln n_{i} vs 1/T gives: | −E_{g}/(2k_{B}) | E_{g} | Mobility | Doping | Arrhenius.
 
 ## Fermi level
 S: The Fermi level is the energy at which the probability of finding an electron is one half; it's the electrochemical potential of electrons. Its position in the gap shows whether a material is n-type or p-type, and in equilibrium it's flat across any device.
@@ -123,8 +123,8 @@ X: Silicon doped N_{D} = 10^{16} cm^{-3} at 300 K. Fermi level below E_{c}?
 !: In equilibrium the Fermi level is constant through a device; band edges bend instead.
 Q: Where is the Fermi level in an n-type semiconductor? | Closer to the conduction band.
 Q: What happens to Fermi levels when two materials contact? | They align, causing band bending and built-in fields.
-M1: The Fermi level in equilibrium across a p–n junction is: | Flat | Stepped | Sloped | Absent | Equilibrium.
-M2: A Schottky contact is: | Rectifying | Always ohmic | Superconducting | Insulating | Metal–semiconductor barrier.
+M1#physics-u28-06-q1: The Fermi level in equilibrium across a p–n junction is: | Flat | Stepped | Sloped | Absent | Equilibrium.
+M2#physics-u28-06-q2: A Schottky contact is: | Rectifying | Always ohmic | Superconducting | Insulating | Metal–semiconductor barrier.
 
 ## Drift and diffusion
 S: Charge carriers move in two ways: drift, pushed by an electric field, and diffusion, spreading from high to low concentration. Together they describe current in every semiconductor device.
@@ -143,8 +143,8 @@ X: Electron diffusion coefficient in silicon (μ_{n} = 1400 cm^{2} V^{-1} s^{-1}
 !: Diffusion current flows even with no electric field; it depends on concentration gradients, not on charge sign directly (signs differ for electrons and holes).
 Q: State the Einstein relation. | D/μ = k_{B}T/q.
 Q: What is the minority carrier diffusion length? | The average distance minority carriers diffuse before recombining, L = √(Dτ).
-M1: Drift current is driven by: | Electric field | Concentration gradient | Temperature only | Light only | qnμE.
-M2: In a p–n junction at equilibrium: | Drift and diffusion currents cancel | Only drift flows | Only diffusion flows | Current flows | Zero net current.
+M1#physics-u28-07-q1: Drift current is driven by: | Electric field | Concentration gradient | Temperature only | Light only | qnμE.
+M2#physics-u28-07-q2: In a p–n junction at equilibrium: | Drift and diffusion currents cancel | Only drift flows | Only diffusion flows | Current flows | Zero net current.
 
 ## Mobility and conductivity
 S: Mobility measures how quickly carriers move in an electric field; with carrier density, it sets conductivity. It depends on effective mass and scattering, and high mobility means faster, more efficient devices.
@@ -167,8 +167,8 @@ X: Resistivity of silicon doped with 10^{16} cm^{-3} phosphorus?
 !: Mobility falls with heavy doping because ionised dopants scatter carriers; more dopants don't increase conductivity proportionally.
 Q: How is mobility related to scattering time? | μ = qτ/m*.
 Q: Why does mobility fall at high temperature? | More phonon scattering.
-M1: In silicon, electron mobility is roughly how many times hole mobility? | 3 | 1 | 10 | 0.3 | 1400 vs 450.
-M2: Velocity saturation means: | Drift speed stops rising at high fields | Mobility is infinite | Carriers stop | Conductivity is zero | Hot carriers.
+M1#physics-u28-08-q1: In silicon, electron mobility is roughly how many times hole mobility? | 3 | 1 | 10 | 0.3 | 1400 vs 450.
+M2#physics-u28-08-q2: Velocity saturation means: | Drift speed stops rising at high fields | Mobility is infinite | Carriers stop | Conductivity is zero | Hot carriers.
 
 ## p-n junctions
 S: A p–n junction forms where p-type and n-type semiconductor meet. Carriers diffuse across, leaving a depletion region with a built-in electric field. This structure is the heart of diodes, solar cells, LEDs and transistors.
@@ -188,8 +188,8 @@ X: Built-in voltage for N_{A} = N_{D} = 10^{16} cm^{-3} in silicon?
 !: The built-in voltage can't be measured with a voltmeter across an unbiased diode; contact potentials cancel it.
 Q: What is the depletion region? | A zone near the junction emptied of free carriers, containing ionised dopants and a built-in field.
 Q: What happens to the depletion width under reverse bias? | It increases.
-M1: Under forward bias, current rises: | Exponentially with voltage | Linearly | Not at all | Quadratically | Lower barrier.
-M2: Varactor diodes use: | Voltage-dependent depletion capacitance | Light emission | Tunnelling | Magnetism | C ∝ V^{−1/2}.
+M1#physics-u28-09-q1: Under forward bias, current rises: | Exponentially with voltage | Linearly | Not at all | Quadratically | Lower barrier.
+M2#physics-u28-09-q2: Varactor diodes use: | Voltage-dependent depletion capacitance | Light emission | Tunnelling | Magnetism | C ∝ V^{−1/2}.
 
 ## Diodes
 S: A diode lets current flow easily in one direction and blocks it in the other. Semiconductor diodes rectify AC, protect circuits, regulate voltage, emit and detect light, and switch signals.
@@ -215,8 +215,8 @@ D: phys-u28-diode-iv
 !: Diode forward voltage falls ~2 mV per °C; used as a temperature sensor, but it can cause thermal runaway in parallel diodes.
 Q: State the Shockley diode equation. | I = I_{s}(e^{qV/nk_{B}T} − 1).
 Q: Why do Schottky diodes switch faster? | They conduct with majority carriers only, storing no minority charge.
-M1: A Zener diode is used for: | Voltage regulation | Light emission | Amplification | Rectifying high frequencies only | Controlled breakdown.
-M2: Forward current increases tenfold for each extra: | ~60 mV | 0.6 V | 6 V | 1 mV | At 300 K, n = 1.
+M1#physics-u28-10-q1: A Zener diode is used for: | Voltage regulation | Light emission | Amplification | Rectifying high frequencies only | Controlled breakdown.
+M2#physics-u28-10-q2: Forward current increases tenfold for each extra: | ~60 mV | 0.6 V | 6 V | 1 mV | At 300 K, n = 1.
 
 ## Transistors
 S: A transistor uses a small signal to control a larger current, acting as an amplifier or a switch. Invented in 1947, transistors are the basic building block of all modern electronics: there are now more than 10^{22} made in total.
@@ -234,8 +234,8 @@ X: A transistor switch: base current 1 mA with current gain 100 switches what co
 !: Transistors don't create energy; they control power from a supply using a small signal.
 Q: What two main roles do transistors play? | Amplifiers and switches.
 Q: Who invented the transistor? | Bardeen, Brattain and Shockley at Bell Labs (1947).
-M1: The most common transistor type in modern chips is the: | MOSFET | BJT | Vacuum tube | JFET | CMOS logic.
-M2: Moore's law describes: | Transistor counts doubling about every two years | Speed of light | Ohm's law | Battery capacity | Integration density.
+M1#physics-u28-11-q1: The most common transistor type in modern chips is the: | MOSFET | BJT | Vacuum tube | JFET | CMOS logic.
+M2#physics-u28-11-q2: Moore's law describes: | Transistor counts doubling about every two years | Speed of light | Ohm's law | Battery capacity | Integration density.
 
 ## Bipolar junction transistors
 S: A bipolar junction transistor (BJT) has three regions, emitter, base and collector, forming two p–n junctions. A small base current controls a much larger collector current, making BJTs excellent amplifiers.
@@ -260,8 +260,8 @@ X: A BJT with β = 150 and I_{C} = 3 mA. Base current and transconductance?
 !: β varies widely between transistors and with temperature; good circuit design makes gain depend on resistors, not on β.
 Q: Why must a BJT's base be thin? | So injected carriers cross it before recombining.
 Q: What is current gain β? | The ratio of collector current to base current.
-M1: An emitter follower has voltage gain about: | 1 | β | 100 | 0 | Buffer.
-M2: SiGe HBTs are used for: | High-frequency RF circuits | Solar cells | Memory | Power rectifiers | Fast bipolar.
+M1#physics-u28-12-q1: An emitter follower has voltage gain about: | 1 | β | 100 | 0 | Buffer.
+M2#physics-u28-12-q2: SiGe HBTs are used for: | High-frequency RF circuits | Solar cells | Memory | Power rectifiers | Fast bipolar.
 
 ## Field-effect transistors
 S: A field-effect transistor controls current through a channel using the electric field from a gate voltage. Because the gate draws almost no current, FETs are efficient switches and amplifiers with very high input impedance.
@@ -284,8 +284,8 @@ X: Why do FET amplifiers suit high-impedance sensors (like pH electrodes)?
 !: "Field effect" doesn't mean magnetic fields; it's the gate's electric field that controls the channel.
 Q: Why is a MOSFET's gate current nearly zero? | The gate is insulated from the channel by an oxide layer.
 Q: What is CMOS? | Logic using complementary n- and p-channel MOSFET pairs, drawing little static power.
-M1: Display pixels are driven by: | Thin-film transistors | BJTs | Vacuum tubes | Relays | TFTs on glass.
-M2: An enhancement-mode n-MOSFET is: | Off at zero gate voltage | On at zero gate voltage | Always on | A diode | Normally off.
+M1#physics-u28-13-q1: Display pixels are driven by: | Thin-film transistors | BJTs | Vacuum tubes | Relays | TFTs on glass.
+M2#physics-u28-13-q2: An enhancement-mode n-MOSFET is: | Off at zero gate voltage | On at zero gate voltage | Always on | A diode | Normally off.
 
 ## MOSFETs
 S: The metal–oxide–semiconductor FET is the most manufactured device in history. A gate voltage above a threshold creates a thin inversion layer of carriers under the oxide, forming a conducting channel between source and drain.
@@ -305,8 +305,8 @@ D: phys-u28-mosfet-output
 !: The 60 mV per decade subthreshold slope is a thermal limit (k_{B}T/q × ln 10); beating it needs new physics (tunnel FETs, negative capacitance).
 Q: What creates the channel in a MOSFET? | An inversion layer of carriers induced by the gate voltage.
 Q: Why were FinFETs introduced? | To improve gate control over short channels and reduce leakage.
-M1: MOSFET saturation current depends on overdrive as: | (V_{GS} − V_{T})^{2} | Linearly | Exponentially | Not at all | Square law.
-M2: The minimum subthreshold swing at room temperature is about: | 60 mV per decade | 6 mV | 600 mV | 1 V | k_{B}T ln10/q.
+M1#physics-u28-14-q1: MOSFET saturation current depends on overdrive as: | (V_{GS} − V_{T})^{2} | Linearly | Exponentially | Not at all | Square law.
+M2#physics-u28-14-q2: The minimum subthreshold swing at room temperature is about: | 60 mV per decade | 6 mV | 600 mV | 1 V | k_{B}T ln10/q.
 
 ## Semiconductor heterojunctions
 S: A heterojunction joins two different semiconductors with different band gaps. The band offsets at the interface confine carriers and steer them, enabling efficient lasers, fast transistors and high-efficiency solar cells.
@@ -326,8 +326,8 @@ X: Why does a wide-gap emitter improve a bipolar transistor?
 !: Lattice mismatch creates dislocations that kill device performance; heterostructure design is constrained by crystal compatibility.
 Q: What is a band offset? | The discontinuity in conduction or valence band energy at a heterojunction.
 Q: How do GaN HEMTs form a 2D electron gas without doping? | Spontaneous and piezoelectric polarisation fields at the AlGaN/GaN interface.
-M1: Multi-junction solar cells improve efficiency by: | Absorbing different parts of the spectrum in different layers | Using one gap | Reflecting light | Cooling | Stacked gaps.
-M2: GaAs and AlGaAs are a good pair because they are: | Nearly lattice-matched | Identical | Both metals | Insulators | Same lattice constant.
+M1#physics-u28-15-q1: Multi-junction solar cells improve efficiency by: | Absorbing different parts of the spectrum in different layers | Using one gap | Reflecting light | Cooling | Stacked gaps.
+M2#physics-u28-15-q2: GaAs and AlGaAs are a good pair because they are: | Nearly lattice-matched | Identical | Both metals | Insulators | Same lattice constant.
 
 ## Photodiodes
 S: Photodiodes convert light into current: photons absorbed in or near the depletion region create electron–hole pairs, which the built-in field separates. They're in cameras, optical fibre receivers, smoke detectors and scientific instruments.
@@ -350,8 +350,8 @@ D: phys-u28-photodiode-responsivity
 !: A photodiode can't detect photons with energy below the band gap; that sets its long-wavelength cut-off.
 Q: How does a photodiode generate current? | Absorbed photons create electron–hole pairs separated by the junction field.
 Q: What is an avalanche photodiode? | A photodiode with internal gain from impact ionisation under high reverse bias.
-M1: Telecom receivers at 1.55 μm use: | InGaAs photodiodes | Silicon | GaN | Diamond | Narrow gap.
-M2: Responsivity increases with wavelength (below cut-off) because: | Each photon carries less energy, so more photons per watt | Gaps shrink | Light speeds up | Diodes heat | Photons per watt.
+M1#physics-u28-16-q1: Telecom receivers at 1.55 μm use: | InGaAs photodiodes | Silicon | GaN | Diamond | Narrow gap.
+M2#physics-u28-16-q2: Responsivity increases with wavelength (below cut-off) because: | Each photon carries less energy, so more photons per watt | Gaps shrink | Light speeds up | Diodes heat | Photons per watt.
 
 ## Solar cells
 S: Solar cells are large-area p–n junctions that turn sunlight directly into electricity. Silicon cells dominate a market that has made solar the cheapest electricity in history in many places.
@@ -376,8 +376,8 @@ D: phys-u28-solar-panel
 !: Higher temperatures reduce solar cell voltage and efficiency (~0.3–0.4% per °C for silicon).
 Q: What is the Shockley–Queisser limit? | The maximum efficiency (~33%) of a single-junction solar cell under unconcentrated sunlight.
 Q: What two losses limit single-junction efficiency? | Non-absorption of sub-gap photons and thermalisation of excess photon energy.
-M1: The optimal single-junction band gap is about: | 1.34 eV | 3.4 eV | 0.5 eV | 5.5 eV | Shockley–Queisser.
-M2: Tandem cells exceed single-junction limits by: | Using multiple band gaps | Larger area | Cooling | Concentrating heat | Spectrum splitting.
+M1#physics-u28-17-q1: The optimal single-junction band gap is about: | 1.34 eV | 3.4 eV | 0.5 eV | 5.5 eV | Shockley–Queisser.
+M2#physics-u28-17-q2: Tandem cells exceed single-junction limits by: | Using multiple band gaps | Larger area | Cooling | Concentrating heat | Spectrum splitting.
 
 ## LEDs
 S: Light-emitting diodes produce light when electrons and holes recombine across a direct band gap in a forward-biased junction. The gap sets the colour; efficient blue LEDs made white LED lighting possible.
@@ -398,8 +398,8 @@ X: Colour of an LED with E_{g} = 2.0 eV?
 !: LEDs don't emit perfectly monochromatic light; their spectra are tens of nanometres wide, unlike lasers.
 Q: What determines an LED's colour? | The band gap of its active semiconductor.
 Q: How do white LEDs work? | A blue LED excites a yellow phosphor; the mix looks white.
-M1: Blue LEDs are made from: | InGaN | Silicon | Germanium | Copper | Nobel 2014.
-M2: Efficiency droop at high current is mainly attributed to: | Auger recombination | Phonons | Low temperature | Light absorption by air | Non-radiative.
+M1#physics-u28-18-q1: Blue LEDs are made from: | InGaN | Silicon | Germanium | Copper | Nobel 2014.
+M2#physics-u28-18-q2: Efficiency droop at high current is mainly attributed to: | Auger recombination | Phonons | Low temperature | Light absorption by air | Non-radiative.
 
 ## Semiconductor lasers
 S: Semiconductor (diode) lasers create coherent light from a forward-biased p–n junction with an optical cavity. They're the most common lasers, in fibre optics, data centres, barcode scanners, laser pointers and LIDAR.
@@ -420,8 +420,8 @@ X: Mode spacing of a 300 μm GaAs laser cavity (n_{g} ≈ 4)?
 !: Below threshold a laser diode is just an LED; coherence and narrow linewidth appear only above threshold.
 Q: What provides feedback in a simple diode laser? | Reflections from the cleaved crystal facets.
 Q: What is a VCSEL? | A vertical-cavity surface-emitting laser, emitting from the chip surface.
-M1: DFB lasers achieve single-mode operation using: | A built-in grating | Larger cavities | Lower current | Multiple materials | Distributed feedback.
-M2: Above threshold, a diode laser's output rises: | Steeply and linearly with current | Not at all | Logarithmically | Only with temperature | Slope efficiency.
+M1#physics-u28-19-q1: DFB lasers achieve single-mode operation using: | A built-in grating | Larger cavities | Lower current | Multiple materials | Distributed feedback.
+M2#physics-u28-19-q2: Above threshold, a diode laser's output rises: | Steeply and linearly with current | Not at all | Logarithmically | Only with temperature | Slope efficiency.
 
 ## Integrated circuits
 S: An integrated circuit puts billions of transistors, resistors and interconnects on one chip of silicon. Invented in 1958–59, ICs made computers, phones and modern electronics possible.
@@ -441,8 +441,8 @@ X: A 100 W processor on a 1.5 cm^{2} die. Heat flux?
 !: Chip speed is now limited more by power and heat than by how fast transistors can switch.
 Q: What did integrated circuits enable? | Mass production of complex circuits with billions of transistors on one chip.
 Q: What limits modern chip performance? | Power density and heat, interconnect delays, leakage and variability.
-M1: Who co-invented the integrated circuit? | Kilby and Noyce | Shockley | Einstein | Turing | 1958–59.
-M2: Chiplets are: | Smaller dies combined in one package | Tiny batteries | Optical fibres | Transistor types | Modular integration.
+M1#physics-u28-20-q1: Who co-invented the integrated circuit? | Kilby and Noyce | Shockley | Einstein | Turing | 1958–59.
+M2#physics-u28-20-q2: Chiplets are: | Smaller dies combined in one package | Tiny batteries | Optical fibres | Transistor types | Modular integration.
 
 ## Quantum wells, wires and dots
 S: Shrinking semiconductors to nanometre sizes in one, two or three dimensions confines electrons, quantising their energies. Quantum wells, wires and dots let engineers design electronic and optical properties by size.
@@ -463,8 +463,8 @@ X: Why does shrinking a CdSe dot from 6 nm to 2 nm shift emission from red to bl
 !: Quantum dots aren't just small crystals; their discrete levels make them behave like tunable atoms.
 Q: Why are quantum dots called artificial atoms? | Their electrons occupy discrete energy levels set by size.
 Q: What are quantum dot spin qubits? | Electron spins confined in gate-defined dots, controlled electrically.
-M1: Confinement energy scales with size L as: | 1/L^{2} | L | 1/L | L^{2} | Particle in a box.
-M2: QLED displays use: | Colloidal quantum dots | Silicon wafers | Liquid crystals only | Vacuum tubes | Colour conversion.
+M1#physics-u28-21-q1: Confinement energy scales with size L as: | 1/L^{2} | L | 1/L | L^{2} | Particle in a box.
+M2#physics-u28-21-q2: QLED displays use: | Colloidal quantum dots | Silicon wafers | Liquid crystals only | Vacuum tubes | Colour conversion.
 
 ## Tunnel diodes
 S: A tunnel diode is a very heavily doped p–n junction so thin that electrons tunnel directly through it. Its current–voltage curve has a region of negative differential resistance, used for very fast oscillators and switches.
@@ -485,8 +485,8 @@ X: Why does negative differential resistance make an oscillator?
 !: Negative differential resistance doesn't mean negative total resistance; V/I stays positive.
 Q: Why do tunnel diodes show negative differential resistance? | As bias increases, filled and empty states misalign, reducing tunnelling current.
 Q: Who discovered the tunnel diode? | Leo Esaki (1957).
-M1: Tunnel diodes are: | Very heavily doped | Lightly doped | Undoped | Superconducting | Degenerate junctions.
-M2: Resonant tunnelling diodes can oscillate at: | Above 1 THz | Only 50 Hz | Only audio frequencies | DC only | Fast quantum transport.
+M1#physics-u28-22-q1: Tunnel diodes are: | Very heavily doped | Lightly doped | Undoped | Superconducting | Degenerate junctions.
+M2#physics-u28-22-q2: Resonant tunnelling diodes can oscillate at: | Above 1 THz | Only 50 Hz | Only audio frequencies | DC only | Fast quantum transport.
 
 ## Spintronics
 S: Spintronics uses the electron's spin as well as its charge to store and process information. It already powers hard-disk read heads and magnetic memory, and may enable lower-power computing.
@@ -507,8 +507,8 @@ X: A magnetic tunnel junction has 1 kΩ (parallel) and 3 kΩ (antiparallel). TMR
 !: Spin currents can flow without charge currents; spintronics isn't just magnetised electronics.
 Q: What is giant magnetoresistance? | A large resistance change depending on the relative alignment of magnetic layers.
 Q: What is MRAM? | Non-volatile memory storing bits in magnetic tunnel junctions.
-M1: Spin-transfer torque uses: | Spin-polarised currents to switch magnets | Magnetic fields only | Light | Heat | Angular momentum transfer.
-M2: NV centres are defects in: | Diamond | Silicon | GaAs | Copper | Nitrogen–vacancy.
+M1#physics-u28-23-q1: Spin-transfer torque uses: | Spin-polarised currents to switch magnets | Magnetic fields only | Light | Heat | Angular momentum transfer.
+M2#physics-u28-23-q2: NV centres are defects in: | Diamond | Silicon | GaAs | Copper | Nitrogen–vacancy.
 
 ## Semiconductor fabrication principles
 S: Chips are made by repeatedly depositing, patterning and modifying thin layers on silicon wafers in ultra-clean factories. Hundreds of steps build transistors only a few nanometres across with astonishing precision and yield.
@@ -530,8 +530,8 @@ X: Resolution limit for 193 nm immersion lithography (NA = 1.35, k_{1} = 0.28)?
 !: Today's "3 nm" process names are marketing labels; actual gate lengths and pitches are larger.
 Q: What is EUV lithography? | Patterning with 13.5 nm extreme ultraviolet light to print the smallest chip features.
 Q: What is atomic layer deposition? | Growing films one atomic layer per cycle using self-limiting surface reactions.
-M1: Silicon wafers are grown by the: | Czochralski method | Bessemer process | Haber process | Float glass method | Crystal pulling.
-M2: Plasma etching gives: | Vertical, anisotropic features | Rounded shapes only | No selectivity | Crystal growth | Reactive ions.
+M1#physics-u28-24-q1: Silicon wafers are grown by the: | Czochralski method | Bessemer process | Haber process | Float glass method | Crystal pulling.
+M2#physics-u28-24-q2: Plasma etching gives: | Vertical, anisotropic features | Rounded shapes only | No selectivity | Crystal growth | Reactive ions.
 
 ## Nanoscale electronic devices
 S: As electronic devices shrink to nanometre sizes, quantum effects, single electrons and individual atoms matter. Nanoscale devices both extend conventional electronics and enable new ones based on quantum physics.
@@ -555,6 +555,6 @@ X: Charging energy of a 10 nm quantum dot (C ≈ 1 aF)?
 !: Smaller isn't automatically better; at atomic scales, variability and quantum effects can make devices unreliable unless designed in.
 Q: What is Coulomb blockade? | Suppression of current because adding one electron to a tiny island costs significant charging energy.
 Q: What is a memristor? | A resistor whose resistance depends on the history of current through it, used for memory and neuromorphic computing.
-M1: Gate-all-around transistors improve: | Electrostatic control of the channel | Light emission | Magnetism | Battery life only | Gate on all sides.
-M2: Single-atom transistors have been made by placing: | Phosphorus atoms in silicon with an STM | Gold in glass | Carbon in copper | Helium in vacuum | Atomic precision.
+M1#physics-u28-25-q1: Gate-all-around transistors improve: | Electrostatic control of the channel | Light emission | Magnetism | Battery life only | Gate on all sides.
+M2#physics-u28-25-q2: Single-atom transistors have been made by placing: | Phosphorus atoms in silicon with an STM | Gold in glass | Carbon in copper | Helium in vacuum | Atomic precision.
 `;

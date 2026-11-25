@@ -27,7 +27,7 @@ import { learnerOf, needsSetup, applyPrefs } from "../data/profile.js";
 import { paceFor } from "../learning/pace.js";
 import { trackView, track } from "../core/analytics.js";
 import { callFunction } from "../data/functions.js";
-import { mergeProgress, cloudCopy, mergeAttempts, queueAttempt, outboxAttempts, confirmAttempts } from "./progress.js";
+import { mergeProgress, cloudCopy, mergeAttempts, queueAttempt, outboxAttempts, confirmAttempts, carrySolved } from "./progress.js";
 import { access, plusPanelHtml, promptPlus } from "../data/plan.js";
 import { gate, lockedHtml } from "../data/limits.js";
 import { mapsSectionHtml, wireMaps } from "../maps/view.js";
@@ -263,7 +263,8 @@ export function mountCourse(root, cfg) {
     for (const l of u.lessons) {
       const L = out[l.id]; if (!L) continue;
       L.items = [...L.mcq.map((m, i) => ({ Q: m.Q || normalize(m), key: m.id || `${l.id}#${i}`, legacy: `${l.id}#${i}` })), ...L.tasks.map((q, i) => ({ Q: q, key: q.id || `${l.id}#t${i}`, legacy: `${l.id}#t${i}` }))];
-      for (const it of L.items) { it.l = byId[l.id]; it.v = cfg.questionVersions?.[it.key]?.v ?? null; if (it.key !== it.legacy && S.solved[it.legacy] && !S.solved[it.key]) { S.solved[it.key] = S.solved[it.legacy]; delete S.solved[it.legacy]; moved = true; } }
+      for (const it of L.items) { it.l = byId[l.id]; it.v = cfg.questionVersions?.[it.key]?.v ?? null; }
+      if (carrySolved(L.items, S.solved)) moved = true;
     }
     if (moved) save();
     return out;
