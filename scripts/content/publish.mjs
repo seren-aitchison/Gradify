@@ -6,6 +6,7 @@
 // The course files import published.js once (installHooks adds the import the first time), so the subject's own
 // syllabus, ids and written list are never rewritten. Published ids are permanent: a lesson once published stays,
 // in the last version that passed. Expert-required, gates-only and edited ("unchecked") drafts are never published.
+import { drawnEnough, diagramsOf } from "./gates.mjs";
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { pathToFileURL } from "node:url";
 import { at, out, fp, today, loadLedger } from "./lib.mjs";
@@ -71,6 +72,8 @@ export async function publish(subject) {
     for (const l of e.lessons || []) {
       const label = LABEL[l.tier]; if (!label) { skipped.push(`${l.title} (${l.tier})`); continue; }
       const text = lessons.get(l.title); if (!text || fp(text) !== l.hash) { skipped.push(`${l.title} (text changed since it was checked)`); continue; }
+      // a DNEED: diagram counts towards filing, but a lesson is published only once its diagrams are drawn (config.standards)
+      if (!drawnEnough(text)) { skipped.push(`${l.title} (its diagrams aren't all drawn yet: ${diagramsOf(text).needed.length} DNEED)`); continue; }
       const known = byKey.get(titleKey(l.title));
       // titles are unique in a unit: a second topic's lesson with the same title waits for a rename, and gets no id
       if (known && meta[known]?.topic && meta[known].topic !== topicId) { skipped.push(`${l.title} (${meta[known].topic} already published a lesson with this title)`); continue; }

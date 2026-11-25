@@ -17,8 +17,8 @@ One unit file: lessons separated by `## Title` lines, using the tags in `docs/CU
 - `T:` key terms, `term | definition`, at least two
 - at least two `H:` sections, at least one `K:` key point, `!:` lines for the misconceptions in the brief
 - `X:` worked examples with `> ` steps for any method or calculation
-- `D: <diagram-id>` for a listed library diagram, or `DIA: <renderer-id> | <json spec>` for a new one using a listed renderer, or `DNEED: <what the diagram must show>` if none fits. Mechanisms, processes, structures and cycles need a diagram
-- `Q:` flashcards, `question | answer`, one thing each, answer under 40 words
+- at least three distinct diagrams in every lesson, each one teaching something: `D: <diagram-id>` for a listed library diagram, `DIA: <renderer-id> | <json spec>` for a new one using a listed renderer, or `DNEED: <what the diagram must show and label>` if none fits (it is drawn before the lesson is published). Mechanisms, processes, structures and cycles always need one. Don't count the same diagram twice
+- `Q:` flashcards, `question | answer`, one thing each, answer under 40 words. The topic's lessons together need at least 20 distinct flashcards, covering definitions, explanations, comparisons, processes, applications and exam knowledge, with no question asked twice
 - check questions `M1@n:`, `M2@n:`, `M3@n:` (and `NUM`, `SEQ`, `MS`, `SA` where they fit), each tagged with the objectives it assesses. Every objective has at least one question
 - `SUM:` full-sentence summary points
 - `SRC:` the brief's sources you relied on, `citation | kind | date | link`

@@ -8,7 +8,7 @@ import { SPECS } from "../../kit/curriculum/uk.js";
 import { loadIndex } from "../curriculum/engine.mjs";
 import { CONFIG, at, out, fp, save, slug, today, briefPath, draftPath, loadLedger, saveLedger } from "./lib.mjs";
 import { packet, parseBrief, parseVerdicts, fixList, parseRepairs, applyRepair, splitUnit, numbered, parentOf, conflictStakes } from "./shorthand.mjs";
-import { runGates } from "./gates.mjs";
+import { runGates, topicFlashcards } from "./gates.mjs";
 import { diagramsFor, reqHash, TYPE } from "./queue.mjs";
 import { longestSharedRun } from "../knowledge/lib.mjs";
 import { SOURCES, sourceFor, classOf } from "../../kit/curriculum/sources.js";
@@ -127,11 +127,12 @@ export function applyRepairReply(s, reply) {
 export const verdictOf = (reply) => (reply instanceof Error ? { ok: false, issues: [{ code: "CLR", line: null, note: `review call failed: ${reply.message}` }] } : parseVerdicts(reply)[0] || { ok: false, issues: [{ code: "CLR", line: null, note: "reviewer returned no verdict" }] });
 
 const escRe = (x) => x.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-/** the high-risk keywords found in a lesson's text. A keyword matches at the start of a word
+/** the high-risk keywords found in a lesson's text (not its D:/DIA: diagram references). A keyword matches at the start of a word
  * (so the stem "pregnan" finds "pregnancy", but "acid" no longer fires inside "placid"), and
  * phrases in `notKeywords` ("amino acid") are removed first, so molecule names aren't hazards. */
 export function riskKeywords(text, hr = CONFIG.highRisk) {
-  let t = String(text).toLowerCase();
+  // diagram references are file names and render specs, not teaching text ("D: bio-amino-acids" isn't about acids)
+  let t = String(text).split("\n").filter((l) => !/^(D|DIA):/.test(l)).join("\n").toLowerCase();
   for (const n of hr.notKeywords || []) t = t.replace(new RegExp(`\\b${escRe(n.toLowerCase())}`, "g"), " ");
   return hr.keywords.filter((k) => new RegExp(`\\b${escRe(k.toLowerCase())}`).test(t));
 }
@@ -216,7 +217,15 @@ export async function runTopic(topic, { ask, askMany, render = null, legible = n
  */
 export function fileTopic(topic, states, { brief = null, failures = [], reviewed = true } = {}) {
   const rec = { topic: topic.id, fw: topic.fw, section: topic.section, title: topic.title, date: today(), lessons: [], failures: [...failures], uncovered: [], gaps: [], needs: [], brief: brief ? (brief.cached ? "reused" : "new") : null };
-  const passed = states.filter((s) => s.done && s.lesson);
+  let passed = states.filter((s) => s.done && s.lesson);
+  // the topic's flashcard minimum (config.standards), over every lesson its draft will hold: the ones filed before and
+  // the ones passing now. Short of it, nothing new is filed; the lessons are listed with what's missing
+  if (passed.length) {
+    const file = draftPath(topic.subject, topic.fw, slug(topic.title)), prior = existsSync(file) ? splitUnit(readFileSync(file, "utf8")) : [];
+    const merged = new Map(prior.map((l) => [l.title, l.text])); for (const s of passed) merged.set(s.lesson.title, s.text);
+    const f = topicFlashcards([...merged.values()]);
+    if (!f.ok) { for (const s of passed) { s.done = false; s.failedAt = "standards"; s.issues = [{ code: "STD", line: null, note: f.note }]; } passed = []; }
+  }
   for (const s of passed) {
     const flags = lessonRisk(topic, s, brief.parsed), title = s.lesson.title;
     rec.lessons.push({ title, tier: !reviewed ? "gates-passed" : flags.risk || flags.conflict ? "expert-required" : "ai-verified", reqs: s.lesson.reqs.map((x) => x.id), disagreed: s.reviewFails > 0, repairs: s.gateFails + s.reviewFails, ...(flags.conflict ? { conflict: true, conflictsOpen: flags.conflicts.open } : {}), ...(flags.conflicts.explained.length ? { conflictsExplained: flags.conflicts.explained } : {}), ...(flags.risk ? { highRisk: true } : {}), hash: fp(s.text),

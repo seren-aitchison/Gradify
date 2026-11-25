@@ -52,7 +52,28 @@ M3@1: An antibiotic damages a structure found only in cells without a nucleus. W
 TF2@2: A typical animal cell is larger than a typical bacterium. | true | Most bacteria are 1 to 10 micrometres long, while animal cells are usually 10 to 30 micrometres across.
 SUM: Prokaryotic cells have no nucleus and keep their DNA in a single loop.
 SUM: They are much smaller than eukaryotic cells.
-SRC: Open biology text | secondary | 2026-11-25 | https://openstax.org/books/biology-2e`;
+SRC: Open biology text | secondary | 2026-11-25 | https://openstax.org/books/biology-2e
+Q: Which kind of cell has no nucleus? | A prokaryotic cell
+Q: What is a plasmid? | A small ring of DNA found in many bacteria
+Q: Name a eukaryotic cell type. | An animal cell, a plant cell or a fungal cell
+Q: About how long is a typical bacterium? | Between 1 and 10 micrometres
+Q: About how wide is a typical animal cell? | Between 10 and 30 micrometres
+Q: What does the cell membrane control? | What enters and leaves the cell
+Q: What is the cytoplasm? | The jelly-like fluid where most cell reactions happen
+Q: Do bacteria have mitochondria? | No: they have no membrane-bound organelles
+Q: Where are ribosomes found in a bacterium? | Free in the cytoplasm
+Q: What is a micrometre? | One millionth of a metre
+Q: Is a bacterium a eukaryote? | No, it is a prokaryote
+Q: What surrounds the bacterial cell membrane? | A cell wall
+Q: What does a eukaryotic nucleus contain? | The cell's genetic material
+Q: Give one difference between prokaryotes and eukaryotes. | Prokaryotes have no nucleus
+Q: How many times larger is a 30 micrometre cell than a 3 micrometre bacterium? | Ten times larger
+Q: Which organisms are prokaryotes? | Bacteria
+Q: What is a flagellum used for? | Movement
+Q: Why can antibiotics target bacteria? | Bacterial cells have structures human cells lack
+D: bio-animal-cell
+D: bio-active-transport-gut
+D: bio-amino-acids`;
 
 test("notes tags: REQ with objectives, DIA spec, DNEED and GAP", () => {
   const [L] = parseNotes(`## T\nO: a\nO: b\nREQ: aqa-gcse-biology:4.1.1.1.b @1,2\nREQ: ocr-gcse-biology:2.1\nDIA: graph | {"range":{"x":[0,1]}}\nDIA: graph | not json\nDNEED: a labelled bacterium\nGAP: no source for plasmid size`);
@@ -678,7 +699,7 @@ test("filing: a practical elsewhere in the topic doesn't make a lesson high-risk
 
 test("source conflicts: an explained, low-stakes, cited conflict is AI-checked; anything less goes to an expert", async () => {
   const CONFL = (extra = " | stakes=low", what = "bacterium lengths differ by source (1 to 10 or 0.5 to 5 micrometres)") => `CONFLICT: ${what} | s1,s2${extra}`;
-  const withSrc = LESSON("3 × 4 = 12").replace(/\nSRC:.*$/, (m) => `${m}\nSRC: Cell structure | secondary | 2026-11-25 | https://www.bbc.co.uk/bitesize/x`);
+  const withSrc = LESSON("3 × 4 = 12").replace(/\nSRC:[^\n]*/, (m) => `${m}\nSRC: Cell structure | secondary | 2026-11-25 | https://www.bbc.co.uk/bitesize/x`);
   const bang = withSrc.split("\n").findIndex((l) => l.startsWith("!:")) + 1;
   const run = async (name, { conflict = CONFL(), verdict = `C1=L${bang}`, lesson = withSrc } = {}) => {
     const topic = { ...TOPIC, id: `biology/${name}`, title: name };
@@ -753,4 +774,72 @@ test("the mapping store: one status per statement, a person's check is never rep
   assert.ok(r.folded); assert.ok(!existsSync(legacyPath(fw))); assert.ok(existsSync(storePath(fw)));
   assert.deepEqual(loadStore(fw).links[ref].missing, ["osmosis practical not taught"]);
   assert.equal(consolidate(fw).folded, false, "running it again changes nothing");
+});
+
+test("production standard: 3+ distinct diagrams per lesson to file, all drawn to publish; 20+ distinct flashcards per topic", async () => {
+  const { diagramsOf, flashcardsOf, standardsGate, topicFlashcards, drawnEnough } = await import("../scripts/content/gates.mjs");
+  const base = LESSON("3 × 4 = 12");
+  assert.deepEqual([diagramsOf(base).drawn, diagramsOf(base).total], [3, 3]); assert.ok(drawnEnough(base));
+  const twoAndSpec = base.replace("\nD: bio-amino-acids", "\nDNEED: A prokaryotic and a eukaryotic cell side by side, to scale");
+  assert.ok(standardsGate(null, twoAndSpec).ok, "a DNEED specification counts towards filing"); assert.ok(!drawnEnough(twoAndSpec), "but not towards publishing");
+  const repeated = base.replace("\nD: bio-amino-acids", "\nD: bio-animal-cell");
+  assert.equal(diagramsOf(repeated).total, 2, "the same diagram twice counts once"); assert.match(standardsGate(null, repeated).issues[0].note, /2 distinct diagrams; every lesson needs at least 3/);
+  assert.equal(flashcardsOf(base).length, 20);
+  assert.equal(flashcardsOf(`${base}\nQ: Which kind of cell has no nucleus?  | Prokaryotic`).length, 20, "a repeated question counts once");
+  assert.deepEqual(topicFlashcards([base.replace(/^Q: About.*\n/gm, "")]).ok, false);
+  // a topic short of flashcards files nothing, and says what's missing
+  const thin = base.split("\n").filter((l) => !/^Q: (About|What is a|Is a|Do bacteria)/.test(l)).join("\n");
+  const topic = { ...TOPIC, id: "biology/test-thin", title: "Test thin" };
+  const r = await runTopic(topic, { ask: async (job) => (job === "research" ? BRIEF.replace("test-prokaryotes", "test-thin") : `${thin}\nEND`), askMany: async (job, items) => new Map(items.map((it) => [it.key, `REV ${it.key} OK`])) });
+  assert.equal(r.lessons.length, 0); assert.equal(r.failures[0].gate, "standards"); assert.match(r.failures[0].issues[0].note, /distinct flashcards across the topic; it needs at least 20/);
+});
+
+test("diagram references are file names, not teaching text: D: bio-amino-acids doesn't raise the 'acid' keyword", async () => {
+  const { riskKeywords } = await import("../scripts/content/loop.mjs");
+  assert.deepEqual(riskKeywords("P: Proteins are chains.\nD: bio-amino-acids\nDIA: graph | {\"title\":\"acid strength\"}"), []);
+  assert.deepEqual(riskKeywords("P: Hydrochloric acid is corrosive."), ["acid"]);
+});
+
+test("the content factory: a template carries everything an external model needs; returned Markdown is checked, installed once, or rejected with a report", async () => {
+  const { writeTemplate, researchTemplate, readSubmission, ingestFile, ingestAll } = await import("../scripts/content/factory.mjs");
+  const { currentBrief } = await import("../scripts/content/loop.mjs");
+  const { readFileSync, existsSync, writeFileSync, mkdirSync } = await import("node:fs");
+  const topic = { ...TOPIC, id: "biology/test-factory", title: "Test factory" };
+  // no brief yet: a research template; the returned brief is checked and stored
+  assert.match(researchTemplate(topic), /^RESEARCH biology\/test-factory \| levels=GCSE/m);
+  const briefMd = "Here is the brief:\n\n```\n" + BRIEF.replace("test-prokaryotes", "test-factory") + "\n```\n";
+  const b = await ingestFile("test-factory.brief.md", briefMd, { all: [topic] });
+  assert.ok(b.ok, b.report); assert.ok(currentBrief(topic), "the brief is stored, stamped for its inputs");
+  assert.match((await ingestFile("x.brief.md", BRIEF.replace("test-prokaryotes", "test-factory").replace(/^SRC: s3.*$/m, ""), { all: [topic] })).report, /Rejected:.*problem/);
+  // the write template: instructions, format, standard, examples, minimums and the packet, in one file
+  const t = writeTemplate(topic, currentBrief(topic));
+  for (const re of [/at least 20 distinct `Q:` flashcards/, /at least 3 distinct diagrams/, /^PKT aqa-gcse-biology\/4\.1\.1\.1/m, /^# Writer prompt/m, /^# Curriculum content standard/m, /^### Example: gcse--/m, /content\/inbox\/test-factory\.md/]) assert.match(t, re);
+  // a chat reply with a preamble and a fence is read as its unit file
+  assert.equal(readSubmission("Sure! Here you go:\n```markdown\n## A\nS: x\n```\nThanks").text, "## A\nS: x");
+  assert.equal(readSubmission("just chat").kind, "unknown");
+  // short of the topic's flashcard minimum: rejected with the reason, nothing filed
+  const thin = LESSON("3 × 4 = 12").split("\n").filter((l) => !/^Q: (About|What is a|Is a|Do bacteria)/.test(l)).join("\n");
+  const r1 = await ingestFile("test-factory.md", `${thin}\nEND`, { all: [topic] });
+  assert.equal(r1.ok, false); assert.match(r1.report, /failed `standards`/); assert.match(r1.report, /it needs at least 20/); assert.equal(r1.filed.length, 0);
+  // a valid file is installed (gates only: claims no review), and resubmitting it doesn't duplicate the lesson
+  const r2 = await ingestFile("test-factory.md", `${LESSON("3 × 4 = 12")}\nEND`, { all: [topic] });
+  assert.ok(r2.ok, r2.report); assert.equal(r2.filed[0].tier, "gates-passed"); assert.match(r2.report, /can't be published until reviewed/);
+  await ingestFile("test-factory.md", `${LESSON("3 × 4 = 12")}\nEND`, { all: [topic] });
+  const draft = readFileSync(join(process.env.GRADIFY_OUT, "content/drafts/biology/aqa-gcse-biology/test-factory.txt"), "utf8");
+  assert.equal(draft.match(/^## Prokaryotes up close$/gm).length, 1, "resubmitting replaces by title");
+  // a lesson for no queued requirement, and a file with no lessons, are rejected
+  assert.match((await ingestFile("y.md", LESSON().replace(/^REQ: .*$/m, "REQ: aqa-gcse-biology:9.9.9"), { all: [topic] })).report, /No `REQ:` line names a queued requirement/);
+  // the inbox: each file moves to done/ or rejected/ with its report beside it
+  const inbox = join(process.env.GRADIFY_OUT, "content/inbox"); mkdirSync(inbox, { recursive: true });
+  writeFileSync(join(inbox, "nonsense.md"), "hello");
+  const all = await ingestAll([], { all: [topic] });
+  assert.equal(all[0].ok, false); assert.ok(existsSync(join(inbox, "rejected/nonsense.md")) && existsSync(join(inbox, "rejected/nonsense.report.md")));
+});
+
+test("the library's standard is measured per course and per lesson, without changing anything", async () => {
+  const { measure, table } = await import("../scripts/content/standards.mjs");
+  const m = await measure({ courses: ["biology"] });
+  assert.equal(m.rows[0].lessons, 391); assert.equal(m.lessons.length, 391);
+  assert.ok(m.rows[0].topicsMet <= m.rows[0].topics && m.rows[0].lessonsMet <= m.rows[0].lessons);
+  assert.match(table(m), /^\| Course \| Lessons \| Flashcards/);
 });
