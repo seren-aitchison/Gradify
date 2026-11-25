@@ -175,6 +175,8 @@ S: Leaves are the main organs of photosynthesis. This lesson describes leaf stru
 O: Describe the internal structure of a leaf
 O: Explain how leaves are adapted for photosynthesis and gas exchange
 O: Explain how stomata open and close
+REQ: aqa-gcse-biology:4.2.3.2.i @2,3
+REQ: aqa-gcse-biology:4.2.3.1.c @1,3
 H: Structure
 - **Waxy cuticle** reduces water loss.
 - **Upper epidermis**: transparent, allowing light through.
@@ -219,6 +221,7 @@ S: Vascular tissue transports water, minerals and sugars through plants. This le
 O: Describe the functions of xylem and phloem
 O: Describe the arrangement of vascular tissue in roots, stems and leaves
 O: Explain the evolutionary importance of vascular tissue
+REQ: aqa-gcse-biology:4.2.3.2.e @1,2
 H: Xylem and phloem
 - **Xylem** carries water and minerals upwards from roots.
 - **Phloem** carries sugars and other organic substances in both directions.
@@ -430,6 +433,7 @@ S: Plants need mineral ions from the soil for growth. This lesson describes key 
 O: Describe the roles of key mineral ions in plants
 O: Identify symptoms of mineral deficiencies
 O: Explain how minerals are absorbed and the use of fertilisers
+REQ: aqa-gcse-biology:4.1.3.3.b @1,2,3
 H: Key minerals
 - **Nitrate** (nitrogen): needed for amino acids, proteins and DNA.
 - **Phosphate** (phosphorus): needed for DNA, ATP and membranes.

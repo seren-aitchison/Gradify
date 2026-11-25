@@ -890,6 +890,7 @@ S: Food molecules are digested into small units and absorbed in the small intest
 O: Describe the digestion of carbohydrates, proteins and lipids
 O: Explain how the small intestine is adapted for absorption
 O: Describe the mechanisms of absorption
+REQ: aqa-gcse-biology:4.2.2.1.l @1
 REQ: aqa-gcse-biology:4.2.2.1.i @1,3
 H: Enzymes
 - **Carbohydrates**: amylase breaks starch to maltose; maltase and other membrane enzymes produce glucose.

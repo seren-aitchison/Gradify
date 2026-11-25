@@ -467,6 +467,7 @@ S: Cancer is uncontrolled cell division caused by changes in genes that regulate
 O: Explain how mutations in proto-oncogenes and tumour suppressor genes cause cancer
 O: Describe the hallmarks of cancer
 O: Identify risk factors for cancer
+REQ: aqa-gcse-biology:4.2.2.7.a @1,2
 H: Genetic basis
 - Cancer develops from **mutations** that accumulate in a single cell lineage.
 - **Oncogenes**: mutated proto-oncogenes that are overactive; one mutated allele can be enough (**gain of function**).
@@ -509,6 +510,7 @@ S: Tumours develop in stages from a single altered cell to an invasive cancer. T
 O: Distinguish benign and malignant tumours
 O: Describe the stages of tumour progression
 O: Explain how metastasis occurs
+REQ: aqa-gcse-biology:4.2.2.7.c @1,2,3
 H: Benign and malignant
 - **Benign tumours**: grow slowly, are usually enclosed in a capsule, do not invade and do not spread; often removable.
 - **Malignant tumours** (cancers): grow faster, invade surrounding tissue and can spread (**metastasise**).

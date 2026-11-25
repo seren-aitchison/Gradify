@@ -1,10 +1,10 @@
 {
  "generated": "2026-11-25",
  "branch": "content/rolling",
- "commit": "f86064e7f",
+ "commit": "4d56e9737",
  "dirty": true,
  "briefs": 1,
- "drafts": 0,
+ "drafts": 1,
  "mode": "fast",
  "budgetUsd": 25,
  "subjects": [
@@ -17,17 +17,17 @@
    "requirementsToWrite": 364,
    "topics": {
     "filed": 0,
-    "partial": 0,
+    "partial": 1,
     "filed-with-gaps": 0,
     "failed": 1,
     "blocked": 0
    },
    "lessons": {
-    "total": 0,
+    "total": 1,
     "aiVerified": 0,
-    "expertRequired": 0,
+    "expertRequired": 1,
     "expertApproved": 0,
-    "disagreements": 0
+    "disagreements": 1
    },
    "editedSinceChecked": [],
    "next": "biology/eukaryotes-and-prokaryotes"

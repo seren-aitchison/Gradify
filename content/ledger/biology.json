@@ -31,6 +31,73 @@
    "gaps": [],
    "needs": [],
    "status": "failed"
+  },
+  "biology/animal-and-plant-cells": {
+   "runs": 1,
+   "lessons": [
+    {
+     "title": "Required practical: observing cells with a light microscope",
+     "tier": "expert-required",
+     "reqs": [
+      "aqa-gcse-biology:4.1.1.2.RP1"
+     ],
+     "disagreed": true,
+     "repairs": 1,
+     "conflict": true,
+     "highRisk": true,
+     "hash": "a98f62cf20a69a93",
+     "built": {
+      "brief": "921196447f2219c9",
+      "prompts": "5d5b9a9d01db8d91",
+      "models": {
+       "write": "agent:opus",
+       "review": "agent:sonnet"
+      },
+      "reqs": [
+       "aqa-gcse-biology:4.1.1.2.RP1@c91271790a2decde"
+      ]
+     }
+    }
+   ],
+   "lastRun": "2026-11-25",
+   "reqHash": "aqa-gcse-biology:4.1.1.2.e:5563589420a21a5f,aqa-gcse-biology:4.1.1.2.RP1:c91271790a2decde",
+   "file": "content/drafts/biology/aqa-gcse-biology/animal-and-plant-cells.txt",
+   "title": "Animal and plant cells",
+   "fw": "aqa-gcse-biology",
+   "section": "4.1.1.2",
+   "failures": [
+    {
+     "title": "Estimating the size of cell structures",
+     "gate": "review",
+     "issues": [
+      {
+       "code": "COV",
+       "line": 37,
+       "note": "never explains when estimates should be used"
+      },
+      {
+       "code": "COV",
+       "line": 29,
+       "note": "area estimation never taught, only widths"
+      },
+      {
+       "code": "FACT",
+       "line": 22,
+       "note": "no-unit claim not in brief"
+      }
+     ]
+    }
+   ],
+   "uncovered": [
+    "aqa-gcse-biology:4.1.1.2.e"
+   ],
+   "gaps": [
+    "Required practical: observing cells with a light microscope: The brief does not cover how to prepare and stain a slide, which stains to use, or which specific cells to observe, so these practical steps are not taught here"
+   ],
+   "needs": [
+    "Required practical: observing cells with a light microscope: A labelled light microscope showing the eyepiece, objective lenses, stage and focusing knobs, with an arrow showing the move from low to high power"
+   ],
+   "status": "partial"
   }
  }
 }
