@@ -1,0 +1,7941 @@
+{
+ "spec": "aqa-gcse-chemistry",
+ "title": "AQA GCSE Chemistry",
+ "code": "8462",
+ "version": "1.1",
+ "versionDate": "2019-10-04",
+ "published": "2019-10-04",
+ "applies": {
+  "from": "2016",
+  "to": null
+ },
+ "source": "https://filestore.aqa.org.uk/resources/chemistry/specifications/AQA-8462-SP-2016.PDF",
+ "sha1": "9e1579c8cdada254bf7726b794379cf4c1a56036",
+ "checkedOn": "2026-11-25",
+ "pages": 112,
+ "extractedBy": "scripts/curriculum/aqa.mjs from the PDF's layout (pdftotext -bbox-layout)",
+ "licence": "Statement text is the awarding body's copyright and is not in this repository: rebuild it with `engine.mjs fetch` and `import`. Sections carry the document's own headings; refs ending in a letter are Gradify's subdivision of a numbered section.",
+ "counts": {
+  "statements": 442,
+  "content": 323,
+  "skill": 111,
+  "practical": 8,
+  "higherTier": 62,
+  "biologyOnly": 0,
+  "sections": 164
+ },
+ "sections": [
+  {
+   "ref": "4.1",
+   "title": "Atomic structure and the periodic table",
+   "page": 17
+  },
+  {
+   "ref": "4.1.1",
+   "title": "A simple model of the atom, symbols, relative atomic mass, electronic charge and isotopes",
+   "page": 18
+  },
+  {
+   "ref": "4.1.1.1",
+   "title": "Atoms, elements and compounds",
+   "page": 18
+  },
+  {
+   "ref": "4.1.1.2",
+   "title": "Mixtures",
+   "page": 19
+  },
+  {
+   "ref": "4.1.1.3",
+   "title": "The development of the model of the atom (common content with physics)",
+   "page": 19
+  },
+  {
+   "ref": "4.1.1.4",
+   "title": "Relative electrical charges of subatomic particles",
+   "page": 20
+  },
+  {
+   "ref": "4.1.1.5",
+   "title": "Size and mass of atoms",
+   "page": 21
+  },
+  {
+   "ref": "4.1.1.6",
+   "title": "Relative atomic mass",
+   "page": 21
+  },
+  {
+   "ref": "4.1.1.7",
+   "title": "Electronic structure",
+   "page": 22
+  },
+  {
+   "ref": "4.1.2",
+   "title": "The periodic table",
+   "page": 22
+  },
+  {
+   "ref": "4.1.2.1",
+   "title": "The periodic table",
+   "page": 22
+  },
+  {
+   "ref": "4.1.2.2",
+   "title": "Development of the periodic table",
+   "page": 23
+  },
+  {
+   "ref": "4.1.2.3",
+   "title": "Metals and non-metals",
+   "page": 23
+  },
+  {
+   "ref": "4.1.2.4",
+   "title": "Group 0",
+   "page": 24
+  },
+  {
+   "ref": "4.1.2.5",
+   "title": "Group 1",
+   "page": 24
+  },
+  {
+   "ref": "4.1.2.6",
+   "title": "Group 7",
+   "page": 25
+  },
+  {
+   "ref": "4.1.3",
+   "title": "Properties of transition metals",
+   "page": 25,
+   "chemistryOnly": true
+  },
+  {
+   "ref": "4.1.3.1",
+   "title": "Comparison with Group 1 elements",
+   "page": 25
+  },
+  {
+   "ref": "4.1.3.2",
+   "title": "Typical properties",
+   "page": 26
+  },
+  {
+   "ref": "4.2",
+   "title": "Bonding, structure, and the properties of matter",
+   "page": 26
+  },
+  {
+   "ref": "4.2.1",
+   "title": "Chemical bonds, ionic, covalent and metallic",
+   "page": 26
+  },
+  {
+   "ref": "4.2.1.1",
+   "title": "Chemical bonds",
+   "page": 26
+  },
+  {
+   "ref": "4.2.1.2",
+   "title": "Ionic bonding",
+   "page": 27
+  },
+  {
+   "ref": "4.2.1.3",
+   "title": "Ionic compounds",
+   "page": 27
+  },
+  {
+   "ref": "4.2.1.4",
+   "title": "Covalent bonding",
+   "page": 29
+  },
+  {
+   "ref": "4.2.1.5",
+   "title": "Metallic bonding",
+   "page": 30
+  },
+  {
+   "ref": "4.2.2",
+   "title": "How bonding and structure are related to the properties of substances",
+   "page": 31
+  },
+  {
+   "ref": "4.2.2.1",
+   "title": "The three states of matter",
+   "page": 31
+  },
+  {
+   "ref": "4.2.2.2",
+   "title": "State symbols",
+   "page": 32
+  },
+  {
+   "ref": "4.2.2.3",
+   "title": "Properties of ionic compounds",
+   "page": 32
+  },
+  {
+   "ref": "4.2.2.4",
+   "title": "Properties of small molecules",
+   "page": 32
+  },
+  {
+   "ref": "4.2.2.5",
+   "title": "Polymers",
+   "page": 33
+  },
+  {
+   "ref": "4.2.2.6",
+   "title": "Giant covalent structures",
+   "page": 33
+  },
+  {
+   "ref": "4.2.2.7",
+   "title": "Properties of metals and alloys",
+   "page": 33
+  },
+  {
+   "ref": "4.2.2.8",
+   "title": "Metals as conductors",
+   "page": 33
+  },
+  {
+   "ref": "4.2.3",
+   "title": "Structure and bonding of carbon",
+   "page": 34
+  },
+  {
+   "ref": "4.2.3.1",
+   "title": "Diamond",
+   "page": 34
+  },
+  {
+   "ref": "4.2.3.2",
+   "title": "Graphite",
+   "page": 34
+  },
+  {
+   "ref": "4.2.3.3",
+   "title": "Graphene and fullerenes",
+   "page": 35
+  },
+  {
+   "ref": "4.2.4",
+   "title": "Bulk and surface properties of matter including nanoparticles ",
+   "page": 35
+  },
+  {
+   "ref": "4.2.4.1",
+   "title": "Sizes of particles and their properties",
+   "page": 35
+  },
+  {
+   "ref": "4.2.4.2",
+   "title": "Uses of nanoparticles",
+   "page": 36
+  },
+  {
+   "ref": "4.3",
+   "title": "Quantitative chemistry",
+   "page": 36
+  },
+  {
+   "ref": "4.3.1",
+   "title": "Chemical measurements, conservation of mass and the quantitative interpretation of chemical equations",
+   "page": 37
+  },
+  {
+   "ref": "4.3.1.1",
+   "title": "Conservation of mass and balanced chemical equations",
+   "page": 37
+  },
+  {
+   "ref": "4.3.1.2",
+   "title": "Relative formula mass",
+   "page": 37
+  },
+  {
+   "ref": "4.3.1.3",
+   "title": "Mass changes when a reactant or product is a gas",
+   "page": 37
+  },
+  {
+   "ref": "4.3.1.4",
+   "title": "Chemical measurements",
+   "page": 38
+  },
+  {
+   "ref": "4.3.2",
+   "title": "Use of amount of substance in relation to masses of pure substances",
+   "page": 38
+  },
+  {
+   "ref": "4.3.2.1",
+   "title": "Moles",
+   "page": 38,
+   "higherTier": true
+  },
+  {
+   "ref": "4.3.2.2",
+   "title": "Amounts of substances in equations",
+   "page": 39,
+   "higherTier": true
+  },
+  {
+   "ref": "4.3.2.3",
+   "title": "Using moles to balance equations",
+   "page": 39,
+   "higherTier": true
+  },
+  {
+   "ref": "4.3.2.4",
+   "title": "Limiting reactants",
+   "page": 40,
+   "higherTier": true
+  },
+  {
+   "ref": "4.3.2.5",
+   "title": "Concentration of solutions",
+   "page": 40
+  },
+  {
+   "ref": "4.3.3",
+   "title": "Yield and atom economy of chemical reactions",
+   "page": 41,
+   "chemistryOnly": true
+  },
+  {
+   "ref": "4.3.3.1",
+   "title": "Percentage yield",
+   "page": 41
+  },
+  {
+   "ref": "4.3.3.2",
+   "title": "Atom economy",
+   "page": 41
+  },
+  {
+   "ref": "4.3.4",
+   "title": "Using concentrations of solutions in mol/dm 3 ",
+   "page": 42,
+   "chemistryOnly": true
+  },
+  {
+   "ref": "4.3.5",
+   "title": "Use of amount of substance in relation to volumes of gases ",
+   "page": 43
+  },
+  {
+   "ref": "4.4",
+   "title": "Chemical changes",
+   "page": 43
+  },
+  {
+   "ref": "4.4.1",
+   "title": "Reactivity of metals",
+   "page": 43
+  },
+  {
+   "ref": "4.4.1.1",
+   "title": "Metal oxides",
+   "page": 43
+  },
+  {
+   "ref": "4.4.1.2",
+   "title": "The reactivity series",
+   "page": 44
+  },
+  {
+   "ref": "4.4.1.3",
+   "title": "Extraction of metals and reduction",
+   "page": 45
+  },
+  {
+   "ref": "4.4.1.4",
+   "title": "Oxidation and reduction in terms of electrons",
+   "page": 45,
+   "higherTier": true
+  },
+  {
+   "ref": "4.4.2",
+   "title": "Reactions of acids",
+   "page": 46
+  },
+  {
+   "ref": "4.4.2.1",
+   "title": "Reactions of acids with metals",
+   "page": 46
+  },
+  {
+   "ref": "4.4.2.2",
+   "title": "Neutralisation of acids and salt production",
+   "page": 46
+  },
+  {
+   "ref": "4.4.2.3",
+   "title": "Soluble salts",
+   "page": 47
+  },
+  {
+   "ref": "4.4.2.4",
+   "title": "The pH scale and neutralisation",
+   "page": 47
+  },
+  {
+   "ref": "4.4.2.5",
+   "title": "Titrations",
+   "page": 48,
+   "chemistryOnly": true
+  },
+  {
+   "ref": "4.4.2.6",
+   "title": "Strong and weak acids",
+   "page": 48,
+   "higherTier": true
+  },
+  {
+   "ref": "4.4.3",
+   "title": "Electrolysis",
+   "page": 49
+  },
+  {
+   "ref": "4.4.3.1",
+   "title": "The process of electrolysis",
+   "page": 49
+  },
+  {
+   "ref": "4.4.3.2",
+   "title": "Electrolysis of molten ionic compounds",
+   "page": 49
+  },
+  {
+   "ref": "4.4.3.3",
+   "title": "Using electrolysis to extract metals",
+   "page": 50
+  },
+  {
+   "ref": "4.4.3.4",
+   "title": "Electrolysis of aqueous solutions",
+   "page": 50
+  },
+  {
+   "ref": "4.4.3.5",
+   "title": "Representation of reactions at electrodes as half equations",
+   "page": 51,
+   "higherTier": true
+  },
+  {
+   "ref": "4.5",
+   "title": "Energy changes",
+   "page": 51
+  },
+  {
+   "ref": "4.5.1",
+   "title": "Exothermic and endothermic reactions",
+   "page": 52
+  },
+  {
+   "ref": "4.5.1.1",
+   "title": "Energy transfer during exothermic and endothermic reactions",
+   "page": 52
+  },
+  {
+   "ref": "4.5.1.2",
+   "title": "Reaction profiles",
+   "page": 53
+  },
+  {
+   "ref": "4.5.1.3",
+   "title": "The energy change of reactions",
+   "page": 53,
+   "higherTier": true
+  },
+  {
+   "ref": "4.5.2",
+   "title": "Chemical cells and fuel cells",
+   "page": 54,
+   "chemistryOnly": true
+  },
+  {
+   "ref": "4.5.2.1",
+   "title": "Cells and batteries",
+   "page": 54
+  },
+  {
+   "ref": "4.5.2.2",
+   "title": "Fuel cells",
+   "page": 54
+  },
+  {
+   "ref": "4.6",
+   "title": "The rate and extent of chemical change",
+   "page": 55
+  },
+  {
+   "ref": "4.6.1",
+   "title": "Rate of reaction",
+   "page": 56
+  },
+  {
+   "ref": "4.6.1.1",
+   "title": "Calculating rates of reactions",
+   "page": 56
+  },
+  {
+   "ref": "4.6.1.2",
+   "title": "Factors which affect the rates of chemical reactions",
+   "page": 57
+  },
+  {
+   "ref": "4.6.1.3",
+   "title": "Collision theory and activation energy",
+   "page": 57
+  },
+  {
+   "ref": "4.6.1.4",
+   "title": "Catalysts",
+   "page": 58
+  },
+  {
+   "ref": "4.6.2",
+   "title": "Reversible reactions and dynamic equilibrium",
+   "page": 59
+  },
+  {
+   "ref": "4.6.2.1",
+   "title": "Reversible reactions",
+   "page": 59
+  },
+  {
+   "ref": "4.6.2.2",
+   "title": "Energy changes and reversible reactions",
+   "page": 59
+  },
+  {
+   "ref": "4.6.2.3",
+   "title": "Equilibrium",
+   "page": 59
+  },
+  {
+   "ref": "4.6.2.4",
+   "title": "The effect of changing conditions on equilibrium",
+   "page": 60,
+   "higherTier": true
+  },
+  {
+   "ref": "4.6.2.5",
+   "title": "The effect of changing concentration",
+   "page": 60,
+   "higherTier": true
+  },
+  {
+   "ref": "4.6.2.6",
+   "title": "The effect of temperature changes on equilibrium",
+   "page": 61,
+   "higherTier": true
+  },
+  {
+   "ref": "4.6.2.7",
+   "title": "The effect of pressure changes on equilibrium",
+   "page": 61,
+   "higherTier": true
+  },
+  {
+   "ref": "4.7",
+   "title": "Organic chemistry",
+   "page": 61
+  },
+  {
+   "ref": "4.7.1",
+   "title": "Carbon compounds as fuels and feedstock",
+   "page": 62
+  },
+  {
+   "ref": "4.7.1.1",
+   "title": "Crude oil, hydrocarbons and alkanes",
+   "page": 62
+  },
+  {
+   "ref": "4.7.1.2",
+   "title": "Fractional distillation and petrochemicals",
+   "page": 63
+  },
+  {
+   "ref": "4.7.1.3",
+   "title": "Properties of hydrocarbons",
+   "page": 63
+  },
+  {
+   "ref": "4.7.1.4",
+   "title": "Cracking and alkenes",
+   "page": 64
+  },
+  {
+   "ref": "4.7.2",
+   "title": "Reactions of alkenes and alcohols",
+   "page": 65,
+   "chemistryOnly": true
+  },
+  {
+   "ref": "4.7.2.1",
+   "title": "Structure and formulae of alkenes",
+   "page": 65
+  },
+  {
+   "ref": "4.7.2.2",
+   "title": "Reactions of alkenes",
+   "page": 65
+  },
+  {
+   "ref": "4.7.2.3",
+   "title": "Alcohols",
+   "page": 66
+  },
+  {
+   "ref": "4.7.2.4",
+   "title": "Carboxylic acids",
+   "page": 67
+  },
+  {
+   "ref": "4.7.3",
+   "title": "Synthetic and naturally occurring polymers",
+   "page": 68,
+   "chemistryOnly": true
+  },
+  {
+   "ref": "4.7.3.1",
+   "title": "Addition polymerisation",
+   "page": 68
+  },
+  {
+   "ref": "4.7.3.2",
+   "title": "Condensation polymerisation",
+   "page": 69,
+   "higherTier": true
+  },
+  {
+   "ref": "4.7.3.3",
+   "title": "Amino acids",
+   "page": 70,
+   "higherTier": true
+  },
+  {
+   "ref": "4.7.3.4",
+   "title": "DNA (deoxyribonucleic acid) and other naturally occurring polymers",
+   "page": 70
+  },
+  {
+   "ref": "4.8",
+   "title": "Chemical analysis",
+   "page": 70
+  },
+  {
+   "ref": "4.8.1",
+   "title": "Purity, formulations and chromatography",
+   "page": 71
+  },
+  {
+   "ref": "4.8.1.1",
+   "title": "Pure substances",
+   "page": 71
+  },
+  {
+   "ref": "4.8.1.2",
+   "title": "Formulations",
+   "page": 71
+  },
+  {
+   "ref": "4.8.1.3",
+   "title": "Chromatography",
+   "page": 72
+  },
+  {
+   "ref": "4.8.2",
+   "title": "Identification of common gases",
+   "page": 72
+  },
+  {
+   "ref": "4.8.2.1",
+   "title": "Test for hydrogen",
+   "page": 72
+  },
+  {
+   "ref": "4.8.2.2",
+   "title": "Test for oxygen",
+   "page": 73
+  },
+  {
+   "ref": "4.8.2.3",
+   "title": "Test for carbon dioxide",
+   "page": 73
+  },
+  {
+   "ref": "4.8.2.4",
+   "title": "Test for chlorine",
+   "page": 73
+  },
+  {
+   "ref": "4.8.3",
+   "title": "Identification of ions by chemical and spectroscopic means ",
+   "page": 73
+  },
+  {
+   "ref": "4.8.3.1",
+   "title": "Flame tests",
+   "page": 73
+  },
+  {
+   "ref": "4.8.3.2",
+   "title": "Metal hydroxides",
+   "page": 74
+  },
+  {
+   "ref": "4.8.3.3",
+   "title": "Carbonates",
+   "page": 74
+  },
+  {
+   "ref": "4.8.3.4",
+   "title": "Halides",
+   "page": 74
+  },
+  {
+   "ref": "4.8.3.5",
+   "title": "Sulfates",
+   "page": 74
+  },
+  {
+   "ref": "4.8.3.6",
+   "title": "Instrumental methods",
+   "page": 75
+  },
+  {
+   "ref": "4.8.3.7",
+   "title": "Flame emission spectroscopy",
+   "page": 75
+  },
+  {
+   "ref": "4.9",
+   "title": "Chemistry of the atmosphere",
+   "page": 75
+  },
+  {
+   "ref": "4.9.1",
+   "title": "The composition and evolution of the Earth's atmosphere",
+   "page": 76
+  },
+  {
+   "ref": "4.9.1.1",
+   "title": "The proportions of different gases in the atmosphere",
+   "page": 76
+  },
+  {
+   "ref": "4.9.1.2",
+   "title": "The Earth's early atmosphere",
+   "page": 76
+  },
+  {
+   "ref": "4.9.1.3",
+   "title": "How oxygen increased",
+   "page": 77
+  },
+  {
+   "ref": "4.9.1.4",
+   "title": "How carbon dioxide decreased",
+   "page": 77
+  },
+  {
+   "ref": "4.9.2",
+   "title": "Carbon dioxide and methane as greenhouse gases",
+   "page": 77
+  },
+  {
+   "ref": "4.9.2.1",
+   "title": "Greenhouse gases",
+   "page": 77
+  },
+  {
+   "ref": "4.9.2.2",
+   "title": "Human activities which contribute to an increase in greenhouse gases in the atmosphere",
+   "page": 78
+  },
+  {
+   "ref": "4.9.2.3",
+   "title": "Global climate change",
+   "page": 78
+  },
+  {
+   "ref": "4.9.2.4",
+   "title": "The carbon footprint and its reduction",
+   "page": 79
+  },
+  {
+   "ref": "4.9.3",
+   "title": "Common atmospheric pollutants and their sources",
+   "page": 79
+  },
+  {
+   "ref": "4.9.3.1",
+   "title": "Atmospheric pollutants from fuels",
+   "page": 79
+  },
+  {
+   "ref": "4.9.3.2",
+   "title": "Properties and effects of atmospheric pollutants",
+   "page": 80
+  },
+  {
+   "ref": "4.10",
+   "title": "Using resources",
+   "page": 80
+  },
+  {
+   "ref": "4.10.1",
+   "title": "Using the Earth's resources and obtaining potable water",
+   "page": 81
+  },
+  {
+   "ref": "4.10.1.1",
+   "title": "Using the Earth's resources and sustainable development",
+   "page": 81
+  },
+  {
+   "ref": "4.10.1.2",
+   "title": "Potable water",
+   "page": 82
+  },
+  {
+   "ref": "4.10.1.3",
+   "title": "Waste water treatment",
+   "page": 83
+  },
+  {
+   "ref": "4.10.1.4",
+   "title": "Alternative methods of extracting metals",
+   "page": 83,
+   "higherTier": true
+  },
+  {
+   "ref": "4.10.2",
+   "title": "Life cycle assessment and recycling",
+   "page": 84
+  },
+  {
+   "ref": "4.10.2.1",
+   "title": "Life cycle assessment",
+   "page": 84
+  },
+  {
+   "ref": "4.10.2.2",
+   "title": "Ways of reducing the use of resources",
+   "page": 85
+  },
+  {
+   "ref": "4.10.3",
+   "title": "Using materials",
+   "page": 85,
+   "chemistryOnly": true
+  },
+  {
+   "ref": "4.10.3.1",
+   "title": "Corrosion and its prevention",
+   "page": 85
+  },
+  {
+   "ref": "4.10.3.2",
+   "title": "Alloys as useful materials",
+   "page": 86
+  },
+  {
+   "ref": "4.10.3.3",
+   "title": "Ceramics, polymers and composites",
+   "page": 87
+  },
+  {
+   "ref": "4.10.4",
+   "title": "The Haber process and the use of NPK fertilisers (chemistry only)",
+   "page": 88
+  },
+  {
+   "ref": "4.10.4.1",
+   "title": "The Haber process",
+   "page": 88
+  },
+  {
+   "ref": "4.10.4.2",
+   "title": "Production and uses of NPK fertilisers",
+   "page": 89
+  }
+ ],
+ "statements": [
+  {
+   "ref": "4.1.1.1.a",
+   "section": "4.1.1.1",
+   "kind": "content",
+   "page": 18,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.1",
+    "4.1.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "146c767f94e93877"
+  },
+  {
+   "ref": "4.1.1.1.b",
+   "section": "4.1.1.1",
+   "kind": "content",
+   "page": 18,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.1",
+    "4.1.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "45462d58ebf8b76e"
+  },
+  {
+   "ref": "4.1.1.1.c",
+   "section": "4.1.1.1",
+   "kind": "content",
+   "page": 18,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.1",
+    "4.1.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "c02fbe408ba1678c"
+  },
+  {
+   "ref": "4.1.1.1.d",
+   "section": "4.1.1.1",
+   "kind": "content",
+   "page": 18,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.1",
+    "4.1.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "b88f42aaf213e9c0"
+  },
+  {
+   "ref": "4.1.1.1.e",
+   "section": "4.1.1.1",
+   "kind": "content",
+   "page": 18,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.1",
+    "4.1.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "bf6974ab0e565c08"
+  },
+  {
+   "ref": "4.1.1.1.f",
+   "section": "4.1.1.1",
+   "kind": "content",
+   "page": 18,
+   "skills": [],
+   "higherTier": true,
+   "topic": [
+    "4.1",
+    "4.1.1",
+    "4.1.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "701036cfe1cf0215"
+  },
+  {
+   "ref": "4.1.1.2.a",
+   "section": "4.1.1.2",
+   "kind": "content",
+   "page": 19,
+   "skills": [
+    "WS 2.2",
+    "WS 2.3",
+    "AT 4"
+   ],
+   "topic": [
+    "4.1",
+    "4.1.1",
+    "4.1.1.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "1ee76d3e975feb53"
+  },
+  {
+   "ref": "4.1.1.2.b",
+   "section": "4.1.1.2",
+   "kind": "content",
+   "page": 19,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.1",
+    "4.1.1.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "1ed1324b856b63c8"
+  },
+  {
+   "ref": "4.1.1.2.c",
+   "section": "4.1.1.2",
+   "kind": "skill",
+   "page": 19,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.1",
+    "4.1.1.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "2177306ce84c3252"
+  },
+  {
+   "ref": "4.1.1.3.a",
+   "section": "4.1.1.3",
+   "kind": "content",
+   "page": 19,
+   "skills": [
+    "WS 1.1",
+    "WS 1.6"
+   ],
+   "topic": [
+    "4.1",
+    "4.1.1",
+    "4.1.1.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "f2bea9facb3b2762"
+  },
+  {
+   "ref": "4.1.1.3.b",
+   "section": "4.1.1.3",
+   "kind": "content",
+   "page": 19,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.1",
+    "4.1.1.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "237b3bb52c637b2b"
+  },
+  {
+   "ref": "4.1.1.3.c",
+   "section": "4.1.1.3",
+   "kind": "content",
+   "page": 19,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.1",
+    "4.1.1.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "cef92712acbd688b"
+  },
+  {
+   "ref": "4.1.1.3.d",
+   "section": "4.1.1.3",
+   "kind": "content",
+   "page": 19,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.1",
+    "4.1.1.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "41076b2334e56d28"
+  },
+  {
+   "ref": "4.1.1.3.e",
+   "section": "4.1.1.3",
+   "kind": "content",
+   "page": 19,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.1",
+    "4.1.1.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "97cc21126311176d"
+  },
+  {
+   "ref": "4.1.1.3.f",
+   "section": "4.1.1.3",
+   "kind": "content",
+   "page": 19,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.1",
+    "4.1.1.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "5c0f123e1a7e94f9"
+  },
+  {
+   "ref": "4.1.1.3.g",
+   "section": "4.1.1.3",
+   "kind": "content",
+   "page": 19,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.1",
+    "4.1.1.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "6f3edd2268391e63"
+  },
+  {
+   "ref": "4.1.1.3.h",
+   "section": "4.1.1.3",
+   "kind": "skill",
+   "page": 19,
+   "skills": [
+    "WS 1.2"
+   ],
+   "topic": [
+    "4.1",
+    "4.1.1",
+    "4.1.1.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "scoped": 2,
+   "hash": "46a244f669d0aa91"
+  },
+  {
+   "ref": "4.1.1.4.a",
+   "section": "4.1.1.4",
+   "kind": "content",
+   "page": 20,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.1",
+    "4.1.1.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "6a0d50f676e98a03"
+  },
+  {
+   "ref": "4.1.1.4.b",
+   "section": "4.1.1.4",
+   "kind": "content",
+   "page": 20,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.1",
+    "4.1.1.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "caeb8537186ee353"
+  },
+  {
+   "ref": "4.1.1.4.c",
+   "section": "4.1.1.4",
+   "kind": "skill",
+   "page": 20,
+   "skills": [
+    "WS 1.2"
+   ],
+   "topic": [
+    "4.1",
+    "4.1.1",
+    "4.1.1.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "1ec0f98c60cffd46"
+  },
+  {
+   "ref": "4.1.1.5.a",
+   "section": "4.1.1.5",
+   "kind": "content",
+   "page": 21,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.1",
+    "4.1.1.5"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "7d8e96a419da6435"
+  },
+  {
+   "ref": "4.1.1.5.b",
+   "section": "4.1.1.5",
+   "kind": "content",
+   "page": 21,
+   "skills": [
+    "MS 1b"
+   ],
+   "topic": [
+    "4.1",
+    "4.1.1",
+    "4.1.1.5"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "84ea98b9b15407be"
+  },
+  {
+   "ref": "4.1.1.5.c",
+   "section": "4.1.1.5",
+   "kind": "content",
+   "page": 21,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.1",
+    "4.1.1.5"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "736d26fec3110876"
+  },
+  {
+   "ref": "4.1.1.5.d",
+   "section": "4.1.1.5",
+   "kind": "content",
+   "page": 21,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.1",
+    "4.1.1.5"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "55b7d178f119e2bf"
+  },
+  {
+   "ref": "4.1.1.5.e",
+   "section": "4.1.1.5",
+   "kind": "content",
+   "page": 21,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.1",
+    "4.1.1.5"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "768fc7715e18aa40"
+  },
+  {
+   "ref": "4.1.1.5.f",
+   "section": "4.1.1.5",
+   "kind": "skill",
+   "page": 21,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.1",
+    "4.1.1.5"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "7c3900fb8f812548"
+  },
+  {
+   "ref": "4.1.1.6.a",
+   "section": "4.1.1.6",
+   "kind": "content",
+   "page": 21,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.1",
+    "4.1.1.6"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "f039596c83e43e2d"
+  },
+  {
+   "ref": "4.1.1.6.b",
+   "section": "4.1.1.6",
+   "kind": "skill",
+   "page": 21,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.1",
+    "4.1.1.6"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "23a0790ff21c651b"
+  },
+  {
+   "ref": "4.1.1.7.a",
+   "section": "4.1.1.7",
+   "kind": "content",
+   "page": 22,
+   "skills": [
+    "MS 5b"
+   ],
+   "topic": [
+    "4.1",
+    "4.1.1",
+    "4.1.1.7"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "6b0dd92a20aba091"
+  },
+  {
+   "ref": "4.1.1.7.b",
+   "section": "4.1.1.7",
+   "kind": "content",
+   "page": 22,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.1",
+    "4.1.1.7"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "8498c2a2bf514cd3"
+  },
+  {
+   "ref": "4.1.2.1.a",
+   "section": "4.1.2.1",
+   "kind": "content",
+   "page": 22,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.2",
+    "4.1.2.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "1661c17ced720513"
+  },
+  {
+   "ref": "4.1.2.1.b",
+   "section": "4.1.2.1",
+   "kind": "content",
+   "page": 22,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.2",
+    "4.1.2.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "09b99ecec132a4d0"
+  },
+  {
+   "ref": "4.1.2.1.c",
+   "section": "4.1.2.1",
+   "kind": "skill",
+   "page": 22,
+   "skills": [
+    "WS 1.2"
+   ],
+   "topic": [
+    "4.1",
+    "4.1.2",
+    "4.1.2.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "9ae5fd80125ce2a8"
+  },
+  {
+   "ref": "4.1.2.2.a",
+   "section": "4.1.2.2",
+   "kind": "content",
+   "page": 23,
+   "skills": [
+    "WS 1.1",
+    "WS 1.6"
+   ],
+   "topic": [
+    "4.1",
+    "4.1.2",
+    "4.1.2.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "41f0103df9102e84"
+  },
+  {
+   "ref": "4.1.2.2.b",
+   "section": "4.1.2.2",
+   "kind": "content",
+   "page": 23,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.2",
+    "4.1.2.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "5a8ccc17c76dea52"
+  },
+  {
+   "ref": "4.1.2.2.c",
+   "section": "4.1.2.2",
+   "kind": "content",
+   "page": 23,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.2",
+    "4.1.2.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "73571feb7f7895be"
+  },
+  {
+   "ref": "4.1.2.2.d",
+   "section": "4.1.2.2",
+   "kind": "content",
+   "page": 23,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.2",
+    "4.1.2.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "9225b8ac6f07b64f"
+  },
+  {
+   "ref": "4.1.2.2.e",
+   "section": "4.1.2.2",
+   "kind": "skill",
+   "page": 23,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.2",
+    "4.1.2.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "4bd5cf6bd9383502"
+  },
+  {
+   "ref": "4.1.2.3.a",
+   "section": "4.1.2.3",
+   "kind": "content",
+   "page": 23,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.2",
+    "4.1.2.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "80d2ac6d21c6738e"
+  },
+  {
+   "ref": "4.1.2.3.b",
+   "section": "4.1.2.3",
+   "kind": "content",
+   "page": 23,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.2",
+    "4.1.2.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "e527ea1087f98bf3"
+  },
+  {
+   "ref": "4.1.2.3.c",
+   "section": "4.1.2.3",
+   "kind": "content",
+   "page": 23,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.2",
+    "4.1.2.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "74355859dc2317dc"
+  },
+  {
+   "ref": "4.1.2.3.d",
+   "section": "4.1.2.3",
+   "kind": "skill",
+   "page": 23,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.2",
+    "4.1.2.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "a2cf61aca7d3dced"
+  },
+  {
+   "ref": "4.1.2.4.a",
+   "section": "4.1.2.4",
+   "kind": "content",
+   "page": 24,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.2",
+    "4.1.2.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "1ddcb4a6b66e0c47"
+  },
+  {
+   "ref": "4.1.2.4.b",
+   "section": "4.1.2.4",
+   "kind": "content",
+   "page": 24,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.2",
+    "4.1.2.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "7121df0d12dc8777"
+  },
+  {
+   "ref": "4.1.2.4.c",
+   "section": "4.1.2.4",
+   "kind": "skill",
+   "page": 24,
+   "skills": [
+    "WS 1.2"
+   ],
+   "topic": [
+    "4.1",
+    "4.1.2",
+    "4.1.2.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "7cba176ee6219264"
+  },
+  {
+   "ref": "4.1.2.5.a",
+   "section": "4.1.2.5",
+   "kind": "content",
+   "page": 24,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.2",
+    "4.1.2.5"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "3d9c07dc087318a5"
+  },
+  {
+   "ref": "4.1.2.5.b",
+   "section": "4.1.2.5",
+   "kind": "skill",
+   "page": 24,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.2",
+    "4.1.2.5"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "8cb865287dd45ebb"
+  },
+  {
+   "ref": "4.1.2.5.c",
+   "section": "4.1.2.5",
+   "kind": "content",
+   "page": 24,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.2",
+    "4.1.2.5"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "ec6b59a13d68f742"
+  },
+  {
+   "ref": "4.1.2.5.d",
+   "section": "4.1.2.5",
+   "kind": "skill",
+   "page": 24,
+   "skills": [
+    "WS 1.2"
+   ],
+   "topic": [
+    "4.1",
+    "4.1.2",
+    "4.1.2.5"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "2e45507af518509d"
+  },
+  {
+   "ref": "4.1.2.6.a",
+   "section": "4.1.2.6",
+   "kind": "content",
+   "page": 25,
+   "skills": [
+    "AT 6"
+   ],
+   "topic": [
+    "4.1",
+    "4.1.2",
+    "4.1.2.6"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "b6aebfc163588645"
+  },
+  {
+   "ref": "4.1.2.6.b",
+   "section": "4.1.2.6",
+   "kind": "skill",
+   "page": 25,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.2",
+    "4.1.2.6"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "4de912a4f5189a9e"
+  },
+  {
+   "ref": "4.1.2.6.c",
+   "section": "4.1.2.6",
+   "kind": "content",
+   "page": 25,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.2",
+    "4.1.2.6"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "45e45d5ca072ba7f"
+  },
+  {
+   "ref": "4.1.2.6.d",
+   "section": "4.1.2.6",
+   "kind": "content",
+   "page": 25,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.2",
+    "4.1.2.6"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "9b0079cc27950ada"
+  },
+  {
+   "ref": "4.1.2.6.e",
+   "section": "4.1.2.6",
+   "kind": "content",
+   "page": 25,
+   "skills": [
+    "WS 1.2"
+   ],
+   "topic": [
+    "4.1",
+    "4.1.2",
+    "4.1.2.6"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "ef88449a60b033fc"
+  },
+  {
+   "ref": "4.1.2.6.f",
+   "section": "4.1.2.6",
+   "kind": "skill",
+   "page": 25,
+   "skills": [],
+   "topic": [
+    "4.1",
+    "4.1.2",
+    "4.1.2.6"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "197b7d2b32163b1f"
+  },
+  {
+   "ref": "4.1.3.1.a",
+   "section": "4.1.3.1",
+   "kind": "content",
+   "page": 25,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.1",
+    "4.1.3",
+    "4.1.3.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "3b39d69b31f2e10b"
+  },
+  {
+   "ref": "4.1.3.1.b",
+   "section": "4.1.3.1",
+   "kind": "skill",
+   "page": 25,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.1",
+    "4.1.3",
+    "4.1.3.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "27f2860a816d1a24"
+  },
+  {
+   "ref": "4.1.3.1.c",
+   "section": "4.1.3.1",
+   "kind": "skill",
+   "page": 25,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.1",
+    "4.1.3",
+    "4.1.3.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "56e1244f7c75b330"
+  },
+  {
+   "ref": "4.1.3.2.a",
+   "section": "4.1.3.2",
+   "kind": "content",
+   "page": 26,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.1",
+    "4.1.3",
+    "4.1.3.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "a1dd97cef8268c1b"
+  },
+  {
+   "ref": "4.1.3.2.b",
+   "section": "4.1.3.2",
+   "kind": "skill",
+   "page": 26,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.1",
+    "4.1.3",
+    "4.1.3.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "8a6b056ffd989217"
+  },
+  {
+   "ref": "4.2.1.1.a",
+   "section": "4.2.1.1",
+   "kind": "content",
+   "page": 26,
+   "skills": [],
+   "topic": [
+    "4.2",
+    "4.2.1",
+    "4.2.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "c84304d021dc6ea1"
+  },
+  {
+   "ref": "4.2.1.1.b",
+   "section": "4.2.1.1",
+   "kind": "content",
+   "page": 26,
+   "skills": [],
+   "topic": [
+    "4.2",
+    "4.2.1",
+    "4.2.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "5e1643cd0c2fe268"
+  },
+  {
+   "ref": "4.2.1.1.c",
+   "section": "4.2.1.1",
+   "kind": "content",
+   "page": 26,
+   "skills": [],
+   "topic": [
+    "4.2",
+    "4.2.1",
+    "4.2.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "27cb63617532d92a"
+  },
+  {
+   "ref": "4.2.1.1.d",
+   "section": "4.2.1.1",
+   "kind": "content",
+   "page": 26,
+   "skills": [],
+   "topic": [
+    "4.2",
+    "4.2.1",
+    "4.2.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "09c91e46d523747d"
+  },
+  {
+   "ref": "4.2.1.1.e",
+   "section": "4.2.1.1",
+   "kind": "skill",
+   "page": 26,
+   "skills": [],
+   "topic": [
+    "4.2",
+    "4.2.1",
+    "4.2.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "362659559ab60a5a"
+  },
+  {
+   "ref": "4.2.1.2.a",
+   "section": "4.2.1.2",
+   "kind": "content",
+   "page": 27,
+   "skills": [
+    "MS 5b"
+   ],
+   "topic": [
+    "4.2",
+    "4.2.1",
+    "4.2.1.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "aad162d6aece9895"
+  },
+  {
+   "ref": "4.2.1.2.b",
+   "section": "4.2.1.2",
+   "kind": "content",
+   "page": 27,
+   "skills": [
+    "WS 1.2"
+   ],
+   "topic": [
+    "4.2",
+    "4.2.1",
+    "4.2.1.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "564eea9a1b351a4e"
+  },
+  {
+   "ref": "4.2.1.2.c",
+   "section": "4.2.1.2",
+   "kind": "content",
+   "page": 27,
+   "skills": [],
+   "topic": [
+    "4.2",
+    "4.2.1",
+    "4.2.1.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "09c4de0f80acddfa"
+  },
+  {
+   "ref": "4.2.1.2.d",
+   "section": "4.2.1.2",
+   "kind": "skill",
+   "page": 27,
+   "skills": [],
+   "topic": [
+    "4.2",
+    "4.2.1",
+    "4.2.1.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "d9a5cc5286553e34"
+  },
+  {
+   "ref": "4.2.1.3.a",
+   "section": "4.2.1.3",
+   "kind": "content",
+   "page": 27,
+   "skills": [
+    "WS 1.2"
+   ],
+   "topic": [
+    "4.2",
+    "4.2.1",
+    "4.2.1.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "f69b42faee4f4ad6"
+  },
+  {
+   "ref": "4.2.1.3.b",
+   "section": "4.2.1.3",
+   "kind": "skill",
+   "page": 28,
+   "skills": [],
+   "topic": [
+    "4.2",
+    "4.2.1",
+    "4.2.1.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "c44e526d25e0a6dd"
+  },
+  {
+   "ref": "4.2.1.4.a",
+   "section": "4.2.1.4",
+   "kind": "content",
+   "page": 29,
+   "skills": [
+    "WS 1.2"
+   ],
+   "topic": [
+    "4.2",
+    "4.2.1",
+    "4.2.1.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "eb34bf47ebd17d1a"
+  },
+  {
+   "ref": "4.2.1.4.b",
+   "section": "4.2.1.4",
+   "kind": "content",
+   "page": 29,
+   "skills": [],
+   "topic": [
+    "4.2",
+    "4.2.1",
+    "4.2.1.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "cf26e833301600c6"
+  },
+  {
+   "ref": "4.2.1.4.c",
+   "section": "4.2.1.4",
+   "kind": "skill",
+   "page": 29,
+   "skills": [],
+   "topic": [
+    "4.2",
+    "4.2.1",
+    "4.2.1.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "9789508436de52fb"
+  },
+  {
+   "ref": "4.2.1.4.d",
+   "section": "4.2.1.4",
+   "kind": "content",
+   "page": 29,
+   "skills": [],
+   "topic": [
+    "4.2",
+    "4.2.1",
+    "4.2.1.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "7e1499e758c11e00"
+  },
+  {
+   "ref": "4.2.1.4.e",
+   "section": "4.2.1.4",
+   "kind": "content",
+   "page": 29,
+   "skills": [],
+   "topic": [
+    "4.2",
+    "4.2.1",
+    "4.2.1.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "32237ba593117a8b"
+  },
+  {
+   "ref": "4.2.1.4.f",
+   "section": "4.2.1.4",
+   "kind": "content",
+   "page": 29,
+   "skills": [],
+   "topic": [
+    "4.2",
+    "4.2.1",
+    "4.2.1.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "773ebbb65640d6ba"
+  },
+  {
+   "ref": "4.2.1.4.g",
+   "section": "4.2.1.4",
+   "kind": "skill",
+   "page": 30,
+   "skills": [
+    "MS 5b"
+   ],
+   "topic": [
+    "4.2",
+    "4.2.1",
+    "4.2.1.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "55fe3845e17522a2"
+  },
+  {
+   "ref": "4.2.1.5.a",
+   "section": "4.2.1.5",
+   "kind": "content",
+   "page": 30,
+   "skills": [
+    "WS 1.2"
+   ],
+   "topic": [
+    "4.2",
+    "4.2.1",
+    "4.2.1.5"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "83f57f54f7ec31fe"
+  },
+  {
+   "ref": "4.2.1.5.b",
+   "section": "4.2.1.5",
+   "kind": "content",
+   "page": 30,
+   "skills": [
+    "MS 5b"
+   ],
+   "topic": [
+    "4.2",
+    "4.2.1",
+    "4.2.1.5"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "f903bfa68c4bc700"
+  },
+  {
+   "ref": "4.2.2.1.a",
+   "section": "4.2.2.1",
+   "kind": "content",
+   "page": 31,
+   "skills": [
+    "MS 5b"
+   ],
+   "topic": [
+    "4.2",
+    "4.2.2",
+    "4.2.2.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "8cbf97a1d8a2d11a"
+  },
+  {
+   "ref": "4.2.2.1.b",
+   "section": "4.2.2.1",
+   "kind": "content",
+   "page": 31,
+   "skills": [],
+   "topic": [
+    "4.2",
+    "4.2.2",
+    "4.2.2.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "6a38711249039d9d"
+  },
+  {
+   "ref": "4.2.2.1.c",
+   "section": "4.2.2.1",
+   "kind": "content",
+   "page": 31,
+   "skills": [],
+   "topic": [
+    "4.2",
+    "4.2.2",
+    "4.2.2.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "a89bb2ad4258caff"
+  },
+  {
+   "ref": "4.2.2.1.d",
+   "section": "4.2.2.1",
+   "kind": "content",
+   "page": 31,
+   "skills": [
+    "WS 1.2"
+   ],
+   "higherTier": true,
+   "topic": [
+    "4.2",
+    "4.2.2",
+    "4.2.2.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "728978914f3ef88d"
+  },
+  {
+   "ref": "4.2.2.1.e",
+   "section": "4.2.2.1",
+   "kind": "skill",
+   "page": 31,
+   "skills": [],
+   "higherTier": true,
+   "topic": [
+    "4.2",
+    "4.2.2",
+    "4.2.2.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "9d71978025a4dea8"
+  },
+  {
+   "ref": "4.2.2.2.a",
+   "section": "4.2.2.2",
+   "kind": "content",
+   "page": 32,
+   "skills": [],
+   "topic": [
+    "4.2",
+    "4.2.2",
+    "4.2.2.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "6c2e78bd1a2ea4f9"
+  },
+  {
+   "ref": "4.2.2.2.b",
+   "section": "4.2.2.2",
+   "kind": "skill",
+   "page": 32,
+   "skills": [],
+   "topic": [
+    "4.2",
+    "4.2.2",
+    "4.2.2.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "bec5f8f8ec9612f5"
+  },
+  {
+   "ref": "4.2.2.3.a",
+   "section": "4.2.2.3",
+   "kind": "content",
+   "page": 32,
+   "skills": [],
+   "topic": [
+    "4.2",
+    "4.2.2",
+    "4.2.2.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "455a248a430359e9"
+  },
+  {
+   "ref": "4.2.2.3.b",
+   "section": "4.2.2.3",
+   "kind": "content",
+   "page": 32,
+   "skills": [],
+   "topic": [
+    "4.2",
+    "4.2.2",
+    "4.2.2.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "b1b34ededae6264f"
+  },
+  {
+   "ref": "4.2.2.3.c",
+   "section": "4.2.2.3",
+   "kind": "content",
+   "page": 32,
+   "skills": [],
+   "topic": [
+    "4.2",
+    "4.2.2",
+    "4.2.2.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "scoped": 1,
+   "hash": "18f9d8e283346dab"
+  },
+  {
+   "ref": "4.2.2.4.a",
+   "section": "4.2.2.4",
+   "kind": "content",
+   "page": 32,
+   "skills": [
+    "WS 1.2"
+   ],
+   "topic": [
+    "4.2",
+    "4.2.2",
+    "4.2.2.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "31cdb6fbf0e74a52"
+  },
+  {
+   "ref": "4.2.2.4.b",
+   "section": "4.2.2.4",
+   "kind": "content",
+   "page": 32,
+   "skills": [],
+   "topic": [
+    "4.2",
+    "4.2.2",
+    "4.2.2.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "27ed591d5bc182a4"
+  },
+  {
+   "ref": "4.2.2.4.c",
+   "section": "4.2.2.4",
+   "kind": "content",
+   "page": 32,
+   "skills": [],
+   "topic": [
+    "4.2",
+    "4.2.2",
+    "4.2.2.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "40ee292e4ab84931"
+  },
+  {
+   "ref": "4.2.2.4.d",
+   "section": "4.2.2.4",
+   "kind": "content",
+   "page": 32,
+   "skills": [],
+   "topic": [
+    "4.2",
+    "4.2.2",
+    "4.2.2.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "89bb30632a9666b6"
+  },
+  {
+   "ref": "4.2.2.4.e",
+   "section": "4.2.2.4",
+   "kind": "skill",
+   "page": 32,
+   "skills": [],
+   "topic": [
+    "4.2",
+    "4.2.2",
+    "4.2.2.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "e1359af06d393da6"
+  },
+  {
+   "ref": "4.2.2.5.a",
+   "section": "4.2.2.5",
+   "kind": "content",
+   "page": 33,
+   "skills": [],
+   "topic": [
+    "4.2",
+    "4.2.2",
+    "4.2.2.5"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "6ae2c524663e9c16"
+  },
+  {
+   "ref": "4.2.2.5.b",
+   "section": "4.2.2.5",
+   "kind": "skill",
+   "page": 33,
+   "skills": [],
+   "topic": [
+    "4.2",
+    "4.2.2",
+    "4.2.2.5"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "c21dcb4d8717a79b"
+  },
+  {
+   "ref": "4.2.2.6.a",
+   "section": "4.2.2.6",
+   "kind": "content",
+   "page": 33,
+   "skills": [
+    "MS 5b"
+   ],
+   "topic": [
+    "4.2",
+    "4.2.2",
+    "4.2.2.6"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "10d3cd20bd9c0f94"
+  },
+  {
+   "ref": "4.2.2.6.b",
+   "section": "4.2.2.6",
+   "kind": "skill",
+   "page": 33,
+   "skills": [
+    "WS 1.2"
+   ],
+   "topic": [
+    "4.2",
+    "4.2.2",
+    "4.2.2.6"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "8329c09c9a49d7b9"
+  },
+  {
+   "ref": "4.2.2.7.a",
+   "section": "4.2.2.7",
+   "kind": "content",
+   "page": 33,
+   "skills": [],
+   "topic": [
+    "4.2",
+    "4.2.2",
+    "4.2.2.7"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "7728583ede1d06b6"
+  },
+  {
+   "ref": "4.2.2.7.b",
+   "section": "4.2.2.7",
+   "kind": "content",
+   "page": 33,
+   "skills": [],
+   "topic": [
+    "4.2",
+    "4.2.2",
+    "4.2.2.7"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "406abf2cb32aa7be"
+  },
+  {
+   "ref": "4.2.2.7.c",
+   "section": "4.2.2.7",
+   "kind": "skill",
+   "page": 33,
+   "skills": [],
+   "topic": [
+    "4.2",
+    "4.2.2",
+    "4.2.2.7"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "75d5588cb475489a"
+  },
+  {
+   "ref": "4.2.2.8.a",
+   "section": "4.2.2.8",
+   "kind": "content",
+   "page": 33,
+   "skills": [],
+   "topic": [
+    "4.2",
+    "4.2.2",
+    "4.2.2.8"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "1c6fb728d04ea6cd"
+  },
+  {
+   "ref": "4.2.3.1.a",
+   "section": "4.2.3.1",
+   "kind": "content",
+   "page": 34,
+   "skills": [],
+   "topic": [
+    "4.2",
+    "4.2.3",
+    "4.2.3.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "50f3b9a34705c369"
+  },
+  {
+   "ref": "4.2.3.1.b",
+   "section": "4.2.3.1",
+   "kind": "skill",
+   "page": 34,
+   "skills": [
+    "WS 1.2"
+   ],
+   "topic": [
+    "4.2",
+    "4.2.3",
+    "4.2.3.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "746d7ed8207aea01"
+  },
+  {
+   "ref": "4.2.3.2.a",
+   "section": "4.2.3.2",
+   "kind": "content",
+   "page": 34,
+   "skills": [
+    "WS 1.2"
+   ],
+   "topic": [
+    "4.2",
+    "4.2.3",
+    "4.2.3.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "13020009f4ad2ec4"
+  },
+  {
+   "ref": "4.2.3.2.b",
+   "section": "4.2.3.2",
+   "kind": "content",
+   "page": 34,
+   "skills": [],
+   "topic": [
+    "4.2",
+    "4.2.3",
+    "4.2.3.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "82eaea22748aecb6"
+  },
+  {
+   "ref": "4.2.3.2.c",
+   "section": "4.2.3.2",
+   "kind": "skill",
+   "page": 34,
+   "skills": [],
+   "topic": [
+    "4.2",
+    "4.2.3",
+    "4.2.3.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "95aa51dfd021df1a"
+  },
+  {
+   "ref": "4.2.3.2.d",
+   "section": "4.2.3.2",
+   "kind": "skill",
+   "page": 34,
+   "skills": [],
+   "topic": [
+    "4.2",
+    "4.2.3",
+    "4.2.3.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "e4e93b93239f606a"
+  },
+  {
+   "ref": "4.2.3.3.a",
+   "section": "4.2.3.3",
+   "kind": "content",
+   "page": 35,
+   "skills": [],
+   "topic": [
+    "4.2",
+    "4.2.3",
+    "4.2.3.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "57d6e0f657ca8389"
+  },
+  {
+   "ref": "4.2.3.3.b",
+   "section": "4.2.3.3",
+   "kind": "content",
+   "page": 35,
+   "skills": [],
+   "topic": [
+    "4.2",
+    "4.2.3",
+    "4.2.3.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "6e3f8493631e876d"
+  },
+  {
+   "ref": "4.2.3.3.c",
+   "section": "4.2.3.3",
+   "kind": "skill",
+   "page": 35,
+   "skills": [],
+   "topic": [
+    "4.2",
+    "4.2.3",
+    "4.2.3.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "c92aa8bb6a9baa84"
+  },
+  {
+   "ref": "4.2.4.1.a",
+   "section": "4.2.4.1",
+   "kind": "content",
+   "page": 35,
+   "skills": [
+    "WS 1.2",
+    "WS 1.4",
+    "WS 4.1",
+    "WS 4.2",
+    "WS 4.3",
+    "MS 2h"
+   ],
+   "topic": [
+    "4.2",
+    "4.2.4",
+    "4.2.4.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "cf276bfa914dcb90"
+  },
+  {
+   "ref": "4.2.4.1.b",
+   "section": "4.2.4.1",
+   "kind": "content",
+   "page": 35,
+   "skills": [],
+   "topic": [
+    "4.2",
+    "4.2.4",
+    "4.2.4.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "2d814bf53685eb67"
+  },
+  {
+   "ref": "4.2.4.1.c",
+   "section": "4.2.4.1",
+   "kind": "skill",
+   "page": 36,
+   "skills": [
+    "MS 1b",
+    "MS 1c",
+    "MS 1d"
+   ],
+   "topic": [
+    "4.2",
+    "4.2.4",
+    "4.2.4.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "226375fe28d88e8f"
+  },
+  {
+   "ref": "4.2.4.2.a",
+   "section": "4.2.4.2",
+   "kind": "content",
+   "page": 36,
+   "skills": [],
+   "topic": [
+    "4.2",
+    "4.2.4",
+    "4.2.4.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "6613ee0ec611a5d3"
+  },
+  {
+   "ref": "4.2.4.2.b",
+   "section": "4.2.4.2",
+   "kind": "skill",
+   "page": 36,
+   "skills": [],
+   "topic": [
+    "4.2",
+    "4.2.4",
+    "4.2.4.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "9c3095f39b75fc09"
+  },
+  {
+   "ref": "4.2.4.2.c",
+   "section": "4.2.4.2",
+   "kind": "skill",
+   "page": 36,
+   "skills": [
+    "WS 1.3",
+    "WS 1.4",
+    "WS 1.5"
+   ],
+   "topic": [
+    "4.2",
+    "4.2.4",
+    "4.2.4.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "f8963c7257c7c35b"
+  },
+  {
+   "ref": "4.3.1.1.a",
+   "section": "4.3.1.1",
+   "kind": "content",
+   "page": 37,
+   "skills": [
+    "WS 1.2"
+   ],
+   "topic": [
+    "4.3",
+    "4.3.1",
+    "4.3.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "bb7d193b0a168dc2"
+  },
+  {
+   "ref": "4.3.1.1.b",
+   "section": "4.3.1.1",
+   "kind": "content",
+   "page": 37,
+   "skills": [],
+   "topic": [
+    "4.3",
+    "4.3.1",
+    "4.3.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "8073378610bad3d0"
+  },
+  {
+   "ref": "4.3.1.1.c",
+   "section": "4.3.1.1",
+   "kind": "skill",
+   "page": 37,
+   "skills": [],
+   "topic": [
+    "4.3",
+    "4.3.1",
+    "4.3.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "94a9392001713dd2"
+  },
+  {
+   "ref": "4.3.1.2.a",
+   "section": "4.3.1.2",
+   "kind": "content",
+   "page": 37,
+   "skills": [],
+   "topic": [
+    "4.3",
+    "4.3.1",
+    "4.3.1.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "32ae94b4fb0106aa"
+  },
+  {
+   "ref": "4.3.1.2.b",
+   "section": "4.3.1.2",
+   "kind": "content",
+   "page": 37,
+   "skills": [],
+   "topic": [
+    "4.3",
+    "4.3.1",
+    "4.3.1.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "9790f8408ebedcc9"
+  },
+  {
+   "ref": "4.3.1.2.c",
+   "section": "4.3.1.2",
+   "kind": "skill",
+   "page": 37,
+   "skills": [],
+   "topic": [
+    "4.3",
+    "4.3.1",
+    "4.3.1.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "1485e02f4e2ae825"
+  },
+  {
+   "ref": "4.3.1.3.a",
+   "section": "4.3.1.3",
+   "kind": "content",
+   "page": 37,
+   "skills": [
+    "AT 1",
+    "AT 2",
+    "AT 6"
+   ],
+   "topic": [
+    "4.3",
+    "4.3.1",
+    "4.3.1.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "36f8c5b25dca956d"
+  },
+  {
+   "ref": "4.3.1.3.b",
+   "section": "4.3.1.3",
+   "kind": "skill",
+   "page": 37,
+   "skills": [],
+   "topic": [
+    "4.3",
+    "4.3.1",
+    "4.3.1.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "3fa40d7fc6843d8f"
+  },
+  {
+   "ref": "4.3.1.4.a",
+   "section": "4.3.1.4",
+   "kind": "content",
+   "page": 38,
+   "skills": [
+    "WS 3.4"
+   ],
+   "topic": [
+    "4.3",
+    "4.3.1",
+    "4.3.1.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "31fb7251e58ed390"
+  },
+  {
+   "ref": "4.3.1.4.b",
+   "section": "4.3.1.4",
+   "kind": "skill",
+   "page": 38,
+   "skills": [],
+   "topic": [
+    "4.3",
+    "4.3.1",
+    "4.3.1.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "558b193ddf323fc0"
+  },
+  {
+   "ref": "4.3.2.1.a",
+   "section": "4.3.2.1",
+   "kind": "content",
+   "page": 38,
+   "skills": [
+    "WS 4.1",
+    "WS 4.2",
+    "WS 4.3",
+    "WS 4.5",
+    "WS 4.6"
+   ],
+   "higherTier": true,
+   "topic": [
+    "4.3",
+    "4.3.2",
+    "4.3.2.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "2ec5db82af594787"
+  },
+  {
+   "ref": "4.3.2.1.b",
+   "section": "4.3.2.1",
+   "kind": "content",
+   "page": 38,
+   "skills": [
+    "MS 3b",
+    "MS 1c"
+   ],
+   "higherTier": true,
+   "topic": [
+    "4.3",
+    "4.3.2",
+    "4.3.2.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "6f3e5256e4bdf17d"
+  },
+  {
+   "ref": "4.3.2.2.a",
+   "section": "4.3.2.2",
+   "kind": "content",
+   "page": 39,
+   "skills": [
+    "MS 1a"
+   ],
+   "higherTier": true,
+   "topic": [
+    "4.3",
+    "4.3.2",
+    "4.3.2.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "c4028926a001453f"
+  },
+  {
+   "ref": "4.3.2.2.b",
+   "section": "4.3.2.2",
+   "kind": "content",
+   "page": 39,
+   "skills": [
+    "MS 1c"
+   ],
+   "higherTier": true,
+   "topic": [
+    "4.3",
+    "4.3.2",
+    "4.3.2.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "cd8b89ea0b4481af"
+  },
+  {
+   "ref": "4.3.2.2.c",
+   "section": "4.3.2.2",
+   "kind": "skill",
+   "page": 39,
+   "skills": [
+    "MS 3b",
+    "MS 3c"
+   ],
+   "higherTier": true,
+   "topic": [
+    "4.3",
+    "4.3.2",
+    "4.3.2.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "8d907f75b12880a6"
+  },
+  {
+   "ref": "4.3.2.3.a",
+   "section": "4.3.2.3",
+   "kind": "content",
+   "page": 39,
+   "skills": [
+    "MS 3b"
+   ],
+   "higherTier": true,
+   "topic": [
+    "4.3",
+    "4.3.2",
+    "4.3.2.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "1db3350dbf6b34c5"
+  },
+  {
+   "ref": "4.3.2.3.b",
+   "section": "4.3.2.3",
+   "kind": "skill",
+   "page": 39,
+   "skills": [],
+   "higherTier": true,
+   "topic": [
+    "4.3",
+    "4.3.2",
+    "4.3.2.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "14c0a2ac105c7965"
+  },
+  {
+   "ref": "4.3.2.3.c",
+   "section": "4.3.2.3",
+   "kind": "skill",
+   "page": 39,
+   "skills": [
+    "MS 3c"
+   ],
+   "higherTier": true,
+   "topic": [
+    "4.3",
+    "4.3.2",
+    "4.3.2.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "13144afcc43a36cd"
+  },
+  {
+   "ref": "4.3.2.4.a",
+   "section": "4.3.2.4",
+   "kind": "content",
+   "page": 40,
+   "skills": [
+    "WS 4.1"
+   ],
+   "higherTier": true,
+   "topic": [
+    "4.3",
+    "4.3.2",
+    "4.3.2.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "e2e111a178fe6037"
+  },
+  {
+   "ref": "4.3.2.4.b",
+   "section": "4.3.2.4",
+   "kind": "skill",
+   "page": 40,
+   "skills": [],
+   "higherTier": true,
+   "topic": [
+    "4.3",
+    "4.3.2",
+    "4.3.2.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "867be1810087950c"
+  },
+  {
+   "ref": "4.3.2.5.a",
+   "section": "4.3.2.5",
+   "kind": "content",
+   "page": 40,
+   "skills": [
+    "MS 1c"
+   ],
+   "topic": [
+    "4.3",
+    "4.3.2",
+    "4.3.2.5"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "a4d1e0122aecc20f"
+  },
+  {
+   "ref": "4.3.2.5.b",
+   "section": "4.3.2.5",
+   "kind": "skill",
+   "page": 40,
+   "skills": [
+    "MS 3b"
+   ],
+   "higherTier": true,
+   "topic": [
+    "4.3",
+    "4.3.2",
+    "4.3.2.5"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "fb3588359bfe1359"
+  },
+  {
+   "ref": "4.3.3.1.a",
+   "section": "4.3.3.1",
+   "kind": "content",
+   "page": 41,
+   "skills": [
+    "MS 3b"
+   ],
+   "chemistryOnly": true,
+   "higherTier": true,
+   "topic": [
+    "4.3",
+    "4.3.3",
+    "4.3.3.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "a713ec38c1f16d25"
+  },
+  {
+   "ref": "4.3.3.2.a",
+   "section": "4.3.3.2",
+   "kind": "content",
+   "page": 41,
+   "skills": [
+    "WS 4.2",
+    "WS 4.6",
+    "MS 1a"
+   ],
+   "chemistryOnly": true,
+   "topic": [
+    "4.3",
+    "4.3.3",
+    "4.3.3.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "df057876a6c24fd0"
+  },
+  {
+   "ref": "4.3.3.2.b",
+   "section": "4.3.3.2",
+   "kind": "content",
+   "page": 41,
+   "skills": [],
+   "chemistryOnly": true,
+   "higherTier": true,
+   "topic": [
+    "4.3",
+    "4.3.3",
+    "4.3.3.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "0e6e0780dc746dc9"
+  },
+  {
+   "ref": "4.3.4.a",
+   "section": "4.3.4",
+   "kind": "content",
+   "page": 42,
+   "skills": [
+    "WS 4.2",
+    "WS 4.3",
+    "WS 4.6"
+   ],
+   "chemistryOnly": true,
+   "topic": [
+    "4.3",
+    "4.3.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "edfa999de7b42410"
+  },
+  {
+   "ref": "4.3.4.b",
+   "section": "4.3.4",
+   "kind": "content",
+   "page": 42,
+   "skills": [
+    "MS 1a"
+   ],
+   "chemistryOnly": true,
+   "topic": [
+    "4.3",
+    "4.3.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "808dceaf5c07be84"
+  },
+  {
+   "ref": "4.3.4.c",
+   "section": "4.3.4",
+   "kind": "content",
+   "page": 42,
+   "skills": [
+    "MS 3c",
+    "AT 1",
+    "AT 3",
+    "AT 8"
+   ],
+   "chemistryOnly": true,
+   "topic": [
+    "4.3",
+    "4.3.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "cf752ea8ba377d6b"
+  },
+  {
+   "ref": "4.3.5.a",
+   "section": "4.3.5",
+   "kind": "content",
+   "page": 43,
+   "skills": [
+    "WS 1.2",
+    "WS 4.1",
+    "WS 4.2",
+    "WS 4.3",
+    "WS 4.6"
+   ],
+   "topic": [
+    "4.3",
+    "4.3.5"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "a88b1fc9fb1d775b"
+  },
+  {
+   "ref": "4.3.5.b",
+   "section": "4.3.5",
+   "kind": "content",
+   "page": 43,
+   "skills": [],
+   "topic": [
+    "4.3",
+    "4.3.5"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "2e7b2f15bb82d15f"
+  },
+  {
+   "ref": "4.3.5.c",
+   "section": "4.3.5",
+   "kind": "content",
+   "page": 43,
+   "skills": [],
+   "topic": [
+    "4.3",
+    "4.3.5"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "9890e4f50a80475d"
+  },
+  {
+   "ref": "4.3.5.d",
+   "section": "4.3.5",
+   "kind": "skill",
+   "page": 43,
+   "skills": [
+    "MS 1a",
+    "MS 1c",
+    "MS 3b",
+    "MS 3c"
+   ],
+   "topic": [
+    "4.3",
+    "4.3.5"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "a5f58ca7b133938f"
+  },
+  {
+   "ref": "4.4.1.1.a",
+   "section": "4.4.1.1",
+   "kind": "content",
+   "page": 43,
+   "skills": [],
+   "topic": [
+    "4.4",
+    "4.4.1",
+    "4.4.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "6deb1d6725aa95c8"
+  },
+  {
+   "ref": "4.4.1.1.b",
+   "section": "4.4.1.1",
+   "kind": "skill",
+   "page": 43,
+   "skills": [],
+   "topic": [
+    "4.4",
+    "4.4.1",
+    "4.4.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "4220af54007a9719"
+  },
+  {
+   "ref": "4.4.1.2.a",
+   "section": "4.4.1.2",
+   "kind": "content",
+   "page": 44,
+   "skills": [],
+   "topic": [
+    "4.4",
+    "4.4.1",
+    "4.4.1.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "b5c8a1681cb7ab6c"
+  },
+  {
+   "ref": "4.4.1.2.b",
+   "section": "4.4.1.2",
+   "kind": "content",
+   "page": 44,
+   "skills": [],
+   "topic": [
+    "4.4",
+    "4.4.1",
+    "4.4.1.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "1a4866cf402dc766"
+  },
+  {
+   "ref": "4.4.1.2.c",
+   "section": "4.4.1.2",
+   "kind": "content",
+   "page": 44,
+   "skills": [],
+   "topic": [
+    "4.4",
+    "4.4.1",
+    "4.4.1.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "a5706438cbd9d0d1"
+  },
+  {
+   "ref": "4.4.1.2.d",
+   "section": "4.4.1.2",
+   "kind": "skill",
+   "page": 44,
+   "skills": [],
+   "topic": [
+    "4.4",
+    "4.4.1",
+    "4.4.1.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "4f071685dc4abce5"
+  },
+  {
+   "ref": "4.4.1.2.e",
+   "section": "4.4.1.2",
+   "kind": "content",
+   "page": 44,
+   "skills": [],
+   "topic": [
+    "4.4",
+    "4.4.1",
+    "4.4.1.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "df4bc9d538d12fd6"
+  },
+  {
+   "ref": "4.4.1.3.a",
+   "section": "4.4.1.3",
+   "kind": "content",
+   "page": 45,
+   "skills": [],
+   "topic": [
+    "4.4",
+    "4.4.1",
+    "4.4.1.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "c301bc4c59a2e025"
+  },
+  {
+   "ref": "4.4.1.3.b",
+   "section": "4.4.1.3",
+   "kind": "content",
+   "page": 45,
+   "skills": [],
+   "topic": [
+    "4.4",
+    "4.4.1",
+    "4.4.1.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "bb62731fe975396e"
+  },
+  {
+   "ref": "4.4.1.3.c",
+   "section": "4.4.1.3",
+   "kind": "content",
+   "page": 45,
+   "skills": [],
+   "topic": [
+    "4.4",
+    "4.4.1",
+    "4.4.1.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "6d636cd38bcf73e4"
+  },
+  {
+   "ref": "4.4.1.3.d",
+   "section": "4.4.1.3",
+   "kind": "content",
+   "page": 45,
+   "skills": [],
+   "topic": [
+    "4.4",
+    "4.4.1",
+    "4.4.1.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "scoped": 1,
+   "hash": "cdcdb165ea5282b8"
+  },
+  {
+   "ref": "4.4.1.3.e",
+   "section": "4.4.1.3",
+   "kind": "skill",
+   "page": 45,
+   "skills": [],
+   "topic": [
+    "4.4",
+    "4.4.1",
+    "4.4.1.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "93c6ab26b4c6f6c5"
+  },
+  {
+   "ref": "4.4.1.4.a",
+   "section": "4.4.1.4",
+   "kind": "content",
+   "page": 45,
+   "skills": [],
+   "higherTier": true,
+   "topic": [
+    "4.4",
+    "4.4.1",
+    "4.4.1.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "23811f0bbb809d72"
+  },
+  {
+   "ref": "4.4.1.4.b",
+   "section": "4.4.1.4",
+   "kind": "content",
+   "page": 45,
+   "skills": [],
+   "higherTier": true,
+   "topic": [
+    "4.4",
+    "4.4.1",
+    "4.4.1.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "cbd3831b44738746"
+  },
+  {
+   "ref": "4.4.2.1.a",
+   "section": "4.4.2.1",
+   "kind": "content",
+   "page": 46,
+   "skills": [],
+   "topic": [
+    "4.4",
+    "4.4.2",
+    "4.4.2.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "f79343de5fbc3ae7"
+  },
+  {
+   "ref": "4.4.2.1.b",
+   "section": "4.4.2.1",
+   "kind": "skill",
+   "page": 46,
+   "skills": [],
+   "higherTier": true,
+   "topic": [
+    "4.4",
+    "4.4.2",
+    "4.4.2.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "scoped": 1,
+   "hash": "b1bc43c2dd0c2ff6"
+  },
+  {
+   "ref": "4.4.2.2.a",
+   "section": "4.4.2.2",
+   "kind": "content",
+   "page": 46,
+   "skills": [],
+   "topic": [
+    "4.4",
+    "4.4.2",
+    "4.4.2.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "5c8bbdac2434a741"
+  },
+  {
+   "ref": "4.4.2.2.b",
+   "section": "4.4.2.2",
+   "kind": "content",
+   "page": 46,
+   "skills": [],
+   "topic": [
+    "4.4",
+    "4.4.2",
+    "4.4.2.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "1be194ebb316976e"
+  },
+  {
+   "ref": "4.4.2.2.c",
+   "section": "4.4.2.2",
+   "kind": "skill",
+   "page": 46,
+   "skills": [],
+   "topic": [
+    "4.4",
+    "4.4.2",
+    "4.4.2.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "de5488399f8d3275"
+  },
+  {
+   "ref": "4.4.2.3.a",
+   "section": "4.4.2.3",
+   "kind": "content",
+   "page": 47,
+   "skills": [],
+   "topic": [
+    "4.4",
+    "4.4.2",
+    "4.4.2.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "c006939954db3b61"
+  },
+  {
+   "ref": "4.4.2.3.b",
+   "section": "4.4.2.3",
+   "kind": "content",
+   "page": 47,
+   "skills": [],
+   "topic": [
+    "4.4",
+    "4.4.2",
+    "4.4.2.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "c76c9aa905a3a0f1"
+  },
+  {
+   "ref": "4.4.2.3.c",
+   "section": "4.4.2.3",
+   "kind": "skill",
+   "page": 47,
+   "skills": [],
+   "topic": [
+    "4.4",
+    "4.4.2",
+    "4.4.2.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "55643137256d15c9"
+  },
+  {
+   "ref": "4.4.2.3.RP1",
+   "section": "4.4.2.3",
+   "kind": "practical",
+   "page": 47,
+   "skills": [
+    "AT 2",
+    "AT 3",
+    "AT 4",
+    "AT 6"
+   ],
+   "topic": [
+    "4.4",
+    "4.4.2",
+    "4.4.2.3"
+   ],
+   "status": "official",
+   "type": "practical",
+   "hash": "b37c06b09a83775a"
+  },
+  {
+   "ref": "4.4.2.4.a",
+   "section": "4.4.2.4",
+   "kind": "content",
+   "page": 47,
+   "skills": [
+    "AT 3"
+   ],
+   "topic": [
+    "4.4",
+    "4.4.2",
+    "4.4.2.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "101f4b1d2091b6ec"
+  },
+  {
+   "ref": "4.4.2.4.b",
+   "section": "4.4.2.4",
+   "kind": "content",
+   "page": 47,
+   "skills": [],
+   "topic": [
+    "4.4",
+    "4.4.2",
+    "4.4.2.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "ccb2cf7bdeb8f4bb"
+  },
+  {
+   "ref": "4.4.2.4.c",
+   "section": "4.4.2.4",
+   "kind": "content",
+   "page": 47,
+   "skills": [],
+   "topic": [
+    "4.4",
+    "4.4.2",
+    "4.4.2.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "13187fed6904ee92"
+  },
+  {
+   "ref": "4.4.2.4.d",
+   "section": "4.4.2.4",
+   "kind": "content",
+   "page": 47,
+   "skills": [],
+   "topic": [
+    "4.4",
+    "4.4.2",
+    "4.4.2.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "694d6a6c21747fb7"
+  },
+  {
+   "ref": "4.4.2.4.e",
+   "section": "4.4.2.4",
+   "kind": "content",
+   "page": 47,
+   "skills": [],
+   "topic": [
+    "4.4",
+    "4.4.2",
+    "4.4.2.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "202181cba7f7c9d4"
+  },
+  {
+   "ref": "4.4.2.4.f",
+   "section": "4.4.2.4",
+   "kind": "content",
+   "page": 47,
+   "skills": [],
+   "topic": [
+    "4.4",
+    "4.4.2",
+    "4.4.2.4"
+   ],
+   "check": "contains a formula or equation set out over lines in the PDF: read it there",
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "22bc4ad19ff1e599"
+  },
+  {
+   "ref": "4.4.2.5.a",
+   "section": "4.4.2.5",
+   "kind": "content",
+   "page": 48,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.4",
+    "4.4.2",
+    "4.4.2.5"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "8fcaa84c9b2d0a3d"
+  },
+  {
+   "ref": "4.4.2.5.b",
+   "section": "4.4.2.5",
+   "kind": "skill",
+   "page": 48,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.4",
+    "4.4.2",
+    "4.4.2.5"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "f74fb398207c9d28"
+  },
+  {
+   "ref": "4.4.2.5.RP2",
+   "section": "4.4.2.5",
+   "kind": "practical",
+   "page": 48,
+   "skills": [
+    "AT 1",
+    "AT 8"
+   ],
+   "chemistryOnly": true,
+   "topic": [
+    "4.4",
+    "4.4.2",
+    "4.4.2.5"
+   ],
+   "status": "official",
+   "type": "practical",
+   "hash": "adb17c5b15ac2c1a"
+  },
+  {
+   "ref": "4.4.2.6.a",
+   "section": "4.4.2.6",
+   "kind": "content",
+   "page": 48,
+   "skills": [
+    "AT 8"
+   ],
+   "higherTier": true,
+   "topic": [
+    "4.4",
+    "4.4.2",
+    "4.4.2.6"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "bf37dbf9b8d9e6d3"
+  },
+  {
+   "ref": "4.4.2.6.b",
+   "section": "4.4.2.6",
+   "kind": "content",
+   "page": 48,
+   "skills": [],
+   "higherTier": true,
+   "topic": [
+    "4.4",
+    "4.4.2",
+    "4.4.2.6"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "ec65e626ea3dc6f7"
+  },
+  {
+   "ref": "4.4.2.6.c",
+   "section": "4.4.2.6",
+   "kind": "content",
+   "page": 48,
+   "skills": [],
+   "higherTier": true,
+   "topic": [
+    "4.4",
+    "4.4.2",
+    "4.4.2.6"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "d3175c7cc3bb4f47"
+  },
+  {
+   "ref": "4.4.2.6.d",
+   "section": "4.4.2.6",
+   "kind": "content",
+   "page": 48,
+   "skills": [],
+   "higherTier": true,
+   "topic": [
+    "4.4",
+    "4.4.2",
+    "4.4.2.6"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "96e3fd5d05d5a081"
+  },
+  {
+   "ref": "4.4.2.6.e",
+   "section": "4.4.2.6",
+   "kind": "skill",
+   "page": 48,
+   "skills": [],
+   "higherTier": true,
+   "topic": [
+    "4.4",
+    "4.4.2",
+    "4.4.2.6"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "c6530cc14295dff5"
+  },
+  {
+   "ref": "4.4.3.1.a",
+   "section": "4.4.3.1",
+   "kind": "content",
+   "page": 49,
+   "skills": [],
+   "topic": [
+    "4.4",
+    "4.4.3",
+    "4.4.3.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "a49d2dfab9e087a0"
+  },
+  {
+   "ref": "4.4.3.1.b",
+   "section": "4.4.3.1",
+   "kind": "content",
+   "page": 49,
+   "skills": [],
+   "topic": [
+    "4.4",
+    "4.4.3",
+    "4.4.3.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "45ea2e64e77ba79f"
+  },
+  {
+   "ref": "4.4.3.1.c",
+   "section": "4.4.3.1",
+   "kind": "content",
+   "page": 49,
+   "skills": [],
+   "higherTier": true,
+   "topic": [
+    "4.4",
+    "4.4.3",
+    "4.4.3.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "b89977fbbe4a11d2"
+  },
+  {
+   "ref": "4.4.3.2.a",
+   "section": "4.4.3.2",
+   "kind": "content",
+   "page": 49,
+   "skills": [],
+   "topic": [
+    "4.4",
+    "4.4.3",
+    "4.4.3.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "917e9240b940d313"
+  },
+  {
+   "ref": "4.4.3.2.b",
+   "section": "4.4.3.2",
+   "kind": "skill",
+   "page": 49,
+   "skills": [],
+   "topic": [
+    "4.4",
+    "4.4.3",
+    "4.4.3.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "1e2a97bbf7402b91"
+  },
+  {
+   "ref": "4.4.3.3.a",
+   "section": "4.4.3.3",
+   "kind": "content",
+   "page": 50,
+   "skills": [],
+   "topic": [
+    "4.4",
+    "4.4.3",
+    "4.4.3.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "40957b08ab9e9dcd"
+  },
+  {
+   "ref": "4.4.3.3.b",
+   "section": "4.4.3.3",
+   "kind": "content",
+   "page": 50,
+   "skills": [],
+   "topic": [
+    "4.4",
+    "4.4.3",
+    "4.4.3.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "b5d9cee15577f6c1"
+  },
+  {
+   "ref": "4.4.3.3.c",
+   "section": "4.4.3.3",
+   "kind": "skill",
+   "page": 50,
+   "skills": [],
+   "topic": [
+    "4.4",
+    "4.4.3",
+    "4.4.3.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "6ef3079ab278616f"
+  },
+  {
+   "ref": "4.4.3.4.a",
+   "section": "4.4.3.4",
+   "kind": "content",
+   "page": 50,
+   "skills": [],
+   "topic": [
+    "4.4",
+    "4.4.3",
+    "4.4.3.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "5e0d61112e7356b2"
+  },
+  {
+   "ref": "4.4.3.4.b",
+   "section": "4.4.3.4",
+   "kind": "content",
+   "page": 50,
+   "skills": [],
+   "topic": [
+    "4.4",
+    "4.4.3",
+    "4.4.3.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "71621caa351a7c4f"
+  },
+  {
+   "ref": "4.4.3.4.c",
+   "section": "4.4.3.4",
+   "kind": "content",
+   "page": 50,
+   "skills": [],
+   "topic": [
+    "4.4",
+    "4.4.3",
+    "4.4.3.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "f43ca51d9efe6537"
+  },
+  {
+   "ref": "4.4.3.4.d",
+   "section": "4.4.3.4",
+   "kind": "content",
+   "page": 50,
+   "skills": [],
+   "topic": [
+    "4.4",
+    "4.4.3",
+    "4.4.3.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "ea03d2c4f1797388"
+  },
+  {
+   "ref": "4.4.3.4.e",
+   "section": "4.4.3.4",
+   "kind": "skill",
+   "page": 50,
+   "skills": [],
+   "topic": [
+    "4.4",
+    "4.4.3",
+    "4.4.3.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "4cb2c31e702c776b"
+  },
+  {
+   "ref": "4.4.3.4.RP3",
+   "section": "4.4.3.4",
+   "kind": "practical",
+   "page": 50,
+   "skills": [
+    "AT 3",
+    "AT 7",
+    "AT 8"
+   ],
+   "topic": [
+    "4.4",
+    "4.4.3",
+    "4.4.3.4"
+   ],
+   "status": "official",
+   "type": "practical",
+   "hash": "25378fcefa66d788"
+  },
+  {
+   "ref": "4.4.3.5.a",
+   "section": "4.4.3.5",
+   "kind": "content",
+   "page": 51,
+   "skills": [],
+   "higherTier": true,
+   "topic": [
+    "4.4",
+    "4.4.3",
+    "4.4.3.5"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "f6f10a04d14a08a8"
+  },
+  {
+   "ref": "4.4.3.5.b",
+   "section": "4.4.3.5",
+   "kind": "content",
+   "page": 51,
+   "skills": [],
+   "higherTier": true,
+   "topic": [
+    "4.4",
+    "4.4.3",
+    "4.4.3.5"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "717e493da61a98f0"
+  },
+  {
+   "ref": "4.4.3.5.c",
+   "section": "4.4.3.5",
+   "kind": "content",
+   "page": 51,
+   "skills": [],
+   "higherTier": true,
+   "topic": [
+    "4.4",
+    "4.4.3",
+    "4.4.3.5"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "050cafb49309d530"
+  },
+  {
+   "ref": "4.5.1.1.a",
+   "section": "4.5.1.1",
+   "kind": "content",
+   "page": 52,
+   "skills": [
+    "AT 5"
+   ],
+   "topic": [
+    "4.5",
+    "4.5.1",
+    "4.5.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "d97befdac3b9d94f"
+  },
+  {
+   "ref": "4.5.1.1.b",
+   "section": "4.5.1.1",
+   "kind": "content",
+   "page": 52,
+   "skills": [],
+   "topic": [
+    "4.5",
+    "4.5.1",
+    "4.5.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "c06e08581122131b"
+  },
+  {
+   "ref": "4.5.1.1.c",
+   "section": "4.5.1.1",
+   "kind": "content",
+   "page": 52,
+   "skills": [],
+   "topic": [
+    "4.5",
+    "4.5.1",
+    "4.5.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "2e786003d4aa404d"
+  },
+  {
+   "ref": "4.5.1.1.d",
+   "section": "4.5.1.1",
+   "kind": "content",
+   "page": 52,
+   "skills": [],
+   "topic": [
+    "4.5",
+    "4.5.1",
+    "4.5.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "c39b625f245beeb0"
+  },
+  {
+   "ref": "4.5.1.1.e",
+   "section": "4.5.1.1",
+   "kind": "content",
+   "page": 52,
+   "skills": [],
+   "topic": [
+    "4.5",
+    "4.5.1",
+    "4.5.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "c9e66f2704dcad62"
+  },
+  {
+   "ref": "4.5.1.1.f",
+   "section": "4.5.1.1",
+   "kind": "content",
+   "page": 52,
+   "skills": [],
+   "topic": [
+    "4.5",
+    "4.5.1",
+    "4.5.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "9066f02cc1058c0d"
+  },
+  {
+   "ref": "4.5.1.1.g",
+   "section": "4.5.1.1",
+   "kind": "skill",
+   "page": 52,
+   "skills": [],
+   "topic": [
+    "4.5",
+    "4.5.1",
+    "4.5.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "scoped": 1,
+   "hash": "8eae61f667d099c4"
+  },
+  {
+   "ref": "4.5.1.1.RP4",
+   "section": "4.5.1.1",
+   "kind": "practical",
+   "page": 52,
+   "skills": [
+    "AT 1",
+    "AT 3",
+    "AT 5",
+    "AT 6"
+   ],
+   "topic": [
+    "4.5",
+    "4.5.1",
+    "4.5.1.1"
+   ],
+   "status": "official",
+   "type": "practical",
+   "hash": "9ed6cc802dc79c7f"
+  },
+  {
+   "ref": "4.5.1.2.a",
+   "section": "4.5.1.2",
+   "kind": "content",
+   "page": 53,
+   "skills": [],
+   "topic": [
+    "4.5",
+    "4.5.1",
+    "4.5.1.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "649c999b23c3ce56"
+  },
+  {
+   "ref": "4.5.1.2.b",
+   "section": "4.5.1.2",
+   "kind": "content",
+   "page": 53,
+   "skills": [],
+   "topic": [
+    "4.5",
+    "4.5.1",
+    "4.5.1.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "a58e306c4e51e6ea"
+  },
+  {
+   "ref": "4.5.1.2.c",
+   "section": "4.5.1.2",
+   "kind": "skill",
+   "page": 53,
+   "skills": [],
+   "topic": [
+    "4.5",
+    "4.5.1",
+    "4.5.1.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "83ca2b2b5f3a32b1"
+  },
+  {
+   "ref": "4.5.1.3.a",
+   "section": "4.5.1.3",
+   "kind": "content",
+   "page": 53,
+   "skills": [],
+   "higherTier": true,
+   "topic": [
+    "4.5",
+    "4.5.1",
+    "4.5.1.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "335e59495f0b2cd7"
+  },
+  {
+   "ref": "4.5.1.3.b",
+   "section": "4.5.1.3",
+   "kind": "content",
+   "page": 53,
+   "skills": [],
+   "higherTier": true,
+   "topic": [
+    "4.5",
+    "4.5.1",
+    "4.5.1.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "02cb2fe4eec7e3a3"
+  },
+  {
+   "ref": "4.5.1.3.c",
+   "section": "4.5.1.3",
+   "kind": "content",
+   "page": 53,
+   "skills": [],
+   "higherTier": true,
+   "topic": [
+    "4.5",
+    "4.5.1",
+    "4.5.1.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "9fbb0f0076690ded"
+  },
+  {
+   "ref": "4.5.1.3.d",
+   "section": "4.5.1.3",
+   "kind": "content",
+   "page": 53,
+   "skills": [],
+   "higherTier": true,
+   "topic": [
+    "4.5",
+    "4.5.1",
+    "4.5.1.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "5c9376ccc6bf2c5c"
+  },
+  {
+   "ref": "4.5.1.3.e",
+   "section": "4.5.1.3",
+   "kind": "content",
+   "page": 53,
+   "skills": [],
+   "higherTier": true,
+   "topic": [
+    "4.5",
+    "4.5.1",
+    "4.5.1.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "41f2d52a91b0951d"
+  },
+  {
+   "ref": "4.5.1.3.f",
+   "section": "4.5.1.3",
+   "kind": "skill",
+   "page": 53,
+   "skills": [
+    "MS 1a"
+   ],
+   "higherTier": true,
+   "topic": [
+    "4.5",
+    "4.5.1",
+    "4.5.1.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "e8c9665f9f270911"
+  },
+  {
+   "ref": "4.5.2.1.a",
+   "section": "4.5.2.1",
+   "kind": "content",
+   "page": 54,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.5",
+    "4.5.2",
+    "4.5.2.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "8d6ed2cff48523a5"
+  },
+  {
+   "ref": "4.5.2.1.b",
+   "section": "4.5.2.1",
+   "kind": "content",
+   "page": 54,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.5",
+    "4.5.2",
+    "4.5.2.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "470546e0869b9f7d"
+  },
+  {
+   "ref": "4.5.2.1.c",
+   "section": "4.5.2.1",
+   "kind": "content",
+   "page": 54,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.5",
+    "4.5.2",
+    "4.5.2.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "701646924df7fea0"
+  },
+  {
+   "ref": "4.5.2.1.d",
+   "section": "4.5.2.1",
+   "kind": "content",
+   "page": 54,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.5",
+    "4.5.2",
+    "4.5.2.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "cc182b16e167fcd9"
+  },
+  {
+   "ref": "4.5.2.1.e",
+   "section": "4.5.2.1",
+   "kind": "content",
+   "page": 54,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.5",
+    "4.5.2",
+    "4.5.2.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "04517ce01cb0ef64"
+  },
+  {
+   "ref": "4.5.2.1.f",
+   "section": "4.5.2.1",
+   "kind": "content",
+   "page": 54,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.5",
+    "4.5.2",
+    "4.5.2.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "df13053454118237"
+  },
+  {
+   "ref": "4.5.2.1.g",
+   "section": "4.5.2.1",
+   "kind": "skill",
+   "page": 54,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.5",
+    "4.5.2",
+    "4.5.2.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "a1ce73a3b2259f7d"
+  },
+  {
+   "ref": "4.5.2.1.h",
+   "section": "4.5.2.1",
+   "kind": "content",
+   "page": 54,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.5",
+    "4.5.2",
+    "4.5.2.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "2e4def23f4bd8fa6"
+  },
+  {
+   "ref": "4.5.2.2.a",
+   "section": "4.5.2.2",
+   "kind": "content",
+   "page": 54,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.5",
+    "4.5.2",
+    "4.5.2.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "576d6ac683d93913"
+  },
+  {
+   "ref": "4.5.2.2.b",
+   "section": "4.5.2.2",
+   "kind": "content",
+   "page": 54,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.5",
+    "4.5.2",
+    "4.5.2.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "1c4e83263104113d"
+  },
+  {
+   "ref": "4.5.2.2.c",
+   "section": "4.5.2.2",
+   "kind": "content",
+   "page": 54,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.5",
+    "4.5.2",
+    "4.5.2.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "cae6af8933b4669f"
+  },
+  {
+   "ref": "4.5.2.2.d",
+   "section": "4.5.2.2",
+   "kind": "skill",
+   "page": 54,
+   "skills": [],
+   "chemistryOnly": true,
+   "higherTier": true,
+   "topic": [
+    "4.5",
+    "4.5.2",
+    "4.5.2.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "61f95dbf0d1bd428"
+  },
+  {
+   "ref": "4.6.1.1.a",
+   "section": "4.6.1.1",
+   "kind": "content",
+   "page": 56,
+   "skills": [
+    "MS 1a",
+    "MS 1c",
+    "MS 1d"
+   ],
+   "topic": [
+    "4.6",
+    "4.6.1",
+    "4.6.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "fa3637203cb56ead"
+  },
+  {
+   "ref": "4.6.1.1.b",
+   "section": "4.6.1.1",
+   "kind": "content",
+   "page": 56,
+   "skills": [],
+   "topic": [
+    "4.6",
+    "4.6.1",
+    "4.6.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "b784400accadef53"
+  },
+  {
+   "ref": "4.6.1.1.c",
+   "section": "4.6.1.1",
+   "kind": "content",
+   "page": 56,
+   "skills": [],
+   "topic": [
+    "4.6",
+    "4.6.1",
+    "4.6.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "6fb9c1d82c20fb97"
+  },
+  {
+   "ref": "4.6.1.1.d",
+   "section": "4.6.1.1",
+   "kind": "skill",
+   "page": 56,
+   "skills": [
+    "MS 4a",
+    "MS 4b",
+    "MS 4c",
+    "MS 4d",
+    "MS 4e"
+   ],
+   "higherTier": true,
+   "topic": [
+    "4.6",
+    "4.6.1",
+    "4.6.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "148a359461148249"
+  },
+  {
+   "ref": "4.6.1.2.a",
+   "section": "4.6.1.2",
+   "kind": "content",
+   "page": 57,
+   "skills": [],
+   "topic": [
+    "4.6",
+    "4.6.1",
+    "4.6.1.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "42adb975cbfaa0b4"
+  },
+  {
+   "ref": "4.6.1.2.b",
+   "section": "4.6.1.2",
+   "kind": "skill",
+   "page": 57,
+   "skills": [],
+   "topic": [
+    "4.6",
+    "4.6.1",
+    "4.6.1.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "a33163c6c12a50f9"
+  },
+  {
+   "ref": "4.6.1.2.RP5",
+   "section": "4.6.1.2",
+   "kind": "practical",
+   "page": 57,
+   "skills": [
+    "AT 1",
+    "AT 3",
+    "AT 5",
+    "AT 6"
+   ],
+   "topic": [
+    "4.6",
+    "4.6.1",
+    "4.6.1.2"
+   ],
+   "status": "official",
+   "type": "practical",
+   "hash": "92cec329aefe6e47"
+  },
+  {
+   "ref": "4.6.1.3.a",
+   "section": "4.6.1.3",
+   "kind": "content",
+   "page": 57,
+   "skills": [],
+   "topic": [
+    "4.6",
+    "4.6.1",
+    "4.6.1.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "787f2c169ea6e4f3"
+  },
+  {
+   "ref": "4.6.1.3.b",
+   "section": "4.6.1.3",
+   "kind": "content",
+   "page": 57,
+   "skills": [],
+   "topic": [
+    "4.6",
+    "4.6.1",
+    "4.6.1.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "5e020232a7537f70"
+  },
+  {
+   "ref": "4.6.1.3.c",
+   "section": "4.6.1.3",
+   "kind": "content",
+   "page": 57,
+   "skills": [
+    "WS 1.2"
+   ],
+   "topic": [
+    "4.6",
+    "4.6.1",
+    "4.6.1.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "f0112eee9d9f0a1e"
+  },
+  {
+   "ref": "4.6.1.3.d",
+   "section": "4.6.1.3",
+   "kind": "skill",
+   "page": 57,
+   "skills": [],
+   "topic": [
+    "4.6",
+    "4.6.1",
+    "4.6.1.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "b90bce98e30bc8b1"
+  },
+  {
+   "ref": "4.6.1.4.a",
+   "section": "4.6.1.4",
+   "kind": "content",
+   "page": 58,
+   "skills": [],
+   "topic": [
+    "4.6",
+    "4.6.1",
+    "4.6.1.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "c3e4e814e0c8cbf6"
+  },
+  {
+   "ref": "4.6.1.4.b",
+   "section": "4.6.1.4",
+   "kind": "skill",
+   "page": 58,
+   "skills": [],
+   "topic": [
+    "4.6",
+    "4.6.1",
+    "4.6.1.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "1474ed04fbad935d"
+  },
+  {
+   "ref": "4.6.1.4.c",
+   "section": "4.6.1.4",
+   "kind": "content",
+   "page": 58,
+   "skills": [],
+   "topic": [
+    "4.6",
+    "4.6.1",
+    "4.6.1.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "6b04aa595f014f69"
+  },
+  {
+   "ref": "4.6.2.1.a",
+   "section": "4.6.2.1",
+   "kind": "content",
+   "page": 59,
+   "skills": [],
+   "topic": [
+    "4.6",
+    "4.6.2",
+    "4.6.2.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "096b803d4fca7f33"
+  },
+  {
+   "ref": "4.6.2.1.b",
+   "section": "4.6.2.1",
+   "kind": "content",
+   "page": 59,
+   "skills": [],
+   "topic": [
+    "4.6",
+    "4.6.2",
+    "4.6.2.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "652744a2ab28954b"
+  },
+  {
+   "ref": "4.6.2.2.a",
+   "section": "4.6.2.2",
+   "kind": "content",
+   "page": 59,
+   "skills": [],
+   "topic": [
+    "4.6",
+    "4.6.2",
+    "4.6.2.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "6b67a85634daab6f"
+  },
+  {
+   "ref": "4.6.2.3.a",
+   "section": "4.6.2.3",
+   "kind": "content",
+   "page": 59,
+   "skills": [
+    "WS 1.2"
+   ],
+   "topic": [
+    "4.6",
+    "4.6.2",
+    "4.6.2.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "fa230c52852ed623"
+  },
+  {
+   "ref": "4.6.2.4.a",
+   "section": "4.6.2.4",
+   "kind": "content",
+   "page": 60,
+   "skills": [],
+   "higherTier": true,
+   "topic": [
+    "4.6",
+    "4.6.2",
+    "4.6.2.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "4c9142356c3250e7"
+  },
+  {
+   "ref": "4.6.2.4.b",
+   "section": "4.6.2.4",
+   "kind": "content",
+   "page": 60,
+   "skills": [],
+   "higherTier": true,
+   "topic": [
+    "4.6",
+    "4.6.2",
+    "4.6.2.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "d233f167191baf5e"
+  },
+  {
+   "ref": "4.6.2.4.c",
+   "section": "4.6.2.4",
+   "kind": "content",
+   "page": 60,
+   "skills": [],
+   "higherTier": true,
+   "topic": [
+    "4.6",
+    "4.6.2",
+    "4.6.2.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "19c5285041af0c1b"
+  },
+  {
+   "ref": "4.6.2.4.d",
+   "section": "4.6.2.4",
+   "kind": "skill",
+   "page": 60,
+   "skills": [],
+   "higherTier": true,
+   "topic": [
+    "4.6",
+    "4.6.2",
+    "4.6.2.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "49a69596b5d14a13"
+  },
+  {
+   "ref": "4.6.2.5.a",
+   "section": "4.6.2.5",
+   "kind": "content",
+   "page": 60,
+   "skills": [],
+   "higherTier": true,
+   "topic": [
+    "4.6",
+    "4.6.2",
+    "4.6.2.5"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "fe795f5e42cac7ac"
+  },
+  {
+   "ref": "4.6.2.5.b",
+   "section": "4.6.2.5",
+   "kind": "content",
+   "page": 60,
+   "skills": [],
+   "higherTier": true,
+   "topic": [
+    "4.6",
+    "4.6.2",
+    "4.6.2.5"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "48b8cd43fc486b07"
+  },
+  {
+   "ref": "4.6.2.5.c",
+   "section": "4.6.2.5",
+   "kind": "content",
+   "page": 60,
+   "skills": [],
+   "higherTier": true,
+   "topic": [
+    "4.6",
+    "4.6.2",
+    "4.6.2.5"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "2aaa01555bfc1e2e"
+  },
+  {
+   "ref": "4.6.2.5.d",
+   "section": "4.6.2.5",
+   "kind": "skill",
+   "page": 60,
+   "skills": [],
+   "higherTier": true,
+   "topic": [
+    "4.6",
+    "4.6.2",
+    "4.6.2.5"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "219c6ca56759f3b9"
+  },
+  {
+   "ref": "4.6.2.6.a",
+   "section": "4.6.2.6",
+   "kind": "content",
+   "page": 61,
+   "skills": [],
+   "higherTier": true,
+   "topic": [
+    "4.6",
+    "4.6.2",
+    "4.6.2.6"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "69322308450999dc"
+  },
+  {
+   "ref": "4.6.2.6.b",
+   "section": "4.6.2.6",
+   "kind": "content",
+   "page": 61,
+   "skills": [],
+   "higherTier": true,
+   "topic": [
+    "4.6",
+    "4.6.2",
+    "4.6.2.6"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "9a4a3f4bcea15b94"
+  },
+  {
+   "ref": "4.6.2.6.c",
+   "section": "4.6.2.6",
+   "kind": "skill",
+   "page": 61,
+   "skills": [],
+   "higherTier": true,
+   "topic": [
+    "4.6",
+    "4.6.2",
+    "4.6.2.6"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "ca60ceaf5725822c"
+  },
+  {
+   "ref": "4.6.2.7.a",
+   "section": "4.6.2.7",
+   "kind": "content",
+   "page": 61,
+   "skills": [],
+   "higherTier": true,
+   "topic": [
+    "4.6",
+    "4.6.2",
+    "4.6.2.7"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "d891d4bcc0b209a6"
+  },
+  {
+   "ref": "4.6.2.7.b",
+   "section": "4.6.2.7",
+   "kind": "skill",
+   "page": 61,
+   "skills": [],
+   "higherTier": true,
+   "topic": [
+    "4.6",
+    "4.6.2",
+    "4.6.2.7"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "e436f8466762abba"
+  },
+  {
+   "ref": "4.7.1.1.a",
+   "section": "4.7.1.1",
+   "kind": "content",
+   "page": 62,
+   "skills": [],
+   "topic": [
+    "4.7",
+    "4.7.1",
+    "4.7.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "43463237563e197e"
+  },
+  {
+   "ref": "4.7.1.1.b",
+   "section": "4.7.1.1",
+   "kind": "content",
+   "page": 62,
+   "skills": [],
+   "topic": [
+    "4.7",
+    "4.7.1",
+    "4.7.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "0e66fc4252ca1605"
+  },
+  {
+   "ref": "4.7.1.1.c",
+   "section": "4.7.1.1",
+   "kind": "content",
+   "page": 62,
+   "skills": [],
+   "topic": [
+    "4.7",
+    "4.7.1",
+    "4.7.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "89e1df9a5550fffb"
+  },
+  {
+   "ref": "4.7.1.1.d",
+   "section": "4.7.1.1",
+   "kind": "content",
+   "page": 62,
+   "skills": [],
+   "topic": [
+    "4.7",
+    "4.7.1",
+    "4.7.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "8fe1d8f4b25d06fd"
+  },
+  {
+   "ref": "4.7.1.2.a",
+   "section": "4.7.1.2",
+   "kind": "content",
+   "page": 63,
+   "skills": [],
+   "topic": [
+    "4.7",
+    "4.7.1",
+    "4.7.1.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "d902924fcf5b6e1f"
+  },
+  {
+   "ref": "4.7.1.2.b",
+   "section": "4.7.1.2",
+   "kind": "content",
+   "page": 63,
+   "skills": [],
+   "topic": [
+    "4.7",
+    "4.7.1",
+    "4.7.1.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "1e8bbd56bfd470c4"
+  },
+  {
+   "ref": "4.7.1.2.c",
+   "section": "4.7.1.2",
+   "kind": "content",
+   "page": 63,
+   "skills": [],
+   "topic": [
+    "4.7",
+    "4.7.1",
+    "4.7.1.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "36085e706ca2d8da"
+  },
+  {
+   "ref": "4.7.1.2.d",
+   "section": "4.7.1.2",
+   "kind": "content",
+   "page": 63,
+   "skills": [],
+   "topic": [
+    "4.7",
+    "4.7.1",
+    "4.7.1.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "2f323d2779900214"
+  },
+  {
+   "ref": "4.7.1.2.e",
+   "section": "4.7.1.2",
+   "kind": "content",
+   "page": 63,
+   "skills": [],
+   "topic": [
+    "4.7",
+    "4.7.1",
+    "4.7.1.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "b55b03e7355623f4"
+  },
+  {
+   "ref": "4.7.1.2.f",
+   "section": "4.7.1.2",
+   "kind": "skill",
+   "page": 63,
+   "skills": [],
+   "topic": [
+    "4.7",
+    "4.7.1",
+    "4.7.1.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "scoped": 1,
+   "hash": "b8523fa76e607fac"
+  },
+  {
+   "ref": "4.7.1.3.a",
+   "section": "4.7.1.3",
+   "kind": "content",
+   "page": 63,
+   "skills": [],
+   "topic": [
+    "4.7",
+    "4.7.1",
+    "4.7.1.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "101605149f935690"
+  },
+  {
+   "ref": "4.7.1.3.b",
+   "section": "4.7.1.3",
+   "kind": "skill",
+   "page": 63,
+   "skills": [],
+   "topic": [
+    "4.7",
+    "4.7.1",
+    "4.7.1.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "6c9ccf29fbad34cb"
+  },
+  {
+   "ref": "4.7.1.3.c",
+   "section": "4.7.1.3",
+   "kind": "content",
+   "page": 63,
+   "skills": [],
+   "topic": [
+    "4.7",
+    "4.7.1",
+    "4.7.1.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "7ca421827e11fa6f"
+  },
+  {
+   "ref": "4.7.1.3.d",
+   "section": "4.7.1.3",
+   "kind": "skill",
+   "page": 63,
+   "skills": [],
+   "topic": [
+    "4.7",
+    "4.7.1",
+    "4.7.1.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "scoped": 1,
+   "hash": "5fe279bddb4788a6"
+  },
+  {
+   "ref": "4.7.1.4.a",
+   "section": "4.7.1.4",
+   "kind": "content",
+   "page": 64,
+   "skills": [
+    "WS 1.2"
+   ],
+   "topic": [
+    "4.7",
+    "4.7.1",
+    "4.7.1.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "02cc1640a9f1a547"
+  },
+  {
+   "ref": "4.7.1.4.b",
+   "section": "4.7.1.4",
+   "kind": "content",
+   "page": 64,
+   "skills": [],
+   "topic": [
+    "4.7",
+    "4.7.1",
+    "4.7.1.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "59ed220570dda513"
+  },
+  {
+   "ref": "4.7.1.4.c",
+   "section": "4.7.1.4",
+   "kind": "skill",
+   "page": 64,
+   "skills": [],
+   "topic": [
+    "4.7",
+    "4.7.1",
+    "4.7.1.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "9f549849d9a3e6ab"
+  },
+  {
+   "ref": "4.7.1.4.d",
+   "section": "4.7.1.4",
+   "kind": "content",
+   "page": 64,
+   "skills": [],
+   "topic": [
+    "4.7",
+    "4.7.1",
+    "4.7.1.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "ab79f1d31af5cee8"
+  },
+  {
+   "ref": "4.7.1.4.e",
+   "section": "4.7.1.4",
+   "kind": "content",
+   "page": 64,
+   "skills": [],
+   "topic": [
+    "4.7",
+    "4.7.1",
+    "4.7.1.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "3fc84c9b41b07352"
+  },
+  {
+   "ref": "4.7.1.4.f",
+   "section": "4.7.1.4",
+   "kind": "skill",
+   "page": 64,
+   "skills": [],
+   "topic": [
+    "4.7",
+    "4.7.1",
+    "4.7.1.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "cceddd9bca08039b"
+  },
+  {
+   "ref": "4.7.1.4.g",
+   "section": "4.7.1.4",
+   "kind": "content",
+   "page": 64,
+   "skills": [],
+   "topic": [
+    "4.7",
+    "4.7.1",
+    "4.7.1.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "e0684e9074d371f2"
+  },
+  {
+   "ref": "4.7.1.4.h",
+   "section": "4.7.1.4",
+   "kind": "content",
+   "page": 64,
+   "skills": [],
+   "topic": [
+    "4.7",
+    "4.7.1",
+    "4.7.1.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "9d74167ba872d6e4"
+  },
+  {
+   "ref": "4.7.1.4.i",
+   "section": "4.7.1.4",
+   "kind": "skill",
+   "page": 64,
+   "skills": [],
+   "topic": [
+    "4.7",
+    "4.7.1",
+    "4.7.1.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "ddd8388d3563c5e0"
+  },
+  {
+   "ref": "4.7.1.4.j",
+   "section": "4.7.1.4",
+   "kind": "skill",
+   "page": 64,
+   "skills": [],
+   "topic": [
+    "4.7",
+    "4.7.1",
+    "4.7.1.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "b032f24df9f7c16b"
+  },
+  {
+   "ref": "4.7.2.1.a",
+   "section": "4.7.2.1",
+   "kind": "content",
+   "page": 65,
+   "skills": [
+    "WS 1.2"
+   ],
+   "chemistryOnly": true,
+   "topic": [
+    "4.7",
+    "4.7.2",
+    "4.7.2.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "4e02583d19d8bdfd"
+  },
+  {
+   "ref": "4.7.2.1.b",
+   "section": "4.7.2.1",
+   "kind": "content",
+   "page": 65,
+   "skills": [
+    "MS 5b"
+   ],
+   "chemistryOnly": true,
+   "topic": [
+    "4.7",
+    "4.7.2",
+    "4.7.2.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "577a83d7fd679f40"
+  },
+  {
+   "ref": "4.7.2.1.c",
+   "section": "4.7.2.1",
+   "kind": "content",
+   "page": 65,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.7",
+    "4.7.2",
+    "4.7.2.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "5b213a1b2485a122"
+  },
+  {
+   "ref": "4.7.2.2.a",
+   "section": "4.7.2.2",
+   "kind": "content",
+   "page": 65,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.7",
+    "4.7.2",
+    "4.7.2.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "c73553ad464803c3"
+  },
+  {
+   "ref": "4.7.2.2.b",
+   "section": "4.7.2.2",
+   "kind": "content",
+   "page": 65,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.7",
+    "4.7.2",
+    "4.7.2.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "ac04a8ad1a8fad5d"
+  },
+  {
+   "ref": "4.7.2.2.c",
+   "section": "4.7.2.2",
+   "kind": "content",
+   "page": 65,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.7",
+    "4.7.2",
+    "4.7.2.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "1bdda0006a50cdbe"
+  },
+  {
+   "ref": "4.7.2.2.d",
+   "section": "4.7.2.2",
+   "kind": "content",
+   "page": 65,
+   "skills": [
+    "WS 1.2"
+   ],
+   "chemistryOnly": true,
+   "topic": [
+    "4.7",
+    "4.7.2",
+    "4.7.2.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "9f005e466bf31520"
+  },
+  {
+   "ref": "4.7.2.2.e",
+   "section": "4.7.2.2",
+   "kind": "skill",
+   "page": 65,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.7",
+    "4.7.2",
+    "4.7.2.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "69940dda094873f3"
+  },
+  {
+   "ref": "4.7.2.3.a",
+   "section": "4.7.2.3",
+   "kind": "content",
+   "page": 66,
+   "skills": [
+    "AT 2",
+    "AT 5",
+    "AT 6"
+   ],
+   "chemistryOnly": true,
+   "topic": [
+    "4.7",
+    "4.7.2",
+    "4.7.2.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "7dff6414aa83fca5"
+  },
+  {
+   "ref": "4.7.2.3.b",
+   "section": "4.7.2.3",
+   "kind": "content",
+   "page": 66,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.7",
+    "4.7.2",
+    "4.7.2.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "b880961cbc59b727"
+  },
+  {
+   "ref": "4.7.2.3.c",
+   "section": "4.7.2.3",
+   "kind": "content",
+   "page": 66,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.7",
+    "4.7.2",
+    "4.7.2.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "bc07e926a08379ff"
+  },
+  {
+   "ref": "4.7.2.3.d",
+   "section": "4.7.2.3",
+   "kind": "content",
+   "page": 66,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.7",
+    "4.7.2",
+    "4.7.2.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "8f7a391a769e6b4d"
+  },
+  {
+   "ref": "4.7.2.3.e",
+   "section": "4.7.2.3",
+   "kind": "skill",
+   "page": 66,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.7",
+    "4.7.2",
+    "4.7.2.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "d2b8a0b90b59a02a"
+  },
+  {
+   "ref": "4.7.2.3.f",
+   "section": "4.7.2.3",
+   "kind": "skill",
+   "page": 66,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.7",
+    "4.7.2",
+    "4.7.2.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "49921767b88b22f6"
+  },
+  {
+   "ref": "4.7.2.3.g",
+   "section": "4.7.2.3",
+   "kind": "content",
+   "page": 66,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.7",
+    "4.7.2",
+    "4.7.2.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "scoped": 1,
+   "hash": "12582df8cfd0365b"
+  },
+  {
+   "ref": "4.7.2.4.a",
+   "section": "4.7.2.4",
+   "kind": "content",
+   "page": 67,
+   "skills": [
+    "AT 2",
+    "AT 5",
+    "AT 6"
+   ],
+   "chemistryOnly": true,
+   "topic": [
+    "4.7",
+    "4.7.2",
+    "4.7.2.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "fa0b2365db1ef2b9"
+  },
+  {
+   "ref": "4.7.2.4.b",
+   "section": "4.7.2.4",
+   "kind": "content",
+   "page": 67,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.7",
+    "4.7.2",
+    "4.7.2.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "6097077cb6ffb326"
+  },
+  {
+   "ref": "4.7.2.4.c",
+   "section": "4.7.2.4",
+   "kind": "content",
+   "page": 67,
+   "skills": [],
+   "chemistryOnly": true,
+   "higherTier": true,
+   "topic": [
+    "4.7",
+    "4.7.2",
+    "4.7.2.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "7763f82eb08ecc94"
+  },
+  {
+   "ref": "4.7.2.4.d",
+   "section": "4.7.2.4",
+   "kind": "skill",
+   "page": 67,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.7",
+    "4.7.2",
+    "4.7.2.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "042932d70c1bdbc6"
+  },
+  {
+   "ref": "4.7.2.4.e",
+   "section": "4.7.2.4",
+   "kind": "content",
+   "page": 67,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.7",
+    "4.7.2",
+    "4.7.2.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "scoped": 1,
+   "hash": "7cd57842c4d87ecd"
+  },
+  {
+   "ref": "4.7.2.4.f",
+   "section": "4.7.2.4",
+   "kind": "content",
+   "page": 67,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.7",
+    "4.7.2",
+    "4.7.2.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "cdb621d254807656"
+  },
+  {
+   "ref": "4.7.3.1.a",
+   "section": "4.7.3.1",
+   "kind": "content",
+   "page": 68,
+   "skills": [
+    "WS 1.2"
+   ],
+   "chemistryOnly": true,
+   "topic": [
+    "4.7",
+    "4.7.3",
+    "4.7.3.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "4b48a2c630195d5f"
+  },
+  {
+   "ref": "4.7.3.1.b",
+   "section": "4.7.3.1",
+   "kind": "content",
+   "page": 68,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.7",
+    "4.7.3",
+    "4.7.3.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "1243241d40a1dfbc"
+  },
+  {
+   "ref": "4.7.3.1.c",
+   "section": "4.7.3.1",
+   "kind": "content",
+   "page": 68,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.7",
+    "4.7.3",
+    "4.7.3.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "48bf08022a1e3db2"
+  },
+  {
+   "ref": "4.7.3.1.d",
+   "section": "4.7.3.1",
+   "kind": "skill",
+   "page": 68,
+   "skills": [
+    "MS 5b"
+   ],
+   "chemistryOnly": true,
+   "topic": [
+    "4.7",
+    "4.7.3",
+    "4.7.3.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "cd0d77f067cffaec"
+  },
+  {
+   "ref": "4.7.3.2.a",
+   "section": "4.7.3.2",
+   "kind": "content",
+   "page": 69,
+   "skills": [
+    "WS 1.2"
+   ],
+   "chemistryOnly": true,
+   "higherTier": true,
+   "topic": [
+    "4.7",
+    "4.7.3",
+    "4.7.3.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "ccda4cda8d13b483"
+  },
+  {
+   "ref": "4.7.3.2.b",
+   "section": "4.7.3.2",
+   "kind": "content",
+   "page": 69,
+   "skills": [],
+   "chemistryOnly": true,
+   "higherTier": true,
+   "topic": [
+    "4.7",
+    "4.7.3",
+    "4.7.3.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "545c5d493b710b52"
+  },
+  {
+   "ref": "4.7.3.2.c",
+   "section": "4.7.3.2",
+   "kind": "content",
+   "page": 69,
+   "skills": [
+    "MS 5b"
+   ],
+   "chemistryOnly": true,
+   "higherTier": true,
+   "topic": [
+    "4.7",
+    "4.7.3",
+    "4.7.3.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "9691f6f09a6fcdeb"
+  },
+  {
+   "ref": "4.7.3.3.a",
+   "section": "4.7.3.3",
+   "kind": "content",
+   "page": 70,
+   "skills": [],
+   "chemistryOnly": true,
+   "higherTier": true,
+   "topic": [
+    "4.7",
+    "4.7.3",
+    "4.7.3.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "5469f0db70f8d982"
+  },
+  {
+   "ref": "4.7.3.3.b",
+   "section": "4.7.3.3",
+   "kind": "content",
+   "page": 70,
+   "skills": [],
+   "chemistryOnly": true,
+   "higherTier": true,
+   "topic": [
+    "4.7",
+    "4.7.3",
+    "4.7.3.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "8dc6efe968874e1e"
+  },
+  {
+   "ref": "4.7.3.4.a",
+   "section": "4.7.3.4",
+   "kind": "content",
+   "page": 70,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.7",
+    "4.7.3",
+    "4.7.3.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "eb666ba3b26feab7"
+  },
+  {
+   "ref": "4.7.3.4.b",
+   "section": "4.7.3.4",
+   "kind": "content",
+   "page": 70,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.7",
+    "4.7.3",
+    "4.7.3.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "6209ef53312cc178"
+  },
+  {
+   "ref": "4.7.3.4.c",
+   "section": "4.7.3.4",
+   "kind": "skill",
+   "page": 70,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.7",
+    "4.7.3",
+    "4.7.3.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "d7cecd93d5111a90"
+  },
+  {
+   "ref": "4.8.1.1.a",
+   "section": "4.8.1.1",
+   "kind": "content",
+   "page": 71,
+   "skills": [
+    "WS 2.2",
+    "WS 4.1"
+   ],
+   "topic": [
+    "4.8",
+    "4.8.1",
+    "4.8.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "a0935773cd3500c4"
+  },
+  {
+   "ref": "4.8.1.1.b",
+   "section": "4.8.1.1",
+   "kind": "content",
+   "page": 71,
+   "skills": [],
+   "topic": [
+    "4.8",
+    "4.8.1",
+    "4.8.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "8fa27cd2333f2264"
+  },
+  {
+   "ref": "4.8.1.1.c",
+   "section": "4.8.1.1",
+   "kind": "content",
+   "page": 71,
+   "skills": [],
+   "topic": [
+    "4.8",
+    "4.8.1",
+    "4.8.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "37308591d8559b6d"
+  },
+  {
+   "ref": "4.8.1.1.d",
+   "section": "4.8.1.1",
+   "kind": "skill",
+   "page": 71,
+   "skills": [],
+   "topic": [
+    "4.8",
+    "4.8.1",
+    "4.8.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "1406cd23c479920d"
+  },
+  {
+   "ref": "4.8.1.2.a",
+   "section": "4.8.1.2",
+   "kind": "content",
+   "page": 71,
+   "skills": [
+    "WS 1.4",
+    "WS 2.2"
+   ],
+   "topic": [
+    "4.8",
+    "4.8.1",
+    "4.8.1.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "b05cd2605613b45a"
+  },
+  {
+   "ref": "4.8.1.2.b",
+   "section": "4.8.1.2",
+   "kind": "skill",
+   "page": 71,
+   "skills": [],
+   "topic": [
+    "4.8",
+    "4.8.1",
+    "4.8.1.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "4e6ea0e5bbbdb2e0"
+  },
+  {
+   "ref": "4.8.1.2.c",
+   "section": "4.8.1.2",
+   "kind": "content",
+   "page": 71,
+   "skills": [],
+   "topic": [
+    "4.8",
+    "4.8.1",
+    "4.8.1.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "a3c2a601d0fabfa7"
+  },
+  {
+   "ref": "4.8.1.3.a",
+   "section": "4.8.1.3",
+   "kind": "content",
+   "page": 72,
+   "skills": [
+    "MS 1d"
+   ],
+   "topic": [
+    "4.8",
+    "4.8.1",
+    "4.8.1.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "5e554d55f2ace634"
+  },
+  {
+   "ref": "4.8.1.3.b",
+   "section": "4.8.1.3",
+   "kind": "skill",
+   "page": 72,
+   "skills": [
+    "MS 2a"
+   ],
+   "topic": [
+    "4.8",
+    "4.8.1",
+    "4.8.1.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "6c8e891221ee0c47"
+  },
+  {
+   "ref": "4.8.1.3.RP6",
+   "section": "4.8.1.3",
+   "kind": "practical",
+   "page": 72,
+   "skills": [
+    "AT 1",
+    "AT 4"
+   ],
+   "topic": [
+    "4.8",
+    "4.8.1",
+    "4.8.1.3"
+   ],
+   "status": "official",
+   "type": "practical",
+   "hash": "2713c728bf818584"
+  },
+  {
+   "ref": "4.8.2.1.a",
+   "section": "4.8.2.1",
+   "kind": "content",
+   "page": 72,
+   "skills": [],
+   "topic": [
+    "4.8",
+    "4.8.2",
+    "4.8.2.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "6df1c00b831fea62"
+  },
+  {
+   "ref": "4.8.2.2.a",
+   "section": "4.8.2.2",
+   "kind": "content",
+   "page": 73,
+   "skills": [],
+   "topic": [
+    "4.8",
+    "4.8.2",
+    "4.8.2.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "c2f1d002fe795086"
+  },
+  {
+   "ref": "4.8.2.3.a",
+   "section": "4.8.2.3",
+   "kind": "content",
+   "page": 73,
+   "skills": [],
+   "topic": [
+    "4.8",
+    "4.8.2",
+    "4.8.2.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "c2e4c94661551942"
+  },
+  {
+   "ref": "4.8.2.4.a",
+   "section": "4.8.2.4",
+   "kind": "content",
+   "page": 73,
+   "skills": [],
+   "topic": [
+    "4.8",
+    "4.8.2",
+    "4.8.2.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "803ce083b5bed1d5"
+  },
+  {
+   "ref": "4.8.3.1.a",
+   "section": "4.8.3.1",
+   "kind": "content",
+   "page": 73,
+   "skills": [
+    "AT 8"
+   ],
+   "topic": [
+    "4.8",
+    "4.8.3",
+    "4.8.3.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "f760f05b23a13241"
+  },
+  {
+   "ref": "4.8.3.1.b",
+   "section": "4.8.3.1",
+   "kind": "content",
+   "page": 73,
+   "skills": [],
+   "topic": [
+    "4.8",
+    "4.8.3",
+    "4.8.3.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "2dbe9da50af3062d"
+  },
+  {
+   "ref": "4.8.3.1.c",
+   "section": "4.8.3.1",
+   "kind": "skill",
+   "page": 73,
+   "skills": [
+    "WS 2.2"
+   ],
+   "topic": [
+    "4.8",
+    "4.8.3",
+    "4.8.3.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "1fed97ccdb13fff1"
+  },
+  {
+   "ref": "4.8.3.1.d",
+   "section": "4.8.3.1",
+   "kind": "content",
+   "page": 73,
+   "skills": [],
+   "topic": [
+    "4.8",
+    "4.8.3",
+    "4.8.3.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "cec812c3b34e81b6"
+  },
+  {
+   "ref": "4.8.3.2.a",
+   "section": "4.8.3.2",
+   "kind": "content",
+   "page": 74,
+   "skills": [
+    "AT 8"
+   ],
+   "topic": [
+    "4.8",
+    "4.8.3",
+    "4.8.3.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "c0a9285614079981"
+  },
+  {
+   "ref": "4.8.3.2.b",
+   "section": "4.8.3.2",
+   "kind": "content",
+   "page": 74,
+   "skills": [],
+   "topic": [
+    "4.8",
+    "4.8.3",
+    "4.8.3.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "04cc0c6b8be21f84"
+  },
+  {
+   "ref": "4.8.3.2.c",
+   "section": "4.8.3.2",
+   "kind": "content",
+   "page": 74,
+   "skills": [],
+   "topic": [
+    "4.8",
+    "4.8.3",
+    "4.8.3.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "e5ad05a28916fc09"
+  },
+  {
+   "ref": "4.8.3.2.d",
+   "section": "4.8.3.2",
+   "kind": "content",
+   "page": 74,
+   "skills": [],
+   "topic": [
+    "4.8",
+    "4.8.3",
+    "4.8.3.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "4c8ed16fa4f5d549"
+  },
+  {
+   "ref": "4.8.3.2.e",
+   "section": "4.8.3.2",
+   "kind": "skill",
+   "page": 74,
+   "skills": [
+    "WS 2.2"
+   ],
+   "topic": [
+    "4.8",
+    "4.8.3",
+    "4.8.3.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "scoped": 1,
+   "hash": "0467706274156f30"
+  },
+  {
+   "ref": "4.8.3.3.a",
+   "section": "4.8.3.3",
+   "kind": "content",
+   "page": 74,
+   "skills": [],
+   "topic": [
+    "4.8",
+    "4.8.3",
+    "4.8.3.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "02d531d794f98ab6"
+  },
+  {
+   "ref": "4.8.3.4.a",
+   "section": "4.8.3.4",
+   "kind": "content",
+   "page": 74,
+   "skills": [],
+   "topic": [
+    "4.8",
+    "4.8.3",
+    "4.8.3.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "a71d33dff1d2ef3d"
+  },
+  {
+   "ref": "4.8.3.5.a",
+   "section": "4.8.3.5",
+   "kind": "content",
+   "page": 74,
+   "skills": [],
+   "topic": [
+    "4.8",
+    "4.8.3",
+    "4.8.3.5"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "7ac56a48555e87ab"
+  },
+  {
+   "ref": "4.8.3.5.RP7",
+   "section": "4.8.3.5",
+   "kind": "practical",
+   "page": 74,
+   "skills": [
+    "AT 1",
+    "AT 8"
+   ],
+   "topic": [
+    "4.8",
+    "4.8.3",
+    "4.8.3.5"
+   ],
+   "status": "official",
+   "type": "practical",
+   "hash": "d4e328dceaaffb4b"
+  },
+  {
+   "ref": "4.8.3.6.a",
+   "section": "4.8.3.6",
+   "kind": "content",
+   "page": 75,
+   "skills": [],
+   "topic": [
+    "4.8",
+    "4.8.3",
+    "4.8.3.6"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "13c841cb2233cae7"
+  },
+  {
+   "ref": "4.8.3.6.b",
+   "section": "4.8.3.6",
+   "kind": "skill",
+   "page": 75,
+   "skills": [],
+   "topic": [
+    "4.8",
+    "4.8.3",
+    "4.8.3.6"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "d6560a58aa5c8c4f"
+  },
+  {
+   "ref": "4.8.3.7.a",
+   "section": "4.8.3.7",
+   "kind": "content",
+   "page": 75,
+   "skills": [
+    "AT 8"
+   ],
+   "topic": [
+    "4.8",
+    "4.8.3",
+    "4.8.3.7"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "ebd93d3426f1a187"
+  },
+  {
+   "ref": "4.8.3.7.b",
+   "section": "4.8.3.7",
+   "kind": "skill",
+   "page": 75,
+   "skills": [
+    "WS 3.6"
+   ],
+   "topic": [
+    "4.8",
+    "4.8.3",
+    "4.8.3.7"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "0aa1407380af53d5"
+  },
+  {
+   "ref": "4.8.3.7.c",
+   "section": "4.8.3.7",
+   "kind": "content",
+   "page": 75,
+   "skills": [
+    "MS 4a"
+   ],
+   "topic": [
+    "4.8",
+    "4.8.3",
+    "4.8.3.7"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "80480b4cadd7bc44"
+  },
+  {
+   "ref": "4.9.1.1.a",
+   "section": "4.9.1.1",
+   "kind": "content",
+   "page": 76,
+   "skills": [
+    "MS 1c"
+   ],
+   "topic": [
+    "4.9",
+    "4.9.1",
+    "4.9.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "fe1265f1ae6b0010"
+  },
+  {
+   "ref": "4.9.1.2.a",
+   "section": "4.9.1.2",
+   "kind": "content",
+   "page": 76,
+   "skills": [
+    "WS 1.1",
+    "WS 1.2",
+    "WS 1.3",
+    "WS 3.5",
+    "WS 3.6",
+    "WS 4.1"
+   ],
+   "topic": [
+    "4.9",
+    "4.9.1",
+    "4.9.1.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "ae837bd7f7feda40"
+  },
+  {
+   "ref": "4.9.1.2.b",
+   "section": "4.9.1.2",
+   "kind": "content",
+   "page": 76,
+   "skills": [],
+   "topic": [
+    "4.9",
+    "4.9.1",
+    "4.9.1.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "9ba143053bacfb26"
+  },
+  {
+   "ref": "4.9.1.2.c",
+   "section": "4.9.1.2",
+   "kind": "content",
+   "page": 76,
+   "skills": [],
+   "topic": [
+    "4.9",
+    "4.9.1",
+    "4.9.1.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "9a8c4b3b7bd109e7"
+  },
+  {
+   "ref": "4.9.1.2.d",
+   "section": "4.9.1.2",
+   "kind": "content",
+   "page": 76,
+   "skills": [],
+   "topic": [
+    "4.9",
+    "4.9.1",
+    "4.9.1.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "29e716cfca9f6edd"
+  },
+  {
+   "ref": "4.9.1.2.e",
+   "section": "4.9.1.2",
+   "kind": "skill",
+   "page": 76,
+   "skills": [],
+   "topic": [
+    "4.9",
+    "4.9.1",
+    "4.9.1.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "792e7e8a78ffd5d6"
+  },
+  {
+   "ref": "4.9.1.3.a",
+   "section": "4.9.1.3",
+   "kind": "content",
+   "page": 77,
+   "skills": [
+    "WS 1.2"
+   ],
+   "topic": [
+    "4.9",
+    "4.9.1",
+    "4.9.1.3"
+   ],
+   "check": "contains a formula or equation set out over lines in the PDF: read it there",
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "e799f050bcd33534"
+  },
+  {
+   "ref": "4.9.1.4.a",
+   "section": "4.9.1.4",
+   "kind": "content",
+   "page": 77,
+   "skills": [],
+   "topic": [
+    "4.9",
+    "4.9.1",
+    "4.9.1.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "a877480977d8a7ea"
+  },
+  {
+   "ref": "4.9.1.4.b",
+   "section": "4.9.1.4",
+   "kind": "content",
+   "page": 77,
+   "skills": [
+    "WS 1.2",
+    "WS 4.1"
+   ],
+   "topic": [
+    "4.9",
+    "4.9.1",
+    "4.9.1.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "2e2c2c7ec626f079"
+  },
+  {
+   "ref": "4.9.1.4.c",
+   "section": "4.9.1.4",
+   "kind": "skill",
+   "page": 77,
+   "skills": [],
+   "topic": [
+    "4.9",
+    "4.9.1",
+    "4.9.1.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "bba0e2d8e67a380c"
+  },
+  {
+   "ref": "4.9.2.1.a",
+   "section": "4.9.2.1",
+   "kind": "content",
+   "page": 77,
+   "skills": [],
+   "topic": [
+    "4.9",
+    "4.9.2",
+    "4.9.2.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "da5faaa762806cc1"
+  },
+  {
+   "ref": "4.9.2.1.b",
+   "section": "4.9.2.1",
+   "kind": "skill",
+   "page": 77,
+   "skills": [],
+   "topic": [
+    "4.9",
+    "4.9.2",
+    "4.9.2.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "8c98548395a5803b"
+  },
+  {
+   "ref": "4.9.2.2.a",
+   "section": "4.9.2.2",
+   "kind": "content",
+   "page": 78,
+   "skills": [],
+   "topic": [
+    "4.9",
+    "4.9.2",
+    "4.9.2.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "aade3b88b9bc2e86"
+  },
+  {
+   "ref": "4.9.2.2.b",
+   "section": "4.9.2.2",
+   "kind": "skill",
+   "page": 78,
+   "skills": [],
+   "topic": [
+    "4.9",
+    "4.9.2",
+    "4.9.2.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "2c9c426bb5489c73"
+  },
+  {
+   "ref": "4.9.2.2.c",
+   "section": "4.9.2.2",
+   "kind": "content",
+   "page": 78,
+   "skills": [],
+   "topic": [
+    "4.9",
+    "4.9.2",
+    "4.9.2.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "840ae9a630c3cce1"
+  },
+  {
+   "ref": "4.9.2.2.d",
+   "section": "4.9.2.2",
+   "kind": "content",
+   "page": 78,
+   "skills": [],
+   "topic": [
+    "4.9",
+    "4.9.2",
+    "4.9.2.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "1fdb809b03e7d3c0"
+  },
+  {
+   "ref": "4.9.2.2.e",
+   "section": "4.9.2.2",
+   "kind": "skill",
+   "page": 78,
+   "skills": [
+    "WS 1.2",
+    "WS 1.3",
+    "WS 1.6"
+   ],
+   "topic": [
+    "4.9",
+    "4.9.2",
+    "4.9.2.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "4ac6e184babe7fec"
+  },
+  {
+   "ref": "4.9.2.3.a",
+   "section": "4.9.2.3",
+   "kind": "content",
+   "page": 78,
+   "skills": [
+    "WS 1.5"
+   ],
+   "topic": [
+    "4.9",
+    "4.9.2",
+    "4.9.2.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "dd9a5492f99569c4"
+  },
+  {
+   "ref": "4.9.2.3.b",
+   "section": "4.9.2.3",
+   "kind": "content",
+   "page": 78,
+   "skills": [],
+   "topic": [
+    "4.9",
+    "4.9.2",
+    "4.9.2.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "e8818b6ac2c7b694"
+  },
+  {
+   "ref": "4.9.2.3.c",
+   "section": "4.9.2.3",
+   "kind": "skill",
+   "page": 78,
+   "skills": [],
+   "topic": [
+    "4.9",
+    "4.9.2",
+    "4.9.2.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "a388514b406c9ee2"
+  },
+  {
+   "ref": "4.9.2.4.a",
+   "section": "4.9.2.4",
+   "kind": "content",
+   "page": 79,
+   "skills": [],
+   "topic": [
+    "4.9",
+    "4.9.2",
+    "4.9.2.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "f654f142129bc781"
+  },
+  {
+   "ref": "4.9.2.4.b",
+   "section": "4.9.2.4",
+   "kind": "content",
+   "page": 79,
+   "skills": [],
+   "topic": [
+    "4.9",
+    "4.9.2",
+    "4.9.2.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "9f3d53b775efd5ba"
+  },
+  {
+   "ref": "4.9.2.4.c",
+   "section": "4.9.2.4",
+   "kind": "skill",
+   "page": 79,
+   "skills": [],
+   "topic": [
+    "4.9",
+    "4.9.2",
+    "4.9.2.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "f8c9c9623e1b25e7"
+  },
+  {
+   "ref": "4.9.3.1.a",
+   "section": "4.9.3.1",
+   "kind": "content",
+   "page": 79,
+   "skills": [],
+   "topic": [
+    "4.9",
+    "4.9.3",
+    "4.9.3.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "0839aad23af4a7dc"
+  },
+  {
+   "ref": "4.9.3.1.b",
+   "section": "4.9.3.1",
+   "kind": "content",
+   "page": 79,
+   "skills": [],
+   "topic": [
+    "4.9",
+    "4.9.3",
+    "4.9.3.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "92eb8289b12c5e77"
+  },
+  {
+   "ref": "4.9.3.1.c",
+   "section": "4.9.3.1",
+   "kind": "content",
+   "page": 79,
+   "skills": [],
+   "topic": [
+    "4.9",
+    "4.9.3",
+    "4.9.3.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "7096f5d3310f45a1"
+  },
+  {
+   "ref": "4.9.3.1.d",
+   "section": "4.9.3.1",
+   "kind": "skill",
+   "page": 79,
+   "skills": [
+    "WS 1.2"
+   ],
+   "topic": [
+    "4.9",
+    "4.9.3",
+    "4.9.3.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "13264e98cd219099"
+  },
+  {
+   "ref": "4.9.3.2.a",
+   "section": "4.9.3.2",
+   "kind": "content",
+   "page": 80,
+   "skills": [],
+   "topic": [
+    "4.9",
+    "4.9.3",
+    "4.9.3.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "fcd5634c0600111d"
+  },
+  {
+   "ref": "4.9.3.2.b",
+   "section": "4.9.3.2",
+   "kind": "content",
+   "page": 80,
+   "skills": [],
+   "topic": [
+    "4.9",
+    "4.9.3",
+    "4.9.3.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "049eaf3cf70008cc"
+  },
+  {
+   "ref": "4.9.3.2.c",
+   "section": "4.9.3.2",
+   "kind": "content",
+   "page": 80,
+   "skills": [],
+   "topic": [
+    "4.9",
+    "4.9.3",
+    "4.9.3.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "e234b0b1ae475b2c"
+  },
+  {
+   "ref": "4.9.3.2.d",
+   "section": "4.9.3.2",
+   "kind": "skill",
+   "page": 80,
+   "skills": [
+    "WS 1.4"
+   ],
+   "topic": [
+    "4.9",
+    "4.9.3",
+    "4.9.3.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "c0e5198757484a5f"
+  },
+  {
+   "ref": "4.10.1.1.a",
+   "section": "4.10.1.1",
+   "kind": "content",
+   "page": 81,
+   "skills": [],
+   "topic": [
+    "4.10",
+    "4.10.1",
+    "4.10.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "393519011aef2468"
+  },
+  {
+   "ref": "4.10.1.1.b",
+   "section": "4.10.1.1",
+   "kind": "content",
+   "page": 81,
+   "skills": [],
+   "topic": [
+    "4.10",
+    "4.10.1",
+    "4.10.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "98746df5372bdfc8"
+  },
+  {
+   "ref": "4.10.1.1.c",
+   "section": "4.10.1.1",
+   "kind": "content",
+   "page": 81,
+   "skills": [],
+   "topic": [
+    "4.10",
+    "4.10.1",
+    "4.10.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "f773485ac211edc8"
+  },
+  {
+   "ref": "4.10.1.1.d",
+   "section": "4.10.1.1",
+   "kind": "content",
+   "page": 81,
+   "skills": [],
+   "topic": [
+    "4.10",
+    "4.10.1",
+    "4.10.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "844df32dae8ecbe2"
+  },
+  {
+   "ref": "4.10.1.1.e",
+   "section": "4.10.1.1",
+   "kind": "skill",
+   "page": 81,
+   "skills": [],
+   "topic": [
+    "4.10",
+    "4.10.1",
+    "4.10.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "22bbb222dddfec47"
+  },
+  {
+   "ref": "4.10.1.1.f",
+   "section": "4.10.1.1",
+   "kind": "skill",
+   "page": 81,
+   "skills": [
+    "WS 3.2",
+    "MS 2h",
+    "MS 2c",
+    "MS 4a"
+   ],
+   "topic": [
+    "4.10",
+    "4.10.1",
+    "4.10.1.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "072ba802c974854f"
+  },
+  {
+   "ref": "4.10.1.2.a",
+   "section": "4.10.1.2",
+   "kind": "content",
+   "page": 82,
+   "skills": [],
+   "topic": [
+    "4.10",
+    "4.10.1",
+    "4.10.1.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "25417b810a853bb1"
+  },
+  {
+   "ref": "4.10.1.2.b",
+   "section": "4.10.1.2",
+   "kind": "content",
+   "page": 82,
+   "skills": [],
+   "topic": [
+    "4.10",
+    "4.10.1",
+    "4.10.1.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "98b8410220565379"
+  },
+  {
+   "ref": "4.10.1.2.c",
+   "section": "4.10.1.2",
+   "kind": "content",
+   "page": 82,
+   "skills": [],
+   "topic": [
+    "4.10",
+    "4.10.1",
+    "4.10.1.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "4ba687554c735170"
+  },
+  {
+   "ref": "4.10.1.2.d",
+   "section": "4.10.1.2",
+   "kind": "content",
+   "page": 82,
+   "skills": [],
+   "topic": [
+    "4.10",
+    "4.10.1",
+    "4.10.1.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "644ecc954ebe7d43"
+  },
+  {
+   "ref": "4.10.1.2.e",
+   "section": "4.10.1.2",
+   "kind": "content",
+   "page": 82,
+   "skills": [],
+   "topic": [
+    "4.10",
+    "4.10.1",
+    "4.10.1.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "2da35e87e5dfdffa"
+  },
+  {
+   "ref": "4.10.1.2.f",
+   "section": "4.10.1.2",
+   "kind": "skill",
+   "page": 82,
+   "skills": [],
+   "topic": [
+    "4.10",
+    "4.10.1",
+    "4.10.1.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "93eefa62df2c392f"
+  },
+  {
+   "ref": "4.10.1.2.RP8",
+   "section": "4.10.1.2",
+   "kind": "practical",
+   "page": 82,
+   "skills": [
+    "AT 2",
+    "AT 3",
+    "AT 4"
+   ],
+   "topic": [
+    "4.10",
+    "4.10.1",
+    "4.10.1.2"
+   ],
+   "status": "official",
+   "type": "practical",
+   "hash": "aacc04004acb6096"
+  },
+  {
+   "ref": "4.10.1.3.a",
+   "section": "4.10.1.3",
+   "kind": "content",
+   "page": 83,
+   "skills": [],
+   "topic": [
+    "4.10",
+    "4.10.1",
+    "4.10.1.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "a455b8c05688fa42"
+  },
+  {
+   "ref": "4.10.1.3.b",
+   "section": "4.10.1.3",
+   "kind": "content",
+   "page": 83,
+   "skills": [],
+   "topic": [
+    "4.10",
+    "4.10.1",
+    "4.10.1.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "8673720279ebc2f0"
+  },
+  {
+   "ref": "4.10.1.3.c",
+   "section": "4.10.1.3",
+   "kind": "skill",
+   "page": 83,
+   "skills": [],
+   "topic": [
+    "4.10",
+    "4.10.1",
+    "4.10.1.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "d63ede2de519cd0f"
+  },
+  {
+   "ref": "4.10.1.4.a",
+   "section": "4.10.1.4",
+   "kind": "content",
+   "page": 83,
+   "skills": [],
+   "higherTier": true,
+   "topic": [
+    "4.10",
+    "4.10.1",
+    "4.10.1.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "cf7f9473413ea314"
+  },
+  {
+   "ref": "4.10.1.4.b",
+   "section": "4.10.1.4",
+   "kind": "content",
+   "page": 83,
+   "skills": [],
+   "higherTier": true,
+   "topic": [
+    "4.10",
+    "4.10.1",
+    "4.10.1.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "74d9b1b8aab72baf"
+  },
+  {
+   "ref": "4.10.1.4.c",
+   "section": "4.10.1.4",
+   "kind": "content",
+   "page": 83,
+   "skills": [],
+   "higherTier": true,
+   "topic": [
+    "4.10",
+    "4.10.1",
+    "4.10.1.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "72068b19bffc4ff8"
+  },
+  {
+   "ref": "4.10.1.4.d",
+   "section": "4.10.1.4",
+   "kind": "content",
+   "page": 83,
+   "skills": [],
+   "higherTier": true,
+   "topic": [
+    "4.10",
+    "4.10.1",
+    "4.10.1.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "11bfbe05ced3145f"
+  },
+  {
+   "ref": "4.10.1.4.e",
+   "section": "4.10.1.4",
+   "kind": "content",
+   "page": 83,
+   "skills": [],
+   "higherTier": true,
+   "topic": [
+    "4.10",
+    "4.10.1",
+    "4.10.1.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "c55a7b9298a8d380"
+  },
+  {
+   "ref": "4.10.1.4.f",
+   "section": "4.10.1.4",
+   "kind": "skill",
+   "page": 83,
+   "skills": [],
+   "higherTier": true,
+   "topic": [
+    "4.10",
+    "4.10.1",
+    "4.10.1.4"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "9585c1b58df4a4f4"
+  },
+  {
+   "ref": "4.10.2.1.a",
+   "section": "4.10.2.1",
+   "kind": "content",
+   "page": 84,
+   "skills": [
+    "WS 1.3",
+    "WS 4",
+    "WS 5"
+   ],
+   "topic": [
+    "4.10",
+    "4.10.2",
+    "4.10.2.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "305ab176d67c782b"
+  },
+  {
+   "ref": "4.10.2.1.b",
+   "section": "4.10.2.1",
+   "kind": "content",
+   "page": 84,
+   "skills": [
+    "MS 1c",
+    "MS 1d",
+    "MS 2a",
+    "MS 4a"
+   ],
+   "topic": [
+    "4.10",
+    "4.10.2",
+    "4.10.2.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "5e91794066044257"
+  },
+  {
+   "ref": "4.10.2.2.a",
+   "section": "4.10.2.2",
+   "kind": "content",
+   "page": 85,
+   "skills": [],
+   "topic": [
+    "4.10",
+    "4.10.2",
+    "4.10.2.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "10e929ce2af6506d"
+  },
+  {
+   "ref": "4.10.2.2.b",
+   "section": "4.10.2.2",
+   "kind": "content",
+   "page": 85,
+   "skills": [],
+   "topic": [
+    "4.10",
+    "4.10.2",
+    "4.10.2.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "b0ca2ba04ef697af"
+  },
+  {
+   "ref": "4.10.2.2.c",
+   "section": "4.10.2.2",
+   "kind": "content",
+   "page": 85,
+   "skills": [],
+   "topic": [
+    "4.10",
+    "4.10.2",
+    "4.10.2.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "b463a05b3520dc32"
+  },
+  {
+   "ref": "4.10.2.2.d",
+   "section": "4.10.2.2",
+   "kind": "content",
+   "page": 85,
+   "skills": [],
+   "topic": [
+    "4.10",
+    "4.10.2",
+    "4.10.2.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "2195237975e2ebb6"
+  },
+  {
+   "ref": "4.10.2.2.e",
+   "section": "4.10.2.2",
+   "kind": "skill",
+   "page": 85,
+   "skills": [],
+   "topic": [
+    "4.10",
+    "4.10.2",
+    "4.10.2.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "46d95e209e7331d1"
+  },
+  {
+   "ref": "4.10.3.1.a",
+   "section": "4.10.3.1",
+   "kind": "content",
+   "page": 85,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.10",
+    "4.10.3",
+    "4.10.3.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "b5c7c30901ea4b59"
+  },
+  {
+   "ref": "4.10.3.1.b",
+   "section": "4.10.3.1",
+   "kind": "content",
+   "page": 85,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.10",
+    "4.10.3",
+    "4.10.3.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "3c36c6a19bf63f2a"
+  },
+  {
+   "ref": "4.10.3.1.c",
+   "section": "4.10.3.1",
+   "kind": "content",
+   "page": 85,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.10",
+    "4.10.3",
+    "4.10.3.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "27834480b2887a5d"
+  },
+  {
+   "ref": "4.10.3.1.d",
+   "section": "4.10.3.1",
+   "kind": "skill",
+   "page": 85,
+   "skills": [
+    "WS 2.2",
+    "WS 7",
+    "WS 3.5"
+   ],
+   "chemistryOnly": true,
+   "topic": [
+    "4.10",
+    "4.10.3",
+    "4.10.3.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "d70f99e44860d05e"
+  },
+  {
+   "ref": "4.10.3.2.a",
+   "section": "4.10.3.2",
+   "kind": "content",
+   "page": 86,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.10",
+    "4.10.3",
+    "4.10.3.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "2486a1695451bf40"
+  },
+  {
+   "ref": "4.10.3.2.b",
+   "section": "4.10.3.2",
+   "kind": "content",
+   "page": 86,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.10",
+    "4.10.3",
+    "4.10.3.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "ff18e85256412eab"
+  },
+  {
+   "ref": "4.10.3.2.c",
+   "section": "4.10.3.2",
+   "kind": "content",
+   "page": 86,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.10",
+    "4.10.3",
+    "4.10.3.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "a7c53ada3381d7c9"
+  },
+  {
+   "ref": "4.10.3.2.d",
+   "section": "4.10.3.2",
+   "kind": "content",
+   "page": 86,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.10",
+    "4.10.3",
+    "4.10.3.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "b895e77b80eb3f1b"
+  },
+  {
+   "ref": "4.10.3.2.e",
+   "section": "4.10.3.2",
+   "kind": "content",
+   "page": 86,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.10",
+    "4.10.3",
+    "4.10.3.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "4e4c2c4224187e0d"
+  },
+  {
+   "ref": "4.10.3.2.f",
+   "section": "4.10.3.2",
+   "kind": "skill",
+   "page": 86,
+   "skills": [
+    "MS 1a",
+    "MS 1c"
+   ],
+   "chemistryOnly": true,
+   "topic": [
+    "4.10",
+    "4.10.3",
+    "4.10.3.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "e08145e0499dcb76"
+  },
+  {
+   "ref": "4.10.3.3.a",
+   "section": "4.10.3.3",
+   "kind": "content",
+   "page": 87,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.10",
+    "4.10.3",
+    "4.10.3.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "eabbaed43eb2986b"
+  },
+  {
+   "ref": "4.10.3.3.b",
+   "section": "4.10.3.3",
+   "kind": "content",
+   "page": 87,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.10",
+    "4.10.3",
+    "4.10.3.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "fc8a4f1e07ed6fce"
+  },
+  {
+   "ref": "4.10.3.3.c",
+   "section": "4.10.3.3",
+   "kind": "content",
+   "page": 87,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.10",
+    "4.10.3",
+    "4.10.3.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "b12c1e50ecad396a"
+  },
+  {
+   "ref": "4.10.3.3.d",
+   "section": "4.10.3.3",
+   "kind": "content",
+   "page": 87,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.10",
+    "4.10.3",
+    "4.10.3.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "255de89c647d7a0e"
+  },
+  {
+   "ref": "4.10.3.3.e",
+   "section": "4.10.3.3",
+   "kind": "skill",
+   "page": 87,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.10",
+    "4.10.3",
+    "4.10.3.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "0d6b145bff8fb111"
+  },
+  {
+   "ref": "4.10.3.3.f",
+   "section": "4.10.3.3",
+   "kind": "content",
+   "page": 87,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.10",
+    "4.10.3",
+    "4.10.3.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "271b6e7a4d851e0a"
+  },
+  {
+   "ref": "4.10.3.3.g",
+   "section": "4.10.3.3",
+   "kind": "skill",
+   "page": 87,
+   "skills": [],
+   "chemistryOnly": true,
+   "topic": [
+    "4.10",
+    "4.10.3",
+    "4.10.3.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "a5981199437c8ff3"
+  },
+  {
+   "ref": "4.10.3.3.h",
+   "section": "4.10.3.3",
+   "kind": "skill",
+   "page": 87,
+   "skills": [
+    "WS 1.4",
+    "WS 3.5",
+    "WS 3.8"
+   ],
+   "chemistryOnly": true,
+   "topic": [
+    "4.10",
+    "4.10.3",
+    "4.10.3.3"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "dc81825f49336b31"
+  },
+  {
+   "ref": "4.10.4.1.a",
+   "section": "4.10.4.1",
+   "kind": "content",
+   "page": 88,
+   "skills": [
+    "MS 1a"
+   ],
+   "topic": [
+    "4.10",
+    "4.10.4",
+    "4.10.4.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "5eb807d173218098"
+  },
+  {
+   "ref": "4.10.4.1.b",
+   "section": "4.10.4.1",
+   "kind": "content",
+   "page": 88,
+   "skills": [],
+   "topic": [
+    "4.10",
+    "4.10.4",
+    "4.10.4.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "830286136a1ef146"
+  },
+  {
+   "ref": "4.10.4.1.c",
+   "section": "4.10.4.1",
+   "kind": "skill",
+   "page": 88,
+   "skills": [
+    "MS 1c"
+   ],
+   "topic": [
+    "4.10",
+    "4.10.4",
+    "4.10.4.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "f6875cb04d0570d4"
+  },
+  {
+   "ref": "4.10.4.1.d",
+   "section": "4.10.4.1",
+   "kind": "content",
+   "page": 88,
+   "skills": [],
+   "topic": [
+    "4.10",
+    "4.10.4",
+    "4.10.4.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "356e2622e65dfc5c"
+  },
+  {
+   "ref": "4.10.4.1.e",
+   "section": "4.10.4.1",
+   "kind": "skill",
+   "page": 88,
+   "skills": [
+    "MS 1a",
+    "MS 1c",
+    "WS 3.5",
+    "WS 3.8"
+   ],
+   "higherTier": true,
+   "topic": [
+    "4.10",
+    "4.10.4",
+    "4.10.4.1"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "825f9df2bc44f1ca"
+  },
+  {
+   "ref": "4.10.4.2.a",
+   "section": "4.10.4.2",
+   "kind": "content",
+   "page": 89,
+   "skills": [],
+   "topic": [
+    "4.10",
+    "4.10.4",
+    "4.10.4.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "6f6f8f2e7da38a36"
+  },
+  {
+   "ref": "4.10.4.2.b",
+   "section": "4.10.4.2",
+   "kind": "content",
+   "page": 89,
+   "skills": [],
+   "topic": [
+    "4.10",
+    "4.10.4",
+    "4.10.4.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "87a30b37e13e40e4"
+  },
+  {
+   "ref": "4.10.4.2.c",
+   "section": "4.10.4.2",
+   "kind": "content",
+   "page": 89,
+   "skills": [],
+   "topic": [
+    "4.10",
+    "4.10.4",
+    "4.10.4.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "d435b2c466a5e581"
+  },
+  {
+   "ref": "4.10.4.2.d",
+   "section": "4.10.4.2",
+   "kind": "content",
+   "page": 89,
+   "skills": [],
+   "topic": [
+    "4.10",
+    "4.10.4",
+    "4.10.4.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "e13f2a7c363e32c5"
+  },
+  {
+   "ref": "4.10.4.2.e",
+   "section": "4.10.4.2",
+   "kind": "content",
+   "page": 89,
+   "skills": [],
+   "topic": [
+    "4.10",
+    "4.10.4",
+    "4.10.4.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "b003af763016bf80"
+  },
+  {
+   "ref": "4.10.4.2.f",
+   "section": "4.10.4.2",
+   "kind": "skill",
+   "page": 89,
+   "skills": [],
+   "topic": [
+    "4.10",
+    "4.10.4",
+    "4.10.4.2"
+   ],
+   "status": "official",
+   "type": "spec-bullet",
+   "hash": "04de71faee304bed"
+  }
+ ]
+}

@@ -16,27 +16,21 @@ import { currentBrief, checkBrief, stampBrief, researchRequest, packetFor, revie
 import { loadStatements, loadMap, loadIndex } from "../curriculum/engine.mjs";
 import { SPECS } from "../../kit/curriculum/uk.js";
 
-const AGENT = { research: "sonnet", write: "opus", repair: "opus", review: "sonnet", map: "haiku", ...(CONFIG.agent?.models || {}) };
+import { AGENT_MODELS as AGENT, examplesFor } from "./build.mjs";
 const rel = (u) => u.pathname.replace(out("./").pathname, "");
 const read = (u) => (existsSync(u) ? readFileSync(u, "utf8") : null);
 export const queueRoot = (subject) => out(`content/queue/${subject}/`);
 const dirOf = (subject, topicId) => out(`content/queue/${subject}/${topicId.split("/")[1]}/`);
-const examplesFor = (level) => {
-  const lv = String(level).toLowerCase(), key = /gcse|national 5|grade (9|10)/.test(lv) ? "gcse" : /a level|as level|higher/.test(lv) ? "alevel" : /university|undergraduate/.test(lv) ? "undergraduate" : /postgraduate/.test(lv) ? "postgraduate" : /primary|year [1-6]\b|ks[12]/.test(lv) ? "primary" : "gcse";
-  const d = at("prompts/examples/"), all = existsSync(d) ? readdirSync(d).filter((f) => f.endsWith(".txt")).sort() : [];
-  const pick = all.filter((f) => f.startsWith(`${key}--`));
-  return (pick.length ? pick : all.slice(0, 2)).map((f) => `prompts/examples/${f}`);
-};
 
 // ---------- what each subagent is told: short, file-based, and the same every time ----------
 // the checks the engine runs (scripts/content/gates.mjs), so a lesson can pass first time instead of costing repairs
-const GATES = `The engine then checks every lesson, and sends back a FIX list for anything that fails: an S: lead over 60 characters; an LV: line; two or more O: and T: lines; a REQ: line for each requirement it teaches naming its objectives (@1,2), and every objective tested by at least one question tagged @n; at least two H: sections, a K: key point, a SUM: line, two Q: flashcards (answers under 40 words); at least four questions with M1/M2/M3 levels, including at least one M3, each multiple-choice question with three wrong options, an explanation over 40 characters, and a right answer not much longer than the wrong ones; at least six P:, -, E:, X:, K: or !: lines; SRC: lines as "citation | kind | YYYY-MM-DD | https link" where kind is one of legislation, case, rule, guidance, standard, primary, secondary; every "a op b = c" in the lesson must be arithmetically right; and no 8 words in a row from the requirement text.`;
+const GATES = `The engine then checks every lesson, and sends back a FIX list for anything that fails: an S: lead over 60 characters; an LV: line; two or more O: and T: lines; a REQ: line for each requirement it teaches naming its objectives (@1,2), and every objective tested by at least one question tagged @n; at least two H: sections, a K: key point, a SUM: line, two Q: flashcards (answers under 40 words); at least four questions with M1/M2/M3 levels, including at least one M3, each multiple-choice question with three wrong options, an explanation over 40 characters, and a right answer not much longer than the wrong ones; at least six P:, -, E:, X:, K: or !: lines; SRC: lines as "citation | kind | YYYY-MM-DD | https link" where kind is one of legislation, case, rule, guidance, standard, primary, secondary; every "a op b = c" in the lesson must be arithmetically right; no 8 words in a row from the requirement text; and every PRE: line (optional) names a lesson title from the course or this unit, or a requirement id such as aqa-gcse-biology:4.1.1.1.a.`;
 export const BRIEFS = {
-  research: (a) => `You are Gradify's Researcher. Read prompts/research.md and prompts/shorthand.md, then the request in ${a.req}. Research it with web search, following research.md exactly (official specifications first, at least three independent sources, licence class for every source, never copy wording). Write ONLY the brief, in the shorthand format and ending with END, to ${a.out}. Do nothing else.`,
+  research: (a) => `You are Gradify's Researcher. Read prompts/research.md and prompts/shorthand.md, then the request in ${a.req}. Research it with web search, following research.md exactly (official specifications first, at least three independent sources, licence class for every source, never copy wording). Cite ONLY pages under the ALLOW lines in the request, from at least three different publishers there, and give each source the licence= its ALLOW line shows: a brief citing anything else is refused. Write ONLY the brief, in the shorthand format and ending with END, to ${a.out}. Do nothing else.`,
   write: (a) => `You are Gradify's Writer. Read prompts/writer.md, prompts/shorthand.md, docs/CURRICULUM_CONTENT_STANDARD.md, the comment header at the top of kit/course/notes.js, and these example lessons: ${a.examples.join(", ")}. Then read the work packet in ${a.req}. Write the unit file from the packet's brief only (no web search, no memory), following writer.md exactly, and save ONLY the lessons, ending with END, to ${a.out}. Do nothing else.\n${GATES}`,
   repair: (a) => `You are Gradify's Writer, repairing lessons. Read prompts/writer.md (Repairs) and prompts/shorthand.md. For each request file below, read its FIX list, numbered lesson and packet, and save ONLY the REPAIR block (changed lines only) to the matching reply file:\n${a.pairs.map(([q, o]) => `  ${q} → ${o}`).join("\n")}\nDo nothing else.`,
   review: (a) => `You are Gradify's Reviewer. You did not write these lessons and must judge them only against the requirements and the research brief in each request: no web search, and don't open drafts or other files. Read prompts/review.md and prompts/shorthand.md. For each request file below, save ONLY its REV line to the matching reply file:\n${a.pairs.map(([q, o]) => `  ${q} → ${o}`).join("\n")}\nDo nothing else.`,
-  map: (a) => `You confirm whether existing Gradify lessons already teach official requirements. Read the request in ${a.req}. For each MAPREQ, decide from the LESSON's objectives, headings and key terms (open its file only if you can't tell) whether it teaches that requirement at the level asked. Write one line per requirement to ${a.out}: "MAP <requirement-id> <lesson-id> YES @<numbers of the objectives that teach it>" or "MAP <requirement-id> NO <reason, 12 words or fewer>". End with END. Do nothing else.`,
+  map: (a) => `You confirm whether existing Gradify lessons already teach official requirements. Read the request in ${a.req}. For each MAPREQ, decide from the LESSON's objectives, headings and key terms (open its file only if you can't tell) whether it teaches that requirement at the level asked. Answer YES only if every element the requirement names (each structure, process, hormone, method or skill) is taught by the lesson's objectives, headings or terms; if any is missing, or only implied, answer NO. Write one line per requirement to ${a.out}: "MAP <requirement-id> <lesson-id> YES @<numbers of the objectives that teach it>" or "MAP <requirement-id> NO <reason, 12 words or fewer>". End with END. Do nothing else.`,
 };
 const action = (kind, topic, files) => ({ kind, topic, model: AGENT[kind], ...files, prompt: BRIEFS[kind](files) });
 
@@ -83,7 +77,7 @@ export async function advance(topic, { render = null, legible = null } = {}) {
     if (!st.lessons.length) { rmSync(dir, { recursive: true, force: true }); return { actions: [], filed: fileTopic(topic, [], { brief, failures: [{ title: "(unit)", gate: "parse", issues: [{ code: "FMT", line: null, note: "the Writer returned no lessons" }] }] }) }; }
   }
   // 3. each lesson: gates → review → repair, up to the repair limit
-  const opts = gateOptions(topic, { render, legible }), repairs = [], reviews = [];
+  const opts = gateOptions(topic, { render, legible, siblings: st.lessons.map((s) => s.title) }), repairs = [], reviews = [];
   for (const [i, s] of st.lessons.entries()) {
     const n = i + 1, rq = f(`repair-${n}.req.txt`), ro = f(`repair-${n}.out.txt`), vq = f(`review-${n}.req.txt`), vo = f(`review-${n}.out.txt`);
     for (let guard = 0; guard < 4 && !["done", "failed"].includes(s.stage); guard++) {

@@ -69,6 +69,21 @@ export function parseSpecText(text) {
 export function parseSpecCsv(text) {
   return parseTable(text).filter((r) => r.ref).map((r) => ({ ref: r.ref.trim(), topic: (r.topic || "").split(/\s*>\s*/).filter(Boolean), title: r.title || "", text: r.statement || r.text || "", ...(r.tier ? { tier: r.tier } : {}), ...(r.kind ? { kind: r.kind } : {}) }));
 }
+// ---------- what kind of requirement each statement is (Master Plan, decision B; RULES.md rule 3) ----------
+export const REQ_STATUSES = ["statutory", "official", "attainment", "developmental", "recommended", "supplementary"];
+export const REQ_TYPES = ["spec-bullet", "assessment-objective", "practical", "guidance"];
+/** a statement's requirement type from the kind its extractor gave it (AQA: content, skill, practical) */
+export const reqTypeOf = (x) => ({ practical: "practical", objective: "assessment-objective", "assessment-objective": "assessment-objective", guidance: "guidance" })[x.kind] || "spec-bullet";
+/** problems with a committed index's requirement records: version, publication date, period, status and type */
+export function checkIndex(idx) {
+  const p = [], at = idx?.spec || "(index)";
+  if (!idx?.version) p.push(`${at}: no specification version`);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(idx?.published || "")) p.push(`${at}: no publication date (published, YYYY-MM-DD)`);
+  if (!/^\d{4}(-\d{2}(-\d{2})?)?$/.test(idx?.applies?.from || "") || !(idx.applies.to === null || /^\d{4}(-\d{2}(-\d{2})?)?$/.test(idx.applies.to))) p.push(`${at}: no applicable period (applies: { from, to }, to null while current)`);
+  const bad = (idx?.statements || []).filter((x) => !REQ_STATUSES.includes(x.status) || !REQ_TYPES.includes(x.type));
+  if (bad.length) p.push(`${at}: ${bad.length} statements without a valid status and type (first ${bad[0].ref}): re-import it`);
+  return p;
+}
 /** the committed index of a specification: everything but the statement text (pure) */
 export function indexOf(doc) {
   const { statements, sections, ...meta } = doc;
@@ -118,7 +133,10 @@ export function importSpec(id, file, { version, source, checked } = {}) {
   const d = registered ? s.document : {};
   Object.assign(doc, { version: version || d.version, versionDate: d.versionDate || null, source: source || d.url, sha1, checkedOn: checked || d.checkedOn, pages: d.pages || null });
   // keep the provenance first in the file
-  const ordered = { spec: doc.spec, title: doc.title, code: doc.code, version: doc.version, versionDate: doc.versionDate, source: doc.source, sha1: doc.sha1, checkedOn: doc.checkedOn, pages: doc.pages, extractedBy: doc.extractedBy, sections: doc.sections, statements: doc.statements };
+  // each statement says what kind of requirement it is; the index says when the document applies (decision B)
+  const statements = doc.statements.map((x) => ({ ...x, status: REQ_STATUSES.includes(x.status) ? x.status : s.status || "official", type: reqTypeOf(x) }));
+  const applies = { from: s.applies?.from ?? (s.firstTeaching ? String(s.firstTeaching) : null), to: s.applies?.to ?? null };
+  const ordered = { spec: doc.spec, title: doc.title, code: doc.code, version: doc.version, versionDate: doc.versionDate, published: doc.versionDate, applies, source: doc.source, sha1: doc.sha1, checkedOn: doc.checkedOn, pages: doc.pages, extractedBy: doc.extractedBy, sections: doc.sections, statements };
   write(statementsPath(id), ordered);
   write(indexPath(id), indexOf(ordered));
   return ordered;

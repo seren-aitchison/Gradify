@@ -20,3 +20,13 @@ From the Gradify Knowledge Engine Master Plan (24 Nov 2026), word for word. They
 16. **Write from briefs only.** Lessons are written from the topic's cited brief, never from the open web or memory alone. Every brief uses at least three independent sources, and conflicts go to an expert.
 
 Also from the plan: new ideas go into the Deferred list, not the active brief, until the milestone in progress ships. Optimise for the least wasted effort and the most verified content, never fewer tokens at the cost of accuracy.
+
+## Fixed decisions (25 Nov 2026, added to the Master Plan; rules 1–16 stand)
+
+- **A. Canonical content** is the research briefs plus the lesson files. The knowledge items from #201 (`kit/knowledge/`) are a seed for briefs. There is no second licence gate or QA path for content.
+- **B. Requirement records** carry a status (statutory, official, attainment, developmental, recommended or supplementary), a type (spec-bullet, assessment-objective, practical or guidance), the specification's version, publication date and applicable period. The queue refuses an index without them (`checkIndex`, `scripts/curriculum/engine.mjs`).
+- **C. `PRE:`** lines name prerequisites: a lesson title in the course or unit, or a requirement id. They are parsed and checked by the coverage gate. There is no graph store.
+- **D. Each filed lesson records** its brief fingerprint, a hash of each prompt file, its models and its template (`scripts/content/build.mjs`). A change to any of them requeues only the lessons that used it.
+- **E. Flashcards, the specification explorer, the glossary and the question bank** are views generated from the notes. They are never authored separately.
+- **F. The status ladder** in the report runs: not researched, framework found, spec imported, mapped, drafted, gates passed, AI-verified, expert-required, expert-approved, published, needs update.
+- **Sources:** briefs cite only publications on the allowlist (`kit/curriculum/sources.js`). Each source's licence class comes from its row there. Nothing gets "adapt" without a named person's confirmation.

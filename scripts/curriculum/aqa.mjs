@@ -23,12 +23,13 @@
 
 const HEAD = /^(4(?:\.\d+){1,3})\s+(.+)$/;
 const COLUMN = 410;                 // the skills column usually starts at x≈417; each table's header says where exactly
-const MARGIN = 46;                  // headings and required practicals sit at x≈43, table content at x≈48
+const DEFAULT_MARGIN = 46;          // Biology 8461: headings and required practicals at x≈43, table content at x≈48 (measured per document in extractAqa)
 const SCOPE = /^(Limited to|This is limited to|Knowledge (and understanding )?(of|is)\b.*\b(not required|restricted to|limited to)|.*\b(is|are) not required\.?$|Students (are not|do not need|will not be) (expected|required|need)|Students should not|No (knowledge|details?) of)/i;
-const flags = (t) => ({ ...(/\(HT only\)/.test(t) ? { higherTier: true } : {}), ...(/\(biology only\)/i.test(t) ? { biologyOnly: true } : {}) });
+// "(biology only)", "(chemistry only)", "(physics only)": separate-science content, not in Combined Science: Trilogy
+const flags = (t) => { const only = t.match(/\((biology|chemistry|physics) only\)/i)?.[1]?.toLowerCase(); return { ...(/\(HT only\)/.test(t) ? { higherTier: true } : {}), ...(only ? { [`${only}Only`]: true } : {}) }; };
 // "C 6 H 12 O 6" → "C6H12O6": pdftotext sets subscripts apart
 const formulae = (t) => t.replace(/\b((?:[A-Z][a-z]?\d*)*[A-Z][a-z]?) (\d{1,2})(?=[\s,.;)]|$)/g, "$1$2").replace(/\b((?:[A-Z][a-z]?\d+)+) (?=(?:[A-Z][a-z]?\d+)+\b)/g, "$1").replace(/\b((?:[A-Z][a-z]?\d+)+) (?=(?:[A-Z][a-z]?\d+)+\b)/g, "$1").replace(/\b([A-Z][a-z]?\d+) ([A-Z])(?=[\s,.;)]|$)/g, "$1$2").replace(/(\d) (st|nd|rd|th)\b/g, "$1$2").replace(/ ,/g, ",").replace(/ \./g, ".");
-const clean = (t) => formulae(t.replace(/\(HT only\)\s*/g, "").replace(/\(biology only\)\s*/gi, "").replace(/\s+/g, " ").trim());
+const clean = (t) => formulae(t.replace(/\(HT only\)\s*/g, "").replace(/\((biology|chemistry|physics) only\)\s*/gi, "").replace(/\s+/g, " ").trim());
 const tidy = (lines) => lines.join("\n").replace(/•\s*•\s*/g, "• ").replace(/-\n(?=[a-z])/g, "-").replace(/\n•/g, " •").replace(/\n/g, " ").replace(/\s+/g, " ").trim();
 const letter = (i) => (i < 26 ? String.fromCharCode(97 + i) : letter(Math.floor(i / 26) - 1) + String.fromCharCode(97 + (i % 26)));
 const ends = (t) => /[.?!)]$|\.”$|\.’$/.test(t);
@@ -47,7 +48,11 @@ function paragraphs(lines) {
  * Statements from AQA layout pages: { sections: [{ ref, title, page, ...flags }], statements: [...] }.
  * `from`/`to` bound the subject content (the contents pages repeat the headings with page numbers).
  */
-export function extractAqa(pages, { first = "4.1", stop = /^4\.8\s|^5\s+Scheme/ } = {}) {
+export function extractAqa(pages, { first = "4.1", stop = /^4\.\d+\s+Key ideas\b|^5\s+Scheme/ } = {}) {
+  // headings sit at the page's left margin and table content a little to its right. The margin differs between AQA
+  // documents (Biology 8461 at x≈43, Chemistry 8462 at x≈57), so it's measured: the leftmost numbered heading, plus 2
+  const lefts = pages.flatMap((pg) => pg.blocks.filter((b) => HEAD.test(b.lines[0] || "") || /^\d+(\.\d+)?$/.test(b.lines[0] || "")).map((b) => b.x));
+  const MARGIN = lefts.length ? Math.min(...lefts) + 2 : DEFAULT_MARGIN;
   const sections = [], statements = [], byRef = new Map();
   let dropped = null, on = false, sec = null, last = null, practical = null, practicals = 0, col = COLUMN;
   const secFlags = (ref) => { const f = {}; for (const s of sections) if (ref === s.ref || ref.startsWith(`${s.ref}.`)) Object.assign(f, s.flags); return f; };
@@ -83,7 +88,7 @@ export function extractAqa(pages, { first = "4.1", stop = /^4\.8\s|^5\s+Scheme/ 
       if (/^Content$/.test(text)) continue;
 
       if (b.x < MARGIN) {   // margin text inside a section: required practicals, or a section's introduction
-        const rp = text.match(/^Required practical activity (\d+):\s*(.+)$/);
+        const rp = text.match(/^Required practical(?: activity)? (\d+):\s*(.+)$/);   // Biology: "activity 1:"; Chemistry: "1:"
         if (rp) { practicals = +rp[1]; practical = { ref: `${sec.ref}.RP${rp[1]}`, section: sec.ref, kind: "practical", text: rp[2], page: pg.page, skills: [], ...secFlags(sec.ref) }; add(practical); continue; }
         if (practical && /^AT skills covered/.test(text)) { practical.skills.push(...(text.match(/\d+/g) || []).map((n) => `AT ${n}`)); continue; }
         if (practical && /^(This practical activity also provides|There are links with this practical)/.test(text)) { if (/^There are links/.test(text)) practical.links = text; continue; }

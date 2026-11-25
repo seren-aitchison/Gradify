@@ -84,7 +84,9 @@ test("AQA GCSE Biology 8461 is registered with the official document it was impo
   for (const k of ["version", "versionDate", "source", "sha1", "checkedOn"]) assert.ok(idx[k], `the index records ${k}`);
   assert.equal(idx.version, s.version); assert.equal(idx.sha1, s.document.sha1); assert.equal(idx.source, s.document.url);
   assert.match(checkRegistry([{ ...s, document: { ...s.document, sha1: "x" } }])[0], /document needs/);
-  assert.ok(SPECS.filter((x) => x.id !== ID).every((x) => !x.confirmed), "no other specification is confirmed yet");
+  // the only other confirmed specification is AQA GCSE Chemistry, also checked against its own document
+  assert.deepEqual(SPECS.filter((x) => x.id !== ID && x.confirmed).map((x) => x.id), ["aqa-gcse-chemistry"]);
+  assert.ok(SPECS.filter((x) => x.confirmed).every((x) => /^[0-9a-f]{40}$/.test(x.document?.sha1 || "")), "every confirmed specification names its official document");
 });
 
 test("the index: every statement once, in a real section, with a fingerprint, and no specification text", () => {
