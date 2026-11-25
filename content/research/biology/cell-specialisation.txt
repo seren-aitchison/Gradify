@@ -1,0 +1,26 @@
+# fp=be145ad5bde2b41c · 2026-11-25
+TOPIC biology/cell-specialisation | levels=GCSE | checked=2026-11-25
+F: AQA GCSE Biology asks students to explain, from information given, how a cell type's structure suits its function in a tissue, organ, organ system or whole organism | aqa8461,bbc-cells | conf=high
+F: Named cell types for AQA: sperm, nerve and muscle in animals; root hair, xylem and phloem in plants | aqa8461,bbc-cells | conf=high
+F: Differentiation is how cells in a developing organism become different types; a differentiating cell gains different sub-cellular structures suited to one job and is then specialised | aqa8461,bbc-cells | conf=high
+F: Most animal cell types differentiate early in development; many plant cell types keep the ability to differentiate throughout life | aqa8461 | conf=med
+F: In mature animals cell division is mostly for repair and replacement | aqa8461 | conf=med
+F: Cell differences are controlled by genes in the nucleus; cells isolated early, before they specialise, can still grow into varied types (basis of stem cell technology) | aqa8461 | conf=med
+F: Sperm: head holds the genetic material and an acrosome of enzymes that lets it get into the egg; middle piece full of mitochondria supplying energy for swimming; tail for swimming | bbc-cells | conf=med
+F: Nerve cell: long, with branched extensions to link with other nerve cells, muscles and glands and to reach the central nervous system; fatty insulating sheath speeds the impulse | bbc-cells | conf=med
+F: Muscle cell: protein filaments slide past each other to shorten the cell; many mitochondria give energy for contraction; in skeletal muscle cells merge into fibres that contract together | bbc-cells,osb2e | conf=high
+F: Root hair cell: large surface area gives contact with soil water; thin wall so water movement is not held back | bbc-cells | conf=med
+F: Xylem: no end walls between vessel cells, so water flows in a continuous column; thick woody walls give support | bbc-cells | conf=med
+F: Phloem: carries dissolved sugars and amino acids up and down the stem; companion cells beside sieve tubes supply the energy for this transport | bbc-cells | conf=med
+F: Form follows function: absorptive cells lining the small intestine have finger-like membrane folds (microvilli) that raise surface area for absorbing nutrients | osb2e | conf=med
+F: Cells making lots of protein (e.g. enzyme-secreting pancreas cells) hold many ribosomes | osb2e | conf=med
+F: Cells needing much energy, such as muscle, hold many mitochondria, which make ATP by aerobic respiration | osb2e,bbc-cells | conf=high
+DEF: specialised cell | a cell whose structure is adapted for one particular function | GCSE
+DEF: differentiation | the process by which a cell acquires the sub-cellular structures needed for a specific function | GCSE
+DEF: stem cell | an undifferentiated cell that can give rise to other cells by differentiation | GCSE
+VAR: AQA lists exactly six example cells; the OpenStax book uses different examples (intestinal absorptive, pancreatic, muscle) at a more advanced level, useful only for the principle
+NUM: none needed for this topic
+SRC: aqa8461 | AQA GCSE Biology 8461 specification (first teaching 2016), sections 4.1, 4.1.1.3, 4.1.1.4 | https://filestore.aqa.org.uk/resources/biology/specifications/AQA-8461-SP-2016.PDF | AQA | licence=facts | 2026-11-25
+SRC: bbc-cells | Plant and animal cells, Cell structure (AQA GCSE Biology), BBC Bitesize | https://www.bbc.co.uk/bitesize/guides/z84jtv4/revision/12 | BBC Bitesize | licence=facts | 2026-11-25
+SRC: osb2e | 4.3 Eukaryotic Cells, Biology 2e | https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells | OpenStax | licence=facts | 2026-11-25
+END

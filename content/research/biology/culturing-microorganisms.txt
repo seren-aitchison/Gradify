@@ -1,0 +1,37 @@
+# fp=6aa5c057b47f37d4 · 2026-11-25
+TOPIC biology/culturing-microorganisms | levels=GCSE | checked=2026-11-25
+F: Bacteria reproduce by binary fission, a simple cell division; under good conditions a division can take as little as about 20 minutes | s1,s2,s3 | conf=high
+F: How fast they divide depends on nutrient supply and suitable conditions such as temperature | s1,s2,s3 | conf=high
+F: Cultures can be grown in a liquid nutrient broth or as colonies on a set agar gel plate | s1,s2 | conf=high
+F: A culture medium must supply carbohydrate for energy, nitrogen for making protein, and minerals | s2 | conf=med
+F: Agar plates are made by pouring molten agar into sterile Petri dishes and letting it set; spreading bacteria gives separate colonies | s2 | conf=high
+F: Uncontaminated cultures are needed because stray microbes compete for nutrients and could be pathogens, confusing tests of antibiotics, antiseptics or disinfectants | s1,s2 | conf=high
+F: Dishes and agar are sterilised first (autoclave, or buy pre-sterilised plastic dishes) to kill existing microbes | s1,s2 | conf=high
+F: Inoculating loop is sterilised by heating in a Bunsen flame before transferring microbes; a sterile spreader gives a lawn | s1,s2 | conf=high
+F: Lid is taped on, plate labelled and stored inverted so airborne microbes and condensation do not contaminate the culture; lid should not be sealed fully, as no oxygen could encourage harmful anaerobes | s1,s2 | conf=med
+F: School incubation is kept at or below 25C to lower the chance of growing human pathogens; hospital labs use 37C for faster growth | s1,s2 | conf=high
+F: RP2 method: place filter-paper discs soaked in different antiseptics or antibiotics (or different concentrations) on a bacterial lawn, incubate, then measure the clear zone around each disc; include a control disc | s1,s2 | conf=high
+F: A clear zone means bacteria were killed or could not reproduce; a larger zone means a more effective substance | s2 | conf=high
+F: Population growth is by repeated doubling: final number = start number x 2^n, n = number of divisions (OpenStax gives the same relation with generation = doubling time) | s2,s3 | conf=high
+DEF: binary fission | the simple cell division by which a bacterium copies its DNA and splits into two cells | GCSE
+DEF: mean division time | the average time for a bacterial population to double in number | GCSE
+DEF: aseptic technique | laboratory procedures that stop contamination of a pure culture by unwanted microorganisms | GCSE
+DEF: zone of inhibition | the clear area around a test substance where bacteria did not grow | GCSE
+DEF: antiseptic vs antibiotic | antiseptic is applied to living tissue or surfaces to kill or stop growth of germs; antibiotic controls bacteria inside the body by killing them or stopping reproduction | GCSE
+MIS: Taping the lid fully shut is safest | Lid is secured but not completely sealed, so oxygen can enter and anaerobic pathogens are not encouraged
+MIS: Bacteria always divide every 20 minutes | 20 minutes is the fastest case; it needs enough nutrients and suitable temperature
+MIS: Zone width is read directly as the effect | Convert diameter to radius first, then area = pi r^2, so zones compare fairly
+EXAM: Give a reason for each step of aseptic technique (sterilise, flame loop, tape and invert, 25C) | s1,s2
+EXAM: Area of zone from diameter: halve to get radius, then pi r^2 with units mm^2; pi value may be given (3.14 used) | s2
+EXAM: Higher tier: express large bacterial numbers in standard form | s1,s2
+VAR: Hospital incubation 37C vs school maximum 25C | s2
+VAR: Standard form of final population is Higher tier only (HT) in AQA spec; division counting is for all triple-science candidates | s1
+NUM: Worked: 1 bacterium, division every 20 min, 6 h -> 18 divisions -> 2^18 = 262144 = 2.62 x 10^5 | s2
+NUM: Worked: 1 bacterium, 30 min, 8 h -> 16 divisions -> 65536 = 6.55 x 10^4 | s2
+NUM: Worked: 10 bacteria, 20 min, 2 h -> 6 divisions -> 10 x 64 = 640 = 6.4 x 10^2 | s2
+NUM: Zone diameter 10 mm -> r = 5 mm -> area = 3.14 x 25 = 78.5 mm^2 | s2
+CONFLICT: none found
+SRC: s1 | AQA GCSE Biology 8461 specification (section 4.1.1.6, RP2) | https://filestore.aqa.org.uk/resources/biology/specifications/AQA-8461-SP-2016.PDF | AQA | licence=facts | 2026-11-25
+SRC: s2 | BBC Bitesize GCSE Biology (AQA): Infection and response, pages 5-8 | https://www.bbc.co.uk/bitesize/guides/z8fkmsg/revision/5 | BBC | licence=facts | 2026-11-25
+SRC: s3 | OpenStax Microbiology 9.1 How Microbes Grow | https://openstax.org/books/microbiology/pages/9-1-how-microbes-grow | OpenStax | licence=facts | 2026-11-25
+END
