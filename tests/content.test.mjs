@@ -658,3 +658,19 @@ test("a graph diagram without an id still renders", async () => {
   assert.ok(id); const out = graph(spec, 680, 380);
   assert.match(out, /clipPath id="vx\d+680"/);
 });
+
+test("filing: a practical elsewhere in the topic doesn't make a lesson high-risk; one the lesson teaches does", async () => {
+  // a minimal two-requirement topic: the lesson teaches only the concept, and a required practical sits beside it
+  const PRAC = { ...REQ, id: "aqa-gcse-biology:4.1.1.1.c", ref: "4.1.1.1.c", asks: "a required practical", text: "Use a light microscope to look at cells.", type: "prac", hash: "h2" };
+  const run = async (name, lesson) => {
+    const topic = { ...TOPIC, id: `biology/${name}`, title: name, reqs: [REQ, PRAC] };
+    const ask = async (job) => (job === "research" ? BRIEF.replace("test-prokaryotes", name) : `${lesson}\nEND`);
+    return runTopic(topic, { ask, askMany: async (job, items) => new Map(items.map((it) => [it.key, `REV ${it.key} OK`])) });
+  };
+  const own = await run("test-own-reqs", LESSON("3 × 4 = 12"));
+  assert.deepEqual(own.lessons[0].reqs, [REQ.id]);
+  assert.equal(own.lessons[0].tier, "ai-verified"); assert.ok(!own.lessons[0].highRisk);
+  // naming the practical, or one part of it, makes the lesson high-risk
+  const part = await run("test-prac-part", LESSON("3 × 4 = 12").replace(`REQ: ${REQ.id} @1,2`, `REQ: ${REQ.id} @1,2\nREQ: ${PRAC.id}.ii @1`));
+  assert.equal(part.lessons[0].tier, "expert-required"); assert.ok(part.lessons[0].highRisk);
+});
