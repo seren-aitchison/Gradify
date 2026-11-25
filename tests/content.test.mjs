@@ -650,3 +650,11 @@ test("a requirement's asks is its whole statement, so write and review requests 
   if (!r) return; // specification text not imported here
   assert.equal(r.asks, r.text);
 });
+
+test("a graph diagram without an id still renders", async () => {
+  const { graph } = await import("../kit/diagrams/renderers.js");
+  const { readFileSync: rf } = await import("node:fs");
+  const { id, ...spec } = JSON.parse(rf(new URL("../kit/diagrams/specs/bio-accuracy-precision.json", import.meta.url), "utf8"));
+  assert.ok(id); const out = graph(spec, 680, 380);
+  assert.match(out, /clipPath id="vx\d+680"/);
+});
