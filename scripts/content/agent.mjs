@@ -13,7 +13,7 @@ import { parseNotes } from "../../kit/course/notes.js";
 import { runGates } from "./gates.mjs";
 import { nextTopics, frameworksFor, topicsFor, reqHash } from "./queue.mjs";
 import { currentBrief, checkBrief, stampBrief, researchRequest, packetFor, reviewRequest, gateOptions, lessonState, applyRepairReply, verdictOf, fileTopic, retier } from "./loop.mjs";
-import { loadStatements, loadMap, loadIndex } from "../curriculum/engine.mjs";
+import { loadStatements, loadMap, loadIndex, statementsPath } from "../curriculum/engine.mjs";
 import { SPECS } from "../../kit/curriculum/uk.js";
 
 import { AGENT_MODELS as AGENT, examplesFor } from "./build.mjs";
@@ -207,6 +207,10 @@ export function workTopics(subject, { limit = CONFIG.topicsPerRun } = {}) {
 }
 export async function work(subject, { limit = CONFIG.topicsPerRun, render = null, legible = null, map = true } = {}) {
   if (!SPECS.some((s) => s.subject === subject) || !frameworksFor(subject).length) throw new Error(`${subject} has no framework in this run (scripts/content/config.json frameworks)`);
+  // without the specification text the spec gate can't check copying, and every lesson would fail it and spend its
+  // repair rounds on a fault no edit can fix: stop before anything is gated (the text is local only, never committed)
+  const noText = frameworksFor(subject).filter((fw) => !existsSync(statementsPath(fw)));
+  if (noText.length) throw new Error(`the specification text isn't imported here for ${noText.join(", ")}, so lessons can't be gated. Run:\n${noText.map((fw) => `  node scripts/curriculum/engine.mjs fetch ${fw} && node scripts/curriculum/engine.mjs import ${fw}`).join("\n")}`);
   const mapped = map ? await applyMapping(subject) : [];
   // filed lessons take the current high-risk rules before anything new is written
   const retiered = retier(subject);
