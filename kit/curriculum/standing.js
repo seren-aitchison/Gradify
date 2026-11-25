@@ -27,11 +27,11 @@ export function lessonMastery(attempts = [], { subject = null, levels = null } =
  */
 export function specStanding(spec, map, attempts, opts = {}) {
   const mastery = lessonMastery(attempts, opts), w = whereYouStand(spec, map, mastery, opts);
-  const mapped = w.rows.length - w.by.unmapped;
+  const mapped = w.rows.length - w.by.unmapped, ai = w.rows.filter((r) => r.evidence === "ai-mapped").length;
   return {
     ...w, mastery,
     summary: mapped
-      ? `${w.by.secure} of ${mapped} mapped statements secure, ${w.by.developing} developing${w.by.unmapped ? `; ${w.by.unmapped} not mapped yet` : ""}`
+      ? `${w.by.secure} of ${mapped} mapped statements secure, ${w.by.developing} developing${w.by.unmapped ? `; ${w.by.unmapped} not mapped yet` : ""}${ai ? ` (${ai === mapped ? "all" : ai} mapped by AI, not independently verified)` : ""}`
       : `This specification isn't mapped yet: none of its ${w.rows.length} statements has a reviewed link to a lesson`,
   };
 }

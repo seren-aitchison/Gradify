@@ -382,6 +382,12 @@ test("agent mode: a topic moves through files from research to filing, and each 
 test("mapping replies: NO lines are recorded, and a rejected strong match joins the write queue", async () => {
   const { parseMapLine, mapCandidates } = await import("../scripts/content/agent.mjs");
   const { writeFileSync, mkdirSync } = await import("node:fs");
+  // these tests start from the matcher's proposals, whatever has been decided in the real store since: the store is
+  // copied into this run's output with every AI decision put back to its candidates (a person's check is kept)
+  const { storePath } = await import("../scripts/content/mapstore.mjs");
+  const { loadMap } = await import("../scripts/curriculum/engine.mjs");
+  const real = loadMap("aqa-gcse-biology"), fresh = { ...real, links: Object.fromEntries(Object.entries(real.links).map(([ref, l]) => [ref, ["ai-confirmed", "rejected"].includes(l.status) ? { status: "proposed", confidence: l.confidence, lessons: l.candidates || [], ...(l.proposedBy ? { proposedBy: l.proposedBy } : {}) } : l])) };
+  mkdirSync(new URL("./", storePath("aqa-gcse-biology")), { recursive: true }); writeFileSync(storePath("aqa-gcse-biology"), JSON.stringify(fresh));
   assert.deepEqual(parseMapLine("MAP aqa-gcse-biology:4.1.1.2.a NO lesson never relates structures to functions"), { reqId: "aqa-gcse-biology:4.1.1.2.a", lesson: null, verdict: "NO", rest: "lesson never relates structures to functions" });
   assert.deepEqual(parseMapLine("MAP aqa-gcse-biology:4.1.1.2.b u02-04 YES @1,2"), { reqId: "aqa-gcse-biology:4.1.1.2.b", lesson: "u02-04", verdict: "YES", rest: "@1,2" });
   assert.equal(parseMapLine("MAP aqa-gcse-biology:4.1.1.2.b u02-04 NO too shallow").verdict, "NO");
