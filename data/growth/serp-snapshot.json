@@ -12,16 +12,16 @@
   "Bring your notes into Gradify. Turn them into flashcards you can trust, revise them, and see your progress."
  ],
  "artgradify/course/index.html": [
-  "Art and Design Course",
-  "Free Art and Design course on ArtGradify: 183 lessons from The Visual Language of Art and Design to Art in Society and Professional Practice, with…"
+  "Free Art and Design Course Online: Notes and Flashcards",
+  "Free online Art and Design course for artists and design students: 183 lessons with revision notes, flashcards, practice questions and practice exams."
  ],
  "artgradify/index.html": [
   "Learn Art & Design Online: Free Course | ArtGradify",
   "Learn drawing, colour theory, painting, composition and art history in a free art and design course, with practice and flashcards to build your skills."
  ],
  "businessgradify/course/index.html": [
-  "Business and Management Course",
-  "Free Business and Management course on BusinessGradify: 178 lessons from The Business Environment to Ethics, ESG and Corporate Governance, with…"
+  "Free Business and Management Course · BusinessGradify",
+  "Free online Business and Management course: 178 lessons with revision notes, flashcards, practice questions and practice exams."
  ],
  "businessgradify/index.html": [
   "Business & Management Revision Online | BusinessGradify",
@@ -100,40 +100,40 @@
   "TurboLearn and StudyFetch both turn lectures and PDFs into notes, flashcards and quizzes, with free plans that limit uploads or AI use each month and…"
  ],
  "creategradify/course/index.html": [
-  "Design Thinking and Creativity Course",
-  "Free Design Thinking and Creativity course on CreateGradify: 173 lessons from Foundations of Design Thinking to Collaboration, Communication and…"
+  "Free Design Thinking and Creativity Course · CreateGradify",
+  "Free online Design Thinking and Creativity course: 173 lessons with revision notes, flashcards, practice questions and practice exams."
  ],
  "creategradify/index.html": [
   "Design Thinking Course & Creative Briefs | CreateGradify",
   "Learn design thinking, ideation, user research and prototyping in a free creativity course, then practise on real design briefs."
  ],
  "dentalgradify/course/index.html": [
-  "Dentistry Course: Free Lessons and Flashcards",
-  "Free Dentistry course on DentalGradify: 200 lessons from Oral and Head and Neck Anatomy to Professionalism, Ethics and Law, with flashcards, check…"
+  "Free Dentistry Course Online: Notes and Flashcards",
+  "Free online Dentistry course for dental students and dentists: 200 lessons with revision notes, flashcards, practice questions and practice exams."
  ],
  "dentalgradify/index.html": [
   "Dental School Revision: Notes & Flashcards | DentalGradify",
   "Revise oral anatomy, dental materials, caries and clinical dentistry with a free dental course, flashcards made from your lectures and quizzes."
  ],
  "ecogradify/course/index.html": [
-  "Ecology and Environmental Science Course",
-  "Free Ecology and Environmental Science course on EcoGradify: 198 lessons from Foundations of Ecology to Sustainability and Environmental Policy, with…"
+  "Free Ecology and Environmental Science Course · EcoGradify",
+  "Free online Ecology and Environmental Science course: 198 lessons with revision notes, flashcards, practice questions and practice exams."
  ],
  "ecogradify/index.html": [
   "Ecology & Environmental Science Revision | EcoGradify",
   "Revise populations, communities, ecosystems, biodiversity and sustainability with a free ecology course, flashcards, quizzes and real-world case studies."
  ],
  "edugradify/course/index.html": [
-  "Teaching Course: Free Lessons and Flashcards · EduGradify",
-  "Free Teaching course on EduGradify: 228 lessons from How Pupils Learn to Education, with flashcards, check questions and practice exams."
+  "Free Teaching Course Online: Notes and Flashcards",
+  "Free online Teaching course for teachers and educators: 228 lessons with revision notes, flashcards, practice questions and practice exams."
  ],
  "edugradify/index.html": [
   "Teacher CPD & Retrieval Practice Resources | EduGradify",
   "Free teacher CPD on how pupils learn, classroom practice, assessment and adaptive teaching, plus tools that turn your materials into retrieval quizzes."
  ],
  "engineergradify/course/index.html": [
-  "Engineering Course: Free Lessons and Flashcards",
-  "Free Engineering course on EngineerGradify: 191 lessons from Engineering Mathematics to Projects and Professional Practice, with flashcards, check…"
+  "Free Engineering Course Online: Notes and Flashcards",
+  "Free online Engineering course for engineering students: 191 lessons with revision notes, flashcards, practice questions and practice exams."
  ],
  "engineergradify/index.html": [
   "Engineering Revision Online: Free Course | EngineerGradify",
@@ -142,6 +142,10 @@
  "explore.html": [
   "Explore · Gradify",
   "Browse every Gradify course: chapters, topics and lessons, with estimated study time and your progress. Open anything."
+ ],
+ "features/3d-visuals-on-demand/index.html": [
+  "See Any Science Concept in 3D, on Demand | Gradify",
+  "Visualise lets you ask to see a concept, such as benzene, an electric field or the heart, and shows the best visual Gradify already has: a 3D molecule, a…"
  ],
  "features/adaptive-difficulty/index.html": [
   "Adaptive Revision Quizzes That Adjust | Gradify",
@@ -204,7 +208,7 @@
   "The heatmap shows every day you've learned across every Gradify site, in one calendar grid, so gaps and streaks are easy to see. Free."
  ],
  "features/index.html": [
-  "Every Gradify Feature: 38 Study Tools | Gradify",
+  "Every Gradify Feature: 39 Study Tools | Gradify",
   "Every Gradify feature on one page: courses, Notes Studio, flashcards with spaced repetition, quizzes, mind maps, planning, progress and community."
  ],
  "features/interim-quizzes/index.html": [
@@ -292,8 +296,8 @@
   "You earn XP for what you learn on Gradify and level up as it adds up. Free."
  ],
  "financegradify/course/index.html": [
-  "Accounting and Finance Course",
-  "Free Accounting and Finance course on FinanceGradify: 202 lessons from Accounting and the Double-Entry System to Accounting, Technology and Society, with…"
+  "Free Accounting and Finance Course · FinanceGradify",
+  "Free online Accounting and Finance course: 202 lessons with revision notes, flashcards, practice questions and practice exams."
  ],
  "financegradify/index.html": [
   "Accounting & Finance Revision Online | FinanceGradify",
@@ -492,16 +496,16 @@
   "How to use the Christmas break before January exams or resits: rest first, light spaced reviews so nothing fades, then focused exam blocks."
  ],
  "healthgradify/course/index.html": [
-  "Health and Wellbeing Course",
-  "Free Health and Wellbeing course on HealthGradify: 176 lessons from Foundations of Health and Wellbeing to Health Across the Life Course, with…"
+  "Free Health and Wellbeing Course · HealthGradify",
+  "Free online Health and Wellbeing course: 176 lessons with revision notes, flashcards, practice questions and practice exams."
  ],
  "healthgradify/index.html": [
   "How Your Body Works: Free Health Course | HealthGradify",
   "Clear, trustworthy lessons on the human body, nutrition, sleep, activity and mental health, in small daily steps. Health education, not medical advice."
  ],
  "historygradify/course/index.html": [
-  "History Course: Free Lessons and Flashcards · HistoryGradify",
-  "Free History course on HistoryGradify: 301 lessons from Historical Thinking and Methods to Historical Examination and Revision, with flashcards, check…"
+  "Free History Course Online: Notes and Flashcards",
+  "Free online History course: 301 lessons with revision notes, flashcards, practice questions and practice exams."
  ],
  "historygradify/index.html": [
   "History Revision: Notes, Sources & Essays | HistoryGradify",
@@ -512,16 +516,16 @@
   "Upload your notes and Gradify turns them into flashcards checked against what you wrote, then schedules your revision around your exam. Free, no card."
  ],
  "internshipgradify/course/index.html": [
-  "Careers and Employability Course",
-  "Free Careers and Employability course on InternshipGradify: 145 lessons from Knowing Yourself to Career Planning and Resilience, with flashcards, check…"
+  "Free Careers and Employability Course · InternshipGradify",
+  "Free online Careers and Employability course: 145 lessons with revision notes, flashcards, practice questions and practice exams."
  ],
  "internshipgradify/index.html": [
   "Internships & Careers Help for Students | InternshipGradify",
   "Find internships and work experience, and prepare with a free careers course on CVs, applications, interviews, networking and your first job."
  ],
  "investorgradify/course/index.html": [
-  "Investing Course: Free Lessons and Flashcards",
-  "Free Investing course on InvestorGradify: 183 lessons from Money Foundations to Building Your Plan, with flashcards, check questions and practice exams."
+  "Free Investing Course Online: Notes and Flashcards",
+  "Free online Investing course for new and growing investors: 183 lessons with revision notes, flashcards, practice questions and practice exams."
  ],
  "investorgradify/index.html": [
   "Learn to Invest: Free Investing Course | InvestorGradify",
@@ -532,28 +536,28 @@
   "Your Gradify level, streak, daily goal, quests, achievements and progress in every subject, in one place."
  ],
  "juniorgradify/course/index.html": [
-  "Primary Course: Free Lessons and Flashcards · JuniorGradify",
-  "Free Primary course on JuniorGradify: 167 lessons from Number and Place Value to Geography, with flashcards, check questions and practice exams."
+  "Free Primary Course Online: Notes and Flashcards",
+  "Free online Primary course for children, 5 to 12: 167 lessons with revision notes, flashcards, practice questions and practice exams."
  ],
  "juniorgradify/index.html": [
   "Primary Learning Practice for Ages 5 to 12 | JuniorGradify",
   "Bite-sized primary practice for ages 5 to 12: number, fractions, phonics, reading, grammar, science, history and geography, with stars and streaks."
  ],
  "languagegradify/course/index.html": [
-  "Spanish Course: Free Lessons and Flashcards",
-  "Free Spanish course on LanguageGradify: 145 lessons from First Steps in Spanish to Skills: Listening, Reading, Speaking, Writing and Translation, with…"
+  "Free Spanish Course Online: Notes and Flashcards",
+  "Free online Spanish course for language learners: 145 lessons with revision notes, flashcards, practice questions and practice exams."
  ],
  "languagegradify/index.html": [
   "Learn Spanish & Japanese Online Free | LanguageGradify",
   "Learn Spanish and Japanese with short daily lessons in vocabulary, grammar and scripts, and spaced repetition that makes new words stick. Free."
  ],
  "languagegradify/japanese/index.html": [
-  "Japanese Course: Free Lessons and Flashcards",
-  "Free Japanese course on LanguageGradify: 182 lessons from First Steps: Sounds and Hiragana to Exam Skills: GCSE and JLPT, with flashcards, check…"
+  "Free Japanese Course Online: Notes and Flashcards",
+  "Free online Japanese course for language learners: 182 lessons with revision notes, flashcards, practice questions and practice exams."
  ],
  "lawgradify/course/index.html": [
-  "Law Course: Free Lessons and Flashcards · LawGradify",
-  "Free Law course on LawGradify: 480 lessons from Legal Foundations and the English Legal System to SQE2 Skills Practice, with flashcards, check questions…"
+  "Free Law Course for SQE and Law Degrees · LawGradify",
+  "Free online Law course for SQE and law degrees: 480 lessons with revision notes, flashcards, practice questions and practice exams."
  ],
  "lawgradify/index.html": [
   "Law Revision & SQE Prep: Free Notes | LawGradify",
@@ -564,32 +568,32 @@
   "Paste lecture notes or upload a PDF and get a mind map of the topic, free: main ideas, processes, concepts and examples, editable and exportable as PNG…"
  ],
  "litgradify/course/index.html": [
-  "English Literature Course",
-  "Free English Literature course on LitGradify: 166 lessons from Foundations of Literary Study to Unseen, Comparative and Essay Writing, with flashcards…"
+  "Free English Literature Course Online: Notes and Flashcards",
+  "Free online English Literature course: 166 lessons with revision notes, flashcards, practice questions and practice exams."
  ],
  "litgradify/index.html": [
   "English Literature Revision Online | LitGradify",
   "Revise poetry, drama, Shakespeare and the novel with close-reading practice, context, quotations and essay writing, in a free English literature course."
  ],
  "mathgradify/course/index.html": [
-  "Mathematics Course: Free Lessons and Flashcards",
-  "Free Mathematics course on MathGradify: 1077 lessons from Number and Arithmetic to Everyday and Practical Mathematics, with flashcards, check questions…"
+  "Free Mathematics Course: GCSE, A Level and Degree",
+  "Free online Mathematics course for GCSE, A Level and Degree: 1,077 lessons with revision notes, flashcards, practice questions and practice exams."
  ],
  "mathgradify/index.html": [
   "GCSE, A Level & University Maths Revision | MathGradify",
   "Maths from GCSE and A level to university, with worked examples, generated practice and a line-by-line step checker that shows where a method went wrong."
  ],
  "medgradify/course/index.html": [
-  "Medicine Course: Free Lessons and Flashcards · MedGradify",
-  "Free Medicine course on MedGradify: 234 lessons from Foundations of Medical Science to Professional Practice, Prescribing and Population Health, with…"
+  "Free Medicine Course for MLA and Medicine Degrees",
+  "Free online Medicine course for MLA and medicine degrees: 234 lessons with revision notes, flashcards, practice questions and practice exams."
  ],
  "medgradify/index.html": [
   "Medical School Revision: Notes & Flashcards | MedGradify",
   "Medical school revision for clinical medicine, physiology and pharmacology: a free course, flashcards from your lectures and a 3D anatomy explorer."
  ],
  "musicgradify/course/index.html": [
-  "Music Course: Free Lessons and Flashcards · MusicGradify",
-  "Free Music course on MusicGradify: 201 lessons from Notation and Rhythm to Composition and Analysis, with flashcards, check questions and practice exams."
+  "Free Music Course Online: Notes and Flashcards",
+  "Free online Music course for musicians and music students: 201 lessons with revision notes, flashcards, practice questions and practice exams."
  ],
  "musicgradify/index.html": [
   "Learn Music Theory Online: Free Course | MusicGradify",
@@ -604,8 +608,8 @@
   "Turn your revision notes into a study chant with a beat: each key fact on the beat, plus flashcards, a cheat-sheet poster and a narrated video."
  ],
  "nursegradify/course/index.html": [
-  "Nursing Course: Free Lessons and Flashcards · NurseGradify",
-  "Free Nursing course on NurseGradify: 497 lessons from Foundations of Nursing and Professional Practice to Nursing Law, Ethics and Safeguarding, with…"
+  "Free Nursing Course for NMC and Nursing Degrees",
+  "Free online Nursing course for NMC and nursing degrees: 497 lessons with revision notes, flashcards, practice questions and practice exams."
  ],
  "nursegradify/index.html": [
   "Nursing Student Revision & Practice Questions | NurseGradify",
@@ -616,16 +620,16 @@
   "Turn a lecture PDF into flashcards free in about a minute. Every card is matched to the line in your notes it came from, so nothing is made up."
  ],
  "pharmagradify/course/index.html": [
-  "Pharmacy Course: Free Lessons and Flashcards · PharmaGradify",
-  "Free Pharmacy course on PharmaGradify: 318 lessons from Foundations of Pharmacy Practice to Registration Assessment and Foundation Training, with…"
+  "Free Pharmacy Course for GPhC · PharmaGradify",
+  "Free online Pharmacy course for GPhC: 318 lessons with revision notes, flashcards, practice questions and practice exams."
  ],
  "pharmagradify/index.html": [
   "Pharmacy Revision for MPharm & GPhC Prep | PharmaGradify",
   "Revise pharmacology, pharmacokinetics, therapeutics and calculations for the MPharm and the GPhC registration assessment, with a free course and quizzes."
  ],
  "postgradify/course/index.html": [
-  "Research and the Dissertation Course",
-  "Free Research and the Dissertation course on PostGradify: 197 lessons from The Research Landscape and Research Degrees to The Viva and Beyond, with…"
+  "Free Research and the Dissertation Course · PostGradify",
+  "Free online Research and the Dissertation course: 197 lessons with revision notes, flashcards, practice questions and practice exams."
  ],
  "postgradify/index.html": [
   "Dissertation & PhD Research Study Help | PostGradify",
@@ -640,16 +644,16 @@
   "What Gradify keeps about you, where it's kept, what Gradify AI sees, and how to download or delete it."
  ],
  "progradify/course/index.html": [
-  "Professional Skills Course",
-  "Free Professional Skills course on ProGradify: 169 lessons from Professional Communication to Motivation, Emotion and Wellbeing, with flashcards, check…"
+  "Free Professional Skills Course Online: Notes and Flashcards",
+  "Free online Professional Skills course for working professionals: 169 lessons with revision notes, flashcards, practice questions and practice exams."
  ],
  "progradify/index.html": [
   "Professional Skills & CPD Learning Online | ProGradify",
   "Short daily practice for workplace skills and CPD: communication, management and project skills in a free course, with flashcards and quizzes."
  ],
  "psychgradify/course/index.html": [
-  "Psychology Course: Free Lessons and Flashcards",
-  "Free Psychology course on PsychGradify: 393 lessons from Foundations of Psychology to Contemporary Psychology, with flashcards, check questions and…"
+  "Free Psychology Course Online: Notes and Flashcards",
+  "Free online Psychology course for psychology students: 393 lessons with revision notes, flashcards, practice questions and practice exams."
  ],
  "psychgradify/index.html": [
   "Psychology Revision Online: Notes & Quizzes | PsychGradify",
@@ -660,36 +664,36 @@
   "How Gradify holds its lessons to account: the Quality Constitution, an audit of every lesson on nine dimensions, and the qualifications it can honestly claim."
  ],
  "scigradify/biology/index.html": [
-  "Biology Course: Free Lessons and Flashcards · SciGradify",
-  "Free Biology course on SciGradify: 391 lessons from Foundations of Biology to Experimental Biology and Research Methods, with flashcards, check questions…"
+  "Free Biology Course Online: Notes and Flashcards",
+  "Free online Biology course for science students: 391 lessons with revision notes, flashcards, practice questions and practice exams."
  ],
  "scigradify/chemistry/index.html": [
-  "Chemistry Course: Free Lessons and Flashcards · SciGradify",
-  "Free Chemistry course on SciGradify: 460 lessons from Foundations of Chemistry to Computational Chemistry and Chemical Data Science, with flashcards…"
+  "Free Chemistry Course Online: Notes and Flashcards",
+  "Free online Chemistry course for science students: 460 lessons with revision notes, flashcards, practice questions and practice exams."
  ],
  "scigradify/index.html": [
   "Biology, Chemistry & Physics Revision Online | SciGradify",
   "Free biology, chemistry and physics courses with interactive simulations, notes, flashcards, quizzes and exams, from first principles to advanced topics."
  ],
  "scigradify/physics/index.html": [
-  "Physics Course: Free Lessons and Flashcards · SciGradify",
-  "Free Physics course on SciGradify: 1308 lessons from Foundations of Physics to Research and Professional Physics Skills, with flashcards, check questions…"
+  "Free Physics Course Online: Notes and Flashcards",
+  "Free online Physics course for science students: 1,308 lessons with revision notes, flashcards, practice questions."
  ],
  "site-map.html": [
   "Site Map: Every Gradify Page · Gradify",
   "Every part of Gradify on one page: the app, every subject site, free study tools, guides, comparisons, the glossary, templates, topics and study plans."
  ],
  "socgradify/course/index.html": [
-  "Sociology Course: Free Lessons and Flashcards · SocGradify",
-  "Free Sociology course on SocGradify: 438 lessons from Foundations of Sociology to Social Statistics and Data Science, with flashcards, check questions…"
+  "Free Sociology Course Online: Notes and Flashcards",
+  "Free online Sociology course for social science students: 438 lessons with revision notes, flashcards, practice questions and practice exams."
  ],
  "socgradify/index.html": [
   "Sociology Revision Online: Notes & Quizzes | SocGradify",
   "Revise sociological theory, inequality, culture, institutions and research methods with real-data explorers, flashcards and quizzes. Free."
  ],
  "sportgradify/course/index.html": [
-  "Sport and Exercise Science Course",
-  "Free Sport and Exercise Science course on SportGradify: 205 lessons from Functional Anatomy and the Musculoskeletal System to Physical Activity, with…"
+  "Free Sport and Exercise Science Course · SportGradify",
+  "Free online Sport and Exercise Science course: 205 lessons with revision notes, flashcards, practice questions and practice exams."
  ],
  "sportgradify/index.html": [
   "Sport & Exercise Science Revision | SportGradify",
@@ -868,16 +872,16 @@
   "Plan the winter break before January exams or resits: rest days first, light spaced-repetition days, then focused exam blocks. Day by day, free."
  ],
  "undergradify/course/index.html": [
-  "University Study Skills Course",
-  "Free University Study Skills course on UnderGradify: 189 lessons from Starting University and Independent Learning to Knowing Yourself, with flashcards…"
+  "Free University Study Skills Course · UnderGradify",
+  "Free online University Study Skills course: 189 lessons with revision notes, flashcards, practice questions and practice exams."
  ],
  "undergradify/index.html": [
   "University Revision & Study Skills App | UnderGradify",
   "Revise university modules with flashcards made from your own lecture notes, a free study-skills course and a revision plan paced to your exams."
  ],
  "vetgradify/course/index.html": [
-  "Veterinary Science Course",
-  "Free Veterinary Science course on VetGradify: 209 lessons from Comparative Anatomy to Veterinary Public Health and Professional Practice, with…"
+  "Free Veterinary Science Course Online: Notes and Flashcards",
+  "Free online Veterinary Science course for veterinary students: 209 lessons with revision notes, flashcards, practice questions and practice exams."
  ],
  "vetgradify/index.html": [
   "Vet School Revision: Notes & Flashcards | VetGradify",
@@ -928,8 +932,8 @@
   "Validity is whether a method measures what it's meant to; reliability is whether it gives consistent results when repeated."
  ],
  "youthgradify/course/index.html": [
-  "GCSE Core Course: Free Lessons and Flashcards · YouthGradify",
-  "Free GCSE Core course on YouthGradify: 149 lessons from Revision and Exam Skills to Foundations of Health and Wellbeing, with flashcards, check questions…"
+  "Free GCSE Core Course for GCSE · YouthGradify",
+  "Free online GCSE Core course for GCSE: 149 lessons with revision notes, flashcards, practice questions and practice exams."
  ],
  "youthgradify/index.html": [
   "Free GCSE Revision: Notes & Flashcards | YouthGradify",

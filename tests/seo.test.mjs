@@ -354,3 +354,37 @@ test("every sitemap URL is a real, indexable page: canonical to itself, no noind
     assert.ok(t && !titles.has(t), `${p}: title "${t}" also on ${titles.get(t)}`); titles.set(t, p);
   }
 });
+
+// search wording (scripts/seo/serp.mjs, docs/SEO.md "Search wording")
+test("search wording: qualifications only where coverage.js claims them, content words only where the page has them", async () => {
+  const { quals, contents, caseName } = await import("../scripts/seo/serp.mjs");
+  assert.deepEqual(quals("biology"), []);
+  assert.ok(quals("law").includes("SQE"));
+  assert.equal(caseName("Fisher v Bell [1961] 1 QB 394"), "Fisher v Bell");
+  assert.equal(contents({ diagrams: 1, terms: 3, questions: 2 }), "a labelled diagram, key terms and 2 questions with answers");
+  // the generated pages (built once at the top of this file)
+  const QUAL = /\b(GCSE|A Level|SQE|MLA|NMC|GPhC)\b/;
+  const head = (h) => `${h.match(/<title>([^<]*)/)?.[1] || ""} ${h.match(/<meta name="description" content="([^"]*)"/)?.[1] || ""}`;
+  let lessonsSeen = 0;
+  for (const [path, html] of files) {
+    const m = path.match(/^(?:lessons|topics|questions)\/([a-z0-9-]+)\//); if (!m) continue;
+    // a topic or lesson may be named after a qualification ("A Level Historical Investigation"): that's the course's own
+    // data, not a claim made by the wording, so the page's own name is left out of the check
+    const own = (html.match(/<h1[^>]*>([^<]*)/)?.[1] || "").replace(/: revision notes$/, "");
+    const words = own ? head(html).split(own).join(" ").split(own.replace(/\b\w/g, (x) => x.toUpperCase())).join(" ") : head(html), claimed = quals(m[1]);
+    for (const q of words.match(new RegExp(QUAL, "g")) || []) assert.ok(claimed.includes(q), `${path}: "${q}" in title or description, but coverage.js doesn't claim it for ${m[1]}`);
+    if (!path.startsWith("lessons/")) continue;
+    lessonsSeen++;
+    const title = html.match(/<title>([^<]*)/)[1];
+    assert.ok(title.length <= 60, `${path}: title over 60 characters`);
+    assert.match(title, /Revision Notes|Notes and Key Case/, `${path}: title says what the page is`);
+    if (/Diagram/.test(title)) assert.match(html, /class="lesson-dg"/, `${path}: title promises a diagram`);
+    if (/Key Case/.test(title)) assert.match(html, /class="co-auth"/, `${path}: title promises a key case`);
+    if (/Worked Example/.test(title)) assert.match(html, /class="co-ex/, `${path}: title promises a worked example`);
+    assert.match(html.match(/<meta name="description" content="([^"]*)"/)[1], /revision notes/i, `${path}: description leads with the search phrase`);
+  }
+  assert.ok(lessonsSeen >= 80, "the lesson pages were checked");
+  // the course page and the topics hub answer different searches, so they never share a title shape
+  assert.match(files.get("topics/biology/index.html"), /<title>Biology Revision Notes/);
+  assert.match(files.get("scigradify/biology/index.html") || await readFile(new URL("../scigradify/biology/index.html", import.meta.url), "utf8"), /<title>Free Biology Course/);
+});
