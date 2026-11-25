@@ -2,7 +2,9 @@
 // key. Each topic is a small state machine kept in files under content/queue/<subject>/<topic>/, so any session
 // can stop at any point and the next one carries on. `gradify work <subject>` does everything a script can (brief
 // checks, gates, applying repairs and verdicts, filing, mapping edits) and prints the model steps that remain, as
-// pairs of files: a request (*.req.txt) the engine wrote and a reply (*.out.txt) a subagent writes. Run it again
+// pairs of files: a request (*.req.txt) the engine wrote and a reply (*.out.txt) a subagent writes. Requests quote the
+// specification's own text, which is the awarding body's copyright, so they're git-ignored and rebuilt on demand;
+// state.json and the replies (Gradify's own words) are committed, so the next session can carry on. Run it again
 // when the replies are in. The same gates, review and repair limits as the API loop apply (scripts/content/loop.mjs).
 import { readFileSync, writeFileSync, existsSync, readdirSync, rmSync, mkdirSync } from "node:fs";
 import { CONFIG, at, out, load, save, slug, today, briefPath } from "./lib.mjs";
@@ -50,7 +52,7 @@ export async function advance(topic, { render = null, legible = null } = {}) {
     const reply = read(f("research.out.txt"));
     if (reply) {
       rmSync(f("research.out.txt")); st.researchTries++;
-      const c = checkBrief(reply);
+      const c = checkBrief(reply, topic);
       if (!c.problems.length) { save(briefPath(topic.id), stampBrief(topic, reply)); brief = currentBrief(topic); rmSync(f("research.req.txt"), { force: true }); }
       else if (st.researchTries >= 2) { rmSync(dir, { recursive: true, force: true }); return { actions: [], filed: fileTopic(topic, [], { failures: [{ title: "(research)", gate: "brief", issues: c.problems.map((p) => ({ code: "SRC", line: null, note: p })) }] }) }; }
       else save(f("research.req.txt"), researchRequest(topic, { old: read(briefPath(topic.id)), problems: c.problems }));
@@ -74,6 +76,9 @@ export async function advance(topic, { render = null, legible = null } = {}) {
   for (const [i, s] of st.lessons.entries()) {
     const n = i + 1, rq = f(`repair-${n}.req.txt`), ro = f(`repair-${n}.out.txt`), vq = f(`review-${n}.req.txt`), vo = f(`review-${n}.out.txt`);
     for (let guard = 0; guard < 4 && !["done", "failed"].includes(s.stage); guard++) {
+      // request files hold specification text, so they're never committed (.gitignore): rebuild any that are missing
+      if (s.stage === "await-repair" && !existsSync(rq) && !existsSync(ro)) save(rq, [fixList(s.key, s.issues), `LESSON ${s.key}`, numbered(s.text), pkt].join("\n"));
+      if (s.stage === "await-review" && !existsSync(vq) && !existsSync(vo)) save(vq, reviewRequest(s, topic, brief.brief));
       if (s.stage === "await-repair") {
         const reply = read(ro); if (!reply) { repairs.push([rel(rq), rel(ro)]); break; }
         applyRepairReply(s, reply); rmSync(ro); rmSync(rq, { force: true }); s.stage = "check";

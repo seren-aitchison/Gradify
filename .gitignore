@@ -22,3 +22,6 @@ data/knowledge/raw/
 
 # content engine: chat replies pasted in for gradify ingest (local only)
 content/inbox/
+
+# content engine: request files quote specification text (copyright, never committed); rebuilt by gradify work
+content/queue/**/*.req.txt

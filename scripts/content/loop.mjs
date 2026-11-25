@@ -7,6 +7,7 @@ import { CONFIG, at, fp, save, slug, today, briefPath, draftPath, loadLedger, sa
 import { packet, parseBrief, parseVerdicts, fixList, parseRepairs, applyRepair, splitUnit, numbered, parentOf } from "./shorthand.mjs";
 import { runGates } from "./gates.mjs";
 import { diagramsFor, reqHash } from "./queue.mjs";
+import { longestSharedRun } from "../knowledge/lib.mjs";
 
 const promptText = (f) => (existsSync(at(`prompts/${f}`)) ? readFileSync(at(`prompts/${f}`), "utf8") : "");
 const PROMPT_FP = () => fp(["research.md", "writer.md", "review.md"].map(promptText).join("\n"));
@@ -28,8 +29,13 @@ export function licenceProblems(b) {
   return out;
 }
 export const briefKey = (topic) => fp({ reqs: topic.reqs.map((r) => r.hash).sort(), level: topic.level, prompt: fp(promptText("research.md")) });
-/** a brief's text → { parsed, problems } with the format and licence checks together */
-export function checkBrief(text) { const parsed = parseBrief(text); return { parsed, problems: [...parsed.problems, ...(parsed.problems.length ? [] : licenceProblems(parsed))] }; }
+/** a brief's text → { parsed, problems }: format, licence, and (given the topic) no 8-word run of the specification,
+ * since briefs are committed and the specification's text is the awarding body's copyright */
+export function checkBrief(text, topic = null) {
+  const parsed = parseBrief(text), problems = [...parsed.problems, ...(parsed.problems.length ? [] : licenceProblems(parsed))];
+  for (const r of topic?.reqs || []) if (r.text) { const run = longestSharedRun(text, r.text); if (run.words >= 8) problems.push(`copies ${run.words} words of ${r.id}'s wording ("${run.run.split(" ").slice(0, 6).join(" ")}…"): condense it in your own words`); }
+  return { parsed, problems };
+}
 export const stampBrief = (topic, text) => `# fp=${briefKey(topic)} · ${today()}\n${String(text).replace(/^#.*\n/, "").trim().replace(/\nEND\s*$/, "")}\nEND\n`;
 /** the topic's stored brief, if it is current (same requirements and research prompt) and passes its checks */
 export function currentBrief(topic) {
@@ -43,8 +49,8 @@ export const researchRequest = (topic, { old = null, problems = [] } = {}) => [`
 export async function research(topic, { ask, force = false } = {}) {
   const cur = !force && currentBrief(topic); if (cur) return { ...cur, cached: true };
   const old = existsSync(briefPath(topic.id)) ? readFileSync(briefPath(topic.id), "utf8") : null;
-  let text = await ask("research", researchRequest(topic, { old })), c = checkBrief(text);
-  if (c.problems.length) { text = await ask("research", researchRequest(topic, { old, problems: c.problems })); c = checkBrief(text); }
+  let text = await ask("research", researchRequest(topic, { old })), c = checkBrief(text, topic);
+  if (c.problems.length) { text = await ask("research", researchRequest(topic, { old, problems: c.problems })); c = checkBrief(text, topic); }
   if (c.problems.length) return { brief: null, parsed: c.parsed, problems: c.problems, cached: false };
   const brief = stampBrief(topic, text); save(briefPath(topic.id), brief);
   return { brief, parsed: c.parsed, cached: false, key: briefKey(topic) };
