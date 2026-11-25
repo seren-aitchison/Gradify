@@ -616,3 +616,10 @@ test("a NUM problem is reported on its own line, not on a worked example that op
   const hit = r.issues.find((i) => /isn't what the working gives/.test(i.note));
   assert.ok(hit, JSON.stringify(r.issues)); assert.equal(hit.line, numAt);
 });
+
+test("the specification gate doesn't ask for command words like 'demonstrate an understanding'", () => {
+  const L = { reqs: [{ id: "x:1" }] }, req = { id: "x:1", title: "Osmosis", text: "Demonstrate an understanding of osmosis across a partially permeable membrane." };
+  const lesson = "REQ: x:1 @1\nWater moves by osmosis across a partially permeable membrane.";
+  assert.ok(G.specGate(L, lesson, [req]).ok);
+  assert.ok(!G.specGate(L, "REQ: x:1 @1\nWater moves.", [req]).ok);
+});

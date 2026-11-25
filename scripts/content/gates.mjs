@@ -106,6 +106,9 @@ export function qaGate(L, text) {
 }
 
 // ---------- 4. no 8-word run of the specification; its key terms appear ----------
+// a specification's command and skill words ("demonstrate an understanding of") say what learners do, not what a lesson
+// teaches, so they aren't key terms: requiring them only pushes writers to pad lessons with exam wording
+export const SKILL_WORDS = new Set(tokens("demonstrate demonstrating demonstration understanding recognise recognising recognize recognizing outline outlining define defining appreciate appreciation aware awareness consider considering develop developing developed skills skill knowledge"));
 /** reqs: [{ id, text, title }] with the specification's text (local only, never committed) */
 export function specGate(L, text, reqs) {
   const issues = [], lessonWords = new Set(tokens(text));
@@ -115,7 +118,7 @@ export function specGate(L, text, reqs) {
     if (!req?.text) { issues.push(issue("SPEC", at, `${r.id}: specification text not imported here, can't check copying`)); continue; }
     const run = longestSharedRun(text, req.text);
     if (run.words >= 8) issues.push(issue("COPY", lineOf(text, new RegExp(esc(run.run.split(" ").slice(0, 3).join(" ")), "i")), `${run.words} words copied from the specification`));
-    const terms = [...new Set(tokens(`${req.title || ""} ${req.text}`))], missing = terms.filter((t) => !lessonWords.has(t));
+    const terms = [...new Set(tokens(`${req.title || ""} ${req.text}`))].filter((t) => !SKILL_WORDS.has(t)), missing = terms.filter((t) => !lessonWords.has(t));
     // a part teaches some of its requirement, so it needs some of the terms; the whole requirement needs most of them
     if (part ? terms.length && missing.length === terms.length : terms.length && missing.length / terms.length > 0.4) issues.push(issue("COV", at, `${r.id}: specification terms missing: ${missing.slice(0, 6).join(", ")}`));
   }
