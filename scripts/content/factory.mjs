@@ -36,7 +36,7 @@ export function researchTemplate(topic) {
     `Return **only** the research brief, in the shorthand format below, ending with \`END\`. Save it as \`content/inbox/${submissionName(topic, "research")}\`, then run \`gradify ingest\`. The brief is refused, with a report, if it cites a source not on the ALLOW list, has fewer than 3 independent publishers, copies 8 or more words of a requirement, or breaks the format.`, "",
     "## Research instructions", "", promptText("research.md").trim(), "",
     "## Formats", "", promptText("shorthand.md").trim(), "",
-    "## Your research request", "", fence(researchRequest(topic)), ""].join("\n");
+    "## Your research request", "", fence(researchRequest(topic, { old: existsSync(briefPath(topic.id)) ? readFileSync(briefPath(topic.id), "utf8") : null })), ""].join("\n");
 }
 
 /** the WRITE template for a topic whose brief is current */
@@ -60,7 +60,17 @@ export function writeTemplate(topic, brief) {
     "## Your work packet", "", fence(packetFor(topic, brief.brief)), ""].join("\n");
 }
 
-/** write templates for the next queued topics; returns [{ topic, kind, file }] */
+/** a subject's start file: the handover instructions, then its templates in the order to work through them */
+export function startFile(subject, res) {
+  const rows = res.filter((r) => r.subject === subject), n = (k) => rows.filter((r) => r.kind === k).length;
+  return [promptText("handover.md").trim(), "", `## ${subject[0].toUpperCase()}${subject.slice(1)}: the templates in this folder`, "",
+    `Made ${today()} by \`gradify template\`: ${rows.length} topic${rows.length === 1 ? "" : "s"}, ${n("research")} needing research first and ${n("write")} ready to write. Work through them in this order, which follows the specification. Give the model this file once, then one template at a time.`, "",
+    "| # | Topic | Template | Save the reply as |", "|---|---|---|---|",
+    ...rows.map((r, i) => `| ${i + 1} | ${r.title} (${r.section}, ${r.reqs} requirement${r.reqs === 1 ? "" : "s"}) | \`${r.file.split("/").pop()}\` | \`content/inbox/${r.save}\` |`), "",
+    "After saving replies to the inbox, run `gradify ingest`. Each file gets a report in `content/inbox/done/` or `content/inbox/rejected/`. When briefs have been accepted, run `gradify template` again to get those topics' lesson templates.", ""].join("\n");
+}
+
+/** write templates for the next queued topics, and each subject's start file; returns [{ topic, kind, file }] */
 export function exportTemplates(subjects, { limit = 5, topicId = null } = {}) {
   const res = [];
   for (const subject of subjects) {
@@ -69,8 +79,9 @@ export function exportTemplates(subjects, { limit = 5, topicId = null } = {}) {
       const brief = currentBrief(topic), kind = brief ? "write" : "research";
       const file = new URL(`${slug(topic.id.split("/").pop())}.${kind}.md`, templateDir(subject));
       save(file, kind === "write" ? writeTemplate(topic, brief) : researchTemplate(topic));
-      res.push({ topic: topic.id, kind, file: file.pathname });
+      res.push({ subject, topic: topic.id, title: topic.title, section: topic.section, reqs: topic.reqs.length, kind, file: file.pathname, save: submissionName(topic, kind) });
     }
+    if (res.some((r) => r.subject === subject)) save(new URL("00-START-HERE.md", templateDir(subject)), startFile(subject, res));
   }
   return res;
 }

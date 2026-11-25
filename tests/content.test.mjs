@@ -849,3 +849,12 @@ test("the library's standard is measured per course and per lesson, without chan
   assert.ok(m.rows[0].topicsMet <= m.rows[0].topics && m.rows[0].lessonsMet <= m.rows[0].lessons);
   assert.match(table(m), /^\| Course \| Lessons \| Flashcards/);
 });
+
+test("each subject's template folder starts with the handover instructions and its templates in order", async () => {
+  const { startFile } = await import("../scripts/content/factory.mjs");
+  const f = startFile("biology", [{ subject: "biology", topic: "biology/a", title: "Cells", section: "4.1.1.1", reqs: 3, kind: "research", file: "/x/cells.research.md", save: "cells.brief.md" }, { subject: "chemistry", topic: "c", title: "Atoms", section: "5.1", reqs: 1, kind: "write", file: "/x/atoms.write.md", save: "atoms.md" }]);
+  assert.match(f, /^# Gradify handover: instructions for the lesson-writing model/);
+  assert.match(f, /At least 20 distinct flashcards across the topic/); assert.match(f, /At least 3 distinct diagrams in every lesson/);
+  assert.match(f, /\| 1 \| Cells \(4\.1\.1\.1, 3 requirements\) \| `cells\.research\.md` \| `content\/inbox\/cells\.brief\.md` \|/);
+  assert.doesNotMatch(f, /Atoms/, "only this subject's templates");
+});
