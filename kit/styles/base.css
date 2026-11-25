@@ -555,18 +555,19 @@ html:root body, html:root body.sub-page { background: transparent; }
 
 /* the action card ("Start here", "Next step"): a gleaming edge in pink, yellow, orange and the mode's contrast (black
    on white, white on black), with a glint that runs round it. Still when motion is reduced. */
-:root { --g-contrast: #fff; --g-glint: rgba(255, 255, 255, .95); }
-:root[data-theme="light"] { --g-contrast: #0d0d18; --g-glint: rgba(255, 255, 255, .95); }
+:root { --g-contrast: #fff; --g-glint: rgba(255, 255, 255, .7); }
+:root[data-theme="light"] { --g-contrast: #0d0d18; --g-glint: rgba(255, 255, 255, .75); }
 :root .g-action::before {
   padding: 3px;
   background:
-    linear-gradient(115deg, transparent 34%, var(--g-glint) 48%, transparent 62%) 0 0 / 260% 100% no-repeat,
+    linear-gradient(115deg, transparent 24%, var(--g-glint) 48%, transparent 72%) 0 0 / 260% 100% no-repeat,
     linear-gradient(115deg, #ff2e88 0%, #ffc400 22%, #ff6a00 44%, var(--g-contrast) 66%, #ff2e88 88%, #ffc400 100%) 0 0 / 220% 100%;
-  animation: g-gleam 7s linear infinite;
+  animation: g-gleam 22s linear infinite;
 }
+/* one slow, continuous glide: the glint crosses once per cycle (starting and ending out of sight, so the loop never
+   jumps) while the colours drift the other way */
 @keyframes g-gleam {
   0% { background-position: 160% 0, 0% 0; }
-  45% { background-position: -60% 0, 100% 0; }
   100% { background-position: -60% 0, 200% 0; }
 }
 @media (prefers-reduced-motion: reduce) { :root .g-action::before { animation: none; background-position: -60% 0, 30% 0; } }
@@ -625,15 +626,15 @@ html:root body, html:root body.sub-page { background: transparent; }
 :root :is(#groups .card, .sub-page .sm-topic, .sub-page .sm-steps li, .g-tiles a, .g-gleam)::before {
   content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; padding: 3px; pointer-events: none;
   background:
-    linear-gradient(115deg, transparent 34%, var(--g-glint) 48%, transparent 62%) 0 0 / 260% 100% no-repeat,
+    linear-gradient(115deg, transparent 24%, var(--g-glint) 48%, transparent 72%) 0 0 / 260% 100% no-repeat,
     linear-gradient(115deg, var(--gleam) 0%, color-mix(in srgb, var(--gleam) 68%, #fff) 22%, var(--g-contrast) 46%, color-mix(in srgb, var(--gleam) 70%, #000) 68%, var(--gleam) 88%, color-mix(in srgb, var(--gleam) 68%, #fff) 100%) 0 0 / 220% 100%;
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
   mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
-  animation: g-gleam 7s linear infinite;
+  animation: g-gleam 22s linear infinite;
 }
-:root :is(#groups .card, .sub-page .sm-topic, .sub-page .sm-steps li, .g-tiles a, .g-gleam):nth-child(3n + 1)::before { animation-delay: -1.6s; }
-:root :is(#groups .card, .sub-page .sm-topic, .sub-page .sm-steps li, .g-tiles a, .g-gleam):nth-child(3n + 2)::before { animation-delay: -4.1s; }
-:root :is(#groups .card, .sub-page .sm-topic, .sub-page .sm-steps li, .g-tiles a, .g-gleam):nth-child(4n)::before { animation-duration: 8.5s; }
+:root :is(#groups .card, .sub-page .sm-topic, .sub-page .sm-steps li, .g-tiles a, .g-gleam):nth-child(3n + 1)::before { animation-delay: -5s; }
+:root :is(#groups .card, .sub-page .sm-topic, .sub-page .sm-steps li, .g-tiles a, .g-gleam):nth-child(3n + 2)::before { animation-delay: -12.5s; }
+:root :is(#groups .card, .sub-page .sm-topic, .sub-page .sm-steps li, .g-tiles a, .g-gleam):nth-child(4n)::before { animation-duration: 26s; }
 /* "coming soon" sites: the same edge, quieter */
 :root #groups .card.soon::before { opacity: .45; }
 :root :is(#groups .card, .sub-page .sm-topic, .sub-page .sm-steps li, .g-tiles a, .g-gleam) { border-color: transparent; }
@@ -691,8 +692,8 @@ html:root body, html:root body.sub-page { background: transparent; }
 /* the homepage: less air between "Everything that makes Gradify work" and "Find your Gradify" */
 :root body.ds #features { padding-bottom: clamp(28px, 4vw, 56px); }
 :root body.ds #find { padding-top: clamp(24px, 3vw, 48px); }
-:root .g-tiles > li:nth-child(3n + 2) > a::before { animation-delay: -2.4s; } :root .g-tiles > li:nth-child(3n) > a::before { animation-delay: -4.8s; }
-:root .sub-page .sm-steps li:nth-child(2)::before { animation-delay: -2.3s; } :root .sub-page .sm-steps li:nth-child(3)::before { animation-delay: -4.6s; }
+:root .g-tiles > li:nth-child(3n + 2) > a::before { animation-delay: -7.2s; } :root .g-tiles > li:nth-child(3n) > a::before { animation-delay: -14.4s; }
+:root .sub-page .sm-steps li:nth-child(2)::before { animation-delay: -6.9s; } :root .sub-page .sm-steps li:nth-child(3)::before { animation-delay: -13.8s; }
 
 
 /* ---------- The homepage's feature tiles, filters and site search: the same gleaming edge ----------
@@ -705,25 +706,25 @@ html:root body, html:root body.sub-page { background: transparent; }
 :root body.ds :is(#bubbles .bubble, #chips, #bubble-filter)::before {
   content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; padding: 3px; pointer-events: none;
   background:
-    linear-gradient(115deg, transparent 34%, var(--g-glint) 48%, transparent 62%) 0 0 / 260% 100% no-repeat,
+    linear-gradient(115deg, transparent 24%, var(--g-glint) 48%, transparent 72%) 0 0 / 260% 100% no-repeat,
     linear-gradient(115deg, var(--gleam) 0%, color-mix(in srgb, var(--gleam) 68%, #fff) 22%, var(--g-contrast) 46%, color-mix(in srgb, var(--gleam) 70%, #000) 68%, var(--gleam) 88%, color-mix(in srgb, var(--gleam) 68%, #fff) 100%) 0 0 / 220% 100%;
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
   mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
-  animation: g-gleam 7s linear infinite;
+  animation: g-gleam 22s linear infinite;
 }
 :root body.ds #find .search::after {
   display: block; top: 0; right: 0; bottom: 0; left: 0; width: auto; height: auto; transform: none; filter: none; opacity: 1; margin: 0;
   content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; padding: 3px; pointer-events: none;
   background:
-    linear-gradient(115deg, transparent 34%, var(--g-glint) 48%, transparent 62%) 0 0 / 260% 100% no-repeat,
+    linear-gradient(115deg, transparent 24%, var(--g-glint) 48%, transparent 72%) 0 0 / 260% 100% no-repeat,
     linear-gradient(115deg, var(--gleam) 0%, color-mix(in srgb, var(--gleam) 68%, #fff) 22%, var(--g-contrast) 46%, color-mix(in srgb, var(--gleam) 70%, #000) 68%, var(--gleam) 88%, color-mix(in srgb, var(--gleam) 68%, #fff) 100%) 0 0 / 220% 100%;
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
   mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
-  animation: g-gleam 7s linear infinite;
-  animation-delay: -2.5s;
+  animation: g-gleam 22s linear infinite;
+  animation-delay: -7.5s;
 }
-:root body.ds #bubbles .bubble:nth-child(3n + 2)::before { animation-delay: -2.3s; } :root body.ds #bubbles .bubble:nth-child(3n)::before { animation-delay: -4.7s; }
-:root body.ds #bubble-filter::before { animation-delay: -1.2s; } :root body.ds #chips::before { animation-delay: -5s; }
+:root body.ds #bubbles .bubble:nth-child(3n + 2)::before { animation-delay: -6.9s; } :root body.ds #bubbles .bubble:nth-child(3n)::before { animation-delay: -14.1s; }
+:root body.ds #bubble-filter::before { animation-delay: -3.6s; } :root body.ds #chips::before { animation-delay: -15s; }
 :root body.ds #bubble-filter { overflow: visible; }
 @media (max-width: 640px) { :root body.ds #bubble-filter { overflow-x: auto; } }
 @media (prefers-reduced-motion: reduce) { :root body.ds :is(#bubbles .bubble, #chips, #bubble-filter)::before, :root body.ds #find .search::after { animation: none; background-position: -60% 0, 30% 0; } }
@@ -793,11 +794,11 @@ body.ds { font-family: var(--ds-font-text); }
 :root header.bar.glass::before, :root header.sub-nav.glass::before {
   content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; padding: 2px; pointer-events: none;
   background:
-    linear-gradient(115deg, transparent 34%, var(--g-glint) 48%, transparent 62%) 0 0 / 260% 100% no-repeat,
+    linear-gradient(115deg, transparent 24%, var(--g-glint) 48%, transparent 72%) 0 0 / 260% 100% no-repeat,
     linear-gradient(115deg, #ff2e88 0%, #ffc400 22%, #ff6a00 44%, var(--g-contrast) 66%, #ff2e88 88%, #ffc400 100%) 0 0 / 220% 100%;
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
   mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
-  animation: g-gleam 9s linear infinite;
+  animation: g-gleam 26s linear infinite;
 }
 @media (prefers-reduced-motion: reduce) { :root :is(header.bar.glass, header.sub-nav.glass)::before { animation: none; background-position: -60% 0, 30% 0; } }
 :root[data-motion="reduce"] :is(header.bar.glass, header.sub-nav.glass)::before { animation: none; background-position: -60% 0, 30% 0; }

@@ -2873,13 +2873,13 @@ body:has(.co-modal) .cx-dock { visibility: hidden; }
 .co.co-reading :is(.co-read .co-notes, .cx-tree, .cx-widget)::before {
   content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; padding: 2.5px; pointer-events: none;
   background:
-    linear-gradient(115deg, transparent 34%, var(--g-glint) 48%, transparent 62%) 0 0 / 260% 100% no-repeat,
+    linear-gradient(115deg, transparent 24%, var(--g-glint) 48%, transparent 72%) 0 0 / 260% 100% no-repeat,
     linear-gradient(115deg, var(--gleam) 0%, color-mix(in srgb, var(--gleam) 68%, #fff) 22%, var(--g-contrast) 46%, color-mix(in srgb, var(--gleam) 70%, #000) 68%, var(--gleam) 88%, color-mix(in srgb, var(--gleam) 68%, #fff) 100%) 0 0 / 220% 100%;
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
   mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
-  animation: g-gleam 12s linear infinite;
+  animation: g-gleam 32s linear infinite;
 }
-.co.co-reading .cx-tree::before { animation-delay: -3s; } .co.co-reading .cx-widget:nth-child(2)::before { animation-delay: -6s; } .co.co-reading .cx-widget:nth-child(3)::before { animation-delay: -9s; }
+.co.co-reading .cx-tree::before { animation-delay: -9s; } .co.co-reading .cx-widget:nth-child(2)::before { animation-delay: -18s; } .co.co-reading .cx-widget:nth-child(3)::before { animation-delay: -27s; }
 /* the rail's cards: calm type, no tinted fills inside */
 .co.co-reading .cx-widget :is(.co-kicker, .cx-w-k) { font: 600 12.5px var(--sans); letter-spacing: 0; text-transform: none; color: var(--mute); }
 .co.co-reading .cx-widget :is(button:not(.btn), a.cx-kc, .co-checkn) { background: rgba(var(--ink-rgb), .035); border: 1px solid var(--line); box-shadow: none; }
@@ -2939,19 +2939,28 @@ body:has(.co-modal) .cx-dock { visibility: hidden; }
 :root .co :is(.co-hero, .cx-hero, .co-tabs, .sm-measure, .sm-note, .co-school, .co-pcard, #g-edge)::before {
   content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; padding: 2.5px; pointer-events: none;
   background:
-    linear-gradient(115deg, transparent 34%, var(--g-glint) 48%, transparent 62%) 0 0 / 260% 100% no-repeat,
+    linear-gradient(115deg, transparent 24%, var(--g-glint) 48%, transparent 72%) 0 0 / 260% 100% no-repeat,
     linear-gradient(115deg, #ff2e88 0%, #ffc400 22%, #ff6a00 44%, var(--g-contrast) 66%, #ff2e88 88%, #ffc400 100%) 0 0 / 220% 100%;
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
   mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
-  animation: g-gleam 8s linear infinite;
+  animation: g-gleam 24s linear infinite;
 }
-.co :is(.co-school, .co-pcard, .sm-measure):nth-child(3n + 2)::before { animation-delay: -2.7s; }
-.co :is(.co-school, .co-pcard, .sm-measure):nth-child(3n)::before { animation-delay: -5.3s; }
+:root .co :is(.co-school, .co-pcard, .sm-measure, #g-edge):nth-child(3n + 2)::before { animation-delay: -8s; }
+:root .co :is(.co-school, .co-pcard, .sm-measure, #g-edge):nth-child(3n)::before { animation-delay: -16s; }
 .co :is(.co-school, .co-pcard, .sm-note)::before { padding: 1.5px; }
-@media (prefers-reduced-motion: reduce) { .co :is(.co-hero, .cx-hero, .co-tabs, .sm-measure, .sm-note, .co-school, .co-pcard)::before { animation: none; background-position: -60% 0, 30% 0; } }
-:root[data-motion="reduce"] .co :is(.co-hero, .cx-hero, .co-tabs, .sm-measure, .sm-note, .co-school, .co-pcard)::before { animation: none; background-position: -60% 0, 30% 0; }
+@media (prefers-reduced-motion: reduce) { :root .co :is(.co-hero, .cx-hero, .co-tabs, .sm-measure, .sm-note, .co-school, .co-pcard, #g-edge)::before { animation: none; background-position: -60% 0, 30% 0; } }
+:root[data-motion="reduce"] .co :is(.co-hero, .cx-hero, .co-tabs, .sm-measure, .sm-note, .co-school, .co-pcard, #g-edge)::before { animation: none; background-position: -60% 0, 30% 0; }
 @media print { .co :is(.co-hero, .cx-hero, .co-tabs, .sm-measure, .sm-note, .co-school, .co-pcard)::before { content: none; } }
 /* fewer words: a unit's blurb is one line, and the hero is its headline and one button */
 .co .co-school p { display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
 .co .co-hero .co-herotext > p:first-of-type { display: none; }   /* the headline says it; the intro stays in the static overview */
 .co .sm-note a { white-space: nowrap; }
+
+/* the lesson rim gleams once when the lesson opens, then holds still. It wears the panels' gleaming edge (the panel
+   rule, .co.co-reading :is(.co-read .co-notes, .cx-tree, .cx-widget)::before, outranks the older conic rim above), and
+   that rule ran it forever, repainting the page-sized rim every frame for as long as the lesson was open, phones
+   included. One slow pass of the same gleam keeps the look and the cost of the original one-off sweep */
+.co.co-reading .co-read .co-notes::before { animation: g-gleam 14s linear 1s 1 both; }
+@media (max-width: 1020px) { .co.co-reading .co-read .co-notes::before { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .co.co-reading .co-read .co-notes::before { animation: none; } }
+:root[data-motion="reduce"] .co.co-reading .co-read .co-notes::before { animation: none; }
