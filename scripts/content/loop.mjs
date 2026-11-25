@@ -93,14 +93,23 @@ export function packetFor(topic, brief) {
 }
 export const reviewRequest = (s, topic, brief) => [`LESSON ${s.key}`, numbered(s.text), ...topic.reqs.map((r) => `REQ ${r.id} | ${String(r.asks).replace(/\s+/g, " ")}`), `BRIEF ${topic.id}`, brief.replace(/^#.*\n/, "").trim()].join("\n");
 export const repairRequest = (s, pkt) => [fixList(s.key, s.issues), `LESSON ${s.key}`, numbered(s.text), pkt].join("\n");
-export const gateOptions = (topic, { siblings = [], ...extra } = {}) => ({ reqs: topic.reqs, allowed: new Set(topic.reqs.map((x) => x.id)), prereq: prereqResolver(topic.subject, siblings), ...extra });
+export const gateOptions = (topic, { siblings = [], ...extra } = {}) => ({ reqs: topic.reqs, allowed: new Set(topic.reqs.map((x) => x.id)), prereq: prereqResolver(topic.subject, siblings), taken: takenTitle(topic.subject), ...extra });
+/** the course's own lesson titles, keyed as the syllabus keys them; the engine's published unit is left out, since a
+ * lesson published there keeps its title when it's rebuilt */
+export function courseTitles(subject, { withPublished = true } = {}) {
+  const dir = at(`kit/courses/${subject}/notes/`), out = new Map(); if (!existsSync(dir)) return out;
+  let pub = null; try { pub = JSON.parse(readFileSync(at(`kit/courses/${subject}/published.js`), "utf8").match(/PUBLISHED = (\{[\s\S]*\});/)?.[1] || "{}").id || null; } catch {}
+  for (const f of readdirSync(dir).filter((x) => x.endsWith(".js"))) { if (!withPublished && pub && f === `${pub}.js`) continue; for (const m of readFileSync(new URL(f, dir), "utf8").matchAll(/^## (.+)$/gm)) out.set(titleKey(m[1]), `${f.replace(/\.js$/, "")}: ${m[1]}`); }
+  return out;
+}
+/** a new lesson's title must not be one the course already uses: the syllabus identifies lessons by title */
+export const takenTitle = (subject) => { const t = courseTitles(subject, { withPublished: false }); return (title) => t.get(titleKey(title)) || null; };
 /**
  * PRE: lines (decision C) resolve to a lesson title in the subject's course or in the unit being written (case and
  * punctuation ignored, as the syllabus matches titles), or to a requirement id of an imported specification.
  */
 export function prereqResolver(subject, siblings = []) {
-  const dir = at(`kit/courses/${subject}/notes/`), titles = new Set(siblings.map(titleKey));
-  if (existsSync(dir)) for (const f of readdirSync(dir).filter((x) => x.endsWith(".js"))) for (const m of readFileSync(new URL(f, dir), "utf8").matchAll(/^## (.+)$/gm)) titles.add(titleKey(m[1]));
+  const titles = new Set([...siblings.map(titleKey), ...courseTitles(subject).keys()]);
   const reqIds = new Set(SPECS.filter((s) => s.statements === "imported").flatMap((s) => (loadIndex(s.id)?.statements || []).map((x) => `${s.id}:${x.ref}`)));
   return (p) => { const v = String(p).trim(); return titles.has(titleKey(v)) || reqIds.has(v) || !!parentOf(v, reqIds); };
 }
