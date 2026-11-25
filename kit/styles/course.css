@@ -2956,10 +2956,11 @@ body:has(.co-modal) .cx-dock { visibility: hidden; }
 .co .co-hero .co-herotext > p:first-of-type { display: none; }   /* the headline says it; the intro stays in the static overview */
 .co .sm-note a { white-space: nowrap; }
 
-/* the lesson rim sweeps once when the lesson opens (lg-gleam, above), never the panels' endless gleam: the panel rule
-   (.co.co-reading :is(.co-read .co-notes, .cx-tree, .cx-widget)::before) outranked it, so the page-sized rim
-   repainted every frame for as long as the lesson was open, phones included */
-.co.co-reading .co-read .co-notes::before { animation: lg-gleam 14s linear 1s; }
+/* the lesson rim gleams once when the lesson opens, then holds still. It wears the panels' gleaming edge (the panel
+   rule, .co.co-reading :is(.co-read .co-notes, .cx-tree, .cx-widget)::before, outranks the older conic rim above), and
+   that rule ran it forever, repainting the page-sized rim every frame for as long as the lesson was open, phones
+   included. One slow pass of the same gleam keeps the look and the cost of the original one-off sweep */
+.co.co-reading .co-read .co-notes::before { animation: g-gleam 14s linear 1s 1 both; }
 @media (max-width: 1020px) { .co.co-reading .co-read .co-notes::before { animation: none; } }
 @media (prefers-reduced-motion: reduce) { .co.co-reading .co-read .co-notes::before { animation: none; } }
 :root[data-motion="reduce"] .co.co-reading .co-read .co-notes::before { animation: none; }
