@@ -85,7 +85,7 @@
 .mv-cols b { color: var(--fg); }
 .mv-key { padding: 10px 14px; border-left: 2px solid var(--c); border-radius: 0 12px 12px 0; background: color-mix(in srgb, var(--c) 8%, transparent); color: #eaf6f8 !important; }
 .mv-clin { margin: 4px 0 12px; padding: 12px 14px; border-radius: 14px; font-size: 14.5px; line-height: 1.55; color: #ffe9d6; color: light-dark(#b85500, #ffe9d6); background: rgba(255, 150, 70, .08); border: 1px solid rgba(255, 150, 70, .3); }
-.mv-clin b { display: block; margin-bottom: 3px; font: 600 11px var(--mono); letter-spacing: .14em; text-transform: uppercase; color: #ffb36b; color: light-dark(#b85900, #ffb36b); }
+.mv-clin b { display: block; margin-bottom: 3px; font: 600 11px var(--mono); letter-spacing: .14em; text-transform: uppercase; color: #ffb36b; color: light-dark(#9a4a00, #ffb36b); }
 .mv-page footer { display: flex; flex-wrap: wrap; gap: 10px; padding-top: 20px; border-top: 1px solid var(--line); }
 
 @media (max-width: 960px) {

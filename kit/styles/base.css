@@ -783,7 +783,7 @@ body.ds { font-family: var(--ds-font-text); }
 :root :is(.cx-donestats b, .co-herostats b, .cx-habit b, .ds-stat b, .sm-stat b, .stat b, .co-ring b, .cx-gain) { font-weight: 650; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
 /* small labels */
 :root :is(.co-kicker, .g-kicker, .gx-kicker, .kicker, .eyebrow, .ds-eyebrow, small) { font-weight: 500; }
-:root :is(.g-kicker, .co-read .co-frame h3, .co-read .co-qn::before) { font-weight: 600; }
+:root :is(.g-kicker, .co-read .co-frame :is(h2, h3), .co-read .co-qn::before) { font-weight: 600; }
 
 /* ---------- The Gradify edge on the top bar, on every page: the action card's gleaming border (pink, amber, orange and
    the mode's contrast, with a glint that runs round it), drawn as a ::before ring so the GPU glass (kit/ui/liquid-gl.js),

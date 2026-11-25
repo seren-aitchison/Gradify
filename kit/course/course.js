@@ -77,7 +77,7 @@ import { specMastery } from "../learning/spec-mastery.js";
 import { specPageHtml, topicPageHtml, pointPageHtml, specSummaryHtml } from "./spec-view.js";
 import { subjectById } from "../curriculum/subjects.js";
 import { STRATEGIES, explain as explainWay, available as waysFor, rank as rankWays, stats as wayStats, record as wayRecord, shown as wayShown, answered as wayAnswered } from "../learning/explain.js";
-import { lessonSteps, LEARN_PILOTS } from "./blocks.js";
+import { lessonSteps, LEARN_PILOTS, finalCheck, untried } from "./blocks.js";
 
 const DAY = 864e5;
 const XP = { lesson: 10, check: 5, chest: 15, quiz: 50, perfect: 20, review: 2, problem: 5, weekly: 100 };
@@ -1534,7 +1534,7 @@ export function mountCourse(root, cfg) {
       const B = s.block, partsHtml = lessonHtml({ blocks: B.parts }), ob = B.objectives.length ? `<p class="ls-obtag">${ic("target")} ${B.objectives.map((o) => esc(N.objectives[o - 1] || `Objective ${o}`)).join(" · ")}</p>` : "";
       body = `<span class="ls-kicker">Concept ${s.n} of ${s.of}</span><h1 class="ls-title" tabindex="-1">${inline(B.title || l.title)}</h1>${ob}
         ${B.hook ? `<div class="ls-hook"><b>Think first</b><p>${inline(B.hook)}</p></div>` : ""}
-        <div class="ls-teach co-prose">${partsHtml}</div>
+        <div class="co-read"><div class="ls-teach co-prose">${partsHtml}</div></div>
         ${B.more.length ? `<details class="ls-more"><summary>${ic("more")} More detail</summary>${B.more.map((x) => `<p>${inline(x)}</p>`).join("")}</details>` : ""}
         <div class="ls-tools"><button type="button" class="ls-tool" data-explain aria-expanded="false">${ic("sparkles")} Explain it differently</button><button type="button" class="ls-tool" data-capture>${ic("save")} ${S.saved[id] ? "Saved to your notes ✓" : "Save to my notes"}</button></div>
         <div class="ls-explain" hidden aria-live="polite"></div>
@@ -1555,7 +1555,9 @@ export function mountCourse(root, cfg) {
     } else {
       const shown = new Set((S.attempts || []).filter((a) => a.lesson === id && a.score >= 0.7).flatMap((a) => a.question?.objectives || []));
       body = `<span class="ls-kicker">Next</span><h1 class="ls-title" tabindex="-1">${S.done[id] ? "Lesson complete" : "Almost there"}</h1>
-        ${N.objectives.length ? `<section class="ls-card"><h2>What you've shown</h2><ul class="ls-objs">${N.objectives.map((o, k) => `<li class="${shown.has(k + 1) ? "ok" : ""}"><span class="ls-ob">${shown.has(k + 1) ? "✓" : k + 1}</span>${inline(o)}<small>${shown.has(k + 1) ? "Shown in your answers" : "Not shown yet"}</small></li>`).join("")}</ul></section>` : ""}
+        ${N.objectives.length ? `<section class="ls-card"><h2>What you've shown</h2><ul class="ls-objs">${N.objectives.map((o, k) => { const ok = shown.has(k + 1), at = ok ? -1 : steps.findIndex((x) => x.kind === "block" && x.block.objectives.includes(k + 1));
+          return `<li class="${ok ? "ok" : ""}"><span class="ls-ob">${ok ? "✓" : k + 1}</span>${inline(o)}<small>${ok ? "Shown in your answers" : at >= 0 ? `Not shown yet · <a href="${href(at)}">Revisit this concept</a>` : "Not shown yet"}</small></li>`; }).join("")}</ul></section>` : ""}
+        ${(() => { const b = buildsOnHtml(id); return b && b.includes("review first") ? `<section class="ls-card"><h2>Worth revisiting first</h2><p>This lesson builds on these. Your answers there suggest a quick review would help.</p>${b}</section>` : ""; })()}
         <div class="ls-tools">${S.done[id] ? "" : `<button type="button" class="btn btn-light lg" data-done>Complete lesson · +${XP.lesson} XP</button>`}${nextL ? `<a class="btn btn-ghost lg" href="${href(0).replace(id, nextL.id)}">Next lesson: ${esc(nextL.title)}</a>` : ""}<a class="ls-tool" href="#/lesson/${id}">${ic("notes")} Read as notes</a></div>`;
       primary = "";
     }
@@ -1570,8 +1572,14 @@ export function mountCourse(root, cfg) {
     hydrateDiagrams(main); mountIxSlots(main); glassIcons(main, cfg.site).catch(() => {});
     // Continue unlocks once every question on the step has an answer (right or wrong: the feedback teaches)
     const answered = new Set(), go_ = main.querySelector(".ls-go");
-    wirePractice(main, s.kind === "diagnose" ? "diagnostic" : "lesson", id, s.kind === "diagnose" ? 0 : XP.check, (it) => {
+    const pits = s.kind === "block" ? s.block.parts.filter((p) => p.t === "pit").map((p) => p.x) : [];
+    wirePractice(main, s.kind === "diagnose" ? "diagnostic" : "lesson", id, s.kind === "diagnose" ? 0 : XP.check, (it, res) => {
       answered.add(it.key);
+      // a wrong answer in a concept block: what to think about, from this concept's own misconceptions, and a way back
+      // to the explanation. Never a penalty: Continue still unlocks.
+      const box = main.querySelector(`.aq[data-key="${CSS.escape(it.key)}"]`);
+      if (s.kind === "block" && !res.correct && !res.self && box && !box.querySelector(".ls-rethink")) { box.insertAdjacentHTML("beforeend", `<div class="ls-rethink" role="note"><b>Before you go on</b>${pits.length ? `<p>A common slip here:</p><ul>${pits.map((x) => `<li>${inline(x)}</li>`).join("")}</ul>` : ""}<p><button type="button" class="ls-tool" data-reread>${ic("book")} Re-read the explanation</button></p></div>`);
+        box.querySelector("[data-reread]").addEventListener("click", () => { const t = main.querySelector(".ls-teach"); t?.scrollIntoView({ behavior: "smooth", block: "start" }); t?.setAttribute("tabindex", "-1"); t?.focus({ preventScroll: true }); }); }
       if (go_ && answered.size >= needsAnswer) { go_.classList.remove("off"); go_.removeAttribute("aria-disabled"); main.querySelector(".ls-why")?.remove(); }
     });
     go_?.addEventListener("click", (e) => { if (go_.classList.contains("off")) { e.preventDefault(); main.querySelector(".ls-q .aq, .ls-q")?.scrollIntoView({ behavior: "smooth", block: "center" }); } });
@@ -1590,8 +1598,7 @@ export function mountCourse(root, cfg) {
     });
     main.querySelector("[data-done]")?.addEventListener("click", async (e) => {
       if (S.done[id]) return;
-      const proveQs = F.prove.map((q) => N.items[q.n].key), tried = new Set((S.attempts || []).filter((a) => a.lesson === id).map((a) => a.question?.id));
-      if (proveQs.some((k) => !tried.has(k))) { location.hash = href(steps.findIndex((x) => x.kind === "prove")); return; }
+      if (untried(F.prove.map((q) => N.items[q.n].key), S.attempts, id).length) { location.hash = href(steps.findIndex((x) => x.kind === "prove")); return; }
       S.done[id] = Date.now(); save(); track("lesson_complete", cfg.site);
       ledger({ event: "lesson_completed", concept: `${cfg.slug}:${id}`, source: "course", detail: { mode: "learn", seconds: Math.round((lt.current()?.ms || 0) / 1000) + (S.time?.[id]?.s || 0) } });
       await award(XP.lesson, "lesson", id, `${cfg.name}: ${l.title}`); shareProgress(l);
@@ -1614,6 +1621,9 @@ export function mountCourse(root, cfg) {
     const u = l.unit, t = trackOf(u), N = await notesFor(l); clearTimeout(skT);
     const prev = u.lessons[l.i - 1], next = u.lessons[l.i + 1] || units[u.n]?.lessons[0];
     const F = N ? lessonFrame(N) : null, nQ = N?.items?.length || 0;
+    // complete, in every mode, once the final check has been tried (kit/course/blocks.js finalCheck; owner, 25 Nov 2026)
+    const finalKeys = nQ ? finalCheck(N).map((k) => N.items[k].key) : [], finalSet = new Set(finalKeys);
+    const finalLeft = () => untried(finalKeys, S.attempts, id);
     curN = N; const openedAt = Date.now(), xpBefore = totalXp();
     const g = groupsOf(u).find((x) => x.lessons.some((y) => y.id === id)), gi = groupsOf(u).indexOf(g);
     const nIx = ixs.filter((x) => x.lessons?.includes(id)).length + (N ? N.blocks.filter((b) => b.t === "ix").length : 0), qz = S.quiz[u.id];
@@ -1664,7 +1674,7 @@ export function mountCourse(root, cfg) {
         ${N && cfg.reviewLine ? `<p class="co-reviewed">${reviewLine(u)}</p>` : ""}
         ${N && (LEARN_PILOTS[cfg.slug] || []).includes(id) ? `<a class="btn btn-light lg co-learnstep" href="#/step/${id}/0">${ic("play")} Learn it step by step <small>New · one idea at a time, with a check after each</small></a>` : ""}
         ${buildsOnHtml(id)}
-        ${N ? F.top : ""}
+        ${N ? F.top.replace(/<(\/?)h3>/g, "<$1h2>") : ""}
         ${N ? `<div class="mv-cols co-prose">${lessonDiagrams(N, id)}</div>${F.end || recapDiagrams(N, id).length ? `<section class="co-recap" id="co-recap"><h3 class="co-part">${ic("check")} Recap</h3>${recapHtml(N, id)}${F.end}</section>` : ""}` : `<p class="co-empty">The notes for this lesson are still being written. You can still mark it done and come back later.</p>`}
         ${N && cfg.anatomy3d?.lessons && id in cfg.anatomy3d.lessons ? anatomyPanel(cfg.anatomy3d.lessons[id]) : ""}
         ${N ? `<nav class="cx-kit" aria-label="Practise this lesson"><h3 class="co-part cx-kith">${ic("target")} Practise this lesson</h3>
@@ -1674,7 +1684,7 @@ export function mountCourse(root, cfg) {
           <a class="cx-kc" href="#/quiz/${u.id}"><span>${ic("trophy")}</span><b>${U} quiz</b><small>${qz ? `best ${pc(qz.best)}` : `+${XP.quiz} XP`}</small></a>
           <a class="cx-kc" href="#/target/${encodeTest({ minutes: 5, scope: "lessons", lessons: (g?.lessons || [l]).map((x) => x.id) })}"><span>${ic("bolt")}</span><b>Target test</b><small>5 min · ${esc(g?.title || "this lesson")}</small></a>
         </nav>` : ""}
-        ${nQ ? `<section class="co-check" id="co-check"><header><h3 class="co-part">${ic("target")} Check yourself</h3><span class="co-checkn" aria-live="polite"></span></header>${N.items.map((it, k) => `<div class="co-qn" data-n="${k + 1} of ${nQ}">${qHtml(it, { confidence: true })}</div>`).join("")}</section>` : ""}
+        ${nQ ? `<section class="co-check" id="co-check"><header><h3 class="co-part">${ic("target")} Check yourself</h3><span class="co-checkn" aria-live="polite"></span></header>${N.items.map((it, k) => `<div class="co-qn${finalSet.has(it.key) ? " co-qfinal" : ""}" data-n="${k + 1} of ${nQ}">${finalSet.has(it.key) ? `<span class="co-finalq">Final check</span>` : ""}${qHtml(it, { confidence: true })}</div>`).join("")}</section>` : ""}
         ${N ? `<details class="co-deeper cx-acc" id="co-deeper"><summary>${ic("sparkles")} Go deeper: ask the AI tutor, mind maps<span class="cx-chev" aria-hidden="true">${ic("right")}</span></summary><div class="cx-accbody"><section class="co-ask co-tutor"></section>${mapsSectionHtml(N, mapOpts(l))}</div></details>` : ""}
         ${resourceSwitcher({ kicker: `${U} ${u.n} · ${u.title} · ${l.title}`, items: res, id: "co-next" })}
         ${N && F.refs ? `<details class="co-refsec cx-acc" id="co-refs"><summary>${ic("book")} Sources and further reading<span class="cx-chev" aria-hidden="true">${ic("right")}</span></summary><div class="cx-accbody">${F.refs}</div></details>` : ""}
@@ -1682,7 +1692,7 @@ export function mountCourse(root, cfg) {
         <footer class="co-finish">
           ${N ? topicStrip(l) : ""}
           ${N ? spotArt(S.done[id] ? "done" : "lesson", { cls: "co-finish-art" }) : ""}
-          <div class="co-finish-txt"><b>${S.done[id] ? "You've finished this lesson" : N ? "Finished reading?" : "Notes coming soon"}</b><span>${S.done[id] ? "Review it any time, or carry on to the next one." : `Mark it complete for +${XP.lesson} XP${next ? ", then choose what's next" : ""}.`}</span></div>
+          <div class="co-finish-txt"><b>${S.done[id] ? "You've finished this lesson" : N ? "Finished reading?" : "Notes coming soon"}</b><span>${S.done[id] ? "Review it any time, or carry on to the next one." : finalKeys.length ? `Try the ${finalKeys.length === 1 ? "final check question" : `${finalKeys.length} final check questions`} in Check yourself, then mark it complete for +${XP.lesson} XP.` : `Mark it complete for +${XP.lesson} XP${next ? ", then choose what's next" : ""}.`}</span><p class="co-finish-need" aria-live="polite"></p></div>
           <div class="co-finish-btns">
             <button class="btn btn-light lg co-complete" ${S.done[id] ? "disabled" : ""}><span>${S.done[id] ? "Completed ✓" : `Complete lesson · +${XP.lesson} XP`}</span></button>
             ${N?.cards.length ? `<button class="btn btn-ghost lg" data-cards><span>${ic("cards")} Flashcards</span></button>` : ""}
@@ -1766,6 +1776,13 @@ export function mountCourse(root, cfg) {
     });
     main.querySelector(".co-complete").addEventListener("click", async (e) => {
       if (S.done[id]) return;
+      const left = finalLeft();
+      if (left.length) {
+        main.querySelector(".co-finish-need").textContent = `Try the final check first: ${left.length} question${left.length > 1 ? "s" : ""} left. Right or wrong, trying is what counts.`;
+        const q = main.querySelector(`.aq[data-key="${CSS.escape(left[0])}"]`);
+        q?.closest(".co-qn")?.scrollIntoView({ behavior: "smooth", block: "center" }); q?.querySelector("input, button")?.focus({ preventScroll: true });
+        return;
+      }
       S.done[id] = Date.now(); save(); track("lesson_complete", cfg.site);
       ledger({ event: "lesson_completed", concept: `${cfg.slug}:${id}`, source: "course", detail: { seconds: Math.round((lt.current()?.ms || 0) / 1000) + (S.time?.[id]?.s || 0) } }); e.currentTarget.disabled = true; e.currentTarget.querySelector("span").textContent = "Completed ✓";
       const lvBefore = levelOf(totalXp());
