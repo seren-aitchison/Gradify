@@ -8,7 +8,7 @@ import { CONFIG, at, out, load, slug, loadLedger, briefPath } from "./lib.mjs";
 import { staleness, targetKey } from "./build.mjs";
 
 const LEVEL = { gcse: "GCSE", "a-level": "A level", "as-level": "AS level", n5: "National 5", higher: "Higher" };
-const TYPE = (s) => (s.kind === "practical" ? "prac" : s.kind === "skill" ? (s.skills || []).some((k) => /math|calc/i.test(k)) ? "method" : "data" : "concept");
+export const TYPE = (s) => (s.kind === "practical" ? "prac" : s.kind === "skill" ? (s.skills || []).some((k) => /math|calc/i.test(k)) ? "method" : "data" : "concept");
 const lessonRef = (subject, id) => { const m = String(id).match(/^(u\d+)-(\d+)$/); return m ? `${subject}/${m[1]}#${Number(m[2])}` : `${subject}/${id}`; };
 
 /** every topic of a framework with requirements still to write */

@@ -570,3 +570,49 @@ test("a new lesson can't take a title the course already uses; the engine's publ
   const g = await G.runGates(LESSON("3 × 4 = 12").replace("## Prokaryotes up close", "## Cell specialisation"), { reqs: [REQ], allowed: new Set([REQ.id]), taken });
   assert.equal(g.failed?.gate, "coverage"); assert.ok(g.failed.issues.some((i) => /already has a lesson titled/.test(i.note)));
 });
+
+test("high-risk keywords match at a word start, and molecule names like amino acids aren't hazards", async () => {
+  const { riskKeywords } = await import("../scripts/content/loop.mjs");
+  assert.deepEqual(riskKeywords("Ribosomes join amino acids into proteins; DNA is a nucleic acid."), []);
+  assert.deepEqual(riskKeywords("A placid dog."), []);
+  assert.deepEqual(riskKeywords("Wear eye protection: the acid is corrosive."), ["acid"]);
+  assert.deepEqual(riskKeywords("Hydrochloric acid in the stomach kills bacteria."), ["acid"]);
+  assert.deepEqual(riskKeywords("Hormones in pregnancy"), ["pregnan"]);
+});
+
+test("filed lessons take the current high-risk rules: a keyword misfire is cleared, a new hit is raised, edited text is left", async () => {
+  const { writeFileSync, mkdirSync } = await import("node:fs");
+  const { retier } = await import("../scripts/content/loop.mjs");
+  const { fp } = await import("../scripts/content/lib.mjs");
+  const S0 = await import("../scripts/content/shorthand.mjs");
+  const file = "content/drafts/retier/aqa-gcse-biology/t.txt", dir = join(process.env.GRADIFY_OUT, "content/drafts/retier/aqa-gcse-biology");
+  mkdirSync(dir, { recursive: true });
+  const A = "## Lesson A\nLV: GCSE\nS: Ribosomes join amino acids.", B = "## Lesson B\nLV: GCSE\nS: Never taste an acid.", C = "## Lesson C\nLV: GCSE\nS: Amino acids again.";
+  writeFileSync(join(process.env.GRADIFY_OUT, file), `# head\n\n${A}\n\n${B}\n\n${C}\n`);
+  const h = (t) => fp(S0.splitUnit(`${t}\n`)[0].text);
+  const L = (title, tier, hash, x = {}) => ({ title, tier, hash, reqs: ["aqa-gcse-biology:4.1.1.3.a"], ...x });
+  mkdirSync(join(process.env.GRADIFY_OUT, "content/ledger"), { recursive: true });
+  writeFileSync(join(process.env.GRADIFY_OUT, "content/ledger/retier.json"), JSON.stringify({ subject: "retier", topics: { "retier/t": { file, lessons: [
+    L("Lesson A", "expert-required", h(A), { highRisk: true }), L("Lesson B", "ai-verified", h(B)), L("Lesson C", "expert-required", "edited", { highRisk: true }),
+  ] } } }));
+  const changed = retier("retier", { date: "2026-11-25" });
+  assert.deepEqual(changed.map((c) => [c.title, c.to]), [["Lesson A", "ai-verified"], ["Lesson B", "expert-required"]]);
+  const led = JSON.parse(readFileSync(join(process.env.GRADIFY_OUT, "content/ledger/retier.json"), "utf8")).topics["retier/t"].lessons;
+  assert.equal(led[0].highRisk, undefined); assert.equal(led[0].retiered.from, "expert-required");
+  assert.equal(led[1].highRisk, true); assert.match(led[1].retiered.why, /acid/);
+  assert.equal(led[2].tier, "expert-required");
+  assert.deepEqual(retier("retier"), []);
+});
+
+test("a NUM problem is reported on its own line, not on a worked example that opens with the same words", async () => {
+  const shared = "A cell image is 20 mm wide under a magnification of";
+  const base = LESSON("3 × 4 = 12");
+  const text = base.replace(/\n(?=M1@)/, `\nX: ${shared} ×400. Real size = 20 ÷ 400 = 0.05 mm.\nNUM1@1: ${shared} ×100. What is the real width in mm? | 0.5 | 0 | mm | Real size = 20 ÷ 100 = 0.2 mm.\n`);
+  const lines = text.split("\n"), numAt = lines.findIndex((l) => l.startsWith("NUM1@")) + 1, exAt = lines.findIndex((l) => l.startsWith(`X: ${shared}`)) + 1;
+  assert.ok(numAt > exAt && exAt > 0);
+  const { parseNotes: P } = await import("../kit/course/notes.js");
+  const L = P(text)?.[0] || P(text);
+  const r = await G.mathsDiagramGate(L.lessons ? L.lessons[0] : L, text);
+  const hit = r.issues.find((i) => /isn't what the working gives/.test(i.note));
+  assert.ok(hit, JSON.stringify(r.issues)); assert.equal(hit.line, numAt);
+});

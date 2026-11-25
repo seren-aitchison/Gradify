@@ -12,7 +12,7 @@ import { splitUnit, fixList, numbered } from "./shorthand.mjs";
 import { parseNotes } from "../../kit/course/notes.js";
 import { runGates } from "./gates.mjs";
 import { nextTopics, frameworksFor, topicsFor, reqHash } from "./queue.mjs";
-import { currentBrief, checkBrief, stampBrief, researchRequest, packetFor, reviewRequest, gateOptions, lessonState, applyRepairReply, verdictOf, fileTopic } from "./loop.mjs";
+import { currentBrief, checkBrief, stampBrief, researchRequest, packetFor, reviewRequest, gateOptions, lessonState, applyRepairReply, verdictOf, fileTopic, retier } from "./loop.mjs";
 import { loadStatements, loadMap, loadIndex } from "../curriculum/engine.mjs";
 import { SPECS } from "../../kit/curriculum/uk.js";
 
@@ -208,8 +208,10 @@ export function workTopics(subject, { limit = CONFIG.topicsPerRun } = {}) {
 export async function work(subject, { limit = CONFIG.topicsPerRun, render = null, legible = null, map = true } = {}) {
   if (!SPECS.some((s) => s.subject === subject) || !frameworksFor(subject).length) throw new Error(`${subject} has no framework in this run (scripts/content/config.json frameworks)`);
   const mapped = map ? await applyMapping(subject) : [];
+  // filed lessons take the current high-risk rules before anything new is written
+  const retiered = retier(subject);
   const actions = [], filed = [];
   for (const t of workTopics(subject, { limit })) { const r = await advance(t, { render, legible }); actions.push(...r.actions); if (r.filed) filed.push(r.filed); }
   if (map) actions.push(...(await mapActions(subject)));
-  return { subject, actions, filed, mapped, done: !actions.length && !nextTopics(subject, { limit: 1 }).length && !(map && frameworksFor(subject).some((fw) => mapCandidates(fw).length)) };
+  return { subject, actions, filed, mapped, retiered, done: !actions.length && !nextTopics(subject, { limit: 1 }).length && !(map && frameworksFor(subject).some((fw) => mapCandidates(fw).length)) };
 }

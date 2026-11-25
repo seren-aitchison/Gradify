@@ -11,6 +11,14 @@ const KNOWN = new Set(["S", "H", "P", "E", "X", "K", "!", "Q", "O", "PRE", "T", 
 const QTAG = /^(M|TF|MS|SEQ|MATCH|SA|NUM)[123]?(#[a-z0-9-]+)?(@[\d,]+)?:/;
 const lineOf = (text, re) => { const i = text.split("\n").findIndex((l) => re.test(l)); return i < 0 ? null : i + 1; };
 const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+// the line of a question or flashcard: a task line (NUM#…@1:, M2:, SA1:, Q:) whose text starts with the whole question,
+// so a worked example or another question that opens with the same words isn't taken for it; else the first mention
+const TASK = /^\s*(?:[A-Z]{1,4}\d*(?:#[^\s:@]*)?(?:@[\d,]+)?|Q):\s*/;
+const questionLine = (text, q) => {
+  const want = String(q).trim(), lines = text.split("\n");
+  const i = lines.findIndex((l) => TASK.test(l) && l.replace(TASK, "").startsWith(want));
+  return i >= 0 ? i + 1 : lineOf(text, new RegExp(esc(want.slice(0, 40))));
+};
 const issue = (code, line, note) => ({ code, line, note });
 const SRC_KINDS = ["legislation", "case", "rule", "guidance", "standard", "primary", "secondary"];
 const result = (gate, issues) => ({ gate, ok: !issues.length, issues });
@@ -64,7 +72,7 @@ export function coverageGate(L, text, { allowed = null, prereq = null, taken = n
 
 // ---------- 3. the course QA rules (scripts/qa-courses.mjs), applied to the one lesson ----------
 export function qaGate(L, text) {
-  const issues = [], at = (q) => lineOf(text, new RegExp(esc(q.slice(0, 40))));
+  const issues = [], at = (q) => questionLine(text, q);
   if (L.blocks.filter((b) => b.t === "h").length < 2) issues.push(issue("QA", null, "fewer than two H: sections"));
   if (!L.blocks.some((b) => b.t === "key")) issues.push(issue("QA", null, "no K: key point"));
   if (L.cards.length < 2) issues.push(issue("QA", lineOf(text, /^Q:/), "fewer than two Q: flashcards"));
@@ -149,7 +157,7 @@ export async function mathsDiagramGate(L, text, { render = null, legible = null 
   const issues = [];
   text.split("\n").forEach((l, i) => { if (/^(X:|> |E:|NUM|P:|- )/.test(l.trim())) for (const b of checkArithmetic(l)) issues.push(issue("NUM", i + 1, b)); });
   for (const q of L.tasks.filter((t) => t.type === "num")) {
-    const at = lineOf(text, new RegExp(esc(q.q.slice(0, 40))));
+    const at = questionLine(text, q.q);
     const steps = (q.why || "").split(/[;.](?=\s)/).flatMap((s) => { const parts = s.split(/\s=\s|=(?=\s*[-−\d])/); return parts.slice(0, -1).map((p, k) => [evalExpr(p), parts[k + 1].trim().match(NUMRE)?.[0]]).filter(([v]) => v != null); });
     if (!steps.length) issues.push(issue("NUM", at, "NUM explanation shows no working (expr = value) to recompute"));
     else if (!steps.some(([v]) => Math.abs(v - q.answer) <= (q.tol.rel ? Math.abs(q.answer) * q.tol.rel : q.tol.abs) + Math.abs(q.answer) * 0.005 + 1e-9)) issues.push(issue("NUM", at, `answer ${q.answer} isn't what the working gives`));

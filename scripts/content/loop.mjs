@@ -6,10 +6,10 @@ import { readFileSync, existsSync, readdirSync } from "node:fs";
 import { titleKey } from "../../kit/course/syllabus.js";
 import { SPECS } from "../../kit/curriculum/uk.js";
 import { loadIndex } from "../curriculum/engine.mjs";
-import { CONFIG, at, fp, save, slug, today, briefPath, draftPath, loadLedger, saveLedger } from "./lib.mjs";
+import { CONFIG, at, out, fp, save, slug, today, briefPath, draftPath, loadLedger, saveLedger } from "./lib.mjs";
 import { packet, parseBrief, parseVerdicts, fixList, parseRepairs, applyRepair, splitUnit, numbered, parentOf } from "./shorthand.mjs";
 import { runGates } from "./gates.mjs";
-import { diagramsFor, reqHash } from "./queue.mjs";
+import { diagramsFor, reqHash, TYPE } from "./queue.mjs";
 import { longestSharedRun } from "../knowledge/lib.mjs";
 import { SOURCES, sourceFor, classOf } from "../../kit/curriculum/sources.js";
 
@@ -123,9 +123,18 @@ export function applyRepairReply(s, reply) {
 /** a reviewer's reply → verdict */
 export const verdictOf = (reply) => (reply instanceof Error ? { ok: false, issues: [{ code: "CLR", line: null, note: `review call failed: ${reply.message}` }] } : parseVerdicts(reply)[0] || { ok: false, issues: [{ code: "CLR", line: null, note: "reviewer returned no verdict" }] });
 
+const escRe = (x) => x.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+/** the high-risk keywords found in a lesson's text. A keyword matches at the start of a word
+ * (so the stem "pregnan" finds "pregnancy", but "acid" no longer fires inside "placid"), and
+ * phrases in `notKeywords` ("amino acid") are removed first, so molecule names aren't hazards. */
+export function riskKeywords(text, hr = CONFIG.highRisk) {
+  let t = String(text).toLowerCase();
+  for (const n of hr.notKeywords || []) t = t.replace(new RegExp(`\\b${escRe(n.toLowerCase())}`, "g"), " ");
+  return hr.keywords.filter((k) => new RegExp(`\\b${escRe(k.toLowerCase())}`).test(t));
+}
 const isHighRisk = (topic, s, parsedBrief) => {
-  const t = s.text.toLowerCase(), hr = CONFIG.highRisk;
-  return { conflict: parsedBrief.conflicts.length > 0, risk: topic.reqs.some((r) => hr.types.includes(r.type)) || /^NUM/m.test(s.text) || hr.keywords.some((k) => t.includes(k)) };
+  const hr = CONFIG.highRisk;
+  return { conflict: parsedBrief.conflicts.length > 0, risk: topic.reqs.some((r) => hr.types.includes(r.type)) || /^NUM/m.test(s.text) || riskKeywords(s.text, hr).length > 0 };
 };
 
 /** write, check, review and repair one topic's lessons; file what passes; return the record for the ledger and PR */
@@ -191,6 +200,40 @@ export function fileTopic(topic, states, { brief = null, failures = [], reviewed
     save(file, `${head}\n\n${[...merged.values()].join("\n\n")}\n`);
   }
   return finish(topic, rec);
+}
+
+/**
+ * Re-apply the current high-risk rules to lessons already filed and not yet approved, so a fix to the rules (or a new
+ * keyword) reaches them without a rewrite. Only a lesson whose draft text still has its filed hash is changed; a
+ * conflict, a gates-only lesson, an approved one or a superseded one keeps its tier. Each change is recorded on the
+ * lesson as `retiered`. Returns [{ topic, title, from, to }].
+ */
+export function retier(subject, { date = today() } = {}) {
+  const led = loadLedger(subject), changed = [], types = new Map();
+  const typeOf = (id) => {
+    const [fw, ref] = String(id).split(":");
+    if (!types.has(fw)) types.set(fw, new Map((loadIndex(fw)?.statements || []).map((x) => [x.ref, TYPE(x)])));
+    const m = types.get(fw); let r = ref;
+    while (r && !m.has(r)) r = r.includes(".") ? r.slice(0, r.lastIndexOf(".")) : "";
+    return m.get(r);
+  };
+  for (const [id, e] of Object.entries(led.topics || {})) {
+    if (!e.file || !existsSync(out(e.file))) continue;
+    const texts = new Map(splitUnit(readFileSync(out(e.file), "utf8")).map((l) => [l.title, l.text]));
+    for (const l of e.lessons || []) {
+      if (!["ai-verified", "expert-required"].includes(l.tier) || l.conflict || l.superseded) continue;
+      const text = texts.get(l.title); if (!text || fp(text) !== l.hash) continue;
+      const hr = CONFIG.highRisk, risk = l.reqs.some((r) => hr.types.includes(typeOf(r))) || /^NUM/m.test(text) || riskKeywords(text, hr).length > 0;
+      const tier = risk ? "expert-required" : "ai-verified";
+      if (tier === l.tier) continue;
+      changed.push({ topic: id, title: l.title, from: l.tier, to: tier });
+      l.retiered = { from: l.tier, date, why: risk ? `high-risk: ${riskKeywords(text, hr).join(", ") || "requirement type or NUM"}` : "high-risk rules no longer match" };
+      l.tier = tier;
+      if (risk) l.highRisk = true; else delete l.highRisk;
+    }
+  }
+  if (changed.length) saveLedger(led);
+  return changed;
 }
 
 /** record the topic in its subject's ledger: filed, partial (some requirements left), failed, or blocked */

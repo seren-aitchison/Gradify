@@ -30,6 +30,6 @@
   { "wave": 3, "subjects": ["*"], "ages": [18, 99] }
  ],
  "frameworks": ["aqa-gcse-biology", "aqa-gcse-chemistry"],
- "highRisk": { "types": ["prac", "num"], "keywords": ["safety", "hazard", "drug", "dose", "medicine", "disease", "allergy", "mental health", "self-harm", "pregnan", "first aid", "electric shock", "acid", "flammable"] },
+ "highRisk": { "types": ["prac", "num"], "keywords": ["safety", "hazard", "drug", "dose", "medicine", "disease", "allergy", "mental health", "self-harm", "pregnan", "first aid", "electric shock", "acid", "flammable"], "notKeywords": ["amino acid", "nucleic acid", "fatty acid", "deoxyribonucleic acid", "ribonucleic acid", "lactic acid"] },
  "examplesPerLevel": 2
 }
