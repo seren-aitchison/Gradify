@@ -8,6 +8,9 @@
 // Gradify covers it: coverage claims live in kit/curriculum/coverage.js and are verified, mapped, aligned or none.
 // An official site is given only where it's certain; otherwise `url: null` rather than a guess.
 //
+// `type` links a UK entry to its qualification type in kit/curriculum/uk.js (QUAL_TYPES), where the awarding bodies and
+// individual specifications are: England's GCSE and AQA's GCSE Biology are the same qualification, seen from two sides.
+//
 // ISCED 2011 levels: 1 primary, 2 lower secondary, 3 upper secondary, 4 post-secondary non-tertiary, 5 short-cycle
 // tertiary, 6 bachelor's, 7 master's, 8 doctoral. "P" marks professional licensing, which sits outside ISCED.
 
@@ -18,25 +21,25 @@ const Q = (id, name, o = {}) => ({ id, name, kind: "school-leaving", ages: "", l
 export const WORLD = [
   { country: "United Kingdom", iso: "GB", systems: [
     { id: "gb-eng", name: "England", regulator: "Ofqual", qualifications: [
-      Q("gb-eng-gcse", "GCSE", { kind: "secondary", ages: "14–16", level: 2, body: "AQA, Pearson Edexcel, OCR, WJEC Eduqas (regulated by Ofqual)", url: "https://www.gov.uk/government/organisations/ofqual", gradify: SCHOOL, coverage: "gcse" }),
-      Q("gb-eng-alevel", "A level", { ages: "16–18", body: "AQA, Pearson Edexcel, OCR, WJEC Eduqas (regulated by Ofqual)", url: "https://www.gov.uk/government/organisations/ofqual", gradify: ["maths", ...SCI, "literature", "history", "computing", "psychology", "sociology", "business", "art", "music", "spanish"], coverage: "a-level" }),
+      Q("gb-eng-gcse", "GCSE", { type: "gcse", kind: "secondary", ages: "14–16", level: 2, body: "AQA, Pearson Edexcel, OCR, WJEC Eduqas (regulated by Ofqual)", url: "https://www.gov.uk/government/organisations/ofqual", gradify: SCHOOL, coverage: "gcse" }),
+      Q("gb-eng-alevel", "A level", { type: "a-level", ages: "16–18", body: "AQA, Pearson Edexcel, OCR, WJEC Eduqas (regulated by Ofqual)", url: "https://www.gov.uk/government/organisations/ofqual", gradify: ["maths", ...SCI, "literature", "history", "computing", "psychology", "sociology", "business", "art", "music", "spanish"], coverage: "a-level" }),
       Q("gb-eng-tlevel", "T Level", { ages: "16–19", body: "Institute for Apprenticeships and Technical Education; awarding organisations", url: "https://www.tlevels.gov.uk/", gradify: ["health", "engineering", "computing", "business", "teaching"] }),
       Q("gb-eng-btec", "BTEC Nationals", { ages: "16–19", body: "Pearson", gradify: ["business", "sport", "health", "engineering", "computing", "art"] }),
       Q("gb-eng-apprenticeship", "Apprenticeships (levels 2–7)", { kind: "vocational", ages: "16+", level: 4, body: "Employers and training providers, with end-point assessment", url: "https://www.gov.uk/apply-apprenticeship", gradify: ["careers", "professional", "engineering", "business"] }),
       Q("gb-eng-degree", "Bachelor's degree", { kind: "higher", ages: "18+", level: 6, body: "Universities (quality body: QAA)", url: "https://www.qaa.ac.uk/", gradify: ["university", "research", "law", "medicine", "nursing", "pharmacy", "dentistry", "veterinary", "psychology", "engineering", "computing", "business", "finance", ...SCI], coverage: "degree" }),
     ] },
     { id: "gb-wls", name: "Wales", regulator: "Qualifications Wales", qualifications: [
-      Q("gb-wls-gcse", "GCSE (Wales)", { kind: "secondary", ages: "14–16", level: 2, body: "WJEC (regulated by Qualifications Wales)", url: "https://qualifications.wales/", gradify: SCHOOL }),
-      Q("gb-wls-alevel", "A level (Wales)", { ages: "16–18", body: "WJEC (regulated by Qualifications Wales)", url: "https://qualifications.wales/", gradify: ["maths", ...SCI, "literature", "history", "psychology"] }),
+      Q("gb-wls-gcse", "GCSE (Wales)", { type: "gcse", kind: "secondary", ages: "14–16", level: 2, body: "WJEC (regulated by Qualifications Wales)", url: "https://qualifications.wales/", gradify: SCHOOL }),
+      Q("gb-wls-alevel", "A level (Wales)", { type: "a-level", ages: "16–18", body: "WJEC (regulated by Qualifications Wales)", url: "https://qualifications.wales/", gradify: ["maths", ...SCI, "literature", "history", "psychology"] }),
     ] },
     { id: "gb-sct", name: "Scotland", regulator: "SQA", qualifications: [
-      Q("gb-sct-n5", "National 5", { kind: "secondary", ages: "15–16", level: 3, body: "Scottish Qualifications Authority", url: "https://www.sqa.org.uk/", gradify: SCHOOL }),
-      Q("gb-sct-higher", "Higher", { ages: "16–17", body: "Scottish Qualifications Authority", url: "https://www.sqa.org.uk/", gradify: ["maths", ...SCI, "literature", "history", "psychology", "business"] }),
-      Q("gb-sct-ah", "Advanced Higher", { ages: "17–18", body: "Scottish Qualifications Authority", url: "https://www.sqa.org.uk/", gradify: ["maths", ...SCI] }),
+      Q("gb-sct-n5", "National 5", { type: "nat5", kind: "secondary", ages: "15–16", level: 3, body: "Scottish Qualifications Authority", url: "https://www.sqa.org.uk/", gradify: SCHOOL }),
+      Q("gb-sct-higher", "Higher", { type: "higher", ages: "16–17", body: "Scottish Qualifications Authority", url: "https://www.sqa.org.uk/", gradify: ["maths", ...SCI, "literature", "history", "psychology", "business"] }),
+      Q("gb-sct-ah", "Advanced Higher", { type: "adv-higher", ages: "17–18", body: "Scottish Qualifications Authority", url: "https://www.sqa.org.uk/", gradify: ["maths", ...SCI] }),
     ] },
     { id: "gb-nir", name: "Northern Ireland", regulator: "CCEA", qualifications: [
-      Q("gb-nir-gcse", "GCSE (Northern Ireland)", { kind: "secondary", ages: "14–16", level: 2, body: "CCEA", url: "https://ccea.org.uk/", gradify: SCHOOL }),
-      Q("gb-nir-alevel", "A level (Northern Ireland)", { ages: "16–18", body: "CCEA", url: "https://ccea.org.uk/", gradify: ["maths", ...SCI, "literature", "history"] }),
+      Q("gb-nir-gcse", "GCSE (Northern Ireland)", { type: "gcse", kind: "secondary", ages: "14–16", level: 2, body: "CCEA", url: "https://ccea.org.uk/", gradify: SCHOOL }),
+      Q("gb-nir-alevel", "A level (Northern Ireland)", { type: "a-level", ages: "16–18", body: "CCEA", url: "https://ccea.org.uk/", gradify: ["maths", ...SCI, "literature", "history"] }),
     ] },
     { id: "gb-prof", name: "Professional (UK-wide)", qualifications: [
       Q("gb-sqe", "Solicitors Qualifying Examination (SQE)", { kind: "professional", ages: "Graduate", level: "P", body: "Solicitors Regulation Authority", url: "https://www.sra.org.uk/", gradify: ["law"], coverage: "sqe" }),
