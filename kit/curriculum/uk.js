@@ -41,15 +41,26 @@ export const QUAL_TYPES = {
   "adv-higher": { name: "Advanced Higher", nations: ["sco"] },
 };
 
-const spec = (o) => ({ subject: "biology", confirmed: false, statements: "not-imported", ...o });
+// status: what kind of requirement the specification's statements are (kit/curriculum/requirements, REQ_STATUSES in
+// scripts/curriculum/engine.mjs): an awarding body's specification content is "official"; a national curriculum's
+// programmes of study would be "statutory". applies: the period the specification is in use, from its first teaching
+// to its last (null: no end announced).
+const spec = (o) => ({ subject: "biology", confirmed: false, statements: "not-imported", status: "official", ...o });
 /** Biology first: every specification a UK biology student might sit. */
 export const SPECS = [
   // England, GCSE
   // Confirmed 2026-11-24 against aqa.org.uk: the specification page lists version 1.0 (21 April 2016) and this file,
   // whose SHA-1 matches the one AQA's page publishes for it. Statements imported; mapping proposed, not reviewed.
   spec({ id: "aqa-gcse-biology", body: "aqa", qual: "gcse", title: "AQA GCSE Biology", code: "8461", firstTeaching: 2016, firstExams: 2018,
-    confirmed: true, version: "1.0", source: "https://www.aqa.org.uk/subjects/biology/gcse/biology-8461/specification", checkedOn: "2026-11-24", statements: "imported",
+    confirmed: true, version: "1.0", source: "https://www.aqa.org.uk/subjects/biology/gcse/biology-8461/specification", checkedOn: "2026-11-24", statements: "imported", applies: { from: "2016", to: null },
     document: { url: "https://filestore.aqa.org.uk/resources/biology/specifications/AQA-8461-SP-2016.PDF", sha1: "510eb7c76df13be23292df4392de95eb32b0d30f", version: "1.0", versionDate: "2016-04-21", pages: 92, checkedOn: "2026-11-24" } }),
+  // Chemistry: added as a registry row only, to show a second subject needs no engine code (Master Plan, M1 test).
+  // Checked 2026-11-25 against the PDF on AQA's file host: its cover and footers give "AQA GCSE Chemistry 8462 …
+  // Version 1.1 04 October 2019", first teaching 2016, exams from June 2018. AQA's specification page itself wasn't
+  // reachable from the engine's environment, so its published SHA-1 hasn't been compared: this one is the file's own.
+  spec({ id: "aqa-gcse-chemistry", subject: "chemistry", body: "aqa", qual: "gcse", title: "AQA GCSE Chemistry", code: "8462", firstTeaching: 2016, firstExams: 2018,
+    confirmed: true, version: "1.1", source: "https://filestore.aqa.org.uk/resources/chemistry/specifications/AQA-8462-SP-2016.PDF", checkedOn: "2026-11-25", statements: "imported", applies: { from: "2016", to: null },
+    document: { url: "https://filestore.aqa.org.uk/resources/chemistry/specifications/AQA-8462-SP-2016.PDF", sha1: "9e1579c8cdada254bf7726b794379cf4c1a56036", version: "1.1", versionDate: "2019-10-04", pages: 112, checkedOn: "2026-11-25" } }),
   spec({ id: "aqa-gcse-combined-trilogy", body: "aqa", qual: "gcse-combined", title: "AQA GCSE Combined Science: Trilogy (biology content)", code: "8464", firstTeaching: 2016, part: "biology" }),
   spec({ id: "pearson-gcse-biology", body: "pearson", qual: "gcse", title: "Pearson Edexcel GCSE Biology", code: "1BI0", firstTeaching: 2016 }),
   spec({ id: "pearson-gcse-combined", body: "pearson", qual: "gcse-combined", title: "Pearson Edexcel GCSE Combined Science (biology content)", code: "1SC0", firstTeaching: 2016, part: "biology" }),

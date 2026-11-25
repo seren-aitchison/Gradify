@@ -226,14 +226,42 @@ test("sub-requirements: a REQ may name a part, which counts towards its requirem
 });
 
 test("licence gate: a brief's non-fact lines can't rest only on noncommercial or unknown sources", async () => {
-  const { checkBrief } = await import("../scripts/content/loop.mjs");
+  const { checkBrief, licenceProblems } = await import("../scripts/content/loop.mjs");
+  const { parseBrief } = await import("../scripts/content/shorthand.mjs");
   assert.deepEqual(checkBrief(BRIEF).problems, []);
-  const nc = BRIEF.replace(/licence=facts/g, "licence=noncommercial");
-  assert.ok(checkBrief(nc).problems.some((p) => /definitions and misconceptions/.test(p)));
-  const exam = BRIEF.replace("END", "EXAM: credit for naming the single loop of DNA | s1").replace("SRC: s1 | Open biology text | https://openstax.org/books/biology-2e | OpenStax | licence=facts", "SRC: s1 | Open biology text | https://openstax.org/books/biology-2e | OpenStax | licence=unknown") + "\nEND";
-  assert.ok(checkBrief(exam).problems.some((p) => /EXAM .* rests only/.test(p)));
-  // facts may rest on any source
-  assert.deepEqual(checkBrief(BRIEF.replace("SRC: s1 | Open biology text | https://openstax.org/books/biology-2e | OpenStax | licence=facts", "SRC: s1 | Open biology text | https://openstax.org/books/biology-2e | OpenStax | licence=unknown")).problems, []);
+  // the gate itself, on licence classes as given
+  const nc = parseBrief(BRIEF.replace(/licence=facts/g, "licence=noncommercial"));
+  assert.ok(licenceProblems(nc).some((p) => /definitions and misconceptions/.test(p)));
+  const exam = parseBrief(BRIEF.replace("END", "EXAM: credit for naming the single loop of DNA | s1\nEND").replace(/s1 \| Open biology text \| (\S+) \| OpenStax \| licence=facts/, "s1 | Open biology text | $1 | OpenStax | licence=unknown"));
+  assert.ok(licenceProblems(exam).some((p) => /EXAM .* rests only/.test(p)));
+});
+
+test("source allowlist: briefs cite only listed publications, whose class the registry sets; adapt needs a named person", async () => {
+  const { checkBrief, researchRequest } = await import("../scripts/content/loop.mjs");
+  const { SOURCES, checkSources, sourceFor, classOf } = await import("../kit/curriculum/sources.js");
+  assert.deepEqual(checkSources(), []);
+  // prefixes match whole path segments: the retired first edition is its own row
+  assert.equal(sourceFor("https://openstax.org/books/biology-2e/pages/4-1")?.id, "openstax-biology-2e");
+  assert.equal(sourceFor("https://openstax.org/books/biology/pages/4-1")?.id, "openstax-biology");
+  assert.equal(sourceFor("https://example.com/biology"), null);
+  // the Researcher's label changes nothing: an unconfirmed CC BY row is still facts-only
+  const by = SOURCES.find((x) => x.id === "openstax-biology");
+  assert.equal(by.use, "adapt"); assert.equal(classOf(by), "facts");
+  // the owner's hold keeps the first editions facts-only even once confirmed; without a hold, a confirmed row adapts
+  assert.ok(by.hold); assert.equal(classOf({ ...by, confirmedBy: "A Person", confirmedOn: "2026-11-25" }), "facts");
+  assert.equal(classOf({ ...by, hold: undefined, confirmedBy: "A Person", confirmedOn: "2026-11-25" }), "adapt");
+  const claimed = checkBrief(BRIEF.replace(/licence=facts/g, "licence=adapt"));
+  assert.deepEqual(claimed.problems, []); assert.ok(claimed.parsed.sources.every((x) => x.licence === "facts"));
+  // an unlisted source refuses the brief
+  const off = checkBrief(BRIEF.replace("https://www.bbc.co.uk/bitesize/x", "https://example.com/cells"));
+  assert.ok(off.problems.some((p) => /isn't on the source allowlist/.test(p)));
+  // independence is by publisher: three different sites, but two of them AQA's, are two publishers
+  const two = checkBrief(BRIEF.replace("https://www.bbc.co.uk/bitesize/x", "https://filestore.aqa.org.uk/x").replace("https://www.ncbi.nlm.nih.gov/books/x", "https://www.aqa.org.uk/x"));
+  assert.ok(two.problems.some((p) => /2 publishers/.test(p)));
+  // the research request lists what may be cited; a row marked none isn't offered
+  assert.match(researchRequest(TOPIC), /^ALLOW openstax-biology-2e \| .* \| licence=facts$/m);
+  assert.ok(checkSources([{ ...by, id: "x", confirmedBy: "A" }]).some((p) => /confirmation needs/.test(p)));
+  assert.ok(checkSources([{ ...by, id: "y", commercial: false }]).some((p) => /adapt needs a licence/.test(p)));
 });
 
 test("filing merges by lesson title: rechecking one lesson keeps the others, and the repaired title is recorded", async () => {
@@ -394,4 +422,130 @@ test("publish: titles differing only in case share an identity, and one TIER lab
   assert.ok(r.skipped.some((x) => /prokaryotic CELLS .*already published a lesson with this title/.test(x)), "a case-only variant gets no new id");
   const notes = readFileSync(join(process.env.GRADIFY_OUT, "kit/courses/biology/notes/u15.js"), "utf8");
   for (const lesson of notes.split(/\n(?=## )/).filter((x) => x.startsWith("## "))) assert.equal((lesson.match(/^TIER:/gm) || []).length, 1);
+});
+
+test("review fixes after #208 merged: mapping replies, publish wiring and duplicates, verified links, spend", async () => {
+  const { writeFileSync, mkdirSync, cpSync } = await import("node:fs");
+  const { applyMapping, mapCandidates, loadMapping } = await import("../scripts/content/agent.mjs");
+  const { loadIndex, applyReview } = await import("../scripts/curriculum/engine.mjs");
+  const fw = "aqa-gcse-biology", hash = new Map(loadIndex(fw).statements.map((x) => [x.ref, x.hash]));
+  // a mapping reply is stored only against the statement text it was asked about
+  const [, , c, d] = mapCandidates(fw).map((x) => x.ref), dir = join(process.env.GRADIFY_OUT, `content/queue/biology/_map-${fw}`);
+  mkdirSync(dir, { recursive: true });
+  writeFileSync(join(dir, "map.req.txt"), `MAPREQ ${fw}:${c} #${hash.get(c)} | x\nMAPREQ ${fw}:${d} #0000stale0000000 | x\nEND\n`);
+  writeFileSync(join(dir, "map.out.txt"), `MAP ${fw}:${c} NO not taught\nMAP ${fw}:${d} NO not taught\nEND\n`);
+  const res = await applyMapping("biology"), M = loadMapping(fw);
+  assert.equal(M.confirmed[c]?.hash, hash.get(c), "a current reply is recorded with its hash");
+  assert.ok(!M.confirmed[d] && res.some((x) => x.includes(d) && /dropped/.test(x)), "a reply about changed text is dropped and asked again");
+  assert.ok(mapCandidates(fw).some((x) => x.ref === d));
+  // a course file that imports published.js without its hook is refused, not accepted as wired
+  const { installHooks, publish } = await import("../scripts/content/publish.mjs");
+  const cdir = join(process.env.GRADIFY_OUT, "kit/courses/halfwired");
+  mkdirSync(cdir, { recursive: true });
+  for (const f of ["syllabus.js", "ids.js", "qa.js", "course.js"]) cpSync(new URL(`../kit/courses/biology/${f}`, import.meta.url), join(cdir, f));
+  writeFileSync(join(cdir, "syllabus.js"), readFileSync(join(cdir, "syllabus.js"), "utf8").replace(/export const UNITS = parseSyllabus\(PUBLISHED[^\n]+/, "export const UNITS = parseSyllabus(SYLLABUS, IDS, RETIRED);"));
+  assert.throws(() => installHooks("halfwired"), /without its hook/);
+  // two lessons in one topic whose titles share a key: the second is skipped, not written over the first
+  const ledPath = join(process.env.GRADIFY_OUT, "content/ledger/biology.json"), led = JSON.parse(readFileSync(ledPath, "utf8"));
+  const { fp } = await import("../scripts/content/lib.mjs");
+  const one = LESSON("3 × 4 = 12").replace("## Prokaryotic cells", "## Cell division"), two = LESSON("3 × 4 = 12").replace("## Prokaryotic cells", "## Cell-division");
+  writeFileSync(join(process.env.GRADIFY_OUT, "content/drafts/biology/aqa-gcse-biology/test-dupe.txt"), `# draft\n\n${one}\n\n${two}\n`);
+  led.topics["biology/test-dupe"] = { file: "content/drafts/biology/aqa-gcse-biology/test-dupe.txt", title: "Test dupe", status: "filed", lessons: [{ title: "Cell division", tier: "ai-verified", hash: fp(one), reqs: [REQ.id] }, { title: "Cell-division", tier: "ai-verified", hash: fp(two), reqs: [REQ.id] }] };
+  writeFileSync(ledPath, JSON.stringify(led));
+  const r = await publish("biology");
+  assert.equal(r.added.filter((x) => /Cell.division/.test(x)).length, 1);
+  assert.ok(r.skipped.some((x) => /Cell-division .*same title/.test(x)));
+  // a reviewed mapping link records the statement it was reviewed on
+  const st = { spec: fw, version: "1", statements: [{ ref: "1.a", text: "Cells divide by mitosis." }] };
+  const rv = applyReview(st, { spec: fw, specVersion: "1", links: {} }, [{ ref: "1.a", decision: "missing", reviewer: "A Reviewer", reviewed_on: "2026-11-25", note: "not taught" }], new Set());
+  assert.match(rv.map.links["1.a"]?.hash || "", /^[0-9a-f]{16}$/);
+  // the workflow counts each run record once, even when the publish job is rerun
+  assert.match(readFileSync(new URL("../.github/workflows/content.yml", import.meta.url), "utf8"), /!counted\.has\(f\)/);
+});
+
+test("requirement records: status, type, version, publication date and period; the queue refuses an index without them", async () => {
+  const { checkIndex, loadIndex, REQ_TYPES } = await import("../scripts/curriculum/engine.mjs");
+  const idx = loadIndex("aqa-gcse-biology");
+  assert.deepEqual(checkIndex(idx), []);
+  assert.equal(idx.published, "2016-04-21"); assert.deepEqual(idx.applies, { from: "2016", to: null });
+  assert.ok(idx.statements.every((x) => x.status === "official" && REQ_TYPES.includes(x.type)));
+  assert.equal(idx.statements.filter((x) => x.type === "practical").length, 10);
+  const r = topicsFor("aqa-gcse-biology")[0].reqs[0];
+  assert.equal(r.status, "official"); assert.equal(r.reqType, "spec-bullet"); assert.deepEqual(r.spec, { version: "1.0", published: "2016-04-21" });
+  assert.ok(checkIndex({ ...idx, applies: undefined }).some((p) => /applicable period/.test(p)));
+  assert.ok(checkIndex({ ...idx, statements: [{ ...idx.statements[0], status: "compulsory" }] }).some((p) => /valid status and type/.test(p)));
+});
+
+test("PRE: lines must name a course lesson, a lesson in the unit, or a registered requirement", async () => {
+  const { prereqResolver } = await import("../scripts/content/loop.mjs");
+  const ok = prereqResolver("biology", ["Cells in this unit"]);
+  assert.ok(ok("Eukaryotic cells")); assert.ok(ok("eukaryotic CELLS")); assert.ok(ok("Cells in this unit"));
+  assert.ok(ok("aqa-gcse-biology:4.1.1.1.a")); assert.ok(ok("aqa-gcse-biology:4.1.1.1.a.ii"));
+  assert.ok(!ok("A lesson nobody wrote")); assert.ok(!ok("aqa-gcse-biology:9.9.9"));
+  const withPre = LESSON("3 × 4 = 12").replace("REQ:", "PRE: A lesson nobody wrote\nREQ:");
+  const g = await G.runGates(withPre, { reqs: [REQ], allowed: new Set([REQ.id]), prereq: ok });
+  assert.equal(g.failed?.gate, "coverage"); assert.ok(g.failed.issues.some((i) => i.code === "PRE"));
+});
+
+test("build records: a changed model, prompt or template requeues only the lessons that used it; a rebuild supersedes them", async () => {
+  const { writeFileSync } = await import("node:fs");
+  const { staleness, buildRecord, currentModels, templateOf, promptHashes } = await import("../scripts/content/build.mjs");
+  const { rebuildReqs, staleLessons } = await import("../scripts/content/queue.mjs");
+  const { fileTopic, lessonState } = await import("../scripts/content/loop.mjs");
+  const brief = { key: (await import("../scripts/content/build.mjs")).briefKey(TOPIC), brief: BRIEF };
+  const fresh = buildRecord(TOPIC, brief, { reqs: [`${REQ.id}@${REQ.hash}`] });
+  assert.deepEqual(Object.keys(fresh.prompts).sort(), ["review.md", "shorthand.md", "writer.md"]);
+  assert.deepEqual(fresh.models, currentModels()); assert.equal(fresh.template.fp, templateOf(TOPIC.level).fp);
+  const lesson = (built, o = {}) => ({ title: "A", reqs: [REQ.id], tier: "ai-verified", built, ...o });
+  assert.deepEqual(staleness(lesson(fresh), TOPIC), []);
+  assert.deepEqual(staleness(lesson({ ...fresh, models: { ...fresh.models, write: "old-model" } }), TOPIC), ["write model"]);
+  assert.deepEqual(staleness(lesson({ ...fresh, prompts: { ...promptHashes(), "writer.md": "x" } }), TOPIC), ["prompt writer.md"]);
+  assert.deepEqual(staleness(lesson({ ...fresh, template: { level: "gcse", fp: "x" } }), TOPIC), ["template"]);
+  assert.deepEqual(staleness(lesson({ ...fresh, brief: "old" }), TOPIC), ["brief"]);
+  assert.deepEqual(staleness(lesson({ ...fresh, models: { write: "old" } }, { superseded: "2026-11-25" }), TOPIC), [], "a superseded lesson isn't rebuilt again");
+  // only the stale lesson's requirements go back; the other lesson's don't
+  const other = { ...REQ, id: "aqa-gcse-biology:4.1.1.1.c", ref: "4.1.1.1.c", hash: "h2" }, t2 = { ...TOPIC, reqs: [REQ, other] };
+  const fresh2 = buildRecord(t2, { ...brief, key: (await import("../scripts/content/build.mjs")).briefKey(t2) });
+  const e = { lessons: [lesson({ ...fresh2, models: { write: "old" } }), lesson(fresh2, { title: "B", reqs: [other.id] })] };
+  assert.deepEqual(rebuildReqs(t2, e), [REQ.id]); assert.equal(staleLessons(t2, e).length, 1);
+  assert.deepEqual(rebuildReqs(t2, { ...e, rebuildKey: (await import("../scripts/content/build.mjs")).targetKey(t2), rebuilds: 3 }), [], "a target that failed `repairs` times isn't retried");
+  // filing a rebuild: the new lesson supersedes the old one, which drops out of the rebuild list
+  const ledPath = join(process.env.GRADIFY_OUT, "content/ledger/biology.json"), led = JSON.parse(readFileSync(ledPath, "utf8"));
+  const tid = "biology/test-rebuild", T = { ...TOPIC, id: tid, title: "Test rebuild" };
+  led.topics[tid] = { runs: 1, reqHash: `${REQ.id}:${REQ.hash}`, status: "filed", lessons: [lesson({ ...fresh, models: { write: "old" } }, { title: "Old title" })] };
+  writeFileSync(ledPath, JSON.stringify(led));
+  const text = LESSON("3 × 4 = 12"), s = { ...lessonState({ title: "Prokaryotic cells", text }, 0), done: true, lesson: parseNotes(text)[0] };
+  fileTopic({ ...T, rebuild: [REQ.id], full: T }, [s], { brief: { ...brief, parsed: S.parseBrief(BRIEF), cached: true } });
+  const after = JSON.parse(readFileSync(ledPath, "utf8")).topics[tid];
+  assert.ok(after.lessons.find((l) => l.title === "Old title").superseded);
+  assert.deepEqual(rebuildReqs(T, after), []);
+});
+
+test("status ladder: frameworks by country, requirements by the highest rung reached", async () => {
+  const { ladder, LADDER } = await import("../scripts/content/report.mjs");
+  const L = ladder(), uk = L.frameworks.find((c) => c.country === "United Kingdom");
+  assert.equal(uk.subjects.find((x) => x.subject === "biology").stage, "spec imported");
+  assert.equal(uk.subjects.find((x) => x.subject === "maths").stage, "not researched", "unknown stays unknown");
+  assert.ok(L.frameworks.filter((c) => c.country !== "United Kingdom").every((c) => c.subjects.every((x) => x.stage === "not researched")));
+  const c = L.requirements["aqa-gcse-biology"];
+  assert.deepEqual(Object.keys(c), LADDER.slice(2));
+  assert.equal(Object.values(c).reduce((a, n) => a + n, 0), 475, "every statement sits on exactly one rung");
+  assert.ok(c.mapped >= 1, "confirmed matches count as mapped");
+  // earlier tests edit a filed lesson after it was checked: its requirement needs update, which outranks published
+  assert.ok(c["needs update"] >= 1);
+});
+
+test("a second subject from registry rows: AQA GCSE Chemistry queues with the same engine", async () => {
+  const { checkRegistry, SPECS } = await import("../kit/curriculum/uk.js");
+  const { checkIndex, loadIndex } = await import("../scripts/curriculum/engine.mjs");
+  const { subjectsInRun } = await import("../scripts/content/queue.mjs");
+  assert.deepEqual(checkRegistry(), []);
+  assert.equal(SPECS.find((s) => s.id === "aqa-gcse-chemistry").subject, "chemistry");
+  const idx = loadIndex("aqa-gcse-chemistry");
+  assert.deepEqual(checkIndex(idx), []);
+  assert.equal(idx.statements.filter((x) => x.type === "practical").length, 8, "AQA's eight required practicals");
+  assert.deepEqual([...new Set(idx.statements.map((x) => x.ref.split(".").slice(0, 2).join(".")))], ["4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7", "4.8", "4.9", "4.10"], "4.11 Key ideas isn't assessed");
+  assert.ok(subjectsInRun().includes("chemistry"));
+  const t = topicsFor("aqa-gcse-chemistry");
+  assert.ok(t.length > 50 && t.every((x) => x.subject === "chemistry" && x.level === "GCSE" && x.reqs.every((r) => r.status === "official")));
 });

@@ -4,8 +4,57 @@ import { readdirSync, existsSync, readFileSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 import { CONFIG, at, out, load, save, today, fp, loadLedger, saveLedger } from "./lib.mjs";
 import { splitUnit } from "./shorthand.mjs";
-import { topicsFor, frameworksFor, subjectsInRun, nextTopics } from "./queue.mjs";
-import { mapCandidates } from "./agent.mjs";
+import { topicsFor, frameworksFor, subjectsInRun, nextTopics, staleLessons } from "./queue.mjs";
+import { mapCandidates, loadMapping } from "./agent.mjs";
+import { SPECS } from "../../kit/curriculum/uk.js";
+import { loadIndex, loadMap } from "../curriculum/engine.mjs";
+import { parentOf } from "./shorthand.mjs";
+
+// ---------- the status ladder (Master Plan, decision F) ----------
+/** the rungs, lowest first. Frameworks: not researched → framework found → spec imported. Each requirement of an
+ * imported specification then sits on the highest rung any of its lessons reached; "needs update" outranks the rest,
+ * since it is work to do: a lesson built from inputs that changed, or edited since it was checked. */
+export const LADDER = ["not researched", "framework found", "spec imported", "mapped", "drafted", "gates passed", "AI-verified", "expert-required", "expert-approved", "published", "needs update"];
+export const COUNTRIES = [["uk", "United Kingdom"], ["us", "United States"], ["ca", "Canada"], ["au", "Australia"], ["nz", "New Zealand"]];
+const TIER_RUNG = { "gates-passed": "gates passed", "ai-verified": "AI-verified", "expert-required": "expert-required", "expert-approved": "expert-approved" };
+/**
+ * Frameworks by country and wave-1 subject, from the registry (kit/curriculum/uk.js; the other countries have no
+ * registry yet, so everything there is "not researched"), and requirements by rung for each imported specification.
+ * Unknown stays unknown: a subject with no registry row is counted as not researched, never as covered.
+ */
+export function ladder() {
+  const subjects = CONFIG.waves[0].subjects;
+  const frameworks = COUNTRIES.map(([iso, name]) => {
+    const rows = iso === "uk" ? SPECS : [];
+    const per = subjects.map((sub) => { const r = rows.filter((s) => s.subject === sub); return { subject: sub, stage: !r.length ? "not researched" : r.some((s) => s.statements === "imported") ? "spec imported" : "framework found", found: r.length, imported: r.filter((s) => s.statements === "imported").length }; });
+    return { country: name, subjects: per };
+  });
+  const requirements = {};
+  for (const s of SPECS.filter((x) => x.statements === "imported")) {
+    const idx = loadIndex(s.id); if (!idx) continue;
+    const rung = new Map(idx.statements.map((x) => [x.ref, "spec imported"])), set = (ref, r) => { if (rung.has(ref) && LADDER.indexOf(r) > LADDER.indexOf(rung.get(ref))) rung.set(ref, r); };
+    const ids = new Set(idx.statements.map((x) => `${s.id}:${x.ref}`)), refOf = (id) => parentOf(id, ids)?.slice(s.id.length + 1);
+    // mapped: an existing course lesson teaches it (confirmed in a session, or reviewed by a person)
+    const map = loadMap(s.id) || { links: {} }, conf = loadMapping(s.id).confirmed, hash = new Map(idx.statements.map((x) => [x.ref, x.hash]));
+    for (const [ref, c] of Object.entries(conf)) if (c.ok && (!c.hash || c.hash === hash.get(ref))) set(ref, "mapped");
+    for (const [ref, l] of Object.entries(map.links)) if (l.status === "verified" && l.hash === hash.get(ref) && (l.lessons || []).length) set(ref, "mapped");
+    // drafted: a topic in flight has the Writer's lessons
+    const q = out(`content/queue/${s.subject}/`);
+    if (existsSync(q)) for (const d of readdirSync(q)) { const st = load(new URL(`${d}/state.json`, q)); if (st?.lessons?.length) for (const t of topicsFor(s.id)) if (t.id === st.topic) for (const r of t.reqs) set(r.ref, "drafted"); }
+    // filed lessons, by tier; published (in the course's published unit); needs update
+    const led = loadLedger(s.subject), pub = (() => { const f = out(`kit/courses/${s.subject}/published.js`); return existsSync(f) ? JSON.parse(readFileSync(f, "utf8").match(/PUBLISHED = (\{[\s\S]*\});/)?.[1] || "{}") : {}; })();
+    const topics = new Map(topicsFor(s.id).map((t) => [t.id, t]));
+    for (const [tid, e] of Object.entries(led.topics)) {
+      if (e.fw && e.fw !== s.id) continue;
+      const stale = new Set(topics.has(tid) ? staleLessons(topics.get(tid), e).map((x) => x.l) : []);
+      for (const l of e.lessons || []) for (const id of l.reqs || []) { const ref = refOf(id); if (!ref) continue; if (TIER_RUNG[l.tier]) set(ref, TIER_RUNG[l.tier]); }
+      for (const l of e.lessons || []) if (l.tier === "unchecked" || stale.has(l)) for (const id of l.reqs || []) { const ref = refOf(id); if (ref) set(ref, "needs update"); }
+    }
+    for (const m of Object.values(pub.lessons || {})) for (const id of m.reqs || []) { const ref = refOf(id); if (ref && rung.get(ref) !== "needs update") set(ref, "published"); }
+    requirements[s.id] = Object.fromEntries(LADDER.slice(2).map((r) => [r, [...rung.values()].filter((x) => x === r).length]));
+  }
+  return { frameworks, requirements };
+}
 
 const git = (...a) => { try { return execFileSync("git", a, { cwd: at("./").pathname, encoding: "utf8" }).trim(); } catch { return null; } };
 const ledgers = () => { const d = out("content/ledger/"); return existsSync(d) ? readdirSync(d).filter((f) => f.endsWith(".json")).map((f) => load(new URL(f, d))) : []; };
@@ -51,7 +100,7 @@ export function status() {
       mappingPending: frameworksFor(subject).reduce((a, fw) => { try { return a + mapCandidates(fw).length; } catch { return a; } }, 0),
     };
   });
-  return { generated: today(), branch: git("rev-parse", "--abbrev-ref", "HEAD"), commit: git("rev-parse", "--short", "HEAD"), dirty: !!git("status", "--porcelain"), briefs: count("content/research/", ".txt"), drafts: count("content/drafts/", ".txt"), mode: CONFIG.mode, budgetUsd: CONFIG.budgetUsd, subjects, approvals: { merge: "owner only", deploy: "owner only", publish: "owner only (merging the rolling PR approves AI-verified drafts; expert-required ones wait for a named reviewer)" } };
+  return { generated: today(), ladder: ladder(), branch: git("rev-parse", "--abbrev-ref", "HEAD"), commit: git("rev-parse", "--short", "HEAD"), dirty: !!git("status", "--porcelain"), briefs: count("content/research/", ".txt"), drafts: count("content/drafts/", ".txt"), mode: CONFIG.mode, budgetUsd: CONFIG.budgetUsd, subjects, approvals: { merge: "owner only", deploy: "owner only", publish: "owner only (merging the rolling PR approves AI-verified drafts; expert-required ones wait for a named reviewer)" } };
 }
 
 /** STATUS.json, NEXT_TASK.json and HANDOVER.md, all generated from status() */
@@ -62,7 +111,7 @@ export function writeHandover(s = status()) {
     ? { task: "run the content loop in agent mode", command: `node scripts/gradify.mjs work ${next.subject}`, topic: next.next || `${next.mappingPending} strong matches to confirm (mapping)`, by: "a Claude Code session (the hourly scheduled one, or any you open): follow what gradify work prints; a person only merges the rolling PR",
       acceptance: "lessons pass every gate and the review; failures are listed in the PR" }
     : { task: "run the content loop", command: `node scripts/gradify.mjs run --subject ${next.subject}`, topic: next.next, by: "the Content engine workflow (.github/workflows/content.yml); a person only merges the rolling PR", acceptance: "lessons pass every gate and the review; failures are listed in the PR" } : { task: "nothing queued", note: "add a framework to scripts/content/config.json (frameworks) and its registry row" });
-  save(out("knowledge-engine/CORE/HANDOVER.md"), `# Handover (generated by \`gradify status --write\`, ${s.generated})\n\nBranch \`${s.branch}\` at \`${s.commit}\`${s.dirty ? " (uncommitted changes)" : ""}. Read START-HERE.md and RULES.md, then only the files the task names.\n\n| Subject | To write (topics / requirements) | Filed | Partial | Failed | Blocked | Lessons | AI-verified | Expert required | Disagreements | Mapping to confirm | Next topic |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n${s.subjects.map((x) => `| ${x.subject} | ${x.topicsToWrite} / ${x.requirementsToWrite} | ${x.topics.filed + x.topics["filed-with-gaps"]} | ${x.topics.partial} | ${x.topics.failed} | ${x.topics.blocked} | ${x.lessons.total} | ${x.lessons.aiVerified} | ${x.lessons.expertRequired} | ${x.lessons.disagreements} | ${x.mappingPending || 0} | ${x.next || "-"} |`).join("\n")}\n\n${s.briefs} research briefs, ${s.drafts} draft unit files. Mode ${s.mode}, budget $${s.budgetUsd} a run. Nothing is merged, deployed or published without the owner.\n`);
+  save(out("knowledge-engine/CORE/HANDOVER.md"), `# Handover (generated by \`gradify status --write\`, ${s.generated})\n\nBranch \`${s.branch}\` at \`${s.commit}\`${s.dirty ? " (uncommitted changes)" : ""}. Read START-HERE.md and RULES.md, then only the files the task names.\n\n| Subject | To write (topics / requirements) | Filed | Partial | Failed | Blocked | Lessons | AI-verified | Expert required | Disagreements | Mapping to confirm | Next topic |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n${s.subjects.map((x) => `| ${x.subject} | ${x.topicsToWrite} / ${x.requirementsToWrite} | ${x.topics.filed + x.topics["filed-with-gaps"]} | ${x.topics.partial} | ${x.topics.failed} | ${x.topics.blocked} | ${x.lessons.total} | ${x.lessons.aiVerified} | ${x.lessons.expertRequired} | ${x.lessons.disagreements} | ${x.mappingPending || 0} | ${x.next || "-"} |`).join("\n")}\n\n${s.briefs} research briefs, ${s.drafts} draft unit files. Mode ${s.mode}, budget $${s.budgetUsd} a run. Nothing is merged, deployed or published without the owner.\n\n## Status ladder\n\nRequirements of each imported specification, by the highest rung reached (\`gradify status\` → ladder):\n\n| Framework | ${LADDER.slice(2).join(" | ")} |\n|---|${LADDER.slice(2).map(() => "---").join("|")}|\n${Object.entries(s.ladder?.requirements || {}).map(([fw, c]) => `| ${fw} | ${LADDER.slice(2).map((r) => c[r]).join(" | ")} |`).join("\n")}\n\nFrameworks by country (wave 1 subjects): ${(s.ladder?.frameworks || []).map((c) => `${c.country}: ${c.subjects.filter((x) => x.stage !== "not researched").map((x) => `${x.subject} ${x.stage} (${x.found} found, ${x.imported} imported)`).join(", ") || "not researched"}`).join("; ")}. Everything not listed is not researched.\n`);
 }
 
 /**

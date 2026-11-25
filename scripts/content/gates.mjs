@@ -42,8 +42,10 @@ export function parseGate(text) {
 }
 
 // ---------- 2. every REQ has an objective and a question ----------
-export function coverageGate(L, text, { allowed = null } = {}) {
+export function coverageGate(L, text, { allowed = null, prereq = null } = {}) {
   const issues = [], qs = [...L.mcq.map((m) => m.Q), ...L.tasks];
+  // a prerequisite must name something real: a lesson in the course (or in this unit) or a requirement in the registry
+  if (prereq) for (const p of L.prereq) if (!prereq(p)) issues.push(issue("PRE", lineOf(text, new RegExp(`^PRE:\\s*${p.slice(0, 20).replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}`)) || 2, `PRE: "${p.slice(0, 60)}" names no lesson in the course or this unit, and no requirement in the registry`));
   const asked = new Set(qs.flatMap((q) => q.objectives || []));
   for (const r of L.reqs) {
     const at = lineOf(text, new RegExp(`^REQ:\\s*${esc(r.id)}`));
@@ -165,10 +167,10 @@ export async function mathsDiagramGate(L, text, { render = null, legible = null 
 }
 
 /** all deterministic gates in order, stopping at the first failure */
-export async function runGates(text, { reqs = [], allowed = null, render = null, legible = null } = {}) {
+export async function runGates(text, { reqs = [], allowed = null, render = null, legible = null, prereq = null } = {}) {
   const p = parseGate(text); if (!p.ok) return { ok: false, failed: p, results: [p] };
   const L = p.lesson, results = [p];
-  for (const g of [() => coverageGate(L, text, { allowed }), () => qaGate(L, text), () => specGate(L, text, reqs), () => mathsDiagramGate(L, text, { render, legible })]) {
+  for (const g of [() => coverageGate(L, text, { allowed, prereq }), () => qaGate(L, text), () => specGate(L, text, reqs), () => mathsDiagramGate(L, text, { render, legible })]) {
     const r = await g(); results.push(r); if (!r.ok) return { ok: false, failed: r, results, lesson: L };
   }
   return { ok: true, results, lesson: L };

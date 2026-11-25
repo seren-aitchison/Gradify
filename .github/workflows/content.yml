@@ -162,10 +162,14 @@ jobs:
           rm -rf _runs
           node --input-type=module -e "
             import { readdirSync, readFileSync, writeFileSync, existsSync } from 'node:fs';
-            // only this workflow run's records: earlier runs' spend is already in content/spend.json
-            const runs = existsSync('content/runs') ? readdirSync('content/runs').filter((f) => f.includes('-${{ github.run_id }}') && f.endsWith('.json')).map((f) => JSON.parse(readFileSync('content/runs/' + f, 'utf8'))) : [];
+            // only this workflow run's records, each counted once: a rerun of this job keeps the run id, so
+            // content/spend.json lists the record files it has already counted
             const s = existsSync('content/spend.json') ? JSON.parse(readFileSync('content/spend.json', 'utf8')) : { usd: 0, runs: [] };
-            const usd = runs.reduce((a, r) => a + (r.spend?.usd || 0), 0); s.usd = +(s.usd + usd).toFixed(4); s.runs.push({ run: '${{ github.run_id }}', usd: +usd.toFixed(4) });
+            const counted = new Set(s.counted || []);
+            const files = existsSync('content/runs') ? readdirSync('content/runs').filter((f) => f.includes('-${{ github.run_id }}') && f.endsWith('.json') && !counted.has(f)) : [];
+            const usd = files.reduce((a, f) => a + (JSON.parse(readFileSync('content/runs/' + f, 'utf8')).spend?.usd || 0), 0);
+            s.usd = +(s.usd + usd).toFixed(4); s.counted = [...counted, ...files];
+            if (files.length) s.runs.push({ run: '${{ github.run_id }}', attempt: '${{ github.run_attempt }}', usd: +usd.toFixed(4) });
             writeFileSync('content/spend.json', JSON.stringify(s, null, 1) + '\n');
             console.log('spent this run: \$' + usd.toFixed(2) + ', total \$' + s.usd.toFixed(2));
             writeFileSync(process.env.GITHUB_OUTPUT, 'total=' + s.usd + '\n', { flag: 'a' });"

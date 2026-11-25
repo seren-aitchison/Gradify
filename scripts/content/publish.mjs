@@ -35,7 +35,7 @@ function nextUnitNumber(subject) {
  */
 export function installHooks(subject) {
   // each edit names the hook it must add; the import alone isn't enough, so a file without the expected shape is refused
-  const changed = [], edit = (f, fn, hook) => { const u = courseFile(subject, f), s = readFileSync(u, "utf8"); if (s.includes("./published.js")) return; const t = fn(s); if (t === s || !t.includes(hook) || s.includes(hook)) throw new Error(`kit/courses/${subject}/${f}: unexpected shape, wire published.js by hand (see docs/CONTENT-ENGINE.md)`); writeFileSync(u, t); changed.push(f); };
+  const changed = [], edit = (f, fn, hook) => { const u = courseFile(subject, f), s = readFileSync(u, "utf8"); if (s.includes("./published.js")) { if (!s.includes(hook)) throw new Error(`kit/courses/${subject}/${f}: imports published.js without its hook (${hook}), wire it by hand (see docs/CONTENT-ENGINE.md)`); return; } const t = fn(s); if (t === s || !t.includes(hook) || s.includes(hook)) throw new Error(`kit/courses/${subject}/${f}: unexpected shape, wire published.js by hand (see docs/CONTENT-ENGINE.md)`); writeFileSync(u, t); changed.push(f); };
   const imp = 'import { PUBLISHED } from "./published.js";   // lessons published by the content engine (scripts/content/publish.mjs)\n';
   const firstImport = (s) => s.replace(/^(import [^\n]+\n)/m, `$1${imp}`);
   if (!existsSync(courseFile(subject, "published.js"))) writeFileSync(courseFile(subject, "published.js"), publishedJs({}));
@@ -64,6 +64,7 @@ export async function publish(subject) {
   const byKey = new Map(Object.entries(ids).map(([id, t]) => [titleKey(t), id]));
   const texts = new Map(existing.map((l) => [byKey.get(titleKey(l.title)), l.text]).filter(([id]) => id));
   let next = Math.max(0, ...Object.keys(ids).map((id) => Number(id.slice(4)))) + 1;
+  const claimed = new Set();   // ids given a lesson in this publish: a second lesson with the same title key waits for a rename
   for (const [topicId, e] of Object.entries(led.topics)) {
     const draft = e.file && out(e.file); if (!draft || !existsSync(draft)) continue;
     const lessons = new Map(splitUnit(readFileSync(draft, "utf8")).map((l) => [l.title, l.text]));
@@ -73,7 +74,8 @@ export async function publish(subject) {
       const known = byKey.get(titleKey(l.title));
       // titles are unique in a unit: a second topic's lesson with the same title waits for a rename, and gets no id
       if (known && meta[known]?.topic && meta[known].topic !== topicId) { skipped.push(`${l.title} (${meta[known].topic} already published a lesson with this title)`); continue; }
-      const id = known || lessonId(uid, next++), was = meta[id];
+      if (known && claimed.has(known)) { skipped.push(`${l.title} (another lesson in this publish has the same title)`); continue; }
+      const id = known || lessonId(uid, next++), was = meta[id]; claimed.add(id);
       if (was?.hash === l.hash && was?.tier === label) continue;   // already published, unchanged
       ids[id] = l.title; byKey.set(titleKey(l.title), id);
       // every TIER: line in the draft goes; the only label is the one the ledger's tier gives

@@ -29,7 +29,7 @@
   { "wave": 2, "subjects": ["*"], "ages": [0, 18] },
   { "wave": 3, "subjects": ["*"], "ages": [18, 99] }
  ],
- "frameworks": ["aqa-gcse-biology"],
+ "frameworks": ["aqa-gcse-biology", "aqa-gcse-chemistry"],
  "highRisk": { "types": ["prac", "num"], "keywords": ["safety", "hazard", "drug", "dose", "medicine", "disease", "allergy", "mental health", "self-harm", "pregnan", "first aid", "electric shock", "acid", "flammable"] },
  "examplesPerLevel": 2
 }
