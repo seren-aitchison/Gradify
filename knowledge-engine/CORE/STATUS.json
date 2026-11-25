@@ -221,7 +221,7 @@
     "needs update": 0
    },
    "aqa-gcse-chemistry": {
-    "spec imported": 442,
+    "spec imported": 439,
     "mapped": 0,
     "drafted": 0,
     "gates passed": 0,
@@ -234,7 +234,7 @@
   }
  },
  "branch": "claude/determined-clarke-y76qwz",
- "commit": "35c6422c5",
+ "commit": "bfe3b50cd",
  "dirty": false,
  "briefs": 0,
  "drafts": 0,
@@ -272,7 +272,7 @@
     "aqa-gcse-chemistry"
    ],
    "topicsToWrite": 119,
-   "requirementsToWrite": 311,
+   "requirementsToWrite": 309,
    "topics": {
     "filed": 0,
     "partial": 0,
@@ -289,7 +289,7 @@
    },
    "editedSinceChecked": [],
    "next": "chemistry/atoms-elements-and-compounds",
-   "mappingPending": 131
+   "mappingPending": 130
   }
  ],
  "approvals": {
