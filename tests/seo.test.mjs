@@ -388,3 +388,19 @@ test("search wording: qualifications only where coverage.js claims them, content
   assert.match(files.get("topics/biology/index.html"), /<title>Biology Revision Notes/);
   assert.match(files.get("scigradify/biology/index.html") || await readFile(new URL("../scigradify/biology/index.html", import.meta.url), "utf8"), /<title>Free Biology Course/);
 });
+
+test("every indexed page shows the Gradify G and a link-preview image wherever it's shared or listed", async () => {
+  const { existsSync: has } = await import("node:fs");
+  assert.ok(has(new URL("../favicon.ico", import.meta.url)), "a /favicon.ico for crawlers and apps that only look there");
+  assert.ok(PUBLISH.files.includes("favicon.ico"), "favicon.ico is published");
+  for (const f of ["assets/icons/favicon-48.png", "assets/icons/favicon-96.png", "assets/favicon.svg"]) assert.ok(has(new URL(`../${f}`, import.meta.url)), f);
+  for (const u of await sitemapUrls()) {
+    let p = u.replace("https://getgradify.com/", ""); if (!p || p.endsWith("/")) p += "index.html";
+    const html = files.get(p) ?? await readFile(new URL(`../${p}`, import.meta.url), "utf8");
+    assert.match(html, /<link rel="icon" href="[^"]*favicon\.svg"/, `${p}: SVG favicon`);
+    assert.match(html, /<link rel="icon" href="\/assets\/icons\/favicon-48\.png" type="image\/png" sizes="48x48">/, `${p}: 48px PNG favicon (Google asks for a multiple of 48px)`);
+    const og = html.match(/<meta property="og:image" content="https:\/\/getgradify\.com\/([^"]+)"/)?.[1];
+    assert.ok(og && has(new URL(`../${og}`, import.meta.url)), `${p}: og:image is a real file`);
+    assert.match(html, /<meta name="twitter:image" content="https:\/\/getgradify\.com\/[^"]+"/, `${p}: twitter:image`);
+  }
+});
