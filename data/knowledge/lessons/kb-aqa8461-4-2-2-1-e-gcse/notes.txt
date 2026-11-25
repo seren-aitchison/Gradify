@@ -1,0 +1,54 @@
+## The human digestive system
+S: Enzymes are biological catalysts: proteins that speed up reactions without being used up.
+LV: GCSE
+O: Define enzyme and use the term correctly
+O: Explain the active site
+O: Explain how an enzyme works: the lock and key model
+H: The idea
+P: **Enzymes** are biological catalysts: proteins that speed up chemical reactions in living organisms without being used up, so each enzyme molecule can be used again and again.
+P: For example:
+- Amylase breaks starch down into sugars.
+- Proteases break proteins down into amino acids.
+P: Each enzyme has an **active site**: a region of its surface with a particular shape. The molecule an enzyme acts on, its **substrate**, binds there.
+K: **Enzyme**: a protein that acts as a biological catalyst, speeding up a reaction without being used up.
+H: Enzymes are specific
+P: Enzymes are **specific**: each one catalyses only one reaction, or one type of reaction, because only a substrate whose shape is complementary to its active site can fit into it.
+P: For example:
+- Amylase breaks down starch, but not proteins or fats.
+H: Denaturation
+P: High temperatures and extreme pH change the shape of an enzyme's active site, so the substrate no longer fits and the enzyme stops working. The enzyme is **denatured**, and this is usually permanent.
+H: How an enzyme works: the lock and key model
+P: The lock and key theory is a simplified model of how an enzyme works: the substrate fits the active site like a key in a lock.
+- The substrate collides with the enzyme's active site.
+- Because their shapes are complementary, the substrate fits into the active site, forming an enzyme-substrate complex.
+- The reaction happens while the substrate is held in the active site: it is broken down or joined to another molecule.
+- The products are a different shape, so they leave the active site.
+- The enzyme is unchanged and its active site is free to bind another substrate molecule.
+D: kb-aqa8461-4-2-2-1-e-gcse-enzymes-lock-and-key
+!: "High temperatures kill enzymes." Enzymes are molecules, not living things, so they can't be killed: heat changes the shape of the active site and denatures them.
+!: "An enzyme is used up in the reaction it catalyses." An enzyme is unchanged at the end of the reaction, so it can catalyse the same reaction again and again.
+!: "The substrate is the same shape as the active site." The substrate's shape is complementary to the active site, fitting into it the way a key fits a lock, not identical to it.
+H: Where this leads
+P: The rest of AQA GCSE Biology 4.2.2.1 (The human digestive system) has its own lessons: 4.2.2.1.a, 4.2.2.1.b, 4.2.2.1.c, 4.2.2.1.d, 4.2.2.1.f, 4.2.2.1.g, 4.2.2.1.h, 4.2.2.1.i, 4.2.2.1.j, 4.2.2.1.k, 4.2.2.1.l, 4.2.2.1.m, 4.2.2.1.n, 4.2.2.1.RP4, 4.2.2.1.RP5.
+P: Later, at A level and university: the induced fit model; activation energy.
+T: Enzyme | A protein that acts as a biological catalyst, speeding up a reaction without being used up
+T: Catalyst | A substance that speeds up a chemical reaction without being used up
+T: Active site | The region of an enzyme where its substrate binds and the reaction happens
+T: Substrate | The molecule an enzyme acts on
+T: Specific | Describes an enzyme that catalyses only one reaction, because only one substrate fits its active site
+T: Denatured | Describes an enzyme whose active site has changed shape, so its substrate no longer fits
+T: Enzyme-substrate complex | An enzyme with its substrate bound in the active site
+T: Lock and key model | A simplified model of enzyme action in which the substrate fits a complementary active site like a key in a lock
+SUM: Enzymes are biological catalysts: proteins that speed up reactions without being used up.
+SUM: The substrate binds at the enzyme's active site, a region with a particular shape.
+SUM: Each enzyme is specific to one reaction, because only a substrate with a complementary shape fits its active site.
+SUM: Heat and extreme pH change the active site's shape, so the enzyme is denatured and stops working.
+SUM: In the lock and key model the substrate fits the complementary active site, forms an enzyme-substrate complex, reacts, and the products leave the enzyme unchanged.
+SRC: OpenStax, Rice University, Biology 2e, section 6.5: Enzymes (Mary Ann Clark, Matthew Douglas, Jung Choi), Creative Commons Attribution-NonCommercial-ShareAlike 4.0: used to check facts, not reproduced | secondary | 2026-11-24 | https://openstax.org/books/biology-2e/pages/6-5-enzymes
+M1#kb-aqa8461-4-2-2-1-e-gcse-q1@1: Which of these best describes enzyme? | A protein that acts as a biological catalyst, speeding up a reaction without being used up | The molecule an enzyme acts on | High temperatures kill enzymes | An enzyme is used up in the reaction it catalyses | Enzyme: a protein that acts as a biological catalyst, speeding up a reaction without being used up.
+M1#kb-aqa8461-4-2-2-1-e-gcse-q2@2: Which of these best describes active site? | The region of an enzyme where its substrate binds and the reaction happens | A substance that speeds up a chemical reaction without being used up | Describes an enzyme whose active site has changed shape, so its substrate no longer fits | The molecule an enzyme acts on | Active site: the region of an enzyme where its substrate binds and the reaction happens.
+M1#kb-aqa8461-4-2-2-1-e-gcse-q3@1: Which of these best describes catalyst? | A substance that speeds up a chemical reaction without being used up | A protein that acts as a biological catalyst, speeding up a reaction without being used up | Describes an enzyme that catalyses only one reaction, because only one substrate fits its active site | The molecule an enzyme acts on | Catalyst: a substance that speeds up a chemical reaction without being used up.
+SEQ2#kb-aqa8461-4-2-2-1-e-gcse-q4@3: How an enzyme works: put these steps in order. | The substrate collides with the enzyme's active site.; Because their shapes are complementary, the substrate fits into the active site, forming an enzyme-substrate complex.; The reaction happens while the substrate is held in the active site: it is broken down or joined to another molecule.; The products are a different shape, so they leave the active site.; The enzyme is unchanged and its active site is free to bind another substrate molecule. | In the lock and key model the substrate fits the complementary active site, forms an enzyme-substrate complex, reacts, and the products leave the enzyme unchanged.
+TF1#kb-aqa8461-4-2-2-1-e-gcse-q5@1: High temperatures kill enzymes. | false | Enzymes are molecules, not living things, so they can't be killed: heat changes the shape of the active site and denatures them.
+TF1#kb-aqa8461-4-2-2-1-e-gcse-q6@1: An enzyme is used up in the reaction it catalyses. | false | An enzyme is unchanged at the end of the reaction, so it can catalyse the same reaction again and again.
+TF1#kb-aqa8461-4-2-2-1-e-gcse-q7@1: The substrate is the same shape as the active site. | false | The substrate's shape is complementary to the active site, fitting into it the way a key fits a lock, not identical to it.

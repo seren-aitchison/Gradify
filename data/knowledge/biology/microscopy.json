@@ -1,0 +1,348 @@
+{
+ "subject": "biology",
+ "topic": "Magnification and microscope calculations",
+ "about": "Gradify's own explanations, written for the knowledge engine (2026-11-25) and checked against the sources named on each item; draft until a biology specialist reviews them. Every worked answer is recomputed by QA.",
+ "items": [
+  {
+   "id": "bio.microscopy.units",
+   "kind": "fact",
+   "version": 1,
+   "status": "draft",
+   "title": "Units for small lengths",
+   "text": "Cells are measured in **micrometres** (µm): 1 mm = 1000 µm. Smaller structures are measured in **nanometres** (nm): 1 µm = 1000 nm. Before comparing or dividing two lengths, convert them to the same unit.",
+   "summary": "1 mm = 1000 µm and 1 µm = 1000 nm: convert lengths to the same unit before dividing.",
+   "terms": [
+    {
+     "term": "Micrometre",
+     "definition": "A unit of length, µm: one thousandth of a millimetre"
+    },
+    {
+     "term": "Nanometre",
+     "definition": "A unit of length, nm: one thousandth of a micrometre"
+    }
+   ],
+   "level": {
+    "from": "ks3",
+    "to": "pg"
+   },
+   "concepts": [
+    "magnification",
+    "units"
+   ],
+   "sources": [
+    {
+     "source": "openstax-biology-2e-4-1"
+    },
+    {
+     "source": "gradify-biology-u14-05"
+    }
+   ]
+  },
+  {
+   "id": "bio.microscopy.magnification",
+   "kind": "equation",
+   "version": 1,
+   "status": "draft",
+   "title": "Magnification",
+   "text": "**Magnification** says how many times bigger an image is than the real object. Use the formula: divide the size of the image by the real size of the object, with both in the same unit. Magnification has no unit: write it as, for example, ×400.",
+   "equation": "magnification = size of image ÷ size of real object",
+   "equationNote": "both sizes in the same unit",
+   "compute": {
+    "fn": "magnification",
+    "inputs": [
+     "image",
+     "real"
+    ],
+    "unit": "×"
+   },
+   "summary": "Magnification = size of image ÷ size of real object, with both in the same unit.",
+   "terms": [
+    {
+     "term": "Magnification",
+     "definition": "How many times bigger an image is than the real object: size of image ÷ size of real object"
+    }
+   ],
+   "level": {
+    "from": "gcse",
+    "to": "alevel"
+   },
+   "concepts": [
+    "magnification",
+    "microscopy",
+    "calculation"
+   ],
+   "prereqs": [
+    "bio.microscopy.units"
+   ],
+   "visual": {
+    "renderer": "magnification",
+    "purpose": "an image of a cell measured against its real size, with a scale bar and the calculation",
+    "data": {
+     "object": {
+      "name": "A human cheek cell",
+      "real": {
+       "value": 60,
+       "unit": "µm"
+      }
+     },
+     "image": {
+      "value": 90,
+      "unit": "mm"
+     },
+     "scaleBar": {
+      "value": 20,
+      "unit": "µm"
+     },
+     "claims": [
+      {
+       "type": "magnification",
+       "value": 1500
+      }
+     ]
+    },
+    "title": "Working out magnification",
+    "caption": "The cell is 60 µm across but 90 mm across in the image. Converting 90 mm to 90 000 µm and dividing by 60 µm gives a magnification of ×1500. The scale bar shows how long 20 µm is at this magnification.",
+    "alt": "An oval cell with a nucleus, a bracket above it marking the image length of 90 mm, a scale bar labelled 20 µm, and the calculation: 90 000 µm divided by 60 µm equals ×1500.",
+    "description": [
+     "The cell's image is 90 mm across.",
+     "Its real width is 60 µm.",
+     "90 mm = 90 000 µm, so magnification = 90 000 ÷ 60 = ×1500.",
+     "The scale bar is a third of the cell's width, because 20 µm is a third of 60 µm."
+    ]
+   },
+   "sources": [
+    {
+     "source": "openstax-biology-2e-4-1"
+    },
+    {
+     "source": "gradify-biology-u14-05"
+    }
+   ]
+  },
+  {
+   "id": "bio.microscopy.rearranging",
+   "kind": "method",
+   "version": 1,
+   "status": "draft",
+   "title": "Real size from an image",
+   "text": "Rearrange the magnification equation to find a real size from an image and its magnification, or an image size from a real size.",
+   "equation": "size of real object = size of image ÷ magnification",
+   "equationNote": "and size of image = size of real object × magnification",
+   "compute": {
+    "fn": "realSize",
+    "inputs": [
+     "image",
+     "magnification"
+    ],
+    "unit": "µm"
+   },
+   "level": {
+    "from": "gcse",
+    "to": "alevel"
+   },
+   "concepts": [
+    "magnification",
+    "calculation"
+   ],
+   "prereqs": [
+    "bio.microscopy.magnification"
+   ],
+   "sources": [
+    {
+     "source": "openstax-biology-2e-4-1"
+    },
+    {
+     "source": "gradify-biology-u14-05"
+    }
+   ]
+  },
+  {
+   "id": "bio.microscopy.standard-form",
+   "kind": "method",
+   "version": 1,
+   "status": "draft",
+   "title": "Answers in standard form",
+   "text": "Very small sizes are often written in standard form. To express a number in standard form, write it as a number between 1 and 10 multiplied by a power of ten.",
+   "steps": [
+    "Write the number with one non-zero digit before the decimal point.",
+    "Count how many places the decimal point moved: that is the power of ten.",
+    "Moving it to the right gives a negative power: 0.000 025 m = 2.5 × 10⁻⁵ m."
+   ],
+   "level": {
+    "from": "gcse",
+    "to": "alevel"
+   },
+   "concepts": [
+    "magnification",
+    "calculation",
+    "standard-form"
+   ],
+   "sources": [
+    {
+     "source": "gradify-biology-u14-05"
+    }
+   ],
+   "compute": {
+    "fn": "convert",
+    "inputs": [
+     "value",
+     "from",
+     "to"
+    ],
+    "unit": "m"
+   }
+  },
+  {
+   "id": "bio.microscopy.worked-magnification",
+   "kind": "worked-example",
+   "version": 1,
+   "status": "draft",
+   "title": "Finding a magnification",
+   "text": "A cell is 15 µm long. In a micrograph it is 45 mm long. What is the magnification?",
+   "steps": [
+    "Convert to the same unit: 45 mm = 45 × 1000 = 45 000 µm.",
+    "Magnification = size of image ÷ size of real object = 45 000 µm ÷ 15 µm.",
+    "Magnification = ×3000."
+   ],
+   "values": {
+    "image": {
+     "value": 45,
+     "unit": "mm"
+    },
+    "real": {
+     "value": 15,
+     "unit": "µm"
+    },
+    "answer": 3000
+   },
+   "compute": {
+    "fn": "magnification"
+   },
+   "level": {
+    "from": "gcse",
+    "to": "alevel"
+   },
+   "concepts": [
+    "magnification",
+    "calculation"
+   ],
+   "prereqs": [
+    "bio.microscopy.magnification"
+   ],
+   "sources": [
+    {
+     "source": "gradify-biology-u14-05"
+    }
+   ]
+  },
+  {
+   "id": "bio.microscopy.worked-real-size",
+   "kind": "worked-example",
+   "version": 1,
+   "status": "draft",
+   "title": "Finding a real size, in standard form",
+   "text": "In a drawing at a magnification of ×1500, a cell is 30 mm long. What is its real length, in µm and in metres in standard form?",
+   "steps": [
+    "Convert the image size: 30 mm = 30 000 µm.",
+    "Real size = size of image ÷ magnification = 30 000 µm ÷ 1500 = 20 µm.",
+    "In metres: 20 µm = 0.000 020 m = 2.0 × 10⁻⁵ m."
+   ],
+   "values": {
+    "image": {
+     "value": 30,
+     "unit": "mm"
+    },
+    "magnification": 1500,
+    "unit": "µm",
+    "answer": 20
+   },
+   "compute": {
+    "fn": "realSize"
+   },
+   "level": {
+    "from": "gcse",
+    "to": "alevel"
+   },
+   "concepts": [
+    "magnification",
+    "calculation",
+    "standard-form"
+   ],
+   "prereqs": [
+    "bio.microscopy.rearranging"
+   ],
+   "sources": [
+    {
+     "source": "gradify-biology-u14-05"
+    }
+   ]
+  },
+  {
+   "id": "bio.microscopy.mistake-units",
+   "kind": "misconception",
+   "version": 1,
+   "status": "draft",
+   "title": "Convert before you divide",
+   "wrong": "A 45 mm image of a 15 µm cell is magnified ×3, because 45 ÷ 15 = 3.",
+   "right": "Convert to the same unit first: 45 mm is 45 000 µm, so the magnification is 45 000 ÷ 15 = ×3000.",
+   "level": {
+    "from": "gcse",
+    "to": "alevel"
+   },
+   "concepts": [
+    "magnification",
+    "calculation",
+    "units"
+   ],
+   "sources": [
+    {
+     "source": "gradify-biology-u14-05"
+    }
+   ]
+  },
+  {
+   "id": "bio.microscopy.mistake-unit-on-magnification",
+   "kind": "misconception",
+   "version": 1,
+   "status": "draft",
+   "title": "Magnification has no unit",
+   "wrong": "The magnification is 400 mm.",
+   "right": "Magnification is a ratio of two lengths, so it has no unit: write ×400.",
+   "level": {
+    "from": "gcse",
+    "to": "alevel"
+   },
+   "concepts": [
+    "magnification",
+    "calculation"
+   ],
+   "sources": [
+    {
+     "source": "gradify-biology-u14-05"
+    }
+   ]
+  },
+  {
+   "id": "bio.microscopy.mistake-upside-down",
+   "kind": "misconception",
+   "version": 1,
+   "status": "draft",
+   "title": "Image over real, not real over image",
+   "wrong": "Magnification = size of real object ÷ size of image.",
+   "right": "Divide the image size by the real size; a magnification is bigger than 1 because the image is bigger than the object.",
+   "level": {
+    "from": "gcse",
+    "to": "alevel"
+   },
+   "concepts": [
+    "magnification",
+    "calculation"
+   ],
+   "sources": [
+    {
+     "source": "gradify-biology-u14-05"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,108 @@
+{
+ "subject": "biology",
+ "topic": "Risk factors, correlation and scatter diagrams",
+ "about": "Gradify's own explanations, written for the knowledge engine (2026-11-25); draft until a specialist reviews them. The datasets are illustrative, made up for practice, and say so wherever they are shown: they are not real measurements and must never be presented as such.",
+ "items": [
+  {
+   "id": "bio.disease.risk-factor", "kind": "definition", "version": 1, "status": "draft",
+   "title": "Risk factors",
+   "text": "A **risk factor** is anything linked to an increased chance of developing a disease. It can be an aspect of a person's lifestyle, such as smoking or diet, or a substance in their body or environment.",
+   "summary": "A risk factor is linked to an increased chance of developing a disease.",
+   "examples": ["Smoking is a risk factor for lung cancer and cardiovascular disease.", "Being obese increases the chance of developing Type 2 diabetes."],
+   "terms": [{ "term": "Risk factor", "definition": "Something linked to an increased chance of developing a disease" }],
+   "level": { "from": "gcse", "to": "pg" }, "concepts": ["risk-factors", "disease"],
+   "sources": [{ "source": "gradify-biology-u01-18" }]
+  },
+  {
+   "id": "bio.data.correlation", "kind": "concept", "version": 1, "status": "draft",
+   "title": "Correlation",
+   "text": "Two variables are **correlated** when they tend to change together. In a **positive correlation**, as one increases the other tends to increase too; in a **negative correlation**, as one increases the other tends to decrease. The closer the points on a scatter diagram lie to a straight line, the stronger the correlation.",
+   "summary": "A correlation is a pattern of two variables changing together: positive or negative, strong or weak.",
+   "terms": [{ "term": "Correlation", "definition": "A relationship in which two variables tend to change together" }, { "term": "Positive correlation", "definition": "As one variable increases, the other tends to increase" }, { "term": "Negative correlation", "definition": "As one variable increases, the other tends to decrease" }],
+   "level": { "from": "ks3", "to": "pg" }, "concepts": ["correlation", "data"],
+   "forms": [{ "level": { "from": "alevel", "to": "pg" }, "text": "Two variables are **correlated** when they vary together. The strength of a linear correlation is measured by a correlation coefficient, from −1 (perfect negative) through 0 (none) to +1 (perfect positive); a significance test then asks whether a coefficient that size could have arisen by chance in a sample of that size.", "terms": [{ "term": "Correlation coefficient", "definition": "A number from −1 to +1 measuring the strength and direction of a linear relationship" }] }],
+   "sources": [{ "source": "gradify-biology-u01-18" }, { "source": "gradify-biology-u01-17" }]
+  },
+  {
+   "id": "bio.data.scatter-diagram", "kind": "method", "version": 1, "status": "draft",
+   "title": "Using a scatter diagram",
+   "text": "A scatter diagram shows whether two variables are correlated.",
+   "steps": ["Plot one variable on each axis, each with a sensible, evenly spaced scale and a label with units.", "Plot each pair of values as a point; don't join the points up.", "If there's a trend, draw a straight line of best fit with about as many points above it as below.", "Describe the pattern: positive, negative or no correlation, and how strong it is.", "Use the line to estimate values between your measurements."],
+   "level": { "from": "ks3", "to": "alevel" }, "concepts": ["correlation", "data"],
+   "prereqs": ["bio.data.correlation"],
+   "sources": [{ "source": "gradify-biology-u01-17" }]
+  },
+  {
+   "id": "bio.data.causation", "kind": "fact", "version": 1, "status": "draft",
+   "title": "Correlation doesn't prove cause",
+   "text": "A correlation doesn't show that one variable causes the other. Both could be caused by a third factor, or the link could be chance. A risk factor is shown to cause a disease only when scientists find a causal mechanism: how one leads to the other.",
+   "summary": "A correlation alone doesn't prove cause; a causal mechanism does.",
+   "examples": ["A causal mechanism is known for smoking and lung cancer: chemicals in tobacco smoke damage the DNA of lung cells."],
+   "terms": [{ "term": "Causal mechanism", "definition": "The process by which one factor brings about another" }],
+   "level": { "from": "gcse", "to": "pg" }, "concepts": ["correlation", "risk-factors"],
+   "prereqs": ["bio.data.correlation"],
+   "sources": [{ "source": "gradify-biology-u01-18" }]
+  },
+  {
+   "id": "bio.disease.waist-bp-data", "kind": "dataset", "version": 1, "status": "draft",
+   "title": "Waist size and blood pressure",
+   "text": "A health survey recorded the waist circumference and systolic blood pressure of 12 adults. High blood pressure is a risk factor for cardiovascular disease.",
+   "level": { "from": "gcse", "to": "alevel" }, "concepts": ["correlation", "risk-factors", "data"],
+   "prereqs": ["bio.data.correlation", "bio.data.scatter-diagram"],
+   "data": {
+    "provenance": "illustrative", "x": "waist", "y": "bp",
+    "columns": [{ "key": "waist", "label": "Waist circumference", "unit": "cm" }, { "key": "bp", "label": "Systolic blood pressure", "unit": "mmHg" }],
+    "rows": [[72, 112], [76, 118], [79, 115], [83, 121], [86, 126], [88, 123], [91, 130], [94, 128], [97, 135], [101, 139], [104, 136], [108, 145]],
+    "claims": [{ "type": "correlation", "sign": "positive", "strength": "strong" }, { "type": "predict", "x": 90, "y": 128, "tol": 2 }],
+    "ask": ["correlation", "causation", "predict"], "predictAt": 90, "predictTol": 3,
+    "causation": { "statement": "These data show that a larger waist causes higher blood pressure.", "why": "They show a correlation only. A third factor, such as diet or lack of exercise, could raise both; showing cause needs a causal mechanism." }
+   },
+   "steps": ["As waist circumference increases, blood pressure tends to increase: a positive correlation.", "The points lie close to a straight line, so the correlation is strong.", "The data alone don't show that a larger waist causes higher blood pressure."],
+   "visual": { "renderer": "graph", "title": "Waist circumference and blood pressure (illustrative data)", "caption": "Illustrative data for practice, not real measurements. The points rise from left to right and lie close to the line of best fit: a strong positive correlation.", "alt": "A scatter diagram of systolic blood pressure against waist circumference for 12 people, from 72 to 108 cm. The points rise from about 112 to 145 mmHg and lie close to a dashed line of best fit.", "description": ["x-axis: waist circumference, 70 to 110 cm.", "y-axis: systolic blood pressure, about 110 to 145 mmHg.", "Twelve points, rising from left to right.", "A line of best fit runs close to the points: a strong positive correlation."] },
+   "summary": "On a scatter diagram, points rising close to a line show a strong positive correlation.",
+   "sources": [{ "source": "gradify-biology-u01-18" }, { "source": "gradify-biology-u01-17" }]
+  },
+  {
+   "id": "bio.disease.exercise-hr-data", "kind": "dataset", "version": 1, "status": "draft",
+   "title": "Exercise and resting heart rate",
+   "text": "A group of 10 adults recorded the hours of exercise they did each week and their resting heart rate.",
+   "level": { "from": "gcse", "to": "alevel" }, "concepts": ["correlation", "risk-factors", "data"],
+   "prereqs": ["bio.data.correlation", "bio.data.scatter-diagram"],
+   "data": {
+    "provenance": "illustrative", "x": "hours", "y": "hr",
+    "columns": [{ "key": "hours", "label": "Exercise per week", "unit": "hours" }, { "key": "hr", "label": "Resting heart rate", "unit": "beats per minute" }],
+    "rows": [[0, 82], [1, 79], [1.5, 80], [2, 75], [3, 73], [4, 71], [4.5, 68], [5, 69], [6, 64], [7, 62]],
+    "claims": [{ "type": "correlation", "sign": "negative", "strength": "strong" }],
+    "ask": ["correlation"]
+   },
+   "steps": ["As weekly exercise increases, resting heart rate tends to decrease: a negative correlation.", "The points lie close to a line, so it is strong."],
+   "visual": { "renderer": "graph", "title": "Exercise and resting heart rate (illustrative data)", "caption": "Illustrative data for practice, not real measurements. The points fall from left to right: a strong negative correlation.", "alt": "A scatter diagram of resting heart rate against hours of exercise per week for 10 people, from 0 to 7 hours. The points fall from about 82 to 62 beats per minute, close to a dashed line of best fit.", "description": ["x-axis: exercise per week, 0 to 7 hours.", "y-axis: resting heart rate, about 60 to 85 beats per minute.", "Ten points falling from left to right, close to a line: a strong negative correlation."] },
+   "summary": "Points falling close to a line show a strong negative correlation.",
+   "sources": [{ "source": "gradify-biology-u01-18" }]
+  },
+  {
+   "id": "bio.data.mistake-causation", "kind": "misconception", "version": 1, "status": "draft",
+   "title": "Correlation isn't cause",
+   "wrong": "A strong correlation proves that one variable causes the other.",
+   "right": "A correlation shows only that the variables change together; a third factor or chance could explain it. Cause needs a mechanism.",
+   "level": { "from": "gcse", "to": "pg" }, "concepts": ["correlation", "risk-factors"],
+   "sources": [{ "source": "gradify-biology-u01-18" }]
+  },
+  {
+   "id": "bio.data.mistake-join-dots", "kind": "misconception", "version": 1, "status": "draft",
+   "title": "A line of best fit doesn't join the dots",
+   "wrong": "A line of best fit should go through every point.",
+   "right": "A line of best fit shows the overall trend: it passes as close as possible to the points, with about as many above it as below.",
+   "level": { "from": "ks3", "to": "gcse" }, "concepts": ["correlation", "data"],
+   "sources": [{ "source": "gradify-biology-u01-17" }]
+  },
+  {
+   "id": "bio.data.mistake-no-correlation", "kind": "misconception", "version": 1, "status": "draft",
+   "title": "A few odd points don't cancel a trend",
+   "wrong": "If a few points don't fit the pattern, there is no correlation.",
+   "right": "A correlation is about the overall trend. A few points off the line make it weaker, not absent; check whether they are anomalies.",
+   "level": { "from": "gcse", "to": "gcse" }, "concepts": ["correlation", "data"],
+   "sources": [{ "source": "gradify-biology-u01-17" }]
+  }
+ ]
+}

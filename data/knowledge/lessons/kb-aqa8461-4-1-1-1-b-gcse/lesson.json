@@ -1,0 +1,872 @@
+{
+ "id": "kb-aqa8461-4-1-1-1-b-gcse",
+ "title": "Eukaryotes and prokaryotes",
+ "level": "gcse",
+ "subject": "biology",
+ "template": "gcse-science",
+ "requirementKind": "content",
+ "requirement": {
+  "id": "aqa-gcse-biology:4.1.1.1.b",
+  "kind": "specification",
+  "title": "AQA GCSE Biology 4.1.1.1 Eukaryotes and prokaryotes",
+  "hash": "bc6d6b08bdd8401e",
+  "version": "1.0",
+  "page": 15,
+  "statementKind": "content",
+  "higherTier": false,
+  "biologyOnly": false
+ },
+ "objectives": [
+  "Define prokaryotic cell and use the term correctly",
+  "Predict and explain telling prokaryotic and eukaryotic cells apart"
+ ],
+ "knowledge": [
+  {
+   "id": "bio.cells.eukaryotic",
+   "version": 1,
+   "form": "default",
+   "hash": "06a04ec53206ebb9",
+   "formHash": "6a1f6e80511a6b96",
+   "status": "draft",
+   "origin": "original",
+   "why": "matched"
+  },
+  {
+   "id": "bio.cells.prokaryotic",
+   "version": 1,
+   "form": "default",
+   "hash": "8cd4e6f7c629ce07",
+   "formHash": "9ae18128600adc17",
+   "status": "draft",
+   "origin": "original",
+   "why": "matched"
+  },
+  {
+   "id": "bio.cells.bacterial-dna",
+   "version": 1,
+   "form": "default",
+   "hash": "2c9c2270095697b3",
+   "formHash": "3451ec92e41dcc14",
+   "status": "draft",
+   "origin": "original",
+   "why": "matched"
+  },
+  {
+   "id": "bio.cells.plasmids",
+   "version": 1,
+   "form": "default",
+   "hash": "bde1d84111e538d7",
+   "formHash": "117b8a1a33b268a7",
+   "status": "draft",
+   "origin": "original",
+   "why": "matched"
+  },
+  {
+   "id": "bio.cells.prokaryote-size",
+   "version": 1,
+   "form": "default",
+   "hash": "bbd3ccf49c524de8",
+   "formHash": "674355e0f2bce142",
+   "status": "draft",
+   "origin": "original",
+   "why": "matched"
+  },
+  {
+   "id": "bio.cells.telling-apart",
+   "version": 1,
+   "form": "default",
+   "hash": "a0175a2a94f64ee6",
+   "formHash": "5fa0634e3ed58068",
+   "status": "draft",
+   "origin": "original",
+   "why": "matched"
+  },
+  {
+   "id": "bio.cells.mistake-no-dna",
+   "version": 1,
+   "form": "default",
+   "hash": "22746e75ba3b06d8",
+   "formHash": "c4b0238a933b0d84",
+   "status": "draft",
+   "origin": "original",
+   "why": "matched"
+  },
+  {
+   "id": "bio.cells.mistake-plasmid-main",
+   "version": 1,
+   "form": "default",
+   "hash": "d6d41d33dfc08ff0",
+   "formHash": "f81b5295240e6bfd",
+   "status": "draft",
+   "origin": "original",
+   "why": "matched"
+  },
+  {
+   "id": "bio.cells.mistake-cellulose",
+   "version": 1,
+   "form": "default",
+   "hash": "7a6d315c38ad0e74",
+   "formHash": "a82166f0ec71a39e",
+   "status": "draft",
+   "origin": "original",
+   "why": "matched"
+  }
+ ],
+ "prior": [
+  {
+   "id": "bio.diffusion.definition",
+   "version": 1,
+   "form": "default",
+   "hash": "310fba0dd4ed0139",
+   "formHash": "18f0202b3ddb1a60"
+  }
+ ],
+ "retrieval": {
+  "main": "prokaryotes",
+  "kind": "content",
+  "items": [
+   {
+    "id": "bio.cells.prokaryotic",
+    "why": "matched",
+    "score": 27.42,
+    "matched": [
+     "bacterial",
+     "cell",
+     "prokaryotic",
+     "cytoplasm",
+     "membrane",
+     "surrounded",
+     "wall",
+     "nucleu"
+    ]
+   },
+   {
+    "id": "bio.cells.telling-apart",
+    "why": "matched",
+    "score": 26.73,
+    "matched": [
+     "cell",
+     "prokaryotic",
+     "cytoplasm",
+     "membrane",
+     "wall",
+     "nucleu",
+     "single",
+     "dna"
+    ]
+   },
+   {
+    "id": "bio.cells.eukaryotic",
+    "why": "matched",
+    "score": 26.71,
+    "matched": [
+     "cell",
+     "cytoplasm",
+     "membrane",
+     "genetic",
+     "material",
+     "enclosed",
+     "nucleu",
+     "eukaryot"
+    ]
+   },
+   {
+    "id": "bio.cells.bacterial-dna",
+    "why": "matched",
+    "score": 25.43,
+    "matched": [
+     "cytoplasm",
+     "genetic",
+     "material",
+     "nucleu",
+     "single",
+     "dna",
+     "loop",
+     "prokaryot"
+    ]
+   },
+   {
+    "id": "bio.cells.mistake-no-dna",
+    "why": "matched",
+    "score": 18.69,
+    "matched": [
+     "cytoplasm",
+     "nucleu",
+     "dna",
+     "loop",
+     "plasmid",
+     "prokaryot"
+    ]
+   },
+   {
+    "id": "bio.cells.prokaryote-size",
+    "why": "matched",
+    "score": 17.99,
+    "matched": [
+     "bacterial",
+     "cell",
+     "prokaryotic",
+     "smaller",
+     "comparison",
+     "prokaryot"
+    ]
+   },
+   {
+    "id": "bio.cells.mistake-plasmid-main",
+    "why": "matched",
+    "score": 17.33,
+    "matched": [
+     "dna",
+     "loop",
+     "ring",
+     "plasmid",
+     "prokaryot"
+    ]
+   },
+   {
+    "id": "bio.cells.plasmids",
+    "why": "matched",
+    "score": 17.16,
+    "matched": [
+     "dna",
+     "loop",
+     "ring",
+     "plasmid",
+     "prokaryot"
+    ]
+   },
+   {
+    "id": "bio.cells.mistake-cellulose",
+    "why": "matched",
+    "score": 15.9,
+    "matched": [
+     "bacterial",
+     "cell",
+     "wall",
+     "material",
+     "prokaryot"
+    ]
+   }
+  ],
+  "excludedAboveLevel": [
+   "bio.cells.mistake-no-ribosomes"
+  ]
+ },
+ "assets": [
+  {
+   "id": "kb-aqa8461-4-1-1-1-b-gcse-cells-prokaryotic",
+   "kind": "diagram",
+   "origin": "generated",
+   "renderer": "cellmap",
+   "from": {
+    "item": "bio.cells.prokaryotic",
+    "version": 1,
+    "form": "default"
+   },
+   "checks": [
+    {
+     "name": "the cell type prokaryote is known",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "every labelled structure is found in a prokaryotic cell",
+     "ok": true,
+     "detail": "5 structures"
+    },
+    {
+     "name": "every labelled structure is drawn",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "a prokaryote cell has no nucleus, mitochondrion",
+     "ok": true,
+     "detail": ""
+    }
+   ]
+  }
+ ],
+ "library": [
+  {
+   "id": "bio-prokaryotic-cell",
+   "usable": false,
+   "reason": "uses nucleoid, beyond GCSE",
+   "score": 42.82
+  },
+  {
+   "id": "bio-horizontal-transfer",
+   "usable": false,
+   "reason": "on another topic (Horizontal gene transfer)",
+   "score": 28.87
+  },
+  {
+   "id": "bio-plant-cell",
+   "usable": false,
+   "reason": "on another topic (Plant cells)",
+   "score": 26
+  },
+  {
+   "id": "bio-animal-cell",
+   "usable": false,
+   "reason": "on another topic (Animal cells)",
+   "score": 23.05
+  },
+  {
+   "id": "bio-fungal-cell",
+   "usable": false,
+   "reason": "on another topic (Fungal cells)",
+   "score": 20.8
+  },
+  {
+   "id": "bio-germ-layers",
+   "usable": false,
+   "reason": "on another topic (Gastrulation)",
+   "score": 17.81
+  }
+ ],
+ "questions": [
+  {
+   "id": "kb-aqa8461-4-1-1-1-b-gcse-q1",
+   "type": "M",
+   "d": 1,
+   "items": [
+    "bio.cells.prokaryotic"
+   ],
+   "objectives": [
+    1
+   ]
+  },
+  {
+   "id": "kb-aqa8461-4-1-1-1-b-gcse-q2",
+   "type": "M",
+   "d": 1,
+   "items": [
+    "bio.cells.prokaryotic"
+   ],
+   "objectives": [
+    1
+   ]
+  },
+  {
+   "id": "kb-aqa8461-4-1-1-1-b-gcse-q3",
+   "type": "M",
+   "d": 1,
+   "items": [
+    "bio.cells.eukaryotic"
+   ],
+   "objectives": [
+    1
+   ]
+  },
+  {
+   "id": "kb-aqa8461-4-1-1-1-b-gcse-q4",
+   "type": "M",
+   "d": 2,
+   "items": [
+    "bio.cells.telling-apart"
+   ],
+   "objectives": [
+    2
+   ]
+  },
+  {
+   "id": "kb-aqa8461-4-1-1-1-b-gcse-q5",
+   "type": "M",
+   "d": 2,
+   "items": [
+    "bio.cells.telling-apart"
+   ],
+   "objectives": [
+    2
+   ]
+  },
+  {
+   "id": "kb-aqa8461-4-1-1-1-b-gcse-q6",
+   "type": "M",
+   "d": 2,
+   "items": [
+    "bio.cells.telling-apart"
+   ],
+   "objectives": [
+    2
+   ]
+  },
+  {
+   "id": "kb-aqa8461-4-1-1-1-b-gcse-q7",
+   "type": "TF",
+   "d": 1,
+   "items": [
+    "bio.cells.mistake-cellulose"
+   ],
+   "objectives": [
+    1
+   ]
+  },
+  {
+   "id": "kb-aqa8461-4-1-1-1-b-gcse-q8",
+   "type": "TF",
+   "d": 1,
+   "items": [
+    "bio.cells.mistake-plasmid-main"
+   ],
+   "objectives": [
+    1
+   ]
+  },
+  {
+   "id": "kb-aqa8461-4-1-1-1-b-gcse-q9",
+   "type": "TF",
+   "d": 1,
+   "items": [
+    "bio.cells.mistake-no-dna"
+   ],
+   "objectives": [
+    1
+   ]
+  }
+ ],
+ "components": {
+  "objectives": 2,
+  "prior": 1,
+  "explain": 12,
+  "mechanism": 0,
+  "visual": 1,
+  "terms": 4,
+  "quantitative": 0,
+  "worked": 0,
+  "practical": 0,
+  "data": 0,
+  "misconceptions": 3,
+  "apply": 6,
+  "practice": 9,
+  "summary": true,
+  "connections": 2,
+  "evidence": 2
+ },
+ "sources": [
+  "openstax-biology-2e-4-2",
+  "gradify-biology-u02-02"
+ ],
+ "attributed": [
+  "openstax-biology-2e-4-2"
+ ],
+ "status": "expert-review",
+ "history": [
+  {
+   "status": "generated",
+   "on": "2026-11-24",
+   "by": "scripts/knowledge/assemble.mjs"
+  },
+  {
+   "status": "automated-qa",
+   "on": "2026-11-24",
+   "by": "scripts/knowledge/qa.mjs",
+   "note": "64 checks: 0 failed, 3 for the reviewer"
+  },
+  {
+   "status": "expert-review",
+   "on": "2026-11-24",
+   "by": "scripts/knowledge/qa.mjs",
+   "note": "awaiting a subject reviewer"
+  }
+ ],
+ "qa": {
+  "result": "pass",
+  "on": "2026-11-24",
+  "checks": 64,
+  "fails": 0,
+  "reviews": 3,
+  "dimensions": {
+   "accuracy": {
+    "status": "review",
+    "checks": [
+     {
+      "name": "every knowledge item the lesson was built from still exists, its form for this level unchanged",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "every knowledge item has been reviewed by a subject specialist",
+      "ok": false,
+      "severity": "review",
+      "detail": "9 of 9 items are drafts: bio.cells.eukaryotic, bio.cells.prokaryotic, bio.cells.bacterial-dna, bio.cells.plasmids, bio.cells.prokaryote-size, bio.cells.telling-apart, bio.cells.mistake-no-dna, bio.cells.mistake-plasmid-main, bio.cells.mistake-cellulose"
+     },
+     {
+      "name": "every knowledge item has supporting passages in its sources",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "the evidence was linked to the current version of each item",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "each item's sources contain most of its distinctive vocabulary (support ≥ 0.3)",
+      "ok": false,
+      "severity": "review",
+      "detail": "bio.cells.prokaryotic (0.25: check against gradify-biology-u02-02#L68, gradify-biology-u02-02#L50, openstax-biology-2e-4-2#fs-id1320930); bio.cells.telling-apart (0.23: check against gradify-biology-u02-02#L68, gradify-biology-u02-02#L59, gradify-biology-u02-02#L73)"
+     },
+     {
+      "name": "diagram kb-aqa8461-4-1-1-1-b-gcse-cells-prokaryotic: every subject check passes",
+      "ok": true,
+      "severity": "fail"
+     }
+    ]
+   },
+   "coverage": {
+    "status": "pass",
+    "checks": [
+     {
+      "name": "the requirement is the version the lesson was built for",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "the lesson teaches the requirement's content words",
+      "ok": true,
+      "severity": "fail",
+      "detail": "17 of 17"
+     }
+    ]
+   },
+   "depth": {
+    "status": "pass",
+    "checks": [
+     {
+      "name": "every knowledge item is valid at GCSE",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "the lesson's prose uses no term the knowledge base teaches only at a higher level",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "the template's depth (gcse-science) matches the lesson's level",
+      "ok": true,
+      "severity": "fail",
+      "detail": "gcse-science"
+     }
+    ]
+   },
+   "terminology": {
+    "status": "pass",
+    "checks": [
+     {
+      "name": "every key term the lesson uses is defined in it (or in a prerequisite)",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "the requirement's own terms are defined in the lesson",
+      "ok": true,
+      "severity": "fail",
+      "detail": "cell wall"
+     }
+    ]
+   },
+   "explanation": {
+    "status": "review",
+    "checks": [
+     {
+      "name": "template component \"Learning objectives\" is present",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "template component \"Explanation\" is present",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "template component \"Key terms\" is present",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "template component \"Practice questions\" is present",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "template component \"Summary\" is present",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "readability suits GCSE (Flesch–Kincaid grade 6–11)",
+      "ok": true,
+      "severity": "review",
+      "detail": "grade 6.8"
+     },
+     {
+      "name": "no sentence is over 30 words",
+      "ok": false,
+      "severity": "review",
+      "detail": "\"Bacterial cells are much smaller in comparison with plant an…\""
+     },
+     {
+      "name": "every section has content",
+      "ok": true,
+      "severity": "fail"
+     }
+    ]
+   },
+   "visuals": {
+    "status": "pass",
+    "checks": [
+     {
+      "name": "a diagram (the gcse-science template's visual rule is \"required\")",
+      "ok": true,
+      "severity": "fail",
+      "detail": "1 diagram(s)"
+     },
+     {
+      "name": "kb-aqa8461-4-1-1-1-b-gcse-cells-prokaryotic: title, caption, alt text and a step-by-step description",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "kb-aqa8461-4-1-1-1-b-gcse-cells-prokaryotic: its labels use the lesson's words",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "kb-aqa8461-4-1-1-1-b-gcse-cells-prokaryotic: placed in the lesson",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "kb-aqa8461-4-1-1-1-b-gcse-cells-prokaryotic: shows what the lesson's mechanism describes (knowledge bio.cells.prokaryotic)",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "kb-aqa8461-4-1-1-1-b-gcse-cells-prokaryotic (wide): every label inside the picture",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "kb-aqa8461-4-1-1-1-b-gcse-cells-prokaryotic (narrow): every label inside the picture",
+      "ok": true,
+      "severity": "fail"
+     }
+    ]
+   },
+   "assessment": {
+    "status": "pass",
+    "checks": [
+     {
+      "name": "at least 5 questions",
+      "ok": true,
+      "severity": "fail",
+      "detail": "9"
+     },
+     {
+      "name": "the course engine parses every question",
+      "ok": true,
+      "severity": "fail",
+      "detail": "9 parsed of 9"
+     },
+     {
+      "name": "question ids are unique and permanent",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "objective 1 is tested (\"Define prokaryotic cell and use the term correctly\")",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "objective 2 is tested (\"Predict and explain telling prokaryotic and eukaryotic cells apart\")",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "question kinds: M, TF",
+      "ok": true,
+      "severity": "review"
+     }
+    ]
+   },
+   "accessibility": {
+    "status": "pass",
+    "checks": [
+     {
+      "name": "kb-aqa8461-4-1-1-1-b-gcse-cells-prokaryotic (wide): role=\"img\" with an aria-label",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "kb-aqa8461-4-1-1-1-b-gcse-cells-prokaryotic (wide): everything coloured is also labelled in text",
+      "ok": true,
+      "severity": "fail",
+      "detail": "5 text labels"
+     },
+     {
+      "name": "kb-aqa8461-4-1-1-1-b-gcse-cells-prokaryotic (narrow): role=\"img\" with an aria-label",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "kb-aqa8461-4-1-1-1-b-gcse-cells-prokaryotic (narrow): everything coloured is also labelled in text",
+      "ok": true,
+      "severity": "fail",
+      "detail": "10 text labels"
+     },
+     {
+      "name": "headings break the lesson into sections",
+      "ok": true,
+      "severity": "fail"
+     }
+    ]
+   },
+   "sources": {
+    "status": "pass",
+    "checks": [
+     {
+      "name": "bio.cells.eukaryotic: source openstax-biology-2e-4-2 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.cells.eukaryotic: source gradify-biology-u02-02 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.cells.prokaryotic: source openstax-biology-2e-4-2 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.cells.prokaryotic: source gradify-biology-u02-02 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.cells.bacterial-dna: source openstax-biology-2e-4-2 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.cells.bacterial-dna: source gradify-biology-u02-02 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.cells.plasmids: source openstax-biology-2e-4-2 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.cells.plasmids: source gradify-biology-u02-02 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.cells.prokaryote-size: source openstax-biology-2e-4-2 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.cells.prokaryote-size: source gradify-biology-u02-02 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.cells.telling-apart: source openstax-biology-2e-4-2 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.cells.telling-apart: source gradify-biology-u02-02 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.cells.mistake-no-dna: source openstax-biology-2e-4-2 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.cells.mistake-plasmid-main: source gradify-biology-u02-02 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.cells.mistake-cellulose: source openstax-biology-2e-4-2 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "openstax-biology-2e-4-2: licence category noncommercial-only permits fact-checking only",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "gradify-biology-u02-02: licence category commercial-adapt permits adaptation",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "no item copies 12 or more words in a row from a source it may not reuse",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "no item shares 8 or more words in a row with such a source",
+      "ok": true,
+      "severity": "review"
+     },
+     {
+      "name": "the lesson copies no 12 or more words in a row from a source it may not reuse",
+      "ok": true,
+      "severity": "fail",
+      "detail": "4 words from openstax-biology-2e-4-2#fs-id1228431: \"cells are much smaller\""
+     },
+     {
+      "name": "the lesson shares fewer than 8 words in a row with such a source",
+      "ok": true,
+      "severity": "review"
+     },
+     {
+      "name": "the lesson shares fewer than 8 words in a row with the specification's own wording",
+      "ok": true,
+      "severity": "review"
+     },
+     {
+      "name": "longest run of words shared with a verify-only source: 4",
+      "ok": true,
+      "severity": "review"
+     },
+     {
+      "name": "attribution to OpenStax, Rice University, Biology 2e, section 4.2: Prokaryotic Cells",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "the lesson record links its requirement, template and every item with its version",
+      "ok": true,
+      "severity": "fail"
+     }
+    ]
+   }
+  }
+ },
+ "review": {
+  "status": "awaiting",
+  "reviewer": null,
+  "flagged": [
+   "every knowledge item has been reviewed by a subject specialist: 9 of 9 items are drafts: bio.cells.eukaryotic, bio.cells.prokaryotic, bio.cells.bacterial-dna, bio.cells.plasmids, bio.cells.prokaryote-size, bio.cells.telling-apart, bio.cells.mistake-no-dna, bio.cells.mistake-plasmid-main, bio.cells.mistake-cellulose",
+   "each item's sources contain most of its distinctive vocabulary (support ≥ 0.3): bio.cells.prokaryotic (0.25: check against gradify-biology-u02-02#L68, gradify-biology-u02-02#L50, openstax-biology-2e-4-2#fs-id1320930); bio.cells.telling-apart (0.23: check against gradify-biology-u02-02#L68, gradify-biology-u02-02#L59, gradify-biology-u02-02#L73)",
+   "no sentence is over 30 words: \"Bacterial cells are much smaller in comparison with plant an…\""
+  ],
+  "approvedBy": null,
+  "approvedOn": null
+ }
+}

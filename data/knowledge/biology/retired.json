@@ -1,0 +1,15 @@
+{
+ "about": "Knowledge ids that no longer exist, and what replaced them. Ids are never reused.",
+ "retired": {
+  "bio.osmosis.definition-solutions": {
+   "replacedBy": "bio.osmosis.definition",
+   "form": "ks3-gcse",
+   "on": "2026-11-25"
+  },
+  "bio.osmosis.definition-water-potential": {
+   "replacedBy": "bio.osmosis.definition",
+   "form": "alevel-pg",
+   "on": "2026-11-25"
+  }
+ }
+}

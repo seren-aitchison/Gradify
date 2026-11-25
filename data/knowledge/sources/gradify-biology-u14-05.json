@@ -1,0 +1,271 @@
+{
+ "id": "gradify-biology-u14-05",
+ "title": "Gradify Biology, lesson u14-05: Microscopy",
+ "publisher": "Gradify",
+ "authors": [
+  "Gradify"
+ ],
+ "course": "biology",
+ "unit": "u14",
+ "lesson": "Microscopy",
+ "url": "kit/courses/biology/notes/u14.js",
+ "licence": "gradify",
+ "level": "ug",
+ "type": "gradify-notes",
+ "retrievedOn": "2026-11-24",
+ "version": "as of 2026-11-24",
+ "sha256": "0bcc5cf5980a4aec2f10fe908f68e28838098ce87d26de028ce25cd79d6fb73b",
+ "bytes": 101919,
+ "licenceName": "Gradify's own work",
+ "category": "commercial-adapt",
+ "uses": {
+  "adapt": true,
+  "commercial": true,
+  "verify": true
+ },
+ "policy": "reuse",
+ "attribution": false,
+ "parsedTitle": "Microscopy",
+ "passages": [
+  {
+   "id": "L170",
+   "kind": "S",
+   "hash": "4c7501abf9cbcb50",
+   "words": 21
+  },
+  {
+   "id": "L171",
+   "kind": "O",
+   "hash": "ff26fe81ef07f80a",
+   "words": 6
+  },
+  {
+   "id": "L172",
+   "kind": "O",
+   "hash": "39a9bc16d91b57fc",
+   "words": 5
+  },
+  {
+   "id": "L173",
+   "kind": "O",
+   "hash": "a80c4de181d1f58e",
+   "words": 9
+  },
+  {
+   "id": "L174",
+   "kind": "H",
+   "hash": "64399f693dcee6b1",
+   "words": 2
+  },
+  {
+   "id": "L175",
+   "kind": "P",
+   "hash": "6f7e1f74338a319d",
+   "words": 7
+  },
+  {
+   "id": "L176",
+   "kind": "P",
+   "hash": "9011e4d8f85a5a5c",
+   "words": 21
+  },
+  {
+   "id": "L177",
+   "kind": "P",
+   "hash": "bff4e773eb4ffece",
+   "words": 15
+  },
+  {
+   "id": "L178",
+   "kind": "P",
+   "hash": "65240b26e174e993",
+   "words": 8
+  },
+  {
+   "id": "L179",
+   "kind": "H",
+   "hash": "6e390d391e6892b7",
+   "words": 3
+  },
+  {
+   "id": "L180",
+   "kind": "P",
+   "hash": "dc84d500ae84a912",
+   "words": 12
+  },
+  {
+   "id": "L181",
+   "kind": "P",
+   "hash": "ac1767ce55ca66b4",
+   "words": 11
+  },
+  {
+   "id": "L182",
+   "kind": "P",
+   "hash": "11668faa4e1b0dc7",
+   "words": 13
+  },
+  {
+   "id": "L183",
+   "kind": "P",
+   "hash": "2753fed9de59520a",
+   "words": 13
+  },
+  {
+   "id": "L184",
+   "kind": "P",
+   "hash": "163d1398651b0588",
+   "words": 37
+  },
+  {
+   "id": "L185",
+   "kind": "D",
+   "hash": "29677f5c30483b42",
+   "words": 1
+  },
+  {
+   "id": "L186",
+   "kind": "X",
+   "hash": "49d830180da5cd38",
+   "words": 3
+  },
+  {
+   "id": "L187",
+   "kind": "P",
+   "hash": "b2e427437f54b3f0",
+   "words": 17
+  },
+  {
+   "id": "L188",
+   "kind": "P",
+   "hash": "64b00d3aef1445ab",
+   "words": 10
+  },
+  {
+   "id": "L189",
+   "kind": "P",
+   "hash": "af6b4a29b97147a4",
+   "words": 7
+  },
+  {
+   "id": "L190",
+   "kind": "P",
+   "hash": "e33cc1a80d205c63",
+   "words": 10
+  },
+  {
+   "id": "L191",
+   "kind": "K",
+   "hash": "e46c0f61763e1d0d",
+   "words": 32
+  },
+  {
+   "id": "L192",
+   "kind": "!",
+   "hash": "619586f08a73a674",
+   "words": 15
+  },
+  {
+   "id": "L193",
+   "kind": "EV",
+   "hash": "784bc025c1b712e2",
+   "words": 22
+  },
+  {
+   "id": "L194",
+   "kind": "T",
+   "hash": "2f9adda160ae28df",
+   "words": 10
+  },
+  {
+   "id": "L195",
+   "kind": "T",
+   "hash": "8ac3b765a47a8773",
+   "words": 11
+  },
+  {
+   "id": "L196",
+   "kind": "T",
+   "hash": "aa47ec5c69fd4dd8",
+   "words": 9
+  },
+  {
+   "id": "L197",
+   "kind": "SUM",
+   "hash": "0381ddb3d6861d71",
+   "words": 3
+  },
+  {
+   "id": "L198",
+   "kind": "SUM",
+   "hash": "0b2ae27271a4c74a",
+   "words": 3
+  },
+  {
+   "id": "L199",
+   "kind": "SUM",
+   "hash": "7c2f8d7b85098c30",
+   "words": 3
+  },
+  {
+   "id": "L200",
+   "kind": "SRC",
+   "hash": "f84421e5ee88dbe4",
+   "words": 12
+  },
+  {
+   "id": "L201",
+   "kind": "SRC",
+   "hash": "a4077c7386b4950c",
+   "words": 13
+  },
+  {
+   "id": "L202",
+   "kind": "Q",
+   "hash": "ce239fca698be144",
+   "words": 14
+  },
+  {
+   "id": "L203",
+   "kind": "Q",
+   "hash": "148dd12047910492",
+   "words": 6
+  },
+  {
+   "id": "L204",
+   "kind": "P",
+   "hash": "838a36749c358326",
+   "words": 38
+  },
+  {
+   "id": "L205",
+   "kind": "P",
+   "hash": "8d7b647c254b0f51",
+   "words": 47
+  },
+  {
+   "id": "L206",
+   "kind": "P",
+   "hash": "9ae7a94997345358",
+   "words": 43
+  },
+  {
+   "id": "L207",
+   "kind": "P",
+   "hash": "0602889375a351d9",
+   "words": 37
+  },
+  {
+   "id": "L208",
+   "kind": "P",
+   "hash": "1848ef108a045a80",
+   "words": 107
+  }
+ ],
+ "duplicates": [
+  {
+   "id": "L169",
+   "duplicateOf": "gradify-biology-u03-24#L967"
+  }
+ ]
+}

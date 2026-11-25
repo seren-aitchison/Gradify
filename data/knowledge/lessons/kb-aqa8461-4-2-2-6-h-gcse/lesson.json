@@ -1,0 +1,931 @@
+{
+ "id": "kb-aqa8461-4-2-2-6-h-gcse",
+ "title": "The effect of lifestyle on some non-communicable diseases",
+ "level": "gcse",
+ "subject": "biology",
+ "template": "gcse-science",
+ "requirementKind": "skill",
+ "requirement": {
+  "id": "aqa-gcse-biology:4.2.2.6.h",
+  "kind": "specification",
+  "title": "AQA GCSE Biology 4.2.2.6 The effect of lifestyle on some non-communicable diseases",
+  "hash": "d259e03d58bd8ce0",
+  "version": "1.0",
+  "page": 27,
+  "statementKind": "skill",
+  "higherTier": false,
+  "biologyOnly": false
+ },
+ "objectives": [
+  "Interpret waist size and blood pressure",
+  "Explain correlation",
+  "Use a scatter diagram",
+  "Interpret exercise and resting heart rate"
+ ],
+ "knowledge": [
+  {
+   "id": "bio.disease.risk-factor",
+   "version": 1,
+   "form": "default",
+   "hash": "007f2bf74c2a18ea",
+   "formHash": "eb7b0513cda70827",
+   "status": "draft",
+   "origin": "original",
+   "why": "matched"
+  },
+  {
+   "id": "bio.data.correlation",
+   "version": 1,
+   "form": "default",
+   "hash": "ee30f3e36bdfe66e",
+   "formHash": "7fb1cc5f12b3df11",
+   "status": "draft",
+   "origin": "original",
+   "why": "matched"
+  },
+  {
+   "id": "bio.data.causation",
+   "version": 1,
+   "form": "default",
+   "hash": "e87c789b40774aa7",
+   "formHash": "6a705db0f3c97f54",
+   "status": "draft",
+   "origin": "original",
+   "why": "matched"
+  },
+  {
+   "id": "bio.data.scatter-diagram",
+   "version": 1,
+   "form": "default",
+   "hash": "f55ef5124a8bcfcd",
+   "formHash": "7a56f3bc1477d0d4",
+   "status": "draft",
+   "origin": "original",
+   "why": "matched"
+  },
+  {
+   "id": "bio.disease.waist-bp-data",
+   "version": 1,
+   "form": "default",
+   "hash": "a36005ffe2ac64f2",
+   "formHash": "36dce5618dc7a6c5",
+   "status": "draft",
+   "origin": "original",
+   "why": "matched"
+  },
+  {
+   "id": "bio.disease.exercise-hr-data",
+   "version": 1,
+   "form": "default",
+   "hash": "057302618f8739f6",
+   "formHash": "802e2e84c1cc1b37",
+   "status": "draft",
+   "origin": "original",
+   "why": "concept"
+  },
+  {
+   "id": "bio.data.mistake-causation",
+   "version": 1,
+   "form": "default",
+   "hash": "461f510340ccda55",
+   "formHash": "e7c5caf621da7737",
+   "status": "draft",
+   "origin": "original",
+   "why": "matched"
+  },
+  {
+   "id": "bio.data.mistake-join-dots",
+   "version": 1,
+   "form": "default",
+   "hash": "2ce4421fc786e4f7",
+   "formHash": "013c3c2d61d4aabf",
+   "status": "draft",
+   "origin": "original",
+   "why": "concept"
+  },
+  {
+   "id": "bio.data.mistake-no-correlation",
+   "version": 1,
+   "form": "default",
+   "hash": "3e4396cf2d2850c5",
+   "formHash": "52a4a4435b3b4cf8",
+   "status": "draft",
+   "origin": "original",
+   "why": "concept"
+  }
+ ],
+ "prior": [],
+ "retrieval": {
+  "main": "correlation",
+  "kind": "skill",
+  "items": [
+   {
+    "id": "bio.data.scatter-diagram",
+    "why": "matched",
+    "score": 12.29,
+    "matched": [
+     "scatter",
+     "diagram",
+     "correlation",
+     "variabl"
+    ]
+   },
+   {
+    "id": "bio.data.correlation",
+    "why": "matched",
+    "score": 12.13,
+    "matched": [
+     "scatter",
+     "diagram",
+     "correlation",
+     "variabl"
+    ]
+   },
+   {
+    "id": "bio.disease.risk-factor",
+    "why": "matched",
+    "score": 8.47,
+    "matched": [
+     "risk",
+     "lifestyle"
+    ]
+   },
+   {
+    "id": "bio.data.mistake-causation",
+    "why": "matched",
+    "score": 7.18,
+    "matched": [
+     "correlation",
+     "variabl"
+    ]
+   },
+   {
+    "id": "bio.data.causation",
+    "why": "matched",
+    "score": 6.02,
+    "matched": [
+     "correlation",
+     "risk"
+    ]
+   },
+   {
+    "id": "bio.disease.waist-bp-data",
+    "why": "matched",
+    "score": 4.88,
+    "matched": [
+     "correlation",
+     "risk"
+    ]
+   },
+   {
+    "id": "bio.disease.exercise-hr-data",
+    "why": "concept",
+    "concept": "correlation"
+   },
+   {
+    "id": "bio.data.mistake-join-dots",
+    "why": "concept",
+    "concept": "correlation"
+   },
+   {
+    "id": "bio.data.mistake-no-correlation",
+    "why": "concept",
+    "concept": "correlation"
+   }
+  ],
+  "excludedAboveLevel": []
+ },
+ "assets": [
+  {
+   "id": "kb-aqa8461-4-2-2-6-h-gcse-disease-waist-bp-data",
+   "kind": "diagram",
+   "origin": "generated",
+   "renderer": "graph",
+   "from": {
+    "item": "bio.disease.waist-bp-data",
+    "version": 1,
+    "form": "default"
+   },
+   "checks": [
+    {
+     "name": "the line of best fit passes through the mean of the data (a least-squares line)",
+     "ok": true,
+     "detail": "y(89.91666666666667) = 127.3333"
+    }
+   ]
+  },
+  {
+   "id": "kb-aqa8461-4-2-2-6-h-gcse-disease-exercise-hr-data",
+   "kind": "diagram",
+   "origin": "generated",
+   "renderer": "graph",
+   "from": {
+    "item": "bio.disease.exercise-hr-data",
+    "version": 1,
+    "form": "default"
+   },
+   "checks": [
+    {
+     "name": "the line of best fit passes through the mean of the data (a least-squares line)",
+     "ok": true,
+     "detail": "y(3.4) = 72.3"
+    }
+   ]
+  }
+ ],
+ "library": [
+  {
+   "id": "bio-which-graph",
+   "usable": false,
+   "reason": "on another topic (Graphs and data presentation)",
+   "score": 23.93
+  },
+  {
+   "id": "bio-flow-cytometry",
+   "usable": false,
+   "reason": "on another topic (Flow cytometry)",
+   "score": 23.01
+  },
+  {
+   "id": "bio-negative-feedback",
+   "usable": false,
+   "reason": "on another topic (Homeostasis)",
+   "score": 20.77
+  },
+  {
+   "id": "bio-scale-of-life",
+   "usable": false,
+   "reason": "on another topic (Biological measurements)",
+   "score": 19.15
+  },
+  {
+   "id": "bio-double-circulation",
+   "usable": false,
+   "reason": "on another topic (Circulation)",
+   "score": 18.95
+  },
+  {
+   "id": "bio-blast-evalue",
+   "usable": false,
+   "reason": "on another topic (BLAST)",
+   "score": 17.67
+  }
+ ],
+ "questions": [
+  {
+   "id": "kb-aqa8461-4-2-2-6-h-gcse-q1",
+   "type": "M",
+   "d": 1,
+   "items": [
+    "bio.data.correlation"
+   ],
+   "objectives": [
+    2
+   ]
+  },
+  {
+   "id": "kb-aqa8461-4-2-2-6-h-gcse-q2",
+   "type": "M",
+   "d": 1,
+   "items": [
+    "bio.data.correlation"
+   ],
+   "objectives": [
+    2
+   ]
+  },
+  {
+   "id": "kb-aqa8461-4-2-2-6-h-gcse-q3",
+   "type": "TF",
+   "d": 1,
+   "items": [
+    "bio.data.mistake-join-dots"
+   ],
+   "objectives": [
+    1
+   ]
+  },
+  {
+   "id": "kb-aqa8461-4-2-2-6-h-gcse-q4",
+   "type": "TF",
+   "d": 1,
+   "items": [
+    "bio.data.mistake-no-correlation"
+   ],
+   "objectives": [
+    1
+   ]
+  },
+  {
+   "id": "kb-aqa8461-4-2-2-6-h-gcse-q5",
+   "type": "TF",
+   "d": 1,
+   "items": [
+    "bio.data.mistake-causation"
+   ],
+   "objectives": [
+    1
+   ]
+  },
+  {
+   "id": "kb-aqa8461-4-2-2-6-h-gcse-q6",
+   "type": "M",
+   "d": 2,
+   "items": [
+    "bio.disease.waist-bp-data",
+    "bio.data.correlation",
+    "bio.data.scatter-diagram"
+   ],
+   "objectives": [
+    1,
+    2,
+    3
+   ],
+   "data": {
+    "item": "bio.disease.waist-bp-data",
+    "sign": "positive",
+    "strength": "strong"
+   }
+  },
+  {
+   "id": "kb-aqa8461-4-2-2-6-h-gcse-q7",
+   "type": "TF",
+   "d": 2,
+   "items": [
+    "bio.disease.waist-bp-data",
+    "bio.data.causation"
+   ],
+   "objectives": [
+    1
+   ]
+  },
+  {
+   "id": "kb-aqa8461-4-2-2-6-h-gcse-q8",
+   "type": "NUM",
+   "d": 3,
+   "items": [
+    "bio.disease.waist-bp-data",
+    "bio.data.correlation",
+    "bio.data.scatter-diagram"
+   ],
+   "objectives": [
+    1,
+    2,
+    3
+   ],
+   "compute": {
+    "fn": "fitAt",
+    "inputs": {
+     "item": "bio.disease.waist-bp-data",
+     "x": 90
+    },
+    "answer": 127.4,
+    "dp": 1
+   }
+  },
+  {
+   "id": "kb-aqa8461-4-2-2-6-h-gcse-q9",
+   "type": "M",
+   "d": 2,
+   "items": [
+    "bio.disease.exercise-hr-data",
+    "bio.data.correlation",
+    "bio.data.scatter-diagram"
+   ],
+   "objectives": [
+    2,
+    3,
+    4
+   ],
+   "data": {
+    "item": "bio.disease.exercise-hr-data",
+    "sign": "negative",
+    "strength": "strong"
+   }
+  }
+ ],
+ "components": {
+  "objectives": 4,
+  "prior": 0,
+  "explain": 10,
+  "mechanism": 0,
+  "visual": 2,
+  "terms": 5,
+  "quantitative": 7,
+  "worked": 0,
+  "practical": 0,
+  "data": 37,
+  "misconceptions": 3,
+  "apply": 0,
+  "practice": 9,
+  "summary": true,
+  "connections": 7,
+  "evidence": 2
+ },
+ "sources": [
+  "gradify-biology-u01-18",
+  "gradify-biology-u01-17"
+ ],
+ "attributed": [],
+ "status": "expert-review",
+ "history": [
+  {
+   "status": "generated",
+   "on": "2026-11-24",
+   "by": "scripts/knowledge/assemble.mjs"
+  },
+  {
+   "status": "automated-qa",
+   "on": "2026-11-24",
+   "by": "scripts/knowledge/qa.mjs",
+   "note": "80 checks: 0 failed, 2 for the reviewer"
+  },
+  {
+   "status": "expert-review",
+   "on": "2026-11-24",
+   "by": "scripts/knowledge/qa.mjs",
+   "note": "awaiting a subject reviewer"
+  }
+ ],
+ "qa": {
+  "result": "pass",
+  "on": "2026-11-24",
+  "checks": 80,
+  "fails": 0,
+  "reviews": 2,
+  "dimensions": {
+   "accuracy": {
+    "status": "review",
+    "checks": [
+     {
+      "name": "every knowledge item the lesson was built from still exists, its form for this level unchanged",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "every knowledge item has been reviewed by a subject specialist",
+      "ok": false,
+      "severity": "review",
+      "detail": "9 of 9 items are drafts: bio.disease.risk-factor, bio.data.correlation, bio.data.causation, bio.data.scatter-diagram, bio.disease.waist-bp-data, bio.disease.exercise-hr-data, bio.data.mistake-causation, bio.data.mistake-join-dots, bio.data.mistake-no-correlation"
+     },
+     {
+      "name": "every knowledge item has supporting passages in its sources",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "the evidence was linked to the current version of each item",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "each item's sources contain most of its distinctive vocabulary (support ≥ 0.3)",
+      "ok": false,
+      "severity": "review",
+      "detail": "bio.disease.risk-factor (0.06: check against gradify-biology-u01-18#L639, gradify-biology-u01-18#L655, gradify-biology-u01-18#L616); bio.data.causation (0.18: check against gradify-biology-u01-18#L655, gradify-biology-u01-18#L635, gradify-biology-u01-18#L632); bio.disease.waist-bp-data (0.16: check against gradify-biology-u01-17#L593, gradify-biology-u01-17#L599, gradify-biology-u01-17#L596); bio.disease.exercise-hr-data (0.08: check against gradify-biology-u01-18#L632, gradify-biology-u01-18#L646, gradify-biology-u01-18#L651); bio.data.mistake-no-correlation (0.24: check against gradify-biology-u01-17#L593, gradify-biology-u01-17#L588, gradify-biology-u01-17#L596)"
+     },
+     {
+      "name": "bio.disease.waist-bp-data: \"strong positive correlation\" recomputes from the data",
+      "ok": true,
+      "severity": "fail",
+      "detail": "r = 0.972: strong positive"
+     },
+     {
+      "name": "bio.disease.waist-bp-data: \"at 90 the line gives about 128\" recomputes from the data",
+      "ok": true,
+      "severity": "fail",
+      "detail": "recomputed 127.41"
+     },
+     {
+      "name": "bio.disease.exercise-hr-data: \"strong negative correlation\" recomputes from the data",
+      "ok": true,
+      "severity": "fail",
+      "detail": "r = -0.987: strong negative"
+     },
+     {
+      "name": "question kb-aqa8461-4-2-2-6-h-gcse-q8: its answer recomputes",
+      "ok": true,
+      "severity": "fail",
+      "detail": "computed 127.4, stated 127.4"
+     },
+     {
+      "name": "diagram kb-aqa8461-4-2-2-6-h-gcse-disease-waist-bp-data: every subject check passes",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "diagram kb-aqa8461-4-2-2-6-h-gcse-disease-exercise-hr-data: every subject check passes",
+      "ok": true,
+      "severity": "fail"
+     }
+    ]
+   },
+   "coverage": {
+    "status": "pass",
+    "checks": [
+     {
+      "name": "the requirement is the version the lesson was built for",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "the lesson teaches the requirement's content words",
+      "ok": true,
+      "severity": "fail",
+      "detail": "5 of 5"
+     },
+     {
+      "name": "data to interpret, with a graph of it",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "questions that need the data",
+      "ok": true,
+      "severity": "fail"
+     }
+    ]
+   },
+   "depth": {
+    "status": "pass",
+    "checks": [
+     {
+      "name": "every knowledge item is valid at GCSE",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "the lesson's prose uses no term the knowledge base teaches only at a higher level",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "the template's depth (gcse-science) matches the lesson's level",
+      "ok": true,
+      "severity": "fail",
+      "detail": "gcse-science"
+     }
+    ]
+   },
+   "terminology": {
+    "status": "pass",
+    "checks": [
+     {
+      "name": "every key term the lesson uses is defined in it (or in a prerequisite)",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "the requirement's own terms are defined in the lesson",
+      "ok": true,
+      "severity": "fail",
+      "detail": "correlation"
+     }
+    ]
+   },
+   "explanation": {
+    "status": "pass",
+    "checks": [
+     {
+      "name": "template component \"Learning objectives\" is present",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "template component \"Explanation\" is present",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "template component \"Key terms\" is present",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "template component \"Practice questions\" is present",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "template component \"Summary\" is present",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "readability suits GCSE (Flesch–Kincaid grade 6–11)",
+      "ok": true,
+      "severity": "review",
+      "detail": "grade 7.5"
+     },
+     {
+      "name": "no sentence is over 30 words",
+      "ok": true,
+      "severity": "review"
+     },
+     {
+      "name": "every section has content",
+      "ok": true,
+      "severity": "fail"
+     }
+    ]
+   },
+   "visuals": {
+    "status": "pass",
+    "checks": [
+     {
+      "name": "a diagram (the gcse-science template's visual rule is \"required\")",
+      "ok": true,
+      "severity": "fail",
+      "detail": "2 diagram(s)"
+     },
+     {
+      "name": "kb-aqa8461-4-2-2-6-h-gcse-disease-waist-bp-data: title, caption, alt text and a step-by-step description",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "kb-aqa8461-4-2-2-6-h-gcse-disease-waist-bp-data: its labels use the lesson's words",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "kb-aqa8461-4-2-2-6-h-gcse-disease-waist-bp-data: placed in the lesson",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "kb-aqa8461-4-2-2-6-h-gcse-disease-waist-bp-data: shows what the lesson's mechanism describes (knowledge bio.disease.waist-bp-data)",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "kb-aqa8461-4-2-2-6-h-gcse-disease-exercise-hr-data: title, caption, alt text and a step-by-step description",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "kb-aqa8461-4-2-2-6-h-gcse-disease-exercise-hr-data: its labels use the lesson's words",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "kb-aqa8461-4-2-2-6-h-gcse-disease-exercise-hr-data: placed in the lesson",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "kb-aqa8461-4-2-2-6-h-gcse-disease-exercise-hr-data: shows what the lesson's mechanism describes (knowledge bio.disease.exercise-hr-data)",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "kb-aqa8461-4-2-2-6-h-gcse-disease-waist-bp-data (wide): every label inside the picture",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "kb-aqa8461-4-2-2-6-h-gcse-disease-waist-bp-data (narrow): every label inside the picture",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "kb-aqa8461-4-2-2-6-h-gcse-disease-exercise-hr-data (wide): every label inside the picture",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "kb-aqa8461-4-2-2-6-h-gcse-disease-exercise-hr-data (narrow): every label inside the picture",
+      "ok": true,
+      "severity": "fail"
+     }
+    ]
+   },
+   "assessment": {
+    "status": "pass",
+    "checks": [
+     {
+      "name": "at least 5 questions",
+      "ok": true,
+      "severity": "fail",
+      "detail": "9"
+     },
+     {
+      "name": "the course engine parses every question",
+      "ok": true,
+      "severity": "fail",
+      "detail": "9 parsed of 9"
+     },
+     {
+      "name": "question ids are unique and permanent",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "objective 1 is tested (\"Interpret waist size and blood pressure\")",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "objective 2 is tested (\"Explain correlation\")",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "objective 3 is tested (\"Use a scatter diagram\")",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "objective 4 is tested (\"Interpret exercise and resting heart rate\")",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "question kinds: M, TF, NUM",
+      "ok": true,
+      "severity": "review"
+     }
+    ]
+   },
+   "accessibility": {
+    "status": "pass",
+    "checks": [
+     {
+      "name": "kb-aqa8461-4-2-2-6-h-gcse-disease-waist-bp-data (wide): role=\"img\" with an aria-label",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "kb-aqa8461-4-2-2-6-h-gcse-disease-waist-bp-data (wide): everything coloured is also labelled in text",
+      "ok": true,
+      "severity": "fail",
+      "detail": "15 text labels"
+     },
+     {
+      "name": "kb-aqa8461-4-2-2-6-h-gcse-disease-waist-bp-data (narrow): role=\"img\" with an aria-label",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "kb-aqa8461-4-2-2-6-h-gcse-disease-waist-bp-data (narrow): everything coloured is also labelled in text",
+      "ok": true,
+      "severity": "fail",
+      "detail": "15 text labels"
+     },
+     {
+      "name": "kb-aqa8461-4-2-2-6-h-gcse-disease-exercise-hr-data (wide): role=\"img\" with an aria-label",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "kb-aqa8461-4-2-2-6-h-gcse-disease-exercise-hr-data (wide): everything coloured is also labelled in text",
+      "ok": true,
+      "severity": "fail",
+      "detail": "14 text labels"
+     },
+     {
+      "name": "kb-aqa8461-4-2-2-6-h-gcse-disease-exercise-hr-data (narrow): role=\"img\" with an aria-label",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "kb-aqa8461-4-2-2-6-h-gcse-disease-exercise-hr-data (narrow): everything coloured is also labelled in text",
+      "ok": true,
+      "severity": "fail",
+      "detail": "14 text labels"
+     },
+     {
+      "name": "headings break the lesson into sections",
+      "ok": true,
+      "severity": "fail"
+     }
+    ]
+   },
+   "sources": {
+    "status": "pass",
+    "checks": [
+     {
+      "name": "bio.disease.risk-factor: source gradify-biology-u01-18 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.data.correlation: source gradify-biology-u01-18 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.data.correlation: source gradify-biology-u01-17 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.data.causation: source gradify-biology-u01-18 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.data.scatter-diagram: source gradify-biology-u01-17 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.disease.waist-bp-data: source gradify-biology-u01-18 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.disease.waist-bp-data: source gradify-biology-u01-17 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.disease.exercise-hr-data: source gradify-biology-u01-18 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.data.mistake-causation: source gradify-biology-u01-18 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.data.mistake-join-dots: source gradify-biology-u01-17 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.data.mistake-no-correlation: source gradify-biology-u01-17 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "gradify-biology-u01-18: licence category commercial-adapt permits adaptation",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "gradify-biology-u01-17: licence category commercial-adapt permits adaptation",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.disease.waist-bp-data: illustrative data are labelled as illustrative in the lesson",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.disease.waist-bp-data: and in its diagram's caption",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.disease.exercise-hr-data: illustrative data are labelled as illustrative in the lesson",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.disease.exercise-hr-data: and in its diagram's caption",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "no item copies 12 or more words in a row from a source it may not reuse",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "no item shares 8 or more words in a row with such a source",
+      "ok": true,
+      "severity": "review"
+     },
+     {
+      "name": "the lesson shares fewer than 8 words in a row with the specification's own wording",
+      "ok": true,
+      "severity": "review"
+     },
+     {
+      "name": "longest run of words shared with a verify-only source: 5",
+      "ok": true,
+      "severity": "review"
+     },
+     {
+      "name": "the lesson record links its requirement, template and every item with its version",
+      "ok": true,
+      "severity": "fail"
+     }
+    ]
+   }
+  }
+ },
+ "review": {
+  "status": "awaiting",
+  "reviewer": null,
+  "flagged": [
+   "every knowledge item has been reviewed by a subject specialist: 9 of 9 items are drafts: bio.disease.risk-factor, bio.data.correlation, bio.data.causation, bio.data.scatter-diagram, bio.disease.waist-bp-data, bio.disease.exercise-hr-data, bio.data.mistake-causation, bio.data.mistake-join-dots, bio.data.mistake-no-correlation",
+   "each item's sources contain most of its distinctive vocabulary (support ≥ 0.3): bio.disease.risk-factor (0.06: check against gradify-biology-u01-18#L639, gradify-biology-u01-18#L655, gradify-biology-u01-18#L616); bio.data.causation (0.18: check against gradify-biology-u01-18#L655, gradify-biology-u01-18#L635, gradify-biology-u01-18#L632); bio.disease.waist-bp-data (0.16: check against gradify-biology-u01-17#L593, gradify-biology-u01-17#L599, gradify-biology-u01-17#L596); bio.disease.exercise-hr-data (0.08: check against gradify-biology-u01-18#L632, gradify-biology-u01-18#L646, gradify-biology-u01-18#L651); bio.data.mistake-no-correlation (0.24: check against gradify-biology-u01-17#L593, gradify-biology-u01-17#L588, gradify-biology-u01-17#L596)"
+  ],
+  "approvedBy": null,
+  "approvedOn": null
+ }
+}

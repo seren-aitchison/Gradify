@@ -1,0 +1,256 @@
+{
+ "id": "openstax-biology-2e-4-1",
+ "title": "Biology 2e, section 4.1: Studying Cells",
+ "publisher": "OpenStax, Rice University",
+ "authors": [
+  "Mary Ann Clark",
+  "Matthew Douglas",
+  "Jung Choi"
+ ],
+ "url": "https://raw.githubusercontent.com/openstax/osbooks-biology-bundle/bc1be223bd23a00cc68efb6195dc183f4e1e228a/modules/m66445/index.cnxml",
+ "readerUrl": "https://openstax.org/books/biology-2e/pages/4-1-studying-cells",
+ "version": "osbooks-biology-bundle@bc1be223bd23a00cc68efb6195dc183f4e1e228a, module m66445",
+ "licence": "CC-BY-NC-SA-4.0",
+ "licenceUrl": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+ "licenceEvidence": "LICENSE file and <md:license> in the repository at this commit",
+ "level": "ug",
+ "type": "openstax-cnxml",
+ "retrievedOn": "2026-11-24",
+ "sha256": "7e77556cd3d0af6aa1b6314cf498ff1c8403c6392fa95f076e40df2fe5230453",
+ "bytes": 17347,
+ "licenceName": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0",
+ "category": "noncommercial-only",
+ "uses": {
+  "adapt": false,
+  "commercial": false,
+  "verify": true
+ },
+ "policy": "verify-only",
+ "policyReason": "NonCommercial (Gradify is a paid product) and ShareAlike",
+ "attribution": true,
+ "parsedTitle": "Studying Cells",
+ "passages": [
+  {
+   "id": "fs-id1488921",
+   "kind": "para",
+   "hash": "43c2de273a09833c",
+   "words": 38
+  },
+  {
+   "id": "fs-id1754058",
+   "kind": "para",
+   "hash": "88d454405e191baf",
+   "words": 68
+  },
+  {
+   "id": "fs-id1325976",
+   "kind": "para",
+   "hash": "9d3df04fbd904d5c",
+   "words": 58
+  },
+  {
+   "id": "fs-id2075340",
+   "kind": "para",
+   "hash": "3f2f28f9dc125f5f",
+   "words": 54
+  },
+  {
+   "id": "fs-id1723106",
+   "kind": "para",
+   "hash": "e5a6120cc41e44a0",
+   "words": 128
+  },
+  {
+   "id": "fs-id801148",
+   "kind": "para",
+   "hash": "f5c6ebf254494990",
+   "words": 56
+  },
+  {
+   "id": "fs-id1338921",
+   "kind": "para",
+   "hash": "e33b1ea9c6fbd03e",
+   "words": 58
+  },
+  {
+   "id": "fs-id848090",
+   "kind": "para",
+   "hash": "dbd07731422ff9f1",
+   "words": 94
+  },
+  {
+   "id": "fs-id1735427",
+   "kind": "para",
+   "hash": "326409a5a15fa1d3",
+   "words": 77
+  },
+  {
+   "id": "fs-id1773165",
+   "kind": "para",
+   "hash": "04ffb31e6e0a16fb",
+   "words": 57
+  },
+  {
+   "id": "fs-id2029814",
+   "kind": "para",
+   "hash": "f5d133fab7bbabc1",
+   "words": 10
+  },
+  {
+   "id": "fs-id1456208",
+   "kind": "para",
+   "hash": "55ee81103856d42f",
+   "words": 38
+  },
+  {
+   "id": "fs-id1283231",
+   "kind": "para",
+   "hash": "8137f5833b0fd4b6",
+   "words": 53
+  },
+  {
+   "id": "fs-id2182808",
+   "kind": "para",
+   "hash": "221cbc60423557ed",
+   "words": 55
+  },
+  {
+   "id": "fs-id1848543",
+   "kind": "para",
+   "hash": "c497e35a1a141f68",
+   "words": 57
+  },
+  {
+   "id": "fs-id1194585",
+   "kind": "para",
+   "hash": "01769abda0e40c3f",
+   "words": 73
+  },
+  {
+   "id": "fs-id1348294",
+   "kind": "para",
+   "hash": "6b166cdf0529e626",
+   "words": 29
+  },
+  {
+   "id": "fs-id1396879",
+   "kind": "para",
+   "hash": "2c59c3a6ad4087fe",
+   "words": 70
+  },
+  {
+   "id": "fs-id1330034",
+   "kind": "para",
+   "hash": "81b5b2aa34a22ef4",
+   "words": 18
+  },
+  {
+   "id": "fs-id1645582",
+   "kind": "para",
+   "hash": "3376dee3213913d4",
+   "words": 8
+  },
+  {
+   "id": "fs-id1744817",
+   "kind": "para",
+   "hash": "71c14d7a657f1279",
+   "words": 70
+  },
+  {
+   "id": "fs-id1334194",
+   "kind": "para",
+   "hash": "2f9b518417c26eae",
+   "words": 22
+  },
+  {
+   "id": "fs-id1930159",
+   "kind": "para",
+   "hash": "91b2343fb0ffd56f",
+   "words": 15
+  },
+  {
+   "id": "fs-id1880319",
+   "kind": "para",
+   "hash": "543c4aef32a98a1b",
+   "words": 35
+  },
+  {
+   "id": "fs-id1904648",
+   "kind": "para",
+   "hash": "98d06f3d6e91b823",
+   "words": 12
+  },
+  {
+   "id": "fs-id1792037",
+   "kind": "para",
+   "hash": "72708fca6b2b1009",
+   "words": 29
+  },
+  {
+   "id": "fs-id1886246",
+   "kind": "para",
+   "hash": "b3d27f67932fa3db",
+   "words": 13
+  },
+  {
+   "id": "fs-id2029876",
+   "kind": "para",
+   "hash": "521e2d18f98c0395",
+   "words": 60
+  },
+  {
+   "id": "fs-idm74380419",
+   "kind": "para",
+   "hash": "e99bc62d9e72d48c",
+   "words": 12
+  },
+  {
+   "id": "fs-idm200102067",
+   "kind": "para",
+   "hash": "096620fc01737676",
+   "words": 4
+  },
+  {
+   "id": "fs-idm200102068",
+   "kind": "para",
+   "hash": "fdcdf92f396c15fb",
+   "words": 86
+  },
+  {
+   "id": "fs-id1783836",
+   "kind": "meaning",
+   "hash": "04605e0f1ddae79d",
+   "words": 4
+  },
+  {
+   "id": "fs-id1967276",
+   "kind": "meaning",
+   "hash": "d27d70279c30111d",
+   "words": 22
+  },
+  {
+   "id": "fs-id1430780",
+   "kind": "meaning",
+   "hash": "afdd3377d333c934",
+   "words": 24
+  },
+  {
+   "id": "fs-id1753183",
+   "kind": "meaning",
+   "hash": "6f699706bf31d170",
+   "words": 6
+  },
+  {
+   "id": "fs-id1325439",
+   "kind": "meaning",
+   "hash": "cb1488c12dc3529b",
+   "words": 28
+  }
+ ],
+ "duplicates": [
+  {
+   "id": "para-00001",
+   "duplicateOf": "openstax-biology-2e-5-2#para-00001"
+  }
+ ]
+}

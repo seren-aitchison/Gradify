@@ -1,0 +1,158 @@
+{
+ "id": "kb-aqa8461-4-2-2-6-h-gcse-disease-waist-bp-data",
+ "renderer": "graph",
+ "course": "knowledge",
+ "title": "Waist circumference and blood pressure (illustrative data)",
+ "caption": "Illustrative data for practice, not real measurements. The points rise from left to right and lie close to the line of best fit: a strong positive correlation.",
+ "alt": "A scatter diagram of systolic blood pressure against waist circumference for 12 people, from 72 to 108 cm. The points rise from about 112 to 145 mmHg and lie close to a dashed line of best fit.",
+ "description": [
+  "x-axis: waist circumference, 70 to 110 cm.",
+  "y-axis: systolic blood pressure, about 110 to 145 mmHg.",
+  "Twelve points, rising from left to right.",
+  "A line of best fit runs close to the points: a strong positive correlation."
+ ],
+ "range": {
+  "x": [
+   60,
+   120
+  ],
+  "y": [
+   110,
+   150
+  ]
+ },
+ "ticks": [
+  [
+   60,
+   70,
+   80,
+   90,
+   100,
+   110,
+   120
+  ],
+  [
+   110,
+   120,
+   130,
+   140,
+   150
+  ]
+ ],
+ "height": [
+  340,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "Waist circumference (cm)",
+  "Systolic blood pressure (mmHg)"
+ ],
+ "points": [
+  {
+   "x": 72,
+   "y": 112,
+   "colour": "a1"
+  },
+  {
+   "x": 76,
+   "y": 118,
+   "colour": "a1"
+  },
+  {
+   "x": 79,
+   "y": 115,
+   "colour": "a1"
+  },
+  {
+   "x": 83,
+   "y": 121,
+   "colour": "a1"
+  },
+  {
+   "x": 86,
+   "y": 126,
+   "colour": "a1"
+  },
+  {
+   "x": 88,
+   "y": 123,
+   "colour": "a1"
+  },
+  {
+   "x": 91,
+   "y": 130,
+   "colour": "a1"
+  },
+  {
+   "x": 94,
+   "y": 128,
+   "colour": "a1"
+  },
+  {
+   "x": 97,
+   "y": 135,
+   "colour": "a1"
+  },
+  {
+   "x": 101,
+   "y": 139,
+   "colour": "a1"
+  },
+  {
+   "x": 104,
+   "y": 136,
+   "colour": "a1"
+  },
+  {
+   "x": 108,
+   "y": 145,
+   "colour": "a1"
+  }
+ ],
+ "curves": [
+  {
+   "expr": "0.866200*x+49.447509",
+   "colour": "a2",
+   "dash": "7 5",
+   "width": 2.2,
+   "domain": [
+    72,
+    108
+   ],
+   "label": "line of best fit",
+   "labelAt": [
+    108,
+    146.9971181556196
+   ],
+   "anchor": "middle"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "0.866200*x+49.447509",
+   "x": 89.91666666666667,
+   "y": 127.333326,
+   "name": "the line of best fit passes through the mean of the data (a least-squares line)"
+  }
+ ],
+ "from": {
+  "item": "bio.disease.waist-bp-data",
+  "version": 1,
+  "form": "default"
+ },
+ "dataClaims": [
+  {
+   "type": "correlation",
+   "sign": "positive",
+   "strength": "strong"
+  },
+  {
+   "type": "predict",
+   "x": 90,
+   "y": 128,
+   "tol": 2
+  }
+ ]
+}

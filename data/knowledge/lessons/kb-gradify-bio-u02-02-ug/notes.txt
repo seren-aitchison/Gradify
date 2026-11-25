@@ -1,0 +1,33 @@
+## Prokaryotic cells
+S: Prokaryotes have no nucleus or membrane-bound organelles; they have 70S ribosomes, usually a cell wall, and often a capsule, flagella or pili.
+LV: Undergraduate
+O: Define prokaryote and use the term correctly
+PRE: Eukaryotic cells
+PRE: Diffusion
+H: The idea
+P: **Prokaryotes**, bacteria and archaea, have no nucleus and no membrane-bound organelles. The structures found in a prokaryotic cell are a plasma membrane enclosing the cytoplasm, which contains 70S ribosomes and the chromosome; most have a cell wall outside the membrane (made of peptidoglycan in bacteria), and many also have a capsule, flagella or pili.
+P: **Plasmids** are small circular DNA molecules that replicate independently of the chromosome. They often carry genes that help in particular conditions, such as antibiotic resistance, and can pass between bacteria by conjugation, which spreads those genes; biologists use them as vectors in genetic engineering.
+K: **Prokaryote**: an organism whose cells have no nucleus and no membrane-bound organelles: bacteria and archaea.
+H: A bacterium's DNA
+P: A prokaryote stores its genes on a single circular chromosome, packed with proteins into a region of the cytoplasm called the **nucleoid**. To copy its genetic material, replication starts at one origin and runs both ways round the loop; the cell then divides by binary fission.
+D: bio-prokaryotic-cell
+H: How big prokaryotic cells are
+P: Prokaryotic cells are typically 1–5 µm long, about a tenth of the size of a eukaryotic cell. Small size suits prokaryotic life: it gives a large surface area to volume ratio, so diffusion alone can supply the whole cell with nutrients and remove wastes quickly, which supports fast growth and division.
+P: For example:
+- *E. coli*, a gut bacterium: about 2 µm long
+- A human cheek cell: about 60 µm across
+!: "Prokaryotes have no ribosomes, because they have no organelles." Prokaryotes lack membrane-bound organelles, but they have ribosomes (70S, smaller than the 80S ribosomes of eukaryotes), which aren't bounded by a membrane.
+T: Prokaryote | An organism whose cells have no nucleus and no membrane-bound organelles: bacteria and archaea
+T: Peptidoglycan | The polymer of sugars and short peptides that makes up bacterial cell walls
+T: Cell wall | A rigid layer outside the plasma membrane that gives the cell its shape and stops it bursting in dilute surroundings
+T: Nucleoid | The region of a prokaryotic cell's cytoplasm that holds its chromosome, not enclosed by a membrane
+T: Plasmid | A small circular DNA molecule that replicates independently of the chromosome
+SUM: Prokaryotes have no nucleus or membrane-bound organelles; they have 70S ribosomes, usually a cell wall, and often a capsule, flagella or pili.
+SUM: Prokaryotes store their genes on one circular chromosome in the nucleoid and copy it from a single origin before binary fission.
+SUM: Plasmids replicate independently, often carry genes such as antibiotic resistance, and can pass between bacteria.
+SUM: Small size (1–5 µm) gives prokaryotes a large surface area to volume ratio, so diffusion supplies the whole cell quickly.
+SRC: OpenStax, Rice University, Biology 2e, section 4.2: Prokaryotic Cells (Mary Ann Clark, Matthew Douglas, Jung Choi), Creative Commons Attribution-NonCommercial-ShareAlike 4.0: used to check facts, not reproduced | secondary | 2026-11-24 | https://openstax.org/books/biology-2e/pages/4-2-prokaryotic-cells
+M1#kb-gradify-bio-u02-02-ug-q1@1: Which of these best describes prokaryote? | An organism whose cells have no nucleus and no membrane-bound organelles: bacteria and archaea | The region of a prokaryotic cell's cytoplasm that holds its chromosome, not enclosed by a membrane | The polymer of sugars and short peptides that makes up bacterial cell walls | A rigid layer outside the plasma membrane that gives the cell its shape and stops it bursting in dilute surroundings | Prokaryote: an organism whose cells have no nucleus and no membrane-bound organelles: bacteria and archaea.
+M1#kb-gradify-bio-u02-02-ug-q2@1: Which of these best describes peptidoglycan? | The polymer of sugars and short peptides that makes up bacterial cell walls | The region of a prokaryotic cell's cytoplasm that holds its chromosome, not enclosed by a membrane | An organism whose cells have no nucleus and no membrane-bound organelles: bacteria and archaea | A small circular DNA molecule that replicates independently of the chromosome | Peptidoglycan: the polymer of sugars and short peptides that makes up bacterial cell walls.
+M1#kb-gradify-bio-u02-02-ug-q3@1: Which of these best describes cell wall? | A rigid layer outside the plasma membrane that gives the cell its shape and stops it bursting in dilute surroundings | The polymer of sugars and short peptides that makes up bacterial cell walls | Prokaryotes have no ribosomes, because they have no organelles | The region of a prokaryotic cell's cytoplasm that holds its chromosome, not enclosed by a membrane | Cell wall: a rigid layer outside the plasma membrane that gives the cell its shape and stops it bursting in dilute surroundings.
+TF1#kb-gradify-bio-u02-02-ug-q4@1: Prokaryotes have no ribosomes, because they have no organelles. | false | Prokaryotes lack membrane-bound organelles, but they have ribosomes (70S, smaller than the 80S ribosomes of eukaryotes), which aren't bounded by a membrane.

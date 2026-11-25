@@ -1,0 +1,256 @@
+{
+ "id": "openstax-biology-2e-6-5",
+ "title": "Biology 2e, section 6.5: Enzymes",
+ "publisher": "OpenStax, Rice University",
+ "authors": [
+  "Mary Ann Clark",
+  "Matthew Douglas",
+  "Jung Choi"
+ ],
+ "url": "https://raw.githubusercontent.com/openstax/osbooks-biology-bundle/bc1be223bd23a00cc68efb6195dc183f4e1e228a/modules/m66463/index.cnxml",
+ "readerUrl": "https://openstax.org/books/biology-2e/pages/6-5-enzymes",
+ "version": "osbooks-biology-bundle@bc1be223bd23a00cc68efb6195dc183f4e1e228a, module m66463",
+ "licence": "CC-BY-NC-SA-4.0",
+ "licenceUrl": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+ "licenceEvidence": "LICENSE file and <md:license> in the repository at this commit",
+ "level": "ug",
+ "type": "openstax-cnxml",
+ "retrievedOn": "2026-11-24",
+ "sha256": "0d49b8b8da5d493c88737e8744a996c26c71fc8b23ec6505a387813b9c29a454",
+ "bytes": 31044,
+ "licenceName": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0",
+ "category": "noncommercial-only",
+ "uses": {
+  "adapt": false,
+  "commercial": false,
+  "verify": true
+ },
+ "policy": "verify-only",
+ "policyReason": "NonCommercial (Gradify is a paid product) and ShareAlike",
+ "attribution": true,
+ "parsedTitle": "Enzymes",
+ "passages": [
+  {
+   "id": "fs-id1910884",
+   "kind": "para",
+   "hash": "e3ebaedee304c7bd",
+   "words": 132
+  },
+  {
+   "id": "fs-id2322412",
+   "kind": "para",
+   "hash": "acaf8fb5e17cfa12",
+   "words": 242
+  },
+  {
+   "id": "fs-id1344546",
+   "kind": "para",
+   "hash": "4ecda9ccd787464b",
+   "words": 161
+  },
+  {
+   "id": "fs-id2781386",
+   "kind": "para",
+   "hash": "d52cc171311a5fa2",
+   "words": 102
+  },
+  {
+   "id": "fs-id2065566",
+   "kind": "para",
+   "hash": "a95a6cd1a001323f",
+   "words": 8
+  },
+  {
+   "id": "fs-id2008559",
+   "kind": "para",
+   "hash": "36f2dc50e6060a29",
+   "words": 137
+  },
+  {
+   "id": "fs-id2865494",
+   "kind": "para",
+   "hash": "87dfd44f61dc73e1",
+   "words": 155
+  },
+  {
+   "id": "fs-id2115354",
+   "kind": "para",
+   "hash": "c9b816f900823f27",
+   "words": 137
+  },
+  {
+   "id": "fs-id1422858",
+   "kind": "para",
+   "hash": "79c726ebf6e46c63",
+   "words": 84
+  },
+  {
+   "id": "fs-id1465037",
+   "kind": "para",
+   "hash": "86bd79747303f320",
+   "words": 159
+  },
+  {
+   "id": "fs-id1728320",
+   "kind": "para",
+   "hash": "f7c8770d20ed4f16",
+   "words": 114
+  },
+  {
+   "id": "fs-id2583817",
+   "kind": "para",
+   "hash": "eeb5b31c75387b95",
+   "words": 45
+  },
+  {
+   "id": "fs-id1341136",
+   "kind": "para",
+   "hash": "cc681622e565677a",
+   "words": 87
+  },
+  {
+   "id": "fs-id2018996",
+   "kind": "para",
+   "hash": "f9f4ed9023af95f8",
+   "words": 153
+  },
+  {
+   "id": "fs-id2026260",
+   "kind": "para",
+   "hash": "627ed7b05f4a6a74",
+   "words": 225
+  },
+  {
+   "id": "fs-id1524656",
+   "kind": "para",
+   "hash": "093c51f119819459",
+   "words": 89
+  },
+  {
+   "id": "fs-id1596004",
+   "kind": "para",
+   "hash": "f47bbc535b109484",
+   "words": 171
+  },
+  {
+   "id": "fs-id2115837",
+   "kind": "para",
+   "hash": "cec3b26266250edc",
+   "words": 119
+  },
+  {
+   "id": "fs-id2927047",
+   "kind": "para",
+   "hash": "66f5f3519391d813",
+   "words": 151
+  },
+  {
+   "id": "fs-id2155353",
+   "kind": "para",
+   "hash": "92e5e51832a9c50d",
+   "words": 142
+  },
+  {
+   "id": "fs-id2258341",
+   "kind": "para",
+   "hash": "043200cf70cc647e",
+   "words": 9
+  },
+  {
+   "id": "fs-id1966703",
+   "kind": "para",
+   "hash": "da191585416e4fc8",
+   "words": 8
+  },
+  {
+   "id": "fs-id1374840",
+   "kind": "para",
+   "hash": "ba9c70a6aae1eacd",
+   "words": 13
+  },
+  {
+   "id": "fs-id2026434",
+   "kind": "para",
+   "hash": "cfc9ab0397878865",
+   "words": 13
+  },
+  {
+   "id": "fs-id2491682",
+   "kind": "para",
+   "hash": "0c766011fb9b365c",
+   "words": 120
+  },
+  {
+   "id": "fs-id1962154",
+   "kind": "para",
+   "hash": "579570b486163250",
+   "words": 12
+  },
+  {
+   "id": "fs-id1631652",
+   "kind": "para",
+   "hash": "b4fb9c69a615ff0b",
+   "words": 54
+  },
+  {
+   "id": "fs-id1693867",
+   "kind": "meaning",
+   "hash": "1c4633f8869ab843",
+   "words": 8
+  },
+  {
+   "id": "fs-id1853356",
+   "kind": "meaning",
+   "hash": "5596c0846a46e51a",
+   "words": 26
+  },
+  {
+   "id": "fs-id1510995",
+   "kind": "meaning",
+   "hash": "76e685e3193beda5",
+   "words": 18
+  },
+  {
+   "id": "fs-id2198035",
+   "kind": "meaning",
+   "hash": "b36f837478e93fe4",
+   "words": 14
+  },
+  {
+   "id": "fs-id2199913",
+   "kind": "meaning",
+   "hash": "94d681600f7a470a",
+   "words": 19
+  },
+  {
+   "id": "fs-id1731587",
+   "kind": "meaning",
+   "hash": "749e666165d0a0fb",
+   "words": 7
+  },
+  {
+   "id": "fs-id1808392",
+   "kind": "meaning",
+   "hash": "9610fab7727ef2a8",
+   "words": 24
+  },
+  {
+   "id": "fs-id1454994",
+   "kind": "meaning",
+   "hash": "b3be041965a4bd05",
+   "words": 20
+  },
+  {
+   "id": "fs-id1785669",
+   "kind": "meaning",
+   "hash": "212ab20aa8280e05",
+   "words": 6
+  }
+ ],
+ "duplicates": [
+  {
+   "id": "para-00001",
+   "duplicateOf": "openstax-biology-2e-5-2#para-00001"
+  }
+ ]
+}

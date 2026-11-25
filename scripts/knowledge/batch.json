@@ -1,0 +1,14 @@
+{
+ "about": "The validation batch: requirements of different kinds, built end to end by `node scripts/knowledge/pipeline.mjs batch`. The osmosis statement is the baseline; the university lessons reuse the same knowledge at another level.",
+ "requirements": [
+  { "id": "aqa-gcse-biology:4.1.3.2.a", "type": "baseline: content (osmosis)" },
+  { "id": "aqa-gcse-biology:4.1.1.1.b", "type": "factual knowledge" },
+  { "id": "aqa-gcse-biology:4.2.2.1.e", "type": "complex mechanism" },
+  { "id": "aqa-gcse-biology:4.1.1.5.c", "type": "calculation" },
+  { "id": "aqa-gcse-biology:4.1.3.2.RP3", "type": "required practical" },
+  { "id": "aqa-gcse-biology:4.2.2.6.h", "type": "data interpretation" },
+  { "id": "gradify-biology:u02-21", "type": "reuse at university: osmosis" },
+  { "id": "gradify-biology:u02-02", "type": "reuse at university: prokaryotic cells" },
+  { "id": "gradify-biology:u03-24", "type": "reuse at university: enzymes" }
+ ]
+}

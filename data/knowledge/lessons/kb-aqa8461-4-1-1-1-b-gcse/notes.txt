@@ -1,0 +1,49 @@
+## Eukaryotes and prokaryotes
+S: Prokaryotic (bacterial) cells have a cell membrane, cytoplasm and a cell wall, but no nucleus.
+LV: GCSE
+O: Define prokaryotic cell and use the term correctly
+O: Predict and explain telling prokaryotic and eukaryotic cells apart
+PRE: Diffusion
+H: The idea
+P: Plant and animal cells are **eukaryotic cells**. Each has a cell membrane around its cytoplasm, and its genetic material is enclosed in a nucleus.
+P: Bacterial cells are **prokaryotic cells**. Like plant and animal cells they have cytoplasm and a cell membrane, which is surrounded by a cell wall. Unlike them, they have no nucleus: their DNA lies loose in the cytoplasm.
+P: Many bacteria also have one or more **plasmids**: small rings of DNA separate from the main loop, which carry a few extra genes.
+K: **Prokaryotic cell**: a cell with no nucleus, such as a bacterial cell.
+H: A bacterium's DNA
+P: A bacterium's genetic material is a single loop of DNA, lying free in the cytoplasm rather than inside a nucleus.
+H: How big prokaryotic cells are
+P: Bacterial cells are much smaller in comparison with plant and animal cells: a typical bacterium is about 1–5 µm long, while most plant and animal cells are about 10–100 µm across.
+P: For example:
+- *E. coli*, a gut bacterium: about 2 µm long
+- A human cheek cell: about 60 µm across
+D: kb-aqa8461-4-1-1-1-b-gcse-cells-prokaryotic
+!: "Bacteria have no DNA because they have no nucleus." Bacteria do have DNA, just not inside a nucleus: a loop of it lies in the cytoplasm, often with plasmids as well.
+!: "Plasmids are the bacterium's main DNA." The main DNA is the large loop; plasmids are small extra rings with only a few genes.
+!: "A bacterial cell wall is made of cellulose, like a plant cell wall." Plant cell walls are made of cellulose; bacterial cell walls are made of a different material.
+H: Telling prokaryotic and eukaryotic cells apart
+P: To decide what kind of cell you are looking at, check for a nucleus first, then a cell wall.
+- **A cell has a cell wall, no nucleus and a single loop of DNA:** it is a prokaryotic cell, such as a bacterium. It has no nucleus: its DNA lies loose in the cytoplasm.
+- **A cell has a nucleus and a cell membrane but no cell wall:** it is a eukaryotic animal cell. It has a nucleus, and animal cells have no cell wall.
+- **A cell has a nucleus, a cell wall and chloroplasts:** it is a eukaryotic plant cell. It has a nucleus, and only plant (and algal) cells have chloroplasts.
+- **A cell is about 2 µm long and has small rings of DNA in its cytoplasm:** it is almost certainly a bacterium. Its size and plasmids are typical of a prokaryotic cell.
+H: Where this leads
+P: The rest of AQA GCSE Biology 4.1.1.1 (Eukaryotes and prokaryotes) has its own lessons: 4.1.1.1.a, 4.1.1.1.c.
+T: Eukaryotic cell | A cell whose genetic material is enclosed in a nucleus, such as a plant or animal cell
+T: Prokaryotic cell | A cell with no nucleus, such as a bacterial cell
+T: Cell wall | A layer outside the cell membrane that strengthens the cell and stops it bursting
+T: Plasmid | A small ring of DNA, separate from the main DNA, found in many bacteria
+SUM: Prokaryotic (bacterial) cells have a cell membrane, cytoplasm and a cell wall, but no nucleus.
+SUM: Eukaryotic cells (plant and animal cells) keep their DNA in a nucleus.
+SUM: A bacterium's main DNA is a single loop, free in the cytoplasm.
+SUM: Plasmids are small extra rings of DNA in many bacteria.
+SUM: Bacteria (about 1–5 µm) are much smaller than plant and animal cells (about 10–100 µm).
+SRC: OpenStax, Rice University, Biology 2e, section 4.2: Prokaryotic Cells (Mary Ann Clark, Matthew Douglas, Jung Choi), Creative Commons Attribution-NonCommercial-ShareAlike 4.0: used to check facts, not reproduced | secondary | 2026-11-24 | https://openstax.org/books/biology-2e/pages/4-2-prokaryotic-cells
+M1#kb-aqa8461-4-1-1-1-b-gcse-q1@1: Which of these best describes prokaryotic cell? | A cell with no nucleus, such as a bacterial cell | Bacteria have no DNA because they have no nucleus | A cell whose genetic material is enclosed in a nucleus, such as a plant or animal cell | Plasmids are the bacterium's main DNA | Prokaryotic cell: a cell with no nucleus, such as a bacterial cell.
+M1#kb-aqa8461-4-1-1-1-b-gcse-q2@1: Which of these best describes cell wall? | A layer outside the cell membrane that strengthens the cell and stops it bursting | Bacteria have no DNA because they have no nucleus | A cell with no nucleus, such as a bacterial cell | Plasmids are the bacterium's main DNA | Cell wall: a layer outside the cell membrane that strengthens the cell and stops it bursting.
+M1#kb-aqa8461-4-1-1-1-b-gcse-q3@1: Which of these best describes eukaryotic cell? | A cell whose genetic material is enclosed in a nucleus, such as a plant or animal cell | A layer outside the cell membrane that strengthens the cell and stops it bursting | A cell with no nucleus, such as a bacterial cell | A bacterial cell wall is made of cellulose, like a plant cell wall | Eukaryotic cell: a cell whose genetic material is enclosed in a nucleus, such as a plant or animal cell.
+M2#kb-aqa8461-4-1-1-1-b-gcse-q4@2: A cell has a nucleus and a cell membrane but no cell wall. What kind of cell is it? | It is a eukaryotic animal cell | It is a eukaryotic plant cell | It is almost certainly a bacterium | It is a prokaryotic cell, such as a bacterium | It has a nucleus, and animal cells have no cell wall.
+M2#kb-aqa8461-4-1-1-1-b-gcse-q5@2: A cell has a nucleus, a cell wall and chloroplasts. What kind of cell is it? | It is a eukaryotic plant cell | It is almost certainly a bacterium | It is a eukaryotic animal cell | It is a prokaryotic cell, such as a bacterium | It has a nucleus, and only plant (and algal) cells have chloroplasts.
+M2#kb-aqa8461-4-1-1-1-b-gcse-q6@2: A cell has a cell wall, no nucleus and a single loop of DNA. What kind of cell is it? | It is a prokaryotic cell, such as a bacterium | It is a eukaryotic animal cell | It is a eukaryotic plant cell | It is almost certainly a bacterium | It has no nucleus: its DNA lies loose in the cytoplasm.
+TF1#kb-aqa8461-4-1-1-1-b-gcse-q7@1: A bacterial cell wall is made of cellulose, like a plant cell wall. | false | Plant cell walls are made of cellulose; bacterial cell walls are made of a different material.
+TF1#kb-aqa8461-4-1-1-1-b-gcse-q8@1: Plasmids are the bacterium's main DNA. | false | The main DNA is the large loop; plasmids are small extra rings with only a few genes.
+TF1#kb-aqa8461-4-1-1-1-b-gcse-q9@1: Bacteria have no DNA because they have no nucleus. | false | Bacteria do have DNA, just not inside a nucleus: a loop of it lies in the cytoplasm, often with plasmids as well.
