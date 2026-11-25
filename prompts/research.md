@@ -20,6 +20,8 @@ You research one topic thoroughly, across many sources, and condense it into a s
 4. Cover every level listed: what a learner at each level must know, the terms they must use, and the depth expected.
 5. Look specifically for misconceptions, common exam errors and what examiners reward.
 6. Note where sources disagree, where a definition differs by country or board, and where a figure is date-sensitive.
+7. Mark each disagreement's stakes. `stakes=low` means getting it wrong couldn't harm anyone or cost a learner marks, for example a historical date or which lens counts as "low power". Use `stakes=high` for anything touching safety, health, medicine, dosage or a mark-scheme answer, and whenever you are unsure.
+8. Supply the background the lesson depends on. Writers may use only your brief, so list the sourced facts from neighbouring topics that a complete, accurate lesson needs to explain its requirements as `BG:` lines, for example respiration using oxygen for a diffusion topic, or meiosis making gametes for a mitosis topic. Background is held to the same standard as `F:` lines: your own words, at least one listed source (two for anything non-trivial) and the specification's level of detail. Keep it to what the explanation needs, not a second topic.
 
 ## Rules
 
@@ -30,4 +32,4 @@ You research one topic thoroughly, across many sources, and condense it into a s
 
 ## Output
 
-The brief only, in the format defined in `prompts/shorthand.md` (TOPIC, F, DEF, MIS, EXAM, VAR, NUM, CONFLICT, SRC lines). No prose before or after. End with `END`.
+The brief only, in the format defined in `prompts/shorthand.md` (TOPIC, F, BG, DEF, MIS, EXAM, VAR, NUM, CONFLICT, SRC lines). `F:` lines cover what the requirements teach; `BG:` lines cover only the supporting background. No prose before or after. End with `END`.

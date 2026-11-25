@@ -32,19 +32,20 @@ END
 ```
 TOPIC <topic-id> | levels=<comma list> | checked=<YYYY-MM-DD>
 F: fact | src ids | conf=high|med|low
+BG: background fact the explanation needs, not taught as a requirement | src ids | conf=high|med|low
 DEF: term | definition | levels
 MIS: misconception | correct idea
 EXAM: what examiners reward or penalise | src
 VAR: board, country or level difference
 NUM: values, units or worked data | src
-CONFLICT: where sources disagree | src ids
+CONFLICT: where sources disagree | src ids | stakes=low|high      (no stakes= counts as high)
 SRC: id | title | url | publisher | licence=adapt|noncommercial|facts|unknown | checked
 ```
 
 ## Review verdict (Reviewer → engine)
 
 ```
-REV <lesson-id> OK
+REV <lesson-id> OK C1=L<n> C2=none C3=open      (one Cn= per CONF line in the request; omit when there are none)
 REV <lesson-id> FAIL <code> <line> <note of 12 words or fewer>; <code> <line> <note>
 ```
 

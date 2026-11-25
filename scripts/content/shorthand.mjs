@@ -12,7 +12,9 @@ export function parentOf(id, known) {
   return i > 0 && PART.test(id.slice(i + 1)) && known.has(base) ? base : null;
 }
 
-export const BRIEF_TAGS = ["F", "DEF", "MIS", "EXAM", "VAR", "NUM", "CONFLICT", "SRC"];
+// BG: supporting background, sourced like F: but not what the lesson teaches (respiration behind diffusion, meiosis
+// behind mitosis): the Writer may use it to explain a requirement, never as an objective or an assessed point
+export const BRIEF_TAGS = ["F", "BG", "DEF", "MIS", "EXAM", "VAR", "NUM", "CONFLICT", "SRC"];
 export const REVIEW_CODES = ["FACT", "COV", "LVL", "Q", "CLR", "SAFE", "COPY", "CONF", "REQ"];
 const field = (s) => String(s ?? "").replace(/\s*\|\s*/g, " / ").replace(/\s+/g, " ").trim();
 
@@ -31,7 +33,7 @@ const briefBody = (b) => String(b || "").split("\n").map((l) => l.trim()).filter
 /** parse a research brief; problems lists what makes it unusable (the engine re-researches, never writes from it) */
 export function parseBrief(text) {
   const lines = String(text || "").split("\n").map((l) => l.trim()).filter((l) => l && !l.startsWith("#"));
-  const b = { topic: null, levels: [], checked: null, facts: [], defs: [], mis: [], exam: [], vars: [], nums: [], conflicts: [], sources: [], problems: [] };
+  const b = { topic: null, levels: [], checked: null, facts: [], background: [], defs: [], mis: [], exam: [], vars: [], nums: [], conflicts: [], sources: [], problems: [] };
   for (const l of lines) {
     if (l === "END") break;
     const t = l.match(/^TOPIC (\S+)\s*\|\s*levels=([^|]*)\|\s*checked=(\S+)/);
@@ -39,7 +41,7 @@ export function parseBrief(text) {
     const m = l.match(/^([A-Z]+):\s*(.*)$/);
     if (!m || !BRIEF_TAGS.includes(m[1])) { b.problems.push(`unknown line: ${l.slice(0, 60)}`); continue; }
     const parts = m[2].split(" | ").map((x) => x.trim());
-    const key = { F: "facts", DEF: "defs", MIS: "mis", EXAM: "exam", VAR: "vars", NUM: "nums", CONFLICT: "conflicts", SRC: "sources" }[m[1]];
+    const key = { F: "facts", BG: "background", DEF: "defs", MIS: "mis", EXAM: "exam", VAR: "vars", NUM: "nums", CONFLICT: "conflicts", SRC: "sources" }[m[1]];
     if (m[1] === "SRC") { const [id, title, url, publisher, licence = "", checked = ""] = parts; b.sources.push({ id, title, url, publisher, licence: licence.replace(/^licence=/, ""), checked }); }
     else b[key].push(parts);
   }
@@ -49,12 +51,17 @@ export function parseBrief(text) {
   for (const s of b.sources) if (!/^https?:\/\//.test(s.url || "")) b.problems.push(`source ${s.id} has no URL`);
   const ids = new Set(b.sources.map((s) => s.id));
   for (const f of b.facts) { const refs = (f[1] || "").split(/[ ,]+/).filter(Boolean); if (refs.some((r) => !ids.has(r))) b.problems.push(`fact cites an unknown source: ${f[0].slice(0, 40)}`); }
+  // background is held to the same sourcing as facts: a BG line with no listed source supports nothing
+  for (const f of b.background) { const refs = (f[1] || "").split(/[ ,]+/).filter(Boolean); if (!refs.length || refs.some((r) => !ids.has(r))) b.problems.push(`background line cites ${refs.length ? "an unknown source" : "no source"}: ${f[0].slice(0, 40)}`); }
   if (!b.facts.length && !b.defs.length) b.problems.push("no facts or definitions");
   return b;
 }
+/** a CONFLICT row's stakes: "low" only when the Researcher said so; anything else (or nothing) is high */
+export const conflictStakes = (row) => (row.slice(2).some((x) => /^stakes=low$/i.test(String(x).trim())) ? "low" : "high");
 const hostOf = (u) => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return u; } };
 
-/** review verdicts: "REV <id> OK" or "REV <id> FAIL <code> L<n> note; …" */
+/** review verdicts: "REV <id> OK [C1=L23 C2=none C3=open]" or "REV <id> FAIL <code> L<n> note; …". On an OK, each Cn=
+ * says how the lesson handles the brief's nth CONFLICT: explained at that `!:` line, not relied on, or left open */
 export function parseVerdicts(text) {
   const out = [];
   for (const raw of String(text || "").split("\n")) {
@@ -63,7 +70,9 @@ export function parseVerdicts(text) {
       const p = x.match(/^([A-Z]+)\s+(L\d+|-)?\s*(.*)$/) || [];
       return { code: REVIEW_CODES.includes(p[1]) ? p[1] : "CLR", line: p[2] && p[2] !== "-" ? Number(p[2].slice(1)) : null, note: (p[3] || x).trim() };
     });
-    out.push({ lesson: m[1], ok: m[2] === "OK", issues: m[2] === "FAIL" && !issues.length ? [{ code: "CLR", line: null, note: "failed without a reason" }] : issues });
+    const conf = {};
+    if (m[2] === "OK") for (const c of m[3].matchAll(/\bC(\d+)=(L\d+|none|open)\b/gi)) conf[Number(c[1])] = c[2].toLowerCase() === "none" || c[2].toLowerCase() === "open" ? c[2].toLowerCase() : `L${c[2].slice(1)}`;
+    out.push({ lesson: m[1], ok: m[2] === "OK", conf, issues: m[2] === "FAIL" && !issues.length ? [{ code: "CLR", line: null, note: "failed without a reason" }] : issues });
   }
   return out;
 }
