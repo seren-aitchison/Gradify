@@ -159,7 +159,8 @@ export function renderPathway(root, hash, { g, lessonTitle, crumbs }) {
   } else if (n.kind === "award") {
     const jur = outs(n.id, "in")[0]?.n, type = outs(n.id, "is")[0]?.n, stage = outs(n.id, "stage")[0]?.n, org = outs(n.id, "set-by")[0]?.n, rel = outs(n.id, "related-course");
     body = `${head(n, `<p class="gx-pw-facts">${[n.body && `Set or awarded by ${esc(n.body)}`, n.url && `<a href="${esc(n.url)}" target="_blank" rel="noopener">Official site ↗</a>`].filter(Boolean).join(" · ")}</p>`)}
-      ${type ? actionCard({ kicker: "Choose your exam board", title: `${type.name} specifications, subject by subject`, why: `See the ${type.name} specifications in the registry and choose your board.`, actions: [{ label: `Open ${type.name}`, icon: "award", href: hrefOf(type, trail) }], art: false, cls: "compact gx-pw-act" }) : ""}
+      ${type ? actionCard({ kicker: "Everywhere it's taken", title: `${type.name} across every education system`, why: `${type.name} in ${type.sub}: every subject and exam board in the registry.`, actions: [{ label: `Open ${type.name}`, icon: "award", href: hrefOf(type, trail) }], art: false, cls: "compact gx-pw-act" }) : ""}
+      ${type ? sec(`Specifications in ${jur?.name || "this system"}`, (() => { const here = outs(type.id, "spec").map((x) => x.n).filter((sp) => jurisdictionsOf(g, sp.id).some((j) => j.id === jur?.id)); return here.length ? grid(here.map((sp) => nav(sp, { kicker: `${node(`body:${sp.bodyKey}`)?.name || ""} · ${node(`subject:${sp.subjectKey}`)?.name || ""}`, tag: sp.mastery ? "Mapped on Gradify" : "" }))) : none(`No ${n.name} specifications in the registry yet`, "Specifications are added as they're checked against the boards' own documents."); })(), `Only the specifications taken in ${esc(jur?.name || "this system")}.`) : ""}
       ${sec("Where it sits", grid([jur && nav(jur), stage && nav(stage), org && nav(org)].filter(Boolean)))}
       ${sec("Related Gradify courses", grid(rel.map(({ e, n: c }) => nav(c, { href: `#/course/${c.key}`, kicker: c.site, meta: `${c.lessons.toLocaleString()} lessons`, tag: CLAIM[e.claim] || "Related, not mapped" }))), "Related means the course covers subjects this qualification includes. Only a verified mapping means it covers the qualification itself.")}
       <p class="gx-pw-honest">${n.checked ? `Checked against the official source on ${esc(n.checked)}.` : "Listed from public information; not yet checked against the official source."} <a href="/app.html#/curriculum">Choose it as what you're studying →</a></p>`;
@@ -168,7 +169,7 @@ export function renderPathway(root, hash, { g, lessonTitle, crumbs }) {
   } else if (n.kind === "jurisdiction") {
     const country = outs(n.id, "in")[0]?.n, awards = outs(n.id, "offers").map((x) => x.n), bodies = outs(n.id, "body").map((x) => x.n);
     body = `${head(n, country ? `<p class="gx-pw-facts"><a href="${esc(hrefOf(country, trail))}">${esc(country.name)}</a></p>` : "")}
-      ${sec("Qualifications", grid(awards.map((aw) => { const t = aw.type && node(`qualification:${aw.type}`); return nav(aw, { href: t ? hrefOf(t, trail) : hrefOf(aw, trail), kicker: aw.qkind ? aw.qkind.replace(/-/g, " ") : "Qualification", meta: aw.sub }); })))}
+      ${sec("Qualifications", grid(awards.map((aw) => nav(aw, { kicker: aw.qkind ? aw.qkind.replace(/-/g, " ") : "Qualification", meta: aw.sub }))))}
       ${sec("Exam boards", grid(bodies.map((bd) => nav(bd, { meta: `${g.out(bd.id, "awards").length} specifications in the registry` }))))}`;
   } else if (n.kind === "spec") {
     const bd = node(`body:${n.bodyKey}`), q = node(`qualification:${n.qualKey}`), subj = node(`subject:${n.subjectKey}`), juris = jurisdictionsOf(g, n.id), alts = alternatives(g, n.key);
@@ -194,7 +195,7 @@ export function renderPathway(root, hash, { g, lessonTitle, crumbs }) {
     body = `${head(n)}
       ${sec("Gradify courses for this stage", grid(courses.map((c) => nav(c, { href: `#/course/${c.key}`, kicker: c.site, meta: `${c.lessons.toLocaleString()} lessons` }))))}
       ${n.key === "undergraduate" || n.key === "postgraduate" ? actionCard({ kicker: "Your university", title: "Add your own course and modules", why: "Universities, programmes and modules aren't in Gradify's registry yet. Add yours, and your plan and revision follow it.", actions: [{ label: "Add your course", icon: "cap", href: "/app.html#/academic/1" }], cls: "gx-pw-act" }) : ""}
-      ${[...byCountry].map(([c, list]) => sec(c, grid(list.map((aw) => { const t = aw.type && node(`qualification:${aw.type}`); return nav(aw, { href: t ? hrefOf(t, trail) : hrefOf(aw, trail), kicker: aw.system, meta: aw.ages ? `Ages ${aw.ages}` : "" }); })))).join("")
+      ${[...byCountry].map(([c, list]) => sec(c, grid(list.map((aw) => nav(aw, { kicker: aw.system, meta: aw.ages ? `Ages ${aw.ages}` : "" }))))).join("")
         || (courses.length ? "" : none(`Nothing for ${n.name.toLowerCase()} in the registry yet`, "Qualifications and courses for this stage are added as they're checked."))}`;
   } else {
     page(n.name, none("That isn't in the registry", "", [{ label: "Pathways", href: "#/pathways", primary: true }]));

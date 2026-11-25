@@ -179,3 +179,12 @@ test("a site in the search results opens the site itself, not a pathways page", 
   assert.ok(site, "SciGradify is found");
   assert.equal(hrefOf(site), "/scigradify/");
 });
+
+test("a qualification seen from its jurisdiction keeps that jurisdiction: Wales's GCSE lists only Welsh specifications", () => {
+  const wales = render("#/jurisdiction/gb-wls").html;
+  assert.match(wales, /href="#\/award\/gb-wls-gcse\?from=jurisdiction:gb-wls"/);
+  const gcse = render("#/award/gb-wls-gcse?from=jurisdiction:gb-wls").html;
+  assert.match(gcse, /WJEC GCSE Biology \(Wales\)/);
+  for (const other of ["AQA GCSE Biology", "OCR GCSE", "CCEA GCSE Biology", "Pearson Edexcel GCSE Biology"]) assert.ok(!gcse.includes(`<b>${other}`), `GCSE (Wales) doesn't list ${other}`);
+  assert.match(gcse, /href="#\/qualification\/gcse\?from=jurisdiction:gb-wls,award:gb-wls-gcse"/);
+});
