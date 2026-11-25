@@ -404,3 +404,22 @@ test("every indexed page shows the Gradify G and a link-preview image wherever i
     assert.match(html, /<meta name="twitter:image" content="https:\/\/getgradify\.com\/[^"]+"/, `${p}: twitter:image`);
   }
 });
+
+test("lesson pages answer questions the way students ask them, each a heading with its answer under it", () => {
+  let pages = 0, total = 0;
+  for (const [path, html] of files) {
+    if (!/^lessons\/[^/]+\/[^/]+\/index\.html$/.test(path)) continue;
+    pages++;
+    const sec = html.match(/<section class="lesson-qa">([\s\S]*?)<\/section>/)?.[1];
+    assert.ok(sec, `${path}: a "Questions this page answers" section`);
+    const qs = [...sec.matchAll(/<h3 id="([^"]+)">([^<]+)<\/h3><p>/g)];
+    assert.ok(qs.length >= 3, `${path}: at least three questions, each with its answer`);
+    assert.equal(new Set(qs.map((m) => m[1])).size, qs.length, `${path}: each question has its own anchor`);
+    for (const [, , q] of qs) assert.doesNotMatch(q, /^What is (a |the )?[A-Z][a-z]+\?$|“[A-Z][a-z]+” mean/, `${path}: "${q}" reads as a student would type it`);
+    total += qs.length;
+  }
+  assert.ok(pages >= 80 && total >= 500, `${pages} lesson pages, ${total} questions`);
+  const law = files.get("lessons/law/u01-12/index.html");
+  assert.match(law, /<h3 id="q-what-happened-in-pepper-v-hart">What happened in Pepper v Hart\?<\/h3>/);
+  assert.match(files.get("lessons/biology/u02-04/index.html"), /<li id="lysosomes"><b>Lysosomes<\/b>/);
+});

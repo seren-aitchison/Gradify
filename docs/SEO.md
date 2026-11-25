@@ -206,3 +206,12 @@ Titles, descriptions and headings now use the words students search with. The ru
 2. A content word (diagram, worked example, key case, flashcards, questions) is used only when the page has one.
 
 **Next, once Search Console has data:** replace the estimates in `scripts/seo/keywords.mjs` with real queries and impressions, and rewrite the titles that get impressions but few clicks.
+
+**Questions this page answers (lesson pages).** Each lesson page has a section where every question is its own heading (`<h3 id="q-…">`) with the answer from the lesson directly under it. A page matches a search best when the search is a heading on the page and its answer follows. The questions come only from the lesson:
+- every flashcard written as a question;
+- "What does “<key term>” mean?" for each key term;
+- "What is the <part>?" / "What are <parts>?" for each named part the notes describe ("**Lysosomes**: digest…");
+- check questions not already shown in "Check your understanding";
+- in law, "What happened in <case>?" and "What principle does <case> establish?" for each case card.
+
+It replaces the old six-card flashcard list. Each named part in the notes also gets an anchor (`#lysosomes`), so search can link straight to it. Across the 85 pilot pages that's about 870 questions, 3 to 24 a page. Check the effect in Search Console under Performance, filtered by page, on the Queries tab.

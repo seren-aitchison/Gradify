@@ -22,7 +22,10 @@ const json = async (p) => JSON.parse(await readFile(new URL(p, root), "utf8"));
 // a lesson's notes for a standalone page: section headings one level up (the page's h1 is the lesson), diagrams as
 // images with their checked captions, and the app's empty interactive slots left out
 function notesHtml(L, diagrams) {
+  const used = new Set();
   return lessonHtml(L)
+    // a named part in a list ("<b>Lysosomes</b>: …") gets its own anchor, so a search can link straight to it
+    .replace(/<li><b>([^<]{2,60})<\/b>/g, (m, name) => { const id = anchorId(name); if (!id || used.has(id)) return m; used.add(id); return `<li id="${id}"><b>${name}</b>`; })
     .replace(/<h3>/g, "<h2>").replace(/<\/h3>/g, "</h2>")
     .replace(/<div class="co-ixslot"[^>]*><\/div>/g, "")
     .replace(/<figure class="vx" data-dg="([^"]+)" hidden><\/figure>/g, (m, id) => {
@@ -56,6 +59,43 @@ function lessonDesc(title, lead, slug, api, c) {
   return opts.find((x) => x.length <= 155) || fitDesc(opts.at(-1));
 }
 
+const anchorId = (t) => plain(t).toLowerCase().replace(/&[a-z#0-9]+;/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 60);
+const INTERROGATIVE = /^(what|why|how|which|when|where|who|whose|is|are|does|do|did|can|could|should|would|will|was|were|has|have|name|define|state|give|explain|describe|outline|list|identify|calculate|compare|distinguish)\b/i;
+/** the questions a lesson answers, worded as a student would ask them, each with its answer from the lesson itself:
+ *  every flashcard phrased as a question, "What is …?" for each key term, and for law, what happened in each case and
+ *  the principle it stands for. Questions shown in "Check your understanding" aren't repeated. */
+const PLURAL = /[^su]s$/i, IRREGULAR = new Set(["mitochondria", "bacteria", "criteria", "phenomena", "data", "media", "cilia", "flagella", "fungi", "nuclei", "stimuli"]);
+/** "Golgi apparatus" stays capitalised (the lesson writes "the Golgi" mid-sentence); "Nucleus" becomes "nucleus" */
+function lowerUnlessProper(name, L) {
+  const first = name.split(/\s+/)[0];
+  if (/^[A-Z0-9]{2,}$/.test(first) || /[A-Z]/.test(first.slice(1))) return name;
+  // a proper name keeps its capital: the lesson capitalises it mid-sentence ("the Golgi") and never writes it in lower
+  // case. Everything else is lower-cased ("nucleus", and "arbitration" though the lesson also names "the Arbitration Act")
+  const low = name.charAt(0).toLowerCase() + name.slice(1), text = plain(lessonText(L)), esc = (w) => w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const midCap = new RegExp(`[a-z,;] ${esc(first)}\\b`).test(text), lowSeen = new RegExp(`\\b${esc(low.split(/\s+/)[0])}\\b`).test(text);
+  return midCap && !lowSeen ? name : low;
+}
+export function questionsFor(L, skip = new Set()) {
+  const out = [], seen = new Set(skip), add = (q, a) => { const k = plain(q).toLowerCase(); if (!q || !a || seen.has(k)) return; seen.add(k); out.push([q, a]); };
+  for (const c of L.authorities.filter((x) => x.kind === "case")) {
+    const n = caseName(c.name);
+    add(`What happened in ${n}?`, `${c.facts} **Held:** ${c.held}`);
+    add(`What principle does ${n} establish?`, c.principle);
+  }
+  for (const [t, d] of L.terms) if (!L.authorities.some((c) => caseName(c.name) === plain(t))) add(`What does “${lowerUnlessProper(plain(t), L)}” mean?`, d);
+  for (const [q, a] of L.cards) if (INTERROGATIVE.test(plain(q)) && !/^Case card:|^Which case is authority/.test(plain(q))) add(q.trim(), a);
+  // a named part described in a list ("**Lysosomes**: digest worn-out parts…"): "What are lysosomes?"
+  for (const b of L.blocks.filter((x) => x.t === "ul")) for (const item of b.items || []) {
+    const m = String(item).match(/^\*\*([^*]{2,60})\*\*:\s*(.{20,})$/); if (!m) continue;
+    const name = plain(m[1]); if (name.split(/\s+/).length > 6 || /(al|ive|ing|ed|ly)$/i.test(name)) continue;
+    const n = lowerUnlessProper(name, L), many = PLURAL.test(name) || IRREGULAR.has(name.toLowerCase());
+    add(many ? `What are ${n}?` : `What is the ${n}?`, item);
+  }
+  // check questions not already on the page, with the right answer and why
+  for (const m of L.mcq) if (INTERROGATIVE.test(plain(m.q))) add(m.q.trim(), `**${m.right}.** ${m.why || ""}`.trim());
+  return out;
+}
+
 export async function lessonPages() {
   const diagrams = await json("kit/diagrams/manifest.json"), cat = (await json("kit/api/v1/catalogue.json")).courses, pages = [];
   for (const [slug, unitIds] of Object.entries(PILOT)) {
@@ -68,7 +108,7 @@ export async function lessonPages() {
       list.forEach(({ meta, L }, i) => {
         const prev = list[i - 1]?.meta, next = list[i + 1]?.meta, f = lessonFrame(L), path = `lessons/${slug}/${meta.id}/index.html`;
         const words = lessonText(L).split(/\s+/).length + L.cards.reduce((n, [q, a]) => n + plain(q).split(/\s+/).length + plain(a).split(/\s+/).length, 0);
-        const cards = L.cards.slice(0, 6), mcq = L.mcq.slice(0, 4);
+        const mcq = L.mcq.slice(0, 4), qa = questionsFor(L, new Set(mcq.map((m) => plain(m.q).toLowerCase()))), cards = qa;
         const lead = plain(L.lead);
         const counts = { diagrams: L.blocks.filter((b) => b.t === "dg" && diagrams[b.id] && diagrams[b.id].status !== "failed").length, examples: L.blocks.filter((b) => b.t === "ex").length,
           cases: L.authorities.filter((a) => a.kind === "case").map((a) => caseName(a.name)), terms: L.terms.length, cards: cards.length, questions: mcq.length };
@@ -87,7 +127,7 @@ export async function lessonPages() {
     ${frame(f.top)}
     <div class="lesson-notes">${notesHtml(L, diagrams)}</div>
     ${frame(f.end)}
-    ${cards.length ? `<section><h2>Flashcards</h2><p>Answer from memory, then open the card to check.</p>${cards.map(([q, a]) => `<details class="flash"><summary>${inline(q)}</summary><p>${inline(a)}</p></details>`).join("")}</section>` : ""}
+    ${qa.length ? `<section class="lesson-qa"><h2 id="questions">Questions this page answers</h2><p>Use them as flashcards: cover the answer, say it out loud, then check.</p>${(() => { const ids = new Set(); return qa.map(([q, a]) => { let id = `q-${anchorId(q)}`; while (ids.has(id)) id += "-2"; ids.add(id); return `<h3 id="${id}">${inline(q)}</h3><p>${inline(a)}</p>`; }).join(""); })()}</section>` : ""}
     ${mcq.length ? `<section><h2>Check your understanding</h2><ol class="qbank">${mcq.map((m) => `<li><b>${inline(m.q)}</b><ul class="opts">${[m.right, ...m.wrong].sort((a, b) => a.localeCompare(b)).map((o) => `<li>${inline(o)}</li>`).join("")}</ul><details><summary>Show the answer</summary><p><b>${inline(m.right)}.</b> ${inline(m.why || "")}</p></details></li>`).join("")}</ol></section>` : ""}
     ${frame(f.refs)}
     <nav class="unit-nav" aria-label="Previous and next lessons">${prev ? `<a href="/lessons/${slug}/${prev.id}/">← ${esc(prev.title)}</a>` : `<a href="/topics/${slug}/${uid}/">← ${esc(unit.title)} overview</a>`}${next ? `<a href="/lessons/${slug}/${next.id}/">Next: ${esc(next.title)} →</a>` : `<a href="${c.page}">Back to the ${esc(api.name)} course →</a>`}</nav>
