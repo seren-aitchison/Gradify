@@ -135,7 +135,10 @@ export function riskKeywords(text, hr = CONFIG.highRisk) {
 }
 const isHighRisk = (topic, s, parsedBrief) => {
   const hr = CONFIG.highRisk;
-  return { conflict: parsedBrief.conflicts.length > 0, risk: topic.reqs.some((r) => hr.types.includes(r.type)) || /^NUM/m.test(s.text) || riskKeywords(s.text, hr).length > 0 };
+  // only the requirements this lesson teaches: a practical elsewhere in the topic doesn't make every lesson high-risk
+  const own = new Set(s.lesson?.reqs?.map((x) => x.id) || []), ids = new Set(topic.reqs.map((r) => r.id));
+  const mine = topic.reqs.filter((r) => [...own].some((id) => parentOf(id, ids) === r.id));
+  return { conflict: parsedBrief.conflicts.length > 0, risk: (own.size ? mine : topic.reqs).some((r) => hr.types.includes(r.type)) || /^NUM/m.test(s.text) || riskKeywords(s.text, hr).length > 0 };
 };
 
 /** write, check, review and repair one topic's lessons; file what passes; return the record for the ledger and PR */
