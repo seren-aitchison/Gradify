@@ -7,7 +7,7 @@
 // is the course. One subject can be taught in several courses, and one site can host several subjects.
 //   id        stable, lower case
 //   courses   the Gradify courses (kit/courses/<slug>) that teach this subject as their main subject
-//   uk        the subject key its specifications use in kit/curriculum/uk.js (SPECS[].subject), where there are any
+//   uk        the subject key its specifications use in kit/curriculum/uk.js (SPECS[].subject), when it isn't the id
 //   related   other subjects with a genuine overlap, each with the overlap itself: [[subjectId, "what they share"]].
 //             Listed once, on either subject; the graph shows it from both. A link here is a pointer between subjects,
 //             never a claim that one course covers the other's content.
@@ -17,7 +17,7 @@
 // learner at that stage might use.
 
 export const SUBJECTS = [
-  { id: "biology", name: "Biology", courses: ["biology"], uk: "biology", aliases: ["life science", "bio"] },
+  { id: "biology", name: "Biology", courses: ["biology"], aliases: ["life science", "bio"] },
   { id: "chemistry", name: "Chemistry", courses: ["chemistry"], aliases: ["chem"] },
   { id: "physics", name: "Physics", courses: ["physics"] },
   { id: "maths", name: "Mathematics", courses: ["maths"], aliases: ["maths", "math", "statistics"] },

@@ -67,7 +67,7 @@ export function buildGraph({ courses = [] } = {}) {
   // subjects, related subjects and stages (subjects.js)
   for (const s of SUBJECTS) {
     const first = s.courses.map(courseOf).find(Boolean), n = first && nodes.get(first);
-    add("subject", s.id, { name: s.name, sub: s.courses.map((c) => nodes.get(`course:${c}`)?.site).filter(Boolean).join(", "), colour: n?.colour, icon: n?.icon, aliases: s.aliases || [], uk: s.uk || null });
+    add("subject", s.id, { name: s.name, sub: s.courses.map((c) => nodes.get(`course:${c}`)?.site).filter(Boolean).join(", "), colour: n?.colour, icon: n?.icon, aliases: s.aliases || [], uk: s.uk || s.id });
     for (const c of s.courses) link(`subject:${s.id}`, "taught-in", `course:${c}`, "subjects.js");
   }
   for (const [a, b, why] of RELATED) { link(`subject:${a}`, "related", `subject:${b}`, "subjects.js", why); link(`subject:${b}`, "related", `subject:${a}`, "subjects.js", why); }
@@ -109,7 +109,7 @@ export function buildGraph({ courses = [] } = {}) {
     for (const n of b.nations) { const j = jurOfNation(n); if (j) { link(bid, "in", j, "uk.js"); link(j, "body", bid, "uk.js"); } }
   }
   for (const s of UK_SPECS) {
-    const subj = SUBJECTS.find((x) => x.uk === s.subject), sid = add("spec", s.id, { name: s.title, sub: [s.code && `Code ${s.code}`, s.firstTeaching && `first taught ${s.firstTeaching}`].filter(Boolean).join(" · "), code: s.code, confirmed: s.confirmed, statements: s.statements, source: s.source || null, note: s.note || null, bodyKey: s.body, qualKey: s.qual, subjectKey: subj?.id || null });
+    const subj = SUBJECTS.find((x) => (x.uk || x.id) === s.subject), sid = add("spec", s.id, { name: s.title, sub: [s.code && `Code ${s.code}`, s.firstTeaching && `first taught ${s.firstTeaching}`].filter(Boolean).join(" · "), code: s.code, confirmed: s.confirmed, statements: s.statements, source: s.source || null, note: s.note || null, bodyKey: s.body, qualKey: s.qual, subjectKey: subj?.id || null });
     link(sid, "by", `body:${s.body}`, "uk.js"); link(`body:${s.body}`, "awards", sid, "uk.js");
     link(sid, "for", `qualification:${s.qual}`, "uk.js"); link(`qualification:${s.qual}`, "spec", sid, "uk.js");
     if (subj) { link(sid, "of", `subject:${subj.id}`, "uk.js"); link(`subject:${subj.id}`, "spec", sid, "uk.js"); }

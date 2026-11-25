@@ -169,3 +169,7 @@ test("the coverage report is up to date (node scripts/curriculum/pathways-report
   const { report } = await import("../scripts/curriculum/pathways-report.mjs");
   assert.equal(readFileSync(new URL("docs/curriculum/PATHWAYS-COVERAGE.md", root), "utf8"), report(), "docs/curriculum/PATHWAYS-COVERAGE.md is out of date: run node scripts/curriculum/pathways-report.mjs");
 });
+
+test("every specification in uk.js belongs to a subject (a new subject's specifications join it by id)", () => {
+  for (const s of UK_SPECS) assert.ok(g.out(`spec:${s.id}`, "of").length, `${s.id} (${s.subject}) isn't linked to a subject`);
+});
