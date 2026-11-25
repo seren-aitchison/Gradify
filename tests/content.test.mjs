@@ -329,3 +329,18 @@ test("agent mode: a topic moves through files from research to filing, and each 
   const t = readFileSync(join(process.env.GRADIFY_OUT, f), "utf8");
   assert.match(t, /O: two\nREQ: aqa-gcse-biology:4\.1\.1\.1\.a @1,2\nH: h/); assert.equal((t.match(/REQ:/g) || []).length, 1);
 });
+
+test("mapping replies: NO lines are recorded, and a rejected strong match joins the write queue", async () => {
+  const { parseMapLine, mapCandidates } = await import("../scripts/content/agent.mjs");
+  const { writeFileSync, mkdirSync } = await import("node:fs");
+  assert.deepEqual(parseMapLine("MAP aqa-gcse-biology:4.1.1.2.a NO lesson never relates structures to functions"), { reqId: "aqa-gcse-biology:4.1.1.2.a", lesson: null, verdict: "NO", rest: "lesson never relates structures to functions" });
+  assert.deepEqual(parseMapLine("MAP aqa-gcse-biology:4.1.1.2.b u02-04 YES @1,2"), { reqId: "aqa-gcse-biology:4.1.1.2.b", lesson: "u02-04", verdict: "YES", rest: "@1,2" });
+  assert.equal(parseMapLine("MAP aqa-gcse-biology:4.1.1.2.b u02-04 NO too shallow").verdict, "NO");
+  assert.equal(parseMapLine("END"), null);
+  const [a, b] = mapCandidates("aqa-gcse-biology").map((c) => c.ref), inQueue = (ref) => topicsFor("aqa-gcse-biology").some((t) => t.reqs.some((r) => r.ref === ref));
+  assert.ok(!inQueue(a) && !inQueue(b), "unconfirmed strong matches wait for their check");
+  mkdirSync(join(process.env.GRADIFY_OUT, "content/mapping"), { recursive: true });
+  writeFileSync(join(process.env.GRADIFY_OUT, "content/mapping/aqa-gcse-biology.json"), JSON.stringify({ confirmed: { [a]: { ok: false, why: "not taught" }, [b]: { ok: true, lesson: "u02-04", objectives: [1] } } }));
+  assert.ok(inQueue(a), "a rejected match is written"); assert.ok(!inQueue(b), "a confirmed match is not");
+  assert.ok(!mapCandidates("aqa-gcse-biology").some((c) => c.ref === a || c.ref === b), "decided matches aren't asked again");
+});

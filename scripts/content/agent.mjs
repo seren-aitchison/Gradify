@@ -148,6 +148,17 @@ export function addReqLine(file, title, reqId, objectives) {
   lines.splice(at + 1, 0, `REQ: ${reqId}${objectives.length ? ` @${objectives.join(",")}` : ""}`);
   writeFileSync(u, lines.join("\n")); return true;
 }
+/**
+ * One reply line. The map prompt asks for "MAP <req> <lesson> YES @<objectives>" or "MAP <req> NO <reason>"; a NO
+ * that also names the lesson ("MAP <req> <lesson> NO <reason>") is accepted too. Anything else is null.
+ */
+export function parseMapLine(line) {
+  const t = String(line).trim();
+  let m = t.match(/^MAP (\S+) NO\b\s*(.*)$/);
+  if (m) return { reqId: m[1], lesson: null, verdict: "NO", rest: m[2].trim() };
+  m = t.match(/^MAP (\S+) (\S+) (YES|NO)\b\s*(.*)$/);
+  return m ? { reqId: m[1], lesson: m[2], verdict: m[3], rest: m[4].trim() } : null;
+}
 /** apply map.out.txt replies: YES → a REQ: line on the existing lesson; NO → the requirement joins the write queue */
 export async function applyMapping(subject) {
   const res = [], idx = await lessonIndex(subject);
@@ -155,14 +166,14 @@ export async function applyMapping(subject) {
     const dir = out(`content/queue/${subject}/_map-${fw}/`), o = new URL("map.out.txt", dir), reply = read(o); if (!reply) continue;
     const M = loadMapping(fw);
     for (const line of reply.split("\n")) {
-      const m = line.trim().match(/^MAP (\S+) (\S+) (YES|NO)\s*(.*)$/); if (!m) continue;
-      const [, reqId, second, verdict, rest] = m, ref = reqId.replace(`${fw}:`, "");
+      const m = parseMapLine(line); if (!m) continue;
+      const { reqId, lesson, verdict, rest } = m, ref = reqId.replace(`${fw}:`, "");
       if (verdict === "YES") {
-        const x = idx.get(second), objs = (rest.match(/@([\d,]+)/)?.[1] || "").split(",").map(Number).filter((n) => n >= 1 && n <= (x?.L.objectives.length || 0));
-        if (!x || !objs.length) { M.confirmed[ref] = { ok: false, why: x ? "confirmed without valid objectives" : `unknown lesson ${second}`, on: today() }; continue; }
+        const x = idx.get(lesson), objs = (rest.match(/@([\d,]+)/)?.[1] || "").split(",").map(Number).filter((n) => n >= 1 && n <= (x?.L.objectives.length || 0));
+        if (!x || !objs.length) { M.confirmed[ref] = { ok: false, why: x ? "confirmed without valid objectives" : `unknown lesson ${lesson}`, on: today() }; continue; }
         addReqLine(`kit/courses/${x.c.slug}/notes/${x.u.id}.js`, x.L.title, reqId, objs);
-        M.confirmed[ref] = { ok: true, lesson: second, objectives: objs, by: `agent:${AGENT.map}`, on: today() }; res.push(`${reqId} → ${second} @${objs.join(",")}`);
-      } else { M.confirmed[ref] = { ok: false, why: `${second} ${rest}`.trim(), on: today() }; res.push(`${reqId}: not taught (${`${second} ${rest}`.trim()}), queued to write`); }
+        M.confirmed[ref] = { ok: true, lesson, objectives: objs, by: `agent:${AGENT.map}`, on: today() }; res.push(`${reqId} → ${lesson} @${objs.join(",")}`);
+      } else { M.confirmed[ref] = { ok: false, why: rest || "not taught", ...(lesson ? { lesson } : {}), by: `agent:${AGENT.map}`, on: today() }; res.push(`${reqId}: not taught (${rest || "no reason given"}), queued to write`); }
     }
     save(mappingPath(fw), M); rmSync(dir, { recursive: true, force: true });
   }
