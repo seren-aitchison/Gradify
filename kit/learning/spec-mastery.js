@@ -157,7 +157,9 @@ export function specMastery(spec, { attempts = [], levels = null, exploration = 
     const practise = ids.slice().sort((a, b) => rank[readings.get(a).state] - rank[readings.get(b).state] || (readings.get(a).latest ?? 1) - (readings.get(b).latest ?? 1)).slice(0, 3);
     return {
       ...p, lessons: full, partial: part,
-      coverage: { gradify: full.length ? "full" : part.length ? "partial" : "none", done: ids.filter((id) => done[id]).length, total: ids.length, ids, doneIds: ids.filter((id) => done[id]) },
+      // gradify: full, partial, none, or unchecked (a generated view: nothing taught, some statements not checked yet);
+      // evidence: "verified" (a named person) or "ai-mapped" (an AI reviewer), from the mapping store
+      coverage: { gradify: p.state && !(full.length || part.length) ? (p.state === "none" ? "none" : "unchecked") : full.length ? "full" : part.length ? "partial" : "none", evidence: p.evidence ?? null, done: ids.filter((id) => done[id]).length, total: ids.length, ids, doneIds: ids.filter((id) => done[id]) },
       estimate, provisional, band: bandOf(estimate), confidence: conf, profile, trend, series,
       byLesson: Object.fromEntries(readings), can: r.can, struggle: r.struggle, next: r.next,
       practise, focus: ["apply", "transfer"].includes(profile.weakest) ? "application" : "mixed",
@@ -186,14 +188,16 @@ function topicOf(t, points) {
 function overallOf(points) {
   const { assessed, estimate, provisional } = combine(points);
   const bands = Object.fromEntries([...BANDS, UNASSESSED].map((b) => [b.key, points.filter((p) => p.band.key === b.key).length]));
-  const covered = points.filter((p) => p.coverage.gradify !== "none").length, full = points.filter((p) => p.coverage.gradify === "full").length;
+  const covered = points.filter((p) => ["full", "partial"].includes(p.coverage.gradify)).length, full = points.filter((p) => p.coverage.gradify === "full").length;
+  // what the coverage rests on: verified by a person, mapped by an AI reviewer only, or not checked yet
+  const evidence = { verified: points.filter((p) => p.coverage.evidence === "verified").length, aiMapped: points.filter((p) => p.coverage.evidence === "ai-mapped").length, unchecked: points.filter((p) => p.coverage.gradify === "unchecked").length };
   const share = points.length ? assessed / points.length : 0;
   const firm = points.filter((p) => ["medium", "high"].includes(p.confidence.level)).length;
   // the headline is only as trustworthy as the share of the specification behind it
   const level = !assessed ? "none" : share >= 0.6 && firm >= assessed / 2 ? "high" : share >= 0.25 ? "medium" : "low";
   // one lesson can teach several requirements: the totals count each lesson once
   const mapped = new Set(points.flatMap((p) => p.coverage.ids)), doneIds = new Set(points.flatMap((p) => p.coverage.doneIds));
-  return { total: points.length, covered, full, assessed, firm, measured: points.filter((p) => p.estimate != null && !p.provisional).length, estimate, provisional, band: bandOf(estimate), bands, confidence: level,
+  return { total: points.length, covered, full, evidence, assessed, firm, measured: points.filter((p) => p.estimate != null && !p.provisional).length, estimate, provisional, band: bandOf(estimate), bands, confidence: level,
     slipping: points.filter((p) => p.trend === "slipping").length,
     lessonsDone: doneIds.size, lessonsMapped: mapped.size };
 }

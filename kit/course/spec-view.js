@@ -15,11 +15,18 @@ import { sixHtml, calibrationHtml } from "../learning/mastery-view.js";
 const pct = (v) => `${Math.round(v * 100)}%`;
 const SHADE = { emerging: 0.22, building: 0.4, developing: 0.58, secure: 0.78, strong: 1 };
 const STEPS = { none: 0, low: 1, medium: 2, high: 3 };
-const COVER = { full: ["Fully taught", "Gradify's lessons teach and test all of this point."], partial: ["Partly taught", "Gradify's lessons cover part of this point; use your class notes for the rest."], none: ["Not on Gradify yet", "No Gradify lesson teaches this point yet, so Gradify can't measure it."] };
+const COVER = { full: ["Fully taught", "Gradify's lessons teach and test all of this point."], partial: ["Partly taught", "Gradify's lessons cover part of this point; use your class notes for the rest."], none: ["Not on Gradify yet", "No Gradify lesson teaches this point yet, so Gradify can't measure it."],
+  unchecked: ["Not checked yet", "Gradify hasn't yet checked which of its lessons teach this point, so it can't measure it yet."] };
+// what the coverage rests on (the mapping store): a named person's check, or an AI reviewer's only
+const EVIDENCE = {
+  verified: { full: ["Independently verified", "A named reviewer confirmed Gradify's lessons teach all of this point."], partial: ["Partly taught (verified)", "A named reviewer confirmed Gradify's lessons teach part of this point; use your class notes for the rest."] },
+  "ai-mapped": { full: ["Mapped \u2014 not independently verified", "An AI reviewer confirmed Gradify's lessons teach this point. No person has checked it yet."], partial: ["Partially mapped", "An AI reviewer found Gradify's lessons teach part of this point. No person has checked it yet, so use your class notes too."] },
+};
+const coverOf = (p) => EVIDENCE[p.coverage.evidence]?.[p.coverage.gradify] || COVER[p.coverage.gradify] || COVER.none;
 const TREND = { improving: "Improving: your recent answers are better than earlier ones.", steady: "Steady: your recent answers are about the same as earlier ones.", slipping: "Slipping: your recent answers are clearly weaker than before. Worth revisiting soon." };
 
 const fig = (p) => (p.estimate == null ? "" : `${p.provisional ? "~" : ""}${pct(p.estimate)}`);
-const state = (p) => (p.estimate != null ? p.band.label : p.coverage.gradify === "none" ? "Not on Gradify yet" : "Not assessed yet");
+const state = (p) => (p.estimate != null ? p.band.label : p.coverage.gradify === "none" ? "Not on Gradify yet" : p.coverage.gradify === "unchecked" ? "Not checked yet" : "Not assessed yet");
 const pill = (p) => `<span class="sm-pill b-${p.estimate == null ? "none" : p.band.key}">${esc(state(p))}</span>`;
 const tip = (p) => `${p.id} ${p.title}: ${state(p)}${p.estimate == null ? "" : ` ${fig(p)}${p.provisional ? " (early estimate)" : ""}`}${p.trend === "slipping" ? ", slipping" : ""}`;
 const tileCls = (p) => [p.estimate == null ? (p.coverage.gradify === "none" ? "gap" : "none") : `b-${p.band.key}`, p.provisional ? "prov" : "", p.trend === "slipping" ? "slip" : ""].filter(Boolean).join(" ");
@@ -124,13 +131,13 @@ export function topicPageHtml(m, t, { practiseHref } = {}) {
     <div class="sm-topicnav">${m.topics.map((x) => `<a href="#/spec/${esc(x.id)}" ${x === t ? 'aria-current="page"' : ""}>${esc(x.id)} ${esc(x.title)}</a>`).join("")}</div>
     <div class="co-intro"><span class="co-kicker">Topic ${esc(t.id)}</span><h2>${esc(t.title)}</h2><p>${topicStatus(t)} · ${t.assessed} of ${t.total} requirements assessed</p>${summaryNote(m.spec, { short: true })}</div>
     ${groupsOf(t.points).map((g) => `<section class="co-panel sm-group"><h3><span class="sm-id">${esc(g[0].group.id)}</span>${esc(g[0].group.title)}</h3>
-      <ul class="sm-rows">${g.map((p) => `<li><span class="sm-tiles sm-swatch">${tile(p)}</span><a class="sm-rt" href="#/spec/${esc(p.id)}"><span class="sm-id">${esc(p.id)}</span>${esc(p.title)}${flagTags(m.spec, p)}<small>${p.estimate == null ? esc(COVER[p.coverage.gradify][0]) : `${esc(CONFIDENCE[p.confidence.level].label)}${p.trend === "slipping" ? " · slipping" : ""}`}</small></a><span class="sm-rs">${pill(p)}<b>${fig(p)}</b></span>${action(p, practiseHref)}</li>`).join("")}</ul></section>`).join("")}
+      <ul class="sm-rows">${g.map((p) => `<li><span class="sm-tiles sm-swatch">${tile(p)}</span><a class="sm-rt" href="#/spec/${esc(p.id)}"><span class="sm-id">${esc(p.id)}</span>${esc(p.title)}${flagTags(m.spec, p)}<small>${p.estimate == null ? esc(coverOf(p)[0]) : `${esc(CONFIDENCE[p.confidence.level].label)}${p.trend === "slipping" ? " · slipping" : ""}`}</small></a><span class="sm-rs">${pill(p)}<b>${fig(p)}</b></span>${action(p, practiseHref)}</li>`).join("")}</ul></section>`).join("")}
     <nav class="sm-pager">${prev ? `<a href="#/spec/${esc(prev.id)}">← ${esc(prev.id)} ${esc(prev.title)}</a>` : "<span></span>"}${next ? `<a href="#/spec/${esc(next.id)}">${esc(next.id)} ${esc(next.title)} →</a>` : ""}</nav>`;
 }
 
 // ---------- #/spec/<point> ----------
 export function pointPageHtml(m, p, { titleOf = (id) => id, statusOf = () => null, practiseHref } = {}) {
-  const spec = m.spec, c = p.confidence, cov = COVER[p.coverage.gradify];
+  const spec = m.spec, c = p.confidence, cov = coverOf(p);
   const i = m.points.findIndex((x) => x.id === p.id), prev = m.points[i - 1], next = m.points[i + 1], topic = m.topics.find((t) => t.id === p.topic.id);
   const lessonRow = (id, kind) => {
     const r = p.byLesson[id] || { state: "unanswered", n: 0 }, st = statusOf(id);

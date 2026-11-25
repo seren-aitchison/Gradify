@@ -426,7 +426,8 @@ test("publish: titles differing only in case share an identity, and one TIER lab
 
 test("review fixes after #208 merged: mapping replies, publish wiring and duplicates, verified links, spend", async () => {
   const { writeFileSync, mkdirSync, cpSync } = await import("node:fs");
-  const { applyMapping, mapCandidates, loadMapping } = await import("../scripts/content/agent.mjs");
+  const { applyMapping, mapCandidates } = await import("../scripts/content/agent.mjs");
+  const { loadStore } = await import("../scripts/content/mapstore.mjs");
   const { loadIndex, applyReview } = await import("../scripts/curriculum/engine.mjs");
   const fw = "aqa-gcse-biology", hash = new Map(loadIndex(fw).statements.map((x) => [x.ref, x.hash]));
   // a mapping reply is stored only against the statement text it was asked about
@@ -434,9 +435,9 @@ test("review fixes after #208 merged: mapping replies, publish wiring and duplic
   mkdirSync(dir, { recursive: true });
   writeFileSync(join(dir, "map.req.txt"), `MAPREQ ${fw}:${c} #${hash.get(c)} | x\nMAPREQ ${fw}:${d} #0000stale0000000 | x\nEND\n`);
   writeFileSync(join(dir, "map.out.txt"), `MAP ${fw}:${c} NO not taught\nMAP ${fw}:${d} NO not taught\nEND\n`);
-  const res = await applyMapping("biology"), M = loadMapping(fw);
-  assert.equal(M.confirmed[c]?.hash, hash.get(c), "a current reply is recorded with its hash");
-  assert.ok(!M.confirmed[d] && res.some((x) => x.includes(d) && /dropped/.test(x)), "a reply about changed text is dropped and asked again");
+  const res = await applyMapping("biology"), M = loadStore(fw);
+  assert.equal(M.links[c]?.status, "rejected"); assert.equal(M.links[c]?.hash, hash.get(c), "a current reply is recorded with its hash");
+  assert.equal(M.links[d]?.status, "proposed"); assert.ok(res.some((x) => x.includes(d) && /dropped/.test(x)), "a reply about changed text is dropped and asked again");
   assert.ok(mapCandidates(fw).some((x) => x.ref === d));
   // a course file that imports published.js without its hook is refused, not accepted as wired
   const { installHooks, publish } = await import("../scripts/content/publish.mjs");
@@ -729,4 +730,27 @@ test("reused lessons are named by their locked ids, not their position in the no
   // borrowed units (teaching, professional, gcse…) start after their retired ids, so position names the wrong lesson
   assert.deepEqual(wrong.slice(0, 5), []);
   assert.equal(lessonTitles("teaching").size > 0, true);
+});
+
+test("the mapping store: one status per statement, a person's check is never replaced, stale decisions are undecided, legacy decisions fold in once", async () => {
+  const { decide, decisionOf, candidatesOf, consolidate, loadStore, legacyPath, storePath } = await import("../scripts/content/mapstore.mjs");
+  const { mergeProposals } = await import("../scripts/curriculum/engine.mjs");
+  const { existsSync, writeFileSync, mkdirSync } = await import("node:fs");
+  const m = { spec: "t", links: { A: { status: "proposed", confidence: "strong", lessons: [{ id: "u1", coverage: "partial" }] }, V: { status: "verified", reviewer: "A. Teacher", reviewedOn: "2026-11-30", hash: "hv", lessons: [] } } };
+  decide(m, "A", { ok: true, lesson: "u1", objectives: [1, 2], hash: "h1", by: "agent:haiku", on: "2026-11-25" });
+  assert.equal(m.links.A.status, "ai-confirmed"); assert.deepEqual(m.links.A.lessons, [{ id: "u1", coverage: "full", objectives: [1, 2] }]);
+  assert.deepEqual(candidatesOf(m.links.A), [{ id: "u1", coverage: "partial" }], "the matcher's candidates are kept as evidence");
+  decide(m, "V", { ok: false, why: "x", hash: "hv", by: "agent:haiku", on: "2026-11-25" });
+  assert.equal(m.links.V.status, "verified", "an AI decision never replaces a person's check");
+  assert.ok(decisionOf(m, "A", "h1")); assert.equal(decisionOf(m, "A", "changed"), null, "a decision on older text is no decision");
+  const merged = mergeProposals(m, [{ ref: "A", candidates: [{ id: "u7", band: "strong", score: 9, share: 1, matched: [] }] }]);
+  assert.equal(merged.links.A.status, "ai-confirmed", "rerunning the matcher keeps decisions");
+  // a legacy content/mapping decision is folded into the store, and the legacy file goes once the store is saved
+  const fw = "aqa-gcse-biology", ref = Object.entries(loadStore(fw).links).find(([, l]) => l.status === "proposed" && l.lessons.length)[0];
+  mkdirSync(new URL("./", legacyPath(fw)), { recursive: true });
+  writeFileSync(legacyPath(fw), JSON.stringify({ confirmed: { [ref]: { ok: false, why: "osmosis practical not taught", by: "agent:haiku", on: "2026-11-25" } } }));
+  const r = consolidate(fw);
+  assert.ok(r.folded); assert.ok(!existsSync(legacyPath(fw))); assert.ok(existsSync(storePath(fw)));
+  assert.deepEqual(loadStore(fw).links[ref].missing, ["osmosis practical not taught"]);
+  assert.equal(consolidate(fw).folded, false, "running it again changes nothing");
 });

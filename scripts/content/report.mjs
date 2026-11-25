@@ -5,7 +5,8 @@ import { execFileSync } from "node:child_process";
 import { CONFIG, at, out, load, save, today, fp, loadLedger, saveLedger } from "./lib.mjs";
 import { splitUnit } from "./shorthand.mjs";
 import { topicsFor, frameworksFor, subjectsInRun, nextTopics, staleLessons } from "./queue.mjs";
-import { mapCandidates, loadMapping } from "./agent.mjs";
+import { mapCandidates } from "./agent.mjs";
+import { loadStore, decisionOf } from "./mapstore.mjs";
 import { SPECS } from "../../kit/curriculum/uk.js";
 import { loadIndex, loadMap } from "../curriculum/engine.mjs";
 import { parentOf } from "./shorthand.mjs";
@@ -35,9 +36,8 @@ export function ladder() {
     const rung = new Map(idx.statements.map((x) => [x.ref, "spec imported"])), set = (ref, r) => { if (rung.has(ref) && LADDER.indexOf(r) > LADDER.indexOf(rung.get(ref))) rung.set(ref, r); };
     const ids = new Set(idx.statements.map((x) => `${s.id}:${x.ref}`)), refOf = (id) => parentOf(id, ids)?.slice(s.id.length + 1);
     // mapped: an existing course lesson teaches it (confirmed in a session, or reviewed by a person)
-    const map = loadMap(s.id) || { links: {} }, conf = loadMapping(s.id).confirmed, hash = new Map(idx.statements.map((x) => [x.ref, x.hash]));
-    for (const [ref, c] of Object.entries(conf)) if (c.ok && (!c.hash || c.hash === hash.get(ref))) set(ref, "mapped");
-    for (const [ref, l] of Object.entries(map.links)) if (l.status === "verified" && l.hash === hash.get(ref) && (l.lessons || []).length) set(ref, "mapped");
+    const map = loadStore(s.id), hash = new Map(idx.statements.map((x) => [x.ref, x.hash]));
+    for (const ref of Object.keys(map.links)) { const d = decisionOf(map, ref, hash.get(ref)); if (d && d.status !== "rejected" && (d.lessons || []).length) set(ref, "mapped"); }
     // drafted: a topic in flight has the Writer's lessons
     const q = out(`content/queue/${s.subject}/`);
     if (existsSync(q)) for (const d of readdirSync(q)) { const st = load(new URL(`${d}/state.json`, q)); if (st?.lessons?.length) for (const t of topicsFor(s.id)) if (t.id === st.topic) for (const r of t.reqs) set(r.ref, "drafted"); }

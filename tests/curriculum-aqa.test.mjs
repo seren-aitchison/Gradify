@@ -171,7 +171,7 @@ test("applying review decisions: full, partial and missing become verified; bad 
   assert.match(ok.map.links["9.1.b"].hash, /^[0-9a-f]{16}$/, "a reviewed link records the statement text it was reviewed on");
   assert.deepEqual({ ...ok.map.links["9.1.b"], hash: undefined }, { status: "verified", hash: undefined, reviewer: "A. Reviewer", reviewedOn: "2026-12-01", lessons: [], gap: "no lesson on this", matcherConfidence: "none" });
   assert.deepEqual(ok.map.links["9.1.c"].lessons.map((l) => [l.id, l.coverage]), [["u02-05", "partial"], ["u05-03", "partial"]]);
-  assert.deepEqual(coverageReport(tiny, ok.map).totals, { statements: 3, covered: 1, partial: 1, missing: 1, awaiting: 0 });
+  assert.deepEqual(coverageReport(tiny, ok.map).totals, { statements: 3, covered: 1, partial: 1, missing: 1, mapped: 0, partiallyMapped: 0, rejected: 0, awaiting: 0 });
   assert.equal(claimFor(tiny, ok.map).line, "Covers 1 of 3 specification statements fully and 1 in part");
   const mixed = applyReview(tiny, tinyMap, [R({ ref: "9.1.a", decision: "full", lessons: "u02-03=full u05-03" })], lessonIds);
   assert.deepEqual(mixed.map.links["9.1.a"].lessons.map((l) => l.coverage), ["full", "partial"], "=full marks the lesson that teaches it fully");

@@ -11,6 +11,8 @@
 //                                           --emit writes the queue's request files to content/queue/ instead
 //   gradify publish <subject>               move AI-checked and expert-reviewed drafts into the course (via the rolling PR)
 //   gradify ingest [files…] [--review]      gate and file unit files from content/inbox/ (pasted back from chat)
+//   gradify map [<framework>]                fold legacy mapping decisions into the mapping store; count each status
+//                                           (then node scripts/curriculum/spec-view.mjs <view> regenerates Specification Mastery)
 //   gradify fixlist [--subject s]           fix lists for every lesson that failed, to paste back to the Writer
 //   gradify status [--write]                progress from the files and git; --write updates knowledge-engine/CORE/
 //   gradify signals                         repair queue from learners' wrong-answer rates (Supabase secrets needed)
@@ -158,6 +160,11 @@ try {
     // wiring a course adds an import, which changes its page's module preloads (tests/smooth-load.test.mjs)
     if (r.hooks?.length) { const { execFileSync } = await import("node:child_process"); execFileSync("node", ["scripts/preload-modules.mjs"], { cwd: at("./").pathname, stdio: "inherit" }); } }
   else if (cmd === "ingest") await ingest();
+  else if (cmd === "map") {
+    // the mapping store (scripts/content/mapstore.mjs): fold legacy decisions in, and count each status
+    const { consolidate } = await import("./content/mapstore.mjs");
+    for (const fw of argv[1] && !argv[1].startsWith("--") ? [argv[1]] : subjects().flatMap((s) => frameworksFor(s))) { const r = consolidate(fw); log(`${fw}: ${r.folded ? "legacy decisions folded in; " : ""}${Object.entries(r.counts).map(([k, v]) => `${v} ${k}`).join(", ")}`); }
+  }
   else if (cmd === "fixlist") fixlists();
   else if (cmd === "status") { const s = status(); if (flag("write")) writeHandover(s); log(JSON.stringify(s, null, 1)); }
   else if (cmd === "signals") { const { fetchSignals } = await import("./content/signals.mjs"); log(JSON.stringify(await fetchSignals())); }

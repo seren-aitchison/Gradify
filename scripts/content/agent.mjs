@@ -17,6 +17,7 @@ import { loadStatements, loadMap, loadIndex, statementsPath } from "../curriculu
 import { SPECS } from "../../kit/curriculum/uk.js";
 
 import { AGENT_MODELS as AGENT, examplesFor } from "./build.mjs";
+import { loadStore, saveStore, decide, decisionOf, candidatesOf } from "./mapstore.mjs";
 const rel = (u) => u.pathname.replace(out("./").pathname, "");
 const read = (u) => (existsSync(u) ? readFileSync(u, "utf8") : null);
 export const queueRoot = (subject) => out(`content/queue/${subject}/`);
@@ -122,14 +123,11 @@ export async function advance(topic, { render = null, legible = null } = {}) {
 }
 
 // ---------- mapping: strong existing matches are confirmed, then get REQ: lines ----------
-export const mappingPath = (fw) => out(`content/mapping/${fw}.json`);
-export const loadMapping = (fw) => load(mappingPath(fw), { framework: fw, confirmed: {} });
-/** statements a matcher linked strongly to an existing lesson that nobody has confirmed yet */
+// decisions live in the mapping store (scripts/content/mapstore.mjs, kit/curriculum/maps/<framework>.json)
+/** statements a matcher linked strongly to an existing lesson that nobody has decided on, for their current text */
 export function mapCandidates(fw) {
-  const map = loadMap(fw) || { links: {} }, done = loadMapping(fw).confirmed, hashes = new Map((loadIndex(fw)?.statements || []).map((x) => [x.ref, x.hash]));
-  // decided = a decision on the statement's current text (or one recorded before hashes were stored)
-  const decided = (ref) => done[ref] && (!done[ref].hash || done[ref].hash === hashes.get(ref));
-  return Object.entries(map.links).filter(([ref, l]) => l.status !== "verified" && l.confidence === "strong" && !decided(ref)).map(([ref, l]) => ({ ref, lessons: l.lessons.filter((x) => x.confidence === "strong" || x === l.lessons[0]).slice(0, 2).map((x) => x.id) }));
+  const map = loadStore(fw), hashes = new Map((loadIndex(fw)?.statements || []).map((x) => [x.ref, x.hash]));
+  return Object.entries(map.links).filter(([ref, l]) => l.status !== "verified" && l.confidence === "strong" && !decisionOf(map, ref, hashes.get(ref))).map(([ref, l]) => [ref, candidatesOf(l)]).filter(([, c]) => c.length).map(([ref, c]) => ({ ref, lessons: c.filter((x) => x.confidence === "strong" || x === c[0]).slice(0, 2).map((x) => x.id) }));
 }
 async function lessonIndex(subject) { const { lessonsOf } = await import("../growth/lesson-readiness.mjs"); return new Map((await lessonsOf([subject])).map((x) => [x.id, x])); }
 export async function mapActions(subject, { batch = 20 } = {}) {
@@ -176,7 +174,7 @@ export async function applyMapping(subject) {
   const res = [], idx = await lessonIndex(subject);
   for (const fw of frameworksFor(subject)) {
     const dir = out(`content/queue/${subject}/_map-${fw}/`), o = new URL("map.out.txt", dir), reply = read(o); if (!reply) continue;
-    const M = loadMapping(fw), hashes = new Map((loadIndex(fw)?.statements || []).map((x) => [x.ref, x.hash]));
+    const M = loadStore(fw), hashes = new Map((loadIndex(fw)?.statements || []).map((x) => [x.ref, x.hash]));
     const asked = new Map([...(read(new URL("map.req.txt", dir)) || "").matchAll(/^MAPREQ (\S+) #(\S+)/gm)].map((m) => [m[1], m[2]]));
     for (const line of reply.split("\n")) {
       const m = parseMapLine(line); if (!m) continue;
@@ -185,12 +183,12 @@ export async function applyMapping(subject) {
       if (!asked.has(reqId) || asked.get(reqId) !== (hashes.get(ref) || "-")) { res.push(`${reqId}: reply dropped (statement changed or not asked), asked again`); continue; }
       if (verdict === "YES") {
         const x = idx.get(lesson), objs = (rest.match(/@([\d,]+)/)?.[1] || "").split(",").map(Number).filter((n) => n >= 1 && n <= (x?.L.objectives.length || 0));
-        if (!x || !objs.length) { M.confirmed[ref] = { ok: false, why: x ? "confirmed without valid objectives" : `unknown lesson ${lesson}`, on: today() }; continue; }
+        if (!x || !objs.length) { decide(M, ref, { ok: false, why: x ? "confirmed without valid objectives" : `unknown lesson ${lesson}`, hash: hashes.get(ref), by: `agent:${AGENT.map}`, on: today() }); continue; }
         addReqLine(`kit/courses/${x.c.slug}/notes/${x.u.id}.js`, x.L.title, reqId, objs);
-        M.confirmed[ref] = { ok: true, lesson, objectives: objs, hash: hashes.get(ref), by: `agent:${AGENT.map}`, on: today() }; res.push(`${reqId} → ${lesson} @${objs.join(",")}`);
-      } else { M.confirmed[ref] = { ok: false, why: rest || "not taught", ...(lesson ? { lesson } : {}), hash: hashes.get(ref), by: `agent:${AGENT.map}`, on: today() }; res.push(`${reqId}: not taught (${rest || "no reason given"}), queued to write`); }
+        decide(M, ref, { ok: true, lesson, objectives: objs, hash: hashes.get(ref), by: `agent:${AGENT.map}`, on: today() }); res.push(`${reqId} → ${lesson} @${objs.join(",")}`);
+      } else { decide(M, ref, { ok: false, why: rest || "not taught", lesson, hash: hashes.get(ref), by: `agent:${AGENT.map}`, on: today() }); res.push(`${reqId}: not taught (${rest || "no reason given"}), queued to write`); }
     }
-    save(mappingPath(fw), M); rmSync(dir, { recursive: true, force: true });
+    saveStore(fw, M); rmSync(dir, { recursive: true, force: true });
   }
   return res;
 }
