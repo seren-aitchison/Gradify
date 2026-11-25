@@ -644,3 +644,9 @@ test("reused lessons are named by their course titles, not bare ids", async () =
   const reuse = topicsFor("aqa-gcse-biology").flatMap((x) => x.reuse);
   assert.ok(reuse.length && reuse.every((r) => !/^u\d+-\d+$/.test(r.title)), JSON.stringify(reuse.slice(0, 3)));
 });
+
+test("a requirement's asks is its whole statement, so write and review requests aren't cut off", () => {
+  const r = topicsFor("aqa-gcse-biology").flatMap((t) => t.reqs).find((x) => x.text && x.text.length > 400);
+  if (!r) return; // specification text not imported here
+  assert.equal(r.asks, r.text);
+});

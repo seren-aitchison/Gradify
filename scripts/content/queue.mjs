@@ -46,7 +46,7 @@ export function topicsFor(fwId, { titles = null } = {}) {
     const id = `${s.subject}/${slug(sec.title)}`;
     if (!byTopic.has(id)) byTopic.set(id, { id, subject: s.subject, fw: fwId, section: sec.ref, title: sec.title, level: LEVEL[s.qual] || QUAL_TYPES[s.qual]?.name || s.qual, country: "uk", reqs: [], reuse: new Map() });
     const t = byTopic.get(id), full = text.get(x.ref);
-    t.reqs.push({ id: `${fwId}:${x.ref}`, ref: x.ref, asks: full?.text ? full.text.slice(0, 400) : `${sec.title} (${x.ref})`, text: full?.text || null, title: sec.title, type: TYPE(x), status: x.status, reqType: x.type, spec: { version: idx.version, published: idx.published }, hash: x.hash, ...(x.higherTier ? { higherTier: true } : {}) });
+    t.reqs.push({ id: `${fwId}:${x.ref}`, ref: x.ref, asks: full?.text || `${sec.title} (${x.ref})`, text: full?.text || null, title: sec.title, type: TYPE(x), status: x.status, reqType: x.type, spec: { version: idx.version, published: idx.published }, hash: x.hash, ...(x.higherTier ? { higherTier: true } : {}) });
     for (const l of link?.lessons || []) t.reuse.set(lessonRef(s.subject, l.id), titles.get(l.id) || l.id);
   }
   return [...byTopic.values()].map((t) => ({ ...t, reuse: [...t.reuse].map(([id, title]) => ({ id, title })) }));
