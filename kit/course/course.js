@@ -75,6 +75,7 @@ import { art as spotArt, heroArt, subjectOf } from "../ui/art.js";
 import { specsFor } from "../specs/index.js";
 import { specMastery } from "../learning/spec-mastery.js";
 import { specPageHtml, topicPageHtml, pointPageHtml, specSummaryHtml } from "./spec-view.js";
+import { subjectById } from "../curriculum/subjects.js";
 import { STRATEGIES, explain as explainWay, available as waysFor, rank as rankWays, stats as wayStats, record as wayRecord, shown as wayShown, answered as wayAnswered } from "../learning/explain.js";
 
 const DAY = 864e5;
@@ -2677,7 +2678,7 @@ export function mountCourse(root, cfg) {
     const count = (f) => units.filter(f).reduce((a, u) => a + u.lessons.length, 0);
     main.innerHTML = `<section class="co-hero g-gleam" style="--a:${t0.from};--b:${cfg.tracks.at(-1).to}">${heroArt(`${cfg.name} ${cfg.site}`, { cls: "co-heroart" })}
         <div class="co-herotext"><h2>${esc(O.headline || cfg.name)}</h2><p>${esc(O.intro)}</p>
-          <div class="co-row co-herogo">${(() => { const rl = started ? resumeLesson() || nl : nl; return rl ? `<a class="btn btn-light lg co-start1" href="${started ? resumeHref(rl) : `#/lesson/${rl.id}`}"><span>${ic("play")} ${started ? `Continue: ${esc(rl.title)}` : `Start the first lesson`}</span></a>` : ""; })()}<a class="co-link co-pathlink" href="#/paths">or choose a path</a></div>
+          <div class="co-row co-herogo">${(() => { const rl = started ? resumeLesson() || nl : nl; return rl ? `<a class="btn btn-light lg co-start1" href="${started ? resumeHref(rl) : `#/lesson/${rl.id}`}"><span>${ic("play")} ${started ? `Continue: ${esc(rl.title)}` : `Start the first lesson`}</span></a>` : ""; })()}<a class="co-link co-pathlink" href="#/paths">or choose a path</a>${subjectById(cfg.slug) ? `<a class="co-link co-pathlink" href="/explore.html#/subject/${esc(cfg.slug)}">exam boards and qualifications</a>` : ""}</div>
           <p class="co-herosmall">${units.length} ${u1}s · ${lessons.length.toLocaleString()} lessons${ixs.length ? ` · ${ixs.length} interactives` : ""}${nl && !started ? ` · first lesson: ${esc(nl.title)}` : ""}</p></div>
       </section>
       ${feat.length ? `<section class="co-osec"><div class="co-intro"><h2>Try it</h2></div><div class="co-herolab">${ixCard(feat[0], true)}</div></section>` : ""}

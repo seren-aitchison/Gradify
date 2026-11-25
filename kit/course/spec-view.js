@@ -62,7 +62,7 @@ function measuresHtml({ mastery, confidence, coverage }) {
 // ---------- shared pieces ----------
 function controlsHtml(m, specs) {
   const s = m.spec;
-  const pick = specs.length > 1 ? `<label class="sm-choose"><span>Change</span><select data-spec aria-label="Your qualification">${specs.map((x) => `<option value="${esc(x.id)}" ${x.id === s.id ? "selected" : ""}>${esc(x.title)}</option>`).join("")}</select></label>` : `<small class="sm-only">More boards coming.</small>`;
+  const pick = specs.length > 1 ? `<label class="sm-choose"><span>Change</span><select data-spec aria-label="Your qualification">${specs.map((x) => `<option value="${esc(x.id)}" ${x.id === s.id ? "selected" : ""}>${esc(x.title)}</option>`).join("")}</select></label>` : `<a class="sm-only" href="/explore.html#/subject/${esc(s.course)}/${esc(s.qualification)}">Other boards and qualifications →</a>`;
   const opts = (s.options || []).map((o) => `<div class="sm-seg" role="group" aria-label="${esc(o.label)}"><span>${esc(o.label)}</span>${o.choices.map((c) => `<button type="button" data-opt="${esc(o.id)}" data-choice="${esc(c.id)}" aria-pressed="${m.choices[o.id] === c.id}">${esc(c.label)}</button>`).join("")}</div>`).join("");
   return `<div class="sm-qual"><span class="sm-live" title="Updated every time you answer"><i></i>Live</span><span>Your qualification <b>${esc(s.title)}</b></span>${pick}${opts}</div>`;
 }

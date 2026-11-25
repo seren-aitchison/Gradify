@@ -29,6 +29,9 @@ import { masteryMap } from "../learning/mastery-map.js";
 import { renderMasteryMap } from "./mastery-map-view.js";
 import { segmentedHtml, wireSegmented } from "./disclosure.js";
 import { pref, setPref } from "./prefs.js";
+import { pathwaysFor, renderPathway, pathwayHits, hrefOf } from "./pathways.js";
+import { actionCard } from "../core/action-card.js";
+import { KINDS } from "../curriculum/graph.js";
 
 const MIN_DEFAULT = 8;   // a lesson, roughly, until this learner's own pace is known
 const pc = (x) => `${Math.round((x || 0) * 100)}%`;
@@ -67,7 +70,7 @@ const courseState = (slug) => readJson(`gradify.course.${slug}`, null);
 export function mountExplore(root) {
   ensureStyles();
   root.innerHTML = skeleton("cards", 6, "Loading every course");
-  let idx = null;
+  let idx = null, pw = null;
   const bySite = () => { const m = new Map(); for (const c of idx.courses) { if (!m.has(c.site)) m.set(c.site, []); m.get(c.site).push(c); } return m; };
   const groupOfSite = (site) => GROUPS.find((g) => g.items.some((s) => s.n === site));
   const siteOf = (name) => GROUPS.flatMap((g) => g.items).find((s) => s.n === name);
@@ -84,10 +87,12 @@ export function mountExplore(root) {
     const run = () => {
       const q = input.value.trim();
       if (q.length < 2) { out.innerHTML = ""; if (rest) rest.hidden = false; return; }
-      const hits = searchIndex(idx, q, { limit: 30 });
+      pw ||= pathwaysFor(idx);
+      const hits = searchIndex(idx, q, { limit: 30 }), paths = pathwayHits(pw.g, q);
       if (rest) rest.hidden = true;
-      out.innerHTML = hits.length ? `<ul class="gx-ex-hits">${hits.map((h) => `<li><a href="${esc(h.type === "course" ? `#/course/${idx.courses.find((c) => c.u === h.href)?.s}` : h.href)}"><span class="gx-ex-kind">${{ course: "Course", topic: "Topic", lesson: "Lesson" }[h.type] || ""}</span><b>${h.html}</b><small>${esc(h.k)}</small></a></li>`).join("")}</ul>`
-        : emptyState({ icon: "search", title: `Nothing matches “${q}”`, body: "Try a key term, or fewer words. Every course, chapter, topic and lesson is searchable.", compact: true });
+      const pathHtml = paths.length ? `<ul class="gx-ex-hits gx-pw-hits">${paths.map((n) => `<li><a href="${esc(hrefOf(n))}"><span class="gx-ex-kind">${esc(KINDS[n.kind].one)}</span><b>${esc(n.name)}</b>${n.sub ? `<small>${esc(n.sub)}</small>` : ""}</a></li>`).join("")}</ul>` : "";
+      out.innerHTML = pathHtml + (hits.length || pathHtml ? `<ul class="gx-ex-hits">${hits.map((h) => `<li><a href="${esc(h.type === "course" ? `#/course/${idx.courses.find((c) => c.u === h.href)?.s}` : h.href)}"><span class="gx-ex-kind">${{ course: "Course", topic: "Topic", lesson: "Lesson" }[h.type] || ""}</span><b>${h.html}</b><small>${esc(h.k)}</small></a></li>`).join("")}</ul>`
+        : emptyState({ icon: "search", title: `Nothing matches “${q}”`, body: "Try a key term, or fewer words. Every course, chapter, topic and lesson is searchable.", compact: true }));
     };
     input.addEventListener("input", run); run();
   }
@@ -101,6 +106,7 @@ export function mountExplore(root) {
     root.innerHTML = `${crumbs([["Gradify", "/"], ["Explore", "#/"]])}
       <header class="gx-ex-head"><h1>Explore</h1><p>${idx.courses.length} courses and ${total.toLocaleString()} lessons across the Gradify sites. Open anything: nothing is locked behind anything else.</p>${searchBox()}</header>
       <div class="gx-ex-browse">
+      ${actionCard({ kicker: "Start anywhere", title: "Find your course by subject, exam board or country", why: "Biology to GCSE to your exam board, AQA to every subject it publishes, England to its qualifications: follow any of them to the lessons.", actions: [{ label: "Explore pathways", icon: "route", href: "#/pathways" }, { label: "By exam board", soft: true, href: "#/boards" }, { label: "By country", soft: true, href: "#/countries" }], cls: "gx-pw-act" })}
       ${mine.length || explored.length ? `<section class="gx-ex-sec"><h2>Pick up where you were</h2><div class="gx-ex-row">${mine.slice(0, 4).map((r) => `<a class="gx-ex-mini" href="${esc(r.href)}">${uiIcon("play")}<span><b>${esc(r.title)}</b><small>${esc(r.course)} · ${pc(r.course_pct)} complete</small></span></a>`).join("")}${explored.filter((e) => !mine.some((m) => m.href.startsWith(e.href))).slice(0, 4).map((r) => `<a class="gx-ex-mini" href="${esc(r.href)}">${uiIcon("clock")}<span><b>${esc(r.title)}</b><small>${esc(r.sub || "Explored")}</small></span></a>`).join("")}</div></section>` : ""}
       ${groups.map(({ g, items }) => `<section class="gx-ex-sec"><h2>${esc(g.title)}</h2>${g.blurb ? `<p class="gx-ex-sub">${esc(g.blurb)}</p>` : ""}<div class="gx-ex-sites">${items.map((s) => {
         const cs = sites.get(s.n);
@@ -172,8 +178,15 @@ export function mountExplore(root) {
     void acc;
   }
 
+  const PATHWAY_VIEWS = new Set(["pathways", "subjects", "boards", "countries", "stages", "professions", "subject", "body", "qualification", "award", "country", "jurisdiction", "spec", "topic", "org", "stage"]);
   function route() {
-    const [, view, slug, unit] = location.hash.replace(/^#/, "").split("/");
+    const [, view0, slug, unit] = location.hash.replace(/^#/, "").split("/"), view = (view0 || "").split("?")[0];
+    if (PATHWAY_VIEWS.has(view)) {
+      pw ||= pathwaysFor(idx);
+      const title = renderPathway(root, location.hash, { ...pw, crumbs });
+      scrollTo({ top: 0 }); document.title = `${title} · Explore · Gradify`;
+      return;
+    }
     if (view === "course" && slug) course(slug, unit); else overview();
     if (!unit) scrollTo({ top: 0 });
     document.title = view === "course" ? `${idx.courses.find((c) => c.s === slug)?.n || "Course"} · Explore · Gradify` : "Explore · Gradify";
