@@ -153,7 +153,9 @@ try {
   else if (cmd === "next" && flag("emit")) { const s = opt("subject") || subjectsInRun()[0], r = await agentWork(s, { print: false }); for (const a of r.actions) log(`${a.kind.padEnd(8)} ${a.topic}  ${a.req || a.pairs?.map((p) => p[0]).join(" ")}`); if (!r.actions.length) log("Nothing to emit."); }
   else if (cmd === "next") await next();
   else if (cmd === "work") await agentWork(argv[1] && !argv[1].startsWith("--") ? argv[1] : opt("subject") || subjectsInRun()[0]);
-  else if (cmd === "publish") { const { publish } = await import("./content/publish.mjs"); const r = await publish(argv[1] || opt("subject")); log(r.unit ? `${r.unit}: ${r.added.length} added, ${r.updated.length} updated${r.hooks?.length ? `; course files wired: ${r.hooks.join(", ")}` : ""}${[...r.added, ...r.updated].map((x) => `\n  ${x}`).join("")}${r.skipped.length ? `\nnot published (${r.skipped.length}): ${r.skipped.slice(0, 12).join("; ")}` : ""}` : "Nothing to publish yet."); }
+  else if (cmd === "publish") { const { publish } = await import("./content/publish.mjs"); const r = await publish(argv[1] || opt("subject")); log(r.unit ? `${r.unit}: ${r.added.length} added, ${r.updated.length} updated${r.hooks?.length ? `; course files wired: ${r.hooks.join(", ")}` : ""}${[...r.added, ...r.updated].map((x) => `\n  ${x}`).join("")}${r.skipped.length ? `\nnot published (${r.skipped.length}): ${r.skipped.slice(0, 12).join("; ")}` : ""}` : "Nothing to publish yet.");
+    // wiring a course adds an import, which changes its page's module preloads (tests/smooth-load.test.mjs)
+    if (r.hooks?.length) { const { execFileSync } = await import("node:child_process"); execFileSync("node", ["scripts/preload-modules.mjs"], { cwd: at("./").pathname, stdio: "inherit" }); } }
   else if (cmd === "ingest") await ingest();
   else if (cmd === "fixlist") fixlists();
   else if (cmd === "status") { const s = status(); if (flag("write")) writeHandover(s); log(JSON.stringify(s, null, 1)); }
