@@ -39,7 +39,7 @@ export function summaryNote(spec, { short = false } = {}) {
   const fl = Object.values(spec.flags || {}).map((f) => `“${f.short}”`);
   if (short) return `<small class="sm-sumtag" title="Not yet checked against ${esc(spec.board)}'s published specification">Summary, not official wording</small>`;
   const what = spec.verified ? "The requirement wording is Gradify's summary; the structure was checked against the published specification" : `Point titles, wording and classifications${fl.length ? ` (such as ${esc(fl.join(" and "))})` : ""} are Gradify's summary of ${esc(spec.board)}'s specification and haven't yet been checked against the published version`;
-  return `<p class="sm-note" role="note"><b>Summary, not official wording.</b> ${what}. Use your own specification for the exact requirements.${spec.url ? ` <a href="${esc(spec.url)}" target="_blank" rel="noopener">${esc(spec.board)}'s specification ↗</a>` : ""}</p>`;
+  return `<p class="sm-note" role="note" title="${what}"><b>Summary, not official wording.</b> ${spec.verified ? "Wording is Gradify's; structure checked." : "Not yet checked against the original."}${spec.url ? ` <a href="${esc(spec.url)}" target="_blank" rel="noopener">${esc(spec.board)}'s specification ↗</a>` : ""}</p>`;
 }
 const flagTags = (spec, p) => p.flags.map((f) => spec.flags?.[f] ? `<span class="sm-tag" title="${esc(spec.flags[f].name)}${spec.verified ? "" : " (Gradify's summary, not yet verified)"}">${esc(spec.flags[f].short)}</span>` : "").join("");
 
@@ -69,7 +69,7 @@ function measuresHtml({ mastery, confidence, coverage }) {
 // ---------- shared pieces ----------
 function controlsHtml(m, specs) {
   const s = m.spec;
-  const pick = specs.length > 1 ? `<label class="sm-choose"><span>Change</span><select data-spec aria-label="Your qualification">${specs.map((x) => `<option value="${esc(x.id)}" ${x.id === s.id ? "selected" : ""}>${esc(x.title)}</option>`).join("")}</select></label>` : `<small class="sm-only">The only ${esc(s.subject)} specification mapped so far. More boards are coming.</small>`;
+  const pick = specs.length > 1 ? `<label class="sm-choose"><span>Change</span><select data-spec aria-label="Your qualification">${specs.map((x) => `<option value="${esc(x.id)}" ${x.id === s.id ? "selected" : ""}>${esc(x.title)}</option>`).join("")}</select></label>` : `<a class="sm-only" href="/explore.html#/subject/${esc(s.course)}/${esc(s.qualification)}">Other boards and qualifications →</a>`;
   const opts = (s.options || []).map((o) => `<div class="sm-seg" role="group" aria-label="${esc(o.label)}"><span>${esc(o.label)}</span>${o.choices.map((c) => `<button type="button" data-opt="${esc(o.id)}" data-choice="${esc(c.id)}" aria-pressed="${m.choices[o.id] === c.id}">${esc(c.label)}</button>`).join("")}</div>`).join("");
   return `<div class="sm-qual"><span class="sm-live" title="Updated every time you answer"><i></i>Live</span><span>Your qualification <b>${esc(s.title)}</b></span>${pick}${opts}</div>`;
 }
@@ -104,16 +104,16 @@ export function keyHtml() {
 export function specPageHtml(m, { specs = [], practiseHref } = {}) {
   const s = m.spec, o = m.overall;
   return `<div class="co-intro sm-head"><span class="co-kicker">Specification mastery</span><h2>How ready you are for ${esc(s.board)} ${esc(s.subject)}</h2>
-      <p>Every requirement of your specification, and how well your own answers across Gradify show you can meet it.</p>
+      <p>Every requirement, and what your answers show.</p>
       ${controlsHtml(m, specs)}${summaryNote(s)}</div>
     ${measuresHtml({
-      mastery: { estimate: o.estimate, provisional: o.provisional, band: o.band, scope: `Across the ${o.assessed} ${o.assessed === 1 ? "requirement" : "requirements"} you've been assessed on. Requirements without answers aren't counted as zero.`, empty: "Answer some check questions and Gradify starts measuring. It doesn't guess from nothing." },
-      confidence: { level: o.confidence, basis: o.assessed ? `${o.firm} of the ${o.assessed} assessed requirements have a fair amount of varied evidence. Covering more of the specification makes the figure firmer.` : "No answers yet." },
+      mastery: { estimate: o.estimate, provisional: o.provisional, band: o.band, scope: `Across ${o.assessed} assessed ${o.assessed === 1 ? "requirement" : "requirements"}.`, empty: "Answer a few questions to start." },
+      confidence: { level: o.confidence, basis: o.assessed ? `${o.firm} of ${o.assessed} with firm evidence.` : "No answers yet." },
       coverage: [["Requirements with evidence", o.assessed, o.total], ["Taught on Gradify", o.covered, o.total, o.covered - o.full ? `${o.covered - o.full} only in part` : ""], ["Lessons you've completed", o.lessonsDone, o.lessonsMapped]],
     })}
     ${nextStepsHtml(m, practiseHref)}
     <section class="co-panel sm-map"><div class="cx-acth"><h3>Your specification map</h3><span>${o.assessed} of ${o.total} assessed</span></div>
-      <p class="co-acct">One tile per requirement. The stronger the colour, the more your answers show; an empty tile isn't assessed yet. Pick any tile to see it.</p>
+      <p class="co-acct">One tile per requirement. Stronger colour, more evidence.</p>
       ${keyHtml()}
       <div class="sm-topics">${m.topics.map((t) => `<section class="sm-topic"><a class="sm-th" href="#/spec/${esc(t.id)}"><b><span class="sm-id">${esc(t.id)}</span>${esc(t.title)}</b><span>${topicStatus(t)}</span></a>
         <div class="sm-tiles">${groupsOf(t.points).map((g) => `<span class="sm-grp">${g.map((p) => tile(p)).join("")}</span>`).join("")}</div></section>`).join("")}</div></section>
