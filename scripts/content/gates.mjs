@@ -9,7 +9,7 @@ import { parentOf } from "./shorthand.mjs";
 import { CONFIG } from "./lib.mjs";
 import { readFileSync } from "node:fs";
 
-const KNOWN = new Set(["S", "H", "P", "E", "X", "K", "!", "Q", "O", "PRE", "T", "SUM", "SAFE", "SRC", "READ", "IX", "D", "EV", "LV", "CASE", "LAW", "DRUG", "REQ", "DIA", "DNEED", "GAP"]);
+const KNOWN = new Set(["S", "H", "HOOK", "MORE", "ALT", "P", "E", "X", "K", "!", "Q", "O", "PRE", "T", "SUM", "SAFE", "SRC", "READ", "IX", "D", "EV", "LV", "CASE", "LAW", "DRUG", "REQ", "DIA", "DNEED", "GAP"]);
 const QTAG = /^(M|TF|MS|SEQ|MATCH|SA|NUM)[123]?(#[a-z0-9-]+)?(@[\d,]+)?:/;
 const lineOf = (text, re) => { const i = text.split("\n").findIndex((l) => re.test(l)); return i < 0 ? null : i + 1; };
 const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
