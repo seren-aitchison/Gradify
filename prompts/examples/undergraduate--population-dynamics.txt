@@ -1,0 +1,42 @@
+# example · level: undergraduate · from kit/courses/biology/notes/u11.js · selected by a structure score, not yet expert-approved
+## Population dynamics
+LV: Year 1 · Application
+S: Populations change in size over time. This lesson explains exponential and logistic growth and the factors that regulate populations.
+O: Describe exponential and logistic population growth
+O: Define carrying capacity
+O: Distinguish density-dependent and density-independent factors
+H: Growth models
+- Population change = births + immigration − deaths − emigration.
+- **Exponential growth**: J-shaped curve when resources are unlimited.
+- **Logistic growth**: S-shaped curve as growth slows near the **carrying capacity** (K).
+- Carrying capacity is the maximum population an environment can support.
+D: bio-logistic-growth
+H: Regulating factors
+- **Density-dependent factors** have stronger effects at higher density: competition, predation, disease.
+- **Density-independent factors** act regardless of density: weather, floods, fires.
+- Populations may overshoot K and crash.
+- **r-selected species** reproduce quickly; **K-selected species** have few offspring with much care.
+P: Predator-prey cycles, such as those of lynx and snowshoe hares in Canada, show linked oscillations. Human population has grown from about 1 billion in 1800 to over 8 billion today. Understanding population dynamics is essential for managing fisheries, pests and endangered species.
+X: Yeast in a flask.
+> A few yeast cells are added to a sugar solution.
+> At first they multiply slowly, then rapidly in an exponential phase.
+> As sugar runs out and ethanol builds up, growth slows.
+> The population levels off at the carrying capacity.
+K: Population size changes with births, deaths and migration; exponential growth occurs with unlimited resources and logistic growth levels at carrying capacity, regulated by density-dependent and density-independent factors.
+!: Thinking populations stay exactly at carrying capacity. They fluctuate around it and can overshoot.
+EV: established | Lynx and snowshoe hare cycles are a classic example of predator-prey dynamics (Elton and Nicholson, 1942).
+T: Carrying capacity | The maximum population an environment can support
+T: Logistic growth | S-shaped growth levelling at carrying capacity
+T: Density-dependent factor | A factor whose effect increases with density
+SUM: J-shaped and S-shaped.
+SUM: Carrying capacity.
+SUM: Density-dependent and independent.
+SRC: Elton C. and Nicholson M., "The ten-year cycle in numbers of the lynx in Canada", Journal of Animal Ecology 11(2), 215–244 | primary | 1942
+SRC: United Nations, World Population Prospects 2024 | guidance | 2024 | https://population.un.org/wpp/
+Q: What is carrying capacity? | The maximum population an environment can support.
+Q: Give an example of a density-independent factor. | A flood or severe weather.
+M1#biology-u11-15-q1@1: What shape is a logistic growth curve? | S-shaped | J-shaped | U-shaped | A straight line | Growth slows as the population approaches K.
+M2#biology-u11-15-q2@2: Which is a density-dependent factor? | Competition for food | A volcanic eruption | A severe frost | A forest fire | Competition intensifies as density rises.
+MATCH1#biology-u11-15-q3@2: Match each term to its meaning. | Exponential = J-shaped ; Logistic = S-shaped ; r-selected = Many offspring ; K-selected = Few offspring | Populations grow in different ways.
+M3#biology-u11-15-q4@3: Why do lynx and hare populations cycle? | Predator numbers lag behind prey numbers | Both species breed at the same rate | Hares eat lynx | Weather alone controls both | Predators increase after prey, then decline after prey falls.
+SA2#biology-u11-15-q5@1,3: Explain how populations grow and are regulated. | Population change equals births plus immigration minus deaths and emigration. With unlimited resources, populations grow exponentially in a J-shaped curve; as resources become limited, logistic growth produces an S-shaped curve levelling at the carrying capacity. Density-dependent factors such as competition, predation and disease intensify at high density, while density-independent factors such as weather and fire act regardless. Populations can overshoot and crash, and predator-prey cycles, such as lynx and hares, show linked oscillations. | Growth equation ; Exponential growth ; Logistic growth ; Regulating factors ; Cycles

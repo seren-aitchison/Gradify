@@ -1,0 +1,42 @@
+# example · level: alevel · from kit/courses/gcse/notes/u09.js · selected by a structure score, not yet expert-approved
+## Lifestyle factors and health
+LV: Level 3 · Foundation
+S: Smoking, diet, physical activity and alcohol are the four lifestyle factors with the largest effects on health in the UK. This lesson sets out the UK guidance on each, the evidence on their combined effect, and why lifestyle advice alone rarely changes population health.
+O: Identify the main lifestyle factors and the UK guidance for each
+O: Explain how lifestyle factors combine to affect risk, using evidence
+O: Evaluate the concept of lifestyle "choice" in explaining health
+PRE: The determinants of health
+H: The main lifestyle factors
+- **Smoking**: the largest single preventable cause of death and ill health in the UK. Stopping at any age brings benefits.
+- **Diet**: the Eatwell Guide (Public Health England, 2016) recommends at least five portions of fruit and vegetables a day, plenty of fibre, and less salt, sugar and saturated fat.
+- **Physical activity**: the UK Chief Medical Officers' guidelines (2019) recommend that adults do at least 150 minutes of moderate or 75 minutes of vigorous activity a week, strength activities on at least two days, and break up long periods of sitting.
+- **Alcohol**: the UK Chief Medical Officers' low-risk drinking guidelines (2016) advise not regularly drinking more than 14 units a week, spread over three or more days.
+P: Other lifestyle factors include sleep, sexual behaviour, drug use and gambling. Each is covered later in the course.
+H: Combined effects
+P: Lifestyle factors cluster: people who smoke are more likely also to drink heavily and be inactive, and clustering is most common in more deprived groups (The King's Fund, 2012). Their effects also combine. In the EPIC-Norfolk study, Khaw and colleagues (2008) followed about 20,000 adults aged 45 to 79 for around 11 years. Those with none of four healthy behaviours (not smoking, not being physically inactive, moderate alcohol intake and blood vitamin C levels indicating at least five servings of fruit and vegetables a day) had about four times the death rate of those with all four, equivalent to being around 14 years older.
+X: Reading the EPIC-Norfolk result.
+> Design: a prospective cohort, so behaviours were measured before deaths occurred, which strengthens causal inference.
+> Limitation: it is observational, so other differences between groups (income, education) could explain part of the result, although the authors adjusted for social class and other factors.
+> Interpretation: the result shows a strong association; trials of single behaviours (such as stopping smoking) support a causal effect for several of them.
+K: The four main lifestyle factors cluster in the same people and combine, so several healthy behaviours together are associated with large differences in risk.
+H: Lifestyle as choice?
+P: Calling behaviours "lifestyle choices" implies that people freely choose them. In practice, behaviours are shaped by income, stress, education, the local environment, commercial marketing and addiction. Popay, Whitehead and Hunter (2010) described **lifestyle drift**: policy that starts by recognising the social determinants of health but drifts towards campaigns aimed at individual behaviour. Population measures, such as smoke-free laws and the soft drinks industry levy, often change behaviour more than advice does.
+!: Treating lifestyle factors as purely personal choices. Choices are made within circumstances; blaming individuals can widen inequalities and discourage help-seeking.
+EV: established | Smoking, unhealthy diet, physical inactivity and harmful alcohol use are major causes of death and disability in the UK.
+EV: contested | How far campaigns aimed at individual behaviour reduce inequalities is debated; they often benefit more advantaged groups most.
+T: Lifestyle factor | A behaviour that affects health, such as smoking, diet, physical activity or alcohol use
+T: Clustering | The tendency for unhealthy behaviours to occur together in the same people
+T: Lifestyle drift | The tendency for policy to drift from tackling social determinants towards changing individual behaviour
+SUM: Smoking, diet, inactivity and alcohol are the main lifestyle factors; UK guidance sets clear thresholds for each.
+SUM: The factors cluster and combine, but they are shaped by circumstances, so population measures matter as much as advice.
+SRC: Khaw K.-T. et al., "Combined impact of health behaviours and mortality in men and women: the EPIC-Norfolk prospective population study", PLoS Medicine 5(1):e12 | primary | 2008 | https://doi.org/10.1371/journal.pmed.0050012
+SRC: UK Chief Medical Officers, UK Chief Medical Officers' Low Risk Drinking Guidelines | guidance | 2016
+SRC: UK Chief Medical Officers, UK Chief Medical Officers' Physical Activity Guidelines | guidance | 2019
+SRC: Buck D. and Frosini F., Clustering of unhealthy behaviours over time: implications for policy and practice, The King's Fund | secondary | 2012
+Q: What is the UK low-risk drinking guideline for adults? | Not to drink more than 14 units a week on a regular basis, spread over three or more days (UK CMOs, 2016).
+Q: What did the EPIC-Norfolk study find about four health behaviours? | People with none of the four had about four times the death rate of those with all four, equivalent to being about 14 years older.
+M1#gcse-u09-22-q1@1: How much moderate-intensity activity a week do the UK CMO guidelines recommend for adults? | At least 150 minutes | At least 60 minutes | At least 300 minutes every day | At least 30 minutes in total | The 2019 guidelines recommend at least 150 minutes of moderate (or 75 minutes of vigorous) activity a week, plus strength activities on two days.
+M2#gcse-u09-22-q2@2: A survey finds that people who smoke are also more likely to drink heavily and be inactive. What does this illustrate? | Clustering of unhealthy behaviours | The inverse care law | Lifestyle drift | A negative definition of health | Clustering is the tendency of unhealthy behaviours to occur together, often among more deprived groups.
+TF2#gcse-u09-22-q3@2: Because EPIC-Norfolk was a cohort study, it proves that the four behaviours caused the difference in deaths. | false | A cohort study shows a strong prospective association; confounding remains possible, so causal claims need support from other evidence such as trials.
+M3#gcse-u09-22-q4@3: Which policy is most likely to reduce smoking across the whole population, including disadvantaged groups? | Raising tobacco tax and enforcing smoke-free laws | Leaflets explaining the risks of smoking | A website with quit tips | A celebrity advertisement once a year | Price and environmental measures change behaviour across all groups, whereas information-only approaches are taken up most by advantaged people.
+SA3#gcse-u09-22-q5@2,3: "Ill health is mainly the result of poor lifestyle choices." Evaluate this statement. | Lifestyle factors (smoking, diet, inactivity, alcohol) are major causes of disease and combine strongly, as EPIC-Norfolk shows. However, "choice" is constrained by income, environment, stress, education, addiction and marketing, and behaviours cluster in deprived groups. Genetics and wider determinants also matter. Treating ill health as choice risks blame and lifestyle drift; evidence suggests population and structural measures are more effective. The statement is partly true for proximate causes but neglects the causes of the causes. | Lifestyle factors are major causes ; Evidence such as EPIC-Norfolk ; Choices constrained by circumstances ; Other determinants ; Risk of blame or lifestyle drift ; Judgement

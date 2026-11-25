@@ -66,7 +66,7 @@ It needs the `ANTHROPIC_API_KEY` secret, and Settings → Actions → General mu
 - **No mapping step yet.** Strong existing matches are skipped, not given `REQ:` lines. Mapping is the first job of M3.
 - **No sub-requirements.** A requirement with several separately assessable parts is checked as one: coverage requires a question per objective, not per part.
 - **No table for learners' reports of lessons.** Only wrong-answer rates (`assessment_attempts`) feed the repair queue, and suspect questions in live courses are listed for a person rather than repaired automatically.
-- **No expert benchmark yet.** `bench` scores against `prompts/examples/` until reviewers approve the 50 benchmark lessons. Put those in `prompts/benchmark/`. 5 of the 9 examples fail the give-away rule (right answer much the longest option) that new lessons are held to.
+- **No expert benchmark yet.** `bench` scores against `prompts/examples/` until reviewers approve the 50 benchmark lessons. Put those in `prompts/benchmark/`. All 9 examples pass every gate, including the give-away rule.
 - **Source licences aren't checked per lesson.** Writers see only briefs, which are in Gradify's own words. Source licences are recorded in each brief's `SRC:` lines, but nothing yet blocks a lesson whose brief rests on `noncommercial` or `unknown` sources.
 
 ## When the rolling PR reports a systematic failure
