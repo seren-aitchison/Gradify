@@ -90,6 +90,6 @@ ${(() => { const sig = subjects.map((sub) => load(out(`content/signals/${sub}.js
 ${records.filter((r) => r.uncovered.length).map((r) => `- ${r.topic}: ${r.uncovered.join(", ")}`).join("\n") || "None."}
 ${records.some((r) => r.gaps.length || r.needs.length) ? `\n## Research gaps and diagrams needed\n${records.flatMap((r) => [...r.gaps.map((g) => `- GAP ${g}`), ...r.needs.map((g) => `- DNEED ${g}`)]).join("\n")}\n` : ""}
 ## Cost
-$${spend.usd.toFixed(2)} over ${spend.calls} calls (${spend.searches} web searches); cache read ${spend.cacheRead.toLocaleString()} tokens, written ${spend.cacheWrite.toLocaleString()}. ${Object.entries(spend.byJob).map(([j, c]) => `${j} $${c.toFixed(2)}`).join(", ")}.
+${(CONFIG.provider || "api") === "agent" && !spend.calls ? "Written in agent mode by Claude Code sessions on the Claude subscription: no API spend." : `$${spend.usd.toFixed(2)} over ${spend.calls} calls (${spend.searches} web searches); cache read ${spend.cacheRead.toLocaleString()} tokens, written ${spend.cacheWrite.toLocaleString()}. ${Object.entries(spend.byJob).map(([j, c]) => `${j} $${c.toFixed(2)}`).join(", ")}.`}
 `;
 }
