@@ -24,7 +24,9 @@ export function topicsFor(fwId, { titles = new Map() } = {}) {
     const link = map.links[x.ref];
     // a decision holds for the statement text it was made on; one recorded before hashes were stored still counts
     const m0 = confirmed[x.ref], m = m0 && (!m0.hash || m0.hash === x.hash) ? m0 : null;
-    if (link?.status === "verified" || m?.ok) continue;                             // already taught: mapped, not written
+    // a reviewed link holds only for the statement text it was reviewed on; a changed statement is written or re-reviewed
+    const verified = link?.status === "verified" && link.hash === x.hash;
+    if (verified || m?.ok) continue;                                                // already taught: mapped, not written
     if (link?.confidence === "strong" && !m) continue;                             // waiting for its mapping check
     const sec = sections.get(x.section) || { ref: x.section, title: x.section };
     const id = `${s.subject}/${slug(sec.title)}`;

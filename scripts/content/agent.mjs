@@ -141,8 +141,10 @@ export async function mapActions(subject, { batch = 20 } = {}) {
     const dir = out(`content/queue/${subject}/_map-${fw}/`), q = new URL("map.req.txt", dir), o = new URL("map.out.txt", dir);
     if (existsSync(q)) { acts.push(action("map", `${fw} mapping`, { req: rel(q), out: rel(o) })); continue; }
     const st = loadStatements(fw), text = new Map((st?.statements || []).map((x) => [x.ref, x.text])), lines = [];
+    const hashes = new Map((loadIndex(fw)?.statements || []).map((x) => [x.ref, x.hash]));
     for (const c of mapCandidates(fw).slice(0, batch)) {
-      lines.push(`MAPREQ ${fw}:${c.ref} | ${String(text.get(c.ref) || c.ref).replace(/\s+/g, " ").slice(0, 500)}`);
+      // the statement hash travels with the request, so a reply is only stored against the text it was asked about
+      lines.push(`MAPREQ ${fw}:${c.ref} #${hashes.get(c.ref) || "-"} | ${String(text.get(c.ref) || c.ref).replace(/\s+/g, " ").slice(0, 500)}`);
       for (const id of c.lessons) { const x = idx.get(id); if (x) lines.push(`LESSON ${id} | ${x.L.title} | file kit/courses/${x.c.slug}/notes/${x.u.id}.js | ${x.L.objectives.map((ob, i) => `O${i + 1}: ${ob}`).join("; ")} | headings: ${x.L.blocks.filter((b) => b.t === "h").map((b) => b.x).join("; ")} | terms: ${x.L.terms.map(([t]) => t).join(", ")}`); }
     }
     if (!lines.length) continue;
@@ -178,9 +180,12 @@ export async function applyMapping(subject) {
   for (const fw of frameworksFor(subject)) {
     const dir = out(`content/queue/${subject}/_map-${fw}/`), o = new URL("map.out.txt", dir), reply = read(o); if (!reply) continue;
     const M = loadMapping(fw), hashes = new Map((loadIndex(fw)?.statements || []).map((x) => [x.ref, x.hash]));
+    const asked = new Map([...(read(new URL("map.req.txt", dir)) || "").matchAll(/^MAPREQ (\S+) #(\S+)/gm)].map((m) => [m[1], m[2]]));
     for (const line of reply.split("\n")) {
       const m = parseMapLine(line); if (!m) continue;
       const { reqId, lesson, verdict, rest } = m, ref = reqId.replace(`${fw}:`, "");
+      // a reply about text that has since changed (or wasn't asked) is dropped: the statement is asked again
+      if (!asked.has(reqId) || asked.get(reqId) !== (hashes.get(ref) || "-")) { res.push(`${reqId}: reply dropped (statement changed or not asked), asked again`); continue; }
       if (verdict === "YES") {
         const x = idx.get(lesson), objs = (rest.match(/@([\d,]+)/)?.[1] || "").split(",").map(Number).filter((n) => n >= 1 && n <= (x?.L.objectives.length || 0));
         if (!x || !objs.length) { M.confirmed[ref] = { ok: false, why: x ? "confirmed without valid objectives" : `unknown lesson ${lesson}`, on: today() }; continue; }

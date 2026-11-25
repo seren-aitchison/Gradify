@@ -395,3 +395,42 @@ test("publish: titles differing only in case share an identity, and one TIER lab
   const notes = readFileSync(join(process.env.GRADIFY_OUT, "kit/courses/biology/notes/u15.js"), "utf8");
   for (const lesson of notes.split(/\n(?=## )/).filter((x) => x.startsWith("## "))) assert.equal((lesson.match(/^TIER:/gm) || []).length, 1);
 });
+
+test("review fixes after #208 merged: mapping replies, publish wiring and duplicates, verified links, spend", async () => {
+  const { writeFileSync, mkdirSync, cpSync } = await import("node:fs");
+  const { applyMapping, mapCandidates, loadMapping } = await import("../scripts/content/agent.mjs");
+  const { loadIndex, applyReview } = await import("../scripts/curriculum/engine.mjs");
+  const fw = "aqa-gcse-biology", hash = new Map(loadIndex(fw).statements.map((x) => [x.ref, x.hash]));
+  // a mapping reply is stored only against the statement text it was asked about
+  const [, , c, d] = mapCandidates(fw).map((x) => x.ref), dir = join(process.env.GRADIFY_OUT, `content/queue/biology/_map-${fw}`);
+  mkdirSync(dir, { recursive: true });
+  writeFileSync(join(dir, "map.req.txt"), `MAPREQ ${fw}:${c} #${hash.get(c)} | x\nMAPREQ ${fw}:${d} #0000stale0000000 | x\nEND\n`);
+  writeFileSync(join(dir, "map.out.txt"), `MAP ${fw}:${c} NO not taught\nMAP ${fw}:${d} NO not taught\nEND\n`);
+  const res = await applyMapping("biology"), M = loadMapping(fw);
+  assert.equal(M.confirmed[c]?.hash, hash.get(c), "a current reply is recorded with its hash");
+  assert.ok(!M.confirmed[d] && res.some((x) => x.includes(d) && /dropped/.test(x)), "a reply about changed text is dropped and asked again");
+  assert.ok(mapCandidates(fw).some((x) => x.ref === d));
+  // a course file that imports published.js without its hook is refused, not accepted as wired
+  const { installHooks, publish } = await import("../scripts/content/publish.mjs");
+  const cdir = join(process.env.GRADIFY_OUT, "kit/courses/halfwired");
+  mkdirSync(cdir, { recursive: true });
+  for (const f of ["syllabus.js", "ids.js", "qa.js", "course.js"]) cpSync(new URL(`../kit/courses/biology/${f}`, import.meta.url), join(cdir, f));
+  writeFileSync(join(cdir, "syllabus.js"), readFileSync(join(cdir, "syllabus.js"), "utf8").replace(/export const UNITS = parseSyllabus\(PUBLISHED[^\n]+/, "export const UNITS = parseSyllabus(SYLLABUS, IDS, RETIRED);"));
+  assert.throws(() => installHooks("halfwired"), /without its hook/);
+  // two lessons in one topic whose titles share a key: the second is skipped, not written over the first
+  const ledPath = join(process.env.GRADIFY_OUT, "content/ledger/biology.json"), led = JSON.parse(readFileSync(ledPath, "utf8"));
+  const { fp } = await import("../scripts/content/lib.mjs");
+  const one = LESSON("3 × 4 = 12").replace("## Prokaryotic cells", "## Cell division"), two = LESSON("3 × 4 = 12").replace("## Prokaryotic cells", "## Cell-division");
+  writeFileSync(join(process.env.GRADIFY_OUT, "content/drafts/biology/aqa-gcse-biology/test-dupe.txt"), `# draft\n\n${one}\n\n${two}\n`);
+  led.topics["biology/test-dupe"] = { file: "content/drafts/biology/aqa-gcse-biology/test-dupe.txt", title: "Test dupe", status: "filed", lessons: [{ title: "Cell division", tier: "ai-verified", hash: fp(one), reqs: [REQ.id] }, { title: "Cell-division", tier: "ai-verified", hash: fp(two), reqs: [REQ.id] }] };
+  writeFileSync(ledPath, JSON.stringify(led));
+  const r = await publish("biology");
+  assert.equal(r.added.filter((x) => /Cell.division/.test(x)).length, 1);
+  assert.ok(r.skipped.some((x) => /Cell-division .*same title/.test(x)));
+  // a reviewed mapping link records the statement it was reviewed on
+  const st = { spec: fw, version: "1", statements: [{ ref: "1.a", text: "Cells divide by mitosis." }] };
+  const rv = applyReview(st, { spec: fw, specVersion: "1", links: {} }, [{ ref: "1.a", decision: "missing", reviewer: "A Reviewer", reviewed_on: "2026-11-25", note: "not taught" }], new Set());
+  assert.match(rv.map.links["1.a"]?.hash || "", /^[0-9a-f]{16}$/);
+  // the workflow counts each run record once, even when the publish job is rerun
+  assert.match(readFileSync(new URL("../.github/workflows/content.yml", import.meta.url), "utf8"), /!counted\.has\(f\)/);
+});

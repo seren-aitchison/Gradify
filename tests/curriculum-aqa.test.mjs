@@ -166,7 +166,8 @@ test("applying review decisions: full, partial and missing become verified; bad 
   assert.deepEqual(ok.problems, []); assert.equal(ok.applied, 3);
   assert.deepEqual(ok.map.links["9.1.a"].lessons, [{ id: "u02-03", coverage: "full" }], "blank lessons: the proposed ones");
   assert.equal(ok.map.links["9.1.a"].matcherConfidence, "strong", "the matcher's confidence is kept, to measure it later");
-  assert.deepEqual(ok.map.links["9.1.b"], { status: "verified", reviewer: "A. Reviewer", reviewedOn: "2026-12-01", lessons: [], gap: "no lesson on this", matcherConfidence: "none" });
+  assert.match(ok.map.links["9.1.b"].hash, /^[0-9a-f]{16}$/, "a reviewed link records the statement text it was reviewed on");
+  assert.deepEqual({ ...ok.map.links["9.1.b"], hash: undefined }, { status: "verified", hash: undefined, reviewer: "A. Reviewer", reviewedOn: "2026-12-01", lessons: [], gap: "no lesson on this", matcherConfidence: "none" });
   assert.deepEqual(ok.map.links["9.1.c"].lessons.map((l) => [l.id, l.coverage]), [["u02-05", "partial"], ["u05-03", "partial"]]);
   assert.deepEqual(coverageReport(tiny, ok.map).totals, { statements: 3, covered: 1, partial: 1, missing: 1, awaiting: 0 });
   assert.equal(claimFor(tiny, ok.map).line, "Covers 1 of 3 specification statements fully and 1 in part");

@@ -274,7 +274,8 @@ export function applyReview(st, map, rows, lessonIds) {
     // "full": every listed lesson counts as teaching it fully unless some are marked; "partial": none fully
     const anyMarked = ids.some((l) => l.full);
     const lessons = ids.map((l) => ({ id: l.id, coverage: d === "full" && (!anyMarked || l.full) ? "full" : "partial", ...(d === "partial" ? { note } : {}) }));
-    out.links[ref] = { status: "verified", reviewer: r.reviewer.trim(), reviewedOn: r.reviewed_on.trim(), lessons, ...(d === "missing" ? { gap: note } : d === "full" && note ? { note } : {}), ...(prior.confidence ? { matcherConfidence: prior.confidence } : {}) };
+    const sx = st.statements.find((x) => x.ref === ref), hash = sx?.hash || (sx?.text ? textHash(sx.text) : undefined);
+    out.links[ref] = { status: "verified", ...(hash ? { hash } : {}), reviewer: r.reviewer.trim(), reviewedOn: r.reviewed_on.trim(), lessons, ...(d === "missing" ? { gap: note } : d === "full" && note ? { note } : {}), ...(prior.confidence ? { matcherConfidence: prior.confidence } : {}) };
     applied++;
   }
   problems.push(...checkMap(st, out, lessonIds));
