@@ -636,3 +636,11 @@ test("a research request carries a requirement's whole text, not the 400-charact
   const t = { ...TOPIC, reqs: [{ ...REQ, asks: long.slice(0, 400), text: long }] };
   assert.ok(researchRequest(t).includes(long));
 });
+
+test("reused lessons are named by their course titles, not bare ids", async () => {
+  const { lessonTitles } = await import("../scripts/content/queue.mjs");
+  const t = lessonTitles("biology");
+  assert.equal(t.get("u02-26"), "Stem cells"); assert.equal(t.get("u02-20"), "Diffusion");
+  const reuse = topicsFor("aqa-gcse-biology").flatMap((x) => x.reuse);
+  assert.ok(reuse.length && reuse.every((r) => !/^u\d+-\d+$/.test(r.title)), JSON.stringify(reuse.slice(0, 3)));
+});

@@ -1,7 +1,7 @@
 // What to write next: topics from the requirement map, in wave order, skipping what is filed or blocked.
 // A topic is one section of a specification (AQA 4.1.1.1 "Eukaryotes and prokaryotes"). Its requirements are the
 // statements in that section that no existing lesson covers strongly: existing lessons are reused, never rewritten.
-import { readFileSync, existsSync } from "node:fs";
+import { readFileSync, existsSync, readdirSync } from "node:fs";
 import { SPECS, QUAL_TYPES } from "../../kit/curriculum/uk.js";
 import { loadIndex, loadStatements, loadMap, tokens, checkIndex } from "../curriculum/engine.mjs";
 import { CONFIG, at, out, load, slug, loadLedger, briefPath } from "./lib.mjs";
@@ -11,9 +11,20 @@ const LEVEL = { gcse: "GCSE", "a-level": "A level", "as-level": "AS level", n5: 
 export const TYPE = (s) => (s.kind === "practical" ? "prac" : s.kind === "skill" ? (s.skills || []).some((k) => /math|calc/i.test(k)) ? "method" : "data" : "concept");
 const lessonRef = (subject, id) => { const m = String(id).match(/^(u\d+)-(\d+)$/); return m ? `${subject}/${m[1]}#${Number(m[2])}` : `${subject}/${id}`; };
 
-/** every topic of a framework with requirements still to write */
-export function topicsFor(fwId, { titles = new Map() } = {}) {
+/** a course's lesson ids (u02-26: unit u02, its 26th lesson) → titles, from its notes files */
+export function lessonTitles(subject) {
+  const dir = at(`kit/courses/${subject}/notes/`), out = new Map(); if (!existsSync(dir)) return out;
+  for (const f of readdirSync(dir).filter((x) => /^u\d+\.js$/.test(x))) {
+    let n = 0; for (const m of readFileSync(new URL(f, dir), "utf8").matchAll(/^## (.+)$/gm)) out.set(`${f.slice(0, -3)}-${String(++n).padStart(2, "0")}`, m[1].trim());
+  }
+  return out;
+}
+
+/** every topic of a framework with requirements still to write; reused lessons are named by title (read from the course
+ * when no titles are passed), so a Writer can tell what each one already teaches */
+export function topicsFor(fwId, { titles = null } = {}) {
   const s = SPECS.find((x) => x.id === fwId); if (!s) throw new Error(`no framework ${fwId} in the registry (kit/curriculum/uk.js)`);
+  titles ||= lessonTitles(s.subject);
   const idx = loadIndex(fwId); if (!idx) throw new Error(`${fwId} has no statement index (kit/curriculum/specs/${fwId}.json): import it first`);
   // nothing is queued from an index that doesn't say what kind of requirement each statement is, or when it applies
   const bad = checkIndex(idx); if (bad.length) throw new Error(`${fwId}: ${bad.join("; ")}`);
