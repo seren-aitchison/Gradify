@@ -15,7 +15,7 @@ For each lesson: the lesson text with line numbers, its `REQ` lines from the pac
 5. **Clarity.** A learner at that level could follow it (`CLR`).
 6. **Safety.** Practical, health and safety topics have the needed `SAFE:` or `!:` line (`SAFE`).
 7. **Copying.** No wording copied from the requirement text or a source (`COPY`).
-8. **Conflicts.** A point resting on a brief `CONFLICT:` item is flagged (`CONF`).
+8. **Conflicts.** A point resting on a brief `CONFLICT:` item is `CONF`, unless the lesson teaches the version the official specification uses and notes the disagreement in a `!:` line, as the Writer is told to. That is correct: don't flag it (the engine already sends such lessons to an expert).
 
 Be strict about accuracy, coverage and questions. Don't fail a lesson for style or length.
 

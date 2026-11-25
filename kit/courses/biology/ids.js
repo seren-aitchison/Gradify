@@ -1,3 +1,4 @@
+import { PUBLISHED } from "./published.js";   // lessons published by the content engine (scripts/content/publish.mjs)
 // Permanent lesson ids for SciGradify Biology (see kit/course/syllabus.js). Never delete or reuse an id: saved
 // progress, notes, flashcards and attempts depend on them. To rename a lesson, change its title here and in
 // the syllabus. To remove one, move its id to RETIRED: retired ids are reserved forever.
@@ -394,4 +395,5 @@ export const IDS = {
   "u14-23": "Research integrity",
   "u14-24": "Laboratory safety",
 };
+Object.assign(IDS, PUBLISHED.ids || {});
 export const RETIRED = {};

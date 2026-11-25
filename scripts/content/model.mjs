@@ -85,16 +85,21 @@ async function batch(job, items) {
   const ids = new Map(items.map((it, i) => [`r${i}`, it.key]));
   const b = await c.messages.batches.create({ requests: items.map((it, i) => ({ custom_id: `r${i}`, params: params(job, it.user) })) });
   const until = Date.now() + CONFIG.batchWaitMinutes * 60e3;
-  let s = b;
+  let s = b, timedOut = false;
   while (s.processing_status !== "ended") {
-    if (Date.now() > until) { await c.messages.batches.cancel(b.id).catch(() => {}); throw new Error(`batch ${b.id} didn't finish in ${CONFIG.batchWaitMinutes} minutes (cancelled)`); }
+    if (Date.now() > until + 15 * 60e3) throw new Error(`batch ${b.id} still running 15 minutes after it was cancelled: reconcile it before more paid work (its finished requests are billed)`);
+    if (Date.now() > until && !s.cancelling) {
+      // cancel, but keep reading: requests that already finished are billed, and must be counted before more paid work
+      await c.messages.batches.cancel(b.id).catch(() => {}); s.cancelling = true; timedOut = true;
+    }
     await new Promise((r) => setTimeout(r, 30e3));
-    s = await c.messages.batches.retrieve(b.id);
+    const cancelling = s.cancelling; s = await c.messages.batches.retrieve(b.id); s.cancelling = cancelling;
   }
   for await (const r of await c.messages.batches.results(b.id)) {
     const key = ids.get(r.custom_id);
     if (r.result.type === "succeeded") { record(job, r.result.message.model, r.result.message.usage, { batch: true }); out.set(key, textOf(r.result.message)); }
     else out.set(key, new Error(`${job}: ${r.result.type}`));
   }
+  if (timedOut) out.timedOut = `batch ${b.id} ran past ${CONFIG.batchWaitMinutes} minutes and was cancelled; finished requests were kept and counted`;
   return out;
 }

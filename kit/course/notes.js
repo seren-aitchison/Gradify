@@ -35,6 +35,8 @@
 //        it becomes a D: line once built into the library
 //   DNEED: a diagram the lesson needs and no renderer can draw yet (for the diagram queue)
 //   GAP: something a requirement needs that the research brief didn't support (for the research queue)
+//   TIER: how the lesson was checked, shown to learners as a label: "AI-checked" (written and checked by AI against
+//        cited sources, not yet reviewed by a person) or "Expert-reviewed" (approved by a named subject expert)
 //   DRUG: a drug card, "drug or class | class and mechanism | main uses | key adverse effects and cautions |
 //        monitoring, interactions and counselling": shown with the cards and turned into two flashcards
 // Inline: **bold**, *italic*, `code`, x^{2} and v_{0}.
@@ -49,12 +51,12 @@ export function parseNotes(text) {
   for (const raw of String(text || "").split("\n")) {
     const line = raw.trim();
     if (!line) { ex = null; continue; }
-    if (line.startsWith("## ")) { L = { title: line.slice(3).trim(), lead: "", blocks: [], cards: [], mcq: [], tasks: [], objectives: [], prereq: [], terms: [], summary: [], sources: [], reading: [], evidence: [], authorities: [], level: "", reqs: [], needs: [], gaps: [] }; lessons.push(L); ex = null; continue; }
+    if (line.startsWith("## ")) { L = { title: line.slice(3).trim(), lead: "", blocks: [], cards: [], mcq: [], tasks: [], objectives: [], prereq: [], terms: [], summary: [], sources: [], reading: [], evidence: [], authorities: [], level: "", reqs: [], needs: [], gaps: [], tier: "" }; lessons.push(L); ex = null; continue; }
     if (!L) continue;
     if (line.startsWith("> ") && ex) { ex.steps.push(line.slice(2)); continue; }
     ex = null;
     // block tags, then question tags (TAG_LINE, which includes any type a subject adapter has registered)
-    const m = line.match(/^(S|H|P|E|X|K|!|Q|O|PRE|T|SUM|SAFE|SRC|READ|IX|D|EV|LV|CASE|LAW|DRUG|REQ|DIA|DNEED|GAP):\s*(.*)$/) || line.match(TAG_LINE);
+    const m = line.match(/^(S|H|P|E|X|K|!|Q|O|PRE|T|SUM|SAFE|SRC|READ|IX|D|EV|LV|CASE|LAW|DRUG|REQ|DIA|DNEED|GAP|TIER):\s*(.*)$/) || line.match(TAG_LINE);
     const [tag, body] = m ? [m[1], m[2]] : line.startsWith("- ") ? ["-", line.slice(2)] : ["P", line];
     const last = L.blocks.at(-1);
     if (tag === "S") L.lead += (L.lead ? " " : "") + body;
@@ -82,6 +84,7 @@ export function parseNotes(text) {
     else if (tag === "DIA") { const i = body.indexOf(" | "), renderer = (i < 0 ? body : body.slice(0, i)).trim(); let spec = null; try { spec = JSON.parse(body.slice(i + 3)); } catch {} L.blocks.push({ t: "dia", renderer, spec }); }
     else if (tag === "DNEED") L.needs.push(body.trim());
     else if (tag === "GAP") L.gaps.push(body.trim());
+    else if (tag === "TIER") L.tier = body.trim();
     else if (tag === "CASE") {
       const [name, facts, held, principle] = body.split(" | ").map((x) => x.trim());
       if (name && facts && held && principle) {
@@ -175,8 +178,13 @@ export function authorityCards(list) {
     : `<article class="co-auth"><span class="co-auth-k">Statute</span><h4>${inline(a.name)}</h4><p>${inline(a.provides)}</p></article>`).join("")}</div>`;
 }
 
+export const TIERS = {
+  "AI-checked": "Written and checked by AI against cited sources. A subject expert hasn't reviewed it yet.",
+  "Expert-reviewed": "Reviewed and approved by a subject expert.",
+};
 export function lessonFrame(L) {
-  const top = (L.objectives.length || L.prereq.length) ? `<div class="co-frame">${L.objectives.length ? `<section><h3>By the end of this lesson you can</h3><ul>${L.objectives.map((o) => `<li>${inline(o)}</li>`).join("")}</ul></section>` : ""}${L.prereq.length ? `<section><h3>Before you start</h3><ul>${L.prereq.map((o) => `<li>${inline(o)}</li>`).join("")}</ul></section>` : ""}</div>` : "";
+  const tier = L.tier && TIERS[L.tier] ? `<p class="co-tier co-tier-${L.tier === "Expert-reviewed" ? "expert" : "ai"}"><b>${esc(L.tier)}</b> <span>${esc(TIERS[L.tier])}</span></p>` : "";
+  const top = tier + ((L.objectives.length || L.prereq.length) ? `<div class="co-frame">${L.objectives.length ? `<section><h3>By the end of this lesson you can</h3><ul>${L.objectives.map((o) => `<li>${inline(o)}</li>`).join("")}</ul></section>` : ""}${L.prereq.length ? `<section><h3>Before you start</h3><ul>${L.prereq.map((o) => `<li>${inline(o)}</li>`).join("")}</ul></section>` : ""}</div>` : "");
   const KIND = { legislation: "Legislation", case: "Case law", rule: "Professional rules", guidance: "Guidance", standard: "Standard", primary: "Primary source", secondary: "Secondary source", data: "Data source" };
   const EVN = { established: "Established", contested: "Contested", hypothetical: "Hypothetical" };
   // the recap: what to take away from the lesson

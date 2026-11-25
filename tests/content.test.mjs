@@ -48,6 +48,8 @@ Q: Where is the DNA in a prokaryotic cell? | In a single loop in the cytoplasm, 
 Q: Which is usually larger, a bacterium or an animal cell? | An animal cell
 M1@1: Where is the main DNA found in a bacterial cell? | In a single loop in the cytoplasm | Inside the nucleus of the cell | Inside the cell's chloroplasts | Inside the cell's mitochondria | Bacteria are prokaryotes, so they have no nucleus or other membrane-bound organelles; the DNA is a loop in the cytoplasm.
 M2@2: A cell is 2 micrometres long. What kind of cell is it most likely to be? | A prokaryotic cell | A plant leaf cell | An animal cheek cell | A human egg cell | Prokaryotic cells are usually 1 to 10 micrometres long; plant and animal cells are usually much larger than that.
+M3@1: An antibiotic damages a structure found only in cells without a nucleus. Which cells does it target? | Bacterial cells | Human skin cells | Plant leaf cells | Yeast cells | Bacteria are prokaryotes with no nucleus, while human, plant and yeast cells are all eukaryotic cells with a nucleus.
+TF2@2: A typical animal cell is larger than a typical bacterium. | true | Most bacteria are 1 to 10 micrometres long, while animal cells are usually 10 to 30 micrometres across.
 SUM: Prokaryotic cells have no nucleus and keep their DNA in a single loop.
 SUM: They are much smaller than eukaryotic cells.
 SRC: Open biology text | secondary | 2026-11-25 | https://openstax.org/books/biology-2e`;
@@ -101,7 +103,7 @@ test("gates run cheapest first and stop at the first failure", async () => {
   assert.equal(num.failed.gate, "num-dia"); assert.equal(num.failed.issues[0].line, 13);
   const noReq = await G.runGates(LESSON().replace(/^REQ:.*\n/m, ""), { reqs: [REQ] });
   assert.equal(noReq.failed.gate, "parse");
-  const untested = await G.runGates(LESSON().replace("M2@2:", "M2@1:"), { reqs: [REQ] });
+  const untested = await G.runGates(LESSON().replace("M2@2:", "M2@1:").replace("TF2@2:", "TF2@1:"), { reqs: [REQ] });
   assert.equal(untested.failed.gate, "coverage");
   assert.ok(untested.failed.issues.some((i) => /objective 2 has no question/.test(i.note)));
   const giveaway = await G.runGates(LESSON().replace("A prokaryotic cell | A plant leaf cell", "A prokaryotic cell, because it is between one and ten micrometres long | A plant leaf cell"), { reqs: [REQ] });
@@ -145,7 +147,7 @@ test("the loop: a lesson that never passes is recorded with its fix list, not fi
   assert.equal(r.status, "failed"); assert.equal(r.lessons.length, 0);
   assert.equal(r.failures[0].gate, "num-dia"); assert.deepEqual(r.uncovered, [REQ.id]);
   assert.ok(!existsSync(join(process.env.GRADIFY_OUT, "content/drafts/biology/aqa-gcse-biology/test-stuck.txt")));
-  assert.match(prBody([r], { usd: 0.1, calls: 3, searches: 0, cacheRead: 0, cacheWrite: 0, byJob: {} }), /stopped at `num-dia`/);
+  assert.match(prBody({ usd: 0.1, calls: 3, searches: 0, cacheRead: 0, cacheWrite: 0, byJob: {} }, { subjects: ["biology"] }), /stopped at `num-dia`/);
 });
 
 test("high-risk and conflicting topics need an expert", async () => {
@@ -201,4 +203,195 @@ test("approval is per file: a named reviewer, and any edit resets the tier", asy
 test("a new diagram must describe itself in words", async () => {
   const r = G.parseGate(LESSON("3 × 4 = 12").replace("K: A prokaryote", 'DIA: graph | {"range":{"x":[0,1],"y":[0,1]},"title":"Sizes"}\nK: A prokaryote'));
   assert.deepEqual(r.issues.map((i) => i.note), ["DIA: spec needs a caption", "DIA: spec needs alt text"]);
+});
+
+test("arithmetic: scientific notation keeps its exponent, and its rounding scales with it", () => {
+  assert.equal(G.evalExpr("2 × 10^-3 + 0"), 0.002);
+  assert.deepEqual(G.checkArithmetic("P: 4 × 10^{-3} ÷ 2 = 2 × 10^{-3}"), []);
+  assert.equal(G.checkArithmetic("P: 1 / 1000000 = 2 × 10^-6").length, 1, "twice the right answer must fail");
+  assert.deepEqual(G.checkArithmetic("P: 3 × 10^4 × 2 = 6 × 10^4"), []);
+});
+
+test("sub-requirements: a REQ may name a part, which counts towards its requirement", async () => {
+  const { parentOf } = S, known = new Set([REQ.id]);
+  assert.equal(parentOf(`${REQ.id}.ii`, known), REQ.id);
+  assert.equal(parentOf(`${REQ.id}.zz`, known), null);
+  assert.equal(parentOf("other:1.ii", known), null);
+  const part = LESSON("3 × 4 = 12").replace(`REQ: ${REQ.id} @1,2`, `REQ: ${REQ.id}.i @1\nREQ: ${REQ.id}.ii @2`);
+  const g = await G.runGates(part, { reqs: [REQ], allowed: known });
+  assert.ok(g.ok, JSON.stringify(g.failed?.issues));
+  const topic = { ...TOPIC, id: "biology/test-parts", title: "Test parts" };
+  const r = await runTopic(topic, { ask: async (job) => (job === "research" ? BRIEF.replace("test-prokaryotes", "test-parts") : `${part}\nEND`), askMany: async (job, items) => new Map(items.map((it) => [it.key, `REV ${it.key} OK`])) });
+  assert.equal(r.status, "filed"); assert.deepEqual(r.uncovered, []);
+});
+
+test("licence gate: a brief's non-fact lines can't rest only on noncommercial or unknown sources", async () => {
+  const { checkBrief } = await import("../scripts/content/loop.mjs");
+  assert.deepEqual(checkBrief(BRIEF).problems, []);
+  const nc = BRIEF.replace(/licence=facts/g, "licence=noncommercial");
+  assert.ok(checkBrief(nc).problems.some((p) => /definitions and misconceptions/.test(p)));
+  const exam = BRIEF.replace("END", "EXAM: credit for naming the single loop of DNA | s1").replace("SRC: s1 | Open biology text | https://openstax.org/books/biology-2e | OpenStax | licence=facts", "SRC: s1 | Open biology text | https://openstax.org/books/biology-2e | OpenStax | licence=unknown") + "\nEND";
+  assert.ok(checkBrief(exam).problems.some((p) => /EXAM .* rests only/.test(p)));
+  // facts may rest on any source
+  assert.deepEqual(checkBrief(BRIEF.replace("SRC: s1 | Open biology text | https://openstax.org/books/biology-2e | OpenStax | licence=facts", "SRC: s1 | Open biology text | https://openstax.org/books/biology-2e | OpenStax | licence=unknown")).problems, []);
+});
+
+test("filing merges by lesson title: rechecking one lesson keeps the others, and the repaired title is recorded", async () => {
+  const topic = { ...TOPIC, id: "biology/test-merge", title: "Test merge" };
+  const second = LESSON("3 × 4 = 12").replace("## Prokaryotic cells", "## Bacteria and size");
+  const ask = (unit) => async (job) => (job === "research" ? BRIEF.replace("test-prokaryotes", "test-merge") : `${unit}\nEND`);
+  const ok = async (job, items) => new Map(items.map((it) => [it.key, `REV ${it.key} OK`]));
+  await runTopic(topic, { ask: ask(`${LESSON("3 × 4 = 12")}\n\n${second}`), askMany: ok });
+  const r = await runTopic(topic, { ask: ask(LESSON("3 × 4 = 12").replace("several times", "far")), askMany: ok });
+  const draft = readFileSync(join(process.env.GRADIFY_OUT, "content/drafts/biology/aqa-gcse-biology/test-merge.txt"), "utf8");
+  assert.match(draft, /## Bacteria and size/); assert.equal((draft.match(/## Prokaryotic cells/g) || []).length, 1);
+  const led = JSON.parse(readFileSync(join(process.env.GRADIFY_OUT, "content/ledger/biology.json"), "utf8")).topics["biology/test-merge"];
+  assert.deepEqual(led.lessons.map((l) => l.title).sort(), ["Bacteria and size", "Prokaryotic cells"]);
+  assert.equal(r.status, "filed");
+});
+
+test("gates-only filing claims no review, and a failed research keeps every requirement queued", async () => {
+  const topic = { ...TOPIC, id: "biology/test-gates-only", title: "Test gates only" };
+  const r = await runTopic(topic, { reviewed: false, ask: async (job) => (job === "research" ? BRIEF.replace("test-prokaryotes", "test-gates-only") : `${LESSON("3 × 4 = 12")}\nEND`), askMany: async (job, items) => new Map(items.map((it) => [it.key, `REV ${it.key} OK`])) });
+  assert.equal(r.lessons[0].tier, "gates-passed");
+  const bad = { ...TOPIC, id: "biology/test-no-brief", title: "Test no brief" };
+  const f = await runTopic(bad, { ask: async () => "TOPIC x | levels=GCSE | checked=2026-11-25\nEND", askMany: async () => new Map() });
+  assert.equal(f.status, "failed"); assert.deepEqual(f.uncovered, [REQ.id]);
+});
+
+test("publish: AI-checked and expert-reviewed drafts become a labelled course unit with permanent ids", async () => {
+  const { cpSync, mkdirSync } = await import("node:fs");
+  const dir = join(process.env.GRADIFY_OUT, "kit/courses/biology");
+  mkdirSync(join(dir, "notes"), { recursive: true });
+  for (const f of ["syllabus.js", "ids.js", "qa.js", "course.js"]) cpSync(new URL(`../kit/courses/biology/${f}`, import.meta.url), join(dir, f));
+  const { publish } = await import("../scripts/content/publish.mjs");
+  const r = await publish("biology");
+  assert.equal(r.unit, "u15");
+  // ai-verified lessons are published; expert-required, gates-only and edited ones are not; a repeated title is skipped
+  assert.deepEqual(r.added.map((x) => x.replace(/^u15-\d\d /, "")).sort(), ["Bacteria and size · AI-checked", "Prokaryotic cells · AI-checked"]);
+  assert.ok(r.skipped.some((x) => /gates-passed/.test(x)) && r.skipped.some((x) => /expert-required/.test(x)) && r.skipped.some((x) => /already published a lesson with this title/.test(x)));
+  const notes = readFileSync(join(dir, "notes/u15.js"), "utf8"), pub = readFileSync(join(dir, "published.js"), "utf8");
+  assert.match(notes, /## Prokaryotic cells\nTIER: AI-checked\n/);
+  assert.match(pub, /"n": 15/); assert.match(pub, /15\. Specification lessons\\n> /);
+  for (const f of ["syllabus.js", "ids.js", "qa.js", "course.js"]) assert.match(readFileSync(join(dir, f), "utf8"), /from "\.\/published\.js"/, `${f} imports the published unit`);
+  assert.match(readFileSync(join(dir, "course.js"), "utf8"), /\.\.\.\(PUBLISHED\.id \? \[PUBLISHED\.id\] : \[\]\)\]/);
+  // a second publish with nothing new changes nothing, and keeps the ids
+  const ids = JSON.parse(pub.match(/PUBLISHED = (\{[\s\S]*\});/)[1]).ids;
+  const again = await publish("biology");
+  assert.deepEqual([again.added, again.updated, again.hooks], [[], [], []]);
+  assert.deepEqual(JSON.parse(readFileSync(join(dir, "published.js"), "utf8").match(/PUBLISHED = (\{[\s\S]*\});/)[1]).ids, ids);
+});
+
+test("lesson reports: one 'wrong' report or two of any kind send a lesson to the repair queue", async () => {
+  const { reportQueue } = await import("../scripts/content/signals.mjs");
+  const q = reportQueue([{ subject: "biology", lesson_id: "u02-03", kind: "wrong" }, { subject: "biology", lesson_id: "u02-04", kind: "typo" }, { subject: "biology", lesson_id: "u02-05", kind: "unclear" }, { subject: "biology", lesson_id: "u02-05", kind: "typo" }]);
+  assert.deepEqual(q.map((x) => x.lesson), ["u02-03", "u02-05"]);
+  const sql = readFileSync(new URL("../supabase/migrations/20261125120000_lesson_reports.sql", import.meta.url), "utf8");
+  assert.match(sql, /enable row level security/); assert.match(sql, /subject ~ '\^\[a-z0-9-\]\{1,40\}\$'/); assert.match(sql, /revoke all on table public\.lesson_reports from anon/);
+});
+
+test("agent mode: a topic moves through files from research to filing, and each step says which model runs it", async () => {
+  const { advance, BRIEFS, addReqLine } = await import("../scripts/content/agent.mjs");
+  const { writeFileSync, mkdirSync } = await import("node:fs");
+  const topic = { ...TOPIC, id: "biology/test-agent", title: "Test agent" }, Q = join(process.env.GRADIFY_OUT, "content/queue/biology/test-agent");
+  const reply = (name, text) => writeFileSync(join(Q, name), text);
+  let r = await advance(topic);
+  assert.deepEqual(r.actions.map((a) => [a.kind, a.model]), [["research", "sonnet"]]);
+  assert.match(r.actions[0].prompt, /web search/); assert.ok(existsSync(join(process.env.GRADIFY_OUT, r.actions[0].req)));
+  reply("research.out.txt", BRIEF.replace("test-prokaryotes", "test-agent"));
+  r = await advance(topic);
+  assert.equal(r.actions[0].kind, "write"); assert.equal(r.actions[0].model, "opus");
+  assert.match(readFileSync(join(process.env.GRADIFY_OUT, r.actions[0].req), "utf8"), /^PKT /);
+  assert.ok(r.actions[0].examples.every((f) => f.startsWith("prompts/examples/gcse--")));
+  reply("write.out.txt", `${LESSON()}\nEND`);
+  r = await advance(topic);                                    // the arithmetic gate fails: a repair step
+  assert.equal(r.actions[0].kind, "repair"); assert.match(readFileSync(join(process.env.GRADIFY_OUT, r.actions[0].pairs[0][0]), "utf8"), /^FIX new#1\nL13 NUM/);
+  reply("repair-1.out.txt", "REPAIR new#1\nL13> > 3 × 4 = 12 micrometres.\nEND");
+  r = await advance(topic);                                    // gates pass: a fresh reviewer on a different model
+  assert.deepEqual(r.actions.map((a) => [a.kind, a.model]), [["review", "sonnet"]]);
+  assert.match(r.actions[0].prompt, /did not write/);
+  reply("review-1.out.txt", "REV new#1 FAIL CLR L11 the size comparison is muddled");
+  r = await advance(topic);
+  assert.equal(r.actions[0].kind, "repair");
+  reply("repair-1.out.txt", "REPAIR new#1\nL11> P: Most bacteria are 1 to 10 micrometres long, while a typical animal cell is 10 to 30 micrometres across, so eukaryotic cells are usually several times bigger.\nEND");
+  r = await advance(topic); assert.equal(r.actions[0].kind, "review");
+  reply("review-1.out.txt", "REV new#1 OK");
+  r = await advance(topic);
+  assert.deepEqual(r.actions, []); assert.equal(r.filed.status, "filed");
+  assert.equal(r.filed.lessons[0].tier, "ai-verified"); assert.ok(r.filed.lessons[0].disagreed);
+  assert.equal(r.filed.lessons[0].built.models.review, "agent:sonnet");
+  assert.ok(!existsSync(Q), "the queue entry is cleared once filed");
+  assert.ok(Object.keys(BRIEFS).every((k) => typeof BRIEFS[k] === "function"));
+  // mapping: a confirmed match adds a REQ: line to the existing lesson, once
+  const f = "kit/courses/biology/notes/u99.js"; mkdirSync(join(process.env.GRADIFY_OUT, "kit/courses/biology/notes"), { recursive: true });
+  writeFileSync(join(process.env.GRADIFY_OUT, f), "export default `\n## A lesson\nS: lead\nO: one\nO: two\nH: h\n\n## Next\nS: x\n`;\n");
+  assert.ok(addReqLine(f, "A lesson", "aqa-gcse-biology:4.1.1.1.a", [1, 2])); addReqLine(f, "A lesson", "aqa-gcse-biology:4.1.1.1.a", [1, 2]);
+  const t = readFileSync(join(process.env.GRADIFY_OUT, f), "utf8");
+  assert.match(t, /O: two\nREQ: aqa-gcse-biology:4\.1\.1\.1\.a @1,2\nH: h/); assert.equal((t.match(/REQ:/g) || []).length, 1);
+});
+
+test("mapping replies: NO lines are recorded, and a rejected strong match joins the write queue", async () => {
+  const { parseMapLine, mapCandidates } = await import("../scripts/content/agent.mjs");
+  const { writeFileSync, mkdirSync } = await import("node:fs");
+  assert.deepEqual(parseMapLine("MAP aqa-gcse-biology:4.1.1.2.a NO lesson never relates structures to functions"), { reqId: "aqa-gcse-biology:4.1.1.2.a", lesson: null, verdict: "NO", rest: "lesson never relates structures to functions" });
+  assert.deepEqual(parseMapLine("MAP aqa-gcse-biology:4.1.1.2.b u02-04 YES @1,2"), { reqId: "aqa-gcse-biology:4.1.1.2.b", lesson: "u02-04", verdict: "YES", rest: "@1,2" });
+  assert.equal(parseMapLine("MAP aqa-gcse-biology:4.1.1.2.b u02-04 NO too shallow").verdict, "NO");
+  assert.equal(parseMapLine("END"), null);
+  const [a, b] = mapCandidates("aqa-gcse-biology").map((c) => c.ref), inQueue = (ref) => topicsFor("aqa-gcse-biology").some((t) => t.reqs.some((r) => r.ref === ref));
+  assert.ok(!inQueue(a) && !inQueue(b), "unconfirmed strong matches wait for their check");
+  mkdirSync(join(process.env.GRADIFY_OUT, "content/mapping"), { recursive: true });
+  writeFileSync(join(process.env.GRADIFY_OUT, "content/mapping/aqa-gcse-biology.json"), JSON.stringify({ confirmed: { [a]: { ok: false, why: "not taught" }, [b]: { ok: true, lesson: "u02-04", objectives: [1] } } }));
+  assert.ok(inQueue(a), "a rejected match is written"); assert.ok(!inQueue(b), "a confirmed match is not");
+  assert.ok(!mapCandidates("aqa-gcse-biology").some((c) => c.ref === a || c.ref === b), "decided matches aren't asked again");
+});
+
+test("review fixes on #208: citations, stale inputs, outdated coverage, timeouts, learners", async () => {
+  const { checkBrief } = await import("../scripts/content/loop.mjs");
+  const { advance } = await import("../scripts/content/agent.mjs");
+  const { reportQueue } = await import("../scripts/content/signals.mjs");
+  const { writeFileSync } = await import("node:fs");
+  // a non-fact line citing a source the brief doesn't list is refused
+  assert.ok(checkBrief(BRIEF.replace("END", "EXAM: credit for naming the DNA loop | missing-source") + "\nEND").problems.some((p) => /missing-source/.test(p)));
+  // replies made for old inputs are discarded when the requirement changes
+  const topic = { ...TOPIC, id: "biology/test-stale", title: "Test stale" }, Q = join(process.env.GRADIFY_OUT, "content/queue/biology/test-stale");
+  await advance(topic); writeFileSync(join(Q, "research.out.txt"), BRIEF.replace("test-prokaryotes", "test-stale"));
+  await advance(topic); writeFileSync(join(Q, "write.out.txt"), `${LESSON("3 × 4 = 12")}\nEND`);
+  let r = await advance(topic); assert.equal(r.actions[0].kind, "review"); writeFileSync(join(Q, "review-1.out.txt"), "REV new#1 OK");
+  const changed = { ...topic, reqs: [{ ...REQ, hash: "h2" }] };
+  writeFileSync(join(process.env.GRADIFY_OUT, "content/research/biology/test-stale.txt"), `# fp=${(await import("../scripts/content/loop.mjs")).briefKey(changed)}\n${BRIEF.replace("test-prokaryotes", "test-stale")}\n`);
+  r = await advance(changed);
+  assert.equal(r.filed, null, "an OK review of the old requirement isn't filed against the new one");
+  assert.equal(r.actions[0].kind, "write"); assert.ok(!existsSync(join(Q, "review-1.out.txt")));
+  // a lesson built on an old requirement hash no longer covers it
+  const old = { ...TOPIC, id: "biology/test-outdated", title: "Test outdated" };
+  const ok = async (job, items) => new Map(items.map((it) => [it.key, `REV ${it.key} OK`]));
+  const ask = (t) => async (job) => (job === "research" ? BRIEF.replace("test-prokaryotes", "test-outdated") : `${LESSON("3 × 4 = 12")}\nEND`);
+  assert.equal((await runTopic(old, { ask: ask(), askMany: ok })).status, "filed");
+  const f = await runTopic({ ...old, reqs: [{ ...REQ, hash: "h9" }] }, { ask: async () => "TOPIC x | levels=GCSE | checked=2026-11-25\nEND", askMany: ok });
+  assert.deepEqual(f.uncovered, [REQ.id]); assert.notEqual(f.status, "filed");
+  // a timed-out batch stops the topic: cancelled reviews aren't failures and no repair round starts
+  let repairs = 0;
+  const timed = async (job, items) => { if (job === "repair") repairs++; const m = new Map(items.map((it) => [it.key, new Error("canceled")])); m.timedOut = "batch b1 ran past 300 minutes"; return m; };
+  const t = await runTopic({ ...TOPIC, id: "biology/test-timeout", title: "Test timeout" }, { ask: async (job) => (job === "research" ? BRIEF.replace("test-prokaryotes", "test-timeout") : `${LESSON("3 × 4 = 12")}\nEND`), askMany: timed });
+  assert.equal(repairs, 0); assert.equal(t.failures[0].gate, "unfinished"); assert.deepEqual(t.uncovered, [REQ.id]);
+  // two reports from one learner aren't two learners
+  assert.deepEqual(reportQueue([{ subject: "biology", lesson_id: "u02-04", kind: "typo", user_id: "a" }, { subject: "biology", lesson_id: "u02-04", kind: "typo", user_id: "a" }]), []);
+  const two = reportQueue([{ subject: "biology", lesson_id: "u02-04", kind: "typo", user_id: "a" }, { subject: "biology", lesson_id: "u02-04", kind: "unclear", user_id: "b" }]);
+  assert.equal(two.length, 1); assert.ok(!("who" in two[0]), "no learner ids leave the function");
+});
+
+test("publish: titles differing only in case share an identity, and one TIER label survives", async () => {
+  const { publish } = await import("../scripts/content/publish.mjs");
+  const { writeFileSync, mkdirSync } = await import("node:fs");
+  const ledPath = join(process.env.GRADIFY_OUT, "content/ledger/biology.json"), led = JSON.parse(readFileSync(ledPath, "utf8"));
+  const text = LESSON("3 × 4 = 12").replace("## Prokaryotic cells", "## prokaryotic CELLS").replace("LV: GCSE", "TIER: Expert-reviewed\nLV: GCSE");
+  mkdirSync(join(process.env.GRADIFY_OUT, "content/drafts/biology/aqa-gcse-biology"), { recursive: true });
+  writeFileSync(join(process.env.GRADIFY_OUT, "content/drafts/biology/aqa-gcse-biology/test-case.txt"), `# draft\n\n${text}\n`);
+  const { fp } = await import("../scripts/content/lib.mjs");
+  led.topics["biology/test-case"] = { file: "content/drafts/biology/aqa-gcse-biology/test-case.txt", title: "Test case", lessons: [{ title: "prokaryotic CELLS", tier: "ai-verified", hash: fp(text), reqs: [REQ.id] }], status: "filed" };
+  writeFileSync(ledPath, JSON.stringify(led));
+  const r = await publish("biology");
+  assert.ok(r.skipped.some((x) => /prokaryotic CELLS .*already published a lesson with this title/.test(x)), "a case-only variant gets no new id");
+  const notes = readFileSync(join(process.env.GRADIFY_OUT, "kit/courses/biology/notes/u15.js"), "utf8");
+  for (const lesson of notes.split(/\n(?=## )/).filter((x) => x.startsWith("## "))) assert.equal((lesson.match(/^TIER:/gm) || []).length, 1);
 });

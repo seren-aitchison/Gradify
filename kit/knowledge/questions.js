@@ -71,7 +71,7 @@ export function generateQuestions(items, { slug, objectiveOf = () => [], rnd = s
     if (k.compute.fn === "percentChange") {
       const initial = Math.round((2 + rnd() * 2) * 100) / 100, pct = Math.round((rnd() * 30 - 15) || 7), final = Math.round(initial * (1 + pct / 100) * 100) / 100;
       const ans = Math.round(COMPUTE.percentChange({ initial, final }) * 10) / 10;
-      add("NUM", 2, `A piece of plant tissue has a mass of ${initial.toFixed(2)} g. After an hour in a solution its mass is ${final.toFixed(2)} g. What is its percentage change in mass, to 1 decimal place? | ${ans} | 0.1 | % | (${final.toFixed(2)} − ${initial.toFixed(2)}) ÷ ${initial.toFixed(2)} × 100 = ${ans}%: the tissue ${ans > 0 ? "gained water, so the solution had a higher concentration of water than its cells" : "lost water, so the solution had a lower concentration of water than its cells"}.`, [k.id], { compute: { fn: "percentChange", inputs: { initial, final }, answer: ans, dp: 1 } });
+      add("NUM", 2, `A piece of plant tissue has a mass of ${initial.toFixed(2)} g. After an hour in a solution its mass is ${final.toFixed(2)} g. What is its percentage change in mass, to 1 decimal place? | ${ans} | 0.1 | % | (${final.toFixed(2)} − ${initial.toFixed(2)}) ÷ ${initial.toFixed(2)} × 100 = ${ans}%: the tissue ${ans > 0 ? "gained water, so the solution had a higher concentration of water than its cells" : ans < 0 ? "lost water, so the solution had a lower concentration of water than its cells" : "had no net change in mass, so there was no net movement of water between it and the solution"}.`, [k.id], { compute: { fn: "percentChange", inputs: { initial, final }, answer: ans, dp: 1 } });
     }
   }
   for (const k of items.filter((x) => x.kind === "equation" && x.compute?.fn === "waterPotential")) {
@@ -98,7 +98,8 @@ export function generateQuestions(items, { slug, objectiveOf = () => [], rnd = s
   for (const k of items.filter((x) => x.kind === "dataset" && x.data?.rows?.length)) {
     const D = k.data, pts = pointsOf(D), fit = linearFit(pts), d = describeCorrelation(pearson(pts)), dk = withPrereqs(k);
     const X = D.columns.find((c) => c.key === D.x), Y = D.columns.find((c) => c.key === D.y);
-    if (D.ask?.includes("correlation")) {
+    // only the correlation question needs a defined correlation; prediction and causation questions still hold
+    if (D.ask?.includes("correlation") && d.sign !== "undefined") {
       const right = d.sign === "none" ? "No correlation" : `A ${d.strength} ${d.sign} correlation`;
       const opts = ["A strong positive correlation", "A strong negative correlation", "A weak positive correlation", "A weak negative correlation", "No correlation"].filter((o) => o !== right);
       add("M", 2, `${clean(k.title)}: what does the scatter diagram show? | ${right} | ${shuffle(opts, rnd).slice(0, 3).join(" | ")} | As ${X.label.toLowerCase()} increases, ${Y.label.toLowerCase()} ${d.sign === "positive" ? "tends to increase" : d.sign === "negative" ? "tends to decrease" : "shows no clear trend"}; the points lie ${d.strength === "strong" ? "close to" : "loosely around"} a straight line.`, dk, { data: { item: k.id, sign: d.sign, strength: d.strength } });

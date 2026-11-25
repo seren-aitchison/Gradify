@@ -1,6 +1,7 @@
 // SciGradify Biology: the curriculum, notes, interactives and quality record, handed to the shared course
 // engine (kit/course/course.js), the same engine and lesson renderer that runs Physics, Law and Nursing.
 import { UNITS, TRACKS, PATHS, BLURBS } from "./syllabus.js";
+import { PUBLISHED } from "./published.js";   // lessons published by the content engine (scripts/content/publish.mjs)
 import { QA } from "./qa.js";
 import { INTERACTIVES } from "./interactives.js";
 import { EVIDENCE, EXPLORATION } from "./evidence.js";
@@ -25,7 +26,7 @@ export default defineCourse(science, {
   // cumulative exams (kit/assess/exam.js): one per stage and one over the whole course, drawn from written schools only
   exams: scienceExams(UNITS, TRACKS),
   // the schools whose notes are written (tests/sciences.test.mjs checks this matches notes/)
-  written: ["u01", "u02", "u03", "u04", "u05", "u06", "u07", "u08", "u09", "u10", "u11", "u12", "u13", "u14"],
+  written: ["u01", "u02", "u03", "u04", "u05", "u06", "u07", "u08", "u09", "u10", "u11", "u12", "u13", "u14", ...(PUBLISHED.id ? [PUBLISHED.id] : [])],
   notes: (unitId) => import(`./notes/${unitId}.js`).then((m) => m.default),
   overview: {
     headline: "Life, from molecules to ecosystems",

@@ -4,7 +4,7 @@
 import { readFileSync, existsSync } from "node:fs";
 import { SPECS, QUAL_TYPES } from "../../kit/curriculum/uk.js";
 import { loadIndex, loadStatements, loadMap, tokens } from "../curriculum/engine.mjs";
-import { CONFIG, at, load, slug, loadLedger, briefPath } from "./lib.mjs";
+import { CONFIG, at, out, load, slug, loadLedger, briefPath } from "./lib.mjs";
 
 const LEVEL = { gcse: "GCSE", "a-level": "A level", "as-level": "AS level", n5: "National 5", higher: "Higher" };
 const TYPE = (s) => (s.kind === "practical" ? "prac" : s.kind === "skill" ? (s.skills || []).some((k) => /math|calc/i.test(k)) ? "method" : "data" : "concept");
@@ -16,18 +16,24 @@ export function topicsFor(fwId, { titles = new Map() } = {}) {
   const idx = loadIndex(fwId); if (!idx) throw new Error(`${fwId} has no statement index (kit/curriculum/specs/${fwId}.json): import it first`);
   const st = loadStatements(fwId), text = new Map((st.statements || []).map((x) => [x.ref, x])), map = loadMap(fwId) || { links: {} };
   const sections = new Map((idx.sections || []).map((x) => [x.ref, x]));
-  const out = new Map();
+  // strong matches are confirmed in a session first (scripts/content/agent.mjs, mapping): confirmed ones are taught
+  // already and get REQ: lines; rejected ones are written like any gap; unconfirmed ones wait for their check
+  const confirmed = load(out(`content/mapping/${fwId}.json`), { confirmed: {} }).confirmed;
+  const byTopic = new Map();
   for (const x of idx.statements) {
     const link = map.links[x.ref];
-    if (link?.status === "verified" || link?.confidence === "strong") continue;      // already taught: map, don't write
+    // a decision holds for the statement text it was made on; one recorded before hashes were stored still counts
+    const m0 = confirmed[x.ref], m = m0 && (!m0.hash || m0.hash === x.hash) ? m0 : null;
+    if (link?.status === "verified" || m?.ok) continue;                             // already taught: mapped, not written
+    if (link?.confidence === "strong" && !m) continue;                             // waiting for its mapping check
     const sec = sections.get(x.section) || { ref: x.section, title: x.section };
     const id = `${s.subject}/${slug(sec.title)}`;
-    if (!out.has(id)) out.set(id, { id, subject: s.subject, fw: fwId, section: sec.ref, title: sec.title, level: LEVEL[s.qual] || QUAL_TYPES[s.qual]?.name || s.qual, country: "uk", reqs: [], reuse: new Map() });
-    const t = out.get(id), full = text.get(x.ref);
+    if (!byTopic.has(id)) byTopic.set(id, { id, subject: s.subject, fw: fwId, section: sec.ref, title: sec.title, level: LEVEL[s.qual] || QUAL_TYPES[s.qual]?.name || s.qual, country: "uk", reqs: [], reuse: new Map() });
+    const t = byTopic.get(id), full = text.get(x.ref);
     t.reqs.push({ id: `${fwId}:${x.ref}`, ref: x.ref, asks: full?.text ? full.text.slice(0, 400) : `${sec.title} (${x.ref})`, text: full?.text || null, title: sec.title, type: TYPE(x), status: "official", hash: x.hash, ...(x.higherTier ? { higherTier: true } : {}) });
     for (const l of link?.lessons || []) t.reuse.set(lessonRef(s.subject, l.id), titles.get(l.id) || l.id);
   }
-  return [...out.values()].map((t) => ({ ...t, reuse: [...t.reuse].map(([id, title]) => ({ id, title })) }));
+  return [...byTopic.values()].map((t) => ({ ...t, reuse: [...t.reuse].map(([id, title]) => ({ id, title })) }));
 }
 
 /** the subjects in wave order, and the frameworks in the run (config.frameworks) */

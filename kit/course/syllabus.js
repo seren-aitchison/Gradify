@@ -13,6 +13,8 @@
 // Module ids are "u07:registration": stable while the module's title is unchanged. Units without
 // module lines get one unnamed module.
 const key = (t) => t.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+// the identity a lesson title has for the id lock: anything that writes a syllabus (scripts/content/publish.mjs) uses it too
+export const titleKey = key;
 export function parseSyllabus(text, lock = {}, retired = {}) {
   const lockedByTitle = new Map(Object.entries(lock).map(([id, title]) => [`${id.slice(0, 3)}|${key(title)}`, id]));
   return text.trim().split(/\n(?=\d+\. )/).map((block) => {

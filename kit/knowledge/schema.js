@@ -107,6 +107,7 @@ export function checkKnowledge(items, sources = {}) {
     if (k.kind === "application" && !k.cases?.length) p.push(`${at}: an application needs cases`);
     if (k.kind === "equation" && !k.equation) p.push(`${at}: an equation needs its equation`);
     if (k.kind === "worked-example" && !k.steps?.length) p.push(`${at}: a worked example needs steps`);
+    if (k.kind === "mechanism" && !k.steps?.length) p.push(`${at}: a mechanism needs its steps`);
     for (const t of [...(k.terms || []), ...(k.forms || []).flatMap((f) => f.terms || [])]) if (!t.term || !t.definition) p.push(`${at}: each term needs term and definition`);
     p.push(...checkForms(k));
     const o = k.origin || { type: "original" };
@@ -147,8 +148,18 @@ export function checkLesson(l) {
  *   attribution for every source that requires it
  * Similarity scores are not consulted here: they can suggest copying, never establish permission.
  */
-export function publishGate({ lesson, items, sources, evidence = {}, attributed = [] }) {
+/** a short fingerprint of a lesson's notes text (FNV-1a; no crypto, so it runs in the browser too) */
+export const notesHash = (s) => { let h = 0x811c9dc5; for (const ch of String(s)) { h ^= ch.codePointAt(0); h = Math.imul(h, 0x01000193) >>> 0; } return h.toString(16).padStart(8, "0"); };
+export function publishGate({ lesson, items, sources, evidence = {}, attributed = [], stale = null, notes = null }) {
   const p = [];
+  // approval is of a text (RULES.md rule 14): the notes must be exactly what the reviewer approved
+  if (notes == null) p.push("the lesson's notes weren't read, so the gate can't tell they are what was approved");
+  else if (lesson.status === "approved" && lesson.qa?.notesHash && lesson.qa.notesHash !== notesHash(notes)) p.push("the notes aren't the ones that passed automated QA: QA and review must run again");
+  else if (lesson.status === "approved" && lesson.review?.notesHash !== notesHash(notes)) p.push(lesson.review?.notesHash ? "the notes changed after approval: QA and review must run again" : "the approval doesn't record which text was approved: approve it again");
+  // what changed since QA and approval (scripts/knowledge/qa.mjs impact()): knowledge for this level, or the requirement.
+  // Callers must pass it; a gate run without it can't know the approval still holds.
+  if (stale == null) p.push("the change check (impact) wasn't run, so the approval may describe different knowledge");
+  for (const w of stale || []) p.push(`changed since QA and approval: ${w}`);
   if (lesson.status !== "approved") p.push(`the lesson is ${lesson.status}, not approved`);
   if (!lesson.review?.approvedBy) p.push("no named reviewer has approved it");
   if (lesson.qa?.result !== "pass") p.push("it hasn't passed automated QA");

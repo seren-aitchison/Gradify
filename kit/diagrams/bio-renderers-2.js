@@ -102,10 +102,12 @@ function osmosisChecks(spec) {
   const crossing = spec.crossing || (net ? [[net.from, net.to], [net.from, net.to], [net.from, net.to], [net.to, net.from]] : []);
   if (net && crossing.length) {
     const fwd = crossing.filter(([f, t]) => f === net.from && t === net.to).length, back = crossing.length - fwd;
-    out.push(check("water crosses both ways, but more crosses down the gradient", fwd > back && back >= 0, `${fwd} one way, ${back} back`));
+    out.push(check("water crosses both ways, but more crosses down the gradient", fwd > back && back >= 1, `${fwd} one way, ${back} back`));
   }
-  out.push(check("a water molecule fits through a pore", sz.water < pore, `water ${sz.water}, pore ${pore}`));
-  out.push(check("a solute molecule doesn't fit through a pore (the membrane is partially permeable)", sz.solute > pore, `solute ${sz.solute}, pore ${pore}`));
+  // the pore is drawn in units of a water molecule's diameter, so compare sizes in the same units
+  const drawn = pore * sz.water;
+  out.push(check("a water molecule fits through a pore", sz.water < drawn, `water ${sz.water}, pore ${drawn}`));
+  out.push(check("a solute molecule doesn't fit through a pore (the membrane is partially permeable)", sz.solute > drawn, `solute ${sz.solute}, pore ${drawn}`));
   out.push(check("labels for both solutions and the membrane", a.label && b.label && spec.membrane?.label));
   return out;
 }

@@ -1,3 +1,4 @@
+import { PUBLISHED } from "./published.js";   // lessons published by the content engine (scripts/content/publish.mjs)
 // SciGradify Biology quality assurance record, one entry per written school. The stages (docs/CURRICULUM_QA.md):
 //   written   — notes exist for every planned lesson (derived from course.js `written`)
 //   tested    — technical checks pass (derived: npm test + npm run qa)
@@ -23,3 +24,4 @@ export const QA = {
   u01: { standard: 2, reviewed: null, sources: null, signoff: null },
   u02: { standard: 2, reviewed: null, sources: null, signoff: null },
 };
+if (PUBLISHED.id) QA[PUBLISHED.id] = PUBLISHED.qa;

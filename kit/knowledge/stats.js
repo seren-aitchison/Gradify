@@ -15,6 +15,8 @@ export function pearson(pts) {
 }
 /** how a GCSE student would describe it: positive, negative or none; strong or weak */
 export function describeCorrelation(r) {
+  // no variation in x or y: r is undefined, and the data show no correlation in either direction
+  if (!Number.isFinite(r)) return { sign: "undefined", strength: "none" };
   const a = Math.abs(r);
   return { sign: a < 0.3 ? "none" : r > 0 ? "positive" : "negative", strength: a >= 0.7 ? "strong" : a >= 0.3 ? "weak" : "none" };
 }

@@ -7,7 +7,7 @@ import assert from "node:assert/strict";
 import { existsSync, readFileSync } from "node:fs";
 import { TEMPLATES, LEVELS, templateFor, inRange, depthOf } from "../kit/knowledge/templates.js";
 import { resolve, checkForms, merge } from "../kit/knowledge/forms.js";
-import { checkSource, checkKnowledge, checkLesson, policyOf, categoryOf, usesOf, LICENCES, CATEGORIES, NEXT, publishGate } from "../kit/knowledge/schema.js";
+import { checkSource, checkKnowledge, checkLesson, policyOf, categoryOf, usesOf, LICENCES, CATEGORIES, NEXT, publishGate, notesHash } from "../kit/knowledge/schema.js";
 import { generateQuestions, COMPUTE } from "../kit/knowledge/questions.js";
 import { checkDataClaims, pearson, linearFit, describeCorrelation, xIntercept } from "../kit/knowledge/stats.js";
 import { loadKnowledge, loadSources, load, at, itemHash, longestSharedRun } from "../scripts/knowledge/lib.mjs";
@@ -97,10 +97,18 @@ test("the publishing gate: hard rules, and similarity never stands in for permis
   const p = publishGate({ lesson, items: its, sources, evidence, attributed: lesson.attributed });
   for (const re of [/not approved/, /no named reviewer/, /hasn't been reviewed/, /no person has confirmed its licence/]) assert.ok(p.some((x) => re.test(x)), String(re));
   // everything a person would do: approve, review every item, confirm every licence → publishable
-  const ok = { ...lesson, status: "approved", review: { approvedBy: "A. Reviewer" } };
+  const notes = "## The approved text\nS: exactly what the reviewer read";
+  const ok = { ...lesson, status: "approved", review: { approvedBy: "A. Reviewer", notesHash: notesHash(notes) } };
   const reviewed = its.map((k) => ({ ...k, status: "reviewed", reviewedBy: "A. Reviewer", reviewedOn: "2026-12-01" }));
   const confirmed = Object.fromEntries(Object.entries(sources).map(([id, s]) => [id, { ...s, licenceConfirmed: { by: "A. Owner", on: "2026-12-01" } }]));
-  assert.deepEqual(publishGate({ lesson: ok, items: reviewed, sources: confirmed, evidence, attributed: lesson.attributed }), []);
+  assert.deepEqual(publishGate({ lesson: ok, items: reviewed, sources: confirmed, evidence, attributed: lesson.attributed, stale: [], notes }), []);
+  // approval is of a text: edited notes, notes not read, or an approval with no fingerprint all block publishing
+  assert.ok(publishGate({ lesson: ok, items: reviewed, sources: confirmed, evidence, attributed: lesson.attributed, stale: [], notes: `${notes} (edited)` }).some((x) => /notes changed after approval/.test(x)));
+  assert.ok(publishGate({ lesson: ok, items: reviewed, sources: confirmed, evidence, attributed: lesson.attributed, stale: [] }).some((x) => /notes weren't read/.test(x)));
+  assert.ok(publishGate({ lesson: { ...ok, review: { approvedBy: "A. Reviewer" } }, items: reviewed, sources: confirmed, evidence, attributed: lesson.attributed, stale: [], notes }).some((x) => /doesn't record which text/.test(x)));
+  // knowledge that changed after QA and approval blocks publishing, and so does skipping the change check
+  assert.ok(publishGate({ lesson: ok, items: reviewed, sources: confirmed, evidence, attributed: lesson.attributed, stale: ["bio.x changed for this level (v1 → v2)"] }).some((x) => /changed since QA/.test(x)));
+  assert.ok(publishGate({ lesson: ok, items: reviewed, sources: confirmed, evidence, attributed: lesson.attributed }).some((x) => /change check/.test(x)));
   // each hard rule, broken on its own
   assert.ok(publishGate({ lesson: ok, items: reviewed.map((k, i) => (i ? k : { ...k, origin: { type: "adapted", source: "openstax-biology-2e-4-1", passages: ["x"] } })), sources: confirmed, evidence, attributed: lesson.attributed }).some((x) => /may not adapt commercially/.test(x)));
   assert.ok(publishGate({ lesson: ok, items: reviewed, sources: { ...confirmed, "openstax-biology-2e-4-1": { ...confirmed["openstax-biology-2e-4-1"], licence: "unknown" } }, evidence, attributed: lesson.attributed }).some((x) => /unknown or unverified/.test(x)));
@@ -253,10 +261,12 @@ test("QA fails a lesson that's wrong, and the lifecycle can't skip review", asyn
   assert.equal(qa(untested).dimensions.assessment.status, "fail");
   const noSrc = structuredClone(a); noSrc.notes = noSrc.notes.split("\n").filter((l) => !l.startsWith("SRC: OpenStax")).join("\n");
   assert.equal(qa(noSrc).dimensions.sources.status, "fail");
-  const l = structuredClone(a.lesson); advance(l, qa(a)); assert.equal(l.status, "expert-review");
+  const l = structuredClone(a.lesson); advance(l, qa(a), a.notes); assert.equal(l.status, "expert-review");
+  // approval is of the notes QA checked: edited notes can't be approved until QA runs on them
+  assert.throws(() => review(structuredClone(l), { approve: true, by: "A. Reviewer", notes: `${a.notes}\nP: an unchecked addition` }), /aren't the ones that passed automated QA/);
   assert.throws(() => review(structuredClone(l), { approve: true }), /reviewer's name/);
   assert.throws(() => review(structuredClone(l), { approve: false, by: "A. Reviewer" }), /needs a note/);
-  const ok = review(structuredClone(l), { approve: true, by: "A. Reviewer" }); assert.equal(ok.status, "approved"); assert.deepEqual(checkLesson(ok), []);
+  const ok = review(structuredClone(l), { approve: true, by: "A. Reviewer", notes: a.notes }); assert.equal(ok.status, "approved"); assert.deepEqual(checkLesson(ok), []);
   const failed = structuredClone(a.lesson); advance(failed, qa(bad)); assert.equal(failed.status, "generated");
   assert.ok(!NEXT.generated.includes("published") && !NEXT["automated-qa"].includes("approved"));
 });

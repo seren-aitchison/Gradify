@@ -4,7 +4,8 @@ import { readdirSync, existsSync, readFileSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 import { CONFIG, at, out, load, save, today, fp, loadLedger, saveLedger } from "./lib.mjs";
 import { splitUnit } from "./shorthand.mjs";
-import { topicsFor, frameworksFor, subjectsInRun } from "./queue.mjs";
+import { topicsFor, frameworksFor, subjectsInRun, nextTopics } from "./queue.mjs";
+import { mapCandidates } from "./agent.mjs";
 
 const git = (...a) => { try { return execFileSync("git", a, { cwd: at("./").pathname, encoding: "utf8" }).trim(); } catch { return null; } };
 const ledgers = () => { const d = out("content/ledger/"); return existsSync(d) ? readdirSync(d).filter((f) => f.endsWith(".json")).map((f) => load(new URL(f, d))) : []; };
@@ -12,16 +13,17 @@ const count = (dir, ext) => { const d = at(dir); if (!existsSync(d)) return 0; l
 
 /**
  * Approval is per lesson file (knowledge-engine/CORE/RULES.md, rule 14): a tier holds only while the lesson's text is
- * byte-for-byte what was checked. Returns the lessons whose text changed, and resets their tier.
+ * byte-for-byte what was checked. Returns the lessons whose text changed, resets their tier and saves the ledger
+ * (unless write: false), and hands back the checked ledger so callers report from it.
  */
-export function checkTiers(subject, { write = false } = {}) {
+export function checkTiers(subject, { write = true, withLedger = false } = {}) {
   const led = loadLedger(subject), changed = [];
   for (const [id, e] of Object.entries(led.topics)) {
     const f = e.file && out(e.file), texts = f && existsSync(f) ? new Map(splitUnit(readFileSync(f, "utf8")).map((l) => [l.title, l.text])) : new Map();
     for (const l of e.lessons || []) if (l.tier !== "unchecked" && fp(texts.get(l.title) ?? "") !== l.hash) { changed.push(`${id}: ${l.title}`); l.was = l.tier; l.tier = "unchecked"; delete l.approvedBy; }
   }
   if (write && changed.length) saveLedger(led);
-  return changed;
+  return withLedger ? { changed, led } : changed;
 }
 /** a named reviewer approves one lesson, exactly as it now reads */
 export function approve(subject, topicId, title, by) {
@@ -36,8 +38,7 @@ export function approve(subject, topicId, title, by) {
 
 export function status() {
   const subjects = subjectsInRun().map((subject) => {
-    const edited = checkTiers(subject);
-    const led = ledgers().find((l) => l.subject === subject) || { topics: {} }, T = Object.values(led.topics);
+    const { changed: edited, led } = checkTiers(subject, { withLedger: true }), T = Object.values(led.topics);
     const topics = frameworksFor(subject).flatMap((fw) => { try { return topicsFor(fw); } catch { return []; } });
     const lessons = T.flatMap((t) => t.lessons || []);
     return {
@@ -45,7 +46,9 @@ export function status() {
       topics: Object.fromEntries(["filed", "partial", "filed-with-gaps", "failed", "blocked"].map((s) => [s, T.filter((t) => t.status === s).length])),
       lessons: { total: lessons.length, aiVerified: lessons.filter((l) => l.tier === "ai-verified").length, expertRequired: lessons.filter((l) => l.tier === "expert-required").length, expertApproved: lessons.filter((l) => l.tier === "expert-approved").length, disagreements: lessons.filter((l) => l.disagreed).length },
       editedSinceChecked: edited,
-      next: topics.find((t) => !["filed", "filed-with-gaps", "blocked"].includes(led.topics[t.id]?.status))?.id || null,
+      next: (() => { try { return nextTopics(subject, { limit: 1 })[0]?.id || null; } catch { return null; } })(),
+      // strong matches still to confirm are work too: a session must run gradify work even with no topic queued
+      mappingPending: frameworksFor(subject).reduce((a, fw) => { try { return a + mapCandidates(fw).length; } catch { return a; } }, 0),
     };
   });
   return { generated: today(), branch: git("rev-parse", "--abbrev-ref", "HEAD"), commit: git("rev-parse", "--short", "HEAD"), dirty: !!git("status", "--porcelain"), briefs: count("content/research/", ".txt"), drafts: count("content/drafts/", ".txt"), mode: CONFIG.mode, budgetUsd: CONFIG.budgetUsd, subjects, approvals: { merge: "owner only", deploy: "owner only", publish: "owner only (merging the rolling PR approves AI-verified drafts; expert-required ones wait for a named reviewer)" } };
@@ -54,19 +57,28 @@ export function status() {
 /** STATUS.json, NEXT_TASK.json and HANDOVER.md, all generated from status() */
 export function writeHandover(s = status()) {
   save(out("knowledge-engine/CORE/STATUS.json"), s);
-  const next = s.subjects.find((x) => x.next);
-  save(out("knowledge-engine/CORE/NEXT_TASK.json"), next ? { task: "run the content loop", command: `node scripts/gradify.mjs run --subject ${next.subject}`, topic: next.next, by: "the Content engine workflow (.github/workflows/content.yml); a person only merges the rolling PR", acceptance: "lessons pass every gate and the review; failures are listed in the PR" } : { task: "nothing queued", note: "add a framework to scripts/content/config.json (frameworks) and its registry row" });
-  save(out("knowledge-engine/CORE/HANDOVER.md"), `# Handover (generated by \`gradify status --write\`, ${s.generated})\n\nBranch \`${s.branch}\` at \`${s.commit}\`${s.dirty ? " (uncommitted changes)" : ""}. Read START-HERE.md and RULES.md, then only the files the task names.\n\n| Subject | To write (topics / requirements) | Filed | Partial | Failed | Blocked | Lessons | AI-verified | Expert required | Disagreements | Next topic |\n|---|---|---|---|---|---|---|---|---|---|---|\n${s.subjects.map((x) => `| ${x.subject} | ${x.topicsToWrite} / ${x.requirementsToWrite} | ${x.topics.filed + x.topics["filed-with-gaps"]} | ${x.topics.partial} | ${x.topics.failed} | ${x.topics.blocked} | ${x.lessons.total} | ${x.lessons.aiVerified} | ${x.lessons.expertRequired} | ${x.lessons.disagreements} | ${x.next || "-"} |`).join("\n")}\n\n${s.briefs} research briefs, ${s.drafts} draft unit files. Mode ${s.mode}, budget $${s.budgetUsd} a run. Nothing is merged, deployed or published without the owner.\n`);
+  const next = s.subjects.find((x) => x.next || x.mappingPending);
+  save(out("knowledge-engine/CORE/NEXT_TASK.json"), next ? (CONFIG.provider || "api") === "agent"
+    ? { task: "run the content loop in agent mode", command: `node scripts/gradify.mjs work ${next.subject}`, topic: next.next || `${next.mappingPending} strong matches to confirm (mapping)`, by: "a Claude Code session (the hourly scheduled one, or any you open): follow what gradify work prints; a person only merges the rolling PR",
+      acceptance: "lessons pass every gate and the review; failures are listed in the PR" }
+    : { task: "run the content loop", command: `node scripts/gradify.mjs run --subject ${next.subject}`, topic: next.next, by: "the Content engine workflow (.github/workflows/content.yml); a person only merges the rolling PR", acceptance: "lessons pass every gate and the review; failures are listed in the PR" } : { task: "nothing queued", note: "add a framework to scripts/content/config.json (frameworks) and its registry row" });
+  save(out("knowledge-engine/CORE/HANDOVER.md"), `# Handover (generated by \`gradify status --write\`, ${s.generated})\n\nBranch \`${s.branch}\` at \`${s.commit}\`${s.dirty ? " (uncommitted changes)" : ""}. Read START-HERE.md and RULES.md, then only the files the task names.\n\n| Subject | To write (topics / requirements) | Filed | Partial | Failed | Blocked | Lessons | AI-verified | Expert required | Disagreements | Mapping to confirm | Next topic |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n${s.subjects.map((x) => `| ${x.subject} | ${x.topicsToWrite} / ${x.requirementsToWrite} | ${x.topics.filed + x.topics["filed-with-gaps"]} | ${x.topics.partial} | ${x.topics.failed} | ${x.topics.blocked} | ${x.lessons.total} | ${x.lessons.aiVerified} | ${x.lessons.expertRequired} | ${x.lessons.disagreements} | ${x.mappingPending || 0} | ${x.next || "-"} |`).join("\n")}\n\n${s.briefs} research briefs, ${s.drafts} draft unit files. Mode ${s.mode}, budget $${s.budgetUsd} a run. Nothing is merged, deployed or published without the owner.\n`);
 }
 
-/** the rolling PR's description: what passed, what failed, what an expert must see, and what it cost */
-export function prBody(records, spend) {
+/**
+ * The rolling PR's description: what passed, what failed, what an expert must see, and what it cost. Everything but
+ * the cost comes from the subjects' ledgers as they are now (after checkTiers), so a later approval or edit shows, and
+ * a topic run twice appears once. Run records are only history.
+ */
+export function prBody(spend, { subjects = subjectsInRun() } = {}) {
+  const records = subjects.map((sub) => checkTiers(sub, { withLedger: true }).led).flatMap((led) => Object.entries(led.topics).map(([topic, e]) => ({ topic, lessons: e.lessons || [], failures: e.failures || [], uncovered: e.uncovered || [], gaps: e.gaps || [], needs: e.needs || [] })));
   const passed = records.flatMap((r) => r.lessons.map((l) => ({ ...l, topic: r.topic })));
   const line = (l) => `- **${l.title}** (${l.topic}) · ${l.tier}${l.disagreed ? " · reviewer disagreed first" : ""}${l.conflict ? " · sources conflict" : ""} · ${l.reqs.length} requirement${l.reqs.length === 1 ? "" : "s"}`;
   const fails = records.flatMap((r) => r.failures.map((f) => `- ${r.topic} · **${f.title}** stopped at \`${f.gate}\`: ${f.issues.slice(0, 3).map((i) => `${i.code}${i.line ? ` L${i.line}` : ""} ${i.note}`).join("; ")}`));
   const byGate = {}; for (const r of records) for (const f of r.failures) byGate[f.gate] = (byGate[f.gate] || 0) + 1;
   const systematic = Object.entries(byGate).filter(([, n]) => n >= 5);
-  return `Content engine run, ${today()}. Merging this PR approves the **AI-verified** drafts below for publishing; **expert-required** ones stay unpublished until a named reviewer approves them. Nothing here is deployed by merging.
+  const pub = subjects.map((sub) => { const f = out(`kit/courses/${sub}/published.js`); return existsSync(f) ? { sub, n: Object.keys(JSON.parse(readFileSync(f, "utf8").match(/PUBLISHED = (\{[\s\S]*\});/)?.[1] || "{}").ids || {}).length } : null; }).filter((x) => x?.n);
+  return `Content engine, ${today()}. **Merging this PR publishes** the lessons in each course's "Specification lessons" unit${pub.length ? ` (${pub.map((x) => `${x.sub}: ${x.n}`).join(", ")})` : ""}, labelled **AI-checked** or **Expert-reviewed** for learners, once the site deploys. **Expert-required** lessons stay in drafts until a named reviewer approves them.
 
 ## Passed (${passed.length})
 ${passed.map(line).join("\n") || "None this run."}
@@ -77,10 +89,10 @@ ${passed.filter((l) => l.tier === "expert-required" || l.disagreed).map(line).jo
 ## Failed after ${CONFIG.repairs} repairs (${fails.length})
 ${fails.join("\n") || "None."}
 ${systematic.length ? `\n> **Systematic failure:** ${systematic.map(([g, n]) => `\`${g}\` failed ${n} lessons`).join(", ")}. This is probably the engine, not the content: use the fix prompt in docs/CONTENT-ENGINE.md.\n` : ""}
-## Not covered yet
+${(() => { const sig = subjects.map((sub) => load(out(`content/signals/${sub}.json`))).filter(Boolean).flatMap((x) => [...(x.items || []).map((i) => `- ${i.subject} ${i.lesson} · question ${i.question}: ${i.why}`), ...(x.reports || []).map((r) => `- ${r.subject} ${r.lesson}: ${r.why}`)]); return sig.length ? `## Learners flagged (repair queue)\n${sig.join("\n")}\n\n` : ""; })()}## Not covered yet
 ${records.filter((r) => r.uncovered.length).map((r) => `- ${r.topic}: ${r.uncovered.join(", ")}`).join("\n") || "None."}
 ${records.some((r) => r.gaps.length || r.needs.length) ? `\n## Research gaps and diagrams needed\n${records.flatMap((r) => [...r.gaps.map((g) => `- GAP ${g}`), ...r.needs.map((g) => `- DNEED ${g}`)]).join("\n")}\n` : ""}
 ## Cost
-$${spend.usd.toFixed(2)} over ${spend.calls} calls (${spend.searches} web searches); cache read ${spend.cacheRead.toLocaleString()} tokens, written ${spend.cacheWrite.toLocaleString()}. ${Object.entries(spend.byJob).map(([j, c]) => `${j} $${c.toFixed(2)}`).join(", ")}.
+${(CONFIG.provider || "api") === "agent" && !spend.calls ? "Written in agent mode by Claude Code sessions on the Claude subscription: no API spend." : `$${spend.usd.toFixed(2)} over ${spend.calls} calls (${spend.searches} web searches); cache read ${spend.cacheRead.toLocaleString()} tokens, written ${spend.cacheWrite.toLocaleString()}. ${Object.entries(spend.byJob).map(([j, c]) => `${j} $${c.toFixed(2)}`).join(", ")}.`}
 `;
 }
