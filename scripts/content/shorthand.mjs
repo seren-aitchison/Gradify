@@ -15,7 +15,7 @@ export function parentOf(id, known) {
 // BG: supporting background, sourced like F: but not what the lesson teaches (respiration behind diffusion, meiosis
 // behind mitosis): the Writer may use it to explain a requirement, never as an objective or an assessed point
 export const BRIEF_TAGS = ["F", "BG", "DEF", "MIS", "EXAM", "VAR", "NUM", "CONFLICT", "SRC"];
-export const REVIEW_CODES = ["FACT", "COV", "LVL", "Q", "CLR", "SAFE", "COPY", "CONF", "REQ"];
+export const REVIEW_CODES = ["FACT", "COV", "LVL", "Q", "CLR", "SAFE", "COPY", "CONF", "REQ", "CARD", "DIAG", "TEACH"];
 const field = (s) => String(s ?? "").replace(/\s*\|\s*/g, " / ").replace(/\s+/g, " ").trim();
 
 /** a work packet (engine → Writer). Fixed field order, no dates, so identical inputs give identical bytes. */

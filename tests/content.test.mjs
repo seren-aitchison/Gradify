@@ -20,6 +20,7 @@ const REQ = { id: "aqa-gcse-biology:4.1.1.1.b", ref: "4.1.1.1.b", asks: "prokary
 const TOPIC = { id: "biology/test-prokaryotes", subject: "biology", fw: "aqa-gcse-biology", section: "4.1.1.1", title: "Test prokaryotes", level: "GCSE", country: "uk", reqs: [REQ], reuse: [] };
 const BRIEF = `TOPIC biology/test-prokaryotes | levels=GCSE | checked=2026-11-25
 F: Prokaryotic cells have no nucleus | s1,s2 | conf=high
+F: Eukaryotic cells are far larger than prokaryotes, whose genetic material sits in one DNA loop | s1,s3 | conf=high
 F: Bacterial cells are usually 1 to 10 micrometres long | s1,s3 | conf=high
 DEF: prokaryote | an organism whose cells have no nucleus | GCSE
 MIS: bacteria have no DNA | bacteria have DNA in a single loop and often plasmids
@@ -692,7 +693,8 @@ test("filing: a practical elsewhere in the topic doesn't make a lesson high-risk
   const PRAC = { ...REQ, id: "aqa-gcse-biology:4.1.1.1.c", ref: "4.1.1.1.c", asks: "a required practical", text: "Use a light microscope to look at cells.", type: "prac", hash: "h2" };
   const run = async (name, lesson) => {
     const topic = { ...TOPIC, id: `biology/${name}`, title: name, reqs: [REQ, PRAC] };
-    const ask = async (job) => (job === "research" ? BRIEF.replace("test-prokaryotes", name) : `${lesson}\nEND`);
+    // the brief covers both requirements, as the evidence check asks
+    const ask = async (job) => (job === "research" ? BRIEF.replace("test-prokaryotes", name).replace("\nDEF:", "\nF: Cells are viewed with a light microscope in the practical | s1,s2 | conf=high\nDEF:") : `${lesson}\nEND`);
     return runTopic(topic, { ask, askMany: async (job, items) => new Map(items.map((it) => [it.key, `REV ${it.key} OK`])) });
   };
   const own = await run("test-own-reqs", LESSON("3 × 4 = 12"));
@@ -901,4 +903,28 @@ test("in-session review of ingested lessons: a pass takes its tier, a fail is re
   assert.ok((await ingestFile("test-rev-bad.md", `${LESSON("3 × 4 = 12").replace("10 to 30 micrometres across, so", "10 to 30 micrometres across, so")}\nP: Bacteria are prokaryotes.\nEND`, { all: [topic] })).ok);
   assert.ok(reviewStep("biology", { action: act }).actions.some((x) => x.topic === "biology/test-rev-bad"));
   assert.ok(existsSync(join(process.env.GRADIFY_OUT, "content/queue/biology/_review/test-rev-bad")));
+});
+
+test("quality checks: sources trace to the brief, diagrams exist in the library, the brief covers each requirement, the reviewer sees each diagram", async () => {
+  const { sourcesGate, standardsGate } = await import("../scripts/content/gates.mjs");
+  const { checkBrief, reviewRequest } = await import("../scripts/content/loop.mjs");
+  const brief = S.parseBrief(BRIEF), urls = brief.sources.map((x) => x.url), L = (t) => parseNotes(t)[0];
+  const base = LESSON("3 × 4 = 12");
+  assert.ok(sourcesGate(L(base), base, urls).ok, "the lesson cites the brief's OpenStax page");
+  const other = base.replace("https://openstax.org/books/biology-2e", "https://example.com/biology");
+  assert.match(sourcesGate(L(other), other, urls).issues[0].note, /example\.com\/biology isn't a source in the research brief/);
+  const bare = base.replace(" | https://openstax.org/books/biology-2e", "");
+  assert.match(sourcesGate(L(bare), bare, urls).issues[0].note, /has no link: cite a source from the research brief/);
+  const deeper = base.replace("https://openstax.org/books/biology-2e", "https://openstax.org/books/biology-2e/pages/4-2");
+  assert.ok(sourcesGate(L(deeper), deeper, urls).ok, "a page within a brief source counts");
+  const ghost = base.replace("D: bio-amino-acids", "D: bio-made-up-diagram");
+  assert.match(standardsGate(L(ghost), ghost).issues.map((i) => i.note).join(" "), /D: bio-made-up-diagram isn't in the diagram library/);
+  // the brief must cover what each requirement names, or it can't support a lesson on it
+  const thin = BRIEF.replace(/^F: Eukaryotic.*\n/m, "");
+  assert.match(checkBrief(thin, TOPIC).problems.join(";"), /doesn't support aqa-gcse-biology:4\.1\.1\.1\.b: the brief never covers .*eukaryot/);
+  assert.deepEqual(checkBrief(BRIEF, TOPIC).problems.filter((p) => /doesn't support/.test(p)), []);
+  // the reviewer is told what each library diagram shows, and can fail flashcards, diagrams and teaching quality
+  assert.match(reviewRequest({ key: "k", text: base }, TOPIC, BRIEF), /^DIAG bio-animal-cell \| An animal cell \| .* \| alt: /m);
+  const v = S.parseVerdicts("REV k FAIL CARD L30 trivial card; DIAG L40 decorative; TEACH L8 three concepts in one section")[0];
+  assert.deepEqual(v.issues.map((i) => i.code), ["CARD", "DIAG", "TEACH"]);
 });

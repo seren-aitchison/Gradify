@@ -5,10 +5,10 @@
 import { readFileSync, existsSync, readdirSync } from "node:fs";
 import { titleKey } from "../../kit/course/syllabus.js";
 import { SPECS } from "../../kit/curriculum/uk.js";
-import { loadIndex } from "../curriculum/engine.mjs";
+import { loadIndex, tokens } from "../curriculum/engine.mjs";
 import { CONFIG, at, out, fp, save, slug, today, briefPath, draftPath, loadLedger, saveLedger } from "./lib.mjs";
 import { packet, parseBrief, parseVerdicts, fixList, parseRepairs, applyRepair, splitUnit, numbered, parentOf, conflictStakes } from "./shorthand.mjs";
-import { runGates, topicFlashcards } from "./gates.mjs";
+import { runGates, topicFlashcards, SKILL_WORDS } from "./gates.mjs";
 import { diagramsFor, reqHash, TYPE } from "./queue.mjs";
 import { longestSharedRun } from "../knowledge/lib.mjs";
 import { SOURCES, sourceFor, classOf } from "../../kit/curriculum/sources.js";
@@ -61,7 +61,14 @@ export const allowLines = (rows = SOURCES) => rows.filter((r) => classOf(r)).map
 export function checkBrief(text, topic = null) {
   const parsed = parseBrief(text), allow = parsed.problems.length ? [] : allowlistProblems(parsed);
   const problems = [...parsed.problems, ...allow, ...(parsed.problems.length ? [] : licenceProblems(parsed))];
-  for (const r of topic?.reqs || []) if (r.text) { const run = longestSharedRun(text, r.text); if (run.words >= 8) problems.push(`copies ${run.words} words of ${r.id}'s wording ("${run.run.split(" ").slice(0, 6).join(" ")}…"): condense it in your own words`); }
+  const briefWords = new Set(tokens(text));
+  for (const r of topic?.reqs || []) if (r.text) {
+    const run = longestSharedRun(text, r.text); if (run.words >= 8) problems.push(`copies ${run.words} words of ${r.id}'s wording ("${run.run.split(" ").slice(0, 6).join(" ")}…"): condense it in your own words`);
+    // evidence: a lesson is written from the brief alone, so the brief must cover what each requirement names (the
+    // specification gate later asks the lesson for the same terms)
+    const terms = [...new Set(tokens(`${r.title || ""} ${r.text}`))].filter((t) => !SKILL_WORDS.has(t)), missing = terms.filter((t) => !briefWords.has(t));
+    if (terms.length && missing.length / terms.length > 0.4) problems.push(`doesn't support ${r.id}: the brief never covers ${missing.slice(0, 8).join(", ")}`);
+  }
   return { parsed, problems };
 }
 export const stampBrief = (topic, text) => `# fp=${briefKey(topic)} · ${today()}\n${String(text).replace(/^#.*\n/, "").trim().replace(/\nEND\s*$/, "")}\nEND\n`;
@@ -92,11 +99,20 @@ export function packetFor(topic, brief) {
   const { diagrams, renderers } = diagramsFor(topic);
   return packet({ id: `${topic.fw}/${topic.section}`, subject: topic.subject, level: topic.level, country: topic.country, framework: topic.fw, reqs: topic.reqs, reuse: topic.reuse, diagrams, renderers, brief: brief.replace(/^#.*\n/, "") });
 }
-export const reviewRequest = (s, topic, brief) => [`LESSON ${s.key}`, numbered(s.text), ...topic.reqs.map((r) => `REQ ${r.id} | ${String(r.asks).replace(/\s+/g, " ")}`), `BRIEF ${topic.id}`, brief.replace(/^#.*\n/, "").trim(),
+export const reviewRequest = (s, topic, brief) => [`LESSON ${s.key}`, numbered(s.text), ...topic.reqs.map((r) => `REQ ${r.id} | ${String(r.asks).replace(/\s+/g, " ")}`),
+  // each library diagram the lesson uses, as the learner will see it, so the reviewer can judge what it teaches
+  ...diagramLines(s.text), `BRIEF ${topic.id}`, brief.replace(/^#.*\n/, "").trim(),
   // the brief's conflicts, numbered as the verdict's Cn= names them
   ...parseBrief(brief).conflicts.map((c, i) => `CONF C${i + 1} | ${c[0]} | src=${c[1] || ""} | stakes=${conflictStakes(c)}`)].join("\n");
+let MANIFEST = null;
+/** "DIAG <id> | <title> | <caption> | alt: <alt>" for each D: line, or a note that the id isn't in the library */
+export function diagramLines(text) {
+  MANIFEST ||= (() => { try { const m = JSON.parse(readFileSync(at("kit/diagrams/manifest.json"), "utf8")); return m.diagrams || m; } catch { return {}; } })();
+  const one = (x) => String(x || "").replace(/\s+/g, " ").trim();
+  return [...new Set([...String(text).matchAll(/^D:\s*(\S+)/gm)].map((m) => m[1]))].map((id) => { const d = MANIFEST[id]; return d ? `DIAG ${id} | ${one(d.title)} | ${one(d.caption)} | alt: ${one(d.alt)}` : `DIAG ${id} | not in the diagram library`; });
+}
 export const repairRequest = (s, pkt) => [fixList(s.key, s.issues), `LESSON ${s.key}`, numbered(s.text), pkt].join("\n");
-export const gateOptions = (topic, { siblings = [], ...extra } = {}) => ({ reqs: topic.reqs, allowed: new Set(topic.reqs.map((x) => x.id)), prereq: prereqResolver(topic.subject, siblings), taken: takenTitle(topic.subject), ...extra });
+export const gateOptions = (topic, { siblings = [], brief = null, ...extra } = {}) => ({ reqs: topic.reqs, sources: brief ? (brief.sources || []).map((x) => x.url) : null, allowed: new Set(topic.reqs.map((x) => x.id)), prereq: prereqResolver(topic.subject, siblings), taken: takenTitle(topic.subject), ...extra });
 /** the course's own lesson titles, keyed as the syllabus keys them; the engine's published unit is left out, since a
  * lesson published there keeps its title when it's rebuilt */
 export function courseTitles(subject, { withPublished = true } = {}) {
@@ -178,7 +194,7 @@ export async function runTopic(topic, { ask, askMany, render = null, legible = n
   const pkt = packetFor(topic, r.brief);
   const states = splitUnit(await ask("write", pkt)).map((l, i) => ({ ...lessonState(l, i), models: { write: CONFIG.models.write, review: CONFIG.models.review } }));
   if (!states.length) return fileTopic(topic, [], { brief: r, failures: [{ title: "(unit)", gate: "parse", issues: [{ code: "FMT", line: null, note: "the Writer returned no lessons" }] }] });
-  const opts = gateOptions(topic, { render, legible, siblings: states.map((s) => s.title) });
+  const opts = gateOptions(topic, { render, legible, siblings: states.map((s) => s.title), brief: r.parsed });
   let active = states, stopped = null;
   try {
     for (let round = 0; round <= CONFIG.repairs && active.length; round++) {

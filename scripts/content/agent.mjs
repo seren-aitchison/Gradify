@@ -82,7 +82,7 @@ export async function advance(topic, { render = null, legible = null } = {}) {
     if (!st.lessons.length) { rmSync(dir, { recursive: true, force: true }); return { actions: [], filed: fileTopic(topic, [], { brief, failures: [{ title: "(unit)", gate: "parse", issues: [{ code: "FMT", line: null, note: "the Writer returned no lessons" }] }] }) }; }
   }
   // 3. each lesson: gates → review → repair, up to the repair limit
-  const opts = gateOptions(topic, { render, legible, siblings: st.lessons.map((s) => s.title) }), repairs = [], reviews = [];
+  const opts = gateOptions(topic, { render, legible, siblings: st.lessons.map((s) => s.title), brief: brief.parsed }), repairs = [], reviews = [];
   for (const [i, s] of st.lessons.entries()) {
     const n = i + 1, rq = f(`repair-${n}.req.txt`), ro = f(`repair-${n}.out.txt`), vq = f(`review-${n}.req.txt`), vo = f(`review-${n}.out.txt`);
     for (let guard = 0; guard < 4 && !["done", "failed"].includes(s.stage); guard++) {
