@@ -6,6 +6,7 @@ import * as K from "../kit/labs/chemistry/skeletal.js";
 import * as C from "../kit/labs/chemistry/reactions/configuration.js";
 import { drawSmiles } from "../kit/labs/chemistry/reactions/predictor.js";
 import * as M from "../kit/labs/chemistry/mol.js";
+import { EZ } from "../kit/labs/chemistry/stereo.js";
 
 /** CHFClBr drawn by hand: F up the page on a wedge or dash, Cl lower right, Br lower left, H hidden. */
 function chfclbr(stereo) {
@@ -55,11 +56,19 @@ test("E/Z from where the groups sit, matching / and \\ in the SMILES and the E/Z
   for (const [s, want] of [["C/C=C/C", "(E)"], ["C/C=C\\C", "(Z)"], ["Cl/C=C/Cl", "(E)"], ["CC/C=C(\\C)Cl", "(E)"], ["OC(=O)/C=C/C(=O)O", "(E)"], ["OC(=O)/C=C\\C(=O)O", "(Z)"]]) {
     const m = drawSmiles(s); assert.equal(C.descriptor(m), want, s);
   }
-  // the ethyl is cis to the methyl, so trans to Cl, the higher group: E (read from the SMILES, not from mol.js's 3D
-  // embedding, which can settle cis acids and crowded alkenes into the wrong isomer)
-  for (const s of ["C/C=C/C", "C/C=C\\C", "Cl/C=C/Cl"]) {
-    const M3 = M.molecule(s), b = M3.bonds.find((x) => x.order === 2);
-    assert.equal(`(${M.ez(M3, b.a, b.b)})`, C.descriptor(drawSmiles(s)), `${s} (mol.js)`);
+  // the ethyl is cis to the methyl, so trans to Cl, the higher group: E. The drawing reads this straight from the
+  // SMILES; mol.js's 3D embedding must agree, over several random starts, for cis acids, crowded and trisubstituted
+  // alkenes and every E/Z exercise case (each written C(/ul)(dl)=C(/ur)dr, so up-left and up-right are cis)
+  const cases = ["C/C=C/C", "C/C=C\\C", "Cl/C=C/Cl", "CC/C=C(\\C)Cl", "CC/C=C(/C)Cl", "OC(=O)/C=C/C(=O)O", "OC(=O)/C=C\\C(=O)O",
+    "F/C=C/F", "Cl/C(Br)=C(/I)C", "I/C=C\\I", "I/C=C/I", ...EZ.map(([[ul, dl, ur, dr]]) => `C(/${ul})(${dl})=C(/${ur})${dr}`)];
+  for (const s of cases) {
+    const want = C.descriptor(drawSmiles(s));
+    for (const seed of [7, 1, 2, 3]) {
+      const M3 = M.molecule(s, { seed }), CC = M3.bonds.filter((x) => x.order === 2 && M3.atoms[x.a].el === "C" && M3.atoms[x.b].el === "C");
+      // the C=C that carries the / and \ marks (an exercise case can have a second, unmarked C=C)
+      const b = CC.find((x) => M3.bonds.some((y) => y.dir && (y.a === x.a || y.b === x.a))) || CC[0];
+      assert.equal(`(${M.ez(M3, b.a, b.b)})`, want, `${s} seed ${seed} (mol.js)`);
+    }
   }
   const m = drawSmiles("CC=CC"), bond = C.configuration(m).bonds[0].bond;
   for (const want of ["E", "Z", "E"]) { assert.ok(C.setEZ(m, bond, want)); assert.equal(C.descriptor(m), `(${want})`); }

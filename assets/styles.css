@@ -536,7 +536,7 @@ body.ds { overflow-x: clip; }
 body.ds .aurora { display: none; }
 /* the bar: slim and quiet, a hairline under translucent page colour */
 body.ds .hub-bar { background: color-mix(in srgb, var(--ds-bg) 78%, transparent) !important; border: 0 !important; box-shadow: 0 0 0 1px var(--ds-line) !important; -webkit-backdrop-filter: saturate(1.8) blur(20px); backdrop-filter: saturate(1.8) blur(20px); }
-body.ds .hub-bar::before, body.ds .hub-bar::after { display: none !important; }
+body.ds .hub-bar::after { display: none !important; }   /* ::before is the Gradify edge (kit/styles/base.css) */
 /* the hero */
 body.ds .ds-hero-sec { display: block; padding: clamp(72px, 10vw, 132px) 0 0; text-align: center; }
 body.ds .ds-hero-sec .hero-copy { max-width: none; }
@@ -622,3 +622,6 @@ body.ds .pro h2 .grad { background: none; -webkit-text-fill-color: currentColor;
 .hero-who { font-size: 14px; color: var(--mute); margin: 14px 0 0; } .hero-who a { color: var(--fg); }
 .resume-home .resume { margin-top: 14px; font-size: 14px; border: 1px solid var(--line-strong); border-radius: 14px; padding: 10px 14px; }
 .resume-home .resume p { margin: 3px 0; } .resume-home .resume a { color: var(--fg); }
+
+/* the pathways card above the site directory (index.html #find): the action card, with room around it */
+.find-paths { margin: 4px 0 18px; }

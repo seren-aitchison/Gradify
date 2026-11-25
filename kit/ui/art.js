@@ -9,12 +9,11 @@
 //
 // Styles: .g-art in kit/styles/base.css. Docs: docs/DESIGN-SYSTEM.md, "Spot illustrations".
 
-// a muted, grown-up palette: slate indigo, dusty rose, copper, brass and sage (one family, never candy)
-// duotone: the page's accent (--art-a, set to the site's colour by the CSS) and a warm neutral, with one quiet second
-// tone (--art-c). Five names, so every drawing keeps its structure, but only two colour families on screen.
-const C = { i: "var(--art-a, #4b56a6)", p: "var(--art-n, #8d8a86)", o: "var(--art-a, #4b56a6)", a: "var(--art-c, #b8935a)", t: "var(--art-n, #8d8a86)" };
+// colour: the page's accent (--art-a, the site's colour) leads, with the Gradify pink, orange, amber and teal
+// (--art-p, --art-o, --art-c, --art-t; kit/styles/base.css) as clear, saturated tints under firm ink lines.
+const C = { i: "var(--art-a, #4641ff)", p: "var(--art-p, #ec3f8c)", o: "var(--art-o, #ff7a1a)", a: "var(--art-c, #f5b400)", t: "var(--art-t, #12b5a5)" };
 // a tint (flat fill), an ink line, a filled dot
-const tint = (c, o = 0.22) => `fill="${c}" fill-opacity="${Math.min(0.5, 0.12 + o * 0.7).toFixed(2)}"`;
+const tint = (c, o = 0.22) => `fill="${c}" fill-opacity="${Math.min(0.85, 0.3 + o * 1.2).toFixed(2)}"`;
 const ink = 'fill="none" stroke="var(--art-ink, currentColor)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"';
 // the gleam: a short glint of light that runs along the ink lines (CSS .g-glint in kit/styles/base.css; still when
 // motion is reduced). Each ink line gets a copy drawn as one short dash that travels its length.
