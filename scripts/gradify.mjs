@@ -12,6 +12,8 @@
 //   gradify publish <subject>               move AI-checked and expert-reviewed drafts into the course (via the rolling PR)
 //   gradify standards [--lessons f.tsv]    the production standard across the library: flashcards per topic, diagrams per
 //                                           lesson, by course (and per lesson into f.tsv); read-only
+//   gradify preview <subject> [--topic t] [--out dir]   filed lessons drawn by the real course engine, desktop and
+//                                           mobile screenshots; publishes only into a scratch copy (preview.mjs)
 //   gradify template [--subject s] [--limit n] [--topic t]   self-contained templates for an external model to write
 //                                           from: a research template, or once the brief is in, a lesson template
 //   gradify ingest [files…] [--review]      check and install the returned .md files from content/inbox/ (factory.mjs)
@@ -157,6 +159,12 @@ try {
     if (r.hooks?.length) { const { execFileSync } = await import("node:child_process"); execFileSync("node", ["scripts/preload-modules.mjs"], { cwd: at("./").pathname, stdio: "inherit" }); } }
   else if (cmd === "ingest") await ingest();
   else if (cmd === "standards") { const { report } = await import("./content/standards.mjs"); log(await report({ lessonsFile: opt("lessons") })); }
+  else if (cmd === "preview") {
+    const { preview } = await import("./content/preview.mjs"), subject = argv[1] && !argv[1].startsWith("--") ? argv[1] : subjects()[0];
+    const r = await preview(subject, { topic: opt("topic"), outDir: opt("out") });
+    for (const x of r.lessons) log(`${x.id} ${x.view}: ${x.file}${x.errors.length ? ` · ${x.errors.length} console error(s): ${x.errors[0].slice(0, 120)}` : ""}`);
+    if (r.skipped?.length) log(`not previewed: ${r.skipped.join("; ")}`);
+  }
   else if (cmd === "template") {
     const { exportTemplates } = await import("./content/factory.mjs");
     const res = exportTemplates(subjects(), { limit: Number(opt("limit", 5)), topicId: opt("topic") });
