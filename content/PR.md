@@ -19,4 +19,4 @@ Content engine, 2026-11-25. **Merging this PR publishes** the lessons in each co
 - DNEED Required practical: observing cells with a light microscope: A labelled light microscope showing the eyepiece, objective lenses, stage and focusing knobs, with an arrow showing the move from low to high power
 
 ## Cost
-$0.00 over 0 calls (0 web searches); cache read 0 tokens, written 0. .
+Written in agent mode by Claude Code sessions on the Claude subscription: no API spend.
