@@ -12,7 +12,7 @@ import { checkLesson, NEXT } from "../../kit/knowledge/schema.js";
 import { parseNotes } from "../../kit/course/notes.js";
 import { resolve } from "../../kit/knowledge/forms.js";
 import { checkDataClaims, pointsOf, linearFit, xIntercept } from "../../kit/knowledge/stats.js";
-import { categoryOf, usesOf } from "../../kit/knowledge/schema.js";
+import { categoryOf, usesOf, notesHash } from "../../kit/knowledge/schema.js";
 import { formHash } from "./assemble.mjs";
 import { loadIndex } from "../curriculum/engine.mjs";
 
@@ -249,11 +249,11 @@ export function advance(lesson, record) {
 }
 
 /** a reviewer's decision: approve (with their name) or send back with a note. Publishing is a separate, later step. */
-export function review(lesson, { approve, by, note }) {
+export function review(lesson, { approve, by, note, notes = null }) {
   if (lesson.status !== "expert-review") throw new Error(`${lesson.id} is ${lesson.status}, not awaiting expert review`);
   if (!by) throw new Error("a review needs the reviewer's name");
   if (!approve && !note) throw new Error("sending a lesson back needs a note saying what to fix");
-  lesson.review = { ...lesson.review, status: approve ? "approved" : "changes-requested", reviewer: by, note: note || null, approvedBy: approve ? by : null, approvedOn: approve ? today() : null };
+  lesson.review = { ...lesson.review, status: approve ? "approved" : "changes-requested", reviewer: by, note: note || null, approvedBy: approve ? by : null, approvedOn: approve ? today() : null, notesHash: approve && notes != null ? notesHash(notes) : null };
   lesson.history.push({ status: approve ? "approved" : "generated", on: today(), by, ...(note ? { note } : {}) }); lesson.status = approve ? "approved" : "generated";
   return lesson;
 }
