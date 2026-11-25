@@ -145,7 +145,7 @@ test("the loop: a lesson that never passes is recorded with its fix list, not fi
   assert.equal(r.status, "failed"); assert.equal(r.lessons.length, 0);
   assert.equal(r.failures[0].gate, "num-dia"); assert.deepEqual(r.uncovered, [REQ.id]);
   assert.ok(!existsSync(join(process.env.GRADIFY_OUT, "content/drafts/biology/aqa-gcse-biology/test-stuck.txt")));
-  assert.match(prBody([r], { usd: 0.1, calls: 3, searches: 0, cacheRead: 0, cacheWrite: 0, byJob: {} }), /stopped at `num-dia`/);
+  assert.match(prBody({ usd: 0.1, calls: 3, searches: 0, cacheRead: 0, cacheWrite: 0, byJob: {} }, { subjects: ["biology"] }), /stopped at `num-dia`/);
 });
 
 test("high-risk and conflicting topics need an expert", async () => {
@@ -201,4 +201,58 @@ test("approval is per file: a named reviewer, and any edit resets the tier", asy
 test("a new diagram must describe itself in words", async () => {
   const r = G.parseGate(LESSON("3 × 4 = 12").replace("K: A prokaryote", 'DIA: graph | {"range":{"x":[0,1],"y":[0,1]},"title":"Sizes"}\nK: A prokaryote'));
   assert.deepEqual(r.issues.map((i) => i.note), ["DIA: spec needs a caption", "DIA: spec needs alt text"]);
+});
+
+test("arithmetic: scientific notation keeps its exponent, and its rounding scales with it", () => {
+  assert.equal(G.evalExpr("2 × 10^-3 + 0"), 0.002);
+  assert.deepEqual(G.checkArithmetic("P: 4 × 10^{-3} ÷ 2 = 2 × 10^{-3}"), []);
+  assert.equal(G.checkArithmetic("P: 1 / 1000000 = 2 × 10^-6").length, 1, "twice the right answer must fail");
+  assert.deepEqual(G.checkArithmetic("P: 3 × 10^4 × 2 = 6 × 10^4"), []);
+});
+
+test("sub-requirements: a REQ may name a part, which counts towards its requirement", async () => {
+  const { parentOf } = S, known = new Set([REQ.id]);
+  assert.equal(parentOf(`${REQ.id}.ii`, known), REQ.id);
+  assert.equal(parentOf(`${REQ.id}.zz`, known), null);
+  assert.equal(parentOf("other:1.ii", known), null);
+  const part = LESSON("3 × 4 = 12").replace(`REQ: ${REQ.id} @1,2`, `REQ: ${REQ.id}.i @1\nREQ: ${REQ.id}.ii @2`);
+  const g = await G.runGates(part, { reqs: [REQ], allowed: known });
+  assert.ok(g.ok, JSON.stringify(g.failed?.issues));
+  const topic = { ...TOPIC, id: "biology/test-parts", title: "Test parts" };
+  const r = await runTopic(topic, { ask: async (job) => (job === "research" ? BRIEF.replace("test-prokaryotes", "test-parts") : `${part}\nEND`), askMany: async (job, items) => new Map(items.map((it) => [it.key, `REV ${it.key} OK`])) });
+  assert.equal(r.status, "filed"); assert.deepEqual(r.uncovered, []);
+});
+
+test("licence gate: a brief's non-fact lines can't rest only on noncommercial or unknown sources", async () => {
+  const { checkBrief } = await import("../scripts/content/loop.mjs");
+  assert.deepEqual(checkBrief(BRIEF).problems, []);
+  const nc = BRIEF.replace(/licence=facts/g, "licence=noncommercial");
+  assert.ok(checkBrief(nc).problems.some((p) => /definitions and misconceptions/.test(p)));
+  const exam = BRIEF.replace("END", "EXAM: credit for naming the single loop of DNA | s1").replace("SRC: s1 | Open biology text | https://openstax.org/books/biology-2e | OpenStax | licence=facts", "SRC: s1 | Open biology text | https://openstax.org/books/biology-2e | OpenStax | licence=unknown") + "\nEND";
+  assert.ok(checkBrief(exam).problems.some((p) => /EXAM .* rests only/.test(p)));
+  // facts may rest on any source
+  assert.deepEqual(checkBrief(BRIEF.replace("SRC: s1 | Open biology text | https://openstax.org/books/biology-2e | OpenStax | licence=facts", "SRC: s1 | Open biology text | https://openstax.org/books/biology-2e | OpenStax | licence=unknown")).problems, []);
+});
+
+test("filing merges by lesson title: rechecking one lesson keeps the others, and the repaired title is recorded", async () => {
+  const topic = { ...TOPIC, id: "biology/test-merge", title: "Test merge" };
+  const second = LESSON("3 × 4 = 12").replace("## Prokaryotic cells", "## Bacteria and size");
+  const ask = (unit) => async (job) => (job === "research" ? BRIEF.replace("test-prokaryotes", "test-merge") : `${unit}\nEND`);
+  const ok = async (job, items) => new Map(items.map((it) => [it.key, `REV ${it.key} OK`]));
+  await runTopic(topic, { ask: ask(`${LESSON("3 × 4 = 12")}\n\n${second}`), askMany: ok });
+  const r = await runTopic(topic, { ask: ask(LESSON("3 × 4 = 12").replace("several times", "far")), askMany: ok });
+  const draft = readFileSync(join(process.env.GRADIFY_OUT, "content/drafts/biology/aqa-gcse-biology/test-merge.txt"), "utf8");
+  assert.match(draft, /## Bacteria and size/); assert.equal((draft.match(/## Prokaryotic cells/g) || []).length, 1);
+  const led = JSON.parse(readFileSync(join(process.env.GRADIFY_OUT, "content/ledger/biology.json"), "utf8")).topics["biology/test-merge"];
+  assert.deepEqual(led.lessons.map((l) => l.title).sort(), ["Bacteria and size", "Prokaryotic cells"]);
+  assert.equal(r.status, "filed");
+});
+
+test("gates-only filing claims no review, and a failed research keeps every requirement queued", async () => {
+  const topic = { ...TOPIC, id: "biology/test-gates-only", title: "Test gates only" };
+  const r = await runTopic(topic, { reviewed: false, ask: async (job) => (job === "research" ? BRIEF.replace("test-prokaryotes", "test-gates-only") : `${LESSON("3 × 4 = 12")}\nEND`), askMany: async (job, items) => new Map(items.map((it) => [it.key, `REV ${it.key} OK`])) });
+  assert.equal(r.lessons[0].tier, "gates-passed");
+  const bad = { ...TOPIC, id: "biology/test-no-brief", title: "Test no brief" };
+  const f = await runTopic(bad, { ask: async () => "TOPIC x | levels=GCSE | checked=2026-11-25\nEND", askMany: async () => new Map() });
+  assert.equal(f.status, "failed"); assert.deepEqual(f.uncovered, [REQ.id]);
 });

@@ -54,8 +54,10 @@ async function run() {
       if (Date.now() > stopAt || m.budgetLeft() <= 0) break outer;
     }
   } finally { await t.legible?.close?.(); }
-  const runFile = out(`content/runs/${opt("subject") || "all"}.json`);
-  save(runFile, { date: today(), mode: opt("mode", CONFIG.mode), spend: m.spend, records });
+  // one record per run, never overwritten: <subject>-<workflow run id or time>.json
+  const runId = process.env.GITHUB_RUN_ID || new Date().toISOString().replace(/[-:T.Z]/g, "").slice(0, 14);
+  const runFile = out(`content/runs/${opt("subject") || "all"}-${runId}.json`);
+  save(runFile, { date: today(), at: new Date().toISOString(), run: runId, mode: opt("mode", CONFIG.mode), spend: m.spend, records });
   writeHandover();
   log(`\n${records.reduce((a, r) => a + r.lessons.length, 0)} lessons passed, ${records.reduce((a, r) => a + r.failures.length, 0)} failed. Spent $${m.spend.usd.toFixed(2)}. Record: ${runFile.pathname}`);
   const left = subjects().some((s) => nextTopics(s, { limit: 1 }).length);
@@ -88,9 +90,10 @@ async function ingest() {
       const reply = readFileSync(f, "utf8"), brief = existsSync(briefPath(tp.id)) ? readFileSync(briefPath(tp.id), "utf8") : null;
       if (!brief) { log(`  no brief at content/research/${tp.id}.txt: research it first (gradify research ${tp.id})`); continue; }
       const fake = async (job) => { if (job === "write") return reply; if (job === "research") return brief.replace(/^#.*\n/, ""); throw new Error(`${job} needs --review and an API key`); };
+      // without --review no reviewer runs: the lesson is filed as "gates-passed", which claims no review
       const manyFake = async (job, items) => new Map(items.map((it) => [it.key, job === "review" ? `REV ${it.key} OK` : new Error("repairs are pasted by hand: run gradify fixlist")]));
       if (!m) log("  (no --review: gates only; lessons are filed as gate-passed and still need the review)");
-      const r = await runTopic(tp, { ask: fake, askMany: m ? m.askMany : manyFake, render: t.render, legible: t.legible, log });
+      const r = await runTopic(tp, { ask: fake, askMany: m ? m.askMany : manyFake, render: t.render, legible: t.legible, log, reviewed: !!m });
       log(`  → ${r.status}: ${r.lessons.length} passed, ${r.failures.length} failed${r.failures.length ? " (gradify fixlist)" : ""}`);
       mkdirSync(out("content/inbox/done/"), { recursive: true }); if (f.startsWith(inboxDir.pathname)) renameSync(f, new URL(`done/${f.split("/").pop()}`, inboxDir));
     }
@@ -134,6 +137,6 @@ try {
   else if (cmd === "approve") { const { approve } = await import("./content/report.mjs"); const l = approve(argv[1].split("/")[0], argv[1], argv[2], opt("by")); log(`approved: ${l.title} by ${l.approvedBy} (${l.approvedOn})`); }
   else if (cmd === "pr") { const d = out("content/runs/"), runs = existsSync(d) ? readdirSync(d).filter((f) => f.endsWith(".json")).map((f) => load(new URL(f, d))) : [];
     const spend = runs.reduce((a, r) => { for (const k of ["usd", "calls", "searches", "cacheRead", "cacheWrite"]) a[k] += r.spend?.[k] || 0; for (const [j, c] of Object.entries(r.spend?.byJob || {})) a.byJob[j] = (a.byJob[j] || 0) + c; return a; }, { usd: 0, calls: 0, searches: 0, cacheRead: 0, cacheWrite: 0, byJob: {} });
-    const body = prBody(runs.flatMap((r) => r.records || []), spend); if (opt("out")) save(new URL(opt("out"), `file://${process.cwd()}/`), body); else log(body); }
+    const body = prBody(spend); if (opt("out")) save(new URL(opt("out"), `file://${process.cwd()}/`), body); else log(body); }
   else { log(readFileSync(new URL(import.meta.url), "utf8").split("\n").filter((l) => l.startsWith("//")).join("\n").replace(/^\/\/ ?/gm, "")); process.exitCode = cmd ? 2 : 0; }
 } catch (e) { console.error(e.message); process.exitCode = 1; }

@@ -59,9 +59,16 @@ jobs:
         env:
           HAS_KEY: ${{ secrets.ANTHROPIC_API_KEY != '' }}
         run: |
-          subjects=$(node --input-type=module -e "import { subjectsInRun } from './scripts/content/queue.mjs'; const only = process.env.ONLY; console.log(JSON.stringify(only ? [only] : subjectsInRun()))")
+          subjects=$(node --input-type=module -e "
+            import { subjectsInRun } from './scripts/content/queue.mjs';
+            const only = process.env.ONLY, all = subjectsInRun();
+            if (only && !all.includes(only)) { console.error(only + ' is not in this run (scripts/content/config.json frameworks): ' + all.join(', ')); process.exit(1); }
+            console.log(JSON.stringify(only ? [only] : all))")
+          provider=$(node -p "require('./scripts/content/config.json').provider || 'api'")
           echo "subjects=$subjects" >> "$GITHUB_OUTPUT"
-          echo "ready=$HAS_KEY" >> "$GITHUB_OUTPUT"
+          # this workflow is the API provider; in agent mode (config provider "agent") Claude Code sessions do the work
+          if [ "$provider" = "api" ] && [ "$HAS_KEY" = "true" ]; then echo "ready=true" >> "$GITHUB_OUTPUT"; else echo "ready=false" >> "$GITHUB_OUTPUT"; fi
+          [ "$provider" = "api" ] || echo "::notice::provider is \"$provider\" (scripts/content/config.json): the API workflow is off"
           [ "$HAS_KEY" = "true" ] || echo "::warning::ANTHROPIC_API_KEY isn't set: add it under Settings → Secrets and variables → Actions"
 
   write:
@@ -112,10 +119,13 @@ jobs:
         if: always()
         with:
           name: content-${{ matrix.subject }}
+          # this subject's files only, so one worker's stale copy can't overwrite another's new one. Their common root
+          # is content/, so the artifact holds research/, drafts/ … without that prefix: publish restores them into content/
           path: |
-            content/drafts/
+            content/research/${{ matrix.subject }}/
+            content/drafts/${{ matrix.subject }}/
             content/ledger/${{ matrix.subject }}.json
-            content/runs/${{ matrix.subject }}.json
+            content/runs/${{ matrix.subject }}-${{ github.run_id }}.json
             content/signals/
           if-no-files-found: ignore
           retention-days: 14
@@ -147,11 +157,13 @@ jobs:
           TOTAL: ${{ vars.CONTENT_TOTAL_BUDGET_USD || '200' }}
         run: |
           shopt -s nullglob
-          for d in _runs/*/; do cp -r "$d". . ; done
+          mkdir -p content
+          for d in _runs/*/; do cp -r "$d". content/ ; done
           rm -rf _runs
           node --input-type=module -e "
             import { readdirSync, readFileSync, writeFileSync, existsSync } from 'node:fs';
-            const runs = existsSync('content/runs') ? readdirSync('content/runs').filter((f) => f.endsWith('.json')).map((f) => JSON.parse(readFileSync('content/runs/' + f, 'utf8'))) : [];
+            // only this workflow run's records: earlier runs' spend is already in content/spend.json
+            const runs = existsSync('content/runs') ? readdirSync('content/runs').filter((f) => f.endsWith('-${{ github.run_id }}.json')).map((f) => JSON.parse(readFileSync('content/runs/' + f, 'utf8'))) : [];
             const s = existsSync('content/spend.json') ? JSON.parse(readFileSync('content/spend.json', 'utf8')) : { usd: 0, runs: [] };
             const usd = runs.reduce((a, r) => a + (r.spend?.usd || 0), 0); s.usd = +(s.usd + usd).toFixed(4); s.runs.push({ run: '${{ github.run_id }}', usd: +usd.toFixed(4) });
             writeFileSync('content/spend.json', JSON.stringify(s, null, 1) + '\n');
@@ -165,7 +177,8 @@ jobs:
             if gh pr view "$ROLLING" --json state -q .state 2>/dev/null | grep -q OPEN; then gh pr edit "$ROLLING" --body-file content/PR.md
             else gh pr create --head "$ROLLING" --base "${{ github.event.repository.default_branch }}" --title "Content engine: lessons for review" --body-file content/PR.md || true; fi
           fi
-          more=$(node --input-type=module -e "import { status } from './scripts/content/report.mjs'; console.log(status().subjects.some((s) => s.next))")
+          # restart only if the subjects this run covers still have work
+          more=$(node --input-type=module -e "import { status } from './scripts/content/report.mjs'; const only = process.env.ONLY; console.log(status().subjects.some((s) => (!only || s.subject === only) && s.next))")
           echo "more=$more" >> "$GITHUB_OUTPUT"
           cat content/PR.md >> "$GITHUB_STEP_SUMMARY"
       - name: Start the next run

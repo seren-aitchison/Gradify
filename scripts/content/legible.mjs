@@ -4,7 +4,7 @@ export async function legibility() {
   let pw; try { pw = await import("playwright"); } catch { pw = (await import("node:module")).createRequire(import.meta.url)("playwright"); }
   const { chromium } = pw;
   const browser = await chromium.launch(), page = await browser.newPage();
-  const check = async (svgs) => {
+  const measure = async (svgs) => {
     const problems = [];
     for (const svg of svgs) {
       await page.setContent(`<body style="margin:0;background:#fff;font-family:Inter,system-ui,sans-serif">${svg}</body>`);
@@ -24,6 +24,9 @@ export async function legibility() {
     }
     return [...new Set(problems)];
   };
+  // one page holds one document, so concurrent callers (two topic workers) take turns
+  let turn = Promise.resolve();
+  const check = (svgs) => (turn = turn.then(() => measure(svgs), () => measure(svgs)));
   check.close = () => browser.close();
   return check;
 }

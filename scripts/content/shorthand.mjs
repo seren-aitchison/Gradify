@@ -2,6 +2,16 @@
 // verdicts, fix lists and repairs. Pure functions, no I/O, so every format is tested on its own (tests/content.test.mjs).
 // Shorthand never reaches a learner: lessons are full English; these are the envelopes around them.
 
+// A REQ line names a requirement ("aqa-gcse-biology:4.1.1.1.b") or one separately assessable part of it
+// ("aqa-gcse-biology:4.1.1.1.b.ii"): a roman numeral or a number after the requirement's own ref.
+export const PART = /^(?:i|ii|iii|iv|v|vi|vii|viii|ix|x|xi|xii|\d{1,2})$/;
+/** the requirement a REQ id belongs to (itself, or the parent of a part), if it's one of `known` */
+export function parentOf(id, known) {
+  if (known.has(id)) return id;
+  const i = id.lastIndexOf("."), base = id.slice(0, i);
+  return i > 0 && PART.test(id.slice(i + 1)) && known.has(base) ? base : null;
+}
+
 export const BRIEF_TAGS = ["F", "DEF", "MIS", "EXAM", "VAR", "NUM", "CONFLICT", "SRC"];
 export const REVIEW_CODES = ["FACT", "COV", "LVL", "Q", "CLR", "SAFE", "COPY", "CONF", "REQ"];
 const field = (s) => String(s ?? "").replace(/\s*\|\s*/g, " / ").replace(/\s+/g, " ").trim();

@@ -3,7 +3,11 @@
 // with the service-role key (SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY: GitHub secrets, never committed). Only
 // aggregates leave the database: question id, lesson, attempts and the share correct. No learner data is stored.
 // Learner reports of a lesson have no table yet (docs/CONTENT-ENGINE.md, gaps), so only wrong-answer rates are used.
+import { readdirSync, existsSync, unlinkSync } from "node:fs";
 import { at, out, save, today } from "./lib.mjs";
+
+// subject comes from learner-written rows, so it never names a file unless it is one of Gradify's course slugs
+export const COURSES = () => new Set(readdirSync(at("kit/courses/"), { withFileTypes: true }).filter((d) => d.isDirectory() && /^[a-z0-9-]+$/.test(d.name)).map((d) => d.name));
 
 // expected share correct by difficulty (M1 easy … M3 hard); a question well below its band is suspect
 export const EXPECTED = { 1: 0.75, 2: 0.6, 3: 0.45 };
@@ -31,8 +35,11 @@ export async function fetchSignals({ days = 30 } = {}) {
     if (!res.ok) throw new Error(`assessment_attempts: HTTP ${res.status}`);
     const page = await res.json(); rows.push(...page); if (page.length < 1000) break;
   }
-  const list = suspects(rows), bySubject = {};
+  const courses = COURSES(), list = suspects(rows).filter((s) => courses.has(s.subject)), bySubject = {};
   for (const s of list) (bySubject[s.subject] ||= []).push(s);
   for (const [subject, items] of Object.entries(bySubject)) save(out(`content/signals/${subject}.json`), { generated: today(), days, items });
+  // the fetch worked, so a subject with no suspects now has none: clear its old snapshot
+  const dir = out("content/signals/");
+  if (existsSync(dir)) for (const f of readdirSync(dir)) if (f.endsWith(".json") && !bySubject[f.slice(0, -5)] && f !== "reports.json") unlinkSync(new URL(f, dir));
   return { rows: rows.length, suspects: list.length, subjects: Object.keys(bySubject) };
 }

@@ -71,7 +71,7 @@ export function generateQuestions(items, { slug, objectiveOf = () => [], rnd = s
     if (k.compute.fn === "percentChange") {
       const initial = Math.round((2 + rnd() * 2) * 100) / 100, pct = Math.round((rnd() * 30 - 15) || 7), final = Math.round(initial * (1 + pct / 100) * 100) / 100;
       const ans = Math.round(COMPUTE.percentChange({ initial, final }) * 10) / 10;
-      add("NUM", 2, `A piece of plant tissue has a mass of ${initial.toFixed(2)} g. After an hour in a solution its mass is ${final.toFixed(2)} g. What is its percentage change in mass, to 1 decimal place? | ${ans} | 0.1 | % | (${final.toFixed(2)} − ${initial.toFixed(2)}) ÷ ${initial.toFixed(2)} × 100 = ${ans}%: the tissue ${ans > 0 ? "gained water, so the solution had a higher concentration of water than its cells" : "lost water, so the solution had a lower concentration of water than its cells"}.`, [k.id], { compute: { fn: "percentChange", inputs: { initial, final }, answer: ans, dp: 1 } });
+      add("NUM", 2, `A piece of plant tissue has a mass of ${initial.toFixed(2)} g. After an hour in a solution its mass is ${final.toFixed(2)} g. What is its percentage change in mass, to 1 decimal place? | ${ans} | 0.1 | % | (${final.toFixed(2)} − ${initial.toFixed(2)}) ÷ ${initial.toFixed(2)} × 100 = ${ans}%: the tissue ${ans > 0 ? "gained water, so the solution had a higher concentration of water than its cells" : ans < 0 ? "lost water, so the solution had a lower concentration of water than its cells" : "had no net change in mass, so there was no net movement of water between it and the solution"}.`, [k.id], { compute: { fn: "percentChange", inputs: { initial, final }, answer: ans, dp: 1 } });
     }
   }
   for (const k of items.filter((x) => x.kind === "equation" && x.compute?.fn === "waterPotential")) {
@@ -97,6 +97,7 @@ export function generateQuestions(items, { slug, objectiveOf = () => [], rnd = s
   // data: what it shows, what it doesn't, and reading from the line of best fit
   for (const k of items.filter((x) => x.kind === "dataset" && x.data?.rows?.length)) {
     const D = k.data, pts = pointsOf(D), fit = linearFit(pts), d = describeCorrelation(pearson(pts)), dk = withPrereqs(k);
+    if (d.sign === "undefined") continue;   // no correlation can be described: no directional question
     const X = D.columns.find((c) => c.key === D.x), Y = D.columns.find((c) => c.key === D.y);
     if (D.ask?.includes("correlation")) {
       const right = d.sign === "none" ? "No correlation" : `A ${d.strength} ${d.sign} correlation`;

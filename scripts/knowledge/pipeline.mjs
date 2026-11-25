@@ -99,7 +99,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     } else if (cmd === "gate") {
       const { publishGate } = await import("../../kit/knowledge/schema.js"), { resolve } = await import("../../kit/knowledge/forms.js");
       const l = load(at(`lessons/${a}/lesson.json`)); if (!l) throw new Error(`no lesson ${a}`);
-      const items = loadKnowledge(l.subject), p = publishGate({ lesson: l, items: l.knowledge.map((k) => resolve(items.find((x) => x.id === k.id), l.level)).filter(Boolean), sources: loadSources(), evidence: load(at(`${l.subject}/evidence.json`))?.items || {}, attributed: l.attributed || [] });
+      const items = loadKnowledge(l.subject), p = publishGate({ lesson: l, items: l.knowledge.map((k) => resolve(items.find((x) => x.id === k.id), l.level)).filter(Boolean), sources: loadSources(), evidence: load(at(`${l.subject}/evidence.json`))?.items || {}, attributed: l.attributed || [], stale: impact([l], l.subject)[0]?.why || [] });
       console.log(p.length ? `${a} can't be published:\n  ${p.join("\n  ")}` : `${a} passes the publishing gate. (Placing it in a course is a separate step, not automated.)`);
       if (p.length) process.exit(1);
     } else if (cmd === "confirm-licence") {

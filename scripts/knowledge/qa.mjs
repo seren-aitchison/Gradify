@@ -191,7 +191,8 @@ export function qa({ lesson, notes, assets, req }, { subject = lesson.subject } 
   for (let i = 1; i <= lesson.objectives.length; i++) D.assessment.push(c(`objective ${i} is tested ("${lesson.objectives[i - 1]}")`, qs.some((q) => q.objectives.includes(i))));
   const kinds = [...new Set(qs.map((q) => q.type))];
   D.assessment.push(c(`question kinds: ${kinds.join(", ")}`, kinds.length >= 2, "", "review"));
-  for (const q of L.mcq || []) if (q.options) D.assessment.push(c(`${q.id || "a question"}: options are distinct`, new Set(q.options.map((o) => String(o).toLowerCase())).size === q.options.length));
+  // the full question (q.Q) holds the options; the { q, right, wrong } view has none
+  for (const q of L.mcq || []) if (q.Q?.options) D.assessment.push(c(`${q.id || "a question"}: options are distinct`, new Set(q.Q.options.map((o) => o.text.toLowerCase())).size === q.Q.options.length));
 
   // accessibility
   for (const a of assets.filter((x) => x.origin === "generated")) for (const w of ["wide", "narrow"]) {

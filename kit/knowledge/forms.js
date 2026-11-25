@@ -46,6 +46,7 @@ export function checkForms(item) {
   const p = [], fs = item.forms || [];
   for (const [i, f] of fs.entries()) {
     if (!f.level?.from) { p.push(`${item.id}: form ${i + 1} needs a level`); continue; }
+    if (f.level.to && !inRange(f.level, f.level.from)) { p.push(`${item.id}: form ${f.level.from}–${f.level.to} runs backwards`); continue; }
     if (!inRange(item.level, f.level.from) || !inRange(item.level, f.level.to || "pg")) p.push(`${item.id}: form ${f.level.from}–${f.level.to} is outside the item's levels`);
     for (const g of fs.slice(i + 1)) if (g.level && (inRange(f.level, g.level.from) || inRange(g.level, f.level.from))) p.push(`${item.id}: forms ${f.level.from}–${f.level.to} and ${g.level.from}–${g.level.to} overlap`);
     for (const k of Object.keys(f)) if (k !== "level" && !FORM_FIELDS.includes(k)) p.push(`${item.id}: a form can't override ${k}`);

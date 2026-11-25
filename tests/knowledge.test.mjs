@@ -100,7 +100,10 @@ test("the publishing gate: hard rules, and similarity never stands in for permis
   const ok = { ...lesson, status: "approved", review: { approvedBy: "A. Reviewer" } };
   const reviewed = its.map((k) => ({ ...k, status: "reviewed", reviewedBy: "A. Reviewer", reviewedOn: "2026-12-01" }));
   const confirmed = Object.fromEntries(Object.entries(sources).map(([id, s]) => [id, { ...s, licenceConfirmed: { by: "A. Owner", on: "2026-12-01" } }]));
-  assert.deepEqual(publishGate({ lesson: ok, items: reviewed, sources: confirmed, evidence, attributed: lesson.attributed }), []);
+  assert.deepEqual(publishGate({ lesson: ok, items: reviewed, sources: confirmed, evidence, attributed: lesson.attributed, stale: [] }), []);
+  // knowledge that changed after QA and approval blocks publishing, and so does skipping the change check
+  assert.ok(publishGate({ lesson: ok, items: reviewed, sources: confirmed, evidence, attributed: lesson.attributed, stale: ["bio.x changed for this level (v1 → v2)"] }).some((x) => /changed since QA/.test(x)));
+  assert.ok(publishGate({ lesson: ok, items: reviewed, sources: confirmed, evidence, attributed: lesson.attributed }).some((x) => /change check/.test(x)));
   // each hard rule, broken on its own
   assert.ok(publishGate({ lesson: ok, items: reviewed.map((k, i) => (i ? k : { ...k, origin: { type: "adapted", source: "openstax-biology-2e-4-1", passages: ["x"] } })), sources: confirmed, evidence, attributed: lesson.attributed }).some((x) => /may not adapt commercially/.test(x)));
   assert.ok(publishGate({ lesson: ok, items: reviewed, sources: { ...confirmed, "openstax-biology-2e-4-1": { ...confirmed["openstax-biology-2e-4-1"], licence: "unknown" } }, evidence, attributed: lesson.attributed }).some((x) => /unknown or unverified/.test(x)));

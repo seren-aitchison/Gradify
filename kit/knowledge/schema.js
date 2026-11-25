@@ -107,6 +107,7 @@ export function checkKnowledge(items, sources = {}) {
     if (k.kind === "application" && !k.cases?.length) p.push(`${at}: an application needs cases`);
     if (k.kind === "equation" && !k.equation) p.push(`${at}: an equation needs its equation`);
     if (k.kind === "worked-example" && !k.steps?.length) p.push(`${at}: a worked example needs steps`);
+    if (k.kind === "mechanism" && !k.steps?.length) p.push(`${at}: a mechanism needs its steps`);
     for (const t of [...(k.terms || []), ...(k.forms || []).flatMap((f) => f.terms || [])]) if (!t.term || !t.definition) p.push(`${at}: each term needs term and definition`);
     p.push(...checkForms(k));
     const o = k.origin || { type: "original" };
@@ -147,8 +148,12 @@ export function checkLesson(l) {
  *   attribution for every source that requires it
  * Similarity scores are not consulted here: they can suggest copying, never establish permission.
  */
-export function publishGate({ lesson, items, sources, evidence = {}, attributed = [] }) {
+export function publishGate({ lesson, items, sources, evidence = {}, attributed = [], stale = null }) {
   const p = [];
+  // what changed since QA and approval (scripts/knowledge/qa.mjs impact()): knowledge for this level, or the requirement.
+  // Callers must pass it; a gate run without it can't know the approval still holds.
+  if (stale == null) p.push("the change check (impact) wasn't run, so the approval may describe different knowledge");
+  for (const w of stale || []) p.push(`changed since QA and approval: ${w}`);
   if (lesson.status !== "approved") p.push(`the lesson is ${lesson.status}, not approved`);
   if (!lesson.review?.approvedBy) p.push("no named reviewer has approved it");
   if (lesson.qa?.result !== "pass") p.push("it hasn't passed automated QA");

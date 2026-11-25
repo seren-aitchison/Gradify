@@ -5,6 +5,7 @@
 import { parseNotes, norm } from "../../kit/course/notes.js";
 import { longestSharedRun } from "../knowledge/lib.mjs";
 import { tokens } from "../curriculum/engine.mjs";
+import { parentOf } from "./shorthand.mjs";
 
 const KNOWN = new Set(["S", "H", "P", "E", "X", "K", "!", "Q", "O", "PRE", "T", "SUM", "SAFE", "SRC", "READ", "IX", "D", "EV", "LV", "CASE", "LAW", "DRUG", "REQ", "DIA", "DNEED", "GAP"]);
 const QTAG = /^(M|TF|MS|SEQ|MATCH|SA|NUM)[123]?(#[a-z0-9-]+)?(@[\d,]+)?:/;
@@ -45,7 +46,7 @@ export function coverageGate(L, text, { allowed = null } = {}) {
   const asked = new Set(qs.flatMap((q) => q.objectives || []));
   for (const r of L.reqs) {
     const at = lineOf(text, new RegExp(`^REQ:\\s*${esc(r.id)}`));
-    if (allowed && !allowed.has(r.id)) issues.push(issue("REQ", at, `${r.id} isn't in the packet`));
+    if (allowed && !parentOf(r.id, allowed)) issues.push(issue("REQ", at, `${r.id} isn't in the packet (nor a part of a requirement in it)`));
     if (!r.objectives.length) issues.push(issue("REQ", at, `${r.id} names no objectives (@n)`));
     for (const o of r.objectives) {
       if (o < 1 || o > L.objectives.length) issues.push(issue("REQ", at, `${r.id} names objective ${o}; lesson has ${L.objectives.length}`));
@@ -87,12 +88,14 @@ export function qaGate(L, text) {
 export function specGate(L, text, reqs) {
   const issues = [], lessonWords = new Set(tokens(text));
   for (const r of L.reqs) {
-    const req = reqs.find((x) => x.id === r.id), at = lineOf(text, new RegExp(`^REQ:\\s*${esc(r.id)}`));
+    const pid = parentOf(r.id, new Set(reqs.map((x) => x.id))), part = pid && pid !== r.id;
+    const req = reqs.find((x) => x.id === pid), at = lineOf(text, new RegExp(`^REQ:\\s*${esc(r.id)}`));
     if (!req?.text) { issues.push(issue("SPEC", at, `${r.id}: specification text not imported here, can't check copying`)); continue; }
     const run = longestSharedRun(text, req.text);
     if (run.words >= 8) issues.push(issue("COPY", lineOf(text, new RegExp(esc(run.run.split(" ").slice(0, 3).join(" ")), "i")), `${run.words} words copied from the specification`));
     const terms = [...new Set(tokens(`${req.title || ""} ${req.text}`))], missing = terms.filter((t) => !lessonWords.has(t));
-    if (terms.length && missing.length / terms.length > 0.4) issues.push(issue("COV", at, `${r.id}: specification terms missing: ${missing.slice(0, 6).join(", ")}`));
+    // a part teaches some of its requirement, so it needs some of the terms; the whole requirement needs most of them
+    if (part ? terms.length && missing.length === terms.length : terms.length && missing.length / terms.length > 0.4) issues.push(issue("COV", at, `${r.id}: specification terms missing: ${missing.slice(0, 6).join(", ")}`));
   }
   return result("spec", issues);
 }
@@ -102,16 +105,22 @@ const NUMRE = /[-−]?\d[\d,]*(?:\.\d+)?(?:\s*[×x*]\s*10\^\{?[-−]?\d+\}?)?/;
 const toNum = (s) => { const t = s.replace(/−/g, "-").replace(/,(?=\d{3}\b)/g, "").replace(/\s/g, ""); const m = t.match(/^(-?\d+(?:\.\d+)?)(?:[×x*]10\^\{?(-?\d+)\}?)?/); return m ? Number(m[1]) * 10 ** Number(m[2] || 0) : NaN; };
 /** evaluate "25 mm ÷ 500" (units dropped); null if it isn't an arithmetic expression of two or more numbers */
 export function evalExpr(s) {
-  let e = String(s).replace(/−/g, "-").replace(/(\d),(?=\d{3}\b)/g, "$1").replace(/(\d)\s*[×x]\s*10\^\{?(-?\d+)\}?/g, "$1e$2").replace(/10\^\{?(-?\d+)\}?/g, "1e$1")
+  let e = String(s).replace(/−/g, "-").replace(/(\d),(?=\d{3}\b)/g, "$1").replace(/(\d)\s*[×x]\s*10\^\{?(-?\d+)\}?/g, "$1~$2").replace(/10\^\{?(-?\d+)\}?/g, "1~$1")
     .replace(/[×]/g, "*").replace(/÷/g, "/").replace(/(\d)\s*x\s*(?=[\d(])/g, "$1*").replace(/%/g, "").replace(/\^/g, "**").replace(/\{|\}/g, "");
-  e = e.replace(/[A-Za-zµμΩ°£$€³²]+/g, " ");   // units and words
+  // units and words; "~" holds a scientific-notation exponent so stripping letters can't eat its "e"
+  e = e.replace(/[A-Za-zµμΩ°£$€³²]+/g, " ").replace(/~/g, "e");
   const m = e.match(/[\d.\s+\-*/()e]+$/); if (!m) return null;
   let x = m[0].trim().replace(/^[+*/)\s]+/, "");
   if (!/\d/.test(x) || (x.match(/\d+(?:\.\d+)?(?:e-?\d+)?/g) || []).length < 2 || !/[+\-*/]/.test(x.replace(/^-/, "").replace(/e-/g, "e"))) return null;
   if (/[^\d.\s+\-*/()e]/.test(x) || /[a-df-z]/i.test(x)) return null;
   try { const v = Function(`"use strict";return (${x})`)(); return Number.isFinite(v) ? v : null; } catch { return null; }
 }
-const close = (calc, shown) => { const dp = (String(shown).split(".")[1] || "").replace(/\D.*/, "").length; return Math.abs(calc - toNum(shown)) <= Math.max(0.5 * 10 ** -dp * 1.01, Math.abs(calc) * 0.005); };
+// rounding tolerance from the precision shown: the mantissa's decimal places, scaled by any "× 10^n" exponent
+const close = (calc, shown) => {
+  const t = String(shown).replace(/−/g, "-").replace(/\s/g, ""), exp = Number(t.match(/10\^\{?(-?\d+)\}?/)?.[1] || 0);
+  const dp = (t.replace(/[×x*]10\^.*$/, "").split(".")[1] || "").replace(/\D.*/, "").length;
+  return Math.abs(calc - toNum(shown)) <= Math.max(0.5 * 10 ** (exp - dp) * 1.01, Math.abs(calc) * 0.005);
+};
 /** arithmetic claims in a line: each "<expr> = <number>" pair is recomputed */
 export function checkArithmetic(line) {
   const bad = [], parts = String(line).split(/\s=\s|=(?=\s*[-−\d])/);
