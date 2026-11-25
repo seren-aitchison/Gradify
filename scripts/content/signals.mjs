@@ -2,7 +2,8 @@
 // Reads public.assessment_attempts (supabase/migrations/20261101120000_assessment_attempts.sql) through the REST API
 // with the service-role key (SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY: GitHub secrets, never committed). Only
 // aggregates leave the database: question id, lesson, attempts and the share correct. No learner data is stored.
-// Learner reports of a lesson have no table yet (docs/CONTENT-ENGINE.md, gaps), so only wrong-answer rates are used.
+// Learners' reports of a lesson come from public.lesson_reports (20261125120000_lesson_reports.sql): only counts per
+// lesson and kind are kept, never the learner's note (free text can hold personal details).
 import { readdirSync, existsSync, unlinkSync } from "node:fs";
 import { at, out, save, today } from "./lib.mjs";
 
@@ -26,20 +27,36 @@ export function suspects(rows, { min = MIN_ATTEMPTS } = {}) {
     .sort((a, b) => a.share - b.share);
 }
 
+/** pure: open lesson_reports rows { subject, lesson_id, kind } → lessons to repair. One "wrong" report is enough; other
+ * kinds need two learners, so a single stray click doesn't send a lesson back */
+export function reportQueue(rows) {
+  const by = new Map();
+  for (const r of rows) { const k = `${r.subject}|${r.lesson_id}`, e = by.get(k) || { subject: r.subject, lesson: r.lesson_id, n: 0, kinds: {} }; e.n++; e.kinds[r.kind] = (e.kinds[r.kind] || 0) + 1; by.set(k, e); }
+  return [...by.values()].filter((e) => e.kinds.wrong || e.n >= 2).map((e) => ({ ...e, why: `${e.n} learner report${e.n === 1 ? "" : "s"}: ${Object.entries(e.kinds).map(([k, n]) => `${n} ${k}`).join(", ")}` })).sort((a, b) => (b.kinds.wrong || 0) - (a.kinds.wrong || 0) || b.n - a.n);
+}
+
+async function rest(path, key) {
+  const rows = [];
+  for (let from = 0; ; from += 1000) {
+    const res = await fetch(`${process.env.SUPABASE_URL}/rest/v1/${path}`, { headers: { apikey: key, Authorization: `Bearer ${key}`, Range: `${from}-${from + 999}` } });
+    if (!res.ok) throw new Error(`${path.split("?")[0]}: HTTP ${res.status}`);
+    const page = await res.json(); rows.push(...page); if (page.length < 1000) break;
+  }
+  return rows;
+}
+
 export async function fetchSignals({ days = 30 } = {}) {
   const url = process.env.SUPABASE_URL, key = process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!url || !key) return { skipped: "SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY aren't set" };
-  const since = new Date(Date.now() - days * 864e5).toISOString(), rows = [];
-  for (let from = 0; ; from += 1000) {
-    const res = await fetch(`${url}/rest/v1/assessment_attempts?select=subject,lesson_id,question_id,difficulty,correct&created_at=gte.${since}&order=id`, { headers: { apikey: key, Authorization: `Bearer ${key}`, Range: `${from}-${from + 999}` } });
-    if (!res.ok) throw new Error(`assessment_attempts: HTTP ${res.status}`);
-    const page = await res.json(); rows.push(...page); if (page.length < 1000) break;
-  }
-  const courses = COURSES(), list = suspects(rows).filter((s) => courses.has(s.subject)), bySubject = {};
-  for (const s of list) (bySubject[s.subject] ||= []).push(s);
-  for (const [subject, items] of Object.entries(bySubject)) save(out(`content/signals/${subject}.json`), { generated: today(), days, items });
+  const since = new Date(Date.now() - days * 864e5).toISOString();
+  const rows = await rest(`assessment_attempts?select=subject,lesson_id,question_id,difficulty,correct&created_at=gte.${since}&order=id`, key);
+  const reportRows = await rest("lesson_reports?select=subject,lesson_id,kind&status=eq.open&order=id", key).catch((e) => { console.error(`lesson reports skipped: ${e.message}`); return []; });
+  const courses = COURSES(), list = suspects(rows).filter((s) => courses.has(s.subject)), reports = reportQueue(reportRows).filter((r) => courses.has(r.subject)), bySubject = {};
+  for (const s of list) (bySubject[s.subject] ||= { items: [], reports: [] }).items.push(s);
+  for (const r of reports) (bySubject[r.subject] ||= { items: [], reports: [] }).reports.push(r);
+  for (const [subject, v] of Object.entries(bySubject)) save(out(`content/signals/${subject}.json`), { generated: today(), days, ...v });
   // the fetch worked, so a subject with no suspects now has none: clear its old snapshot
   const dir = out("content/signals/");
   if (existsSync(dir)) for (const f of readdirSync(dir)) if (f.endsWith(".json") && !bySubject[f.slice(0, -5)] && f !== "reports.json") unlinkSync(new URL(f, dir));
-  return { rows: rows.length, suspects: list.length, subjects: Object.keys(bySubject) };
+  return { rows: rows.length, suspects: list.length, reports: reports.length, subjects: Object.keys(bySubject) };
 }

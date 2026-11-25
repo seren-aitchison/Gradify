@@ -281,3 +281,51 @@ test("publish: AI-checked and expert-reviewed drafts become a labelled course un
   assert.deepEqual([again.added, again.updated, again.hooks], [[], [], []]);
   assert.deepEqual(JSON.parse(readFileSync(join(dir, "published.js"), "utf8").match(/PUBLISHED = (\{[\s\S]*\});/)[1]).ids, ids);
 });
+
+test("lesson reports: one 'wrong' report or two of any kind send a lesson to the repair queue", async () => {
+  const { reportQueue } = await import("../scripts/content/signals.mjs");
+  const q = reportQueue([{ subject: "biology", lesson_id: "u02-03", kind: "wrong" }, { subject: "biology", lesson_id: "u02-04", kind: "typo" }, { subject: "biology", lesson_id: "u02-05", kind: "unclear" }, { subject: "biology", lesson_id: "u02-05", kind: "typo" }]);
+  assert.deepEqual(q.map((x) => x.lesson), ["u02-03", "u02-05"]);
+  const sql = readFileSync(new URL("../supabase/migrations/20261125120000_lesson_reports.sql", import.meta.url), "utf8");
+  assert.match(sql, /enable row level security/); assert.match(sql, /subject ~ '\^\[a-z0-9-\]\{1,40\}\$'/); assert.match(sql, /revoke all on table public\.lesson_reports from anon/);
+});
+
+test("agent mode: a topic moves through files from research to filing, and each step says which model runs it", async () => {
+  const { advance, BRIEFS, addReqLine } = await import("../scripts/content/agent.mjs");
+  const { writeFileSync, mkdirSync } = await import("node:fs");
+  const topic = { ...TOPIC, id: "biology/test-agent", title: "Test agent" }, Q = join(process.env.GRADIFY_OUT, "content/queue/biology/test-agent");
+  const reply = (name, text) => writeFileSync(join(Q, name), text);
+  let r = await advance(topic);
+  assert.deepEqual(r.actions.map((a) => [a.kind, a.model]), [["research", "sonnet"]]);
+  assert.match(r.actions[0].prompt, /web search/); assert.ok(existsSync(join(process.env.GRADIFY_OUT, r.actions[0].req)));
+  reply("research.out.txt", BRIEF.replace("test-prokaryotes", "test-agent"));
+  r = await advance(topic);
+  assert.equal(r.actions[0].kind, "write"); assert.equal(r.actions[0].model, "opus");
+  assert.match(readFileSync(join(process.env.GRADIFY_OUT, r.actions[0].req), "utf8"), /^PKT /);
+  assert.ok(r.actions[0].examples.every((f) => f.startsWith("prompts/examples/gcse--")));
+  reply("write.out.txt", `${LESSON()}\nEND`);
+  r = await advance(topic);                                    // the arithmetic gate fails: a repair step
+  assert.equal(r.actions[0].kind, "repair"); assert.match(readFileSync(join(process.env.GRADIFY_OUT, r.actions[0].pairs[0][0]), "utf8"), /^FIX new#1\nL13 NUM/);
+  reply("repair-1.out.txt", "REPAIR new#1\nL13> > 3 × 4 = 12 micrometres.\nEND");
+  r = await advance(topic);                                    // gates pass: a fresh reviewer on a different model
+  assert.deepEqual(r.actions.map((a) => [a.kind, a.model]), [["review", "sonnet"]]);
+  assert.match(r.actions[0].prompt, /did not write/);
+  reply("review-1.out.txt", "REV new#1 FAIL CLR L11 the size comparison is muddled");
+  r = await advance(topic);
+  assert.equal(r.actions[0].kind, "repair");
+  reply("repair-1.out.txt", "REPAIR new#1\nL11> P: Most bacteria are 1 to 10 micrometres long, while a typical animal cell is 10 to 30 micrometres across, so eukaryotic cells are usually several times bigger.\nEND");
+  r = await advance(topic); assert.equal(r.actions[0].kind, "review");
+  reply("review-1.out.txt", "REV new#1 OK");
+  r = await advance(topic);
+  assert.deepEqual(r.actions, []); assert.equal(r.filed.status, "filed");
+  assert.equal(r.filed.lessons[0].tier, "ai-verified"); assert.ok(r.filed.lessons[0].disagreed);
+  assert.equal(r.filed.lessons[0].built.models.review, "agent:sonnet");
+  assert.ok(!existsSync(Q), "the queue entry is cleared once filed");
+  assert.ok(Object.keys(BRIEFS).every((k) => typeof BRIEFS[k] === "function"));
+  // mapping: a confirmed match adds a REQ: line to the existing lesson, once
+  const f = "kit/courses/biology/notes/u99.js"; mkdirSync(join(process.env.GRADIFY_OUT, "kit/courses/biology/notes"), { recursive: true });
+  writeFileSync(join(process.env.GRADIFY_OUT, f), "export default `\n## A lesson\nS: lead\nO: one\nO: two\nH: h\n\n## Next\nS: x\n`;\n");
+  assert.ok(addReqLine(f, "A lesson", "aqa-gcse-biology:4.1.1.1.a", [1, 2])); addReqLine(f, "A lesson", "aqa-gcse-biology:4.1.1.1.a", [1, 2]);
+  const t = readFileSync(join(process.env.GRADIFY_OUT, f), "utf8");
+  assert.match(t, /O: two\nREQ: aqa-gcse-biology:4\.1\.1\.1\.a @1,2\nH: h/); assert.equal((t.match(/REQ:/g) || []).length, 1);
+});

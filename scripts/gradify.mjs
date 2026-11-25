@@ -5,7 +5,11 @@
 //   gradify run [--subject s] [--limit n] [--mode fast|cheap] [--minutes m]   the whole loop for the next topics
 //   gradify batch [...]                     run in cheap mode (Message Batches, half price, slower)
 //   gradify research <subject/topic> [--force]   build or refresh one topic's brief
-//   gradify next [--subject s]              print the next work packet (paste into the Writer project by hand)
+//   gradify work <subject> [--limit n] [--json] [--no-map]   agent mode: drive this Claude Code session (no API key);
+//                                           does every scripted step and prints the subagent steps left (docs/CONTENT-ENGINE.md)
+//   gradify next [--subject s] [--emit]     print the next work packet (paste into the Writer project by hand);
+//                                           --emit writes the queue's request files to content/queue/ instead
+//   gradify publish <subject>               move AI-checked and expert-reviewed drafts into the course (via the rolling PR)
 //   gradify ingest [files…] [--review]      gate and file unit files from content/inbox/ (pasted back from chat)
 //   gradify fixlist [--subject s]           fix lists for every lesson that failed, to paste back to the Writer
 //   gradify status [--write]                progress from the files and git; --write updates knowledge-engine/CORE/
@@ -36,6 +40,7 @@ const model = async () => { const m = await import("./content/model.mjs"); retur
 const subjects = () => (opt("subject") ? [opt("subject")] : subjectsInRun());
 
 async function run() {
+  if ((CONFIG.provider || "api") !== "api" && opt("provider") !== "api") throw new Error(`provider is "${CONFIG.provider}" in scripts/content/config.json: the paid API loop is off. Use \`gradify work <subject>\` in a Claude Code session, or pass --provider api`);
   if (!process.env.ANTHROPIC_API_KEY && !process.env.ANTHROPIC_AUTH_TOKEN) throw new Error("ANTHROPIC_API_KEY isn't set (the workflow reads it from the repository secret)");
   const m = await model(), t = await tools(), stopAt = Date.now() + Number(opt("minutes", CONFIG.runMinutes)) * 60e3, records = [];
   try {
@@ -100,6 +105,23 @@ async function ingest() {
   } finally { await t.legible?.close?.(); }
 }
 
+// agent mode: one round of `gradify work`, printed as the steps this session hands to subagents
+async function agentWork(subject, { print = true } = {}) {
+  const { work } = await import("./content/agent.mjs"), t = await tools();
+  let r; try { r = await work(subject, { limit: Number(opt("limit", CONFIG.topicsPerRun)), render: t.render, legible: t.legible, map: !flag("no-map") }); } finally { await t.legible?.close?.(); }
+  save(out(`content/queue/${subject}/ACTIONS.json`), { generated: new Date().toISOString(), actions: r.actions });
+  if (!print) return r;
+  if (flag("json")) { log(JSON.stringify(r, null, 1)); return r; }
+  for (const f of r.filed) log(`filed ${f.topic}: ${f.status}, ${f.lessons.length} lessons passed${f.failures.length ? `, ${f.failures.length} failed` : ""}`);
+  for (const m of r.mapped) log(`mapped ${m}`);
+  if (r.filed.length || r.mapped.length) log(`\nCOMMIT NOW, so nothing is lost if the session stops:\n  node scripts/gradify.mjs publish ${subject}\n  node scripts/gradify.mjs pr --out content/PR.md && node scripts/gradify.mjs status --write\n  git add content kit/courses knowledge-engine && git commit -m "Content engine: ${subject}" && git push origin HEAD:content/rolling\n  then open or update the pull request from content/rolling, with content/PR.md as its description.\n`);
+  if (r.done) { log(`DONE: nothing left to write or map for ${subject}.`); return r; }
+  if (!r.actions.length) { log("Nothing waiting on a subagent: run gradify work again."); return r; }
+  log(`${r.actions.length} steps for subagents. Start them all at once, one Agent call each, with the model and prompt shown. Each writes only its reply file. When every reply is saved, run \`node scripts/gradify.mjs work ${subject}\` again.\nIf the session is close to its usage limit, start no new steps: commit what's filed (above) and stop. Everything else is saved in content/queue/ for the next session.\n`);
+  r.actions.forEach((a, i) => log(`[${i + 1}] ${a.kind} · ${a.topic} · model ${a.model}\n${a.prompt}\n`));
+  return r;
+}
+
 function fixlists() {
   for (const s of subjects()) { const led = load(out(`content/ledger/${s}.json`)); if (!led) continue;
     for (const [id, e] of Object.entries(led.topics)) for (const f of e.failures || []) log(`# ${id}\n${fixList(f.title, f.issues)}\n`); }
@@ -128,7 +150,10 @@ try {
   if (cmd === "run") await run();
   else if (cmd === "batch") { argv.push("--mode", "cheap"); await run(); }
   else if (cmd === "research") { const m = await model(), tp = subjects().flatMap((s) => frameworksFor(s).flatMap((fw) => topicsFor(fw))).find((x) => x.id === argv[1]); if (!tp) throw new Error(`no queued topic ${argv[1]}`); const r = await research(tp, { ask: m.ask, force: flag("force") }); log(r.brief ? `${r.cached ? "unchanged" : "written"}: content/research/${tp.id}.txt ($${m.spend.usd.toFixed(2)})` : `unusable brief: ${r.parsed.problems.join("; ")}`); }
+  else if (cmd === "next" && flag("emit")) { const s = opt("subject") || subjectsInRun()[0], r = await agentWork(s, { print: false }); for (const a of r.actions) log(`${a.kind.padEnd(8)} ${a.topic}  ${a.req || a.pairs?.map((p) => p[0]).join(" ")}`); if (!r.actions.length) log("Nothing to emit."); }
   else if (cmd === "next") await next();
+  else if (cmd === "work") await agentWork(argv[1] && !argv[1].startsWith("--") ? argv[1] : opt("subject") || subjectsInRun()[0]);
+  else if (cmd === "publish") { const { publish } = await import("./content/publish.mjs"); const r = await publish(argv[1] || opt("subject")); log(r.unit ? `${r.unit}: ${r.added.length} added, ${r.updated.length} updated${r.hooks?.length ? `; course files wired: ${r.hooks.join(", ")}` : ""}${[...r.added, ...r.updated].map((x) => `\n  ${x}`).join("")}${r.skipped.length ? `\nnot published (${r.skipped.length}): ${r.skipped.slice(0, 12).join("; ")}` : ""}` : "Nothing to publish yet."); }
   else if (cmd === "ingest") await ingest();
   else if (cmd === "fixlist") fixlists();
   else if (cmd === "status") { const s = status(); if (flag("write")) writeHandover(s); log(JSON.stringify(s, null, 1)); }

@@ -1,5 +1,7 @@
 {
  "_doc": "The content engine's settings (docs/CONTENT-ENGINE.md). Changing a model, mode or budget is a config change, never a code change.",
+ "provider": "agent",
+ "agent": { "models": { "research": "sonnet", "write": "opus", "repair": "opus", "review": "sonnet", "map": "haiku" } },
  "mode": "fast",
  "models": {
   "map": "claude-haiku-5-5",

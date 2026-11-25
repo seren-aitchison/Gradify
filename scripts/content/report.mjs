@@ -82,7 +82,7 @@ ${passed.filter((l) => l.tier === "expert-required" || l.disagreed).map(line).jo
 ## Failed after ${CONFIG.repairs} repairs (${fails.length})
 ${fails.join("\n") || "None."}
 ${systematic.length ? `\n> **Systematic failure:** ${systematic.map(([g, n]) => `\`${g}\` failed ${n} lessons`).join(", ")}. This is probably the engine, not the content: use the fix prompt in docs/CONTENT-ENGINE.md.\n` : ""}
-## Not covered yet
+${(() => { const sig = subjects.map((sub) => load(out(`content/signals/${sub}.json`))).filter(Boolean).flatMap((x) => [...(x.items || []).map((i) => `- ${i.subject} ${i.lesson} · question ${i.question}: ${i.why}`), ...(x.reports || []).map((r) => `- ${r.subject} ${r.lesson}: ${r.why}`)]); return sig.length ? `## Learners flagged (repair queue)\n${sig.join("\n")}\n\n` : ""; })()}## Not covered yet
 ${records.filter((r) => r.uncovered.length).map((r) => `- ${r.topic}: ${r.uncovered.join(", ")}`).join("\n") || "None."}
 ${records.some((r) => r.gaps.length || r.needs.length) ? `\n## Research gaps and diagrams needed\n${records.flatMap((r) => [...r.gaps.map((g) => `- GAP ${g}`), ...r.needs.map((g) => `- DNEED ${g}`)]).join("\n")}\n` : ""}
 ## Cost
