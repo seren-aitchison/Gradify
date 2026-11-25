@@ -9,12 +9,13 @@ The work runs in **agent mode**: Claude Code sessions on your subscription do th
 A topic is one section of a specification (AQA 4.1.1.1 *Eukaryotes and prokaryotes*). Its requirements are the statements no existing lesson teaches. Strong matches are checked first (see Mapping): confirmed ones get `REQ:` lines on the existing lesson, and rejected ones are written like any other gap.
 
 1. **Research** (`prompts/research.md`, web search): one cited brief per topic at `content/research/<subject>/<topic>.txt`, with at least 3 independent sources. A brief is reused by every board and level that shares the topic, and redone only when its requirements or the research prompt change (the `# fp=` line).
+   - **Source allowlist** (`kit/curriculum/sources.js`): the request lists the publications that may be cited (`ALLOW` lines), and a brief citing anything else is refused. Each source's licence class is taken from its row, whatever the Researcher wrote. A row may say `adapt` only if its licence allows commercial reuse of the text, and it counts as `adapt` only once a named person has confirmed it (`confirmedBy`, `confirmedOn`); until then it's `facts`. The three independent sources must come from three different publishers on the list.
    - **Licence gate:** a brief isn't used if any non-fact line rests only on `noncommercial` or `unknown` sources. Facts (`F:`) may rest on any source. The research step is asked again, with the problem named.
 2. **Write** (`prompts/writer.md`, the content standard, the notes format, the shorthand and the example lessons for the level): a unit file with `REQ:` lines.
    - A `REQ:` line may name a requirement or one part of it, such as `aqa-gcse-biology:4.1.1.1.b.ii`. A part counts toward its requirement.
 3. **Gates**, cheapest first, stopping at the first failure (`scripts/content/gates.mjs`):
    1. `parse`: one lesson, known tags, a lead over 60 characters, `LV:`, two or more `O:` and `T:`, at least one `REQ:`, and every `DIA:` spec is JSON with a title, caption and alt text.
-   2. `coverage`: every `REQ:` (or part) is in the packet and names objectives, each of those objectives has a question tagged with it, and every objective is tested.
+   2. `coverage`: every `REQ:` (or part) is in the packet and names objectives, each of those objectives has a question tagged with it, and every objective is tested. Every `PRE:` names a lesson in the course or the unit, or a requirement id in the registry.
    3. `qa`: the course QA rules and the course's lesson standard (`tests/sciences.test.mjs`), so a filed lesson can be published:
       - two sections, a key point, two flashcards and a summary;
       - at least four questions, a hard (M3) one, and two difficulty levels;
@@ -25,7 +26,7 @@ A topic is one section of a specification (AQA 4.1.1.1 *Eukaryotes and prokaryot
 4. **Review** (`prompts/review.md`): only for lessons that pass every gate. A different model from the writer judges each lesson against its brief and requirements only.
 5. **Repair**: failures go back as a `FIX` list, the Writer returns changed lines only (`REPAIR`), and the lesson goes through the gates again. This repeats up to `repairs` times (3).
 6. **File**: passing lessons are merged by title into `content/drafts/<subject>/<framework>/<topic>.txt`, and the topic's record goes to `content/ledger/<subject>.json`. The record holds:
-   - each lesson's tier, hash, whether the reviewer disagreed, and its build record (brief, prompts, models, requirement hashes);
+   - each lesson's tier, hash, whether the reviewer disagreed, and its build record (`scripts/content/build.mjs`): the brief's key and text fingerprint, a hash of each prompt file (writer, review, shorthand), the models that wrote and reviewed it, its template (the content standard, the notes format and the level's example lessons) and the requirement hashes. When any of these changes, `gradify next` and `work` send back only the requirements those lessons teach. When the rebuilt lesson files, the old one is marked superseded, and a rebuild that fails `repairs` times isn't retried until something changes again;
    - the topic's failures, uncovered requirements, research gaps (`GAP:`) and needed diagrams (`DNEED:`).
 7. **Publish** (`gradify publish <subject>`): AI-verified and expert-approved lessons go into the course through the rolling PR. Merging it is the owner's approval. What learners see:
 
@@ -33,7 +34,7 @@ A topic is one section of a specification (AQA 4.1.1.1 *Eukaryotes and prokaryot
    |---|---|---|
    | **ai-verified** (gates and review passed) | **AI-checked**: "Written and checked by AI against cited sources. A subject expert hasn't reviewed it yet." | Yes |
    | **expert-approved** (`gradify approve … --by "<name>"`) | **Expert-reviewed** | Yes |
-   | **expert-required** (practicals, calculations, safety or health keywords, or a brief with a `CONFLICT:`) | none | Not until approved |
+   | **expert-required** (practicals, calculations, safety or health keywords, or a brief `CONFLICT:` the lesson relies on and doesn't resolve: decision G) | none | Not until approved |
    | **gates-passed** (a hand ingest with no review) | none | No |
    | **unchecked** (the text changed after it was checked: rule 14) | none | No; its earlier published version stays |
 
@@ -49,7 +50,7 @@ A topic is one section of a specification (AQA 4.1.1.1 *Eukaryotes and prokaryot
 
 | Step | Model (config `agent.models`) | What the subagent does |
 |---|---|---|
-| research | sonnet | Researches with web search and writes the brief |
+| research | sonnet | Finds pages with web search, opens each with `scripts/content/fetchtext.sh` (the web-fetch tool runs outside this environment's network proxy and can't reach most hosts), and writes the brief from pages it read |
 | write | opus | Writes the unit file from the packet only |
 | repair | opus | Writes changed lines only |
 | review | sonnet | A fresh subagent that never saw the writing, on a different model. It judges only against the requirements and brief, and writes `REV` lines |
@@ -97,6 +98,12 @@ node scripts/gradify.mjs pr [--out file]       # the rolling PR's description, f
 node scripts/gradify.mjs run | batch           # the paid API loop: only with "provider": "api" or --provider api
 ```
 
+**Requirement records.** Each statement in a committed index (`kit/curriculum/specs/<id>.json`) has a `status` and a `type`, and the index has `version`, `published` and `applies` (`{ from, to }`, where `to` is null while the specification is current). They come from the registry row on import. The queue refuses an index without them.
+
+**Status ladder.** `gradify status` (`ladder`, also in HANDOVER.md) counts frameworks by country and wave-1 subject (not researched, framework found, spec imported). It then counts each imported specification's requirements by the highest rung they've reached: spec imported, mapped, drafted, gates passed, AI-verified, expert-required, expert-approved, published, needs update. "Needs update" outranks the rest because it's work to do.
+
+**Views, not copies.** Flashcards (`Q:`), the specification explorer (`kit/course/spec-view.js`, from `REQ:` lines), the glossary (`T:`) and the question bank are all drawn from the notes. Never write them as separate content.
+
 Adding a framework means adding its registry row (`kit/curriculum/uk.js` and the other country files to come), importing it, proposing its map (`engine.mjs propose`), and adding its id to `frameworks` in `scripts/content/config.json`. It needs no code.
 
 ## The API path (off)
@@ -115,6 +122,8 @@ The workflow runs one job per subject, publishes into `content/rolling` and rest
 - **No way for learners to file a report yet.** The `lesson_reports` table exists, but no site page writes to it.
 - **Signals are listed, not repaired.** Suspect questions and reported lessons in live courses go to a person, not into automatic repairs.
 - **Parts aren't detected.** Sub-requirements are whatever the Writer names. Parts aren't found in the specification text automatically.
+- **AQA layout only.** `scripts/curriculum/aqa.mjs` reads AQA's science specifications (biology and chemistry checked). Other bodies need AI extraction with a script check, which isn't built yet (M2).
+- **NCBI Bookshelf's licence page** returns a reCAPTCHA to automated requests, so its row has no quoted licence and stays facts-only until a person checks it.
 - **The PGlite rehearsal isn't a real deploy.** The migration passes it; applying it to the live database is the owner's step.
 
 ## When the rolling PR reports a systematic failure

@@ -118,7 +118,7 @@ function graph(spec, W, H) {
   const { s: base, sx, sy } = axes(spec, W, H, pad);
   let s = base;
   const { x: [x0, x1], y: [y0, y1] } = spec.range;
-  const clipId = `vx${Math.abs([...spec.id].reduce((h, c) => (h * 31 + c.charCodeAt(0)) | 0, 7))}${W}`;
+  const clipId = `vx${Math.abs([...String(spec.id ?? JSON.stringify(spec))].reduce((h, c) => (h * 31 + c.charCodeAt(0)) | 0, 7))}${W}`;
   s += `<defs><clipPath id="${clipId}"><rect x="${f1(sx(x0))}" y="${f1(sy(y1))}" width="${f1(sx(x1) - sx(x0))}" height="${f1(sy(y0) - sy(y1))}"/></clipPath></defs>`;
   for (const m of spec.bands || []) s += `<rect x="${f1(sx(m.x[0]))}" y="${f1(sy(y1))}" width="${f1(sx(m.x[1]) - sx(m.x[0]))}" height="${f1(sy(y0) - sy(y1))}" fill="${col(m.colour || "a1")}" fill-opacity=".08"/>` + L((sx(m.x[0]) + sx(m.x[1])) / 2, sy(y0) - 12, m.label, { size: 12, weight: 600, fill: C.soft });
   for (const m of spec.marks || []) {

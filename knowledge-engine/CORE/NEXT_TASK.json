@@ -1,7 +1,7 @@
 {
- "task": "run the content loop",
- "command": "node scripts/gradify.mjs run --subject biology",
+ "task": "run the content loop in agent mode",
+ "command": "node scripts/gradify.mjs work biology",
  "topic": "biology/eukaryotes-and-prokaryotes",
- "by": "the Content engine workflow (.github/workflows/content.yml); a person only merges the rolling PR",
+ "by": "a Claude Code session (the hourly scheduled one, or any you open): follow what gradify work prints; a person only merges the rolling PR",
  "acceptance": "lessons pass every gate and the review; failures are listed in the PR"
 }
