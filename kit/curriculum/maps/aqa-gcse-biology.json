@@ -94,9 +94,9 @@
    ]
   },
   "4.1.1.2.a": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u02-04",
      "coverage": "partial",
@@ -129,12 +129,19 @@
       "cell"
      ]
     }
+   ],
+   "hash": "c26ae7414505c77e",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Plasmids and membrane function untaught; other structures mostly structural only."
    ]
   },
   "4.1.1.2.b": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u02-04",
      "coverage": "partial",
@@ -175,12 +182,23 @@
       "cell"
      ]
     }
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u02-04",
+     "coverage": "full",
+     "objectives": [
+      1
+     ]
+    }
    ]
   },
   "4.1.1.2.c": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u02-05",
      "coverage": "partial",
@@ -210,12 +228,24 @@
       "cell"
      ]
     }
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u02-05",
+     "coverage": "full",
+     "objectives": [
+      1,
+      2
+     ]
+    }
    ]
   },
   "4.1.1.2.d": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u02-05",
      "coverage": "partial",
@@ -228,6 +258,18 @@
       "animal",
       "plant",
       "cell"
+     ]
+    }
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u02-05",
+     "coverage": "full",
+     "objectives": [
+      1,
+      2
      ]
     }
    ]
@@ -270,9 +312,9 @@
    ]
   },
   "4.1.1.3.a": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u02-30",
      "coverage": "partial",
@@ -289,12 +331,19 @@
       "cell"
      ]
     }
+   ],
+   "hash": "8ee99e188b9bd7de",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Tissues named, but cell structure never linked to tissue function."
    ]
   },
   "4.1.1.3.b": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u02-25",
      "coverage": "partial",
@@ -310,6 +359,18 @@
       "specialised",
       "animal",
       "plant"
+     ]
+    }
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u02-25",
+     "coverage": "full",
+     "objectives": [
+      1,
+      2
      ]
     }
    ]
@@ -469,9 +530,9 @@
    ]
   },
   "4.1.1.6.b": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u09-25",
      "coverage": "partial",
@@ -484,6 +545,17 @@
       "colony",
       "agar",
       "bacteria"
+     ]
+    }
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u09-25",
+     "coverage": "full",
+     "objectives": [
+      1
      ]
     }
    ]
@@ -523,9 +595,9 @@
    ]
   },
   "4.1.1.6.d": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u09-25",
      "coverage": "partial",
@@ -536,6 +608,18 @@
       "aseptic",
       "technique",
       "culture"
+     ]
+    }
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u09-25",
+     "coverage": "full",
+     "objectives": [
+      2,
+      3
      ]
     }
    ]
@@ -673,9 +757,9 @@
    ]
   },
   "4.1.2.1.a": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u02-09",
      "coverage": "partial",
@@ -703,6 +787,13 @@
       "cell"
      ]
     }
+   ],
+   "hash": "6088bfd384bce4a1",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Covers DNA packaging into chromosomes; genes never mentioned."
    ]
   },
   "4.1.2.1.b": {
@@ -862,9 +953,9 @@
    ]
   },
   "4.1.2.2.d": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u05-03",
      "coverage": "partial",
@@ -888,6 +979,18 @@
       "divid",
       "cycle",
       "cell"
+     ]
+    }
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u05-03",
+     "coverage": "full",
+     "objectives": [
+      1,
+      2
      ]
     }
    ]
@@ -954,9 +1057,9 @@
    ]
   },
   "4.1.2.2.g": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u05-05",
      "coverage": "partial",
@@ -982,6 +1085,17 @@
       "growth",
       "cycle",
       "cell"
+     ]
+    }
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u05-05",
+     "coverage": "full",
+     "objectives": [
+      3
      ]
     }
    ]
@@ -1067,9 +1181,9 @@
    ]
   },
   "4.1.2.3.c": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u02-26",
      "coverage": "partial",
@@ -1095,12 +1209,20 @@
       "cell"
      ]
     }
-   ]
+   ],
+   "hash": "43d8c74c9ca1e1e1",
+   "by": "agent:haiku, re-decided under the strict rule",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "strict rule: cloning plants not taught, only pluripotency"
+   ],
+   "rejectedLesson": "u02-26"
   },
   "4.1.2.3.d": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u02-26",
      "coverage": "partial",
@@ -1130,12 +1252,19 @@
       "cell"
      ]
     }
+   ],
+   "hash": "4617cdd8f8f859ca",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Multipotency covered; bone marrow source and blood-cell formation untaught."
    ]
   },
   "4.1.2.3.e": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u08-02",
      "coverage": "partial",
@@ -1160,6 +1289,17 @@
       "stem",
       "life",
       "cell"
+     ]
+    }
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u08-02",
+     "coverage": "full",
+     "objectives": [
+      3
      ]
     }
    ]
@@ -1308,9 +1448,9 @@
    ]
   },
   "4.1.3.1.b": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u02-20",
      "coverage": "partial",
@@ -1325,6 +1465,17 @@
       "movement",
       "area",
       "concentration"
+     ]
+    }
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u02-20",
+     "coverage": "full",
+     "objectives": [
+      1
      ]
     }
    ]
@@ -1381,9 +1532,9 @@
    ]
   },
   "4.1.3.1.e": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u02-20",
      "coverage": "partial",
@@ -1396,6 +1547,17 @@
       "area",
       "concentration",
       "gradient"
+     ]
+    }
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u02-20",
+     "coverage": "full",
+     "objectives": [
+      2
      ]
     }
    ]
@@ -1423,9 +1585,9 @@
    ]
   },
   "4.1.3.1.g": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u02-20",
      "coverage": "partial",
@@ -1440,12 +1602,23 @@
       "ratio"
      ]
     }
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u02-20",
+     "coverage": "full",
+     "objectives": [
+      3
+     ]
+    }
    ]
   },
   "4.1.3.1.h": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u02-20",
      "coverage": "partial",
@@ -1463,6 +1636,13 @@
       "organism"
      ]
     }
+   ],
+   "hash": "2cddfb407ad4a62b",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Surface area to volume covered; transport system need not taught."
    ]
   },
   "4.1.3.1.i": {
@@ -1507,9 +1687,9 @@
    ]
   },
   "4.1.3.2.a": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u02-21",
      "coverage": "partial",
@@ -1525,6 +1705,17 @@
       "diffusion",
       "membrane",
       "water"
+     ]
+    }
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u02-21",
+     "coverage": "full",
+     "objectives": [
+      1
      ]
     }
    ]
@@ -1565,9 +1756,9 @@
    ]
   },
   "4.1.3.2.c": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u14-18",
      "coverage": "partial",
@@ -1588,6 +1779,19 @@
      "matched": [
       "draw",
       "graph"
+     ]
+    }
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u14-18",
+     "coverage": "full",
+     "objectives": [
+      1,
+      2,
+      3
      ]
     }
    ]
@@ -1634,9 +1838,9 @@
    ]
   },
   "4.1.3.3.a": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u02-23",
      "coverage": "partial",
@@ -1654,12 +1858,23 @@
       "energy"
      ]
     }
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u02-23",
+     "coverage": "full",
+     "objectives": [
+      1
+     ]
+    }
    ]
   },
   "4.1.3.3.b": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u08-11",
      "coverage": "partial",
@@ -1700,6 +1915,19 @@
       "transport"
      ]
     }
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u08-11",
+     "coverage": "full",
+     "objectives": [
+      1,
+      2,
+      3
+     ]
+    }
    ]
   },
   "4.1.3.3.c": {
@@ -1734,9 +1962,9 @@
    ]
   },
   "4.1.3.3.d": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u02-19",
      "coverage": "partial",
@@ -1764,6 +1992,13 @@
       "cell"
      ]
     }
+   ],
+   "hash": "6ddc84be00259778",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Osmosis absent from all objectives, headings and terms."
    ]
   },
   "4.2.1.a": {
@@ -1896,9 +2131,9 @@
    ]
   },
   "4.2.1.d": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u02-30",
      "coverage": "partial",
@@ -1930,12 +2165,24 @@
       "system"
      ]
     }
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u07-01",
+     "coverage": "full",
+     "objectives": [
+      1,
+      3
+     ]
+    }
    ]
   },
   "4.2.2.1.a": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u07-21",
      "coverage": "partial",
@@ -1948,6 +2195,19 @@
       "organ",
       "food",
       "system"
+     ]
+    }
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u07-21",
+     "coverage": "full",
+     "objectives": [
+      1,
+      2,
+      3
      ]
     }
    ]
@@ -1970,9 +2230,9 @@
    ]
   },
   "4.2.2.1.c": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u03-27",
      "coverage": "partial",
@@ -1985,6 +2245,13 @@
       "enzyme"
      ]
     }
+   ],
+   "hash": "8d4920ceda8c913d",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Temperature and pH effects covered; enzyme molecule nature absent."
    ]
   },
   "4.2.2.1.d": {
@@ -2049,9 +2316,9 @@
    ]
   },
   "4.2.2.1.f": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u03-24",
      "coverage": "partial",
@@ -2063,6 +2330,19 @@
       "enzyme",
       "model",
       "key"
+     ]
+    }
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u03-24",
+     "coverage": "full",
+     "objectives": [
+      1,
+      2,
+      3
      ]
     }
    ]
@@ -2103,9 +2383,9 @@
    ]
   },
   "4.2.2.1.i": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u07-22",
      "coverage": "partial",
@@ -2130,6 +2410,18 @@
       "digestive",
       "food",
       "system"
+     ]
+    }
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u07-22",
+     "coverage": "full",
+     "objectives": [
+      1,
+      3
      ]
     }
    ]
@@ -2214,9 +2506,9 @@
    ]
   },
   "4.2.2.1.l": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u03-11",
      "coverage": "partial",
@@ -2243,12 +2535,23 @@
       "system"
      ]
     }
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u07-22",
+     "coverage": "full",
+     "objectives": [
+      1
+     ]
+    }
    ]
   },
   "4.2.2.1.m": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u07-22",
      "coverage": "partial",
@@ -2275,6 +2578,13 @@
       "system"
      ]
     }
+   ],
+   "hash": "f0eb054d488035b1",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Digestion covered; uses of digestion products absent."
    ]
   },
   "4.2.2.1.n": {
@@ -2468,9 +2778,9 @@
    ]
   },
   "4.2.2.2.d": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u07-14",
      "coverage": "partial",
@@ -2485,12 +2795,23 @@
       "blood"
      ]
     }
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u07-14",
+     "coverage": "full",
+     "objectives": [
+      1
+     ]
+    }
    ]
   },
   "4.2.2.2.e": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u07-14",
      "coverage": "partial",
@@ -2529,6 +2850,18 @@
       "structure"
      ]
     }
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u07-14",
+     "coverage": "full",
+     "objectives": [
+      1,
+      2
+     ]
+    }
    ]
   },
   "4.2.2.2.f": {
@@ -2561,9 +2894,9 @@
    ]
   },
   "4.2.2.3.a": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u07-15",
      "coverage": "partial",
@@ -2581,12 +2914,23 @@
       "cell"
      ]
     }
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u07-15",
+     "coverage": "full",
+     "objectives": [
+      1
+     ]
+    }
    ]
   },
   "4.2.2.3.b": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u07-15",
      "coverage": "partial",
@@ -2599,6 +2943,13 @@
       "function"
      ]
     }
+   ],
+   "hash": "7f05d55923834794",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Red cells, white cells, platelets covered; plasma function absent."
    ]
   },
   "4.2.2.3.c": {
@@ -2732,9 +3083,9 @@
    ]
   },
   "4.2.2.5.a": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u09-16",
      "coverage": "partial",
@@ -2748,6 +3099,13 @@
       "typ"
      ]
     }
+   ],
+   "hash": "0ef913af9e6994fd",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Microbe relationships covered; health-disease relationship absent."
    ]
   },
   "4.2.2.5.b": {
@@ -3105,9 +3463,9 @@
    ]
   },
   "4.2.2.7.a": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u05-12",
      "coverage": "partial",
@@ -3120,6 +3478,18 @@
       "division",
       "chang",
       "cell"
+     ]
+    }
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u05-12",
+     "coverage": "full",
+     "objectives": [
+      1,
+      2
      ]
     }
    ]
@@ -3144,9 +3514,9 @@
    ]
   },
   "4.2.2.7.c": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u05-13",
      "coverage": "partial",
@@ -3159,6 +3529,19 @@
       "secondary",
       "cancer",
       "cell"
+     ]
+    }
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u05-13",
+     "coverage": "full",
+     "objectives": [
+      1,
+      2,
+      3
      ]
     }
    ]
@@ -3242,9 +3625,9 @@
    ]
   },
   "4.2.3.1.c": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u08-05",
      "coverage": "partial",
@@ -3261,12 +3644,24 @@
       "cell"
      ]
     }
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u08-05",
+     "coverage": "full",
+     "objectives": [
+      1,
+      3
+     ]
+    }
    ]
   },
   "4.2.3.2.a": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u08-06",
      "coverage": "partial",
@@ -3296,6 +3691,13 @@
       "structure"
      ]
     }
+   ],
+   "hash": "255837fea6156d7b",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Root hair adaptation covered; xylem and phloem structure adaptation absent."
    ]
   },
   "4.2.3.2.b": {
@@ -3362,9 +3764,9 @@
    ]
   },
   "4.2.3.2.e": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u08-06",
      "coverage": "partial",
@@ -3406,12 +3808,24 @@
       "plant"
      ]
     }
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u08-06",
+     "coverage": "full",
+     "objectives": [
+      1,
+      2
+     ]
+    }
    ]
   },
   "4.2.3.2.f": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u08-10",
      "coverage": "partial",
@@ -3446,6 +3860,13 @@
       "structure"
      ]
     }
+   ],
+   "hash": "f769c42699b72cec",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Transpiration covered; translocation and stomata absent."
    ]
   },
   "4.2.3.2.g": {
@@ -3551,9 +3972,9 @@
    ]
   },
   "4.2.3.2.i": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u08-05",
      "coverage": "partial",
@@ -3568,6 +3989,18 @@
       "organ",
       "control",
       "cell"
+     ]
+    }
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u08-05",
+     "coverage": "full",
+     "objectives": [
+      2,
+      3
      ]
     }
    ]
@@ -3643,9 +4076,9 @@
    ]
   },
   "4.3.1.1.a": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u09-17",
      "coverage": "partial",
@@ -3673,6 +4106,13 @@
       "plant"
      ]
     }
+   ],
+   "hash": "959cfbcd74a094fa",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Pathogen types and harm covered; transmission and spread absent."
    ]
   },
   "4.3.1.1.b": {
@@ -4004,9 +4444,9 @@
    ]
   },
   "4.3.1.5.a": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u09-12",
      "coverage": "partial",
@@ -4016,6 +4456,19 @@
      "matched": [
       "malaria",
       "diseas"
+     ]
+    }
+   ],
+   "hash": "46cd0814027e1e10",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u09-12",
+     "coverage": "full",
+     "objectives": [
+      1,
+      3
      ]
     }
    ]
@@ -4060,9 +4513,9 @@
    ]
   },
   "4.3.1.6.b": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u07-30",
      "coverage": "partial",
@@ -4099,12 +4552,26 @@
       "system"
      ]
     }
+   ],
+   "hash": "1ee21ebf922f5e2a",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u07-30",
+     "coverage": "full",
+     "objectives": [
+      1,
+      2,
+      3
+     ]
+    }
    ]
   },
   "4.3.1.6.c": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u07-30",
      "coverage": "partial",
@@ -4116,6 +4583,19 @@
       "immune",
       "body",
       "system"
+     ]
+    }
+   ],
+   "hash": "2aa665e01fe3f5b1",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u07-30",
+     "coverage": "full",
+     "objectives": [
+      2,
+      3
      ]
     }
    ]
@@ -4567,9 +5047,9 @@
    ]
   },
   "4.3.2.1.a": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u12-21",
      "coverage": "partial",
@@ -4591,6 +5071,13 @@
       "produced"
      ]
     }
+   ],
+   "hash": "f21d8cc186c3fe14",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Cell culture mentioned; monoclonal production method not taught."
    ]
   },
   "4.3.2.1.b": {
@@ -4659,9 +5146,9 @@
    ]
   },
   "4.3.2.2.a": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u12-21",
      "coverage": "partial",
@@ -4673,6 +5160,13 @@
       "antibody"
      ]
     }
+   ],
+   "hash": "302daeec517a809d",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Uses only in body text; no objective or heading covers them."
    ]
   },
   "4.3.2.2.b": {
@@ -4811,9 +5305,9 @@
    ]
   },
   "4.3.3.1.c": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u09-17",
      "coverage": "partial",
@@ -4828,6 +5322,13 @@
       "pathogen"
      ]
     }
+   ],
+   "hash": "c03a8ce3aafd55b9",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Covers general pathogen types; plant diseases and insect pests absent."
    ]
   },
   "4.3.3.1.d": {
@@ -4851,9 +5352,9 @@
    ]
   },
   "4.3.3.2.a": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u08-33",
      "coverage": "partial",
@@ -4866,6 +5367,18 @@
       "chemical",
       "respons",
       "plant"
+     ]
+    }
+   ],
+   "hash": "09b878bae2fc92be",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u08-33",
+     "coverage": "full",
+     "objectives": [
+      2
      ]
     }
    ]
@@ -4890,9 +5403,9 @@
    ]
   },
   "4.3.3.2.c": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u08-33",
      "coverage": "partial",
@@ -4905,6 +5418,18 @@
       "chemical",
       "respons",
       "plant"
+     ]
+    }
+   ],
+   "hash": "6c0973680f76801a",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u08-33",
+     "coverage": "full",
+     "objectives": [
+      2
      ]
     }
    ]
@@ -4985,9 +5510,9 @@
    ]
   },
   "4.4.1.1.b": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u08-12",
      "coverage": "partial",
@@ -5015,6 +5540,13 @@
       "energy"
      ]
     }
+   ],
+   "hash": "cd30d2f4395baf58",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Equation and chloroplast structure covered; light energy transfer absent."
    ]
   },
   "4.4.1.2.a": {
@@ -5096,9 +5628,9 @@
    ]
   },
   "4.4.1.2.c": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u08-12",
      "coverage": "partial",
@@ -5119,6 +5651,18 @@
      "matched": [
       "photosynthesi",
       "limit"
+     ]
+    }
+   ],
+   "hash": "ca9914a56356a247",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u08-12",
+     "coverage": "full",
+     "objectives": [
+      3
      ]
     }
    ]
@@ -5220,9 +5764,9 @@
    ]
   },
   "4.4.1.3.b": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u08-11",
      "coverage": "partial",
@@ -5248,7 +5792,15 @@
       "plant"
      ]
     }
-   ]
+   ],
+   "hash": "26939f104c9afa57",
+   "by": "agent:haiku, re-decided under the strict rule",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "strict rule: nitrate ions and protein synthesis not named"
+   ],
+   "rejectedLesson": "u08-11"
   },
   "4.4.2.1.a": {
    "status": "proposed",
@@ -5296,9 +5848,9 @@
    ]
   },
   "4.4.2.1.c": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u02-10",
      "coverage": "partial",
@@ -5328,6 +5880,13 @@
       "cell"
      ]
     }
+   ],
+   "hash": "9d53c33c5c0375d7",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Aerobic respiration locations only; anaerobic respiration absent."
    ]
   },
   "4.4.2.1.d": {
@@ -5884,9 +6443,9 @@
    ]
   },
   "4.5.2.1.a": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u07-03",
      "coverage": "partial",
@@ -5910,6 +6469,19 @@
       "system",
       "function",
       "structure"
+     ]
+    }
+   ],
+   "hash": "6e53a418d9fa271f",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u07-07",
+     "coverage": "full",
+     "objectives": [
+      1,
+      2
      ]
     }
    ]
@@ -6016,9 +6588,9 @@
    ]
   },
   "4.5.2.1.e": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u01-17",
      "coverage": "partial",
@@ -6044,7 +6616,15 @@
       "function"
      ]
     }
-   ]
+   ],
+   "hash": "ed2eea309e4a24ae",
+   "by": "agent:haiku, re-decided under the strict rule",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "strict rule: generic graph reading; nervous-system context absent"
+   ],
+   "rejectedLesson": "u01-17"
   },
   "4.5.2.1.f": {
    "status": "proposed",
@@ -6130,9 +6710,9 @@
    ]
   },
   "4.5.2.2.b": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u07-07",
      "coverage": "partial",
@@ -6147,6 +6727,13 @@
       "function"
      ]
     }
+   ],
+   "hash": "1703fc0ca4269250",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Medulla not named; brain regions taught but diagram identification not stated."
    ]
   },
   "4.5.2.2.c": {
@@ -6855,9 +7442,9 @@
    ]
   },
   "4.5.3.3.a": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u07-34",
      "coverage": "partial",
@@ -6884,6 +7471,13 @@
       "cell"
      ]
     }
+   ],
+   "hash": "0f734d6f9c11f0cb",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Covers body water and electrolytes; osmotic effects on cells not taught."
    ]
   },
   "4.5.3.3.b": {
@@ -7093,9 +7687,9 @@
    ]
   },
   "4.5.3.3.h": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u07-24",
      "coverage": "partial",
@@ -7121,12 +7715,24 @@
       "function"
      ]
     }
+   ],
+   "hash": "709009b53bdf1ef3",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u07-24",
+     "coverage": "full",
+     "objectives": [
+      2
+     ]
+    }
    ]
   },
   "4.5.3.3.i": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u07-25",
      "coverage": "partial",
@@ -7140,6 +7746,18 @@
       "selective",
       "blood",
       "water"
+     ]
+    }
+   ],
+   "hash": "b272e9b63ff94fb3",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u07-25",
+     "coverage": "full",
+     "objectives": [
+      2
      ]
     }
    ]
@@ -7163,9 +7781,9 @@
    ]
   },
   "4.5.3.3.k": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u07-25",
      "coverage": "partial",
@@ -7188,6 +7806,18 @@
       "kidney",
       "balance",
       "water"
+     ]
+    }
+   ],
+   "hash": "6b1e92b701405b21",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u07-25",
+     "coverage": "full",
+     "objectives": [
+      3
      ]
     }
    ]
@@ -7226,9 +7856,9 @@
    ]
   },
   "4.5.3.3.m": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u07-24",
      "coverage": "partial",
@@ -7243,6 +7873,18 @@
       "balance",
       "organ",
       "water"
+     ]
+    }
+   ],
+   "hash": "c6725c4addc3d1e0",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u07-24",
+     "coverage": "full",
+     "objectives": [
+      3
      ]
     }
    ]
@@ -7337,9 +7979,9 @@
    ]
   },
   "4.5.3.4.f": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u07-31",
      "coverage": "partial",
@@ -7355,6 +7997,13 @@
       "control"
      ]
     }
+   ],
+   "hash": "835a4dbe7170556f",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Only describes menstrual hormone control; explaining interactions not stated."
    ]
   },
   "4.5.3.4.g": {
@@ -7375,9 +8024,9 @@
    ]
   },
   "4.5.3.5.a": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u07-31",
      "coverage": "partial",
@@ -7390,12 +8039,19 @@
       "method"
      ]
     }
+   ],
+   "hash": "38eceeb503d87c1a",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Describes contraception methods only; evaluation not stated."
    ]
   },
   "4.5.3.5.b": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u07-31",
      "coverage": "partial",
@@ -7407,6 +8063,18 @@
       "contraception",
       "hormonal",
       "method"
+     ]
+    }
+   ],
+   "hash": "c844ec2856f28384",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u07-31",
+     "coverage": "full",
+     "objectives": [
+      3
      ]
     }
    ]
@@ -7649,9 +8317,9 @@
    ]
   },
   "4.5.3.7.d": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u07-02",
      "coverage": "partial",
@@ -7663,7 +8331,15 @@
       "negative"
      ]
     }
-   ]
+   ],
+   "hash": "9d13a48597233af3",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "strict rule: thyroxine and its feedback not named in lesson"
+   ],
+   "rejectedLesson": "u07-02"
   },
   "4.5.4.1.a": {
    "status": "proposed",
@@ -7688,9 +8364,9 @@
    ]
   },
   "4.5.4.1.b": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u08-21",
      "coverage": "partial",
@@ -7703,12 +8379,24 @@
       "seed"
      ]
     }
+   ],
+   "hash": "08470b76a02002b1",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u08-21",
+     "coverage": "full",
+     "objectives": [
+      2
+     ]
+    }
    ]
   },
   "4.5.4.1.c": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u08-24",
      "coverage": "partial",
@@ -7721,6 +8409,13 @@
       "control"
      ]
     }
+   ],
+   "hash": "fab4f64a81a0fd94",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Covers ripening only; cell division effect not in objectives."
    ]
   },
   "4.5.4.1.RP8": {
@@ -7760,9 +8455,9 @@
    ]
   },
   "4.5.4.2.a": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u08-19",
      "coverage": "partial",
@@ -7786,12 +8481,20 @@
       "plant"
      ]
     }
-   ]
+   ],
+   "hash": "86d293f6edc60de0",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "strict rule: plant hormone uses not in this lesson"
+   ],
+   "rejectedLesson": "u08-19"
   },
   "4.5.4.2.b": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u08-19",
      "coverage": "partial",
@@ -7813,6 +8516,18 @@
      "matched": [
       "growth",
       "plant"
+     ]
+    }
+   ],
+   "hash": "77ad16746afcdb6e",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u08-21",
+     "coverage": "full",
+     "objectives": [
+      3
      ]
     }
    ]
@@ -7854,9 +8569,9 @@
    ]
   },
   "4.5.4.2.d": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u08-24",
      "coverage": "partial",
@@ -7869,6 +8584,18 @@
       "storage",
       "food",
       "control"
+     ]
+    }
+   ],
+   "hash": "af23f03c90f0d2e2",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u08-24",
+     "coverage": "full",
+     "objectives": [
+      3
      ]
     }
    ]
@@ -7918,9 +8645,9 @@
    ]
   },
   "4.6.1.1.a": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u05-05",
      "coverage": "partial",
@@ -7931,6 +8658,18 @@
       "identical",
       "mitosi",
       "meiosi"
+     ]
+    }
+   ],
+   "hash": "8641b9ca674949ad",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u05-05",
+     "coverage": "full",
+     "objectives": [
+      2
      ]
     }
    ]
@@ -8005,9 +8744,9 @@
    ]
   },
   "4.6.1.2.a": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u05-04",
      "coverage": "partial",
@@ -8021,12 +8760,20 @@
       "chromosom"
      ]
     }
-   ]
+   ],
+   "hash": "d03354f4d106cfb0",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "strict rule: fertilisation restoring chromosome number only implied"
+   ],
+   "rejectedLesson": "u05-04"
   },
   "4.6.1.2.b": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u05-04",
      "coverage": "partial",
@@ -8060,6 +8807,19 @@
      "matched": [
       "meiosi",
       "gamet"
+     ]
+    }
+   ],
+   "hash": "2048b245ac34991b",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u05-04",
+     "coverage": "full",
+     "objectives": [
+      1,
+      3
      ]
     }
    ]
@@ -8165,9 +8925,9 @@
    ]
   },
   "4.6.1.3.d": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u08-32",
      "coverage": "partial",
@@ -8180,12 +8940,19 @@
       "reproduction"
      ]
     }
+   ],
+   "hash": "878e2c331a12f13c",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Covers plant reproduction only; advantages and disadvantages not stated."
    ]
   },
   "4.6.1.4.a": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u04-07",
      "coverage": "partial",
@@ -8220,6 +8987,13 @@
       "structure"
      ]
     }
+   ],
+   "hash": "a467493b291a4dc0",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Defines genome; DNA structure not in objectives, headings or terms."
    ]
   },
   "4.6.1.4.b": {
@@ -8389,9 +9163,9 @@
    ]
   },
   "4.6.1.5.c": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u02-12",
      "coverage": "partial",
@@ -8421,6 +9195,13 @@
       "structure"
      ]
     }
+   ],
+   "hash": "2a6b8a416e9e7332",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Ribosome structure lesson; triplet code and amino acid order not taught."
    ]
   },
   "4.6.1.5.d": {
@@ -8690,9 +9471,9 @@
    ]
   },
   "4.6.1.5.m": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u04-07",
      "coverage": "partial",
@@ -8720,6 +9501,13 @@
       "protein"
      ]
     }
+   ],
+   "hash": "3fa3e5d31d0bda09",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Mentions non-coding DNA; gene switching on/off not in objectives."
    ]
   },
   "4.6.1.6.a": {
@@ -8807,9 +9595,9 @@
    ]
   },
   "4.6.1.6.c": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u04-22",
      "coverage": "partial",
@@ -8836,12 +9624,24 @@
       "genetic"
      ]
     }
+   ],
+   "hash": "99e61747545b6800",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u04-22",
+     "coverage": "full",
+     "objectives": [
+      2
+     ]
+    }
    ]
   },
   "4.6.1.6.d": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u04-21",
      "coverage": "partial",
@@ -8857,12 +9657,24 @@
       "copy"
      ]
     }
+   ],
+   "hash": "caaea84d152b4b41",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u04-21",
+     "coverage": "full",
+     "objectives": [
+      1
+     ]
+    }
    ]
   },
   "4.6.1.6.e": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u04-06",
      "coverage": "partial",
@@ -8873,6 +9685,18 @@
       "homozygou",
       "heterozygou",
       "allel"
+     ]
+    }
+   ],
+   "hash": "f02aa83a9a6cabbd",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u04-06",
+     "coverage": "full",
+     "objectives": [
+      2
      ]
     }
    ]
@@ -8935,9 +9759,9 @@
    ]
   },
   "4.6.1.6.i": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u04-23",
      "coverage": "partial",
@@ -8953,12 +9777,20 @@
       "genetic"
      ]
     }
-   ]
+   ],
+   "hash": "89a7aa2dec749d27",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "strict rule: family trees not named; Punnett squares only"
+   ],
+   "rejectedLesson": "u04-23"
   },
   "4.6.1.6.j": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u04-23",
      "coverage": "partial",
@@ -8973,6 +9805,19 @@
       "cros",
       "inheritance",
       "genetic"
+     ]
+    }
+   ],
+   "hash": "0467fd649cf5bd95",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u04-23",
+     "coverage": "full",
+     "objectives": [
+      1,
+      2
      ]
     }
    ]
@@ -9035,9 +9880,9 @@
    ]
   },
   "4.6.1.8.b": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u04-27",
      "coverage": "partial",
@@ -9053,12 +9898,24 @@
       "gen"
      ]
     }
+   ],
+   "hash": "aa4f5033b6e478a0",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u04-27",
+     "coverage": "full",
+     "objectives": [
+      1
+     ]
+    }
    ]
   },
   "4.6.1.8.c": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u04-27",
      "coverage": "partial",
@@ -9071,12 +9928,25 @@
       "inheritance"
      ]
     }
+   ],
+   "hash": "e98ce83dd8d5343d",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u04-27",
+     "coverage": "full",
+     "objectives": [
+      1,
+      3
+     ]
+    }
    ]
   },
   "4.6.1.8.d": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u04-23",
      "coverage": "partial",
@@ -9112,6 +9982,13 @@
       "ratio"
      ]
     }
+   ],
+   "hash": "84b2a93c10dd83aa",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Direct proportion not taught; only genotype and phenotype ratios."
    ]
   },
   "4.6.2.1.a": {
@@ -9229,9 +10106,9 @@
    ]
   },
   "4.6.2.2.a": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u06-01",
      "coverage": "partial",
@@ -9246,12 +10123,19 @@
       "specy"
      ]
     }
+   ],
+   "hash": "507b4a442d6d7dc2",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "New species formation and population change over time not taught."
    ]
   },
   "4.6.2.2.b": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u06-01",
      "coverage": "partial",
@@ -9268,6 +10152,13 @@
       "specy"
      ]
     }
+   ],
+   "hash": "67c707938582dfa2",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Simple early life forms and three-billion-year origin not taught."
    ]
   },
   "4.6.2.2.c": {
@@ -9894,9 +10785,9 @@
    ]
   },
   "4.6.3.2.a": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u06-01",
      "coverage": "partial",
@@ -9912,6 +10803,13 @@
       "evolution"
      ]
     }
+   ],
+   "hash": "c2337d833346b1ae",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Impact of Darwin and Wallace's ideas on biology only implied."
    ]
   },
   "4.6.3.2.b": {
@@ -10112,9 +11010,9 @@
    ]
   },
   "4.6.3.3.f": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u14-20",
      "coverage": "partial",
@@ -10150,12 +11048,19 @@
       "theory"
      ]
     }
+   ],
+   "hash": "b34287a732c4fba5",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Lesson covers peer review and papers, not gene theory development."
    ]
   },
   "4.6.3.4.a": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u06-23",
      "coverage": "partial",
@@ -10169,12 +11074,19 @@
       "bacteria"
      ]
     }
+   ],
+   "hash": "3df5d1a8e675a7cb",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Fossil evidence not taught; only antibiotic resistance evidence."
    ]
   },
   "4.6.3.4.b": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u06-01",
      "coverage": "partial",
@@ -10212,6 +11124,13 @@
       "evolution"
      ]
     }
+   ],
+   "hash": "6c707de4038630b4",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "'Widely accepted' status not taught; only implied by modern synthesis."
    ]
   },
   "4.6.3.4.c": {
@@ -10361,9 +11280,9 @@
    ]
   },
   "4.6.3.5.e": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u01-17",
      "coverage": "partial",
@@ -10387,6 +11306,13 @@
       "evolutionary"
      ]
     }
+   ],
+   "hash": "5b8e88971cb91b66",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Reads graphs only; table interpretation and evolutionary trees missing."
    ]
   },
   "4.6.3.6.a": {
@@ -10429,9 +11355,9 @@
    ]
   },
   "4.6.3.6.b": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u11-26",
      "coverage": "partial",
@@ -10443,6 +11369,13 @@
       "specy"
      ]
     }
+   ],
+   "hash": "3809d33dae38be6d",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Extinction not named; only climate change causes taught."
    ]
   },
   "4.6.3.7.a": {
@@ -10483,9 +11416,9 @@
    ]
   },
   "4.6.3.7.c": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u06-23",
      "coverage": "partial",
@@ -10498,6 +11431,13 @@
       "bacteria"
      ]
     }
+   ],
+   "hash": "0b94b667bfef5ee9",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "MRSA not named; only general antibiotic resistance taught."
    ]
   },
   "4.6.3.7.d": {
@@ -10582,9 +11522,9 @@
    ]
   },
   "4.6.4.b": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u01-05",
      "coverage": "partial",
@@ -10602,6 +11542,13 @@
       "classification"
      ]
     }
+   ],
+   "hash": "9df5971ee110902e",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Named ranks and Linnaeus not taught; only generic ranks mentioned."
    ]
   },
   "4.6.4.c": {
@@ -10719,9 +11666,9 @@
    ]
   },
   "4.7.1.1.a": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u11-01",
      "coverage": "partial",
@@ -10760,6 +11707,13 @@
       "organism"
      ]
     }
+   ],
+   "hash": "0dade033e1e031c7",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Interdependence and competition in a community not taught."
    ]
   },
   "4.7.1.1.b": {
@@ -10795,9 +11749,9 @@
    ]
   },
   "4.7.1.1.c": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u11-01",
      "coverage": "partial",
@@ -10813,6 +11767,13 @@
       "organism"
      ]
     }
+   ],
+   "hash": "41a067f7fc610cbc",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "'Community' not named; biotic/abiotic and ecosystem are taught."
    ]
   },
   "4.7.1.1.d": {
@@ -10909,9 +11870,9 @@
    ]
   },
   "4.7.1.1.g": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u01-17",
      "coverage": "partial",
@@ -10924,6 +11885,13 @@
       "graph"
      ]
     }
+   ],
+   "hash": "859a2ab6429a077f",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Graph reading generic; community context and tables missing."
    ]
   },
   "4.7.1.2.a": {
@@ -10992,9 +11960,9 @@
    ]
   },
   "4.7.1.2.c": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u01-17",
      "coverage": "partial",
@@ -11007,6 +11975,13 @@
       "graph"
      ]
     }
+   ],
+   "hash": "87c72041c560f0a7",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Graph reading generic; abiotic factor context and tables missing."
    ]
   },
   "4.7.1.3.a": {
@@ -11064,9 +12039,9 @@
    ]
   },
   "4.7.1.3.c": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u01-17",
      "coverage": "partial",
@@ -11079,6 +12054,13 @@
       "graph"
      ]
     }
+   ],
+   "hash": "247822defecae14b",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Graph reading generic; biotic factor context and tables missing."
    ]
   },
   "4.7.1.4.a": {
@@ -11383,9 +12365,9 @@
    ]
   },
   "4.7.2.2.a": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u11-12",
      "coverage": "partial",
@@ -11426,6 +12408,13 @@
       "organism"
      ]
     }
+   ],
+   "hash": "db89719172388bfe",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Water cycle and material cycling not taught; only carbon cycle."
    ]
   },
   "4.7.2.2.b": {
@@ -11447,9 +12436,9 @@
    ]
   },
   "4.7.2.2.c": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u11-12",
      "coverage": "partial",
@@ -11476,6 +12465,13 @@
       "plant"
      ]
     }
+   ],
+   "hash": "e8ae4ca964ba7b19",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Photosynthesis and atmospheric CO2 uptake not named."
    ]
   },
   "4.7.2.2.d": {
@@ -11656,9 +12652,9 @@
    ]
   },
   "4.7.2.4.a": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u11-26",
      "coverage": "partial",
@@ -11672,6 +12668,13 @@
       "specy"
      ]
     }
+   ],
+   "hash": "5ce117df2c981b74",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "'Evaluate' skill not taught; only explain and describe objectives."
    ]
   },
   "4.7.2.4.b": {
@@ -11727,9 +12730,9 @@
    ]
   },
   "4.7.3.1.a": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u11-21",
      "coverage": "partial",
@@ -11741,6 +12744,18 @@
       "biodiversity",
       "ecosystem",
       "specy"
+     ]
+    }
+   ],
+   "hash": "28b0310c0d3d11f2",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u11-21",
+     "coverage": "full",
+     "objectives": [
+      1
      ]
     }
    ]
@@ -12270,9 +13285,9 @@
    ]
   },
   "4.7.4.2.a": {
-   "status": "proposed",
+   "status": "ai-confirmed",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u11-09",
      "coverage": "partial",
@@ -12287,12 +13302,25 @@
       "food"
      ]
     }
+   ],
+   "hash": "0f762e3fa7f6d31c",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [
+    {
+     "id": "u11-09",
+     "coverage": "full",
+     "objectives": [
+      1,
+      2
+     ]
+    }
    ]
   },
   "4.7.4.2.b": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u11-09",
      "coverage": "partial",
@@ -12304,12 +13332,19 @@
       "biomas"
      ]
     }
+   ],
+   "hash": "069f5bf4edf13d61",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Constructing biomass pyramids from data not taught; only comparing."
    ]
   },
   "4.7.4.3.a": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u11-09",
      "coverage": "partial",
@@ -12322,6 +13357,13 @@
       "trophic"
      ]
     }
+   ],
+   "hash": "379071599e8249ed",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Biomass loss between trophic levels not taught in lesson."
    ]
   },
   "4.7.4.3.b": {
@@ -12368,9 +13410,9 @@
    ]
   },
   "4.7.4.3.c": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u11-09",
      "coverage": "partial",
@@ -12394,6 +13436,13 @@
       "transfer"
      ]
     }
+   ],
+   "hash": "3c5f2094103bb3f9",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Covers energy transfer efficiency, not biomass or the 10% figure."
    ]
   },
   "4.7.4.3.d": {
@@ -12460,9 +13509,9 @@
    ]
   },
   "4.7.4.3.g": {
-   "status": "proposed",
+   "status": "rejected",
    "confidence": "strong",
-   "lessons": [
+   "candidates": [
     {
      "id": "u11-09",
      "coverage": "partial",
@@ -12486,6 +13535,13 @@
       "transfer"
      ]
     }
+   ],
+   "hash": "ff1f9bc0c4e29e40",
+   "by": "agent:haiku",
+   "on": "2026-11-25",
+   "lessons": [],
+   "missing": [
+    "Energy loss taught, but effect on organism numbers is not."
    ]
   },
   "4.7.5.1.a": {
