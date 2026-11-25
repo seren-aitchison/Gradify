@@ -11,9 +11,13 @@
 //   consolidate  summary, key terms, the lesson's misconceptions
 //   prove        the hardest questions, as the final check
 //
-// Which block a question checks: a v2 lesson places it inside its block, or tags the block "H: Title @2". A v1
-// lesson keeps its questions at the end, tagged with objectives (M2@1:), so each objective goes to the block whose
-// words it shares most, and its questions follow it.
+// Which block a question checks, most trusted first (each check records its basis):
+//   "placed"   a v2 lesson puts the question inside its block
+//   "tagged"   the block is tagged with the objective the question tests ("H: Title @2", question "M2@2:")
+//   "matched"  a v1 lesson: the question's own words clearly match one block more than any other (counting only
+//              words that tell the blocks apart), and if it tests an objective (M2@1:), that objective's words match the
+//              same block. Anything less certain stays in practice:
+//              no check is better than a wrong one (owner, 25 Nov 2026), so a block with no confident check has none.
 const STOP = new Set("the and for with that this from into what which when where how why are was were their there these those your you can its it's than then them they have has had not but use used using also more most each other about between explain describe identify compare give state show".split(" "));
 const words = (s) => String(s || "").toLowerCase().replace(/\*\*|`|\^{|\}|_{/g, " ").match(/[a-z][a-z-]{2,}/g)?.filter((w) => !STOP.has(w)).map((w) => w.replace(/(ies|es|s|ing|ed|ly)$/, "")) || [];
 
@@ -38,41 +42,67 @@ export function conceptBlocks(L) {
 }
 const blockText = (B) => [B.title, B.hook, ...B.parts.map((p) => p.x || (p.items || []).join(" ") || (p.steps || []).join(" ") || (p.rows || []).map((r) => r.join(" ")).join(" ")), ...B.more].join(" ");
 
-/** which block teaches each objective (1-based objective → block index) */
+// a clear match: at least two shared words that tell the blocks apart (not in the title, not in most blocks), and
+// more of them than the next best block
+const MIN_SHARED = 2;
+function blockSets(L, blocks) {
+  const sets = blocks.map((B) => new Set(words(blockText(B)))), title = new Set(words(L.title)), df = new Map();
+  for (const set of sets) for (const w of set) df.set(w, (df.get(w) || 0) + 1);
+  const most = Math.max(1, Math.floor(blocks.length / 2));
+  return sets.map((set) => new Set([...set].filter((w) => !title.has(w) && (blocks.length === 1 || df.get(w) <= most))));
+}
+function bestBlock(ws, sets) {
+  const sc = sets.map((set) => ws.filter((w) => set.has(w)).length), top = Math.max(0, ...sc), bi = sc.indexOf(top);
+  return top >= MIN_SHARED && sc.filter((x) => x === top).length === 1 ? bi : -1;
+}
+
+/** which block teaches each objective: 1-based objective → { block, basis: "tagged" | "matched" }. Objectives with no
+ * clear block are left out (their questions go to practice). */
 export function objectiveBlocks(L, blocks = conceptBlocks(L)) {
   const map = new Map();
-  blocks.forEach((B, bi) => { for (const o of B.obj || []) if (!map.has(o)) map.set(o, bi); });
-  const bw = blocks.map((B) => new Set(words(blockText(B))));
+  blocks.forEach((B, bi) => { for (const o of B.obj || []) if (!map.has(o)) map.set(o, { block: bi, basis: "tagged" }); });
+  const bw = blockSets(L, blocks);
   L.objectives.forEach((text, k) => {
     const o = k + 1; if (map.has(o)) return;
-    const ow = [...new Set(words(text))];
-    let best = -1, bestScore = 0;
-    bw.forEach((set, bi) => { const s = ow.filter((w) => set.has(w)).length; if (s > bestScore) { best = bi; bestScore = s; } });
-    // nothing shared: the objectives run in teaching order, so spread them across the blocks
-    map.set(o, best >= 0 ? best : Math.min(blocks.length - 1, Math.floor((k * blocks.length) / Math.max(1, L.objectives.length))));
+    const bi = bestBlock([...new Set(words(text))], bw);
+    if (bi >= 0) map.set(o, { block: bi, basis: "matched" });
   });
   return map;
 }
+// what a question is about: its stem and its right answers (wrong options name other ideas on purpose, and an
+// explanation often contrasts with them, so neither is evidence of what the question tests)
+const qText = (Q) => [Q.q, Q.prompt, Q.stem, ...(Q.options || []).filter((x) => x?.correct).map((x) => x.text), typeof Q.answer === "string" ? Q.answer : null].filter((x) => typeof x === "string").join(" ");
 
 /** the lesson as the Learn mode's flow (see the top of this file) */
 export function lessonFlow(L, { checksPerBlock = 1 } = {}) {
   const blocks = conceptBlocks(L), objBlock = objectiveBlocks(L, blocks), qs = questionsOf(L), used = new Set();
   const hasSections = L.blocks.some((b) => b.t === "h"), placedInside = qs.some((q) => q.sec !== null && q.sec > 0 && q.sec < blocks.length);
-  // which block each question belongs to
+  const bw = blockSets(L, blocks);
+  // which block each question checks, and on what basis (see the top of this file); null: it's practice
   const home = (q) => {
-    if (placedInside && q.sec !== null && q.sec > 0 && q.sec <= blocks.length) return q.sec - 1;
-    for (const o of q.objectives) if (objBlock.has(o)) return objBlock.get(o);
-    return null;
+    if (placedInside && q.sec !== null && q.sec > 0 && q.sec <= blocks.length) return { block: q.sec - 1, basis: "placed" };
+    const own = bestBlock([...new Set(words(qText(q.Q)))], bw);
+    for (const o of q.objectives) {
+      const m = objBlock.get(o); if (!m) continue;
+      if (m.basis === "tagged") return m;
+      // a matched objective: the question itself must point at the same block
+      if (own === m.block) return m;
+    }
+    // a question tagged with no objective: its own words must point clearly at one block
+    return !q.objectives.length && own >= 0 ? { block: own, basis: "matched" } : null;
   };
   const byBlock = blocks.map(() => []);
-  for (const q of qs) { const h = home(q); if (h !== null && hasSections) byBlock[h].push(q); }
+  for (const q of qs) { const h = hasSections ? home(q) : null; if (h) byBlock[h.block].push({ ...q, basis: h.basis }); }
   const easiest = (a, b) => a.d - b.d || a.n - b.n;
   // the hardest questions are kept for the final check, so a block's check is an easier one when it has a choice
   const proveIds = new Set(qs.filter((q) => q.d >= 3).sort((a, b) => b.d - a.d || a.n - b.n).slice(0, 3).map((q) => q.n));
+  // a block takes a final-check question only when it has no other and at least one stays for the final check
+  let proveLeft = proveIds.size;
   const flowBlocks = blocks.map((B, bi) => {
-    const pool = byBlock[bi].slice().sort(easiest), pick = [...pool.filter((q) => !proveIds.has(q.n)), ...pool.filter((q) => proveIds.has(q.n))].slice(0, checksPerBlock);
+    const pool = byBlock[bi].slice().sort(easiest), pick = pool.filter((q) => !proveIds.has(q.n)).slice(0, checksPerBlock);
+    for (const q of pool) if (pick.length < checksPerBlock && proveIds.has(q.n) && proveLeft > 1) { pick.push(q); proveLeft--; }
     pick.forEach((q) => used.add(q.n));
-    return { ...B, index: bi, objectives: [...objBlock].filter(([, b]) => b === bi).map(([o]) => o).sort((a, b) => a - b), checks: pick };
+    return { ...B, index: bi, objectives: [...objBlock].filter(([, m]) => m.block === bi).map(([o]) => o).sort((a, b) => a - b), checks: pick };
   });
   const prove = qs.filter((q) => proveIds.has(q.n) && !used.has(q.n)); prove.forEach((q) => used.add(q.n));
   // a diagnostic needs questions to spare: up to two easy ones nobody else uses
@@ -101,4 +131,17 @@ export function lessonSteps(L, opts) {
 
 /** the pilot lessons that offer the step-by-step Learn mode on their lesson page (Lesson System Brief v2, Stage 2).
  * Any lesson opens in it at #/step/<id>; until the pilot gate is passed, only these show the button. */
+/** the final check's questions (the "prove" step), as indices into the lesson's questions: a lesson is complete, in
+ * any mode, once each has been tried (owner, 25 Nov 2026). Empty when the lesson has no level 3 questions. */
+export const finalCheck = (L) => lessonFlow(L).prove.map((q) => q.n);
+/** which of those the learner hasn't tried yet: keys are the questions' progress keys, in the lesson's order */
+export const untried = (keys, attempts, lesson) => { const t = new Set((attempts || []).filter((a) => a.lesson === lesson).map((a) => a.question?.id)); return keys.filter((k) => !t.has(k)); };
+
+/** how many blocks have a check, and on what basis: the honest measure of the adapter (docs/LESSON-SCHEMA.md) */
+export function checkCoverage(L) {
+  const F = lessonFlow(L), by = { placed: 0, tagged: 0, matched: 0 };
+  for (const B of F.blocks) for (const q of B.checks) by[q.basis]++;
+  return { blocks: F.blocks.length, checked: F.blocks.filter((B) => B.checks.length).length, ...by, version: F.version };
+}
+
 export const LEARN_PILOTS = { biology: ["u02-02"], maths: ["u03-07"], pharmacy: ["u04-06"] };   // chemistry u18 (medicinal chemistry) has no notes yet: PharmaGradify's SAR lesson stands in
