@@ -50,7 +50,7 @@ A topic is one section of a specification (AQA 4.1.1.1 *Eukaryotes and prokaryot
 
 | Step | Model (config `agent.models`) | What the subagent does |
 |---|---|---|
-| research | sonnet | Researches with web search and writes the brief |
+| research | sonnet | Finds pages with web search, opens each with `scripts/content/fetchtext.sh` (the web-fetch tool runs outside this environment's network proxy and can't reach most hosts), and writes the brief from pages it read |
 | write | opus | Writes the unit file from the packet only |
 | repair | opus | Writes changed lines only |
 | review | sonnet | A fresh subagent that never saw the writing, on a different model. It judges only against the requirements and brief, and writes `REV` lines |

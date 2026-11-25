@@ -549,3 +549,15 @@ test("a second subject from registry rows: AQA GCSE Chemistry queues with the sa
   const t = topicsFor("aqa-gcse-chemistry");
   assert.ok(t.length > 50 && t.every((x) => x.subject === "chemistry" && x.level === "GCSE" && x.reqs.every((r) => r.status === "official")));
 });
+
+test("a waiting research request is rebuilt each run, so one written by an older engine gets the ALLOW list", async () => {
+  const { writeFileSync, mkdirSync } = await import("node:fs");
+  const { advance } = await import("../scripts/content/agent.mjs");
+  const T = { ...TOPIC, id: "biology/test-stale-request", title: "Test stale request" }, dir = join(process.env.GRADIFY_OUT, "content/queue/biology/test-stale-request");
+  mkdirSync(dir, { recursive: true });
+  writeFileSync(join(dir, "research.req.txt"), `RESEARCH ${T.id} | levels=GCSE\nEND\n`);
+  const r = await advance(T);
+  assert.equal(r.actions[0].kind, "research");
+  assert.match(readFileSync(join(dir, "research.req.txt"), "utf8"), /^ALLOW openstax-biology-2e /m);
+  assert.match(r.actions[0].prompt, /fetchtext\.sh/);
+});
