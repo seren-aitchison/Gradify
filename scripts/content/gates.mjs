@@ -12,6 +12,7 @@ const QTAG = /^(M|TF|MS|SEQ|MATCH|SA|NUM)[123]?(#[a-z0-9-]+)?(@[\d,]+)?:/;
 const lineOf = (text, re) => { const i = text.split("\n").findIndex((l) => re.test(l)); return i < 0 ? null : i + 1; };
 const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 const issue = (code, line, note) => ({ code, line, note });
+const SRC_KINDS = ["legislation", "case", "rule", "guidance", "standard", "primary", "secondary"];
 const result = (gate, issues) => ({ gate, ok: !issues.length, issues });
 
 // ---------- 1. the parser accepts the file ----------
@@ -80,6 +81,15 @@ export function qaGate(L, text) {
     const k = norm(m.q); if (seen.has(k)) issues.push(issue("Q", where, "duplicate question")); seen.add(k);
   }
   if (text.length < 1200) issues.push(issue("QA", null, `lesson too short (${text.length} characters)`));
+  // the course's lesson standard (tests/sciences.test.mjs), so a filed lesson can be published without breaking it
+  const all = [...L.mcq.map((m) => m.Q), ...L.tasks];
+  if (all.length < 4) issues.push(issue("QA", null, `${all.length} questions: at least four`));
+  if (!all.some((q) => q.d === 3)) issues.push(issue("QA", null, "no hard (M3, level 3) reasoning question"));
+  if (new Set(all.map((q) => q.d)).size < 2) issues.push(issue("QA", null, "questions at only one difficulty level"));
+  for (const q of L.tasks) if (q.type !== "short" && (q.why || "").length <= 20) issues.push(issue("Q", at(q.q), "explanation too thin (20 characters or fewer)"));
+  if (L.blocks.filter((b) => ["p", "ul", "eq", "ex", "key", "pit"].includes(b.t)).length < 6) issues.push(issue("QA", null, "too thin: fewer than six paragraphs, lists, equations, examples, key points or pitfalls"));
+  for (const x of L.sources) if (x.kind && !SRC_KINDS.includes(x.kind)) issues.push(issue("QA", lineOf(text, new RegExp(`^SRC:\\s*${esc(x.cite.slice(0, 30))}`)), `source kind "${x.kind}" isn't one of ${SRC_KINDS.join(", ")}`));
+  for (const x of L.sources) if (x.url && !/^https:\/\//.test(x.url)) issues.push(issue("QA", lineOf(text, new RegExp(`^SRC:\\s*${esc(x.cite.slice(0, 30))}`)), "source link must be https"));
   return result("qa", issues);
 }
 

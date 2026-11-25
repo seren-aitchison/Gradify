@@ -2,6 +2,7 @@
 // Biology brief (lesson titles verbatim). Schools are units to the course engine, grouped into modules
 // ("> " lines) and into stages (TRACKS). Lesson ids are permanent (ids.js), u01-01 style, as for every Gradify course.
 import { parseSyllabus } from "../../course/syllabus.js";
+import { PUBLISHED } from "./published.js";   // lessons published by the content engine (scripts/content/publish.mjs)
 import { IDS, RETIRED } from "./ids.js";
 export const SYLLABUS = `
 1. Foundations of Biology
@@ -533,4 +534,7 @@ export const BLURBS = {
 };
 
 // the curriculum as schools, modules and lessons; lesson ids are u01-01 style and locked in ids.js
-export const UNITS = parseSyllabus(SYLLABUS, IDS, RETIRED);
+export const UNITS = parseSyllabus(PUBLISHED.syllabus ? `${SYLLABUS.trim()}\n${PUBLISHED.syllabus}` : SYLLABUS, IDS, RETIRED);
+for (const u of UNITS) if (u.id === PUBLISHED.id) u.published = true;
+if (PUBLISHED.track) TRACKS.push(PUBLISHED.track);
+if (PUBLISHED.n) BLURBS[PUBLISHED.n] = PUBLISHED.blurb;

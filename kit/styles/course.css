@@ -313,6 +313,12 @@ a.co-feat:hover { border-color: var(--line-strong); background: rgba(var(--ink-r
 .co-draft b { color: var(--fg); }
 
 /* lesson framing: objectives, prerequisites, summary, key terms, sources (kit/course/notes.js lessonFrame) */
+/* how a lesson was checked (TIER: in its notes): AI-checked or Expert-reviewed */
+.co-tier { display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: baseline; margin: 0 0 12px; padding: 8px 12px; border-radius: 12px; font-size: .9em; border: 1px solid var(--line); background: rgba(var(--ink-rgb), .03); }
+.co-tier b { font-weight: 700; }
+.co-tier-ai b { color: #b45309; }
+.co-tier-expert b { color: #047857; }
+@media (prefers-color-scheme: dark) { .co-tier-ai b { color: #fbbf24; } .co-tier-expert b { color: #34d399; } }
 .co-frame { display: grid; gap: 14px; margin: 0 0 22px; padding: 16px 18px; border: 1px solid var(--line); border-radius: 16px; background: rgba(var(--ink-rgb), .03); }
 .co-frame h3 { margin: 0 0 6px; font-size: 14px; letter-spacing: .02em; color: var(--fg); }
 .co-frame ul { margin: 0; padding-left: 18px; color: var(--mute); }

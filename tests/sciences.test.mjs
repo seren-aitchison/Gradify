@@ -18,8 +18,11 @@ for (const { c, dir, counts } of SUBJECTS) {
   const units = c.units, lessons = units.flatMap((u) => u.lessons), byId = new Map(lessons.map((l) => [l.id, l]));
 
   test(`${c.name}: every school and lesson from the brief, in order`, () => {
-    assert.deepEqual(units.map((u) => u.lessons.length), counts);
-    assert.deepEqual(units.map((u) => u.n), counts.map((_, i) => i + 1));
+    // the brief's schools, then (if any) the content engine's published unit (kit/courses/<subject>/published.js)
+    const brief = units.filter((u) => !u.published), extra = units.filter((u) => u.published);
+    assert.deepEqual(brief.map((u) => u.lessons.length), counts);
+    assert.deepEqual(brief.map((u) => u.n), counts.map((_, i) => i + 1));
+    assert.ok(extra.length <= 1 && extra.every((u) => u.n === counts.length + 1 && u.lessons.length), "at most one published unit, after the brief's schools");
     for (const u of units) assert.equal(new Set(u.lessons.map((l) => norm(l.title))).size, u.lessons.length, `school ${u.n} has no duplicate titles`);
   });
 

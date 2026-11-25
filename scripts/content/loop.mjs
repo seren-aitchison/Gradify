@@ -140,6 +140,7 @@ function finish(topic, rec) {
   const led = loadLedger(topic.subject), e = led.topics[topic.id] || { runs: 0, lessons: [] };
   e.runs++; e.lastRun = rec.date; e.reqHash = reqHash(topic.full || topic);
   e.file = `content/drafts/${topic.subject}/${topic.fw}/${slug(topic.title)}.txt`;
+  Object.assign(e, { title: topic.title, fw: topic.fw, section: topic.section });
   const byTitle = new Map((e.lessons || []).map((l) => [l.title, l]));
   for (const l of rec.lessons) byTitle.set(l.title, l);
   e.lessons = [...byTitle.values()];

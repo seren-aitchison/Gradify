@@ -48,6 +48,8 @@ Q: Where is the DNA in a prokaryotic cell? | In a single loop in the cytoplasm, 
 Q: Which is usually larger, a bacterium or an animal cell? | An animal cell
 M1@1: Where is the main DNA found in a bacterial cell? | In a single loop in the cytoplasm | Inside the nucleus of the cell | Inside the cell's chloroplasts | Inside the cell's mitochondria | Bacteria are prokaryotes, so they have no nucleus or other membrane-bound organelles; the DNA is a loop in the cytoplasm.
 M2@2: A cell is 2 micrometres long. What kind of cell is it most likely to be? | A prokaryotic cell | A plant leaf cell | An animal cheek cell | A human egg cell | Prokaryotic cells are usually 1 to 10 micrometres long; plant and animal cells are usually much larger than that.
+M3@1: An antibiotic damages a structure found only in cells without a nucleus. Which cells does it target? | Bacterial cells | Human skin cells | Plant leaf cells | Yeast cells | Bacteria are prokaryotes with no nucleus, while human, plant and yeast cells are all eukaryotic cells with a nucleus.
+TF2@2: A typical animal cell is larger than a typical bacterium. | true | Most bacteria are 1 to 10 micrometres long, while animal cells are usually 10 to 30 micrometres across.
 SUM: Prokaryotic cells have no nucleus and keep their DNA in a single loop.
 SUM: They are much smaller than eukaryotic cells.
 SRC: Open biology text | secondary | 2026-11-25 | https://openstax.org/books/biology-2e`;
@@ -101,7 +103,7 @@ test("gates run cheapest first and stop at the first failure", async () => {
   assert.equal(num.failed.gate, "num-dia"); assert.equal(num.failed.issues[0].line, 13);
   const noReq = await G.runGates(LESSON().replace(/^REQ:.*\n/m, ""), { reqs: [REQ] });
   assert.equal(noReq.failed.gate, "parse");
-  const untested = await G.runGates(LESSON().replace("M2@2:", "M2@1:"), { reqs: [REQ] });
+  const untested = await G.runGates(LESSON().replace("M2@2:", "M2@1:").replace("TF2@2:", "TF2@1:"), { reqs: [REQ] });
   assert.equal(untested.failed.gate, "coverage");
   assert.ok(untested.failed.issues.some((i) => /objective 2 has no question/.test(i.note)));
   const giveaway = await G.runGates(LESSON().replace("A prokaryotic cell | A plant leaf cell", "A prokaryotic cell, because it is between one and ten micrometres long | A plant leaf cell"), { reqs: [REQ] });
@@ -255,4 +257,27 @@ test("gates-only filing claims no review, and a failed research keeps every requ
   const bad = { ...TOPIC, id: "biology/test-no-brief", title: "Test no brief" };
   const f = await runTopic(bad, { ask: async () => "TOPIC x | levels=GCSE | checked=2026-11-25\nEND", askMany: async () => new Map() });
   assert.equal(f.status, "failed"); assert.deepEqual(f.uncovered, [REQ.id]);
+});
+
+test("publish: AI-checked and expert-reviewed drafts become a labelled course unit with permanent ids", async () => {
+  const { cpSync, mkdirSync } = await import("node:fs");
+  const dir = join(process.env.GRADIFY_OUT, "kit/courses/biology");
+  mkdirSync(join(dir, "notes"), { recursive: true });
+  for (const f of ["syllabus.js", "ids.js", "qa.js", "course.js"]) cpSync(new URL(`../kit/courses/biology/${f}`, import.meta.url), join(dir, f));
+  const { publish } = await import("../scripts/content/publish.mjs");
+  const r = await publish("biology");
+  assert.equal(r.unit, "u15");
+  // ai-verified lessons are published; expert-required, gates-only and edited ones are not; a repeated title is skipped
+  assert.deepEqual(r.added.map((x) => x.replace(/^u15-\d\d /, "")).sort(), ["Bacteria and size · AI-checked", "Prokaryotic cells · AI-checked"]);
+  assert.ok(r.skipped.some((x) => /gates-passed/.test(x)) && r.skipped.some((x) => /expert-required/.test(x)) && r.skipped.some((x) => /already published a lesson with this title/.test(x)));
+  const notes = readFileSync(join(dir, "notes/u15.js"), "utf8"), pub = readFileSync(join(dir, "published.js"), "utf8");
+  assert.match(notes, /## Prokaryotic cells\nTIER: AI-checked\n/);
+  assert.match(pub, /"n": 15/); assert.match(pub, /15\. Specification lessons\\n> /);
+  for (const f of ["syllabus.js", "ids.js", "qa.js", "course.js"]) assert.match(readFileSync(join(dir, f), "utf8"), /from "\.\/published\.js"/, `${f} imports the published unit`);
+  assert.match(readFileSync(join(dir, "course.js"), "utf8"), /\.\.\.\(PUBLISHED\.id \? \[PUBLISHED\.id\] : \[\]\)\]/);
+  // a second publish with nothing new changes nothing, and keeps the ids
+  const ids = JSON.parse(pub.match(/PUBLISHED = (\{[\s\S]*\});/)[1]).ids;
+  const again = await publish("biology");
+  assert.deepEqual([again.added, again.updated, again.hooks], [[], [], []]);
+  assert.deepEqual(JSON.parse(readFileSync(join(dir, "published.js"), "utf8").match(/PUBLISHED = (\{[\s\S]*\});/)[1]).ids, ids);
 });
