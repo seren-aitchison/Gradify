@@ -629,3 +629,10 @@ test("a fraction shown as a result is checked as a fraction", () => {
   assert.equal(G.checkArithmetic("> Area: 2 ÷ 50 = 1/20 of the cell").length, 1);
   assert.equal(G.checkArithmetic("> 3 × 4 = 13").length, 1);
 });
+
+test("a research request carries a requirement's whole text, not the 400-character asks", async () => {
+  const { researchRequest } = await import("../scripts/content/loop.mjs");
+  const long = "Gas exchange surfaces have features that help them work. ".repeat(10).trim();
+  const t = { ...TOPIC, reqs: [{ ...REQ, asks: long.slice(0, 400), text: long }] };
+  assert.ok(researchRequest(t).includes(long));
+});

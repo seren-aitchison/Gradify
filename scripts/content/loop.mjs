@@ -72,7 +72,8 @@ export function currentBrief(topic) {
   const c = checkBrief(text); return c.problems.length ? null : { brief: text, parsed: c.parsed, key: briefKey(topic) };
 }
 export const researchRequest = (topic, { old = null, problems = [] } = {}) => [`RESEARCH ${topic.id} | levels=${topic.level} | reqs=${topic.reqs.map((r) => r.id).join(",")} | ctry=${topic.country}`,
-  ...topic.reqs.map((r) => `REQ ${r.id} | ${String(r.asks).replace(/\s+/g, " ")}`),
+  // the whole statement (asks is cut at 400 characters): a researcher given half a requirement researches half of it
+  ...topic.reqs.map((r) => `REQ ${r.id} | ${String(r.text || r.asks).replace(/\s+/g, " ")}`),
   // only these publications may be cited: the brief is refused if any SRC isn't one of them (allowlistProblems)
   ...allowLines(), "ALLOWED ONLY: cite only sources under these URL prefixes; licence= comes from this list", ...(old ? ["EXISTING", old.replace(/^#.*\n/, "")] : []), ...(problems.length ? [`PROBLEMS ${problems.join("; ")}`, "Fix these and return the whole brief."] : []), "END"].join("\n");
 
