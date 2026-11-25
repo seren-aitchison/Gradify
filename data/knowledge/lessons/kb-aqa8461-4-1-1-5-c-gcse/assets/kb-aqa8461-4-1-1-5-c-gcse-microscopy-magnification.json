@@ -1,0 +1,40 @@
+{
+ "id": "kb-aqa8461-4-1-1-5-c-gcse-microscopy-magnification",
+ "renderer": "magnification",
+ "course": "knowledge",
+ "title": "Working out magnification",
+ "caption": "The cell is 60 µm across but 90 mm across in the image. Converting 90 mm to 90 000 µm and dividing by 60 µm gives a magnification of ×1500. The scale bar shows how long 20 µm is at this magnification.",
+ "alt": "An oval cell with a nucleus, a bracket above it marking the image length of 90 mm, a scale bar labelled 20 µm, and the calculation: 90 000 µm divided by 60 µm equals ×1500.",
+ "description": [
+  "The cell's image is 90 mm across.",
+  "Its real width is 60 µm.",
+  "90 mm = 90 000 µm, so magnification = 90 000 ÷ 60 = ×1500.",
+  "The scale bar is a third of the cell's width, because 20 µm is a third of 60 µm."
+ ],
+ "object": {
+  "name": "A human cheek cell",
+  "real": {
+   "value": 60,
+   "unit": "µm"
+  }
+ },
+ "image": {
+  "value": 90,
+  "unit": "mm"
+ },
+ "scaleBar": {
+  "value": 20,
+  "unit": "µm"
+ },
+ "claims": [
+  {
+   "type": "magnification",
+   "value": 1500
+  }
+ ],
+ "from": {
+  "item": "bio.microscopy.magnification",
+  "version": 1,
+  "form": "default"
+ }
+}

@@ -1,0 +1,432 @@
+{
+ "subject": "biology",
+ "topic": "Prokaryotic and eukaryotic cells",
+ "about": "Gradify's own explanations, written for the knowledge engine (2026-11-25) and checked against the sources named on each item; draft until a biology specialist reviews them. Forms give the GCSE and university wording of the same idea.",
+ "items": [
+  {
+   "id": "bio.cells.eukaryotic",
+   "kind": "definition",
+   "version": 1,
+   "status": "draft",
+   "title": "Eukaryotic cells",
+   "text": "Plant and animal cells are **eukaryotic cells**. Each has a cell membrane around its cytoplasm, and its genetic material is enclosed in a nucleus.",
+   "summary": "Eukaryotic cells (plant and animal cells) keep their DNA in a nucleus.",
+   "terms": [
+    {
+     "term": "Eukaryotic cell",
+     "definition": "A cell whose genetic material is enclosed in a nucleus, such as a plant or animal cell"
+    }
+   ],
+   "level": {
+    "from": "ks3",
+    "to": "pg"
+   },
+   "concepts": [
+    "cells",
+    "eukaryotes"
+   ],
+   "forms": [
+    {
+     "level": {
+      "from": "alevel",
+      "to": "pg"
+     },
+     "text": "**Eukaryotic cells** (animals, plants, fungi and protists) have a nucleus bounded by a double membrane, and other membrane-bound organelles such as mitochondria, endoplasmic reticulum and the Golgi apparatus. Their ribosomes are 80S, and most are 10–100 µm across.",
+     "summary": "Eukaryotic cells have a nucleus and membrane-bound organelles, 80S ribosomes, and are usually 10–100 µm across.",
+     "terms": [
+      {
+       "term": "Eukaryotic cell",
+       "definition": "A cell with a membrane-bound nucleus and other membrane-bound organelles"
+      }
+     ]
+    }
+   ],
+   "sources": [
+    {
+     "source": "openstax-biology-2e-4-2"
+    },
+    {
+     "source": "gradify-biology-u02-02"
+    }
+   ]
+  },
+  {
+   "id": "bio.cells.prokaryotic",
+   "kind": "definition",
+   "version": 1,
+   "status": "draft",
+   "title": "Prokaryotic cells",
+   "text": "Bacterial cells are **prokaryotic cells**. Like plant and animal cells they have cytoplasm and a cell membrane, which is surrounded by a cell wall. Unlike them, they have no nucleus: their DNA lies loose in the cytoplasm.",
+   "summary": "Prokaryotic (bacterial) cells have a cell membrane, cytoplasm and a cell wall, but no nucleus.",
+   "terms": [
+    {
+     "term": "Prokaryotic cell",
+     "definition": "A cell with no nucleus, such as a bacterial cell"
+    },
+    {
+     "term": "Cell wall",
+     "definition": "A layer outside the cell membrane that strengthens the cell and stops it bursting"
+    }
+   ],
+   "level": {
+    "from": "gcse",
+    "to": "pg"
+   },
+   "concepts": [
+    "prokaryotes",
+    "cells"
+   ],
+   "prereqs": [
+    "bio.cells.eukaryotic"
+   ],
+   "visual": {
+    "renderer": "cellmap",
+    "purpose": "the parts of a bacterial cell, labelled in the words the lesson uses",
+    "data": {
+     "cell": "prokaryote",
+     "labels": [
+      "cell wall",
+      "plasma membrane",
+      "cytoplasm",
+      "nucleoid",
+      "plasmid"
+     ],
+     "names": {
+      "plasma membrane": "cell membrane",
+      "nucleoid": "single loop of DNA",
+      "plasmid": "plasmid"
+     },
+     "claims": [
+      {
+       "type": "lacks",
+       "structures": [
+        "nucleus",
+        "mitochondrion"
+       ]
+      }
+     ]
+    },
+    "title": "A bacterial (prokaryotic) cell",
+    "caption": "A bacterial cell has a cell wall, a cell membrane and cytoplasm, like many other cells, but there is no nucleus: its DNA is a single loop lying in the cytoplasm. Many bacteria also have small rings of DNA called plasmids.",
+    "alt": "A rod-shaped bacterial cell with labels: cell wall, cell membrane, cytoplasm, single loop of DNA, and plasmid (small ring of DNA). There is no nucleus.",
+    "description": [
+     "The outer layer is the cell wall.",
+     "Inside it is the cell membrane, which surrounds the cytoplasm.",
+     "The DNA is a single loop in the cytoplasm, not inside a nucleus.",
+     "A plasmid is a small separate ring of DNA."
+    ]
+   },
+   "forms": [
+    {
+     "level": {
+      "from": "alevel",
+      "to": "pg"
+     },
+     "text": "**Prokaryotes**, bacteria and archaea, have no nucleus and no membrane-bound organelles. The structures found in a prokaryotic cell are a plasma membrane enclosing the cytoplasm, which contains 70S ribosomes and the chromosome; most have a cell wall outside the membrane (made of peptidoglycan in bacteria), and many also have a capsule, flagella or pili.",
+     "summary": "Prokaryotes have no nucleus or membrane-bound organelles; they have 70S ribosomes, usually a cell wall, and often a capsule, flagella or pili.",
+     "terms": [
+      {
+       "term": "Prokaryote",
+       "definition": "An organism whose cells have no nucleus and no membrane-bound organelles: bacteria and archaea"
+      },
+      {
+       "term": "Peptidoglycan",
+       "definition": "The polymer of sugars and short peptides that makes up bacterial cell walls"
+      },
+      {
+       "term": "Cell wall",
+       "definition": "A rigid layer outside the plasma membrane that gives the cell its shape and stops it bursting in dilute surroundings"
+      }
+     ],
+     "visual": null
+    }
+   ],
+   "sources": [
+    {
+     "source": "openstax-biology-2e-4-2"
+    },
+    {
+     "source": "gradify-biology-u02-02"
+    }
+   ]
+  },
+  {
+   "id": "bio.cells.bacterial-dna",
+   "kind": "fact",
+   "version": 1,
+   "status": "draft",
+   "title": "A bacterium's DNA",
+   "text": "A bacterium's genetic material is a single loop of DNA, lying free in the cytoplasm rather than inside a nucleus.",
+   "summary": "A bacterium's main DNA is a single loop, free in the cytoplasm.",
+   "level": {
+    "from": "gcse",
+    "to": "pg"
+   },
+   "concepts": [
+    "prokaryotes",
+    "dna"
+   ],
+   "prereqs": [
+    "bio.cells.prokaryotic"
+   ],
+   "forms": [
+    {
+     "level": {
+      "from": "alevel",
+      "to": "pg"
+     },
+     "text": "A prokaryote stores its genes on a single circular chromosome, packed with proteins into a region of the cytoplasm called the **nucleoid**. To copy its genetic material, replication starts at one origin and runs both ways round the loop; the cell then divides by binary fission.",
+     "summary": "Prokaryotes store their genes on one circular chromosome in the nucleoid and copy it from a single origin before binary fission.",
+     "terms": [
+      {
+       "term": "Nucleoid",
+       "definition": "The region of a prokaryotic cell's cytoplasm that holds its chromosome, not enclosed by a membrane"
+      }
+     ]
+    }
+   ],
+   "sources": [
+    {
+     "source": "openstax-biology-2e-4-2"
+    },
+    {
+     "source": "gradify-biology-u02-02"
+    }
+   ]
+  },
+  {
+   "id": "bio.cells.plasmids",
+   "kind": "definition",
+   "version": 1,
+   "status": "draft",
+   "title": "Plasmids",
+   "text": "Many bacteria also have one or more **plasmids**: small rings of DNA separate from the main loop, which carry a few extra genes.",
+   "summary": "Plasmids are small extra rings of DNA in many bacteria.",
+   "terms": [
+    {
+     "term": "Plasmid",
+     "definition": "A small ring of DNA, separate from the main DNA, found in many bacteria"
+    }
+   ],
+   "level": {
+    "from": "gcse",
+    "to": "pg"
+   },
+   "concepts": [
+    "prokaryotes",
+    "dna"
+   ],
+   "prereqs": [
+    "bio.cells.bacterial-dna"
+   ],
+   "forms": [
+    {
+     "level": {
+      "from": "alevel",
+      "to": "pg"
+     },
+     "text": "**Plasmids** are small circular DNA molecules that replicate independently of the chromosome. They often carry genes that help in particular conditions, such as antibiotic resistance, and can pass between bacteria by conjugation, which spreads those genes; biologists use them as vectors in genetic engineering.",
+     "summary": "Plasmids replicate independently, often carry genes such as antibiotic resistance, and can pass between bacteria.",
+     "terms": [
+      {
+       "term": "Plasmid",
+       "definition": "A small circular DNA molecule that replicates independently of the chromosome"
+      }
+     ]
+    }
+   ],
+   "sources": [
+    {
+     "source": "openstax-biology-2e-4-2"
+    },
+    {
+     "source": "gradify-biology-u02-02"
+    }
+   ]
+  },
+  {
+   "id": "bio.cells.prokaryote-size",
+   "kind": "fact",
+   "version": 1,
+   "status": "draft",
+   "title": "How big prokaryotic cells are",
+   "text": "Bacterial cells are much smaller in comparison with plant and animal cells: a typical bacterium is about 1–5 µm long, while most plant and animal cells are about 10–100 µm across.",
+   "summary": "Bacteria (about 1–5 µm) are much smaller than plant and animal cells (about 10–100 µm).",
+   "examples": [
+    "*E. coli*, a gut bacterium: about 2 µm long",
+    "A human cheek cell: about 60 µm across"
+   ],
+   "level": {
+    "from": "gcse",
+    "to": "pg"
+   },
+   "concepts": [
+    "prokaryotes",
+    "cells",
+    "size"
+   ],
+   "prereqs": [
+    "bio.cells.prokaryotic",
+    "bio.diffusion.definition"
+   ],
+   "forms": [
+    {
+     "level": {
+      "from": "alevel",
+      "to": "pg"
+     },
+     "text": "Prokaryotic cells are typically 1–5 µm long, about a tenth of the size of a eukaryotic cell. Small size suits prokaryotic life: it gives a large surface area to volume ratio, so diffusion alone can supply the whole cell with nutrients and remove wastes quickly, which supports fast growth and division.",
+     "summary": "Small size (1–5 µm) gives prokaryotes a large surface area to volume ratio, so diffusion supplies the whole cell quickly."
+    }
+   ],
+   "sources": [
+    {
+     "source": "openstax-biology-2e-4-2"
+    },
+    {
+     "source": "gradify-biology-u02-02"
+    }
+   ]
+  },
+  {
+   "id": "bio.cells.telling-apart",
+   "kind": "application",
+   "version": 1,
+   "status": "draft",
+   "title": "Telling prokaryotic and eukaryotic cells apart",
+   "text": "To decide what kind of cell you are looking at, check for a nucleus first, then a cell wall.",
+   "cases": [
+    {
+     "situation": "A cell has a cell wall, no nucleus and a single loop of DNA",
+     "outcome": "It is a prokaryotic cell, such as a bacterium",
+     "why": "It has no nucleus: its DNA lies loose in the cytoplasm."
+    },
+    {
+     "situation": "A cell has a nucleus and a cell membrane but no cell wall",
+     "outcome": "It is a eukaryotic animal cell",
+     "why": "It has a nucleus, and animal cells have no cell wall."
+    },
+    {
+     "situation": "A cell has a nucleus, a cell wall and chloroplasts",
+     "outcome": "It is a eukaryotic plant cell",
+     "why": "It has a nucleus, and only plant (and algal) cells have chloroplasts."
+    },
+    {
+     "situation": "A cell is about 2 µm long and has small rings of DNA in its cytoplasm",
+     "outcome": "It is almost certainly a bacterium",
+     "why": "Its size and plasmids are typical of a prokaryotic cell."
+    }
+   ],
+   "level": {
+    "from": "gcse",
+    "to": "gcse"
+   },
+   "concepts": [
+    "prokaryotes",
+    "cells"
+   ],
+   "prereqs": [
+    "bio.cells.prokaryotic"
+   ],
+   "sources": [
+    {
+     "source": "openstax-biology-2e-4-2"
+    },
+    {
+     "source": "gradify-biology-u02-02"
+    }
+   ],
+   "ask": "What kind of cell is it?"
+  },
+  {
+   "id": "bio.cells.mistake-no-dna",
+   "kind": "misconception",
+   "version": 1,
+   "status": "draft",
+   "title": "Bacteria do have DNA",
+   "wrong": "Bacteria have no DNA because they have no nucleus.",
+   "right": "Bacteria do have DNA, just not inside a nucleus: a loop of it lies in the cytoplasm, often with plasmids as well.",
+   "level": {
+    "from": "gcse",
+    "to": "alevel"
+   },
+   "concepts": [
+    "prokaryotes",
+    "dna"
+   ],
+   "sources": [
+    {
+     "source": "openstax-biology-2e-4-2"
+    }
+   ]
+  },
+  {
+   "id": "bio.cells.mistake-cellulose",
+   "kind": "misconception",
+   "version": 1,
+   "status": "draft",
+   "title": "Not every cell wall is cellulose",
+   "wrong": "A bacterial cell wall is made of cellulose, like a plant cell wall.",
+   "right": "Plant cell walls are made of cellulose; bacterial cell walls are made of a different material.",
+   "level": {
+    "from": "gcse",
+    "to": "gcse"
+   },
+   "concepts": [
+    "prokaryotes",
+    "cells"
+   ],
+   "sources": [
+    {
+     "source": "openstax-biology-2e-4-2"
+    }
+   ]
+  },
+  {
+   "id": "bio.cells.mistake-plasmid-main",
+   "kind": "misconception",
+   "version": 1,
+   "status": "draft",
+   "title": "Plasmids are extra DNA",
+   "wrong": "Plasmids are the bacterium's main DNA.",
+   "right": "The main DNA is the large loop; plasmids are small extra rings with only a few genes.",
+   "level": {
+    "from": "gcse",
+    "to": "alevel"
+   },
+   "concepts": [
+    "prokaryotes",
+    "dna"
+   ],
+   "sources": [
+    {
+     "source": "gradify-biology-u02-02"
+    }
+   ]
+  },
+  {
+   "id": "bio.cells.mistake-no-ribosomes",
+   "kind": "misconception",
+   "version": 1,
+   "status": "draft",
+   "title": "Prokaryotes have ribosomes",
+   "wrong": "Prokaryotes have no ribosomes, because they have no organelles.",
+   "right": "Prokaryotes lack membrane-bound organelles, but they have ribosomes (70S, smaller than the 80S ribosomes of eukaryotes), which aren't bounded by a membrane.",
+   "level": {
+    "from": "alevel",
+    "to": "pg"
+   },
+   "concepts": [
+    "prokaryotes"
+   ],
+   "sources": [
+    {
+     "source": "openstax-biology-2e-4-2"
+    },
+    {
+     "source": "gradify-biology-u02-02"
+    }
+   ]
+  }
+ ]
+}

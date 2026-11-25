@@ -1,0 +1,42 @@
+# example · level: undergraduate · from kit/courses/chemistry/notes/u11.js · selected by a structure score, not yet expert-approved
+## Solid-state inorganic chemistry
+LV: Year 1 · Chemical reasoning
+S: Solid-state chemistry studies extended inorganic solids. This lesson explores structures, defects and properties of inorganic solids.
+O: Describe common ionic structure types
+O: Explain point defects and non-stoichiometry
+O: Relate solid structures to useful properties
+H: Structure types
+- **Rock salt** (NaCl): 6:6 coordination.
+- **Caesium chloride**: 8:8 coordination.
+- **Fluorite** (CaF₂): 8:4 coordination.
+- **Perovskite** (CaTiO₃): ABX₃, important in electronics and solar cells.
+D: chem-perovskite
+H: Defects
+- **Schottky** defects: missing cation-anion pairs.
+- **Frenkel** defects: an ion moved to an interstitial site.
+- **Non-stoichiometric** compounds such as Fe₀.₉₅O have variable composition.
+- Defects allow **ionic conduction** in solid electrolytes.
+P: Radius ratio helps predict structure: larger cations fit more anions around them. Perovskite oxides show ferroelectric and superconducting properties, while lead halide perovskites are promising solar cell materials. Zirconia doped with yttria conducts oxide ions in fuel cells and oxygen sensors.
+X: Ionic conduction in doped zirconia.
+> Y³⁺ replaces some Zr⁴⁺ in ZrO₂.
+> To balance charge, some oxide sites are left vacant.
+> Oxide ions hop between vacancies at high temperature.
+> The solid conducts electricity through moving O²⁻ ions.
+K: Inorganic solids adopt structure types such as rock salt, caesium chloride, fluorite and perovskite, contain Schottky and Frenkel defects and non-stoichiometry and these features give useful properties such as ionic conduction.
+!: Thinking all crystals are perfect. Real solids always contain defects, which control many properties.
+EV: established | Point defects enable ionic conductivity in solids (West, 2014).
+T: Schottky defect | A missing pair of oppositely charged ions
+T: Frenkel defect | An ion displaced to an interstitial site
+T: Perovskite | A structure type with formula ABX₃
+SUM: Key structure types.
+SUM: Defects.
+SUM: Properties from structure.
+SRC: West A. R., Solid State Chemistry and its Applications, 2nd edition, Wiley | secondary | 2014
+SRC: Kojima A. et al., "Organometal halide perovskites as visible-light sensitizers for photovoltaic cells", Journal of the American Chemical Society 131(17), 6050–6051 | primary | 2009
+Q: What is a Schottky defect? | A missing cation-anion pair.
+Q: What is the general formula of a perovskite? | ABX₃.
+M1#chemistry-u11-20-q1@1: What is the coordination in the rock salt structure? | 6:6 | 8:8 | 8:4 | 4:4 | Each ion is surrounded octahedrally by six of the other.
+M2#chemistry-u11-20-q2@2: Why does yttria-doped zirconia conduct oxide ions? | Doping creates oxide vacancies that ions can hop into | It contains free electrons that carry the current | It melts to a liquid at room temperature | The yttrium ions move rapidly through the lattice | Charge balance leaves vacant anion sites.
+MATCH1#chemistry-u11-20-q3@2: Match each structure to its coordination. | Rock salt = 6:6 ; Caesium chloride = 8:8 ; Fluorite = 8:4 ; Zinc blende = 4:4 | Ion sizes determine coordination.
+M3#chemistry-u11-20-q4@3: Why is Fe₀.₉₅O non-stoichiometric? | Some iron is Fe³⁺, so fewer iron ions balance the oxide charge | It contains no oxygen ions in its crystal lattice | Iron and oxygen must always combine in a 1:1 ratio | It is a small covalent molecule, not an ionic solid | Mixed oxidation states allow variable composition.
+SA2#chemistry-u11-20-q5@1,3: Describe the structures, defects and properties of inorganic solids. | Ionic solids adopt structure types such as rock salt (6:6), caesium chloride (8:8), fluorite (8:4) and perovskite ABX₃, influenced by ion size ratios. Real solids contain Schottky defects, missing ion pairs, and Frenkel defects, displaced ions, and some are non-stoichiometric, such as Fe₀.₉₅O, because of mixed oxidation states. Defects enable ionic conduction, as oxide vacancies in yttria-doped zirconia allow use in fuel cells. Perovskites are used in electronics and solar cells. | Structure types ; Schottky ; Frenkel ; Non-stoichiometry ; Applications

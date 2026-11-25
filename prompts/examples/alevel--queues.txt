@@ -1,0 +1,49 @@
+# example · level: alevel · from kit/courses/computing/notes/u05.js · selected by a structure score, not yet expert-approved
+## Queues
+LV: A level · Application
+S: A queue is a first-in, first-out (FIFO) collection: items join at the rear and leave from the front. This lesson covers queue operations, a linear array implementation with front and rear pointers, and where queues are used.
+O: Describe the queue operations enqueue, dequeue, is_empty and is_full
+O: Implement a linear queue with an array and front and rear pointers, and trace it
+O: Explain the weakness of a linear array queue and identify uses of queues
+H: First in, first out
+P: A **queue** adds items at the **rear** with **enqueue** and removes them from the **front** with **dequeue**, so items leave in the order they arrived. Peek returns the front item without removing it.
+P: In a **linear queue** in an array, a front pointer marks the first item and a rear pointer the last. Enqueue increments rear and stores the item; dequeue reads the item at front and increments front. Items never move, so both operations are O(1).
+X: Trace a linear queue of size 5 (front = 0, rear = −1) after enqueue(4), enqueue(7), enqueue(2), dequeue(), enqueue(9).
+> enqueue(4): rear = 0. enqueue(7): rear = 1. enqueue(2): rear = 2. Queue 4, 7, 2.
+> dequeue() returns 4; front = 1.
+> enqueue(9): rear = 3. Queue 7, 2, 9 in positions 1 to 3.
+> Position 0 is now wasted: once rear reaches 4, the queue reports full even though position 0 is free.
+K: A queue removes items in arrival order; a linear array queue is simple but wastes the space at the front as items are dequeued.
+H: Uses and implementations
+- **Print queues** and **task scheduling** in an operating system.
+- **Keyboard buffers** and network packet buffers.
+- **Breadth-first search**.
+- Simulations of real queues (checkouts, traffic).
+- In Python, `collections.deque` gives O(1) appends and pops at both ends; `list.pop(0)` is O(n) because every item shifts.
+!: Using `list.pop(0)` for a large queue in Python. Each dequeue shifts every remaining item; use collections.deque instead.
+EV: established | Queue operations take O(1) time with a circular array, linked list or deque.
+EV: established | Python's documentation recommends collections.deque for queues because removing from the front of a list is slow.
+T: Queue | A first-in, first-out collection: items join at the rear and leave from the front
+T: Enqueue | The operation that adds an item to the rear of a queue
+T: Dequeue | The operation that removes and returns the item at the front of a queue
+SUM: A queue is FIFO: enqueue at the rear, dequeue from the front.
+SUM: A linear array queue wastes space as the front advances; circular queues and deques fix this.
+SRC: Python Software Foundation, The Python Standard Library, "collections": deque objects | standard | 2024 | https://docs.python.org/3/library/collections.html
+SRC: OCR, A Level Computer Science H446 specification, section 1.4.2 "Data structures" | standard | 2015
+Q: What does FIFO mean? | First in, first out: items leave in the order they arrived.
+Q: Why is collections.deque better than a list for a queue in Python? | Removing from the front of a list shifts every item, O(n); deque removes from either end in O(1).
+M1#computing-u05-04-q1@1: In a queue, where are new items added? | At the rear | At the front | In the middle | At a random position | Enqueue adds at the rear; dequeue removes from the front.
+M2#computing-u05-04-q2@2: An empty queue does enqueue(P), enqueue(Q), dequeue(), enqueue(R), dequeue(). Which item remains? | R | P | Q | None | P leaves first, then Q, so only R remains.
+TF1#computing-u05-04-q3@3: In a linear array queue, positions freed by dequeue are automatically reused for new items. | false | The rear only moves forward, so freed positions at the front are wasted; a circular queue wraps round to reuse them.
+M3#computing-u05-04-q4@3: Why does an operating system use a queue for print jobs? | Jobs should be printed in the order they were submitted | The most recent job should always print first | Jobs must be sorted by size before printing | Queues use no memory at all | Fairness requires first come, first served, which is FIFO.
+SA3#computing-u05-04-q5@2,3: Compare stacks and queues, giving one application of each and explaining why that structure suits it. | A stack is LIFO: items are added and removed at the top. It suits undo in a word processor, because the most recent action must be undone first. A queue is FIFO: items join at the rear and leave from the front. It suits a print queue, because jobs should be printed in submission order. Both have O(1) operations when implemented properly. | Defines a stack as LIFO ; Gives a stack application with reason ; Defines a queue as FIFO ; Gives a queue application with reason ; Notes O(1) operations or implementation
+Q: At which end of a queue are items removed? | The front.
+Q: Describe enqueue in a linear array queue. | Increment the rear pointer and store the item at that position.
+Q: Describe dequeue in a linear array queue. | Read the item at the front pointer, then increment the front pointer.
+Q: What is the main drawback of a linear array queue? | Space at the front is wasted as items are dequeued, so it can report full while slots are free.
+Q: Why is list.pop(0) slow for a large queue in Python? | Every remaining item shifts along, so each dequeue is O(n).
+Q: Name two uses of queues in an operating system. | Print queues and task scheduling.
+Q: Which graph search algorithm uses a queue? | Breadth-first search.
+Q: What kinds of buffer use queues? | Keyboard buffers and network packet buffers.
+Q: Why are enqueue and dequeue O(1) in a linear array queue? | Items never move; only the pointers change.
+Q: What fixes the wasted space problem of a linear array queue? | A circular queue or a deque.

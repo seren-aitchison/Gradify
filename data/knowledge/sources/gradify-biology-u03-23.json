@@ -1,0 +1,265 @@
+{
+ "id": "gradify-biology-u03-23",
+ "title": "Gradify Biology, lesson u03-23: Enzymes",
+ "publisher": "Gradify",
+ "authors": [
+  "Gradify"
+ ],
+ "course": "biology",
+ "unit": "u03",
+ "lesson": "Enzymes",
+ "url": "kit/courses/biology/notes/u03.js",
+ "licence": "gradify",
+ "level": "ug",
+ "type": "gradify-notes",
+ "retrievedOn": "2026-11-24",
+ "version": "as of 2026-11-24",
+ "sha256": "7c825198f68d34095c7175df7af3877edf4bbca29aeba338fef658cc3739e3a5",
+ "bytes": 141107,
+ "licenceName": "Gradify's own work",
+ "category": "commercial-adapt",
+ "uses": {
+  "adapt": true,
+  "commercial": true,
+  "verify": true
+ },
+ "policy": "reuse",
+ "attribution": false,
+ "parsedTitle": "Enzymes",
+ "passages": [
+  {
+   "id": "L926",
+   "kind": "LV",
+   "hash": "4d5e0c06be4f61c6",
+   "words": 4
+  },
+  {
+   "id": "L927",
+   "kind": "S",
+   "hash": "747abf170393ad95",
+   "words": 26
+  },
+  {
+   "id": "L928",
+   "kind": "O",
+   "hash": "baa200d305296127",
+   "words": 5
+  },
+  {
+   "id": "L929",
+   "kind": "O",
+   "hash": "2d5073c87c53737c",
+   "words": 6
+  },
+  {
+   "id": "L930",
+   "kind": "O",
+   "hash": "4bf5c1b3d125ea72",
+   "words": 5
+  },
+  {
+   "id": "L931",
+   "kind": "H",
+   "hash": "0b1f8ef85fe05b62",
+   "words": 3
+  },
+  {
+   "id": "L932",
+   "kind": "P",
+   "hash": "84b305d1edc565a1",
+   "words": 11
+  },
+  {
+   "id": "L933",
+   "kind": "P",
+   "hash": "ad48fa02cdb2e920",
+   "words": 9
+  },
+  {
+   "id": "L934",
+   "kind": "P",
+   "hash": "f54842b4f4945783",
+   "words": 12
+  },
+  {
+   "id": "L935",
+   "kind": "P",
+   "hash": "9b7a3043bf45287f",
+   "words": 13
+  },
+  {
+   "id": "L936",
+   "kind": "H",
+   "hash": "3a351218abfb7840",
+   "words": 4
+  },
+  {
+   "id": "L937",
+   "kind": "P",
+   "hash": "0f39502a3ca074bc",
+   "words": 11
+  },
+  {
+   "id": "L938",
+   "kind": "P",
+   "hash": "cb5f6f7eabea67a6",
+   "words": 16
+  },
+  {
+   "id": "L939",
+   "kind": "P",
+   "hash": "662e2d95cbe30035",
+   "words": 13
+  },
+  {
+   "id": "L940",
+   "kind": "P",
+   "hash": "b9b260b4606197d0",
+   "words": 11
+  },
+  {
+   "id": "L941",
+   "kind": "P",
+   "hash": "b8ad7cfae96b35ce",
+   "words": 63
+  },
+  {
+   "id": "L942",
+   "kind": "X",
+   "hash": "1937b2a4a9115b8f",
+   "words": 3
+  },
+  {
+   "id": "L943",
+   "kind": "P",
+   "hash": "e064325e4eb1389d",
+   "words": 9
+  },
+  {
+   "id": "L944",
+   "kind": "P",
+   "hash": "9f85b95831deb7a8",
+   "words": 10
+  },
+  {
+   "id": "L945",
+   "kind": "P",
+   "hash": "55469a11daa398fb",
+   "words": 14
+  },
+  {
+   "id": "L946",
+   "kind": "P",
+   "hash": "94123e3025271e81",
+   "words": 11
+  },
+  {
+   "id": "L947",
+   "kind": "K",
+   "hash": "b076d66d82bfc056",
+   "words": 36
+  },
+  {
+   "id": "L948",
+   "kind": "!",
+   "hash": "0c38ba3467a966b5",
+   "words": 17
+  },
+  {
+   "id": "L949",
+   "kind": "EV",
+   "hash": "0f7a982a95f9be38",
+   "words": 20
+  },
+  {
+   "id": "L950",
+   "kind": "T",
+   "hash": "21d58edb4df5aaa2",
+   "words": 8
+  },
+  {
+   "id": "L951",
+   "kind": "T",
+   "hash": "f4b145f332090211",
+   "words": 10
+  },
+  {
+   "id": "L952",
+   "kind": "T",
+   "hash": "375229eb549234c1",
+   "words": 9
+  },
+  {
+   "id": "L953",
+   "kind": "SUM",
+   "hash": "c3f9a1447a50fe68",
+   "words": 2
+  },
+  {
+   "id": "L954",
+   "kind": "SUM",
+   "hash": "5aac02baf1ff65be",
+   "words": 3
+  },
+  {
+   "id": "L955",
+   "kind": "SUM",
+   "hash": "0d76e558e7de9cd9",
+   "words": 3
+  },
+  {
+   "id": "L956",
+   "kind": "SRC",
+   "hash": "229e9aa6b879dfaf",
+   "words": 15
+  },
+  {
+   "id": "L957",
+   "kind": "SRC",
+   "hash": "03c24758fbc129f8",
+   "words": 12
+  },
+  {
+   "id": "L958",
+   "kind": "Q",
+   "hash": "7af38679d1f8f7f0",
+   "words": 13
+  },
+  {
+   "id": "L959",
+   "kind": "Q",
+   "hash": "43cc532ffe484439",
+   "words": 14
+  },
+  {
+   "id": "L960",
+   "kind": "P",
+   "hash": "c285c05f17312360",
+   "words": 42
+  },
+  {
+   "id": "L961",
+   "kind": "P",
+   "hash": "740c448f8e948e7b",
+   "words": 33
+  },
+  {
+   "id": "L962",
+   "kind": "P",
+   "hash": "85f4186cf48106fa",
+   "words": 34
+  },
+  {
+   "id": "L963",
+   "kind": "P",
+   "hash": "5154660778203d3c",
+   "words": 45
+  },
+  {
+   "id": "L964",
+   "kind": "P",
+   "hash": "04bd45f50c2e1dd4",
+   "words": 98
+  }
+ ]
+}

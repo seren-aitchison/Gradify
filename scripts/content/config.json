@@ -1,0 +1,33 @@
+{
+ "_doc": "The content engine's settings (docs/CONTENT-ENGINE.md). Changing a model, mode or budget is a config change, never a code change.",
+ "mode": "fast",
+ "models": {
+  "map": "claude-haiku-5-5",
+  "research": "claude-sonnet-5-5",
+  "write": "claude-opus-5-5",
+  "review": "claude-sonnet-5-5",
+  "repair": "claude-opus-5-5"
+ },
+ "effort": { "map": "low", "research": "medium", "write": "high", "review": "high", "repair": "medium" },
+ "maxTokens": { "map": 2000, "research": 16000, "write": 32000, "review": 2000, "repair": 6000 },
+ "webSearchMaxUses": 12,
+ "concurrency": 6,
+ "repairs": 3,
+ "budgetUsd": 25,
+ "runMinutes": 30,
+ "topicsPerRun": 6,
+ "batchWaitMinutes": 300,
+ "pricesUsdPerMTok": {
+  "claude-opus-5-5": [4, 20, 0.2, 5],
+  "claude-sonnet-5-5": [2, 10, 0.1, 2.5],
+  "claude-haiku-5-5": [0.1, 0.5, 0.01, 0.125]
+ },
+ "waves": [
+  { "wave": 1, "subjects": ["maths", "english", "biology", "chemistry", "physics", "science"], "ages": [5, 18] },
+  { "wave": 2, "subjects": ["*"], "ages": [0, 18] },
+  { "wave": 3, "subjects": ["*"], "ages": [18, 99] }
+ ],
+ "frameworks": ["aqa-gcse-biology"],
+ "highRisk": { "types": ["prac", "num"], "keywords": ["safety", "hazard", "drug", "dose", "medicine", "disease", "allergy", "mental health", "self-harm", "pregnan", "first aid", "electric shock", "acid", "flammable"] },
+ "examplesPerLevel": 2
+}

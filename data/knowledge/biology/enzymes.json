@@ -1,0 +1,464 @@
+{
+ "subject": "biology",
+ "topic": "Enzymes and how they work",
+ "about": "Gradify's own explanations, written for the knowledge engine (2026-11-25) and checked against the sources named on each item; draft until a biology specialist reviews them.",
+ "items": [
+  {
+   "id": "bio.enzymes.definition",
+   "kind": "definition",
+   "version": 1,
+   "status": "draft",
+   "title": "Enzymes",
+   "text": "**Enzymes** are biological catalysts: proteins that speed up chemical reactions in living organisms without being used up, so each enzyme molecule can be used again and again.",
+   "summary": "Enzymes are biological catalysts: proteins that speed up reactions without being used up.",
+   "examples": [
+    "Amylase breaks starch down into sugars.",
+    "Proteases break proteins down into amino acids."
+   ],
+   "terms": [
+    {
+     "term": "Enzyme",
+     "definition": "A protein that acts as a biological catalyst, speeding up a reaction without being used up"
+    },
+    {
+     "term": "Catalyst",
+     "definition": "A substance that speeds up a chemical reaction without being used up"
+    }
+   ],
+   "level": {
+    "from": "ks3",
+    "to": "pg"
+   },
+   "concepts": [
+    "enzymes"
+   ],
+   "forms": [
+    {
+     "level": {
+      "from": "alevel",
+      "to": "pg"
+     },
+     "text": "**Enzymes** are biological catalysts, almost all globular proteins, that speed up reactions by lowering their activation energy. They are unchanged at the end of each reaction, so a single enzyme molecule can catalyse thousands of reactions a second.",
+     "summary": "Enzymes are globular proteins that catalyse reactions by lowering activation energy, unchanged at the end.",
+     "terms": [
+      {
+       "term": "Enzyme",
+       "definition": "A biological catalyst, usually a globular protein, that lowers the activation energy of a reaction"
+      }
+     ],
+     "examples": []
+    }
+   ],
+   "sources": [
+    {
+     "source": "openstax-biology-2e-6-5"
+    },
+    {
+     "source": "gradify-biology-u03-23"
+    }
+   ]
+  },
+  {
+   "id": "bio.enzymes.active-site",
+   "kind": "concept",
+   "version": 1,
+   "status": "draft",
+   "title": "The active site",
+   "text": "Each enzyme has an **active site**: a region of its surface with a particular shape. The molecule an enzyme acts on, its **substrate**, binds there.",
+   "summary": "The substrate binds at the enzyme's active site, a region with a particular shape.",
+   "terms": [
+    {
+     "term": "Active site",
+     "definition": "The region of an enzyme where its substrate binds and the reaction happens"
+    },
+    {
+     "term": "Substrate",
+     "definition": "The molecule an enzyme acts on"
+    }
+   ],
+   "level": {
+    "from": "gcse",
+    "to": "pg"
+   },
+   "concepts": [
+    "enzymes",
+    "active-site"
+   ],
+   "prereqs": [
+    "bio.enzymes.definition"
+   ],
+   "forms": [
+    {
+     "level": {
+      "from": "alevel",
+      "to": "pg"
+     },
+     "text": "The **active site** is a small cleft or pocket on the enzyme, formed by a few amino acids whose side chains bind the substrate and catalyse its reaction. Its shape and chemistry are set by the protein's tertiary structure."
+    }
+   ],
+   "sources": [
+    {
+     "source": "openstax-biology-2e-6-5"
+    },
+    {
+     "source": "gradify-biology-u03-24"
+    }
+   ]
+  },
+  {
+   "id": "bio.enzymes.specificity",
+   "kind": "fact",
+   "version": 1,
+   "status": "draft",
+   "title": "Enzymes are specific",
+   "text": "Enzymes are **specific**: each one catalyses only one reaction, or one type of reaction, because only a substrate whose shape is complementary to its active site can fit into it.",
+   "summary": "Each enzyme is specific to one reaction, because only a substrate with a complementary shape fits its active site.",
+   "examples": [
+    "Amylase breaks down starch, but not proteins or fats."
+   ],
+   "terms": [
+    {
+     "term": "Specific",
+     "definition": "Describes an enzyme that catalyses only one reaction, because only one substrate fits its active site"
+    }
+   ],
+   "level": {
+    "from": "gcse",
+    "to": "pg"
+   },
+   "concepts": [
+    "enzymes",
+    "active-site"
+   ],
+   "prereqs": [
+    "bio.enzymes.active-site"
+   ],
+   "forms": [
+    {
+     "level": {
+      "from": "alevel",
+      "to": "pg"
+     },
+     "text": "**Enzyme specificity** comes from the active site's shape and from the chemical interactions its amino acids make with the substrate: hydrogen bonds, ionic attractions and hydrophobic contacts. Only a substrate that matches both binds well enough to react, so enzymes can even tell apart mirror-image forms of a molecule.",
+     "terms": [
+      {
+       "term": "Enzyme specificity",
+       "definition": "An enzyme's ability to catalyse the reaction of only one substrate, or a narrow group, set by the shape and chemistry of its active site"
+      }
+     ],
+     "examples": []
+    }
+   ],
+   "sources": [
+    {
+     "source": "openstax-biology-2e-6-5"
+    },
+    {
+     "source": "gradify-biology-u03-24"
+    }
+   ]
+  },
+  {
+   "id": "bio.enzymes.lock-and-key",
+   "kind": "mechanism",
+   "version": 1,
+   "status": "draft",
+   "title": "How an enzyme works: the lock and key model",
+   "text": "The lock and key theory is a simplified model of how an enzyme works: the substrate fits the active site like a key in a lock.",
+   "steps": [
+    "The substrate collides with the enzyme's active site.",
+    "Because their shapes are complementary, the substrate fits into the active site, forming an enzyme-substrate complex.",
+    "The reaction happens while the substrate is held in the active site: it is broken down or joined to another molecule.",
+    "The products are a different shape, so they leave the active site.",
+    "The enzyme is unchanged and its active site is free to bind another substrate molecule."
+   ],
+   "summary": "In the lock and key model the substrate fits the complementary active site, forms an enzyme-substrate complex, reacts, and the products leave the enzyme unchanged.",
+   "terms": [
+    {
+     "term": "Enzyme-substrate complex",
+     "definition": "An enzyme with its substrate bound in the active site"
+    },
+    {
+     "term": "Lock and key model",
+     "definition": "A simplified model of enzyme action in which the substrate fits a complementary active site like a key in a lock"
+    }
+   ],
+   "level": {
+    "from": "gcse",
+    "to": "pg"
+   },
+   "concepts": [
+    "enzymes",
+    "active-site"
+   ],
+   "prereqs": [
+    "bio.enzymes.active-site",
+    "bio.enzymes.specificity"
+   ],
+   "visual": {
+    "renderer": "inducedfit",
+    "purpose": "the substrate fitting a complementary active site, reacting, and the products leaving an unchanged enzyme",
+    "data": {
+     "substrate": {
+      "w": 40,
+      "h": 46
+     },
+     "products": [
+      {
+       "w": 22
+      },
+      {
+       "w": 18
+      }
+     ],
+     "models": [
+      {
+       "name": "lock and key",
+       "before": 40,
+       "after": 40
+      }
+     ]
+    },
+    "title": "The lock and key model",
+    "caption": "The substrate fits the active site because their shapes are complementary, forming an enzyme-substrate complex. After the reaction the products leave, and the enzyme is unchanged and can be used again.",
+    "alt": "The lock and key model in three stages: an enzyme with an empty active site and a substrate of complementary shape; the substrate held in the active site; two products leaving an unchanged enzyme.",
+    "description": [
+     "An enzyme with an active site, and a substrate whose shape fits it.",
+     "The substrate binds in the active site: an enzyme-substrate complex.",
+     "The reaction splits the substrate into two products, which leave.",
+     "The enzyme is the same shape as before."
+    ]
+   },
+   "forms": [
+    {
+     "level": {
+      "from": "alevel",
+      "to": "pg"
+     },
+     "text": "In the lock and key model, the formation of an enzyme-substrate complex needs no change in shape: the active site is treated as rigid and already complementary to the substrate. The model explains specificity, but not how binding itself helps the reaction along, or why some enzymes bind a range of related substrates.",
+     "summary": "The lock and key model treats the active site as rigid and already complementary to the substrate.",
+     "visual": null
+    }
+   ],
+   "sources": [
+    {
+     "source": "openstax-biology-2e-6-5"
+    },
+    {
+     "source": "gradify-biology-u03-24"
+    }
+   ]
+  },
+  {
+   "id": "bio.enzymes.induced-fit",
+   "kind": "mechanism",
+   "version": 1,
+   "status": "draft",
+   "title": "The induced fit model",
+   "text": "The induced fit model, now preferred, says the active site is flexible.",
+   "steps": [
+    "The substrate binds to an active site that is close to, but not exactly, complementary to it.",
+    "Binding causes the active site to change shape slightly, moulding around the substrate to form the enzyme-substrate complex.",
+    "The closer fit puts strain on bonds in the substrate and brings reacting groups together, lowering the activation energy.",
+    "The products are released and the active site returns to its original shape."
+   ],
+   "summary": "In induced fit, the active site changes shape as the substrate binds, straining its bonds and lowering the activation energy.",
+   "terms": [
+    {
+     "term": "Induced fit model",
+     "definition": "A model of enzyme action in which the active site changes shape slightly as the substrate binds, giving a closer fit"
+    }
+   ],
+   "level": {
+    "from": "alevel",
+    "to": "pg"
+   },
+   "concepts": [
+    "enzymes",
+    "active-site"
+   ],
+   "prereqs": [
+    "bio.enzymes.lock-and-key"
+   ],
+   "sources": [
+    {
+     "source": "openstax-biology-2e-6-5"
+    },
+    {
+     "source": "gradify-biology-u03-24"
+    }
+   ]
+  },
+  {
+   "id": "bio.enzymes.activation-energy",
+   "kind": "concept",
+   "version": 1,
+   "status": "draft",
+   "title": "Activation energy",
+   "text": "**Activation energy** is the energy reacting molecules need before they can react. An enzyme provides a different route for the reaction with a lower activation energy, so many more molecules react each second at body temperature.",
+   "summary": "Enzymes lower the activation energy of a reaction.",
+   "terms": [
+    {
+     "term": "Activation energy",
+     "definition": "The minimum energy reacting molecules need for a reaction to happen"
+    }
+   ],
+   "level": {
+    "from": "alevel",
+    "to": "pg"
+   },
+   "concepts": [
+    "enzymes"
+   ],
+   "prereqs": [
+    "bio.enzymes.definition"
+   ],
+   "sources": [
+    {
+     "source": "openstax-biology-2e-6-5"
+    },
+    {
+     "source": "gradify-biology-u03-23"
+    }
+   ]
+  },
+  {
+   "id": "bio.enzymes.denaturation",
+   "kind": "fact",
+   "version": 1,
+   "status": "draft",
+   "title": "Denaturation",
+   "text": "High temperatures and extreme pH change the shape of an enzyme's active site, so the substrate no longer fits and the enzyme stops working. The enzyme is **denatured**, and this is usually permanent.",
+   "summary": "Heat and extreme pH change the active site's shape, so the enzyme is denatured and stops working.",
+   "terms": [
+    {
+     "term": "Denatured",
+     "definition": "Describes an enzyme whose active site has changed shape, so its substrate no longer fits"
+    }
+   ],
+   "level": {
+    "from": "gcse",
+    "to": "pg"
+   },
+   "concepts": [
+    "enzymes",
+    "active-site"
+   ],
+   "prereqs": [
+    "bio.enzymes.active-site"
+   ],
+   "forms": [
+    {
+     "level": {
+      "from": "alevel",
+      "to": "pg"
+     },
+     "text": "Heat and extreme pH break the hydrogen bonds and ionic bonds that hold an enzyme's tertiary structure, so the active site loses its shape and the substrate can no longer bind: the enzyme is **denatured**.",
+     "terms": [
+      {
+       "term": "Denaturation",
+       "definition": "The loss of a protein's tertiary structure, and so of its function, when the bonds holding it break"
+      }
+     ]
+    }
+   ],
+   "sources": [
+    {
+     "source": "openstax-biology-2e-6-5"
+    },
+    {
+     "source": "gradify-biology-u03-23"
+    }
+   ]
+  },
+  {
+   "id": "bio.enzymes.mistake-killed",
+   "kind": "misconception",
+   "version": 1,
+   "status": "draft",
+   "title": "Enzymes aren't killed",
+   "wrong": "High temperatures kill enzymes.",
+   "right": "Enzymes are molecules, not living things, so they can't be killed: heat changes the shape of the active site and denatures them.",
+   "level": {
+    "from": "gcse",
+    "to": "alevel"
+   },
+   "concepts": [
+    "enzymes"
+   ],
+   "sources": [
+    {
+     "source": "openstax-biology-2e-6-5"
+    }
+   ]
+  },
+  {
+   "id": "bio.enzymes.mistake-used-up",
+   "kind": "misconception",
+   "version": 1,
+   "status": "draft",
+   "title": "Enzymes aren't used up",
+   "wrong": "An enzyme is used up in the reaction it catalyses.",
+   "right": "An enzyme is unchanged at the end of the reaction, so it can catalyse the same reaction again and again.",
+   "level": {
+    "from": "gcse",
+    "to": "pg"
+   },
+   "concepts": [
+    "enzymes"
+   ],
+   "sources": [
+    {
+     "source": "openstax-biology-2e-6-5"
+    },
+    {
+     "source": "gradify-biology-u03-23"
+    }
+   ]
+  },
+  {
+   "id": "bio.enzymes.mistake-same-shape",
+   "kind": "misconception",
+   "version": 1,
+   "status": "draft",
+   "title": "Complementary, not the same",
+   "wrong": "The substrate is the same shape as the active site.",
+   "right": "The substrate's shape is complementary to the active site, fitting into it the way a key fits a lock, not identical to it.",
+   "level": {
+    "from": "gcse",
+    "to": "alevel"
+   },
+   "concepts": [
+    "enzymes",
+    "active-site"
+   ],
+   "sources": [
+    {
+     "source": "openstax-biology-2e-6-5"
+    }
+   ]
+  },
+  {
+   "id": "bio.enzymes.mistake-induced-permanent",
+   "kind": "misconception",
+   "version": 1,
+   "status": "draft",
+   "title": "Induced fit isn't permanent",
+   "wrong": "In induced fit, the enzyme changes shape permanently.",
+   "right": "The active site changes shape only while the substrate is bound; it returns to its original shape when the products are released.",
+   "level": {
+    "from": "alevel",
+    "to": "pg"
+   },
+   "concepts": [
+    "enzymes",
+    "active-site"
+   ],
+   "sources": [
+    {
+     "source": "gradify-biology-u03-24"
+    }
+   ]
+  }
+ ]
+}

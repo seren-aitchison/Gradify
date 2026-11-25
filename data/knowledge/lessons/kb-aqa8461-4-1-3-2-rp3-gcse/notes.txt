@@ -1,0 +1,97 @@
+## Osmosis
+S: This practical measures how the mass of plant tissue changes in sugar (or salt) solutions of different concentrations, and uses the results to estimate the concentration of the tissue's own cells.
+LV: GCSE
+O: Plan and carry out investigating osmosis in plant tissue, and analyse and evaluate the results
+O: Calculate percentage change in mass
+O: Interpret potato cylinders in sugar solutions
+PRE: Osmosis
+PRE: Diffusion
+PRE: Solutes, solvents and solutions
+PRE: Partially permeable membranes
+H: Aim
+P: To investigate how the concentration of a sugar solution affects the change in mass of potato tissue, and to estimate the concentration at which the tissue neither gains nor loses water.
+P: **Prediction:** Potato cylinders will gain mass in dilute solutions and lose mass in concentrated ones; somewhere in between there will be no change.
+H: Equipment
+- A potato
+- A cork borer and a ruler (or a chip cutter)
+- A scalpel and a white tile
+- Boiling tubes (or test tubes) in a rack, labelled
+- Sucrose solutions: 0 (distilled water), 0.2, 0.4, 0.6, 0.8 and 1.0 mol/dm³
+- Sugar (sucrose) or salt solutions: 0 (distilled water), 0.2, 0.4, 0.6, 0.8 and 1.0 mol/dm³
+- A top-pan balance reading to 0.01 g
+- Paper towels
+- A timer
+H: Variables
+- **Independent variable** (what you change): The concentration of the sugar solution
+- **Dependent variable** (what you measure): The percentage change in mass of the potato cylinder
+- **Control variables** (kept the same): The volume of solution in each tube; The time the cylinders are left in the solutions; The size and surface area of each cylinder; The temperature; Using cylinders from the same potato
+H: Method
+- **1.** Use the cork borer to cut cylinders from the same potato, and trim them with the scalpel on the tile to the same length (for example 3 cm), removing any skin.
+- **2.** Blot each cylinder gently with a paper towel and record its starting mass.
+- **3.** Put the same volume (for example 10 cm³) of each concentration into a labelled tube.
+- **4.** Put one cylinder in each tube and start the timer; leave them for the same time (for example 30 minutes, or overnight), at room temperature.
+- **5.** Remove each cylinder, blot it gently in the same way, and record its final mass.
+- **6.** Calculate the percentage change in mass for each cylinder.
+- **7.** Repeat with more cylinders at each concentration and calculate a mean for each.
+P: Why some steps matter:
+- *Blot each cylinder before weighing it:* Liquid on the surface would add to the mass without having entered the cells
+- *Use percentage change, not change in mass:* The cylinders start at slightly different masses, and percentage change makes them comparable
+- *Cut all the cylinders from the same potato:* Different potatoes can have cells of different concentrations
+- *Leave every tube for the same time:* The longer a cylinder is left, the more water can move, up to equilibrium
+H: Safety
+SAFE: Cut away from your fingers on a white tile, and carry the scalpel and cork borer point down.
+SAFE: Wipe up spills straight away: sugar solutions make the floor slippery.
+SAFE: Don't eat any of the potato or drink the solutions in the laboratory.
+H: Recording results
+P: Record your results in a table with a row for each concentration and its repeats:
+- Concentration of sugar solution (mol/dm³) · Starting mass (g) · Final mass (g) · Change in mass (g) · Percentage change in mass (%)
+H: Analysing results
+- Work out the percentage change in mass for each cylinder, then the mean for each concentration.
+- Plot the mean percentage change (y-axis) against concentration (x-axis), with zero in the middle of the y-axis, and draw a line of best fit.
+- Read off where the line crosses zero: at that concentration the solution has the same concentration of water as the potato cells, so there is no net movement.
+P: To compare pieces of tissue that started at different masses, work out the percentage change in mass. A gain means water entered by osmosis; a loss means water left.
+E: percentage change in mass = (final mass − initial mass) ÷ initial mass × 100
+X: A cylinder of potato has a mass of 2.50 g. After 30 minutes in a sugar solution its mass is 2.80 g. Find the percentage change in mass, and say what it shows.
+> Change in mass = 2.80 − 2.50 = +0.30 g.
+> Percentage change = 0.30 ÷ 2.50 × 100 = +12%.
+> The potato gained mass, so water entered its cells by osmosis: the solution had a higher concentration of water than the potato cells.
+P: **Potato cylinders in sugar solutions.** A student left potato cylinders in sugar solutions for 30 minutes and worked out the mean percentage change in mass at each concentration.
+P: These are illustrative data, made up for practice: they are not real measurements.
+- Concentration of sugar solution (mol/dm³) · Mean percentage change in mass (%)
+- 0 · 18.2
+- 0.2 · 7.9
+- 0.4 · -3.1
+- 0.6 · -11.8
+- 0.8 · -19.6
+- 1 · -24
+D: kb-aqa8461-4-1-3-2-rp3-gcse-osmosis-rp-tissue-data
+- The more concentrated the solution, the more mass the potato lost.
+- In the most dilute solutions the cylinders gained mass: water entered their cells by osmosis.
+- The line crosses zero at about 0.37 mol/dm³, so the potato cells' contents are about as concentrated as a 0.37 mol/dm³ sugar solution.
+H: Evaluating the investigation
+- Blotting is a source of error: blotting harder or more lightly changes the measured mass. Blot every cylinder the same way.
+- Water can evaporate from the tubes if they are left a long time: cover them.
+- Using more concentrations near where the line crosses zero gives a more precise estimate.
+- Repeating and finding a mean makes anomalies easier to spot; an anomalous result should be repeated, not just ignored.
+!: "Water moves from a high concentration to a low concentration." Say which concentration you mean: water moves from a high concentration of water (a dilute solution) to a low concentration of water (a concentrated solution). The two are opposites, so leaving it out makes the answer ambiguous.
+!: "You can compare the cylinders by their change in mass in grams." Cylinders start at different masses, so compare the percentage change in mass: the same change in grams is a bigger share of a lighter cylinder.
+H: Where this leads
+P: The rest of AQA GCSE Biology 4.1.3.2 (Osmosis) has its own lessons: 4.1.3.2.a, 4.1.3.2.b, 4.1.3.2.c.
+P: Later, at A level and university: water potential; water potential of a cell; aquaporins; hypotonic, isotonic and hypertonic.
+T: Independent variable | The variable you change on purpose in an investigation
+T: Dependent variable | The variable you measure, to see how it responds
+T: Control variable | A variable kept the same so it can't affect the results
+T: Percentage change in mass | The change in mass divided by the starting mass, times 100
+SUM: This practical measures how the mass of plant tissue changes in sugar (or salt) solutions of different concentrations, and uses the results to estimate the concentration of the tissue's own cells.
+SUM: Where the line of best fit crosses zero change in mass, the solution's concentration matches the tissue's.
+SRC: OpenStax, Rice University, Biology 2e, section 5.2: Passive Transport (Mary Ann Clark, Matthew Douglas, Jung Choi), Creative Commons Attribution-NonCommercial-ShareAlike 4.0: used to check facts, not reproduced | secondary | 2026-11-24 | https://openstax.org/books/biology-2e/pages/5-2-passive-transport
+TF1#kb-aqa8461-4-1-3-2-rp3-gcse-q1@1: You can compare the cylinders by their change in mass in grams. | false | Cylinders start at different masses, so compare the percentage change in mass: the same change in grams is a bigger share of a lighter cylinder.
+TF1#kb-aqa8461-4-1-3-2-rp3-gcse-q2@1: Water moves from a high concentration to a low concentration. | false | Say which concentration you mean: water moves from a high concentration of water (a dilute solution) to a low concentration of water (a concentrated solution). The two are opposites, so leaving it out makes the answer ambiguous.
+NUM2#kb-aqa8461-4-1-3-2-rp3-gcse-q3@2: A piece of plant tissue has a mass of 2.51 g. After an hour in a solution its mass is 2.64 g. What is its percentage change in mass, to 1 decimal place? | 5.2 | 0.1 | % | (2.64 − 2.51) ÷ 2.51 × 100 = 5.2%: the tissue gained water, so the solution had a higher concentration of water than its cells.
+M1#kb-aqa8461-4-1-3-2-rp3-gcse-q4@1,2: In this investigation, what is the independent variable? | The concentration of the sugar solution | The time the cylinders are left in the solutions | The percentage change in mass of the potato cylinder | The volume of solution in each tube | The independent variable is the one you change on purpose: the concentration of the sugar solution.
+M1#kb-aqa8461-4-1-3-2-rp3-gcse-q5@1,2: What is the dependent variable? | The percentage change in mass of the potato cylinder | The concentration of the sugar solution | The time the cylinders are left in the solutions | The volume of solution in each tube | The dependent variable is the one you measure: the percentage change in mass of the potato cylinder.
+MS2#kb-aqa8461-4-1-3-2-rp3-gcse-q6@1: Which of these should be kept the same (control variables)? | The volume of solution in each tube; The time the cylinders are left in the solutions; The size and surface area of each cylinder | The concentration of the sugar solution; The percentage change in mass of the potato cylinder; The colour of the tubes | Everything except the independent variable must be kept the same so the test is fair; the dependent variable is what you measure.
+SEQ2#kb-aqa8461-4-1-3-2-rp3-gcse-q7@1: Put these steps of the method in order. | Cut cylinders of the same length from one potato; Blot each cylinder and record its starting mass; Put one cylinder in each tube of solution; Leave all the tubes for the same time; Blot each cylinder and record its final mass; Calculate the percentage change in mass | You need each cylinder's starting mass before it goes into the solution, and its final mass after the same time in every tube, to calculate the change.
+M2#kb-aqa8461-4-1-3-2-rp3-gcse-q8@1: Why should you cut all the cylinders from the same potato? | Different potatoes can have cells of different concentrations | The cylinders start at slightly different masses, and percentage change makes them comparable | The longer a cylinder is left, the more water can move, up to equilibrium | Liquid on the surface would add to the mass without having entered the cells | Different potatoes can have cells of different concentrations.
+M2#kb-aqa8461-4-1-3-2-rp3-gcse-q9@1: Why should you use percentage change, not change in mass? | The cylinders start at slightly different masses, and percentage change makes them comparable | The longer a cylinder is left, the more water can move, up to equilibrium | Different potatoes can have cells of different concentrations | Liquid on the surface would add to the mass without having entered the cells | The cylinders start at slightly different masses, and percentage change makes them comparable.
+NUM3#kb-aqa8461-4-1-3-2-rp3-gcse-q10@2,3: Use the line of best fit to estimate the concentration of sugar solution at which the mean percentage change in mass would be zero. | 0.37 | 0.05 | mol/dm³ | Where the line crosses zero, there is no net gain or loss: about 0.37 mol/dm³. At that concentration the solution has the same concentration of water as the tissue.

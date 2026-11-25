@@ -68,3 +68,7 @@ Specifications are the awarding bodies' copyright. AQA's says: "All rights reser
 - **Course and topic pages**: "This unit covers AQA GCSE Biology 4.1.1–4.1.3" (only verified links).
 - **Smart Plan**: schedule the statements that are developing or not started before the exam date.
 - **Progress**: a specification checklist with the learner's standing on each statement.
+
+## Beyond mapping: building lessons from requirements
+
+Mapping existing lessons is one use of the imported specifications. The knowledge engine (`docs/knowledge/README.md`) uses each statement as a production instruction: it assembles a lesson for that statement, at its level, from Gradify's subject knowledge base, with a checked diagram, generated questions and an automated QA record, then waits for expert review.

@@ -1,0 +1,271 @@
+{
+ "id": "gradify-biology-u03-24",
+ "title": "Gradify Biology, lesson u03-24: Enzyme-substrate interactions",
+ "publisher": "Gradify",
+ "authors": [
+  "Gradify"
+ ],
+ "course": "biology",
+ "unit": "u03",
+ "lesson": "Enzyme-substrate interactions",
+ "url": "kit/courses/biology/notes/u03.js",
+ "licence": "gradify",
+ "level": "ug",
+ "type": "gradify-notes",
+ "retrievedOn": "2026-11-24",
+ "version": "as of 2026-11-24",
+ "sha256": "7c825198f68d34095c7175df7af3877edf4bbca29aeba338fef658cc3739e3a5",
+ "bytes": 141107,
+ "licenceName": "Gradify's own work",
+ "category": "commercial-adapt",
+ "uses": {
+  "adapt": true,
+  "commercial": true,
+  "verify": true
+ },
+ "policy": "reuse",
+ "attribution": false,
+ "parsedTitle": "Enzyme-substrate interactions",
+ "passages": [
+  {
+   "id": "L967",
+   "kind": "LV",
+   "hash": "75711d4b03f3689e",
+   "words": 4
+  },
+  {
+   "id": "L968",
+   "kind": "S",
+   "hash": "dc1ad12c26c8e4a7",
+   "words": 25
+  },
+  {
+   "id": "L969",
+   "kind": "O",
+   "hash": "6ab7c052930c1828",
+   "words": 6
+  },
+  {
+   "id": "L970",
+   "kind": "O",
+   "hash": "f84fbe55e2879646",
+   "words": 9
+  },
+  {
+   "id": "L971",
+   "kind": "O",
+   "hash": "3a05994031bcefc9",
+   "words": 3
+  },
+  {
+   "id": "L972",
+   "kind": "H",
+   "hash": "03df2b275aeb6bca",
+   "words": 3
+  },
+  {
+   "id": "L973",
+   "kind": "P",
+   "hash": "f2d21f69839ef63e",
+   "words": 12
+  },
+  {
+   "id": "L974",
+   "kind": "P",
+   "hash": "e522c0149849855c",
+   "words": 8
+  },
+  {
+   "id": "L975",
+   "kind": "P",
+   "hash": "c6d65b441d0d36ca",
+   "words": 12
+  },
+  {
+   "id": "L976",
+   "kind": "P",
+   "hash": "be1a1ca7a3523d70",
+   "words": 14
+  },
+  {
+   "id": "L977",
+   "kind": "D",
+   "hash": "eb457afbe69553ff",
+   "words": 1
+  },
+  {
+   "id": "L978",
+   "kind": "H",
+   "hash": "826412e6f154b903",
+   "words": 2
+  },
+  {
+   "id": "L979",
+   "kind": "P",
+   "hash": "5249db0f99b0d73c",
+   "words": 18
+  },
+  {
+   "id": "L980",
+   "kind": "P",
+   "hash": "9f0fac65f4ce0583",
+   "words": 15
+  },
+  {
+   "id": "L981",
+   "kind": "P",
+   "hash": "468abd7fcdd9473a",
+   "words": 13
+  },
+  {
+   "id": "L982",
+   "kind": "P",
+   "hash": "afaa8465c1503fa4",
+   "words": 11
+  },
+  {
+   "id": "L983",
+   "kind": "P",
+   "hash": "fd20b535993108fa",
+   "words": 60
+  },
+  {
+   "id": "L984",
+   "kind": "X",
+   "hash": "2c71eb0d93982400",
+   "words": 4
+  },
+  {
+   "id": "L985",
+   "kind": "P",
+   "hash": "de009facebd965ab",
+   "words": 8
+  },
+  {
+   "id": "L986",
+   "kind": "P",
+   "hash": "fec0e9464e8c31ce",
+   "words": 11
+  },
+  {
+   "id": "L987",
+   "kind": "P",
+   "hash": "49ddb61e71504047",
+   "words": 10
+  },
+  {
+   "id": "L988",
+   "kind": "P",
+   "hash": "8c4fe9260cfc07a1",
+   "words": 9
+  },
+  {
+   "id": "L989",
+   "kind": "K",
+   "hash": "f0257cc0d5949c55",
+   "words": 43
+  },
+  {
+   "id": "L990",
+   "kind": "!",
+   "hash": "e8d66e2f54179d4c",
+   "words": 23
+  },
+  {
+   "id": "L991",
+   "kind": "EV",
+   "hash": "8bcdef7ed994d823",
+   "words": 18
+  },
+  {
+   "id": "L992",
+   "kind": "T",
+   "hash": "591f0417afa07c65",
+   "words": 13
+  },
+  {
+   "id": "L993",
+   "kind": "T",
+   "hash": "a64009f505b9a9d1",
+   "words": 17
+  },
+  {
+   "id": "L994",
+   "kind": "T",
+   "hash": "d5533748b512f969",
+   "words": 17
+  },
+  {
+   "id": "L995",
+   "kind": "SUM",
+   "hash": "7fd6c298659a1438",
+   "words": 4
+  },
+  {
+   "id": "L996",
+   "kind": "SUM",
+   "hash": "21638866cd3641cd",
+   "words": 6
+  },
+  {
+   "id": "L997",
+   "kind": "SUM",
+   "hash": "c3011a5fb1bef25c",
+   "words": 3
+  },
+  {
+   "id": "L998",
+   "kind": "SRC",
+   "hash": "45dded309ad4a6a2",
+   "words": 20
+  },
+  {
+   "id": "L1000",
+   "kind": "Q",
+   "hash": "3e8d35054354e6c8",
+   "words": 19
+  },
+  {
+   "id": "L1001",
+   "kind": "Q",
+   "hash": "533d9da5eb487563",
+   "words": 11
+  },
+  {
+   "id": "L1002",
+   "kind": "P",
+   "hash": "315249dc1cc9863d",
+   "words": 43
+  },
+  {
+   "id": "L1003",
+   "kind": "P",
+   "hash": "d311a22e21a62f3a",
+   "words": 54
+  },
+  {
+   "id": "L1004",
+   "kind": "P",
+   "hash": "b6543f0da6f25cfc",
+   "words": 31
+  },
+  {
+   "id": "L1005",
+   "kind": "P",
+   "hash": "1f3b8dfe139fe792",
+   "words": 47
+  },
+  {
+   "id": "L1006",
+   "kind": "P",
+   "hash": "92376c46221b69f3",
+   "words": 108
+  }
+ ],
+ "duplicates": [
+  {
+   "id": "L999",
+   "duplicateOf": "gradify-biology-u03-23#L956"
+  }
+ ]
+}

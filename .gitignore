@@ -17,3 +17,8 @@ data/growth/inputs/
 data/curriculum/specs/
 data/curriculum/sources/
 data/curriculum/review/
+# sources retrieved by the knowledge engine: text whose licence may not allow redistribution stays local
+data/knowledge/raw/
+
+# content engine: chat replies pasted in for gradify ingest (local only)
+content/inbox/

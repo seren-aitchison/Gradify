@@ -1,0 +1,48 @@
+# example · level: gcse · from kit/courses/history/notes/u16.js · selected by a structure score, not yet expert-approved
+## The European Reformation
+LV: GCSE and A level · Application
+S: In 1517 Martin Luther's protest against indulgences began a movement that split Western Christianity. This lesson explains Luther's ideas, the spread of Protestantism through print and princes, the work of Calvin, and the Catholic response.
+O: Explain why Luther challenged the Catholic Church
+O: Describe how Protestantism spread across Europe
+O: Evaluate the success of the Catholic Reformation
+H: Luther
+P: In 1517 the friar Johann Tetzel was selling **indulgences**, which promised to reduce time in purgatory, to raise money for St Peter's in Rome. Martin Luther, a monk and professor at Wittenberg, published his **Ninety-Five Theses** on 31 October 1517. He came to argue that salvation came through faith alone, that the Bible was the only authority, and that all believers were priests. At the **Diet of Worms** in 1521 he refused to recant.
+H: Spread
+- **Printing** spread Luther's pamphlets and his German Bible quickly and widely.
+- **Princes** protected reformers and took control of churches in their lands.
+- **Huldrych Zwingli** led reform in Zurich, and **John Calvin** in Geneva, whose Institutes (1536) shaped Reformed churches across Europe.
+- The **Peace of Augsburg** (1555) allowed each German prince to choose Lutheranism or Catholicism for his lands.
+H: The Catholic Reformation
+P: The **Council of Trent** (1545 to 1563) reaffirmed Catholic doctrine and reformed the training of priests. The **Jesuits**, founded by Ignatius of Loyola in 1540, built schools and sent missionaries across Europe and the world. The Inquisition and the Index of forbidden books tried to stop Protestant ideas.
+X: How successful was the Catholic Reformation?
+> Success: southern Europe, Poland and much of central Europe stayed or became Catholic.
+> Limits: northern Germany, Scandinavia, the Dutch Republic and Britain remained Protestant.
+> Judgement: it halted and partly reversed Protestant expansion, but could not restore a united Western Church.
+K: Luther's Ninety-Five Theses (1517) against indulgences led to a doctrine of faith alone; print and princes spread Protestantism, Calvin shaped Reformed churches, and the Council of Trent (1545 to 1563) and the Jesuits led a Catholic revival.
+!: Thinking Luther meant to split the Church in 1517. He sought reform; division followed from conflict over authority.
+EV: established | Luther published the Ninety-Five Theses on 31 October 1517.
+EV: contested | Whether print, princes or popular belief did most to spread the Reformation is debated (MacCulloch).
+T: Indulgence | A grant from the Church reducing punishment in purgatory for sins
+T: Justification by faith | Luther's belief that people are saved by faith in God, not by good works
+T: Council of Trent | The Catholic council of 1545 to 1563 that reaffirmed doctrine and reformed the Church
+SUM: Luther's protest of 1517 began the Protestant Reformation.
+SUM: Print and princes spread it, and the Catholic Reformation halted its advance.
+SRC: MacCulloch D., Reformation: Europe's House Divided, 1490–1700, Allen Lane | secondary | 2003
+SRC: Pettegree A., Brand Luther: 1517, Printing, and the Making of the Reformation, Penguin Press | secondary | 2015
+Q: What did Luther argue about salvation? | That people are saved through faith alone, not good works.
+Q: What did the Peace of Augsburg of 1555 allow? | Each German prince to choose Lutheranism or Catholicism for his lands.
+M1#history-u16-02-q1@1: Who founded the Jesuits in 1540? | Ignatius of Loyola | John Calvin | Martin Luther | Huldrych Zwingli | The Jesuits built schools and sent missionaries worldwide.
+M2#history-u16-02-q2@2: Why did printing help the Reformation spread? | Pamphlets and Bibles reached large numbers of readers quickly | Printing was banned in every Protestant territory | The Pope controlled all printing presses | Luther wrote only in Latin for scholars | Print carried reformers' ideas faster than censors could act.
+TF1#history-u16-02-q3@1: Luther refused to recant at the Diet of Worms in 1521. | true | He was declared an outlaw but was protected by Frederick of Saxony.
+M3#history-u16-02-q4@3: Which judgement about the Catholic Reformation is best supported? | It halted and partly reversed Protestant expansion, but could not reunite the Church | It restored a single united Western Church across Europe by 1563 | It failed to keep a single European country loyal to Rome | It was led by Luther himself after he was reconciled with the Pope | Its gains were real but limited to parts of Europe.
+SA3#history-u16-02-q5@2,3: Why did the Protestant Reformation spread so rapidly after 1517? | Luther's Ninety-Five Theses (1517) attacked indulgences and his doctrines of faith alone and scripture won followers; printing spread his pamphlets and German Bible; princes protected reformers and took control of churches, recognised at Augsburg (1555); Zwingli and Calvin extended reform. A strong answer weighs print, princes and popular belief. | Explains Luther's ideas ; Explains printing ; Explains princes ; Explains other reformers ; Reaches a judgement
+Q: What was an indulgence? | A grant from the Church reducing punishment in purgatory for sins.
+Q: Why was Johann Tetzel selling indulgences in 1517? | To raise money for St Peter's in Rome.
+Q: What did Luther argue about authority and priests? | That the Bible was the only authority and all believers were priests.
+Q: Where did Luther teach? | At Wittenberg, where he was a monk and professor.
+Q: How did princes help the Reformation spread? | They protected reformers and took control of churches in their lands.
+Q: Who led reform in Zurich and in Geneva? | Huldrych Zwingli in Zurich and John Calvin in Geneva.
+Q: Which work by Calvin shaped Reformed churches across Europe? | His Institutes, of 1536.
+Q: What did the Council of Trent do? | From 1545 to 1563 it reaffirmed Catholic doctrine and reformed the training of priests.
+Q: How did the Catholic Church try to stop Protestant ideas spreading? | Through the Inquisition and the Index of forbidden books.
+Q: What common mistake is made about Luther's aims in 1517? | Thinking he meant to split the Church; he sought reform, and division followed conflict over authority.

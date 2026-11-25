@@ -1,0 +1,85 @@
+## The effect of lifestyle on some non-communicable diseases
+S: On a scatter diagram, points rising close to a line show a strong positive correlation.
+LV: GCSE
+O: Interpret waist size and blood pressure
+O: Explain correlation
+O: Use a scatter diagram
+O: Interpret exercise and resting heart rate
+H: The idea
+P: A **risk factor** is anything linked to an increased chance of developing a disease. It can be an aspect of a person's lifestyle, such as smoking or diet, or a substance in their body or environment.
+P: For example:
+- Smoking is a risk factor for lung cancer and cardiovascular disease.
+- Being obese increases the chance of developing Type 2 diabetes.
+P: Two variables are **correlated** when they tend to change together. In a **positive correlation**, as one increases the other tends to increase too; in a **negative correlation**, as one increases the other tends to decrease. The closer the points on a scatter diagram lie to a straight line, the stronger the correlation.
+H: Correlation doesn't prove cause
+P: A correlation doesn't show that one variable causes the other. Both could be caused by a third factor, or the link could be chance. A risk factor is shown to cause a disease only when scientists find a causal mechanism: how one leads to the other.
+P: For example:
+- A causal mechanism is known for smoking and lung cancer: chemicals in tobacco smoke damage the DNA of lung cells.
+H: Calculations
+P: A scatter diagram shows whether two variables are correlated.
+- Plot one variable on each axis, each with a sensible, evenly spaced scale and a label with units.
+- Plot each pair of values as a point; don't join the points up.
+- If there's a trend, draw a straight line of best fit with about as many points above it as below.
+- Describe the pattern: positive, negative or no correlation, and how strong it is.
+- Use the line to estimate values between your measurements.
+H: Waist size and blood pressure
+P: A health survey recorded the waist circumference and systolic blood pressure of 12 adults. High blood pressure is a risk factor for cardiovascular disease.
+P: These are illustrative data, made up for practice: they are not real measurements.
+- Waist circumference (cm) · Systolic blood pressure (mmHg)
+- 72 · 112
+- 76 · 118
+- 79 · 115
+- 83 · 121
+- 86 · 126
+- 88 · 123
+- 91 · 130
+- 94 · 128
+- 97 · 135
+- 101 · 139
+- 104 · 136
+- 108 · 145
+D: kb-aqa8461-4-2-2-6-h-gcse-disease-waist-bp-data
+- As waist circumference increases, blood pressure tends to increase: a positive correlation.
+- The points lie close to a straight line, so the correlation is strong.
+- The data alone don't show that a larger waist causes higher blood pressure.
+H: Exercise and resting heart rate
+P: A group of 10 adults recorded the hours of exercise they did each week and their resting heart rate.
+P: These are illustrative data, made up for practice: they are not real measurements.
+- Exercise per week (hours) · Resting heart rate (beats per minute)
+- 0 · 82
+- 1 · 79
+- 1.5 · 80
+- 2 · 75
+- 3 · 73
+- 4 · 71
+- 4.5 · 68
+- 5 · 69
+- 6 · 64
+- 7 · 62
+D: kb-aqa8461-4-2-2-6-h-gcse-disease-exercise-hr-data
+- As weekly exercise increases, resting heart rate tends to decrease: a negative correlation.
+- The points lie close to a line, so it is strong.
+!: "A strong correlation proves that one variable causes the other." A correlation shows only that the variables change together; a third factor or chance could explain it. Cause needs a mechanism.
+!: "A line of best fit should go through every point." A line of best fit shows the overall trend: it passes as close as possible to the points, with about as many above it as below.
+!: "If a few points don't fit the pattern, there is no correlation." A correlation is about the overall trend. A few points off the line make it weaker, not absent; check whether they are anomalies.
+H: Where this leads
+P: The rest of AQA GCSE Biology 4.2.2.6 (The effect of lifestyle on some non-communicable diseases) has its own lessons: 4.2.2.6.a, 4.2.2.6.b, 4.2.2.6.c, 4.2.2.6.d, 4.2.2.6.e, 4.2.2.6.f, 4.2.2.6.g.
+T: Risk factor | Something linked to an increased chance of developing a disease
+T: Correlation | A relationship in which two variables tend to change together
+T: Positive correlation | As one variable increases, the other tends to increase
+T: Negative correlation | As one variable increases, the other tends to decrease
+T: Causal mechanism | The process by which one factor brings about another
+SUM: On a scatter diagram, points rising close to a line show a strong positive correlation.
+SUM: A risk factor is linked to an increased chance of developing a disease.
+SUM: A correlation is a pattern of two variables changing together: positive or negative, strong or weak.
+SUM: A correlation alone doesn't prove cause; a causal mechanism does.
+SUM: Points falling close to a line show a strong negative correlation.
+M1#kb-aqa8461-4-2-2-6-h-gcse-q1@2: Which of these best describes correlation? | A relationship in which two variables tend to change together | Something linked to an increased chance of developing a disease | As one variable increases, the other tends to decrease | As one variable increases, the other tends to increase | Correlation: a relationship in which two variables tend to change together.
+M1#kb-aqa8461-4-2-2-6-h-gcse-q2@2: Which of these best describes positive correlation? | As one variable increases, the other tends to increase | As one variable increases, the other tends to decrease | A strong correlation proves that one variable causes the other | A relationship in which two variables tend to change together | Positive correlation: as one variable increases, the other tends to increase.
+TF1#kb-aqa8461-4-2-2-6-h-gcse-q3@1: A line of best fit should go through every point. | false | A line of best fit shows the overall trend: it passes as close as possible to the points, with about as many above it as below.
+TF1#kb-aqa8461-4-2-2-6-h-gcse-q4@1: If a few points don't fit the pattern, there is no correlation. | false | A correlation is about the overall trend. A few points off the line make it weaker, not absent; check whether they are anomalies.
+TF1#kb-aqa8461-4-2-2-6-h-gcse-q5@1: A strong correlation proves that one variable causes the other. | false | A correlation shows only that the variables change together; a third factor or chance could explain it. Cause needs a mechanism.
+M2#kb-aqa8461-4-2-2-6-h-gcse-q6@1,2,3: Waist size and blood pressure: what does the scatter diagram show? | A strong positive correlation | A weak negative correlation | A weak positive correlation | No correlation | As waist circumference increases, systolic blood pressure tends to increase; the points lie close to a straight line.
+TF2#kb-aqa8461-4-2-2-6-h-gcse-q7@1: These data show that a larger waist causes higher blood pressure. | false | They show a correlation only. A third factor, such as diet or lack of exercise, could raise both; showing cause needs a causal mechanism.
+NUM3#kb-aqa8461-4-2-2-6-h-gcse-q8@1,2,3: Using the line of best fit, estimate systolic blood pressure when waist circumference is 90 cm. | 127.4 | 3 | mmHg | Read up from 90 on the x-axis to the line, then across: about 127.4 mmHg.
+M2#kb-aqa8461-4-2-2-6-h-gcse-q9@2,3,4: Exercise and resting heart rate: what does the scatter diagram show? | A strong negative correlation | A weak positive correlation | No correlation | A strong positive correlation | As exercise per week increases, resting heart rate tends to decrease; the points lie close to a straight line.

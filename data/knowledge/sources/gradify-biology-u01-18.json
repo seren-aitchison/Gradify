@@ -1,0 +1,271 @@
+{
+ "id": "gradify-biology-u01-18",
+ "title": "Gradify Biology, lesson u01-18: Statistical foundations",
+ "publisher": "Gradify",
+ "authors": [
+  "Gradify"
+ ],
+ "course": "biology",
+ "unit": "u01",
+ "lesson": "Statistical foundations",
+ "url": "kit/courses/biology/notes/u01.js",
+ "licence": "gradify",
+ "level": "ug",
+ "type": "gradify-notes",
+ "retrievedOn": "2026-11-24",
+ "version": "as of 2026-11-24",
+ "sha256": "77645a4b8147ef87bbcd1249d9df1d6dd1be50f00336a19200228b8159f11fc8",
+ "bytes": 93468,
+ "licenceName": "Gradify's own work",
+ "category": "commercial-adapt",
+ "uses": {
+  "adapt": true,
+  "commercial": true,
+  "verify": true
+ },
+ "policy": "reuse",
+ "attribution": false,
+ "parsedTitle": "Statistical foundations",
+ "passages": [
+  {
+   "id": "L616",
+   "kind": "S",
+   "hash": "eccf6a8eb79785d2",
+   "words": 33
+  },
+  {
+   "id": "L617",
+   "kind": "O",
+   "hash": "55de8143b1d09884",
+   "words": 8
+  },
+  {
+   "id": "L618",
+   "kind": "O",
+   "hash": "91706c6adf8f685d",
+   "words": 10
+  },
+  {
+   "id": "L619",
+   "kind": "O",
+   "hash": "3d605630232a25ad",
+   "words": 9
+  },
+  {
+   "id": "L620",
+   "kind": "PRE",
+   "hash": "3d0dd010e8d564d7",
+   "words": 3
+  },
+  {
+   "id": "L621",
+   "kind": "H",
+   "hash": "cfa4b1fe0bfba17c",
+   "words": 3
+  },
+  {
+   "id": "L622",
+   "kind": "P",
+   "hash": "8934f29e6f9e3d92",
+   "words": 21
+  },
+  {
+   "id": "L623",
+   "kind": "P",
+   "hash": "32efc7b00b26247f",
+   "words": 8
+  },
+  {
+   "id": "L624",
+   "kind": "P",
+   "hash": "b8ea6f035f076b95",
+   "words": 12
+  },
+  {
+   "id": "L625",
+   "kind": "E",
+   "hash": "8b86b5dd964eea0a",
+   "words": 15
+  },
+  {
+   "id": "L626",
+   "kind": "H",
+   "hash": "9c13382d94a07c47",
+   "words": 3
+  },
+  {
+   "id": "L627",
+   "kind": "P",
+   "hash": "6978c1a8a2e4afd4",
+   "words": 30
+  },
+  {
+   "id": "L628",
+   "kind": "D",
+   "hash": "d8a55d57d08a1e09",
+   "words": 1
+  },
+  {
+   "id": "L629",
+   "kind": "H",
+   "hash": "2f25d3d87e50a4b9",
+   "words": 3
+  },
+  {
+   "id": "L630",
+   "kind": "P",
+   "hash": "512055999844c680",
+   "words": 13
+  },
+  {
+   "id": "L631",
+   "kind": "P",
+   "hash": "aae00cc44e6f2120",
+   "words": 15
+  },
+  {
+   "id": "L632",
+   "kind": "P",
+   "hash": "515756397dfc3832",
+   "words": 15
+  },
+  {
+   "id": "L633",
+   "kind": "P",
+   "hash": "686e91c2a8ded810",
+   "words": 34
+  },
+  {
+   "id": "L634",
+   "kind": "D",
+   "hash": "fcf0f8122060c167",
+   "words": 1
+  },
+  {
+   "id": "L635",
+   "kind": "X",
+   "hash": "e2550a93a5109507",
+   "words": 13
+  },
+  {
+   "id": "L636",
+   "kind": "P",
+   "hash": "5f69d84a8b89ee33",
+   "words": 8
+  },
+  {
+   "id": "L637",
+   "kind": "P",
+   "hash": "ea392aaf4b8c19a6",
+   "words": 11
+  },
+  {
+   "id": "L638",
+   "kind": "P",
+   "hash": "9cc8246f130a4e34",
+   "words": 10
+  },
+  {
+   "id": "L639",
+   "kind": "K",
+   "hash": "6c08d59f8fe1f852",
+   "words": 25
+  },
+  {
+   "id": "L640",
+   "kind": "IX",
+   "hash": "2a139574bb13a25a",
+   "words": 1
+  },
+  {
+   "id": "L641",
+   "kind": "!",
+   "hash": "fe75f69fd08a0947",
+   "words": 30
+  },
+  {
+   "id": "L642",
+   "kind": "T",
+   "hash": "5c8b070718d0b490",
+   "words": 14
+  },
+  {
+   "id": "L643",
+   "kind": "T",
+   "hash": "406d8a882bf3e8d6",
+   "words": 11
+  },
+  {
+   "id": "L644",
+   "kind": "T",
+   "hash": "726184b5ee6f3700",
+   "words": 20
+  },
+  {
+   "id": "L645",
+   "kind": "SUM",
+   "hash": "b4fd514590843bd2",
+   "words": 13
+  },
+  {
+   "id": "L646",
+   "kind": "SUM",
+   "hash": "b7ae9b6c41b41e38",
+   "words": 14
+  },
+  {
+   "id": "L647",
+   "kind": "SUM",
+   "hash": "d9884897c6a57d1c",
+   "words": 11
+  },
+  {
+   "id": "L648",
+   "kind": "SRC",
+   "hash": "b632d2090e12dc6b",
+   "words": 17
+  },
+  {
+   "id": "L649",
+   "kind": "SRC",
+   "hash": "6a8674dedd4167d7",
+   "words": 10
+  },
+  {
+   "id": "L650",
+   "kind": "Q",
+   "hash": "a4531c66feb695cc",
+   "words": 13
+  },
+  {
+   "id": "L651",
+   "kind": "Q",
+   "hash": "6435f11a50f2bdce",
+   "words": 19
+  },
+  {
+   "id": "L652",
+   "kind": "NUM2",
+   "hash": "6e3872d3015db55f",
+   "words": 40
+  },
+  {
+   "id": "L653",
+   "kind": "M1",
+   "hash": "3cfabf47ad2977c6",
+   "words": 42
+  },
+  {
+   "id": "L654",
+   "kind": "M2",
+   "hash": "eeda778d97766520",
+   "words": 48
+  },
+  {
+   "id": "L655",
+   "kind": "M3",
+   "hash": "d10e90123ae15a27",
+   "words": 97
+  }
+ ]
+}

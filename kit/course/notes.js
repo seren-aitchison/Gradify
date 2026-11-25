@@ -29,6 +29,12 @@
 //   CASE: a case card, "case name and citation | facts | held | principle": shown under "Case and statute
 //        cards" and turned into two flashcards (the case → facts, held and principle; the principle → the case)
 //   LAW: a statute card, "provision | what it provides (elements)": shown with the case cards, one flashcard
+//   REQ: an official requirement this lesson teaches, "<framework>:<ref> @<objective numbers>", e.g.
+//        "aqa-gcse-biology:4.1.1.1.b @1,2". One lesson may carry several boards' equivalent requirements.
+//   DIA: a new diagram for the engine to render and check, "<renderer> | <json spec>" (kit/diagrams/renderers.js);
+//        it becomes a D: line once built into the library
+//   DNEED: a diagram the lesson needs and no renderer can draw yet (for the diagram queue)
+//   GAP: something a requirement needs that the research brief didn't support (for the research queue)
 //   DRUG: a drug card, "drug or class | class and mechanism | main uses | key adverse effects and cautions |
 //        monitoring, interactions and counselling": shown with the cards and turned into two flashcards
 // Inline: **bold**, *italic*, `code`, x^{2} and v_{0}.
@@ -43,12 +49,12 @@ export function parseNotes(text) {
   for (const raw of String(text || "").split("\n")) {
     const line = raw.trim();
     if (!line) { ex = null; continue; }
-    if (line.startsWith("## ")) { L = { title: line.slice(3).trim(), lead: "", blocks: [], cards: [], mcq: [], tasks: [], objectives: [], prereq: [], terms: [], summary: [], sources: [], reading: [], evidence: [], authorities: [], level: "" }; lessons.push(L); ex = null; continue; }
+    if (line.startsWith("## ")) { L = { title: line.slice(3).trim(), lead: "", blocks: [], cards: [], mcq: [], tasks: [], objectives: [], prereq: [], terms: [], summary: [], sources: [], reading: [], evidence: [], authorities: [], level: "", reqs: [], needs: [], gaps: [] }; lessons.push(L); ex = null; continue; }
     if (!L) continue;
     if (line.startsWith("> ") && ex) { ex.steps.push(line.slice(2)); continue; }
     ex = null;
     // block tags, then question tags (TAG_LINE, which includes any type a subject adapter has registered)
-    const m = line.match(/^(S|H|P|E|X|K|!|Q|O|PRE|T|SUM|SAFE|SRC|READ|IX|D|EV|LV|CASE|LAW|DRUG):\s*(.*)$/) || line.match(TAG_LINE);
+    const m = line.match(/^(S|H|P|E|X|K|!|Q|O|PRE|T|SUM|SAFE|SRC|READ|IX|D|EV|LV|CASE|LAW|DRUG|REQ|DIA|DNEED|GAP):\s*(.*)$/) || line.match(TAG_LINE);
     const [tag, body] = m ? [m[1], m[2]] : line.startsWith("- ") ? ["-", line.slice(2)] : ["P", line];
     const last = L.blocks.at(-1);
     if (tag === "S") L.lead += (L.lead ? " " : "") + body;
@@ -72,6 +78,10 @@ export function parseNotes(text) {
     else if (tag === "D") L.blocks.push({ t: "dg", id: body.trim() });
     else if (tag === "EV") { const [status, claim] = body.split(" | ").map((x) => x.trim()); if (status && claim) L.evidence.push({ status: status.toLowerCase(), claim }); }
     else if (tag === "LV") L.level = body.trim();
+    else if (tag === "REQ") { const m = body.trim().match(/^(\S+)(?:\s+@([\d,\s]+))?\s*$/); if (m) L.reqs.push({ id: m[1], objectives: m[2] ? m[2].split(",").map((x) => Number(x.trim())).filter(Boolean) : [] }); }
+    else if (tag === "DIA") { const i = body.indexOf(" | "), renderer = (i < 0 ? body : body.slice(0, i)).trim(); let spec = null; try { spec = JSON.parse(body.slice(i + 3)); } catch {} L.blocks.push({ t: "dia", renderer, spec }); }
+    else if (tag === "DNEED") L.needs.push(body.trim());
+    else if (tag === "GAP") L.gaps.push(body.trim());
     else if (tag === "CASE") {
       const [name, facts, held, principle] = body.split(" | ").map((x) => x.trim());
       if (name && facts && held && principle) {
@@ -148,7 +158,7 @@ export function lessonText(L) {
     else if (b.t === "eq") out.push(...b.rows.map(([x, n]) => `${x}${n ? `  (${n})` : ""}`));
     else if (b.t === "ex") out.push(`Example: ${b.x}`, ...b.steps.map((s, i) => `  ${i + 1}. ${s}`));
     else if (b.t === "pit") out.push(`Mistake to avoid: ${b.x}`);
-    else if (b.t === "ix" || b.t === "dg") continue;
+    else if (b.t === "ix" || b.t === "dg" || b.t === "dia") continue;
     else out.push(b.x);
   }
   return out.join("\n").replace(/\*\*|`|\^\{|_\{|\}/g, "");

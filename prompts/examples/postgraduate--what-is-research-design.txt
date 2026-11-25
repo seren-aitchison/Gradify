@@ -1,0 +1,45 @@
+# example · level: postgraduate · from kit/courses/research/notes/u04.js · selected by a structure score, not yet expert-approved
+## What is research design?
+LV: Postgraduate · Foundation
+S: Research design is the overall plan that connects a research question to the evidence needed to answer it. This lesson explains what a design is, how it differs from methods, and the main families of design used in postgraduate research.
+O: Define research design and distinguish it from research methods
+O: Identify the main types of research design
+O: Explain why design decisions should follow from the research question
+H: Design as a logical plan
+P: A **research design** is the framework that guides the collection and analysis of data so that the evidence obtained answers the research question as unambiguously as possible. De Vaus (2001) stresses that design is a **logical** problem, not a logistical one: before choosing questionnaires or interviews, a researcher must ask what kind of evidence would be convincing. A **research method** is a technique for collecting data, such as a survey instrument or a semi-structured interview, whereas the design is the structure that decides whose data are collected, when, how often and with what comparisons. Bryman (2021) lists five broad designs: **experimental**, **cross-sectional**, **longitudinal**, **case study** and **comparative**.
+H: What a design specifies
+- The **unit of analysis**: individuals, groups, organisations, documents or events.
+- The **comparisons** that will be made, for example between groups or over time.
+- The **timing** of data collection: once, repeatedly or before and after an event.
+- How cases or participants will be **selected**.
+- How data will be **analysed** to support the claims the study wants to make.
+H: Common families of design
+- **Experimental** and **quasi-experimental** designs test causal claims through comparison.
+- **Cross-sectional** designs collect data from many cases at one point in time.
+- **Longitudinal** designs follow the same cases over time.
+- **Case study** designs examine one or a few cases in depth and in context.
+- **Comparative** designs study two or more contrasting cases using similar methods.
+X: Choosing a design for a question about remote working.
+> Question: does moving to remote working change employees' reported wellbeing?
+> A one-off survey of remote and office workers could show differences but not change.
+> A longitudinal design measuring the same staff before and after the move tracks change directly.
+> The question about change points to a longitudinal design; the survey is only the method.
+K: Research design is the logical structure of a study, specifying units, comparisons, timing and selection so that the evidence can answer the question, and it is distinct from the methods used to collect data.
+!: Treating "I will use interviews" as a research design. Interviews are a method; the design states which cases, comparisons and timing make the interview data able to answer the question.
+EV: established | Methodology texts distinguish research design from data collection methods and treat design as driven by the research question.
+T: Research design | The overall plan linking a research question to the evidence needed to answer it
+T: Research method | A technique for collecting or analysing data
+T: Unit of analysis | The entity about which the study draws conclusions
+SUM: Design is logic, not logistics.
+SUM: Methods sit inside a design.
+SUM: The question drives the design.
+SRC: de Vaus D., Research Design in Social Research, Sage | secondary | 2001
+SRC: Bryman A., Social Research Methods, 6th edition, Oxford University Press, chapter 3 | secondary | 2021
+SRC: Creswell J. W. and Creswell J. D., Research Design: Qualitative, Quantitative, and Mixed Methods Approaches, 5th edition, Sage | secondary | 2018
+Q: How does a research design differ from a research method? | The design is the overall logical structure of the study; a method is a technique for collecting or analysing data.
+Q: Name the five broad designs listed by Bryman. | Experimental, cross-sectional, longitudinal, case study and comparative.
+M1#research-u04-01-q1@1: Which of these is a research design rather than a research method? | A longitudinal panel | A semi-structured interview | An online questionnaire item | A focus group topic guide | Longitudinal is a structure for timing data collection; the other options are data collection tools.
+M2#research-u04-01-q2@2: A researcher wants to compare how two hospitals implemented the same policy. Which design family fits best? | Comparative | Experimental | Cross-sectional survey of patients nationwide | Single ethnography | Two contrasting cases studied with similar methods is the defining feature of a comparative design.
+TF2#research-u04-01-q3@1: According to de Vaus, research design is mainly a logistical problem about scheduling fieldwork. | false | De Vaus argues design is a logical problem: deciding what evidence would convincingly answer the question.
+M3#research-u04-01-q4@3: A student plans a study but cannot say what comparison their data will allow. What is the main weakness? | The design cannot support the claims intended | The method is too old-fashioned for a thesis | The sample is necessarily too small to publish | The ethics form will be rejected automatically | Without a planned comparison, evidence cannot discriminate between rival answers to the question.
+SA2#research-u04-01-q5@2,3: Explain why design decisions should follow from the research question, using an example. | The research question defines what counts as an answer, so the design must generate evidence capable of supporting that answer. A question about change over time needs repeated measurement of the same cases, so a longitudinal design is required; a question about in-depth process in context may need a case study. Choosing methods first risks collecting data that cannot address the question. Design therefore turns a question into units, comparisons, timing and selection. | Question defines evidence ; Matching example ; Risk of method-first ; Elements of design

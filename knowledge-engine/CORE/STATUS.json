@@ -1,0 +1,41 @@
+{
+ "generated": "2026-11-25",
+ "branch": "claude/upbeat-rubin-mxcjtp",
+ "commit": "73716f8fe",
+ "dirty": true,
+ "briefs": 0,
+ "drafts": 0,
+ "mode": "fast",
+ "budgetUsd": 25,
+ "subjects": [
+  {
+   "subject": "biology",
+   "frameworks": [
+    "aqa-gcse-biology"
+   ],
+   "topicsToWrite": 95,
+   "requirementsToWrite": 364,
+   "topics": {
+    "filed": 0,
+    "partial": 0,
+    "filed-with-gaps": 0,
+    "failed": 0,
+    "blocked": 0
+   },
+   "lessons": {
+    "total": 0,
+    "aiVerified": 0,
+    "expertRequired": 0,
+    "expertApproved": 0,
+    "disagreements": 0
+   },
+   "editedSinceChecked": [],
+   "next": "biology/eukaryotes-and-prokaryotes"
+  }
+ ],
+ "approvals": {
+  "merge": "owner only",
+  "deploy": "owner only",
+  "publish": "owner only (merging the rolling PR approves AI-verified drafts; expert-required ones wait for a named reviewer)"
+ }
+}

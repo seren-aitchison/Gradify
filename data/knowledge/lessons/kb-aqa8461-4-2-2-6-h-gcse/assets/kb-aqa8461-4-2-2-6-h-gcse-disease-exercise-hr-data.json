@@ -1,0 +1,140 @@
+{
+ "id": "kb-aqa8461-4-2-2-6-h-gcse-disease-exercise-hr-data",
+ "renderer": "graph",
+ "course": "knowledge",
+ "title": "Exercise and resting heart rate (illustrative data)",
+ "caption": "Illustrative data for practice, not real measurements. The points fall from left to right: a strong negative correlation.",
+ "alt": "A scatter diagram of resting heart rate against hours of exercise per week for 10 people, from 0 to 7 hours. The points fall from about 82 to 62 beats per minute, close to a dashed line of best fit.",
+ "description": [
+  "x-axis: exercise per week, 0 to 7 hours.",
+  "y-axis: resting heart rate, about 60 to 85 beats per minute.",
+  "Ten points falling from left to right, close to a line: a strong negative correlation."
+ ],
+ "range": {
+  "x": [
+   0,
+   8
+  ],
+  "y": [
+   60,
+   85
+  ]
+ },
+ "ticks": [
+  [
+   0,
+   2,
+   4,
+   6,
+   8
+  ],
+  [
+   60,
+   65,
+   70,
+   75,
+   80,
+   85
+  ]
+ ],
+ "height": [
+  340,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "Exercise per week (hours)",
+  "Resting heart rate (beats per minute)"
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 82,
+   "colour": "a1"
+  },
+  {
+   "x": 1,
+   "y": 79,
+   "colour": "a1"
+  },
+  {
+   "x": 1.5,
+   "y": 80,
+   "colour": "a1"
+  },
+  {
+   "x": 2,
+   "y": 75,
+   "colour": "a1"
+  },
+  {
+   "x": 3,
+   "y": 73,
+   "colour": "a1"
+  },
+  {
+   "x": 4,
+   "y": 71,
+   "colour": "a1"
+  },
+  {
+   "x": 4.5,
+   "y": 68,
+   "colour": "a1"
+  },
+  {
+   "x": 5,
+   "y": 69,
+   "colour": "a1"
+  },
+  {
+   "x": 6,
+   "y": 64,
+   "colour": "a1"
+  },
+  {
+   "x": 7,
+   "y": 62,
+   "colour": "a1"
+  }
+ ],
+ "curves": [
+  {
+   "expr": "-2.925373*x+82.246269",
+   "colour": "a2",
+   "dash": "7 5",
+   "width": 2.2,
+   "domain": [
+    0,
+    7
+   ],
+   "label": "line of best fit",
+   "labelAt": [
+    6.4,
+    66.02388059701491
+   ],
+   "anchor": "middle"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "-2.925373*x+82.246269",
+   "x": 3.4,
+   "y": 72.300001,
+   "name": "the line of best fit passes through the mean of the data (a least-squares line)"
+  }
+ ],
+ "from": {
+  "item": "bio.disease.exercise-hr-data",
+  "version": 1,
+  "form": "default"
+ },
+ "dataClaims": [
+  {
+   "type": "correlation",
+   "sign": "negative",
+   "strength": "strong"
+  }
+ ]
+}
