@@ -846,7 +846,7 @@
    }
   },
   {
-   "name": "TechGradify · ForgeLab",
+   "name": "TechGradify",
    "slug": "techgradify",
    "status": "external",
    "folder": "techgradify",
@@ -7022,8 +7022,8 @@
   {
    "slug": "computing",
    "name": "Computer Science",
-   "declaredSite": "TechGradify · ForgeLab",
-   "servedBy": ["TechGradify · ForgeLab"],
+   "declaredSite": "TechGradify",
+   "servedBy": ["TechGradify"],
    "plan": null,
    "labs": 0,
    "totals": {

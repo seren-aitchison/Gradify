@@ -11,19 +11,19 @@ let ctx, mode = "feed", exam = false, rated = 0, timer = null;
 const card = (site, front, back, extra = {}) => ({ kind: "card", site, front, back, interval: extra.interval ?? 1, ease: 2.5, due: true, ...extra });
 const DECK = [
   card("MedGradify", "What closes at the start of ventricular systole?", "The mitral and tricuspid valves. Their closing makes the first heart sound, S1.", { bonus: "A resting heart beats roughly 100,000 times a day." }),
-  card("TechGradify · ForgeLab", "What does ReLU return for a negative input?", "Zero. ReLU(x) = max(0, x).", { interval: 3 }),
+  card("TechGradify", "What does ReLU return for a negative input?", "Zero. ReLU(x) = max(0, x).", { interval: 3 }),
   { kind: "tip", text: "Spacing beats cramming. Ten minutes a day sticks better than an hour once a week.", i: "bulb" },
   card("LanguageGradify", "el andén", "the platform (at a train station)", { bonus: "Andén comes from an old word for a walkway or terrace." }),
   card("MedGradify", "What is isovolumetric contraction?", "The brief phase when the ventricles contract with all four valves closed, so pressure rises but volume doesn't change."),
   card("UnderGradify", "What does a p-value below 0.05 tell you?", "That results at least this extreme would happen less than 5% of the time if the null hypothesis were true. It doesn't prove your hypothesis.", { interval: 6 }),
   { kind: "reminder", text: "Physiology quiz on Friday. These cards are part of it.", i: "bell" },
   card("MedGradify", "What causes the second heart sound, S2?", "The aortic and pulmonary valves closing at the end of systole."),
-  card("TechGradify · ForgeLab", "Why do we split data into training and test sets?", "To check the model works on data it hasn't seen, so you can catch overfitting."),
+  card("TechGradify", "Why do we split data into training and test sets?", "To check the model works on data it hasn't seen, so you can catch overfitting."),
   card("LanguageGradify", "¿A qué hora sale el tren?", "What time does the train leave?"),
   { kind: "fact", text: "Recall practice, testing yourself without looking, roughly doubles what you remember a week later compared with re-reading.", i: "star" },
   card("HealthGradify", "Roughly how much sleep do most adults need?", "7 to 9 hours a night.", { interval: 10 }),
   card("MedGradify", "What is stroke volume?", "The amount of blood ejected by each ventricle per beat."),
-  card("TechGradify · ForgeLab", "What does a learning rate that's too high usually do?", "Training becomes unstable: the loss jumps around or blows up instead of going down."),
+  card("TechGradify", "What does a learning rate that's too high usually do?", "Training becomes unstable: the loss jumps around or blows up instead of going down."),
 ];
 
 const fmtDays = (d) => (d < 1 ? "10 min" : d < 30 ? `${Math.round(d)} ${Math.round(d) === 1 ? "day" : "days"}` : `${Math.round(d / 30)} mo`);

@@ -61,7 +61,10 @@ test("every topic card has a real destination or none, never the generic app", a
     }
   }
   assert.deepEqual(bad, []);
-  assert.ok(cards >= 186 && linked / cards > 0.9, `${linked} of ${cards} cards linked`);
+  // a "coming soon" site has no lessons to link to yet, so its cards don't count against the share
+  const { GROUPS } = await import("../kit/core/sites.js"), soon = new Set(GROUPS.flatMap((g) => g.items).filter((x) => x.status === "soon").map((x) => x.n));
+  const open = Object.entries(SITES_CONTENT).filter(([site]) => !soon.has(site)).flatMap(([, c]) => c.topics), openLinked = open.filter((t) => t[2] !== null).length;
+  assert.ok(cards >= 186 && openLinked / open.length > 0.9, `${openLinked} of ${open.length} cards linked on sites with lessons`);
 });
 
 test("the homepage template never links a topic card to the generic app", async () => {

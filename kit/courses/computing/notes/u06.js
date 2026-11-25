@@ -1,4 +1,4 @@
-// TechGradify · ForgeLab Data Representation (content standard 2). Added by scripts/new-course.mjs add-notes.
+// TechGradify Data Representation (content standard 2). Added by scripts/new-course.mjs add-notes.
 export default `
 ## Binary and denary
 LV: GCSE · Foundation

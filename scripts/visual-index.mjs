@@ -27,7 +27,7 @@ export async function visualIndex() {
     const d = (await import(new URL(`kit/models/${m.file}`, root))).default;
     for (const [sid, s] of Object.entries(d.structures || {})) {
       const key = `${m.file}:${sid}`; if (seen.has(key)) continue; seen.add(key);
-      // the site's folder, by the site's own rule (kit/core/site.js slugOf): "TechGradify · ForgeLab" → techgradify
+      // the site's folder, by the site's own rule (kit/core/site.js slugOf): "TechGradify" → techgradify
       const folder = site.split(" · ")[0].toLowerCase().replace(/[^a-z0-9]+/g, "");
       // the 4K Cycles preview the 3D-model pipeline renders for each model (scripts/blender/render-previews.py)
       const still = existsSync(new URL(`kit/models/previews/${m.file.replace(".js", "")}-960.webp`, root)) ? `/kit/models/previews/${m.file.replace(".js", "")}-960.webp` : null;

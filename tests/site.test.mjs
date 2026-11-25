@@ -4,7 +4,7 @@ import { SITES, slugOf, pathOf, currentSite } from "../kit/core/site.js";
 
 test("each sub-site has its own folder on getgradify.com", () => {
   assert.equal(pathOf("MedGradify"), "/medgradify/");
-  assert.equal(slugOf("TechGradify · ForgeLab"), "techgradify");
+  assert.equal(slugOf("TechGradify"), "techgradify");
   const slugs = SITES.map(slugOf);
   assert.equal(new Set(slugs).size, slugs.length, "no two sites share a folder");
   assert.ok(slugs.every((s) => /^[a-z0-9]+$/.test(s)));
@@ -18,7 +18,7 @@ test("a site's first word is drawn in its accent colour", async () => {
   const { nameHtml, accentOf } = await import("../kit/core/site.js");
   const med = SITES.find((s) => s.n === "MedGradify");
   assert.match(nameHtml(med), /<span class="site-accent" style="color:[^"]+">Med<\/span>Gradify<\/span>$/);
-  assert.match(nameHtml(SITES.find((s) => s.n === "TechGradify · ForgeLab")), />Tech<\/span>Gradify · ForgeLab/);
+  assert.match(nameHtml(SITES.find((s) => s.n === "TechGradify")), />Tech<\/span>Gradify</);
   // bright colours are used as they are; dark ones are lifted so they read on black
   assert.equal(accentOf({ c: "a0ff74" }), "#a0ff74");
   assert.notEqual(accentOf({ c: "2e5e18" }), "#2e5e18");
@@ -101,4 +101,16 @@ test("every sub-site's 3D model teaches what it shows: each part has facts and c
       assert.ok(Object.values(model.structures).some((st) => st.group === g), `${m.file}: ${g} has something in the model`);
     }
   }
+});
+
+test("a former site name still finds what learners saved under it, without rewriting anything stored", async () => {
+  const { canonicalSite, canonicalSites, GROUPS } = await import("../kit/core/sites.js");
+  assert.equal(canonicalSite("TechGradify · ForgeLab"), "TechGradify"); assert.equal(canonicalSite("MedGradify"), "MedGradify");
+  const rows = [{ id: 1, site: "TechGradify · ForgeLab" }, { id: 2, site: "MedGradify" }];
+  assert.deepEqual(canonicalSites(rows).map((r) => r.site), ["TechGradify", "MedGradify"]); assert.equal(rows[0].site, "TechGradify · ForgeLab", "the input is untouched");
+  assert.equal(canonicalSites({ site: "ForgeLab", n: 1 }).site, "TechGradify");
+  const all = canonicalSites({ documents: rows, profile: { site: "x" } }); assert.equal(all.documents[0].site, "TechGradify");
+  const tech = GROUPS.flatMap((g) => g.items).find((s) => s.n === "TechGradify");
+  assert.ok(tech && tech.built && !tech.u, "TechGradify is a Gradify sub-site, not an external domain");
+  assert.ok(!GROUPS.flatMap((g) => g.items).some((s) => /ForgeLab/.test(`${s.n} ${s.d}`)), "the ForgeLab name is gone");
 });

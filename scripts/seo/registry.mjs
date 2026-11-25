@@ -44,6 +44,9 @@ export const SITE_HOME = {
   engineergradify: ["Engineering Revision Online: Free Course | EngineerGradify", "Revise engineering maths, statics, dynamics, materials and systems with worked problems, flashcards and quizzes in a free engineering course."],
   mathgradify: ["GCSE, A Level & University Maths Revision | MathGradify", "Maths from GCSE and A level to university, with worked examples, generated practice and a line-by-line step checker that shows where a method went wrong."],
   scigradify: ["Biology, Chemistry & Physics Revision Online | SciGradify", "Free biology, chemistry and physics courses with interactive simulations, notes, flashcards, quizzes and exams, from first principles to advanced topics."],
+  econgradify: ["Economics Revision & Study Notes | EconGradify", "Study microeconomics, macroeconomics, behavioural and development economics and policy, with flashcards and quizzes made from your own notes."],
+  geographygradify: ["Geography Revision & Study Notes | GeographyGradify", "Study physical, human and environmental geography, maps, GIS and fieldwork, with flashcards and quizzes made from your own notes."],
+  techgradify: ["Computer Science Revision for GCSE & A Level | TechGradify", "Learn computer science for GCSE, A level and first-year university: programming, algorithms, data and systems, with check questions and flashcards."],
   ecogradify: ["Ecology & Environmental Science Revision | EcoGradify", "Revise populations, communities, ecosystems, biodiversity and sustainability with a free ecology course, flashcards, quizzes and real-world case studies."],
   socgradify: ["Sociology Revision Online: Notes & Quizzes | SocGradify", "Revise sociological theory, inequality, culture, institutions and research methods with real-data explorers, flashcards and quizzes. Free."],
   historygradify: ["History Revision: Notes, Sources & Essays | HistoryGradify", "Revise British, European and world history from medieval Britain to the modern world, with sources, interpretations, flashcards and essay practice."],
@@ -64,8 +67,8 @@ export const EXTRA = {
 // getgradify.com stay out of search results, so they never compete with the product's own site. Not in the sitemap
 // either (scripts/build-sitemap.mjs).
 export const EXTERNAL = {
-  "techgradify/index.html": { title: "TechGradify · ForgeLab: Coding, Data Science and AI", description: "Hands-on coding, data science and AI engineering, with instant feedback. TechGradify · ForgeLab is a separate product with its own site." },
-  "techgradify/course/index.html": { title: "TechGradify · ForgeLab: Computer Science Course", description: "Computer science, from computational thinking and Python to algorithms, on TechGradify · ForgeLab, a separate product with its own site." },
+  "techgradify/index.html": { title: "TechGradify: Coding, Data Science and AI", description: "Hands-on coding, data science and AI engineering, with instant feedback. TechGradify is a separate product with its own site." },
+  "techgradify/course/index.html": { title: "TechGradify: Computer Science Course", description: "Computer science, from computational thinking and Python to algorithms, on TechGradify, a separate product with its own site." },
 };
 
 // written lessons only: a course is described by what a learner can open today

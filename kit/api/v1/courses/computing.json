@@ -2,14 +2,14 @@
  "api": 1,
  "slug": "computing",
  "name": "Computer Science",
- "site": "TechGradify · ForgeLab",
+ "site": "TechGradify",
  "unitWord": "School",
  "levels": [
   "Foundation",
   "Application",
   "Evaluation"
  ],
- "notice": "<b>Study material, not a qualification or legal advice.</b> ForgeLab teaches computer science for GCSE, A level and the first year of university, but it isn't an exam board resource or an accredited course: check the details of your own specification with your teacher or exam board. The lessons were drafted with AI assistance and haven't yet been reviewed by subject experts, so they may contain errors. Security lessons explain attacks so that you can defend against them: trying them on systems you don't own or have permission to test can be a criminal offence under the Computer Misuse Act 1990. The law lessons describe UK law for study; for a real data protection question, see the ICO or a qualified adviser.",
+ "notice": "<b>Study material, not a qualification or legal advice.</b> TechGradify teaches computer science for GCSE, A level and the first year of university, but it isn't an exam board resource or an accredited course: check the details of your own specification with your teacher or exam board. The lessons were drafted with AI assistance and haven't yet been reviewed by subject experts, so they may contain errors. Security lessons explain attacks so that you can defend against them: trying them on systems you don't own or have permission to test can be a criminal offence under the Computer Misuse Act 1990. The law lessons describe UK law for study; for a real data protection question, see the ICO or a qualified adviser.",
  "notes": "/kit/courses/computing/notes/{unit}.js",
  "tracks": [
   {

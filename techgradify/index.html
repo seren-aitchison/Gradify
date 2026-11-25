@@ -3,13 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>TechGradify · ForgeLab: Coding, Data Science and AI</title>
+  <title>TechGradify: Coding, Data Science and AI</title>
+  <!-- head-tags: canonical and link previews, added by scripts/build-seo.mjs -->
+  <link rel="canonical" href="https://getgradify.com/techgradify/">
+  <meta property="og:title" content="TechGradify: Coding, Data Science and AI">
+  <meta property="og:description" content="Hands-on coding, data science and AI engineering, with instant feedback. TechGradify is a separate product with its own site.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://getgradify.com/techgradify/">
+  <meta property="og:site_name" content="Gradify">
+  <meta property="og:image" content="https://getgradify.com/assets/og.png">
   <meta name="robots" content="noindex, follow">
-  <!-- TechGradify · ForgeLab's homepage, made from kit/templates/subsite by npm run new-site, with the opening
+  <link rel="alternate" hreflang="en-GB" href="https://getgradify.com/techgradify/">
+  <link rel="alternate" hreflang="x-default" href="https://getgradify.com/techgradify/">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- TechGradify's homepage, made from kit/templates/subsite by npm run new-site, with the opening
        copy from kit/core/site-pages.js. Build the site out from here; the look comes from
        kit/styles/subsite.css, shared by every sub-site. -->
-  <meta name="gradify-site" content="TechGradify · ForgeLab">
-  <meta name="description" content="Hands-on coding, data science and AI engineering, with instant feedback. TechGradify · ForgeLab is a separate product with its own site.">
+  <meta name="gradify-site" content="TechGradify">
+  <meta name="description" content="Hands-on coding, data science and AI engineering, with instant feedback. TechGradify is a separate product with its own site.">
   <meta name="theme-color" content="#000000">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="../manifest.webmanifest">
@@ -55,7 +66,7 @@
     import { renderHome } from "../kit/core/subsite-home.js";
     // the rest of the page (how it works, topics, features, progress, a day, questions), from kit/core/site-content.js
     renderHome(document.getElementById("sub-more"), document.querySelector('meta[name="gradify-site"]').content);
-    const s = SITES.find((x) => x.n === "TechGradify · ForgeLab");
+    const s = SITES.find((x) => x.n === "TechGradify");
     if (s) {
       document.body.style.setProperty("--accent", accentOf(s));
       document.querySelectorAll(".sub-brand .icon").forEach((el) => { el.innerHTML = icon(s.i); el.style.cssText = `--c:#${s.c};--tile:${tile(s.c)};--ink:${ink(s.c)}`; });
@@ -82,8 +93,8 @@
     <!-- sub-header: written by scripts/sync-headers.mjs; edit it there -->
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="sub-nav glass">
-      <a class="sub-brand" href="./"><span class="icon"></span><span data-site-name>TechGradify · ForgeLab</span></a>
-      <nav class="sub-links" aria-label="TechGradify · ForgeLab">
+      <a class="sub-brand" href="./"><span class="icon"></span><span data-site-name>TechGradify</span></a>
+      <nav class="sub-links" aria-label="TechGradify">
         <a href="course/">Course</a>
         <a href="app.html#/study">Study</a>
         <details class="sub-more"><summary>More</summary><div class="sub-more-list"><a href="map.html">Map</a><a href="lifeos.html">LifeOS</a><a href="3d.html">Computer 3D</a><a href="app.html#/notes">Notes</a><a href="app.html#/progress">Progress</a><a href="app.html#/plan">Plan</a><a href="/">All Gradify sites</a></div></details>
@@ -100,15 +111,15 @@
       <section class="sub-hero">
         <div>
           <a class="sub-badge" href="/#lifeos"><i></i>A Gradify site, designed to connect with Gradify LifeOS <span aria-hidden="true">→</span></a>
-          <h1><span>TechGradify · ForgeLab</span><span class="fade">on Gradify.</span></h1>
-          <p class="lede">Hands-on coding, data science and AI engineering, with instant feedback. Forge is the future of TechGradify.</p>
+          <h1><span>TechGradify</span><span class="fade">on Gradify.</span></h1>
+          <p class="lede">Hands-on coding, data science and AI engineering, with instant feedback.</p>
           <div class="sub-ctas">
             <a class="btn btn-light lg" href="app.html"><span>Start with your notes</span> <span aria-hidden="true">→</span></a>
             <a class="btn btn-ghost lg" href="map.html"><span data-icon="route"></span><span>Open the learning map</span></a>
           </div>
           <ul class="sub-ticks"><li>Works with your own notes</li><li>Every card checked</li><li>Free to start</li></ul>
         </div>
-        <div class="sub-window" aria-label="An example of TechGradify · ForgeLab checking an answer">
+        <div class="sub-window" aria-label="An example of TechGradify checking an answer">
           <div class="sw-top"><i></i><i></i><i></i><span class="sw-file">your-notes.pdf</span><span class="sw-level">Start</span></div>
           <pre class="sw-code"><span class="c"># Question</span>
 <span class="k">What's the first idea in your notes?</span>
@@ -127,7 +138,7 @@
       <div id="sub-more"></div>
     </main>
     <!-- sub-footer: written by scripts/sync-headers.mjs; edit it there -->
-    <footer class="sub-foot"><p><span data-site-name>TechGradify · ForgeLab</span> is part of <a href="/">Gradify</a>. Sign in to keep your progress on every device.</p><nav aria-label="Free study resources"><a href="/study-plan/">Free study plans</a><a href="/tools/">Free study tools</a><a href="/guides/">Study guides</a></nav><nav aria-label="TechGradify · ForgeLab footer"><a href="/">All Gradify sites</a><a href="/pricing.html">Pricing</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="mailto:hello@getgradify.com">Contact</a></nav></footer>
+    <footer class="sub-foot"><p><span data-site-name>TechGradify</span> is part of <a href="/">Gradify</a>. Sign in to keep your progress on every device.</p><nav aria-label="Free study resources"><a href="/topics/computing/">TechGradify topics and flashcards</a><a href="/study-plan/">Free study plans</a><a href="/tools/">Free study tools</a><a href="/guides/">Study guides</a></nav><nav aria-label="TechGradify footer"><a href="/">All Gradify sites</a><a href="/pricing.html">Pricing</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="mailto:hello@getgradify.com">Contact</a></nav></footer>
     <!-- /sub-footer -->
   </div>
 </body>
