@@ -102,3 +102,22 @@ test("onboarding saves the same profile fields as before", () => {
   assert.equal(onboardingPatch({ site: "", level: "school", deadline: "", week: "?" }).daily_minutes, WEEK[1][3]);
   assert.equal(onboardingPatch({ site: "", level: "school", deadline: "" }).exam_date, null);
 });
+
+test("a v1 lesson's untagged questions become checks on the concepts they ask about", () => {
+  const V1 = `## Enzymes
+O: Describe what an enzyme does
+O: Explain how temperature affects enzymes
+H: What enzymes do
+P: An enzyme is a protein that speeds up a reaction. The substrate fits the active site.
+H: Enzymes and temperature
+P: Raising the temperature speeds a reaction until the enzyme denatures and its active site changes shape.
+M: Where does the substrate bind on an enzyme? | the active site | the nucleus | the membrane | the cell wall
+M: What happens to an enzyme at a very high temperature? | it denatures | it multiplies | it freezes | nothing
+SUM: Enzymes speed up reactions; heat denatures them.
+`;
+  const [L] = parseNotes(V1);
+  const F = lessonFlow(L);
+  assert.equal(F.blocks.length, 2);
+  assert.deepEqual(F.blocks.map((B) => B.checks.length), [1, 1], "each concept is followed by the question about it");
+  assert.match(L.mcq[F.blocks[0].checks[0].i].Q?.q || L.mcq[F.blocks[0].checks[0].i].q, /substrate/);
+});

@@ -330,6 +330,14 @@ const SUBJECT = {
 };
 const subjectOf = (n) => SUBJECT[canonicalSite(n)] || canonicalSite(String(n || ""));
 const POPULAR = ["UnderGradify", "MedGradify", "LawGradify", "NurseGradify", "PsychGradify", "BusinessGradify"];
+// onboarding asks the level first, so the subjects it offers first are the ones studied at that level (school first:
+// most of Gradify's learners are at school); anything else is one search away
+const POPULAR_BY_LEVEL = {
+  school: ["SciGradify", "MathGradify", "HistoryGradify", "LitGradify", "LanguageGradify", "YouthGradify"],
+  undergraduate: POPULAR,
+  postgraduate: ["PostGradify", "MedGradify", "LawGradify", "PsychGradify", "SciGradify", "BusinessGradify"],
+  professional: ["ProGradify", "NurseGradify", "LawGradify", "FinanceGradify", "PharmaGradify", "MedGradify"],
+};
 const pickBtn = (s) => `<button type="button" class="site-pick ${profile.site === s.n ? "on" : ""}" data-site="${esc(s.n)}" data-s="${esc((subjectOf(s.n) + " " + s.n + " " + s.d).toLowerCase())}" style="--c:#${s.c};--tile:${tile(s.c)};--ink:${ink(s.c)}"><span class="icon">${icon(s.i)}</span><span><b>${esc(subjectOf(s.n))}</b><em>${esc(s.who || s.d.split(/[:.]/)[0])}<small>on ${esc(s.n.replace(" · ForgeLab", ""))}</small></em></span></button>`;
 
 // ---------- Save your work: the sign-up ask, shown once a learner has something worth keeping ----------
@@ -432,9 +440,13 @@ function wireOffer(root) {
 // any exam or deadline, and time per week. The goal is inferred from the answers; it saves the same profile fields
 // as before (goal, site, level, exam_date, daily_minutes, and the learner record), so nothing downstream changes.
 async function renderStart(stepArg) {
-  const order = SITE ? ["level", "deadline", "time"] : ["subject", "level", "deadline", "time"];
+  const order = SITE ? ["level", "deadline", "time"] : ["level", "subject", "deadline", "time"];
   const step = Math.min(Math.max(Number(stepArg) || 1, 1), order.length), kind = order[step - 1], p = profile;
-  picks.site ||= SITE || p.site || ""; picks.level ||= levelFor(picks.site, p);
+  // nothing is chosen for a new learner: the level is theirs to pick, not guessed from a default site
+  // (the empty profile carries a default level of "undergraduate": it only counts once set-up has been done)
+  const chose = Boolean(learnerOf(p).onboarded_at);
+  picks.site ||= SITE || (chose ? p.site : "") || ""; picks.level ||= (chose ? p.level : "") || (SITE ? levelFor(SITE, chose ? p : {}) : "");
+  const popular = (POPULAR_BY_LEVEL[picks.level] || POPULAR).map((n) => SITES.find((x) => x.n === n)).filter((x) => x && x.status !== "soon");
   if (picks.deadline === undefined) picks.deadline = p.exam_date || (p.goal && !p.exam_date ? "" : undefined);
   picks.week ||= (WEEK.find((w) => w[3] >= Number(p.daily_minutes || 0)) || WEEK[1])[0];
   document.documentElement.classList.add("onb");
@@ -442,9 +454,9 @@ async function renderStart(stepArg) {
   const card = (val, t, d, ic, on) => `<button type="button" class="onb-card" data-v="${esc(val)}" aria-pressed="${on ? "true" : "false"}">${ic ? `<span class="onb-ic">${icon(ic)}</span>` : ""}<b>${esc(t)}</b>${d ? `<span>${esc(d)}</span>` : ""}</button>`;
   const Q = {
     subject: ["What do you want to learn first?", "You can add more subjects later.",
-      `<div class="onb-cards">${POPULAR.map((n) => SITES.find((x) => x.n === n)).filter(Boolean).map((x) => card(x.n, subjectOf(x.n), x.who, x.i, picks.site === x.n)).join("")}</div>
-       <label class="onb-search"><span class="sr-only">Search every subject</span><input id="onb-q-search" type="search" placeholder="Something else? Search, e.g. history, maths, nursing" autocomplete="off"></label>
-       <div class="onb-cards onb-more" hidden>${SITES.filter((x) => x.n !== "Klerio" && !POPULAR.includes(x.n)).map((x) => card(x.n, subjectOf(x.n), x.who, x.i, picks.site === x.n).replace('class="onb-card"', `class="onb-card" data-s="${esc((subjectOf(x.n) + " " + x.n + " " + x.d).toLowerCase())}"`)).join("")}</div>`, () => picks.site],
+      `<label class="onb-search"><span class="sr-only">Search every subject</span><input id="onb-q-search" type="search" placeholder="Search all subjects, e.g. maths" autocomplete="off"></label>
+       <div class="onb-cards onb-pop">${popular.map((x) => card(x.n, subjectOf(x.n), x.who, x.i, picks.site === x.n)).join("")}</div>
+       <div class="onb-cards onb-more" hidden>${SITES.filter((x) => x.n !== "Klerio" && !popular.includes(x)).map((x) => card(x.n, subjectOf(x.n), x.who, x.i, picks.site === x.n).replace('class="onb-card"', `class="onb-card" data-s="${esc((subjectOf(x.n) + " " + x.n + " " + x.d).toLowerCase())}"`)).join("")}</div>`, () => picks.site],
     level: ["What level are you studying at?", "So explanations and questions are pitched right.", `<div class="onb-cards">${ONB_LEVELS.map(([v, t, d, ic]) => card(v, t, d, ic, picks.level === v)).join("")}</div>`, () => picks.level],
     deadline: ["Do you have an exam or deadline?", "Gradify plans backwards from it. No date? You'll learn at your own pace.",
       `<div class="onb-cards">${card("yes", "Yes, I have a date", "An exam, an assessment or a deadline", "calendar", picks.deadline !== undefined && picks.deadline !== "")}${card("no", "No deadline", "I'm learning at my own pace", "sparkles", picks.deadline === "")}</div>
@@ -474,6 +486,8 @@ async function renderStart(stepArg) {
   view.querySelector("#onb-q-search")?.addEventListener("input", (e) => {
     const q = e.target.value.trim().toLowerCase(), more = view.querySelector(".onb-more"); more.hidden = !q;
     more.querySelectorAll(".onb-card").forEach((b) => { b.hidden = q && !b.dataset.s.includes(q); });
+    // while searching, the suggestions step aside so the matches sit right under the search box (the chosen card stays)
+    view.querySelectorAll(".onb-pop .onb-card").forEach((b) => { b.hidden = Boolean(q) && b.getAttribute("aria-pressed") !== "true" && !(subjectOf(b.dataset.v) + " " + b.dataset.v).toLowerCase().includes(q); });
   });
   $("#skip").addEventListener("click", async () => { await saveLearner(store, { skipped_at: new Date().toISOString() }); profile = await store.getProfile(); document.documentElement.classList.remove("onb"); location.hash = "#/today"; });
   go.addEventListener("click", async () => {

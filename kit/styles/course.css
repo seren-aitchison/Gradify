@@ -2960,16 +2960,18 @@ body:has(.co-modal) .cx-dock { visibility: hidden; }
    One column, one thing to do, one primary action. The course chrome, the outline, the rail and the dock fold away. */
 .co.co-stepmode .co-side, .co.co-stepmode .co-tree, .co.co-stepmode .cx-dock, .co.co-stepmode .cx-rings { display: none !important; }
 .co.co-stepmode .co-body { grid-template-columns: minmax(0, 1fr) !important; margin-top: 8px; }
-.ls { max-width: 720px; margin: 0 auto; padding-bottom: 120px; }
+.ls { max-width: 720px; margin: 0 auto; padding-bottom: calc(170px + env(safe-area-inset-bottom, 0px)); }
 .ls-bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; display: flex; align-items: center; gap: 14px; padding: 14px 0; background: var(--bg, #fff); }
 .ls-back, .ls-close { display: inline-grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; color: var(--fg); flex: none; }
+.ls-close { display: inline-flex; gap: 6px; width: auto; padding: 0 10px; font: 600 14px var(--sans); text-decoration: none; }
+.ls-count { flex: none; font: 600 13px var(--sans); color: var(--fg); font-variant-numeric: tabular-nums; }
 .ls-back:hover, .ls-close:hover { background: rgba(var(--ink-rgb), .06); }
 .ls-back:focus-visible, .ls-close:focus-visible, .ls-prog a:focus-visible, .ls-tool:focus-visible, .ls-go:focus-visible { outline: 3px solid var(--a); outline-offset: 2px; }
 .ls-back .co-ic, .ls-close .co-ic { width: 22px; height: 22px; }
 .ls-prog { flex: 1; display: flex; gap: 6px; list-style: none; margin: 0; padding: 0; min-width: 0; }
 .ls-prog li { flex: 1; height: 8px; border-radius: 99px; background: rgba(var(--ink-rgb), .1); overflow: hidden; }
 .ls-prog li.done, .ls-prog li.here { background: var(--a); }
-.ls-prog li.here { background: linear-gradient(90deg, var(--a) 45%, rgba(var(--ink-rgb), .1) 45%); }
+.ls-prog li.here { background: var(--a); box-shadow: 0 0 0 2px var(--bg, #fff), 0 0 0 3.5px var(--a); }   /* the current step: full, ringed (a half-filled bar read as half done) */
 .ls-prog a { display: block; height: 100%; }
 .ls-body { padding: 8px 0 0; }
 .ls-kicker { display: block; font: 600 13px var(--sans); letter-spacing: .04em; text-transform: uppercase; color: var(--mute); margin-bottom: 8px; }
@@ -2985,7 +2987,7 @@ body:has(.co-modal) .cx-dock { visibility: hidden; }
 .ls-objs li small { grid-column: 2; color: var(--mute); font-size: 13px; }
 .ls-ob { display: inline-grid; place-items: center; width: 26px; height: 26px; border-radius: 99px; background: rgba(var(--ink-rgb), .08); font: 700 13px var(--sans); }
 .ls-objs li.ok .ls-ob { background: var(--s-mastered, var(--a)); color: #fff; }
-.ls-obtag { display: flex; gap: 8px; align-items: flex-start; color: var(--mute); font-size: 14px; margin: -4px 0 18px; }
+.ls-obtag { display: flex; gap: 8px; align-items: flex-start; color: var(--fg); font-size: 15px; line-height: 1.45; margin: -4px 0 18px; }
 .ls-obtag .co-ic { width: 16px; height: 16px; flex: none; margin-top: 3px; }
 .ls-hook { border-left: 4px solid var(--a); background: rgba(var(--ink-rgb), .04); border-radius: 0 14px 14px 0; padding: 14px 18px; margin: 0 0 20px; }
 .ls-hook b { display: block; font-size: 13px; text-transform: uppercase; letter-spacing: .05em; color: var(--mute); margin-bottom: 4px; }
@@ -3004,10 +3006,13 @@ body:has(.co-modal) .cx-dock { visibility: hidden; }
 .ls-way h3 { font-size: 15px; margin: 14px 0 6px; }
 .ls-check { margin: 26px 0 0; padding-top: 18px; border-top: 1px solid var(--line); }
 .ls-q { margin: 0 0 18px; }
-.ls-foot { position: fixed; left: 0; right: 0; bottom: 0; z-index: 6; display: grid; justify-items: center; gap: 6px; padding: 14px max(16px, env(safe-area-inset-right, 0px)) calc(14px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); background: linear-gradient(transparent, var(--bg, #fff) 30%); }
+/* the bar fades in over the last 36px above it, so text running under it reads as "more below", never as cut off */
+.ls-foot { position: fixed; left: 0; right: 0; bottom: 0; z-index: 6; display: grid; justify-items: center; gap: 6px; padding: 36px max(16px, env(safe-area-inset-right, 0px)) calc(14px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); background: linear-gradient(to bottom, transparent, var(--bg, #fff) 36px); pointer-events: none; }
+.ls-foot > * { pointer-events: auto; }
 .ls-go { width: min(720px, 100%); justify-content: center; font-size: 17px; min-height: 54px; }
-.ls-go.off { opacity: .45; cursor: not-allowed; }
-.ls-why { margin: 0; font-size: 13px; color: var(--mute); }
+/* waiting for an answer: readable and clearly not yet the next step (no faded grey) */
+.ls-go.off { opacity: 1; cursor: not-allowed; background: var(--bg, #fff) !important; color: var(--fg) !important; border: 1.5px solid rgba(var(--ink-rgb), .28) !important; box-shadow: none !important; }
+.ls-why { margin: 0; font-size: 14px; color: var(--fg); }
 .co-learnstep { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; margin: 4px 0 18px; width: fit-content; max-width: 100%; }
 .co-learnstep small { font-weight: 500; opacity: .8; }
 .lx-hook { border-left: 4px solid var(--a); }
@@ -3015,3 +3020,18 @@ body:has(.co-modal) .cx-dock { visibility: hidden; }
 .lx-alt { margin: 8px 0; } .lx-alt summary { cursor: pointer; font-weight: 600; }
 @media (max-width: 640px) { .ls-title { font-size: 28px; } .ls-lead, .ls-teach, .ls-hook p { font-size: 16px; } .ls-card { padding: 16px; } }
 @media (prefers-reduced-motion: reduce) { .ls *, .ls-foot { transition: none !important; animation: none !important; scroll-behavior: auto !important; } }
+
+/* Learn mode is for thinking: decoration with no teaching purpose steps away (Lesson System Brief v2, principle 10).
+   The page's line ribbons and glows, the bar's moving rim (a plain line instead), and the tutor is named, not an orb. */
+body:has(.co.co-stepmode) :is(.g-motifs, .aurora) { display: none !important; }
+.co.co-stepmode::before, .co.co-stepmode::after { content: none; }
+:root body:has(.co.co-stepmode) header.sub-nav.glass::before, :root body:has(.co.co-stepmode) header.bar.glass::before { content: none; }
+:root body:has(.co.co-stepmode) :is(header.sub-nav.glass, header.bar.glass) { border-color: var(--line-strong, var(--line)) !important; }
+body:has(.co.co-stepmode) .gai-fab { bottom: calc(112px + env(safe-area-inset-bottom)); gap: 10px; padding: 6px 18px 6px 6px; }
+body:has(.co.co-stepmode) .gai-fab .gai-fabt { max-width: 160px; opacity: 1; }
+body:has(.co.co-stepmode) .gai-orb > i { animation: none; }
+@media (max-width: 640px) {
+  .ls-kstep { display: none; }
+  body:has(.co.co-stepmode) .gai-fab { bottom: calc(108px + env(safe-area-inset-bottom)); width: auto; height: 48px; padding: 4px 14px 4px 4px; }
+  body:has(.co.co-stepmode) .gai-fab .gai-orb { width: 38px; height: 38px; }
+}

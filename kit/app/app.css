@@ -1594,7 +1594,7 @@ body.side-open body.side-open /* phones: set-up's Continue stays in reach at the
 html.onb .lo-side, html.onb .app-bar, html.onb .tabbar, html.onb .sec-screens, html.onb .lo-tabs { display: none !important; }
 html.onb #view { max-width: none; }
 html.onb .lo-shell { display: block; }   /* the sidebar's grid column goes with the sidebar */
-.onb-screen { max-width: 880px; margin: 0 auto; padding: 24px 0 140px; display: grid; gap: 28px; }
+.onb-screen { max-width: 880px; margin: 0 auto; padding: 24px 0 calc(190px + env(safe-area-inset-bottom, 0px)); display: grid; gap: 24px; }
 .onb-top { display: flex; align-items: center; gap: 16px; }
 .onb-back { display: inline-grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; color: var(--fg); flex: none; }
 .onb-back svg { width: 24px; height: 24px; }
@@ -1609,20 +1609,25 @@ html.onb .lo-shell { display: block; }   /* the sidebar's grid column goes with 
 .onb-head h1 { font-size: clamp(24px, 4vw, 32px); line-height: 1.15; margin: 0 0 6px; outline: none; text-wrap: balance; }
 .onb-head p { margin: 0; color: var(--mute, #5b6478); font-size: 17px; }
 .onb-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; max-width: 760px; margin: 0 auto; width: 100%; }
-.onb-card { display: grid; justify-items: center; align-content: center; gap: 8px; min-height: 170px; padding: 22px 16px; border-radius: 22px; border: 2px solid transparent; background: rgba(var(--ink-rgb, 17, 24, 39), .045); color: var(--fg); font: inherit; text-align: center; cursor: pointer; transition: transform .15s, border-color .15s, background .15s; }
+.onb-card { position: relative; display: grid; justify-items: center; align-content: center; gap: 8px; min-height: 170px; padding: 22px 16px; border-radius: 22px; border: 2px solid transparent; background: rgba(var(--ink-rgb, 17, 24, 39), .045); color: var(--fg); font: inherit; text-align: center; cursor: pointer; transition: transform .15s, border-color .15s, background .15s; }
 .onb-card b { font-size: 17px; }
-.onb-card > span:not(.onb-ic) { font-size: 14px; color: var(--mute, #5b6478); }
+.onb-card > span:not(.onb-ic) { font-size: 14px; color: var(--fg); opacity: .78; }
 .onb-ic { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 16px; background: rgba(var(--ink-rgb, 17, 24, 39), .07); }
 .onb-ic svg { width: 28px; height: 28px; }
 .onb-card:hover { transform: translateY(-2px); background: rgba(var(--ink-rgb, 17, 24, 39), .07); }
-.onb-card[aria-pressed="true"] { border-color: #8b5cf6; background: linear-gradient(160deg, rgba(139, 92, 246, .08), rgba(139, 92, 246, .22)); }
+.onb-card[aria-pressed="true"] { border-color: #6d28d9; background: linear-gradient(160deg, rgba(139, 92, 246, .1), rgba(139, 92, 246, .24)); }
+/* the chosen card says so in shape as well as colour: a tick in its corner */
+.onb-card[aria-pressed="true"]::after { content: ""; position: absolute; top: 12px; right: 12px; width: 24px; height: 24px; border-radius: 50%;
+  background: #6d28d9 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 16px no-repeat; }
+.onb-card[aria-pressed="true"] b { color: var(--fg); }
 .onb-card:focus-visible, .onb-go:focus-visible, .onb-back:focus-visible, .onb-skip:focus-visible { outline: 3px solid #8b5cf6; outline-offset: 3px; }
 .onb-search { max-width: 760px; margin: 0 auto; width: 100%; }
 .onb-search input, .onb-date input { width: 100%; min-height: 50px; border-radius: 14px; border: 1.5px solid rgba(var(--ink-rgb, 17, 24, 39), .18); padding: 0 16px; font: inherit; background: transparent; color: var(--fg); }
 .onb-date { display: grid; gap: 8px; max-width: 360px; margin: 0 auto; width: 100%; font-weight: 600; }
-.onb-foot { position: fixed; left: 0; right: 0; bottom: 0; display: grid; justify-items: center; gap: 6px; padding: 16px max(16px, env(safe-area-inset-right, 0px)) calc(16px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); background: linear-gradient(transparent, var(--bg, #fff) 35%); }
+.onb-foot { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; display: grid; justify-items: center; gap: 6px; padding: 36px max(16px, env(safe-area-inset-right, 0px)) calc(12px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); background: linear-gradient(to bottom, transparent, var(--bg, #fff) 32px); }
 .onb-go { width: min(700px, 100%); min-height: 56px; border-radius: 99px; justify-content: center; font-size: 17px; }
-.onb-go:disabled { opacity: .4; cursor: not-allowed; }
-.onb-skip { background: none; border: 0; color: var(--mute, #5b6478); font: inherit; font-size: 14px; min-height: 40px; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+/* not yet chosen: still readable, clearly not the primary action (no faded grey-on-grey) */
+.onb-go:disabled { opacity: 1; cursor: not-allowed; background: var(--bg, #fff) !important; color: var(--fg) !important; border: 1.5px solid rgba(var(--ink-rgb, 17, 24, 39), .28) !important; box-shadow: none !important; }
+.onb-skip { background: none; border: 0; color: var(--fg); font: inherit; font-size: 14px; min-height: 40px; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 560px) { .onb-head { gap: 14px; } .onb-mascot { width: 60px; height: 60px; border-radius: 22px; } .onb-mascot svg { width: 30px; height: 30px; } .onb-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; } .onb-card { min-height: 140px; padding: 16px 10px; } }
 @media (prefers-reduced-motion: reduce) { .onb-card { transition: none; } .onb-card:hover { transform: none; } }

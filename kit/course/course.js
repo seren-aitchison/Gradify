@@ -1532,7 +1532,7 @@ export function mountCourse(root, cfg) {
       needsAnswer = s.questions.length;
     } else if (s.kind === "block") {
       const B = s.block, partsHtml = lessonHtml({ blocks: B.parts }), ob = B.objectives.length ? `<p class="ls-obtag">${ic("target")} ${B.objectives.map((o) => esc(N.objectives[o - 1] || `Objective ${o}`)).join(" · ")}</p>` : "";
-      body = `<span class="ls-kicker">Concept ${s.n} of ${s.of}</span><h1 class="ls-title" tabindex="-1">${inline(B.title || l.title)}</h1>${ob}
+      body = `<span class="ls-kicker">Concept ${s.n} of ${s.of}<span class="ls-kstep"> · step ${n + 1} of ${steps.length}</span></span><h1 class="ls-title" tabindex="-1">${inline(B.title || l.title)}</h1>${ob}
         ${B.hook ? `<div class="ls-hook"><b>Think first</b><p>${inline(B.hook)}</p></div>` : ""}
         <div class="ls-teach co-prose">${partsHtml}</div>
         ${B.more.length ? `<details class="ls-more"><summary>${ic("more")} More detail</summary>${B.more.map((x) => `<p>${inline(x)}</p>`).join("")}</details>` : ""}
@@ -1562,7 +1562,8 @@ export function mountCourse(root, cfg) {
     main.innerHTML = `<article class="ls" style="--a:${t.from};--b:${t.to}">
       <header class="ls-bar"><a class="ls-back" href="${n ? href(n - 1) : `#/lesson/${id}`}" aria-label="${n ? "Previous step" : "Back to the lesson"}">${ic("left")}</a>
         <ol class="ls-prog" aria-label="Step ${n + 1} of ${steps.length}">${steps.map((x, k) => `<li class="${k < n ? "done" : k === n ? "here" : ""}"><a href="${href(k)}" tabindex="${k <= (S.step[id] || 0) ? 0 : -1}" aria-label="Step ${k + 1}${k === n ? " (current)" : ""}"></a></li>`).join("")}</ol>
-        <a class="ls-close" href="#/lesson/${id}" aria-label="Leave step-by-step and read as notes">${ic("notes")}</a></header>
+        <span class="ls-count" aria-hidden="true">${n + 1}/${steps.length}</span>
+        <a class="ls-close" href="#/lesson/${id}" aria-label="Leave step-by-step and read as notes">${ic("notes")}<span>Notes</span></a></header>
       <div class="ls-body">${body}</div>
       ${primary ? `<footer class="ls-foot"><a class="btn btn-light lg ls-go${needsAnswer ? " off" : ""}" href="${href(n + 1)}" ${needsAnswer ? 'aria-disabled="true"' : ""}>${esc(primary)}</a>${needsAnswer ? `<p class="ls-why">Answer ${needsAnswer === 1 ? "the question" : "each question"} to continue</p>` : ""}</footer>` : ""}
     </article>`;

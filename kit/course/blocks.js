@@ -64,11 +64,28 @@ export function lessonFlow(L, { checksPerBlock = 1 } = {}) {
     for (const o of q.objectives) if (objBlock.has(o)) return objBlock.get(o);
     return null;
   };
-  const byBlock = blocks.map(() => []);
-  for (const q of qs) { const h = home(q); if (h !== null && hasSections) byBlock[h].push(q); }
   const easiest = (a, b) => a.d - b.d || a.n - b.n;
   // the hardest questions are kept for the final check, so a block's check is an easier one when it has a choice
   const proveIds = new Set(qs.filter((q) => q.d >= 3).sort((a, b) => b.d - a.d || a.n - b.n).slice(0, 3).map((q) => q.n));
+  // a question with no section and no objective (most v1 lessons) checks the block whose words it shares most, so every
+  // concept is followed by a check where the lesson has one to give; the final check keeps its hardest questions
+  const bw = blocks.map((B) => new Set(words(blockText(B))));
+  const qText = (Q) => [Q.q, Q.why, ...(Q.options || []).filter((o) => o.correct).map((o) => o.text)].join(" ");
+  const score = (q) => { const qw = [...new Set(words(qText(q.Q)))]; return bw.map((set) => qw.filter((w) => set.has(w)).length); };
+  const byBlock = blocks.map(() => []), loose = [];
+  for (const q of qs) {
+    const h = home(q);
+    if (h !== null && hasSections) byBlock[h].push(q);
+    else if (hasSections && !proveIds.has(q.n)) loose.push({ q, sc: score(q) });
+  }
+  // blocks with no check yet take the loose question that suits them best, best pair first; the rest go where they fit
+  for (;;) {
+    let best = null;
+    for (const x of loose) x.sc.forEach((v, bi) => { if (v > 0 && !byBlock[bi].length && (!best || v > best.v)) best = { x, bi, v }; });
+    if (!best) break;
+    byBlock[best.bi].push(best.x.q); loose.splice(loose.indexOf(best.x), 1);
+  }
+  for (const { q, sc } of loose) { const top = Math.max(...sc); if (top > 0) byBlock[sc.indexOf(top)].push(q); }
   const flowBlocks = blocks.map((B, bi) => {
     const pool = byBlock[bi].slice().sort(easiest), pick = [...pool.filter((q) => !proveIds.has(q.n)), ...pool.filter((q) => proveIds.has(q.n))].slice(0, checksPerBlock);
     pick.forEach((q) => used.add(q.n));
