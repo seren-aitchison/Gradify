@@ -125,7 +125,7 @@ jobs:
             content/research/${{ matrix.subject }}/
             content/drafts/${{ matrix.subject }}/
             content/ledger/${{ matrix.subject }}.json
-            content/runs/${{ matrix.subject }}-${{ github.run_id }}.json
+            content/runs/${{ matrix.subject }}-${{ github.run_id }}*.json
             content/signals/
           if-no-files-found: ignore
           retention-days: 14
@@ -163,7 +163,7 @@ jobs:
           node --input-type=module -e "
             import { readdirSync, readFileSync, writeFileSync, existsSync } from 'node:fs';
             // only this workflow run's records: earlier runs' spend is already in content/spend.json
-            const runs = existsSync('content/runs') ? readdirSync('content/runs').filter((f) => f.endsWith('-${{ github.run_id }}.json')).map((f) => JSON.parse(readFileSync('content/runs/' + f, 'utf8'))) : [];
+            const runs = existsSync('content/runs') ? readdirSync('content/runs').filter((f) => f.includes('-${{ github.run_id }}') && f.endsWith('.json')).map((f) => JSON.parse(readFileSync('content/runs/' + f, 'utf8'))) : [];
             const s = existsSync('content/spend.json') ? JSON.parse(readFileSync('content/spend.json', 'utf8')) : { usd: 0, runs: [] };
             const usd = runs.reduce((a, r) => a + (r.spend?.usd || 0), 0); s.usd = +(s.usd + usd).toFixed(4); s.runs.push({ run: '${{ github.run_id }}', usd: +usd.toFixed(4) });
             writeFileSync('content/spend.json', JSON.stringify(s, null, 1) + '\n');

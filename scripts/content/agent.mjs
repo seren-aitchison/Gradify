@@ -13,7 +13,7 @@ import { parseNotes } from "../../kit/course/notes.js";
 import { runGates } from "./gates.mjs";
 import { nextTopics, frameworksFor, topicsFor, reqHash } from "./queue.mjs";
 import { currentBrief, checkBrief, stampBrief, researchRequest, packetFor, reviewRequest, gateOptions, lessonState, applyRepairReply, verdictOf, fileTopic } from "./loop.mjs";
-import { loadStatements, loadMap } from "../curriculum/engine.mjs";
+import { loadStatements, loadMap, loadIndex } from "../curriculum/engine.mjs";
 import { SPECS } from "../../kit/curriculum/uk.js";
 
 const AGENT = { research: "sonnet", write: "opus", repair: "opus", review: "sonnet", map: "haiku", ...(CONFIG.agent?.models || {}) };
@@ -53,7 +53,8 @@ export async function advance(topic, { render = null, legible = null } = {}) {
   if (!brief) {
     const reply = read(f("research.out.txt"));
     if (reply) {
-      rmSync(f("research.out.txt")); st.researchTries++;
+      // checkpoint before consuming a reply, so a stop between the two can't lose it or count it twice
+      st.researchTries++; keep(); rmSync(f("research.out.txt"));
       const c = checkBrief(reply, topic);
       if (!c.problems.length) { save(briefPath(topic.id), stampBrief(topic, reply)); brief = currentBrief(topic); rmSync(f("research.req.txt"), { force: true }); }
       else if (st.researchTries >= 2) { rmSync(dir, { recursive: true, force: true }); return { actions: [], filed: fileTopic(topic, [], { failures: [{ title: "(research)", gate: "brief", issues: c.problems.map((p) => ({ code: "SRC", line: null, note: p })) }] }) }; }
@@ -64,13 +65,21 @@ export async function advance(topic, { render = null, legible = null } = {}) {
       keep(); return { actions: [action("research", topic.id, { req: rel(f("research.req.txt")), out: rel(f("research.out.txt")) })], filed: null };
     }
   }
+  // in-flight work is valid only for the inputs it was made from: if the requirements or the brief changed, the
+  // drafts, repairs and reviews in progress describe something else, so they're discarded and the topic restarts
+  const inputs = `${reqHash(topic)}|${brief.key}`;
+  if (st.lessons && st.inputs && st.inputs !== inputs) {
+    st.lessons = null;
+    for (const n of readdirSync(dir)) if (/^(write|repair-\d+|review-\d+)\.(req|out)\.txt$/.test(n)) rmSync(f(n), { force: true });
+  }
+  st.inputs = inputs; st.reqHash = reqHash(topic);
   // 2. the unit file from the Writer
   const pkt = packetFor(topic, brief.brief);
   if (!st.lessons) {
     const reply = read(f("write.out.txt"));
     if (!reply) { save(f("write.req.txt"), pkt); keep(); return { actions: [action("write", topic.id, { req: rel(f("write.req.txt")), out: rel(f("write.out.txt")), examples: examplesFor(topic.level) })], filed: null }; }
     st.lessons = splitUnit(reply).map((l, i) => ({ ...lessonState(l, i), stage: "check" }));
-    rmSync(f("write.out.txt")); rmSync(f("write.req.txt"), { force: true });
+    keep(); rmSync(f("write.out.txt")); rmSync(f("write.req.txt"), { force: true });
     if (!st.lessons.length) { rmSync(dir, { recursive: true, force: true }); return { actions: [], filed: fileTopic(topic, [], { brief, failures: [{ title: "(unit)", gate: "parse", issues: [{ code: "FMT", line: null, note: "the Writer returned no lessons" }] }] }) }; }
   }
   // 3. each lesson: gates → review → repair, up to the repair limit
@@ -83,13 +92,15 @@ export async function advance(topic, { render = null, legible = null } = {}) {
       if (s.stage === "await-review" && !existsSync(vq) && !existsSync(vo)) save(vq, reviewRequest(s, topic, brief.brief));
       if (s.stage === "await-repair") {
         const reply = read(ro); if (!reply) { repairs.push([rel(rq), rel(ro)]); break; }
-        applyRepairReply(s, reply); rmSync(ro); rmSync(rq, { force: true }); s.stage = "check";
+        // applied and saved before the reply is removed: a stop in between leaves stage "check", which never reads it again
+        applyRepairReply(s, reply); s.stage = "check"; keep(); rmSync(ro); rmSync(rq, { force: true });
       } else if (s.stage === "await-review") {
         const reply = read(vo); if (!reply) { reviews.push([rel(vq), rel(vo)]); break; }
-        const v = verdictOf(reply); rmSync(vo); rmSync(vq, { force: true });
-        if (v.ok) { s.stage = "done"; s.done = true; break; }
-        s.issues = v.issues; s.failedAt = "review"; s.reviewFails++;
-        s.stage = s.gateFails + s.reviewFails > LIMIT() ? "failed" : "repair";
+        const v = verdictOf(reply);
+        if (v.ok) { s.stage = "done"; s.done = true; }
+        else { s.issues = v.issues; s.failedAt = "review"; s.reviewFails++; s.stage = s.gateFails + s.reviewFails > LIMIT() ? "failed" : "repair"; }
+        keep(); rmSync(vo); rmSync(vq, { force: true });
+        if (v.ok) break;
       } else if (s.stage === "check") {
         const g = await runGates(s.text, opts);
         if (g.ok) { s.stage = "review"; continue; }
@@ -118,8 +129,10 @@ export const mappingPath = (fw) => out(`content/mapping/${fw}.json`);
 export const loadMapping = (fw) => load(mappingPath(fw), { framework: fw, confirmed: {} });
 /** statements a matcher linked strongly to an existing lesson that nobody has confirmed yet */
 export function mapCandidates(fw) {
-  const map = loadMap(fw) || { links: {} }, done = loadMapping(fw).confirmed;
-  return Object.entries(map.links).filter(([ref, l]) => l.status !== "verified" && l.confidence === "strong" && !done[ref]).map(([ref, l]) => ({ ref, lessons: l.lessons.filter((x) => x.confidence === "strong" || x === l.lessons[0]).slice(0, 2).map((x) => x.id) }));
+  const map = loadMap(fw) || { links: {} }, done = loadMapping(fw).confirmed, hashes = new Map((loadIndex(fw)?.statements || []).map((x) => [x.ref, x.hash]));
+  // decided = a decision on the statement's current text (or one recorded before hashes were stored)
+  const decided = (ref) => done[ref] && (!done[ref].hash || done[ref].hash === hashes.get(ref));
+  return Object.entries(map.links).filter(([ref, l]) => l.status !== "verified" && l.confidence === "strong" && !decided(ref)).map(([ref, l]) => ({ ref, lessons: l.lessons.filter((x) => x.confidence === "strong" || x === l.lessons[0]).slice(0, 2).map((x) => x.id) }));
 }
 async function lessonIndex(subject) { const { lessonsOf } = await import("../growth/lesson-readiness.mjs"); return new Map((await lessonsOf([subject])).map((x) => [x.id, x])); }
 export async function mapActions(subject, { batch = 20 } = {}) {
@@ -148,21 +161,32 @@ export function addReqLine(file, title, reqId, objectives) {
   lines.splice(at + 1, 0, `REQ: ${reqId}${objectives.length ? ` @${objectives.join(",")}` : ""}`);
   writeFileSync(u, lines.join("\n")); return true;
 }
+/**
+ * One reply line. The map prompt asks for "MAP <req> <lesson> YES @<objectives>" or "MAP <req> NO <reason>"; a NO
+ * that also names the lesson ("MAP <req> <lesson> NO <reason>") is accepted too. Anything else is null.
+ */
+export function parseMapLine(line) {
+  const t = String(line).trim();
+  let m = t.match(/^MAP (\S+) NO\b\s*(.*)$/);
+  if (m) return { reqId: m[1], lesson: null, verdict: "NO", rest: m[2].trim() };
+  m = t.match(/^MAP (\S+) (\S+) (YES|NO)\b\s*(.*)$/);
+  return m ? { reqId: m[1], lesson: m[2], verdict: m[3], rest: m[4].trim() } : null;
+}
 /** apply map.out.txt replies: YES → a REQ: line on the existing lesson; NO → the requirement joins the write queue */
 export async function applyMapping(subject) {
   const res = [], idx = await lessonIndex(subject);
   for (const fw of frameworksFor(subject)) {
     const dir = out(`content/queue/${subject}/_map-${fw}/`), o = new URL("map.out.txt", dir), reply = read(o); if (!reply) continue;
-    const M = loadMapping(fw);
+    const M = loadMapping(fw), hashes = new Map((loadIndex(fw)?.statements || []).map((x) => [x.ref, x.hash]));
     for (const line of reply.split("\n")) {
-      const m = line.trim().match(/^MAP (\S+) (\S+) (YES|NO)\s*(.*)$/); if (!m) continue;
-      const [, reqId, second, verdict, rest] = m, ref = reqId.replace(`${fw}:`, "");
+      const m = parseMapLine(line); if (!m) continue;
+      const { reqId, lesson, verdict, rest } = m, ref = reqId.replace(`${fw}:`, "");
       if (verdict === "YES") {
-        const x = idx.get(second), objs = (rest.match(/@([\d,]+)/)?.[1] || "").split(",").map(Number).filter((n) => n >= 1 && n <= (x?.L.objectives.length || 0));
-        if (!x || !objs.length) { M.confirmed[ref] = { ok: false, why: x ? "confirmed without valid objectives" : `unknown lesson ${second}`, on: today() }; continue; }
+        const x = idx.get(lesson), objs = (rest.match(/@([\d,]+)/)?.[1] || "").split(",").map(Number).filter((n) => n >= 1 && n <= (x?.L.objectives.length || 0));
+        if (!x || !objs.length) { M.confirmed[ref] = { ok: false, why: x ? "confirmed without valid objectives" : `unknown lesson ${lesson}`, on: today() }; continue; }
         addReqLine(`kit/courses/${x.c.slug}/notes/${x.u.id}.js`, x.L.title, reqId, objs);
-        M.confirmed[ref] = { ok: true, lesson: second, objectives: objs, by: `agent:${AGENT.map}`, on: today() }; res.push(`${reqId} → ${second} @${objs.join(",")}`);
-      } else { M.confirmed[ref] = { ok: false, why: `${second} ${rest}`.trim(), on: today() }; res.push(`${reqId}: not taught (${`${second} ${rest}`.trim()}), queued to write`); }
+        M.confirmed[ref] = { ok: true, lesson, objectives: objs, hash: hashes.get(ref), by: `agent:${AGENT.map}`, on: today() }; res.push(`${reqId} → ${lesson} @${objs.join(",")}`);
+      } else { M.confirmed[ref] = { ok: false, why: rest || "not taught", ...(lesson ? { lesson } : {}), hash: hashes.get(ref), by: `agent:${AGENT.map}`, on: today() }; res.push(`${reqId}: not taught (${rest || "no reason given"}), queued to write`); }
     }
     save(mappingPath(fw), M); rmSync(dir, { recursive: true, force: true });
   }

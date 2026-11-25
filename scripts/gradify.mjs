@@ -22,7 +22,7 @@ import { CONFIG, at, out, load, save, today, briefPath, inboxDir } from "./conte
 import { nextTopics, subjectsInRun, frameworksFor, topicsFor, diagramsFor } from "./content/queue.mjs";
 import { runTopic, research } from "./content/loop.mjs";
 import { runGates } from "./content/gates.mjs";
-import { packet, splitUnit, fixList, parseVerdicts, numbered } from "./content/shorthand.mjs";
+import { packet, splitUnit, fixList, parseVerdicts, numbered, parentOf } from "./content/shorthand.mjs";
 import { status, writeHandover, prBody } from "./content/report.mjs";
 
 const argv = process.argv.slice(2), cmd = argv[0];
@@ -61,7 +61,8 @@ async function run() {
   } finally { await t.legible?.close?.(); }
   // one record per run, never overwritten: <subject>-<workflow run id or time>.json
   const runId = process.env.GITHUB_RUN_ID || new Date().toISOString().replace(/[-:T.Z]/g, "").slice(0, 14);
-  const runFile = out(`content/runs/${opt("subject") || "all"}-${runId}.json`);
+  // the workflow run id names the run; a time suffix makes each invocation's record its own file
+  const runFile = out(`content/runs/${opt("subject") || "all"}-${runId}${process.env.GITHUB_RUN_ID ? `-${Date.now().toString(36)}` : ""}.json`);
   save(runFile, { date: today(), at: new Date().toISOString(), run: runId, mode: opt("mode", CONFIG.mode), spend: m.spend, records });
   writeHandover();
   log(`\n${records.reduce((a, r) => a + r.lessons.length, 0)} lessons passed, ${records.reduce((a, r) => a + r.failures.length, 0)} failed. Spent $${m.spend.usd.toFixed(2)}. Record: ${runFile.pathname}`);
@@ -88,7 +89,7 @@ async function ingest() {
     for (const f of files) {
       const lessons = splitUnit(readFileSync(f, "utf8"));
       const reqIds = lessons.flatMap((l) => [...l.text.matchAll(/^REQ:\s*(\S+)/gm)].map((x) => x[1]));
-      const tp = all.find((x) => x.reqs.some((r) => reqIds.includes(r.id)));
+      const tp = all.find((x) => { const known = new Set(x.reqs.map((r) => r.id)); return reqIds.some((id) => parentOf(id, known)); });
       if (!tp) { log(`${f}: no REQ line matches a queued requirement`); continue; }
       log(`${f} → ${tp.id}`);
       // the same loop, with the Writer's reply standing in for the write call; repairs are pasted by hand (fixlist)

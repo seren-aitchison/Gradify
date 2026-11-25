@@ -97,9 +97,9 @@ export function generateQuestions(items, { slug, objectiveOf = () => [], rnd = s
   // data: what it shows, what it doesn't, and reading from the line of best fit
   for (const k of items.filter((x) => x.kind === "dataset" && x.data?.rows?.length)) {
     const D = k.data, pts = pointsOf(D), fit = linearFit(pts), d = describeCorrelation(pearson(pts)), dk = withPrereqs(k);
-    if (d.sign === "undefined") continue;   // no correlation can be described: no directional question
     const X = D.columns.find((c) => c.key === D.x), Y = D.columns.find((c) => c.key === D.y);
-    if (D.ask?.includes("correlation")) {
+    // only the correlation question needs a defined correlation; prediction and causation questions still hold
+    if (D.ask?.includes("correlation") && d.sign !== "undefined") {
       const right = d.sign === "none" ? "No correlation" : `A ${d.strength} ${d.sign} correlation`;
       const opts = ["A strong positive correlation", "A strong negative correlation", "A weak positive correlation", "A weak negative correlation", "No correlation"].filter((o) => o !== right);
       add("M", 2, `${clean(k.title)}: what does the scatter diagram show? | ${right} | ${shuffle(opts, rnd).slice(0, 3).join(" | ")} | As ${X.label.toLowerCase()} increases, ${Y.label.toLowerCase()} ${d.sign === "positive" ? "tends to increase" : d.sign === "negative" ? "tends to decrease" : "shows no clear trend"}; the points lie ${d.strength === "strong" ? "close to" : "loosely around"} a straight line.`, dk, { data: { item: k.id, sign: d.sign, strength: d.strength } });

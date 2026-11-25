@@ -24,6 +24,12 @@ export const BLOCKED_LICENCES = new Set(["noncommercial", "unknown", ""]);
 export function licenceProblems(b) {
   const lic = new Map(b.sources.map((s) => [s.id, String(s.licence || "").toLowerCase()])), bad = (ids) => ids.length && ids.every((id) => BLOCKED_LICENCES.has(lic.get(id) ?? ""));
   const ids = (s) => String(s || "").split(/[ ,]+/).filter((x) => lic.has(x)), out = [];
+  const cited = (s) => String(s || "").split(/[ ,]+/).filter(Boolean);
+  for (const [tag, rows, col] of [["EXAM", b.exam, 1], ["NUM", b.nums, 1], ["CONFLICT", b.conflicts, 1]]) for (const r of rows) {
+    // a citation that names no listed source supports nothing, so it can't pass the gate by being filtered out
+    const unknown = cited(r[col]).filter((id) => !lic.has(id));
+    if (unknown.length) out.push(`licence: ${tag} "${String(r[0]).slice(0, 40)}" cites ${unknown.join(", ")}, which the brief doesn't list`);
+  }
   for (const [tag, rows, col] of [["EXAM", b.exam, 1], ["NUM", b.nums, 1], ["CONFLICT", b.conflicts, 1]]) for (const r of rows) if (bad(ids(r[col]))) out.push(`licence: ${tag} "${String(r[0]).slice(0, 40)}" rests only on noncommercial or unknown sources`);
   if ((b.defs.length || b.mis.length || b.vars.length) && bad([...lic.keys()])) out.push("licence: every source is noncommercial or unknown, so the brief's definitions and misconceptions can't be used");
   return out;
@@ -97,11 +103,14 @@ export async function runTopic(topic, { ask, askMany, render = null, legible = n
       }
       if (toReview.length) {
         const out = await askMany("review", toReview.map((s) => ({ key: s.key, user: reviewRequest(s, topic, r.brief) })));
+        // a batch that timed out was cancelled: its unanswered reviews aren't failures, and no further paid round starts
+        if (out.timedOut) { for (const s of toReview) { const res = out.get(s.key); if (res && !(res instanceof Error) && verdictOf(res).ok) s.done = true; } log(`  ${out.timedOut}: stopping this topic`); break; }
         for (const s of toReview) { const v = verdictOf(out.get(s.key)); if (v.ok) s.done = true; else { s.issues = v.issues; s.failedAt = "review"; s.reviewFails++; fix.push(s); } }
       }
       log(`  round ${round}: ${states.filter((s) => s.done).length}/${states.length} pass${fix.length ? `, ${fix.length} to repair` : ""}`);
       if (round === CONFIG.repairs || !fix.length) break;
       const reps = await askMany("repair", fix.map((s) => ({ key: s.key, user: repairRequest(s, pkt) })));
+      if (reps.timedOut) { log(`  ${reps.timedOut}: stopping this topic`); break; }
       for (const s of fix) { const res = reps.get(s.key); if (!(res instanceof Error)) applyRepairReply(s, res); }
       active = fix;
     }
@@ -152,7 +161,11 @@ function finish(topic, rec) {
   e.lessons = [...byTitle.values()];
   // a requirement is covered by a lesson naming it, or naming one of its parts
   const all = (topic.full || topic).reqs, known = new Set(all.map((x) => x.id));
-  const covered = new Set(e.lessons.flatMap((l) => l.reqs.map((id) => parentOf(id, known)).filter(Boolean)));
+  // a lesson covers a requirement only if it was built from that requirement's current text: when a statement changes,
+  // the old lesson stays in the draft but its requirement is queued again until a replacement passes
+  const hashOf = new Map(all.map((x) => [x.id, x.hash]));
+  const current = (l, id) => { const b = l.built?.reqs; if (!b) return true; return b.includes(`${id}@${hashOf.get(id)}`) || !b.some((x) => x.startsWith(`${id}@`)); };
+  const covered = new Set(e.lessons.flatMap((l) => l.reqs.map((id) => parentOf(id, known)).filter((id) => id && current(l, id))));
   rec.uncovered = all.filter((x) => !covered.has(x.id)).map((x) => x.id);
   e.failures = rec.failures; e.uncovered = rec.uncovered; e.gaps = rec.gaps; e.needs = rec.needs;
   e.status = e.lessons.length ? (rec.uncovered.length ? "partial" : "filed") : e.runs >= CONFIG.repairs ? "blocked" : "failed";

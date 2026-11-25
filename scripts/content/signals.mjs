@@ -27,12 +27,13 @@ export function suspects(rows, { min = MIN_ATTEMPTS } = {}) {
     .sort((a, b) => a.share - b.share);
 }
 
-/** pure: open lesson_reports rows { subject, lesson_id, kind } → lessons to repair. One "wrong" report is enough; other
- * kinds need two learners, so a single stray click doesn't send a lesson back */
+/** pure: open lesson_reports rows { subject, lesson_id, kind, user_id } → lessons to repair. One "wrong" report is
+ * enough; other kinds need two different learners, so one learner's repeated clicks don't send a lesson back. Learner
+ * ids are used only here, in memory: the result (and every saved snapshot) holds counts only */
 export function reportQueue(rows) {
   const by = new Map();
-  for (const r of rows) { const k = `${r.subject}|${r.lesson_id}`, e = by.get(k) || { subject: r.subject, lesson: r.lesson_id, n: 0, kinds: {} }; e.n++; e.kinds[r.kind] = (e.kinds[r.kind] || 0) + 1; by.set(k, e); }
-  return [...by.values()].filter((e) => e.kinds.wrong || e.n >= 2).map((e) => ({ ...e, why: `${e.n} learner report${e.n === 1 ? "" : "s"}: ${Object.entries(e.kinds).map(([k, n]) => `${n} ${k}`).join(", ")}` })).sort((a, b) => (b.kinds.wrong || 0) - (a.kinds.wrong || 0) || b.n - a.n);
+  for (const r of rows) { const k = `${r.subject}|${r.lesson_id}`, e = by.get(k) || { subject: r.subject, lesson: r.lesson_id, n: 0, kinds: {}, who: new Set() }; e.n++; e.kinds[r.kind] = (e.kinds[r.kind] || 0) + 1; e.who.add(r.user_id ?? `row${e.n}`); by.set(k, e); }
+  return [...by.values()].filter((e) => e.kinds.wrong || e.who.size >= 2).map(({ who, ...e }) => ({ ...e, learners: who.size, why: `${e.n} learner report${e.n === 1 ? "" : "s"}: ${Object.entries(e.kinds).map(([k, n]) => `${n} ${k}`).join(", ")}` })).sort((a, b) => (b.kinds.wrong || 0) - (a.kinds.wrong || 0) || b.n - a.n);
 }
 
 async function rest(path, key) {
@@ -50,7 +51,8 @@ export async function fetchSignals({ days = 30 } = {}) {
   if (!url || !key) return { skipped: "SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY aren't set" };
   const since = new Date(Date.now() - days * 864e5).toISOString();
   const rows = await rest(`assessment_attempts?select=subject,lesson_id,question_id,difficulty,correct&created_at=gte.${since}&order=id`, key);
-  const reportRows = await rest("lesson_reports?select=subject,lesson_id,kind&status=eq.open&order=id", key).catch((e) => { console.error(`lesson reports skipped: ${e.message}`); return []; });
+  // a failed fetch isn't "no reports": stop before anything is written, so saved signals stay as they were
+  const reportRows = await rest("lesson_reports?select=subject,lesson_id,kind,user_id&status=eq.open&order=id", key);
   const courses = COURSES(), list = suspects(rows).filter((s) => courses.has(s.subject)), reports = reportQueue(reportRows).filter((r) => courses.has(r.subject)), bySubject = {};
   for (const s of list) (bySubject[s.subject] ||= { items: [], reports: [] }).items.push(s);
   for (const r of reports) (bySubject[r.subject] ||= { items: [], reports: [] }).reports.push(r);

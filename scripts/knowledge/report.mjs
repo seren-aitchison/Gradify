@@ -54,7 +54,7 @@ export function productionReport(specId, { subject = "biology", date = new Date(
   // publishing gate for every lesson (all levels)
   const gate = lessons.map((l) => {
     const its = l.knowledge.map((k) => items.find((x) => x.id === k.id)).filter(Boolean).map((k) => resolve(k, l.level));
-    return { lesson: l.id, problems: publishGate({ lesson: l, items: its, sources, evidence: ev, attributed: l.attributed || [], stale: impact([l], l.subject)[0]?.why || [] }) };
+    return { lesson: l.id, problems: publishGate({ lesson: l, items: its, sources, evidence: ev, attributed: l.attributed || [], stale: impact([l], l.subject)[0]?.why || [], notes: readFileSync(at(`lessons/${l.id}/notes.txt`), "utf8") }) };
   });
   // topics: each top-level topic and each section
   const topics = full.sections.filter((s) => s.ref.split(".").length === 2).map((t) => { const rs = rows.filter((r) => r.section === t.ref || r.section.startsWith(`${t.ref}.`)); return { ref: t.ref, title: t.title, statements: rs.length, relevant: rs.filter((r) => r.relevant).length, complete: rs.filter((r) => r.complete).length, lessons: rs.filter((r) => r.lessons.length).length }; });

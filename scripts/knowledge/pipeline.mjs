@@ -66,7 +66,7 @@ ${body}<h3>Key terms</h3><dl>${L.terms.map(([t, d]) => `<dt>${esc(t)}</dt><dd>${
 
 export async function build(reqId, opts = {}) {
   const a = await assemble(reqId, opts);
-  advance(a.lesson, qa(a));
+  advance(a.lesson, qa(a), a.notes);
   const dir = writeLesson(a);
   save(new URL("preview.html", dir), preview(a));
   return { ...a, dir };
@@ -99,7 +99,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     } else if (cmd === "gate") {
       const { publishGate } = await import("../../kit/knowledge/schema.js"), { resolve } = await import("../../kit/knowledge/forms.js");
       const l = load(at(`lessons/${a}/lesson.json`)); if (!l) throw new Error(`no lesson ${a}`);
-      const items = loadKnowledge(l.subject), p = publishGate({ lesson: l, items: l.knowledge.map((k) => resolve(items.find((x) => x.id === k.id), l.level)).filter(Boolean), sources: loadSources(), evidence: load(at(`${l.subject}/evidence.json`))?.items || {}, attributed: l.attributed || [], stale: impact([l], l.subject)[0]?.why || [] });
+      const items = loadKnowledge(l.subject), p = publishGate({ lesson: l, items: l.knowledge.map((k) => resolve(items.find((x) => x.id === k.id), l.level)).filter(Boolean), sources: loadSources(), evidence: load(at(`${l.subject}/evidence.json`))?.items || {}, attributed: l.attributed || [], stale: impact([l], l.subject)[0]?.why || [], notes: readFileSync(at(`lessons/${a}/notes.txt`), "utf8") });
       console.log(p.length ? `${a} can't be published:\n  ${p.join("\n  ")}` : `${a} passes the publishing gate. (Placing it in a course is a separate step, not automated.)`);
       if (p.length) process.exit(1);
     } else if (cmd === "confirm-licence") {
@@ -110,7 +110,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
       save(f, src); console.log(`${a}: ${src.licence} (${src.category}) confirmed by ${arg("--by")}`);
     } else if (cmd === "review") {
       const f = at(`lessons/${a}/lesson.json`), l = load(f); if (!l) throw new Error(`no lesson ${a}`);
-      save(f, review(l, { approve: process.argv.includes("--approve"), by: arg("--by"), note: arg("--changes") }));
+      save(f, review(l, { approve: process.argv.includes("--approve"), by: arg("--by"), note: arg("--changes"), notes: readFileSync(at(`lessons/${a}/notes.txt`), "utf8") }));
       console.log(`${a}: ${l.status}${l.status === "approved" ? ` by ${l.review.approvedBy}` : ""}`);
     } else if (cmd === "impact") { const r = impact(allLessons(), a || "biology"); console.log(r.length ? r.map((x) => `${x.lesson} (${x.status}): ${x.why.join("; ")}`).join("\n") : "every lesson is up to date with its knowledge and requirement"); }
     else { console.error("usage: ingest | evidence | check | build <requirement> | review <lesson> | impact (see the top of this file)"); process.exit(2); }
