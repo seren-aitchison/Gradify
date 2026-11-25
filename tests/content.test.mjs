@@ -858,3 +858,47 @@ test("each subject's template folder starts with the handover instructions and i
   assert.match(f, /\| 1 \| Cells \(4\.1\.1\.1, 3 requirements\) \| `cells\.research\.md` \| `content\/inbox\/cells\.brief\.md` \|/);
   assert.doesNotMatch(f, /Atoms/, "only this subject's templates");
 });
+
+test("in-session review of ingested lessons: a pass takes its tier, a fail is reported for the writer, nothing is rewritten", async () => {
+  const { ingestFile } = await import("../scripts/content/factory.mjs");
+  const { reviewStep, awaiting } = await import("../scripts/content/review.mjs");
+  const { readFileSync, writeFileSync, existsSync } = await import("node:fs");
+  const { CONFIG } = await import("../scripts/content/lib.mjs");
+  assert.equal(CONFIG.writer, "external", "agent mode doesn't write lessons: an external model does");
+  const act = (kind, topic, files) => ({ kind, topic, ...files });
+  const setup = async (name) => {
+    const topic = { ...TOPIC, id: `biology/${name}`, title: name };
+    assert.ok((await ingestFile(`${name}.brief.md`, BRIEF.replace("test-prokaryotes", name), { all: [topic] })).ok);
+    const r = await ingestFile(`${name}.md`, `${LESSON("3 × 4 = 12")}\nEND`, { all: [topic] }); assert.ok(r.ok, r.report);
+    return topic;
+  };
+  const reply = (a, text) => { const [, o] = a.pairs[0]; writeFileSync(join(process.env.GRADIFY_OUT, o), text); };
+  const led = () => JSON.parse(readFileSync(join(process.env.GRADIFY_OUT, "content/ledger/biology.json"), "utf8"));
+  // a pass: the lesson takes its tier by the engine's rules, and its text is untouched
+  await setup("test-rev-ok");
+  let s = reviewStep("biology", { action: act }); const a = s.actions.find((x) => x.topic === "biology/test-rev-ok");
+  assert.equal(a.kind, "review"); assert.match(readFileSync(join(process.env.GRADIFY_OUT, a.pairs[0][0]), "utf8"), /^LESSON rev-prokaryotes-up-close/);
+  reply(a, "REV rev-prokaryotes-up-close OK");
+  const draft = join(process.env.GRADIFY_OUT, "content/drafts/biology/aqa-gcse-biology/test-rev-ok.txt"), before = readFileSync(draft, "utf8");
+  s = reviewStep("biology", { action: act });
+  assert.deepEqual(s.reviewed.find((x) => x.topic === "biology/test-rev-ok"), { topic: "biology/test-rev-ok", title: "Prokaryotes up close", tier: "ai-verified" });
+  const l = led().topics["biology/test-rev-ok"].lessons[0];
+  assert.equal(l.tier, "ai-verified"); assert.match(l.reviewed.by, /^agent:/); assert.equal(readFileSync(draft, "utf8"), before, "the review rewrote nothing");
+  assert.ok(!awaiting("biology").some((w) => w.id === "biology/test-rev-ok"), "a reviewed lesson isn't asked again");
+  // a fail: the lesson stays unpublishable, the issue is reported with the line quoted, and the same text isn't asked again
+  await setup("test-rev-bad");
+  const b = reviewStep("biology", { action: act }).actions.find((x) => x.topic === "biology/test-rev-bad");
+  reply(b, "REV rev-prokaryotes-up-close FAIL FACT L11 animal cell size range not in the brief");
+  s = reviewStep("biology", { action: act });
+  assert.equal(s.failed[0].title, "Prokaryotes up close");
+  const lb = led().topics["biology/test-rev-bad"].lessons[0];
+  assert.equal(lb.tier, "gates-passed"); assert.equal(lb.reviewFailed.issues[0].code, "FACT");
+  const report = readFileSync(join(process.env.GRADIFY_OUT, "content/inbox/rejected/test-rev-bad.review.md"), "utf8");
+  assert.match(report, /\*\*FACT\*\* L11: animal cell size range not in the brief\n  > P: Most bacteria are 1 to 10 micrometres long/);
+  assert.ok(!reviewStep("biology", { action: act }).actions.some((x) => x.topic === "biology/test-rev-bad"), "the same text isn't reviewed twice");
+  // the writer's corrected file is new text, so it's reviewed afresh
+  const topic = { ...TOPIC, id: "biology/test-rev-bad", title: "test-rev-bad" };
+  assert.ok((await ingestFile("test-rev-bad.md", `${LESSON("3 × 4 = 12").replace("10 to 30 micrometres across, so", "10 to 30 micrometres across, so")}\nP: Bacteria are prokaryotes.\nEND`, { all: [topic] })).ok);
+  assert.ok(reviewStep("biology", { action: act }).actions.some((x) => x.topic === "biology/test-rev-bad"));
+  assert.ok(existsSync(join(process.env.GRADIFY_OUT, "content/queue/biology/_review/test-rev-bad")));
+});

@@ -18,6 +18,7 @@ import { SPECS } from "../../kit/curriculum/uk.js";
 
 import { AGENT_MODELS as AGENT, examplesFor } from "./build.mjs";
 import { loadStore, saveStore, decide, decisionOf, candidatesOf } from "./mapstore.mjs";
+import { reviewStep } from "./review.mjs";
 const rel = (u) => u.pathname.replace(out("./").pathname, "");
 const read = (u) => (existsSync(u) ? readFileSync(u, "utf8") : null);
 export const queueRoot = (subject) => out(`content/queue/${subject}/`);
@@ -212,8 +213,14 @@ export async function work(subject, { limit = CONFIG.topicsPerRun, render = null
   const mapped = map ? await applyMapping(subject) : [];
   // filed lessons take the current high-risk rules before anything new is written
   const retiered = retier(subject);
-  const actions = [], filed = [];
-  for (const t of workTopics(subject, { limit })) { const r = await advance(t, { render, legible }); actions.push(...r.actions); if (r.filed) filed.push(r.filed); }
+  const actions = [], filed = [], external = (CONFIG.writer || "external") === "external";
+  // the external writer (config.writer): no subagent researches, writes or repairs lessons; they come in through
+  // gradify ingest, and this pass reviews them (scripts/content/review.mjs)
+  if (!external) for (const t of workTopics(subject, { limit })) { const r = await advance(t, { render, legible }); actions.push(...r.actions); if (r.filed) filed.push(r.filed); }
+  const rev = reviewStep(subject, { action });
+  actions.push(...rev.actions);
   if (map) actions.push(...(await mapActions(subject)));
-  return { subject, actions, filed, mapped, retiered, done: !actions.length && !nextTopics(subject, { limit: 1 }).length && !(map && frameworksFor(subject).some((fw) => mapCandidates(fw).length)) };
+  const writing = !external && nextTopics(subject, { limit: 1 }).length;
+  return { subject, actions, filed, mapped, retiered, reviewed: rev.reviewed, reviewFailed: rev.failed.map(({ text, ...f }) => f), external,
+    done: !actions.length && !writing && !(map && frameworksFor(subject).some((fw) => mapCandidates(fw).length)) };
 }

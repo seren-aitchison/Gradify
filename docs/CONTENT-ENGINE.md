@@ -44,6 +44,18 @@ A topic is one section of a specification (AQA 4.1.1.1 *Eukaryotes and prokaryot
 
    The first publish adds one import of `published.js` to the course's `syllabus.js`, `ids.js`, `qa.js` and `course.js`. Biology is wired already. Published ids are permanent: a lesson once published is never removed.
 
+## Who writes the lessons (owner's decision, 25 Nov 2026)
+
+The engine builds and checks; an external model writes. `scripts/content/config.json` has `"writer": "external"`, so no Claude Code subagent researches, writes or repairs lessons. The cycle, site by site:
+
+1. `gradify template --subject <s>` writes `content/templates/<s>/00-START-HERE.md` (the handover prompt, `prompts/handover.md`, with the subject's topics in order) and one template per topic: research first, then a lesson template once the topic's brief is in. The templates quote the specification, so they're never committed.
+2. The writing model returns one Markdown file per template. Save the replies in `content/inbox/`.
+3. `gradify ingest` checks each file. A brief must pass the allowlist, licence and copying checks. A unit file must pass every gate, including 20+ distinct flashcards per topic and 3+ distinct diagrams per lesson. Passing lessons are filed as `gates-passed`, and every file gets a report in `content/inbox/done/` or `rejected/`.
+4. `gradify work <s>` then reviews each ingested lesson in this session: a reviewer subagent that didn't write it, judging against the requirements and the brief (`scripts/content/review.mjs`). A pass gives the lesson its tier (AI-checked, or expert-required for practicals, calculations, high-risk keywords and unresolved conflicts). A fail is reported in `content/inbox/rejected/<topic>.review.md`, with each flagged line quoted, for the writing model to fix and resubmit. Nothing is rewritten here.
+5. `gradify publish <s>` puts AI-checked and expert-approved lessons whose diagrams are drawn into the course, through the rolling PR. Nothing goes live until the owner merges.
+
+`"writer": "session"` restores the earlier path below, where subagents research, write and repair.
+
 ## Agent mode (no API key)
 
 `node scripts/gradify.mjs work biology` does every step a script can do, then prints the steps that need a model. Each step is a request file the engine wrote and a reply file a subagent writes, both in `content/queue/<subject>/<topic>/`, with the model and the exact prompt to give it:

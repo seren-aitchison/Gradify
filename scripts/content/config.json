@@ -32,5 +32,7 @@
  "frameworks": ["aqa-gcse-biology", "aqa-gcse-chemistry"],
  "highRisk": { "types": ["prac", "num"], "keywords": ["safety", "hazard", "drug", "dose", "medicine", "disease", "allergy", "mental health", "self-harm", "pregnan", "first aid", "electric shock", "acid", "flammable"], "notKeywords": ["amino acid", "nucleic acid", "fatty acid", "deoxyribonucleic acid", "ribonucleic acid", "lactic acid"] },
  "examplesPerLevel": 2,
+ "writer": "external",
+ "writerNote": "owner, 25 Nov 2026: lessons and research briefs are written by an external model (gradify template, gradify ingest); agent mode only maps existing lessons and reviews what was ingested. \"session\" restores the old path, where subagents research, write and repair",
  "standards": { "flashcardsPerTopic": 20, "diagramsPerLesson": 3, "note": "owner, 25 Nov 2026: every topic 20+ distinct flashcards; every lesson 3+ distinct diagrams to file (a DNEED: specification counts) and 3+ drawn ones (D: or DIA:) to publish" }
 }
