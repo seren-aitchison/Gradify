@@ -4,7 +4,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readdir } from "node:fs/promises";
 import { parseNotes } from "../kit/course/notes.js";
-import { lessonFlow, lessonSteps, conceptBlocks, LEARN_PILOTS } from "../kit/course/blocks.js";
+import { lessonFlow, lessonSteps, conceptBlocks, checkCoverage, finalCheck, untried, LEARN_PILOTS } from "../kit/course/blocks.js";
 import { onboardingPatch, WEEK } from "../kit/app/onboarding.js";
 
 const V2 = `## Osmosis
@@ -48,6 +48,45 @@ test("schema v1 still parses unchanged: no lesson needs the new lines", () => {
   const [L] = parseNotes(V2.replace(/ @\d/g, "").replace(/^(HOOK|MORE|ALT):.*\n/gm, ""));
   assert.ok(!L.blocks.some((b) => ["hook", "more", "alt"].includes(b.t) || b.obj));
   assert.equal(conceptBlocks(L).length, 2);
+});
+
+const V1 = `## Cell membranes
+S: The membrane controls what enters and leaves the cell, and its structure explains how.
+O: Describe the fluid mosaic model
+O: Explain how substances cross the membrane
+H: Structure
+P: A phospholipid bilayer with proteins floating in it: the fluid mosaic model. Cholesterol stiffens the bilayer.
+H: Transport
+P: Small non-polar molecules diffuse through the bilayer; ions need channel proteins or carrier proteins, and active transport uses ATP.
+M1: Which molecule stiffens the phospholipid bilayer? | cholesterol | ATP | channel proteins | carrier proteins
+M1: How do ions cross the membrane? | through channel proteins | dissolving in the bilayer | cholesterol | phospholipid
+M2: What is a cell membrane? | a barrier around the cell | a protein | a sugar | a gene
+`;
+
+test("matching: a v1 question is a block's check only when its stem and right answer clearly point at that block", () => {
+  const [L] = parseNotes(V1), F = lessonFlow(L);
+  const title = (q) => q.Q.q;
+  assert.deepEqual(F.blocks.map((B) => B.checks.map(title)), [["Which molecule stiffens the phospholipid bilayer?"], ["How do ions cross the membrane?"]]);
+  assert.ok(F.blocks.every((B) => B.checks.every((q) => q.basis === "matched")));
+  // the wrong options name the other block's ideas on purpose: they aren't evidence; and words in the lesson's title
+  // ("cell", "membrane") or in every block tell nothing apart, so a general question stays in practice
+  assert.deepEqual(F.practise.map(title), ["What is a cell membrane?"]);
+});
+
+test("matching: no clear winner means no check (no check is better than a wrong one)", () => {
+  const [L] = parseNotes(V1.replace(/^M1: How do ions.*\n/m, "M1: Which proteins carry ions and stiffen the bilayer? | channel proteins and cholesterol | ATP | sugar | water\n"));
+  const F = lessonFlow(L), all = F.blocks.flatMap((B) => B.checks).map((q) => q.Q.q);
+  assert.ok(!all.includes("Which proteins carry ions and stiffen the bilayer?"));
+  const c = checkCoverage(L);
+  assert.equal(c.blocks, 2); assert.equal(c.checked, c.placed + c.tagged + c.matched);
+});
+
+test("completion: the final check is the same in every mode, and trying it (right or wrong) is what counts", () => {
+  const [L] = parseNotes(V2), keys = finalCheck(L).map((n) => `k${n}`);
+  assert.equal(keys.length, 1);
+  assert.deepEqual(untried(keys, [], "x"), keys);
+  assert.deepEqual(untried(keys, [{ lesson: "x", question: { id: keys[0] }, correct: false }], "x"), []);
+  assert.deepEqual(untried(keys, [{ lesson: "y", question: { id: keys[0] } }], "x"), keys, "an attempt in another lesson doesn't count");
 });
 
 const dirs = (await readdir(new URL("../kit/courses/", import.meta.url), { withFileTypes: true })).filter((d) => d.isDirectory()).map((d) => d.name);
