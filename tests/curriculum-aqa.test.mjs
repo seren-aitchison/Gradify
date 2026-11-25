@@ -124,7 +124,10 @@ test("the proposed map: a link for every statement, all proposed, none counted a
   assert.deepEqual(Object.keys(map.links), idx.statements.map((x) => x.ref), "one link per statement, in document order");
   assert.deepEqual(checkMap(idx, map, ids), [], "every proposed lesson is a real, permanent lesson id");
   for (const [ref, l] of Object.entries(map.links)) {
-    assert.equal(l.status, "proposed", `${ref} is only proposed`);
+    // nothing is verified by a person yet; AI decisions name their lesson, objectives and who made them
+    assert.ok(["proposed", "ai-confirmed", "rejected"].includes(l.status), `${ref}: ${l.status}`);
+    if (l.status === "ai-confirmed") { assert.equal(l.lessons.length, 1); assert.ok(l.lessons[0].objectives.length && l.by && l.on, `${ref}: an AI confirmation records its evidence`); continue; }
+    if (l.status === "rejected") { assert.ok(l.missing?.length && l.by && l.on, `${ref}: a rejection says what's missing`); assert.equal(l.lessons.length, 0); continue; }
     assert.ok(l.lessons.every((x) => x.coverage === "partial"), `${ref}: a proposal never says "full"`);
     assert.equal(new Set(l.lessons.map((x) => x.id)).size, l.lessons.length, `${ref}: no lesson proposed twice`);
     assert.ok(["strong", "moderate", "none"].includes(l.confidence));
@@ -134,7 +137,8 @@ test("the proposed map: a link for every statement, all proposed, none counted a
   assert.deepEqual([r.totals.covered, r.totals.partial, r.totals.missing, r.totals.awaiting], [0, 0, 0, idx.statements.length], "nothing is covered until a reviewer says so");
   assert.equal(claimFor(idx, map).allowed, false, "no AQA alignment claim");
   const sum = proposalSummary(idx, map);
-  assert.equal(sum.strong + sum.moderate + sum.gaps, idx.statements.length);
+  // the matcher's summary is of the statements still only proposed (decided ones keep their candidates as evidence)
+  assert.equal(sum.strong + sum.moderate + sum.gaps, Object.values(map.links).filter((l) => l.status === "proposed").length);
   assert.ok(sum.multi.every((e) => e.refs.length > 1));
 });
 
@@ -201,7 +205,9 @@ test("a learner's mastery becomes specification standing through verified links 
   const s = specStanding(tiny, reviewed, atts);
   assert.deepEqual(s.rows.map((r) => r.standing), ["secure", "not-on-gradify", "unmapped"], "9.1.c is only proposed, so it's not mapped, whatever the learner did in u02-05");
   assert.match(s.summary, /1 of 2 mapped statements secure/);
-  // the real specification: nothing is mapped yet, so every statement is "not mapped yet"
-  const real = specStanding(idx, map, atts);
-  assert.equal(real.by.unmapped, idx.statements.length); assert.match(real.summary, /isn't mapped yet/);
+  // the real specification: only AI decisions so far, so every mapped statement says it isn't independently verified
+  const real = specStanding(idx, map, atts), ai = Object.values(map.links).filter((l) => l.status === "ai-confirmed").length;
+  assert.equal(real.by.unmapped, idx.statements.length - ai);
+  assert.ok(real.rows.filter((r) => r.standing !== "unmapped").every((r) => r.evidence === "ai-mapped"));
+  if (ai) assert.match(real.summary, /mapped by AI, not independently verified/); else assert.match(real.summary, /isn't mapped yet/);
 });
