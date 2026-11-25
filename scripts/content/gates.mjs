@@ -30,7 +30,12 @@ export function parseGate(text) {
   if (L.objectives.length < 2) issues.push(issue("FMT", lineOf(text, /^O:/) || 2, "fewer than two O: objectives"));
   if (!L.reqs.length) issues.push(issue("FMT", 2, "no REQ: line"));
   if (L.terms.length < 2) issues.push(issue("FMT", lineOf(text, /^T:/) || 2, "fewer than two T: key terms"));
-  for (const b of L.blocks.filter((b) => b.t === "dia")) if (!b.spec) issues.push(issue("FMT", lineOf(text, new RegExp(`^DIA:\\s*${esc(b.renderer)}`)), "DIA: spec isn't valid JSON"));
+  for (const b of L.blocks.filter((b) => b.t === "dia")) {
+    const at = lineOf(text, new RegExp(`^DIA:\\s*${esc(b.renderer)}`));
+    if (!b.spec) issues.push(issue("FMT", at, "DIA: spec isn't valid JSON"));
+    // accessibility: every diagram says what it shows in words
+    else for (const k of ["title", "caption", "alt"]) if (!String(b.spec[k] || "").trim()) issues.push(issue("FMT", at, `DIA: spec needs ${k === "alt" ? "alt text" : `a ${k}`}`));
+  }
   return { ...result("parse", issues), lesson: L };
 }
 

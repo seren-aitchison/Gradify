@@ -43,9 +43,12 @@ export function nextTopics(subject, { limit = CONFIG.topicsPerRun, titles } = {}
   const led = loadLedger(subject), out = [];
   for (const fw of frameworksFor(subject)) for (const t of topicsFor(fw, { titles })) {
     const e = led.topics[t.id];
-    if (e?.status === "filed" && e.reqHash === reqHash(t)) continue;
-    if (e?.status === "blocked") continue;
-    out.push(t); if (out.length >= limit) return out;
+    const same = e?.reqHash === reqHash(t);
+    if (same && ["filed", "filed-with-gaps", "blocked"].includes(e.status)) continue;
+    // partly done: write only the requirements no filed lesson covers, and add to the draft
+    if (same && e.status === "partial") { const left = new Set(e.uncovered || []); out.push({ ...t, reqs: t.reqs.filter((r) => left.has(r.id)), append: true, full: t }); }
+    else out.push(t);
+    if (out.length >= limit) return out;
   }
   return out;
 }

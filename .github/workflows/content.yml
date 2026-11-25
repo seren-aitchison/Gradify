@@ -1,0 +1,176 @@
+# The content engine's loop (docs/CONTENT-ENGINE.md). Each run: for every subject in the run (scripts/content/config.json
+# "frameworks", in wave order), one parallel job researches and writes the next topics, runs the gates, the review and up
+# to three repairs, and keeps only what passes. A final job adds the results to ONE rolling pull request
+# (branch content/rolling), lists failures, writer-reviewer disagreements and the expert queue in its description, then
+# starts the next run straight away. Merging that PR is the owner's approval to publish the AI-verified drafts.
+#
+# Shaped like growth.yml. Needs the ANTHROPIC_API_KEY secret. Optional repository variables:
+#   CONTENT_LOOP            "off" stops the loop restarting itself (scheduled runs still happen; disable the workflow to stop those)
+#   CONTENT_BUDGET_USD      spend cap per run (default: config budgetUsd)
+#   CONTENT_TOTAL_BUDGET_USD  cap across runs: the loop stops restarting once content/spend.json reaches it (default 200)
+# Optional secrets for the student-data repair queue: SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY.
+# Settings → Actions → General must allow GitHub Actions to create pull requests.
+name: Content engine
+
+on:
+  schedule:
+    - cron: "41 2 * * *"      # nightly, 02:41 UTC, in case the self-restarting loop was stopped
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "fast (standard API, about 30 minutes) or cheap (Batch API, half price, hours)"
+        default: fast
+      subject:
+        description: "one subject only (blank: every subject in the run)"
+        default: ""
+      minutes:
+        description: "time limit for writing, per subject job"
+        default: "30"
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: write
+
+concurrency:
+  group: content-engine
+  cancel-in-progress: false
+
+env:
+  ROLLING: content/rolling
+  # inputs reach the shell only as environment variables, never pasted into scripts
+  MODE: ${{ inputs.mode || 'fast' }}
+  ONLY: ${{ inputs.subject }}
+  MINUTES: ${{ inputs.minutes || '30' }}
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      subjects: ${{ steps.p.outputs.subjects }}
+      ready: ${{ steps.p.outputs.ready }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - id: p
+        env:
+          HAS_KEY: ${{ secrets.ANTHROPIC_API_KEY != '' }}
+        run: |
+          subjects=$(node --input-type=module -e "import { subjectsInRun } from './scripts/content/queue.mjs'; const only = process.env.ONLY; console.log(JSON.stringify(only ? [only] : subjectsInRun()))")
+          echo "subjects=$subjects" >> "$GITHUB_OUTPUT"
+          echo "ready=$HAS_KEY" >> "$GITHUB_OUTPUT"
+          [ "$HAS_KEY" = "true" ] || echo "::warning::ANTHROPIC_API_KEY isn't set: add it under Settings → Secrets and variables → Actions"
+
+  write:
+    needs: plan
+    if: needs.plan.outputs.ready == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    strategy:
+      fail-fast: false
+      matrix:
+        subject: ${{ fromJson(needs.plan.outputs.subjects) }}
+    env:
+      SUBJECT: ${{ matrix.subject }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - name: Continue the rolling branch
+        run: |
+          git config user.name "gradify-content-engine"; git config user.email "content-engine@users.noreply.github.com"
+          if git fetch origin "$ROLLING"; then git checkout -B "$ROLLING" FETCH_HEAD && git merge --no-edit "origin/${{ github.event.repository.default_branch }}"; else git checkout -B "$ROLLING"; fi
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - run: npm ci --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Specification text (local only, never committed)
+        run: |
+          sudo apt-get install -y poppler-utils >/dev/null
+          for fw in $(node --input-type=module -e "import { frameworksFor } from './scripts/content/queue.mjs'; console.log(frameworksFor(process.env.SUBJECT).join(' '))"); do
+            node scripts/curriculum/engine.mjs fetch "$fw" && node scripts/curriculum/engine.mjs import "$fw" || echo "::warning::$fw: specification text unavailable; its lessons will stop at the spec gate"
+          done
+      - name: Repair queue from learners' answers
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: node scripts/gradify.mjs signals || true
+      - name: Research, write, gate, review, repair
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CONTENT_BUDGET_USD: ${{ vars.CONTENT_BUDGET_USD }}
+        run: node scripts/gradify.mjs run --subject "$SUBJECT" --mode "$MODE" --minutes "$MINUTES"
+      - name: The course QA still passes (npm run qa)
+        run: |
+          npm run qa
+          git checkout -- docs   # qa regenerates dated reports; they aren't part of this run
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: content-${{ matrix.subject }}
+          path: |
+            content/drafts/
+            content/ledger/${{ matrix.subject }}.json
+            content/runs/${{ matrix.subject }}.json
+            content/signals/
+          if-no-files-found: ignore
+          retention-days: 14
+
+  publish:
+    needs: [plan, write]
+    if: always() && needs.plan.outputs.ready == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - name: Add this run to the rolling branch
+        run: |
+          git config user.name "gradify-content-engine"; git config user.email "content-engine@users.noreply.github.com"
+          if git fetch origin "$ROLLING"; then git checkout -B "$ROLLING" FETCH_HEAD && git merge --no-edit "origin/${{ github.event.repository.default_branch }}"; else git checkout -B "$ROLLING"; fi
+      - uses: actions/download-artifact@v4
+        with:
+          path: _runs
+          pattern: content-*
+      - name: Commit, count spend, and update the PR
+        id: pr
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TOTAL: ${{ vars.CONTENT_TOTAL_BUDGET_USD || '200' }}
+        run: |
+          shopt -s nullglob
+          for d in _runs/*/; do cp -r "$d". . ; done
+          rm -rf _runs
+          node --input-type=module -e "
+            import { readdirSync, readFileSync, writeFileSync, existsSync } from 'node:fs';
+            const runs = existsSync('content/runs') ? readdirSync('content/runs').filter((f) => f.endsWith('.json')).map((f) => JSON.parse(readFileSync('content/runs/' + f, 'utf8'))) : [];
+            const s = existsSync('content/spend.json') ? JSON.parse(readFileSync('content/spend.json', 'utf8')) : { usd: 0, runs: [] };
+            const usd = runs.reduce((a, r) => a + (r.spend?.usd || 0), 0); s.usd = +(s.usd + usd).toFixed(4); s.runs.push({ run: '${{ github.run_id }}', usd: +usd.toFixed(4) });
+            writeFileSync('content/spend.json', JSON.stringify(s, null, 1) + '\n');
+            console.log('spent this run: \$' + usd.toFixed(2) + ', total \$' + s.usd.toFixed(2));
+            writeFileSync(process.env.GITHUB_OUTPUT, 'total=' + s.usd + '\n', { flag: 'a' });"
+          node scripts/gradify.mjs pr --out content/PR.md
+          node scripts/gradify.mjs status --write > /dev/null
+          git add content knowledge-engine/CORE 2>/dev/null || true
+          if git diff --cached --quiet; then echo "nothing new"; else git commit -qm "Content engine run ${{ github.run_id }}"; git push origin "$ROLLING"; fi
+          if git ls-remote --exit-code --heads origin "$ROLLING" >/dev/null; then
+            if gh pr view "$ROLLING" --json state -q .state 2>/dev/null | grep -q OPEN; then gh pr edit "$ROLLING" --body-file content/PR.md
+            else gh pr create --head "$ROLLING" --base "${{ github.event.repository.default_branch }}" --title "Content engine: lessons for review" --body-file content/PR.md || true; fi
+          fi
+          more=$(node --input-type=module -e "import { status } from './scripts/content/report.mjs'; console.log(status().subjects.some((s) => s.next))")
+          echo "more=$more" >> "$GITHUB_OUTPUT"
+          cat content/PR.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Start the next run
+        if: steps.pr.outputs.more == 'true' && vars.CONTENT_LOOP != 'off' && fromJson(steps.pr.outputs.total) < fromJson(vars.CONTENT_TOTAL_BUDGET_USD || '200')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        # workflow_dispatch is the one event a workflow's own token may trigger; workflow_run can't chain itself indefinitely
+        run: gh workflow run content.yml --ref "${{ github.event.repository.default_branch }}" -f mode="$MODE" -f subject="$ONLY" -f minutes="$MINUTES"

@@ -27,7 +27,7 @@ END
 
 `<what it asks>` may be the official wording. It is input only: never copy it into a lesson.
 
-## Research brief (Researcher → engine, stored at `research/<subject>/<topic>.txt`)
+## Research brief (Researcher → engine, stored at `content/research/<subject>/<topic>.txt`)
 
 ```
 TOPIC <topic-id> | levels=<comma list> | checked=<YYYY-MM-DD>

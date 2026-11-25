@@ -1,0 +1,7 @@
+{
+ "task": "run the content loop",
+ "command": "node scripts/gradify.mjs run --subject biology",
+ "topic": "biology/eukaryotes-and-prokaryotes",
+ "by": "the Content engine workflow (.github/workflows/content.yml); a person only merges the rolling PR",
+ "acceptance": "lessons pass every gate and the review; failures are listed in the PR"
+}
