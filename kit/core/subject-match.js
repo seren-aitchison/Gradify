@@ -8,6 +8,8 @@ import { words } from "../learning/topic-match.js";
 // words that turn up in university module names but not in a site's own description
 export const MODULE_WORDS = {
   SciGradify: "biology biological biochemistry genetics genomics microbiology cell cellular molecular organic inorganic physical analytical chemistry chemical physics quantum mechanics thermodynamics electromagnetism optics astrophysics astronomy cosmology immunology biomedical forensic laboratory virology protein",
+  EconGradify: "economics economic economy microeconomics macroeconomics econometrics monetary fiscal inflation",
+  GeographyGradify: "geography geographical gis cartography geomorphology glaciation coasts rivers urban population migration tectonics fieldwork",
   EcoGradify: "ecology ecosystems conservation environmental biodiversity marine zoology botany plant plants evolution evolutionary geology earth oceanography wildlife",
   MathGradify: "statistics statistical stats probability calculus algebra linear analysis numerical mathematics mathematical econometrics differential equations geometry topology quantitative",
   PsychGradify: "neuroscience cognitive cognition developmental psychology psychological perception personality neuropsychology psychopathology",
@@ -17,7 +19,7 @@ export const MODULE_WORDS = {
   FinanceGradify: "accounting accounts finance financial audit auditing taxation corporate banking actuarial",
   InvestorGradify: "investment investments derivatives portfolio asset securities",
   EngineerGradify: "engineering mechanics structures structural circuits electronics electronic fluids fluid dynamics materials thermofluids control aerospace manufacturing robotics",
-  "TechGradify · ForgeLab": "programming software computing computer computation algorithms databases networks networking machine learning artificial intelligence cyber security web development informatics",
+  "TechGradify": "programming software computing computer computation algorithms databases networks networking machine learning artificial intelligence cyber security web development informatics",
   LitGradify: "literature literary english poetry novel novels shakespeare drama creative writing victorian romantic modernism",
   HistoryGradify: "history historical medieval modern ancient early classics classical archaeology",
   LanguageGradify: "french spanish german italian japanese chinese mandarin arabic portuguese russian linguistics translation language",
@@ -29,7 +31,7 @@ export const MODULE_WORDS = {
   HealthGradify: "nutrition dietetics public health wellbeing",
   VetGradify: "veterinary animal animals",
   DentalGradify: "dental dentistry oral",
-  SocGradify: "sociology sociological politics political economics economic microeconomics macroeconomics geography anthropology social policy international relations criminology philosophy",
+  SocGradify: "sociology sociological politics political anthropology social policy international relations criminology philosophy",
 };
 // sites that are a stage of life or a product, not a subject
 const NOT_SUBJECTS = new Set(["UnderGradify", "PostGradify", "ProGradify", "EduGradify", "YouthGradify", "JuniorGradify", "Klerio", "InternshipGradify", "CreateGradify"]);

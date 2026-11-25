@@ -1,4 +1,4 @@
-// TechGradify · ForgeLab Data Structures, Files and Robust Code in Python (content standard 2). Added by scripts/new-course.mjs add-notes.
+// TechGradify Data Structures, Files and Robust Code in Python (content standard 2). Added by scripts/new-course.mjs add-notes.
 export default `
 ## Lists
 LV: GCSE · Foundation

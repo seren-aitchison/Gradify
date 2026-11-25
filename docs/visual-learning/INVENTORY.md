@@ -70,7 +70,7 @@ A course served by more than one site counts under each of them.
 | MusicGradify | music | 201 | 0 | 0 | 5 | 0 | 0 | **201** |
 | SportGradify | sport | 205 | 0 | 0 | 20 | 0 | 0 | **205** |
 | CreateGradify | design | 173 | 0 | 0 | 0 | 0 | 0 | **173** |
-| TechGradify · ForgeLab | computing | 96 | 0 | 0 | 0 | 0 | 0 | **96** |
+| TechGradify | computing | 96 | 0 | 0 | 0 | 0 | 0 | **96** |
 
 Sites serving no course page: Klerio.
 
@@ -111,7 +111,7 @@ Sites serving no course page: Klerio.
 | GCSE Core (`gcse`) | YouthGradify | yes | 9 | 149 | 149 | 19 | 17 | 0 | 0 | 2 | **130** |
 | Careers and Employability (`careers`) | InternshipGradify | – | 11 | 145 | 145 | 0 | 0 | 0 | 0 | 0 | **145** |
 | Spanish (`spanish`) | LanguageGradify | – | 10 | 145 | 145 | 0 | 0 | 0 | 0 | 0 | **145** |
-| Computer Science (`computing`) | TechGradify · ForgeLab | – | 12 | 179 | 96 | 0 | 0 | 0 | 0 | 0 | **96** |
+| Computer Science (`computing`) | TechGradify | – | 12 | 179 | 96 | 0 | 0 | 0 | 0 | 0 | **96** |
 
 ## Diagrams
 

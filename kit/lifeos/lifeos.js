@@ -25,9 +25,9 @@ const DAY = 864e5;
 const fmt = (d, o) => d.toLocaleDateString("en-GB", o);
 
 const SITES = new Map(GROUPS.flatMap((g) => g.items).map((s) => [s.n, s]));
-const FORGE = "TechGradify · ForgeLab";
+const FORGE = "TechGradify";
 const colourOf = (n) => { const s = SITES.get(n); return s.spot || s.c; };
-const short = (n) => (n === FORGE ? "ForgeLab" : n);
+const short = (n) => n;
 
 // ---------- Example learner ----------
 // Which sites they use, and how often (per-day chance and max count). `when` shapes the pattern.

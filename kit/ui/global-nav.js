@@ -15,7 +15,7 @@ import { pins, pin, recent, setPins, onPlacesChange, restoreAt, move } from "./p
 import { toast } from "./feedback.js";
 import { courseCard } from "./resources.js";
 import { shortcuts } from "./keys.js";
-import { SITES, pathOf } from "../core/site.js";
+import { SITES, pathOf, canonicalSites } from "../core/site.js";
 import { shelfHtml, wireShelf } from "./shelf.js";
 const siteColour = (n) => { const s = SITES.find((x) => x.n === n); return s ? `#${s.c}` : "#6c63ff"; };
 
@@ -77,7 +77,7 @@ function actions(site) {
 
 /** the learner's courses from the cross-site recent list (kit/course/course.js noteVisit), newest first */
 export function myCourses({ site = null } = {}) {
-  const list = readJson("gradify.recent", []).filter((r) => r?.href && r.title && (!site || r.site === site));
+  const list = canonicalSites(readJson("gradify.recent", [])).filter((r) => r?.href && r.title && (!site || r.site === site));
   return list.sort((a, b) => b.t - a.t);
 }
 

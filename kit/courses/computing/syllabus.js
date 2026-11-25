@@ -1,4 +1,4 @@
-// TechGradify · ForgeLab Computer Science: the full curriculum, 12 schools, mapped to the GCSE (AQA 8525, OCR J277)
+// TechGradify Computer Science: the full curriculum, 12 schools, mapped to the GCSE (AQA 8525, OCR J277)
 // and A level (AQA 7517, OCR H446) Computer Science specifications and the first-year core of the ACM/IEEE-CS/AAAI
 // Computer Science Curricula 2023 (CS2023). Each topic is taught as one lesson, grouped into modules ("> " lines) and
 // stages (TRACKS). Lesson ids are permanent (ids.js, written by node scripts/new-course.mjs lock computing): never
@@ -240,7 +240,7 @@ export const SYLLABUS = `
 * Ethical issues in computing
 `;
 
-// stages on the map; ForgeLab's colours run from coral through amber to cyan
+// stages on the map; TechGradify's colours run from coral through amber to cyan
 export const TRACKS = [
   { name: "Stage 1 · Thinking and programming", units: [1, 2, 3], from: "#ff5a4d", to: "#f59e0b" },
   { name: "Stage 2 · Algorithms and data", units: [4, 5, 6], from: "#f97316", to: "#eab308" },

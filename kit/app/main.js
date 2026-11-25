@@ -2,7 +2,7 @@
 // Every screen reads and writes the same store, so they always agree.
 import { heroArt } from "../ui/art.js";
 import { toast as uiToast } from "../ui/feedback.js";
-import { GROUPS } from "../core/sites.js";
+import { GROUPS, canonicalSite } from "../core/sites.js";
 import { icon } from "../core/icons.js";
 import { actionCard } from "../core/action-card.js";
 import { tile, ink } from "../core/colour.js";
@@ -325,9 +325,9 @@ const SUBJECT = {
   EngineerGradify: "Engineering", MathGradify: "Maths", SciGradify: "Biology, chemistry and physics", EcoGradify: "Ecology and environment",
   SocGradify: "Sociology", HistoryGradify: "History", LitGradify: "English and literature", LanguageGradify: "Languages",
   ArtGradify: "Art and design", MusicGradify: "Music", SportGradify: "Sport and exercise science", CreateGradify: "Design and creativity",
-  "TechGradify · ForgeLab": "Coding, data science and AI",
+  "TechGradify": "Coding, data science and AI",
 };
-const subjectOf = (n) => SUBJECT[n] || String(n || "").replace(" · ForgeLab", "");
+const subjectOf = (n) => SUBJECT[canonicalSite(n)] || canonicalSite(String(n || ""));
 const POPULAR = ["UnderGradify", "MedGradify", "LawGradify", "NurseGradify", "PsychGradify", "BusinessGradify"];
 const pickBtn = (s) => `<button type="button" class="site-pick ${profile.site === s.n ? "on" : ""}" data-site="${esc(s.n)}" data-s="${esc((subjectOf(s.n) + " " + s.n + " " + s.d).toLowerCase())}" style="--c:#${s.c};--tile:${tile(s.c)};--ink:${ink(s.c)}"><span class="icon">${icon(s.i)}</span><span><b>${esc(subjectOf(s.n))}</b><em>${esc(s.who || s.d.split(/[:.]/)[0])}<small>on ${esc(s.n.replace(" · ForgeLab", ""))}</small></em></span></button>`;
 

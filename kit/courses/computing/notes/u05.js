@@ -1,4 +1,4 @@
-// TechGradify · ForgeLab Data Structures (content standard 2). Added by scripts/new-course.mjs add-notes.
+// TechGradify Data Structures (content standard 2). Added by scripts/new-course.mjs add-notes.
 export default `
 ## Abstract data types
 LV: A level · Foundation

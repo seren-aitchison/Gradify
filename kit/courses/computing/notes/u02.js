@@ -1,4 +1,4 @@
-// TechGradify · ForgeLab Python Programming Fundamentals (content standard 2). Added by scripts/new-course.mjs add-notes.
+// TechGradify Python Programming Fundamentals (content standard 2). Added by scripts/new-course.mjs add-notes.
 export default `
 ## Programs and the Python interpreter
 LV: GCSE · Foundation

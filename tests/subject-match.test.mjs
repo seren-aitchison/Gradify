@@ -10,7 +10,7 @@ test("module names take their Gradify subject's icon and colour", () => {
   assert.equal(site("Statistics exam"), "MathGradify");
   assert.equal(site("Cognitive Neuroscience"), "PsychGradify");
   assert.equal(site("Financial Accounting"), "FinanceGradify");
-  assert.equal(site("Machine Learning"), "TechGradify · ForgeLab");
+  assert.equal(site("Machine Learning"), "TechGradify");
   assert.equal(site("Victorian Literature"), "LitGradify");
   assert.equal(site("Medieval History"), "HistoryGradify");
   assert.equal(site("French Language"), "LanguageGradify");
@@ -18,7 +18,7 @@ test("module names take their Gradify subject's icon and colour", () => {
   assert.equal(site("Fluid Dynamics"), "EngineerGradify");
   assert.equal(site("Adult Nursing"), "NurseGradify");
   assert.equal(site("Pharmacology"), "PharmaGradify");
-  assert.equal(site("Microeconomics"), "SocGradify");
+  assert.equal(site("Microeconomics"), "EconGradify");   // economics has its own site (owner, 25 Nov 2026)
   assert.equal(subjectOf("Organic Chemistry").site.i, "atom", "the subject site's own icon");
   // vague names don't guess
   for (const n of ["Dissertation", "Field skills", "Research Methods", "Module 3", ""]) assert.equal(site(n), null, n);
