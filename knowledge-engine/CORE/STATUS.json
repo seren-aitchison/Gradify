@@ -1,8 +1,241 @@
 {
  "generated": "2026-11-25",
- "branch": "claude/upbeat-rubin-mxcjtp",
- "commit": "73716f8fe",
- "dirty": true,
+ "ladder": {
+  "frameworks": [
+   {
+    "country": "United Kingdom",
+    "subjects": [
+     {
+      "subject": "maths",
+      "stage": "not researched",
+      "found": 0,
+      "imported": 0
+     },
+     {
+      "subject": "english",
+      "stage": "not researched",
+      "found": 0,
+      "imported": 0
+     },
+     {
+      "subject": "biology",
+      "stage": "spec imported",
+      "found": 21,
+      "imported": 1
+     },
+     {
+      "subject": "chemistry",
+      "stage": "spec imported",
+      "found": 1,
+      "imported": 1
+     },
+     {
+      "subject": "physics",
+      "stage": "not researched",
+      "found": 0,
+      "imported": 0
+     },
+     {
+      "subject": "science",
+      "stage": "not researched",
+      "found": 0,
+      "imported": 0
+     }
+    ]
+   },
+   {
+    "country": "United States",
+    "subjects": [
+     {
+      "subject": "maths",
+      "stage": "not researched",
+      "found": 0,
+      "imported": 0
+     },
+     {
+      "subject": "english",
+      "stage": "not researched",
+      "found": 0,
+      "imported": 0
+     },
+     {
+      "subject": "biology",
+      "stage": "not researched",
+      "found": 0,
+      "imported": 0
+     },
+     {
+      "subject": "chemistry",
+      "stage": "not researched",
+      "found": 0,
+      "imported": 0
+     },
+     {
+      "subject": "physics",
+      "stage": "not researched",
+      "found": 0,
+      "imported": 0
+     },
+     {
+      "subject": "science",
+      "stage": "not researched",
+      "found": 0,
+      "imported": 0
+     }
+    ]
+   },
+   {
+    "country": "Canada",
+    "subjects": [
+     {
+      "subject": "maths",
+      "stage": "not researched",
+      "found": 0,
+      "imported": 0
+     },
+     {
+      "subject": "english",
+      "stage": "not researched",
+      "found": 0,
+      "imported": 0
+     },
+     {
+      "subject": "biology",
+      "stage": "not researched",
+      "found": 0,
+      "imported": 0
+     },
+     {
+      "subject": "chemistry",
+      "stage": "not researched",
+      "found": 0,
+      "imported": 0
+     },
+     {
+      "subject": "physics",
+      "stage": "not researched",
+      "found": 0,
+      "imported": 0
+     },
+     {
+      "subject": "science",
+      "stage": "not researched",
+      "found": 0,
+      "imported": 0
+     }
+    ]
+   },
+   {
+    "country": "Australia",
+    "subjects": [
+     {
+      "subject": "maths",
+      "stage": "not researched",
+      "found": 0,
+      "imported": 0
+     },
+     {
+      "subject": "english",
+      "stage": "not researched",
+      "found": 0,
+      "imported": 0
+     },
+     {
+      "subject": "biology",
+      "stage": "not researched",
+      "found": 0,
+      "imported": 0
+     },
+     {
+      "subject": "chemistry",
+      "stage": "not researched",
+      "found": 0,
+      "imported": 0
+     },
+     {
+      "subject": "physics",
+      "stage": "not researched",
+      "found": 0,
+      "imported": 0
+     },
+     {
+      "subject": "science",
+      "stage": "not researched",
+      "found": 0,
+      "imported": 0
+     }
+    ]
+   },
+   {
+    "country": "New Zealand",
+    "subjects": [
+     {
+      "subject": "maths",
+      "stage": "not researched",
+      "found": 0,
+      "imported": 0
+     },
+     {
+      "subject": "english",
+      "stage": "not researched",
+      "found": 0,
+      "imported": 0
+     },
+     {
+      "subject": "biology",
+      "stage": "not researched",
+      "found": 0,
+      "imported": 0
+     },
+     {
+      "subject": "chemistry",
+      "stage": "not researched",
+      "found": 0,
+      "imported": 0
+     },
+     {
+      "subject": "physics",
+      "stage": "not researched",
+      "found": 0,
+      "imported": 0
+     },
+     {
+      "subject": "science",
+      "stage": "not researched",
+      "found": 0,
+      "imported": 0
+     }
+    ]
+   }
+  ],
+  "requirements": {
+   "aqa-gcse-biology": {
+    "spec imported": 475,
+    "mapped": 0,
+    "drafted": 0,
+    "gates passed": 0,
+    "AI-verified": 0,
+    "expert-required": 0,
+    "expert-approved": 0,
+    "published": 0,
+    "needs update": 0
+   },
+   "aqa-gcse-chemistry": {
+    "spec imported": 442,
+    "mapped": 0,
+    "drafted": 0,
+    "gates passed": 0,
+    "AI-verified": 0,
+    "expert-required": 0,
+    "expert-approved": 0,
+    "published": 0,
+    "needs update": 0
+   }
+  }
+ },
+ "branch": "claude/determined-clarke-y76qwz",
+ "commit": "35c6422c5",
+ "dirty": false,
  "briefs": 0,
  "drafts": 0,
  "mode": "fast",
@@ -30,7 +263,33 @@
     "disagreements": 0
    },
    "editedSinceChecked": [],
-   "next": "biology/eukaryotes-and-prokaryotes"
+   "next": "biology/eukaryotes-and-prokaryotes",
+   "mappingPending": 111
+  },
+  {
+   "subject": "chemistry",
+   "frameworks": [
+    "aqa-gcse-chemistry"
+   ],
+   "topicsToWrite": 119,
+   "requirementsToWrite": 311,
+   "topics": {
+    "filed": 0,
+    "partial": 0,
+    "filed-with-gaps": 0,
+    "failed": 0,
+    "blocked": 0
+   },
+   "lessons": {
+    "total": 0,
+    "aiVerified": 0,
+    "expertRequired": 0,
+    "expertApproved": 0,
+    "disagreements": 0
+   },
+   "editedSinceChecked": [],
+   "next": "chemistry/atoms-elements-and-compounds",
+   "mappingPending": 131
   }
  ],
  "approvals": {
