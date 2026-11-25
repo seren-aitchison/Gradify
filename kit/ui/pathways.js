@@ -16,6 +16,8 @@ import { emptyState } from "./states.js";
 import { icon } from "../core/icons.js";
 import { tile, ink } from "../core/colour.js";
 import { actionCard } from "../core/action-card.js";
+import { GROUPS } from "../core/sites.js";
+import { pathOf } from "../core/site.js";
 import { buildGraph, KINDS, subjectQualifications, bodyQualifications, alternatives, jurisdictionsOf } from "../curriculum/graph.js";
 
 const KIND_ICON = { country: "globe", jurisdiction: "landmark", award: "award", qualification: "award", body: "badge", org: "shield", spec: "checklist", topic: "layers", subject: "book", course: "cap", site: "home", stage: "route" };
@@ -39,6 +41,8 @@ export function parseRoute(hash) {
 /** the address of a node page, carrying the way here (the last three steps) */
 export function hrefOf(n, trail = []) {
   if (!n) return "#/pathways";
+  // a site isn't a pathways page: it opens the site itself, as Explore's site cards do
+  if (n.kind === "site") { const site = GROUPS.flatMap((x) => x.items).find((x) => x.n === n.name); return site ? pathOf(site) : "/#find"; }
   const path = n.kind === "topic" ? `topic/${n.key}` : n.kind === "course" ? `course/${n.key}` : `${n.kind}/${n.key}`;
   const t = trail.filter((x) => x !== n.id).slice(-3);
   return `#/${path}${t.length ? `?from=${t.join(",")}` : ""}`;

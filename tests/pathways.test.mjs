@@ -173,3 +173,9 @@ test("the coverage report is up to date (node scripts/curriculum/pathways-report
 test("every specification in uk.js belongs to a subject (a new subject's specifications join it by id)", () => {
   for (const s of UK_SPECS) assert.ok(g.out(`spec:${s.id}`, "of").length, `${s.id} (${s.subject}) isn't linked to a subject`);
 });
+
+test("a site in the search results opens the site itself, not a pathways page", () => {
+  const site = pw.g.search("scigradify").find((n) => n.kind === "site");
+  assert.ok(site, "SciGradify is found");
+  assert.equal(hrefOf(site), "/scigradify/");
+});

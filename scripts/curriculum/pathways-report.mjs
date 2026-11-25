@@ -4,6 +4,7 @@
 //   node scripts/curriculum/pathways-report.mjs        writes docs/curriculum/PATHWAYS-COVERAGE.md
 //   node scripts/curriculum/pathways-report.mjs --check exits 1 if the file is out of date
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
+import { pathToFileURL } from "node:url";
 import { buildGraph, subjectQualifications, bodyQualifications } from "../../kit/curriculum/graph.js";
 import { GROUPS } from "../../kit/core/sites.js";
 
@@ -112,7 +113,8 @@ ${stages.join("\n")}
 `;
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+// run directly (not imported): compare URLs, since a path with a space is %20 in import.meta.url
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   const out = new URL("docs/curriculum/PATHWAYS-COVERAGE.md", root), md = report();
   if (process.argv.includes("--check")) { const now = existsSync(out) ? readFileSync(out, "utf8") : ""; if (now !== md) { console.error("docs/curriculum/PATHWAYS-COVERAGE.md is out of date: run node scripts/curriculum/pathways-report.mjs"); process.exit(1); } console.log("pathways report up to date"); }
   else { writeFileSync(out, md); console.log("docs/curriculum/PATHWAYS-COVERAGE.md"); }
