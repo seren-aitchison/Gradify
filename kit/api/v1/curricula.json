@@ -44,6 +44,7 @@
         "ecology",
         "sport"
        ],
+       "type": "gcse",
        "coverage": "gcse"
       },
       {
@@ -70,6 +71,7 @@
         "music",
         "spanish"
        ],
+       "type": "a-level",
        "coverage": "a-level"
       },
       {
@@ -185,7 +187,8 @@
         "sociology",
         "ecology",
         "sport"
-       ]
+       ],
+       "type": "gcse"
       },
       {
        "id": "gb-wls-alevel",
@@ -204,7 +207,8 @@
         "literature",
         "history",
         "psychology"
-       ]
+       ],
+       "type": "a-level"
       }
      ]
     },
@@ -239,7 +243,8 @@
         "sociology",
         "ecology",
         "sport"
-       ]
+       ],
+       "type": "nat5"
       },
       {
        "id": "gb-sct-higher",
@@ -259,7 +264,8 @@
         "history",
         "psychology",
         "business"
-       ]
+       ],
+       "type": "higher"
       },
       {
        "id": "gb-sct-ah",
@@ -275,7 +281,8 @@
         "biology",
         "chemistry",
         "physics"
-       ]
+       ],
+       "type": "adv-higher"
       }
      ]
     },
@@ -310,7 +317,8 @@
         "sociology",
         "ecology",
         "sport"
-       ]
+       ],
+       "type": "gcse"
       },
       {
        "id": "gb-nir-alevel",
@@ -328,7 +336,8 @@
         "physics",
         "literature",
         "history"
-       ]
+       ],
+       "type": "a-level"
       }
      ]
     },
