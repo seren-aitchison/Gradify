@@ -77,6 +77,7 @@ import { specMastery } from "../learning/spec-mastery.js";
 import { specPageHtml, topicPageHtml, pointPageHtml, specSummaryHtml } from "./spec-view.js";
 import { subjectById } from "../curriculum/subjects.js";
 import { STRATEGIES, explain as explainWay, available as waysFor, rank as rankWays, stats as wayStats, record as wayRecord, shown as wayShown, answered as wayAnswered } from "../learning/explain.js";
+import { lessonSteps, LEARN_PILOTS } from "./blocks.js";
 
 const DAY = 864e5;
 const XP = { lesson: 10, check: 5, chest: 15, quiz: 50, perfect: 20, review: 2, problem: 5, weekly: 100 };
@@ -293,9 +294,9 @@ export function mountCourse(root, cfg) {
     setTimeout(() => el.remove(), 1600);
     root.querySelectorAll(".cx-combo-n").forEach((x) => { x.textContent = n; x.closest(".cx-combo")?.classList.add("hot"); });
   }
-  function wirePractice(el, context, contextId, xp = XP.check) {
+  function wirePractice(el, context, contextId, xp = XP.check, onAnswer = null) {
     wireQuestions(el, (k) => pageQs.get(k)?.Q, (Q, res, first, box, meta) => {
-      const it = pageQs.get(box.dataset.key); record(it, context, contextId, res, meta);
+      const it = pageQs.get(box.dataset.key); record(it, context, contextId, res, meta); onAnswer?.(it, res);
       if (first) { if (res.score >= 0.7) { combo++; comboBest = Math.max(comboBest, combo); if ([3, 5, 8, 12].includes(combo)) comboPop(combo); } else { combo = 0; root.querySelectorAll(".cx-combo").forEach((x) => x.classList.remove("hot")); } root.querySelectorAll(".cx-combo-n").forEach((x) => { x.textContent = combo; x.closest(".cx-combo").hidden = !combo; }); }
       // an explanation shown in this lesson is judged by the next answer (kit/learning/explain.js)
       if (it.l && !res.self) { const credited = wayAnswered(it.l.id, res.correct); if (credited) logWay("explanation_outcome", credited, it.l.id, res.correct); }
@@ -1503,6 +1504,103 @@ export function mountCourse(root, cfg) {
   }
   addEventListener("resize", () => { if (splitOn() && !splitFits()) setSplit(false, false); });
 
+  // ---------- Learn mode: the lesson one step at a time (Lesson System Brief v2; kit/course/blocks.js) ----------
+  // The same notes as the lesson page, as orient → diagnose → concept blocks → practise → consolidate → prove → next.
+  // One thing to do per screen and one primary action (Continue). Answers are recorded exactly as on the lesson page
+  // (wirePractice), progress is saved on every step, and the lesson page stays available as Notes mode.
+  async function viewStep(id, at = 0) {
+    const l = byId[id]; if (!l) return go("learn");
+    if (!(await gate("lesson", id, { course: cfg.slug, store }))) { main.innerHTML = lockedHtml("lesson"); return; }
+    const N = await notesFor(l); if (!N) { location.replace(`#/lesson/${id}`); return; }
+    curLesson = l; curN = N; lt.start(id);
+    const { flow: F, steps } = lessonSteps(N), u = l.unit, t = trackOf(u), n = Math.max(0, Math.min(steps.length - 1, at || 0)), s = steps[n];
+    S.step ||= {}; if (n > (S.step[id] || 0)) { S.step[id] = n; save(true); }
+    const mins = Math.max(2, Math.round(lessonText(N).split(/\s+/).length / 200 + (N.items?.length || 0) * 0.75));
+    const nextL = u.lessons[l.i + 1] && byId[u.lessons[l.i + 1].id];
+    const href = (k) => `#/step/${id}/${k}`;
+    const qBlock = (qs, opts = {}) => qs.map((q, k) => `<div class="ls-q" data-qn="${q.n}">${qHtml(N.items[q.n], { confidence: true, ...opts })}</div>`).join("");
+    const objList = (os) => os.map((o) => `<li><span class="ls-ob">${o}</span>${inline(N.objectives[o - 1] || "")}</li>`).join("");
+    let body = "", needsAnswer = 0, primary = n < steps.length - 1 ? "Continue" : "";
+    if (s.kind === "orient") {
+      body = `<span class="ls-kicker">${esc(cfg.name)} · ${U} ${u.n}${l.module ? ` · ${esc(l.module)}` : ""}</span><h1 class="ls-title" tabindex="-1">${esc(l.title)}</h1>${N.lead ? `<p class="ls-lead">${inline(N.lead)}</p>` : ""}
+        <p class="ls-meta"><span>${ic("clock")} About ${mins} min</span><span>${ic("grid")} ${F.blocks.length} concept${F.blocks.length === 1 ? "" : "s"}</span>${N.level ? `<span>${esc(N.level)}</span>` : ""}</p>
+        ${N.objectives.length ? `<section class="ls-card"><h2>By the end you can</h2><ul class="ls-objs">${objList(N.objectives.map((_, k) => k + 1))}</ul></section>` : ""}
+        ${buildsOnHtml(id)}`;
+      primary = F.diagnose.length ? "Start with a quick check" : "Start";
+    } else if (s.kind === "diagnose") {
+      body = `<span class="ls-kicker">Before you start</span><h1 class="ls-title" tabindex="-1">What do you already know?</h1><p class="ls-lead">A quick check. It doesn't count against you: it shows what to focus on.</p>${qBlock(s.questions)}`;
+      needsAnswer = s.questions.length;
+    } else if (s.kind === "block") {
+      const B = s.block, partsHtml = lessonHtml({ blocks: B.parts }), ob = B.objectives.length ? `<p class="ls-obtag">${ic("target")} ${B.objectives.map((o) => esc(N.objectives[o - 1] || `Objective ${o}`)).join(" · ")}</p>` : "";
+      body = `<span class="ls-kicker">Concept ${s.n} of ${s.of}</span><h1 class="ls-title" tabindex="-1">${inline(B.title || l.title)}</h1>${ob}
+        ${B.hook ? `<div class="ls-hook"><b>Think first</b><p>${inline(B.hook)}</p></div>` : ""}
+        <div class="ls-teach co-prose">${partsHtml}</div>
+        ${B.more.length ? `<details class="ls-more"><summary>${ic("more")} More detail</summary>${B.more.map((x) => `<p>${inline(x)}</p>`).join("")}</details>` : ""}
+        <div class="ls-tools"><button type="button" class="ls-tool" data-explain aria-expanded="false">${ic("sparkles")} Explain it differently</button><button type="button" class="ls-tool" data-capture>${ic("save")} ${S.saved[id] ? "Saved to your notes ✓" : "Save to my notes"}</button></div>
+        <div class="ls-explain" hidden aria-live="polite"></div>
+        ${B.checks.length ? `<section class="ls-check" aria-label="Check your understanding"><h2>${ic("target")} Check your understanding</h2>${qBlock(B.checks)}</section>` : ""}`;
+      needsAnswer = B.checks.length;
+    } else if (s.kind === "practise") {
+      body = `<span class="ls-kicker">Practise</span><h1 class="ls-title" tabindex="-1">Put it together</h1><p class="ls-lead">These get harder as you go. A hint and another explanation are there if you're stuck.</p>${qBlock(s.questions)}`;
+    } else if (s.kind === "consolidate") {
+      const C = F.consolidate;
+      body = `<span class="ls-kicker">Consolidate</span><h1 class="ls-title" tabindex="-1">What to remember</h1>
+        ${C.summary.length ? `<section class="ls-card"><h2>Summary</h2><ul>${C.summary.map((x) => `<li>${inline(x)}</li>`).join("")}</ul></section>` : ""}
+        ${C.terms.length ? `<section class="ls-card"><h2>Key terms</h2><dl class="co-terms">${C.terms.map(([a, b]) => `<dt>${inline(a)}</dt><dd>${inline(b)}</dd>`).join("")}</dl></section>` : ""}
+        ${C.pitfalls.length ? `<section class="ls-card ls-pits"><h2>Common mistakes</h2><ul>${C.pitfalls.map((x) => `<li>${inline(x)}</li>`).join("")}</ul></section>` : ""}
+        ${C.cards ? `<button type="button" class="ls-tool" data-cards>${ic("cards")} Flashcards (${C.cards})</button>` : ""}`;
+    } else if (s.kind === "prove") {
+      body = `<span class="ls-kicker">Prove it</span><h1 class="ls-title" tabindex="-1">The final check</h1><p class="ls-lead">No hints this time. Answer them all to finish the lesson.</p>${qBlock(s.questions, { confidence: true })}`;
+      needsAnswer = s.questions.length;
+    } else {
+      const shown = new Set((S.attempts || []).filter((a) => a.lesson === id && a.score >= 0.7).flatMap((a) => a.question?.objectives || []));
+      body = `<span class="ls-kicker">Next</span><h1 class="ls-title" tabindex="-1">${S.done[id] ? "Lesson complete" : "Almost there"}</h1>
+        ${N.objectives.length ? `<section class="ls-card"><h2>What you've shown</h2><ul class="ls-objs">${N.objectives.map((o, k) => `<li class="${shown.has(k + 1) ? "ok" : ""}"><span class="ls-ob">${shown.has(k + 1) ? "✓" : k + 1}</span>${inline(o)}<small>${shown.has(k + 1) ? "Shown in your answers" : "Not shown yet"}</small></li>`).join("")}</ul></section>` : ""}
+        <div class="ls-tools">${S.done[id] ? "" : `<button type="button" class="btn btn-light lg" data-done>Complete lesson · +${XP.lesson} XP</button>`}${nextL ? `<a class="btn btn-ghost lg" href="${href(0).replace(id, nextL.id)}">Next lesson: ${esc(nextL.title)}</a>` : ""}<a class="ls-tool" href="#/lesson/${id}">${ic("notes")} Read as notes</a></div>`;
+      primary = "";
+    }
+    main.innerHTML = `<article class="ls" style="--a:${t.from};--b:${t.to}">
+      <header class="ls-bar"><a class="ls-back" href="${n ? href(n - 1) : `#/lesson/${id}`}" aria-label="${n ? "Previous step" : "Back to the lesson"}">${ic("left")}</a>
+        <ol class="ls-prog" aria-label="Step ${n + 1} of ${steps.length}">${steps.map((x, k) => `<li class="${k < n ? "done" : k === n ? "here" : ""}"><a href="${href(k)}" tabindex="${k <= (S.step[id] || 0) ? 0 : -1}" aria-label="Step ${k + 1}${k === n ? " (current)" : ""}"></a></li>`).join("")}</ol>
+        <a class="ls-close" href="#/lesson/${id}" aria-label="Leave step-by-step and read as notes">${ic("notes")}</a></header>
+      <div class="ls-body">${body}</div>
+      ${primary ? `<footer class="ls-foot"><a class="btn btn-light lg ls-go${needsAnswer ? " off" : ""}" href="${href(n + 1)}" ${needsAnswer ? 'aria-disabled="true"' : ""}>${esc(primary)}</a>${needsAnswer ? `<p class="ls-why">Answer ${needsAnswer === 1 ? "the question" : "each question"} to continue</p>` : ""}</footer>` : ""}
+    </article>`;
+    root.classList.add("co-stepmode");
+    hydrateDiagrams(main); mountIxSlots(main); glassIcons(main, cfg.site).catch(() => {});
+    // Continue unlocks once every question on the step has an answer (right or wrong: the feedback teaches)
+    const answered = new Set(), go_ = main.querySelector(".ls-go");
+    wirePractice(main, s.kind === "diagnose" ? "diagnostic" : "lesson", id, s.kind === "diagnose" ? 0 : XP.check, (it) => {
+      answered.add(it.key);
+      if (go_ && answered.size >= needsAnswer) { go_.classList.remove("off"); go_.removeAttribute("aria-disabled"); main.querySelector(".ls-why")?.remove(); }
+    });
+    go_?.addEventListener("click", (e) => { if (go_.classList.contains("off")) { e.preventDefault(); main.querySelector(".ls-q .aq, .ls-q")?.scrollIntoView({ behavior: "smooth", block: "center" }); } });
+    main.querySelector("[data-capture]")?.addEventListener("click", (e) => saveLesson(l, N, e.currentTarget));
+    main.querySelectorAll("[data-cards]").forEach((b) => b.addEventListener("click", async () => { if (await gate("flashcards", `${cfg.slug}:${l.id}`, { store })) flashcards(N.cards, l, N); }));
+    // Explain it differently: the block's own written alternatives first, then the ways built from the lesson's notes
+    main.querySelector("[data-explain]")?.addEventListener("click", async (e) => {
+      const btn = e.currentTarget, box = main.querySelector(".ls-explain"), B = s.block, Q = B.checks[0] ? N.items[B.checks[0].n].Q : null;
+      const open = box.hidden; box.hidden = !open; btn.setAttribute("aria-expanded", String(open)); if (!open || box.dataset.filled) return;
+      box.dataset.filled = "1";
+      const authored = B.alts.map((a) => ({ title: a.style[0].toUpperCase() + a.style.slice(1), html: `<p>${inline(a.x)}</p>` }));
+      const ways = Q ? rankWays(waysFor(N, Q, { ai: false }), wayStats(), await priors()).slice(0, 3).map((w) => { const x = explainWay(w, N, Q); logWay("explanation_shown", w, id); return { title: x.title, html: wayBody(x, N) }; }) : [];
+      const all = [...authored, ...ways];
+      box.innerHTML = all.length ? all.map((x) => `<section class="ls-way"><h3>${esc(x.title)}</h3>${x.html}</section>`).join("") : `<p class="co-empty">No other explanation is written for this concept yet. Ask the tutor from the lesson page.</p>`;
+      box.querySelectorAll(".co-reveal").forEach((r) => r.addEventListener("click", () => { r.nextElementSibling.hidden = false; r.remove(); }));
+    });
+    main.querySelector("[data-done]")?.addEventListener("click", async (e) => {
+      if (S.done[id]) return;
+      const proveQs = F.prove.map((q) => N.items[q.n].key), tried = new Set((S.attempts || []).filter((a) => a.lesson === id).map((a) => a.question?.id));
+      if (proveQs.some((k) => !tried.has(k))) { location.hash = href(steps.findIndex((x) => x.kind === "prove")); return; }
+      S.done[id] = Date.now(); save(); track("lesson_complete", cfg.site);
+      ledger({ event: "lesson_completed", concept: `${cfg.slug}:${id}`, source: "course", detail: { mode: "learn", seconds: Math.round((lt.current()?.ms || 0) / 1000) + (S.time?.[id]?.s || 0) } });
+      await award(XP.lesson, "lesson", id, `${cfg.name}: ${l.title}`); shareProgress(l);
+      e.currentTarget.remove(); viewStep(id, n);
+    });
+    scrollTo(0, 0);
+    main.querySelector(".ls-title")?.focus({ preventScroll: true });
+  }
+
   async function viewLesson(id) {
     const l = byId[id]; if (!l) return go("learn");
     curLesson = l; loop.read = false; loop.check = false; loop.recall = false; comboBest = 0;
@@ -1564,6 +1662,7 @@ export function mountCourse(root, cfg) {
           <span class="kicker">${esc(t.name)} · ${U} ${u.n}${l.module ? ` · ${esc(l.module)}` : ""}</span><h1>${esc(l.title)}</h1>${N?.lead ? `<p class="mv-lead">${inline(N.lead)}</p>` : ""}
           <div class="mv-chips"><span class="co-chip cx-stchip s-${statusOf(id)}">${dot(statusOf(id))} ${STATUS[statusOf(id)].label}</span>${S.done[id] ? "" : `<span class="co-chip">${ic("bolt")} +${XP.lesson} XP</span>`}${mins ? `<span class="co-chip">${ic("clock")} About ${mins} min</span>` : ""}${N?.level ? `<span class="co-chip">${esc(N.level)}</span>` : ""}</div></header>
         ${N && cfg.reviewLine ? `<p class="co-reviewed">${reviewLine(u)}</p>` : ""}
+        ${N && (LEARN_PILOTS[cfg.slug] || []).includes(id) ? `<a class="btn btn-light lg co-learnstep" href="#/step/${id}/0">${ic("play")} Learn it step by step <small>New · one idea at a time, with a check after each</small></a>` : ""}
         ${buildsOnHtml(id)}
         ${N ? F.top : ""}
         ${N ? `<div class="mv-cols co-prose">${lessonDiagrams(N, id)}</div>${F.end || recapDiagrams(N, id).length ? `<section class="co-recap" id="co-recap"><h3 class="co-part">${ic("check")} Recap</h3>${recapHtml(N, id)}${F.end}</section>` : ""}` : `<p class="co-empty">The notes for this lesson are still being written. You can still mark it done and come back later.</p>`}
@@ -2737,7 +2836,7 @@ export function mountCourse(root, cfg) {
     const started = Object.keys(S.done).length || (S.log || []).length || (S.recent || []).length;
     const home = cfg.overview && !started ? "overview" : "home";
     const [v0, arg, sec, how] = location.hash.replace(/^#\/?/, "").split("/"), v = v0 || home;
-    const view = VIEWS.some(([id]) => id === v) || ["lesson", "quiz", "exam", "target"].includes(v) ? v : home;
+    const view = VIEWS.some(([id]) => id === v) || ["lesson", "step", "quiz", "exam", "target"].includes(v) ? v : home;
     const tab = TAB_OF[view] || view;
     // the static course overview below the app belongs to the course's front page, not to lessons, quizzes and the rest
     document.querySelector(".course-overview")?.toggleAttribute("hidden", !["home", "overview"].includes(view));
@@ -2752,7 +2851,8 @@ export function mountCourse(root, cfg) {
     // the course outline stays beside a lesson or a quiz (a drawer on smaller screens)
     showTree(view === "lesson" || view === "quiz");
     // reading a lesson: the course's header, progress and tabs fold away so the lesson starts at the top
-    root.classList.toggle("co-reading", view === "lesson");
+    root.classList.toggle("co-reading", view === "lesson" || view === "step");
+    if (view !== "step") root.classList.remove("co-stepmode");
     root.dataset.view = view;
     paintCrumbs(view, arg);
     const fpref = (() => { try { return localStorage.getItem(FK) === "1"; } catch { return false; } })();
@@ -2765,6 +2865,7 @@ export function mountCourse(root, cfg) {
     // Google Analytics, with consent (kit/core/consent.js): a lesson or quiz opened, not a redraw of the same place
     if (moved && (view === "lesson" || view === "quiz" || view === "exam")) globalThis.gradifyConsent?.event(view === "lesson" ? "lesson_start" : `${view}_start`);
     if (view === "learn") { if (arg) openUnit(arg); viewLearn(arg); }
+    else if (view === "step") await viewStep(arg, Number(sec) || 0);
     else if (view === "lesson") {
       await viewLesson(arg);
       if (sec) setTimeout(() => {
