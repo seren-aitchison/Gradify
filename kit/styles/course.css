@@ -2945,13 +2945,21 @@ body:has(.co-modal) .cx-dock { visibility: hidden; }
   mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
   animation: g-gleam 24s linear infinite;
 }
-.co :is(.co-school, .co-pcard, .sm-measure):nth-child(3n + 2)::before { animation-delay: -8s; }
-.co :is(.co-school, .co-pcard, .sm-measure):nth-child(3n)::before { animation-delay: -16s; }
+:root .co :is(.co-school, .co-pcard, .sm-measure, #g-edge):nth-child(3n + 2)::before { animation-delay: -8s; }
+:root .co :is(.co-school, .co-pcard, .sm-measure, #g-edge):nth-child(3n)::before { animation-delay: -16s; }
 .co :is(.co-school, .co-pcard, .sm-note)::before { padding: 1.5px; }
-@media (prefers-reduced-motion: reduce) { .co :is(.co-hero, .cx-hero, .co-tabs, .sm-measure, .sm-note, .co-school, .co-pcard)::before { animation: none; background-position: -60% 0, 30% 0; } }
-:root[data-motion="reduce"] .co :is(.co-hero, .cx-hero, .co-tabs, .sm-measure, .sm-note, .co-school, .co-pcard)::before { animation: none; background-position: -60% 0, 30% 0; }
+@media (prefers-reduced-motion: reduce) { :root .co :is(.co-hero, .cx-hero, .co-tabs, .sm-measure, .sm-note, .co-school, .co-pcard, #g-edge)::before { animation: none; background-position: -60% 0, 30% 0; } }
+:root[data-motion="reduce"] .co :is(.co-hero, .cx-hero, .co-tabs, .sm-measure, .sm-note, .co-school, .co-pcard, #g-edge)::before { animation: none; background-position: -60% 0, 30% 0; }
 @media print { .co :is(.co-hero, .cx-hero, .co-tabs, .sm-measure, .sm-note, .co-school, .co-pcard)::before { content: none; } }
 /* fewer words: a unit's blurb is one line, and the hero is its headline and one button */
 .co .co-school p { display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
 .co .co-hero .co-herotext > p:first-of-type { display: none; }   /* the headline says it; the intro stays in the static overview */
 .co .sm-note a { white-space: nowrap; }
+
+/* the lesson rim sweeps once when the lesson opens (lg-gleam, above), never the panels' endless gleam: the panel rule
+   (.co.co-reading :is(.co-read .co-notes, .cx-tree, .cx-widget)::before) outranked it, so the page-sized rim
+   repainted every frame for as long as the lesson was open, phones included */
+.co.co-reading .co-read .co-notes::before { animation: lg-gleam 14s linear 1s; }
+@media (max-width: 1020px) { .co.co-reading .co-read .co-notes::before { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .co.co-reading .co-read .co-notes::before { animation: none; } }
+:root[data-motion="reduce"] .co.co-reading .co-read .co-notes::before { animation: none; }
