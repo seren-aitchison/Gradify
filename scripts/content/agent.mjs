@@ -94,7 +94,7 @@ export async function advance(topic, { render = null, legible = null } = {}) {
       } else if (s.stage === "await-review") {
         const reply = read(vo); if (!reply) { reviews.push([rel(vq), rel(vo)]); break; }
         const v = verdictOf(reply);
-        if (v.ok) { s.stage = "done"; s.done = true; }
+        if (v.ok) { s.stage = "done"; s.done = true; s.conf = v.conf; }
         else { s.issues = v.issues; s.failedAt = "review"; s.reviewFails++; s.stage = s.gateFails + s.reviewFails > LIMIT() ? "failed" : "repair"; }
         keep(); rmSync(vo); rmSync(vq, { force: true });
         if (v.ok) break;

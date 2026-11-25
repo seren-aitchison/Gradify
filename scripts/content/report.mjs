@@ -122,7 +122,7 @@ export function writeHandover(s = status()) {
 export function prBody(spend, { subjects = subjectsInRun() } = {}) {
   const records = subjects.map((sub) => checkTiers(sub, { withLedger: true }).led).flatMap((led) => Object.entries(led.topics).map(([topic, e]) => ({ topic, lessons: e.lessons || [], failures: e.failures || [], uncovered: e.uncovered || [], gaps: e.gaps || [], needs: e.needs || [] })));
   const passed = records.flatMap((r) => r.lessons.map((l) => ({ ...l, topic: r.topic })));
-  const line = (l) => `- **${l.title}** (${l.topic}) · ${l.tier}${l.disagreed ? " · reviewer disagreed first" : ""}${l.conflict ? " · sources conflict" : ""} · ${l.reqs.length} requirement${l.reqs.length === 1 ? "" : "s"}`;
+  const line = (l) => `- **${l.title}** (${l.topic}) · ${l.tier}${l.disagreed ? " · reviewer disagreed first" : ""}${l.conflict ? " · sources conflict" : l.conflictsExplained?.length ? " · source conflict explained" : ""} · ${l.reqs.length} requirement${l.reqs.length === 1 ? "" : "s"}`;
   const fails = records.flatMap((r) => r.failures.map((f) => `- ${r.topic} · **${f.title}** stopped at \`${f.gate}\`: ${f.issues.slice(0, 3).map((i) => `${i.code}${i.line ? ` L${i.line}` : ""} ${i.note}`).join("; ")}`));
   const byGate = {}; for (const r of records) for (const f of r.failures) byGate[f.gate] = (byGate[f.gate] || 0) + 1;
   const systematic = Object.entries(byGate).filter(([, n]) => n >= 5);

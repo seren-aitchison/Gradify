@@ -7,7 +7,7 @@ import { titleKey } from "../../kit/course/syllabus.js";
 import { SPECS } from "../../kit/curriculum/uk.js";
 import { loadIndex } from "../curriculum/engine.mjs";
 import { CONFIG, at, out, fp, save, slug, today, briefPath, draftPath, loadLedger, saveLedger } from "./lib.mjs";
-import { packet, parseBrief, parseVerdicts, fixList, parseRepairs, applyRepair, splitUnit, numbered, parentOf } from "./shorthand.mjs";
+import { packet, parseBrief, parseVerdicts, fixList, parseRepairs, applyRepair, splitUnit, numbered, parentOf, conflictStakes } from "./shorthand.mjs";
 import { runGates } from "./gates.mjs";
 import { diagramsFor, reqHash, TYPE } from "./queue.mjs";
 import { longestSharedRun } from "../knowledge/lib.mjs";
@@ -92,7 +92,9 @@ export function packetFor(topic, brief) {
   const { diagrams, renderers } = diagramsFor(topic);
   return packet({ id: `${topic.fw}/${topic.section}`, subject: topic.subject, level: topic.level, country: topic.country, framework: topic.fw, reqs: topic.reqs, reuse: topic.reuse, diagrams, renderers, brief: brief.replace(/^#.*\n/, "") });
 }
-export const reviewRequest = (s, topic, brief) => [`LESSON ${s.key}`, numbered(s.text), ...topic.reqs.map((r) => `REQ ${r.id} | ${String(r.asks).replace(/\s+/g, " ")}`), `BRIEF ${topic.id}`, brief.replace(/^#.*\n/, "").trim()].join("\n");
+export const reviewRequest = (s, topic, brief) => [`LESSON ${s.key}`, numbered(s.text), ...topic.reqs.map((r) => `REQ ${r.id} | ${String(r.asks).replace(/\s+/g, " ")}`), `BRIEF ${topic.id}`, brief.replace(/^#.*\n/, "").trim(),
+  // the brief's conflicts, numbered as the verdict's Cn= names them
+  ...parseBrief(brief).conflicts.map((c, i) => `CONF C${i + 1} | ${c[0]} | src=${c[1] || ""} | stakes=${conflictStakes(c)}`)].join("\n");
 export const repairRequest = (s, pkt) => [fixList(s.key, s.issues), `LESSON ${s.key}`, numbered(s.text), pkt].join("\n");
 export const gateOptions = (topic, { siblings = [], ...extra } = {}) => ({ reqs: topic.reqs, allowed: new Set(topic.reqs.map((x) => x.id)), prereq: prereqResolver(topic.subject, siblings), taken: takenTitle(topic.subject), ...extra });
 /** the course's own lesson titles, keyed as the syllabus keys them; the engine's published unit is left out, since a
@@ -133,12 +135,39 @@ export function riskKeywords(text, hr = CONFIG.highRisk) {
   for (const n of hr.notKeywords || []) t = t.replace(new RegExp(`\\b${escRe(n.toLowerCase())}`, "g"), " ");
   return hr.keywords.filter((k) => new RegExp(`\\b${escRe(k.toLowerCase())}`).test(t));
 }
-const isHighRisk = (topic, s, parsedBrief) => {
+const normUrl = (u) => String(u || "").trim().toLowerCase().replace(/^https?:\/\//, "").replace(/^www\./, "").replace(/[/#?]+$/, "");
+/**
+ * How a lesson handles each of its brief's CONFLICT lines (decision G). A conflict stops a lesson being AI-checked
+ * unless the reviewer says the lesson doesn't rely on it (Cn=none), or says it's explained at a `!:` line (Cn=L<n>)
+ * and the engine confirms all of: the Researcher marked it stakes=low, it names no high-risk keyword, that line of
+ * the lesson really is a `!:` line, and the lesson's SRC lines cite at least two of the conflict's sources. Anything
+ * missing (no verdict, open, high stakes) leaves it open, which sends the lesson to an expert.
+ */
+export function conflictsOf(s, parsedBrief, hr = CONFIG.highRisk) {
+  const srcUrl = new Map((parsedBrief.sources || []).map((x) => [x.id, normUrl(x.url)]));
+  const lines = String(s.text || "").split("\n"), cited = new Set(lines.filter((l) => /^SRC:/.test(l)).map((l) => normUrl(l.split("|").pop())));
+  const explained = [], open = [];
+  (parsedBrief.conflicts || []).forEach((row, i) => {
+    const n = i + 1, v = s.conf?.[n], label = `C${n} ${String(row[0]).slice(0, 60)}`;
+    if (v === "none") return;
+    if (!v || v === "open") return open.push(`${label}: ${v ? "reviewer left it open" : "no reviewer verdict"}`);
+    const at = Number(v.slice(1)), ids = String(row[1] || "").split(/[ ,]+/).filter((x) => srcUrl.has(x));
+    const hits = ids.filter((id) => cited.has(srcUrl.get(id))).length, need = Math.min(2, Math.max(ids.length, 1));
+    const why = conflictStakes(row) !== "low" ? "high stakes" : riskKeywords(row[0], hr).length ? `high-risk keyword (${riskKeywords(row[0], hr).join(", ")})`
+      : !/^!:/.test(lines[at - 1] || "") ? `L${at} isn't a !: line` : hits < need ? `the lesson cites ${hits} of its ${ids.length} sources` : null;
+    if (why) open.push(`${label}: ${why}`); else explained.push(`C${n}@L${at}`);
+  });
+  return { explained, open };
+}
+/** a lesson's tier flags: `risk` from its own requirements (a practical elsewhere in the topic doesn't count), NUM
+ * questions and keywords; `conflict` when a brief conflict it relies on isn't resolved (conflictsOf) */
+export const lessonRisk = (topic, s, parsedBrief) => {
   const hr = CONFIG.highRisk;
   // only the requirements this lesson teaches: a practical elsewhere in the topic doesn't make every lesson high-risk
   const own = new Set(s.lesson?.reqs?.map((x) => x.id) || []), ids = new Set(topic.reqs.map((r) => r.id));
   const mine = topic.reqs.filter((r) => [...own].some((id) => parentOf(id, ids) === r.id));
-  return { conflict: parsedBrief.conflicts.length > 0, risk: (own.size ? mine : topic.reqs).some((r) => hr.types.includes(r.type)) || /^NUM/m.test(s.text) || riskKeywords(s.text, hr).length > 0 };
+  const c = conflictsOf(s, parsedBrief, hr);
+  return { conflict: c.open.length > 0, conflicts: c, risk: (own.size ? mine : topic.reqs).some((r) => hr.types.includes(r.type)) || /^NUM/m.test(s.text) || riskKeywords(s.text, hr).length > 0 };
 };
 
 /** write, check, review and repair one topic's lessons; file what passes; return the record for the ledger and PR */
@@ -160,8 +189,8 @@ export async function runTopic(topic, { ask, askMany, render = null, legible = n
       if (toReview.length) {
         const out = await askMany("review", toReview.map((s) => ({ key: s.key, user: reviewRequest(s, topic, r.brief) })));
         // a batch that timed out was cancelled: its unanswered reviews aren't failures, and no further paid round starts
-        if (out.timedOut) { for (const s of toReview) { const res = out.get(s.key); if (res && !(res instanceof Error) && verdictOf(res).ok) s.done = true; } log(`  ${out.timedOut}: stopping this topic`); break; }
-        for (const s of toReview) { const v = verdictOf(out.get(s.key)); if (v.ok) s.done = true; else { s.issues = v.issues; s.failedAt = "review"; s.reviewFails++; fix.push(s); } }
+        if (out.timedOut) { for (const s of toReview) { const res = out.get(s.key); if (res && !(res instanceof Error) && verdictOf(res).ok) { s.done = true; s.conf = verdictOf(res).conf; } } log(`  ${out.timedOut}: stopping this topic`); break; }
+        for (const s of toReview) { const v = verdictOf(out.get(s.key)); if (v.ok) { s.done = true; s.conf = v.conf; } else { s.issues = v.issues; s.failedAt = "review"; s.reviewFails++; fix.push(s); } }
       }
       log(`  round ${round}: ${states.filter((s) => s.done).length}/${states.length} pass${fix.length ? `, ${fix.length} to repair` : ""}`);
       if (round === CONFIG.repairs || !fix.length) break;
@@ -189,8 +218,8 @@ export function fileTopic(topic, states, { brief = null, failures = [], reviewed
   const rec = { topic: topic.id, fw: topic.fw, section: topic.section, title: topic.title, date: today(), lessons: [], failures: [...failures], uncovered: [], gaps: [], needs: [], brief: brief ? (brief.cached ? "reused" : "new") : null };
   const passed = states.filter((s) => s.done && s.lesson);
   for (const s of passed) {
-    const flags = isHighRisk(topic, s, brief.parsed), title = s.lesson.title;
-    rec.lessons.push({ title, tier: !reviewed ? "gates-passed" : flags.risk || flags.conflict ? "expert-required" : "ai-verified", reqs: s.lesson.reqs.map((x) => x.id), disagreed: s.reviewFails > 0, repairs: s.gateFails + s.reviewFails, ...(flags.conflict ? { conflict: true } : {}), ...(flags.risk ? { highRisk: true } : {}), hash: fp(s.text),
+    const flags = lessonRisk(topic, s, brief.parsed), title = s.lesson.title;
+    rec.lessons.push({ title, tier: !reviewed ? "gates-passed" : flags.risk || flags.conflict ? "expert-required" : "ai-verified", reqs: s.lesson.reqs.map((x) => x.id), disagreed: s.reviewFails > 0, repairs: s.gateFails + s.reviewFails, ...(flags.conflict ? { conflict: true, conflictsOpen: flags.conflicts.open } : {}), ...(flags.conflicts.explained.length ? { conflictsExplained: flags.conflicts.explained } : {}), ...(flags.risk ? { highRisk: true } : {}), hash: fp(s.text),
       // the build record: everything this lesson was made from, so a change to any of them lists it for rebuilding
       built: buildRecord(topic, brief, { models: s.models || currentModels(), reqs: topic.reqs.filter((x) => s.lesson.reqs.some((y) => parentOf(y.id, new Set([x.id])))).map((x) => `${x.id}@${x.hash}`) }) });
     rec.gaps.push(...s.lesson.gaps.map((g) => `${title}: ${g}`)); rec.needs.push(...s.lesson.needs.map((g) => `${title}: ${g}`));

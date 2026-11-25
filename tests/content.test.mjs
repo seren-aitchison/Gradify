@@ -674,3 +674,44 @@ test("filing: a practical elsewhere in the topic doesn't make a lesson high-risk
   const part = await run("test-prac-part", LESSON("3 × 4 = 12").replace(`REQ: ${REQ.id} @1,2`, `REQ: ${REQ.id} @1,2\nREQ: ${PRAC.id}.ii @1`));
   assert.equal(part.lessons[0].tier, "expert-required"); assert.ok(part.lessons[0].highRisk);
 });
+
+test("source conflicts: an explained, low-stakes, cited conflict is AI-checked; anything less goes to an expert", async () => {
+  const CONFL = (extra = " | stakes=low", what = "bacterium lengths differ by source (1 to 10 or 0.5 to 5 micrometres)") => `CONFLICT: ${what} | s1,s2${extra}`;
+  const withSrc = LESSON("3 × 4 = 12").replace(/\nSRC:.*$/, (m) => `${m}\nSRC: Cell structure | secondary | 2026-11-25 | https://www.bbc.co.uk/bitesize/x`);
+  const bang = withSrc.split("\n").findIndex((l) => l.startsWith("!:")) + 1;
+  const run = async (name, { conflict = CONFL(), verdict = `C1=L${bang}`, lesson = withSrc } = {}) => {
+    const topic = { ...TOPIC, id: `biology/${name}`, title: name };
+    const brief = BRIEF.replace("test-prokaryotes", name).replace("\nSRC: s1", `\n${conflict}\nSRC: s1`);
+    const ask = async (job) => (job === "research" ? brief : `${lesson}\nEND`);
+    let req = "";
+    const r = await runTopic(topic, { ask, askMany: async (job, items) => new Map(items.map((it) => { req = it.user; return [it.key, `REV ${it.key} OK ${verdict}`]; })) });
+    return { l: r.lessons[0], req };
+  };
+  const ok = await run("test-conf-ok");
+  assert.equal(ok.l.tier, "ai-verified"); assert.deepEqual(ok.l.conflictsExplained, [`C1@L${bang}`]); assert.ok(!ok.l.conflict);
+  assert.match(ok.req, /^CONF C1 \| bacterium lengths differ .* \| src=s1,s2 \| stakes=low$/m, "the reviewer sees the conflicts numbered");
+  assert.equal((await run("test-conf-none", { verdict: "C1=none" })).l.tier, "ai-verified", "a conflict the lesson doesn't rely on doesn't need an expert");
+  const cases = {
+    "test-conf-noverdict": [{ verdict: "" }, /no reviewer verdict/],
+    "test-conf-open": [{ verdict: "C1=open" }, /left it open/],
+    "test-conf-unmarked": [{ conflict: CONFL("") }, /high stakes/],
+    "test-conf-high": [{ conflict: CONFL(" | stakes=high") }, /high stakes/],
+    "test-conf-keyword": [{ conflict: CONFL(" | stakes=low", "the safe dose differs by source") }, /high-risk keyword \(dose\)/],
+    "test-conf-notbang": [{ verdict: "C1=L2" }, /L2 isn't a !: line/],
+    "test-conf-onecite": [{ lesson: LESSON("3 × 4 = 12") }, /cites 1 of its 2 sources/],
+  };
+  for (const [name, [opts, why]] of Object.entries(cases)) {
+    const { l } = await run(name, opts);
+    assert.equal(l.tier, "expert-required", name); assert.ok(l.conflict, name); assert.match(l.conflictsOpen.join(";"), why, name);
+  }
+});
+
+test("background lines: BG facts are parsed and sourced like F lines", () => {
+  const b = S.parseBrief(BRIEF.replace("\nDEF:", "\nBG: Cells release energy from glucose in respiration | s1,s2 | conf=high\nDEF:"));
+  assert.deepEqual(b.problems, []); assert.equal(b.background.length, 1); assert.equal(b.background[0][0], "Cells release energy from glucose in respiration");
+  assert.match(S.parseBrief(BRIEF.replace("\nDEF:", "\nBG: Meiosis makes gametes | s9\nDEF:")).problems.join(";"), /background line cites an unknown source/);
+  assert.match(S.parseBrief(BRIEF.replace("\nDEF:", "\nBG: Meiosis makes gametes\nDEF:")).problems.join(";"), /background line cites no source/);
+  // verdict conflict tokens are read only from an OK
+  assert.deepEqual(S.parseVerdicts("REV new#1 OK C1=L23 C2=none c3=OPEN")[0].conf, { 1: "L23", 2: "none", 3: "open" });
+  assert.deepEqual(S.parseVerdicts("REV new#1 FAIL FACT L3 C1=L23 wrong")[0].conf, {});
+});
