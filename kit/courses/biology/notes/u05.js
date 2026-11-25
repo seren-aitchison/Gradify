@@ -133,6 +133,7 @@ S: Meiosis is the division that produces gametes with half the chromosome number
 O: Describe the main events of meiosis I and meiosis II
 O: Explain how meiosis halves the chromosome number
 O: Explain why meiosis is needed in sexual reproduction
+REQ: aqa-gcse-biology:4.6.1.2.b @1,3
 H: Meiosis I
 - Homologous chromosomes pair up in **prophase I**, and crossing over occurs.
 - Pairs line up at the equator in **metaphase I**.
@@ -175,6 +176,7 @@ S: Mitosis and meiosis are both forms of nuclear division but have different out
 O: Compare the processes of mitosis and meiosis
 O: Compare the products of mitosis and meiosis
 O: Relate each type of division to its role in organisms
+REQ: aqa-gcse-biology:4.6.1.1.a @2
 REQ: aqa-gcse-biology:4.1.2.2.g @3
 H: Differences in process
 - **Number of divisions**: mitosis one; meiosis two.

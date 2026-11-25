@@ -477,6 +477,7 @@ S: Photosynthesis converts light energy into chemical energy in sugars. This les
 O: Write the overall equation for photosynthesis
 O: Describe the structure of the chloroplast
 O: Explain limiting factors of photosynthesis
+REQ: aqa-gcse-biology:4.4.1.2.c @3
 H: Overview
 - 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂, using light energy.
 - Takes place in **chloroplasts**.
@@ -855,6 +856,8 @@ S: Gibberellins promote stem elongation and seed germination. This lesson explai
 O: Describe the effects of gibberellins on stems
 O: Explain the role of gibberellins in seed germination
 O: Describe the commercial uses of gibberellins
+REQ: aqa-gcse-biology:4.5.4.2.b @3
+REQ: aqa-gcse-biology:4.5.4.1.b @2
 H: Effects
 - Gibberellins (GAs) cause **stem elongation** by stimulating cell division and elongation in internodes.
 - Dwarf varieties often have low gibberellin or reduced response.
@@ -978,6 +981,7 @@ S: Ethylene is a gaseous hormone that controls ripening and ageing. This lesson 
 O: Describe the role of ethylene in fruit ripening
 O: Explain the role of ethylene in abscission
 O: Describe how ethylene is controlled in food storage
+REQ: aqa-gcse-biology:4.5.4.2.d @3
 H: Effects
 - Ethylene (ethene, C₂H₄) is a **gas** made by most plant tissues.
 - It triggers **fruit ripening**: softening, colour change and sugar production.
@@ -1350,6 +1354,8 @@ S: Plants cannot move away from danger, so they respond to stress in other ways.
 O: Describe plant responses to abiotic stresses such as drought, cold and salt
 O: Describe physical and chemical defences against herbivores and pathogens
 O: Explain systemic signalling in plant defence
+REQ: aqa-gcse-biology:4.3.3.2.c @2
+REQ: aqa-gcse-biology:4.3.3.2.a @2
 H: Abiotic stress
 - **Drought**: abscisic acid closes stomata; roots grow deeper.
 - **Cold**: plants make antifreeze proteins and change membrane lipids; some lose leaves.

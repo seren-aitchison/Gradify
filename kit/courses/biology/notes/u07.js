@@ -257,6 +257,7 @@ S: The central nervous system integrates information and controls the body. This
 O: Describe the main regions of the brain and their functions
 O: Describe the structure and roles of the spinal cord
 O: Describe how the CNS is protected
+REQ: aqa-gcse-biology:4.5.2.1.a @1,2
 H: The brain
 - **Cerebrum**: the largest part, with two hemispheres and the **cerebral cortex**, responsible for thought, memory, language and voluntary movement.
 - Cortex lobes: **frontal**, **parietal**, **temporal** and **occipital** (vision).
@@ -975,6 +976,8 @@ S: The renal system removes wastes and controls water and salt balance. This les
 O: Describe the organs of the renal system
 O: Describe the main functions of the kidneys
 O: Describe kidney failure and its treatment
+REQ: aqa-gcse-biology:4.5.3.3.m @3
+REQ: aqa-gcse-biology:4.5.3.3.h @2
 H: Organs
 - Two **kidneys** filter blood.
 - **Ureters** carry urine to the **bladder**.
@@ -1017,6 +1020,8 @@ S: The nephron filters blood and adjusts the composition of urine. This lesson e
 O: Describe the structure of the nephron
 O: Explain ultrafiltration and selective reabsorption
 O: Explain how ADH controls water reabsorption
+REQ: aqa-gcse-biology:4.5.3.3.k @3
+REQ: aqa-gcse-biology:4.5.3.3.i @2
 H: Structure
 - **Bowman's capsule** surrounds a knot of capillaries called the **glomerulus**.
 - **Proximal convoluted tubule** (PCT).
@@ -1227,6 +1232,8 @@ S: The immune system defends the body against pathogens. This lesson introduces 
 O: Describe physical and chemical barriers to infection
 O: Distinguish innate and adaptive immunity
 O: Describe the roles of the main immune cells
+REQ: aqa-gcse-biology:4.3.1.6.c @2,3
+REQ: aqa-gcse-biology:4.3.1.6.b @1,2,3
 H: Barriers and innate immunity
 - **Barriers**: skin, mucus, cilia, stomach acid and enzymes such as lysozyme in tears.
 - **Innate immunity** is rapid and non-specific.
@@ -1268,6 +1275,7 @@ S: The reproductive systems produce gametes and allow fertilisation. This lesson
 O: Describe the male and female reproductive organs
 O: Describe the hormonal control of the menstrual cycle
 O: Describe methods of contraception and fertility treatment
+REQ: aqa-gcse-biology:4.5.3.5.b @3
 H: Anatomy
 - **Male**: testes produce sperm and testosterone; sperm pass through the sperm duct; glands add fluid to form semen.
 - **Female**: ovaries produce eggs and hormones; oviducts carry eggs; the uterus supports a developing fetus.

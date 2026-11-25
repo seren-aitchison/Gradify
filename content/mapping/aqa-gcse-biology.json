@@ -283,6 +283,671 @@
    ],
    "by": "agent:haiku",
    "on": "2026-11-25"
+  },
+  "4.1.1.2.a": {
+   "ok": false,
+   "why": "Plasmids and membrane function untaught; other structures mostly structural only.",
+   "hash": "c26ae7414505c77e",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.1.1.3.a": {
+   "ok": false,
+   "why": "Tissues named, but cell structure never linked to tissue function.",
+   "hash": "8ee99e188b9bd7de",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.1.2.1.a": {
+   "ok": false,
+   "why": "Covers DNA packaging into chromosomes; genes never mentioned.",
+   "hash": "6088bfd384bce4a1",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.1.2.3.c": {
+   "ok": false,
+   "why": "strict rule: cloning plants not taught, only pluripotency",
+   "lesson": "u02-26",
+   "hash": "43d8c74c9ca1e1e1",
+   "by": "agent:haiku, re-decided under the strict rule",
+   "on": "2026-11-25"
+  },
+  "4.1.2.3.d": {
+   "ok": false,
+   "why": "Multipotency covered; bone marrow source and blood-cell formation untaught.",
+   "hash": "4617cdd8f8f859ca",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.1.3.1.h": {
+   "ok": false,
+   "why": "Surface area to volume covered; transport system need not taught.",
+   "hash": "2cddfb407ad4a62b",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.1.3.3.d": {
+   "ok": false,
+   "why": "Osmosis absent from all objectives, headings and terms.",
+   "hash": "6ddc84be00259778",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.2.2.1.c": {
+   "ok": false,
+   "why": "Temperature and pH effects covered; enzyme molecule nature absent.",
+   "hash": "8d4920ceda8c913d",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.2.2.1.m": {
+   "ok": false,
+   "why": "Digestion covered; uses of digestion products absent.",
+   "hash": "f0eb054d488035b1",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.2.2.3.b": {
+   "ok": false,
+   "why": "Red cells, white cells, platelets covered; plasma function absent.",
+   "hash": "7f05d55923834794",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.2.2.5.a": {
+   "ok": false,
+   "why": "Microbe relationships covered; health-disease relationship absent.",
+   "hash": "0ef913af9e6994fd",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.2.3.2.a": {
+   "ok": false,
+   "why": "Root hair adaptation covered; xylem and phloem structure adaptation absent.",
+   "hash": "255837fea6156d7b",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.2.3.2.f": {
+   "ok": false,
+   "why": "Transpiration covered; translocation and stomata absent.",
+   "hash": "f769c42699b72cec",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.3.1.1.a": {
+   "ok": false,
+   "why": "Pathogen types and harm covered; transmission and spread absent.",
+   "hash": "959cfbcd74a094fa",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.3.1.5.a": {
+   "ok": true,
+   "lesson": "u09-12",
+   "objectives": [
+    1,
+    3
+   ],
+   "hash": "46cd0814027e1e10",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.3.1.6.b": {
+   "ok": true,
+   "lesson": "u07-30",
+   "objectives": [
+    1,
+    2,
+    3
+   ],
+   "hash": "1ee21ebf922f5e2a",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.3.1.6.c": {
+   "ok": true,
+   "lesson": "u07-30",
+   "objectives": [
+    2,
+    3
+   ],
+   "hash": "2aa665e01fe3f5b1",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.3.2.1.a": {
+   "ok": false,
+   "why": "Cell culture mentioned; monoclonal production method not taught.",
+   "hash": "f21d8cc186c3fe14",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.3.2.2.a": {
+   "ok": false,
+   "why": "Uses only in body text; no objective or heading covers them.",
+   "hash": "302daeec517a809d",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.3.3.1.c": {
+   "ok": false,
+   "why": "Covers general pathogen types; plant diseases and insect pests absent.",
+   "hash": "c03a8ce3aafd55b9",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.3.3.2.a": {
+   "ok": true,
+   "lesson": "u08-33",
+   "objectives": [
+    2
+   ],
+   "hash": "09b878bae2fc92be",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.3.3.2.c": {
+   "ok": true,
+   "lesson": "u08-33",
+   "objectives": [
+    2
+   ],
+   "hash": "6c0973680f76801a",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.4.1.1.b": {
+   "ok": false,
+   "why": "Equation and chloroplast structure covered; light energy transfer absent.",
+   "hash": "cd30d2f4395baf58",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.4.1.2.c": {
+   "ok": true,
+   "lesson": "u08-12",
+   "objectives": [
+    3
+   ],
+   "hash": "ca9914a56356a247",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.4.1.3.b": {
+   "ok": false,
+   "why": "strict rule: nitrate ions and protein synthesis not named",
+   "lesson": "u08-11",
+   "hash": "26939f104c9afa57",
+   "by": "agent:haiku, re-decided under the strict rule",
+   "on": "2026-11-25"
+  },
+  "4.4.2.1.c": {
+   "ok": false,
+   "why": "Aerobic respiration locations only; anaerobic respiration absent.",
+   "hash": "9d53c33c5c0375d7",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.5.2.1.a": {
+   "ok": true,
+   "lesson": "u07-07",
+   "objectives": [
+    1,
+    2
+   ],
+   "hash": "6e53a418d9fa271f",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.5.2.1.e": {
+   "ok": false,
+   "why": "strict rule: generic graph reading; nervous-system context absent",
+   "lesson": "u01-17",
+   "hash": "ed2eea309e4a24ae",
+   "by": "agent:haiku, re-decided under the strict rule",
+   "on": "2026-11-25"
+  },
+  "4.5.2.2.b": {
+   "ok": false,
+   "why": "Medulla not named; brain regions taught but diagram identification not stated.",
+   "hash": "1703fc0ca4269250",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.5.3.3.a": {
+   "ok": false,
+   "why": "Covers body water and electrolytes; osmotic effects on cells not taught.",
+   "hash": "0f734d6f9c11f0cb",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.5.3.3.h": {
+   "ok": true,
+   "lesson": "u07-24",
+   "objectives": [
+    2
+   ],
+   "hash": "709009b53bdf1ef3",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.5.3.3.i": {
+   "ok": true,
+   "lesson": "u07-25",
+   "objectives": [
+    2
+   ],
+   "hash": "b272e9b63ff94fb3",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.5.3.3.k": {
+   "ok": true,
+   "lesson": "u07-25",
+   "objectives": [
+    3
+   ],
+   "hash": "6b1e92b701405b21",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.5.3.3.m": {
+   "ok": true,
+   "lesson": "u07-24",
+   "objectives": [
+    3
+   ],
+   "hash": "c6725c4addc3d1e0",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.5.3.4.f": {
+   "ok": false,
+   "why": "Only describes menstrual hormone control; explaining interactions not stated.",
+   "hash": "835a4dbe7170556f",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.5.3.5.a": {
+   "ok": false,
+   "why": "Describes contraception methods only; evaluation not stated.",
+   "hash": "38eceeb503d87c1a",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.5.3.5.b": {
+   "ok": true,
+   "lesson": "u07-31",
+   "objectives": [
+    3
+   ],
+   "hash": "c844ec2856f28384",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.5.3.7.d": {
+   "ok": false,
+   "why": "strict rule: thyroxine and its feedback not named in lesson",
+   "lesson": "u07-02",
+   "hash": "9d13a48597233af3",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.5.4.1.b": {
+   "ok": true,
+   "lesson": "u08-21",
+   "objectives": [
+    2
+   ],
+   "hash": "08470b76a02002b1",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.5.4.1.c": {
+   "ok": false,
+   "why": "Covers ripening only; cell division effect not in objectives.",
+   "hash": "fab4f64a81a0fd94",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.5.4.2.a": {
+   "ok": false,
+   "why": "strict rule: plant hormone uses not in this lesson",
+   "lesson": "u08-19",
+   "hash": "86d293f6edc60de0",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.5.4.2.b": {
+   "ok": true,
+   "lesson": "u08-21",
+   "objectives": [
+    3
+   ],
+   "hash": "77ad16746afcdb6e",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.5.4.2.d": {
+   "ok": true,
+   "lesson": "u08-24",
+   "objectives": [
+    3
+   ],
+   "hash": "af23f03c90f0d2e2",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.6.1.1.a": {
+   "ok": true,
+   "lesson": "u05-05",
+   "objectives": [
+    2
+   ],
+   "hash": "8641b9ca674949ad",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.6.1.2.a": {
+   "ok": false,
+   "why": "strict rule: fertilisation restoring chromosome number only implied",
+   "lesson": "u05-04",
+   "hash": "d03354f4d106cfb0",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.6.1.2.b": {
+   "ok": true,
+   "lesson": "u05-04",
+   "objectives": [
+    1,
+    3
+   ],
+   "hash": "2048b245ac34991b",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.6.1.3.d": {
+   "ok": false,
+   "why": "Covers plant reproduction only; advantages and disadvantages not stated.",
+   "hash": "878e2c331a12f13c",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.6.1.4.a": {
+   "ok": false,
+   "why": "Defines genome; DNA structure not in objectives, headings or terms.",
+   "hash": "a467493b291a4dc0",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.6.1.5.c": {
+   "ok": false,
+   "why": "Ribosome structure lesson; triplet code and amino acid order not taught.",
+   "hash": "2a6b8a416e9e7332",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.6.1.5.m": {
+   "ok": false,
+   "why": "Mentions non-coding DNA; gene switching on/off not in objectives.",
+   "hash": "3fa3e5d31d0bda09",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.6.1.6.c": {
+   "ok": true,
+   "lesson": "u04-22",
+   "objectives": [
+    2
+   ],
+   "hash": "99e61747545b6800",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.6.1.6.d": {
+   "ok": true,
+   "lesson": "u04-21",
+   "objectives": [
+    1
+   ],
+   "hash": "caaea84d152b4b41",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.6.1.6.e": {
+   "ok": true,
+   "lesson": "u04-06",
+   "objectives": [
+    2
+   ],
+   "hash": "f02aa83a9a6cabbd",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.6.1.6.i": {
+   "ok": false,
+   "why": "strict rule: family trees not named; Punnett squares only",
+   "lesson": "u04-23",
+   "hash": "89a7aa2dec749d27",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.6.1.6.j": {
+   "ok": true,
+   "lesson": "u04-23",
+   "objectives": [
+    1,
+    2
+   ],
+   "hash": "0467fd649cf5bd95",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.6.1.8.b": {
+   "ok": true,
+   "lesson": "u04-27",
+   "objectives": [
+    1
+   ],
+   "hash": "aa4f5033b6e478a0",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.6.1.8.c": {
+   "ok": true,
+   "lesson": "u04-27",
+   "objectives": [
+    1,
+    3
+   ],
+   "hash": "e98ce83dd8d5343d",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.6.1.8.d": {
+   "ok": false,
+   "why": "Direct proportion not taught; only genotype and phenotype ratios.",
+   "hash": "84b2a93c10dd83aa",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.6.2.2.a": {
+   "ok": false,
+   "why": "New species formation and population change over time not taught.",
+   "hash": "507b4a442d6d7dc2",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.6.2.2.b": {
+   "ok": false,
+   "why": "Simple early life forms and three-billion-year origin not taught.",
+   "hash": "67c707938582dfa2",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.6.3.2.a": {
+   "ok": false,
+   "why": "Impact of Darwin and Wallace's ideas on biology only implied.",
+   "hash": "c2337d833346b1ae",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.6.3.3.f": {
+   "ok": false,
+   "why": "Lesson covers peer review and papers, not gene theory development.",
+   "hash": "b34287a732c4fba5",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.6.3.4.a": {
+   "ok": false,
+   "why": "Fossil evidence not taught; only antibiotic resistance evidence.",
+   "hash": "3df5d1a8e675a7cb",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.6.3.4.b": {
+   "ok": false,
+   "why": "'Widely accepted' status not taught; only implied by modern synthesis.",
+   "hash": "6c707de4038630b4",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.6.3.5.e": {
+   "ok": false,
+   "why": "Reads graphs only; table interpretation and evolutionary trees missing.",
+   "hash": "5b8e88971cb91b66",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.6.3.6.b": {
+   "ok": false,
+   "why": "Extinction not named; only climate change causes taught.",
+   "hash": "3809d33dae38be6d",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.6.3.7.c": {
+   "ok": false,
+   "why": "MRSA not named; only general antibiotic resistance taught.",
+   "hash": "0b94b667bfef5ee9",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.6.4.b": {
+   "ok": false,
+   "why": "Named ranks and Linnaeus not taught; only generic ranks mentioned.",
+   "hash": "9df5971ee110902e",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.7.1.1.a": {
+   "ok": false,
+   "why": "Interdependence and competition in a community not taught.",
+   "hash": "0dade033e1e031c7",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.7.1.1.c": {
+   "ok": false,
+   "why": "'Community' not named; biotic/abiotic and ecosystem are taught.",
+   "hash": "41a067f7fc610cbc",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.7.1.1.g": {
+   "ok": false,
+   "why": "Graph reading generic; community context and tables missing.",
+   "hash": "859a2ab6429a077f",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.7.1.2.c": {
+   "ok": false,
+   "why": "Graph reading generic; abiotic factor context and tables missing.",
+   "hash": "87c72041c560f0a7",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.7.1.3.c": {
+   "ok": false,
+   "why": "Graph reading generic; biotic factor context and tables missing.",
+   "hash": "247822defecae14b",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.7.2.2.a": {
+   "ok": false,
+   "why": "Water cycle and material cycling not taught; only carbon cycle.",
+   "hash": "db89719172388bfe",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.7.2.2.c": {
+   "ok": false,
+   "why": "Photosynthesis and atmospheric CO2 uptake not named.",
+   "hash": "e8ae4ca964ba7b19",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.7.2.4.a": {
+   "ok": false,
+   "why": "'Evaluate' skill not taught; only explain and describe objectives.",
+   "hash": "5ce117df2c981b74",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.7.3.1.a": {
+   "ok": true,
+   "lesson": "u11-21",
+   "objectives": [
+    1
+   ],
+   "hash": "28b0310c0d3d11f2",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.7.4.2.a": {
+   "ok": true,
+   "lesson": "u11-09",
+   "objectives": [
+    1,
+    2
+   ],
+   "hash": "0f762e3fa7f6d31c",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.7.4.2.b": {
+   "ok": false,
+   "why": "Constructing biomass pyramids from data not taught; only comparing.",
+   "hash": "069f5bf4edf13d61",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.7.4.3.a": {
+   "ok": false,
+   "why": "Biomass loss between trophic levels not taught in lesson.",
+   "hash": "379071599e8249ed",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.7.4.3.c": {
+   "ok": false,
+   "why": "Covers energy transfer efficiency, not biomass or the 10% figure.",
+   "hash": "3c5f2094103bb3f9",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.7.4.3.g": {
+   "ok": false,
+   "why": "Energy loss taught, but effect on organism numbers is not.",
+   "hash": "ff1f9bc0c4e29e40",
+   "by": "agent:haiku",
+   "on": "2026-11-25"
   }
  }
 }

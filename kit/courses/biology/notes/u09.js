@@ -470,6 +470,7 @@ S: Protozoa are single-celled eukaryotes, some of which cause major diseases. Th
 O: Describe the features of protozoa
 O: Describe how protozoa move and feed
 O: Describe the life cycle of the malaria parasite
+REQ: aqa-gcse-biology:4.3.1.5.a @1,3
 H: Features
 - Protozoa are single-celled, heterotrophic **eukaryotes**.
 - They live in water, soil and inside other organisms.

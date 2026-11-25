@@ -1,7 +1,7 @@
 {
  "generated": "2026-11-25",
  "branch": "content/rolling",
- "commit": "c49ede785",
+ "commit": "a20a3f055",
  "dirty": true,
  "briefs": 1,
  "drafts": 1,
@@ -13,8 +13,8 @@
    "frameworks": [
     "aqa-gcse-biology"
    ],
-   "topicsToWrite": 95,
-   "requirementsToWrite": 364,
+   "topicsToWrite": 97,
+   "requirementsToWrite": 421,
    "topics": {
     "filed": 0,
     "partial": 1,
@@ -30,7 +30,8 @@
     "disagreements": 1
    },
    "editedSinceChecked": [],
-   "next": "biology/eukaryotes-and-prokaryotes"
+   "next": "biology/eukaryotes-and-prokaryotes",
+   "mappingPending": 0
   }
  ],
  "approvals": {
