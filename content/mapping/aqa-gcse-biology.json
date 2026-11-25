@@ -1,0 +1,217 @@
+{
+ "framework": "aqa-gcse-biology",
+ "confirmed": {
+  "4.1.1.2.b": {
+   "ok": true,
+   "lesson": "u02-04",
+   "objectives": [
+    1
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.1.1.2.c": {
+   "ok": true,
+   "lesson": "u02-05",
+   "objectives": [
+    1,
+    2
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.1.1.2.d": {
+   "ok": true,
+   "lesson": "u02-05",
+   "objectives": [
+    1,
+    2
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.1.1.3.b": {
+   "ok": true,
+   "lesson": "u02-25",
+   "objectives": [
+    1,
+    2
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.1.1.6.b": {
+   "ok": true,
+   "lesson": "u09-25",
+   "objectives": [
+    1
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.1.1.6.d": {
+   "ok": true,
+   "lesson": "u09-25",
+   "objectives": [
+    2,
+    3
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.1.2.2.d": {
+   "ok": true,
+   "lesson": "u05-03",
+   "objectives": [
+    1,
+    2
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.1.2.2.g": {
+   "ok": true,
+   "lesson": "u05-05",
+   "objectives": [
+    3
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.1.2.3.e": {
+   "ok": true,
+   "lesson": "u08-02",
+   "objectives": [
+    3
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.1.3.1.b": {
+   "ok": true,
+   "lesson": "u02-20",
+   "objectives": [
+    1
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.1.3.1.e": {
+   "ok": true,
+   "lesson": "u02-20",
+   "objectives": [
+    2
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.1.3.1.g": {
+   "ok": true,
+   "lesson": "u02-20",
+   "objectives": [
+    3
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.1.3.2.a": {
+   "ok": true,
+   "lesson": "u02-21",
+   "objectives": [
+    1
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.1.3.2.c": {
+   "ok": true,
+   "lesson": "u14-18",
+   "objectives": [
+    1,
+    2,
+    3
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.1.3.3.a": {
+   "ok": true,
+   "lesson": "u02-23",
+   "objectives": [
+    1
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.2.1.d": {
+   "ok": true,
+   "lesson": "u07-01",
+   "objectives": [
+    1,
+    3
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.2.2.1.a": {
+   "ok": true,
+   "lesson": "u07-21",
+   "objectives": [
+    1,
+    2,
+    3
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.2.2.1.f": {
+   "ok": true,
+   "lesson": "u03-24",
+   "objectives": [
+    1,
+    2,
+    3
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.2.2.1.i": {
+   "ok": true,
+   "lesson": "u07-22",
+   "objectives": [
+    1,
+    3
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.2.2.2.d": {
+   "ok": true,
+   "lesson": "u07-14",
+   "objectives": [
+    1
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.2.2.2.e": {
+   "ok": true,
+   "lesson": "u07-14",
+   "objectives": [
+    1,
+    2
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  },
+  "4.2.2.3.a": {
+   "ok": true,
+   "lesson": "u07-15",
+   "objectives": [
+    1
+   ],
+   "by": "agent:haiku",
+   "on": "2026-11-25"
+  }
+ }
+}

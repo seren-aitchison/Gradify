@@ -116,6 +116,7 @@ S: Animal cells are eukaryotic cells without a cell wall or chloroplasts. Their 
 O: Identify the main structures of an animal cell and state their functions
 O: Explain how the lack of a cell wall affects animal cells
 O: Relate cell structure to function in a named animal cell
+REQ: aqa-gcse-biology:4.1.1.2.b @1
 PRE: Eukaryotic cells
 H: The structures of an animal cell
 - **Nucleus**: contains the DNA and controls the cell.
@@ -155,6 +156,8 @@ S: Plant cells share the eukaryotic plan with animal cells but add three feature
 O: Describe the features that distinguish plant cells
 O: Explain how the wall and vacuole keep a plant cell turgid
 O: Explain how plasmodesmata connect plant cells
+REQ: aqa-gcse-biology:4.1.1.2.d @1,2
+REQ: aqa-gcse-biology:4.1.1.2.c @1,2
 PRE: Eukaryotic cells
 H: Three distinctive features
 - **Cellulose cell wall**: a strong, porous layer outside the membrane that resists stretching.
@@ -659,6 +662,9 @@ S: Diffusion is the net movement of particles from where they are more concentra
 O: Define diffusion and explain it in terms of particle movement
 O: State the factors that affect the rate of diffusion
 O: Calculate surface area to volume ratios and explain their significance
+REQ: aqa-gcse-biology:4.1.3.1.g @3
+REQ: aqa-gcse-biology:4.1.3.1.e @2
+REQ: aqa-gcse-biology:4.1.3.1.b @1
 PRE: Membrane transport
 H: Random movement, net direction
 P: Particles in liquids and gases move randomly. Where there are more particles, more move away than arrive, so there is a **net** movement down the concentration gradient until concentrations are equal. No energy from the cell is needed: the energy is the particles' own kinetic energy, so diffusion is faster when warmer.
@@ -696,6 +702,7 @@ S: Osmosis is the diffusion of water across a partially permeable membrane. It d
 O: Define osmosis in terms of water potential
 O: Predict the effects of different solutions on animal and plant cells
 O: Calculate water potential from solute and pressure potentials
+REQ: aqa-gcse-biology:4.1.3.2.a @1
 PRE: Diffusion
 H: Water potential
 P: **Water potential** (ψ, psi) measures the tendency of water to move out of a solution. Pure water at atmospheric pressure has ψ = 0; adding solute lowers it, so solutions have negative water potentials. Water moves by osmosis from a **higher** (less negative) to a **lower** (more negative) water potential, across a partially permeable membrane.
@@ -765,6 +772,7 @@ S: Active transport moves substances against their concentration gradient using 
 O: Explain how active transport works using carrier proteins and ATP
 O: Describe the sodium–potassium pump
 O: Explain co-transport, using the absorption of glucose as an example
+REQ: aqa-gcse-biology:4.1.3.3.a @1
 PRE: Facilitated diffusion
 H: Pumps
 P: In active transport, a carrier protein binds the substance, and energy from ATP hydrolysis changes the protein's shape so the substance is released on the other side, against its gradient. Proteins that do this are called pumps. Cells doing a lot of active transport, such as root hair cells and kidney tubule cells, have many mitochondria.
@@ -829,6 +837,7 @@ S: In a multicellular organism, cells take on different shapes and contents to d
 O: Explain what is meant by a specialised cell
 O: Relate the structure of named animal and plant cells to their functions
 O: Explain the advantages and costs of specialisation
+REQ: aqa-gcse-biology:4.1.1.3.b @1,2
 PRE: Animal cells
 H: Specialised animal cells
 - **Red blood cells**: biconcave discs about 7–8 µm across, with no nucleus in mammals, packed with haemoglobin; the shape gives a large surface area and lets them bend through capillaries.

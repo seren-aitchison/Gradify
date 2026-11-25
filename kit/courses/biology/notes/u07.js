@@ -6,6 +6,7 @@ S: The human body is organised from cells into tissues, organs and organ systems
 O: Describe the levels of organisation in the human body
 O: Name the four main tissue types
 O: Outline the major organ systems and their roles
+REQ: aqa-gcse-biology:4.2.1.d @1,3
 H: Levels and tissues
 - **Cells** form **tissues**, tissues form **organs** and organs form **organ systems**.
 - **Epithelial tissue**: covers surfaces and lines cavities.
@@ -548,6 +549,8 @@ S: Arteries, capillaries and veins have structures suited to their functions. Th
 O: Describe the structure of arteries, capillaries and veins
 O: Relate the structure of each vessel to its function
 O: Explain how tissue fluid forms at capillaries
+REQ: aqa-gcse-biology:4.2.2.2.e @1,2
+REQ: aqa-gcse-biology:4.2.2.2.d @1
 H: Structure and function
 - **Arteries**: thick, elastic, muscular walls and a narrow lumen; carry blood at high pressure away from the heart.
 - **Capillaries**: walls one cell thick, very narrow; allow exchange of substances with tissues.
@@ -589,6 +592,7 @@ S: Blood is a tissue made of cells suspended in plasma. This lesson describes it
 O: Describe the components of blood
 O: Explain the functions of red cells, white cells and platelets
 O: Describe the ABO blood group system
+REQ: aqa-gcse-biology:4.2.2.3.a @1
 H: Components
 - **Plasma** (about 55%): water carrying glucose, amino acids, hormones, CO₂, urea, proteins and salts.
 - **Red blood cells** (erythrocytes): carry oxygen using **haemoglobin**; biconcave, no nucleus.
@@ -841,6 +845,7 @@ S: The digestive system breaks down food and absorbs nutrients. This lesson desc
 O: Describe the organs of the digestive system
 O: Distinguish mechanical and chemical digestion
 O: Explain the roles of the stomach and the large intestine
+REQ: aqa-gcse-biology:4.2.2.1.a @1,2,3
 H: Organs
 - **Mouth**: teeth chew food; saliva contains amylase.
 - **Oesophagus**: moves food by **peristalsis**.
@@ -885,6 +890,7 @@ S: Food molecules are digested into small units and absorbed in the small intest
 O: Describe the digestion of carbohydrates, proteins and lipids
 O: Explain how the small intestine is adapted for absorption
 O: Describe the mechanisms of absorption
+REQ: aqa-gcse-biology:4.2.2.1.i @1,3
 H: Enzymes
 - **Carbohydrates**: amylase breaks starch to maltose; maltase and other membrane enzymes produce glucose.
 - **Proteins**: pepsin in the stomach, then trypsin and peptidases produce amino acids.

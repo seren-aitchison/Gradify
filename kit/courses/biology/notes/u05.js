@@ -91,6 +91,7 @@ S: Mitosis divides the nucleus to produce two genetically identical nuclei. This
 O: Describe the stages of mitosis
 O: Explain the role of spindle fibres and centromeres
 O: Describe cytokinesis in animal and plant cells
+REQ: aqa-gcse-biology:4.1.2.2.d @1,2
 H: Stages
 - **Prophase**: chromosomes condense; the nuclear envelope breaks down; the spindle forms.
 - **Metaphase**: chromosomes line up at the **equator** of the spindle, attached by their centromeres.
@@ -174,6 +175,7 @@ S: Mitosis and meiosis are both forms of nuclear division but have different out
 O: Compare the processes of mitosis and meiosis
 O: Compare the products of mitosis and meiosis
 O: Relate each type of division to its role in organisms
+REQ: aqa-gcse-biology:4.1.2.2.g @3
 H: Differences in process
 - **Number of divisions**: mitosis one; meiosis two.
 - **Pairing of homologues**: only in meiosis (prophase I).

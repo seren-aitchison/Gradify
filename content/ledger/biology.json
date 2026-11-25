@@ -1,0 +1,36 @@
+{
+ "subject": "biology",
+ "topics": {
+  "biology/eukaryotes-and-prokaryotes": {
+   "runs": 1,
+   "lessons": [],
+   "lastRun": "2026-11-25",
+   "reqHash": "aqa-gcse-biology:4.1.1.1.a:11f764faa86a2923,aqa-gcse-biology:4.1.1.1.b:bc6d6b08bdd8401e,aqa-gcse-biology:4.1.1.1.c:fa0259ea0b9f2b99",
+   "file": "content/drafts/biology/aqa-gcse-biology/eukaryotes-and-prokaryotes.txt",
+   "title": "Eukaryotes and prokaryotes",
+   "fw": "aqa-gcse-biology",
+   "section": "4.1.1.1",
+   "failures": [
+    {
+     "title": "(research)",
+     "gate": "brief",
+     "issues": [
+      {
+       "code": "SRC",
+       "line": null,
+       "note": "licence: NUM \"OpenStax gives prokaryote diameters of 0\" rests only on noncommercial or unknown sources"
+      }
+     ]
+    }
+   ],
+   "uncovered": [
+    "aqa-gcse-biology:4.1.1.1.a",
+    "aqa-gcse-biology:4.1.1.1.b",
+    "aqa-gcse-biology:4.1.1.1.c"
+   ],
+   "gaps": [],
+   "needs": [],
+   "status": "failed"
+  }
+ }
+}

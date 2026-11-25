@@ -1,9 +1,9 @@
 {
  "generated": "2026-11-25",
- "branch": "claude/upbeat-rubin-mxcjtp",
- "commit": "73716f8fe",
+ "branch": "content/rolling",
+ "commit": "f86064e7f",
  "dirty": true,
- "briefs": 0,
+ "briefs": 1,
  "drafts": 0,
  "mode": "fast",
  "budgetUsd": 25,
@@ -19,7 +19,7 @@
     "filed": 0,
     "partial": 0,
     "filed-with-gaps": 0,
-    "failed": 0,
+    "failed": 1,
     "blocked": 0
    },
    "lessons": {

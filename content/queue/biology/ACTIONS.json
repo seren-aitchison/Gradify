@@ -1,0 +1,29 @@
+{
+ "generated": "2026-11-25T01:57:27.473Z",
+ "actions": [
+  {
+   "kind": "review",
+   "topic": "biology/animal-and-plant-cells",
+   "model": "sonnet",
+   "pairs": [
+    [
+     "content/queue/biology/animal-and-plant-cells/review-1.req.txt",
+     "content/queue/biology/animal-and-plant-cells/review-1.out.txt"
+    ],
+    [
+     "content/queue/biology/animal-and-plant-cells/review-2.req.txt",
+     "content/queue/biology/animal-and-plant-cells/review-2.out.txt"
+    ]
+   ],
+   "prompt": "You are Gradify's Reviewer. You did not write these lessons and must judge them only against the requirements and the research brief in each request: no web search, and don't open drafts or other files. Read prompts/review.md and prompts/shorthand.md. For each request file below, save ONLY its REV line to the matching reply file:\n  content/queue/biology/animal-and-plant-cells/review-1.req.txt → content/queue/biology/animal-and-plant-cells/review-1.out.txt\n  content/queue/biology/animal-and-plant-cells/review-2.req.txt → content/queue/biology/animal-and-plant-cells/review-2.out.txt\nDo nothing else."
+  },
+  {
+   "kind": "map",
+   "topic": "aqa-gcse-biology mapping",
+   "model": "haiku",
+   "req": "content/queue/biology/_map-aqa-gcse-biology/map.req.txt",
+   "out": "content/queue/biology/_map-aqa-gcse-biology/map.out.txt",
+   "prompt": "You confirm whether existing Gradify lessons already teach official requirements. Read the request in content/queue/biology/_map-aqa-gcse-biology/map.req.txt. For each MAPREQ, decide from the LESSON's objectives, headings and key terms (open its file only if you can't tell) whether it teaches that requirement at the level asked. Write one line per requirement to content/queue/biology/_map-aqa-gcse-biology/map.out.txt: \"MAP <requirement-id> <lesson-id> YES @<numbers of the objectives that teach it>\" or \"MAP <requirement-id> NO <reason, 12 words or fewer>\". End with END. Do nothing else."
+  }
+ ]
+}

@@ -48,6 +48,7 @@ S: Plants are built from a few main tissue types. This lesson describes plant ti
 O: Describe the three main tissue systems of plants
 O: Describe the cell types of ground tissue
 O: Explain the role of meristems in plant growth
+REQ: aqa-gcse-biology:4.1.2.3.e @3
 H: Tissue systems
 - **Dermal tissue**: the epidermis, covered by a waxy **cuticle**, with stomata and root hairs.
 - **Vascular tissue**: xylem and phloem for transport.
