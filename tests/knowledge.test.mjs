@@ -261,10 +261,12 @@ test("QA fails a lesson that's wrong, and the lifecycle can't skip review", asyn
   assert.equal(qa(untested).dimensions.assessment.status, "fail");
   const noSrc = structuredClone(a); noSrc.notes = noSrc.notes.split("\n").filter((l) => !l.startsWith("SRC: OpenStax")).join("\n");
   assert.equal(qa(noSrc).dimensions.sources.status, "fail");
-  const l = structuredClone(a.lesson); advance(l, qa(a)); assert.equal(l.status, "expert-review");
+  const l = structuredClone(a.lesson); advance(l, qa(a), a.notes); assert.equal(l.status, "expert-review");
+  // approval is of the notes QA checked: edited notes can't be approved until QA runs on them
+  assert.throws(() => review(structuredClone(l), { approve: true, by: "A. Reviewer", notes: `${a.notes}\nP: an unchecked addition` }), /aren't the ones that passed automated QA/);
   assert.throws(() => review(structuredClone(l), { approve: true }), /reviewer's name/);
   assert.throws(() => review(structuredClone(l), { approve: false, by: "A. Reviewer" }), /needs a note/);
-  const ok = review(structuredClone(l), { approve: true, by: "A. Reviewer" }); assert.equal(ok.status, "approved"); assert.deepEqual(checkLesson(ok), []);
+  const ok = review(structuredClone(l), { approve: true, by: "A. Reviewer", notes: a.notes }); assert.equal(ok.status, "approved"); assert.deepEqual(checkLesson(ok), []);
   const failed = structuredClone(a.lesson); advance(failed, qa(bad)); assert.equal(failed.status, "generated");
   assert.ok(!NEXT.generated.includes("published") && !NEXT["automated-qa"].includes("approved"));
 });

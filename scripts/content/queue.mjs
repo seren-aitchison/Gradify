@@ -22,7 +22,8 @@ export function topicsFor(fwId, { titles = new Map() } = {}) {
   const byTopic = new Map();
   for (const x of idx.statements) {
     const link = map.links[x.ref];
-    const m = confirmed[x.ref];
+    // a decision holds for the statement text it was made on; one recorded before hashes were stored still counts
+    const m0 = confirmed[x.ref], m = m0 && (!m0.hash || m0.hash === x.hash) ? m0 : null;
     if (link?.status === "verified" || m?.ok) continue;                             // already taught: mapped, not written
     if (link?.confidence === "strong" && !m) continue;                             // waiting for its mapping check
     const sec = sections.get(x.section) || { ref: x.section, title: x.section };

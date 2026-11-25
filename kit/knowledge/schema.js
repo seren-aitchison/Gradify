@@ -154,6 +154,7 @@ export function publishGate({ lesson, items, sources, evidence = {}, attributed 
   const p = [];
   // approval is of a text (RULES.md rule 14): the notes must be exactly what the reviewer approved
   if (notes == null) p.push("the lesson's notes weren't read, so the gate can't tell they are what was approved");
+  else if (lesson.status === "approved" && lesson.qa?.notesHash && lesson.qa.notesHash !== notesHash(notes)) p.push("the notes aren't the ones that passed automated QA: QA and review must run again");
   else if (lesson.status === "approved" && lesson.review?.notesHash !== notesHash(notes)) p.push(lesson.review?.notesHash ? "the notes changed after approval: QA and review must run again" : "the approval doesn't record which text was approved: approve it again");
   // what changed since QA and approval (scripts/knowledge/qa.mjs impact()): knowledge for this level, or the requirement.
   // Callers must pass it; a gate run without it can't know the approval still holds.

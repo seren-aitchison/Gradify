@@ -344,3 +344,54 @@ test("mapping replies: NO lines are recorded, and a rejected strong match joins 
   assert.ok(inQueue(a), "a rejected match is written"); assert.ok(!inQueue(b), "a confirmed match is not");
   assert.ok(!mapCandidates("aqa-gcse-biology").some((c) => c.ref === a || c.ref === b), "decided matches aren't asked again");
 });
+
+test("review fixes on #208: citations, stale inputs, outdated coverage, timeouts, learners", async () => {
+  const { checkBrief } = await import("../scripts/content/loop.mjs");
+  const { advance } = await import("../scripts/content/agent.mjs");
+  const { reportQueue } = await import("../scripts/content/signals.mjs");
+  const { writeFileSync } = await import("node:fs");
+  // a non-fact line citing a source the brief doesn't list is refused
+  assert.ok(checkBrief(BRIEF.replace("END", "EXAM: credit for naming the DNA loop | missing-source") + "\nEND").problems.some((p) => /missing-source/.test(p)));
+  // replies made for old inputs are discarded when the requirement changes
+  const topic = { ...TOPIC, id: "biology/test-stale", title: "Test stale" }, Q = join(process.env.GRADIFY_OUT, "content/queue/biology/test-stale");
+  await advance(topic); writeFileSync(join(Q, "research.out.txt"), BRIEF.replace("test-prokaryotes", "test-stale"));
+  await advance(topic); writeFileSync(join(Q, "write.out.txt"), `${LESSON("3 × 4 = 12")}\nEND`);
+  let r = await advance(topic); assert.equal(r.actions[0].kind, "review"); writeFileSync(join(Q, "review-1.out.txt"), "REV new#1 OK");
+  const changed = { ...topic, reqs: [{ ...REQ, hash: "h2" }] };
+  writeFileSync(join(process.env.GRADIFY_OUT, "content/research/biology/test-stale.txt"), `# fp=${(await import("../scripts/content/loop.mjs")).briefKey(changed)}\n${BRIEF.replace("test-prokaryotes", "test-stale")}\n`);
+  r = await advance(changed);
+  assert.equal(r.filed, null, "an OK review of the old requirement isn't filed against the new one");
+  assert.equal(r.actions[0].kind, "write"); assert.ok(!existsSync(join(Q, "review-1.out.txt")));
+  // a lesson built on an old requirement hash no longer covers it
+  const old = { ...TOPIC, id: "biology/test-outdated", title: "Test outdated" };
+  const ok = async (job, items) => new Map(items.map((it) => [it.key, `REV ${it.key} OK`]));
+  const ask = (t) => async (job) => (job === "research" ? BRIEF.replace("test-prokaryotes", "test-outdated") : `${LESSON("3 × 4 = 12")}\nEND`);
+  assert.equal((await runTopic(old, { ask: ask(), askMany: ok })).status, "filed");
+  const f = await runTopic({ ...old, reqs: [{ ...REQ, hash: "h9" }] }, { ask: async () => "TOPIC x | levels=GCSE | checked=2026-11-25\nEND", askMany: ok });
+  assert.deepEqual(f.uncovered, [REQ.id]); assert.notEqual(f.status, "filed");
+  // a timed-out batch stops the topic: cancelled reviews aren't failures and no repair round starts
+  let repairs = 0;
+  const timed = async (job, items) => { if (job === "repair") repairs++; const m = new Map(items.map((it) => [it.key, new Error("canceled")])); m.timedOut = "batch b1 ran past 300 minutes"; return m; };
+  const t = await runTopic({ ...TOPIC, id: "biology/test-timeout", title: "Test timeout" }, { ask: async (job) => (job === "research" ? BRIEF.replace("test-prokaryotes", "test-timeout") : `${LESSON("3 × 4 = 12")}\nEND`), askMany: timed });
+  assert.equal(repairs, 0); assert.equal(t.failures[0].gate, "unfinished"); assert.deepEqual(t.uncovered, [REQ.id]);
+  // two reports from one learner aren't two learners
+  assert.deepEqual(reportQueue([{ subject: "biology", lesson_id: "u02-04", kind: "typo", user_id: "a" }, { subject: "biology", lesson_id: "u02-04", kind: "typo", user_id: "a" }]), []);
+  const two = reportQueue([{ subject: "biology", lesson_id: "u02-04", kind: "typo", user_id: "a" }, { subject: "biology", lesson_id: "u02-04", kind: "unclear", user_id: "b" }]);
+  assert.equal(two.length, 1); assert.ok(!("who" in two[0]), "no learner ids leave the function");
+});
+
+test("publish: titles differing only in case share an identity, and one TIER label survives", async () => {
+  const { publish } = await import("../scripts/content/publish.mjs");
+  const { writeFileSync, mkdirSync } = await import("node:fs");
+  const ledPath = join(process.env.GRADIFY_OUT, "content/ledger/biology.json"), led = JSON.parse(readFileSync(ledPath, "utf8"));
+  const text = LESSON("3 × 4 = 12").replace("## Prokaryotic cells", "## prokaryotic CELLS").replace("LV: GCSE", "TIER: Expert-reviewed\nLV: GCSE");
+  mkdirSync(join(process.env.GRADIFY_OUT, "content/drafts/biology/aqa-gcse-biology"), { recursive: true });
+  writeFileSync(join(process.env.GRADIFY_OUT, "content/drafts/biology/aqa-gcse-biology/test-case.txt"), `# draft\n\n${text}\n`);
+  const { fp } = await import("../scripts/content/lib.mjs");
+  led.topics["biology/test-case"] = { file: "content/drafts/biology/aqa-gcse-biology/test-case.txt", title: "Test case", lessons: [{ title: "prokaryotic CELLS", tier: "ai-verified", hash: fp(text), reqs: [REQ.id] }], status: "filed" };
+  writeFileSync(ledPath, JSON.stringify(led));
+  const r = await publish("biology");
+  assert.ok(r.skipped.some((x) => /prokaryotic CELLS .*already published a lesson with this title/.test(x)), "a case-only variant gets no new id");
+  const notes = readFileSync(join(process.env.GRADIFY_OUT, "kit/courses/biology/notes/u15.js"), "utf8");
+  for (const lesson of notes.split(/\n(?=## )/).filter((x) => x.startsWith("## "))) assert.equal((lesson.match(/^TIER:/gm) || []).length, 1);
+});

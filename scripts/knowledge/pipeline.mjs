@@ -66,7 +66,7 @@ ${body}<h3>Key terms</h3><dl>${L.terms.map(([t, d]) => `<dt>${esc(t)}</dt><dd>${
 
 export async function build(reqId, opts = {}) {
   const a = await assemble(reqId, opts);
-  advance(a.lesson, qa(a));
+  advance(a.lesson, qa(a), a.notes);
   const dir = writeLesson(a);
   save(new URL("preview.html", dir), preview(a));
   return { ...a, dir };
