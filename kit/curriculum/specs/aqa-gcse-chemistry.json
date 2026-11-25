@@ -16,11 +16,11 @@
  "extractedBy": "scripts/curriculum/aqa.mjs from the PDF's layout (pdftotext -bbox-layout)",
  "licence": "Statement text is the awarding body's copyright and is not in this repository: rebuild it with `engine.mjs fetch` and `import`. Sections carry the document's own headings; refs ending in a letter are Gradify's subdivision of a numbered section.",
  "counts": {
-  "statements": 442,
-  "content": 323,
+  "statements": 439,
+  "content": 320,
   "skill": 111,
   "practical": 8,
-  "higherTier": 62,
+  "higherTier": 61,
   "biologyOnly": 0,
   "sections": 164
  },
@@ -4824,22 +4824,7 @@
    ],
    "status": "official",
    "type": "spec-bullet",
-   "hash": "096b803d4fca7f33"
-  },
-  {
-   "ref": "4.6.2.1.b",
-   "section": "4.6.2.1",
-   "kind": "content",
-   "page": 59,
-   "skills": [],
-   "topic": [
-    "4.6",
-    "4.6.2",
-    "4.6.2.1"
-   ],
-   "status": "official",
-   "type": "spec-bullet",
-   "hash": "652744a2ab28954b"
+   "hash": "6624fe67c8f0a13b"
   },
   {
    "ref": "4.6.2.2.a",
@@ -5830,26 +5815,10 @@
    ],
    "status": "official",
    "type": "spec-bullet",
-   "hash": "1243241d40a1dfbc"
+   "hash": "06fd0edfc3562314"
   },
   {
    "ref": "4.7.3.1.c",
-   "section": "4.7.3.1",
-   "kind": "content",
-   "page": 68,
-   "skills": [],
-   "chemistryOnly": true,
-   "topic": [
-    "4.7",
-    "4.7.3",
-    "4.7.3.1"
-   ],
-   "status": "official",
-   "type": "spec-bullet",
-   "hash": "48bf08022a1e3db2"
-  },
-  {
-   "ref": "4.7.3.1.d",
    "section": "4.7.3.1",
    "kind": "skill",
    "page": 68,
@@ -5890,23 +5859,6 @@
    "section": "4.7.3.2",
    "kind": "content",
    "page": 69,
-   "skills": [],
-   "chemistryOnly": true,
-   "higherTier": true,
-   "topic": [
-    "4.7",
-    "4.7.3",
-    "4.7.3.2"
-   ],
-   "status": "official",
-   "type": "spec-bullet",
-   "hash": "545c5d493b710b52"
-  },
-  {
-   "ref": "4.7.3.2.c",
-   "section": "4.7.3.2",
-   "kind": "content",
-   "page": 69,
    "skills": [
     "MS 5b"
    ],
@@ -5919,7 +5871,7 @@
    ],
    "status": "official",
    "type": "spec-bullet",
-   "hash": "9691f6f09a6fcdeb"
+   "hash": "275819e24eb091ca"
   },
   {
    "ref": "4.7.3.3.a",

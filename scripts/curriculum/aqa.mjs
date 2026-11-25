@@ -114,7 +114,10 @@ export function extractAqa(pages, { first = "4.1", stop = /^4\.\d+\s+Key ideas\b
         // a scope limit belongs to the statement before it
         if (SCOPE.test(t) && last && last.section === sec.ref) { (last.scope ||= []).push(t); continue; }
         // a continuation: the previous statement hadn't finished (a page break, a list, a formula laid out on lines)
-        if (last && last.section === sec.ref && last.kind !== "practical" && (!ends(last.text) || /^[a-z•(=]/.test(t))) { last.text = `${last.text} ${t}`; Object.assign(last, flags(raw)); continue; }
+        // a bare lead-in ("For example:") whose example AQA prints as an image has no text of its own: it stays with
+        // the statement it illustrates (Chemistry 4.6.2.1, 4.7.3.1)
+        const leadIn = /^(For example|Examples? (include|are)|eg|e\.g\.)\s*:?$/i.test(t);
+        if (last && last.section === sec.ref && last.kind !== "practical" && (leadIn || !ends(last.text) || /^[a-z•(=]/.test(t))) { last.text = `${last.text} ${t}`; Object.assign(last, flags(raw)); continue; }
         add({ ref: null, section: sec.ref, kind: /^Students should/.test(t) || /^They should be able/.test(t) ? "skill" : "content", text: t, page: pg.page, skills: [], ...secFlags(sec.ref), ...flags(raw), _y: b.y });
       }
     }

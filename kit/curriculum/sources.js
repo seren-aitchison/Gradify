@@ -11,6 +11,8 @@
 //   licence    { name, url, text, checkedOn }: the licence as the publisher states it, quoted from its own page
 //   confirmedBy / confirmedOn   the person who checked the licence and agreed the row. Until then a row's effective
 //              use is at most "facts-only": nothing gets "adapt" without a named person's confirmation.
+//   hold       an owner's instruction that keeps a row facts-only whatever its licence or confirmation says, with
+//              the reason; only the owner removes it.
 //   urls       the publication's URL prefixes. A cited URL matches a prefix exactly or continues it with / ? or #, so
 //              ".../books/biology" never matches ".../books/biology-2e".
 //
@@ -27,14 +29,18 @@ const openstax = (slug, title, cc, o = {}) => ({
   confirmedBy: null, confirmedOn: null, evidence: `https://openstax.org/apps/cms/api/v2/pages/?type=books.Book&slug=${slug}&fields=title,license_name,license_url`, ...o,
 });
 
+// Owner's decision, 25 Nov 2026: Gradify's commercial use must be protected, so the CC BY first editions stay
+// facts-only until the exact licence and edition have been independently verified.
+const FIRST_EDITION_HOLD = "Owner, 2026-11-25: facts-only until the precise licence and edition are independently verified";
+
 export const SOURCES = [
   // OpenStax: the live second editions are CC BY-NC-SA; the retired first editions are CC BY 4.0
   openstax("biology-2e", "Biology 2e", "by-nc-sa"),
   openstax("concepts-biology", "Concepts of Biology", "by-nc-sa"),
   openstax("microbiology", "Microbiology", "by-nc-sa"),
-  openstax("biology", "Biology (1st edition, retired)", "by", { note: "Retired by OpenStax in favour of Biology 2e, so some content may be out of date: check facts against a current source too." }),
+  openstax("biology", "Biology (1st edition, retired)", "by", { note: "Retired by OpenStax in favour of Biology 2e, so some content may be out of date: check facts against a current source too.", hold: FIRST_EDITION_HOLD }),
   openstax("chemistry-2e", "Chemistry 2e", "by-nc-sa"),
-  openstax("chemistry", "Chemistry (1st edition, retired)", "by", { note: "Retired by OpenStax in favour of Chemistry 2e: check facts against a current source too." }),
+  openstax("chemistry", "Chemistry (1st edition, retired)", "by", { note: "Retired by OpenStax in favour of Chemistry 2e: check facts against a current source too.", hold: FIRST_EDITION_HOLD }),
   {
     id: "ncbi-bookshelf", title: "NCBI Bookshelf", owner: "National Library of Medicine (NCBI)", urls: ["https://www.ncbi.nlm.nih.gov/books"],
     use: "facts-only", commercial: false, text: false, figures: false,
@@ -87,5 +93,5 @@ export const confirmed = (s) => !!(s?.confirmedBy && DATE.test(s.confirmedOn || 
 /** the licence class a brief may use for this source: "adapt" only once a person confirmed it; null = not usable */
 export function classOf(s) {
   if (!s || s.use === "none") return null;
-  return s.use === "adapt" && confirmed(s) ? "adapt" : "facts";
+  return s.use === "adapt" && confirmed(s) && !s.hold ? "adapt" : "facts";
 }

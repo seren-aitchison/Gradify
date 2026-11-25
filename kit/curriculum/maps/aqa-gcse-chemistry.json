@@ -7143,35 +7143,6 @@
     }
    ]
   },
-  "4.6.2.1.b": {
-   "status": "proposed",
-   "confidence": "none",
-   "lessons": [],
-   "gap": "likely gap: no lesson shares enough of the statement's vocabulary (to confirm)",
-   "nearest": [
-    {
-     "id": "u08-01",
-     "coverage": "partial",
-     "confidence": "weak",
-     "score": 6.37,
-     "share": 0,
-     "matched": [
-      "reversible",
-      "reaction"
-     ]
-    },
-    {
-     "id": "u13-22",
-     "coverage": "partial",
-     "confidence": "weak",
-     "score": 2.74,
-     "share": 0,
-     "matched": [
-      "reversible"
-     ]
-    }
-   ]
-  },
   "4.6.2.2.a": {
    "status": "proposed",
    "confidence": "strong",
@@ -8761,41 +8732,8 @@
      "id": "u17-04",
      "coverage": "partial",
      "confidence": "strong",
-     "score": 37.47,
-     "share": 0.59,
-     "matched": [
-      "monomer",
-      "polymerisation",
-      "polymer",
-      "addition"
-     ]
-    },
-    {
-     "id": "u13-21",
-     "coverage": "partial",
-     "confidence": "strong",
-     "score": 29.64,
-     "share": 0.59,
-     "matched": [
-      "polymerisation",
-      "join",
-      "polymer",
-      "molecul",
-      "reaction"
-     ]
-    }
-   ]
-  },
-  "4.7.3.1.c": {
-   "status": "proposed",
-   "confidence": "strong",
-   "lessons": [
-    {
-     "id": "u17-04",
-     "coverage": "partial",
-     "confidence": "strong",
-     "score": 37.29,
-     "share": 0.48,
+     "score": 42.33,
+     "share": 0.42,
      "matched": [
       "monomer",
       "polymerisation",
@@ -8803,10 +8741,25 @@
       "addition",
       "unit"
      ]
+    },
+    {
+     "id": "u13-21",
+     "coverage": "partial",
+     "confidence": "strong",
+     "score": 33.72,
+     "share": 0.45,
+     "matched": [
+      "polymerisation",
+      "join",
+      "polymer",
+      "molecule",
+      "molecul",
+      "reaction"
+     ]
     }
    ]
   },
-  "4.7.3.1.d": {
+  "4.7.3.1.c": {
    "status": "proposed",
    "confidence": "moderate",
    "lessons": [
@@ -8867,39 +8820,8 @@
      "id": "u17-04",
      "coverage": "partial",
      "confidence": "moderate",
-     "score": 28.34,
-     "share": 0.35,
-     "matched": [
-      "monomer",
-      "condensation",
-      "polymerisation",
-      "polymer"
-     ]
-    },
-    {
-     "id": "u13-21",
-     "coverage": "partial",
-     "confidence": "moderate",
-     "score": 22.53,
-     "share": 0.14,
-     "matched": [
-      "condensation",
-      "polymerisation",
-      "polymer"
-     ]
-    }
-   ]
-  },
-  "4.7.3.2.c": {
-   "status": "proposed",
-   "confidence": "moderate",
-   "lessons": [
-    {
-     "id": "u17-04",
-     "coverage": "partial",
-     "confidence": "moderate",
      "score": 42.29,
-     "share": 0.28,
+     "share": 0.25,
      "matched": [
       "monomer",
       "condensation",
@@ -8913,7 +8835,7 @@
      "coverage": "partial",
      "confidence": "moderate",
      "score": 35.95,
-     "share": 0.25,
+     "share": 0.21,
      "matched": [
       "polyester",
       "condensation",

@@ -247,7 +247,9 @@ test("source allowlist: briefs cite only listed publications, whose class the re
   // the Researcher's label changes nothing: an unconfirmed CC BY row is still facts-only
   const by = SOURCES.find((x) => x.id === "openstax-biology");
   assert.equal(by.use, "adapt"); assert.equal(classOf(by), "facts");
-  assert.equal(classOf({ ...by, confirmedBy: "A Person", confirmedOn: "2026-11-25" }), "adapt");
+  // the owner's hold keeps the first editions facts-only even once confirmed; without a hold, a confirmed row adapts
+  assert.ok(by.hold); assert.equal(classOf({ ...by, confirmedBy: "A Person", confirmedOn: "2026-11-25" }), "facts");
+  assert.equal(classOf({ ...by, hold: undefined, confirmedBy: "A Person", confirmedOn: "2026-11-25" }), "adapt");
   const claimed = checkBrief(BRIEF.replace(/licence=facts/g, "licence=adapt"));
   assert.deepEqual(claimed.problems, []); assert.ok(claimed.parsed.sources.every((x) => x.licence === "facts"));
   // an unlisted source refuses the brief
