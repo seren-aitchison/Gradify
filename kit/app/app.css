@@ -501,12 +501,101 @@ kbd { font: 11px var(--mono); padding: 1px 6px; border-radius: 5px; border: 1px 
     background: linear-gradient(180deg, rgba(var(--ink-rgb), .04), rgba(var(--ink-rgb), .01)), var(--panel); }
   .lo-shell .app-nav { display: none; }
 }
-@media (max-width: 1099px) {
-  body.side-open .lo-side { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; position: fixed; z-index: 29; left: 12px; right: 12px; bottom: calc(80px + env(safe-area-inset-bottom, 0px));
-    padding: 12px; border-radius: 22px; border: 1px solid var(--line-strong); background: rgba(var(--surface-rgb), .97); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
-  body.side-open .lo-side-title { grid-column: 1 / -1; }
+/* ---- the sidebar's own controls (kit/app/app-nav.js): its head, search, folding sections, Pinned and Recent ---- */
+.lo-side-head { display: flex; align-items: center; gap: 4px; min-height: 30px; }
+.lo-side-head .lo-side-title { flex: 1; padding-bottom: 4px; }
+.lo-side :is(.lo-rail, .lo-close, .lo-x) { display: grid; place-items: center; flex: none; width: 30px; height: 30px; padding: 0; border: 0; border-radius: 10px; background: none; color: var(--faint); cursor: pointer; }
+.lo-side :is(.lo-rail, .lo-close, .lo-x):hover { color: var(--fg); background: rgba(var(--ink-rgb), .06); }
+.lo-side :is(.lo-rail, .lo-close, .lo-x) svg { width: 16px; height: 16px; }
+.lo-close { display: none !important; }
+.lo-find { display: flex; align-items: center; gap: 10px; width: 100%; margin: 4px 0 6px; padding: 8px 10px 8px 12px; border-radius: 12px; border: 1px solid var(--line); background: rgba(var(--ink-rgb), .04); color: var(--mute); font: 500 14px var(--sans); cursor: pointer; text-align: left; }
+.lo-find:hover { color: var(--fg); border-color: var(--line-strong); }
+.lo-find svg { width: 16px; height: 16px; flex: none; }
+.lo-find span { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lo-find kbd { font: 600 11px var(--mono); padding: 1px 6px; border-radius: 6px; color: var(--faint); background: rgba(var(--ink-rgb), .06); border: 1px solid var(--line); }
+button.lo-sec-label { display: flex; align-items: center; justify-content: space-between; width: 100%; border: 0; background: none; cursor: pointer; text-align: left; border-radius: 8px; font-family: var(--sans); }
+button.lo-sec-label:hover { color: var(--fg); }
+button.lo-sec-label:focus-visible, .lo-side :is(a, button):focus-visible { outline: 2px solid var(--fg); outline-offset: 1px; }
+.lo-chev { width: 13px !important; height: 13px !important; opacity: .6; transition: transform .18s; }
+.lo-sec.expanded .lo-chev { transform: rotate(90deg); }
+.lo-sec:not(.expanded) .lo-sec-body { display: none; }
+.lo-sec-body { display: flex; flex-direction: column; gap: 2px; }
+.lo-sec.nudge .lo-sec-label { animation: lo-nudge .3s; }
+@keyframes lo-nudge { 30% { transform: translateX(3px); } 60% { transform: translateX(-2px); } }
+.lo-place { display: flex; align-items: center; min-width: 0; border-radius: 14px; }
+.lo-place a { flex: 1; min-width: 0; }
+.lo-place a span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lo-side .lo-mine a { font-size: 14px; padding: 6px 12px; }
+.lo-side .lo-mine a svg { width: 16px; height: 16px; opacity: .75; }
+.lo-side .lo-mine a.on { color: var(--fg); background: rgba(var(--ink-rgb), .07); }
+.lo-place .lo-x { opacity: 0; }
+.lo-place:is(:hover, :focus-within) .lo-x { opacity: 1; }
+@media (hover: none) { .lo-place .lo-x { opacity: 1; } }
+
+/* ---- breadcrumbs above each screen, with a pin ---- */
+.lo-crumbs { display: flex; align-items: center; gap: 10px; min-width: 0; margin: 22px 0 -6px; font-size: 13.5px; }
+.lo-crumbs ol { display: flex; align-items: center; flex: 1; min-width: 0; margin: 0; padding: 0; list-style: none; overflow: hidden; white-space: nowrap; }
+.lo-crumbs li { display: flex; align-items: center; min-width: 0; flex: none; }
+.lo-crumbs li:last-child { flex: 0 1 auto; }
+.lo-crumbs li + li::before { content: "›"; padding: 0 8px; color: var(--faint); }
+.lo-crumbs a { color: var(--mute); text-decoration: none; border-radius: 6px; padding: 2px 2px; }
+.lo-crumbs a:hover { color: var(--fg); text-decoration: underline; text-underline-offset: 3px; }
+.lo-crumbs a:focus-visible, .lo-pin:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
+.lo-crumbs [aria-current] { color: var(--fg); font-weight: 600; overflow: hidden; text-overflow: ellipsis; }
+.lo-pin { flex: none; display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border-radius: 999px; border: 1px solid var(--line); background: none; color: var(--mute); font: 500 12.5px var(--sans); cursor: pointer; }
+.lo-pin:hover { color: var(--fg); border-color: var(--line-strong); }
+.lo-pin svg { width: 14px; height: 14px; }
+.lo-pin[aria-pressed="true"] { color: var(--fg); background: rgba(var(--ink-rgb), .07); }
+
+/* ---- the top bar: a menu button (below the sidebar's width) and search ---- */
+.lo-menu { display: none; place-items: center; flex: none; width: 40px; height: 40px; margin-right: -4px; padding: 0; border: 0; border-radius: 12px; background: none; color: var(--fg); cursor: pointer; }
+.lo-menu:hover { background: rgba(var(--ink-rgb), .06); }
+.lo-menu svg { width: 22px; height: 22px; }
+.lo-searchbtn { flex: none; margin-left: auto; }
+.app-bar .lo-searchbtn ~ .mode-chip { margin-left: 0; }
+
+@media (min-width: 1100px) {
+  /* the sidebar beside the page, and the breadcrumb over the page; folded to a rail of icons when asked */
+  .lo-shell { grid-template-columns: 236px minmax(0, 1fr); grid-template-rows: auto auto 1fr; transition: grid-template-columns .2s ease; }
+  .lo-shell > .lo-side { grid-column: 1; grid-row: 2 / 4; margin-top: 22px; }
+  .lo-shell > :is(.lo-crumbs, #view) { grid-column: 2; }
+  .lo-shell > #view { grid-row: 3; }
+  .lo-shell.lo-railed { grid-template-columns: 64px minmax(0, 1fr); }
+  .lo-railed .lo-side { padding: 10px 6px; align-items: center; }
+  .lo-railed .lo-side :is(.lo-side-title, .lo-mine, .lo-sec-label, .lo-find span, .lo-find kbd) { display: none; }
+  .lo-railed .lo-side a span:not(.nav-lock) { display: none; }
+  .lo-railed .lo-side-head { justify-content: center; }
+  .lo-railed .lo-side :is(a, .lo-find) { justify-content: center; width: 44px; height: 40px; padding: 0; margin: 0; }
+  .lo-railed .lo-find { border-color: transparent; background: none; margin: 6px 0 4px; }
+  .lo-railed .lo-side-head { min-height: 40px; }
+  .lo-railed .lo-sec { align-items: center; }
+  .lo-railed .lo-sec:not(.expanded) .lo-sec-body { display: flex; }
+  .lo-railed .nav-lock { position: absolute; }
+  .lo-railed .lo-side a { position: relative; }
+  .lo-menu, .lo-close { display: none !important; }
 }
-@media (min-width: 861px) and (max-width: 1099px) { body.side-open .lo-side { bottom: auto; top: 84px; left: auto; width: 420px; } }
+@media (max-width: 1099px) {
+  /* the same sidebar as a drawer from the left, over a dimmed page */
+  .lo-menu { display: grid; }
+  .lo-rail { display: none !important; }
+  body.side-open .lo-side { display: flex; flex-direction: column; gap: 2px; position: fixed; z-index: 80; top: 0; bottom: 0; left: 0; width: min(320px, 86vw); overflow-y: auto; overscroll-behavior: contain;
+    padding: calc(14px + env(safe-area-inset-top, 0px)) 10px calc(18px + env(safe-area-inset-bottom, 0px)) calc(10px + env(safe-area-inset-left, 0px));
+    border-radius: 0 24px 24px 0; background: rgba(var(--surface-rgb), .98); animation: lo-in .22s cubic-bezier(.2, .8, .2, 1); }
+  body.side-open .lo-close { display: grid !important; }
+  .lo-scrim { position: fixed; inset: 0; z-index: 79; background: rgba(var(--sink-rgb), .45); -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px); animation: gx-fade .2s; }
+  body.side-open { overflow: hidden; }
+  /* a phone has the section's screens as pills; the breadcrumb shows once you're deeper than a screen */
+  .lo-crumbs:not(.deep) ol { display: none; }
+  .lo-crumbs:not(.deep) { justify-content: flex-end; margin: 10px 0 -18px; }
+  .lo-crumbs.deep { margin: 14px 0 -6px; }
+}
+.lo-scrim[hidden] { display: none; }
+@keyframes lo-in { from { transform: translateX(-100%); } }
+@keyframes gx-fade { from { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { body.side-open .lo-side, .lo-scrim, .lo-chev, .lo-shell { animation: none; transition: none; } }
+@media (max-width: 560px) { .lo-searchbtn span, .lo-searchbtn kbd { display: none; } .lo-searchbtn { padding: 8px; } }
+/* a phone's top bar keeps to one row with the menu and search in it: the G stands for Gradify on its own */
+@media (max-width: 440px) { .app-bar { gap: 6px; } .app-bar .brand { font-size: 0; gap: 0; } }
 @media (min-width: 861px) and (max-width: 1099px) { .app-nav { overflow-x: auto; } }
 
 /* =========================================================

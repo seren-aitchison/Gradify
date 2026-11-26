@@ -118,10 +118,10 @@ details.gx-acc[open] > summary::after { transform: rotate(-135deg); }
 /* ---------- the command palette ---------- */
 .gx-pal { position: fixed; inset: 0; z-index: 550; display: grid; justify-items: center; align-items: start; padding: 10vh 16px 16px; background: rgba(var(--sink-rgb), .55); backdrop-filter: blur(6px); animation: gx-fade .15s; }
 .gx-palbox { width: min(680px, 100%); max-height: 76vh; display: flex; flex-direction: column; border-radius: 18px; overflow: hidden; color: var(--fg); background: light-dark(#fff, #121214); border: 1px solid var(--line-strong); box-shadow: 0 40px 120px -20px rgba(0, 0, 0, .8); animation: gx-pop .2s var(--gx-ease); }
-.gx-palin { display: flex; align-items: center; gap: 12px; padding: 16px 18px; border-bottom: 1px solid var(--line); color: var(--mute); }
+.gx-palin { flex: none; display: flex; align-items: center; gap: 12px; padding: 16px 18px; border-bottom: 1px solid var(--line); color: var(--mute); }
 .gx-palin .gx-ic { width: 20px; height: 20px; }
 .gx-palin input { flex: 1; min-width: 0; border: 0; background: none; color: var(--fg); font: 18px var(--sans); outline: none; }
-.gx-palf { display: flex; gap: 6px; padding: 10px 14px; overflow-x: auto; scrollbar-width: none; border-bottom: 1px solid var(--line); }
+.gx-palf { flex: none; display: flex; gap: 6px; padding: 10px 14px; overflow-x: auto; scrollbar-width: none; border-bottom: 1px solid var(--line); }
 .gx-palf button { flex: none; padding: 5px 11px; border-radius: 999px; border: 1px solid var(--line); background: none; color: var(--mute); font: 500 12.5px var(--sans); cursor: pointer; }
 .gx-palf button[aria-pressed="true"] { color: var(--fg); background: rgba(var(--ink-rgb), .1); border-color: var(--line-strong); }
 .gx-pall { flex: 1; overflow: auto; padding: 6px 8px 10px; overscroll-behavior: contain; }

@@ -61,6 +61,7 @@ import { calendarPanelHtml, wireCalendar, intelStripHtml, nextHtml, upcomingHtml
 
 const $ = (s, el = document) => el.querySelector(s);
 import { esc } from "../core/text.js";
+import { mountAppNav } from "./app-nav.js";
 const DAY = 864e5;
 const dayKey = (d) => { const x = new Date(d); return `${x.getFullYear()}-${String(x.getMonth() + 1).padStart(2, "0")}-${String(x.getDate()).padStart(2, "0")}`; };
 const today = () => dayKey(new Date());
@@ -134,53 +135,6 @@ const SCREEN_OF = { academic: "my", deck: "library", jot: "notes", topic: "progr
 const screenOf = (route) => SCREEN_OF[route] || route;
 const sectionOf = (route) => SECTIONS.find(([, , , screens]) => screens.some(([r]) => r === screenOf(route)))?.[0] || null;
 const screenLabel = (route) => (route === "account" ? SETTINGS[1] : SECTIONS.flatMap(([, , , x]) => x).find(([r]) => r === screenOf(route))?.[1]) || "";
-const currentRoute = () => location.hash.replace(/^#\/?/, "").split("/")[0] || "today";
-function paintSide(side) {
-  const link = ([r, label, ic]) => `<a href="#/${r}" data-route="${r}">${icon(ic)}<span>${label}</span></a>`;
-  side.innerHTML = `<span class="lo-side-title">Gradify</span>
-    ${SECTIONS.map(([id, label, , screens]) => `<div class="lo-sec" data-section="${id}" role="group" aria-labelledby="lo-sec-${id}"><span class="lo-sec-label" id="lo-sec-${id}">${label}</span>${screens.map(link).join("")}</div>`).join("")}
-    <div class="lo-sec lo-sec-end">${link(SETTINGS)}</div>`;
-  markCurrent();
-}
-// which screen and section are open: the screen's link, the section's tab, and the phone's screen row
-function markCurrent() {
-  const route = currentRoute(), screen = screenOf(route), section = sectionOf(route);
-  document.querySelectorAll(".lo-side a, .sec-screens a").forEach((a) => a.setAttribute("aria-current", a.dataset.route === screen ? "page" : "false"));
-  document.querySelectorAll(".tabbar a").forEach((a) => a.setAttribute("aria-current", String(a.dataset.section === section)));
-  document.querySelectorAll(".lo-sec[data-section]").forEach((g) => g.classList.toggle("open", g.dataset.section === section));
-  paintScreens(section);
-}
-// below the sidebar's width: the open section's screens as a row of pills above the page, so a sibling screen is one tap
-function paintScreens(section) {
-  let row = document.querySelector(".sec-screens");
-  if (!row) {
-    row = document.createElement("nav"); row.className = "sec-screens"; row.setAttribute("aria-label", "This section");
-    document.querySelector("#view")?.before(row);
-    row.addEventListener("click", (e) => { if (e.target.closest("a")) haptic("tap"); });
-  }
-  const sec = SECTIONS.find(([id]) => id === section), screen = screenOf(currentRoute());
-  row.hidden = !sec || sec[3].length < 2;
-  row.innerHTML = sec ? sec[3].map(([r, label]) => `<a class="chip" href="#/${r}" data-route="${r}" aria-current="${r === screen ? "page" : "false"}">${label}</a>`).join("") : "";
-}
-function drawNav() {
-  // the LifeOS sidebar (wide screens); the top bar keeps the brand and account
-  let side = document.querySelector(".lo-side");
-  if (!side) {
-    side = document.createElement("nav");
-    side.className = "lo-side"; side.id = "lo-side"; side.setAttribute("aria-label", "Gradify sections");
-    document.querySelector("#view")?.before(side);
-    document.querySelector("#view")?.parentElement.classList.add("lo-shell");
-  }
-  paintSide(side);
-  // phones and tablets: the five sections in the tab bar (each opens its first screen) and the section's screens above the page
-  for (const nav of document.querySelectorAll(".tabbar")) {
-    nav.innerHTML = SECTIONS.map(([id, label, ic, screens]) => `<a href="#/${screens[0][0]}" data-section="${id}">${icon(ic)}<span>${label}</span></a>`).join("");
-  }
-  side.addEventListener("click", (e) => { if (e.target.closest("a")) haptic("tap"); });
-  document.querySelector(".tabbar")?.addEventListener("click", (e) => { if (e.target.closest("a, button")) haptic("tap"); });
-  markCurrent();
-}
-drawNav();
 // a small lock on the sections that need Gradify Pro, once the learner's plan is known (only while Pro is on sale)
 const LOCKED = { intel: "intelligence" };
 function markLocks() {
@@ -191,6 +145,9 @@ function markLocks() {
     if (locked) { a.insertAdjacentHTML("beforeend", `<span class="nav-lock" title="Gradify Pro">${icon("lock")}</span>`); a.setAttribute("aria-label", `${a.textContent.trim()} (Gradify Pro)`); }
   }
 }
+// the sidebar (a rail of icons, folding sections, Pinned and Recent), the phone's drawer and tab bar, breadcrumbs and
+// ⌘K search: kit/app/app-nav.js
+const appNav = mountAppNav({ sections: SECTIONS, settings: SETTINGS, screenOf, sectionOf, icon, haptic, appName: SITE || "Gradify", afterPaint: () => markLocks() });
 // the pricing page lives on getgradify.com; sub-sites served elsewhere link to it there
 const PRICING = /(^|\.)getgradify\.com$|^localhost/.test(location.hostname) ? "/pricing.html" : "https://getgradify.com/pricing.html";
 
@@ -276,20 +233,21 @@ function decorate(root) {
 
 async function route() {
   // #/name/arg/…: each view gets its first argument, and any further parts of the route (#/goal/edit/<id>)
-  const [name, arg, ...more] = (location.hash.replace(/^#\/?/, "") || "today").split("/");
+  // a query after the route (#/new?x=1) is not part of it
+  const [name, arg, ...more] = (location.hash.replace(/^#\/?/, "").split("?")[0] || "today").split("/");
   // someone new can try Gradify first: add notes (or the sample), get a pack, study it.
   // Opening the app itself ("Open Gradify", "Start free": no screen named) lands someone new on Bring your notes.
   // Any screen they ask for opens directly: set-up (#/start, "What do you want to achieve?") is never put in front of
   // a destination. It's offered instead, as a card on Today and from Account (docs/product/UX-SPEC.md, onboarding).
   if (needsSetup(profile) && !location.hash.replace(/^#\/?/, "")) { location.replace("#/new"); return; }
-  markCurrent();
-  document.body.classList.remove("side-open");
+  appNav.markCurrent();
   // a Pro prompt belongs to the screen that opened it: leaving the screen closes it
   document.querySelector("dialog.plus-prompt")?.close();
   view.innerHTML = '<div class="loading" aria-busy="true"></div>';
   try { await (routes[name] || renderToday)(arg, more); } catch (e) { console.error(e); view.innerHTML = `<div class="panel glass"><h3>Something went wrong</h3><p class="sub">${esc(e.message)}</p></div>`; }
   decorate(view);
   tabify(name);
+  appNav.arrived(name);
   sessionPill(name);
   // 3D glass icons from the learner's subject set (kit/core/glass-icons.js), matched to each card, pack and lesson
   glassIcons(view, profile.site || "Gradify").catch(() => {});
