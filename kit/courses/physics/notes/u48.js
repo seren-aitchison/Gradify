@@ -25,8 +25,8 @@ K: The Sun fuses hydrogen in its core; its magnetic dynamo drives sunspots, flar
 !: The corona is far hotter than the photosphere; heat doesn't simply flow outward from hot to cold here.
 Q: What is helioseismology? | Studying the Sun's interior by analysing surface oscillation modes.
 Q: How long is the sunspot cycle? | About 11 years (22 years for the full magnetic cycle).
-M1: The solar corona's temperature is about: | 1–3 million K | 5800 K | 15 million K | 300 K | Coronal heating problem.
-M2: Solar flares release energy by: | Magnetic reconnection | Nuclear fusion at the surface | Chemical burning | Gravitational collapse | Field lines reconnect.
+M1#physics-u48-01-q1: The solar corona's temperature is about: | 1–3 million K | 5800 K | 15 million K | 300 K | Coronal heating problem.
+M2#physics-u48-01-q2: Solar flares release energy by: | Magnetic reconnection | Nuclear fusion at the surface | Chemical burning | Gravitational collapse | Field lines reconnect.
 
 ## Solar wind
 S: The solar wind is a continuous outflow of plasma from the Sun's corona, carrying the Sun's magnetic field throughout the solar system. Its speed, density and field shape space weather, planetary magnetospheres and comet tails.
@@ -52,8 +52,8 @@ K: The solar wind is the supersonic expansion of the corona, dragging the magnet
 !: The solar wind is not just fast particles; it carries magnetic field, which controls how it interacts with planets.
 Q: Where does the fast solar wind come from? | Coronal holes, regions of open magnetic field.
 Q: Why does the solar wind field form a spiral? | Field lines frozen into radially flowing plasma are wound up by solar rotation.
-M1: Solar wind density at Earth is about: | 5 protons cm^{-3} | 10^{19} cm^{-3} | 0.001 cm^{-3} | 10^{6} cm^{-3} | Very tenuous.
-M2: Who predicted the solar wind? | Eugene Parker | Einstein | Chapman | Van Allen | 1958.
+M1#physics-u48-02-q1: Solar wind density at Earth is about: | 5 protons cm^{-3} | 10^{19} cm^{-3} | 0.001 cm^{-3} | 10^{6} cm^{-3} | Very tenuous.
+M2#physics-u48-02-q2: Who predicted the solar wind? | Eugene Parker | Einstein | Chapman | Van Allen | 1958.
 
 ## Heliosphere
 S: The heliosphere is the vast bubble carved into interstellar space by the solar wind. Its edges, the termination shock and heliopause, were crossed by Voyager 1 and 2, revealing where the Sun's influence gives way to the galaxy.
@@ -77,8 +77,8 @@ K: The heliosphere is the solar wind's bubble, bounded by the termination shock 
 !: The heliopause isn't the edge of the solar system gravitationally; the Oort cloud extends tens of thousands of AU further.
 Q: Where did Voyager 1 cross the heliopause? | About 121 AU, in 2012.
 Q: What is the termination shock? | Where the solar wind slows abruptly from supersonic to subsonic speed.
-M1: IBEX images: | Energetic neutral atoms | Radio emission | Visible light | Gravitational waves | Neutral atoms from charge exchange.
-M2: The heliosphere reduces: | Galactic cosmic ray flux | Sunlight | Gravity | Solar neutrinos | Magnetic shielding.
+M1#physics-u48-03-q1: IBEX images: | Energetic neutral atoms | Radio emission | Visible light | Gravitational waves | Neutral atoms from charge exchange.
+M2#physics-u48-03-q2: The heliosphere reduces: | Galactic cosmic ray flux | Sunlight | Gravity | Solar neutrinos | Magnetic shielding.
 
 ## Magnetospheres
 S: A magnetosphere is the region where a planet's magnetic field dominates over the solar wind. Earth's magnetosphere deflects the solar wind, stores energy and drives aurorae and storms, protecting the atmosphere and surface from much space radiation.
@@ -102,8 +102,8 @@ K: Magnetospheres balance planetary field pressure against the solar wind; recon
 !: The magnetosphere doesn't block all solar particles; reconnection lets energy and plasma in, especially with southward IMF.
 Q: What is the Dungey cycle? | Magnetospheric convection driven by dayside and nightside magnetic reconnection.
 Q: What feeds Jupiter's magnetosphere with plasma? | Volcanic gases from Io.
-M1: Earth's dayside magnetopause is at about: | 10 R_{E} | 1 R_{E} | 100 R_{E} | 1000 R_{E} | Pressure balance.
-M2: Geomagnetic storms are measured by the: | Dst index | Richter scale | pH | Kelvin scale | Ring current strength.
+M1#physics-u48-04-q1: Earth's dayside magnetopause is at about: | 10 R_{E} | 1 R_{E} | 100 R_{E} | 1000 R_{E} | Pressure balance.
+M2#physics-u48-04-q2: Geomagnetic storms are measured by the: | Dst index | Richter scale | pH | Kelvin scale | Ring current strength.
 
 ## Ionospheres
 S: The ionosphere is the layer of the upper atmosphere ionised by solar extreme ultraviolet and X-rays. It reflects radio waves, affects GPS accuracy, hosts aurorae and changes dramatically between day and night and during space weather.
@@ -129,8 +129,8 @@ K: The ionosphere's electron density sets which radio waves reflect and how much
 !: Higher frequencies pass through the ionosphere; HF skywave works only below the maximum usable frequency.
 Q: Why does AM radio reach further at night? | The absorbing D layer disappears after sunset.
 Q: How do dual-frequency GPS receivers correct ionospheric delay? | The delay scales as 1/f^{2}, so comparing two frequencies removes it.
-M1: The F region has: | The highest electron density | No ions | Only neutral gas | The lowest altitude | ~10^{12} m^{-3}.
-M2: Radio blackouts from flares are caused by: | Enhanced D-region absorption | Solar wind | Cosmic rays | Lightning | X-ray ionisation.
+M1#physics-u48-05-q1: The F region has: | The highest electron density | No ions | Only neutral gas | The lowest altitude | ~10^{12} m^{-3}.
+M2#physics-u48-05-q2: Radio blackouts from flares are caused by: | Enhanced D-region absorption | Solar wind | Cosmic rays | Lightning | X-ray ionisation.
 
 ## Space weather
 S: Space weather is the changing conditions in space, driven by the Sun, that affect technology and people. Solar flares, CMEs and energetic particles can disrupt power grids, satellites, GPS, aviation and astronauts' health.
@@ -157,8 +157,8 @@ K: Space weather from flares, particles and CMEs threatens grids, satellites, na
 !: A CME's impact depends strongly on its magnetic orientation; southward fields cause the biggest storms.
 Q: What was the Carrington event? | An extreme 1859 geomagnetic storm that disrupted telegraphs worldwide.
 Q: What are geomagnetically induced currents? | Currents driven in power lines and pipelines by rapidly changing geomagnetic fields.
-M1: Solar flare classes in increasing strength are: | A, B, C, M, X | X, M, C, B, A | 1 to 10 | G1 to G5 | Logarithmic X-ray flux.
-M2: The Starlink loss in 2022 was due to: | Increased atmospheric drag | Radiation dose | Radio blackout | Collision | Storm heating expanded the atmosphere.
+M1#physics-u48-06-q1: Solar flare classes in increasing strength are: | A, B, C, M, X | X, M, C, B, A | 1 to 10 | G1 to G5 | Logarithmic X-ray flux.
+M2#physics-u48-06-q2: The Starlink loss in 2022 was due to: | Increased atmospheric drag | Radiation dose | Radio blackout | Collision | Storm heating expanded the atmosphere.
 
 ## Cosmic rays
 S: Cosmic rays are high-energy charged particles, mostly protons and nuclei, arriving from the Sun, the galaxy and beyond. They create air showers in the atmosphere, contribute to radiation dose, and reach energies far beyond any human accelerator.
@@ -183,8 +183,8 @@ K: Cosmic rays follow a steep power-law spectrum; galactic ones come from supern
 !: Most cosmic rays are charged, so galactic magnetic fields scramble their arrival directions; only the highest energies point back to sources.
 Q: What is the knee of the cosmic-ray spectrum? | A steepening around 3 × 10^{15} eV, possibly marking the limit of galactic accelerators.
 Q: What is the GZK cutoff? | A suppression of cosmic rays above ~5 × 10^{19} eV due to interactions with CMB photons.
-M1: Most cosmic rays are: | Protons | Electrons | Photons | Neutrinos | ~89%.
-M2: Galactic cosmic rays are mainly accelerated in: | Supernova remnant shocks | The Sun | Planetary magnetospheres | Black hole interiors | Diffusive shock acceleration.
+M1#physics-u48-07-q1: Most cosmic rays are: | Protons | Electrons | Photons | Neutrinos | ~89%.
+M2#physics-u48-07-q2: Galactic cosmic rays are mainly accelerated in: | Supernova remnant shocks | The Sun | Planetary magnetospheres | Black hole interiors | Diffusive shock acceleration.
 
 ## Radiation belts
 S: Earth's radiation belts are doughnut-shaped regions where the magnetic field traps energetic electrons and protons. Discovered by James Van Allen in 1958, they threaten satellites and astronauts and change dramatically during storms.
@@ -211,8 +211,8 @@ K: Radiation belts trap particles via magnetic mirroring; waves accelerate and s
 !: The outer belt is not constant; storms can increase relativistic electron fluxes by orders of magnitude.
 Q: Who discovered the radiation belts? | James Van Allen, using Explorer 1 and 3 data in 1958.
 Q: What is the South Atlantic Anomaly? | A region where the inner radiation belt comes closest to Earth's surface.
-M1: The inner belt is dominated by: | Energetic protons | Relativistic electrons | Neutrons | Photons | From albedo neutron decay.
-M2: The loss cone contains particles that: | Mirror in the atmosphere and are lost | Stay trapped forever | Escape to space | Are neutral | Small pitch angles.
+M1#physics-u48-08-q1: The inner belt is dominated by: | Energetic protons | Relativistic electrons | Neutrons | Photons | From albedo neutron decay.
+M2#physics-u48-08-q2: The loss cone contains particles that: | Mirror in the atmosphere and are lost | Stay trapped forever | Escape to space | Are neutral | Small pitch angles.
 
 ## Planetary atmospheres
 S: Planetary atmospheres range from Venus's crushing CO_{2} hothouse to Mars's thin cold air and Jupiter's deep hydrogen weather layers. Their physics, set by gravity, radiation, composition and rotation, determines climate and habitability.
@@ -238,8 +238,8 @@ K: Atmospheres follow hydrostatic balance; radiation, composition and greenhouse
 !: Equilibrium temperature ignores greenhouse warming; actual surface temperatures can be much higher (Venus by ~500 K).
 Q: What is scale height? | The height over which atmospheric pressure falls by a factor of e.
 Q: Why is Venus hotter than Mercury despite being further from the Sun? | Its thick CO_{2} atmosphere traps heat via a runaway greenhouse effect.
-M1: Earth's greenhouse warming is about: | 33 K | 3 K | 300 K | 0 K | 288 − 255.
-M2: Titan's atmosphere is mainly: | Nitrogen | CO_{2} | Hydrogen | Oxygen | ~95% N_{2}.
+M1#physics-u48-09-q1: Earth's greenhouse warming is about: | 33 K | 3 K | 300 K | 0 K | 288 − 255.
+M2#physics-u48-09-q2: Titan's atmosphere is mainly: | Nitrogen | CO_{2} | Hydrogen | Oxygen | ~95% N_{2}.
 
 ## Planetary interiors
 S: Planetary interiors are layered by density: metal cores, rocky or icy mantles and crusts. Seismology, gravity, magnetic fields and moments of inertia reveal structures we can't see directly, from Earth's solid inner core to Jupiter's diffuse core.
@@ -265,8 +265,8 @@ K: Density, moment of inertia, seismology and gravity reveal layered interiors w
 !: Surface rock density is much lower than the planet's mean; you can't infer interiors from surfaces alone.
 Q: How do we know Earth's outer core is liquid? | S-waves don't pass through it, creating an S-wave shadow zone.
 Q: What did InSight measure on Mars? | Marsquakes revealing crust, mantle and a liquid core about 1830 km in radius.
-M1: A uniform sphere has I/MR^{2} = : | 0.4 | 0.33 | 1 | 0.5 | 2/5.
-M2: Juno found Jupiter's core is: | Diluted or "fuzzy" | Solid iron only | Absent | Made of ice | Gradual transition.
+M1#physics-u48-10-q1: A uniform sphere has I/MR^{2} = : | 0.4 | 0.33 | 1 | 0.5 | 2/5.
+M2#physics-u48-10-q2: Juno found Jupiter's core is: | Diluted or "fuzzy" | Solid iron only | Absent | Made of ice | Gradual transition.
 
 ## Planetary magnetic fields
 S: Planetary magnetic fields are generated by dynamos: convecting, electrically conducting fluids in rotating planets. They shield atmospheres, create magnetospheres and record a planet's history in magnetised rocks.
@@ -291,8 +291,8 @@ K: Dynamos need conducting, convecting, rotating fluid; field histories record p
 !: A planet having an iron core doesn't guarantee a field; the core must be convecting.
 Q: Why does Mars lack a global magnetic field today? | Its core dynamo stopped, probably because the core cooled and convection ceased.
 Q: How did seafloor magnetic stripes support plate tectonics? | Symmetric stripes of reversed magnetisation either side of ridges showed spreading seafloor.
-M1: Dipole field strength falls with distance as: | 1/r^{3} | 1/r^{2} | 1/r | constant | Dipole scaling.
-M2: Uranus's and Neptune's fields are: | Strongly tilted and offset | Aligned with rotation | Absent | Stronger than Jupiter's | Shallow dynamo sources.
+M1#physics-u48-11-q1: Dipole field strength falls with distance as: | 1/r^{3} | 1/r^{2} | 1/r | constant | Dipole scaling.
+M2#physics-u48-11-q2: Uranus's and Neptune's fields are: | Strongly tilted and offset | Aligned with rotation | Absent | Stronger than Jupiter's | Shallow dynamo sources.
 
 ## Planetary rings
 S: Planetary rings are flat discs of countless orbiting particles, from dust to house-sized boulders. Saturn's dazzling icy rings are the most famous, but all giant planets have rings, shaped by gravity, collisions and moons.
@@ -317,8 +317,8 @@ K: Rings live inside the Roche limit; moons sculpt them through resonances and s
 !: Rings aren't solid sheets; they are swarms of independent particles orbiting at Keplerian speeds.
 Q: What is the Roche limit? | The distance inside which tidal forces disrupt a body held together only by its gravity.
 Q: What creates the Cassini Division? | A 2:1 orbital resonance with the moon Mimas.
-M1: Saturn's main rings are about how thick? | 10 m to 1 km | 1000 km | 1 mm | 100 000 km | Extremely thin.
-M2: Shepherd moons: | Confine narrow rings | Destroy rings | Are made of rings | Orbit far outside | Gravitational nudging.
+M1#physics-u48-12-q1: Saturn's main rings are about how thick? | 10 m to 1 km | 1000 km | 1 mm | 100 000 km | Extremely thin.
+M2#physics-u48-12-q2: Shepherd moons: | Confine narrow rings | Destroy rings | Are made of rings | Orbit far outside | Gravitational nudging.
 
 ## Moons and tidal heating
 S: Moons are shaped by tidal forces from their planets, which lock their rotation, alter their orbits and, through flexing, generate internal heat. Tidal heating powers Io's volcanoes and keeps oceans liquid inside Europa and Enceladus.
@@ -346,8 +346,8 @@ K: Tides lock rotations, evolve orbits and, with forced eccentricity, heat moons
 !: The Moon dominates Earth's tides even though the Sun's pull is stronger, because tidal force depends on 1/d^{3}.
 Q: What maintains Io's eccentricity? | The Laplace resonance with Europa and Ganymede.
 Q: Why does the Moon recede from Earth? | Tidal friction transfers Earth's rotational angular momentum to the Moon's orbit.
-M1: Tidal force scales with distance as: | 1/d^{3} | 1/d^{2} | 1/d | d | Gradient of gravity.
-M2: Enceladus's plumes come from: | A subsurface ocean | Surface volcanoes of lava | Rings | Solar wind | Cassini sampled them.
+M1#physics-u48-13-q1: Tidal force scales with distance as: | 1/d^{3} | 1/d^{2} | 1/d | d | Gradient of gravity.
+M2#physics-u48-13-q2: Enceladus's plumes come from: | A subsurface ocean | Surface volcanoes of lava | Rings | Solar wind | Cassini sampled them.
 
 ## Comets and asteroids
 S: Comets and asteroids are leftover building blocks of the solar system. Asteroids are rocky or metallic, mostly between Mars and Jupiter; comets are icy bodies from the distant Kuiper belt and Oort cloud that grow tails when they approach the Sun.
@@ -374,8 +374,8 @@ K: Asteroids and comets are primitive leftovers; resonances sculpt the asteroid 
 !: The asteroid belt is mostly empty space; spacecraft pass through it without danger.
 Q: What are Kirkwood gaps? | Gaps in the asteroid belt at orbital resonances with Jupiter.
 Q: What did DART demonstrate? | That a kinetic impact can change an asteroid's orbit.
-M1: A comet's dust tail is pushed by: | Radiation pressure | Solar wind only | Gravity of Jupiter | Magnetic fields | Curved tail.
-M2: Bennu and Ryugu are: | Rubble-pile asteroids | Solid iron | Comets | Moons | Loosely bound.
+M1#physics-u48-14-q1: A comet's dust tail is pushed by: | Radiation pressure | Solar wind only | Gravity of Jupiter | Magnetic fields | Curved tail.
+M2#physics-u48-14-q2: Bennu and Ryugu are: | Rubble-pile asteroids | Solid iron | Comets | Moons | Loosely bound.
 
 ## Meteorites and impact physics
 S: Meteorites are pieces of asteroids, the Moon and Mars that survive passage through the atmosphere. Impact physics explains how collisions at kilometres per second shape planetary surfaces, cause mass extinctions and deliver material between worlds.
@@ -403,8 +403,8 @@ K: High impact speeds make even small objects release enormous energy; crater fo
 !: Small asteroids often explode in the air rather than reaching the ground; airbursts can still cause widespread damage.
 Q: What do Widmanstätten patterns indicate? | Very slow cooling of iron–nickel meteorites inside planetesimal cores.
 Q: What links Chicxulub to the dinosaur extinction? | Its age matches the extinction, with an iridium layer and shocked quartz worldwide.
-M1: 1 kiloton of TNT equals: | 4.18 × 10^{12} J | 4.18 × 10^{9} J | 1 MJ | 10^{15} J | Standard definition.
-M2: Chelyabinsk's damage was mostly from: | The airburst shock wave | A crater | A tsunami | Fire | Shattered windows.
+M1#physics-u48-15-q1: 1 kiloton of TNT equals: | 4.18 × 10^{12} J | 4.18 × 10^{9} J | 1 MJ | 10^{15} J | Standard definition.
+M2#physics-u48-15-q2: Chelyabinsk's damage was mostly from: | The airburst shock wave | A crater | A tsunami | Fire | Shattered windows.
 
 ## Planetary formation
 S: Planets form in discs of gas and dust around young stars. Dust grows into pebbles and planetesimals, which grow into planets; giant planets must capture gas before the disc disperses within a few million years.
@@ -430,8 +430,8 @@ K: Planets grow from dust via pebbles and planetesimals; giant planets race to c
 !: Planets don't necessarily form where they are found today; migration can move them large distances.
 Q: What is the snow line? | The distance beyond which water ice condenses in a protoplanetary disc.
 Q: What is the streaming instability? | A gas–dust interaction that concentrates pebbles into dense clumps that collapse into planetesimals.
-M1: Protoplanetary discs typically last: | 1–10 million years | 1 billion years | 1000 years | Forever | Gas dispersal.
-M2: Hot Jupiters are explained by: | Inward migration | Formation in place always | Captured stars | Tidal heating only | Disc-driven migration.
+M1#physics-u48-16-q1: Protoplanetary discs typically last: | 1–10 million years | 1 billion years | 1000 years | Forever | Gas dispersal.
+M2#physics-u48-16-q2: Hot Jupiters are explained by: | Inward migration | Formation in place always | Captured stars | Tidal heating only | Disc-driven migration.
 
 ## Exoplanet detection
 S: Thousands of planets have been found orbiting other stars, using methods that detect tiny wobbles, dips in starlight, gravitational lensing and direct images. Each method favours different kinds of planets and reveals different properties.
@@ -458,8 +458,8 @@ K: Transits give radius, radial velocity gives mass, and together with spectrosc
 !: Each method has selection biases; hot, large planets close to their stars are easiest to find, so raw counts don't reflect true populations.
 Q: What does the transit method measure? | The planet's radius relative to its star, from the depth of the dip.
 Q: Why does radial velocity give only M sin i? | Only the line-of-sight component of the star's motion is measured.
-M1: Microlensing is especially good at finding: | Cold planets far from stars and free-floating planets | Hot Jupiters only | Planets around nearby bright stars only | Moons | Lens events are independent of planet brightness.
-M2: JWST characterises atmospheres by: | Transmission spectroscopy | Microlensing | Astrometry | Radar | Starlight filtered through atmosphere.
+M1#physics-u48-17-q1: Microlensing is especially good at finding: | Cold planets far from stars and free-floating planets | Hot Jupiters only | Planets around nearby bright stars only | Moons | Lens events are independent of planet brightness.
+M2#physics-u48-17-q2: JWST characterises atmospheres by: | Transmission spectroscopy | Microlensing | Astrometry | Radar | Starlight filtered through atmosphere.
 
 ## Orbital dynamics
 S: Orbital dynamics describes the motion of planets, moons and spacecraft under gravity. Kepler's laws, energy conservation and orbital manoeuvres let mission designers send probes across the solar system with remarkable precision.
@@ -486,8 +486,8 @@ K: Kepler's laws and vis-viva describe orbits; Hohmann transfers and gravity ass
 !: To catch up with something ahead in the same orbit, you slow down (drop to a lower, faster orbit), which is counterintuitive.
 Q: What is a Hohmann transfer? | A two-burn elliptical transfer between circular coplanar orbits, minimising Δv.
 Q: Why is JWST at Sun–Earth L2? | It keeps Sun, Earth and Moon on one side for shielding, with a stable thermal environment.
-M1: Escape speed is how many times circular speed? | √2 | 2 | 1 | π | v_{esc} = √2 v_{c}.
-M2: Gravity assists change a spacecraft's speed relative to: | The Sun | The planet | Nothing | Light | Exchange with planet's orbital motion.
+M1#physics-u48-18-q1: Escape speed is how many times circular speed? | √2 | 2 | 1 | π | v_{esc} = √2 v_{c}.
+M2#physics-u48-18-q2: Gravity assists change a spacecraft's speed relative to: | The Sun | The planet | Nothing | Light | Exchange with planet's orbital motion.
 
 ## Spacecraft propulsion physics
 S: Spacecraft propulsion changes velocity by expelling mass at high speed. The rocket equation shows why fuel requirements grow exponentially with Δv, driving the search for high-exhaust-velocity engines like ion drives and nuclear propulsion.
@@ -514,8 +514,8 @@ K: Δv depends logarithmically on mass ratio and linearly on exhaust speed; high
 !: High specific impulse isn't everything; launching from Earth needs high thrust, which only chemical (or nuclear) rockets provide.
 Q: What is specific impulse? | Exhaust velocity divided by standard gravity, measuring propellant efficiency.
 Q: Why use multiple stages? | Dropping empty tanks and engines improves the mass ratio of later stages.
-M1: Hydrogen/LOX engines have I_{sp} around: | 450 s | 3000 s | 100 s | 900 s | High chemical efficiency.
-M2: Solar sails get thrust from: | Photon momentum | Solar wind ions mainly | Fuel | Magnetic fields | 2I/c for reflection.
+M1#physics-u48-19-q1: Hydrogen/LOX engines have I_{sp} around: | 450 s | 3000 s | 100 s | 900 s | High chemical efficiency.
+M2#physics-u48-19-q2: Solar sails get thrust from: | Photon momentum | Solar wind ions mainly | Fuel | Magnetic fields | 2I/c for reflection.
 
 ## Remote sensing
 S: Remote sensing gathers information about planets from a distance, using reflected sunlight, emitted heat, radar and other signals. Earth observation satellites monitor climate, weather, land use and disasters; planetary missions map surfaces and atmospheres.
@@ -541,8 +541,8 @@ K: Remote sensing uses reflected, emitted and active signals across the spectrum
 !: Clouds block visible and IR sensing; radar and microwave instruments are needed for all-weather observations.
 Q: What does InSAR measure? | Tiny ground deformations by comparing radar phase between passes.
 Q: Why does healthy vegetation reflect strongly in near-infrared? | Leaf cell structure scatters NIR light strongly while chlorophyll absorbs red.
-M1: GRACE-FO measures: | Changes in Earth's gravity field | Sea surface temperature | Lightning | Ozone only | Mass redistribution.
-M2: SAR works: | Day and night through clouds | Only on clear days | Only at night | Only underwater | Active microwaves.
+M1#physics-u48-20-q1: GRACE-FO measures: | Changes in Earth's gravity field | Sea surface temperature | Lightning | Ozone only | Mass redistribution.
+M2#physics-u48-20-q2: SAR works: | Day and night through clouds | Only on clear days | Only at night | Only underwater | Active microwaves.
 
 ## Planetary exploration instrumentation
 S: Planetary missions carry instruments that measure composition, structure, fields and environment on other worlds. They must be small, light, power-efficient and robust to radiation, temperature extremes and launch vibration, often working millions of kilometres from home.
@@ -570,8 +570,8 @@ K: Instruments measure composition, structure and fields remotely or in situ, co
 !: Light-time delays prevent real-time control; rovers and landers must operate autonomously.
 Q: What does LIBS do on Mars rovers? | A laser vaporises rock to make plasma whose emission spectrum reveals composition.
 Q: Why do outer-planet missions often use RTGs? | Sunlight is too weak for practical solar power far from the Sun (though Juno used large panels).
-M1: Neutron spectrometers detect: | Hydrogen (water ice) below the surface | Magnetic fields | Visible colour | Sound | Neutron moderation by hydrogen.
-M2: One-way light time to Mars ranges from about: | 4 to 24 minutes | 1 second | 1 hour to 1 day | 1 to 2 seconds | Distance varies.
+M1#physics-u48-21-q1: Neutron spectrometers detect: | Hydrogen (water ice) below the surface | Magnetic fields | Visible colour | Sound | Neutron moderation by hydrogen.
+M2#physics-u48-21-q2: One-way light time to Mars ranges from about: | 4 to 24 minutes | 1 second | 1 hour to 1 day | 1 to 2 seconds | Distance varies.
 
 ## Habitability and astrobiology interfaces
 S: Astrobiology asks where life could exist beyond Earth and how to detect it. Physics sets the conditions: liquid water, energy sources, protection from radiation and stable climates, while spectroscopy searches for biosignatures in alien atmospheres.
@@ -595,6 +595,6 @@ K: Habitability needs liquid water, energy and stability; biosignatures must be 
 !: Being in the habitable zone doesn't make a planet habitable; atmosphere, magnetic field and history matter.
 Q: What is the habitable zone? | The range of orbital distances where liquid water could exist on a planet's surface.
 Q: What is a biosignature? | An observable feature, such as gas combinations, indicating the presence of life.
-M1: The habitable zone moves outward for: | More luminous stars | Smaller stars | Colder planets | Moons only | d ∝ √L.
-M2: A strong biosignature combination is: | O_{2} with CH_{4} | CO_{2} alone | H_{2} alone | N_{2} alone | Chemical disequilibrium.
+M1#physics-u48-22-q1: The habitable zone moves outward for: | More luminous stars | Smaller stars | Colder planets | Moons only | d ∝ √L.
+M2#physics-u48-22-q2: A strong biosignature combination is: | O_{2} with CH_{4} | CO_{2} alone | H_{2} alone | N_{2} alone | Chemical disequilibrium.
 `;

@@ -21,7 +21,11 @@ For each lesson: the lesson text with line numbers, its `REQ` lines from the pac
    - `Cn=open`: the lesson relies on it and handles it acceptably, but doesn't fully resolve it. An expert will check it.
    The engine verifies your `L<n>`, the stakes and the citations, and still sends high-stakes conflicts to an expert, so judge only what's on the page.
 
-Be strict about accuracy, coverage and questions. Don't fail a lesson for style or length.
+9. **Flashcards** (`CARD`). Across the lesson's `Q:` lines, each card tests one thing worth remembering for the requirements: a definition, an explanation, a comparison, a process step, an application or exam knowledge. Fail a card that's trivial, ambiguous, answerable from its own wording, a near-repeat of another card, or not supported by the brief. A count alone never passes.
+10. **Diagrams** (`DIAG`). Each `D:`, `DIA:` and `DNEED:` diagram must teach something this lesson needs: it shows a structure, process, comparison, quantity or relationship the text relies on, at the right level, with accurate labels. The request describes each library diagram on a `DIAG` line. It must show something the text alone explains less well (a sentence that says the same thing is better than a picture of the sentence), and it belongs in the section whose idea it shows. The three-diagram standard is for the lesson as a whole, not for each section: never pass a diagram added to reach the count. Fail a diagram that's decorative, wrong, off-topic, a repeat of another (including the same diagram redrawn, relabelled or cropped), or missing a text alternative that teaches (for `DIA:` and `DNEED:`, the description must say what the learner should see and why).
+11. **Teaching quality** (`TEACH`). The lesson teaches understanding rather than listing facts: sections come in a logical order and each builds on the last; each section introduces a manageable amount that's new (about one idea), not several concepts in one block; explanations suit the level; an example comes before the learner is asked to apply an idea; questions rise in difficulty; the brief's misconceptions are actively taught against, not just named. Fail only a real defect a learner would feel, naming the line where it starts.
+
+Be strict about accuracy, coverage, questions, flashcards, diagrams and teaching quality. Don't fail a lesson for style or length alone.
 
 ## Output
 

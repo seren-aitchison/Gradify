@@ -18,8 +18,8 @@ X: Average KE of a nitrogen molecule's translation at 300 K?
 !: Temperature is not heat. A bath of warm water contains more internal energy than a red-hot spark, though the spark is hotter.
 Q: What is thermal equilibrium? | The state in which bodies in thermal contact exchange no net energy, because they're at the same temperature.
 Q: How is temperature defined thermodynamically? | 1/T = ∂S/∂U, the rate of change of entropy with energy.
-M1: 25 °C in kelvin is: | 298 K | 248 K | 25 K | 273 K | +273.15.
-M2: Two bodies in thermal equilibrium must have the same: | Temperature | Internal energy | Heat capacity | Mass | Defines equilibrium.
+M1#physics-u12-01-q1: 25 °C in kelvin is: | 298 K | 248 K | 25 K | 273 K | +273.15.
+M2#physics-u12-01-q2: Two bodies in thermal equilibrium must have the same: | Temperature | Internal energy | Heat capacity | Mass | Defines equilibrium.
 
 ## Zeroth law of thermodynamics
 S: The zeroth law says that if two systems are each in thermal equilibrium with a third, they're in equilibrium with each other. It makes temperature a meaningful, measurable quantity.
@@ -37,8 +37,8 @@ X: Why must a thermometer be small compared with what it measures?
 !: Thermal equilibrium means no net heat flow, not no microscopic energy exchange: molecules still collide constantly.
 Q: State the zeroth law. | If two systems are each in thermal equilibrium with a third, they're in thermal equilibrium with each other.
 Q: Why is the zeroth law needed for thermometers? | It ensures that a thermometer's reading can compare the temperatures of separate bodies.
-M1: The zeroth law establishes: | Temperature as a well-defined property | Energy conservation | Entropy increase | Absolute zero | It's the basis of temperature.
-M2: Different thermometric properties (mercury, resistance) give scales that: | Agree only at fixed points in general | Always agree | Never agree | Agree only at 0 K | Different nonlinearities.
+M1#physics-u12-02-q1: The zeroth law establishes: | Temperature as a well-defined property | Energy conservation | Entropy increase | Absolute zero | It's the basis of temperature.
+M2#physics-u12-02-q2: Different thermometric properties (mercury, resistance) give scales that: | Agree only at fixed points in general | Always agree | Never agree | Agree only at 0 K | Different nonlinearities.
 
 ## Heat and internal energy
 S: Internal energy is the total microscopic energy of a system's particles. Heat is energy transferred because of a temperature difference; work is energy transferred by other means. Heat and work are processes, not things a system contains.
@@ -58,8 +58,8 @@ X: A 1 cm glass window (A = 2 m^{2}) separates 20 °C inside from 0 °C outside.
 !: "Heat content" is a misleading phrase. A body has internal energy; heat is energy crossing a boundary.
 Q: What's the difference between heat and internal energy? | Internal energy is a property of a system; heat is energy transferred because of a temperature difference.
 Q: What did Joule's paddle-wheel experiment show? | Mechanical work and heat are equivalent forms of energy transfer.
-M1: Which is a function of state? | Internal energy | Heat | Work | All of these | Q and W depend on the path.
-M2: Thermal conduction rate through a slab is proportional to: | Area × temperature difference / thickness | Thickness | Temperature only | Mass | Fourier's law.
+M1#physics-u12-03-q1: Which is a function of state? | Internal energy | Heat | Work | All of these | Q and W depend on the path.
+M2#physics-u12-03-q2: Thermal conduction rate through a slab is proportional to: | Area × temperature difference / thickness | Thickness | Temperature only | Mass | Fourier's law.
 
 ## Specific heat capacity
 S: Specific heat capacity is the energy needed to raise the temperature of 1 kg of a substance by 1 K. Water's unusually high value moderates climates and makes it an excellent coolant.
@@ -82,8 +82,8 @@ D: phys-u12-kettle-heating
 !: Specific heat capacity isn't constant; it changes with temperature, especially at low temperatures.
 Q: Why does water moderate coastal climates? | Its high specific heat capacity means it warms and cools slowly.
 Q: Why is c_{p} larger than c_{V} for a gas? | At constant pressure, some heat goes into work as the gas expands.
-M1: Energy to heat 2 kg of aluminium by 10 K: | 18 kJ | 9 kJ | 1.8 kJ | 180 kJ | 2 × 900 × 10.
-M2: The Dulong–Petit law gives the molar heat capacity of solids as: | 3R | (3/2)R | R | (5/2)R | Six quadratic terms per atom.
+M1#physics-u12-04-q1: Energy to heat 2 kg of aluminium by 10 K: | 18 kJ | 9 kJ | 1.8 kJ | 180 kJ | 2 × 900 × 10.
+M2#physics-u12-04-q2: The Dulong–Petit law gives the molar heat capacity of solids as: | 3R | (3/2)R | R | (5/2)R | Six quadratic terms per atom.
 
 ## Latent heat
 S: Latent heat is the energy absorbed or released during a change of phase at constant temperature. It goes into breaking or forming bonds, not raising the temperature, which is why sweating cools you and steam burns badly.
@@ -105,8 +105,8 @@ D: phys-u12-heating-curve
 !: During a phase change, adding heat doesn't raise the temperature; a pan of boiling water stays at 100 °C (at 1 atm) however high the flame.
 Q: What is specific latent heat? | The energy per kg to change phase at constant temperature.
 Q: Why is steam at 100 °C more dangerous than water at 100 °C? | Condensing steam releases a large latent heat onto the skin.
-M1: Energy to melt 2 kg of ice at 0 °C: | 668 kJ | 334 kJ | 4520 kJ | 8.4 kJ | 2 × 334.
-M2: Why does evaporation cool a liquid? | The fastest molecules escape, lowering the average KE of those left | Air is cold | It increases pressure | It adds energy | Latent heat is taken from the liquid.
+M1#physics-u12-05-q1: Energy to melt 2 kg of ice at 0 °C: | 668 kJ | 334 kJ | 4520 kJ | 8.4 kJ | 2 × 334.
+M2#physics-u12-05-q2: Why does evaporation cool a liquid? | The fastest molecules escape, lowering the average KE of those left | Air is cold | It increases pressure | It adds energy | Latent heat is taken from the liquid.
 
 ## Thermal expansion
 S: Most materials expand when heated because their atoms vibrate with larger amplitude in an asymmetric potential, increasing the average spacing. Engineers must allow for it in bridges, railways and precision instruments.
@@ -126,8 +126,8 @@ X: A 500 m steel bridge experiences a 40 K range. How much does it change length
 !: Holes expand too when a plate is heated, as if the hole were made of the same material: heating a metal lid helps loosen it.
 Q: Why do solids expand when heated? | Atoms vibrate with larger amplitude in an asymmetric (anharmonic) potential, so the mean spacing grows.
 Q: Why do lakes freeze from the top? | Water is densest at 4 °C, so colder water and ice float on top.
-M1: A steel rod 1 m long is heated by 100 K. It expands by: | 1.2 mm | 12 mm | 0.12 mm | 1.2 cm | 12 × 10^{-6} × 100.
-M2: A bimetallic strip bends because: | Its two metals have different expansion coefficients | Both metals contract | It's magnetised | It melts | Differential expansion.
+M1#physics-u12-06-q1: A steel rod 1 m long is heated by 100 K. It expands by: | 1.2 mm | 12 mm | 0.12 mm | 1.2 cm | 12 × 10^{-6} × 100.
+M2#physics-u12-06-q2: A bimetallic strip bends because: | Its two metals have different expansion coefficients | Both metals contract | It's magnetised | It melts | Differential expansion.
 
 ## First law of thermodynamics
 S: The first law is energy conservation for thermodynamic systems: the change in internal energy equals the heat supplied to the system minus the work it does. No machine can produce energy from nothing.
@@ -148,8 +148,8 @@ D: phys-u12-first-law
 !: Sign conventions are the main source of error; write the law with the convention you're using and stick to it.
 Q: State the first law of thermodynamics. | ΔU = Q − W: internal energy change equals heat supplied minus work done by the system.
 Q: What happens to an ideal gas's temperature in a free expansion? | It stays the same (no heat, no work, so ΔU = 0).
-M1: In a complete cycle, ΔU = ? | 0 | Q | W | Q + W | U is a state function.
-M2: A gas is compressed adiabatically with 300 J of work done on it. ΔU = ? | +300 J | −300 J | 0 | 600 J | Q = 0; W_{by} = −300.
+M1#physics-u12-07-q1: In a complete cycle, ΔU = ? | 0 | Q | W | Q + W | U is a state function.
+M2#physics-u12-07-q2: A gas is compressed adiabatically with 300 J of work done on it. ΔU = ? | +300 J | −300 J | 0 | 600 J | Q = 0; W_{by} = −300.
 
 ## Work done by thermodynamic systems
 S: A gas does work when it expands against an external pressure. On a pressure–volume diagram, this work is the area under the curve, and it depends on the path taken between two states.
@@ -168,8 +168,8 @@ D: phys-u12-isothermal-work
 !: Work against zero external pressure (free expansion) is zero even if the gas expands a lot.
 Q: How is work represented on a p–V diagram? | As the area under the process curve.
 Q: Why is work path-dependent? | Different paths between the same states enclose different areas on a p–V diagram.
-M1: A gas expands at 2 × 10^{5} Pa from 1 L to 4 L. Work done: | 600 J | 800 J | 200 J | 6000 J | pΔV = 2 × 10^{5} × 3 × 10^{-3}.
-M2: Work done in a constant-volume process is: | Zero | pV | nRT | Maximum | No volume change.
+M1#physics-u12-08-q1: A gas expands at 2 × 10^{5} Pa from 1 L to 4 L. Work done: | 600 J | 800 J | 200 J | 6000 J | pΔV = 2 × 10^{5} × 3 × 10^{-3}.
+M2#physics-u12-08-q2: Work done in a constant-volume process is: | Zero | pV | nRT | Maximum | No volume change.
 
 ## Pressure-volume diagrams
 S: A p–V diagram plots a gas's state as it changes. Each point is a state; each curve is a process. Areas give work, enclosed loops give net work per cycle, and the shapes reveal the kind of process.
@@ -190,8 +190,8 @@ D: phys-u12-pv-rectangle
 !: On p–V diagrams only quasi-static (slow, near-equilibrium) processes can be drawn as lines; rapid irreversible processes have no well-defined path.
 Q: Which way round does an engine cycle go on a p–V diagram? | Clockwise.
 Q: Which curve is steeper through a point: an isotherm or an adiabat? | The adiabat.
-M1: A vertical line on a p–V diagram is: | Isochoric | Isobaric | Isothermal | Adiabatic | Constant volume.
-M2: The net work in a cycle equals: | The enclosed area | Zero always | The area under the top curve | The pressure range | Area of the loop.
+M1#physics-u12-09-q1: A vertical line on a p–V diagram is: | Isochoric | Isobaric | Isothermal | Adiabatic | Constant volume.
+M2#physics-u12-09-q2: The net work in a cycle equals: | The enclosed area | Zero always | The area under the top curve | The pressure range | Area of the loop.
 
 ## Isothermal processes
 S: In an isothermal process the temperature stays constant. For an ideal gas this means internal energy doesn't change, so all the heat absorbed is turned into work (or vice versa).
@@ -212,9 +212,9 @@ P: **Investigate with the lab.** Halve the volume at fixed temperature and watch
 IX: gas
 Q: For an isothermal ideal-gas process, how are Q and W related? | Q = W, since ΔU = 0.
 Q: What law describes an isothermal ideal gas? | Boyle's law, pV = constant.
-M1: A gas is compressed isothermally. Its pressure: | Increases inversely with volume | Stays constant | Decreases | Doubles regardless | pV = constant.
-M2: Isothermal processes require: | Slow change with good thermal contact | No heat flow | Rapid change | Insulation | Heat must flow to maintain T.
-M2: In an isothermal compression of an ideal gas, what stays constant? | The temperature and the product pV | The pressure | The volume | The internal energy only rises | Isothermal means constant temperature, so pV is constant.
+M1#physics-u12-10-q1: A gas is compressed isothermally. Its pressure: | Increases inversely with volume | Stays constant | Decreases | Doubles regardless | pV = constant.
+M2#physics-u12-10-q2: Isothermal processes require: | Slow change with good thermal contact | No heat flow | Rapid change | Insulation | Heat must flow to maintain T.
+M2#physics-u12-10-q3: In an isothermal compression of an ideal gas, what stays constant? | The temperature and the product pV | The pressure | The volume | The internal energy only rises | Isothermal means constant temperature, so pV is constant.
 
 ## Adiabatic processes
 S: In an adiabatic process no heat enters or leaves. Compressing a gas adiabatically heats it; expanding cools it. This explains diesel ignition, cloud formation and why air cools as it rises.
@@ -233,8 +233,8 @@ D: phys-u12-adiabat-isotherm
 !: Adiabatic isn't the same as isothermal: temperature changes even though no heat flows.
 Q: Why does air cool when it rises? | It expands adiabatically as pressure falls, doing work at the expense of internal energy.
 Q: How does a diesel engine ignite its fuel? | Rapid adiabatic compression heats the air above the fuel's ignition temperature.
-M1: In an adiabatic expansion, the gas temperature: | Falls | Rises | Stays constant | Doubles | Work done from internal energy.
-M2: For a monatomic ideal gas, γ = : | 5/3 | 7/5 | 4/3 | 1 | C_{p}/C_{V} = (5/2)/(3/2).
+M1#physics-u12-11-q1: In an adiabatic expansion, the gas temperature: | Falls | Rises | Stays constant | Doubles | Work done from internal energy.
+M2#physics-u12-11-q2: For a monatomic ideal gas, γ = : | 5/3 | 7/5 | 4/3 | 1 | C_{p}/C_{V} = (5/2)/(3/2).
 
 ## Isobaric and isochoric processes
 S: In an isobaric process the pressure is constant; in an isochoric one the volume is constant. Heating at constant pressure does work as the gas expands; heating at constant volume puts all the heat into internal energy.
@@ -256,8 +256,8 @@ D: phys-u12-isobaric-split
 !: Aerosol cans warn against heating because isochoric heating raises pressure in proportion to absolute temperature.
 Q: Why does heating at constant pressure need more heat than at constant volume? | Some of the heat goes into work as the gas expands.
 Q: State Charles's law. | At constant pressure, V/T is constant.
-M1: In an isochoric process the work done is: | Zero | pV | nRΔT | Q | No volume change.
-M2: A sealed can at 300 K and 2 atm is heated to 450 K. New pressure: | 3 atm | 2 atm | 4.5 atm | 1.3 atm | p ∝ T.
+M1#physics-u12-12-q1: In an isochoric process the work done is: | Zero | pV | nRΔT | Q | No volume change.
+M2#physics-u12-12-q2: A sealed can at 300 K and 2 atm is heated to 450 K. New pressure: | 3 atm | 2 atm | 4.5 atm | 1.3 atm | p ∝ T.
 
 ## Heat engines
 S: A heat engine takes heat from a hot source, converts part of it to work, and rejects the rest to a cold sink. The second law forbids converting all the heat to work, so some must always be discarded.
@@ -278,8 +278,8 @@ D: phys-u12-power-station
 !: The "waste" heat isn't a design failure that better engineering can eliminate; the second law requires some.
 Q: Why must a heat engine reject heat? | The second law forbids converting heat entirely into work in a cycle.
 Q: Define the efficiency of a heat engine. | η = W/Q_{h}, the useful work divided by heat taken in.
-M1: An engine takes 1000 J and rejects 700 J. Efficiency: | 30% | 70% | 43% | 100% | W = 300 J.
-M2: Combined-cycle power stations are more efficient because: | They use the exhaust heat of a gas turbine to run a steam turbine | They burn less fuel | They have no cold sink | They break the Carnot limit | Two cycles in series.
+M1#physics-u12-13-q1: An engine takes 1000 J and rejects 700 J. Efficiency: | 30% | 70% | 43% | 100% | W = 300 J.
+M2#physics-u12-13-q2: Combined-cycle power stations are more efficient because: | They use the exhaust heat of a gas turbine to run a steam turbine | They burn less fuel | They have no cold sink | They break the Carnot limit | Two cycles in series.
 
 ## Refrigerators and heat pumps
 S: Refrigerators and heat pumps run a heat engine backwards: work drives heat from a cold place to a hot one. A fridge cools its inside; a heat pump warms a house using heat drawn from cold outside air or ground.
@@ -300,8 +300,8 @@ X: A heat pump moves heat from 0 °C outdoors to 35 °C radiators. Maximum COP?
 !: A fridge with its door open heats the kitchen: it rejects Q_{c} + W, more than it removes.
 Q: What is the coefficient of performance of a heat pump? | Heat delivered divided by work input.
 Q: Why can a heat pump's COP exceed 1? | It moves heat rather than creating it; the heat delivered includes heat taken from outside.
-M1: A fridge removes 300 J using 100 J of work. COP: | 3 | 4 | 0.33 | 1 | Q_{c}/W.
-M2: A heat pump's COP is highest when: | The temperature difference is small | Outside is very cold | Radiators are very hot | It works hardest | Carnot COP ∝ 1/ΔT.
+M1#physics-u12-14-q1: A fridge removes 300 J using 100 J of work. COP: | 3 | 4 | 0.33 | 1 | Q_{c}/W.
+M2#physics-u12-14-q2: A heat pump's COP is highest when: | The temperature difference is small | Outside is very cold | Radiators are very hot | It works hardest | Carnot COP ∝ 1/ΔT.
 
 ## Thermal efficiency
 S: Thermal efficiency measures how much of the heat put into an engine becomes useful work. It's limited fundamentally by the Carnot bound and practically by friction, heat leaks, incomplete combustion and finite-rate heat transfer.
@@ -322,8 +322,8 @@ X: A plant runs between 838 K and 298 K. Compare Carnot and Curzon–Ahlborn eff
 !: Efficiency figures for electric cars and power stations aren't comparable without including the efficiency of generating the electricity.
 Q: What is the Curzon–Ahlborn efficiency? | The efficiency at maximum power for an endoreversible engine: 1 − √(T_{c}/T_{h}).
 Q: Why can't real engines reach Carnot efficiency? | Carnot efficiency requires infinitely slow reversible operation, giving zero power; friction and heat leaks also reduce it.
-M1: Raising the hot reservoir temperature: | Increases maximum efficiency | Decreases it | Has no effect | Makes η = 1 | 1 − T_{c}/T_{h}.
-M2: Combined heat and power improves overall efficiency by: | Using the rejected heat for heating | Exceeding the Carnot limit | Removing the cold sink | Burning more fuel | Waste heat becomes useful.
+M1#physics-u12-15-q1: Raising the hot reservoir temperature: | Increases maximum efficiency | Decreases it | Has no effect | Makes η = 1 | 1 − T_{c}/T_{h}.
+M2#physics-u12-15-q2: Combined heat and power improves overall efficiency by: | Using the rejected heat for heating | Exceeding the Carnot limit | Removing the cold sink | Burning more fuel | Waste heat becomes useful.
 
 ## Second law of thermodynamics
 S: The second law says heat flows spontaneously only from hot to cold, and no cyclic process can turn heat entirely into work. Equivalently, the entropy of an isolated system never decreases. It gives time its direction.
@@ -344,8 +344,8 @@ X: Why can't a ship power itself by extracting heat from the ocean and turning i
 !: Local entropy can decrease (living things, fridges) if more entropy is produced elsewhere.
 Q: State the Clausius form of the second law. | Heat can't flow from cold to hot by itself, with no other effect.
 Q: Is the second law absolute? | It's statistical: decreases are possible but astronomically unlikely for large systems.
-M1: Which is impossible? | An engine converting all heat from one reservoir into work in a cycle | A heat pump | A fridge cooling below room temperature | An engine with 30% efficiency | Kelvin–Planck.
-M2: A living cell decreases its own entropy. This is allowed because: | It increases the entropy of its surroundings more | The second law doesn't apply to life | It's not a closed system so entropy can't be defined | Cells are reversible | Total entropy still increases.
+M1#physics-u12-16-q1: Which is impossible? | An engine converting all heat from one reservoir into work in a cycle | A heat pump | A fridge cooling below room temperature | An engine with 30% efficiency | Kelvin–Planck.
+M2#physics-u12-16-q2: A living cell decreases its own entropy. This is allowed because: | It increases the entropy of its surroundings more | The second law doesn't apply to life | It's not a closed system so entropy can't be defined | Cells are reversible | Total entropy still increases.
 
 ## Entropy
 S: Entropy measures how many microscopic arrangements correspond to a system's macroscopic state, or equivalently how much energy is dispersed and unavailable for work. Isolated systems evolve towards maximum entropy.
@@ -366,8 +366,8 @@ X: 1 kg of ice melts at 273 K. Entropy change?
 !: "Disorder" is a loose description; the precise meaning is the number of accessible microstates (or spread of energy).
 Q: State Boltzmann's entropy formula. | S = k_{B} ln Ω.
 Q: What is Landauer's principle? | Erasing a bit of information dissipates at least k_{B}T ln 2 of heat.
-M1: Heat Q flows from a hot body at T_{h} to a cold body at T_{c}. Total entropy change: | Q/T_{c} − Q/T_{h} > 0 | Zero | Negative | Q/T_{h} | The cold body gains more entropy than the hot loses.
-M2: The entropy change when 2 mol of ideal gas double their volume isothermally: | 2R ln 2 | R ln 2 | 0 | 2R | nR ln(V_{2}/V_{1}).
+M1#physics-u12-17-q1: Heat Q flows from a hot body at T_{h} to a cold body at T_{c}. Total entropy change: | Q/T_{c} − Q/T_{h} > 0 | Zero | Negative | Q/T_{h} | The cold body gains more entropy than the hot loses.
+M2#physics-u12-17-q2: The entropy change when 2 mol of ideal gas double their volume isothermally: | 2R ln 2 | R ln 2 | 0 | 2R | nR ln(V_{2}/V_{1}).
 
 ## Reversible and irreversible processes
 S: A reversible process can be undone exactly, leaving no change anywhere; it happens through a sequence of equilibrium states and creates no entropy. All real processes are irreversible to some degree.
@@ -389,8 +389,8 @@ X: Find the entropy change of a gas in free expansion from V to 2V (1 mol).
 !: Q = 0 doesn't imply ΔS = 0 for an irreversible process; dS = δQ/T only holds for reversible heat.
 Q: What makes a process reversible? | It proceeds through equilibrium states with no dissipation, so it can be undone with no net change anywhere.
 Q: How do you calculate ΔS for an irreversible process? | Use any reversible path between the same initial and final states.
-M1: Which is irreversible? | Friction heating a block | Very slow isothermal expansion | An ideal Carnot cycle | Infinitely slow compression | Dissipation.
-M2: In a reversible process, total entropy of system plus surroundings: | Stays constant | Increases | Decreases | Is undefined | No entropy generated.
+M1#physics-u12-18-q1: Which is irreversible? | Friction heating a block | Very slow isothermal expansion | An ideal Carnot cycle | Infinitely slow compression | Dissipation.
+M2#physics-u12-18-q2: In a reversible process, total entropy of system plus surroundings: | Stays constant | Increases | Decreases | Is undefined | No entropy generated.
 
 ## Carnot cycle
 S: The Carnot cycle is the ideal reversible engine: two isothermal and two adiabatic steps between a hot and a cold reservoir. No engine working between the same temperatures can be more efficient.
@@ -409,8 +409,8 @@ D: phys-u12-carnot-cycle
 !: Use kelvin, not Celsius, in Carnot's formula.
 Q: What are the four steps of the Carnot cycle? | Isothermal expansion, adiabatic expansion, isothermal compression, adiabatic compression.
 Q: State Carnot's theorem. | No engine operating between two reservoirs can be more efficient than a reversible one, and all reversible engines between them are equally efficient.
-M1: Carnot efficiency between 400 K and 300 K: | 25% | 75% | 33% | 100% | 1 − 300/400.
-M2: To reach 100% Carnot efficiency you'd need: | A cold reservoir at 0 K | Infinite T_{h} only | No friction only | A larger engine | 1 − T_{c}/T_{h} = 1 requires T_{c} = 0.
+M1#physics-u12-19-q1: Carnot efficiency between 400 K and 300 K: | 25% | 75% | 33% | 100% | 1 − 300/400.
+M2#physics-u12-19-q2: To reach 100% Carnot efficiency you'd need: | A cold reservoir at 0 K | Infinite T_{h} only | No friction only | A larger engine | 1 − T_{c}/T_{h} = 1 requires T_{c} = 0.
 
 ## Thermodynamic potentials
 S: Thermodynamic potentials (U, H, F, G) are energy-like state functions, each natural for different controlled conditions. The right potential tells you the useful work available and the direction of spontaneous change.
@@ -433,8 +433,8 @@ X: From F = −k_{B}T ln Z, how do you get pressure?
 !: Each potential is useful only with its natural variables held fixed; using G for a constant-volume process gives the wrong criterion.
 Q: Which potential is minimised at constant temperature and pressure? | The Gibbs free energy G.
 Q: How are the potentials related mathematically? | By Legendre transformations.
-M1: Helmholtz free energy is: | U − TS | H − TS | U + pV | U − pV | Definition.
-M2: The partition function gives F through: | F = −k_{B}T ln Z | F = k_{B}T Z | F = ln Z | F = −Z/k_{B}T | Bridge between statistical and thermal physics.
+M1#physics-u12-20-q1: Helmholtz free energy is: | U − TS | H − TS | U + pV | U − pV | Definition.
+M2#physics-u12-20-q2: The partition function gives F through: | F = −k_{B}T ln Z | F = k_{B}T Z | F = ln Z | F = −Z/k_{B}T | Bridge between statistical and thermal physics.
 
 ## Enthalpy
 S: Enthalpy H = U + pV is the energy-like quantity whose change equals the heat absorbed at constant pressure. Chemists use it for reaction heats, engineers for flowing fluids in turbines and refrigerators.
@@ -454,8 +454,8 @@ X: Combustion of methane: ΔH = −890 kJ mol^{-1}. Heat from burning 1 kg?
 !: Enthalpy isn't "heat content"; ΔH equals heat only for constant-pressure processes with only pV work.
 Q: What is enthalpy? | H = U + pV; its change equals the heat absorbed at constant pressure.
 Q: What is conserved in a throttling process? | Enthalpy.
-M1: An exothermic reaction has: | ΔH < 0 | ΔH > 0 | ΔH = 0 | ΔS = 0 | Heat released.
-M2: Helium only cools on Joule–Thomson expansion below about: | 40 K | 300 K | 620 K | 4 K | Its inversion temperature is low.
+M1#physics-u12-21-q1: An exothermic reaction has: | ΔH < 0 | ΔH > 0 | ΔH = 0 | ΔS = 0 | Heat released.
+M2#physics-u12-21-q2: Helium only cools on Joule–Thomson expansion below about: | 40 K | 300 K | 620 K | 4 K | Its inversion temperature is low.
 
 ## Helmholtz free energy
 S: The Helmholtz free energy F = U − TS is the maximum work a system can do at constant temperature. At fixed temperature and volume, systems evolve to minimise F, balancing low energy against high entropy.
@@ -475,8 +475,8 @@ X: Why does a stretched rubber band contract when heated (unlike most materials)
 !: "Free" means available for work, not costless.
 Q: What does −ΔF represent at constant temperature? | The maximum work obtainable from the system.
 Q: Why does a rubber band's tension increase with temperature? | Its elasticity is entropic: tension ∝ T.
-M1: At fixed T and V, equilibrium minimises: | F | G | H | S | Helmholtz.
-M2: High temperature favours states with: | High entropy | Low entropy | Low energy only | Zero energy | −TS dominates.
+M1#physics-u12-22-q1: At fixed T and V, equilibrium minimises: | F | G | H | S | Helmholtz.
+M2#physics-u12-22-q2: High temperature favours states with: | High entropy | Low entropy | Low energy only | Zero energy | −TS dominates.
 
 ## Gibbs free energy
 S: The Gibbs free energy G = H − TS decides whether a process happens spontaneously at constant temperature and pressure, the conditions of most chemistry and biology. Reactions go downhill in G.
@@ -499,8 +499,8 @@ D: phys-u12-gibbs-melting
 !: ΔG < 0 tells you a reaction can happen, not how fast. Diamond turning into graphite is spontaneous but immeasurably slow.
 Q: What sign of ΔG means a reaction is spontaneous? | Negative.
 Q: How is ΔG related to cell voltage? | ΔG = −nFE.
-M1: A reaction with ΔH > 0 and ΔS > 0 is spontaneous: | At high temperature | At low temperature | Never | Always | −TΔS must outweigh ΔH.
-M2: ΔG° = −RT ln K. If K > 1, ΔG° is: | Negative | Positive | Zero | Undefined | Products favoured.
+M1#physics-u12-23-q1: A reaction with ΔH > 0 and ΔS > 0 is spontaneous: | At high temperature | At low temperature | Never | Always | −TΔS must outweigh ΔH.
+M2#physics-u12-23-q2: ΔG° = −RT ln K. If K > 1, ΔG° is: | Negative | Positive | Zero | Undefined | Products favoured.
 
 ## Chemical and phase equilibrium
 S: At equilibrium, matter has no tendency to move between phases or react further: each species has the same chemical potential everywhere it can go. This sets boiling points, solubility, osmotic pressure and reaction yields.
@@ -520,8 +520,8 @@ X: Osmotic pressure of 0.15 mol L^{-1} NaCl (two ions) at 310 K?
 !: Equilibrium is dynamic: molecules still cross between phases, at equal rates.
 Q: What is chemical potential? | The change in Gibbs free energy per mole of a species added, at constant T and p.
 Q: State the Gibbs phase rule. | F = C − P + 2.
-M1: At water's triple point, the degrees of freedom are: | 0 | 1 | 2 | 3 | Fixed T and p.
-M2: Salt is spread on icy roads because it: | Lowers the freezing point of water | Raises it | Absorbs heat | Reacts with ice | Colligative effect.
+M1#physics-u12-24-q1: At water's triple point, the degrees of freedom are: | 0 | 1 | 2 | 3 | Fixed T and p.
+M2#physics-u12-24-q2: Salt is spread on icy roads because it: | Lowers the freezing point of water | Raises it | Absorbs heat | Reacts with ice | Colligative effect.
 
 ## Maxwell relations
 S: Maxwell relations are equalities between partial derivatives of thermodynamic variables, following from the potentials being state functions. They let you calculate hard-to-measure quantities, like entropy changes, from easy ones like p, V and T.
@@ -541,8 +541,8 @@ X: Show U of an ideal gas doesn't depend on V.
 !: Always note which variable is held constant; the same derivative with a different constant is a different quantity.
 Q: What makes Maxwell relations true? | Thermodynamic potentials are state functions, so their mixed second derivatives are equal.
 Q: What does (∂S/∂V)_{T} = (∂p/∂T)_{V} let you do? | Find entropy changes from measurable p–V–T data.
-M1: Maxwell relations come from: | Equality of mixed partial derivatives | The first law only | Experiment | Statistical mechanics only | Exact differentials.
-M2: For an ideal gas, (∂U/∂V)_{T} = : | 0 | p | nR | T | Internal energy depends only on T.
+M1#physics-u12-25-q1: Maxwell relations come from: | Equality of mixed partial derivatives | The first law only | Experiment | Statistical mechanics only | Exact differentials.
+M2#physics-u12-25-q2: For an ideal gas, (∂U/∂V)_{T} = : | 0 | p | nR | T | Internal energy depends only on T.
 
 ## Third law of thermodynamics
 S: The third law says the entropy of a perfect crystal approaches zero as the temperature approaches absolute zero, and that absolute zero can't be reached in a finite number of steps.
@@ -562,8 +562,8 @@ X: Why do coolest lab temperatures approach but never reach 0 K?
 !: Absolute zero doesn't mean zero energy: quantum zero-point motion remains.
 Q: State the third law. | The entropy of a perfect crystal approaches zero as T approaches 0 K, and 0 K can't be reached in finitely many steps.
 Q: Why do heat capacities vanish as T → 0? | Otherwise entropy would diverge; quantum levels freeze out.
-M1: The record lowest temperatures reached are about: | Tens of picokelvin | 1 K | 1 mK | Exactly 0 K | In atom traps and nuclear spin systems.
-M2: Ice has residual entropy at 0 K because: | Hydrogen positions have many possible arrangements | It's not crystalline | It contains air | The third law fails | Frozen-in disorder.
+M1#physics-u12-26-q1: The record lowest temperatures reached are about: | Tens of picokelvin | 1 K | 1 mK | Exactly 0 K | In atom traps and nuclear spin systems.
+M2#physics-u12-26-q2: Ice has residual entropy at 0 K because: | Hydrogen positions have many possible arrangements | It's not crystalline | It contains air | The third law fails | Frozen-in disorder.
 
 ## Thermodynamic cycles
 S: Practical engines and refrigerators follow particular cycles chosen for their working fluid and hardware. Comparing them with the Carnot ideal shows where efficiency is lost.
@@ -584,8 +584,8 @@ D: phys-u12-otto-cycle
 !: Raising the compression ratio in petrol engines is limited by knocking (premature ignition), not by thermodynamics.
 Q: What determines ideal Otto cycle efficiency? | The compression ratio (and γ): η = 1 − r^{1−γ}.
 Q: Which cycle do steam power stations use? | The Rankine cycle.
-M1: Jet engines run on which cycle? | Brayton | Otto | Diesel | Rankine | Gas turbine.
-M2: Stirling engines can approach Carnot efficiency because: | Heat exchange is isothermal with a regenerator | They have no moving parts | They use steam | They're very fast | Reversible isothermal heat transfer.
+M1#physics-u12-27-q1: Jet engines run on which cycle? | Brayton | Otto | Diesel | Rankine | Gas turbine.
+M2#physics-u12-27-q2: Stirling engines can approach Carnot efficiency because: | Heat exchange is isothermal with a regenerator | They have no moving parts | They use steam | They're very fast | Reversible isothermal heat transfer.
 
 ## Equations of state
 S: An equation of state relates pressure, volume and temperature (and amount) for a substance. The ideal gas law works for dilute gases; real substances need corrections for molecular size and attraction.
@@ -612,9 +612,9 @@ P: **Investigate with the lab.** Change volume and temperature in turn and check
 IX: gas
 Q: What do the van der Waals constants a and b represent? | a: intermolecular attraction; b: the volume occupied by molecules.
 Q: What is the compressibility factor? | Z = pV/(nRT), equal to 1 for an ideal gas.
-M1: An ideal gas obeys: | pV = nRT | pV^{γ} = constant always | p = ρg | pV = 0 | Definition.
-M2: Real gases deviate most from ideal behaviour at: | High pressure and low temperature | Low pressure and high temperature | Room conditions | Vacuum | Molecules close together and slow.
-M2: A fixed mass of ideal gas is heated from 300 K to 600 K at constant volume. What happens to its pressure? | It doubles | It halves | It stays the same | It rises by 300 Pa | p/T is constant at fixed volume, so doubling T doubles p.
+M1#physics-u12-28-q1: An ideal gas obeys: | pV = nRT | pV^{γ} = constant always | p = ρg | pV = 0 | Definition.
+M2#physics-u12-28-q2: Real gases deviate most from ideal behaviour at: | High pressure and low temperature | Low pressure and high temperature | Room conditions | Vacuum | Molecules close together and slow.
+M2#physics-u12-28-q3: A fixed mass of ideal gas is heated from 300 K to 600 K at constant volume. What happens to its pressure? | It doubles | It halves | It stays the same | It rises by 300 Pa | p/T is constant at fixed volume, so doubling T doubles p.
 
 ## Critical points
 S: A critical point is where the distinction between two phases disappears: above the critical temperature, liquid and gas merge into one supercritical fluid. Near critical points, matter shows universal behaviour with huge fluctuations.
@@ -635,8 +635,8 @@ D: phys-u12-critical-isotherms
 !: Near critical points mean-field theories (like van der Waals) give wrong exponents; fluctuations dominate.
 Q: What happens above the critical temperature? | Liquid and gas phases can no longer be distinguished; a gas can't be liquefied by pressure.
 Q: What is universality in critical phenomena? | Very different systems share the same critical exponents near their critical points.
-M1: Critical opalescence is caused by: | Large density fluctuations scattering light | Chemical reactions | Boiling | Impurities | Fluctuations at all length scales.
-M2: Supercritical CO_{2} is used to: | Decaffeinate coffee | Make ice | Generate X-rays | Store hydrogen | Solvent properties.
+M1#physics-u12-29-q1: Critical opalescence is caused by: | Large density fluctuations scattering light | Chemical reactions | Boiling | Impurities | Fluctuations at all length scales.
+M2#physics-u12-29-q2: Supercritical CO_{2} is used to: | Decaffeinate coffee | Make ice | Generate X-rays | Store hydrogen | Solvent properties.
 
 ## Phase transitions
 S: A phase transition is an abrupt change in a system's properties as a control parameter (temperature, pressure, field) crosses a critical value: melting, boiling, magnetisation, superconductivity. Their classification depends on how the free energy behaves.
@@ -656,8 +656,8 @@ X: Find the boiling-point rise of water per 1000 Pa near 100 °C (ΔV ≈ 1.67 m
 !: Ice skating isn't explained by pressure melting (the effect is far too small); surface premelting and friction heating matter more.
 Q: What distinguishes first-order from continuous transitions? | First-order have latent heat and discontinuities; continuous have none but show diverging fluctuations.
 Q: What is an order parameter? | A quantity that's zero in the disordered phase and non-zero in the ordered phase.
-M1: Which transition is continuous? | Ferromagnet at its Curie temperature (zero field) | Water boiling | Ice melting | Sublimation of dry ice | No latent heat.
-M2: The Clausius–Clapeyron equation gives: | The slope of a phase boundary | Entropy at 0 K | Heat capacity | Critical exponents | dp/dT = L/(TΔV).
+M1#physics-u12-30-q1: Which transition is continuous? | Ferromagnet at its Curie temperature (zero field) | Water boiling | Ice melting | Sublimation of dry ice | No latent heat.
+M2#physics-u12-30-q2: The Clausius–Clapeyron equation gives: | The slope of a phase boundary | Entropy at 0 K | Heat capacity | Critical exponents | dp/dT = L/(TΔV).
 
 ## Non-equilibrium thermodynamics
 S: Most of the world is out of equilibrium: heat flows, currents run, chemical reactions proceed, organisms live. Non-equilibrium thermodynamics describes flows driven by gradients, the entropy they produce, and the structures they can create.
@@ -678,6 +678,6 @@ X: Peltier and Seebeck effects: how are they related?
 !: Steady state isn't equilibrium: a constant heat flow through a rod has unchanging temperatures but continuous entropy production.
 Q: What do Onsager's reciprocal relations state? | Cross-coupling coefficients between fluxes and forces are equal, L_{ij} = L_{ji}.
 Q: What is a dissipative structure? | An ordered pattern maintained by a continuous flow of energy and production of entropy.
-M1: Fourier's law of heat conduction is an example of: | A linear flux–force relation | A conservation law | Equilibrium | The third law | Heat flux ∝ temperature gradient.
-M2: The Jarzynski equality relates: | Non-equilibrium work to equilibrium free-energy differences | Entropy to temperature | Pressure to volume | Heat to work at equilibrium | Exact for any driving speed.
+M1#physics-u12-31-q1: Fourier's law of heat conduction is an example of: | A linear flux–force relation | A conservation law | Equilibrium | The third law | Heat flux ∝ temperature gradient.
+M2#physics-u12-31-q2: The Jarzynski equality relates: | Non-equilibrium work to equilibrium free-energy differences | Entropy to temperature | Pressure to volume | Heat to work at equilibrium | Exact for any driving speed.
 `;

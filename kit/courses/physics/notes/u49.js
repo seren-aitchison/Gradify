@@ -25,8 +25,8 @@ K: Greek philosophers sought rational natural explanations; Aristotle's physics 
 !: Ancient atomism was philosophical speculation, not an experimentally grounded theory like modern atomic physics.
 Q: What did Archimedes discover about floating bodies? | The buoyant force equals the weight of fluid displaced.
 Q: How did Eratosthenes measure Earth's size? | From the difference in noon shadow angles between two cities a known distance apart.
-M1: Who proposed indivisible atoms? | Democritus | Aristotle | Plato | Ptolemy | With Leucippus.
-M2: Aristotle believed heavier objects: | Fall faster | Fall at the same rate | Float | Fall slower | Corrected by Galileo.
+M1#physics-u49-01-q1: Who proposed indivisible atoms? | Democritus | Aristotle | Plato | Ptolemy | With Leucippus.
+M2#physics-u49-01-q2: Aristotle believed heavier objects: | Fall faster | Fall at the same rate | Float | Fall slower | Corrected by Galileo.
 
 ## Early astronomy and mechanics
 S: Early astronomers across Babylon, Greece, India, China and the Islamic world tracked the heavens with growing precision. Their models, from Ptolemy's epicycles to careful star catalogues, combined observation with mathematics to predict planetary motions.
@@ -48,8 +48,8 @@ K: Ancient astronomy combined precise observation with mathematical models; Ptol
 !: A model can predict accurately yet describe reality wrongly; predictive success isn't proof of physical truth.
 Q: What did Hipparchus discover? | Precession of the equinoxes.
 Q: What was the Antikythera mechanism? | An ancient Greek geared device for calculating astronomical positions and eclipses.
-M1: Ptolemy's model placed at the centre: | Earth | The Sun | The Moon | Jupiter | Geocentric.
-M2: The Tusi couple was developed in: | The Islamic world | Ancient Rome | Medieval England | Babylon | Nasir al-Din al-Tusi.
+M1#physics-u49-02-q1: Ptolemy's model placed at the centre: | Earth | The Sun | The Moon | Jupiter | Geocentric.
+M2#physics-u49-02-q2: The Tusi couple was developed in: | The Islamic world | Ancient Rome | Medieval England | Babylon | Nasir al-Din al-Tusi.
 
 ## Medieval scientific traditions
 S: Between antiquity and the Scientific Revolution, scholars in the Islamic world, Byzantium, India, China and medieval Europe preserved, translated and extended ancient knowledge. They made major advances in optics, mathematics, astronomy and the analysis of motion.
@@ -75,8 +75,8 @@ K: Medieval scholars preserved and extended knowledge, especially in optics, alg
 !: Calling the Middle Ages scientifically empty ignores major work in the Islamic world and medieval Europe.
 Q: What did Ibn al-Haytham establish about vision? | Light travels from objects into the eye in straight lines; he emphasised experimental proof.
 Q: What is the Merton mean speed theorem? | A uniformly accelerated body travels the same distance as one moving at its mean speed.
-M1: Impetus theory was developed by: | Jean Buridan | Newton | Aristotle | Ptolemy | 14th-century Paris.
-M2: The word "algorithm" derives from: | al-Khwarizmi | al-Biruni | Ibn Sina | Ibn al-Haytham | Latinised name.
+M1#physics-u49-03-q1: Impetus theory was developed by: | Jean Buridan | Newton | Aristotle | Ptolemy | 14th-century Paris.
+M2#physics-u49-03-q2: The word "algorithm" derives from: | al-Khwarizmi | al-Biruni | Ibn Sina | Ibn al-Haytham | Latinised name.
 
 ## Scientific Revolution
 S: The Scientific Revolution (roughly 1543–1687) transformed how people understood nature, replacing Aristotelian ideas with a Sun-centred cosmos, mathematical laws and experiment. It produced modern scientific methods and institutions.
@@ -103,8 +103,8 @@ K: The Scientific Revolution established heliocentrism, mathematical laws and ex
 !: The revolution wasn't instant or purely rational; it involved gradual change, institutions and debates.
 Q: What were Kepler's three laws? | Elliptical orbits with the Sun at a focus; equal areas in equal times; T^{2} ∝ a^{3}.
 Q: When was the Royal Society founded? | 1660.
-M1: Copernicus published his heliocentric model in: | 1543 | 1687 | 1609 | 1492 | De revolutionibus.
-M2: Tycho Brahe's main contribution was: | Precise observations | The telescope | Gravity | Calculus | Naked-eye data.
+M1#physics-u49-04-q1: Copernicus published his heliocentric model in: | 1543 | 1687 | 1609 | 1492 | De revolutionibus.
+M2#physics-u49-04-q2: Tycho Brahe's main contribution was: | Precise observations | The telescope | Gravity | Calculus | Naked-eye data.
 
 ## Galileo and experimental mechanics
 S: Galileo Galilei combined careful experiments, mathematics and telescope observations to overturn Aristotelian physics. His work on falling bodies, inclined planes, pendulums and inertia laid the groundwork for Newton's mechanics.
@@ -131,8 +131,8 @@ K: Galileo quantified motion through experiment and mathematics, and telescope e
 !: Galileo's inertia was not exactly Newton's; he thought natural inertial motion was circular around Earth.
 Q: What did Galileo's inclined-plane experiments show? | Distance travelled under uniform acceleration is proportional to time squared.
 Q: Which moons did Galileo discover? | Io, Europa, Ganymede and Callisto.
-M1: Galileo's law of fall states distance is proportional to: | Time squared | Time | Mass | Weight | d ∝ t^{2}.
-M2: Galilean relativity says: | Physics is the same in uniformly moving frames | Time is relative | Light speed is constant | Mass varies | Ship analogy.
+M1#physics-u49-05-q1: Galileo's law of fall states distance is proportional to: | Time squared | Time | Mass | Weight | d ∝ t^{2}.
+M2#physics-u49-05-q2: Galilean relativity says: | Physics is the same in uniformly moving frames | Time is relative | Light speed is constant | Mass varies | Ship analogy.
 
 ## Newtonian mechanics
 S: Isaac Newton's *Principia* (1687) presented three laws of motion and universal gravitation, explaining falling apples, tides, planetary orbits and comets with one framework. It became the model for all of physics and lasted unchallenged for two centuries.
@@ -158,8 +158,8 @@ K: Newton unified terrestrial and celestial mechanics with three laws and univer
 !: Newtonian mechanics isn't "wrong"; it's an excellent approximation at everyday speeds and gravity.
 Q: What was Newton's "Moon test"? | Showing the Moon's centripetal acceleration matches gravity weakened by the inverse square of distance.
 Q: Who independently developed calculus? | Gottfried Wilhelm Leibniz.
-M1: Principia was published in: | 1687 | 1543 | 1905 | 1610 | Philosophiæ Naturalis Principia Mathematica.
-M2: Neptune's discovery in 1846 relied on: | Newtonian perturbation calculations | Telescopes alone | Relativity | Quantum mechanics | Le Verrier and Adams.
+M1#physics-u49-06-q1: Principia was published in: | 1687 | 1543 | 1905 | 1610 | Philosophiæ Naturalis Principia Mathematica.
+M2#physics-u49-06-q2: Neptune's discovery in 1846 relied on: | Newtonian perturbation calculations | Telescopes alone | Relativity | Quantum mechanics | Le Verrier and Adams.
 
 ## Development of thermodynamics
 S: Thermodynamics grew from efforts to improve steam engines into a universal science of energy, heat and entropy. Its laws, developed by Carnot, Joule, Clausius, Kelvin, Boltzmann and Gibbs, apply to everything from engines to black holes.
@@ -187,8 +187,8 @@ K: Thermodynamics developed from engines to universal laws of energy and entropy
 !: Carnot's insight on efficiency was correct even though he used the wrong (caloric) theory of heat.
 Q: What did Joule's experiments establish? | The mechanical equivalent of heat, showing heat is a form of energy.
 Q: What is Boltzmann's entropy formula? | S = k ln W, linking entropy to the number of microstates.
-M1: Who coined the word entropy? | Clausius | Carnot | Joule | Kelvin | 1865.
-M2: Rumford's cannon-boring experiments challenged: | Caloric theory | Atomic theory | Relativity | Newton's laws | Heat from friction seemed limitless.
+M1#physics-u49-07-q1: Who coined the word entropy? | Clausius | Carnot | Joule | Kelvin | 1865.
+M2#physics-u49-07-q2: Rumford's cannon-boring experiments challenged: | Caloric theory | Atomic theory | Relativity | Newton's laws | Heat from friction seemed limitless.
 
 ## Electromagnetism and Maxwell
 S: In the 19th century electricity and magnetism were unified into one theory, culminating in Maxwell's equations, which predicted electromagnetic waves travelling at the speed of light. This revealed light as electromagnetic and paved the way for radio and modern technology.
@@ -216,8 +216,8 @@ K: Faraday's experiments and Maxwell's equations unified electricity, magnetism 
 !: Maxwell didn't write the four compact equations we use today; Heaviside and Gibbs reformulated them in vector form.
 Q: What did Ørsted discover? | Electric currents produce magnetic effects, deflecting compass needles.
 Q: Who first produced and detected radio waves? | Heinrich Hertz, in 1887–88.
-M1: Faraday discovered electromagnetic induction in: | 1831 | 1785 | 1905 | 1687 | Changing magnetic flux induces EMF.
-M2: Maxwell's key addition was: | The displacement current | Coulomb's law | Ohm's law | The battery | Completed Ampère's law.
+M1#physics-u49-08-q1: Faraday discovered electromagnetic induction in: | 1831 | 1785 | 1905 | 1687 | Changing magnetic flux induces EMF.
+M2#physics-u49-08-q2: Maxwell's key addition was: | The displacement current | Coulomb's law | Ohm's law | The battery | Completed Ampère's law.
 
 ## Discovery of radioactivity
 S: In just a few years around 1900, the discovery of X-rays and radioactivity revealed that atoms have internal structure and can transform. Becquerel, the Curies and Rutherford opened up nuclear physics and new medical technologies.
@@ -241,8 +241,8 @@ K: X-rays and radioactivity revealed atomic structure and transmutation, launchi
 !: Early researchers didn't understand radiation dangers; many suffered serious harm.
 Q: What did Becquerel discover in 1896? | Uranium emits radiation spontaneously, fogging photographic plates.
 Q: What did Rutherford and Soddy show? | Radioactive decay transforms one element into another.
-M1: Marie Curie won Nobel Prizes in: | Physics and Chemistry | Physics only | Medicine | Peace and Physics | 1903 and 1911.
-M2: The Geiger–Marsden experiment used: | Alpha particles on gold foil | X-rays on crystals | Electrons in vacuum | Neutrons | Scattering experiment.
+M1#physics-u49-09-q1: Marie Curie won Nobel Prizes in: | Physics and Chemistry | Physics only | Medicine | Peace and Physics | 1903 and 1911.
+M2#physics-u49-09-q2: The Geiger–Marsden experiment used: | Alpha particles on gold foil | X-rays on crystals | Electrons in vacuum | Neutrons | Scattering experiment.
 
 ## Origins of quantum theory
 S: Quantum theory began with puzzles classical physics couldn't solve: blackbody radiation, the photoelectric effect and atomic spectra. Planck, Einstein and Bohr introduced quantised energy, revealing that light and matter exchange energy in discrete packets.
@@ -267,8 +267,8 @@ K: Quantisation of energy explained blackbody spectra, the photoelectric effect 
 !: Planck didn't propose photons; Einstein did, and many physicists resisted the idea for years.
 Q: What was the ultraviolet catastrophe? | Classical theory's prediction of infinite blackbody energy at short wavelengths.
 Q: Why did Einstein win the Nobel Prize? | For explaining the photoelectric effect, not for relativity.
-M1: Planck introduced quanta in: | 1900 | 1905 | 1913 | 1925 | Blackbody radiation.
-M2: The Franck–Hertz experiment confirmed: | Discrete atomic energy levels | Photon momentum | Electron spin | Relativity | Electrons lose energy in quanta.
+M1#physics-u49-10-q1: Planck introduced quanta in: | 1900 | 1905 | 1913 | 1925 | Blackbody radiation.
+M2#physics-u49-10-q2: The Franck–Hertz experiment confirmed: | Discrete atomic energy levels | Photon momentum | Electron spin | Relativity | Electrons lose energy in quanta.
 
 ## Development of special and general relativity
 S: Einstein's relativity overturned absolute space and time. Special relativity (1905) unified space and time and gave E = mc^{2}; general relativity (1915) explained gravity as spacetime curvature, predicting black holes, gravitational waves and an expanding universe.
@@ -295,8 +295,8 @@ K: Special relativity unified space and time; general relativity made gravity th
 !: Einstein built on others (Lorentz, Poincaré, Minkowski, Grossmann for mathematics); relativity wasn't created in isolation.
 Q: What did the 1919 eclipse expedition test? | The bending of starlight by the Sun predicted by general relativity.
 Q: What anomaly did general relativity explain first? | Mercury's 43 arcseconds per century perihelion precession.
-M1: Special relativity was published in: | 1905 | 1915 | 1887 | 1929 | Annus mirabilis.
-M2: The Michelson–Morley experiment found: | No aether wind | Light slows in motion | Gravitational waves | Black holes | Null result.
+M1#physics-u49-11-q1: Special relativity was published in: | 1905 | 1915 | 1887 | 1929 | Annus mirabilis.
+M2#physics-u49-11-q2: The Michelson–Morley experiment found: | No aether wind | Light slows in motion | Gravitational waves | Black holes | Null result.
 
 ## Nuclear physics and the atomic age
 S: Nuclear physics advanced rapidly from the neutron's discovery in 1932 to fission in 1938 and the first reactor and atomic bombs in the 1940s. It brought nuclear power, medicine and weapons, reshaping science, politics and society.
@@ -322,8 +322,8 @@ K: The neutron and fission led within a decade to reactors and weapons, transfor
 !: Fission's discovery depended on chemistry (Hahn and Strassmann) and physics interpretation (Meitner and Frisch) together.
 Q: Who discovered the neutron? | James Chadwick, in 1932.
 Q: Who explained nuclear fission theoretically? | Lise Meitner and Otto Frisch.
-M1: The first controlled chain reaction was in: | 1942 | 1938 | 1945 | 1932 | Chicago Pile-1.
-M2: Bethe explained: | How fusion powers stars | Fission | The neutron | X-rays | 1939.
+M1#physics-u49-12-q1: The first controlled chain reaction was in: | 1942 | 1938 | 1945 | 1932 | Chicago Pile-1.
+M2#physics-u49-12-q2: Bethe explained: | How fusion powers stars | Fission | The neutron | X-rays | 1939.
 
 ## Development of quantum mechanics
 S: In the mid-1920s, a new quantum mechanics replaced the old quantum theory. Heisenberg, Schrödinger, Dirac, Born and Pauli created a mathematical framework of probability amplitudes, uncertainty and spin that underlies all modern physics and chemistry.
@@ -351,8 +351,8 @@ K: Matrix and wave mechanics, probability amplitudes and uncertainty created mod
 !: The uncertainty principle isn't just measurement disturbance; it's a fundamental property of quantum states.
 Q: What did Born propose about the wavefunction? | |ψ|^{2} gives the probability density of finding the particle.
 Q: What did Dirac's equation predict? | Antimatter, specifically the positron.
-M1: Matrix mechanics was developed by: | Heisenberg, Born and Jordan | Schrödinger | Dirac alone | Einstein | 1925.
-M2: The EPR paper argued that quantum mechanics was: | Incomplete | Wrong in predictions | Classical | Relativistic | 1935.
+M1#physics-u49-13-q1: Matrix mechanics was developed by: | Heisenberg, Born and Jordan | Schrödinger | Dirac alone | Einstein | 1925.
+M2#physics-u49-13-q2: The EPR paper argued that quantum mechanics was: | Incomplete | Wrong in predictions | Classical | Relativistic | 1935.
 
 ## Particle physics and the Standard Model
 S: Particle physics grew from cosmic-ray discoveries in the 1930s to the Standard Model of the 1970s and the Higgs boson in 2012. It describes all known elementary particles and three of the four fundamental forces with remarkable precision.
@@ -377,8 +377,8 @@ K: Particle physics went from cosmic-ray surprises to the Standard Model, comple
 !: The Standard Model is incomplete: it lacks gravity, dark matter and an explanation of neutrino masses.
 Q: What did deep inelastic scattering at SLAC reveal? | Point-like constituents (partons, later identified as quarks) inside protons.
 Q: When was the Higgs boson discovered? | 2012, at CERN's LHC.
-M1: The top quark was discovered in: | 1995 | 1974 | 2012 | 1983 | At Fermilab.
-M2: Asymptotic freedom was discovered by: | Gross, Wilczek and Politzer | Gell-Mann | Higgs | Feynman | 1973.
+M1#physics-u49-14-q1: The top quark was discovered in: | 1995 | 1974 | 2012 | 1983 | At Fermilab.
+M2#physics-u49-14-q2: Asymptotic freedom was discovered by: | Gross, Wilczek and Politzer | Gell-Mann | Higgs | Feynman | 1973.
 
 ## Space exploration and modern astrophysics
 S: The 20th century transformed astronomy: galaxies, the expanding universe, the cosmic microwave background, pulsars, black holes and exoplanets were discovered, while spacecraft visited every planet. Space-based telescopes opened the whole electromagnetic spectrum and beyond.
@@ -404,8 +404,8 @@ K: Modern astrophysics revealed an expanding universe dominated by dark matter a
 !: Hubble didn't discover expansion alone; Slipher's redshifts and Lemaître's theory were essential.
 Q: Who discovered pulsars? | Jocelyn Bell Burnell, in 1967.
 Q: What did Penzias and Wilson discover? | The cosmic microwave background radiation.
-M1: Henrietta Leavitt's discovery enabled: | Measuring distances with Cepheids | Finding exoplanets | Detecting neutrinos | Building rockets | Period–luminosity relation.
-M2: The first exoplanet around a Sun-like star was found in: | 1995 | 1965 | 2015 | 1929 | 51 Pegasi b.
+M1#physics-u49-15-q1: Henrietta Leavitt's discovery enabled: | Measuring distances with Cepheids | Finding exoplanets | Detecting neutrinos | Building rockets | Period–luminosity relation.
+M2#physics-u49-15-q2: The first exoplanet around a Sun-like star was found in: | 1995 | 1965 | 2015 | 1929 | 51 Pegasi b.
 
 ## History of computing in physics
 S: Physics and computing grew together: physicists built early computers, invented simulation methods and created the World Wide Web. Today computation is a third pillar of physics alongside theory and experiment.
@@ -431,8 +431,8 @@ K: Physicists created key computational methods and technologies, and computatio
 !: Early programmers and "computers" were often women whose contributions were long overlooked.
 Q: Who programmed the Fermi–Pasta–Ulam–Tsingou simulation? | Mary Tsingou.
 Q: Where was the transistor invented? | Bell Labs, 1947.
-M1: The Metropolis algorithm was published in: | 1953 | 1905 | 1989 | 1974 | Equation of state calculations.
-M2: Feynman proposed quantum computers in: | 1982 | 1945 | 2001 | 1965 | Simulating physics with computers.
+M1#physics-u49-16-q1: The Metropolis algorithm was published in: | 1953 | 1905 | 1989 | 1974 | Equation of state calculations.
+M2#physics-u49-16-q2: Feynman proposed quantum computers in: | 1982 | 1945 | 2001 | 1965 | Simulating physics with computers.
 
 ## Women and underrepresented groups in physics
 S: People of many backgrounds have shaped physics, though women and other underrepresented groups often faced exclusion and saw their work overlooked. Recognising their contributions gives a truer history and shows why inclusion improves science.
@@ -460,8 +460,8 @@ K: Physics has always drawn on diverse contributors; acknowledging overlooked wo
 !: Historical "great men" narratives often hide collaborators, technicians and women whose work was essential.
 Q: What is the Matilda effect? | The systematic under-recognition of women scientists, with credit given to male colleagues.
 Q: What did Chien-Shiung Wu demonstrate? | Parity violation in beta decay of cobalt-60.
-M1: Who explained fission but didn't receive a Nobel for it? | Lise Meitner | Marie Curie | Emmy Noether | Vera Rubin | Hahn alone received it.
-M2: Who founded the ICTP in Trieste? | Abdus Salam | Raman | Bose | Chandrasekhar | International Centre for Theoretical Physics.
+M1#physics-u49-17-q1: Who explained fission but didn't receive a Nobel for it? | Lise Meitner | Marie Curie | Emmy Noether | Vera Rubin | Hahn alone received it.
+M2#physics-u49-17-q2: Who founded the ICTP in Trieste? | Abdus Salam | Raman | Bose | Chandrasekhar | International Centre for Theoretical Physics.
 
 ## Scientific institutions and funding
 S: Physics depends on institutions, from universities and national laboratories to international collaborations and funding agencies. How research is organised and paid for shapes what questions get asked and who can take part.
@@ -484,8 +484,8 @@ K: Physics is shaped by its institutions and funding, from societies and univers
 !: Large collaborations change how credit and authorship work; papers may list thousands of authors.
 Q: What is arXiv? | An open-access preprint server for physics and related fields, started in 1991.
 Q: What is Big Science? | Large-scale, expensive, team-based research typically funded by governments, such as accelerators and observatories.
-M1: CERN was founded in: | 1954 | 1905 | 1989 | 2008 | Post-war Europe.
-M2: Bell Labs produced: | The transistor | The Web | The cyclotron | Radioactivity | 1947.
+M1#physics-u49-18-q1: CERN was founded in: | 1954 | 1905 | 1989 | 2008 | Post-war Europe.
+M2#physics-u49-18-q2: Bell Labs produced: | The transistor | The Web | The cyclotron | Radioactivity | 1947.
 
 ## Physics, technology and society
 S: Physics drives technology, and technology changes society: steam engines, electricity, radio, nuclear power, semiconductors, lasers, GPS and the internet. With these come ethical questions about weapons, energy, privacy and responsibility.
@@ -511,8 +511,8 @@ K: Physics underpins most modern technology and raises ethical questions that sc
 !: The path from discovery to application is rarely direct or predictable; fundamental research often pays off unexpectedly.
 Q: What was the Russell–Einstein Manifesto? | A 1955 statement warning about nuclear weapons, leading to the Pugwash conferences.
 Q: Which physics fields are needed for a smartphone? | Electromagnetism, quantum physics (semiconductors), relativity (GPS) and more.
-M1: Uncorrected relativistic GPS errors would accumulate about: | 10 km per day | 1 mm per day | 1 m per year | Nothing | 38 μs × c.
-M2: Dual-use research means: | Work that can serve both beneficial and harmful purposes | Research done twice | Two authors | Physics and chemistry | Ethical concern.
+M1#physics-u49-19-q1: Uncorrected relativistic GPS errors would accumulate about: | 10 km per day | 1 mm per day | 1 m per year | Nothing | 38 μs × c.
+M2#physics-u49-19-q2: Dual-use research means: | Work that can serve both beneficial and harmful purposes | Research done twice | Two authors | Physics and chemistry | Ethical concern.
 
 ## Philosophy and history of scientific revolutions
 S: Philosophers and historians of science ask how scientific knowledge grows and changes. Ideas from Popper, Kuhn, Lakatos and others describe falsification, paradigms and research programmes, and help us think critically about how physics progresses.
@@ -537,6 +537,6 @@ K: Science advances through conjectures, tests and occasional paradigm shifts; p
 !: A theory's failure to predict one result doesn't automatically refute it; auxiliary assumptions may be at fault, as with Neptune.
 Q: What is a paradigm shift? | Kuhn's term for a fundamental change in a scientific framework after anomalies accumulate.
 Q: What is falsifiability? | The property of a theory that it could in principle be shown false by observation.
-M1: Kuhn's book was published in: | 1962 | 1905 | 1687 | 1999 | Structure of Scientific Revolutions.
-M2: Lakatos described: | Research programmes with a hard core | Paradigms only | Pure induction | Anything goes | Progressive vs degenerating.
+M1#physics-u49-20-q1: Kuhn's book was published in: | 1962 | 1905 | 1687 | 1999 | Structure of Scientific Revolutions.
+M2#physics-u49-20-q2: Lakatos described: | Research programmes with a hard core | Paradigms only | Pure induction | Anything goes | Progressive vs degenerating.
 `;

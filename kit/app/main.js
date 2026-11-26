@@ -2,8 +2,9 @@
 // Every screen reads and writes the same store, so they always agree.
 import { heroArt } from "../ui/art.js";
 import { toast as uiToast } from "../ui/feedback.js";
-import { GROUPS } from "../core/sites.js";
+import { GROUPS, canonicalSite } from "../core/sites.js";
 import { icon } from "../core/icons.js";
+import { ONB_LEVELS, WEEK, levelFor, onboardingPatch } from "./onboarding.js";
 import { actionCard } from "../core/action-card.js";
 import { tile, ink } from "../core/colour.js";
 import { SAMPLE, readFile } from "../notes/studio.js";
@@ -301,9 +302,9 @@ const SUBJECT = {
   EngineerGradify: "Engineering", MathGradify: "Maths", SciGradify: "Biology, chemistry and physics", EcoGradify: "Ecology and environment",
   SocGradify: "Sociology", HistoryGradify: "History", LitGradify: "English and literature", LanguageGradify: "Languages",
   ArtGradify: "Art and design", MusicGradify: "Music", SportGradify: "Sport and exercise science", CreateGradify: "Design and creativity",
-  "TechGradify · ForgeLab": "Coding, data science and AI",
+  "TechGradify": "Coding, data science and AI",
 };
-const subjectOf = (n) => SUBJECT[n] || String(n || "").replace(" · ForgeLab", "");
+const subjectOf = (n) => SUBJECT[canonicalSite(n)] || canonicalSite(String(n || ""));
 const POPULAR = ["UnderGradify", "MedGradify", "LawGradify", "NurseGradify", "PsychGradify", "BusinessGradify"];
 const pickBtn = (s) => `<button type="button" class="site-pick ${profile.site === s.n ? "on" : ""}" data-site="${esc(s.n)}" data-s="${esc((subjectOf(s.n) + " " + s.n + " " + s.d).toLowerCase())}" style="--c:#${s.c};--tile:${tile(s.c)};--ink:${ink(s.c)}"><span class="icon">${icon(s.i)}</span><span><b>${esc(subjectOf(s.n))}</b><em>${esc(s.who || s.d.split(/[:.]/)[0])}<small>on ${esc(s.n.replace(" · ForgeLab", ""))}</small></em></span></button>`;
 
@@ -401,74 +402,67 @@ function wireOffer(root) {
   });
 }
 
+// Onboarding (Lesson System Brief v2, pillar 3; the owner's reference is one question per screen): full screen, a
+// back arrow and a segmented progress bar, one question with large choice cards, and one Continue that lights up once
+// something is chosen. Four screens: what you study (skipped on a subject site, which already says), at what level,
+// any exam or deadline, and time per week. The goal is inferred from the answers; it saves the same profile fields
+// as before (goal, site, level, exam_date, daily_minutes, and the learner record), so nothing downstream changes.
 async function renderStart(stepArg) {
-  const step = Number(stepArg) || 1;
-  const p = profile;
-  const dots = [1, 2, 3].map((n) => `<i class="${n <= step ? "on" : ""}"></i>`).join("");
-  if (step === 1) {
-    view.innerHTML = `<section class="setup"><div class="setup-dots">${dots}</div>
-      <h1>What do you want to achieve?</h1><p class="sub">Gradify plans your revision around it. You can change it any time.</p>
-      <div class="goal-grid">${GOALS.map((g) => `<button type="button" class="goal-card glass ${p.goal === g.id ? "on" : ""}" data-goal="${g.id}"><span class="g-ico">${icon(g.i)}</span><b>${g.t}</b><span>${g.d}</span></button>`).join("")}</div>
-      <p class="setup-skip"><button type="button" class="btn btn-ghost btn-sm" id="skip"><span>Skip for now</span></button> <small>You can set this up later from Account.</small></p></section>`;
-    $("#skip").addEventListener("click", async () => { await saveLearner(store, { skipped_at: new Date().toISOString() }); profile = await store.getProfile(); location.hash = "#/today"; });
-    view.querySelector(".goal-grid").addEventListener("click", (e) => {
-      const b = e.target.closest("[data-goal]");
-      if (!b) return;
-      picks.goal = b.dataset.goal;
-      location.hash = picks.site ? "#/start/3" : "#/start/2";
-    });
-    return;
-  }
-  if (step === 2 && SITE) { location.replace("#/start/3"); return; }
-  if (step === 2) {
-    const picked = p.site || "";
-    const groups = GROUPS.filter((g) => g.id !== "tech").concat(GROUPS.filter((g) => g.id === "tech"));
-    view.innerHTML = `<section class="setup"><div class="setup-dots">${dots}</div>
-      <h1>What are you studying?</h1><p class="sub">Pick your subject. Your notes, cards, courses and progress are organised around it.</p>
-      <label class="search-field"><span class="sr-only">Search subjects</span><input id="site-q" type="search" placeholder="Search, e.g. medicine, law, maths" autocomplete="off"></label>
-      <h3 class="setup-group">Most popular</h3><div class="site-grid">${POPULAR.map((n) => SITES.find((s) => s.n === n)).filter(Boolean).map(pickBtn).join("")}</div>
-      <p class="setup-more"><button type="button" class="btn btn-ghost btn-sm" id="all-subjects" aria-expanded="false" aria-controls="more-subjects"><span>Show all subjects</span></button></p>
-      <div id="more-subjects" hidden>${groups.map((g) => { const items = g.items.filter((s) => s.n !== "Klerio" && !POPULAR.includes(s.n)); return items.length ? `<h3 class="setup-group">${esc(g.title)}</h3><div class="site-grid">${items.map(pickBtn).join("")}</div>` : ""; }).join("")}</div>
-    </section>`;
-    const more = $("#more-subjects"), moreBtn = $("#all-subjects");
-    moreBtn.addEventListener("click", () => { more.hidden = false; moreBtn.parentElement.hidden = true; });
-    $("#site-q").addEventListener("input", (e) => {
-      const q = e.target.value.trim().toLowerCase();
-      if (q) { more.hidden = false; moreBtn.parentElement.hidden = true; }
-      view.querySelectorAll(".site-pick").forEach((b) => { b.hidden = q && !b.dataset.s.includes(q); });
-      view.querySelectorAll("#more-subjects .setup-group").forEach((h) => { h.hidden = ![...h.nextElementSibling.children].some((b) => !b.hidden); });
-    });
-    view.querySelector(".setup").addEventListener("click", (e) => {
-      const b = e.target.closest("[data-site]");
-      if (!b) return;
-      picks.site = b.dataset.site;
-      location.hash = "#/start/3";
-    });
-    return;
-  }
-  const goal = picks.goal || p.goal || "course";
-  const site = SITE || picks.site || p.site || "UnderGradify";
-  view.innerHTML = `<section class="setup"><div class="setup-dots">${dots}</div>
-    <h1>A couple of details</h1><p class="sub">So Gradify can pace your revision.</p>
-    <form class="setup-form panel glass" id="details">
-      ${goal === "exam" || goal === "qualification" ? `<label><span>When is the exam?</span><input type="date" name="exam_date" min="${today()}" value="${p.exam_date || ""}"></label>` : ""}
-      <label><span>How long can you study on a normal day?</span>
-        <select name="daily_minutes">${[10, 20, 30, 45, 60, 90].map((m) => `<option value="${m}" ${Number(p.daily_minutes || 20) === m ? "selected" : ""}>${m} minutes</option>`).join("")}</select></label>
-      <label><span>Level</span><select name="level">${[["school", "School"], ["undergraduate", "University"], ["postgraduate", "Postgraduate"], ["professional", "Professional"]].map(([v, l]) => `<option value="${v}" ${p.level === v ? "selected" : ""}>${l}</option>`).join("")}</select></label>
-      <label><span>How much do you already know? <em class="hint">${esc(subjectOf(site))}</em></span><select name="prior">${PRIOR.map(([v, l]) => `<option value="${v}" ${(learnerOf(p).prior[site] || "new") === v ? "selected" : ""}>${l}</option>`).join("")}</select></label>
-      <label><span>Your first name (optional)</span><input name="display_name" autocomplete="given-name" value="${esc(p.display_name || "")}"></label>
-      ${prefsFields(learnerOf(p).prefs)}
-      <button class="btn btn-primary lg" type="submit"><span>Next: add your notes</span></button>
-    </form></section>`;
-  $("#details").addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const f = new FormData(e.target);
-    profile = await store.saveProfile({ goal, site, exam_date: f.get("exam_date") || null, daily_minutes: Number(f.get("daily_minutes")), level: f.get("level"), display_name: (f.get("display_name") || "").trim() || null });
+  const order = SITE ? ["level", "deadline", "time"] : ["subject", "level", "deadline", "time"];
+  const step = Math.min(Math.max(Number(stepArg) || 1, 1), order.length), kind = order[step - 1], p = profile;
+  picks.site ||= SITE || p.site || ""; picks.level ||= levelFor(picks.site, p);
+  if (picks.deadline === undefined) picks.deadline = p.exam_date || (p.goal && !p.exam_date ? "" : undefined);
+  picks.week ||= (WEEK.find((w) => w[3] >= Number(p.daily_minutes || 0)) || WEEK[1])[0];
+  document.documentElement.classList.add("onb");
+  addEventListener("hashchange", () => { if (!/^#\/start/.test(location.hash)) document.documentElement.classList.remove("onb"); }, { once: true });
+  const card = (val, t, d, ic, on) => `<button type="button" class="onb-card" data-v="${esc(val)}" aria-pressed="${on ? "true" : "false"}">${ic ? `<span class="onb-ic">${icon(ic)}</span>` : ""}<b>${esc(t)}</b>${d ? `<span>${esc(d)}</span>` : ""}</button>`;
+  const Q = {
+    subject: ["What do you want to learn first?", "You can add more subjects later.",
+      `<div class="onb-cards">${POPULAR.map((n) => SITES.find((x) => x.n === n)).filter(Boolean).map((x) => card(x.n, subjectOf(x.n), x.who, x.i, picks.site === x.n)).join("")}</div>
+       <label class="onb-search"><span class="sr-only">Search every subject</span><input id="onb-q-search" type="search" placeholder="Something else? Search, e.g. history, maths, nursing" autocomplete="off"></label>
+       <div class="onb-cards onb-more" hidden>${SITES.filter((x) => x.n !== "Klerio" && !POPULAR.includes(x.n)).map((x) => card(x.n, subjectOf(x.n), x.who, x.i, picks.site === x.n).replace('class="onb-card"', `class="onb-card" data-s="${esc((subjectOf(x.n) + " " + x.n + " " + x.d).toLowerCase())}"`)).join("")}</div>`, () => picks.site],
+    level: ["What level are you studying at?", "So explanations and questions are pitched right.", `<div class="onb-cards">${ONB_LEVELS.map(([v, t, d, ic]) => card(v, t, d, ic, picks.level === v)).join("")}</div>`, () => picks.level],
+    deadline: ["Do you have an exam or deadline?", "Gradify plans backwards from it. No date? You'll learn at your own pace.",
+      `<div class="onb-cards">${card("yes", "Yes, I have a date", "An exam, an assessment or a deadline", "calendar", picks.deadline !== undefined && picks.deadline !== "")}${card("no", "No deadline", "I'm learning at my own pace", "sparkles", picks.deadline === "")}</div>
+       <label class="onb-date" ${picks.deadline ? "" : "hidden"}><span>When is it?</span><input type="date" id="onb-date" min="${today()}" value="${esc(picks.deadline || "")}"></label>`, () => picks.deadline === "" || Boolean(picks.deadline)],
+    time: ["How much time do you have each week?", "Your plan uses what you really have. You can change it any time.", `<div class="onb-cards">${WEEK.map(([v, t, d]) => card(v, t, d, "clock", picks.week === v)).join("")}</div>`, () => Boolean(picks.week)],
+  }[kind];
+  view.innerHTML = `<section class="onb-screen" aria-labelledby="onb-q">
+    <div class="onb-top"><a class="onb-back" href="${step > 1 ? `#/start/${step - 1}` : "#/today"}" aria-label="${step > 1 ? "Back" : "Leave set-up"}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <ol class="onb-prog" aria-label="Question ${step} of ${order.length}">${order.map((_, k) => `<li class="${k < step - 1 ? "done" : k === step - 1 ? "here" : ""}"></li>`).join("")}</ol></div>
+    <div class="onb-head"><span class="onb-mascot" aria-hidden="true">${icon("sparkles")}</span><div><h1 id="onb-q" tabindex="-1">${Q[0]}</h1><p>${Q[1]}</p></div></div>
+    ${Q[2]}
+    <div class="onb-foot"><button type="button" class="btn btn-primary lg onb-go" ${Q[3]() ? "" : "disabled"}>${step === order.length ? "Start learning" : "Continue"}</button>
+      <button type="button" class="onb-skip" id="skip">Skip for now</button></div>
+  </section>`;
+  const go = view.querySelector(".onb-go"), ready = () => { go.disabled = !Q[3](); };
+  view.querySelector("#onb-q").focus({ preventScroll: true });
+  view.querySelectorAll(".onb-card").forEach((b) => b.addEventListener("click", () => {
+    b.closest(".onb-screen").querySelectorAll(".onb-card").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+    const v = b.dataset.v;
+    if (kind === "subject") picks.site = v;
+    else if (kind === "level") picks.level = v;
+    else if (kind === "time") picks.week = v;
+    else { const d = view.querySelector(".onb-date"); d.hidden = v !== "yes"; picks.deadline = v === "yes" ? (view.querySelector("#onb-date").value || null) : ""; if (v === "yes") view.querySelector("#onb-date").focus(); }
+    ready();
+  }));
+  view.querySelector("#onb-date")?.addEventListener("input", (e) => { picks.deadline = e.target.value || null; ready(); });
+  view.querySelector("#onb-q-search")?.addEventListener("input", (e) => {
+    const q = e.target.value.trim().toLowerCase(), more = view.querySelector(".onb-more"); more.hidden = !q;
+    more.querySelectorAll(".onb-card").forEach((b) => { b.hidden = q && !b.dataset.s.includes(q); });
+  });
+  $("#skip").addEventListener("click", async () => { await saveLearner(store, { skipped_at: new Date().toISOString() }); profile = await store.getProfile(); document.documentElement.classList.remove("onb"); location.hash = "#/today"; });
+  go.addEventListener("click", async () => {
+    if (go.disabled) return;
+    if (step < order.length) { location.hash = `#/start/${step + 1}`; return; }
+    go.disabled = true;
+    const site = picks.site || SITE || "UnderGradify", patch = onboardingPatch({ site, level: picks.level, deadline: picks.deadline || null, week: picks.week });
+    profile = await store.saveProfile(patch);
     const l = learnerOf(profile);
-    await saveLearner(store, { subjects: [...new Set([...l.subjects, site])], prior: { [site]: f.get("prior") }, prefs: prefsFrom(f), onboarded_at: l.onboarded_at || new Date().toISOString(), skipped_at: null });
+    await saveLearner(store, { subjects: [...new Set([...l.subjects, site])], prior: { [site]: l.prior[site] || "new" }, prefs: l.prefs, onboarded_at: l.onboarded_at || new Date().toISOString(), skipped_at: null });
     profile = await store.getProfile();
-    // university, postgraduate and college students are offered MyGradify course set-up next (skippable)
-    academicFromStart = ["undergraduate", "postgraduate"].includes(f.get("level")) && !/^(JuniorGradify|YouthGradify)$/.test(site);
+    document.documentElement.classList.remove("onb");
+    academicFromStart = ["undergraduate", "postgraduate"].includes(patch.level) && !/^(JuniorGradify|YouthGradify)$/.test(site);
     location.hash = academicFromStart ? "#/academic/1" : currentOffer() ? "#/offer" : "#/new";
   });
 }

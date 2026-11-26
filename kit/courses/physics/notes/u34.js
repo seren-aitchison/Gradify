@@ -18,8 +18,8 @@ X: Energy of one ATP hydrolysis in units of k_{B}T at 310 K (ΔG ≈ 50 kJ mol^{
 !: Life doesn't violate the second law; it decreases entropy locally by increasing it more in the environment.
 Q: What is k_{B}T at body temperature? | About 4.3 × 10^{-21} J, or ~4 pN nm.
 Q: What is Kleiber's law? | Metabolic rate scales as body mass to the 3/4 power.
-M1: ATP hydrolysis releases about: | 20 k_{B}T | 1 k_{B}T | 1000 k_{B}T | 0.1 k_{B}T | ~50 kJ mol^{-1}.
-M2: Who wrote "What is Life?"? | Erwin Schrödinger | Francis Crick | Darwin | Einstein | 1944.
+M1#physics-u34-01-q1: ATP hydrolysis releases about: | 20 k_{B}T | 1 k_{B}T | 1000 k_{B}T | 0.1 k_{B}T | ~50 kJ mol^{-1}.
+M2#physics-u34-01-q2: Who wrote "What is Life?"? | Erwin Schrödinger | Francis Crick | Darwin | Einstein | 1944.
 
 ## Biomechanics
 S: Biomechanics applies mechanics to living bodies: how bones carry loads, muscles produce force, joints move and animals walk, run, swim and fly. It informs sports science, medicine, prosthetics and robotics.
@@ -39,8 +39,8 @@ X: Biceps force to hold 100 N in the hand (load 35 cm from elbow, muscle 4 cm)?
 !: Muscles are weak in mechanical advantage but fast; the body trades force for speed and range of motion.
 Q: Why are most human limb levers third-class? | Muscles attach close to joints, giving speed and range at the cost of force.
 Q: How do tendons save energy in running? | They store elastic energy on landing and return it at push-off.
-M1: Walking resembles: | An inverted pendulum | A spring | A rocket | A wheel | Energy exchange.
-M2: Larger animals need relatively thicker bones because: | Weight grows as L^{3}, strength as L^{2} | Bones are lighter | Gravity is stronger | Muscles are weaker | Scaling.
+M1#physics-u34-02-q1: Walking resembles: | An inverted pendulum | A spring | A rocket | A wheel | Energy exchange.
+M2#physics-u34-02-q2: Larger animals need relatively thicker bones because: | Weight grows as L^{3}, strength as L^{2} | Bones are lighter | Gravity is stronger | Muscles are weaker | Scaling.
 
 ## Biological fluid dynamics
 S: Fluids flow throughout living things: blood in vessels, air in lungs, water around swimming cells and fish. Biological fluid dynamics explains how organisms pump, breathe, swim and fly, from bacteria to whales.
@@ -64,8 +64,8 @@ D: phys-u34-poiseuille
 !: Blood flow in large arteries is pulsatile and not exactly Poiseuille; the r^{4} rule is still a good guide for small vessels.
 Q: Why does arterial narrowing matter so much? | Flow depends on the fourth power of radius.
 Q: How do bacteria swim at low Reynolds number? | By rotating helical flagella, a non-reciprocal motion.
-M1: Murray's law describes: | Optimal branching of blood vessels | Heart rate | Swimming speed | Diffusion | r^{3} conservation.
-M2: Efficient swimmers and flyers have Strouhal numbers of about: | 0.2–0.4 | 10 | 0.001 | 100 | Vortex shedding.
+M1#physics-u34-03-q1: Murray's law describes: | Optimal branching of blood vessels | Heart rate | Swimming speed | Diffusion | r^{3} conservation.
+M2#physics-u34-03-q2: Efficient swimmers and flyers have Strouhal numbers of about: | 0.2–0.4 | 10 | 0.001 | 100 | Vortex shedding.
 
 ## Diffusion and transport
 S: Diffusion, the random spreading of molecules, moves substances within cells and across short distances in the body. It's fast over micrometres but painfully slow over centimetres, which shapes the design of all living things.
@@ -87,8 +87,8 @@ D: phys-u34-diffusion-time
 !: Diffusion doesn't "push" molecules in a direction; net flux arises statistically from concentration differences.
 Q: State Fick's first law. | Diffusive flux is proportional to the concentration gradient: J = −D dc/dx.
 Q: Why do large organisms need circulatory systems? | Diffusion is far too slow over large distances (time ∝ distance squared).
-M1: Diffusion time scales with distance as: | Distance squared | Distance | Square root of distance | Distance cubed | ⟨x^{2}⟩ = 2Dt.
-M2: The Stokes–Einstein relation links D to: | Temperature, viscosity and particle size | Mass only | Charge | Pressure | k_{B}T/(6πηr).
+M1#physics-u34-04-q1: Diffusion time scales with distance as: | Distance squared | Distance | Square root of distance | Distance cubed | ⟨x^{2}⟩ = 2Dt.
+M2#physics-u34-04-q2: The Stokes–Einstein relation links D to: | Temperature, viscosity and particle size | Mass only | Charge | Pressure | k_{B}T/(6πηr).
 
 ## Osmosis and membrane transport
 S: Cell membranes control what enters and leaves cells. Water moves by osmosis towards higher solute concentration, while ions and molecules cross by diffusion, through channels, or are pumped against gradients using energy.
@@ -109,8 +109,8 @@ X: Osmotic pressure difference for 0.1 mol L^{-1} glucose at 310 K?
 !: Osmosis moves water, not solute; water flows towards higher solute concentration.
 Q: What is osmotic pressure? | The pressure needed to stop water flowing across a semipermeable membrane into a more concentrated solution.
 Q: What does the sodium–potassium pump do? | Uses ATP to pump 3 Na^{+} out and 2 K^{+} into cells.
-M1: Red blood cells placed in pure water: | Swell and burst | Shrink | Stay the same | Freeze | Hypotonic.
-M2: Aquaporins transport: | Water | Glucose | Sodium | Proteins | Water channels.
+M1#physics-u34-05-q1: Red blood cells placed in pure water: | Swell and burst | Shrink | Stay the same | Freeze | Hypotonic.
+M2#physics-u34-05-q2: Aquaporins transport: | Water | Glucose | Sodium | Proteins | Water channels.
 
 ## Thermodynamics of biological systems
 S: Living systems obey the laws of thermodynamics, using free energy from food or light to drive the reactions that build and maintain them. Free-energy coupling, efficiency and heat production are central to understanding metabolism.
@@ -133,8 +133,8 @@ X: How much food energy does a 100 W human use per day?
 !: Metabolic "calories" are kilocalories: a food Calorie = 4.184 kJ.
 Q: How do cells drive unfavourable reactions? | By coupling them to favourable ones, usually ATP hydrolysis.
 Q: What is chemiosmosis? | Using a proton gradient across a membrane to drive ATP synthesis.
-M1: The human brain uses about what fraction of resting energy? | 20% | 2% | 50% | 80% | ~20 W.
-M2: Muscle efficiency is about: | 25% | 90% | 5% | 100% | Rest is heat.
+M1#physics-u34-06-q1: The human brain uses about what fraction of resting energy? | 20% | 2% | 50% | 80% | ~20 W.
+M2#physics-u34-06-q2: Muscle efficiency is about: | 25% | 90% | 5% | 100% | Rest is heat.
 
 ## Molecular motors
 S: Molecular motors are proteins that turn chemical energy into mechanical work, walking along tracks, spinning or contracting. They move cargo in cells, power muscles, divide chromosomes and make ATP.
@@ -153,8 +153,8 @@ X: ATP synthase makes 3 ATP per turn at ~100 turns per second. ATP per second?
 !: The bacterial flagellar motor's speed varies by species; it's driven by ion flow, not ATP.
 Q: How does kinesin move? | Hand-over-hand along microtubules, 8 nm per ATP.
 Q: What powers ATP synthase? | A proton gradient driving rotation of its F_{0} unit.
-M1: Myosin interacts with: | Actin | Microtubules | DNA | Lipids | Muscle contraction.
-M2: Molecular motors work in a thermal environment by: | Rectifying Brownian motion using chemical energy | Ignoring heat | Being very large | Using light only | Brownian ratchets.
+M1#physics-u34-07-q1: Myosin interacts with: | Actin | Microtubules | DNA | Lipids | Muscle contraction.
+M2#physics-u34-07-q2: Molecular motors work in a thermal environment by: | Rectifying Brownian motion using chemical energy | Ignoring heat | Being very large | Using light only | Brownian ratchets.
 
 ## Protein dynamics
 S: Proteins aren't rigid: they fold, flex, breathe and change shape to function. Protein dynamics spans femtosecond vibrations to millisecond conformational changes, and folding itself is a physics problem of searching a vast energy landscape.
@@ -177,8 +177,8 @@ X: Why does Levinthal's paradox not apply in practice?
 !: A protein's structure isn't static; function often depends on motions between conformations.
 Q: What is Levinthal's paradox? | Random conformational search would take impossibly long, yet proteins fold quickly.
 Q: What did AlphaFold achieve? | Highly accurate protein structure prediction from amino acid sequences.
-M1: Protein folding is driven mainly by: | The hydrophobic effect | Gravity | Magnetism | Covalent bonds forming | Burying non-polar groups.
-M2: Cryo-electron microscopy is used to: | Determine biomolecular structures | Freeze food | Measure temperature | Detect radiation | Nobel 2017.
+M1#physics-u34-08-q1: Protein folding is driven mainly by: | The hydrophobic effect | Gravity | Magnetism | Covalent bonds forming | Burying non-polar groups.
+M2#physics-u34-08-q2: Cryo-electron microscopy is used to: | Determine biomolecular structures | Freeze food | Measure temperature | Detect radiation | Nobel 2017.
 
 ## DNA mechanics
 S: DNA is a long, stiff-but-flexible polymer storing genetic information. Its mechanical properties, bending, twisting and stretching, govern how it's packed into cells, read and copied.
@@ -199,8 +199,8 @@ X: Length of DNA in a human cell's 6.4 × 10^{9} bp?
 !: DNA's information isn't affected by its mechanics directly, but mechanics controls access: tightly wound regions are harder to transcribe.
 Q: What is DNA's persistence length? | About 50 nm (~150 base pairs).
 Q: How is 2 m of DNA packed into a cell nucleus? | Wrapped around histones into nucleosomes and folded into chromatin.
-M1: DNA's rise per base pair is: | 0.34 nm | 3.4 nm | 2 nm | 50 nm | B-DNA.
-M2: Overstretching of DNA occurs at about: | 65 pN | 1 pN | 1 nN | 1000 pN | Single-molecule.
+M1#physics-u34-09-q1: DNA's rise per base pair is: | 0.34 nm | 3.4 nm | 2 nm | 50 nm | B-DNA.
+M2#physics-u34-09-q2: Overstretching of DNA occurs at about: | 65 pN | 1 pN | 1 nN | 1000 pN | Single-molecule.
 
 ## Membrane biophysics
 S: Cell membranes are thin, fluid sheets of lipids with embedded proteins. Their physics, self-assembly, elasticity, fluidity and electrical properties, underpins how cells compartmentalise, signal, divide and move.
@@ -224,8 +224,8 @@ X: Electric field across a 5 nm membrane at −70 mV?
 !: Membranes aren't rigid walls; they're 2D fluids constantly flexing with thermal fluctuations.
 Q: Why do lipids self-assemble into bilayers? | The hydrophobic effect drives tails away from water.
 Q: What is the fluid mosaic model? | Membranes as 2D fluids with lipids and proteins free to move laterally.
-M1: Membrane capacitance is about: | 1 μF cm^{-2} | 1 F m^{-2} only in nerves | 1 pF cm^{-2} | 100 μF cm^{-2} | Thin dielectric.
-M2: Membranes are: | Easy to bend, hard to stretch | Hard to bend | Rigid | Gaseous | Low bending rigidity.
+M1#physics-u34-10-q1: Membrane capacitance is about: | 1 μF cm^{-2} | 1 F m^{-2} only in nerves | 1 pF cm^{-2} | 100 μF cm^{-2} | Thin dielectric.
+M2#physics-u34-10-q2: Membranes are: | Easy to bend, hard to stretch | Hard to bend | Rigid | Gaseous | Low bending rigidity.
 
 ## Electrophysiology
 S: Electrophysiology studies electrical activity in cells and tissues: membrane potentials, ion currents, nerve impulses and heartbeats. It underlies ECG and EEG diagnostics and much of neuroscience.
@@ -245,8 +245,8 @@ D: phys-u34-nernst
 !: The resting potential isn't set by the pump directly; the pump maintains gradients, and permeability (mainly to K^{+}) sets the potential.
 Q: What is the Nernst potential? | The membrane voltage at which an ion's diffusive and electrical driving forces balance.
 Q: What does patch clamping measure? | Currents through individual ion channels or small membrane patches.
-M1: The resting membrane potential is mainly set by permeability to: | K^{+} | Na^{+} | Ca^{2+} | Cl^{−} | Leak channels.
-M2: An ECG signal at the skin is about: | 1 mV | 1 V | 1 μV | 100 V | Heart's electrical activity.
+M1#physics-u34-11-q1: The resting membrane potential is mainly set by permeability to: | K^{+} | Na^{+} | Ca^{2+} | Cl^{−} | Leak channels.
+M2#physics-u34-11-q2: An ECG signal at the skin is about: | 1 mV | 1 V | 1 μV | 100 V | Heart's electrical activity.
 
 ## Ion channels
 S: Ion channels are protein pores that let specific ions cross membranes rapidly, opening and closing in response to voltage, chemicals or force. They make nerve signals, heartbeats, senses and muscle contraction possible.
@@ -265,8 +265,8 @@ X: A channel conducts 5 pA. Ions per second?
 !: Selectivity doesn't come from pore size alone; smaller Na^{+} is excluded by the energetics of shedding water.
 Q: How do potassium channels select K^{+} over smaller Na^{+}? | The selectivity filter mimics K^{+}'s water shell, making it energetically favourable only for K^{+}.
 Q: What are mechanosensitive channels? | Channels opened by membrane tension, used in touch and hearing.
-M1: Tetrodotoxin blocks: | Voltage-gated sodium channels | Potassium channels | Water channels | Chloride channels | Pufferfish toxin.
-M2: An open ion channel passes roughly: | 10^{7} ions per second | 1 ion per second | 10^{15} | 100 | pA currents.
+M1#physics-u34-12-q1: Tetrodotoxin blocks: | Voltage-gated sodium channels | Potassium channels | Water channels | Chloride channels | Pufferfish toxin.
+M2#physics-u34-12-q2: An open ion channel passes roughly: | 10^{7} ions per second | 1 ion per second | 10^{15} | 100 | pA currents.
 
 ## Nerve impulses and action potentials
 S: Neurons send signals as action potentials: brief, all-or-nothing spikes of membrane voltage that travel along axons. Hodgkin and Huxley's model of ion currents explaining them is a triumph of biophysics.
@@ -289,8 +289,8 @@ X: Time for a signal to travel 1 m along a myelinated axon at 100 m s^{-1}?
 !: Action potentials don't weaken with distance; they're regenerated along the axon.
 Q: What causes the rising phase of an action potential? | Opening of voltage-gated sodium channels letting Na^{+} flow in.
 Q: How does myelination speed conduction? | Signals jump between nodes of Ranvier (saltatory conduction).
-M1: Hodgkin and Huxley studied: | Squid giant axons | Frog hearts | Human brains | Plants | Large axons.
-M2: The refractory period ensures that action potentials: | Travel in one direction | Are larger | Never end | Reverse | Inactivated Na^{+} channels.
+M1#physics-u34-13-q1: Hodgkin and Huxley studied: | Squid giant axons | Frog hearts | Human brains | Plants | Large axons.
+M2#physics-u34-13-q2: The refractory period ensures that action potentials: | Travel in one direction | Are larger | Never end | Reverse | Inactivated Na^{+} channels.
 
 ## Neural signal processing
 S: Neurons combine thousands of inputs, transform them and encode information in spike patterns. The physics of neural computation, from single synapses to networks, inspires both neuroscience and artificial intelligence.
@@ -313,8 +313,8 @@ X: Energy per synaptic event if the brain (20 W) handles ~10^{15} synaptic event
 !: Artificial neural networks are inspired by, but differ greatly from, biological neurons and their spiking dynamics.
 Q: What is synaptic plasticity? | Activity-dependent changes in synapse strength, underlying learning and memory.
 Q: What is rate coding? | Encoding information in neurons' firing frequency.
-M1: The human brain has about: | 86 billion neurons | 1 million | 86 trillion | 1000 | ~10^{11}.
-M2: The 2024 Nobel Prize in Physics recognised work on: | Neural networks and machine learning | Exoplanets | Graphene | Gravitational waves | Hopfield and Hinton.
+M1#physics-u34-14-q1: The human brain has about: | 86 billion neurons | 1 million | 86 trillion | 1000 | ~10^{11}.
+M2#physics-u34-14-q2: The 2024 Nobel Prize in Physics recognised work on: | Neural networks and machine learning | Exoplanets | Graphene | Gravitational waves | Hopfield and Hinton.
 
 ## Muscle contraction
 S: Muscles contract when myosin motors pull on actin filaments, sliding them past each other. Driven by ATP and triggered by calcium, this sliding filament mechanism powers every movement and heartbeat.
@@ -340,8 +340,8 @@ X: Force from a muscle of cross-section 20 cm^{2} (stress 0.3 MPa)?
 !: Muscles can only pull, not push; they work in antagonistic pairs (biceps and triceps).
 Q: What triggers muscle contraction? | Calcium release exposing myosin binding sites on actin.
 Q: What is Hill's force–velocity relation? | Muscle force decreases hyperbolically as shortening speed increases.
-M1: Muscle contraction is powered by: | ATP hydrolysis by myosin | Electricity directly | Heat | Gravity | Molecular motors.
-M2: Peak muscle power occurs at about: | One third of maximum speed | Maximum speed | Zero speed | Twice max speed | Hill curve.
+M1#physics-u34-15-q1: Muscle contraction is powered by: | ATP hydrolysis by myosin | Electricity directly | Heat | Gravity | Molecular motors.
+M2#physics-u34-15-q2: Peak muscle power occurs at about: | One third of maximum speed | Maximum speed | Zero speed | Twice max speed | Hill curve.
 
 ## Cellular mechanics
 S: Cells are mechanical objects: they have shape, stiffness and the ability to move, divide and exert forces. Their internal skeleton and adhesions let them sense and respond to mechanical cues, which guides development and disease.
@@ -364,8 +364,8 @@ X: Force from a single actin filament polymerising against a membrane (stall for
 !: Cells aren't bags of fluid; their mechanics is controlled actively by the cytoskeleton.
 Q: What is mechanotransduction? | The process by which cells sense and respond to mechanical forces.
 Q: What are the three cytoskeletal filament types? | Actin filaments, microtubules and intermediate filaments.
-M1: Stem cells on stiff substrates tend to become: | Bone-like cells | Neurons | Fat cells always | Blood cells | Matrix stiffness.
-M2: Cell stiffness is commonly measured with: | Atomic force microscopy | X-rays | MRI only | Thermometers | AFM indentation.
+M1#physics-u34-16-q1: Stem cells on stiff substrates tend to become: | Bone-like cells | Neurons | Fat cells always | Blood cells | Matrix stiffness.
+M2#physics-u34-16-q2: Cell stiffness is commonly measured with: | Atomic force microscopy | X-rays | MRI only | Thermometers | AFM indentation.
 
 ## Tissue mechanics
 S: Tissues combine cells and extracellular matrix into materials with remarkable mechanical properties, from soft brain to stiff bone. Their mechanics determines how organs function, heal and fail.
@@ -388,8 +388,8 @@ X: Why do bone implants of very stiff metal sometimes cause bone loss nearby?
 !: Biological tissues aren't simple Hookean materials; most are nonlinear, anisotropic and time-dependent.
 Q: What is Wolff's law? | Bone remodels to adapt its structure to the loads it carries.
 Q: What is elastography? | Imaging that maps tissue stiffness, often using ultrasound or MRI.
-M1: Bone's Young's modulus is about: | 10–20 GPa | 1 kPa | 200 GPa | 1 MPa | Composite.
-M2: Soft tissues typically show a stress–strain curve that is: | J-shaped (stiffening) | Linear | Softening | Flat | Collagen recruitment.
+M1#physics-u34-17-q1: Bone's Young's modulus is about: | 10–20 GPa | 1 kPa | 200 GPa | 1 MPa | Composite.
+M2#physics-u34-17-q2: Soft tissues typically show a stress–strain curve that is: | J-shaped (stiffening) | Linear | Softening | Flat | Collagen recruitment.
 
 ## Medical imaging physics
 S: Medical imaging uses physics to see inside the body without surgery: X-rays and CT for structure, MRI for soft tissue, ultrasound for real-time images, and nuclear medicine for function. Each relies on a different interaction of radiation or waves with tissue.
@@ -411,8 +411,8 @@ X: Why can't ultrasound image the brain in adults?
 !: Every imaging modality shows a physical property (attenuation, relaxation, impedance), not "anatomy" directly; interpretation needs physics.
 Q: What does CT measure? | X-ray attenuation in thin slices, reconstructed into 3D images.
 Q: Why is MRI good for soft tissue? | Its contrast depends on proton density and relaxation times, which differ between soft tissues.
-M1: Which modality uses no ionising radiation? | MRI | CT | PET | X-ray | Magnetic and RF fields.
-M2: Iodine contrast agents enhance: | X-ray/CT images | MRI | Ultrasound | PET | High Z absorption.
+M1#physics-u34-18-q1: Which modality uses no ionising radiation? | MRI | CT | PET | X-ray | Magnetic and RF fields.
+M2#physics-u34-18-q2: Iodine contrast agents enhance: | X-ray/CT images | MRI | Ultrasound | PET | High Z absorption.
 
 ## Radiation biology
 S: Radiation biology studies how ionising radiation damages cells and tissues. Understanding it underpins radiotherapy, which kills tumours, and radiation protection, which keeps doses safe.
@@ -437,8 +437,8 @@ D: phys-u34-cell-survival
 !: Radiation doesn't make the body radioactive (external beams); it damages molecules, chiefly DNA.
 Q: What is the linear–quadratic model? | Cell survival S = e^{−(αD + βD^{2})} after dose D.
 Q: Why is radiotherapy fractionated? | Normal tissues repair between fractions better than tumours, improving the therapeutic ratio.
-M1: Most X-ray DNA damage is: | Indirect, via free radicals | Direct only | From heat | From magnetism | Water radiolysis.
-M2: Hypoxic tumour cells are: | More radioresistant | More sensitive | Unaffected | Killed instantly | Oxygen enhancement.
+M1#physics-u34-19-q1: Most X-ray DNA damage is: | Indirect, via free radicals | Direct only | From heat | From magnetism | Water radiolysis.
+M2#physics-u34-19-q2: Hypoxic tumour cells are: | More radioresistant | More sensitive | Unaffected | Killed instantly | Oxygen enhancement.
 
 ## Optical microscopy
 S: Optical microscopes magnify small structures using lenses and visible light. Their resolution is limited by diffraction to about half the wavelength, but clever contrast methods reveal transparent cells in detail.
@@ -462,8 +462,8 @@ X: Resolution of a 1.4 NA oil objective at 500 nm?
 !: Magnification beyond what the optics can resolve ("empty magnification") reveals no new detail.
 Q: What limits optical microscope resolution? | Diffraction: about 0.61λ/NA.
 Q: How does phase contrast microscopy work? | It converts phase shifts from transparent specimens into intensity differences.
-M1: Confocal microscopy improves: | Optical sectioning by rejecting out-of-focus light | Lateral resolution beyond diffraction greatly | Colour | Speed | Pinhole.
-M2: Two-photon microscopy uses: | Infrared light for deep tissue imaging | X-rays | Electrons | Ultraviolet only | Nonlinear excitation.
+M1#physics-u34-20-q1: Confocal microscopy improves: | Optical sectioning by rejecting out-of-focus light | Lateral resolution beyond diffraction greatly | Colour | Speed | Pinhole.
+M2#physics-u34-20-q2: Two-photon microscopy uses: | Infrared light for deep tissue imaging | X-rays | Electrons | Ultraviolet only | Nonlinear excitation.
 
 ## Fluorescence microscopy
 S: Fluorescence microscopy labels molecules with fluorescent tags and images them with high contrast. It reveals where specific proteins are in living cells and, with super-resolution methods, beats the diffraction limit.
@@ -484,8 +484,8 @@ X: How precisely can a single molecule be localised if it emits 1000 photons and
 !: Super-resolution methods don't violate diffraction; they use molecular switching or nonlinear effects to sidestep it.
 Q: What is GFP? | Green fluorescent protein from jellyfish, used to tag proteins genetically.
 Q: How do PALM and STORM beat the diffraction limit? | By activating sparse single molecules and localising each precisely.
-M1: STED microscopy uses: | A depletion beam to narrow the fluorescent spot | X-rays | Electrons | Sound | Stimulated emission depletion.
-M2: Localisation precision improves with photon number N as: | 1/√N | 1/N | N | √N | Statistical.
+M1#physics-u34-21-q1: STED microscopy uses: | A depletion beam to narrow the fluorescent spot | X-rays | Electrons | Sound | Stimulated emission depletion.
+M2#physics-u34-21-q2: Localisation precision improves with photon number N as: | 1/√N | 1/N | N | √N | Statistical.
 
 ## Single-molecule methods
 S: Single-molecule techniques watch and manipulate individual biomolecules rather than averages over billions. They reveal heterogeneity, rare events and the step-by-step mechanics of molecular machines.
@@ -507,8 +507,8 @@ X: Optical trap stiffness 0.05 pN nm^{-1}; bead displaced 20 nm. Force?
 !: Single-molecule results vary from molecule to molecule; that variability is real information, not just noise.
 Q: What can optical tweezers measure? | Piconewton forces and nanometre displacements of single molecules.
 Q: How does nanopore sequencing work? | DNA passing through a pore changes the ionic current in base-specific ways.
-M1: Optical tweezers were developed by: | Arthur Ashkin | Watson | Rutherford | Planck | Nobel 2018.
-M2: Single-molecule FRET measures: | Distances of a few nanometres | Masses | Charges | Temperatures | Molecular ruler.
+M1#physics-u34-22-q1: Optical tweezers were developed by: | Arthur Ashkin | Watson | Rutherford | Planck | Nobel 2018.
+M2#physics-u34-22-q2: Single-molecule FRET measures: | Distances of a few nanometres | Masses | Charges | Temperatures | Molecular ruler.
 
 ## Biological networks
 S: Cells process information through networks of interacting genes, proteins and metabolites. Physics and network theory help explain how these networks produce reliable decisions, rhythms and patterns despite noise.
@@ -533,8 +533,8 @@ X: Why does negative feedback with delay produce oscillations?
 !: Network diagrams aren't enough; behaviour depends on rates, delays and noise.
 Q: What does positive feedback enable in cells? | Bistable switches and irreversible decisions.
 Q: What are Turing patterns? | Spatial patterns formed by reaction–diffusion of interacting chemicals.
-M1: The repressilator is a: | Synthetic oscillating gene circuit | Protein | Virus | Microscope | Three repressors in a loop.
-M2: Gene expression noise is large because: | Molecules are present in small numbers | Cells are hot | DNA is long | Light is bright | Stochastic events.
+M1#physics-u34-23-q1: The repressilator is a: | Synthetic oscillating gene circuit | Protein | Virus | Microscope | Three repressors in a loop.
+M2#physics-u34-23-q2: Gene expression noise is large because: | Molecules are present in small numbers | Cells are hot | DNA is long | Light is bright | Stochastic events.
 
 ## Statistical physics of living systems
 S: Statistical physics helps explain how collective behaviour in biology emerges from many interacting parts: flocks of birds, bacterial colonies, protein folding, neural activity and evolution itself.
@@ -557,8 +557,8 @@ X: How does kinetic proofreading improve accuracy?
 !: Living systems aren't at thermal equilibrium; equilibrium statistical mechanics applies only partly.
 Q: What is active matter? | Systems made of self-propelled units that consume energy, showing collective motion.
 Q: What is kinetic proofreading? | An energy-consuming mechanism that improves molecular recognition accuracy beyond equilibrium limits.
-M1: The Vicsek model describes: | Flocking of self-propelled particles | Protein folding | DNA replication | Muscle contraction | Collective motion.
-M2: In population genetics, genetic drift is analogous to: | Temperature (noise) | Energy | Mass | Pressure | Random fluctuations.
+M1#physics-u34-24-q1: The Vicsek model describes: | Flocking of self-propelled particles | Protein folding | DNA replication | Muscle contraction | Collective motion.
+M2#physics-u34-24-q2: In population genetics, genetic drift is analogous to: | Temperature (noise) | Energy | Mass | Pressure | Random fluctuations.
 
 ## Computational biophysics
 S: Computational biophysics uses simulations and data analysis to study biological molecules and systems, from atomic motions of proteins to whole-cell models. It complements experiments and increasingly predicts biology.
@@ -580,6 +580,6 @@ X: How many time steps to simulate 1 ms of protein dynamics at 2 fs per step?
 !: A simulation is only as reliable as its model; validate against experimental data.
 Q: What is QM/MM? | Treating a reactive region quantum mechanically and the rest with classical force fields.
 Q: Why are coarse-grained models used? | They group atoms into larger beads, reaching longer times and sizes.
-M1: AlphaFold predicts: | Protein structures | Weather | Galaxies | Stock prices | From sequence.
-M2: The main limitation of atomistic MD is: | Short accessible timescales | Too few atoms | Too slow computers only for gases | Lack of physics | Femtosecond steps.
+M1#physics-u34-25-q1: AlphaFold predicts: | Protein structures | Weather | Galaxies | Stock prices | From sequence.
+M2#physics-u34-25-q2: The main limitation of atomistic MD is: | Short accessible timescales | Too few atoms | Too slow computers only for gases | Lack of physics | Femtosecond steps.
 `;

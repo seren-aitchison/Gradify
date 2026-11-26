@@ -20,8 +20,8 @@ X: Density of a nucleus (A = 56, r = 1.2A^{1/3} fm)?
 !: Atoms are mostly empty space in terms of mass, but the electron cloud fills that space; you can't push atoms through each other because of Pauli exclusion and electrostatics.
 Q: What fixes an element's identity? | Its atomic number Z, the number of protons.
 Q: Why doesn't the electron spiral into the nucleus? | Quantum mechanics: a confined electron has minimum kinetic energy, giving a stable ground state.
-M1: An atom is roughly how many times larger than its nucleus? | 10^{5} | 10 | 10^{10} | 100 | 10^{-10}/10^{-15}.
-M2: Isotopes of an element differ in their number of: | Neutrons | Protons | Electrons when neutral | Charge | Same Z.
+M1#physics-u21-01-q1: An atom is roughly how many times larger than its nucleus? | 10^{5} | 10 | 10^{10} | 100 | 10^{-10}/10^{-15}.
+M2#physics-u21-01-q2: Isotopes of an element differ in their number of: | Neutrons | Protons | Electrons when neutral | Charge | Same Z.
 
 ## Rutherford scattering
 S: Geiger and Marsden fired alpha particles at gold foil; a few bounced back at large angles. Rutherford (1911) showed this required all the positive charge and nearly all the mass to be concentrated in a tiny nucleus.
@@ -42,8 +42,8 @@ X: Closest approach of a 7.7 MeV alpha to gold (Z = 79)?
 !: Rutherford scattering is pure Coulomb repulsion; the alphas never touch the nucleus at the energies Geiger and Marsden used.
 Q: What did large-angle alpha scattering show? | Positive charge and mass are concentrated in a tiny nucleus.
 Q: How does Rutherford's cross-section depend on angle? | As 1/sin^{4}(θ/2).
-M1: Most alphas passed straight through the foil because: | Atoms are mostly empty space | Gold is transparent | Alphas are neutral | Electrons repel them | Small nucleus.
-M2: Deep inelastic scattering revealed: | Quarks inside protons | The nucleus | Electrons | Neutrons | SLAC 1968.
+M1#physics-u21-02-q1: Most alphas passed straight through the foil because: | Atoms are mostly empty space | Gold is transparent | Alphas are neutral | Electrons repel them | Small nucleus.
+M2#physics-u21-02-q2: Deep inelastic scattering revealed: | Quarks inside protons | The nucleus | Electrons | Neutrons | SLAC 1968.
 
 ## Bohr model
 S: Bohr's 1913 model put hydrogen's electron in circular orbits with quantised angular momentum. It correctly gave hydrogen's energy levels and spectral lines, a crucial step towards quantum mechanics, though its picture of orbits was wrong.
@@ -67,8 +67,8 @@ D: phys-u21-bohr-radii
 !: Bohr orbits don't exist; electrons in atoms aren't on circular tracks. The model's energies are right; its picture isn't.
 Q: What did Bohr assume about angular momentum? | It's quantised in units of ħ: mvr = nħ.
 Q: Why was the Bohr model abandoned? | It couldn't explain multi-electron atoms, fine structure or intensities, and its orbit picture conflicts with quantum mechanics.
-M1: Energy of He^{+} in n = 1: | −54.4 eV | −13.6 eV | −27.2 eV | −3.4 eV | Z^{2} = 4.
-M2: The Bohr radius is about: | 0.053 nm | 1 nm | 0.53 nm | 5.3 pm | a_{0}.
+M1#physics-u21-03-q1: Energy of He^{+} in n = 1: | −54.4 eV | −13.6 eV | −27.2 eV | −3.4 eV | Z^{2} = 4.
+M2#physics-u21-03-q2: The Bohr radius is about: | 0.053 nm | 1 nm | 0.53 nm | 5.3 pm | a_{0}.
 
 ## Quantum mechanical atomic models
 S: In the quantum model, electrons occupy orbitals: wavefunctions giving probability clouds around the nucleus. Solving the Schrödinger equation (approximately for many electrons) explains spectra, chemistry and the periodic table.
@@ -89,8 +89,8 @@ X: Why is the 2s orbital lower in energy than 2p in lithium but not in hydrogen?
 !: Orbitals are one-electron approximations; the true many-electron wavefunction isn't a simple product of orbitals.
 Q: What is an atomic orbital? | A one-electron wavefunction describing an electron's probability distribution in an atom.
 Q: Why is gold yellow? | Relativistic effects shift its electron energy levels so it absorbs blue light.
-M1: In hydrogen, the energy depends on: | n only | n and l | l only | m only | Accidental degeneracy.
-M2: Hartree–Fock treats each electron as moving in: | The average field of the others | No field | A magnetic field only | A crystal | Self-consistent mean field.
+M1#physics-u21-04-q1: In hydrogen, the energy depends on: | n only | n and l | l only | m only | Accidental degeneracy.
+M2#physics-u21-04-q2: Hartree–Fock treats each electron as moving in: | The average field of the others | No field | A magnetic field only | A crystal | Self-consistent mean field.
 
 ## Atomic orbitals
 S: Atomic orbitals are the shapes of electron probability clouds, set by the quantum numbers l and m. Their shapes and orientations determine how atoms bond and the geometry of molecules.
@@ -113,8 +113,8 @@ X: How many radial and angular nodes does a 4d orbital have?
 !: Orbital diagrams show regions of high probability (usually 90% boundary surfaces), not hard edges.
 Q: How many p orbitals are there in a shell? | Three.
 Q: What determines an orbital's number of angular nodes? | Its l value.
-M1: A 3s orbital has how many radial nodes? | 2 | 1 | 0 | 3 | n − l − 1.
-M2: Methane's tetrahedral shape comes from: | sp^{3} hybridisation | sp hybrids | Pure p orbitals | d orbitals | Four equivalent hybrids.
+M1#physics-u21-05-q1: A 3s orbital has how many radial nodes? | 2 | 1 | 0 | 3 | n − l − 1.
+M2#physics-u21-05-q2: Methane's tetrahedral shape comes from: | sp^{3} hybridisation | sp hybrids | Pure p orbitals | d orbitals | Four equivalent hybrids.
 
 ## Electron configurations
 S: An electron configuration lists how an atom's electrons fill its orbitals. Filling follows energy order, the Pauli principle and Hund's rule, and the outer electrons determine chemistry and the periodic table's structure.
@@ -133,8 +133,8 @@ X: Configuration of phosphorus (Z = 15) and its unpaired electrons?
 !: 4s fills before 3d in neutral atoms, but in transition-metal ions 4s electrons are removed first.
 Q: State Hund's first rule. | Electrons in a subshell occupy separate orbitals with parallel spins first, maximising total spin.
 Q: Why are noble gases inert? | Their outer shells are completely filled.
-M1: The configuration of sodium (Z = 11) is: | [Ne] 3s^{1} | [Ne] 3p^{1} | [Ar] 4s^{1} | [He] 2s^{1} | One outer s electron.
-M2: Copper's configuration is [Ar] 3d^{10} 4s^{1} because: | A full d subshell is particularly stable | 4s is higher than 4p | Copper has 28 electrons | It's ionised | Exception.
+M1#physics-u21-06-q1: The configuration of sodium (Z = 11) is: | [Ne] 3s^{1} | [Ne] 3p^{1} | [Ar] 4s^{1} | [He] 2s^{1} | One outer s electron.
+M2#physics-u21-06-q2: Copper's configuration is [Ar] 3d^{10} 4s^{1} because: | A full d subshell is particularly stable | 4s is higher than 4p | Copper has 28 electrons | It's ionised | Exception.
 
 ## Atomic energy levels
 S: Each atom has a characteristic set of energy levels determined by its electron configuration and the interactions between electrons. Transitions between them produce the spectral lines that fingerprint every element.
@@ -153,8 +153,8 @@ D: phys-u21-sodium-d
 !: Multi-electron atoms' levels depend on n and l, unlike hydrogen's, because of screening and electron interactions.
 Q: What causes term splitting within a configuration? | Electron–electron repulsion depending on how spins and orbital momenta combine.
 Q: What are Rydberg atoms? | Atoms with an electron in a very high n state, making them huge and highly sensitive to fields.
-M1: Which has the lowest ionisation energy? | Caesium | Helium | Hydrogen | Neon | Outer electron far from nucleus.
-M2: Fine structure splitting is typically: | ~meV | ~eV | ~keV | ~MeV | Smaller than gross structure.
+M1#physics-u21-07-q1: Which has the lowest ionisation energy? | Caesium | Helium | Hydrogen | Neon | Outer electron far from nucleus.
+M2#physics-u21-07-q2: Fine structure splitting is typically: | ~meV | ~eV | ~keV | ~MeV | Smaller than gross structure.
 
 ## Hydrogen and hydrogen-like atoms
 S: Hydrogen and ions with a single electron (He^{+}, Li^{2+}…) can be solved exactly. Their levels scale simply with nuclear charge, and they are benchmarks for testing quantum electrodynamics.
@@ -177,8 +177,8 @@ D: phys-u21-lithium-ion
 !: Hydrogen-like formulas only apply to one-electron systems; neutral helium needs the multi-electron treatment.
 Q: How do hydrogen-like energies scale with Z? | As Z^{2}.
 Q: What did muonic hydrogen measure? | The proton's charge radius, with surprising initial results (the proton radius puzzle).
-M1: Positronium's binding energy is: | 6.8 eV | 13.6 eV | 27.2 eV | 0 | Reduced mass m_{e}/2.
-M2: Deuterium was discovered through: | Isotope shifts in its spectral lines | Mass spectrometry | Radioactivity | Neutron scattering | Reduced-mass shift.
+M1#physics-u21-08-q1: Positronium's binding energy is: | 6.8 eV | 13.6 eV | 27.2 eV | 0 | Reduced mass m_{e}/2.
+M2#physics-u21-08-q2: Deuterium was discovered through: | Isotope shifts in its spectral lines | Mass spectrometry | Radioactivity | Neutron scattering | Reduced-mass shift.
 
 ## Multi-electron atoms
 S: In atoms with more than one electron, electron–electron repulsion makes the Schrödinger equation unsolvable exactly. Screening, exchange and correlation explain why energies depend on l, and why the periodic table has its shape.
@@ -201,8 +201,8 @@ D: phys-u21-moseley
 !: Electrons in multi-electron atoms aren't independent; correlation effects matter for accurate energies.
 Q: What is effective nuclear charge? | The net positive charge an electron experiences after shielding by other electrons.
 Q: What did Moseley's law establish? | Atomic number is the true ordering principle of elements.
-M1: Across a period, atomic radius generally: | Decreases | Increases | Stays the same | Doubles | Rising Z_{eff}.
-M2: In helium, triplet states lie lower than singlets because: | Exchange keeps parallel-spin electrons apart, reducing repulsion | Triplets have more electrons | Spin–orbit coupling | Magnetism | Antisymmetric spatial wavefunction.
+M1#physics-u21-09-q1: Across a period, atomic radius generally: | Decreases | Increases | Stays the same | Doubles | Rising Z_{eff}.
+M2#physics-u21-09-q2: In helium, triplet states lie lower than singlets because: | Exchange keeps parallel-spin electrons apart, reducing repulsion | Triplets have more electrons | Spin–orbit coupling | Magnetism | Antisymmetric spatial wavefunction.
 
 ## Electron spin
 S: The electron's intrinsic spin gives it a magnetic moment and two possible orientations in a field. Spin explains doublet spectral lines, atomic magnetism, chemical bonding rules and the structure of the periodic table.
@@ -223,8 +223,8 @@ X: ESR frequency for a free electron in 0.35 T?
 !: The electron's g-factor is almost exactly 2, not 1 as for orbital motion; Dirac's theory explains why.
 Q: What is the electron's spin g-factor? | About 2.0023.
 Q: What is giant magnetoresistance? | A large change in electrical resistance of magnetic multilayers depending on the relative alignment of their magnetisations.
-M1: The sodium D doublet arises from: | Spin–orbit splitting of the 3p level | Two isotopes | Hyperfine structure | The Stark effect | Fine structure.
-M2: ESR flips electron spins using: | Microwaves | X-rays | Radio at 50 Hz | Visible light | ~10 GHz.
+M1#physics-u21-10-q1: The sodium D doublet arises from: | Spin–orbit splitting of the 3p level | Two isotopes | Hyperfine structure | The Stark effect | Fine structure.
+M2#physics-u21-10-q2: ESR flips electron spins using: | Microwaves | X-rays | Radio at 50 Hz | Visible light | ~10 GHz.
 
 ## Fine structure
 S: Fine structure is the small splitting of atomic energy levels caused by relativistic effects and the coupling between an electron's spin and its orbital motion. It splits spectral lines into closely spaced multiplets.
@@ -245,8 +245,8 @@ X: Fine-structure splitting of hydrogen n = 2 (2p_{1/2} vs 2p_{3/2}) is ~10.9 GH
 !: Fine structure isn't caused by the nucleus's spin; that's hyperfine structure, about 1000 times smaller.
 Q: What causes fine structure? | Relativistic corrections and spin–orbit coupling.
 Q: What is the Lamb shift? | A small QED splitting between 2s_{1/2} and 2p_{1/2} in hydrogen, not predicted by Dirac's equation.
-M1: The fine-structure constant is about: | 1/137 | 1/1836 | 137 | 1/2 | α.
-M2: In hydrogen, fine-structure energies depend on: | n and j | n only | l only | m_{l} | Dirac result.
+M1#physics-u21-11-q1: The fine-structure constant is about: | 1/137 | 1/1836 | 137 | 1/2 | α.
+M2#physics-u21-11-q2: In hydrogen, fine-structure energies depend on: | n and j | n only | l only | m_{l} | Dirac result.
 
 ## Hyperfine structure
 S: Hyperfine structure is a tiny splitting of atomic levels from the interaction between the electron and the nucleus's magnetic moment (and electric quadrupole). It's behind the 21 cm hydrogen line and the caesium atomic clock.
@@ -265,8 +265,8 @@ X: Energy of the 21 cm hydrogen transition?
 !: Hyperfine transitions are extremely narrow and stable, which is why they make good clocks, not because they're energetic.
 Q: What causes hyperfine structure? | Interaction of the electron's magnetic field with the nucleus's magnetic moment.
 Q: Why is the 21 cm line important in astronomy? | It traces neutral hydrogen, mapping galaxies' structure and rotation.
-M1: The second is defined by a hyperfine transition in: | Caesium-133 | Hydrogen | Rubidium | Strontium | 9 192 631 770 Hz.
-M2: Hyperfine splittings are typically in the: | Microwave range | X-ray range | Visible | Gamma range | μeV energies.
+M1#physics-u21-12-q1: The second is defined by a hyperfine transition in: | Caesium-133 | Hydrogen | Rubidium | Strontium | 9 192 631 770 Hz.
+M2#physics-u21-12-q2: Hyperfine splittings are typically in the: | Microwave range | X-ray range | Visible | Gamma range | μeV energies.
 
 ## Spin-orbit coupling
 S: Spin–orbit coupling is the interaction between an electron's spin magnetic moment and the magnetic field it feels from its orbital motion. It splits atomic levels, drives fine structure and is crucial in modern materials physics.
@@ -285,8 +285,8 @@ X: Sodium 3p splitting is 2.1 meV (0.6 nm between D lines). How does caesium com
 !: Spin–orbit coupling is a relativistic magnetic effect, not an electrostatic one; it vanishes for s states (L = 0).
 Q: What is spin–orbit coupling? | The interaction between an electron's spin and the magnetic field from its orbital motion relative to the nucleus.
 Q: Why is spin–orbit coupling stronger in heavy atoms? | Stronger nuclear fields near the nucleus; it scales steeply with Z.
-M1: Spin–orbit coupling is zero for: | s states (l = 0) | p states | d states | All states | No orbital angular momentum.
-M2: Topological insulators rely heavily on: | Spin–orbit coupling | Gravity | Nuclear spin | Superconductivity | Band inversion.
+M1#physics-u21-13-q1: Spin–orbit coupling is zero for: | s states (l = 0) | p states | d states | All states | No orbital angular momentum.
+M2#physics-u21-13-q2: Topological insulators rely heavily on: | Spin–orbit coupling | Gravity | Nuclear spin | Superconductivity | Band inversion.
 
 ## Zeeman effect
 S: In a magnetic field, atomic energy levels split according to their magnetic quantum number, so spectral lines split into several components. The Zeeman effect measures magnetic fields from the lab to the Sun's surface.
@@ -309,8 +309,8 @@ X: Normal Zeeman splitting of a 500 nm line in 1 T, as a wavelength shift?
 !: The anomalous Zeeman effect is actually the more common one; the "normal" effect needs total spin zero.
 Q: What is the Landé g-factor? | The factor relating a level's magnetic moment to its total angular momentum J.
 Q: How did Hale measure sunspot magnetic fields? | From the Zeeman splitting of spectral lines.
-M1: The normal Zeeman effect splits a line into: | 3 components | 2 | 5 | Many | Δm = 0, ±1.
-M2: Zeeman splitting is proportional to: | Magnetic field strength | Wavelength | Temperature | Electric field | ΔE ∝ B.
+M1#physics-u21-14-q1: The normal Zeeman effect splits a line into: | 3 components | 2 | 5 | Many | Δm = 0, ±1.
+M2#physics-u21-14-q2: Zeeman splitting is proportional to: | Magnetic field strength | Wavelength | Temperature | Electric field | ΔE ∝ B.
 
 ## Stark effect
 S: The Stark effect is the shifting and splitting of atomic and molecular energy levels in an electric field. It's usually much smaller than the Zeeman effect but matters in plasmas, semiconductors and precision measurements.
@@ -330,8 +330,8 @@ X: Ground-state helium has polarisability α ≈ 2.3 × 10^{-41} C m^{2} V^{-1}.
 !: Hydrogen shows a linear Stark effect only because of its special degeneracy between states of different l.
 Q: Why does hydrogen show a linear Stark effect? | Its degenerate states of opposite parity mix in the field.
 Q: What is an AC Stark shift? | The shift of atomic levels caused by an oscillating (laser) electric field.
-M1: Most atoms show a Stark shift that is: | Quadratic in field | Linear | Cubic | Independent of field | Non-degenerate states.
-M2: Stark broadening of plasma lines measures: | Electron density | Temperature only | Magnetic field | Composition only | Microfields from charged particles.
+M1#physics-u21-15-q1: Most atoms show a Stark shift that is: | Quadratic in field | Linear | Cubic | Independent of field | Non-degenerate states.
+M2#physics-u21-15-q2: Stark broadening of plasma lines measures: | Electron density | Temperature only | Magnetic field | Composition only | Microfields from charged particles.
 
 ## Atomic spectra
 S: Every element emits and absorbs light at its own set of wavelengths. Atomic spectra fingerprint elements in flames, stars and galaxies, and their patterns revealed the quantum structure of atoms.
@@ -353,8 +353,8 @@ D: phys-u21-balmer-series
 !: Absorption and emission lines occur at the same wavelengths for the same transitions; whether you see bright or dark lines depends on the gas's temperature relative to the background.
 Q: State Kirchhoff's laws of spectroscopy. | Hot dense objects give continuous spectra; hot thin gas gives emission lines; cool gas in front of a continuous source gives absorption lines.
 Q: Where was helium first discovered? | In the Sun's spectrum, during an 1868 eclipse.
-M1: Fraunhofer lines in sunlight are: | Absorption lines | Emission lines | Continuous | Artefacts | Cooler outer gas.
-M2: The Balmer series ends on level: | n = 2 | n = 1 | n = 3 | n = ∞ | Visible lines.
+M1#physics-u21-16-q1: Fraunhofer lines in sunlight are: | Absorption lines | Emission lines | Continuous | Artefacts | Cooler outer gas.
+M2#physics-u21-16-q2: The Balmer series ends on level: | n = 2 | n = 1 | n = 3 | n = ∞ | Visible lines.
 
 ## Selection rules
 S: Selection rules state which transitions between atomic states can occur by emitting or absorbing a photon. They follow from conservation of angular momentum and parity, and they explain why some spectral lines are bright, some faint and some missing.
@@ -375,8 +375,8 @@ X: Can hydrogen go 3d → 1s by electric dipole emission?
 !: "Forbidden" means suppressed by orders of magnitude, not impossible.
 Q: What is the Δl selection rule for electric dipole transitions? | Δl = ±1.
 Q: Why are forbidden lines seen in nebulae but not in the lab? | Low densities let long-lived states decay radiatively before collisions de-excite them.
-M1: Which transition is electric-dipole allowed? | 2p → 1s | 2s → 1s | 3d → 1s | 3s → 2s | Δl = ±1.
-M2: Forbidden transitions have: | Long lifetimes and narrow lines | Short lifetimes | Broad lines | No emission ever | Small transition rates.
+M1#physics-u21-17-q1: Which transition is electric-dipole allowed? | 2p → 1s | 2s → 1s | 3d → 1s | 3s → 2s | Δl = ±1.
+M2#physics-u21-17-q2: Forbidden transitions have: | Long lifetimes and narrow lines | Short lifetimes | Broad lines | No emission ever | Small transition rates.
 
 ## Spontaneous and stimulated emission
 S: An excited atom can emit a photon spontaneously at a random time, or be stimulated to emit by an incoming photon, producing an identical copy. Einstein (1917) showed both must exist, laying the foundation for lasers.
@@ -398,8 +398,8 @@ X: Why are X-ray lasers hard to build?
 !: Spontaneous emission is random in direction and phase; it's the background noise from which lasers build coherent light.
 Q: Why is stimulated emission necessary to explain Planck's law? | Einstein showed equilibrium with radiation requires both spontaneous and stimulated emission.
 Q: How does spontaneous emission rate depend on frequency? | As f^{3}.
-M1: A stimulated photon is: | Identical to the stimulating photon | Random in phase | Lower in energy | Opposite in direction | Coherent.
-M2: The Purcell effect shows spontaneous emission can be: | Changed by the surrounding optical environment | Never changed | Only stimulated | Instant | Cavity QED.
+M1#physics-u21-18-q1: A stimulated photon is: | Identical to the stimulating photon | Random in phase | Lower in energy | Opposite in direction | Coherent.
+M2#physics-u21-18-q2: The Purcell effect shows spontaneous emission can be: | Changed by the surrounding optical environment | Never changed | Only stimulated | Instant | Cavity QED.
 
 ## Atomic transitions
 S: An atomic transition is a jump between energy levels, absorbing or emitting energy. Its frequency, strength, width and shape tell physicists about the atom and its environment.
@@ -421,8 +421,8 @@ D: phys-u21-natural-linewidth
 !: Doppler broadening hides natural linewidths in gases; saturation spectroscopy and cold atoms remove it.
 Q: What is natural linewidth? | The minimum linewidth set by the excited state's lifetime, Δf = 1/(2πτ).
 Q: What is a Rabi oscillation? | Periodic exchange of population between two levels driven by a resonant field.
-M1: Doppler broadening increases with: | Temperature | Atomic mass | Density only | Lifetime | ∝ √(T/m).
-M2: A π pulse on a two-level atom: | Fully transfers population to the other level | Does nothing | Creates superposition | Ionises it | Half a Rabi cycle.
+M1#physics-u21-19-q1: Doppler broadening increases with: | Temperature | Atomic mass | Density only | Lifetime | ∝ √(T/m).
+M2#physics-u21-19-q2: A π pulse on a two-level atom: | Fully transfers population to the other level | Does nothing | Creates superposition | Ionises it | Half a Rabi cycle.
 
 ## Lasers and atomic transitions
 S: Lasers depend on atomic (or molecular, or semiconductor) transitions arranged so that population inversion can be maintained. The choice of transition sets a laser's wavelength, efficiency and whether it runs continuously or in pulses.
@@ -441,8 +441,8 @@ X: Why is the HeNe laser four-level?
 !: Ruby was the first laser (Maiman, 1960) despite being three-level, because its long-lived metastable level helped.
 Q: Why are four-level lasers more efficient than three-level? | The lower laser level isn't the ground state, so it empties quickly and inversion is easy.
 Q: What sets a laser's gain bandwidth? | The linewidth of its gain transition.
-M1: The first laser used: | Ruby | HeNe | CO_{2} | Semiconductor | Maiman 1960.
-M2: Quantum cascade lasers emit in the: | Mid-infrared | Ultraviolet | X-ray | Microwave only | Intersubband transitions.
+M1#physics-u21-20-q1: The first laser used: | Ruby | HeNe | CO_{2} | Semiconductor | Maiman 1960.
+M2#physics-u21-20-q2: Quantum cascade lasers emit in the: | Mid-infrared | Ultraviolet | X-ray | Microwave only | Intersubband transitions.
 
 ## Atomic clocks
 S: Atomic clocks keep time by locking an oscillator to an atomic transition frequency. They're the most precise instruments ever made: the best now lose less than a second in the age of the universe.
@@ -462,8 +462,8 @@ X: A clock with fractional uncertainty 10^{-18}. Error over the age of the unive
 !: Atomic clocks don't count radioactive decays; they're oscillators locked to atomic transition frequencies.
 Q: Which transition defines the SI second? | The caesium-133 ground-state hyperfine transition, 9 192 631 770 Hz.
 Q: Why are optical clocks more precise than microwave clocks? | Their transition frequencies are ~10^{5} times higher, with very narrow lines.
-M1: Optical lattice clocks commonly use: | Strontium | Caesium | Hydrogen | Uranium | 698 nm transition.
-M2: Optical clocks can detect height differences of about: | 1 cm | 1 km | 1 m | 1 mm only in space | Gravitational redshift ~10^{-18}.
+M1#physics-u21-21-q1: Optical lattice clocks commonly use: | Strontium | Caesium | Hydrogen | Uranium | 698 nm transition.
+M2#physics-u21-21-q2: Optical clocks can detect height differences of about: | 1 cm | 1 km | 1 m | 1 mm only in space | Gravitational redshift ~10^{-18}.
 
 ## Laser cooling
 S: Laser cooling slows atoms using the momentum of photons. Tuning lasers slightly below an atomic resonance makes atoms moving towards the light absorb more, so they're always pushed back: temperatures fall to microkelvin.
@@ -484,8 +484,8 @@ X: Recoil velocity of a sodium atom absorbing a 589 nm photon?
 !: Laser cooling works only for atoms with suitable closed transitions; molecules are much harder (though now achieved for some).
 Q: How does Doppler cooling slow atoms? | Red-detuned light is absorbed preferentially by atoms moving towards it, giving momentum kicks that oppose motion.
 Q: What is the Doppler cooling limit? | T = ħΓ/(2k_{B}), set by heating from random spontaneous emission.
-M1: Laser cooling beams are tuned: | Slightly below resonance | Exactly on resonance | Far above | To any frequency | Red detuning.
-M2: Optical molasses refers to: | Damping of atomic motion by counter-propagating beams | Sticky lasers | A type of BEC | Laser cutting | Viscous-like force.
+M1#physics-u21-22-q1: Laser cooling beams are tuned: | Slightly below resonance | Exactly on resonance | Far above | To any frequency | Red detuning.
+M2#physics-u21-22-q2: Optical molasses refers to: | Damping of atomic motion by counter-propagating beams | Sticky lasers | A type of BEC | Laser cutting | Viscous-like force.
 
 ## Magneto-optical trapping
 S: A magneto-optical trap (MOT) combines laser cooling with a magnetic field gradient so the light both cools atoms and pushes them to the centre. It's the standard starting point for cold-atom experiments.
@@ -507,8 +507,8 @@ X: Why does the field gradient need circular polarisation?
 !: The magnetic field alone doesn't trap atoms in a MOT; it makes the radiation pressure position-dependent.
 Q: What does the magnetic field do in a MOT? | It Zeeman-shifts transitions so radiation pressure pushes atoms towards the trap centre.
 Q: How many atoms does a typical MOT hold? | About a million to ten billion.
-M1: A MOT's magnetic field is: | Zero at the centre, increasing linearly | Uniform | Oscillating | Absent | Quadrupole field.
-M2: Optical tweezer arrays are used for: | Arranging individual atoms for quantum computing | Cutting atoms | Heating atoms | Measuring magnetic fields only | Programmable atom arrays.
+M1#physics-u21-23-q1: A MOT's magnetic field is: | Zero at the centre, increasing linearly | Uniform | Oscillating | Absent | Quadrupole field.
+M2#physics-u21-23-q2: Optical tweezer arrays are used for: | Arranging individual atoms for quantum computing | Cutting atoms | Heating atoms | Measuring magnetic fields only | Programmable atom arrays.
 
 ## Bose–Einstein condensation in atomic gases
 S: When a dilute gas of bosonic atoms is cooled to nanokelvin temperatures, a large fraction collapses into the lowest quantum state, forming a Bose–Einstein condensate: a macroscopic matter wave. First made in 1995, BECs are laboratories for quantum physics.
@@ -530,8 +530,8 @@ X: Why evaporative cooling works: remove atoms with energy > 4k_{B}T.
 !: A BEC isn't a solid or liquid; it's an extremely dilute gas whose atoms share one quantum state.
 Q: What is evaporative cooling? | Removing the most energetic atoms so the remainder rethermalise at lower temperature.
 Q: How was BEC first observed? | As a sharp peak in the atoms' velocity distribution after release from the trap.
-M1: BECs are made from: | Bosonic atoms | Fermionic atoms only | Photons only | Electrons | Integer spin.
-M2: Two overlapping BECs produce: | Interference fringes | Nothing | A solid | Heat only | Coherent matter waves.
+M1#physics-u21-24-q1: BECs are made from: | Bosonic atoms | Fermionic atoms only | Photons only | Electrons | Integer spin.
+M2#physics-u21-24-q2: Two overlapping BECs produce: | Interference fringes | Nothing | A solid | Heat only | Coherent matter waves.
 
 ## Precision spectroscopy
 S: Precision spectroscopy measures atomic and molecular transition frequencies to extraordinary accuracy, testing fundamental physics: QED, the constancy of nature's constants, and the symmetry between matter and antimatter.
@@ -553,6 +553,6 @@ X: Why does two-photon spectroscopy with counter-propagating beams cancel Dopple
 !: Precision isn't just more digits; it lets tiny effects (QED corrections, possible new forces) become visible.
 Q: How does a frequency comb help precision spectroscopy? | It provides a ruler of evenly spaced optical frequencies linked to a microwave standard.
 Q: What did comparing hydrogen and antihydrogen spectra test? | CPT symmetry between matter and antimatter.
-M1: Doppler-free spectroscopy techniques include: | Saturated absorption | Simple absorption at room temperature | X-ray diffraction | Flame tests | Velocity-selective.
-M2: Limits on the electron's electric dipole moment test: | Physics beyond the Standard Model | Gravity directly | Nuclear fission | Chemical bonding | Time-reversal violation.
+M1#physics-u21-25-q1: Doppler-free spectroscopy techniques include: | Saturated absorption | Simple absorption at room temperature | X-ray diffraction | Flame tests | Velocity-selective.
+M2#physics-u21-25-q2: Limits on the electron's electric dipole moment test: | Physics beyond the Standard Model | Gravity directly | Nuclear fission | Chemical bonding | Time-reversal violation.
 `;

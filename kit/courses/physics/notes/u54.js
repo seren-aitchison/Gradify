@@ -25,8 +25,8 @@ K: Read papers in passes, extract claims and evidence, and evaluate critically f
 !: A published paper isn't automatically correct; independent confirmation matters.
 Q: What is the three-pass approach to reading papers? | Skim for relevance, read for understanding of results, then study methods in depth.
 Q: What should you check in a paper's figures? | Axes, units, error bars, sample sizes and whether they support the claims.
-M1: The abstract contains: | A summary of the problem, method and main result | Full derivations | Raw data | References only | Brief overview.
-M2: A key sign of reproducibility is: | Available data and code | Many authors | Long length | Famous journal | Others can check.
+M1#physics-u54-01-q1: The abstract contains: | A summary of the problem, method and main result | Full derivations | Raw data | References only | Brief overview.
+M2#physics-u54-01-q2: A key sign of reproducibility is: | Available data and code | Many authors | Long length | Famous journal | Others can check.
 
 ## Literature searches and systematic reviews
 S: A literature search finds what is already known before starting research, avoiding duplication and building on others' work. Systematic reviews go further, using explicit methods to find, assess and synthesise all relevant studies on a question.
@@ -54,8 +54,8 @@ K: Search systematically with databases, keywords and citation chaining; systema
 !: Searching only one database or recent papers can miss key work; document your search so others can repeat it.
 Q: What is citation chaining? | Following references backward and citing papers forward from a key article.
 Q: What does the PDG do? | Reviews and combines measurements of particle properties into recommended values.
-M1: INSPIRE-HEP is a database for: | High-energy physics | Biology | Chemistry | Economics | Particle physics literature.
-M2: A weighted mean gives more weight to: | Measurements with smaller uncertainties | Larger values | Older results | Random choices | 1/σ^{2}.
+M1#physics-u54-02-q1: INSPIRE-HEP is a database for: | High-energy physics | Biology | Chemistry | Economics | Particle physics literature.
+M2#physics-u54-02-q2: A weighted mean gives more weight to: | Measurements with smaller uncertainties | Larger values | Older results | Random choices | 1/σ^{2}.
 
 ## Formulating research questions
 S: A good research question is specific, answerable, significant and feasible. Formulating it well focuses a project, guides methods and makes results meaningful, and it's often the hardest and most creative part of research.
@@ -81,8 +81,8 @@ K: Good research questions are specific, answerable, significant, feasible and o
 !: Questions that are too broad lead to unfocused projects; too narrow ones may lack significance.
 Q: What makes a research question answerable? | It can be tested with available methods, data and resources.
 Q: What is a hypothesis? | A testable proposed explanation that makes predictions.
-M1: "Why do cuprates superconduct?" is a: | Explanatory question | Descriptive question | Methodological question | Trivial question | Seeks mechanism.
-M2: Checking literature before starting ensures: | Originality | Speed | Funding | Publication | Not already answered.
+M1#physics-u54-03-q1: "Why do cuprates superconduct?" is a: | Explanatory question | Descriptive question | Methodological question | Trivial question | Seeks mechanism.
+M2#physics-u54-03-q2: Checking literature before starting ensures: | Originality | Speed | Funding | Publication | Not already answered.
 
 ## Developing theoretical models
 S: Theoretical models explain observations and make predictions using physical principles and mathematics. Developing one involves choosing assumptions, building equations, solving them and testing against data, often iterating many times.
@@ -111,8 +111,8 @@ K: Models connect assumptions to predictions; develop them iteratively, test aga
 !: Too many free parameters can fit anything; a good model predicts beyond the data it was tuned on.
 Q: What is a toy model? | A deliberately simplified model capturing essential physics.
 Q: Why should models make falsifiable predictions? | So they can be tested and potentially refuted by experiment.
-M1: Ab initio models are: | Derived from fundamental theory without fitting | Purely empirical | Toy models | Always wrong | First principles.
-M2: Overfitting means: | Too many parameters fit noise | Too few data points | Perfect predictions | Simple models | Poor generalisation.
+M1#physics-u54-04-q1: Ab initio models are: | Derived from fundamental theory without fitting | Purely empirical | Toy models | Always wrong | First principles.
+M2#physics-u54-04-q2: Overfitting means: | Too many parameters fit noise | Too few data points | Perfect predictions | Simple models | Poor generalisation.
 
 ## Designing experiments
 S: Experimental design determines whether a study can answer its question convincingly. Good designs control variables, minimise and quantify uncertainties, avoid bias and make efficient use of time and resources.
@@ -139,8 +139,8 @@ K: Design experiments to control variables, quantify and minimise uncertainties,
 !: An experiment without sufficient statistical power can't detect the effect it seeks, wasting effort.
 Q: What is a confounding variable? | An uncontrolled factor that affects the outcome and could mimic or hide the effect studied.
 Q: Why run pilot experiments? | To test feasibility and refine methods before the full experiment.
-M1: Factorial designs: | Vary multiple factors efficiently | Change one factor only | Remove controls | Avoid statistics | Design of experiments.
-M2: Blinding prevents: | Analysis bias | Random error | Calibration | Data storage | Unconscious tuning.
+M1#physics-u54-05-q1: Factorial designs: | Vary multiple factors efficiently | Change one factor only | Remove controls | Avoid statistics | Design of experiments.
+M2#physics-u54-05-q2: Blinding prevents: | Analysis bias | Random error | Calibration | Data storage | Unconscious tuning.
 
 ## Writing research proposals
 S: A research proposal persuades others that a project is worth doing, feasible and well planned. Whether for a PhD, telescope time or funding, a strong proposal states a clear question, explains its significance and lays out credible methods and timelines.
@@ -171,8 +171,8 @@ K: A strong proposal has a clear significant question, credible methods with pre
 !: Vague proposals ("we will study X") fail; reviewers need specific goals and evidence of feasibility.
 Q: What is a Gantt chart? | A timeline chart showing tasks, durations and dependencies.
 Q: Why include preliminary results? | To demonstrate feasibility and reduce reviewers' perceived risk.
-M1: Telescope proposals must justify: | The time requested | Only the title | Funding of staff | Hiring | Exposure calculations.
-M2: Risk mitigation describes: | How to handle things that might go wrong | Budget only | Literature | Title | Contingency plans.
+M1#physics-u54-06-q1: Telescope proposals must justify: | The time requested | Only the title | Funding of staff | Hiring | Exposure calculations.
+M2#physics-u54-06-q2: Risk mitigation describes: | How to handle things that might go wrong | Budget only | Literature | Title | Contingency plans.
 
 ## Grant applications and project planning
 S: Research is funded through competitive grants from government agencies, charities and industry. Successful applications align with funder priorities, present excellent science and realistic plans, and show the team can deliver.
@@ -196,8 +196,8 @@ K: Grants need excellent science, alignment with funders, realistic budgets and 
 !: Underestimating costs or timelines damages delivery and credibility; plan realistically with contingency.
 Q: What is a work package? | A defined part of a project with its own tasks, deliverables and milestones.
 Q: What is full economic costing? | Including direct costs plus institutional overheads in grant budgets.
-M1: Typical grant success rates are about: | 10–30% | 90% | 1% | 100% | Competitive.
-M2: The ERC is a funder in: | Europe | the USA | Japan | Australia | European Research Council.
+M1#physics-u54-07-q1: Typical grant success rates are about: | 10–30% | 90% | 1% | 100% | Competitive.
+M2#physics-u54-07-q2: The ERC is a funder in: | Europe | the USA | Japan | Australia | European Research Council.
 
 ## Laboratory management
 S: Running a laboratory involves more than doing experiments: managing equipment, budgets, safety, people, data and schedules. Good management keeps research productive, safe and collaborative.
@@ -224,8 +224,8 @@ K: Lab management balances safety, equipment, budget, people and data, supported
 !: Undocumented procedures mean knowledge is lost when people leave; write SOPs.
 Q: What is an SOP? | A standard operating procedure: written instructions for performing a task consistently and safely.
 Q: Why use electronic lab notebooks? | For searchable, timestamped, shareable records supporting reproducibility and IP.
-M1: Lab safety records include: | Training and risk assessments | Only publications | Holidays | Budgets only | Compliance documentation.
-M2: Helium recovery systems: | Recycle boil-off gas | Produce helium | Cool rooms | Store data | Save scarce resource.
+M1#physics-u54-08-q1: Lab safety records include: | Training and risk assessments | Only publications | Holidays | Budgets only | Compliance documentation.
+M2#physics-u54-08-q2: Helium recovery systems: | Recycle boil-off gas | Produce helium | Cool rooms | Store data | Save scarce resource.
 
 ## Research ethics and integrity
 S: Research integrity means honesty, rigour, transparency and accountability in how research is done and reported. Ethical research protects participants, the environment and society, and maintains the trust on which science depends.
@@ -252,8 +252,8 @@ K: Integrity means honest, rigorous, transparent research; misconduct and questi
 !: Small "tidying" of data can become falsification; document every decision.
 Q: What are the three main forms of research misconduct? | Fabrication, falsification and plagiarism.
 Q: What is p-hacking? | Repeatedly analysing data in different ways until a significant result appears.
-M1: The Schön scandal involved: | Fabricated data | Plagiarism only | Honest error | Funding fraud only | Bell Labs, 2002.
-M2: Pre-registration helps prevent: | Selective analysis and reporting | Measurement error | Equipment failure | Funding issues | Fixed analysis plan.
+M1#physics-u54-09-q1: The Schön scandal involved: | Fabricated data | Plagiarism only | Honest error | Funding fraud only | Bell Labs, 2002.
+M2#physics-u54-09-q2: Pre-registration helps prevent: | Selective analysis and reporting | Measurement error | Equipment failure | Funding issues | Fixed analysis plan.
 
 ## Data management and documentation
 S: Research data management keeps data organised, safe, documented and shareable throughout and after a project. Good practice prevents loss, enables reproducibility and meets funder requirements for open data.
@@ -279,8 +279,8 @@ K: Plan, document, back up and share data following FAIR principles so research 
 !: Data without metadata or documentation quickly become unusable, even to their creator.
 Q: What does FAIR stand for? | Findable, accessible, interoperable, reusable.
 Q: What is a data management plan? | A document describing how data will be collected, stored, documented, shared and preserved.
-M1: The 3-2-1 backup rule means: | 3 copies, 2 media, 1 offsite | 3 hard drives only | 2 copies | 1 cloud copy | Resilient storage.
-M2: FITS is a standard format in: | Astronomy | Biology | Finance | Music | Flexible Image Transport System.
+M1#physics-u54-10-q1: The 3-2-1 backup rule means: | 3 copies, 2 media, 1 offsite | 3 hard drives only | 2 copies | 1 cloud copy | Resilient storage.
+M2#physics-u54-10-q2: FITS is a standard format in: | Astronomy | Biology | Finance | Music | Flexible Image Transport System.
 
 ## Version control and reproducible workflows
 S: Version control systems like git track every change to code and documents, enabling collaboration, rollback and reproducibility. Combined with environments and automated workflows, they make computational research transparent and repeatable.
@@ -307,8 +307,8 @@ K: Version control plus captured environments and automated pipelines make compu
 !: "It works on my machine" isn't reproducibility; record environments and automate.
 Q: What is a git commit? | A recorded snapshot of changes with a descriptive message.
 Q: What does a container provide? | A portable, consistent software environment.
-M1: Pull requests enable: | Code review before merging | Faster computers | Data storage | Funding | Collaborative workflow.
-M2: Fixing random seeds ensures: | Reproducible stochastic results | Better statistics | Faster code | Security | Same random sequence.
+M1#physics-u54-11-q1: Pull requests enable: | Code review before merging | Faster computers | Data storage | Funding | Collaborative workflow.
+M2#physics-u54-11-q2: Fixing random seeds ensures: | Reproducible stochastic results | Better statistics | Faster code | Security | Same random sequence.
 
 ## Collaboration across disciplines
 S: Modern physics research is collaborative, from small teams to collaborations of thousands. Working effectively with others, including people from different disciplines and cultures, requires communication, clear roles and shared norms.
@@ -335,8 +335,8 @@ K: Successful collaboration needs shared goals, clear roles, good communication 
 !: Unclear authorship and responsibilities are common sources of conflict; agree them early.
 Q: What is the CRediT taxonomy? | A standard list of contributor roles describing who did what in a research output.
 Q: How do large collaborations ensure quality? | Through internal review committees before publication.
-M1: ATLAS papers typically have authors listed: | Alphabetically | By seniority | By contribution size | Randomly | Collaboration policy.
-M2: A shared glossary helps: | Avoid misunderstandings | Increase jargon | Replace meetings | Write code | Common definitions.
+M1#physics-u54-12-q1: ATLAS papers typically have authors listed: | Alphabetically | By seniority | By contribution size | Randomly | Collaboration policy.
+M2#physics-u54-12-q2: A shared glossary helps: | Avoid misunderstandings | Increase jargon | Replace meetings | Write code | Common definitions.
 
 ## Research presentations and posters
 S: Presenting research at group meetings, conferences and seminars builds your reputation, invites feedback and spreads ideas. Effective presentations tell a clear story tailored to the audience, with simple visuals and confident delivery.
@@ -362,8 +362,8 @@ K: Tailor talks to the audience, tell one clear story, design visuals for readab
 !: Cramming too much into a talk loses the audience; focus on the key message.
 Q: What should a poster's title achieve? | Be readable from a distance and convey the main point.
 Q: What are backup slides for? | Answering likely detailed questions without cluttering the main talk.
-M1: A 20-minute talk typically has about: | 15–20 slides | 60 slides | 2 slides | 100 slides | ~1 per minute.
-M2: Colour-blind-safe palettes improve: | Accessibility | Speed | Data accuracy | Funding | Inclusive design.
+M1#physics-u54-13-q1: A 20-minute talk typically has about: | 15–20 slides | 60 slides | 2 slides | 100 slides | ~1 per minute.
+M2#physics-u54-13-q2: Colour-blind-safe palettes improve: | Accessibility | Speed | Data accuracy | Funding | Inclusive design.
 
 ## Scientific writing and publishing
 S: Scientific writing communicates research precisely and clearly so others can understand, evaluate and build on it. Publishing in journals, after peer review, makes work part of the scientific record and is central to research careers.
@@ -390,8 +390,8 @@ K: Write clearly around a key message, design figures first, publish via peer re
 !: Hype and overclaiming damage credibility; state results and uncertainties precisely.
 Q: What is a preprint server? | An online archive (like arXiv) for sharing papers before formal peer review.
 Q: Why respond point-by-point to referees? | To show how each concern was addressed, making re-review efficient.
-M1: The standard typesetting system in physics is: | LaTeX | Word only | PowerPoint | HTML | With BibTeX.
-M2: Gold open access means: | The published article is freely available from the journal | Paywalled | Preprint only | Abstract only | Usually APC-funded.
+M1#physics-u54-14-q1: The standard typesetting system in physics is: | LaTeX | Word only | PowerPoint | HTML | With BibTeX.
+M2#physics-u54-14-q2: Gold open access means: | The published article is freely available from the journal | Paywalled | Preprint only | Abstract only | Usually APC-funded.
 
 ## Peer review
 S: Peer review is how experts evaluate research for publication, funding and facility time. Reviewing well, constructively and fairly, is a professional responsibility, and understanding the process helps you respond to reviews of your own work.
@@ -418,8 +418,8 @@ K: Good reviews are thorough, constructive, confidential and fair; responding to
 !: Using confidential information from a manuscript under review is a serious ethical breach.
 Q: What distinguishes major from minor review comments? | Major comments affect validity or conclusions; minor ones concern clarity and presentation.
 Q: Why declare conflicts of interest as a reviewer? | To avoid biased evaluation and maintain fairness.
-M1: Double-blind review hides: | Both authors' and reviewers' identities | Only reviewers | Only data | The journal | Reduces bias.
-M2: A reviewer should keep manuscripts: | Confidential | Public | On social media | Shared with students without permission | Ethical duty.
+M1#physics-u54-15-q1: Double-blind review hides: | Both authors' and reviewers' identities | Only reviewers | Only data | The journal | Reduces bias.
+M2#physics-u54-15-q2: A reviewer should keep manuscripts: | Confidential | Public | On social media | Shared with students without permission | Ethical duty.
 
 ## Intellectual property and technology transfer
 S: Physics research can produce inventions with commercial value. Intellectual property (IP) protects them, and technology transfer moves ideas from labs into products, through patents, licensing and spin-out companies.
@@ -446,8 +446,8 @@ K: IP protects inventions; technology transfer turns research into products via 
 !: Publishing or presenting an invention before filing can make it unpatentable.
 Q: What are the criteria for a patent? | Novelty, inventive step and industrial applicability.
 Q: What is a spin-out company? | A company founded to commercialise research from a university or lab.
-M1: Patents last about: | 20 years | 5 years | 100 years | Forever | From filing.
-M2: Software is automatically protected by: | Copyright | Patents always | Trademarks | Nothing | Automatic on creation.
+M1#physics-u54-16-q1: Patents last about: | 20 years | 5 years | 100 years | Forever | From filing.
+M2#physics-u54-16-q2: Software is automatically protected by: | Copyright | Patents always | Trademarks | Nothing | Automatic on creation.
 
 ## Project management
 S: Project management keeps research on track: defining goals, planning tasks, managing time, resources and risks, and communicating progress. From a PhD thesis to a multi-billion facility, good management turns ideas into results.
@@ -476,8 +476,8 @@ K: Plan scope, tasks, schedule, resources and risks; monitor progress and adapt,
 !: Delays on the critical path delay the whole project; focus effort there.
 Q: What is the critical path? | The longest sequence of dependent tasks, which determines the minimum project duration.
 Q: What is agile project management? | An iterative approach with short cycles, frequent review and adaptive planning.
-M1: A risk register records: | Risks, likelihood, impact and mitigation | Publications | Staff salaries | Lab safety only | Risk planning.
-M2: Building in contingency means: | Allowing extra time or budget for surprises | Removing deadlines | Doubling scope | Ignoring risks | Buffer.
+M1#physics-u54-17-q1: A risk register records: | Risks, likelihood, impact and mitigation | Publications | Staff salaries | Lab safety only | Risk planning.
+M2#physics-u54-17-q2: Building in contingency means: | Allowing extra time or budget for surprises | Removing deadlines | Doubling scope | Ignoring risks | Buffer.
 
 ## Research impact and public engagement
 S: Research impact is the difference research makes beyond academia: to the economy, society, health, policy, culture and the environment. Public engagement shares research with wider audiences and listens to their perspectives, often leading to impact.
@@ -504,8 +504,8 @@ K: Impact extends research benefits beyond academia; plan stakeholder engagement
 !: Impact isn't just publicity; it's demonstrable change or benefit, evidenced over time.
 Q: What is research impact? | A demonstrable contribution research makes to the economy, society, policy, health, culture or environment.
 Q: What does the REF assess? | The quality and impact of UK university research, including impact case studies.
-M1: GPS relying on relativity is an example of: | Long-term unpredictable impact from fundamental research | Public engagement | Peer review | Data management | Decades later.
-M2: Good engagement emphasises: | Two-way dialogue | Audience size only | One-way lectures | Jargon | Listening too.
+M1#physics-u54-18-q1: GPS relying on relativity is an example of: | Long-term unpredictable impact from fundamental research | Public engagement | Peer review | Data management | Decades later.
+M2#physics-u54-18-q2: Good engagement emphasises: | Two-way dialogue | Audience size only | One-way lectures | Jargon | Listening too.
 
 ## Communicating with industry and policymakers
 S: Physicists increasingly advise industry and government. Communicating effectively with these audiences means understanding their goals, constraints and timescales, and presenting evidence clearly with options, trade-offs and uncertainties.
@@ -530,8 +530,8 @@ K: Tailor communication to industry and policy audiences: lead with key messages
 !: Overstating readiness or certainty damages trust; be clear about what is known and how far a technology is from use.
 Q: What is a technology readiness level? | A scale from 1 to 9 describing how mature a technology is, from basic principles to proven operation.
 Q: What should a policy brief lead with? | The key message and recommendations, then supporting evidence.
-M1: TRL 9 means: | Proven in operational environment | Basic principles observed | Lab prototype | Idea only | Fully mature.
-M2: POST notes are produced for: | The UK Parliament | Journals | Companies | Schools | Parliamentary Office of Science and Technology.
+M1#physics-u54-19-q1: TRL 9 means: | Proven in operational environment | Basic principles observed | Lab prototype | Idea only | Fully mature.
+M2#physics-u54-19-q2: POST notes are produced for: | The UK Parliament | Journals | Companies | Schools | Parliamentary Office of Science and Technology.
 
 ## Careers in academia, industry and scientific computing
 S: A physics education opens many careers: academic research, industry R&D, engineering, data science, finance, medicine, teaching, policy and entrepreneurship. Physicists are valued for problem-solving, quantitative and computational skills, wherever they work.
@@ -558,6 +558,6 @@ K: Physics leads to diverse careers in academia, industry, computing, medicine, 
 !: Academia is only one path; most physics graduates build successful careers outside it.
 Q: What is a research software engineer? | A professional who develops and maintains software for research, combining coding and scientific expertise.
 Q: What is CPhys? | Chartered Physicist, a professional accreditation from the Institute of Physics.
-M1: A common route into medical physics is: | Clinical scientist training | Patent law | Finance | Journalism | Accredited training scheme.
-M2: The most transferable skill from physics is often: | Quantitative problem-solving | Memorising constants | Lab safety only | Handwriting | Valued widely.
+M1#physics-u54-20-q1: A common route into medical physics is: | Clinical scientist training | Patent law | Finance | Journalism | Accredited training scheme.
+M2#physics-u54-20-q2: The most transferable skill from physics is often: | Quantitative problem-solving | Memorising constants | Lab safety only | Handwriting | Valued widely.
 `;

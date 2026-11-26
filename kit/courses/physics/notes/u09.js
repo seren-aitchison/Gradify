@@ -19,8 +19,8 @@ X: A 2.0 m steel wire of 1.0 mm diameter stretches 1.0 mm under 150 N. Find stre
 !: Strain has no units; percentages are common (0.05% here).
 Q: Why use stress and strain instead of force and extension? | They describe the material itself, independent of the sample's dimensions.
 Q: What is the ultimate tensile strength? | The maximum stress a material can withstand in tension before necking and failure.
-M1: Stress has units of: | Pa | N | m | None | Force per area.
-M2: A 1 m rod extends 0.2 mm. Its strain is: | 2 × 10^{-4} | 0.2 | 2 × 10^{-3} | 200 | 0.0002/1.
+M1#physics-u09-01-q1: Stress has units of: | Pa | N | m | None | Force per area.
+M2#physics-u09-01-q2: A 1 m rod extends 0.2 mm. Its strain is: | 2 × 10^{-4} | 0.2 | 2 × 10^{-3} | 200 | 0.0002/1.
 
 ## Young's modulus
 S: Young's modulus is the ratio of tensile stress to tensile strain in the linear elastic region. It measures a material's stiffness: how hard it is to stretch, regardless of how strong it is.
@@ -36,8 +36,8 @@ X: A 3.0 m copper wire (d = 0.50 mm) extends 2.6 mm under a 20 N load. Find E.
 !: Stiffness (E) isn't strength. Glass is stiff but brittle; rubber is flexible but tough.
 Q: What does Young's modulus measure? | A material's stiffness in tension: stress per unit strain in the elastic region.
 Q: Why use a reference wire in Searle's method? | To cancel effects of temperature changes and support movement.
-M1: Which has the highest Young's modulus? | Diamond | Steel | Rubber | Aluminium | ~1000 GPa.
-M2: Doubling a wire's diameter (same load, length) changes its extension by: | ×1/4 | ×1/2 | ×2 | ×4 | ΔL ∝ 1/A ∝ 1/d^{2}.
+M1#physics-u09-02-q1: Which has the highest Young's modulus? | Diamond | Steel | Rubber | Aluminium | ~1000 GPa.
+M2#physics-u09-02-q2: Doubling a wire's diameter (same load, length) changes its extension by: | ×1/4 | ×1/2 | ×2 | ×4 | ΔL ∝ 1/A ∝ 1/d^{2}.
 
 ## Shear modulus
 S: The shear (rigidity) modulus relates shear stress to shear strain: how a material resists being skewed. It governs torsion of shafts, the speed of S-waves in rock and the twisting of springs.
@@ -56,8 +56,8 @@ X: A shear force of 400 N acts on the top of a 0.1 m cube of rubber (G = 1 MPa).
 !: Shear strain is an angle (in radians, for small values), not a fractional length change.
 Q: Why can't S-waves travel through liquid? | Liquids have zero shear modulus.
 Q: How is G related to E for an isotropic material? | G = E/(2(1 + ν)).
-M1: Torsional stiffness of a solid shaft scales with radius as: | r^{4} | r^{2} | r | r^{3} | Polar moment of area ∝ r^{4}.
-M2: The shear modulus of water is: | 0 | 2.2 GPa | 1 GPa | 79 GPa | Fluids don't resist static shear.
+M1#physics-u09-03-q1: Torsional stiffness of a solid shaft scales with radius as: | r^{4} | r^{2} | r | r^{3} | Polar moment of area ∝ r^{4}.
+M2#physics-u09-03-q2: The shear modulus of water is: | 0 | 2.2 GPa | 1 GPa | 79 GPa | Fluids don't resist static shear.
 
 ## Bulk modulus
 S: The bulk modulus measures resistance to uniform compression: the pressure needed per fractional change in volume. It sets the speed of sound in fluids and how much the ocean, rocks and stars compress.
@@ -76,8 +76,8 @@ X: How much does 1 L of water compress at the bottom of the Mariana Trench (Δp 
 !: A gas's bulk modulus depends on how it's compressed: isothermally K = p, adiabatically K = γp. Newton got the speed of sound wrong by assuming isothermal.
 Q: Define bulk modulus. | The ratio of pressure change to fractional volume decrease, K = −Δp/(ΔV/V).
 Q: Why did Newton's speed of sound in air come out too low? | He assumed isothermal compression; sound is adiabatic, with K = γp.
-M1: Speed of sound in a medium depends on: | √(K/ρ) | K/ρ | ρ/K | Kρ | c = √(modulus/density).
-M2: A material with Poisson's ratio 0.5 is: | Incompressible | Infinitely compressible | Auxetic | Rigid in shear | K → ∞ as ν → 0.5.
+M1#physics-u09-04-q1: Speed of sound in a medium depends on: | √(K/ρ) | K/ρ | ρ/K | Kρ | c = √(modulus/density).
+M2#physics-u09-04-q2: A material with Poisson's ratio 0.5 is: | Incompressible | Infinitely compressible | Auxetic | Rigid in shear | K → ∞ as ν → 0.5.
 
 ## Hooke's law
 S: Hooke's law states that extension is proportional to the applied force, up to a limit. It holds for springs and for small deformations of most solids, because interatomic forces near equilibrium behave like springs.
@@ -95,8 +95,8 @@ D: phys-u09-hooke-spring
 !: Rubber doesn't obey Hooke's law beyond small strains; its stiffness comes from entropy of tangled polymer chains, not bond stretching.
 Q: State Hooke's law. | Extension is proportional to force, F = kx, up to the limit of proportionality.
 Q: Why do most solids obey Hooke's law for small strains? | Interatomic potentials are approximately quadratic near equilibrium.
-M1: Two springs (k each) in parallel have total stiffness: | 2k | k/2 | k | k^{2} | Parallel springs share the load.
-M2: A force–extension graph's gradient (force on y-axis) gives: | The spring constant | Young's modulus directly | Energy stored | Strain | F = kx.
+M1#physics-u09-05-q1: Two springs (k each) in parallel have total stiffness: | 2k | k/2 | k | k^{2} | Parallel springs share the load.
+M2#physics-u09-05-q2: A force–extension graph's gradient (force on y-axis) gives: | The spring constant | Young's modulus directly | Energy stored | Strain | F = kx.
 
 ## Elastic and plastic deformation
 S: Elastic deformation is reversible: atoms are displaced but return when the load is removed. Plastic deformation is permanent: planes of atoms slip past each other, carried by defects called dislocations.
@@ -118,8 +118,8 @@ D: phys-u09-unloading
 !: Elastic limit and limit of proportionality are different: a material can be non-linear yet still elastic (rubber).
 Q: What carries plastic deformation in metals? | The movement of dislocations.
 Q: What is work hardening? | Strengthening by plastic deformation, as dislocations multiply and tangle.
-M1: Annealing a metal makes it: | Softer and more ductile | Harder and more brittle | Stiffer | Denser | Dislocations rearrange and annihilate.
-M2: When a ductile metal is unloaded after plastic deformation, it: | Keeps a permanent strain | Returns to its original length | Breaks | Contracts below its original length | Only the elastic part recovers.
+M1#physics-u09-06-q1: Annealing a metal makes it: | Softer and more ductile | Harder and more brittle | Stiffer | Denser | Dislocations rearrange and annihilate.
+M2#physics-u09-06-q2: When a ductile metal is unloaded after plastic deformation, it: | Keeps a permanent strain | Returns to its original length | Breaks | Contracts below its original length | Only the elastic part recovers.
 
 ## Poisson's ratio
 S: When you stretch a material it usually gets thinner. Poisson's ratio is the ratio of the sideways contraction strain to the lengthwise extension strain, and it links the different elastic moduli.
@@ -136,8 +136,8 @@ X: A rubber band (ν = 0.5) is stretched by 10%. How does its cross-sectional ar
 !: ν = 0.5 means no volume change, not "half as much"; materials with ν < 0.5 increase in volume when stretched.
 Q: Define Poisson's ratio. | Minus the ratio of lateral strain to axial strain.
 Q: Why is cork good for bottle stoppers? | Its Poisson's ratio is near zero, so it doesn't bulge sideways when compressed.
-M1: A material with ν = 0.5 is: | Incompressible | Auxetic | Rigid | Brittle | Volume conserved.
-M2: Stretching a steel bar (ν = 0.3) by 0.1% makes its diameter: | Shrink by 0.03% | Grow by 0.03% | Shrink by 0.1% | Unchanged | Lateral strain = −νε.
+M1#physics-u09-07-q1: A material with ν = 0.5 is: | Incompressible | Auxetic | Rigid | Brittle | Volume conserved.
+M2#physics-u09-07-q2: Stretching a steel bar (ν = 0.3) by 0.1% makes its diameter: | Shrink by 0.03% | Grow by 0.03% | Shrink by 0.1% | Unchanged | Lateral strain = −νε.
 
 ## Elastic energy
 S: Work done deforming a material elastically is stored as elastic potential energy, released when it springs back. It powers bows, springs, catapults and trampolines, and stored strain energy drives fractures and earthquakes.
@@ -158,8 +158,8 @@ D: phys-u09-spring-energy
 !: Energy stored isn't F × x but ½Fx, because the force grows from zero as the spring stretches.
 Q: What is the elastic energy per unit volume? | ½σε = σ^{2}/(2E).
 Q: What does the area of a hysteresis loop represent? | Energy dissipated per cycle as heat.
-M1: Doubling a spring's extension multiplies its stored energy by: | 4 | 2 | 8 | √2 | ∝ x^{2}.
-M2: Toughness is: | Energy absorbed per volume before fracture | Stiffness | Yield stress | Hardness | Area under the entire stress–strain curve.
+M1#physics-u09-08-q1: Doubling a spring's extension multiplies its stored energy by: | 4 | 2 | 8 | √2 | ∝ x^{2}.
+M2#physics-u09-08-q2: Toughness is: | Energy absorbed per volume before fracture | Stiffness | Yield stress | Hardness | Area under the entire stress–strain curve.
 
 ## Bending and torsion
 S: When a beam bends, one side stretches and the other compresses, with a neutral axis between. When a shaft twists, shear stress grows from the centre outward. Both explain why I-beams and hollow tubes are efficient.
@@ -177,8 +177,8 @@ X: Compare the bending stiffness of a 10 × 2 cm plank laid flat and on edge.
 !: The second moment of area (geometry) and Young's modulus (material) both matter; changing shape is often cheaper than changing material.
 Q: Why are I-beams efficient? | They place most material far from the neutral axis, maximising I for their mass.
 Q: Where is the stress largest in a twisted solid shaft? | At the outer surface.
-M1: Doubling a rectangular beam's depth multiplies its bending stiffness by: | 8 | 2 | 4 | 16 | I ∝ h^{3}.
-M2: Bones are hollow because: | Hollow tubes give high bending and torsional stiffness for little mass | Marrow needs room only | They're weaker that way | It reduces blood flow | Material at the centre contributes little.
+M1#physics-u09-09-q1: Doubling a rectangular beam's depth multiplies its bending stiffness by: | 8 | 2 | 4 | 16 | I ∝ h^{3}.
+M2#physics-u09-09-q2: Bones are hollow because: | Hollow tubes give high bending and torsional stiffness for little mass | Marrow needs room only | They're weaker that way | It reduces blood flow | Material at the centre contributes little.
 
 ## Beam deflection
 S: Engineers predict how much beams sag under loads using the Euler–Bernoulli beam equation. Deflection depends strongly on span: doubling it can increase sag sixteen-fold.
@@ -200,8 +200,8 @@ D: phys-u09-shelf-sag
 !: Beam theory assumes small deflections and slender beams; deep, short beams need shear corrections (Timoshenko theory).
 Q: How does a cantilever's tip deflection depend on its length? | ∝ L^{3} for a point load at the tip.
 Q: How do atomic force microscopes measure forces? | From the tiny deflection of a cantilever, F = kδ.
-M1: Doubling the span of a uniformly loaded beam increases sag by: | 16 | 4 | 8 | 2 | ∝ L^{4}.
-M2: At a clamped end, a beam has: | Zero deflection and zero slope | Zero moment | Free rotation | Maximum deflection | Built-in support.
+M1#physics-u09-10-q1: Doubling the span of a uniformly loaded beam increases sag by: | 16 | 4 | 8 | 2 | ∝ L^{4}.
+M2#physics-u09-10-q2: At a clamped end, a beam has: | Zero deflection and zero slope | Zero moment | Free rotation | Maximum deflection | Built-in support.
 
 ## Pressure and material deformation
 S: Materials under pressure compress, and their structure can change: pressure vessels must contain it safely, rocks deep in the Earth deform plastically, and high-pressure physics creates new phases like metallic hydrogen.
@@ -220,8 +220,8 @@ X: A gas cylinder (r = 0.1 m, t = 5 mm) holds 20 MPa. Find the hoop stress.
 !: Thin-wall formulas only work when t ≪ r; thick-walled vessels need the Lamé equations.
 Q: Why do pressurised pipes split along their length? | The hoop stress is twice the axial stress.
 Q: Why is Earth's inner core solid? | The enormous pressure raises iron's melting point above the core temperature.
-M1: For a thin sphere and cylinder of the same r, t and p, the sphere's stress is: | Half the cylinder's hoop stress | Twice | Equal | Zero | pr/2t vs pr/t.
-M2: Diamond anvil cells are used to: | Create extremely high static pressures | Cut diamonds | Measure temperature | Store hydrogen | Small diamond tips concentrate force.
+M1#physics-u09-11-q1: For a thin sphere and cylinder of the same r, t and p, the sphere's stress is: | Half the cylinder's hoop stress | Twice | Equal | Zero | pr/2t vs pr/t.
+M2#physics-u09-11-q2: Diamond anvil cells are used to: | Create extremely high static pressures | Cut diamonds | Measure temperature | Store hydrogen | Small diamond tips concentrate force.
 
 ## Fracture and failure
 S: Materials fail by yielding (permanent deformation), fracture (cracking apart), buckling (sudden instability under compression) or fatigue. Real materials break far below their theoretical strength because of tiny flaws that concentrate stress.
@@ -241,8 +241,8 @@ X: Why does scoring glass let it snap cleanly?
 !: Strength in tension and compression differ hugely for brittle materials: concrete is ~10 times stronger in compression, hence steel reinforcement.
 Q: Why are real materials weaker than theory predicts? | Flaws and cracks concentrate stress.
 Q: What does the Euler buckling formula predict? | The critical compressive load at which a slender column buckles, ∝ EI/L^{2}.
-M1: Aircraft windows have rounded corners to: | Reduce stress concentration | Improve the view | Save weight | Let in more light | Sharp corners concentrate stress.
-M2: Doubling a slender column's length changes its buckling load by: | ×1/4 | ×1/2 | ×2 | ×4 | ∝ 1/L^{2}.
+M1#physics-u09-12-q1: Aircraft windows have rounded corners to: | Reduce stress concentration | Improve the view | Save weight | Let in more light | Sharp corners concentrate stress.
+M2#physics-u09-12-q2: Doubling a slender column's length changes its buckling load by: | ×1/4 | ×1/2 | ×2 | ×4 | ∝ 1/L^{2}.
 
 ## Viscoelasticity
 S: Viscoelastic materials behave partly like elastic solids and partly like viscous fluids: their response depends on how fast and how long you load them. Polymers, biological tissues, asphalt and the Earth's mantle are viscoelastic.
@@ -263,8 +263,8 @@ D: phys-u09-maxwell-relaxation
 !: Whether a material counts as "solid" or "liquid" depends on the timescale compared with its relaxation time (the Deborah number).
 Q: What is creep? | Gradual increase of strain under constant stress.
 Q: Why does the mantle behave as a solid for earthquakes but a fluid for plate tectonics? | Its relaxation time is long: short loading gives an elastic response, long loading lets it flow.
-M1: Which is a viscoelastic material? | Silly putty | Steel at room temperature | Water | Diamond | Elastic bounce, viscous flow.
-M2: The Maxwell model consists of a spring and dashpot in: | Series | Parallel | Neither | Rotation | It relaxes stress completely.
+M1#physics-u09-13-q1: Which is a viscoelastic material? | Silly putty | Steel at room temperature | Water | Diamond | Elastic bounce, viscous flow.
+M2#physics-u09-13-q2: The Maxwell model consists of a spring and dashpot in: | Series | Parallel | Neither | Rotation | It relaxes stress completely.
 
 ## Crystal elasticity
 S: In crystals, elastic properties depend on direction because atoms are arranged in regular lattices. Full description needs the elastic stiffness tensor, which crystal symmetry reduces from 81 to as few as 3 independent constants.
@@ -285,8 +285,8 @@ X: Why does a single-crystal iron sample have different Young's moduli along [10
 !: Isotropic formulas (like G = E/2(1 + ν)) don't apply to single crystals.
 Q: How many independent elastic constants does a cubic crystal have? | Three.
 Q: Why do polycrystalline metals appear isotropic? | Many randomly oriented grains average out the directional differences.
-M1: An isotropic material needs how many independent elastic constants? | 2 | 1 | 3 | 21 | e.g. E and ν.
-M2: Turbine blades are grown as single crystals mainly to: | Remove grain boundaries that weaken them at high temperature | Make them lighter | Reduce cost | Increase conductivity | Grain boundaries enable creep.
+M1#physics-u09-14-q1: An isotropic material needs how many independent elastic constants? | 2 | 1 | 3 | 21 | e.g. E and ν.
+M2#physics-u09-14-q2: Turbine blades are grown as single crystals mainly to: | Remove grain boundaries that weaken them at high temperature | Make them lighter | Reduce cost | Increase conductivity | Grain boundaries enable creep.
 
 ## Mechanical waves in solids
 S: Solids carry several kinds of elastic wave: compressional (P), shear (S) and surface waves. Their speeds depend on the elastic moduli and density, which is how seismology maps Earth's interior and ultrasound inspects materials.
@@ -306,8 +306,8 @@ X: Find the longitudinal speed in a steel rod (E = 200 GPa, ρ = 7850 kg m^{-3})
 !: The speed of sound in a bulk solid (P-wave) is higher than in a thin rod of the same material, because the bulk can't contract sideways.
 Q: Why can't S-waves pass through Earth's outer core? | It's liquid, and liquids have zero shear modulus.
 Q: How is the distance to an earthquake found? | From the delay between P- and S-wave arrivals.
-M1: Which seismic waves arrive first? | P-waves | S-waves | Love waves | Rayleigh waves | Fastest.
-M2: Phonons are: | Quantised lattice vibrations | Photons in solids | Electrons | Defects | Quanta of sound in crystals.
+M1#physics-u09-15-q1: Which seismic waves arrive first? | P-waves | S-waves | Love waves | Rayleigh waves | Fastest.
+M2#physics-u09-15-q2: Phonons are: | Quantised lattice vibrations | Photons in solids | Electrons | Defects | Quanta of sound in crystals.
 
 ## Stress tensors
 S: Stress inside a material can't be described by a single number: the force on a small surface depends on the surface's orientation. The stress tensor σ_{ij} captures it fully: the i-component of force per area on a surface whose normal is along j.
@@ -324,8 +324,8 @@ X: A plate has σ_{xx} = 80 MPa, σ_{yy} = 20 MPa, σ_{xy} = 40 MPa. Find the pr
 !: A uniaxial tension still produces shear stress on planes at 45°: that's why ductile metals fail along 45° slip planes.
 Q: What does σ_{ij} mean? | The i-component of force per unit area on a surface whose normal points along j.
 Q: Why is the stress tensor symmetric? | Otherwise a small element would have unbalanced torque and infinite angular acceleration.
-M1: How many independent components does the stress tensor have? | 6 | 9 | 3 | 81 | Symmetric 3 × 3.
-M2: Principal stresses are found where: | Shear stresses are zero | Normal stresses are zero | All stresses are equal | The material yields | Eigenvalues of the tensor.
+M1#physics-u09-16-q1: How many independent components does the stress tensor have? | 6 | 9 | 3 | 81 | Symmetric 3 × 3.
+M2#physics-u09-16-q2: Principal stresses are found where: | Shear stresses are zero | Normal stresses are zero | All stresses are equal | The material yields | Eigenvalues of the tensor.
 
 ## Continuum mechanics
 S: Continuum mechanics treats solids and fluids as continuous media described by fields (density, velocity, stress, strain) instead of individual atoms. It provides the general framework from which elasticity, fluid dynamics and plasticity all follow.
@@ -345,8 +345,8 @@ X: The equation of linear elastodynamics, ρ ü = (λ + μ)∇(∇·u) + μ∇^{
 !: Balance laws are universal; constitutive laws are not. Most modelling errors come from the wrong material model, not the physics of conservation.
 Q: What is the continuum hypothesis? | Matter is treated as continuous, with smoothly varying fields, at scales much larger than atomic.
 Q: What does a constitutive law describe? | How a specific material responds: the relation between stress and strain or strain rate.
-M1: The finite element method is used to: | Solve continuum problems numerically | Measure stress | Make materials | Count atoms | Discretised PDEs.
-M2: Which equation is universal for all continua? | Conservation of momentum | Hooke's law | Newtonian viscosity | Poiseuille's law | Balance laws apply to all materials.
+M1#physics-u09-17-q1: The finite element method is used to: | Solve continuum problems numerically | Measure stress | Make materials | Count atoms | Discretised PDEs.
+M2#physics-u09-17-q2: Which equation is universal for all continua? | Conservation of momentum | Hooke's law | Newtonian viscosity | Poiseuille's law | Balance laws apply to all materials.
 
 ## Material stability
 S: A structure or material is stable if small disturbances die away and unstable if they grow. Buckling, necking, snap-through and phase transitions under load are stability problems, often failing suddenly without warning.
@@ -366,8 +366,8 @@ X: Why does a soft drink can crush suddenly when you stand on it?
 !: Linear analysis predicts buckling loads but not post-buckling behaviour; some structures (shells) collapse catastrophically, others (plates) carry more load after buckling.
 Q: What is the Considère criterion? | Necking begins when the slope of the true stress–strain curve equals the true stress.
 Q: Why do real shells buckle below their theoretical load? | Small imperfections greatly reduce the critical load.
-M1: Stable equilibrium corresponds to: | A minimum of potential energy | A maximum | A saddle point | Zero energy | Small disturbances return.
-M2: A bistable hair clip that clicks between two shapes is an example of: | Snap-through instability | Creep | Fatigue | Viscoelasticity | Jumps between two energy minima.
+M1#physics-u09-18-q1: Stable equilibrium corresponds to: | A minimum of potential energy | A maximum | A saddle point | Zero energy | Small disturbances return.
+M2#physics-u09-18-q2: A bistable hair clip that clicks between two shapes is an example of: | Snap-through instability | Creep | Fatigue | Viscoelasticity | Jumps between two energy minima.
 
 ## Fatigue and fracture mechanics
 S: Repeated loading well below a material's strength can grow microscopic cracks until a part fails: fatigue causes most mechanical failures. Fracture mechanics predicts how cracks grow and when they become critical.
@@ -388,6 +388,6 @@ D: phys-u09-critical-crack
 !: A part can pass a static strength test and still fail by fatigue in service: cycles, not peak load, matter.
 Q: What is the endurance limit? | The stress amplitude below which a material (like steel) can survive indefinitely many cycles.
 Q: What does fracture toughness K_{IC} measure? | A material's resistance to fast crack propagation.
-M1: Fatigue failure is caused by: | Repeated cyclic loading | A single overload | Corrosion only | High temperature only | Cracks grow cycle by cycle.
-M2: Doubling the crack length changes the stress intensity factor by: | ×√2 | ×2 | ×4 | ×1/2 | K ∝ √a.
+M1#physics-u09-19-q1: Fatigue failure is caused by: | Repeated cyclic loading | A single overload | Corrosion only | High temperature only | Cracks grow cycle by cycle.
+M2#physics-u09-19-q2: Doubling the crack length changes the stress intensity factor by: | ×√2 | ×2 | ×4 | ×1/2 | K ∝ √a.
 `;

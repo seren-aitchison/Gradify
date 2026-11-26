@@ -70,15 +70,15 @@ function flashcards() {
 function weekPlan() {
   const days = Array.from({ length: 7 }, (_, k) => new Date(+ctx.today + k * ctx.DAY));
   const plan = [
-    "Review the cardiac cycle · ForgeLab unit challenge prep",
-    "ForgeLab unit challenge (due) · Spanish speaking",
+    "Review the cardiac cycle · TechGradify unit challenge prep",
+    "TechGradify unit challenge (due) · Spanish speaking",
     "Heart sounds lesson · workout",
     "ECG basics · Spanish writing",
     "Physiology lab report draft",
     "Rest day: light flashcards only",
     "Physiology lab report due · renal function intro",
   ];
-  return `<p>Here's a week that keeps the exam on track without dropping ForgeLab or Spanish:</p>
+  return `<p>Here's a week that keeps the exam on track without dropping TechGradify or Spanish:</p>
     <ul class="ai-week">${days.map((d, i) => `<li><b>${ctx.fmt(d, { weekday: "short" })}</b><span>${plan[i]}</span></li>`).join("")}</ul>
     <div class="ai-actions"><button type="button" class="btn btn-light lg btn-sm" data-addweek><span>Add to my calendar</span></button></div>`;
 }
@@ -153,5 +153,5 @@ export function initAssistant(context) {
       ctx.toast('Added this week\'s plan. <a href="#command">See Coming up ↑</a>', true);
     }
   });
-  add("ai", `<p>Hi Alex. I can see your progress across MedGradify, ForgeLab, LanguageGradify and your other connected sites. Ask me what to study, whether you're ready for your exam, or to turn your notes into flashcards.</p>`);
+  add("ai", `<p>Hi Alex. I can see your progress across MedGradify, TechGradify, LanguageGradify and your other connected sites. Ask me what to study, whether you're ready for your exam, or to turn your notes into flashcards.</p>`);
 }

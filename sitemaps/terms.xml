@@ -60,6 +60,7 @@
   <url><loc>https://getgradify.com/terms/conflict-of-interest/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://getgradify.com/terms/confounder/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://getgradify.com/terms/confounding-variable/</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://getgradify.com/terms/constraint/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://getgradify.com/terms/contemporaneous-record/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://getgradify.com/terms/context/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://getgradify.com/terms/contraction/</loc><lastmod>2026-11-23</lastmod></url>
@@ -71,6 +72,7 @@
   <url><loc>https://getgradify.com/terms/critical-path/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://getgradify.com/terms/crystalloid/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://getgradify.com/terms/cultural-capital/</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://getgradify.com/terms/de-morgans-laws/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://getgradify.com/terms/decolonisation/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://getgradify.com/terms/degrees-of-freedom/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://getgradify.com/terms/delegation/</loc><lastmod>2026-11-23</lastmod></url>
@@ -172,8 +174,10 @@
   <url><loc>https://getgradify.com/terms/invariant/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://getgradify.com/terms/inverse-care-law/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://getgradify.com/terms/inversion/</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://getgradify.com/terms/iteration/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://getgradify.com/terms/just-culture/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://getgradify.com/terms/kernel/</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://getgradify.com/terms/key/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://getgradify.com/terms/lasting-power-of-attorney/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://getgradify.com/terms/latency/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://getgradify.com/terms/latent-condition/</loc><lastmod>2026-11-23</lastmod></url>
@@ -273,6 +277,7 @@
   <url><loc>https://getgradify.com/terms/ratio/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://getgradify.com/terms/reasonable-adjustment/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://getgradify.com/terms/recession/</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://getgradify.com/terms/record/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://getgradify.com/terms/red-flag/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://getgradify.com/terms/reflection-on-action/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://getgradify.com/terms/refractory-period/</loc><lastmod>2026-11-23</lastmod></url>
@@ -354,17 +359,20 @@
   <url><loc>https://getgradify.com/terms/tolerance/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://getgradify.com/terms/topic-sentence/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://getgradify.com/terms/total-fertility-rate/</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://getgradify.com/terms/trade-off/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://getgradify.com/terms/transition-period/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://getgradify.com/terms/transition/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://getgradify.com/terms/translation/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://getgradify.com/terms/transmission-based-precautions/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://getgradify.com/terms/troponin/</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://getgradify.com/terms/turing-machine/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://getgradify.com/terms/turning-point/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://getgradify.com/terms/unlimited-liability/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://getgradify.com/terms/urbanisation/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://getgradify.com/terms/utilitarianism/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://getgradify.com/terms/validation/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://getgradify.com/terms/validity/</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://getgradify.com/terms/variable/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://getgradify.com/terms/vector/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://getgradify.com/terms/verification/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://getgradify.com/terms/volume-of-distribution/</loc><lastmod>2026-11-23</lastmod></url>

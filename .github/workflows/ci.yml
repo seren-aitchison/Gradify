@@ -144,6 +144,39 @@ jobs:
           path: catalogue-benchmark.json
           if-no-files-found: ignore
 
+  lesson-a11y:
+    # The Premium Lesson System pilot (docs/LESSON-SCHEMA.md): axe-core (WCAG 2.0, 2.1 and 2.2 A and AA, and best
+    # practice) on every Learn mode step of the pilot lessons, their Notes pages and each onboarding screen, light and
+    # dark, desktop and phone; and Learn mode's keyboard behaviour. Screen-reader checks are manual.
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    concurrency:
+      group: lesson-a11y-${{ github.ref }}
+      cancel-in-progress: true
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: Install pinned dev dependencies (Playwright, axe-core)
+        run: npm ci --no-audit --no-fund
+
+      - name: Install Chromium for Playwright
+        run: npx playwright install --with-deps chromium
+
+      - name: Lesson and onboarding accessibility (axe, keyboard)
+        run: node scripts/a11y/learn.cjs --out lesson-a11y.json
+
+      - name: Keep the results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lesson-a11y
+          path: lesson-a11y.json
+          if-no-files-found: ignore
+
   deploy:
     # only after every test step and the signed-in journey have passed, and only from main (never from a pull request
     # or another branch)

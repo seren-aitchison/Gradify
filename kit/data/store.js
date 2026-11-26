@@ -4,6 +4,7 @@
 import { SUPABASE_URL, SUPABASE_ANON_KEY } from "../../gradify.config.js";
 import { PLUS_ON_SALE } from "./billing.js";
 import { deviceId } from "./plan.js";
+import { canonicalSites, canonicalSite } from "../core/sites.js";
 
 // a random UUID (the goals table needs one; older browsers without crypto.randomUUID get the same v4 format)
 const uid = () => (crypto.randomUUID ? crypto.randomUUID() : "10000000-1000-4000-8000-100000000000".replace(/[018]/g, (c) => (c ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))).toString(16)));
@@ -57,6 +58,8 @@ export class LocalStore {
     this.mem = null;
     try { this.mem = JSON.parse(localStorage.getItem(KEY) || "null"); } catch { /* storage blocked */ }
     this.mem ||= EMPTY();
+    // rows saved under a site's former name belong to it (kit/core/sites.js SITE_ALIASES)
+    this.mem = canonicalSites(this.mem); if (this.mem.profile?.site) this.mem.profile = { ...this.mem.profile, site: canonicalSite(this.mem.profile.site) };
     this.persistent = true;
     try { localStorage.setItem(`${KEY}.probe`, "1"); localStorage.removeItem(`${KEY}.probe`); } catch { this.persistent = false; }
   }
@@ -190,7 +193,8 @@ export class CloudStore {
   }
   async signOut() { await this.db.auth.signOut(); }
   onAuth(cb) { this.db.auth.onAuthStateChange((_e, s) => cb(s?.user || null)); }
-  async q(p) { const { data, error } = await p; if (error) throw error; return data; }
+  // every read: rows saved under a site's former name come back under its current one (nothing is rewritten)
+  async q(p) { const { data, error } = await p; if (error) throw error; return canonicalSites(data); }
   async getProfile() {
     const u = await this.user();
     if (!u) throw new Error("You've been signed out. Sign in again from Settings.");

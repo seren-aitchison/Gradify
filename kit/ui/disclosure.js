@@ -84,9 +84,13 @@ export function wireSections(root, { scope = "gradify", key = "sections", allBtn
     const body = document.createElement("div"); body.className = "gx-secb"; body.id = `${s.id}-body`;
     while (h.nextSibling) body.append(h.nextSibling);
     s.append(body);
+    // a link or button already in the heading (a section's "copy link") stays beside the toggle, never inside it:
+    // interactive content inside a button is unreachable for keyboard and screen-reader users (axe nested-interactive)
+    const keep = [...h.querySelectorAll("a[href], button, input, select, textarea, [tabindex]")];
+    keep.forEach((x) => x.remove());
     const b = document.createElement("button"); b.type = "button"; b.className = "gx-sech"; b.setAttribute("aria-controls", body.id);
     b.innerHTML = `<span>${h.innerHTML}</span>${CHEV}`;
-    h.replaceChildren(b);
+    h.replaceChildren(b, ...keep);
     secs.push(s);
   }
   const set = (s, open, remember = true) => {

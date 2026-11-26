@@ -1,4 +1,4 @@
-// The programming adapter (TechGradify · ForgeLab, techgradify.com). TechGradify is a separate site; this adapter is
+// The programming adapter (TechGradify, techgradify.com). TechGradify is a separate site; this adapter is
 // what it would give the shared engine. It adds one assessment type that programming needs and no other subject
 // does: predict the output of a piece of code. Its styles are in programming.css, which the site's pages link. The example course in tests/fixtures/programming/ runs on it.
 //

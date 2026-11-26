@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "test": "node --test tests/*.mjs",
+    "a11y": "node scripts/a11y/learn.cjs",
     "eval": "node scripts/eval-notes.mjs",
     "eval:claude": "node scripts/eval-notes.mjs --claude",
     "serve": "python3 -m http.server 8080",

@@ -111,7 +111,7 @@ globe.setScene({
   regions: [{ v: vec(-14, -58), radius: 0.3, rgb: [229, 33, 83], light: 0.7 }],     // coloured glow on the land
   pins: [{ id: "cycle", v: vec(-10, -60), c: "#e52153", name: "The cardiac cycle", state: "fading", strength: 60 }],
   roads: [{ a: vec(-10, -60), b: vec(-5, -50), weak: false }],                       // arcs between pins
-  portals: [{ v: vec(-10, -60), dir: [0.3, -0.45, 0.15], c: "#ff5a4d", site: "ForgeLab" }],
+  portals: [{ v: vec(-10, -60), dir: [0.3, -0.45, 0.15], c: "#ff5a4d", site: "TechGradify" }],
   hubs: [{ id: "hub:London", name: "London", v: vec(51.5, -0.1) }],                  // glowing city markers
   selected: "cycle", rings: true,
 });

@@ -21,8 +21,8 @@ K: Properties follow from structure at many scales, and processing controls stru
 !: The same composition can give wildly different properties depending on processing and microstructure.
 Q: What does the Hall–Petch relation describe? | Yield strength increasing as grain size decreases, σ_{y} ∝ d^{−1/2}.
 Q: Why are diamond and graphite so different? | Different bonding (sp^{3} 3D network vs sp^{2} layers) gives different structures and properties.
-M1: Quenching steel produces: | Hard, brittle martensite | Soft ferrite | Liquid steel | Amorphous glass only | Trapped carbon distorts the lattice.
-M2: The materials tetrahedron links processing, structure, properties and: | Performance | Price | Colour | Density | Four corners.
+M1#physics-u45-01-q1: Quenching steel produces: | Hard, brittle martensite | Soft ferrite | Liquid steel | Amorphous glass only | Trapped carbon distorts the lattice.
+M2#physics-u45-01-q2: The materials tetrahedron links processing, structure, properties and: | Performance | Price | Colour | Density | Four corners.
 
 ## Atomic bonding and crystal structure
 S: Atoms bond through ionic, covalent, metallic and van der Waals interactions, and their arrangement into crystal lattices determines density, slip systems, cleavage and much more. Crystallography gives the language to describe these arrangements.
@@ -52,8 +52,8 @@ K: Bonding sets strength and conductivity; lattice structure sets packing, slip 
 !: Close-packed structures (FCC, HCP) have the same packing fraction but different ductility because of slip-system geometry.
 Q: What is the coordination number of BCC? | 8.
 Q: Why are FCC metals typically ductile? | They have 12 slip systems on close-packed planes.
-M1: Ionic solids are usually: | Brittle and insulating | Ductile and conducting | Soft | Magnetic | Fixed ion arrangement.
-M2: The FCC atomic packing fraction is: | 0.74 | 0.68 | 0.52 | 1.0 | Closest packing.
+M1#physics-u45-02-q1: Ionic solids are usually: | Brittle and insulating | Ductile and conducting | Soft | Magnetic | Fixed ion arrangement.
+M2#physics-u45-02-q2: The FCC atomic packing fraction is: | 0.74 | 0.68 | 0.52 | 1.0 | Closest packing.
 
 ## Defects and dislocations
 S: No crystal is perfect. Point defects, dislocations, grain boundaries and voids control diffusion, strength, colour and conductivity. Dislocations, in particular, explain why metals deform at stresses thousands of times lower than perfect-crystal theory predicts.
@@ -81,8 +81,8 @@ K: Dislocations make metals ductile; blocking them makes metals strong.
 !: A perfect, dislocation-free crystal (like a whisker) can be enormously strong; real metals are weak because of dislocations.
 Q: What is a Burgers vector? | The vector describing the magnitude and direction of lattice distortion caused by a dislocation.
 Q: How does precipitation hardening work? | Fine precipitates obstruct dislocation motion.
-M1: Schmid factor is maximal (0.5) when: | φ = λ = 45° | φ = 0° | λ = 90° | φ = 90° | cos 45° cos 45°.
-M2: Work hardening occurs because: | Dislocations multiply and tangle | Grains grow | Vacancies vanish | Temperature rises | Higher density impedes motion.
+M1#physics-u45-03-q1: Schmid factor is maximal (0.5) when: | φ = λ = 45° | φ = 0° | λ = 90° | φ = 90° | cos 45° cos 45°.
+M2#physics-u45-03-q2: Work hardening occurs because: | Dislocations multiply and tangle | Grains grow | Vacancies vanish | Temperature rises | Higher density impedes motion.
 
 ## Diffusion in solids
 S: Atoms in solids move by hopping between sites, driven by random thermal motion and concentration gradients. Diffusion controls heat treatment, doping of semiconductors, corrosion, sintering, creep and the lifetime of batteries and turbine blades.
@@ -109,8 +109,8 @@ K: Diffusion follows Fick's laws with Arrhenius temperature dependence; distance
 !: Doubling the diffusion distance needs four times the time.
 Q: Why is interstitial diffusion faster than substitutional? | Interstitial atoms don't need a vacancy next to them and have lower activation energies.
 Q: What is the Kirkendall effect? | Marker movement and voids caused by unequal diffusion rates of two species.
-M1: Diffusion length scales as: | √(Dt) | Dt | D/t | t^{2} | Random walk.
-M2: Grain-boundary diffusion is faster because: | Activation energy is lower | Atoms are heavier | Boundaries are colder | Grains rotate | More open structure.
+M1#physics-u45-04-q1: Diffusion length scales as: | √(Dt) | Dt | D/t | t^{2} | Random walk.
+M2#physics-u45-04-q2: Grain-boundary diffusion is faster because: | Activation energy is lower | Atoms are heavier | Boundaries are colder | Grains rotate | More open structure.
 
 ## Phase diagrams
 S: Phase diagrams map which phases are stable at each temperature and composition. They are the road maps of materials processing, telling metallurgists how to melt, cast, heat-treat and alloy materials to get desired microstructures.
@@ -135,8 +135,8 @@ K: Phase diagrams show stable phases; the lever rule gives phase fractions and t
 !: Phase diagrams describe equilibrium; fast processing can produce structures not on the diagram.
 Q: What is a eutectic? | A composition where liquid transforms directly into two solid phases at the lowest melting temperature.
 Q: What is pearlite? | Alternating layers of ferrite and cementite formed from austenite at the eutectoid.
-M1: The eutectoid temperature in steel is: | 727 °C | 1538 °C | 912 °C | 183 °C | γ → α + Fe_{3}C.
-M2: The lever rule gives: | Phase fractions | Melting points | Diffusion rates | Crystal structure | From tie-line lengths.
+M1#physics-u45-05-q1: The eutectoid temperature in steel is: | 727 °C | 1538 °C | 912 °C | 183 °C | γ → α + Fe_{3}C.
+M2#physics-u45-05-q2: The lever rule gives: | Phase fractions | Melting points | Diffusion rates | Crystal structure | From tie-line lengths.
 
 ## Phase transformations
 S: Phase transformations change a material's structure: solidification, precipitation, eutectoid reactions and martensitic changes. Their rates and mechanisms control microstructure and properties, and they are manipulated through cooling rate and heat treatment.
@@ -161,8 +161,8 @@ K: Transformations proceed by nucleation and growth (or shear); their kinetics, 
 !: Larger undercooling doesn't always speed transformation; at low temperature diffusion becomes too slow.
 Q: What is martensite? | A hard, metastable phase formed by diffusionless shear transformation during rapid quenching.
 Q: Why is heterogeneous nucleation easier? | Surfaces reduce the interfacial energy cost, lowering the barrier.
-M1: The critical nucleus radius shrinks with: | Greater undercooling | Higher surface energy | Higher temperature | Less driving force | |ΔG_{v}| grows.
-M2: Spinodal decomposition: | Has no nucleation barrier | Requires nucleation | Is diffusionless | Only occurs in liquids | Uphill diffusion.
+M1#physics-u45-06-q1: The critical nucleus radius shrinks with: | Greater undercooling | Higher surface energy | Higher temperature | Less driving force | |ΔG_{v}| grows.
+M2#physics-u45-06-q2: Spinodal decomposition: | Has no nucleation barrier | Requires nucleation | Is diffusionless | Only occurs in liquids | Uphill diffusion.
 
 ## Mechanical properties
 S: Mechanical properties describe how materials respond to forces: stiffness, strength, ductility, hardness, toughness and resistance to fatigue and creep. They decide whether a bridge stands, a turbine survives or a phone screen cracks.
@@ -191,8 +191,8 @@ K: Stiffness, strength, ductility and toughness are distinct; fracture and fatig
 !: A strong material isn't necessarily tough; glass is strong in compression but shatters from small flaws.
 Q: What is fracture toughness? | A material's resistance to crack propagation, K_{IC}.
 Q: What is creep? | Slow, time-dependent plastic deformation under constant load, usually at high temperature.
-M1: Young's modulus of steel is about: | 200 GPa | 2 GPa | 2000 GPa | 20 MPa | Stiff metal.
-M2: Fatigue failure occurs under: | Cyclic loading below yield | Single overload only | Zero stress | Compression only | Crack growth per cycle.
+M1#physics-u45-07-q1: Young's modulus of steel is about: | 200 GPa | 2 GPa | 2000 GPa | 20 MPa | Stiff metal.
+M2#physics-u45-07-q2: Fatigue failure occurs under: | Cyclic loading below yield | Single overload only | Zero stress | Compression only | Crack growth per cycle.
 
 ## Thermal properties
 S: Thermal properties describe how materials store heat, conduct it and change size with temperature. They decide how electronics are cooled, why rails buckle in summer, and which materials protect spacecraft during re-entry.
@@ -219,8 +219,8 @@ K: Phonons and electrons carry heat; heat capacity follows Debye at low T; expan
 !: Constrained thermal expansion creates large stresses; expansion joints and matched materials prevent cracking.
 Q: What does the Wiedemann–Franz law state? | The ratio of thermal to electrical conductivity in metals is proportional to temperature.
 Q: Why does diamond conduct heat so well? | Stiff bonds and light atoms give fast phonons with little scattering.
-M1: At low temperature, insulator heat capacity scales as: | T^{3} | T | constant | T^{−1} | Debye law.
-M2: Invar is used for its: | Very low thermal expansion | High conductivity | Magnetism only | Softness | ~1 × 10^{-6} K^{-1}.
+M1#physics-u45-08-q1: At low temperature, insulator heat capacity scales as: | T^{3} | T | constant | T^{−1} | Debye law.
+M2#physics-u45-08-q2: Invar is used for its: | Very low thermal expansion | High conductivity | Magnetism only | Softness | ~1 × 10^{-6} K^{-1}.
 
 ## Electrical properties
 S: Electrical properties range over more than 25 orders of magnitude, from superconductors to insulators. Band structure, carrier density and scattering explain why copper conducts, silicon semiconducts and quartz insulates.
@@ -243,8 +243,8 @@ K: Conductivity = carrier density × charge × mobility; band structure decides 
 !: Semiconductors conduct better when hot; metals conduct worse. Opposite temperature behaviour reveals different physics.
 Q: What is Matthiessen's rule? | Total resistivity is the sum of contributions from independent scattering mechanisms.
 Q: Why does a semiconductor's resistivity fall with temperature? | More carriers are thermally excited across the band gap.
-M1: Metal resistivity at low T is dominated by: | Impurities and defects | Phonons | Band gap | Superconductivity always | Residual resistivity.
-M2: σ = neμ links conductivity to: | Carrier density and mobility | Temperature only | Mass only | Thermal expansion | Drude picture.
+M1#physics-u45-09-q1: Metal resistivity at low T is dominated by: | Impurities and defects | Phonons | Band gap | Superconductivity always | Residual resistivity.
+M2#physics-u45-09-q2: σ = neμ links conductivity to: | Carrier density and mobility | Temperature only | Mass only | Thermal expansion | Drude picture.
 
 ## Magnetic properties
 S: Materials respond to magnetic fields in different ways: weakly opposing (diamagnetism), weakly aligning (paramagnetism), or strongly ordering (ferro-, ferri- and antiferromagnetism). These behaviours come from electron spins and orbits and their quantum interactions.
@@ -270,8 +270,8 @@ K: Magnetism comes from electron moments; exchange interaction produces spontane
 !: Ferromagnetism is a quantum effect; the classical dipole–dipole interaction is far too weak to explain room-temperature magnets.
 Q: What is the Curie temperature? | The temperature above which a ferromagnet loses spontaneous magnetisation.
 Q: What is coercivity? | The reverse field needed to reduce magnetisation to zero.
-M1: Diamagnetic susceptibility is: | Small and negative | Large positive | Zero | Infinite | All materials, weak.
-M2: Magnetite is: | Ferrimagnetic | Diamagnetic | Antiferromagnetic only | Superconducting | Unequal sublattices.
+M1#physics-u45-10-q1: Diamagnetic susceptibility is: | Small and negative | Large positive | Zero | Infinite | All materials, weak.
+M2#physics-u45-10-q2: Magnetite is: | Ferrimagnetic | Diamagnetic | Antiferromagnetic only | Superconducting | Unequal sublattices.
 
 ## Optical properties
 S: A material's optical properties, how it absorbs, reflects, transmits and emits light, come from its electrons and their band structure. They explain why metals shine, glass is transparent, gold is yellow and semiconductors make LEDs and solar cells.
@@ -298,8 +298,8 @@ K: Absorption and reflection depend on electronic structure: band gaps for semic
 !: A material transparent in the visible can be opaque in UV or IR, and vice versa; always specify wavelength.
 Q: Why are metals shiny? | Free electrons reflect light below the plasma frequency.
 Q: Why is ruby red? | Cr^{3+} impurities absorb green and violet light.
-M1: Silicon is transparent at: | 1.5 μm | 500 nm | 300 nm | 100 nm | Below its band gap energy.
-M2: Anti-reflection coatings use layers of thickness: | λ/4 | λ | λ/2 | 2λ | Destructive interference of reflections.
+M1#physics-u45-11-q1: Silicon is transparent at: | 1.5 μm | 500 nm | 300 nm | 100 nm | Below its band gap energy.
+M2#physics-u45-11-q2: Anti-reflection coatings use layers of thickness: | λ/4 | λ | λ/2 | 2λ | Destructive interference of reflections.
 
 ## Dielectric materials
 S: Dielectrics are insulators that polarise in electric fields, storing energy and reducing field strength inside. They are essential in capacitors, insulation, microwave circuits, sensors and memory, with special classes such as piezoelectrics and ferroelectrics.
@@ -326,8 +326,8 @@ K: Dielectrics polarise in fields by several mechanisms; permittivity, loss and 
 !: ε_{r} is frequency-dependent; a material's static permittivity may differ greatly from its GHz value.
 Q: What is a ferroelectric? | A material with spontaneous electric polarisation that can be switched by an applied field.
 Q: Why are high-k dielectrics used in transistors? | They give high capacitance with a thicker layer, reducing leakage current.
-M1: Piezoelectric materials convert: | Mechanical stress to electric polarisation | Heat to light | Magnetism to heat | Light to sound only | And vice versa.
-M2: Dielectric loss is measured by: | tan δ | ε′ only | Breakdown voltage | Capacitance alone | ε″/ε′.
+M1#physics-u45-12-q1: Piezoelectric materials convert: | Mechanical stress to electric polarisation | Heat to light | Magnetism to heat | Light to sound only | And vice versa.
+M2#physics-u45-12-q2: Dielectric loss is measured by: | tan δ | ε′ only | Breakdown voltage | Capacitance alone | ε″/ε′.
 
 ## Semiconductors
 S: Semiconductors have band gaps small enough that their conductivity can be controlled by temperature, doping, light and electric fields. This controllability makes them the basis of transistors, LEDs, lasers, solar cells and sensors.
@@ -355,8 +355,8 @@ K: Doping controls carrier type and density; np = n_{i}^{2} links electrons and 
 !: Dopant concentrations of parts per million change conductivity by orders of magnitude; purity is critical.
 Q: What is an acceptor? | A dopant (like boron in silicon) that creates holes by accepting electrons from the valence band.
 Q: Why are GaN and SiC used in power electronics? | Wide band gaps give high breakdown fields and operation at high temperature.
-M1: In n-type Si, majority carriers are: | Electrons | Holes | Ions | Phonons | Donors provide electrons.
-M2: Intrinsic Si carrier density at 300 K is about: | 10^{10} cm^{-3} | 10^{22} cm^{-3} | 10^{2} cm^{-3} | 10^{16} cm^{-3} | Small gap 1.12 eV.
+M1#physics-u45-13-q1: In n-type Si, majority carriers are: | Electrons | Holes | Ions | Phonons | Donors provide electrons.
+M2#physics-u45-13-q2: Intrinsic Si carrier density at 300 K is about: | 10^{10} cm^{-3} | 10^{22} cm^{-3} | 10^{2} cm^{-3} | 10^{16} cm^{-3} | Small gap 1.12 eV.
 
 ## Superconductors
 S: Superconductors carry current with zero resistance and expel magnetic fields below a critical temperature. Explained by Cooper pairing (BCS theory) in conventional materials, they power MRI scanners, accelerators and quantum computers, while high-temperature cuprates still hold mysteries.
@@ -383,8 +383,8 @@ K: Superconductors have zero resistance and expel flux; Cooper pairing explains 
 !: Zero resistance alone doesn't make a superconductor; the Meissner effect distinguishes it from a perfect conductor.
 Q: What is the Meissner effect? | Expulsion of magnetic flux from a superconductor below T_{c}.
 Q: Why is the flux quantum h/2e? | The charge carriers are Cooper pairs with charge 2e.
-M1: Type II superconductors allow: | Partial flux penetration as vortices | No flux ever | Only zero field | Ferromagnetism | Between H_{c1} and H_{c2}.
-M2: YBCO's T_{c} is about: | 92 K | 9 K | 300 K | 4 K | Above liquid nitrogen.
+M1#physics-u45-14-q1: Type II superconductors allow: | Partial flux penetration as vortices | No flux ever | Only zero field | Ferromagnetism | Between H_{c1} and H_{c2}.
+M2#physics-u45-14-q2: YBCO's T_{c} is about: | 92 K | 9 K | 300 K | 4 K | Above liquid nitrogen.
 
 ## Magnetic materials
 S: Magnetic materials are engineered for specific jobs: soft magnets that switch easily in transformers and motors, hard magnets that hold strong fields in electric vehicles and wind turbines, and thin films that store data and sense fields.
@@ -408,8 +408,8 @@ K: Soft magnets minimise loss for switching; hard magnets maximise stored energy
 !: Permanent magnets lose coercivity when hot; exceeding their maximum temperature can demagnetise them.
 Q: What does (BH)_{max} measure? | The maximum magnetic energy a permanent magnet can supply per unit volume.
 Q: Why are transformer cores laminated? | Thin insulated layers reduce eddy-current losses.
-M1: The strongest commercial permanent magnets are: | NdFeB | Alnico | Ferrite | Iron | Neodymium magnets.
-M2: MRAM uses: | Magnetic tunnel junctions | Capacitors | Floating gates | Phase-change glass | Spin-dependent tunnelling.
+M1#physics-u45-15-q1: The strongest commercial permanent magnets are: | NdFeB | Alnico | Ferrite | Iron | Neodymium magnets.
+M2#physics-u45-15-q2: MRAM uses: | Magnetic tunnel junctions | Capacitors | Floating gates | Phase-change glass | Spin-dependent tunnelling.
 
 ## Metamaterials
 S: Metamaterials are engineered structures whose properties come from their designed architecture rather than chemistry. With unit cells smaller than the wavelength they control, they can bend light backwards, cloak objects, focus beyond the diffraction limit and manipulate sound and vibration.
@@ -431,8 +431,8 @@ K: Metamaterials get their properties from sub-wavelength structure, enabling ne
 !: Most cloaks work only at narrow bands and specific angles; losses limit performance, especially at optical frequencies.
 Q: What is a metasurface? | A thin layer of sub-wavelength scatterers that imposes designed phase and amplitude changes on waves.
 Q: What is an auxetic material? | One with a negative Poisson's ratio: it gets wider when stretched.
-M1: Negative refraction requires: | ε < 0 and μ < 0 | ε > 0 only | μ = 0 | Very high temperature | Double-negative medium.
-M2: Metamaterial unit cells must be: | Smaller than the wavelength | Larger than the wavelength | Exactly one wavelength | Atomic only | Effective medium.
+M1#physics-u45-16-q1: Negative refraction requires: | ε < 0 and μ < 0 | ε > 0 only | μ = 0 | Very high temperature | Double-negative medium.
+M2#physics-u45-16-q2: Metamaterial unit cells must be: | Smaller than the wavelength | Larger than the wavelength | Exactly one wavelength | Atomic only | Effective medium.
 
 ## Nanostructured materials
 S: Nanostructured materials have features between about 1 and 100 nm, where surface effects and quantum confinement change properties dramatically. Quantum dots, nanotubes, graphene and nanoparticles show new optical, electronic, mechanical and catalytic behaviour.
@@ -457,8 +457,8 @@ K: At the nanoscale, surfaces and quantum confinement dominate, giving size-tuna
 !: "Nano" doesn't automatically mean better; agglomeration, defects and toxicity can undermine performance.
 Q: Why do quantum dots change colour with size? | Quantum confinement widens the band gap as size shrinks.
 Q: What determines whether a carbon nanotube is metallic? | Its chirality (how the graphene sheet is rolled).
-M1: Surface-to-volume ratio scales as: | 1/r | r | r^{2} | constant | Smaller particles, more surface.
-M2: The 2023 Nobel Prize in Chemistry honoured: | Quantum dots | Graphene | Fullerenes | Zeolites | Ekimov, Brus, Bawendi.
+M1#physics-u45-17-q1: Surface-to-volume ratio scales as: | 1/r | r | r^{2} | constant | Smaller particles, more surface.
+M2#physics-u45-17-q2: The 2023 Nobel Prize in Chemistry honoured: | Quantum dots | Graphene | Fullerenes | Zeolites | Ekimov, Brus, Bawendi.
 
 ## Thin films and coatings
 S: Thin films, layers from a few atoms to several micrometres thick, give surfaces new functions: anti-reflection, hardness, corrosion protection, conductivity and the active layers of chips, solar cells and displays. Their growth and properties often differ from bulk material.
@@ -485,8 +485,8 @@ K: Deposition method and growth mode control film structure; mismatch strain and
 !: Film properties (density, stress, conductivity) can differ greatly from bulk values.
 Q: What makes ALD special? | Self-limiting surface reactions give atomic-level thickness control and conformal coating.
 Q: What is Stranski–Krastanov growth? | Layer-by-layer growth followed by island formation, used to make quantum dots.
-M1: MBE requires: | Ultra-high vacuum | Atmospheric pressure | Liquid solvents | No substrate | Atomic beams.
-M2: Thermal barrier coatings are made of: | Yttria-stabilised zirconia | Copper | Graphite | Silver | Low conductivity ceramic.
+M1#physics-u45-18-q1: MBE requires: | Ultra-high vacuum | Atmospheric pressure | Liquid solvents | No substrate | Atomic beams.
+M2#physics-u45-18-q2: Thermal barrier coatings are made of: | Yttria-stabilised zirconia | Copper | Graphite | Silver | Low conductivity ceramic.
 
 ## Amorphous materials
 S: Amorphous materials lack long-range crystalline order while keeping short-range order between neighbouring atoms. Glasses, many polymers, amorphous silicon and metallic glasses have properties shaped by this disorder, including transparency, isotropy and unique mechanical behaviour.
@@ -510,8 +510,8 @@ K: Amorphous solids have short-range but no long-range order; the glass transiti
 !: Glass is not a slow-flowing liquid at room temperature; old windows are thicker at the bottom because of manufacturing, not flow.
 Q: What is the glass transition temperature? | The temperature where a supercooled liquid's viscosity becomes so high it behaves as a solid (~10^{12} Pa s).
 Q: Why are metallic glasses strong? | No grain boundaries or dislocations to allow easy plastic flow.
-M1: Amorphous materials' diffraction patterns show: | Broad halos | Sharp Bragg peaks | Nothing | Single spots | No long-range order.
-M2: Phase-change memory uses: | Switching between amorphous and crystalline states | Magnetism | Ferroelectricity | Superconductivity | Chalcogenide glasses.
+M1#physics-u45-19-q1: Amorphous materials' diffraction patterns show: | Broad halos | Sharp Bragg peaks | Nothing | Single spots | No long-range order.
+M2#physics-u45-19-q2: Phase-change memory uses: | Switching between amorphous and crystalline states | Magnetism | Ferroelectricity | Superconductivity | Chalcogenide glasses.
 
 ## Biomaterials
 S: Biomaterials are materials designed to interact with the body: implants, prosthetics, scaffolds and drug-delivery systems. They must perform mechanically while being biocompatible, avoiding harmful immune responses, toxicity or failure inside a living environment.
@@ -536,8 +536,8 @@ K: Biomaterials must meet mechanical needs while being biocompatible, durable an
 !: Stiffer isn't better in implants: mismatch with bone causes stress shielding and loosening.
 Q: What is osseointegration? | Direct structural and functional connection between living bone and an implant surface.
 Q: Why is hydroxyapatite used as a coating? | It is chemically similar to bone mineral and promotes bone bonding.
-M1: Nitinol stents use: | Superelasticity and shape memory | Magnetism | Biodegradation | Piezoelectricity | Ni–Ti alloy.
-M2: UHMWPE is used for: | Joint liners | Electrical wiring | Bone cement | Stents | Low friction, wear resistant.
+M1#physics-u45-20-q1: Nitinol stents use: | Superelasticity and shape memory | Magnetism | Biodegradation | Piezoelectricity | Ni–Ti alloy.
+M2#physics-u45-20-q2: UHMWPE is used for: | Joint liners | Electrical wiring | Bone cement | Stents | Low friction, wear resistant.
 
 ## Smart materials
 S: Smart materials change a property, such as shape, colour, stiffness or electrical output, in a controlled way in response to stimuli like stress, temperature, light or fields. They enable sensors, actuators, adaptive structures and self-healing systems.
@@ -564,8 +564,8 @@ K: Smart materials couple mechanical, thermal, electrical, magnetic and optical 
 !: Every smart material involves trade-offs in strain, force, speed and efficiency; none is best at everything.
 Q: What is a magnetorheological fluid? | A suspension whose viscosity increases sharply in a magnetic field.
 Q: What do electrochromic windows do? | Change tint when a voltage is applied, controlling light and heat.
-M1: Piezoelectric actuators are known for: | Fast response, small strain | Huge strain, slow | No response | Only heating | ~0.1% strain.
-M2: Self-healing polymers can use: | Microcapsules or reversible bonds | Magnets only | Lasers | Radioactivity | Repair mechanisms.
+M1#physics-u45-21-q1: Piezoelectric actuators are known for: | Fast response, small strain | Huge strain, slow | No response | Only heating | ~0.1% strain.
+M2#physics-u45-21-q2: Self-healing polymers can use: | Microcapsules or reversible bonds | Magnets only | Lasers | Radioactivity | Repair mechanisms.
 
 ## Shape-memory alloys
 S: Shape-memory alloys like nickel–titanium remember a shape: deform them when cold and they spring back on heating, or stretch them several percent at body temperature and they recover instantly. These effects come from a reversible martensitic phase transformation.
@@ -588,8 +588,8 @@ K: Reversible martensitic transformation gives shape memory on heating and super
 !: SMA transformation temperatures are very composition-sensitive; small chemistry changes shift performance greatly.
 Q: What is superelasticity? | Large, recoverable strain due to stress-induced martensite that reverts on unloading above A_{f}.
 Q: How does the shape-memory effect work? | Deformed martensite reverts to austenite on heating, recovering the original shape.
-M1: The NiTi high-temperature phase is: | Austenite (B2 cubic) | Martensite | Ferrite | Amorphous | Parent phase.
-M2: SMA actuators are limited by: | Slow thermal response and low efficiency | Being too fast | High efficiency | No strain | Heating and cooling time.
+M1#physics-u45-22-q1: The NiTi high-temperature phase is: | Austenite (B2 cubic) | Martensite | Ferrite | Amorphous | Parent phase.
+M2#physics-u45-22-q2: SMA actuators are limited by: | Slow thermal response and low efficiency | Being too fast | High efficiency | No strain | Heating and cooling time.
 
 ## Materials under extreme conditions
 S: Extreme pressures, temperatures, radiation and strain rates transform materials, creating new phases and revealing fundamental physics. Studying them helps understand planetary interiors, design fusion reactors and spacecraft, and discover materials like superconducting hydrides.
@@ -614,8 +614,8 @@ K: Extreme conditions create new phases and failure modes; experiments with anvi
 !: Many high-pressure phases are unstable at ambient conditions; superconducting hydrides need megabar pressures.
 Q: How is pressure measured in a diamond anvil cell? | From the shift of ruby fluorescence lines (or Raman of diamond).
 Q: What does dpa measure? | Displacements per atom, the average number of times each atom is knocked from its site by radiation.
-M1: Hydride superconductors like LaH_{10} need: | Megabar pressures | Ambient conditions | Vacuum | Liquid helium only | ~170 GPa.
-M2: Superionic water ice may exist in: | Uranus and Neptune | Earth's crust | The Sun | Mars' poles only | High P and T.
+M1#physics-u45-23-q1: Hydride superconductors like LaH_{10} need: | Megabar pressures | Ambient conditions | Vacuum | Liquid helium only | ~170 GPa.
+M2#physics-u45-23-q2: Superionic water ice may exist in: | Uranus and Neptune | Earth's crust | The Sun | Mars' poles only | High P and T.
 
 ## Materials characterisation techniques
 S: Characterisation techniques probe materials from atomic to macroscopic scales. Selecting the right combination of diffraction, microscopy, spectroscopy, thermal and mechanical tests answers questions about structure, composition, defects and performance.
@@ -644,6 +644,6 @@ K: No single technique tells the whole story; combine complementary methods matc
 !: Sample preparation can create artefacts (polishing damage, FIB amorphisation); always consider how preparation affects results.
 Q: What does atom probe tomography do? | Field-evaporates atoms from a sharp tip to reconstruct 3D compositional maps atom by atom.
 Q: Why use X-ray computed tomography in materials science? | To see internal pores, cracks and structure in 3D non-destructively.
-M1: Fatigue striations are observed with: | SEM fractography | XRD | DSC | Hall measurements | Fracture surface imaging.
-M2: ICP-MS measures: | Trace elements in bulk samples | Crystal structure | Surface topography | Magnetic moments | Very low detection limits.
+M1#physics-u45-24-q1: Fatigue striations are observed with: | SEM fractography | XRD | DSC | Hall measurements | Fracture surface imaging.
+M2#physics-u45-24-q2: ICP-MS measures: | Trace elements in bulk samples | Crystal structure | Surface topography | Magnetic moments | Very low detection limits.
 `;

@@ -8,7 +8,7 @@ import { SITE as CONFIG_SITE } from "../../gradify.config.js";
 import { mountSubNav } from "./subnav.js";
 
 export const SITES = GROUPS.flatMap((g) => g.items);
-// "MedGradify" → "medgradify", "TechGradify · ForgeLab" → "techgradify"
+// "MedGradify" → "medgradify", "TechGradify" → "techgradify"
 export const slugOf = (s) => (typeof s === "string" ? s : s.n).split(" · ")[0].toLowerCase().replace(/[^a-z0-9]+/g, "");
 // the sub-site's home on getgradify.com
 export const pathOf = (s) => `/${slugOf(s)}/`;
@@ -25,8 +25,10 @@ export function currentSite() {
 // A site's accent colours, on dark and on light: kit/core/accent.js (on its own so pages that only need the colours
 // don't load the site navigation)
 import { accentOf, accentOnLight } from "./accent.js";
+// former site names (kit/core/sites.js), re-exported so pages that already load this module needn't load another
+export { canonicalSite, canonicalSites } from "./sites.js";
 export { accentOf, accentOnLight };
-// A site's name with its first word in the accent colour: "<Med>Gradify", "<Tech>Gradify · ForgeLab"
+// A site's name with its first word in the accent colour: "<Med>Gradify", "<Tech>Gradify"
 export function nameHtml(s) {
   const m = s.n.match(/^(.+?)(Gradify.*)$/);
   const [first, rest] = m ? [m[1], m[2]] : [s.n.split(" ")[0], s.n.slice(s.n.split(" ")[0].length)];

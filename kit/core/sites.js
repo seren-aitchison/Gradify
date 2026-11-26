@@ -56,6 +56,8 @@ export const GROUPS = [
       { n: "MathGradify", who: "Maths students at any level", i: "sigma", c: "70a7dc", d: "Maths from everyday numeracy and GCSE to A level, university and data science, with worked examples, generated practice and line-by-line checking.", u: "gradifymath.com", built: true, status: "live" },
       { n: "SciGradify", who: "Science students", i: "atom", c: "6aa84f", d: "Biology, chemistry, physics and the scientific method, plus interdisciplinary science.", built: true, status: "live" },
       { n: "EcoGradify", who: "Ecology and environment students", i: "leaf", c: "6aa84f", d: "Ecology, environmental science, biodiversity and sustainability.", u: "ecogradify.com", built: true, status: "live" },
+      { n: "EconGradify", who: "Economics students and anyone curious about economies", i: "trend", c: "2f7f6f", d: "Economics: micro and macro, behaviour, development, international and public economics, policy and economic history.", built: false, status: "soon", built: true },
+      { n: "GeographyGradify", who: "Geography students, GCSE to degree", i: "globe", c: "3a7ca5", d: "Physical, human and environmental geography, with maps, GIS, fieldwork and the world's regions.", built: false, status: "soon", built: true },
       { n: "SocGradify", who: "Social science students", i: "people", c: "a44a99", d: "Sociology, social structures, research methods and social policy.", built: true, status: "live" },
       { n: "HistoryGradify", who: "History students, GCSE to A level and beyond", i: "landmark", c: "b0703a", d: "British, European and world history, historical thinking, sources and interpretations, and essay writing.", built: true, status: "live" },
       { n: "LitGradify", who: "Literature and English students", i: "feather", c: "8c27ca", d: "Literary analysis, close reading, critical interpretation, writing and literary history.", u: "litgradify.com", built: true, status: "live" },
@@ -72,9 +74,9 @@ export const GROUPS = [
     blurb: "Code, data and AI, plus tools for your work.",
     items: [
       {
-        n: "TechGradify · ForgeLab", who: "Developers, data scientists and AI engineers", i: "forge", c: "666666",
-        d: "Hands-on coding, data science and AI engineering, with instant feedback. Forge is the future of TechGradify.",
-        u: "techgradify.com", built: true, spot: "ff5a4d", status: "external",
+        n: "TechGradify", who: "Developers, data scientists and AI engineers", i: "forge", c: "666666",
+        d: "Hands-on coding, data science and AI engineering, with instant feedback.",
+        built: true, spot: "ff5a4d", status: "beta",
       },
       { n: "Klerio", who: "Small teams with contact lists", i: "checklist", c: "2a8c82", d: "Clean contact lists and see what changed every week.", u: "getklerio.com", tm: false, status: "external" },
     ],
@@ -104,7 +106,9 @@ export const KEYWORDS = {
   MathGradify: "maths math algebra calculus statistics numbers",
   SciGradify: "science physics chemistry biology bioinformatics molecular",
   EcoGradify: "environment climate ecology sustainability nature",
-  SocGradify: "sociology politics economics history geography",
+  SocGradify: "sociology politics social policy social theory",
+  EconGradify: "economics economy microeconomics macroeconomics inflation markets trade development behavioural policy gdp",
+  GeographyGradify: "geography maps gis rivers coasts glaciers tectonics climate urban population migration fieldwork",
   HistoryGradify: "history gcse a level medieval tudor stuart industrial revolution world war cold war empire sources essays",
   LitGradify: "english reading books poetry writing literature",
   LanguageGradify: "spanish french german languages vocabulary speaking",
@@ -112,13 +116,29 @@ export const KEYWORDS = {
   MusicGradify: "instrument piano guitar singing theory",
   SportGradify: "fitness gym exercise workout training running",
   CreateGradify: "creative creativity making crafts video",
-  "TechGradify · ForgeLab": "coding programming python ai machine learning data science software developer forge",
+  "TechGradify": "coding programming python ai machine learning data science software developer forge",
   InternshipGradify: "internship work experience placement job graduate scheme summer",
   Klerio: "contacts crm spreadsheet data cleaning",
 };
 
 // Sites that rotate through the big featured card at the top of the page, in order.
-export const FEATURED = ["LawGradify", "NurseGradify", "SciGradify", "TechGradify · ForgeLab"]; // featured courses
+export const FEATURED = ["LawGradify", "NurseGradify", "SciGradify", "TechGradify"]; // featured courses
 
 // Sites listed in the "Start with your stage" panel.
 export const START_HERE = ["UnderGradify", "PostGradify", "ProGradify"];
+
+// Former site names, so what learners saved under an old name (notes, goals, activity, attempts, events: their
+// site field is text) still belongs to the site. Read paths translate them (kit/data/store.js); nothing stored is
+// rewritten in the database. The ForgeLab name was dropped on 25 Nov 2026 (owner's decision): TechGradify is one site.
+export const SITE_ALIASES = { "TechGradify · ForgeLab": "TechGradify", ForgeLab: "TechGradify" };
+export const canonicalSite = (n) => (typeof n === "string" && SITE_ALIASES[n]) || n;
+/** rows (an array, one row, or an object of tables) with any former site name in `site` replaced; returns the same shape */
+export function canonicalSites(x) {
+  if (Array.isArray(x)) return x.map((r) => (r && typeof r === "object" && SITE_ALIASES[r.site] ? { ...r, site: SITE_ALIASES[r.site] } : r));
+  if (x && typeof x === "object") {
+    if (typeof x.site === "string") return SITE_ALIASES[x.site] ? { ...x, site: SITE_ALIASES[x.site] } : x;
+    let out = x; for (const [k, v] of Object.entries(x)) if (Array.isArray(v)) { const c = canonicalSites(v); if (c.some((r, i) => r !== v[i])) out = { ...out, [k]: c }; }
+    return out;
+  }
+  return x;
+}

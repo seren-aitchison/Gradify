@@ -1,4 +1,4 @@
-// TechGradify · ForgeLab interactives. Each entry: { id, title, sub, kind, note, schools, lessons: L("Lesson title", …), load }.
+// TechGradify interactives. Each entry: { id, title, sub, kind, note, schools, lessons: L("Lesson title", …), load }.
 // kind: Experiment, Simulation, Illustrative model, Exercise, Explorer or Tool. Existing Gradify labs can be reused
 // (load: () => import("../../labs/<area>/<file>.js")); lessons are named by title and resolved to permanent ids.
 import { IDS } from "./ids.js";

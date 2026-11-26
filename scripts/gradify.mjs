@@ -10,7 +10,15 @@
 //   gradify next [--subject s] [--emit]     print the next work packet (paste into the Writer project by hand);
 //                                           --emit writes the queue's request files to content/queue/ instead
 //   gradify publish <subject>               move AI-checked and expert-reviewed drafts into the course (via the rolling PR)
-//   gradify ingest [files…] [--review]      gate and file unit files from content/inbox/ (pasted back from chat)
+//   gradify standards [--lessons f.tsv]    the production standard across the library: flashcards per topic, diagrams per
+//                                           lesson, by course (and per lesson into f.tsv); read-only
+//   gradify preview <subject> [--topic t] [--out dir]   filed lessons drawn by the real course engine, desktop and
+//                                           mobile screenshots; publishes only into a scratch copy (preview.mjs)
+//   gradify template [--subject s] [--limit n] [--topic t]   self-contained templates for an external model to write
+//                                           from: a research template, or once the brief is in, a lesson template
+//   gradify ingest [files…] [--review]      check and install the returned .md files from content/inbox/ (factory.mjs)
+//   gradify map [<framework>]                fold legacy mapping decisions into the mapping store; count each status
+//                                           (then node scripts/curriculum/spec-view.mjs <view> regenerates Specification Mastery)
 //   gradify fixlist [--subject s]           fix lists for every lesson that failed, to paste back to the Writer
 //   gradify status [--write]                progress from the files and git; --write updates knowledge-engine/CORE/
 //   gradify signals                         repair queue from learners' wrong-answer rates (Supabase secrets needed)
@@ -79,30 +87,19 @@ async function next() {
   log(packet({ id: `${tp.fw}/${tp.section}`, subject: tp.subject, level: tp.level, country: tp.country, framework: tp.fw, reqs: tp.reqs, reuse: tp.reuse, diagrams, renderers, brief: readFileSync(briefPath(tp.id), "utf8").replace(/^#.*\n/, "") }));
 }
 
-// unit files pasted back from the Writer project: content/inbox/*.txt → gates (and the review with --review) → filed
+// files written by an external model (gradify template), saved to content/inbox/ as .md or .txt: briefs are checked
+// and stored; unit files go through every gate (and the review with --review) and passing lessons are filed. Each file
+// moves to content/inbox/done/ or rejected/ with a report (scripts/content/factory.mjs)
 async function ingest() {
-  const files = argv.slice(1).filter((a) => !a.startsWith("--")).length ? argv.slice(1).filter((a) => !a.startsWith("--")) : existsSync(inboxDir) ? readdirSync(inboxDir).filter((f) => f.endsWith(".txt")).map((f) => new URL(f, inboxDir).pathname) : [];
-  if (!files.length) return log("Nothing in content/inbox/. Save the Writer's reply there as a .txt file.");
+  const { ingestAll } = await import("./content/factory.mjs");
+  const files = argv.slice(1).filter((a) => !a.startsWith("--"));
   const all = subjects().flatMap((s) => frameworksFor(s).flatMap((fw) => topicsFor(fw))), t = await tools();
   const m = flag("review") ? await model() : null;
+  if (!m) log("(no --review: gates only; passing lessons are filed as gates-passed and still need the review before they can be published)");
   try {
-    for (const f of files) {
-      const lessons = splitUnit(readFileSync(f, "utf8"));
-      const reqIds = lessons.flatMap((l) => [...l.text.matchAll(/^REQ:\s*(\S+)/gm)].map((x) => x[1]));
-      const tp = all.find((x) => { const known = new Set(x.reqs.map((r) => r.id)); return reqIds.some((id) => parentOf(id, known)); });
-      if (!tp) { log(`${f}: no REQ line matches a queued requirement`); continue; }
-      log(`${f} → ${tp.id}`);
-      // the same loop, with the Writer's reply standing in for the write call; repairs are pasted by hand (fixlist)
-      const reply = readFileSync(f, "utf8"), brief = existsSync(briefPath(tp.id)) ? readFileSync(briefPath(tp.id), "utf8") : null;
-      if (!brief) { log(`  no brief at content/research/${tp.id}.txt: research it first (gradify research ${tp.id})`); continue; }
-      const fake = async (job) => { if (job === "write") return reply; if (job === "research") return brief.replace(/^#.*\n/, ""); throw new Error(`${job} needs --review and an API key`); };
-      // without --review no reviewer runs: the lesson is filed as "gates-passed", which claims no review
-      const manyFake = async (job, items) => new Map(items.map((it) => [it.key, job === "review" ? `REV ${it.key} OK` : new Error("repairs are pasted by hand: run gradify fixlist")]));
-      if (!m) log("  (no --review: gates only; lessons are filed as gate-passed and still need the review)");
-      const r = await runTopic(tp, { ask: fake, askMany: m ? m.askMany : manyFake, render: t.render, legible: t.legible, log, reviewed: !!m });
-      log(`  → ${r.status}: ${r.lessons.length} passed, ${r.failures.length} failed${r.failures.length ? " (gradify fixlist)" : ""}`);
-      mkdirSync(out("content/inbox/done/"), { recursive: true }); if (f.startsWith(inboxDir.pathname)) renameSync(f, new URL(`done/${f.split("/").pop()}`, inboxDir));
-    }
+    const res = await ingestAll(files, { all, askMany: m?.askMany, tools: t, reviewed: !!m, log });
+    if (!res.length) return log("Nothing in content/inbox/. Save each returned file there as .md, then run gradify ingest.");
+    for (const r of res) log(`${r.file}: ${r.ok ? "installed" : "rejected"}${r.topic ? ` (${r.topic})` : ""}: report in content/inbox/${r.ok ? "done" : "rejected"}/${r.file.replace(/\.(md|txt)$/, "")}.report.md`);
   } finally { await t.legible?.close?.(); }
 }
 
@@ -115,7 +112,10 @@ async function agentWork(subject, { print = true } = {}) {
   if (flag("json")) { log(JSON.stringify(r, null, 1)); return r; }
   for (const f of r.filed) log(`filed ${f.topic}: ${f.status}, ${f.lessons.length} lessons passed${f.failures.length ? `, ${f.failures.length} failed` : ""}`);
   for (const m of r.mapped) log(`mapped ${m}`);
-  if (r.filed.length || r.mapped.length) log(`\nCOMMIT NOW, so nothing is lost if the session stops:\n  node scripts/gradify.mjs publish ${subject}\n  node scripts/gradify.mjs pr --out content/PR.md && node scripts/gradify.mjs status --write\n  git add content kit/courses knowledge-engine && git commit -m "Content engine: ${subject}" && git push origin HEAD:content/rolling\n  then open or update the pull request from content/rolling, with content/PR.md as its description.\n`);
+  for (const x of r.reviewed || []) log(`reviewed ${x.topic}: "${x.title}" passed → ${x.tier}`);
+  for (const x of r.reviewFailed || []) log(`reviewed ${x.topic}: "${x.title}" failed (${x.issues.map((i) => i.code).join(", ")}): report in content/inbox/rejected/${x.topic.split("/").pop()}.review.md for the writing model`);
+  if (r.external && r.done) log(`Nothing waiting for review or mapping. New lessons come from the writing model: gradify template --subject ${subject}, then gradify ingest.`);
+  if (r.filed.length || r.mapped.length || r.reviewed?.length || r.reviewFailed?.length) log(`\nCOMMIT NOW, so nothing is lost if the session stops:\n  node scripts/gradify.mjs publish ${subject}\n  node scripts/gradify.mjs pr --out content/PR.md && node scripts/gradify.mjs status --write\n  git add content kit/courses knowledge-engine && git commit -m "Content engine: ${subject}" && git push origin HEAD:content/rolling\n  then open or update the pull request from content/rolling, with content/PR.md as its description.\n`);
   if (r.done) { log(`DONE: nothing left to write or map for ${subject}.`); return r; }
   if (!r.actions.length) { log("Nothing waiting on a subagent: run gradify work again."); return r; }
   log(`${r.actions.length} steps for subagents. Start them all at once, one Agent call each, with the model and prompt shown. Each writes only its reply file. When every reply is saved, run \`node scripts/gradify.mjs work ${subject}\` again.\nIf the session is close to its usage limit, start no new steps: commit what's filed (above) and stop. Everything else is saved in content/queue/ for the next session.\n`);
@@ -158,6 +158,25 @@ try {
     // wiring a course adds an import, which changes its page's module preloads (tests/smooth-load.test.mjs)
     if (r.hooks?.length) { const { execFileSync } = await import("node:child_process"); execFileSync("node", ["scripts/preload-modules.mjs"], { cwd: at("./").pathname, stdio: "inherit" }); } }
   else if (cmd === "ingest") await ingest();
+  else if (cmd === "standards") { const { report } = await import("./content/standards.mjs"); log(await report({ lessonsFile: opt("lessons") })); }
+  else if (cmd === "preview") {
+    const { preview } = await import("./content/preview.mjs"), subject = argv[1] && !argv[1].startsWith("--") ? argv[1] : subjects()[0];
+    const r = await preview(subject, { topic: opt("topic"), outDir: opt("out") });
+    for (const x of r.lessons) log(`${x.id} ${x.view}: ${x.file}${x.errors.length ? ` · ${x.errors.length} console error(s): ${x.errors[0].slice(0, 120)}` : ""}`);
+    if (r.skipped?.length) log(`not previewed: ${r.skipped.join("; ")}`);
+  }
+  else if (cmd === "template") {
+    const { exportTemplates } = await import("./content/factory.mjs");
+    const res = exportTemplates(subjects(), { limit: Number(opt("limit", 5)), topicId: opt("topic") });
+    if (!res.length) log("Nothing queued.");
+    for (const r of res) log(`${r.topic}: ${r.kind} template → ${r.file.replace(out("").pathname, "")}`);
+    if (res.length) log("Give each file to the writing model, save its reply to content/inbox/ as the .md name the template gives, then run gradify ingest.");
+  }
+  else if (cmd === "map") {
+    // the mapping store (scripts/content/mapstore.mjs): fold legacy decisions in, and count each status
+    const { consolidate } = await import("./content/mapstore.mjs");
+    for (const fw of argv[1] && !argv[1].startsWith("--") ? [argv[1]] : subjects().flatMap((s) => frameworksFor(s))) { const r = consolidate(fw); log(`${fw}: ${r.folded ? "legacy decisions folded in; " : ""}${Object.entries(r.counts).map(([k, v]) => `${v} ${k}`).join(", ")}`); }
+  }
   else if (cmd === "fixlist") fixlists();
   else if (cmd === "status") { const s = status(); if (flag("write")) writeHandover(s); log(JSON.stringify(s, null, 1)); }
   else if (cmd === "signals") { const { fetchSignals } = await import("./content/signals.mjs"); log(JSON.stringify(await fetchSignals())); }

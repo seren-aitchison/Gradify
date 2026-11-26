@@ -23,8 +23,8 @@ K: Energy is conserved but degraded; multiply efficiencies along chains and resp
 !: Don't confuse power (kW) with energy (kWh); a 1 kW device running for 3 hours uses 3 kWh.
 Q: What is capacity factor? | Actual energy produced divided by the maximum possible at rated power over the same time.
 Q: Why does electrification reduce primary energy use? | Fossil power plants and engines waste most fuel energy as heat; renewables and efficient motors avoid this loss.
-M1: Carnot efficiency between 800 K and 300 K is: | 62.5% | 37.5% | 100% | 50% | 1 − 300/800.
-M2: 1 kWh equals: | 3.6 MJ | 1 MJ | 1 kJ | 36 MJ | 1000 W × 3600 s.
+M1#physics-u46-01-q1: Carnot efficiency between 800 K and 300 K is: | 62.5% | 37.5% | 100% | 50% | 1 − 300/800.
+M2#physics-u46-01-q2: 1 kWh equals: | 3.6 MJ | 1 MJ | 1 kJ | 36 MJ | 1000 W × 3600 s.
 
 ## Solar photovoltaic physics
 S: Solar cells convert sunlight directly into electricity using the photovoltaic effect in semiconductors. Photons above the band gap create electron–hole pairs that a p–n junction separates, and cell efficiency is limited by physics, materials and manufacturing.
@@ -50,8 +50,8 @@ K: PV converts photons above E_{g} into current; Shockley–Queisser limits sing
 !: Solar panels lose efficiency when hot; sunny but hot days don't always give peak output.
 Q: What is the Shockley–Queisser limit? | The maximum efficiency (~33.7%) of a single-junction solar cell under unconcentrated sunlight.
 Q: What is fill factor? | The ratio of maximum power to V_{oc} × I_{sc}, indicating how "square" the I–V curve is.
-M1: Thermalisation loss occurs when photons have: | Energy above the band gap | Energy below the gap | No energy | Exactly the gap energy | Excess becomes heat.
-M2: Tandem cells exceed single-junction limits by: | Using multiple band gaps | Larger area | Cooling only | Concentrated light only | Each layer absorbs part of the spectrum.
+M1#physics-u46-02-q1: Thermalisation loss occurs when photons have: | Energy above the band gap | Energy below the gap | No energy | Exactly the gap energy | Excess becomes heat.
+M2#physics-u46-02-q2: Tandem cells exceed single-junction limits by: | Using multiple band gaps | Larger area | Cooling only | Concentrated light only | Each layer absorbs part of the spectrum.
 
 ## Solar thermal systems
 S: Solar thermal systems capture sunlight as heat, for hot water, space heating, industrial processes or electricity generation. Concentrating solar power uses mirrors to reach high temperatures and stores heat in molten salt to generate power after sunset.
@@ -78,8 +78,8 @@ K: Solar thermal turns sunlight into heat; concentration reaches power-plant tem
 !: Concentrating systems need direct sunlight; cloudy, diffuse conditions give little output.
 Q: Why use selective coatings? | High solar absorption with low thermal emission reduces heat loss.
 Q: What advantage does CSP have over PV? | Cheap thermal storage allows electricity after sunset.
-M1: Power towers commonly store heat in: | Molten salt | Water ice | Lithium batteries | Compressed air | ~565 °C.
-M2: Collector efficiency falls as: | Temperature difference rises | Sunlight rises | Glazing improves | Wind falls | Heat losses grow.
+M1#physics-u46-03-q1: Power towers commonly store heat in: | Molten salt | Water ice | Lithium batteries | Compressed air | ~565 °C.
+M2#physics-u46-03-q2: Collector efficiency falls as: | Temperature difference rises | Sunlight rises | Glazing improves | Wind falls | Heat losses grow.
 
 ## Wind energy
 S: Wind turbines convert the kinetic energy of moving air into electricity. Power rises with the cube of wind speed and the square of blade length, so modern turbines are huge and sited where winds are strong, increasingly offshore.
@@ -106,8 +106,8 @@ K: Wind power ∝ v^{3} and rotor area; Betz caps extraction at 59%, so bigger r
 !: Doubling wind speed gives eight times the power; small errors in wind speed estimates give big errors in yield.
 Q: What is the Betz limit? | The maximum 59.3% of wind kinetic energy flux a turbine can extract.
 Q: Why do turbines have a cut-out speed? | To prevent damage in very high winds.
-M1: Doubling rotor diameter multiplies power by: | 4 | 2 | 8 | 16 | Area ∝ D^{2}.
-M2: Wind speed distributions are often modelled with: | Weibull distributions | Normal distributions | Poisson | Uniform | Skewed, positive.
+M1#physics-u46-04-q1: Doubling rotor diameter multiplies power by: | 4 | 2 | 8 | 16 | Area ∝ D^{2}.
+M2#physics-u46-04-q2: Wind speed distributions are often modelled with: | Weibull distributions | Normal distributions | Poisson | Uniform | Skewed, positive.
 
 ## Hydroelectric power
 S: Hydroelectric power converts the gravitational potential energy of water into electricity using turbines. It provides about 15% of world electricity, offers fast, flexible output and, through pumped storage, most of the world's grid-scale energy storage.
@@ -131,8 +131,8 @@ K: Hydropower ∝ flow × head; it is efficient and flexible, and pumped storage
 !: Hydro is renewable but not impact-free; ecological and social effects can be large.
 Q: Which turbine suits high head and low flow? | The Pelton wheel.
 Q: What is pumped-storage hydro? | Storing energy by pumping water uphill and later releasing it through turbines.
-M1: Hydro plant efficiencies are typically: | 85–95% | 30–40% | 10–20% | 59% max | Very efficient.
-M2: Kaplan turbines suit: | Low head, high flow | High head, low flow | No water | Steam | Adjustable propeller blades.
+M1#physics-u46-05-q1: Hydro plant efficiencies are typically: | 85–95% | 30–40% | 10–20% | 59% max | Very efficient.
+M2#physics-u46-05-q2: Kaplan turbines suit: | Low head, high flow | High head, low flow | No water | Steam | Adjustable propeller blades.
 
 ## Tidal and wave energy
 S: Tidal and wave energy harness the ocean's motion: tides driven by the Moon and Sun, and waves driven by wind. Tides are highly predictable, waves carry concentrated energy, and both face engineering challenges in harsh marine environments.
@@ -157,8 +157,8 @@ K: Tides offer predictable power from dense, slow water; waves offer high power 
 !: Tidal power is predictable but not constant; output varies with the tidal cycle.
 Q: Why can tidal stream turbines be smaller than wind turbines for the same power? | Seawater is about 840 times denser than air.
 Q: What is an oscillating water column? | A wave device where rising water pushes air through a turbine.
-M1: Tidal energy's main advantage is: | Predictability | Constant output | Low cost | No environmental effect | Astronomical forcing.
-M2: Wave power scales with wave height as: | H^{2} | H | H^{3} | √H | Energy ∝ amplitude squared.
+M1#physics-u46-06-q1: Tidal energy's main advantage is: | Predictability | Constant output | Low cost | No environmental effect | Astronomical forcing.
+M2#physics-u46-06-q2: Wave power scales with wave height as: | H^{2} | H | H^{3} | √H | Energy ∝ amplitude squared.
 
 ## Geothermal energy
 S: Geothermal energy uses heat from Earth's interior, originally from formation and ongoing radioactive decay, for electricity and direct heating. It provides steady baseload power where hot rocks lie close to the surface, and shallow ground-source heat pumps work almost anywhere.
@@ -183,8 +183,8 @@ K: Geothermal taps Earth's heat for steady power and heating; efficiency is limi
 !: Geothermal reservoirs can deplete if heat or fluid extraction exceeds natural recharge; reinjection is essential.
 Q: What fraction of Earth's heat flow comes from radioactive decay? | About half.
 Q: What is a binary-cycle geothermal plant? | One that uses moderate-temperature water to vaporise a low-boiling working fluid driving the turbine.
-M1: The average geothermal gradient is about: | 25–30 K km^{-1} | 1 K km^{-1} | 300 K km^{-1} | 1000 K km^{-1} | Typical continental crust.
-M2: Enhanced geothermal systems involve: | Fracturing hot dry rock | Burning fuel | Solar panels | Wind turbines | Creating artificial reservoirs.
+M1#physics-u46-07-q1: The average geothermal gradient is about: | 25–30 K km^{-1} | 1 K km^{-1} | 300 K km^{-1} | 1000 K km^{-1} | Typical continental crust.
+M2#physics-u46-07-q2: Enhanced geothermal systems involve: | Fracturing hot dry rock | Burning fuel | Solar panels | Wind turbines | Creating artificial reservoirs.
 
 ## Nuclear fission energy
 S: Nuclear fission power splits heavy nuclei like uranium-235, releasing about 200 MeV per fission, millions of times more energy per kilogram than burning fuel. Fission plants provide about 9% of world electricity with very low carbon emissions.
@@ -212,8 +212,8 @@ K: Fission releases ~200 MeV per event; moderated, controlled chain reactions gi
 !: Reactor control depends on delayed neutrons; prompt criticality (k exceeding 1 + β) is dangerously fast.
 Q: Why is a moderator used in thermal reactors? | To slow neutrons to energies where U-235 fission is much more likely.
 Q: Why do delayed neutrons matter? | They slow reactor response enough to allow mechanical control.
-M1: Typical PWR fuel enrichment is: | 3–5% U-235 | 90% U-235 | 0.7% | 50% | Low-enriched uranium.
-M2: Most fission energy appears as: | Fragment kinetic energy | Neutrinos | Gamma rays | Light | ~80%.
+M1#physics-u46-08-q1: Typical PWR fuel enrichment is: | 3–5% U-235 | 90% U-235 | 0.7% | 50% | Low-enriched uranium.
+M2#physics-u46-08-q2: Most fission energy appears as: | Fragment kinetic energy | Neutrinos | Gamma rays | Light | ~80%.
 
 ## Nuclear fusion energy
 S: Fusion power aims to reproduce the Sun's energy source on Earth by fusing light nuclei, mainly deuterium and tritium, at temperatures above 100 million kelvin. Fuel is abundant and there's no long-lived high-level waste, but sustaining net energy gain is a huge challenge.
@@ -239,8 +239,8 @@ K: Fusion needs high temperature, density and confinement time (Lawson criterion
 !: Scientific gain on target is not engineering gain; total plant energy balance must include heating and support systems.
 Q: What is the Lawson criterion? | A minimum triple product of density, temperature and confinement time needed for net fusion energy.
 Q: Why is lithium needed for D–T fusion? | To breed tritium, which is scarce and radioactive.
-M1: D–T fusion releases: | 17.6 MeV | 200 MeV | 1 MeV | 931 MeV | Per reaction.
-M2: Tokamaks confine plasma with: | Magnetic fields | Lasers | Gravity | Walls only | Toroidal and poloidal fields.
+M1#physics-u46-09-q1: D–T fusion releases: | 17.6 MeV | 200 MeV | 1 MeV | 931 MeV | Per reaction.
+M2#physics-u46-09-q2: Tokamaks confine plasma with: | Magnetic fields | Lasers | Gravity | Walls only | Toroidal and poloidal fields.
 
 ## Hydrogen energy systems
 S: Hydrogen is an energy carrier, not a source: it must be produced using energy, then stored, transported and converted back. It could decarbonise steel, fertiliser, shipping and seasonal storage, but round-trip losses mean electricity is usually better used directly where possible.
@@ -265,8 +265,8 @@ K: Hydrogen stores and carries energy with significant conversion losses; priori
 !: Hydrogen is only as clean as the energy used to make it; most hydrogen today is made from fossil gas.
 Q: What is green hydrogen? | Hydrogen produced by electrolysis using renewable electricity.
 Q: Why is hydrogen hard to store? | Very low volumetric energy density, requiring high pressure, cryogenics or chemical carriers.
-M1: Hydrogen's gravimetric energy density is about: | 120 MJ kg^{-1} | 46 MJ kg^{-1} | 1 MJ kg^{-1} | 10 kJ kg^{-1} | Highest of fuels.
-M2: Liquefying hydrogen requires cooling to about: | 20 K | 77 K | 200 K | 4 K | Boiling point of H_{2}.
+M1#physics-u46-10-q1: Hydrogen's gravimetric energy density is about: | 120 MJ kg^{-1} | 46 MJ kg^{-1} | 1 MJ kg^{-1} | 10 kJ kg^{-1} | Highest of fuels.
+M2#physics-u46-10-q2: Liquefying hydrogen requires cooling to about: | 20 K | 77 K | 200 K | 4 K | Boiling point of H_{2}.
 
 ## Fuel cells
 S: Fuel cells convert chemical energy directly into electricity by electrochemical reactions, without combustion. Because they aren't heat engines, they can exceed Carnot-limited efficiencies, and their only exhaust with hydrogen fuel is water.
@@ -292,8 +292,8 @@ K: Fuel cells convert chemical to electrical energy directly; efficiency is limi
 !: Fuel cell efficiency falls at high current density; operating point balances power and efficiency.
 Q: Why are fuel cells not Carnot-limited? | They convert chemical energy electrochemically, not via heat.
 Q: What are the three main voltage losses? | Activation, ohmic and mass-transport (concentration) losses.
-M1: The reversible H_{2}/O_{2} cell voltage is: | 1.23 V | 0.5 V | 3.7 V | 12 V | ΔG/2F.
-M2: SOFCs operate at: | 600–1000 °C | Room temperature | 80 °C | −20 °C | Ceramic electrolyte.
+M1#physics-u46-11-q1: The reversible H_{2}/O_{2} cell voltage is: | 1.23 V | 0.5 V | 3.7 V | 12 V | ΔG/2F.
+M2#physics-u46-11-q2: SOFCs operate at: | 600–1000 °C | Room temperature | 80 °C | −20 °C | Ceramic electrolyte.
 
 ## Batteries and electrochemical energy storage
 S: Batteries store energy chemically and release it as electricity through redox reactions. Lithium-ion batteries power phones, cars and grids, and improving their energy density, cost, safety and lifetime is central to electrification.
@@ -320,8 +320,8 @@ K: Batteries store energy by redox; voltage comes from electrode chemistry, capa
 !: Fast charging and extreme temperatures accelerate degradation; lithium plating at low temperature is a common failure path.
 Q: What is the SEI? | The solid electrolyte interphase, a passivating film on the anode formed by electrolyte decomposition.
 Q: Why is LFP popular for grid and some EVs? | It is safer, cheaper and longer-lived, though with lower energy density.
-M1: A 1C rate discharges a battery in: | 1 hour | 1 minute | 10 hours | 1 day | Definition of C-rate.
-M2: Thermal runaway is: | Self-heating chain reactions in a cell | Normal operation | Cooling failure only | A charging method | Cascading exothermic reactions.
+M1#physics-u46-12-q1: A 1C rate discharges a battery in: | 1 hour | 1 minute | 10 hours | 1 day | Definition of C-rate.
+M2#physics-u46-12-q2: Thermal runaway is: | Self-heating chain reactions in a cell | Normal operation | Cooling failure only | A charging method | Cascading exothermic reactions.
 
 ## Supercapacitors
 S: Supercapacitors store energy electrostatically at electrode–electrolyte interfaces, delivering power quickly and surviving hundreds of thousands of cycles. They complement batteries where bursts of power, fast charging and long life matter more than energy density.
@@ -347,8 +347,8 @@ K: Supercapacitors trade energy density for power and cycle life; energy ∝ CV^
 !: Usable energy is less than ½CV^{2} because voltage falls during discharge; converters stop working at low voltage.
 Q: Why do supercapacitors have huge capacitance? | Enormous electrode surface area and nanometre charge separation.
 Q: What is a Ragone plot? | A chart of specific energy versus specific power for storage technologies.
-M1: Supercapacitor cycle life is typically: | Over 100 000 cycles | 500 cycles | 10 cycles | 1 cycle | Electrostatic, no chemical change.
-M2: Doubling voltage multiplies stored energy by: | 4 | 2 | 8 | √2 | ½CV^{2}.
+M1#physics-u46-13-q1: Supercapacitor cycle life is typically: | Over 100 000 cycles | 500 cycles | 10 cycles | 1 cycle | Electrostatic, no chemical change.
+M2#physics-u46-13-q2: Doubling voltage multiplies stored energy by: | 4 | 2 | 8 | √2 | ½CV^{2}.
 
 ## Thermoelectric energy conversion
 S: Thermoelectric devices convert heat directly into electricity (Seebeck effect) or use electricity to pump heat (Peltier effect), with no moving parts. They power deep-space probes, recover waste heat and cool electronics, limited by modest efficiency.
@@ -376,8 +376,8 @@ K: Thermoelectrics convert heat and electricity directly; ZT = S^{2}σT/κ sets 
 !: Good electrical conductors usually conduct heat well too; decoupling σ and κ is the central materials challenge.
 Q: What is the Seebeck effect? | Generation of voltage from a temperature difference across a material.
 Q: What powers Voyager? | Radioisotope thermoelectric generators using Pu-238 decay heat.
-M1: A high ZT requires: | High S and σ, low κ | High κ | Low S | Metals only | Phonon glass, electron crystal.
-M2: Peltier coolers work by: | Pumping heat with current at junctions | Evaporation | Compression | Magnetism | Π = ST.
+M1#physics-u46-14-q1: A high ZT requires: | High S and σ, low κ | High κ | Low S | Metals only | Phonon glass, electron crystal.
+M2#physics-u46-14-q2: Peltier coolers work by: | Pumping heat with current at junctions | Evaporation | Compression | Magnetism | Π = ST.
 
 ## Heat pumps
 S: Heat pumps move heat from a cold place to a warm one using work, delivering three to four units of heat per unit of electricity. They are the most efficient way to heat buildings and are central to decarbonising heating.
@@ -401,8 +401,8 @@ K: Heat pumps move rather than make heat, giving COPs of 3–4; small temperatur
 !: Heat pumps work in cold climates too, but COP drops in very cold weather; sizing and emitter temperatures matter.
 Q: What is the COP of a heat pump? | Heat delivered divided by work input.
 Q: Why do underfloor heating systems suit heat pumps? | They run at low water temperatures, reducing the temperature lift and raising COP.
-M1: Heating COP is greater than cooling COP by: | 1 | 0 | 2 | 10 | Q_{h} = Q_{c} + W.
-M2: Heat pump COP rises when: | The temperature lift falls | Outside gets colder | Radiators run hotter | Refrigerant leaks | Carnot dependence.
+M1#physics-u46-15-q1: Heating COP is greater than cooling COP by: | 1 | 0 | 2 | 10 | Q_{h} = Q_{c} + W.
+M2#physics-u46-15-q2: Heat pump COP rises when: | The temperature lift falls | Outside gets colder | Radiators run hotter | Refrigerant leaks | Carnot dependence.
 
 ## Energy efficiency
 S: Energy efficiency means getting the same service, such as warmth, light, motion or computation, with less energy. It is often the cheapest and fastest way to cut emissions and costs, from insulating homes to efficient motors and LEDs.
@@ -428,8 +428,8 @@ K: Efficiency lowers energy for the same service; insulation, LEDs, heat pumps a
 !: Efficiency gains can be partly offset by rebound effects; policies should account for behaviour.
 Q: What is a U-value? | Heat flow per unit area per kelvin through a building element.
 Q: What is the rebound effect? | Increased consumption that offsets part of efficiency savings.
-M1: Fan power scales with speed as: | n^{3} | n | n^{2} | constant | Affinity laws.
-M2: LEDs save about how much energy compared with incandescent bulbs? | ~90% | ~10% | ~50% | ~0% | ~10× more efficient.
+M1#physics-u46-16-q1: Fan power scales with speed as: | n^{3} | n | n^{2} | constant | Affinity laws.
+M2#physics-u46-16-q2: LEDs save about how much energy compared with incandescent bulbs? | ~90% | ~10% | ~50% | ~0% | ~10× more efficient.
 
 ## Grid storage
 S: Grid storage stores electricity when supply exceeds demand and releases it later, balancing variable wind and solar. Different technologies cover timescales from seconds (frequency response) to seasons (hydrogen, pumped hydro).
@@ -458,8 +458,8 @@ K: Storage matches supply and demand across timescales; a mix of technologies is
 !: Power rating and energy capacity are different; a 100 MW battery may hold only 1 hour of energy.
 Q: What fraction of global grid storage is pumped hydro? | About 90% of energy capacity.
 Q: Why are flow batteries suited to long duration? | Energy is stored in tanks of electrolyte, scalable independently of power.
-M1: Round-trip efficiency of lithium-ion is about: | 85–95% | 30% | 50% | 99.9% | High efficiency.
-M2: Seasonal storage is best served by: | Hydrogen or large reservoirs | Supercapacitors | Flywheels | 1-hour batteries | Large energy capacity.
+M1#physics-u46-17-q1: Round-trip efficiency of lithium-ion is about: | 85–95% | 30% | 50% | 99.9% | High efficiency.
+M2#physics-u46-17-q2: Seasonal storage is best served by: | Hydrogen or large reservoirs | Supercapacitors | Flywheels | 1-hour batteries | Large energy capacity.
 
 ## Energy transmission and losses
 S: Electricity travels from power plants to users through transmission and distribution networks. High voltages reduce resistive losses, and long-distance HVDC links connect renewable resources across countries and seas.
@@ -485,8 +485,8 @@ K: High voltage cuts current and I^{2}R losses; HVDC wins for long distances and
 !: Losses scale with current squared, not voltage; raising voltage is the key to efficient transmission.
 Q: Why is electricity transmitted at high voltage? | To reduce current and hence I^{2}R losses for the same power.
 Q: When is HVDC preferred? | For long distances, undersea cables and connecting asynchronous grids.
-M1: Doubling transmission voltage changes losses by: | 1/4 | 1/2 | 2 | 4 | Loss ∝ 1/V^{2}.
-M2: Undersea cables over ~80 km usually use: | HVDC | Low-voltage AC | Superconductors only | Wireless | AC cable capacitance is too high.
+M1#physics-u46-18-q1: Doubling transmission voltage changes losses by: | 1/4 | 1/2 | 2 | 4 | Loss ∝ 1/V^{2}.
+M2#physics-u46-18-q2: Undersea cables over ~80 km usually use: | HVDC | Low-voltage AC | Superconductors only | Wireless | AC cable capacitance is too high.
 
 ## Energy systems modelling
 S: Energy systems models simulate how energy is supplied, converted, stored and used across a region over time. They help plan least-cost pathways to net zero, test policies and reveal trade-offs between technologies, reliability and emissions.
@@ -510,8 +510,8 @@ K: Energy models optimise or simulate systems hourly to find reliable low-cost d
 !: LCOE alone ignores when and where energy is produced; system value matters for variable renewables.
 Q: What does LCOE represent? | The average discounted lifetime cost per unit of electricity generated.
 Q: What is a dunkelflaute? | A prolonged period of low wind and low sunshine, stressing renewable systems.
-M1: PyPSA is an example of: | An open energy system optimisation model | A battery chemistry | A wind turbine | A grid code | Python for Power System Analysis.
-M2: Higher discount rates favour technologies with: | Low capital costs | High capital costs | Long lifetimes | No fuel | Future savings count less.
+M1#physics-u46-19-q1: PyPSA is an example of: | An open energy system optimisation model | A battery chemistry | A wind turbine | A grid code | Python for Power System Analysis.
+M2#physics-u46-19-q2: Higher discount rates favour technologies with: | Low capital costs | High capital costs | Long lifetimes | No fuel | Future savings count less.
 
 ## Life-cycle energy analysis
 S: Life-cycle analysis counts energy use and emissions over a product's whole life, from extracting raw materials to manufacturing, operation and disposal. It reveals whether a technology truly saves energy and carbon, and how quickly it pays back.
@@ -538,8 +538,8 @@ K: LCA counts cradle-to-grave impacts; payback times and EROI show whether techn
 !: Comparing LCAs with different boundaries or functional units can mislead; check what is included.
 Q: What is a functional unit in LCA? | The quantified service used as the basis for comparison, e.g. 1 kWh of electricity.
 Q: What is EROI? | Lifetime energy delivered divided by energy invested.
-M1: Wind power's lifecycle carbon intensity is roughly: | 11 g CO_{2}e kWh^{-1} | 500 g | 820 g | 0 g exactly | Very low.
-M2: A cradle-to-grave LCA includes: | Extraction through disposal | Only operation | Only manufacturing | Only transport | Full lifecycle.
+M1#physics-u46-20-q1: Wind power's lifecycle carbon intensity is roughly: | 11 g CO_{2}e kWh^{-1} | 500 g | 820 g | 0 g exactly | Very low.
+M2#physics-u46-20-q2: A cradle-to-grave LCA includes: | Extraction through disposal | Only operation | Only manufacturing | Only transport | Full lifecycle.
 
 ## Energy security and sustainability
 S: Energy security means reliable, affordable access to energy; sustainability means meeting today's needs without harming future generations or the climate. Balancing the two, alongside equity, shapes energy policy worldwide.
@@ -564,6 +564,6 @@ K: Energy policy balances security, affordability and sustainability; renewables
 !: Shifting from fossil fuels to minerals changes, rather than removes, supply-chain risks.
 Q: What is the energy trilemma? | Balancing energy security, affordability and environmental sustainability.
 Q: What does the Kaya identity decompose? | Emissions into population, wealth per person, energy intensity and carbon intensity.
-M1: Roughly what fraction of greenhouse emissions comes from energy? | Three quarters | One tenth | All | One half exactly | Including transport, heat, industry.
-M2: Critical minerals for batteries include: | Lithium, cobalt and nickel | Gold and silver | Helium | Uranium only | Battery cathodes and anodes.
+M1#physics-u46-21-q1: Roughly what fraction of greenhouse emissions comes from energy? | Three quarters | One tenth | All | One half exactly | Including transport, heat, industry.
+M2#physics-u46-21-q2: Critical minerals for batteries include: | Lithium, cobalt and nickel | Gold and silver | Helium | Uranium only | Battery cathodes and anodes.
 `;

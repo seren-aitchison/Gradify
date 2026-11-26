@@ -28,8 +28,8 @@ K: Read problems for cues, classify by underlying principle, and check which qua
 !: Surface similarity can mislead; two inclined-plane problems may need completely different principles.
 Q: When is momentum conserved? | When the net external force on the system is zero (or negligible during a brief impact).
 Q: How do experts classify physics problems? | By the underlying principles, not surface features.
-M1: For speed after a frictionless slide, the best principle is: | Energy conservation | Momentum conservation | Faraday's law | Ohm's law | No time needed.
-M2: In a ballistic pendulum, kinetic energy is conserved: | Only during the swing, not the collision | During both | Never | Only in the collision | Inelastic impact.
+M1#physics-u52-01-q1: For speed after a frictionless slide, the best principle is: | Energy conservation | Momentum conservation | Faraday's law | Ohm's law | No time needed.
+M2#physics-u52-01-q2: In a ballistic pendulum, kinetic energy is conserved: | Only during the swing, not the collision | During both | Never | Only in the collision | Inelastic impact.
 
 ## Defining systems and boundaries
 S: Choosing the system, what's included and what's outside, determines which forces are internal or external, which energies are counted and which quantities are conserved. A good choice can turn a messy problem into a simple one.
@@ -54,8 +54,8 @@ K: Define the system deliberately; internal forces cancel, and boundaries determ
 !: Mixing systems mid-problem (counting a force as both internal and external) leads to double-counting.
 Q: What is an isolated system? | One with no exchange of energy or matter with its surroundings.
 Q: Why include Earth when using gravitational potential energy? | Potential energy belongs to the interacting pair; otherwise gravity is treated as external work.
-M1: Internal forces in a system: | Cancel in action–reaction pairs | Change total momentum | Are always zero | Are external | Newton's third law.
-M2: A control volume is used for: | Open systems like fluid flow | Isolated systems only | Static charges | Quantum states | Mass crosses the boundary.
+M1#physics-u52-02-q1: Internal forces in a system: | Cancel in action–reaction pairs | Change total momentum | Are always zero | Are external | Newton's third law.
+M2#physics-u52-02-q2: A control volume is used for: | Open systems like fluid flow | Isolated systems only | Static charges | Quantum states | Mass crosses the boundary.
 
 ## Choosing coordinate systems
 S: The right coordinate system can make a problem simple: aligning axes with motion, using polar coordinates for circles and spherical coordinates for spheres. Physics doesn't depend on coordinates, but the difficulty of the maths does.
@@ -83,8 +83,8 @@ K: Align coordinates with motion and symmetry; switch frames (CM, rotating) when
 !: Mixing sign conventions between steps (e.g. up positive, then down positive) is a classic error.
 Q: Why use tilted axes on an incline? | So acceleration lies along one axis, avoiding coupled components.
 Q: What extra forces appear in rotating frames? | Centrifugal and Coriolis forces (fictitious forces).
-M1: Point-charge problems are simplest in: | Spherical coordinates | Cartesian coordinates | Cylindrical always | Tilted axes | Spherical symmetry.
-M2: The centre-of-mass frame has total momentum: | Zero | Maximum | Equal to the energy | Undefined | By definition.
+M1#physics-u52-03-q1: Point-charge problems are simplest in: | Spherical coordinates | Cartesian coordinates | Cylindrical always | Tilted axes | Spherical symmetry.
+M2#physics-u52-03-q2: The centre-of-mass frame has total momentum: | Zero | Maximum | Equal to the energy | Undefined | By definition.
 
 ## Drawing free-body and field diagrams
 S: Free-body diagrams isolate one object and show every force on it, while field diagrams map electric, magnetic or gravitational fields. Drawing them carefully is often the decisive step in solving force and field problems correctly.
@@ -114,8 +114,8 @@ K: Isolate the object, draw only real forces acting on it, resolve along sensibl
 !: "ma" is not a force; it's the result of the net force.
 Q: What forces appear on a book resting on a table? | Weight (down) and normal force (up), equal and opposite.
 Q: How are equipotentials related to field lines? | They are always perpendicular.
-M1: Weight on an incline always points: | Vertically down | Perpendicular to the slope | Along the slope | Upward | Towards Earth's centre.
-M2: Magnetic field lines: | Form closed loops | Start on north monopoles | End on charges | Are perpendicular to currents always | No monopoles.
+M1#physics-u52-04-q1: Weight on an incline always points: | Vertically down | Perpendicular to the slope | Along the slope | Upward | Towards Earth's centre.
+M2#physics-u52-04-q2: Magnetic field lines: | Form closed loops | Start on north monopoles | End on charges | Are perpendicular to currents always | No monopoles.
 
 ## Applying conservation laws
 S: Conservation laws, of energy, momentum, angular momentum and charge, are among the most powerful problem-solving tools because they connect initial and final states without needing details in between. Knowing when each applies is the key.
@@ -144,8 +144,8 @@ K: Conservation laws relate initial and final states directly; check conditions 
 !: Angular momentum is conserved about a point only if external torque about that point is zero; choose the point carefully.
 Q: When is mechanical energy conserved? | When only conservative forces do work.
 Q: Why does a skater's kinetic energy increase when they pull in their arms? | They do work pulling their arms inward against centrifugal effects, while angular momentum is conserved.
-M1: In all collisions, which is conserved for an isolated system? | Momentum | Kinetic energy | Velocity | Mass distribution | KE only if elastic.
-M2: Kirchhoff's current law reflects conservation of: | Charge | Energy | Momentum | Mass | At junctions.
+M1#physics-u52-05-q1: In all collisions, which is conserved for an isolated system? | Momentum | Kinetic energy | Velocity | Mass distribution | KE only if elastic.
+M2#physics-u52-05-q2: Kirchhoff's current law reflects conservation of: | Charge | Energy | Momentum | Mass | At junctions.
 
 ## Deriving equations from fundamental laws
 S: Many problems require building your own equations from fundamental laws rather than using memorised formulas. Practising derivations develops flexibility, so you can tackle situations no textbook formula covers exactly.
@@ -173,8 +173,8 @@ K: Build equations from fundamental laws plus assumptions; solve the resulting O
 !: Using a constant-acceleration formula when forces depend on velocity or position gives wrong answers.
 Q: What is the time constant of an RC circuit? | τ = RC.
 Q: What equation describes hydrostatic pressure? | dp/dz = −ρg, giving p = p_{0} + ρgh for constant density.
-M1: Linear drag leads to velocity that: | Approaches terminal value exponentially | Grows linearly forever | Oscillates | Is constant | 1 − e^{−t/τ}.
-M2: The rocket equation is derived from: | Momentum conservation | Energy conservation only | Ohm's law | Gauss's law | Small mass ejections.
+M1#physics-u52-06-q1: Linear drag leads to velocity that: | Approaches terminal value exponentially | Grows linearly forever | Oscillates | Is constant | 1 − e^{−t/τ}.
+M2#physics-u52-06-q2: The rocket equation is derived from: | Momentum conservation | Energy conservation only | Ohm's law | Gauss's law | Small mass ejections.
 
 ## Checking units and dimensions
 S: Dimensional analysis checks whether equations make sense and can even predict how quantities depend on each other. Every valid physics equation must be dimensionally consistent, so checking units is one of the fastest ways to catch mistakes.
@@ -200,8 +200,8 @@ K: Check that every term has consistent dimensions; dimensional analysis also re
 !: Dimensional consistency is necessary but not sufficient; a dimensionally correct equation can still be wrong.
 Q: What does the Buckingham π theorem state? | A relation among n variables with k independent dimensions can be written using n − k dimensionless groups.
 Q: Why must the argument of an exponential be dimensionless? | Exponentials are power series in their argument; terms of different powers could not add unless dimensionless.
-M1: The dimensions of power are: | ML^{2}T^{-3} | ML^{2}T^{-2} | MLT^{-2} | ML^{-1}T^{-2} | Energy per time.
-M2: Dimensional analysis cannot determine: | Dimensionless constants like 2π | Exponents | Scaling laws | Unit consistency | Pure numbers.
+M1#physics-u52-07-q1: The dimensions of power are: | ML^{2}T^{-3} | ML^{2}T^{-2} | MLT^{-2} | ML^{-1}T^{-2} | Energy per time.
+M2#physics-u52-07-q2: Dimensional analysis cannot determine: | Dimensionless constants like 2π | Exponents | Scaling laws | Unit consistency | Pure numbers.
 
 ## Evaluating limiting cases
 S: Checking what an answer does in extreme or special cases, like zero mass, infinite time or a vanishing angle, is a powerful test. If an answer misbehaves in a limit where you know the physics, it's wrong.
@@ -227,8 +227,8 @@ K: Test answers in limits where the physics is obvious; failing a limit check re
 !: Passing limit checks doesn't prove an answer correct, but failing one proves it wrong.
 Q: What is the correspondence principle? | Quantum results approach classical ones in the limit of large quantum numbers.
 Q: What limit should relativistic formulas reduce to? | Newtonian expressions when v ≪ c.
-M1: For an Atwood machine with equal masses, acceleration is: | 0 | g | g/2 | 2g | Balanced.
-M2: As θ → 90° on a frictionless incline, acceleration approaches: | g | 0 | g/2 | Infinity | Free fall.
+M1#physics-u52-08-q1: For an Atwood machine with equal masses, acceleration is: | 0 | g | g/2 | 2g | Balanced.
+M2#physics-u52-08-q2: As θ → 90° on a frictionless incline, acceleration approaches: | g | 0 | g/2 | Infinity | Free fall.
 
 ## Estimating numerical answers
 S: Before calculating, estimate roughly what the answer should be. Afterwards, compare. Estimation catches order-of-magnitude errors, misplaced powers of ten and unit mistakes, and builds the intuition that experts use to judge results.
@@ -253,8 +253,8 @@ K: Estimate first, calculate symbolically, then compare; big discrepancies signa
 !: Calculators don't catch unit or power-of-ten errors; estimation does.
 Q: Why estimate before calculating? | To have a benchmark for catching errors in the detailed calculation.
 Q: What's a quick sanity check for speeds? | They must be less than the speed of light (and usually far less).
-M1: The kinetic energy of a running person (70 kg, 5 m s^{-1}) is about: | 900 J | 9 J | 90 kJ | 9 MJ | ½ × 70 × 25.
-M2: An efficiency over 100% indicates: | An error | Excellent design | Perpetual motion | Nothing | Energy conservation violated.
+M1#physics-u52-09-q1: The kinetic energy of a running person (70 kg, 5 m s^{-1}) is about: | 900 J | 9 J | 90 kJ | 9 MJ | ½ × 70 × 25.
+M2#physics-u52-09-q2: An efficiency over 100% indicates: | An error | Excellent design | Perpetual motion | Nothing | Energy conservation violated.
 
 ## Analysing approximations
 S: Approximations make problems tractable: small angles, weak fields, low speeds, thin films, ideal gases. Analysing an approximation means knowing when it's valid, estimating its error and recognising when it breaks down.
@@ -281,8 +281,8 @@ K: Approximations simplify problems when small parameters exist; estimate the er
 !: An approximation valid in one regime can fail badly in another; always note its assumptions.
 Q: What is the binomial approximation? | (1 + x)^{n} ≈ 1 + nx for small x.
 Q: How do you estimate the error in a truncated expansion? | Evaluate the size of the first neglected term.
-M1: sin θ ≈ θ is accurate to about 1% for θ up to: | ~14° (0.24 rad) | 90° | 45° | 1° only | Error ~θ^{2}/6 relative.
-M2: The harmonic approximation expands the potential to: | Second order near a minimum | First order | Zeroth order | Fourth order only | Quadratic potential.
+M1#physics-u52-10-q1: sin θ ≈ θ is accurate to about 1% for θ up to: | ~14° (0.24 rad) | 90° | 45° | 1° only | Error ~θ^{2}/6 relative.
+M2#physics-u52-10-q2: The harmonic approximation expands the potential to: | Second order near a minimum | First order | Zeroth order | Fourth order only | Quadratic potential.
 
 ## Solving coupled equations
 S: Many physical systems involve several interacting quantities described by coupled equations: masses on springs, circuits with multiple loops, predator–prey populations and simultaneous force balances. Solving them requires systematic algebra, matrices or eigenvalue methods.
@@ -308,8 +308,8 @@ K: Write coupled equations in matrix form; normal modes from eigenvalues decoupl
 !: Coupled systems rarely have simple sinusoidal motion of each part; motion is generally a mix of normal modes.
 Q: What is a normal mode? | A pattern of motion where all parts oscillate at the same frequency with fixed relative amplitudes.
 Q: How do you find normal mode frequencies? | Solve det(K − ω^{2}M) = 0.
-M1: Kirchhoff's laws for a two-loop circuit give: | Simultaneous linear equations | One differential equation only | No equations | A single number | Two unknown currents.
-M2: Sum and difference coordinates help: | Decouple symmetric oscillators | Add dimensions | Remove energy | Increase coupling | Normal coordinates.
+M1#physics-u52-11-q1: Kirchhoff's laws for a two-loop circuit give: | Simultaneous linear equations | One differential equation only | No equations | A single number | Two unknown currents.
+M2#physics-u52-11-q2: Sum and difference coordinates help: | Decouple symmetric oscillators | Add dimensions | Remove energy | Increase coupling | Normal coordinates.
 
 ## Selecting appropriate mathematical techniques
 S: Physics problems use a toolkit of mathematical techniques: calculus, vectors, differential equations, series, complex numbers, linear algebra and Fourier analysis. Choosing the right tool saves time and reveals structure.
@@ -338,8 +338,8 @@ K: Match mathematical tools to the problem's structure; symmetry and complex num
 !: Using brute-force integration when symmetry offers a shortcut wastes time and invites errors.
 Q: When is Gauss's law useful for computing fields? | When charge distributions have high symmetry (spherical, cylindrical, planar).
 Q: Why use Fourier analysis? | To decompose signals or solutions into frequency components, often simplifying linear problems.
-M1: AC circuits are simplified by: | Complex impedance | Fourier series only | Probability | Tensors | Phasors.
-M2: The Gaussian integral ∫e^{−x^{2}}dx over all x equals: | √π | π | 1 | 2 | √(π/a) with a = 1.
+M1#physics-u52-12-q1: AC circuits are simplified by: | Complex impedance | Fourier series only | Probability | Tensors | Phasors.
+M2#physics-u52-12-q2: The Gaussian integral ∫e^{−x^{2}}dx over all x equals: | √π | π | 1 | 2 | √(π/a) with a = 1.
 
 ## Comparing analytical and numerical solutions
 S: Analytical solutions give exact formulas and insight; numerical solutions handle problems no formula can. Comparing the two, using analytical cases to test codes and numerical results to explore beyond analytic reach, is a key modern skill.
@@ -366,8 +366,8 @@ K: Use analytical solutions for insight and code verification, numerics for comp
 !: A numerical result without a convergence check or comparison can be precisely wrong.
 Q: Why test numerical codes against analytical solutions? | To verify correctness and measure accuracy before tackling unsolvable cases.
 Q: How does Euler's method error scale with step size? | Linearly (first-order): halving h roughly halves the error.
-M1: Numerical solutions are essential for: | Nonlinear and complex systems | Only linear problems | Avoiding computers | Exact symbolic forms | E.g. chaos.
-M2: Halving h in RK4 reduces error by about: | 16× | 2× | 4× | 8× | Fourth order.
+M1#physics-u52-13-q1: Numerical solutions are essential for: | Nonlinear and complex systems | Only linear problems | Avoiding computers | Exact symbolic forms | E.g. chaos.
+M2#physics-u52-13-q2: Halving h in RK4 reduces error by about: | 16× | 2× | 4× | 8× | Fourth order.
 
 ## Sensitivity analysis
 S: Sensitivity analysis asks how much a result changes when inputs change. It identifies which parameters matter most, guides where to improve measurements, and quantifies how input uncertainties propagate to outputs.
@@ -391,8 +391,8 @@ K: Sensitivity shows which inputs dominate; for power laws, relative sensitivity
 !: High-exponent dependencies (v^{3}, T^{4}, r^{−6}) amplify small input errors dramatically.
 Q: What is relative sensitivity for y = kx^{n}? | n.
 Q: What are Sobol indices? | Variance-based measures of how much each input (and interactions) contributes to output variance.
-M1: For Stefan–Boltzmann P ∝ T^{4}, a 1% error in T gives: | 4% error in P | 1% | 0.25% | 16% | Exponent 4.
-M2: Tornado diagrams show: | Ranked parameter influences | Wind speeds | Time series | Feynman diagrams | Sensitivity ranking.
+M1#physics-u52-14-q1: For Stefan–Boltzmann P ∝ T^{4}, a 1% error in T gives: | 4% error in P | 1% | 0.25% | 16% | Exponent 4.
+M2#physics-u52-14-q2: Tornado diagrams show: | Ranked parameter influences | Wind speeds | Time series | Feynman diagrams | Sensitivity ranking.
 
 ## Physical interpretation of mathematical results
 S: A mathematical answer is only half the job: you must understand what it means physically. Interpreting signs, dependencies, limits and magnitudes connects equations back to reality and often reveals deeper insight.
@@ -418,8 +418,8 @@ K: Interpret signs, magnitudes, forms and dependencies; explain results in words
 !: A correct number with no interpretation misses the point; examiners often reward explanation as much as calculation.
 Q: What does an imaginary frequency indicate in stability analysis? | Exponential growth, i.e. instability.
 Q: Why is a pendulum's period independent of mass? | Gravitational and inertial mass cancel in the equation of motion.
-M1: A negative total energy for an orbit means: | It is bound | It escapes | It is impossible | It's moving backward | Below zero at infinity.
-M2: Exponential decay e^{−t/τ} implies: | Rate ∝ amount present | Constant rate | Oscillation | Growth | First-order process.
+M1#physics-u52-15-q1: A negative total energy for an orbit means: | It is bound | It escapes | It is impossible | It's moving backward | Below zero at infinity.
+M2#physics-u52-15-q2: Exponential decay e^{−t/τ} implies: | Rate ∝ amount present | Constant rate | Oscillation | Growth | First-order process.
 
 ## Error checking and independent verification
 S: Even experts make mistakes, so good physicists check their work systematically and seek independent verification. Multiple approaches, consistency checks and fresh eyes catch errors before they matter.
@@ -448,8 +448,8 @@ K: Check units, limits, estimates and conservation; verify independently with di
 !: The Mars Climate Orbiter was lost to a unit error; don't skip unit checks.
 Q: What caused the Mars Climate Orbiter loss? | A mismatch between imperial and SI units in navigation software.
 Q: Why do large experiments use independent analyses? | To catch errors and biases, increasing confidence in results.
-M1: Substituting an answer back into the original equation checks: | That it satisfies the equation | Units only | The estimate | Nothing | Residual zero.
-M2: Blind analysis prevents: | Bias toward expected results | Random errors | Unit errors | Calibration | Unconscious tuning.
+M1#physics-u52-16-q1: Substituting an answer back into the original equation checks: | That it satisfies the equation | Units only | The estimate | Nothing | Residual zero.
+M2#physics-u52-16-q2: Blind analysis prevents: | Bias toward expected results | Random errors | Unit errors | Calibration | Unconscious tuning.
 
 ## Communicating assumptions and limitations
 S: Every physics result rests on assumptions and has limitations. Stating them clearly lets others judge reliability, reproduce work and know when a result applies, which is a hallmark of honest, professional science.
@@ -477,6 +477,6 @@ K: State assumptions, validity ranges and uncertainties explicitly so results ar
 !: Results presented without assumptions may be misused in situations where they don't apply.
 Q: Why state the validity range of a result? | So others know when it applies and when it may fail.
 Q: Name assumptions in a basic projectile range formula. | No air resistance, uniform gravity, same launch and landing height, flat ground.
-M1: A complete result includes: | Value, uncertainty and conditions | Value only | Uncertainty only | Assumptions only | Full reporting.
-M2: Applying a linear-elastic model beyond yield is an example of: | Ignoring model assumptions | Good practice | Sensitivity analysis | Verification | Outside validity.
+M1#physics-u52-17-q1: A complete result includes: | Value, uncertainty and conditions | Value only | Uncertainty only | Assumptions only | Full reporting.
+M2#physics-u52-17-q2: Applying a linear-elastic model beyond yield is an example of: | Ignoring model assumptions | Good practice | Sensitivity analysis | Verification | Outside validity.
 `;

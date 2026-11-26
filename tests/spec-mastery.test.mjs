@@ -41,14 +41,16 @@ test("every specification is well formed and maps onto lessons that exist", asyn
   }
 });
 
-test("AQA GCSE Biology covers the whole subject content, and is honest about its gaps", () => {
+test("AQA GCSE Biology covers the whole subject content, and shows only coverage the mapping store evidences", async () => {
   const spec = specById("aqa-gcse-biology-8461"), pts = pointsOf(spec);
   assert.deepEqual(spec.topics.map((t) => t.id), ["4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7"]);
   assert.ok(pts.length >= 70, `${pts.length} points`);
-  const none = pts.filter((p) => !p.lessons.length && !p.partial.length).map((p) => p.id);
-  assert.deepEqual(none, ["4.5.2.3"], "only the eye has no lesson at all");
-  assert.ok(pts.find((p) => p.id === "4.1.3.3").lessons.includes("u02-23"), "active transport maps to its lesson");
   assert.ok(pts.filter((p) => p.flags.includes("ht")).every((p) => ["4.5.3.6", "4.5.3.7", "4.5.4.2", "4.7.2.4"].includes(p.id)));
+  // the links are exactly what the store says (owner's decision 6); the hand-written lessons are only proposals
+  const { buildLinks } = await import("../scripts/curriculum/spec-view.mjs");
+  const built = buildLinks(spec);
+  for (const p of pts) { assert.deepEqual({ lessons: p.lessons, partial: p.partial, evidence: p.evidence, state: p.state }, { lessons: built[p.id].lessons, partial: built[p.id].partial, evidence: built[p.id].evidence, state: built[p.id].state }, `${p.id}: kit/specs/aqa-gcse-biology-8461.links.js is out of date`); assert.ok(Array.isArray(p.proposed.lessons)); }
+  assert.ok(pts.find((p) => p.id === "4.1.3.3").proposed.lessons.includes("u02-23"), "the hand mapping is kept as a proposal");
 });
 
 test("checkSpec catches the mistakes a mapping can make", () => {
@@ -83,7 +85,7 @@ test("bands follow the percentage the learner sees, and no evidence is never 0%"
 test("completing lessons is coverage, not mastery", () => {
   const m = run([], { done: { "u02-20": true, "u02-23": true } });
   const p = m.points[0];
-  assert.deepEqual({ ...p.coverage, ids: undefined, doneIds: undefined }, { gradify: "full", done: 2, total: 2, ids: undefined, doneIds: undefined });
+  assert.deepEqual({ ...p.coverage, ids: undefined, doneIds: undefined }, { gradify: "full", evidence: null, done: 2, total: 2, ids: undefined, doneIds: undefined });
   assert.equal(p.estimate, null, "finished every lesson, answered nothing: still not assessed");
   assert.match(p.next, /hasn't seen you answer/);
   assert.equal(m.points[2].coverage.gradify, "none");
@@ -168,13 +170,30 @@ test("a learner whose recent answers are clearly worse is told the point is slip
   assert.equal(p.series.at(-1), 0);
 });
 
-test("the real specification runs end to end on a few answers", () => {
+test("the real specification runs end to end, and unchecked points are never measured or called gaps", () => {
   const spec = specById("aqa-gcse-biology-8461");
   const m = specMastery(spec, { attempts: [att("u02-20", 1, { q: "a" }), att("u02-20", 1, { q: "b" }), att("u02-23", 0, { q: "c" })], now: NOW });
-  const assessed = m.points.filter((p) => p.estimate != null).map((p) => p.id);
-  assert.ok(assessed.includes("4.1.3.1") && assessed.includes("4.1.3.3"));
-  assert.equal(m.points.find((p) => p.id === "4.5.2.3").coverage.gradify, "none");
   assert.equal(m.topics.length, 7);
+  for (const p of m.points) {
+    if (p.state === "unchecked") { assert.equal(p.coverage.gradify, "unchecked"); assert.equal(p.estimate, null, `${p.id}: no evidenced lesson, so nothing to measure`); }
+    if (p.evidence === "ai-mapped") assert.ok(["full", "partial"].includes(p.coverage.gradify));
+  }
+  assert.equal(m.overall.evidence.verified + m.overall.evidence.aiMapped + m.overall.evidence.unchecked <= m.points.length, true);
+  // taught counts only what a person verified; provisional mappings are counted apart, never as taught
+  const t = m.overall.taught, taughtBy = (ev) => m.points.filter((p) => p.coverage.evidence === ev && ["full", "partial"].includes(p.coverage.gradify)).length;
+  assert.equal(t.verified, taughtBy("verified")); assert.equal(t.provisional, taughtBy("ai-mapped"));
+  assert.equal(t.verified + t.provisional, m.overall.covered);
+});
+
+test("a point's links: full only when every statement is taught, verified only when a person checked all of them", async () => {
+  const { pointLinks } = await import("../scripts/curriculum/spec-view.mjs");
+  const ai = (id, cov = "full") => ({ status: cov === "full" ? "mapped" : "partially-mapped", link: { lessons: [{ id, coverage: cov }] } });
+  const ok = (id) => ({ status: "covered", link: { lessons: [{ id, coverage: "full" }] } });
+  assert.deepEqual(pointLinks([ok("u1"), ok("u2")]), { lessons: ["u1", "u2"], partial: [], evidence: "verified", state: "full", statements: { taught: 2, total: 2 } });
+  assert.deepEqual(pointLinks([ok("u1"), ai("u2")]).evidence, "ai-mapped", "one AI decision makes the point AI-mapped");
+  assert.deepEqual(pointLinks([ai("u1"), { status: "awaiting", link: { status: "proposed", lessons: [{ id: "u9" }] } }]), { lessons: [], partial: ["u1"], evidence: "ai-mapped", state: "partial", statements: { taught: 1, total: 2 } }, "a proposal is never coverage");
+  assert.equal(pointLinks([{ status: "awaiting", link: { status: "rejected" } }, { status: "missing", link: { status: "verified" } }]).state, "none");
+  assert.equal(pointLinks([{ status: "awaiting", link: { status: "proposed" } }]).state, "unchecked");
 });
 
 // ---------- a reusable system: nothing in the engine or registry is specific to AQA, GCSE, Biology or England ----------
@@ -255,4 +274,31 @@ test("overall totals count each lesson once, and an average of early estimates s
   const many = [];
   for (let i = 0; i < 20; i++) many.push(att(i % 2 ? "u02-20" : "u02-23", i % 7 ? 1 : 0, { q: `q${i % 10}`, d: 1 + (i % 3), type: ["sba", "short", "card", "num"][i % 4], ago: 30 - i, context: i % 3 ? "lesson" : "review" }));
   assert.equal(run(many).overall.provisional, false, "a measured point makes the headline a measurement");
+});
+
+test("the learner's progress and Gradify's coverage are shown as two lists, never one", async () => {
+  const { specPageHtml, pointPageHtml } = await import("../kit/course/spec-view.js");
+  const spec = specById("aqa-gcse-biology-8461"), m = specMastery(spec, { now: NOW });
+  for (const html of [specPageHtml(m), pointPageHtml(m, m.points[0])]) {
+    const card = html.match(/<section class="sm-measure" aria-label="Gradify's coverage and your progress">([\s\S]*?)<\/section>/)?.[1];
+    assert.ok(card, "the coverage card");
+    const [coverage, progress] = card.split('<h3 class="sm-h-progress">Your progress</h3>');
+    assert.match(coverage, /<h3>Gradify's coverage<\/h3>/); assert.ok(progress, "a separate Your progress list");
+    assert.doesNotMatch(coverage, /completed|answered/i, "nothing the learner did is in Gradify's coverage");
+    assert.match(progress, /Lessons you(?:'|&#39;)ve completed/); assert.doesNotMatch(progress, /Taught on Gradify|mapped/i);
+  }
+  assert.doesNotMatch(pointPageHtml(m, m.points[0]), /Completing a lesson is coverage/);
+});
+
+test("every specification view has a framework, its committed links match the store, and generating them is deterministic", async () => {
+  const { SPECS } = await import("../kit/specs/index.js");
+  const { buildLinks, linksSource, linksPath } = await import("../scripts/curriculum/spec-view.mjs");
+  const { readFileSync: rf } = await import("node:fs");
+  assert.ok(SPECS.length >= 1);
+  for (const view of SPECS) {
+    assert.ok(view.framework, `${view.id} names the framework whose mapping store links it`);
+    const once = linksSource(view, buildLinks(view)), twice = linksSource(view, buildLinks(view));
+    assert.equal(once, twice, `${view.id}: the same store always gives the same file`);
+    assert.equal(rf(linksPath(view.id), "utf8"), once, `${view.id}: kit/specs/${view.id}.links.js is out of date (node scripts/curriculum/spec-view.mjs ${view.id})`);
+  }
 });

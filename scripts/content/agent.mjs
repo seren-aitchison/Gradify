@@ -17,6 +17,8 @@ import { loadStatements, loadMap, loadIndex, statementsPath } from "../curriculu
 import { SPECS } from "../../kit/curriculum/uk.js";
 
 import { AGENT_MODELS as AGENT, examplesFor } from "./build.mjs";
+import { loadStore, saveStore, decide, decisionOf, candidatesOf } from "./mapstore.mjs";
+import { reviewStep } from "./review.mjs";
 const rel = (u) => u.pathname.replace(out("./").pathname, "");
 const read = (u) => (existsSync(u) ? readFileSync(u, "utf8") : null);
 export const queueRoot = (subject) => out(`content/queue/${subject}/`);
@@ -80,7 +82,7 @@ export async function advance(topic, { render = null, legible = null } = {}) {
     if (!st.lessons.length) { rmSync(dir, { recursive: true, force: true }); return { actions: [], filed: fileTopic(topic, [], { brief, failures: [{ title: "(unit)", gate: "parse", issues: [{ code: "FMT", line: null, note: "the Writer returned no lessons" }] }] }) }; }
   }
   // 3. each lesson: gates → review → repair, up to the repair limit
-  const opts = gateOptions(topic, { render, legible, siblings: st.lessons.map((s) => s.title) }), repairs = [], reviews = [];
+  const opts = gateOptions(topic, { render, legible, siblings: st.lessons.map((s) => s.title), brief: brief.parsed }), repairs = [], reviews = [];
   for (const [i, s] of st.lessons.entries()) {
     const n = i + 1, rq = f(`repair-${n}.req.txt`), ro = f(`repair-${n}.out.txt`), vq = f(`review-${n}.req.txt`), vo = f(`review-${n}.out.txt`);
     for (let guard = 0; guard < 4 && !["done", "failed"].includes(s.stage); guard++) {
@@ -121,15 +123,14 @@ export async function advance(topic, { render = null, legible = null } = {}) {
   return { actions: [], filed };
 }
 
-// ---------- mapping: strong existing matches are confirmed, then get REQ: lines ----------
-export const mappingPath = (fw) => out(`content/mapping/${fw}.json`);
-export const loadMapping = (fw) => load(mappingPath(fw), { framework: fw, confirmed: {} });
-/** statements a matcher linked strongly to an existing lesson that nobody has confirmed yet */
+// ---------- mapping: an AI check of strong existing matches, as evidence for a person's review ----------
+// An AI check is never coverage (owner, 26 Nov 2026): a yes is recorded as ai-confirmed and the statement is still
+// written; only a person's confirmation (engine.mjs review / apply) counts as taught. Decisions live in the mapping
+// store (scripts/content/mapstore.mjs, kit/curriculum/maps/<framework>.json)
+/** statements a matcher linked strongly to an existing lesson that nobody has decided on, for their current text */
 export function mapCandidates(fw) {
-  const map = loadMap(fw) || { links: {} }, done = loadMapping(fw).confirmed, hashes = new Map((loadIndex(fw)?.statements || []).map((x) => [x.ref, x.hash]));
-  // decided = a decision on the statement's current text (or one recorded before hashes were stored)
-  const decided = (ref) => done[ref] && (!done[ref].hash || done[ref].hash === hashes.get(ref));
-  return Object.entries(map.links).filter(([ref, l]) => l.status !== "verified" && l.confidence === "strong" && !decided(ref)).map(([ref, l]) => ({ ref, lessons: l.lessons.filter((x) => x.confidence === "strong" || x === l.lessons[0]).slice(0, 2).map((x) => x.id) }));
+  const map = loadStore(fw), hashes = new Map((loadIndex(fw)?.statements || []).map((x) => [x.ref, x.hash]));
+  return Object.entries(map.links).filter(([ref, l]) => l.status !== "verified" && l.confidence === "strong" && !decisionOf(map, ref, hashes.get(ref))).map(([ref, l]) => [ref, candidatesOf(l)]).filter(([, c]) => c.length).map(([ref, c]) => ({ ref, lessons: c.filter((x) => x.confidence === "strong" || x === c[0]).slice(0, 2).map((x) => x.id) }));
 }
 async function lessonIndex(subject) { const { lessonsOf } = await import("../growth/lesson-readiness.mjs"); return new Map((await lessonsOf([subject])).map((x) => [x.id, x])); }
 export async function mapActions(subject, { batch = 20 } = {}) {
@@ -171,12 +172,13 @@ export function parseMapLine(line) {
   m = t.match(/^MAP (\S+) (\S+) (YES|NO)\b\s*(.*)$/);
   return m ? { reqId: m[1], lesson: m[2], verdict: m[3], rest: m[4].trim() } : null;
 }
-/** apply map.out.txt replies: YES → a REQ: line on the existing lesson; NO → the requirement joins the write queue */
+/** apply map.out.txt replies: YES → recorded as an AI check (ai-confirmed), for a person to confirm; NO → rejected.
+ * Neither changes a lesson: a REQ: line on an existing lesson would claim coverage no person has confirmed. */
 export async function applyMapping(subject) {
   const res = [], idx = await lessonIndex(subject);
   for (const fw of frameworksFor(subject)) {
     const dir = out(`content/queue/${subject}/_map-${fw}/`), o = new URL("map.out.txt", dir), reply = read(o); if (!reply) continue;
-    const M = loadMapping(fw), hashes = new Map((loadIndex(fw)?.statements || []).map((x) => [x.ref, x.hash]));
+    const M = loadStore(fw), hashes = new Map((loadIndex(fw)?.statements || []).map((x) => [x.ref, x.hash]));
     const asked = new Map([...(read(new URL("map.req.txt", dir)) || "").matchAll(/^MAPREQ (\S+) #(\S+)/gm)].map((m) => [m[1], m[2]]));
     for (const line of reply.split("\n")) {
       const m = parseMapLine(line); if (!m) continue;
@@ -185,12 +187,11 @@ export async function applyMapping(subject) {
       if (!asked.has(reqId) || asked.get(reqId) !== (hashes.get(ref) || "-")) { res.push(`${reqId}: reply dropped (statement changed or not asked), asked again`); continue; }
       if (verdict === "YES") {
         const x = idx.get(lesson), objs = (rest.match(/@([\d,]+)/)?.[1] || "").split(",").map(Number).filter((n) => n >= 1 && n <= (x?.L.objectives.length || 0));
-        if (!x || !objs.length) { M.confirmed[ref] = { ok: false, why: x ? "confirmed without valid objectives" : `unknown lesson ${lesson}`, on: today() }; continue; }
-        addReqLine(`kit/courses/${x.c.slug}/notes/${x.u.id}.js`, x.L.title, reqId, objs);
-        M.confirmed[ref] = { ok: true, lesson, objectives: objs, hash: hashes.get(ref), by: `agent:${AGENT.map}`, on: today() }; res.push(`${reqId} → ${lesson} @${objs.join(",")}`);
-      } else { M.confirmed[ref] = { ok: false, why: rest || "not taught", ...(lesson ? { lesson } : {}), hash: hashes.get(ref), by: `agent:${AGENT.map}`, on: today() }; res.push(`${reqId}: not taught (${rest || "no reason given"}), queued to write`); }
+        if (!x || !objs.length) { decide(M, ref, { ok: false, why: x ? "confirmed without valid objectives" : `unknown lesson ${lesson}`, hash: hashes.get(ref), by: `agent:${AGENT.map}`, on: today() }); continue; }
+        decide(M, ref, { ok: true, lesson, objectives: objs, hash: hashes.get(ref), by: `agent:${AGENT.map}`, on: today() }); res.push(`${reqId} → ${lesson} @${objs.join(",")} (AI-checked: still written until a person confirms it)`);
+      } else { decide(M, ref, { ok: false, why: rest || "not taught", lesson, hash: hashes.get(ref), by: `agent:${AGENT.map}`, on: today() }); res.push(`${reqId}: not taught (${rest || "no reason given"})`); }
     }
-    save(mappingPath(fw), M); rmSync(dir, { recursive: true, force: true });
+    saveStore(fw, M); rmSync(dir, { recursive: true, force: true });
   }
   return res;
 }
@@ -214,8 +215,14 @@ export async function work(subject, { limit = CONFIG.topicsPerRun, render = null
   const mapped = map ? await applyMapping(subject) : [];
   // filed lessons take the current high-risk rules before anything new is written
   const retiered = retier(subject);
-  const actions = [], filed = [];
-  for (const t of workTopics(subject, { limit })) { const r = await advance(t, { render, legible }); actions.push(...r.actions); if (r.filed) filed.push(r.filed); }
+  const actions = [], filed = [], external = (CONFIG.writer || "external") === "external";
+  // the external writer (config.writer): no subagent researches, writes or repairs lessons; they come in through
+  // gradify ingest, and this pass reviews them (scripts/content/review.mjs)
+  if (!external) for (const t of workTopics(subject, { limit })) { const r = await advance(t, { render, legible }); actions.push(...r.actions); if (r.filed) filed.push(r.filed); }
+  const rev = reviewStep(subject, { action });
+  actions.push(...rev.actions);
   if (map) actions.push(...(await mapActions(subject)));
-  return { subject, actions, filed, mapped, retiered, done: !actions.length && !nextTopics(subject, { limit: 1 }).length && !(map && frameworksFor(subject).some((fw) => mapCandidates(fw).length)) };
+  const writing = !external && nextTopics(subject, { limit: 1 }).length;
+  return { subject, actions, filed, mapped, retiered, reviewed: rev.reviewed, reviewFailed: rev.failed.map(({ text, ...f }) => f), external,
+    done: !actions.length && !writing && !(map && frameworksFor(subject).some((fw) => mapCandidates(fw).length)) };
 }

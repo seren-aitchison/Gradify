@@ -1,4 +1,4 @@
-// TechGradify · ForgeLab Algorithms (content standard 2). Added by scripts/new-course.mjs add-notes.
+// TechGradify Algorithms (content standard 2). Added by scripts/new-course.mjs add-notes.
 export default `
 ## Linear search
 LV: GCSE · Foundation
