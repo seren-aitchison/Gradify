@@ -179,6 +179,10 @@ test("the real specification runs end to end, and unchecked points are never mea
     if (p.evidence === "ai-mapped") assert.ok(["full", "partial"].includes(p.coverage.gradify));
   }
   assert.equal(m.overall.evidence.verified + m.overall.evidence.aiMapped + m.overall.evidence.unchecked <= m.points.length, true);
+  // taught counts only what a person verified; provisional mappings are counted apart, never as taught
+  const t = m.overall.taught, taughtBy = (ev) => m.points.filter((p) => p.coverage.evidence === ev && ["full", "partial"].includes(p.coverage.gradify)).length;
+  assert.equal(t.verified, taughtBy("verified")); assert.equal(t.provisional, taughtBy("ai-mapped"));
+  assert.equal(t.verified + t.provisional, m.overall.covered);
 });
 
 test("a point's links: full only when every statement is taught, verified only when a person checked all of them", async () => {

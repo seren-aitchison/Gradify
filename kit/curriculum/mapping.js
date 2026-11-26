@@ -16,15 +16,22 @@
 //   awaiting      not reviewed yet, or proposed by the matcher only. Proposals are never shown as coverage.
 // A link reviewed against an older version of the specification counts as awaiting again.
 
-// AI decisions (status "ai-confirmed" in the map, scripts/content/mapstore.mjs) are shown as mapped, never as verified:
-//   mapped             an AI reviewer confirmed a lesson teaches the statement fully
-//   partially-mapped   an AI reviewer confirmed a lesson teaches part of it
+// AI decisions (status "ai-confirmed" in the map, scripts/content/mapstore.mjs) are provisional, never verified:
+//   mapped             an AI reviewer found a lesson teaches the statement fully
+//   partially-mapped   an AI reviewer found a lesson teaches part of it
 // Only "covered", "partial" and "missing" are a person's verification, and only they allow a coverage claim (claimFor).
+//
+// For learners, a statement's mapping is one of three states (MAPPING), always shown apart from their mastery:
+//   none          Gradify has no identified link to a lesson (nothing, or only the matcher's unchecked candidates)
+//   provisional   an AI-supported match nobody has verified yet: it can inform a learner's progress view, but it's never
+//                 confirmed coverage, never "specification alignment", and never says a requirement is done
+//   verified      a person checked it; it updates by itself when the map records their decision
+// A learner's mastery and Gradify's confidence in a mapping are separate: neither is ever computed from the other.
 export const COVERAGE = {
   covered: { name: "Independently verified", line: "A named reviewer confirmed a Gradify lesson teaches this statement fully." },
   partial: { name: "Partially covered (verified)", line: "A named reviewer confirmed Gradify teaches part of this statement; the note says what's missing." },
-  mapped: { name: "Mapped \u2014 not independently verified", line: "An AI reviewer confirmed a Gradify lesson teaches this statement. No person has checked it yet." },
-  "partially-mapped": { name: "Partially mapped", line: "An AI reviewer found a Gradify lesson teaches part of this statement. No person has checked it yet." },
+  mapped: { name: "Provisionally mapped \u2014 awaiting verification", line: "Gradify has matched this statement to a lesson, but no person has checked the match yet. It isn't counted as coverage." },
+  "partially-mapped": { name: "Provisionally mapped in part \u2014 awaiting verification", line: "Gradify has matched part of this statement to a lesson, but no person has checked the match yet. It isn't counted as coverage." },
   missing: { name: "Missing", line: "A reviewer confirmed no Gradify lesson teaches this statement yet." },
   awaiting: { name: "Awaiting verification", line: "Not reviewed yet. Any suggested lessons are proposals, not coverage." },
 };
@@ -86,8 +93,15 @@ export function checkMap(spec, map, lessonIds) {
 
 // ---------- for learners: "know exactly where you stand against your specification" ----------
 export const STANDING = {
-  secure: "Secure", developing: "Developing", "not-started": "Not started yet", "not-on-gradify": "Not taught on Gradify yet", unmapped: "Not mapped yet",
+  secure: "Secure", developing: "Developing", "not-started": "Not started yet", "not-on-gradify": "Not taught on Gradify yet", unmapped: "Not mapped",
 };
+/** a statement's mapping state for learners, from the map alone (never from the learner's answers) */
+export const MAPPING = {
+  none: { name: "Not mapped", line: "Gradify hasn't linked this statement to a lesson yet, so it can't measure it." },
+  provisional: { name: "Provisionally mapped \u2014 awaiting verification", line: "Gradify has matched this to a lesson, but nobody has checked the match yet. Your results on that lesson show here as progress, not as a confirmed part of your specification." },
+  verified: { name: "Verified mapping", line: "A person has checked which Gradify lesson teaches this statement." },
+};
+export const mappingOf = (status) => (["covered", "partial", "missing"].includes(status) ? "verified" : ["mapped", "partially-mapped"].includes(status) ? "provisional" : "none");
 /**
  * Each statement of a learner's specification with where they stand, from their per-lesson mastery (0–1, or absent
  * when they haven't been assessed). Only verified links count: an unreviewed statement is "unmapped", never guessed.
@@ -95,16 +109,20 @@ export const STANDING = {
  */
 export function whereYouStand(spec, map, mastery, { secure = 0.8, developing = 0.4 } = {}) {
   const rows = coverageReport(spec, map).rows.map((r) => {
-    if (r.status === "awaiting") return { ref: r.ref, topic: r.topic, standing: "unmapped" };
-    // an AI-mapped statement shows where the learner stands, labelled as not independently verified
-    const evidence = ["mapped", "partially-mapped"].includes(r.status) ? "ai-mapped" : "verified";
-    if (r.status === "missing") return { ref: r.ref, topic: r.topic, standing: "not-on-gradify" };
+    // mapping comes from the map only; standing comes from the learner's answers only (an unmapped statement has no
+    // lesson to measure, so it has no standing)
+    const mapping = mappingOf(r.status);
+    if (r.status === "awaiting") return { ref: r.ref, topic: r.topic, standing: "unmapped", mapping };
+    // a provisionally mapped statement shows where the learner stands, always with its mapping state beside it
+    const evidence = mapping === "provisional" ? "ai-mapped" : "verified";
+    if (r.status === "missing") return { ref: r.ref, topic: r.topic, standing: "not-on-gradify", mapping };
     const full = r.link.lessons.filter((l) => l.coverage === "full"), use = full.length ? full : r.link.lessons;
     const vals = use.map((l) => mastery[l.id]).filter((v) => typeof v === "number");
-    if (!vals.length) return { ref: r.ref, topic: r.topic, standing: "not-started", evidence, lessons: use.map((l) => l.id) };
+    if (!vals.length) return { ref: r.ref, topic: r.topic, standing: "not-started", mapping, evidence, lessons: use.map((l) => l.id) };
     const m = Math.min(...vals);
-    return { ref: r.ref, topic: r.topic, mastery: m, standing: m >= secure ? "secure" : m >= developing ? "developing" : "not-started", evidence, lessons: use.map((l) => l.id) };
+    return { ref: r.ref, topic: r.topic, mastery: m, standing: m >= secure ? "secure" : m >= developing ? "developing" : "not-started", mapping, evidence, lessons: use.map((l) => l.id) };
   });
   const by = Object.fromEntries(Object.keys(STANDING).map((k) => [k, rows.filter((r) => r.standing === k).length]));
-  return { rows, by, next: rows.filter((r) => r.standing === "developing" || r.standing === "not-started").slice(0, 5) };
+  const mapped = Object.fromEntries(Object.keys(MAPPING).map((k) => [k, rows.filter((r) => r.mapping === k).length]));
+  return { rows, by, mapped, next: rows.filter((r) => r.standing === "developing" || r.standing === "not-started").slice(0, 5) };
 }

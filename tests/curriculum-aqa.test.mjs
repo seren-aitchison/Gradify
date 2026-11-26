@@ -10,7 +10,7 @@ import { loadIndex, loadMap, indexOf, statementsPath, applyReview, reviewSheet, 
 import { SPECS, checkRegistry } from "../kit/curriculum/uk.js";
 import { coverageReport, claimFor, checkMap, statusOf } from "../kit/curriculum/mapping.js";
 import * as mapstore from "../scripts/content/mapstore.mjs";
-import { specStanding, lessonMastery } from "../kit/curriculum/standing.js";
+import { specStanding, lessonMastery, MAPPING } from "../kit/curriculum/standing.js";
 import { parseTable } from "../scripts/growth/sources.mjs";
 
 const ID = "aqa-gcse-biology";
@@ -236,10 +236,32 @@ test("a learner's mastery becomes specification standing through verified links 
   const reviewed = applyReview(tiny, tinyMap, [R({ ref: "9.1.a", decision: "full", note: "taught in its second section" }), R({ ref: "9.1.b", decision: "missing", note: "x" })], lessonIds).map;
   const s = specStanding(tiny, reviewed, atts);
   assert.deepEqual(s.rows.map((r) => r.standing), ["secure", "not-on-gradify", "unmapped"], "9.1.c is only proposed, so it's not mapped, whatever the learner did in u02-05");
-  assert.match(s.summary, /1 of 2 mapped statements secure/);
+  assert.match(s.summary, /^Verified mapping: 1 of 1 secure, 0 developing\. Of 3 statements: 2 with a verified mapping, 1 not mapped\.$/);
+  assert.deepEqual(s.rows.map((r) => r.mapping), ["verified", "verified", "none"]);
   // the real specification: only AI decisions so far, so every mapped statement says it isn't independently verified
   const real = specStanding(idx, map, atts), ai = Object.values(map.links).filter((l) => l.status === "ai-confirmed").length;
   assert.equal(real.by.unmapped, idx.statements.length - ai);
   assert.ok(real.rows.filter((r) => r.standing !== "unmapped").every((r) => r.evidence === "ai-mapped"));
-  if (ai) assert.match(real.summary, /mapped by AI, not independently verified/); else assert.match(real.summary, /isn't mapped yet/);
+  if (ai) assert.match(real.summary, /Provisionally mapped, awaiting verification \(progress, not confirmed coverage\)/); else assert.match(real.summary, /isn't mapped yet/);
+});
+
+test("where you stand: not mapped, provisionally mapped and verified are separate from the learner's mastery", () => {
+  const atts = [1, 2, 3, 4, 5, 6].map((q) => attempt("u02-03", q, true, q));
+  // 9.1.a: an AI-supported match only; 9.1.b: nothing linked; 9.1.c: the matcher's candidate only (not an identified link)
+  const ai = { ...tinyMap, links: { ...tinyMap.links, "9.1.a": { status: "ai-confirmed", by: "agent:haiku", on: "2026-11-30", lessons: [{ id: "u02-03", coverage: "full", objectives: [1] }] } } };
+  const s = specStanding(tiny, ai, atts);
+  assert.deepEqual(s.rows.map((r) => r.mapping), ["provisional", "none", "none"]);
+  assert.equal(s.rows[0].standing, "secure", "provisional mappings can still show the learner's progress");
+  assert.deepEqual(s.mapped, { none: 2, provisional: 1, verified: 0 });
+  assert.equal(coverageReport(tiny, ai).totals.covered, 0, "and never count as verified coverage");
+  assert.doesNotMatch(s.summary, /^Verified/, "a secure provisional statement isn't reported as a verified requirement");
+  assert.match(s.summary, /Provisionally mapped, awaiting verification \(progress, not confirmed coverage\): 1 of 1 secure/);
+  // the mapping state doesn't depend on the learner: no answers, the same mapping
+  assert.deepEqual(specStanding(tiny, ai, []).rows.map((r) => r.mapping), ["provisional", "none", "none"]);
+  // and the learner's standing doesn't depend on the mapping's confidence: once a person verifies it, same standing
+  const v = applyReview(tiny, ai, [R({ ref: "9.1.a", decision: "full", note: "section 2" })], lessonIds).map;
+  const after = specStanding(tiny, v, atts);
+  assert.equal(after.rows[0].mapping, "verified", "verification updates the state by itself"); assert.equal(after.rows[0].standing, s.rows[0].standing);
+  assert.equal(after.rows[0].mastery, s.rows[0].mastery);
+  assert.equal(MAPPING.provisional.name, "Provisionally mapped \u2014 awaiting verification"); assert.equal(MAPPING.none.name, "Not mapped"); assert.equal(MAPPING.verified.name, "Verified mapping");
 });

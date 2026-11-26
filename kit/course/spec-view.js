@@ -20,7 +20,8 @@ const COVER = { full: ["Fully taught", "Gradify's lessons teach and test all of 
 // what the coverage rests on (the mapping store): a named person's check, or an AI reviewer's only
 const EVIDENCE = {
   verified: { full: ["Independently verified", "A named reviewer confirmed Gradify's lessons teach all of this point."], partial: ["Partly taught (verified)", "A named reviewer confirmed Gradify's lessons teach part of this point; use your class notes for the rest."] },
-  "ai-mapped": { full: ["Mapped \u2014 not independently verified", "An AI reviewer confirmed Gradify's lessons teach this point. No person has checked it yet."], partial: ["Partially mapped", "An AI reviewer found Gradify's lessons teach part of this point. No person has checked it yet, so use your class notes too."] },
+  // provisional: an AI-supported match nobody has checked. Never presented as confirmed coverage or as a requirement done
+  "ai-mapped": { full: ["Provisionally mapped \u2014 awaiting verification", "Gradify has matched this point to its lessons, but nobody has checked the match yet. Your results show your progress on those lessons, not a confirmed part of your specification."], partial: ["Provisionally mapped in part \u2014 awaiting verification", "Gradify has matched part of this point to its lessons, but nobody has checked the match yet. Use your class notes too."] },
 };
 const coverOf = (p) => EVIDENCE[p.coverage.evidence]?.[p.coverage.gradify] || COVER[p.coverage.gradify] || COVER.none;
 const TREND = { improving: "Improving: your recent answers are better than earlier ones.", steady: "Steady: your recent answers are about the same as earlier ones.", slipping: "Slipping: your recent answers are clearly weaker than before. Worth revisiting soon." };
@@ -109,7 +110,12 @@ export function specPageHtml(m, { specs = [], practiseHref } = {}) {
     ${measuresHtml({
       mastery: { estimate: o.estimate, provisional: o.provisional, band: o.band, scope: `Across ${o.assessed} assessed ${o.assessed === 1 ? "requirement" : "requirements"}.`, empty: "Answer a few questions to start." },
       confidence: { level: o.confidence, basis: o.assessed ? `${o.firm} of ${o.assessed} with firm evidence.` : "No answers yet." },
-      coverage: [["Requirements with evidence", o.assessed, o.total], ["Taught on Gradify", o.covered, o.total, o.covered - o.full ? `${o.covered - o.full} only in part` : ""], ["Lessons you've completed", o.lessonsDone, o.lessonsMapped]],
+      // verified and provisional coverage are counted apart: a provisional mapping is never shown as taught
+      coverage: [["Requirements with evidence", o.assessed, o.total],
+        ...(o.evidence.verified || o.evidence.aiMapped
+          ? [["Taught on Gradify, verified", o.taught.verified, o.total, o.taught.verifiedPart ? `${o.taught.verifiedPart} only in part` : ""], ...(o.taught.provisional ? [["Provisionally mapped, awaiting verification", o.taught.provisional, o.total, "Not counted as taught until a person checks it"]] : [])]
+          : [["Taught on Gradify", o.covered, o.total, o.covered - o.full ? `${o.covered - o.full} only in part` : ""]]),
+        ["Lessons you've completed", o.lessonsDone, o.lessonsMapped]],
     })}
     ${nextStepsHtml(m, practiseHref)}
     <section class="co-panel sm-map"><div class="cx-acth"><h3>Your specification map</h3><span>${o.assessed} of ${o.total} assessed</span></div>
