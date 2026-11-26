@@ -71,8 +71,8 @@ async function explain(view, ctx) {
     out.innerHTML = `<div class="ex panel glass"><canvas class="ex-stage" width="1280" height="720" aria-label="Explainer: ${esc(m.title)}"></canvas>
       <p class="ex-cap" aria-live="polite"></p>
       <div class="tl-bar"><button type="button" class="btn btn-primary lg btn-sm" data-play><span>Play</span></button><button type="button" class="btn btn-ghost lg btn-sm" data-prev aria-label="Previous scene">‹</button><button type="button" class="btn btn-ghost lg btn-sm" data-next aria-label="Next scene">›</button>
-      <label class="tl-sel">Speed <select data-rate><option value=".85">Slower</option><option value="1" selected>Normal</option><option value="1.2">Faster</option></select></label><label class="tl-sel">Voice <select data-voice></select></label>
-      <button type="button" class="btn btn-light lg btn-sm" data-rec><span>Download video</span></button></div>
+      <button type="button" class="btn btn-light lg btn-sm" data-rec><span>Download video</span></button>
+      <details class="tl-adv"><summary>Voice and speed</summary><div><label class="tl-sel">Speed <select data-rate><option value=".85">Slower</option><option value="1" selected>Normal</option><option value="1.2">Faster</option></select></label><label class="tl-sel">Voice <select data-voice></select></label></div></details></div>
       ${canSpeak() ? "" : `<p class="sub">This browser can't read aloud, so the captions carry the explainer.</p>`}</div>`;
     const cv = out.querySelector("canvas"), c2 = cv.getContext("2d"), cap = out.querySelector(".ex-cap"), btn = out.querySelector("[data-play]");
     voicePicker(out.querySelector("[data-voice]"));
@@ -141,8 +141,8 @@ async function podcast(view, ctx) {
   const last = (() => { try { return localStorage.getItem("gradify.podcast.course") || ""; } catch { return ""; } })();
   view.innerHTML = `<div class="tl">${head("Learn", "Chant podcasts", "Every unit of a course as an episode: the key points chanted on a beat, each key term said twice, then a chorus to remember them by. Episodes play back to back, so it works on a walk or a commute. Lock your screen and it keeps going on most phones.")}
     <div class="panel glass tp"><div class="tp-row"><label><span class="sub">Show</span><select data-c>${cat.map((c) => `<option value="${esc(c.slug)}" ${c.slug === last ? "selected" : ""}>${esc(c.name)}</option>`).join("")}</select></label>
-      <label class="tl-sel">Voice <select data-voice></select></label><label class="tl-sel">Speed <select data-rate><option value=".9">Steady</option><option value="1.05" selected>Normal</option><option value="1.2">Quick</option></select></label>
-      <label class="tl-sel"><input type="checkbox" data-beat checked> Beat</label></div></div>
+      <details class="tl-adv"><summary>Voice, speed and beat</summary><div><label class="tl-sel">Voice <select data-voice></select></label><label class="tl-sel">Speed <select data-rate><option value=".9">Steady</option><option value="1.05" selected>Normal</option><option value="1.2">Quick</option></select></label>
+      <label class="tl-sel"><input type="checkbox" data-beat checked> Beat</label></div></details></div></div>
     <div class="pod panel glass"><div class="pod-now"><span class="pod-art" aria-hidden="true"></span><div><span class="tl-k">Now playing</span><b class="pod-t">Choose an episode</b><span class="sub pod-l" aria-live="polite"></span></div>
       <div class="tl-bar"><button type="button" class="btn btn-ghost lg btn-sm" data-back aria-label="Previous episode">⏮</button><button type="button" class="btn btn-primary lg btn-sm" data-play><span>Play</span></button><button type="button" class="btn btn-ghost lg btn-sm" data-fwd aria-label="Next episode">⏭</button></div></div>
       <ol class="pod-list"></ol></div></div>`;
@@ -192,8 +192,9 @@ async function audio(view, ctx) {
     if (!qs.length) { out.innerHTML = `<p class="sub">There are no questions in that yet. Try another lesson.</p>`; return; }
     out.innerHTML = `<div class="aq panel glass"><span class="tl-k aq-n"></span><h2 class="aq-q"></h2><p class="aq-a" hidden></p><p class="sub aq-heard" aria-live="polite"></p>
       <div class="aq-ring" aria-hidden="true"><i></i></div>
-      <div class="tl-bar"><button type="button" class="btn btn-primary lg btn-sm" data-go><span>Start</span></button><label class="tl-sel">Pause to answer <select data-gap><option value="4000">4 s</option><option value="6000" selected>6 s</option><option value="10000">10 s</option></select></label>
-      ${SR ? `<label class="tl-sel"><input type="checkbox" data-listen checked> Listen to my answer</label>` : ""}<label class="tl-sel">Voice <select data-voice></select></label></div>
+      <div class="tl-bar"><button type="button" class="btn btn-primary lg btn-sm" data-go><span>Start</span></button>
+      <details class="tl-adv"><summary>Timing and voice</summary><div><label class="tl-sel">Pause to answer <select data-gap><option value="4000">4 s</option><option value="6000" selected>6 s</option><option value="10000">10 s</option></select></label>
+      ${SR ? `<label class="tl-sel"><input type="checkbox" data-listen checked> Listen to my answer</label>` : ""}<label class="tl-sel">Voice <select data-voice></select></label></div></details></div>
       <p class="aq-score sub"></p></div>`;
     voicePicker(out.querySelector("[data-voice]"));
     let running = false, right = 0, asked = 0;

@@ -49,26 +49,80 @@ export function renderQuestion(Q, key, { mode = "practice", levels = DEFAULT_LEV
 export function markQuestion(Q, response) { Q = normalize(Q); return { status: "final", method: "auto", ...handlerFor(Q).mark(Q, response) }; }
 export const answerText = (Q) => handlerFor(normalize(Q)).answer(normalize(Q));
 
+/**
+ * What a practice answer leads to, for every course (pure; tests/feedback.test.mjs):
+ *   "correct" | "self"   right, or self-assessed: the explanation shows
+ *   "retry"              wrong on the first try where a second is worth having: why that answer isn't right and a
+ *                        hint, never the right answer, and "Show the answer" for whoever would rather see it
+ *   "reveal"             wrong again (or a one-try quiz, or a question with only two options): the answer and why
+ */
+export function feedbackStage({ correct = false, self = false, attempt = 1, oneTry = false, canRetry = true } = {}) {
+  if (self) return "self";
+  if (correct) return "correct";
+  if (oneTry || !canRetry || attempt >= 2) return "reveal";
+  return "retry";
+}
+// a second try means something only with something left to choose between
+export const canRetry = (Q, h) => Boolean(h.hint) && !(Q.options && Q.options.length < 3);
+
 export function wireQuestions(el, lookup, onAnswer) {
   el.querySelectorAll(".aq").forEach((box) => {
     if (box.dataset.wired) return; box.dataset.wired = "1";
     const Q = normalize(lookup(box.dataset.key)); if (!Q) return;
-    const h = handlerFor(Q), exam = box.dataset.mode === "exam", shown = Date.now();
-    let attempt = 0, solved = false;
+    const h = handlerFor(Q), exam = box.dataset.mode === "exam", shown = Date.now(), oneTry = Boolean(box.closest("[data-one-try]"));
+    let attempt = 0, solved = false, revealed = false;
     const confidence = () => Number(box.querySelector(".aq-conf input:checked")?.value) || null;
+    const out = box.querySelector(".aq-result"), why = box.querySelector(".aq-why");
+    // practice questions that can be marked: "Show the answer" is there from the start, so nobody is made to guess
+    const practice = !exam && !oneTry && h.auto !== false && Q.type !== "short";
+    const tools = document.createElement("div"); tools.className = "aq-tools";
+    if (practice) { tools.innerHTML = `<div class="aq-try" hidden></div><button type="button" class="aq-show">Show the answer</button>`; out.after(tools); }
+    const lock = () => box.querySelectorAll(".aq-opts button, .aq-checks input, .aq-steps button, .aq-match select, .aq-num input, .aq-submit").forEach((x) => { x.disabled = true; });
+    // the answer and why: after a second wrong try, or when asked for. Nothing more is marked once it's shown.
+    function reveal(res, response, asked) {
+      revealed = true; box.classList.add("revealed");
+      if (response !== undefined || Q.options) h.paint(box, Q, response ?? null, res || { correct: false, score: 0 }, { reveal: true });
+      box.querySelector(".aq-detail").innerHTML = h.feedback(Q, response ?? null, res || { correct: false, score: 0 }, { reveal: true });
+      why.hidden = false;
+      tools.remove(); lock();
+      out.textContent = asked ? (attempt ? "Here's the answer, and why." : "Here's the answer, and why. Try a similar question later to check it's stuck.") : "Not quite again. Here's the answer, and why.";
+      out.className = "aq-result no";
+      box.dispatchEvent(new CustomEvent("aq-reveal", { bubbles: true, detail: { key: box.dataset.key, attempts: attempt, asked } }));
+    }
+    tools.querySelector(".aq-show")?.addEventListener("click", () => { reveal(box.lastResult || null, box.response, true); why.setAttribute("tabindex", "-1"); why.focus({ preventScroll: true }); });
     h.wire(box, Q, (response, { silent } = {}) => {
       box.response = response;
       if (exam) { onAnswer?.(Q, markQuestion(Q, response), attempt === 0, box, { response, confidence: confidence(), ms: Date.now() - shown, attempt: ++attempt }); return; }
-      if (silent || solved) return;
+      if (silent || solved || revealed) return;
       attempt++;
-      const res = markQuestion(Q, response), out = box.querySelector(".aq-result");
-      out.textContent = res.self ? `Self-assessed: ${Math.round(res.score * 100)}% of the marking points (provisional).` : res.correct ? "Correct." : `Not quite${res.detail ? `: ${res.detail}` : ""}.${box.closest("[data-one-try]") ? " Here's why." : " Here's why, and you can try again."}`;
-      out.className = `aq-result ${res.self ? "" : res.correct ? "ok" : "no"}`;
-      h.paint(box, Q, response, res);
-      box.querySelector(".aq-detail").innerHTML = h.feedback(Q, response, res);
-      box.querySelector(".aq-why").hidden = false;
-      if (res.correct || res.self) { solved = true; box.classList.add("solved"); }
-      onAnswer?.(Q, res, attempt === 1, box, { response, confidence: confidence(), ms: Date.now() - shown, attempt });
+      const res = markQuestion(Q, response);
+      box.lastResult = res;
+      const stage = feedbackStage({ correct: res.correct, self: res.self, attempt, oneTry: oneTry || !practice, canRetry: canRetry(Q, h) });
+      if (stage === "retry") {
+        // why that answer isn't right, and a hint; the right answer stays hidden
+        h.paint(box, Q, response, res, { reveal: false });
+        const notIt = h.feedback(Q, response, res, { reveal: false }), hint = h.hint?.(Q, response, res);
+        if (hint?.rule) for (const v of hint.rule) box.querySelectorAll(".aq-opts button").forEach((b) => { if (b.dataset.v === v) { b.disabled = true; b.classList.add("ruled"); b.setAttribute("aria-label", `${b.textContent.trim()} (ruled out)`); } });
+        const t = tools.querySelector(".aq-try");
+        t.innerHTML = `${notIt}${hint?.text ? `<p class="aq-hint2"><b>Hint:</b> ${inline(hint.text)}</p>` : ""}`;
+        t.hidden = !t.innerHTML;
+        out.textContent = `Not quite${res.detail ? `: ${res.detail}` : ""}. Have another go.`;
+        out.className = "aq-result no";
+        why.hidden = true;
+      } else if (stage === "reveal" && practice) {
+        reveal(res, response, false);
+      } else {
+        // right, self-assessed, or a one-try quiz: the result and the explanation
+        out.textContent = res.self ? `Self-assessed: ${Math.round(res.score * 100)}% of the marking points (provisional).` : res.correct ? (attempt > 1 ? "Correct, on the second try." : "Correct.") : `Not quite${res.detail ? `: ${res.detail}` : ""}. Here's why.`;
+        out.className = `aq-result ${res.self ? "" : res.correct ? "ok" : "no"}`;
+        h.paint(box, Q, response, res, { reveal: true });
+        box.querySelector(".aq-detail").innerHTML = h.feedback(Q, response, res, { reveal: true });
+        why.hidden = false;
+        tools.remove();
+        if (res.correct || res.self) { solved = true; box.classList.add("solved"); lock(); }
+      }
+      // every try is recorded as it happened: which try it was, and whether a hint had been given
+      onAnswer?.(Q, res, attempt === 1, box, { response, confidence: confidence(), ms: Date.now() - shown, attempt, assist: attempt > 1 ? "hint" : null });
     }, { mode: box.dataset.mode });
   });
 }

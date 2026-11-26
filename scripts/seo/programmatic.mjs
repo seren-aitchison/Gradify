@@ -8,6 +8,7 @@ import { readFile } from "node:fs/promises";
 import { esc, related, toc, faq } from "./shell.mjs";
 import { starterKit, stagesBlock, coreRule } from "./links.mjs";
 import { parseNotes, inline } from "../../kit/course/notes.js";
+import { qualPhrase, qualTitle, audience, firstFit, titleCase } from "./serp.mjs";
 
 const root = new URL("../../", import.meta.url);
 const json = async (p) => JSON.parse(await readFile(new URL(p, root), "utf8"));
@@ -71,8 +72,13 @@ function unitPage(c, u) {
   const i = c.units.indexOf(u), prev = c.units[i - 1], next = c.units[i + 1];
   const thin = u.lessons.length < MIN_LESSONS || unitWords(u) < MIN_WORDS;
   // the subject always stays in the title, so units with the same name in two courses never share one
-  const title = [`${u.title}: ${c.name} Revision and Flashcards · Gradify`, `${u.title}: ${c.name} Revision · Gradify`, `${u.title}: ${c.name} Revision`, `${u.title} · ${c.name}`].find((t) => t.length <= 60) || `${u.title.slice(0, 56 - c.name.length).replace(/\s+\S*$/, "")}… · ${c.name}`;
-  const description = `Free ${c.name} revision for ${u.title}: ${plural(u.lessons.length, "lesson")}, key terms, ${cards || "practice"} flashcards and a quick quiz. Try five sample cards now.`;
+  // search wording (scripts/seo/serp.mjs): "<topic> revision notes", "<subject> flashcards", "quiz"
+  const title = [`${u.title}: ${c.name} Revision Notes and Flashcards`, `${u.title}: ${c.name} Revision Notes and Quiz`, `${u.title}: ${c.name} Revision Notes`, `${u.title}: ${c.name} Revision`, `${u.title} · ${c.name}`].find((t) => t.length <= 60) || `${u.title.slice(0, 56 - c.name.length).replace(/\s+\S*$/, "")}… · ${c.name}`;
+  const q = qualPhrase(c.slug, c.name);
+  const who = audience(c.site);
+  const description = [`${u.title} revision notes${q ? ` for ${q}` : who ? ` for ${who}` : ""}: ${plural(u.lessons.length, "lesson")}, key terms, ${cards || "practice"} flashcards and a quiz with answers. Free; try five sample cards now.`,
+    `${u.title} revision notes (${c.name}): ${plural(u.lessons.length, "lesson")}, key terms, ${cards || "practice"} flashcards and a quiz with answers. Free; try five sample cards.`,
+    `${u.title} revision notes (${c.name}): ${plural(u.lessons.length, "lesson")}, key terms, flashcards and a quiz with answers. Free.`].find((d) => d.length <= 155) || `${u.title} revision notes (${c.name}), flashcards and a quiz. Free.`;
   const at = (l) => `${c.page}#/lesson/${l.id}`;
   // what the page's script needs: sample cards for the drill, check questions for the quiz, where the full notes are
   const pool = u.lessons.flatMap((l) => l.cards.slice(0, 3).map(([q, a]) => ({ q: inline(q), a: inline(a), l: l.title, href: at(l) })));
@@ -104,7 +110,7 @@ function unitPage(c, u) {
       ...(paa.schema ? [paa.schema] : []),
       ...(mcq.length ? [{ "@type": "Quiz", name: `${u.title} quick quiz`, about: u.title, educationalLevel: c.name, hasPart: mcq.map((m) => ({ "@type": "Question", eduQuestionType: "Multiple choice", text: plain(m.q), acceptedAnswer: { "@type": "Answer", text: plain(m.right) } })) }] : [])],
     body: `<div data-topic>
-    <h1>${esc(u.title)}</h1>
+    <h1>${esc(u.title)}: revision notes</h1>
     <p class="answer">${esc(c.unitWord)} ${u.n} of ${esc(c.site)}'s free ${esc(c.name)} course: ${plural(u.lessons.length, "lesson")}${modules.length ? ` covering ${esc(modules.join("; "))}` : ""}, with ${cards ? plural(cards, "flashcard") : "flashcards"}, practice questions and five mind maps for every lesson.</p>
     ${eqs[0] ? coreRule(`${esc(plain(eqs[0][0]))}${eqs[0][1] ? ` (${esc(plain(eqs[0][1]))})` : ""}`, "Key formula") : keys[0] ? coreRule(inline(keys[0]), "Key idea") : ""}
     <p><a class="btn btn-primary lg" href="${c.page}#/learn/${u.id}"><span>Practise all ${cards || ""} cards free</span> <span aria-hidden="true">→</span></a></p>
@@ -136,13 +142,24 @@ function unitPage(c, u) {
   };
 }
 
+// a subject's topics hub in a search result: qualifications only where coverage.js backs them, else who it's for
+function courseHubTitle(c) {
+  const q = qualPhrase(c.slug, c.name);
+  const qt = qualTitle(c.slug);
+  return firstFit([...(q ? [`${c.name} Revision Notes for ${titleCase(q)}`, `${c.name} Revision Notes: ${qt}`] : []), `${c.name} Revision Notes: Free Topics and Flashcards · Gradify`, `${c.name} Revision Notes: Free Topics and Flashcards`, `${c.name} Revision Notes and Flashcards`]);
+}
+function courseHubDesc(c, lessons) {
+  const q = qualPhrase(c.slug, c.name), who = audience(c.site);
+  const d = `Free ${c.name} revision notes${q ? ` for ${q}` : who ? ` for ${who}` : ""}: ${plural(c.units.length, c.unitWord.toLowerCase())} and ${plural(lessons, "lesson")}, each with flashcards, practice questions and a mind map.`;
+  return d.length <= 155 ? d : `Free ${c.name} revision notes: ${plural(c.units.length, c.unitWord.toLowerCase())} and ${plural(lessons, "lesson")}, each with flashcards, practice questions and a mind map.`;
+}
 function coursePage(c) {
   const lessons = c.units.reduce((s, u) => s + u.lessons.length, 0);
   return {
-    path: `topics/${c.slug}/index.html`, title: `${c.name} Revision: Free Topics, Notes and Flashcards · Gradify`, description: `Free ${c.name} revision: ${plural(c.units.length, c.unitWord.toLowerCase())} and ${plural(lessons, "lesson")}, each with flashcards, practice questions and mind maps, from GCSE and A level to university.`,
+    path: `topics/${c.slug}/index.html`, title: courseHubTitle(c), description: courseHubDesc(c, lessons),
     crumbs: [["Topics", "topics/"], [c.name, `topics/${c.slug}/`]], ogType: "website",
     schema: [{ "@type": "Course", name: c.name, description: `Free ${c.name} course on ${c.site}`, url: `https://getgradify.com${c.page}`, provider: { "@id": "https://getgradify.com/#org" }, isAccessibleForFree: true, hasCourseInstance: { "@type": "CourseInstance", courseMode: "online" }, offers: { "@type": "Offer", price: "0", priceCurrency: "GBP", category: "Free" } }],
-    body: `<h1>${esc(c.name)} topics</h1><p class="answer">${plural(lessons, "free lesson")} in ${plural(c.units.length, c.unitWord.toLowerCase())}, each with flashcards, practice questions and mind maps. Pick a topic to see its lessons, key terms and sample flashcards.</p>
+    body: `<h1>${esc(c.name)} revision notes by topic</h1><p class="answer">${plural(lessons, "free lesson")} in ${plural(c.units.length, c.unitWord.toLowerCase())}, each with flashcards, practice questions and mind maps. Pick a topic to see its lessons, key terms and sample flashcards.</p>
     <p><a class="btn btn-primary lg" href="${c.page}"><span>Open the ${esc(c.name)} course</span></a></p>
     ${starterKit(familyOf(c.slug), c.name)}
     <ul class="cards">${c.units.map((u) => `<li><a href="/topics/${c.slug}/${u.id}/">${esc(u.title)}</a><span>${esc(c.unitWord)} ${u.n} · ${plural(u.lessons.length, "lesson")}</span></li>`).join("")}</ul>
@@ -291,11 +308,11 @@ const trapItems = (c) => c.units.flatMap((u) => u.lessons.flatMap((l) => l.pits.
 function questionsPage(c) {
   const items = qItems(c), byUnit = new Map(); for (const it of items) { if (!byUnit.has(it.u)) byUnit.set(it.u, []); byUnit.get(it.u).push(it); }
   return {
-    path: `questions/${c.slug}/index.html`, title: `${c.name} Practice Questions with Answers · Gradify`, ogType: "website",
-    description: `${items.length} free ${c.name} practice questions with answers and explanations, from foundation recall to stretch, grouped by topic.`,
+    path: `questions/${c.slug}/index.html`, title: firstFit([`${c.name} Practice Questions with Answers: Free Quiz`, `${c.name} Practice Questions with Answers · Gradify`, `${c.name} Practice Questions with Answers`]), ogType: "website",
+    description: ((q) => [`${items.length} free ${c.name} practice questions with answers and explanations${q ? ` for ${q}` : ""}, from recall to stretch, grouped by topic.`, `${items.length} free ${c.name} practice questions with answers and explanations, from recall to stretch, grouped by topic.`].find((d) => d.length <= 155))(qualPhrase(c.slug, c.name)),
     crumbs: [["Practice questions", "questions/"], [c.name, `questions/${c.slug}/`]],
     schema: [{ "@type": "Quiz", name: `${c.name} practice questions`, about: c.name, hasPart: items.slice(0, 60).map((m) => ({ "@type": "Question", eduQuestionType: "Multiple choice", text: plain(m.q), acceptedAnswer: { "@type": "Answer", text: plain(m.right) } })) }],
-    body: `<h1>${esc(c.name)} practice questions</h1><p class="answer">${items.length} questions from Gradify's free ${esc(c.name)} course, with the answer and why behind each reveal. Answer before you open it: that's what makes it stick.</p>
+    body: `<h1>${esc(c.name)} practice questions with answers</h1><p class="answer">${items.length} questions from Gradify's free ${esc(c.name)} course, with the answer and why behind each reveal. Answer before you open it: that's what makes it stick.</p>
     ${[...byUnit.entries()].map(([u, list]) => `<h2>${esc(u.title)}</h2><ol class="qbank">${list.map((m) => `<li><b>${inline(m.q)}</b> <small>(${LEVEL[m.d][1]})</small><ul class="opts">${[m.right, ...m.wrong].sort((a, b) => a.localeCompare(b)).map((o) => `<li>${inline(o)}</li>`).join("")}</ul><details><summary>Reveal the answer and mark-scheme reasoning</summary><p><b>${inline(m.right)}.</b> ${inline(m.why || "")} <a href="/topics/${c.slug}/${u.id}/">Revise ${esc(u.title)} →</a></p></details></li>`).join("")}</ol>`).join("")}
     ${related("Keep going", [[`topics/${c.slug}/`, `${c.name} topics`, "flashcards, quizzes and mind maps"], ...(c.hasTraps ? [[`exam-traps/${c.slug}/`, `${c.name} exam traps`, "the mistakes that cost marks"]] : []), ["guides/command-words/", "Exam command words", "what describe, explain and evaluate want"]])}`,
   };
@@ -303,7 +320,7 @@ function questionsPage(c) {
 function trapsPage(c) {
   const items = trapItems(c), byUnit = new Map(); for (const it of items) { if (!byUnit.has(it.u)) byUnit.set(it.u, []); byUnit.get(it.u).push(it); }
   return {
-    path: `exam-traps/${c.slug}/index.html`, title: `${c.name} Common Exam Mistakes and Traps · Gradify`, ogType: "website",
+    path: `exam-traps/${c.slug}/index.html`, title: firstFit([`Common ${c.name} Exam Mistakes and How to Avoid Them`, `Common ${c.name} Exam Mistakes and Traps · Gradify`, `Common ${c.name} Exam Mistakes`]), ogType: "website",
     description: `The ${items.length} most common ${c.name} mistakes, topic by topic, from Gradify's course notes: what students get wrong and the right idea instead.`,
     crumbs: [["Exam traps", "exam-traps/"], [c.name, `exam-traps/${c.slug}/`]],
     body: `<h1>${esc(c.name)}: common exam mistakes</h1><p class="answer">These are the mistakes our ${esc(c.name)} lessons warn about most, grouped by topic. Read each trap, then cover it and explain the right idea from memory.</p>

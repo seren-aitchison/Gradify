@@ -6,6 +6,9 @@ import { lessonPicker, factKey, useTool, backLink, takePicked, esc } from "./too
 import { map as loadMap, saveMap, deleteMap, uid } from "./store.js";
 import { mindElixir, elixirTheme, scene, toSvg, toPng, PALETTE } from "../maps/view.js";
 import { split } from "../maps/build.js";
+import { link, unlink, retitle } from "../data/links.js";
+import { resource, rid } from "../core/resource.js";
+import { loadIndex as lessonIndex } from "./search.js";
 
 const hash = (s) => { let h = 2166136261; for (const ch of String(s)) h = Math.imul(h ^ ch.charCodeAt(0), 16777619); return (h >>> 0).toString(36); };
 const idOf = { lesson: (slug, l) => `L${hash(`${slug}/${l}`)}`, section: (slug, l, s) => `S${hash(`${slug}/${l}/${s}`)}`, fact: (key) => `F${hash(key)}` };
@@ -40,8 +43,22 @@ export async function renderMapMaker(view, ctx, [id = "new"]) {
   const fit = () => fitTo(mind, view.querySelector(".tl-stage"));
   requestAnimationFrame(fit);
 
-  let timer = 0;
-  const save = () => { clearTimeout(timer); timer = setTimeout(() => { m = saveMap({ ...m, title: view.querySelector(".tl-title").value.trim() || "My mind map", data: mind.getData() }); }, 300); };
+  // where the map came from: a "made from" link to each lesson it has facts from (kit/data/links.js), so the lesson
+  // shows the map in its Connections and the map shows its lessons. It goes when the lesson's last fact goes.
+  const mapRes = () => resource(rid("map", m.id), { title: m.title, sub: "Mind map", href: `${location.pathname}#/tools/map/${m.id}` });
+  async function source(h, on) {
+    let page = h.c?.page;
+    if (!page && h.c?.slug) page = (await lessonIndex().catch(() => ({ courses: [] }))).courses.find((c) => c.slug === h.c.slug)?.page;
+    if (!page || !h.lesson) return;
+    const L = resource(rid("lesson", page, h.lesson), { title: h.title, subject: h.c.name, sub: h.c.name ? `${h.c.name} · lesson` : "Lesson", href: `${page}#/lesson/${h.lesson}` });
+    if (on) link(mapRes(), L, { by: "source" }); else unlink(mapRes().rid, L.rid);
+  }
+  let timer = 0, linkedTitle = m.title;
+  const save = () => { clearTimeout(timer); timer = setTimeout(() => {
+    m = saveMap({ ...m, title: view.querySelector(".tl-title").value.trim() || "My mind map", data: mind.getData() });
+    // renamed: its links say the new name
+    if (m.title !== linkedTitle) { linkedTitle = m.title; retitle(mapRes().rid, m.title); }
+  }, 300); };
   mind.bus.addListener("operation", save);
   view.querySelector(".tl-title").addEventListener("input", (e) => { const d = mind.getData(); d.nodeData.topic = e.target.value || "My mind map"; mind.refresh(d); save(); });
 
@@ -56,10 +73,12 @@ export async function renderMapMaker(view, ctx, [id = "new"]) {
       let S = find(L, sid)?.n;
       if (!S) { S = { id: sid, topic: g.section, children: [] }; L.children.push(S); }
       if (!find(S, fid)) S.children.push({ id: fid, topic: f.short || split(f.title).topic, ...(f.text !== f.short ? { note: f.text } : {}) });
+      source(h, true);
     } else {
       const hit = find(root, fid); if (hit) hit.p.children = hit.p.children.filter((c) => c.id !== fid);
       // an emptied section or lesson goes too
       for (const pid of [sid, lid]) { const x = find(root, pid); if (x && !x.n.children.length && x.p) x.p.children = x.p.children.filter((c) => c.id !== pid); }
+      if (!find(root, lid)) source(h, false);
     }
     mind.refresh(d); save();
   };
@@ -67,7 +86,7 @@ export async function renderMapMaker(view, ctx, [id = "new"]) {
   // facts sent from the search page
   const picked = takePicked();
   if (picked.length) {
-    for (const p of picked) toggle({ title: p.lesson, lesson: p.lessonId, c: { slug: p.slug } }, { section: p.section }, p, true);
+    for (const p of picked) toggle({ title: p.lesson, lesson: p.lessonId, c: { slug: p.slug, name: p.course } }, { section: p.section }, p, true);
     requestAnimationFrame(fit);
   }
 

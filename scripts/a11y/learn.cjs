@@ -77,7 +77,8 @@ const server = http.createServer((req, res) => {
     const order = [];
     for (let i = 0; i < 60; i++) { await page.keyboard.press("Tab"); const t = await page.evaluate(() => { const a = document.activeElement; return a?.closest(".aq") ? "question" : a?.classList.contains("ls-go") ? "continue" : null; }); if (t && order.at(-1) !== t) order.push(t); if (t === "continue") break; }
     K.question_before_continue = order[0] === "question" && order.includes("continue");
-    const opts = page.locator(".ls-check .aq button, .ls-check .aq input");
+    // an answer option (a choice, a checkbox or a number), not the question's Check button or its menu
+    const opts = page.locator(".ls-check .aq .aq-opts button, .ls-check .aq .aq-checks input, .ls-check .aq .aq-num input");
     if (await opts.count()) {
       await opts.last().click(); const submit = page.locator(".ls-check .aq button", { hasText: /check|submit/i }); if (await submit.count()) await submit.first().click(); await settle(page);
       K.continue_unlocks = await page.evaluate(() => document.querySelector(".ls-go")?.getAttribute("aria-disabled") !== "true");

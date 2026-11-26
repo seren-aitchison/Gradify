@@ -21,7 +21,7 @@ const REPO = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 export const PUBLISH = {
   files: [
     ".nojekyll", "CNAME", "404.html", "index.html", "app.html", "journey.html", "explore.html", "privacy.html", "terms.html", "quality.html", "pricing.html", "status.html", "ai-usage.html",
-    "robots.txt", "sitemap.xml", "manifest.webmanifest", "sw.js", "gradify.config.js",
+    "robots.txt", "favicon.ico", "sitemap.xml", "manifest.webmanifest", "sw.js", "gradify.config.js",
     // search pages and files written by scripts/build-seo.mjs (the IndexNow key file proves the site owns the key)
     "about.html", "ambassadors.html", "site-map.html", "llms.txt", "llms-full.txt", "feed.xml", "send.html", "e0ae881afb2339548688d1f7ff91a66c.txt",
   ],

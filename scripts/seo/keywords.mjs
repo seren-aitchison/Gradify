@@ -56,6 +56,14 @@ export const CLUSTERS = [
   { cluster: "music theory", queries: ["learn music theory online", "music theory free course"], dest: "musicgradify/", intent: "learn", demand: "medium", competition: "medium", fit: "partial", stage: 4 },
   { cluster: "dissertation help", queries: ["how to plan a dissertation", "phd literature review organisation"], dest: "postgradify/", intent: "learn", demand: "medium", competition: "medium", fit: "partial", stage: 4 },
   { cluster: "university study skills", queries: ["university revision tips", "study skills for university"], dest: "undergradify/", intent: "learn", demand: "medium", competition: "medium", fit: "strong", stage: 2 },
+  // lesson and topic pages (scripts/seo/serp.mjs): the shapes of search that the pages ranking today are titled for,
+  // from a search sample on 2026-11-25 (Save My Exams titles "<topic> (<board> <level> <subject>): Revision Note"; law
+  // students search "<case> case summary"). One example destination per shape.
+  { cluster: "topic revision notes", queries: ["cell biology revision notes", "cell structure notes", "cell biology flashcards"], dest: "topics/biology/u02/", intent: "learn", demand: "high", competition: "high", sampled: "2026-11-25", fit: "partial", stage: 2 },
+  { cluster: "lesson revision notes with a diagram", queries: ["animal cell diagram labelled", "animal cell revision notes"], dest: "lessons/biology/u02-04/", intent: "learn", demand: "high", competition: "high", sampled: "2026-11-25", fit: "partial", stage: 2 },
+  { cluster: "law key case summaries", queries: ["pepper v hart case summary", "statutory interpretation key cases", "statutory interpretation notes"], dest: "lessons/law/u01-12/", intent: "learn", demand: "medium", competition: "medium", sampled: "2026-11-25", fit: "strong", stage: 2 },
+  { cluster: "subject practice questions", queries: ["law practice questions with answers", "sqe1 practice questions free"], dest: "questions/law/", intent: "do", demand: "medium", competition: "medium", fit: "partial", stage: 2 },
+  { cluster: "chemistry worked examples", queries: ["balancing equations worked examples", "how to balance chemical equations"], dest: "lessons/chemistry/u01-11/", intent: "learn", demand: "high", competition: "high", sampled: "2026-11-25", fit: "partial", stage: 2 },
   { cluster: "internships and work experience", queries: ["work experience for students uk", "virtual work experience"], dest: "internshipgradify/", intent: "find", demand: "medium", competition: "high", fit: "partial", stage: 4 },
 ];
 

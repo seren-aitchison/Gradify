@@ -3,10 +3,12 @@
 //   Places   this tab's trail of meaningful locations ("gradify.places", per tab), each with its scroll position.
 //            Going back to a place puts you back where you were on it; "Back to where I was" offers the last one.
 //   Recent   the last places opened anywhere in Gradify on this device ("gradify.visited"): courses, lessons, tools.
-//   Pins     what the learner pinned: courses, lessons, resources ("gradify.pins"), in the order they chose.
+//   Pins     what the learner pinned: courses, lessons, resources, in the order they chose. Part of the learner's
+//            record (kit/data/learner-state.js, kind "pin"), so they follow the learner to every device.
 //
 // The list functions are pure (tests/ui.test.mjs); the small wrappers below read and write this device's storage.
 import { readJson, writeJson, local, session } from "./store.js";
+import * as LS from "../data/learner-state.js";
 
 // ---------- the trail (pure) ----------
 /**
@@ -62,7 +64,7 @@ export function move(list = [], from, to) {
 }
 
 // ---------- this device ----------
-const TRAIL = "gradify.places", RECENT = "gradify.visited", PINS = "gradify.pins";
+const TRAIL = "gradify.places", RECENT = "gradify.visited";
 const listeners = new Set();
 const changed = () => listeners.forEach((f) => { try { f(); } catch { /* a listener's own problem */ } });
 
@@ -74,10 +76,19 @@ export const backPlace = (opts) => backTarget(trail(), opts);
 export const recent = () => readJson(RECENT, [], local());
 export function visit(item) { writeJson(RECENT, addRecent(recent(), item)); changed(); }
 
-export const pins = () => readJson(PINS, [], local());
+export const pins = () => LS.list("pin").map((e) => e.value).sort((a, b) => (a.order ?? 0) - (b.order ?? 0)).map(({ order, ...p }) => p);
 export const pinned = (href) => isPinned(pins(), href);
-export function setPins(list) { writeJson(PINS, list); changed(); }
+/** the pins, in this order: one change to the learner's record (what's no longer there is removed) */
+export function setPins(list) {
+  const keep = new Set(list.map((p) => p.href));
+  LS.batch((b) => {
+    list.forEach((p, i) => b.put("pin", p.href, { ...p, order: i }));
+    for (const e of LS.list("pin")) if (!keep.has(e.key)) b.del("pin", e.key);
+  });   // the learner's record tells its subscribers, which redraws whatever shows the pins
+}
 export function pin(item) { const r = togglePin(pins(), item); setPins(r.list); return r; }
 export function onPlacesChange(f) { listeners.add(f); return () => listeners.delete(f); }
 // another tab pinned something: keep this one in step
-globalThis.addEventListener?.("storage", (e) => { if (e.key === PINS || e.key === RECENT) changed(); });
+globalThis.addEventListener?.("storage", (e) => { if (e.key === RECENT) changed(); });
+// pins changed in another tab, or arrived from another device
+LS.subscribe((kinds) => { if (!kinds || kinds.includes("pin")) changed(); });

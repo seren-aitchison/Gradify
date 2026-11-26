@@ -8,6 +8,7 @@
 import { readFile } from "node:fs/promises";
 import { readdirSync, existsSync } from "node:fs";
 import { esc, fitTitle, fitDesc } from "./shell.mjs";
+import { qualPhrase, qualTitle, audience, firstFit, titleCase } from "./serp.mjs";
 import { SITES, slugOf } from "../../kit/core/site.js";
 import { COURSES as COVERAGE, QUALIFICATIONS, STATUS } from "../../kit/curriculum/coverage.js";
 
@@ -62,7 +63,7 @@ export function overviewHtml(api, { leads = new Map(), lessonHref = (l) => `#/le
   const intro = `${esc(api.site)}'s free ${esc(api.name)} course runs from <b>${esc(units[0].title)}</b> to <b>${esc(units.at(-1).title)}</b>: ${n(lessons, "lesson")} in ${n(units.length, u1)}, each with notes, flashcards and check questions${levels.length ? ` at three levels (${levels.map(esc).join(", ")})` : ""}.${site?.who ? ` It's written for ${esc(site.who.charAt(0).toLowerCase() + site.who.slice(1))}.` : ""}`;
   return `${START}
     <section class="course-overview" id="course-syllabus" aria-labelledby="co-ov-h">
-      <h1 id="co-ov-h" data-static-h1>${esc(api.name)}: a free course on ${esc(api.site)}</h1>
+      <h1 id="co-ov-h" data-static-h1>Free ${esc(api.name)} course: revision notes, flashcards and questions</h1>
       <p class="co-ov-lead">${intro}</p>
       ${api.notice ? `<p class="co-ov-notice">${plain(api.notice)}</p>` : ""}
       <h2>Course overview</h2>
@@ -90,15 +91,20 @@ export function withOverview(html, api, opts) {
   if (i !== -1 && j !== -1) html = html.slice(0, i) + block + html.slice(j + END.length);
   else html = html.replace('<div id="course"></div>', `<div id="course"></div>\n    ${block}`);
   const lessons = api.units.reduce((s, u) => s + u.lessons.length, 0);
-  const title = fitTitle(`${api.name} Course: Free Lessons and Flashcards · ${api.site}`);
-  const desc = fitDesc(`Free ${api.name} course on ${api.site}: ${lessons} lessons from ${api.units[0].title} to ${api.units.at(-1).title}, with flashcards, check questions and practice exams.`);
+  // search wording (scripts/seo/serp.mjs): course pages answer "free <subject> course (online)", the topics hub answers
+  // "<subject> revision notes", so the two never compete for one search
+  const q = qualPhrase(api.slug, api.name), who = audience(api.site), exams = (api.exams || []).length;
+  const Q = titleCase(q), qt = qualTitle(api.slug), n = api.name, L = lessons.toLocaleString("en-GB");
+  const title = firstFit([...(q ? [`Free ${n} Course for ${Q} · ${api.site}`, `Free ${n} Course for ${Q}`, `Free ${n} Course: ${qt} · ${api.site}`, `Free ${n} Course: ${qt}`] : []), `Free ${n} Course Online: Notes and Flashcards · ${api.site}`, `Free ${n} Course Online: Notes and Flashcards`, fitTitle(`Free ${n} Course · ${api.site}`)]);
+  const forWho = q ? ` for ${q}` : who ? ` for ${who}` : "", has = `revision notes, flashcards, practice questions${exams ? " and practice exams" : ""}`;
+  const desc = [`Free online ${n} course${forWho}: ${L} lessons from ${api.units[0].title} to ${api.units.at(-1).title}, with ${has}.`, `Free online ${n} course${forWho}: ${L} lessons with ${has}.`, ...(qt ? [`Free online ${n} course for ${qt}: ${L} lessons with ${has}.`] : []), `Free online ${n} course: ${L} lessons with ${has}.`].find((d) => d.length <= 155) || fitDesc(`Free online ${n} course: ${L} lessons with ${has}.`);
   const a = (s) => esc(s);
   html = html.replace(/<title>[^<]*<\/title>/, `<title>${a(title)}</title>`)
     .replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${a(desc)}">`)
     .replace(/<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="${a(title)}">`)
     .replace(/<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${a(desc)}">`);
   // Course structured data, once
-  const ld = { "@context": "https://schema.org", "@type": "Course", name: api.name, description: desc, url: `https://getgradify.com${opts.page}`, provider: { "@type": "EducationalOrganization", name: "Gradify", url: "https://getgradify.com/" }, isAccessibleForFree: true, inLanguage: "en-GB", hasCourseInstance: { "@type": "CourseInstance", courseMode: "online", courseWorkload: `PT${Math.max(1, Math.round(lessons * 0.25))}H` }, offers: { "@type": "Offer", price: "0", priceCurrency: "GBP", category: "Free" }, syllabusSections: api.units.map((u) => ({ "@type": "Syllabus", name: `${api.unitWord || "Unit"} ${u.n}: ${u.title}` })) };
+  const ld = { "@context": "https://schema.org", "@type": "Course", name: api.name, description: desc, url: `https://getgradify.com${opts.page}`, provider: { "@type": "EducationalOrganization", name: "Gradify", url: "https://getgradify.com/" }, isAccessibleForFree: true, inLanguage: "en-GB", ...(html.match(/<meta property="og:image" content="([^"]+)"/) ? { image: html.match(/<meta property="og:image" content="([^"]+)"/)[1] } : {}), hasCourseInstance: { "@type": "CourseInstance", courseMode: "online", courseWorkload: `PT${Math.max(1, Math.round(lessons * 0.25))}H` }, offers: { "@type": "Offer", price: "0", priceCurrency: "GBP", category: "Free" }, syllabusSections: api.units.map((u) => ({ "@type": "Syllabus", name: `${api.unitWord || "Unit"} ${u.n}: ${u.title}` })) };
   const tag = `<script type="application/ld+json" data-course-ld>${JSON.stringify(ld).replace(/</g, "\\u003c")}</script>`;
   html = /<script type="application\/ld\+json" data-course-ld>[\s\S]*?<\/script>/.test(html) ? html.replace(/<script type="application\/ld\+json" data-course-ld>[\s\S]*?<\/script>/, tag) : html.replace("</head>", `  ${tag}\n</head>`);
   return html;
