@@ -229,6 +229,12 @@ export function wireBoard(view, ctx, d = null) {
     if (!w.mount && fresh.querySelector("form, input, textarea, select, button:not(.wd-hb):not(.wd-fold):not([data-wretry])")) { ctx.rerender(); return; }
     el.replaceWith(fresh); set(fresh, folded().has(id), false); mountOne(fresh);
   }
+  // the view stays between redraws of Today: the board's last listeners go before new ones are added, so one click
+  // is one action however often the page has redrawn
+  view._boardWired?.abort();
+  const wired = new AbortController(); view._boardWired = wired;
+  const on = { signal: wired.signal };
+  addEventListener("hashchange", () => wired.abort(), { once: true, signal: wired.signal });   // and when Today is left
   view.addEventListener("click", async (e) => {
     const f = e.target.closest("[data-wfold]"); if (f) { e.preventDefault(); const el = f.closest("article.wd"); set(el, !el.classList.contains("wd-folded")); return; }
     const r = e.target.closest("[data-wretry], [data-wrefresh]"); if (r) { e.preventDefault(); refresh(r.dataset.wretry || r.dataset.wrefresh); return; }
@@ -251,12 +257,12 @@ export function wireBoard(view, ctx, d = null) {
     }
     const pr = e.target.closest("[data-preset]");
     if (pr) { const p = PRESETS.find(([id]) => id === pr.dataset.preset); if (p) save(p[3], { title: `${p[1]} board`, sub: `${p[3].length} widgets` }); }
-  });
+  }, on);
   view.addEventListener("change", (e) => {
     const s = e.target.closest("[data-wset]"); if (!s) return;
     setSetting(s.dataset.wset, s.dataset.key, s.value);
     refresh(s.dataset.wset);
-  });
+  }, on);
   const form = view.querySelector("#widget-form");
   form?.addEventListener("submit", async (e) => {
     e.preventDefault();

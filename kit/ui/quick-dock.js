@@ -116,14 +116,18 @@ export function mountQuickDock({ app: appPath = "/app.html", where = document.bo
     if (e.target.closest("[data-qsearch]")) { close(); document.dispatchEvent(new KeyboardEvent("keydown", { key: "k", metaKey: isMac(), ctrlKey: !isMac(), bubbles: true })); }
   });
   dock.addEventListener("keydown", (e) => { if (e.key === "Escape" && !panel.hidden) { e.stopPropagation(); close(true); } });
+  // one save at a time: a second Enter while the first is saving doesn't add the note twice
+  let saving = false;
   dock.querySelector('[data-qpane="note"]').addEventListener("submit", async (e) => {
-    e.preventDefault(); const ta = e.target.querySelector("textarea"), sent = ta.value;
+    e.preventDefault(); if (saving) return; const ta = e.target.querySelector("textarea"), sent = ta.value;
     // only what was sent is cleared: anything typed while it saved stays
-    try { if (await quickNote(sent)) { if (ta.value === sent) ta.value = ""; toast({ html: `Added to today's notes. <a href="${esc(app)}#/notes/daily">Open</a>` }); } } catch (err) { toast(`Couldn't save the note: ${err.message || "try again"}`); }
+    saving = true;
+    try { if (await quickNote(sent)) { if (ta.value === sent) ta.value = ""; toast({ html: `Added to today's notes. <a href="${esc(app)}#/notes/daily">Open</a>` }); } } catch (err) { toast(`Couldn't save the note: ${err.message || "try again"}`); } finally { saving = false; }
   });
   dock.querySelector('[data-qpane="capture"]').addEventListener("submit", async (e) => {
-    e.preventDefault(); const inp = e.target.querySelector("input"), sent = inp.value;
-    try { const r = await capture(sent); if (r) { if (inp.value === sent) inp.value = ""; toast(r.where === "collection" ? { html: `Saved to <a href="${esc(app)}#/collections/${esc(r.cid)}">Captured</a>.` } : "Added to today's notes."); } } catch (err) { toast(`Couldn't capture it: ${err.message || "try again"}`); }
+    e.preventDefault(); if (saving) return; const inp = e.target.querySelector("input"), sent = inp.value;
+    saving = true;
+    try { const r = await capture(sent); if (r) { if (inp.value === sent) inp.value = ""; toast(r.where === "collection" ? { html: `Saved to <a href="${esc(app)}#/collections/${esc(r.cid)}">Captured</a>.` } : "Added to today's notes."); } } catch (err) { toast(`Couldn't capture it: ${err.message || "try again"}`); } finally { saving = false; }
   });
   addEventListener("gradify-timer", paintTimer);
   addEventListener("storage", (e) => { if (e.key === KEY) paintTimer(); });
