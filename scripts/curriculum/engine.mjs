@@ -9,6 +9,7 @@
 //   node scripts/curriculum/engine.mjs review <specId>         a review sheet (CSV, local: it holds the statement text)
 //   node scripts/curriculum/engine.mjs apply <specId> <file.csv>   record a reviewer's decisions from a review sheet
 //   node scripts/curriculum/engine.mjs inventory <subject>     every lesson with objectives, diagrams and questions
+//   node scripts/curriculum/engine.mjs refresh <specId>        rewrite everything derived from the map (reports, pages)
 //   node scripts/curriculum/engine.mjs report <subject>        docs/curriculum/<SUBJECT>-COVERAGE.md and one report per
 //                                                              imported specification
 //
@@ -24,6 +25,10 @@ import { execFileSync } from "node:child_process";
 import { lessonsOf } from "../growth/lesson-readiness.mjs";
 import { parseTable, readText } from "../growth/sources.mjs";
 import { SPECS, BODIES, QUAL_TYPES, specsFor, nationsOf, NATIONS } from "../../kit/curriculum/uk.js";
+// static, not a dynamic import inside the command line below: spec-view.mjs imports this file, and a dynamic import
+// while this module's top-level await is running would wait on itself forever. Both sides only call each other's
+// functions, so the static cycle is safe
+import { refreshLinks } from "./spec-view.mjs";
 import { coverageReport, claimFor, checkMap, COVERAGE } from "../../kit/curriculum/mapping.js";
 import { pdfLayout, fileHash, textHash } from "./layout.mjs";
 import { extractAqa } from "./aqa.mjs";
@@ -34,8 +39,11 @@ export const indexPath = (id) => new URL(`kit/curriculum/specs/${id}.json`, root
 export const sourcePath = (id) => new URL(`data/curriculum/sources/${id}.pdf`, root);
 export const reviewPath = (id) => new URL(`data/curriculum/review/${id}.csv`, root);
 export const mapPath = (id) => new URL(`kit/curriculum/maps/${id}.json`, root);
-const load = (u) => (existsSync(u) ? JSON.parse(readFileSync(u, "utf8")) : null);
-const write = (u, data) => { mkdirSync(new URL("./", u), { recursive: true }); writeFileSync(u, typeof data === "string" ? data : `${JSON.stringify(data, null, 1)}\n`); };
+// under GRADIFY_OUT (tests), a file this engine would write in the repository goes under that folder instead, so the
+// command line can be tested end to end without touching the repository
+const outOf = (u) => (process.env.GRADIFY_OUT && u.href.startsWith(root.href) ? new URL(u.href.slice(root.href.length), new URL(`file://${process.env.GRADIFY_OUT.replace(/\/$/, "")}/`)) : u);
+const load = (u) => { const o = outOf(u), f = existsSync(o) ? o : u; return existsSync(f) ? JSON.parse(readFileSync(f, "utf8")) : null; };   // GRADIFY_OUT overlays the repository
+const write = (u, data) => { u = outOf(u); mkdirSync(new URL("./", u), { recursive: true }); writeFileSync(u, typeof data === "string" ? data : `${JSON.stringify(data, null, 1)}\n`); };
 export const loadIndex = (id) => load(indexPath(id));
 /** the statements with their text when they've been imported here, else the committed index (refs, no text) */
 export const loadStatements = (id) => load(statementsPath(id)) || loadIndex(id);
@@ -218,9 +226,11 @@ export function mergeProposals(map, proposals, { keep = 0.7 } = {}) {
     if (["verified", "ai-confirmed", "rejected"].includes(out.links[p.ref]?.status)) continue;
     const best = p.candidates[0], use = p.candidates.filter((c) => c.band !== "weak" && c.score >= keep * (best?.score || 0));
     const evidence = (c) => ({ id: c.id, coverage: "partial", confidence: c.band, score: c.score, share: c.share, matched: c.matched.slice(0, 8) });
-    out.links[p.ref] = use.length
+    // a withdrawn verification and an earlier AI check stay with the statement through new proposals
+    const was = out.links[p.ref], history = { ...(was?.revoked ? { revoked: was.revoked } : {}), ...(was?.aiCheck ? { aiCheck: was.aiCheck } : {}) };
+    out.links[p.ref] = { ...(use.length
       ? { status: "proposed", proposedBy: MATCHER, confidence: use[0].band, lessons: use.map(evidence) }
-      : { status: "proposed", proposedBy: MATCHER, confidence: "none", lessons: [], gap: "likely gap: no lesson shares enough of the statement's vocabulary (to confirm)", nearest: p.candidates.slice(0, 2).map(evidence), ...(p.unmatched.length ? { notInGradify: p.unmatched.slice(0, 8) } : {}) };
+      : { status: "proposed", proposedBy: MATCHER, confidence: "none", lessons: [], gap: "likely gap: no lesson shares enough of the statement's vocabulary (to confirm)", nearest: p.candidates.slice(0, 2).map(evidence), ...(p.unmatched.length ? { notInGradify: p.unmatched.slice(0, 8) } : {}) }), ...history };
   }
   return out;
 }
@@ -242,16 +252,20 @@ export async function proposeFor(id) {
 
 // ---------- review: a sheet per specification, and applying a reviewer's decisions ----------
 const cell = (v) => { const t = String(v ?? ""); return /[",\n]/.test(t) ? `"${t.replace(/"/g, '""')}"` : t; };
-export const REVIEW_COLUMNS = ["ref", "section", "section_title", "pdf_page", "kind", "tier", "biology_only", "statement", "aqa_limits", "matcher_confidence", "proposal_1", "evidence_1", "proposal_2", "evidence_2", "proposal_3", "evidence_3", "decision", "lessons", "note", "reviewer", "reviewed_on"];
+export const REVIEW_COLUMNS = ["ref", "section", "section_title", "pdf_page", "kind", "tier", "biology_only", "statement", "aqa_limits", "matcher_confidence", "ai_check", "proposal_1", "evidence_1", "proposal_2", "evidence_2", "proposal_3", "evidence_3", "decision", "lessons", "note", "reviewer", "reviewed_on"];
 /**
  * A review sheet: one row per statement, with the statement, AQA's limits on it, the matcher's proposals and their
  * evidence, and empty decision columns. Holds the specification's text, so it stays local (data/curriculum/review/).
- * A reviewer fills in, per row:
- *   decision     full | partial | missing (blank: not reviewed yet, stays awaiting)
+ * ai_check shows what an AI reviewer said, if one has looked: evidence only, never a decision. A reviewer fills in, per
+ * row, for that statement alone (confirming one statement never confirms another mapped to the same lesson):
+ *   decision     full | partial | missing (blank: not reviewed yet, stays awaiting), or revoke to withdraw an
+ *                earlier verification (the statement is uncovered again and will be written)
  *   lessons      the lesson ids that teach it, space-separated (blank: the proposed ones). For "partial", the ids
  *                that teach part of it; mark one as fully teaching it with "=full" ("u02-03=full u02-05")
- *   note         for partial: what isn't taught; for missing: what a lesson would need to teach
+ *   note         always: for full, the evidence (which part of the lesson teaches it); for partial, what isn't taught;
+ *                for missing, what a lesson would need to teach; for revoke, why
  *   reviewer, reviewed_on (YYYY-MM-DD)
+ * Only "full" counts as taught and stops the content engine writing the statement (scripts/content/mapstore.mjs).
  */
 export function reviewSheet(st, map, lessonsById) {
   const titles = new Map((st.sections || []).map((x) => [x.ref, x.title]));
@@ -260,7 +274,8 @@ export function reviewSheet(st, map, lessonsById) {
     const link = map?.links?.[x.ref] || {}, cand = link.lessons?.length ? link.lessons : link.nearest || [];
     const done = link.status === "verified";
     const props = [0, 1, 2].flatMap((i) => { const c = cand[i]; return c ? [lessonLine(c), `${c.confidence || ""}; score ${c.score}; shares ${Math.round((c.share || 0) * 100)}% of its distinctive words: ${(c.matched || []).join(", ")}`] : ["", ""]; });
-    return [x.ref, x.section, titles.get(x.section) || "", x.page, x.kind, x.higherTier ? "higher" : "both", x.biologyOnly ? "yes" : "no", x.text, (x.scope || []).join(" "), link.lessons?.length ? link.confidence : "likely gap", ...props,
+    const ai = link.status === "ai-confirmed" ? `yes: ${(link.lessons || []).map((l) => `${l.id}${l.objectives?.length ? ` @${l.objectives.join(",")}` : ""}`).join(" ")} (${link.by}, ${link.on})` : link.status === "rejected" ? `no: ${(link.missing || []).join("; ")} (${link.by}, ${link.on})` : link.aiCheck ? `${link.aiCheck.verdict} (${link.aiCheck.by}, ${link.aiCheck.on})` : "";
+    return [x.ref, x.section, titles.get(x.section) || "", x.page, x.kind, x.higherTier ? "higher" : "both", x.biologyOnly ? "yes" : "no", x.text, (x.scope || []).join(" "), link.status === "verified" ? link.matcherConfidence || "" : link.lessons?.length || link.candidates?.length ? link.confidence : "likely gap", ai, ...props,
       done ? (link.lessons.length ? (link.lessons.some((l) => l.coverage === "full") ? "full" : "partial") : "missing") : "", done ? link.lessons.map((l) => (l.coverage === "full" ? `${l.id}=full` : l.id)).join(" ") : "", done ? (link.gap || link.lessons.map((l) => l.note).filter(Boolean).join("; ")) : "", done ? link.reviewer : "", done ? link.reviewedOn : ""];
   });
   return `${[REVIEW_COLUMNS, ...rows].map((r) => r.map(cell).join(",")).join("\n")}\n`;
@@ -271,7 +286,7 @@ export function reviewSheet(st, map, lessonsById) {
  * Every decision is checked: a known statement, known lessons, a reviewer and a date, a note for partial and missing.
  * Returns { map, applied, problems }; nothing is applied when there are problems.
  */
-export function applyReview(st, map, rows, lessonIds) {
+export function applyReview(st, map, rows, lessonIds, { now = new Date() } = {}) {
   const out = { ...map, links: { ...(map.links || {}) } }, problems = [], refs = new Set(st.statements.map((x) => x.ref));
   if (map.specVersion && map.specVersion !== st.version) problems.push(`the map is for version ${map.specVersion}, the statements are version ${st.version}: propose again first`);
   let applied = 0;
@@ -279,11 +294,22 @@ export function applyReview(st, map, rows, lessonIds) {
     const d = (r.decision || "").trim().toLowerCase(); if (!d) continue;
     const ref = (r.ref || "").trim(), at = `${ref || "(no ref)"}`;
     if (!refs.has(ref)) { problems.push(`${at}: not a statement of ${st.spec}`); continue; }
-    if (!["full", "partial", "missing"].includes(d)) { problems.push(`${at}: decision must be full, partial or missing, not "${r.decision}"`); continue; }
+    if (!["full", "partial", "missing", "revoke"].includes(d)) { problems.push(`${at}: decision must be full, partial, missing or revoke, not "${r.decision}"`); continue; }
     if (!(r.reviewer || "").trim() || !/^\d{4}-\d{2}-\d{2}$/.test((r.reviewed_on || "").trim())) { problems.push(`${at}: a decision needs reviewer and reviewed_on (YYYY-MM-DD)`); continue; }
     const note = (r.note || "").trim();
-    if (d !== "full" && !note) { problems.push(`${at}: ${d} needs a note (${d === "partial" ? "what isn't taught" : "what a lesson would need to teach"})`); continue; }
+    // every decision records why: the evidence for full, what's missing for partial and missing, the reason for revoke
+    if (!note) { problems.push(`${at}: ${d} needs a note (${{ full: "the evidence: which part of the lesson teaches it", partial: "what isn't taught", missing: "what a lesson would need to teach", revoke: "why the verification is withdrawn" }[d]})`); continue; }
     const prior = out.links[ref] || {};
+    const recordedAt = now.toISOString();
+    // an AI check made before this decision is kept beside it, as evidence, never as the decision
+    const aiCheck = prior.status === "ai-confirmed" || prior.status === "rejected" ? { verdict: prior.status === "ai-confirmed" ? `yes: ${(prior.lessons || []).map((l) => l.id).join(" ")}` : `no: ${(prior.missing || []).join("; ")}`, by: prior.by, on: prior.on } : prior.aiCheck;
+    if (d === "revoke") {
+      if (prior.status !== "verified") { problems.push(`${at}: revoke needs an earlier verification to withdraw (this statement is ${prior.status || "unmapped"})`); continue; }
+      const was = { reviewer: prior.reviewer, reviewedOn: prior.reviewedOn, lessons: prior.lessons, ...(prior.note ? { note: prior.note } : {}), ...(prior.gap ? { gap: prior.gap } : {}) };
+      out.links[ref] = { status: "proposed", ...(prior.matcherConfidence ? { confidence: prior.matcherConfidence } : {}), lessons: (prior.lessons || []).map((l) => ({ id: l.id, coverage: "partial" })), ...(aiCheck ? { aiCheck } : {}),
+        revoked: [...(prior.revoked || []), { reviewer: r.reviewer.trim(), on: r.reviewed_on.trim(), recordedAt, why: note, was }] };
+      applied++; continue;
+    }
     const given = (r.lessons || "").trim().split(/[\s,;]+/).filter(Boolean).map((t) => { const [id, cov] = t.split("="); return { id, full: cov === "full" }; });
     const ids = d === "missing" ? [] : given.length ? given : (prior.lessons || []).map((l) => ({ id: l.id, full: false }));
     const unknown = ids.filter((l) => !lessonIds.has(l.id)).map((l) => l.id);
@@ -294,7 +320,8 @@ export function applyReview(st, map, rows, lessonIds) {
     const anyMarked = ids.some((l) => l.full);
     const lessons = ids.map((l) => ({ id: l.id, coverage: d === "full" && (!anyMarked || l.full) ? "full" : "partial", ...(d === "partial" ? { note } : {}) }));
     const sx = st.statements.find((x) => x.ref === ref), hash = sx?.hash || (sx?.text ? textHash(sx.text) : undefined);
-    out.links[ref] = { status: "verified", ...(hash ? { hash } : {}), reviewer: r.reviewer.trim(), reviewedOn: r.reviewed_on.trim(), lessons, ...(d === "missing" ? { gap: note } : d === "full" && note ? { note } : {}), ...(prior.confidence ? { matcherConfidence: prior.confidence } : {}) };
+    out.links[ref] = { status: "verified", ...(hash ? { hash } : {}), reviewer: r.reviewer.trim(), reviewedOn: r.reviewed_on.trim(), recordedAt, lessons, ...(d === "missing" ? { gap: note } : d === "full" ? { note } : {}),
+      ...(prior.confidence || prior.matcherConfidence ? { matcherConfidence: prior.confidence || prior.matcherConfidence } : {}), ...(aiCheck ? { aiCheck } : {}), ...(prior.revoked ? { revoked: prior.revoked } : {}) };
     applied++;
   }
   problems.push(...checkMap(st, out, lessonIds));
@@ -452,6 +479,32 @@ ${statementRows.join("\n")}
 `;
 }
 
+/**
+ * Rewrite everything derived from a framework's map: the subject's coverage reports and the specification pages'
+ * links. Each output is tried on its own; any that fails is named, with the command that redoes it, and the result is
+ * false, so a caller can't carry on as if the figures were current. Returns true when everything is up to date.
+ */
+export async function refreshDerived(fw, subject, date, { log = console.log, warn = console.error, steps = null } = {}) {
+  const failed = [];
+  steps ||= [
+    [`docs/curriculum coverage reports for ${subject}`, async () => { for (const f of await writeReports(subject, date)) log(`Updated ${f}`); }],
+    [`specification page links for ${fw} (kit/specs/*.links.js)`, async () => { const views = await refreshLinks(fw); if (views.length) log(`Specification pages updated: ${views.map((v) => `kit/specs/${v}.links.js`).join(", ")}.`); }],
+  ];
+  for (const [what, run] of steps) { try { await run(); } catch (e) { failed.push([what, e]); } }
+  if (!failed.length) return true;
+  warn(`STALE COVERAGE: the map for ${fw} is updated, but ${failed.length === 1 ? "this derived output was" : "these derived outputs were"} not rewritten, so ${failed.length === 1 ? "it shows" : "they show"} the old figures:\n${failed.map(([what, e]) => `  - ${what}: ${e.message}`).join("\n")}\nFix the cause, then run: node scripts/curriculum/engine.mjs refresh ${fw}\nDon't commit the map without its derived files (the tests check the specification pages against the map).`);
+  return false;
+}
+
+/** write a subject's coverage report and one per imported specification; returns the files written */
+async function writeReports(subject, date) {
+  const files = [`docs/curriculum/${subject.toUpperCase()}-COVERAGE.md`];
+  write(new URL(files[0], root), await subjectReport(subject, date));
+  const inv = await inventory(subject);
+  for (const s of specsFor(subject)) { const md = specReport(s.id, inv, date); if (md) { write(new URL(`docs/curriculum/${reportName(s.id)}`, root), md); files.push(`docs/curriculum/${reportName(s.id)}`); } }
+  return files;
+}
+
 if (import.meta.url === `file://${process.argv[1]}`) {
   const [cmd, a, b] = process.argv.slice(2), arg = (k) => { const i = process.argv.indexOf(k); return i > 0 ? process.argv[i + 1] : null; };
   const date = new Date().toISOString().slice(0, 10);
@@ -469,15 +522,20 @@ if (import.meta.url === `file://${process.argv[1]}`) {
       write(reviewPath(a), reviewSheet(st, loadMap(a), new Map(inv.map((l) => [l.id, l]))));
       console.log(`data/curriculum/review/${a}.csv (local: it holds the specification's text). Fill in decision, lessons, note, reviewer, reviewed_on; then engine.mjs apply ${a} <file>.`);
     } else if (cmd === "apply") {
-      const st = loadStatements(a), s = SPECS.find((x) => x.id === a), inv = await inventory(s.subject);
+      // decisions need each statement's ref and fingerprint, which the committed index has: the text (local only) isn't
+      // needed, so a review can be recorded anywhere, CI included
+      const st = loadStatements(a) || loadIndex(a), s = SPECS.find((x) => x.id === a), inv = await inventory(s.subject);
+      if (!st) throw new Error(`${a} has no statement index: import it first`);
       const res = applyReview(st, loadMap(a) || { spec: a, specVersion: st.version, links: {} }, parseTable(readText(readFileSync(b))), new Set(inv.map((l) => l.id)));
       if (res.problems.length) { console.error(`Nothing applied. ${res.problems.length} problems:\n  ${res.problems.join("\n  ")}`); process.exit(1); }
-      write(mapPath(a), res.map); console.log(`${res.applied} decisions recorded in kit/curriculum/maps/${a}.json. Run engine.mjs report ${s.subject}.`);
+      write(mapPath(a), res.map); console.log(`${res.applied} decisions recorded in kit/curriculum/maps/${a}.json.`);
+      // every view derived from the map is rewritten in the same step, so a verification or a revocation never leaves
+      // a stale count anywhere. If one fails, the decisions stay recorded and the failure is loud: refresh redoes it
+      if (!(await refreshDerived(a, s.subject, date))) process.exit(2);
+    } else if (cmd === "refresh") {
+      const s = SPECS.find((x) => x.id === a); if (!s) throw new Error(`no framework ${a} in the registry`);
+      if (!(await refreshDerived(a, s.subject, date))) process.exit(2);
     } else if (cmd === "inventory") { const inv = await inventory(a); write(new URL(`data/curriculum/inventory/${a}.json`, root), inv); console.log(`${inv.length} ${a} lessons → data/curriculum/inventory/${a}.json`); }
-    else if (cmd === "report") {
-      write(new URL(`docs/curriculum/${a.toUpperCase()}-COVERAGE.md`, root), await subjectReport(a, date)); console.log(`docs/curriculum/${a.toUpperCase()}-COVERAGE.md`);
-      const inv = await inventory(a);
-      for (const s of specsFor(a)) { const md = specReport(s.id, inv, date); if (md) { write(new URL(`docs/curriculum/${reportName(s.id)}`, root), md); console.log(`docs/curriculum/${reportName(s.id)}`); } }
-    } else { console.error("usage: fetch | import | propose | review | apply | inventory | report (see the top of this file)"); process.exit(2); }
+    else if (cmd === "report") for (const f of await writeReports(a, date)) console.log(f); else { console.error("usage: fetch | import | propose | review | apply | refresh | inventory | report (see the top of this file)"); process.exit(2); }
   } catch (e) { console.error(e.message); process.exit(1); }
 }

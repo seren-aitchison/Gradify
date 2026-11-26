@@ -6,13 +6,13 @@ The work runs in **agent mode**: Claude Code sessions on your subscription do th
 
 ## The loop, per topic
 
-A topic is one section of a specification (AQA 4.1.1.1 *Eukaryotes and prokaryotes*). Its requirements are the statements no existing lesson teaches. Strong matches are checked first (see Mapping): confirmed ones get `REQ:` lines on the existing lesson, and rejected ones are written like any other gap.
+A topic is one section of a specification (AQA 4.1.1.1 *Eukaryotes and prokaryotes*). Its requirements are the statements no existing lesson teaches. A statement is left out only when a person has confirmed, for that statement, that an existing lesson teaches all of it (see Mapping). Everything else is written, including matches the matcher or an AI check thinks are taught.
 
 1. **Research** (`prompts/research.md`, web search): one cited brief per topic at `content/research/<subject>/<topic>.txt`, with at least 3 independent sources. A brief is reused by every board and level that shares the topic, and redone only when its requirements or the research prompt change (the `# fp=` line).
    - **Source allowlist** (`kit/curriculum/sources.js`): the request lists the publications that may be cited (`ALLOW` lines), and a brief citing anything else is refused. Each source's licence class is taken from its row, whatever the Researcher wrote. A row may say `adapt` only if its licence allows commercial reuse of the text, and it counts as `adapt` only once a named person has confirmed it (`confirmedBy`, `confirmedOn`); until then it's `facts`. The three independent sources must come from three different publishers on the list.
    - **Licence gate:** a brief isn't used if any non-fact line rests only on `noncommercial` or `unknown` sources. Facts (`F:`) may rest on any source. The research step is asked again, with the problem named.
 2. **Write** (`prompts/writer.md`, the content standard, the notes format, the shorthand and the example lessons for the level): a unit file with `REQ:` lines.
-   - A `REQ:` line may name a requirement or one part of it, such as `aqa-gcse-biology:4.1.1.1.b.ii`. A part counts toward its requirement.
+   - A `REQ:` line may name a requirement or one part of it, such as `aqa-gcse-biology:4.1.1.1.b.ii`. Only a lesson naming the whole requirement covers it: the index doesn't list a statement's parts, so parts alone leave the requirement uncovered and it's written again (rule H). On publishing, a part links its statement in part.
 3. **Gates**, cheapest first, stopping at the first failure (`scripts/content/gates.mjs`):
    1. `parse`: one lesson, known tags, a lead over 60 characters, `LV:`, two or more `O:` and `T:`, at least one `REQ:`, and every `DIA:` spec is JSON with a title, caption and alt text.
    2. `coverage`: every `REQ:` (or part) is in the packet and names objectives, each of those objectives has a question tagged with it, and every objective is tested. Every `PRE:` names a lesson in the course or the unit, or a requirement id in the registry.
@@ -66,7 +66,7 @@ The engine builds and checks; an external model writes. `scripts/content/config.
 | write | opus | Writes the unit file from the packet only |
 | repair | opus | Writes changed lines only |
 | review | sonnet | A fresh subagent that never saw the writing, on a different model. It judges only against the requirements and brief, and writes `REV` lines |
-| map | haiku | Confirms or rejects strong matches |
+| map | haiku | Checks strong matches, as evidence for a person's review (never coverage) |
 
 Each topic gets its own subagents, so every context stays small. Running `work` again reads the replies and moves each topic on. When topics are filed, it prints the commit steps: `publish`, `pr`, `status --write`, commit, push to `content/rolling`, and open or update the PR with `content/PR.md`.
 
@@ -78,12 +78,25 @@ Faster, for free, while you're awake: open more Claude Code sessions and send ea
 
 ## Mapping
 
-The matcher (`scripts/curriculum/engine.mjs propose`) links statements to existing lessons. For each strong link nobody has confirmed, `work` asks a cheap subagent whether the lesson really teaches the statement.
+Only a person's confirmation counts as coverage (owner, 26 Nov 2026). A false "already taught" leaves a hidden hole in the curriculum; a duplicate lesson is only inconvenient and can be merged later. Each statement goes through three stages, on its own:
 
-- **Yes:** the lesson gets `REQ: <id> @<objectives>` after its objectives. That's metadata only; the lesson's content isn't touched.
-- **No:** the statement joins the write queue.
+| Stage | Recorded as | Counts as taught? | Stops the engine writing it? |
+|---|---|---|---|
+| Proposed | `proposed`: the matcher's candidate lessons and confidence | No | No |
+| AI-checked | `ai-confirmed` or `rejected`, with the model and date | No | No |
+| Human-confirmed | `verified` with coverage `full`, a named reviewer, a date, a timestamp and the evidence | Yes | Yes |
 
-Decisions are recorded in `content/mapping/<framework>.json`.
+- The matcher (`scripts/curriculum/engine.mjs propose`) links statements to existing lessons. For each strong link nobody has decided, `work` asks a cheap subagent whether the lesson really teaches it. Its answer is stored as an AI check and shown in the review sheet's `ai_check` column. It never changes a lesson and never stops a statement being written.
+- A person confirms statement by statement from the review sheet ([`docs/curriculum/REVIEW.md`](curriculum/REVIEW.md)). Only `full` stops the writing. `partial` and `missing` are written, with the reviewer's note. Confirming one statement never confirms another mapped to the same lesson.
+- A confirmation holds for the statement text it was made on: if the awarding body changes the statement, it's uncovered again.
+- A person can withdraw a confirmation with `revoke` and a reason. The statement is uncovered and written again, and the withdrawn verification is kept in `revoked`.
+- AI confidence and a person's decision stay in separate fields (`matcherConfidence`, `aiCheck`, `reviewer`): an AI's yes never becomes a verification.
+- A lesson the engine publishes is linked provisionally to each statement its `REQ:` lines name (`ai-confirmed`, `published: true`), so learners see "Provisionally mapped — awaiting verification" rather than "Not mapped". It never counts as coverage, and a person's verification is never changed by it.
+- Recording decisions (`engine.mjs apply`) rewrites everything derived from the map: the coverage reports (`docs/curriculum/`) and the specification pages' links (`kit/specs/<view>.links.js`). Publishing rewrites the links. A verification or a revocation shows everywhere in the same commit.
+- If a derived output can't be rewritten, the decisions stay recorded and the command fails loudly (exit 2, "STALE COVERAGE"), naming each output that wasn't updated. Fix the cause, then run `node scripts/curriculum/engine.mjs refresh <framework>`. The tests also fail on a committed report or links file that doesn't match the map, so stale figures can't be merged unnoticed.
+- **Tested views.** AQA GCSE Biology (`kit/specs/aqa-gcse-biology-8461.js`) is the only specification view so far, so it's the only one the shared generator has been tested against. The tests check every view in `kit/specs/index.js`, but passing for one view doesn't prove the next framework's structure will work: validate the generator, its reports and its pages against each new framework as it's added.
+
+Decisions are recorded in the mapping store, `kit/curriculum/maps/<framework>.json` (`scripts/content/mapstore.mjs`).
 
 ## Student data as QA
 
@@ -137,6 +150,24 @@ The workflow runs one job per subject, publishes into `content/rolling` and rest
 - **AQA layout only.** `scripts/curriculum/aqa.mjs` reads AQA's science specifications (biology and chemistry checked). Other bodies need AI extraction with a script check, which isn't built yet (M2).
 - **NCBI Bookshelf's licence page** returns a reCAPTCHA to automated requests, so its row has no quoted licence and stays facts-only until a person checks it.
 - **The PGlite rehearsal isn't a real deploy.** The migration passes it; applying it to the live database is the owner's step.
+- **Four tests skip in CI.** They need the AQA GCSE Biology statement text, which is the awarding body's copyright and never committed (`data/curriculum/specs/` is local only), so CI reports them as skipped, not passed. A green CI run with these four skips isn't every test passing:
+
+  | Test | File | Checks |
+  |---|---|---|
+  | the local statement text, when imported here, is exactly what the index fingerprinted | `tests/curriculum-aqa.test.mjs` | the text matches the committed fingerprints (`hash`) that decisions are tied to |
+  | rebuilding every AQA lesson gives the committed notes and passes QA | `tests/knowledge.test.mjs` | the AQA knowledge lessons rebuild from the text exactly |
+  | QA holds a practical to being a practical | `tests/knowledge.test.mjs` | required practicals are taught as practicals |
+  | the production report measures knowledge coverage per statement | `tests/knowledge.test.mjs` | the production report's per-statement coverage |
+
+  To run them, fetch and import the text (the awarding body's host must be reachable), then run the two files or the whole suite. With the text present they run and must pass (they did on 26 Nov 2026: 0 skipped):
+
+  ```bash
+  NODE_USE_ENV_PROXY=1 node scripts/curriculum/engine.mjs fetch aqa-gcse-biology
+  node scripts/curriculum/engine.mjs import aqa-gcse-biology
+  node --test tests/curriculum-aqa.test.mjs tests/knowledge.test.mjs
+  ```
+
+  Run them before merging anything that changes the importer, the index, the knowledge lessons or how decisions are fingerprinted.
 
 ## When the rolling PR reports a systematic failure
 

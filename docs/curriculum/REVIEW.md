@@ -4,7 +4,7 @@ How a subject specialist turns the matcher's proposals into verified coverage, o
 
 ## Who reviews
 
-Someone who knows the subject at that level: a GCSE biology teacher or examiner for AQA 8461. Each decision carries the reviewer's name and the date; it's what Gradify's claims rest on.
+Someone who knows the subject at that level: a GCSE biology teacher or examiner for AQA 8461. Each decision carries the reviewer's name, the date and their evidence; it's what Gradify's claims rest on, and only a `full` decision stops the content engine writing that statement. The `ai_check` column shows what an AI reviewer thought, if one has looked: it's evidence for you, never a decision.
 
 ## 1. Get the sheet
 
@@ -22,9 +22,9 @@ For each statement, open the proposed lesson(s) on the site and fill in:
 
 | Column | What to write |
 |---|---|
-| `decision` | `full`: a lesson teaches all of it, at a depth a GCSE student can use. `partial`: lessons teach some of it. `missing`: no lesson teaches it. Leave blank to skip; it stays awaiting. |
+| `decision` | `full`: a lesson teaches all of it, at a depth a GCSE student can use. `partial`: lessons teach some of it. `missing`: no lesson teaches it. `revoke`: withdraw an earlier verification of this statement (it's uncovered again and the content engine writes it). Leave blank to skip; it stays awaiting. Decide each statement on its own: a lesson that teaches three of five statements is `full` for those three only. |
 | `lessons` | The lesson ids that teach it, separated by spaces. Blank means "the proposed ones". With several lessons and `full`, mark the one that teaches it fully: `u02-03=full u02-05`. Ignored for `missing`. |
-| `note` | Required for `partial` (what isn't taught: "no named examples", "no calculation") and `missing` (what a lesson would need to teach). Optional for `full`. |
+| `note` | Always required. For `full`, the evidence (which part of the lesson teaches it: "section 2 and its worked example"); for `partial`, what isn't taught ("no named examples", "no calculation"); for `missing`, what a lesson would need to teach; for `revoke`, why. |
 | `reviewer`, `reviewed_on` | Your name, and the date as YYYY-MM-DD. |
 
 Things to watch for:

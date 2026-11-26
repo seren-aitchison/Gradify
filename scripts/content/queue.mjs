@@ -7,7 +7,7 @@ import { loadIndex, loadStatements, loadMap, tokens, checkIndex } from "../curri
 import { CONFIG, at, out, load, slug, loadLedger, briefPath } from "./lib.mjs";
 import { staleness, targetKey } from "./build.mjs";
 import { titleKey } from "../../kit/course/syllabus.js";
-import { loadStore, decisionOf, candidatesOf } from "./mapstore.mjs";
+import { loadStore, confirmedTaught, candidatesOf } from "./mapstore.mjs";
 
 const LEVEL = { gcse: "GCSE", "a-level": "A level", "as-level": "AS level", n5: "National 5", higher: "Higher" };
 export const TYPE = (s) => (s.kind === "practical" ? "prac" : s.kind === "skill" ? (s.skills || []).some((k) => /math|calc/i.test(k)) ? "method" : "data" : "concept");
@@ -47,17 +47,15 @@ export function topicsFor(fwId, { titles = null } = {}) {
   const bad = checkIndex(idx); if (bad.length) throw new Error(`${fwId}: ${bad.join("; ")}`);
   const st = loadStatements(fwId), text = new Map((st.statements || []).map((x) => [x.ref, x])), map = loadStore(fwId);
   const sections = new Map((idx.sections || []).map((x) => [x.ref, x]));
-  // strong matches are confirmed in a session first (scripts/content/agent.mjs, mapping): confirmed ones are taught
-  // already and get REQ: lines; rejected ones are written like any gap; unconfirmed ones wait for their check.
-  // Every decision is in the mapping store (scripts/content/mapstore.mjs)
+  // A statement counts as taught only when a person confirmed, for that statement, that a lesson teaches all of it
+  // (scripts/content/mapstore.mjs, confirmedTaught). Everything else is written: a matcher's proposal, an AI check
+  // (yes or no), a person's "partial" or "missing". A keyword overlap or an AI's yes is not coverage, and a duplicate
+  // lesson can be merged later where a missing one would be a hidden gap (owner, 26 Nov 2026)
   const byTopic = new Map();
   for (const x of idx.statements) {
     const link = map.links[x.ref];
-    // a decision holds for the statement text it was made on (a person's review, or an AI reviewer's); a changed
-    // statement is undecided again, so it's checked or written afresh
-    const m = decisionOf(map, x.ref, x.hash);
-    if (m && m.status !== "rejected") continue;                                     // already taught: mapped, not written
-    if (link?.confidence === "strong" && !m) continue;                             // waiting for its mapping check
+    // a confirmation holds for the statement text it was made on: a changed statement is uncovered again
+    if (confirmedTaught(map, x.ref, x.hash)) continue;                              // a person confirmed it's taught
     const sec = sections.get(x.section) || { ref: x.section, title: x.section };
     const id = `${s.subject}/${slug(sec.title)}`;
     if (!byTopic.has(id)) byTopic.set(id, { id, subject: s.subject, fw: fwId, section: sec.ref, title: sec.title, level: LEVEL[s.qual] || QUAL_TYPES[s.qual]?.name || s.qual, country: "uk", reqs: [], reuse: new Map() });
@@ -88,12 +86,17 @@ export function nextTopics(subject, { limit = CONFIG.topicsPerRun, titles } = {}
     if (same && ["filed", "filed-with-gaps", "blocked"].includes(e.status) && !rebuild.length) continue;
     // partly done, or out of date: write only the requirements left, and add to the draft
     if (same && (e.status === "partial" || rebuild.length)) { const left = new Set([...(e.status === "partial" ? e.uncovered || [] : []), ...rebuild]); out.push({ ...t, reqs: t.reqs.filter((r) => left.has(r.id)), append: true, full: t, ...(rebuild.length ? { rebuild } : {}) }); }
+    // a topic that gained requirements and lost none (one that was waiting for a mapping check, say): write only the
+    // new ones, plus any still uncovered, and add them to the draft, so lessons already filed aren't rewritten
+    else if (e && !same && e.reqHash && grewOnly(e.reqHash, t)) { const had = new Set(e.reqHash.split(",")), left = new Set(e.uncovered || []); out.push({ ...t, reqs: t.reqs.filter((r) => !had.has(`${r.id}:${r.hash}`) || left.has(r.id)), append: true, full: t }); }
     else out.push(t);
     if (out.length >= limit) return out;
   }
   return out;
 }
 export const reqHash = (t) => t.reqs.map((r) => `${r.id}:${r.hash}`).join(",");
+/** true when every requirement recorded for a topic (its ledger reqHash) is still in it, unchanged */
+const grewOnly = (was, t) => { const now = new Set(reqHash(t).split(",")); return was.split(",").every((x) => now.has(x)); };
 /** the topic's lessons that are out of date, with why (scripts/content/build.mjs) */
 export const staleLessons = (t, e) => (e?.lessons || []).map((l) => ({ l, why: staleness(l, t) })).filter((x) => x.why.length);
 /** the requirements to rebuild for a topic: those its out-of-date lessons teach, unless this target already failed */

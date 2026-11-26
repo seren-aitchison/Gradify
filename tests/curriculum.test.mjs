@@ -40,7 +40,7 @@ test("AI decisions show as mapped, never as verified, hold only for the text the
   assert.deepEqual(r.rows.map((x) => x.status), ["mapped", "partially-mapped", "awaiting", "awaiting"], "D was judged on older text");
   assert.deepEqual(r.totals, { statements: 4, covered: 0, partial: 0, missing: 0, mapped: 1, partiallyMapped: 1, rejected: 1, awaiting: 4 });
   assert.equal(r.reviewed, 0, "an AI decision is not a review"); assert.equal(claimFor({ spec: "t", version: "1.0", statements: st }, m).allowed, false);
-  assert.equal(LABELS.mapped.name, "Mapped \u2014 not independently verified"); assert.equal(LABELS.covered.name, "Independently verified"); assert.equal(LABELS["partially-mapped"].name, "Partially mapped");
+  assert.equal(LABELS.mapped.name, "Provisionally mapped \u2014 awaiting verification"); assert.equal(LABELS.covered.name, "Independently verified"); assert.equal(LABELS["partially-mapped"].name, "Provisionally mapped in part \u2014 awaiting verification");
   assert.deepEqual(checkMap({ spec: "t", statements: st }, { spec: "t", links: { A: { status: "ai-confirmed", lessons: [] }, C: { status: "rejected", by: "x", on: "2026-11-25", lessons: [] } } }, new Set()).sort(),
     ["A: ai-confirmed needs the lesson it confirmed", "A: an AI decision needs by and on", "C: a rejection needs what's missing"]);
 });

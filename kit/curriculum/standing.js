@@ -10,7 +10,7 @@
 // Works from a specification's committed index (kit/curriculum/specs/<id>.json), which has every ref but no text.
 import { evidenceFromAttempts } from "../learning/mastery.js";
 import { knows } from "../learning/bkt.js";
-import { whereYouStand, STANDING } from "./mapping.js";
+import { whereYouStand, STANDING, MAPPING } from "./mapping.js";
 
 /** P(known) for each lesson the learner has unaided answers in: { lessonId: 0–1 } */
 export function lessonMastery(attempts = [], { subject = null, levels = null } = {}) {
@@ -27,13 +27,18 @@ export function lessonMastery(attempts = [], { subject = null, levels = null } =
  */
 export function specStanding(spec, map, attempts, opts = {}) {
   const mastery = lessonMastery(attempts, opts), w = whereYouStand(spec, map, mastery, opts);
-  const mapped = w.rows.length - w.by.unmapped, ai = w.rows.filter((r) => r.evidence === "ai-mapped").length;
+  // progress is counted within each mapping state, never across them: being secure on a provisionally mapped statement
+  // is progress on that lesson, not a confirmed specification requirement
+  const part = (k) => w.rows.filter((r) => r.mapping === k && r.standing !== "not-on-gradify"), count = (rows, st) => rows.filter((r) => r.standing === st).length;
+  const ver = part("verified"), prov = part("provisional"), m = w.mapped;
+  const line = (rows, what) => `${what}: ${count(rows, "secure")} of ${rows.length} secure, ${count(rows, "developing")} developing`;
+  const states = [m.verified && `${m.verified} with a verified mapping`, m.provisional && `${m.provisional} provisionally mapped (awaiting verification)`, m.none && `${m.none} not mapped`].filter(Boolean).join(", ");
   return {
     ...w, mastery,
-    summary: mapped
-      ? `${w.by.secure} of ${mapped} mapped statements secure, ${w.by.developing} developing${w.by.unmapped ? `; ${w.by.unmapped} not mapped yet` : ""}${ai ? ` (${ai === mapped ? "all" : ai} mapped by AI, not independently verified)` : ""}`
-      : `This specification isn't mapped yet: none of its ${w.rows.length} statements has a reviewed link to a lesson`,
+    summary: m.verified || m.provisional
+      ? [ver.length && line(ver, "Verified mapping"), prov.length && line(prov, "Provisionally mapped, awaiting verification (progress, not confirmed coverage)")].filter(Boolean).join("; ") + `. Of ${w.rows.length} statements: ${states}.`
+      : `This specification isn't mapped yet: none of its ${w.rows.length} statements is linked to a lesson`,
   };
 }
 
-export { STANDING };
+export { STANDING, MAPPING };

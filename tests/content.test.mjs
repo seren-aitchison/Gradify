@@ -234,7 +234,7 @@ test("arithmetic: scientific notation keeps its exponent, and its rounding scale
   assert.deepEqual(G.checkArithmetic("P: 3 × 10^4 × 2 = 6 × 10^4"), []);
 });
 
-test("sub-requirements: a REQ may name a part, which counts towards its requirement", async () => {
+test("sub-requirements: a REQ may name a part, but only a lesson naming the whole requirement covers it", async () => {
   const { parentOf } = S, known = new Set([REQ.id]);
   assert.equal(parentOf(`${REQ.id}.ii`, known), REQ.id);
   assert.equal(parentOf(`${REQ.id}.zz`, known), null);
@@ -244,7 +244,12 @@ test("sub-requirements: a REQ may name a part, which counts towards its requirem
   assert.ok(g.ok, JSON.stringify(g.failed?.issues));
   const topic = { ...TOPIC, id: "biology/test-parts", title: "Test parts" };
   const r = await runTopic(topic, { ask: async (job) => (job === "research" ? BRIEF.replace("test-prokaryotes", "test-parts") : `${part}\nEND`), askMany: async (job, items) => new Map(items.map((it) => [it.key, `REV ${it.key} OK`])) });
-  assert.equal(r.status, "filed"); assert.deepEqual(r.uncovered, []);
+  // the index doesn't list a statement's parts, so two parts named don't show the rest is taught (rule H)
+  assert.notEqual(r.status, "filed"); assert.deepEqual(r.uncovered, [REQ.id], "parts alone leave the requirement to write");
+  // naming the whole requirement (parts may be named too) covers it
+  const whole = LESSON("3 × 4 = 12").replace(`REQ: ${REQ.id} @1,2`, `REQ: ${REQ.id} @1,2\nREQ: ${REQ.id}.ii @2`), t2 = { ...TOPIC, id: "biology/test-parts-whole", title: "Test parts whole" };
+  const r2 = await runTopic(t2, { ask: async (job) => (job === "research" ? BRIEF.replace("test-prokaryotes", "test-parts-whole") : `${whole}\nEND`), askMany: async (job, items) => new Map(items.map((it) => [it.key, `REV ${it.key} OK`])) });
+  assert.equal(r2.status, "filed"); assert.deepEqual(r2.uncovered, []);
 });
 
 test("licence gate: a brief's non-fact lines can't rest only on noncommercial or unknown sources", async () => {
@@ -394,10 +399,21 @@ test("mapping replies: NO lines are recorded, and a rejected strong match joins 
   assert.equal(parseMapLine("MAP aqa-gcse-biology:4.1.1.2.b u02-04 NO too shallow").verdict, "NO");
   assert.equal(parseMapLine("END"), null);
   const [a, b] = mapCandidates("aqa-gcse-biology").map((c) => c.ref), inQueue = (ref) => topicsFor("aqa-gcse-biology").some((t) => t.reqs.some((r) => r.ref === ref));
-  assert.ok(!inQueue(a) && !inQueue(b), "unconfirmed strong matches wait for their check");
+  assert.ok(inQueue(a) && inQueue(b), "an unconfirmed strong match is not coverage: it's written");
   mkdirSync(join(process.env.GRADIFY_OUT, "content/mapping"), { recursive: true });
   writeFileSync(join(process.env.GRADIFY_OUT, "content/mapping/aqa-gcse-biology.json"), JSON.stringify({ confirmed: { [a]: { ok: false, why: "not taught" }, [b]: { ok: true, lesson: "u02-04", objectives: [1] } } }));
-  assert.ok(inQueue(a), "a rejected match is written"); assert.ok(!inQueue(b), "a confirmed match is not");
+  assert.ok(inQueue(a), "a rejected match is written"); assert.ok(inQueue(b), "an AI's yes is not coverage: still written until a person confirms it");
+  // only a person's confirmation, for that statement, that a lesson teaches all of it stops the writing
+  const { loadStore, saveStore, confirmedTaught } = await import("../scripts/content/mapstore.mjs");
+  const { loadIndex } = await import("../scripts/curriculum/engine.mjs");
+  const hashOf = (ref) => loadIndex("aqa-gcse-biology").statements.find((x) => x.ref === ref).hash, S0 = loadStore("aqa-gcse-biology");
+  const person = (coverage) => ({ status: "verified", hash: hashOf(b), reviewer: "A Reviewer", reviewedOn: "2026-11-26", lessons: [{ id: "u02-04", coverage }], note: "taught in section 2" });
+  S0.links[b] = person("partial"); saveStore("aqa-gcse-biology", S0);
+  assert.ok(inQueue(b) && !confirmedTaught(S0, b, hashOf(b)), "a person's 'partial' is still written");
+  S0.links[b] = person("full"); saveStore("aqa-gcse-biology", S0);
+  assert.ok(!inQueue(b) && confirmedTaught(S0, b, hashOf(b)), "a person's 'full' is taught: not written");
+  assert.ok(!confirmedTaught(S0, b, "a-changed-statement"), "a confirmation holds only for the text it was made on");
+  assert.ok(!confirmedTaught(S0, a, hashOf(a)), "confirming one statement never confirms another");
   assert.ok(!mapCandidates("aqa-gcse-biology").some((c) => c.ref === a || c.ref === b), "decided matches aren't asked again");
 });
 
@@ -559,7 +575,12 @@ test("status ladder: frameworks by country, requirements by the highest rung rea
   const c = L.requirements["aqa-gcse-biology"];
   assert.deepEqual(Object.keys(c), LADDER.slice(2));
   assert.equal(Object.values(c).reduce((a, n) => a + n, 0), 475, "every statement sits on exactly one rung");
-  assert.ok(c.mapped >= 1, "confirmed matches count as mapped");
+  // mapped: only statements a person confirmed are fully taught; AI checks never count
+  const { loadStore, confirmedTaught } = await import("../scripts/content/mapstore.mjs");
+  const { loadIndex } = await import("../scripts/curriculum/engine.mjs");
+  const S1 = loadStore("aqa-gcse-biology"), byPerson = loadIndex("aqa-gcse-biology").statements.filter((x) => confirmedTaught(S1, x.ref, x.hash)).length;
+  assert.ok(byPerson >= 1, "the store has a person's confirmation (set by the mapping test)");
+  assert.equal(c.mapped, byPerson, "only a person's confirmation counts as mapped");
   // earlier tests edit a filed lesson after it was checked: its requirement needs update, which outranks published
   assert.ok(c["needs update"] >= 1);
 });
@@ -927,4 +948,63 @@ test("quality checks: sources trace to the brief, diagrams exist in the library,
   assert.match(reviewRequest({ key: "k", text: base }, TOPIC, BRIEF), /^DIAG bio-animal-cell \| An animal cell \| .* \| alt: /m);
   const v = S.parseVerdicts("REV k FAIL CARD L30 trivial card; DIAG L40 decorative; TEACH L8 three concepts in one section")[0];
   assert.deepEqual(v.issues.map((i) => i.code), ["CARD", "DIAG", "TEACH"]);
+});
+
+test("a filed topic that gains a requirement writes only the new one, and adds it to the draft", async () => {
+  const { nextTopics, reqHash } = await import("../scripts/content/queue.mjs");
+  const { loadLedger, saveLedger } = await import("../scripts/content/lib.mjs");
+  const t = topicsFor("aqa-gcse-biology").find((x) => x.id === "biology/chromosomes");
+  assert.ok(t && t.reqs.length >= 2, "both Chromosomes statements are queued: the strong match on 4.1.2.1.a is unconfirmed");
+  const [first, ...rest] = t.reqs, L = loadLedger("biology");
+  // filed before the topic grew: its ledger knew only the last requirement
+  L.topics[t.id] = { status: "filed", reqHash: reqHash({ reqs: rest }), uncovered: [], lessons: [] }; saveLedger(L);
+  const q = nextTopics("biology", { limit: 9999 }).find((x) => x.id === t.id);
+  assert.ok(q?.append, "added to the draft, not written afresh");
+  assert.deepEqual(q.reqs.map((r) => r.id), [first.id], "only the new requirement is written");
+  assert.equal(reqHash(q.full), reqHash(t), "the whole topic is recorded when it's filed");
+  // once the ledger has the whole topic, it isn't queued again
+  L.topics[t.id].reqHash = reqHash(t); saveLedger(L);
+  assert.ok(!nextTopics("biology", { limit: 9999 }).some((x) => x.id === t.id));
+  // a topic that lost or changed a requirement is still written afresh
+  L.topics[t.id].reqHash = reqHash({ reqs: [{ ...first, hash: "old" }, ...rest] }); saveLedger(L);
+  assert.ok(!nextTopics("biology", { limit: 9999 }).find((x) => x.id === t.id).append);
+});
+
+test("a published lesson becomes a provisional link, never coverage, and the specification pages refresh", async () => {
+  const { linkLessons } = await import("../scripts/content/publish.mjs");
+  const { loadStore, saveStore, confirmedTaught } = await import("../scripts/content/mapstore.mjs");
+  const { loadIndex } = await import("../scripts/curriculum/engine.mjs");
+  const { statusOf } = await import("../kit/curriculum/mapping.js");
+  const fw = "aqa-gcse-biology", idx = loadIndex(fw), hash = (ref) => idx.statements.find((x) => x.ref === ref).hash;
+  // a person had verified 4.1.2.2.a as partly taught: publishing never touches their decision
+  const S0 = loadStore(fw); S0.links["4.1.2.2.a"] = { status: "verified", hash: hash("4.1.2.2.a"), reviewer: "A Reviewer", reviewedOn: "2026-11-26", lessons: [{ id: "u04-05", coverage: "partial", note: "no stages" }] }; saveStore(fw, S0);
+  const text = `## Chromosomes in pairs\nO: one\nO: two\nREQ: ${fw}:4.1.2.1.a @1,2\nREQ: ${fw}:4.1.2.1.b.ii @2\nREQ: ${fw}:4.1.2.2.a @1`;
+  const res = await linkLessons([{ id: "u20-01", reqs: [`${fw}:4.1.2.1.a`, `${fw}:4.1.2.1.b.ii`, `${fw}:4.1.2.2.a`], text, by: "agent:sonnet" }], { on: "2026-11-26" });
+  assert.equal(res.length, 3);
+  const M = loadStore(fw), a = M.links["4.1.2.1.a"], b = M.links["4.1.2.1.b"];
+  assert.equal(a.status, "ai-confirmed"); assert.deepEqual(a.lessons, [{ id: "u20-01", coverage: "full", objectives: [1, 2], published: true }]);
+  assert.equal(a.by, "agent:sonnet"); assert.equal(a.hash, hash("4.1.2.1.a"));
+  assert.equal(statusOf(a, idx.version, M.specVersion, hash("4.1.2.1.a")), "mapped", "learners see it as provisionally mapped");
+  assert.equal(b.lessons[0].coverage, "partial", "a lesson naming one part links to its statement in part");
+  assert.ok(![("4.1.2.1.a"), "4.1.2.1.b"].some((r) => confirmedTaught(M, r, hash(r))), "a provisional link is never coverage, so nothing stops being written");
+  assert.equal(M.links["4.1.2.2.a"].status, "verified"); assert.equal(M.links["4.1.2.2.a"].lessons[0].id, "u04-05", "a person's verification is kept");
+  // a second published lesson for the same statement joins the first
+  await linkLessons([{ id: "u20-02", reqs: [`${fw}:4.1.2.1.a`], text: `REQ: ${fw}:4.1.2.1.a @1`, by: "agent:sonnet" }]);
+  assert.deepEqual(loadStore(fw).links["4.1.2.1.a"].lessons.map((l) => l.id), ["u20-01", "u20-02"]);
+  // the specification pages' links were rewritten from the store (in this run's output, not the repository)
+  const { readFileSync: rf } = await import("node:fs");
+  const links = rf(join(process.env.GRADIFY_OUT, "kit/specs/aqa-gcse-biology-8461.links.js"), "utf8");
+  const point = JSON.parse(links.match(/"4\.1\.2\.1": (\{[^}]*\{[^}]*\}[^}]*\})/)[1]);
+  assert.equal(point.evidence, "ai-mapped"); assert.ok(point.partial.includes("u20-01") || point.lessons.includes("u20-01"));
+  const { refreshLinks } = await import("../scripts/curriculum/spec-view.mjs");
+  assert.deepEqual(await refreshLinks(fw), [], "unchanged store, unchanged file");
+  // republishing the same lesson adds no duplicate link
+  await linkLessons([{ id: "u20-01", reqs: [`${fw}:4.1.2.1.a`], text, by: "agent:sonnet" }]);
+  assert.deepEqual(loadStore(fw).links["4.1.2.1.a"].lessons.map((l) => l.id), ["u20-01", "u20-02"]);
+  // a person revoked a verification: republishing makes it provisional again, never verified, and keeps the revocation
+  const S1 = loadStore(fw); S1.links["4.1.2.3.a"] = { status: "proposed", lessons: [], revoked: [{ reviewer: "B Reviewer", on: "2026-11-26", why: "misses the second clause", was: { reviewer: "A Reviewer" } }] }; saveStore(fw, S1);
+  await linkLessons([{ id: "u20-03", reqs: [`${fw}:4.1.2.3.a`], text: `REQ: ${fw}:4.1.2.3.a @1`, by: "agent:sonnet" }]);
+  const rv = loadStore(fw).links["4.1.2.3.a"];
+  assert.equal(rv.status, "ai-confirmed"); assert.equal(rv.revoked.length, 1, "the revocation stays on record");
+  assert.ok(!confirmedTaught(loadStore(fw), "4.1.2.3.a", hash("4.1.2.3.a")), "publishing never restores a verification");
 });

@@ -123,8 +123,10 @@ export async function advance(topic, { render = null, legible = null } = {}) {
   return { actions: [], filed };
 }
 
-// ---------- mapping: strong existing matches are confirmed, then get REQ: lines ----------
-// decisions live in the mapping store (scripts/content/mapstore.mjs, kit/curriculum/maps/<framework>.json)
+// ---------- mapping: an AI check of strong existing matches, as evidence for a person's review ----------
+// An AI check is never coverage (owner, 26 Nov 2026): a yes is recorded as ai-confirmed and the statement is still
+// written; only a person's confirmation (engine.mjs review / apply) counts as taught. Decisions live in the mapping
+// store (scripts/content/mapstore.mjs, kit/curriculum/maps/<framework>.json)
 /** statements a matcher linked strongly to an existing lesson that nobody has decided on, for their current text */
 export function mapCandidates(fw) {
   const map = loadStore(fw), hashes = new Map((loadIndex(fw)?.statements || []).map((x) => [x.ref, x.hash]));
@@ -170,7 +172,8 @@ export function parseMapLine(line) {
   m = t.match(/^MAP (\S+) (\S+) (YES|NO)\b\s*(.*)$/);
   return m ? { reqId: m[1], lesson: m[2], verdict: m[3], rest: m[4].trim() } : null;
 }
-/** apply map.out.txt replies: YES → a REQ: line on the existing lesson; NO → the requirement joins the write queue */
+/** apply map.out.txt replies: YES → recorded as an AI check (ai-confirmed), for a person to confirm; NO → rejected.
+ * Neither changes a lesson: a REQ: line on an existing lesson would claim coverage no person has confirmed. */
 export async function applyMapping(subject) {
   const res = [], idx = await lessonIndex(subject);
   for (const fw of frameworksFor(subject)) {
@@ -185,9 +188,8 @@ export async function applyMapping(subject) {
       if (verdict === "YES") {
         const x = idx.get(lesson), objs = (rest.match(/@([\d,]+)/)?.[1] || "").split(",").map(Number).filter((n) => n >= 1 && n <= (x?.L.objectives.length || 0));
         if (!x || !objs.length) { decide(M, ref, { ok: false, why: x ? "confirmed without valid objectives" : `unknown lesson ${lesson}`, hash: hashes.get(ref), by: `agent:${AGENT.map}`, on: today() }); continue; }
-        addReqLine(`kit/courses/${x.c.slug}/notes/${x.u.id}.js`, x.L.title, reqId, objs);
-        decide(M, ref, { ok: true, lesson, objectives: objs, hash: hashes.get(ref), by: `agent:${AGENT.map}`, on: today() }); res.push(`${reqId} → ${lesson} @${objs.join(",")}`);
-      } else { decide(M, ref, { ok: false, why: rest || "not taught", lesson, hash: hashes.get(ref), by: `agent:${AGENT.map}`, on: today() }); res.push(`${reqId}: not taught (${rest || "no reason given"}), queued to write`); }
+        decide(M, ref, { ok: true, lesson, objectives: objs, hash: hashes.get(ref), by: `agent:${AGENT.map}`, on: today() }); res.push(`${reqId} → ${lesson} @${objs.join(",")} (AI-checked: still written until a person confirms it)`);
+      } else { decide(M, ref, { ok: false, why: rest || "not taught", lesson, hash: hashes.get(ref), by: `agent:${AGENT.map}`, on: today() }); res.push(`${reqId}: not taught (${rest || "no reason given"})`); }
     }
     saveStore(fw, M); rmSync(dir, { recursive: true, force: true });
   }

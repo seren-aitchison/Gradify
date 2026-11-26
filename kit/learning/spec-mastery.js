@@ -191,13 +191,16 @@ function overallOf(points) {
   const covered = points.filter((p) => ["full", "partial"].includes(p.coverage.gradify)).length, full = points.filter((p) => p.coverage.gradify === "full").length;
   // what the coverage rests on: verified by a person, mapped by an AI reviewer only, or not checked yet
   const evidence = { verified: points.filter((p) => p.coverage.evidence === "verified").length, aiMapped: points.filter((p) => p.coverage.evidence === "ai-mapped").length, unchecked: points.filter((p) => p.coverage.gradify === "unchecked").length };
+  // taught, by what it rests on: only a person's verification counts as taught; a provisional mapping is counted apart
+  const taughtBy = (ev) => points.filter((p) => p.coverage.evidence === ev && ["full", "partial"].includes(p.coverage.gradify));
+  const taught = { verified: taughtBy("verified").length, verifiedPart: taughtBy("verified").filter((p) => p.coverage.gradify === "partial").length, provisional: taughtBy("ai-mapped").length };
   const share = points.length ? assessed / points.length : 0;
   const firm = points.filter((p) => ["medium", "high"].includes(p.confidence.level)).length;
   // the headline is only as trustworthy as the share of the specification behind it
   const level = !assessed ? "none" : share >= 0.6 && firm >= assessed / 2 ? "high" : share >= 0.25 ? "medium" : "low";
   // one lesson can teach several requirements: the totals count each lesson once
   const mapped = new Set(points.flatMap((p) => p.coverage.ids)), doneIds = new Set(points.flatMap((p) => p.coverage.doneIds));
-  return { total: points.length, covered, full, evidence, assessed, firm, measured: points.filter((p) => p.estimate != null && !p.provisional).length, estimate, provisional, band: bandOf(estimate), bands, confidence: level,
+  return { total: points.length, covered, full, evidence, taught, assessed, firm, measured: points.filter((p) => p.estimate != null && !p.provisional).length, estimate, provisional, band: bandOf(estimate), bands, confidence: level,
     slipping: points.filter((p) => p.trend === "slipping").length,
     lessonsDone: doneIds.size, lessonsMapped: mapped.size };
 }

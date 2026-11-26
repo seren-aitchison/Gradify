@@ -10,7 +10,9 @@ import { drawnEnough, diagramsOf } from "./gates.mjs";
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { pathToFileURL } from "node:url";
 import { at, out, fp, today, loadLedger } from "./lib.mjs";
-import { splitUnit } from "./shorthand.mjs";
+import { splitUnit, PART } from "./shorthand.mjs";
+import { loadStore, saveStore, linkPublished } from "./mapstore.mjs";
+import { loadIndex } from "../curriculum/engine.mjs";
 import { checkTiers } from "./report.mjs";
 import { titleKey } from "../../kit/course/syllabus.js";
 
@@ -68,6 +70,7 @@ export async function publish(subject, { preview = false, topic = null } = {}) {
   const texts = new Map(existing.map((l) => [byKey.get(titleKey(l.title)), l.text]).filter(([id]) => id));
   let next = Math.max(0, ...Object.keys(ids).map((id) => Number(id.slice(4)))) + 1;
   const claimed = new Set();   // ids given a lesson in this publish: a second lesson with the same title key waits for a rename
+  const linked = [];           // lessons published in this run, for their provisional links in the mapping store
   for (const [topicId, e] of Object.entries(led.topics)) {
     if (topic && topicId !== topic) continue;
     const draft = e.file && out(e.file); if (!draft || !existsSync(draft)) continue;
@@ -89,6 +92,7 @@ export async function publish(subject, { preview = false, topic = null } = {}) {
       texts.set(id, [lines[0], `TIER: ${label}`, ...lines.slice(1)].join("\n"));
       meta[id] = { topic: topicId, module: e.title || topicId.split("/")[1], tier: label, hash: l.hash, reqs: l.reqs, publishedOn: today(), ...(l.approvedBy ? { approvedBy: l.approvedBy } : {}) };
       (was ? updated : added).push(`${id} ${l.title} · ${label}`);
+      if (!preview) linked.push({ id, reqs: l.reqs || [], text, by: l.built?.models?.review || "content-engine" });
     }
   }
   if (!Object.keys(ids).length) return { added, updated, skipped, unit: null };
@@ -113,5 +117,39 @@ ${literal(body)}
 `);
   writeFileSync(courseFile(subject, "published.js"), publishedJs(next_P));
   const hooks = installHooks(subject);
-  return { added, updated, skipped, unit: uid, hooks };
+  const links = await linkLessons(linked);
+  return { added, updated, skipped, unit: uid, hooks, links };
+}
+
+/**
+ * A published lesson was written for its REQ: statements and AI-reviewed against them, so each becomes a provisional
+ * link in the mapping store (owner, 26 Nov 2026): learners see "Provisionally mapped — awaiting verification", and
+ * it never counts as coverage until a person verifies it. A lesson naming one part of a statement (4.1.1.1.b.ii) links
+ * to that statement in part. A person's verification is never touched. The specification pages are refreshed.
+ */
+export async function linkLessons(lessons, { on = today() } = {}) {
+  const byFw = new Map();
+  for (const x of lessons) for (const id of x.reqs) {
+    const fw = id.split(":")[0], ref = id.slice(fw.length + 1);
+    if (!byFw.has(fw)) byFw.set(fw, []);
+    const objectives = (x.text.match(new RegExp(`^\\s*REQ:\\s*${id.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\s*@([\\d,]+)`, "m"))?.[1] || "").split(",").filter(Boolean).map(Number);
+    byFw.get(fw).push({ lesson: x.id, ref, objectives, by: x.by });
+  }
+  const out_ = [];
+  for (const [fw, rows] of byFw) {
+    const idx = loadIndex(fw); if (!idx) continue;
+    const hash = new Map(idx.statements.map((x) => [x.ref, x.hash])), M = loadStore(fw);
+    for (const r of rows) {
+      const tail = r.ref.slice(r.ref.lastIndexOf(".") + 1), base = r.ref.slice(0, r.ref.lastIndexOf("."));
+      const [ref, coverage] = hash.has(r.ref) ? [r.ref, "full"] : PART.test(tail) && hash.has(base) ? [base, "partial"] : [null];
+      if (!ref) continue;
+      const l = linkPublished(M, ref, { lesson: r.lesson, coverage, objectives: r.objectives, hash: hash.get(ref), by: r.by, on });
+      out_.push(`${fw}:${ref} → ${r.lesson} (${l.status === "verified" ? "a person's verification kept" : `provisional, ${coverage}`})`);
+    }
+    saveStore(fw, M);
+    // the map is saved: if the pages can't be rewritten, say so loudly rather than leave them showing old links
+    try { const { refreshLinks } = await import("../curriculum/spec-view.mjs"); await refreshLinks(fw); }
+    catch (e) { throw new Error(`STALE COVERAGE: provisional links for ${fw} are recorded, but the specification pages weren't rewritten (${e.message}). Fix the cause, then run: node scripts/curriculum/engine.mjs refresh ${fw}`); }
+  }
+  return out_;
 }
