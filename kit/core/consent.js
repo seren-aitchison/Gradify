@@ -219,7 +219,7 @@
     if (f && !f.querySelector("[data-cookie-settings]")) {
       var b = document.createElement("button"); b.type = "button"; b.className = "gc-link"; b.setAttribute("data-cookie-settings", "");
       b.textContent = "Cookie settings"; style();
-      var p = document.createElement("p"); p.style.margin = "8px 0 0"; p.style.fontSize = "13px"; p.appendChild(b); f.appendChild(p);
+      var p = document.createElement("p"); p.style.margin = f.classList.contains("hub-foot-base") ? "0" : "8px 0 0"; p.style.fontSize = "13px"; p.appendChild(b); f.appendChild(p);
     }
   }
 

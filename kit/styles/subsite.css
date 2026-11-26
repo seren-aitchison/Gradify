@@ -106,12 +106,12 @@
 .sub-notice { margin: 18px 0 0; padding: 14px 18px; border: 1px solid var(--line); border-left: 3px solid var(--accent, var(--fg)); border-radius: 14px; background: rgba(var(--ink-rgb), .04); color: var(--mute); font-size: 14px; line-height: 1.55; }
 .sub-notice b { color: var(--fg, var(--fg)); }
 .sub-notice a { color: inherit; }
-.sub-foot { margin: 40px 0 30px; font-size: 13px; color: var(--faint); display: flex; justify-content: space-between; align-items: baseline; gap: 10px 24px; flex-wrap: wrap; }
+.sub-foot { margin: 40px 0 30px; padding: 16px 22px; border-radius: 20px; font-size: 13px; color: var(--faint); display: flex; justify-content: space-between; align-items: baseline; gap: 10px 24px; flex-wrap: wrap; }
 .sub-foot p { margin: 0; }
 .sub-foot nav { display: flex; flex-wrap: wrap; gap: 4px 16px; }
 .sub-foot nav a { text-decoration: none; padding: 4px 0; }
 .sub-foot nav a:hover { color: var(--fg); }
-@media (max-width: 640px) { .sub-foot nav { gap: 0 18px; } .sub-foot nav a { padding: 11px 0; } }
+@media (max-width: 640px) { .sub-foot { padding: 14px 18px; } .sub-foot nav { gap: 0 18px; } .sub-foot nav a { padding: 11px 0; } }
 .sub-foot a { color: var(--mute); }
 
 @media (max-width: 960px) {

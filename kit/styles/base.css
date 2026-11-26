@@ -205,7 +205,8 @@ a { color: inherit; }
 .skip-link:focus { top: 12px; }
 /* the hub footer (scripts/sync-headers.mjs): the same on every hub page */
 .hub-foot { margin: 64px 0 28px; padding: 28px 28px 22px; border-radius: 20px; font-size: 14px; color: var(--mute); }
-.hub-foot-cols { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 24px; }
+.hub-foot-cols { display: grid; grid-template-columns: 1.6fr repeat(4, 1fr); gap: 24px; }
+@media (max-width: 1000px) { .hub-foot-cols { grid-template-columns: repeat(4, 1fr); } .hub-foot-brand { grid-column: 1 / -1; } }
 .hub-foot-brand b { font-size: 18px; color: var(--fg); }
 .hub-foot-brand p { margin: 6px 0 0; max-width: 26em; }
 .hub-foot nav { display: flex; flex-direction: column; gap: 4px; }

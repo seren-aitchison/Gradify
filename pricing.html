@@ -47,7 +47,7 @@
     .plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; max-width: 1180px; margin: 0 auto; align-items: start; }
     .plan.plus { border: 1px solid transparent; background: linear-gradient(var(--panel-strong), var(--panel-strong)) padding-box, var(--spectrum) border-box; box-shadow: 0 30px 80px -40px rgba(240, 85, 221, .55); }
     .plan .tag { font: 600 11px var(--sans); text-transform: uppercase; letter-spacing: .08em; color: var(--mute); }
-    .plan h4 { margin: 6px 0 -4px; font-size: 13px; letter-spacing: .02em; color: var(--fg); }
+    .plan h4 { margin: 22px 0 10px; font-size: 13px; letter-spacing: .02em; color: var(--fg); }
     .plan .soon { font: 600 11px var(--sans); letter-spacing: .04em; padding: 2px 8px; border-radius: 99px; border: 1px solid var(--line-strong); color: var(--mute); }
     .plan { position: relative; padding: 28px; border-radius: 18px; display: flex; flex-direction: column; gap: 18px; }
     .plan h2 { margin: 0; font-size: 22px; letter-spacing: -.01em; display: flex; align-items: center; gap: 10px; }
@@ -61,13 +61,14 @@
     .plan li { display: grid; grid-template-columns: 20px 1fr; gap: 10px; line-height: 1.45; }
     .plan li svg { width: 18px; height: 18px; margin-top: 2px; }
     .plan li small { display: block; color: var(--mute); }
-    .plan .cta { margin-top: auto; display: grid; gap: 8px; }
+    .plan .cta { margin-top: auto; display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; }
+    .plan h4:first-child { margin-top: 0; }
     .plan .cta .btn { width: 100%; }
     .plan .cta .btn[aria-disabled="true"] { opacity: .55; cursor: not-allowed; transform: none; }
     .plan .cta p { margin: 0; color: var(--mute); font-size: 13px; text-align: center; line-height: 1.45; }
     .notify label { display: block; font-size: 14px; color: var(--mute); margin-bottom: 8px; text-align: center; }
     .notify-row { display: flex; gap: 8px; }
-    .notify-row input { flex: 1; min-width: 0; padding: 12px 16px; border-radius: 999px; border: 1px solid var(--line-strong); background: var(--inset); color: var(--fg); font: 15px var(--sans); }
+    .notify-row input { flex: 1; min-width: 0; width: 100%; padding: 12px 16px; border-radius: 999px; border: 1px solid var(--line-strong); background: var(--inset); color: var(--fg); font: 15px var(--sans); }
     .notify-row .btn { width: auto !important; }
     .notify p { margin: 8px 0 0; color: var(--mute); font-size: 13px; text-align: center; }
     .notify p a { color: inherit; }
@@ -174,7 +175,7 @@
 
         <article class="plan plus" aria-labelledby="plus-h">
           <div>
-            <span class="tag">Gradify organises, optimises and manages your learning</span>
+            <span class="tag">Gradify runs the rest</span>
             <h2 id="plus-h">Gradify Pro <span class="current" id="plus-current" hidden>Your plan</span></h2>
           </div>
           <div class="price"><span class="amt" id="plus-amt"></span><span class="per">a month</span></div>
