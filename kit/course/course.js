@@ -64,9 +64,18 @@ import { mountToTop, copyLink, jumpTo, reduced } from "../ui/motion.js";
 import { arriveHere, rememberScroll, backPlace, trail, pin, pinned, pins, setPins, restoreAt, onPlacesChange } from "../ui/places.js";
 import { offerBack, hideBack, restoreScroll } from "../ui/wayfinding.js";
 import { resourceSwitcher, wireActions } from "../ui/resources.js";
+import { mountWorkspace } from "../ui/workspace.js";
+import { logEvent } from "../ui/history.js";
+import { mountContextBar } from "../ui/context-bar.js";
+import { mountCourseSwitcher } from "../ui/switcher.js";
+import { attachAccount } from "../data/learner-state.js";
+import { resource as makeResource, rid as makeRid } from "../core/resource.js";
+import { recordMistake, resolveMistake, scheduledFor, unschedule, retitle } from "../data/links.js";
+import { mountResourceActions } from "../ui/resource-actions.js";
+import { mountConnections } from "../ui/connections.js";
 import { pref, setPref } from "../ui/prefs.js";
 import { openModal, openDrawer } from "../ui/overlay.js";
-import { tabsHtml, wireTabs } from "../ui/disclosure.js";
+import { tabsHtml, wireTabs, wireSections, wireSteps, densityHtml, wireDensity, wireRows } from "../ui/disclosure.js";
 import { feel } from "../ui/feel.js";
 import { CHAPTER_PREREQS, chapterPrereqsFromConcepts } from "../learning/chapter-map.js";
 import { masteryMap } from "../learning/mastery-map.js";
@@ -239,6 +248,8 @@ export function mountCourse(root, cfg) {
     try { const cloud = await CloudStore.create(), user = cloud ? await cloud.user() : null; st = scopeToSite(user ? cloud : new LocalStore(), cfg.site); }
     catch { st = scopeToSite(new LocalStore(), cfg.site); }
     storeMode = st.mode; storeNow = st;
+    // the learner's record (pins, tabs, history, links, collections…) syncs with the account when signed in
+    attachAccount(st).catch(() => {});
     const f = S.sync?.failedAt && (!S.sync.ok || S.sync.failedAt > S.sync.ok) ? S.sync.reason : null;
     setSave(st.mode !== "cloud" ? "local" : !navigator.onLine ? "offline" : f || "saved", { at: S.sync?.ok });
     return st;
@@ -276,9 +287,18 @@ export function mountCourse(root, cfg) {
   const LEVELS = cfg.levels || ["Easy", "Medium", "Hard"];
   const pageQs = new Map();                                   // key → item, for questions on the current view
   const qHtml = (it, opts = {}) => { pageQs.set(it.key, it); return renderQuestion(it.Q, it.key, { levels: LEVELS, ...opts }); };
+  // a quiz or test's state in the learner's history (kit/ui/history.js): in progress from the first answer, then
+  // completed, or available to retry when the score is under the pass mark. Opening one records nothing here, so
+  // "Pick up where you left off" only offers what the learner actually started.
+  const assessState = (title, kind, extra) => logEvent({ act: "studied", href: `${location.pathname}${location.hash}`, title, kind, subject: cfg.name, where: `${cfg.site} · ${cfg.name}`, ...extra });
   function record(it, context, contextId, res, meta = {}) {
     const a = makeAttempt({ site: cfg.site, subject: cfg.slug, context, contextId, Q: it.Q, key: it.key, version: it.v, lesson: it.l?.id, module: it.l?.module, unit: it.l?.unit.id, response: meta.response, result: res, meta });
     S.attempts.push(a); if (S.attempts.length > 2000) S.attempts.splice(0, S.attempts.length - 2000);
+    // a wrong answer is a mistake to revisit, everywhere (Continue, the Revision Centre), until it's got right
+    if (it.l && a.marking?.status !== "provisional") {
+      if (a.correct) resolveMistake(`${cfg.slug}:${it.key}`);
+      else recordMistake({ key: `${cfg.slug}:${it.key}`, question: it.Q?.q, lesson: lessonRes(byId[it.l.id] || it.l), href: `${coursePath}#/lesson/${it.l.id}/co-check` });
+    }
     if (a.question?.type !== "card") feel(a.correct ? "correct" : "wrong");
     queueAttempt(S, a.id); save();
     flushOutbox();
@@ -292,7 +312,19 @@ export function mountCourse(root, cfg) {
     setTimeout(() => el.remove(), 1600);
     root.querySelectorAll(".cx-combo-n").forEach((x) => { x.textContent = n; x.closest(".cx-combo")?.classList.add("hot"); });
   }
+  // a question is a resource too (kit/core/resource.js): its ••• menu pins it, saves it to a collection, links it
+  // to notes or flashcards, schedules it, or takes a note on it. Its home is its lesson's questions.
+  const questionRes = (it) => makeResource(makeRid("question", coursePath, it.key), { title: String(it.Q?.q || "Question").replace(/\*\*|`|\^\{|_\{|\}/g, "").slice(0, 90), subject: cfg.name,
+    sub: it.l ? `Question · ${it.l.title}` : `Question · ${cfg.name}`, refs: it.l ? pointsOf(it.l.id) : [], href: it.l ? `${coursePath}#/lesson/${it.l.id}/co-check?q=${encodeURIComponent(it.key)}` : `${coursePath}#/home?q=${encodeURIComponent(it.key)}` });
+  function questionMenus(el) {
+    for (const box of el.querySelectorAll(".aq[data-key]")) {
+      if (box.querySelector(":scope > .gx-ra") || box.dataset.mode === "exam") continue;
+      const it = pageQs.get(box.dataset.key); if (!it) continue;
+      mountResourceActions(box, () => questionRes(it), { store, app: appHref, where: "afterbegin", label: "This question: more actions" });
+    }
+  }
   function wirePractice(el, context, contextId, xp = XP.check) {
+    questionMenus(el);
     wireQuestions(el, (k) => pageQs.get(k)?.Q, (Q, res, first, box, meta) => {
       const it = pageQs.get(box.dataset.key); record(it, context, contextId, res, meta);
       if (first) { if (res.score >= 0.7) { combo++; comboBest = Math.max(comboBest, combo); if ([3, 5, 8, 12].includes(combo)) comboPop(combo); } else { combo = 0; root.querySelectorAll(".cx-combo").forEach((x) => x.classList.remove("hot")); } root.querySelectorAll(".cx-combo-n").forEach((x) => { x.textContent = combo; x.closest(".cx-combo").hidden = !combo; }); }
@@ -414,6 +446,7 @@ export function mountCourse(root, cfg) {
   async function award(xp, k, id, detail) {
     const before = { lvl: levelOf(totalXp()).n, badges: new Set(earned().map((b) => b.id)), goal: todayXp() >= S.goal };
     S.log.push({ t: Date.now(), xp, k, id }); save();
+    logEvent({ act: "studied", href: `${location.pathname}${location.hash || "#/home"}`, title: placeTitle || cfg.name, kind: k, subject: cfg.name, where: `${cfg.site} · ${cfg.name}`, n: xp, unit: "XP" });
     pop(`+${xp} XP`);
     store().then((s) => s.logActivity({ site: cfg.site, kind: `${cfg.slug}-${k}`, xp, detail: detail || id })).catch(() => {});
     const lvl = levelOf(totalXp()).n;
@@ -491,6 +524,20 @@ export function mountCourse(root, cfg) {
     <div class="cx-scrim" hidden></div>
     <nav class="cx-dock" aria-label="${esc(cfg.name)} quick navigation"></nav>`;
   const main = root.querySelector(".co-main"), side = root.querySelector(".co-side"), hud = root.querySelector(".co-hud"), treeEl = root.querySelector(".cx-tree"), dock = root.querySelector(".cx-dock"), scrim = root.querySelector(".cx-scrim");
+  // the learner's workspace tabs (kit/ui/workspace.js): this course's lesson, its questions and flashcards, beside
+  // their notes and plan in the study app; and, in a lesson, its tools in a bar that follows you (kit/ui/context-bar.js)
+  const workspaceTabs = mountWorkspace(root, { where: "afterbegin" });
+  // every lesson, topic and course here is a universal resource (kit/core/resource.js): the same id in links,
+  // collections, notes, the plan and history wherever it appears
+  const coursePath = location.pathname.replace(/index\.html$/, "");
+  const appHref = new URL(cfg.app || "../app.html", location.href).pathname;
+  const pointsOf = (lid) => { try { return specModel().points.filter((p) => p.lessons.includes(lid) || p.partial.includes(lid)).map((p) => p.id); } catch { return []; } };
+  const lessonRes = (l) => makeResource(makeRid("lesson", coursePath, l.id), { title: l.title, subject: cfg.name, sub: `${cfg.name} · ${U} ${l.unit.n}: ${l.unit.title}`, refs: pointsOf(l.id), href: `${coursePath}#/lesson/${l.id}` });
+  const courseRes = () => makeResource(makeRid("course", coursePath), { title: cfg.name, subject: cfg.name, sub: `${cfg.site} · course`, href: `${coursePath}#/home` });
+  mountResourceActions(root.querySelector(".cx-headrow"), courseRes, { store, app: appHref, label: `${cfg.name}: more actions` });
+  // the learner's other courses, one click away from this one's header (kit/ui/switcher.js)
+  mountCourseSwitcher(root.querySelector(".cx-headrow"), { current: location.pathname, where: "afterbegin" });
+  let ctxBar = null, placeTitle = "", sectionFold = null;
   addSave(root.querySelector(".co-head .cx-save"));
   // pin this course to the top of the Gradify homepage and the subject site's (kit/ui/places.js); Undo, no confirm
   const pinBtn = root.querySelector("[data-pincourse]"), courseHref = location.pathname;
@@ -734,6 +781,7 @@ export function mountCourse(root, cfg) {
     { keys: "s", label: "Split screen: notes beside questions", group: "In a lesson", when: () => inLesson() && splitFits(), run: () => setSplit(!splitOn()) },
     { keys: "e", label: "Explore related topics", group: "In a lesson", when: inLesson, run: () => relatedTopics() },
     { keys: "r", label: "Revision notes for the lesson", group: "In a lesson", when: () => inLesson() && Boolean(curN), run: () => revisionNotes() },
+    { keys: "p", label: "Lesson panel: definitions, specification, questions", group: "In a lesson", when: () => inLesson(), run: () => lessonPanel() },
     { keys: "o", label: "Show or hide the course outline", group: "In a lesson", when: () => !treeEl.hidden, run: toggleOutline },
     { keys: "u", label: `Up to the ${u1}`, group: "In a lesson", when: inLesson, run: () => go(`learn/${curLesson.unit.id}`) },
     { keys: "g h", label: "Course home", group: "Go to", run: () => go("home") },
@@ -760,12 +808,12 @@ export function mountCourse(root, cfg) {
     const due = dueCards().length;
     const a = (href, icon, t, cur, extra = "") => `<a href="${href}" ${cur ? 'aria-current="page"' : ""} ${extra}>${ic(icon)}<span>${t}</span></a>`;
     dock.innerHTML = view === "lesson" && l
-      ? `<button type="button" data-tree-open>${ic("menu")}<span>Outline</span></button>${prev ? a(`#/lesson/${prev.id}`, "left", "Previous") : `<span class="off">${ic("left")}<span>Previous</span></span>`}<button type="button" data-ai-open aria-label="Ask Gradify AI">${ic("ai")}<span>Ask AI</span></button>${next ? a(`#/lesson/${next.id}`, "right", "Next") : `<span class="off">${ic("right")}<span>Next</span></span>`}${a("#/home", "home", "Home")}`
+      ? `<button type="button" data-tree-open>${ic("menu")}<span>Outline</span></button>${prev ? a(`#/lesson/${prev.id}`, "left", "Previous") : `<span class="off">${ic("left")}<span>Previous</span></span>`}<button type="button" data-ai-open aria-label="Ask Gradify AI">${ic("ai")}<span>Ask AI</span></button>${next ? a(`#/lesson/${next.id}`, "right", "Next") : `<span class="off">${ic("right")}<span>Next</span></span>`}<button type="button" data-ctx-open aria-label="This lesson's tools">${ic("grid")}<span>Tools</span></button>`
       : `${a("#/home", "home", "Home", view === "home")}${a("#/learn", "book", "Syllabus", ["learn", "quiz"].includes(view))}<button type="button" data-ai-open aria-label="Ask Gradify AI">${ic("ai")}<span>Ask AI</span></button>${a("#/revise", "cards", "Revise", ["revise", "review", "target", "problems"].includes(view), "")}${a("#/me", "chart", "Progress", view === "me")}`;
     if (due) dock.querySelector('a[href="#/revise"]')?.insertAdjacentHTML("beforeend", `<i class="cx-dot">${due > 99 ? "99+" : due}</i>`);
   }
   root.addEventListener("click", (e) => { if (e.target.closest("[data-pal-open]")) { e.preventDefault(); palette.open(); } });
-  dock.addEventListener("click", (e) => { if (e.target.closest("[data-ai-open]")) { e.preventDefault(); document.querySelector(".gai-fab")?.click(); } });
+  dock.addEventListener("click", (e) => { if (e.target.closest("[data-ai-open]")) { e.preventDefault(); document.querySelector(".gai-fab")?.click(); } if (e.target.closest("[data-ctx-open]")) ctxBar?.toggle(); });
   // bookmarks (S.marks: + time on, − time off, so the latest change wins across devices) and recently viewed lessons
   const marked = (id) => (S.marks?.[id] || 0) > 0;
   // a bookmark changes at once and can be undone (no "are you sure?"); the lesson's own button follows
@@ -1436,6 +1484,50 @@ export function mountCourse(root, cfg) {
   // related topics: what this lesson builds on, the rest of its topic, and lessons named after its own key terms,
   // each previewable in place; opening one keeps a way back to the exact spot in this lesson (kit/ui/wayfinding.js)
   let returnTo = null;
+  // the lesson panel: what goes with the lesson, beside it, without leaving it. Definitions, the specification points
+  // it teaches, its questions, the lessons around it and the learner's own things. The open tab is remembered.
+  function lessonPanel() {
+    const l = curLesson, N = curN; if (!l) return;
+    const nQ = (N?.items || []).length, nC = N?.cards?.length || 0;
+    let points = [];
+    try { const m = specModel(); points = m.points.filter((p) => p.lessons.includes(l.id) || p.partial.includes(l.id)); } catch { /* this course has no specification */ }
+    const g = groupsOf(l.unit).find((x) => x.lessons.some((y) => y.id === l.id)), near = (g?.lessons || l.unit.lessons).map((x) => byId[x.id] || x).filter((x) => x.id !== l.id);
+    const pre = (N?.prereq || []).map((t) => lessons.find((x) => norm(x.title) === norm(String(t).replace(/\*\*/g, ""))) || t);
+    const row = (href, label, sub = "", attrs = "") => `<li><a href="${esc(href)}" ${attrs}><b>${label}</b>${sub ? `<small>${sub}</small>` : ""}</a></li>`;
+    const mine = (S.attempts || []).filter((a) => a.lesson === l.id), right = mine.filter((a) => a.correct).length;
+    const tabs = [
+      { id: "terms", label: "Definitions", badge: N?.terms?.length || "", html: N?.terms?.length ? `<dl class="cx-pterms">${N.terms.map(([t, d]) => `<dt>${inline(t)}</dt><dd>${inline(d)}</dd>`).join("")}</dl>` : `<p class="co-empty">This lesson doesn't list key terms.</p>` },
+      { id: "spec", label: "Specification", badge: points.length || "", html: points.length ? `<ul class="cx-plist">${points.map((p) => row(`#/spec/${p.id}`, `<span class="sm-id">${esc(p.id)}</span> ${esc(p.title)}`, esc(p.estimate == null ? "Not assessed yet" : `${Math.round(p.estimate * 100)}% mastery`), "data-pclose")).join("")}</ul>` : `<p class="co-empty">No exam specification points are linked to this lesson${cfg.spec ? "" : " (this course has no specification set up)"}.</p>` },
+      { id: "qs", label: "Questions", html: `<ul class="cx-plist">${nQ ? row("#co-check", "Check yourself", `${nQ} questions in this lesson`, 'data-jump="co-check" data-pclose') : ""}${nC ? `<li><button type="button" data-pcards><b>Flashcards</b><small>${nC} cards from this lesson</small></button></li>` : ""}${row(`#/target/${encodeTest({ minutes: 5, scope: "lessons", lessons: (g?.lessons || [l]).map((x) => x.id) })}`, "Target test", `5 minutes on ${esc(g?.title || l.title)}`, "data-pclose")}${row(`#/quiz/${l.unit.id}`, `${esc(U)} ${l.unit.n} quiz`, S.quiz[l.unit.id] ? `best ${pc(S.quiz[l.unit.id].best)}` : esc(l.unit.title), "data-pclose")}</ul>` },
+      { id: "related", label: "Related", html: `${pre.length ? `<p class="cx-pk">Builds on</p><ul class="cx-plist">${pre.map((x) => (typeof x === "string" ? `<li><span>${inline(x)}</span></li>` : row(`#/lesson/${x.id}`, esc(x.title), esc(`${U} ${x.unit.n}`), "data-pclose"))).join("")}</ul>` : ""}
+        ${near.length ? `<p class="cx-pk">Alongside it${g?.title ? `: ${esc(g.title)}` : ""}</p><ul class="cx-plist">${near.slice(0, 12).map((x) => row(`#/lesson/${x.id}`, esc(x.title), esc(STATUS[statusOf(x.id)]?.label || ""), "data-pclose")).join("")}</ul>` : ""}
+        <button type="button" class="gx-link" data-prelated>Explore everything it connects to</button>` },
+      { id: "mine", label: "Yours", html: `<ul class="cx-plist"><li><span><b>${marked(l.id) ? "Bookmarked" : "Not bookmarked"}</b><small>Press B to ${marked(l.id) ? "remove the bookmark" : "bookmark it"}</small></span></li>
+        <li><span><b>Your answers here</b><small>${mine.length ? `${mine.length} answered, ${right} right` : "None yet"}</small></span></li>
+        ${row(`${appHref}#/notes/from/${encodeURIComponent(lessonRes(l).rid)}?t=${encodeURIComponent(l.title)}`, "Notes on this lesson", "A page in Gradify Notes that remembers it came from this lesson")}${row(`${cfg.app || "app.html"}#/history`, "Your history", "Everything you've opened and studied")}</ul>` },
+    ];
+    tabs.splice(4, 0, { id: "conn", label: "Connections", html: `<div class="cx-pconn"></div>` });
+    const d = openDrawer({ title: l.title, side: "right", label: `Lesson panel: ${l.title}`, body: tabsHtml("cx-panel", tabs, pref(cfg.slug, "panelTab", N?.terms?.length ? "terms" : "qs")) });
+    const box = d.box || d.el;
+    wireTabs(box, { scope: cfg.slug, key: "panelTab" });
+    // this lesson's connections: what the learner linked it to, from any tool, and the course's lessons that share its
+    // specification points (they carry those points here, so the suggestion can say so)
+    // what this lesson is about (its key terms, headings, topic and module), what it builds on in the curriculum
+    // graph, and the lessons sharing its specification points, so suggestions can say why
+    const clean = (t) => String(t).replace(/\*\*|`/g, "").trim();
+    const here = makeResource(lessonRes(l).rid, { ...lessonRes(l), terms: (N?.terms || []).map(([t]) => clean(t)), headings: (N?.blocks || []).filter((b) => b.t === "h").map((b) => clean(b.x)), unit: l.unit.id, module: l.module });
+    const extra = [];
+    try { if (graph) for (const k of prerequisitesOfLesson(graph, l.id).modules) { const n = graph.nodes.get(k), x = n && byId[n.lessons[0]]; if (x && x.id !== l.id) extra.push(makeResource(lessonRes(x).rid, { ...lessonRes(x), rel: "builds-on" })); } } catch { /* no graph */ }
+    try { for (const p of specModel().points) for (const lid of [...p.lessons, ...p.partial]) if (byId[lid] && lid !== l.id) extra.push(lessonRes(byId[lid])); } catch { /* no specification */ }
+    const conn = mountConnections(box.querySelector(".cx-pconn"), here, { app: appHref, extra });
+    d.done?.then(() => conn?.stop?.());
+    box.addEventListener("click", (e) => {
+      if (e.target.closest("[data-pcards]")) { d.close(); setTimeout(() => main.querySelector("[data-cards]")?.click(), 120); return; }
+      if (e.target.closest("[data-prelated]")) { d.close(); setTimeout(relatedTopics, 120); return; }
+      const j = e.target.closest("[data-jump]"); if (j) { e.preventDefault(); d.close(); setTimeout(() => jumpTo(document.getElementById(j.dataset.jump)), 120); return; }
+      if (e.target.closest("[data-pclose]")) d.close();
+    });
+  }
   function relatedTopics() {
     const l = curLesson, N = curN; if (!l) return;
     const seen = new Set([l.id]), take = (ls) => ls.filter((x) => x && !seen.has(x.id) && seen.add(x.id));
@@ -1550,6 +1642,7 @@ export function mountCourse(root, cfg) {
             <span class="cx-save" hidden></span>
             <button type="button" class="cx-ib" data-mark aria-pressed="${marked(id)}" title="Bookmark (B)" aria-label="Bookmark this lesson">${ic(marked(id) ? "bookmarked" : "bookmark")}</button>
             ${N ? `<button type="button" class="cx-ib" data-revnotes title="Revision notes (R)" aria-label="Revision notes">${ic("notes")}</button>` : ""}
+            <button type="button" class="cx-ib" data-panel title="Lesson panel: definitions, specification, questions (P)" aria-label="Lesson panel">${ic("inbox")}</button>
             ${N && (nQ || N.cards.length) ? `<button type="button" class="cx-ib cx-splitb" data-split aria-pressed="${splitOn()}" title="Split screen: notes beside questions (S)" aria-label="Split screen">${ic("split")}</button>` : ""}
             <button type="button" class="cx-ib" data-focus aria-pressed="${focusOn()}" title="Focus mode (F)" aria-label="Focus mode">${ic("expand")}</button>
             <button type="button" class="cx-ib" data-pal-open title="Search (/)" aria-label="Search the course">${ic("search")}</button>
@@ -1565,6 +1658,7 @@ export function mountCourse(root, cfg) {
         ${N && cfg.reviewLine ? `<p class="co-reviewed">${reviewLine(u)}</p>` : ""}
         ${buildsOnHtml(id)}
         ${N ? F.top : ""}
+        ${N && N.blocks.filter((b) => b.t === "h").length > 1 ? `<div class="co-viewbar">${densityHtml("lesson-view")}<button type="button" class="gx-link" data-secall aria-pressed="false">Collapse all sections</button></div><p class="co-compactnote" hidden>Key points only: the first paragraph, lists, key ideas and equations of each section. Worked examples, mistakes and diagrams are in the full lesson.</p>` : ""}
         ${N ? `<div class="mv-cols co-prose">${lessonDiagrams(N, id)}</div>${F.end || recapDiagrams(N, id).length ? `<section class="co-recap" id="co-recap"><h3 class="co-part">${ic("check")} Recap</h3>${recapHtml(N, id)}${F.end}</section>` : ""}` : `<p class="co-empty">The notes for this lesson are still being written. You can still mark it done and come back later.</p>`}
         ${N && cfg.anatomy3d?.lessons && id in cfg.anatomy3d.lessons ? anatomyPanel(cfg.anatomy3d.lessons[id]) : ""}
         ${N ? `<nav class="cx-kit" aria-label="Practise this lesson"><h3 class="co-part cx-kith">${ic("target")} Practise this lesson</h3>
@@ -1646,6 +1740,9 @@ export function mountCourse(root, cfg) {
     { const lab = main.querySelector(".co-trylab, .co-lesson .co-lab"); if (lab) lab.id ||= "co-trylab"; else main.querySelector("[data-kit-lab]")?.remove(); }
     main.querySelector("[data-mark]").addEventListener("click", () => toggleMark(id));
     main.querySelector("[data-focus]").addEventListener("click", () => setFocus(!focusOn()));
+    main.querySelector("[data-panel]")?.addEventListener("click", () => lessonPanel());
+    retitle(lessonRes(l).rid, l.title);   // a lesson renamed in the course: what links to it says the new name
+    mountResourceActions(main.querySelector(".cx-lact"), () => lessonRes(l), { store, app: appHref, where: "beforeend", label: "This lesson: more actions" });
     paintDock("lesson", l, prev && byId[prev.id], next && byId[next.id]);
     freshTree(true);
     wireReading(id, nQ, N, prev && byId[prev.id], next && byId[next.id]);
@@ -1653,7 +1750,15 @@ export function mountCourse(root, cfg) {
     if (N) wireMaps(main, N, mapOpts(l));
     main.querySelectorAll("[data-cards]").forEach((b) => b.addEventListener("click", async () => { if (await gate("flashcards", `${cfg.slug}:${l.id}`, { store })) flashcards(N.cards, l, N); }));
     main.querySelector("[data-save]")?.addEventListener("click", (e) => saveLesson(l, N, e.currentTarget));
-    { const sw = main.querySelector("#co-next"); if (sw) wireActions(sw, res); }
+    // less at once without losing anything (kit/ui/disclosure.js): sections fold (remembered for this lesson, never by
+    // themselves), worked solutions open a step at a time, and the lesson can be read as key points only
+    {
+      const prose = main.querySelector(".co-prose");
+      wireSteps(prose);
+      sectionFold?.stop(); sectionFold = wireSections(prose, { scope: cfg.slug, key: `shut:${id}`, allBtn: main.querySelector("[data-secall]") });
+      wireDensity(main.querySelector(".co-viewbar"), { target: main.querySelector(".co-lesson"), scope: cfg.slug, key: "compact", onChange: (v) => { const n = main.querySelector(".co-compactnote"); if (n) n.hidden = v !== "compact"; } });
+    }
+    { const sw = main.querySelector("#co-next"); if (sw) wireActions(sw, res); ctxBar?.stop(); ctxBar = mountContextBar(root, res, { label: l.title, hideWhen: sw }); }
     main.querySelector("[data-revnotes]")?.addEventListener("click", () => revisionNotes());
     main.querySelector("[data-split]")?.addEventListener("click", () => setSplit(!splitOn()));
     if (splitOn() || pref(cfg.slug, "split")) setSplit(splitFits(), false);
@@ -1667,6 +1772,8 @@ export function mountCourse(root, cfg) {
     main.querySelector(".co-complete").addEventListener("click", async (e) => {
       if (S.done[id]) return;
       S.done[id] = Date.now(); save(); track("lesson_complete", cfg.site);
+      // put into the plan from its ••• menu: the plan block is ticked off too
+      for (const b of scheduledFor(lessonRes(l).rid)) store().then(async (st) => { const blk = (await st.listBlocks(b.day, b.day)).find((x) => x.id === b.id); if (blk && !blk.done) { await st.saveBlock({ ...blk, done: true }); toast("Ticked off in your plan too.", { key: "plan-tick", icon: "check" }); } if (!blk) unschedule(b.id); }).catch(() => {});
       ledger({ event: "lesson_completed", concept: `${cfg.slug}:${id}`, source: "course", detail: { seconds: Math.round((lt.current()?.ms || 0) / 1000) + (S.time?.[id]?.s || 0) } }); e.currentTarget.disabled = true; e.currentTarget.querySelector("span").textContent = "Completed ✓";
       const lvBefore = levelOf(totalXp());
       await award(XP.lesson, "lesson", id, `${cfg.name}: ${l.title}`);
@@ -1901,6 +2008,7 @@ export function mountCourse(root, cfg) {
         if (box.classList.contains("done")) return;
         box.classList.add("done");
         score += res.score; record(it, "quiz", u.id, res, meta);
+        assessState(`${U} ${u.n} quiz`, "quiz", { state: "in-progress", answered: k + 1, total: qs.length });
         box.querySelectorAll("button:not(.co-nextq), input, select, textarea").forEach((x) => { x.disabled = true; });
         main.querySelector(".co-nextq").hidden = false; main.querySelector(".co-nextq").focus();
       });
@@ -1908,6 +2016,7 @@ export function mountCourse(root, cfg) {
     };
     const finish = async () => {
       const p = score / qs.length, pass = p >= 0.75, prev = S.quiz[u.id];
+      assessState(`${U} ${u.n} quiz`, "quiz", { state: "completed", answered: qs.length, total: qs.length, score: Math.round(p * 100), pass });
       S.quiz[u.id] = { best: Math.max(p, prev?.best || 0), pass: pass || prev?.pass || false, t: Date.now() }; save();
       globalThis.gradifyConsent?.event("quiz_complete", { passed: pass });   // Google Analytics, with consent: pass or not, never the score
       main.innerHTML = `<div class="co-panel co-result"><div class="co-burst">${ic(pass ? "trophy" : "target")}</div><h2>${Math.round(score * 10) / 10} / ${qs.length}</h2><p>${pass ? `Passed ${U} ${u.n}: ${esc(u.title)}.` : `You need 75% to pass. Look back over the lessons you missed, then try again.`}</p>
@@ -2152,6 +2261,7 @@ export function mountCourse(root, cfg) {
         if (box.classList.contains("done")) return;
         box.classList.add("done");
         record(it, "quiz", "target", res, meta); rows.push({ lesson: it.l.id, key: it.key, score: res.score });
+        assessState(`Target test · ${scopeLabel}`, "target", { state: "in-progress", answered: rows.length, total: items.length });
         if (res.score >= 0.7) { right++; run++; best = Math.max(best, run); if ([3, 5, 8].includes(run)) comboPop(run); } else run = 0;
         box.querySelectorAll("button:not(.co-nextq), input, select, textarea").forEach((x) => { x.disabled = true; });
         main.querySelector(".co-from").hidden = false;
@@ -2162,6 +2272,7 @@ export function mountCourse(root, cfg) {
     const finish = async () => {
       clearInterval(timer); routeStop = null;
       const n = rows.length, p = n ? rows.reduce((a, r) => a + r.score, 0) / n : 0, ms = Date.now() - t0, by = targetResults(rows);
+      if (n) assessState(`Target test · ${scopeLabel}`, "target", { state: "completed", answered: n, total: items.length, score: Math.round(p * 100), pass: p >= 0.7 });
       // XP for each question solved for the first time (as in the problem bank), paid once at the end
       let gain = 0; for (const r of rows) if (r.score >= 0.7 && !S.solved[r.key]) { S.solved[r.key] = Date.now(); gain += XP.problem; }
       if (gain) save();
@@ -2365,7 +2476,7 @@ export function mountCourse(root, cfg) {
     const m = specModel(), id = ref ? decodeURIComponent(ref) : null;
     const topic = id && m.topics.find((t) => t.id === id), p = id && !topic && m.points.find((x) => x.id === id);
     if (id && !topic && !p) { main.innerHTML = `<div class="co-panel"><h2>That requirement isn't in your specification</h2><p>It may not be part of the options you've chosen (a tier, say), or the link is out of date.</p><a class="btn btn-light lg btn-sm" href="#/spec"><span>Back to your specification</span></a></div>`; return; }
-    if (topic) { main.innerHTML = topicPageHtml(m, topic, { practiseHref: specPractise }); return; }
+    if (topic) { main.innerHTML = topicPageHtml(m, topic, { practiseHref: specPractise, titleOf: (l) => byId[l]?.title || l, statusOf: (l) => (byId[l] ? STATUS[statusOf(l)].label : null) }); wireRows(main, { scope: cfg.slug, key: "specOpen" }); return; }
     if (p) {
       main.innerHTML = pointPageHtml(m, p, { titleOf: (l) => byId[l]?.title || l, statusOf: (l) => (byId[l] ? STATUS[statusOf(l)].label : null), practiseHref: specPractise });
       // what each lesson offers to practise this point with: its check questions and flashcards
@@ -2735,7 +2846,8 @@ export function mountCourse(root, cfg) {
     // a learner who has started lands on Home; someone new lands on the course's overview when it has one
     const started = Object.keys(S.done).length || (S.log || []).length || (S.recent || []).length;
     const home = cfg.overview && !started ? "overview" : "home";
-    const [v0, arg, sec, how] = location.hash.replace(/^#\/?/, "").split("/"), v = v0 || home;
+    // a query after the route (#/lesson/x/co-check?q=…) names one thing on the page; it isn't part of the route
+    const [v0, arg, sec, how] = location.hash.replace(/^#\/?/, "").split("?")[0].split("/"), v = v0 || home;
     const view = VIEWS.some(([id]) => id === v) || ["lesson", "quiz", "exam", "target"].includes(v) ? v : home;
     const tab = TAB_OF[view] || view;
     // the static course overview below the app belongs to the course's front page, not to lessons, quizzes and the rest
@@ -2756,6 +2868,7 @@ export function mountCourse(root, cfg) {
     paintCrumbs(view, arg);
     const fpref = (() => { try { return localStorage.getItem(FK) === "1"; } catch { return false; } })();
     if (view === "lesson") { if (fpref !== focusOn()) setFocus(fpref); } else if (focusOn()) { document.documentElement.classList.remove("cx-focus"); document.querySelector(".cx-focusx")?.remove(); }
+    ctxBar?.stop(); ctxBar = null; sectionFold?.stop(); sectionFold = null;
     paintDock(view);
     // the trail of places (kit/ui/places.js): coming back to the previous place puts you where you were on it
     const arrived = arriveHere({ href: location.hash || "#/", kind: view, title: "" });
@@ -2801,6 +2914,11 @@ export function mountCourse(root, cfg) {
     // what this place is called (for "Back to …"), then where to put the page
     const title = view === "lesson" ? byId[arg]?.title : view === "quiz" ? `${U} ${units.find((u) => u.id === arg)?.n ?? ""} quiz` : (VIEWS.find(([id]) => id === view)?.[1] || main.querySelector("h2")?.textContent || cfg.name);
     arriveHere({ href: location.hash || "#/", kind: view, title: `${title}` });
+    // a workspace tab for a lesson, a question set or flashcards; and a line in the learner's history
+    placeTitle = `${title}`;
+    const workKind = { lesson: "lesson", quiz: "questions", target: "questions", practice: "questions", exam: "questions", problems: "questions", review: "flashcards", revise: "flashcards" }[view];
+    workspaceTabs.arrived({ href: `${location.pathname}${location.hash}`, title: placeTitle, kind: workKind, scope: location.pathname, scopeLabel: cfg.name });
+    logEvent({ act: "viewed", href: `${location.pathname}${location.hash || "#/home"}`, title: placeTitle, kind: view, subject: cfg.name, where: `${cfg.site} · ${cfg.name}` });
     if (arrived.back && arrived.y && !sec) restoreScroll(arrived.y);
     // followed a link away from a lesson to an activity (its quiz, a target test, the flashcards…): offer the way back
     else if (!arrived.back && ["quiz", "target", "review", "practice", "exam", "problems", "cases", "write"].includes(view)) {

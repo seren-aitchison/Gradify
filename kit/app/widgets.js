@@ -11,6 +11,11 @@ import { freeIntervals, windowsFor } from "../intel/schedule.js";
 import { dayKey, DAY, hhmm } from "../intel/memory.js";
 import { opportunities } from "../intel/autopilot.js";
 import { QUESTIONS } from "../intel/ask.js";
+import { prefSet } from "../ui/prefs.js";
+
+// a widget folds to its title bar from the fold button in its header, so a board can stay calm without removing
+// anything; which are folded is remembered on this device
+const folded = () => prefSet("app", "widgetsFolded");
 const pct = (v) => (v == null ? "–" : `${Math.round(v * 100)}%`);
 const n0 = (x) => Number(x || 0).toLocaleString("en-GB");
 const enc = encodeURIComponent;
@@ -48,7 +53,7 @@ const SMALL = [
 ];
 
 // ---------- wide: a list or a strip ----------
-const shell = (w, body, { link = "", sub = "", cls = "" } = {}) => `<article class="wd wd-${w.size} ${w.tone ? `tone-${w.tone}` : ""} ${cls}" data-w="${w.id}"><header class="wd-h"><h3>${icon(w.icon)}${esc(w.name)}</h3>${link}</header>${sub ? `<p class="wd-intro">${sub}</p>` : ""}${body}</article>`;
+const shell = (w, body, { link = "", sub = "", cls = "" } = {}) => `<article class="wd wd-${w.size} ${w.tone ? `tone-${w.tone}` : ""} ${cls}" data-w="${w.id}"><header class="wd-h"><h3>${icon(w.icon)}${esc(w.name)}</h3>${link}<button type="button" class="wd-fold" data-wfold="${w.id}" aria-expanded="true" aria-label="Fold ${esc(w.name)}" title="Fold"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 15 6-6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></header>${sub ? `<p class="wd-intro">${sub}</p>` : ""}${body}</article>`;
 const chip = (href, t) => `<a class="wd-link" href="${href}">${t} →</a>`;
 const WIDE = [
   { id: "w-upcoming", name: "Your upcoming learning", icon: "clock", what: "The rest of today: what's planned, and what Gradify suggests.",
@@ -138,6 +143,14 @@ export function boardHtml(d, chosen = DEFAULT_WIDGETS) {
   </section>`;
 }
 export function wireBoard(view, ctx) {
+  const set = (el, shut, remember = true) => {
+    el.classList.toggle("wd-folded", shut);
+    const b = el.querySelector("[data-wfold]"), name = el.querySelector(".wd-h h3")?.textContent.trim() || "widget";
+    b?.setAttribute("aria-expanded", String(!shut)); b?.setAttribute("aria-label", `${shut ? "Unfold" : "Fold"} ${name}`); if (b) b.title = shut ? "Unfold" : "Fold";
+    if (remember) folded().toggle(el.dataset.w, shut);
+  };
+  view.querySelectorAll("article.wd[data-w]").forEach((el) => set(el, folded().has(el.dataset.w), false));
+  view.addEventListener("click", (e) => { const b = e.target.closest("[data-wfold]"); if (!b) return; e.preventDefault(); const el = b.closest("article.wd"); set(el, !el.classList.contains("wd-folded")); });
   const form = view.querySelector("#widget-form");
   form?.addEventListener("submit", async (e) => { e.preventDefault(); const ids = new FormData(form).getAll("w"); await ctx.saveIntel({ widgets: ids }); ctx.complete("Board saved", { sub: `${ids.length} widgets` }); ctx.rerender(); });
   view.querySelector("[data-w-reset]")?.addEventListener("click", async () => { await ctx.saveIntel({ widgets: null }); ctx.rerender(); });

@@ -11,6 +11,20 @@
 import * as M from "./model.js";
 import * as S from "./store.js";
 import { icon } from "../../core/icons.js";
+import { resource as gResource, rid as gRid, hrefOf } from "../../core/resource.js";
+import { link as gLink, linksOf, forget as gForget, restore as gRestore, retitle as gRetitle } from "../../data/links.js";
+// pages deleted while this view is open, with what forget() removed for each, so Undo can put their links back
+// (and Redo take them away again)
+const forgotten = new Map();
+function syncForgotten() {
+  for (const [id, f] of forgotten) {
+    if (kb.rems[id] && f.gone) { gRestore(f.gone); f.gone = null; }
+    else if (!kb.rems[id] && !f.gone) f.gone = gForget(`note:${id}`, { href: f.href });
+  }
+}
+import { runResourceAction } from "../../ui/resource-actions.js";
+// this page as a universal resource (kit/core/resource.js), for links, collections, the plan and history
+const noteRes = (id) => gResource(gRid("note", id), { title: M.nameOf(kb, id) || "Untitled", sub: "Note in Gradify Notes", href: `${location.pathname}#/notes/${id}` });
 
 const { esc } = M;
 const $ = (s, el = document) => el.querySelector(s);
@@ -45,6 +59,7 @@ function doUndo(redo = false) {
   const from = redo ? hist.redo : hist.undo, to = redo ? hist.undo : hist.redo;
   const step = from.pop(); if (!step) { ctx.toast(redo ? "Nothing to redo." : "Nothing to undo."); return; }
   to.push(M.undo(kb, step)); S.save(); scheduleCards();
+  syncForgotten();
   if (!kb.rems[root]) { location.hash = "#/notes"; return; }
   drawTree();
 }
@@ -89,6 +104,16 @@ async function render() {
   const main = $("#kb-main");
   const special = { cards: "study", exams: "study", exam: "study", pdf: "blocks", guided: "learn", ask: "learn", io: "learn", shared: "learn" };
   if (special[a]) { root = null; return (await lazy[special[a]]()).screen(a, b, main, api); }
+  // #/notes/from/<resource id>?t=<title>: notes on a lesson (or any resource). The page made from it before opens
+  // again; otherwise a new document, titled after it, that remembers where it came from (a "made from" link)
+  if (a === "from" && b) {
+    const made = linksOf(b).find((x) => x.by === "source" && x.dir === "made-into" && x.other.kind === "note" && kb.rems[x.other.rid.slice(5)]);
+    if (made) { location.replace(`#/notes/${made.other.rid.slice(5)}`); return; }
+    const title = new URLSearchParams(location.hash.split("?")[1] || "").get("t") || "Notes";
+    const r = change(() => M.create(kb, { text: title, doc: true, parent: null }), { draw: "none" });
+    gLink(noteRes(r.id), gResource(b, { title, href: hrefOf(b) }), { by: "source" });
+    location.replace(`#/notes/${r.id}`); return;
+  }
   if (a === "tasks") return tasksScreen(main);
   if (a === "tag") return tagScreen(main, b);
   if (a === "help") return helpScreen(main);
@@ -168,6 +193,7 @@ function wireSide() {
 function openPage(main, id) {
   root = id;
   M.visit(kb, id); S.save();
+  gRetitle(`note:${id}`, M.nameOf(kb, id));   // renamed since it was linked or saved: links and collections say so
   const r = kb.rems[id];
   const crumbs = M.ancestors(kb, id).map((a) => `<a href="#/notes/${a}">${esc(M.nameOf(kb, a))}</a>`).join("<span>›</span>");
   main.innerHTML = `<div class="kb-page" data-root="${id}">
@@ -734,7 +760,17 @@ function moreMenu(btn) {
     ["Share…", () => lazy.learn().then((m) => m.shareDialog(api, root))],
     ["Print", () => print()],
     "-",
-    ["Delete", () => { if (!confirm(`Delete “${M.nameOf(kb, root)}” and everything in it? Its flashcards are suspended; Ctrl+Z puts it back while this page is open.`)) return; const parent = r.parent; change(() => M.remove(kb, root), { draw: "none" }); location.hash = parent ? `#/notes/${parent}` : "#/notes"; }],
+    // the same actions as on every resource in Gradify (kit/ui/resource-actions.js)
+    ["Save to a collection…", () => runResourceAction("save", noteRes(root), { store: async () => ctx.store, app: location.pathname })],
+    ["Connections…", () => runResourceAction("link", noteRes(root), { app: location.pathname })],
+    ["Schedule…", () => runResourceAction("schedule", noteRes(root), { store: async () => ctx.store, app: location.pathname })],
+    ["Pin to your Gradify sidebar", () => runResourceAction("pin", noteRes(root), { app: location.pathname })],
+    ["See its history", () => runResourceAction("history", noteRes(root), { app: location.pathname })],
+    "-",
+    ["Delete", () => { if (!confirm(`Delete “${M.nameOf(kb, root)}” and everything in it? Its flashcards are suspended; Ctrl+Z puts it back while this page is open.`)) return; const parent = r.parent, ids = []; (function walk(x) { ids.push(x); for (const k of kb.rems[x]?.kids || []) walk(k); })(root);
+      change(() => M.remove(kb, root), { draw: "none" });
+      // the page and the pages inside it are gone: so are their links, collection places, schedules and pins
+      for (const x of ids) { const href = `${location.pathname}#/notes/${x}`; forgotten.set(x, { href, gone: gForget(`note:${x}`, { href }) }); } location.hash = parent ? `#/notes/${parent}` : "#/notes"; }],
   ]);
 }
 async function templatePicker() {

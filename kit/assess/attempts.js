@@ -26,6 +26,8 @@ export function makeAttempt({ site, subject, context, contextId, Q, key, version
     lesson: lesson || null, module: module || null, unit: unit || null,
     response: response ?? null, score: Math.round((result.score ?? 0) * 1000) / 1000, correct: !!result.correct, attempt: meta.attempt || 1,
     confidence: meta.confidence || null, ms: meta.ms ?? null, misconception,
+    // "hint": answered after a wrong try and a hint (kept on the device; the account's table has no column for it yet)
+    assist: meta.assist || null,
     marking: { method: result.method || "auto", status: result.status || "final" },
   };
 }

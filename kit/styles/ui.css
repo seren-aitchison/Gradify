@@ -118,10 +118,10 @@ details.gx-acc[open] > summary::after { transform: rotate(-135deg); }
 /* ---------- the command palette ---------- */
 .gx-pal { position: fixed; inset: 0; z-index: 550; display: grid; justify-items: center; align-items: start; padding: 10vh 16px 16px; background: rgba(var(--sink-rgb), .55); backdrop-filter: blur(6px); animation: gx-fade .15s; }
 .gx-palbox { width: min(680px, 100%); max-height: 76vh; display: flex; flex-direction: column; border-radius: 18px; overflow: hidden; color: var(--fg); background: light-dark(#fff, #121214); border: 1px solid var(--line-strong); box-shadow: 0 40px 120px -20px rgba(0, 0, 0, .8); animation: gx-pop .2s var(--gx-ease); }
-.gx-palin { display: flex; align-items: center; gap: 12px; padding: 16px 18px; border-bottom: 1px solid var(--line); color: var(--mute); }
+.gx-palin { flex: none; display: flex; align-items: center; gap: 12px; padding: 16px 18px; border-bottom: 1px solid var(--line); color: var(--mute); }
 .gx-palin .gx-ic { width: 20px; height: 20px; }
 .gx-palin input { flex: 1; min-width: 0; border: 0; background: none; color: var(--fg); font: 18px var(--sans); outline: none; }
-.gx-palf { display: flex; gap: 6px; padding: 10px 14px; overflow-x: auto; scrollbar-width: none; border-bottom: 1px solid var(--line); }
+.gx-palf { flex: none; display: flex; gap: 6px; padding: 10px 14px; overflow-x: auto; scrollbar-width: none; border-bottom: 1px solid var(--line); }
 .gx-palf button { flex: none; padding: 5px 11px; border-radius: 999px; border: 1px solid var(--line); background: none; color: var(--mute); font: 500 12.5px var(--sans); cursor: pointer; }
 .gx-palf button[aria-pressed="true"] { color: var(--fg); background: rgba(var(--ink-rgb), .1); border-color: var(--line-strong); }
 .gx-pall { flex: 1; overflow: auto; padding: 6px 8px 10px; overscroll-behavior: contain; }
@@ -401,3 +401,219 @@ html[data-motion="reduce"] :is(.gx-toast, .gx-layer, .gx-dialog, .gx-panel, .gx-
   .gx-ex-crumbs > :nth-last-child(2):not(:nth-child(2))::before { content: "› … ›"; }
   .gx-pw-head { flex-direction: column; gap: 10px; }
 }
+
+/* ---------- workspace tabs (kit/ui/workspace.js) ---------- */
+.gx-ws { display: flex; align-items: center; gap: 10px; min-width: 0; margin: 18px 0 0; }
+.gx-ws[hidden] { display: none; }
+.gx-wsl { flex: none; font: 600 10.5px var(--mono, monospace); letter-spacing: .12em; text-transform: uppercase; color: var(--faint); }
+.gx-ws ul { display: flex; gap: 6px; flex: 1; min-width: 0; margin: 0; padding: 2px; list-style: none; overflow-x: auto; scrollbar-width: none;
+  overscroll-behavior-x: contain; scroll-snap-type: x proximity; scroll-padding-inline: 12px; -webkit-overflow-scrolling: touch; }
+.gx-ws li { scroll-snap-align: start; }
+/* more tabs off to one side: the strip fades out on that side, so it's plain there's more to swipe to */
+.gx-ws.more-r ul { -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 48px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 48px), transparent); }
+.gx-ws.more-l ul { -webkit-mask-image: linear-gradient(90deg, transparent, #000 48px); mask-image: linear-gradient(90deg, transparent, #000 48px); }
+.gx-ws.more-l.more-r ul { -webkit-mask-image: linear-gradient(90deg, transparent, #000 48px, #000 calc(100% - 48px), transparent); mask-image: linear-gradient(90deg, transparent, #000 48px, #000 calc(100% - 48px), transparent); }
+.gx-ws ul::-webkit-scrollbar { display: none; }
+.gx-ws li { flex: 0 1 220px; min-width: 120px; display: flex; align-items: center; border-radius: 12px; border: 1px solid var(--line); background: rgba(var(--ink-rgb), .03); }
+.gx-ws li.on { border-color: var(--line-strong); background: rgba(var(--ink-rgb), .09); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .18); }
+.gx-ws li a { flex: 1; min-width: 0; display: flex; align-items: center; gap: 8px; padding: 6px 4px 6px 10px; color: var(--mute); text-decoration: none; border-radius: 12px; }
+.gx-ws li.on a, .gx-ws li a:hover { color: var(--fg); }
+.gx-ws li a .gx-ic { flex: none; width: 16px; height: 16px; }
+.gx-ws li a span { display: grid; min-width: 0; font-size: 13px; font-weight: 600; line-height: 1.2; }
+.gx-ws li a span, .gx-ws li a small { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.gx-ws li a small { font-size: 11px; font-weight: 500; color: var(--faint); }
+.gx-ws li button { flex: none; display: grid; place-items: center; width: 26px; height: 26px; margin-right: 4px; padding: 0; border: 0; border-radius: 8px; background: none; color: var(--faint); cursor: pointer; }
+.gx-ws li button:hover { color: var(--fg); background: rgba(var(--ink-rgb), .08); }
+.gx-ws li button .gx-ic { width: 13px; height: 13px; }
+.gx-ws :is(a, button):focus-visible { outline: 2px solid var(--fg); outline-offset: 1px; }
+@media (max-width: 640px) { .gx-wsl { display: none; } .gx-ws li { flex: 0 0 168px; } }
+
+/* ---------- floating lesson tools (kit/ui/context-bar.js) ---------- */
+.gx-ctxbar { position: fixed; left: 50%; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); z-index: 145; display: flex; align-items: center; max-width: calc(100vw - 220px);
+  padding: 5px; border-radius: 18px; border: 1px solid var(--line-strong); background: rgba(var(--surface-rgb), .92); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
+  box-shadow: 0 18px 44px -16px rgba(0, 0, 0, .55); transform: translate(-50%, 140%); opacity: 0; pointer-events: none; transition: transform .25s var(--gx-ease, ease), opacity .2s; }
+.gx-ctxbar.shown { transform: translate(-50%, 0); opacity: 1; pointer-events: auto; }
+.gx-ctxbar ul { display: flex; gap: 2px; margin: 0; padding: 0; list-style: none; overflow-x: auto; scrollbar-width: none; }
+.gx-ctxbar ul::-webkit-scrollbar { display: none; }
+.gx-ctxbar li > * { display: inline-flex; align-items: center; gap: 7px; padding: 8px 12px; border: 0; border-radius: 13px; background: none; color: var(--mute); font: 500 13px var(--sans); white-space: nowrap; text-decoration: none; cursor: pointer; }
+.gx-ctxbar li > *:hover { color: var(--fg); background: rgba(var(--ink-rgb), .07); }
+.gx-ctxbar li > .primary { color: var(--invert-fg); background: var(--invert-bg); }
+.gx-ctxbar li > :focus-visible { outline: 2px solid var(--fg); outline-offset: 1px; }
+.gx-ctxbar .gx-ic { width: 16px; height: 16px; flex: none; }
+.gx-ctxt, .gx-ctxx { display: none; }
+html.cx-focus .gx-ctxbar { display: none; }
+/* a phone: the course dock's Tools button opens the same list as a sheet */
+@media (max-width: 760px) {
+  .gx-ctxbar, .gx-ctxbar.shown { left: 8px; right: 8px; max-width: none; bottom: calc(84px + env(safe-area-inset-bottom, 0px)); display: grid; grid-template-columns: 1fr auto; gap: 6px; padding: 12px; border-radius: 22px;
+    transform: translateY(16px); opacity: 0; pointer-events: none; }
+  .gx-ctxbar.open { transform: none; opacity: 1; pointer-events: auto; }
+  .gx-ctxt { display: block; align-self: center; padding-left: 6px; font-weight: 700; font-size: 15px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .gx-ctxx { display: grid; place-items: center; width: 34px; height: 34px; border: 0; border-radius: 10px; background: rgba(var(--ink-rgb), .07); color: var(--fg); cursor: pointer; }
+  .gx-ctxbar ul { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 6px; overflow: visible; }
+  .gx-ctxbar li > * { width: 100%; padding: 12px; font-size: 14px; border: 1px solid var(--line); white-space: normal; text-align: left; }
+}
+@media (prefers-reduced-motion: reduce) { .gx-ctxbar { transition: none; } }
+
+/* ---------- recently opened courses (kit/ui/switcher.js) ---------- */
+.gx-cs { position: relative; display: inline-flex; }
+.gx-cs[hidden] { display: none; }
+.gx-csb { display: inline-flex; align-items: center; gap: 7px; max-width: 220px; padding: 7px 10px; border-radius: 12px; border: 1px solid var(--line); background: rgba(var(--ink-rgb), .04); color: var(--fg); font: 500 13.5px var(--sans); cursor: pointer; }
+.gx-csb:hover, .gx-cs.open .gx-csb { border-color: var(--line-strong); }
+.gx-csb:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
+.gx-csb span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.gx-csb .gx-ic { width: 15px; height: 15px; flex: none; }
+.gx-csb .gx-cschev { width: 12px; height: 12px; transform: rotate(90deg); opacity: .6; transition: transform .15s; }
+.gx-cs.open .gx-cschev { transform: rotate(-90deg); }
+.gx-csm { position: absolute; z-index: 90; top: calc(100% + 8px); left: 0; width: min(360px, calc(100vw - 24px)); max-height: min(70vh, 520px); overflow-y: auto; padding: 6px; border-radius: 16px;
+  border: 1px solid var(--line-strong); background: light-dark(#fff, #141416); box-shadow: 0 24px 60px -18px rgba(0, 0, 0, .6); animation: gx-pop .15s var(--gx-ease, ease); }
+.gx-csm[hidden] { display: none; }
+.gx-csh { margin: 6px 10px 4px; font: 600 10.5px var(--mono, monospace); letter-spacing: .12em; text-transform: uppercase; color: var(--faint); }
+.gx-csi { display: grid; grid-template-columns: minmax(0, 1fr) 56px 36px; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 11px; color: var(--fg); text-decoration: none; }
+.gx-csi:hover, .gx-csi:focus { background: rgba(var(--ink-rgb), .07); outline: none; }
+.gx-csi:focus-visible { box-shadow: inset 0 0 0 2px var(--fg); }
+.gx-csi.on { background: rgba(var(--ink-rgb), .05); }
+.gx-csi.on b::after { content: " · here"; font-weight: 500; color: var(--faint); }
+.gx-cst { display: grid; min-width: 0; }
+.gx-cst b { font-size: 14px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.gx-cst small { font-size: 12px; color: var(--mute); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.gx-csp { height: 5px; border-radius: 9px; background: rgba(var(--ink-rgb), .1); overflow: hidden; }
+.gx-csp i { display: block; height: 100%; border-radius: inherit; background: var(--fg); }
+.gx-csi em { font-style: normal; font-size: 12px; color: var(--mute); text-align: right; font-variant-numeric: tabular-nums; }
+.gx-csall { grid-template-columns: 20px minmax(0, 1fr); margin-top: 4px; border-top: 1px solid var(--line); border-radius: 0 0 11px 11px; }
+.gx-csall .gx-ic { width: 16px; height: 16px; color: var(--mute); }
+@media (prefers-reduced-motion: reduce) { .gx-csm { animation: none; } }
+.co > .gx-ws { margin: 14px 0 12px; }
+
+/* ---------- sections that fold (kit/ui/disclosure.js wireSections) ---------- */
+.gx-sech { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; margin: 0; padding: 0; border: 0; background: none; color: inherit; font: inherit; letter-spacing: inherit; text-align: left; cursor: pointer; }
+.gx-sech > span { min-width: 0; }
+.gx-sech:focus-visible { outline: 2px solid var(--fg); outline-offset: 4px; border-radius: 6px; }
+.gx-sechv { flex: none; width: 20px; height: 20px; color: var(--faint); transform: rotate(90deg); transition: transform .18s; }
+.gx-sech:hover .gx-sechv { color: var(--fg); }
+.gx-shut .gx-sechv { transform: none; }
+section.gx-shut { padding-bottom: 4px; }
+section.gx-shut > h3 { opacity: .8; }
+
+/* ---------- worked solutions one step at a time (wireSteps) ---------- */
+.gx-stepbar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 10px; }
+.gx-stepbar small { font-size: 12.5px; color: var(--mute); }
+.gx-stepb { display: inline-flex; align-items: center; min-height: 36px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--line-strong); background: var(--invert-bg); color: var(--invert-fg); font: 600 13px var(--sans); cursor: pointer; }
+.gx-stepb.ghost { background: none; color: var(--fg); border-color: var(--line); }
+.gx-stepb:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
+[data-steps] li:focus { outline: none; }
+[data-steps] li.gx-ans::before { content: "Answer"; display: block; font: 700 10.5px var(--mono, monospace); letter-spacing: .12em; text-transform: uppercase; color: var(--mute); margin-bottom: 2px; }
+@media (prefers-reduced-motion: no-preference) { [data-steps] li:not([hidden]) { animation: gx-fade .25s; } }
+
+/* ---------- show more / show less (a details.gx-more) ---------- */
+.gx-more { margin: 12px 0; border-radius: 14px; border: 1px dashed var(--line-strong); }
+.gx-more > summary { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; list-style: none; }
+.gx-more > summary::-webkit-details-marker { display: none; }
+.gx-more > summary b { font-weight: 600; }
+.gx-more-l { font: 700 10.5px var(--mono, monospace); letter-spacing: .1em; text-transform: uppercase; color: var(--mute); }
+.gx-more[open] .gx-more-l { font-size: 0; }
+.gx-more[open] .gx-more-l::after { content: "Show less"; font-size: 10.5px; }
+.gx-more > summary:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; border-radius: 12px; }
+.gx-more > div { padding: 0 14px 12px; }
+
+/* ---------- rows that open (wireRows) ---------- */
+[data-row] { display: grid; place-items: center; flex: none; width: 30px; height: 30px; padding: 0; border: 0; border-radius: 9px; background: none; color: var(--mute); cursor: pointer; }
+[data-row]:hover { color: var(--fg); background: rgba(var(--ink-rgb), .07); }
+[data-row]:focus-visible { outline: 2px solid var(--fg); outline-offset: 1px; }
+[data-row] svg { width: 16px; height: 16px; transition: transform .15s; }
+[data-row][aria-expanded="true"] svg { transform: rotate(90deg); }
+
+/* a wrong first try in practice (kit/assess/questions.js): why that answer isn't right, a hint, another go; the
+   answer is one click away, and shows itself after a second wrong try */
+.aq-tools { display: grid; gap: 8px; margin: 6px 0 2px; }
+.aq-try { display: grid; gap: 6px; padding: 10px 12px; border-radius: 12px; background: rgba(var(--ink-rgb), .04); border: 1px solid var(--line); font-size: 14px; line-height: 1.5; }
+.aq-try[hidden] { display: none; }
+.aq-try p { margin: 0; }
+.aq-hint2 b { color: var(--fg); }
+.aq-show { justify-self: start; padding: 4px 2px; border: 0; background: none; color: var(--mute); font: 500 13px var(--sans); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.aq-show:hover { color: var(--fg); }
+.aq-show:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; border-radius: 4px; }
+.aq-opts button.ruled { opacity: .45; text-decoration: line-through; cursor: not-allowed; }
+.aq-why:focus { outline: none; }
+
+/* ---------- Connections beside a resource (kit/ui/connections.js) ---------- */
+.gx-cn { display: grid; gap: 8px; }
+.gx-cn-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.gx-cn-head h3 { margin: 0; font-size: 16px; }
+.gx-cn-head .gx-link .gx-ic { width: 15px; height: 15px; margin-right: 4px; }
+.gx-cn-k { margin: 10px 0 2px; font: 600 10.5px var(--mono, monospace); letter-spacing: .1em; text-transform: uppercase; color: var(--faint); }
+.gx-cn-l { display: grid; gap: 4px; margin: 0; padding: 0; list-style: none; }
+.gx-cn-i { display: flex; align-items: center; gap: 6px; border-radius: 12px; border: 1px solid var(--line); }
+.gx-cn-i > a { flex: 1; min-width: 0; display: flex; align-items: center; gap: 10px; padding: 8px 10px; color: var(--fg); text-decoration: none; border-radius: 12px; }
+.gx-cn-i > a:hover { background: rgba(var(--ink-rgb), .04); }
+.gx-cn-i > a:focus-visible { outline: 2px solid var(--fg); outline-offset: 1px; }
+.gx-cn-ic { display: grid; place-items: center; flex: none; width: 30px; height: 30px; border-radius: 9px; background: rgba(var(--ink-rgb), .06); color: var(--mute); }
+.gx-cn-ic .gx-ic { width: 15px; height: 15px; }
+.gx-cn-t { display: grid; min-width: 0; }
+.gx-cn-t b { font-size: 14px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.gx-cn-t small { font-size: 12px; color: var(--mute); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.gx-cn-x, .gx-cn-ln { flex: none; margin-right: 6px; border: 0; cursor: pointer; }
+.gx-cn-x { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 8px; background: none; color: var(--faint); }
+.gx-cn-x:hover { color: var(--fg); background: rgba(var(--ink-rgb), .07); }
+.gx-cn-x .gx-ic { width: 13px; height: 13px; }
+.gx-cn-ln { padding: 5px 12px; border-radius: 999px; border: 1px solid var(--line-strong); background: none; color: var(--fg); font: 600 12.5px var(--sans); }
+.gx-cn-ln:hover { background: rgba(var(--ink-rgb), .07); }
+.gx-cn-none { margin: 0; font-size: 13.5px; color: var(--mute); list-style: none; }
+.gx-cn-pick { display: grid; gap: 6px; }
+.gx-cn-pick[hidden] { display: none; }
+.gx-cn-q { display: flex; align-items: center; gap: 8px; padding: 0 10px; border-radius: 12px; border: 1px solid var(--line-strong); }
+.gx-cn-q .gx-ic { width: 15px; height: 15px; color: var(--mute); }
+.gx-cn-q input { flex: 1; min-width: 0; min-height: 40px; border: 0; background: none; padding: 0; box-shadow: none; color: var(--fg); }
+.gx-cn-cols { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; }
+.gx-cn-cols a { display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border-radius: 999px; border: 1px solid var(--line); color: var(--fg); text-decoration: none; font-size: 13px; }
+.gx-cn-cols .gx-ic { width: 13px; height: 13px; }
+.gx-cn-note { margin: 0; padding: 10px 12px; border-radius: 12px; background: rgba(var(--ink-rgb), .04); white-space: pre-wrap; font-size: 14px; }
+.gx-cn-map { display: block; width: 100%; max-width: 300px; margin: 10px auto 0; overflow: visible; }
+.gx-cn-map line { stroke: var(--line-strong); stroke-width: 1.5; }
+.gx-cn-map line.sug { stroke-dasharray: 4 4; }
+.gx-cn-map circle { fill: var(--fg); }
+.gx-cn-map circle.sug { fill: none; stroke: var(--fg); stroke-width: 1.5; }
+.gx-cn-map circle.mid { fill: #6c63ff; }
+.gx-cn-map text { font: 600 9.5px var(--sans); fill: var(--mute); }
+.gx-cn-map text.mid { fill: var(--fg); font-size: 11px; }
+.gx-cn-map a:focus-visible circle { stroke: var(--fg); stroke-width: 3; }
+
+/* ---------- the same actions on every resource (kit/ui/resource-actions.js) ---------- */
+.gx-ra { position: relative; display: inline-flex; }
+.gx-rab { display: grid; place-items: center; width: 34px; height: 34px; padding: 0; border-radius: 10px; border: 1px solid var(--line); background: none; color: var(--mute); cursor: pointer; }
+.gx-rab:hover, .gx-rab[aria-expanded="true"] { color: var(--fg); border-color: var(--line-strong); }
+.gx-rab:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
+.gx-rab .gx-ic { width: 17px; height: 17px; }
+.gx-ram { position: absolute; z-index: 95; top: calc(100% + 6px); right: 0; width: min(300px, calc(100vw - 24px)); padding: 6px; border-radius: 16px; border: 1px solid var(--line-strong);
+  background: light-dark(#fff, #141416); box-shadow: 0 24px 60px -18px rgba(0, 0, 0, .6); animation: gx-pop .15s var(--gx-ease, ease); }
+.gx-ram[hidden] { display: none; }
+.gx-ram-h { margin: 6px 10px 6px; font-size: 12px; color: var(--faint); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.gx-ram button { display: flex; align-items: center; gap: 10px; width: 100%; padding: 8px 10px; border: 0; border-radius: 11px; background: none; color: var(--fg); text-align: left; font: inherit; cursor: pointer; }
+.gx-ram button:hover, .gx-ram button:focus { background: rgba(var(--ink-rgb), .07); outline: none; }
+.gx-ram button:focus-visible { box-shadow: inset 0 0 0 2px var(--fg); }
+.gx-ram button .gx-ic { width: 16px; height: 16px; flex: none; color: var(--mute); }
+.gx-ram button span { display: grid; min-width: 0; }
+.gx-ram button b { font-size: 14px; font-weight: 600; }
+.gx-ram button small { font-size: 12px; color: var(--mute); }
+.gx-ra-cols { display: grid; gap: 6px; margin: 10px 0; padding: 0; list-style: none; }
+.gx-ra-cols label { display: flex; gap: 10px; align-items: center; }
+.gx-ra-new { display: flex; gap: 8px; margin-top: 8px; }
+.gx-ra-new input { flex: 1; min-width: 0; }
+.gx-ra-sched { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; }
+.gx-ra-sched label { display: grid; gap: 4px; font-size: 13px; color: var(--mute); }
+.gx-dialog textarea#gx-ra-note { width: 100%; }
+
+/* ---------- where the workspace record is saved (kit/ui/sync-status.js) ---------- */
+.gx-sync { display: inline-flex; align-items: center; gap: 6px; flex: none; padding: 6px 10px; border-radius: 999px; border: 1px solid transparent; background: none; color: var(--mute); font: 500 12.5px var(--sans); cursor: pointer; }
+.gx-sync:hover { border-color: var(--line); color: var(--fg); }
+.gx-sync .gx-ic { width: 14px; height: 14px; }
+.gx-sync[data-tone="warn"] { color: #b26a00; color: light-dark(#9a5d00, #ffb547); }
+.gx-sync:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
+@media (max-width: 900px) { .gx-sync span { display: none; } }
+/* a question's ••• menu, top right of the question (kit/course/course.js questionMenus) */
+.aq:has(> .gx-ra) { position: relative; }
+.aq > .gx-ra { position: absolute; top: 10px; right: 10px; z-index: 2; }
+.aq:has(> .gx-ra) > .aq-q { padding-right: 44px; }
+/* a card's ••• menu sits with its other actions (kit/app/main.js renderDeck) */
+.c-actions .gx-rab { width: 32px; height: 32px; border: 0; }
+.gx-cn-gone { padding: 8px 10px 8px 50px; opacity: .75; border-style: dashed; }
+.gx-cn-gone .gx-cn-t { flex: 1; min-width: 0; }

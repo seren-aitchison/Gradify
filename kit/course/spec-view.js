@@ -118,13 +118,23 @@ export function specPageHtml(m, { specs = [], practiseHref } = {}) {
 function groupsOf(points) { const out = new Map(); for (const p of points) (out.get(p.group.id) || out.set(p.group.id, []).get(p.group.id)).push(p); return [...out.values()]; }
 
 // ---------- #/spec/<topic> ----------
-export function topicPageHtml(m, t, { practiseHref } = {}) {
+// a requirement's row opens in place (kit/ui/disclosure.js wireRows): its wording, the lessons that teach it with
+// where the learner is in each, and a way to practise it, without leaving the topic
+const rowMore = (p, { titleOf, statusOf, practiseHref }) => {
+  const ls = [...p.lessons.map((id) => [id, "full"]), ...p.partial.map((id) => [id, "partial"])];
+  return `<div class="sm-more" id="sm-more-${esc(p.id.replace(/[^\w-]/g, "_"))}" hidden><p class="sm-mtext">${esc(p.text)}</p>
+    ${ls.length ? `<p class="sm-mk">Taught in</p><ul class="sm-mls">${ls.map(([id, kind]) => { const st = statusOf(id); return `<li><a href="#/lesson/${esc(id)}">${esc(titleOf(id))}</a><small>${kind === "partial" ? "part of it" : ""}${kind === "partial" && st ? " · " : ""}${st ? esc(st) : ""}</small></li>`; }).join("")}</ul>` : `<p class="sm-mk">${esc(COVER[p.coverage.gradify][1] || "Not taught in Gradify yet.")}</p>`}
+    <div class="co-row">${practiseHref && p.practise.length ? `<a class="btn btn-light lg btn-sm" href="${practiseHref(p)}"><span>Practise this: 5 minutes</span></a>` : ""}<a class="btn btn-ghost lg btn-sm" href="#/spec/${esc(p.id)}"><span>Everything on ${esc(p.id)}</span></a></div></div>`;
+};
+const rowBtn = (p) => `<button type="button" class="sm-x" data-row="${esc(p.id)}" aria-expanded="false" aria-controls="sm-more-${esc(p.id.replace(/[^\w-]/g, "_"))}" aria-label="Show what teaches ${esc(p.id)}" title="Lessons, questions and resources"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>`;
+
+export function topicPageHtml(m, t, { practiseHref, titleOf = (id) => id, statusOf = () => null } = {}) {
   const i = m.topics.indexOf(t), prev = m.topics[i - 1], next = m.topics[i + 1];
   return `${crumbs([["#/spec", "Specification"], ["", `${t.id} ${t.title}`]])}
     <div class="sm-topicnav">${m.topics.map((x) => `<a href="#/spec/${esc(x.id)}" ${x === t ? 'aria-current="page"' : ""}>${esc(x.id)} ${esc(x.title)}</a>`).join("")}</div>
     <div class="co-intro"><span class="co-kicker">Topic ${esc(t.id)}</span><h2>${esc(t.title)}</h2><p>${topicStatus(t)} · ${t.assessed} of ${t.total} requirements assessed</p>${summaryNote(m.spec, { short: true })}</div>
     ${groupsOf(t.points).map((g) => `<section class="co-panel sm-group"><h3><span class="sm-id">${esc(g[0].group.id)}</span>${esc(g[0].group.title)}</h3>
-      <ul class="sm-rows">${g.map((p) => `<li><span class="sm-tiles sm-swatch">${tile(p)}</span><a class="sm-rt" href="#/spec/${esc(p.id)}"><span class="sm-id">${esc(p.id)}</span>${esc(p.title)}${flagTags(m.spec, p)}<small>${p.estimate == null ? esc(COVER[p.coverage.gradify][0]) : `${esc(CONFIDENCE[p.confidence.level].label)}${p.trend === "slipping" ? " · slipping" : ""}`}</small></a><span class="sm-rs">${pill(p)}<b>${fig(p)}</b></span>${action(p, practiseHref)}</li>`).join("")}</ul></section>`).join("")}
+      <ul class="sm-rows">${g.map((p) => `<li class="sm-xrow">${rowBtn(p)}<span class="sm-tiles sm-swatch">${tile(p)}</span><a class="sm-rt" href="#/spec/${esc(p.id)}"><span class="sm-id">${esc(p.id)}</span>${esc(p.title)}${flagTags(m.spec, p)}<small>${p.estimate == null ? esc(COVER[p.coverage.gradify][0]) : `${esc(CONFIDENCE[p.confidence.level].label)}${p.trend === "slipping" ? " · slipping" : ""}`}</small></a><span class="sm-rs">${pill(p)}<b>${fig(p)}</b></span>${action(p, practiseHref)}${rowMore(p, { titleOf, statusOf, practiseHref })}</li>`).join("")}</ul></section>`).join("")}
     <nav class="sm-pager">${prev ? `<a href="#/spec/${esc(prev.id)}">← ${esc(prev.id)} ${esc(prev.title)}</a>` : "<span></span>"}${next ? `<a href="#/spec/${esc(next.id)}">${esc(next.id)} ${esc(next.title)} →</a>` : ""}</nav>`;
 }
 

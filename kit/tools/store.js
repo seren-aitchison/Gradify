@@ -5,6 +5,7 @@
 // every device: changes are sent shortly after they're made, and each Tools screen fetches what changed elsewhere.
 // Two devices changing the same item: the later change wins (by the database's own timestamps). A deletion is kept
 // as a marker, so another device's older copy doesn't bring it back.
+import { forget } from "../data/links.js";
 const KEY = { decks: "gradify.tools.decks", maps: "gradify.tools.maps", notes: "gradify.tools.notes", srs: (id) => `gradify.tools.srs.${id}`, gone: "gradify.tools.deleted", sent: "gradify.tools.imgsent" };
 const read = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } };
 const write = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); return true; } catch { return false; } };
@@ -38,7 +39,7 @@ export const saveSchedule = (id, cardId, st) => {
 export const maps = () => read(KEY.maps, []).sort((a, b) => (b.updated || 0) - (a.updated || 0));
 export const map = (id) => maps().find((m) => m.id === id) || null;
 export const saveMap = (m) => put(KEY.maps, { ...m, id: m.id || uid("m"), updated: Date.now(), dirty: true });
-export function deleteMap(id) { write(KEY.maps, read(KEY.maps, []).filter((m) => m.id !== id)); gone(id, "map"); }
+export function deleteMap(id) { write(KEY.maps, read(KEY.maps, []).filter((m) => m.id !== id)); gone(id, "map"); forget(`map:${id}`); }   // its links and collections go with it
 function gone(id, kind) { const g = read(KEY.gone, []); if (!g.some((x) => x.id === id)) g.push({ id, kind }); write(KEY.gone, g); soon(); }
 
 // ---------- notebook pages (kit/tools/notebook.js) ----------

@@ -295,7 +295,7 @@ export function welcomeHtml(name) {
       <p class="sub">Bring one lecture's notes. In about a minute you'll have flashcards checked against what you wrote, and Gradify will plan when to revise them.</p>
       <div class="start-cards">
         <a class="start-card primary" href="#/new"><span class="start-icon" aria-hidden="true">${icon("upload")}</span><b>Upload your notes</b><span>A PDF, a .txt file, or paste them in. One topic at a time works best.</span></a>
-        <a class="start-card" href="#/new?sample=1"><span class="start-icon" aria-hidden="true">${icon("sparkles")}</span><b>Try it with sample notes</b><span>Notes on the cardiac cycle. See a whole pack in 30 seconds.</span></a>
+        <a class="start-card" href="#/new/sample"><span class="start-icon" aria-hidden="true">${icon("sparkles")}</span><b>Try it with sample notes</b><span>Notes on the cardiac cycle. See a whole pack in 30 seconds.</span></a>
       </div>
       <div class="quick-jobs" aria-label="Or start with something else"><span class="kicker">Or start with</span>
         <a href="#/learning">${icon("book")}A course on your subject</a><a href="#/plan">${icon("calendar")}Planning your week</a><a href="#/goals">${icon("route")}A goal to aim for</a>
