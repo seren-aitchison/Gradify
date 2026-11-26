@@ -2572,7 +2572,7 @@ export function mountCourse(root, cfg) {
       main.querySelector(".co-dayinfo").textContent = rows.length ? `${b.dataset.day}: ${rows.reduce((a, r) => a + r.xp, 0)} XP from ${Object.entries(kinds).map(([k, n]) => `${n} ${k}${n > 1 ? "s" : ""}`).join(", ")}.` : `${b.dataset.day}: nothing that day.`;
     }));
     try {
-      const s = await store(), docs = (await s.listDocuments()).filter((d) => d.title?.startsWith(`${cfg.name}: `)), cards = await s.listCards();
+      const s = await store(), docs = (await s.listDocuments()).filter((d) => d.file_name?.startsWith(`${cfg.slug}/`) || d.title?.startsWith(`${cfg.name}: `)), cards = await s.listCards();
       const count = (id) => cards.filter((c) => c.document_id === id).length;
       main.querySelector(".co-saved").innerHTML = `<h3>Saved to your account · ${docs.length} lesson${docs.length === 1 ? "" : "s"}</h3>${docs.length ? `<ul class="co-docs">${docs.map((d) => { const lid = d.file_name?.split("/")[1]; return `<li><div><b>${esc(d.title.startsWith(`${cfg.name}: `) ? d.title.slice(cfg.name.length + 2) : d.title)}</b><small>${count(d.id)} cards · saved ${new Date(d.created_at).toLocaleDateString()}</small></div>${lid && byId[lid] ? `<a href="#/lesson/${lid}">Notes</a>` : ""}<a href="${cfg.app || "app.html"}#/deck/${d.id}">Study the cards</a></li>`; }).join("")}</ul>` : `<p class="co-empty">Nothing saved yet. Use <b>Save notes and cards</b> on any lesson to keep it in your Gradify account, where the cards join your daily study.</p>`}
         <p class="co-acct ${syncText(s.mode)?.warn ? "co-warn" : ""}">${s.mode === "cloud" ? esc(syncText("cloud").text) : `Saved on this device. <a href="${cfg.app || "app.html"}#/account">Sign in</a> to keep it everywhere.`}</p>`;

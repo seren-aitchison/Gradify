@@ -7,7 +7,11 @@ import { esc } from "../core/text.js";
 import { uiIcon } from "../ui/icons.js";
 import { collections, itemsOf, createCollection, renameCollection, deleteCollection, removeFromCollection, addToCollection, noteOf } from "../data/links.js";
 import { KINDS } from "../core/resource.js";
-import { setPageOps, renameInPlace, deferredDelete, undoable, pickCollection, download, resourcesMd, fileName, mountMultiSelect } from "../ui/quick-actions.js";
+import { setPageOps, renameInPlace, deferredDelete, undoable, pickCollection, download, resourcesMd, fileName, mountMultiSelect, stopMultiSelect, routeKey } from "../ui/quick-actions.js";
+
+// an Undo can come after the learner has moved on: the data comes back, but a screen is drawn only if it's the one open
+const onList = () => routeKey() === "#/collections";
+const onCollection = (id) => routeKey() === `#/collections/${id}`;
 
 // a deleted collection is hidden at once and really deleted once its notice has gone (so Undo needs nothing rebuilt)
 const hidden = new Set();
@@ -33,6 +37,7 @@ const local = (h) => (h && h.startsWith(`${location.pathname}#`) ? h.slice(locat
 const kindIcon = (k) => KINDS[k]?.[1] || "link";
 
 export function renderCollections(view, id, { toast }) {
+  stopMultiSelect();   // a list drawn again starts without the last one's selection
   const all = collections().filter((x) => !hidden.has(x.id));
   const c = id && all.find((x) => x.id === id);
   if (id && !c) { location.replace("#/collections"); return; }
@@ -50,7 +55,7 @@ export function renderCollections(view, id, { toast }) {
   });
   const grid = view.querySelector(".col-grid");
   if (grid && all.length > 1) {
-    const pick = (ids) => all.filter((x) => ids.includes(x.id)), redraw = () => renderCollections(view, null, { toast });
+    const pick = (ids) => all.filter((x) => ids.includes(x.id)), redraw = () => { if (onList()) renderCollections(view, null, { toast }); };
     const head = document.createElement("div"); head.className = "gx-ms-head"; grid.before(head);
     grid.querySelectorAll(".col-card").forEach((a) => { a.dataset.col = a.getAttribute("href").split("/").pop(); });
     mountMultiSelect(grid, { item: ".col-card", key: (el) => el.dataset.col, name: (el) => el.querySelector("b")?.textContent || "", toggleHost: head, actions: [
@@ -73,6 +78,7 @@ function studyHtml(items) {
   return acts.length ? `<section class="panel glass col-study" aria-label="Study this collection"><p class="wd-k">Study this collection</p><div class="wd-launch">${acts.map(([h, t], i) => `<a class="cp-pill${i ? "" : " dark"}" href="${esc(local(h))}">${esc(t)}</a>`).join("")}</div></section>` : "";
 }
 function renderOne(view, c, { toast }) {
+  stopMultiSelect();
   const items = itemsOf(c.id).sort((a, b) => b.added - a.added);
   const byKind = new Map(); for (const it of items) { const k = KINDS[it.kind]?.[0] || "Other"; if (!byKind.has(k)) byKind.set(k, []); byKind.get(k).push(it); }
   view.innerHTML = `<section class="cols">
@@ -83,9 +89,10 @@ function renderOne(view, c, { toast }) {
     ${items.length ? [...byKind].map(([k, xs]) => `<h2 class="lo-h">${esc(k)}${xs.length > 1 ? "s" : ""}</h2><ul class="col-items">${xs.map((it) => `<li><a data-rid="${esc(it.rid)}" href="${esc(local(it.href))}"><span class="hist-ic" aria-hidden="true">${uiIcon(kindIcon(it.kind))}</span><span class="hist-t"><b>${esc(it.title)}</b><small>${esc([it.sub, noteOf(it.rid) ? "has your note" : ""].filter(Boolean).join(" · "))}</small></span></a><button type="button" class="gx-cn-x" data-remove="${esc(it.rid)}" aria-label="Remove ${esc(it.title)} from this collection" title="Remove">${uiIcon("close")}</button></li>`).join("")}</ul>`).join("")
       : `<div class="panel glass hist-empty"><h3>Empty for now</h3><p class="sub">Open a lesson, a flashcard set or a note, choose ••• and then “Save to a collection”.</p></div>`}
     <p><a href="#/collections">← Every collection</a></p></section>`;
-  const redraw = () => { const now = collections().find((x) => x.id === c.id); if (now && !hidden.has(c.id)) renderOne(view, now, { toast }); };
+  const redraw = () => { const now = collections().find((x) => x.id === c.id); if (now && !hidden.has(c.id) && onCollection(c.id)) renderOne(view, now, { toast }); };
   const rename = () => renameInPlace(view.querySelector(".deck-head h1"), c.name, (t) => { renameCollection(c.id, t); c.name = t; }, { label: "Collection name" });
-  const del = () => deleteWithUndo([c], () => { if (hidden.has(c.id)) location.hash = "#/collections"; else if (location.hash === "#/collections") location.hash = `#/collections/${c.id}`; else redraw(); });
+  // deleting it leaves for the list; Undo brings it back into the list (or this page, if still open)
+  const del = () => deleteWithUndo([c], () => { if (hidden.has(c.id)) { if (onCollection(c.id)) location.hash = "#/collections"; } else if (onList()) renderCollections(view, null, { toast }); else redraw(); });
   // what this collection can do: in the page's ••• menu and on the keyboard
   setPageOps({ rename, duplicate: () => { location.hash = `#/collections/${duplicate(c)}`; }, export: () => exportMd(c), delete: del });
   view.querySelector(".cols").addEventListener("click", (e) => {

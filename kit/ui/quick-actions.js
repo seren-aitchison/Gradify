@@ -20,36 +20,51 @@ import { createCollection, collections, addToCollection } from "../data/links.js
 
 // ---------- undo ----------
 const undos = [];
-/** a notice with Undo, and an entry ⌘Z can undo after the notice has gone. undo() may return false: too late. */
+/**
+ * A notice with Undo, and an entry ⌘Z can undo after the notice has gone. undo() may be async; it returns false when
+ * it's too late, and a rejection means it failed: then the entry stays, to be tried again.
+ */
 export function undoable(html, undo, { label = "", ...opts } = {}) {
-  const u = { label, done: false, run: () => { if (u.done) return false; u.done = true; return undo(); } };
+  const u = { label, done: false, busy: false };
+  // resolves true (undone), false (too late) or "failed"; only a real undo uses the entry up
+  u.run = async () => {
+    if (u.done) return false;
+    if (u.busy) return "busy";
+    u.busy = true;
+    try { const r = await undo(); if (r === false) { u.done = true; return false; } u.done = true; return true; }
+    catch (e) { console.warn("undo", e); return "failed"; }
+    finally { u.busy = false; }
+  };
   undos.push(u); if (undos.length > 20) undos.shift();
-  return toast({ html }, { timeout: 7000, ...opts, undo: () => { u.run(); } });
+  return toast({ html }, { timeout: 7000, ...opts, undo: async () => { const r = await u.run(); if (r === "failed") throw new Error("undo failed"); return r !== false; } });
 }
-/** undo the latest change that can still be undone */
-export function undoLast() {
+/** undo the latest change that can still be undone, and say what really happened */
+export async function undoLast() {
   const u = [...undos].reverse().find((x) => !x.done);
   if (!u) { toast("Nothing to undo."); return false; }
-  const r = u.run();
-  if (r === false) { toast("That can't be undone any more."); return false; }
+  const r = await u.run();
+  if (r === "busy") return false;
+  if (r === "failed") { toast("Couldn't undo that. Try again.", { tone: "warn", key: "gx-undone" }); return false; }
+  if (r === false) { toast("That can't be undone any more.", { key: "gx-undone" }); return false; }
   toast({ html: `Undone${u.label ? `: <b>${esc(u.label)}</b>` : ""}` }, { tone: "ok", key: "gx-undone", timeout: 2200, icon: "undo" });
   return true;
 }
 export const _undos = () => undos;   // tests
 
 /**
- * Delete with Undo: the thing is hidden at once and really deleted only once the notice has gone (or the page is
- * left), so Undo never has to rebuild anything. o: { html, label, hide(), restore(), commit() → Promise, ms }
+ * Delete with Undo: the thing is hidden at once and really deleted only when its notice goes without Undo (it stays
+ * while hovered or focused, and goes when dismissed or pushed out by newer notices), or the page is left. So Undo
+ * is always possible while it's offered, and never has to rebuild anything.
+ * o: { html, label, hide(), restore(), commit() → Promise, ms }
  */
 export function deferredDelete({ html, label = "", hide, restore, commit, ms = 7000 }) {
   hide?.();
-  let settled = false, t = 0;
-  const off = () => { clearTimeout(t); removeEventListener("pagehide", now); document.removeEventListener("visibilitychange", vis); };
+  let settled = false;
+  const off = () => { removeEventListener("pagehide", now); document.removeEventListener("visibilitychange", vis); };
   const now = () => { if (settled) return; settled = true; off(); Promise.resolve().then(commit).catch((e) => { console.warn("delete", e); restore?.(); toast(`Couldn't delete it: ${e.message || "try again"}`); }); };
   const vis = () => { if (document.visibilityState === "hidden") now(); };
-  t = setTimeout(now, ms + 400);
   addEventListener("pagehide", now); document.addEventListener("visibilitychange", vis);
-  undoable(html, () => { if (settled) return false; settled = true; off(); restore?.(); }, { label, timeout: ms });
+  undoable(html, () => { if (settled) return false; settled = true; off(); restore?.(); }, { label, timeout: ms, onClose: ({ undone }) => { if (!undone) now(); } });
   return { now };
 }
 
@@ -203,28 +218,73 @@ export const resourcesMd = (title, rs, base = "https://gradify.app") => [`# ${ti
 export const fileName = (s, ext) => `${String(s || "gradify").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 60) || "gradify"}.${ext}`;
 
 // ---------- reports and feedback: sent now, or kept on this device until they can be ----------
+// The outbox is saved before anything is sent, so a closed tab loses nothing. Each entry records whose it is: one
+// sent while signed in goes only with that account; one written while signed out goes with the account that next
+// signs in here (the dialog says so when it's kept). Sending is one at a time, and only what was sent or refused
+// for good leaves the outbox, so two quick reports never overwrite each other.
 const OUTBOX = "gradify.outbox";
 const readBox = () => { try { return JSON.parse(localStorage.getItem(OUTBOX) || "[]"); } catch { return []; } };
-const writeBox = (v) => { try { localStorage.setItem(OUTBOX, JSON.stringify(v.slice(-50))); } catch { /* full or blocked */ } };
+const writeBox = (v) => { try { localStorage.setItem(OUTBOX, JSON.stringify(v.slice(-50))); return true; } catch { return false; } };
 // a report waits at most 30 days; one the database refuses for what it says (a check) is dropped, not retried
 const FOREVER = new Set(["23514", "22001", "23502", "22P02"]);
-/** send what's waiting (and o.row, if given) with the learner's database. Resolves to "sent" | "waiting". */
+const fresh = (x) => Date.now() - x.t < 30 * 864e5;
+/** who's signed in now (null when no one is, or no account) */
+async function account(store) {
+  try { const s = await getStore(store); const u = s?.mode === "cloud" ? await s.user?.() : null; return u?.id ? { db: s.db, id: u.id } : null; } catch { return null; }
+}
+let flushing = Promise.resolve();
+const delivered = new Set();   // ids sent (or refused for good) by any flush on this page
+/** send what's waiting for this account, one flush at a time; returns the ids it delivered or dropped */
+function flush(store) {
+  const run = flushing.then(async () => {
+    const me = await account(store); if (!me) return new Set();
+    const settled = new Set();
+    for (const x of readBox().filter(fresh)) {
+      if (x.owner && x.owner !== me.id) continue;   // someone else's: it waits for them
+      try { const { error } = await me.db.from(x.table).insert(x.row); if (!error || FOREVER.has(error.code)) { settled.add(x.id); delivered.add(x.id); } }
+      catch { /* offline: it stays */ }
+    }
+    // take out only what this flush settled, from the outbox as it is now (new entries may have arrived meanwhile)
+    if (settled.size) writeBox(readBox().filter((x) => fresh(x) && !settled.has(x.id)));
+    return settled;
+  });
+  flushing = run.catch(() => new Set());
+  return run;
+}
+/**
+ * Keep a report or feedback (saved on this device first) and send it now if the learner is signed in; with no row,
+ * send what's waiting. Resolves "sent" | "waiting" (kept, to send later) | "failed" (couldn't even be kept here).
+ */
 export async function sendOrKeep(store, table, row) {
-  const box = readBox().filter((x) => Date.now() - x.t < 30 * 864e5);
-  if (row) box.push({ table, row, t: Date.now() });
-  let db = null;
-  try { const s = await getStore(store); db = s?.mode === "cloud" && (await s.user?.()) ? s.db : null; } catch { db = null; }
-  if (!db) { writeBox(box); return "waiting"; }
-  const left = [];
-  for (const x of box) {
-    try { const { error } = await db.from(x.table).insert(x.row); if (error && !FOREVER.has(error.code)) left.push(x); }
-    catch { left.push(x); }
+  let id = null;
+  if (row) {
+    const me = await account(store);
+    id = `o${Date.now().toString(36)}${Math.random().toString(36).slice(2, 7)}`;
+    if (!writeBox([...readBox().filter(fresh), { id, table, row, t: Date.now(), owner: me?.id || null }])) {
+      // storage is blocked or full: send straight away if we can, and say so if we can't
+      if (!me) return "failed";
+      try { const { error } = await me.db.from(table).insert(row); return !error || FOREVER.has(error.code) ? "sent" : "failed"; } catch { return "failed"; }
+    }
   }
-  writeBox(left);
-  return row && left.some((x) => x.row === row) ? "waiting" : "sent";
+  await flush(store);
+  return id ? (delivered.has(id) ? "sent" : "waiting") : "sent";
 }
 export const waiting = () => readBox().length;
 
+/** send from a dialog: it stays open (with what was written) until it's sent or kept, and says so if neither worked */
+async function sending(m, go) {
+  const btn = m.box.querySelector(".gx-dfoot [data-gx-act]:last-child"); if (btn) btn.disabled = true;
+  const r = await go().catch(() => "failed");
+  if (r === "failed") {
+    if (btn) btn.disabled = false;
+    let note = m.box.querySelector(".gx-rep-err");
+    if (!note) { note = Object.assign(document.createElement("p"), { className: "gx-rep-err aq-note" }); note.setAttribute("role", "alert"); m.box.querySelector("form")?.append(note); }
+    note.textContent = "Couldn't send or keep it: this browser isn't letting Gradify save anything. Sign in, or copy what you wrote, and try again.";
+    return null;
+  }
+  m.close();
+  return r;
+}
 const REPORT_KINDS = [["wrong", "Something's wrong", "A fact, an answer or a mark scheme"], ["unclear", "It's unclear", "Hard to follow, or it skips a step"], ["typo", "A typo", "Spelling, a symbol, formatting"], ["broken", "Something's broken", "A diagram, a question or a button doesn't work"], ["other", "Something else", ""]];
 const SLUG = /^[a-z0-9-]{1,40}$/, QID = /^[a-z0-9-]{1,80}$/;
 /** the row a report saves (pure; tests): null when the lesson can't be named safely */
@@ -241,9 +301,8 @@ export function reportDialog(r, ctx) {
   async function send() {
     const f = new FormData(m.box.querySelector("form")), row = reportRow({ ...ctx, kind: f.get("kind"), note: f.get("note") });
     if (!row) { m.close(); toast("This page can't be reported from here."); return; }
-    m.close();
-    const r2 = await sendOrKeep(ctx.store, "lesson_reports", row);
-    toast(r2 === "sent" ? "Report sent. Thank you." : "Report saved: it's sent when you're signed in and online.", { tone: "ok" });
+    const r2 = await sending(m, () => sendOrKeep(ctx.store, "lesson_reports", row)); if (!r2) return;
+    toast(r2 === "sent" ? "Report sent. Thank you." : "Report saved on this device: it's sent with your account when you're signed in and online.", { tone: "ok" });
   }
   setTimeout(() => m.box.querySelector("input:checked")?.focus(), 30);
   return m;
@@ -263,9 +322,8 @@ export function feedbackDialog(ctx = {}) {
   async function send() {
     const f = new FormData(m.box.querySelector("form")), row = feedbackRow({ ...ctx, kind: f.get("kind"), note: f.get("note"), page: location.pathname + routeKey() });
     if (!row) { m.box.querySelector("textarea").focus(); return; }
-    m.close();
-    const r = await sendOrKeep(ctx.store, "app_feedback", row);
-    toast(r === "sent" ? "Thank you: sent to the Gradify team." : "Thank you: it's saved and sent when you're signed in and online.", { tone: "ok" });
+    const r = await sending(m, () => sendOrKeep(ctx.store, "app_feedback", row)); if (!r) return;
+    toast(r === "sent" ? "Thank you: sent to the Gradify team." : "Thank you: it's saved on this device and sent with your account when you're signed in and online.", { tone: "ok" });
   }
   setTimeout(() => m.box.querySelector("textarea")?.focus(), 30);
   return m;
@@ -279,6 +337,8 @@ export function feedbackDialog(ctx = {}) {
  * Escape stops. The bar at the bottom says how many and holds the actions.
  */
 let msLive = null;
+/** end the selection on screen (a list drawn again calls this first, whether or not it offers selecting again) */
+export const stopMultiSelect = () => { msLive?.abort(); msLive = null; };
 export function mountMultiSelect(root, o) {
   if (!root) return null;
   ensureStyles();
@@ -293,7 +353,11 @@ export function mountMultiSelect(root, o) {
   (o.toggleHost || root).insertAdjacentElement(o.toggleWhere || "afterbegin", toggle);
   const bar = document.createElement("div"); bar.className = "gx-ms-bar"; bar.setAttribute("role", "toolbar"); bar.setAttribute("aria-label", "Selected items"); bar.hidden = true;
   document.body.append(bar);
-  live.signal.addEventListener("abort", () => bar.remove());
+  // ended: its bar and button go, and the items are as they were, so the same list can offer it again cleanly
+  live.signal.addEventListener("abort", () => {
+    bar.remove(); toggle.remove(); root.classList.remove("gx-ms-on");
+    for (const el of items()) { el.classList.remove("gx-ms-sel", "gx-ms-item"); el.removeAttribute("aria-pressed"); delete el.dataset.msLabel; }
+  });
   function paint() {
     root.classList.toggle("gx-ms-on", on);
     toggle.setAttribute("aria-pressed", String(on)); toggle.querySelector("span").textContent = on ? "Done" : "Select";
@@ -303,7 +367,7 @@ export function mountMultiSelect(root, o) {
     bar.innerHTML = `<span class="gx-ms-n" aria-live="polite">${n ? `${n} selected` : "Select items"}</span><button type="button" class="gx-ms-b" data-ms="all">${n === all && all ? "Select none" : "Select all"}</button>${o.actions.map((a) => `<button type="button" class="gx-ms-b" data-ms="${a.id}" ${n ? "" : "disabled"}>${a.icon ? uiIcon(a.icon) : ""}${esc(a.label)}</button>`).join("")}<button type="button" class="gx-ms-x" data-ms="done" aria-label="Stop selecting">${uiIcon("close")}</button>`;
   }
   const set = (v) => { on = v; if (!v) { sel.clear(); last = -1; } paint(); if (v) items()[0]?.focus?.(); };
-  toggle.addEventListener("click", () => set(!on));
+  toggle.addEventListener("click", () => set(!on), sig);
   root.addEventListener("click", (e) => {
     if (!on) return;
     const el = e.target.closest(o.item); if (!el || !root.contains(el)) return;
@@ -312,13 +376,13 @@ export function mountMultiSelect(root, o) {
     if (e.shiftKey && last >= 0) { const [a, b] = [Math.min(last, i), Math.max(last, i)]; xs.slice(a, b + 1).forEach((x) => sel.add(o.key(x))); }
     else if (sel.has(k)) sel.delete(k); else sel.add(k);
     last = i; paint(); el.focus?.();
-  }, true);
+  }, { capture: true, ...sig });
   root.addEventListener("keydown", (e) => {
     if (!on) return;
     const el = e.target.closest?.(o.item);
     if (el && (e.key === " " || e.key === "Enter")) { e.preventDefault(); el.click(); }
     else if ((isMac() ? e.metaKey : e.ctrlKey) && e.key.toLowerCase() === "a") { e.preventDefault(); items().forEach((x) => sel.add(o.key(x))); paint(); }
-  });
+  }, sig);
   addEventListener("keydown", (e) => { if (on && e.key === "Escape" && !document.querySelector(".gx-layer")) { set(false); toggle.focus(); } }, sig);
   bar.addEventListener("click", async (e) => {
     const b = e.target.closest("[data-ms]"); if (!b) return;

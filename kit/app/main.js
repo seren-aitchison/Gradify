@@ -63,7 +63,7 @@ const $ = (s, el = document) => el.querySelector(s);
 import { esc } from "../core/text.js";
 import { mountAppNav } from "./app-nav.js";
 import { mountQuickDock, startTimer } from "../ui/quick-dock.js";
-import { mountQuickKeys, setPageOps, deferredDelete, undoable, download, cardsCsv, fileName, mountMultiSelect, saveMany, sendOrKeep, renameInPlace } from "../ui/quick-actions.js";
+import { mountQuickKeys, setPageOps, deferredDelete, undoable, download, cardsCsv, fileName, mountMultiSelect, stopMultiSelect, saveMany, sendOrKeep, renameInPlace } from "../ui/quick-actions.js";
 import { attachAccount, exportState, list as stateList, batch as stateBatch, SYNCED } from "../data/learner-state.js";
 import { renderCollections } from "./collections-view.js";
 import { mountConnections } from "../ui/connections.js";
@@ -166,7 +166,6 @@ const appNav = mountAppNav({ sections: SECTIONS, settings: SETTINGS, screenOf, s
 // the floating quick tools: a timer that keeps running between screens, a quick note, capture and search
 mountQuickDock({ app: location.pathname, store: async () => store });
 mountQuickKeys({ app: location.pathname, store: async () => store });
-sendOrKeep(async () => store);   // reports and feedback that waited on this device
 // the pricing page lives on getgradify.com; sub-sites served elsewhere link to it there
 const PRICING = /(^|\.)getgradify\.com$|^localhost/.test(location.hostname) ? "/pricing.html" : "https://getgradify.com/pricing.html";
 
@@ -742,23 +741,30 @@ function deletePacks(docs, { leave = false } = {}) {
 }
 /** a copy of each set with its cards (progress starts again: the copy is for changing, not a second schedule) */
 async function duplicatePacks(docs) {
+  // each copy is counted as soon as it exists, so one that fails half-way (its cards not added) is taken away again
+  // rather than left as a set with no cards
+  const made = [];
   try {
-    const made = [];
     for (const d of docs) {
       const [full, pack, cards] = await Promise.all([store.getDocument(d.id), store.getPack(d.id), store.listCards({ documentId: d.id })]);
       const copy = await store.addDocument({ title: `${d.title} (copy)`.slice(0, 200), site: d.site, file_name: null, pages: full?.pages ?? null, text: full?.text || "" });
+      made.push(copy);
       if (pack) await store.addPack({ document_id: copy.id, engine: pack.engine, model: pack.model, pack: pack.pack, stats: pack.stats });
       if (cards.length) await store.addCards(cards.map((c) => ({ document_id: copy.id, topic: c.topic, front: c.front, back: c.back, kind: c.kind, source_quote: c.source_quote ?? null, source_page: c.source_page ?? null, grounded: c.grounded, edited: Boolean(c.edited) })));
-      made.push(copy);
     }
     undoable(made.length === 1 ? `Made <a href="#/deck/${made[0].id}">${esc(made[0].title)}</a>.` : `Made ${made.length} copies.`, async () => { for (const c of made) await store.deleteDocument(c.id); route(); }, { label: made.length === 1 ? made[0].title : `${made.length} copies` });
     if (made.length === 1 && location.hash.startsWith("#/deck/")) location.hash = `#/deck/${made[0].id}`; else route();
-  } catch (err) { toast(`Couldn't duplicate it: ${esc(err.message || "try again")}`); }
+  } catch (err) {
+    for (const c of made) await store.deleteDocument(c.id).catch(() => {});
+    toast(`Couldn't duplicate ${docs.length === 1 ? "it" : "them"}: ${esc(err.message || "try again")}. Nothing was copied.`);
+    route();
+  }
 }
 
 async function renderNotes() {
   const [allDocs, cards, reviews, L] = await Promise.all([store.listDocuments(), store.listCards(), store.listReviews(400), learnerAcross()]);
   const docs = allDocs.filter((d) => !hiddenPacks.has(d.id));
+  stopMultiSelect();   // drawn again: the last selection ends, whether or not this one offers selecting
   const courseCards = (L?.courses || []).filter((c) => c.cards || c.revisit);
   // each deck's bar is its topics' mastery, weighted by how many cards each topic has
   const topics = topicProfiles(cards, reviews);
@@ -1893,6 +1899,7 @@ async function start() {
   ACCESS = await within(access(store), 8000, "Checking your plan").catch(() => ({ plan: "free", enforced: false, has: () => true }));
   profile = await within(store.getProfile(), 12000, "Loading your profile");
   markLocks();
+  sendOrKeep(async () => store).catch(() => {});   // reports and feedback that waited on this device
   syncMirror(profile);   // the account's settings, for every site in this browser
   // calendar links saved before November 2026 are removed from the account and this browser (a feed link works like
   // a password); events already imported from them stay in the plan, and the calendar panel says so once

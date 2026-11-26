@@ -14,6 +14,14 @@ const notices = [];
 export const recentNotices = () => [...notices];
 let region = null;
 const TONE_ICON = { ok: "check", info: "sparkles", warn: "alert", undo: "undo" };
+// ⌘Z / Ctrl+Z goes to one notice only: the newest one still on screen that can be undone (one listener for all)
+const undoable = [];
+let undoKeyOn = false;
+function onUndoKey(e) {
+  if (!(e.key === "z" || e.key === "Z") || !(e.metaKey || e.ctrlKey) || e.shiftKey) return;
+  if (e.target.closest?.("input, textarea, [contenteditable]")) return;   // their own undo
+  for (let i = undoable.length - 1; i >= 0; i--) { const n = undoable[i]; if (!n.el.isConnected || n.done()) { undoable.splice(i, 1); continue; } e.preventDefault(); n.undo(); return; }
+}
 
 function regionEl() {
   if (region?.isConnected) return region;
@@ -26,39 +34,57 @@ function regionEl() {
 
 /**
  * Show a toast. message is text; pass { html } as message for trusted markup (bold names, icons).
- * opts: { tone: ok|info|warn, undo: fn, action: { label, run }, timeout (ms), key (replace a toast with the same key), icon }
+ * opts: { tone: ok|info|warn, undo: fn, action: { label, run }, timeout (ms), key (replace a toast with the same key), icon,
+ *   onClose({ undone }) when it goes, however it goes }. undo() may return a promise; false means too late, and a
+ *   rejection that it failed (the notice stays, to try again)
  */
 export function toast(message, opts = {}) {
   if (typeof document === "undefined") return { close() {} };
   const box = regionEl();
   const html = typeof message === "string" ? esc(message) : message?.html || "";
-  if (opts.key) box.querySelector(`[data-key="${CSS.escape(opts.key)}"]`)?.remove();
+  if (opts.key) { const was = box.querySelector(`[data-key="${CSS.escape(opts.key)}"]`); if (was) (was._close ? was._close(true) : was.remove()); }
   const el = document.createElement("div");
   el.className = `gx-toast gx-${opts.tone || (opts.undo ? "undo" : "info")}`;
   if (opts.key) el.dataset.key = opts.key;
   const ic = opts.icon ?? TONE_ICON[opts.tone] ?? (opts.undo ? null : null);
   el.innerHTML = `${ic ? uiIcon(ic) : ""}<span class="gx-tmsg">${html}</span>${opts.undo ? `<button type="button" class="gx-tbtn" data-undo title="Undo (${isMac() ? "⌘" : "Ctrl+"}Z)">${uiIcon("undo")}Undo</button>` : ""}${opts.action ? `<button type="button" class="gx-tbtn" data-act>${esc(opts.action.label)}</button>` : ""}<button type="button" class="gx-tx" aria-label="Dismiss">${uiIcon("close")}</button>`;
   box.append(el);
-  while (box.children.length > 3) box.firstElementChild.remove();
+  // at most three: the oldest goes, closed properly (its Undo stops, and whoever's waiting on it hears it closed)
+  while (box.children.length > 3) { const old = box.firstElementChild; if (old._close) old._close(true); else old.remove(); }
   notices.unshift({ text: el.querySelector(".gx-tmsg").textContent, tone: opts.tone || "info", t: Date.now() }); notices.length = Math.min(notices.length, 20);
 
   let timer = null, left = opts.timeout ?? (opts.undo || opts.action ? 7000 : 4000), started = Date.now();
-  const close = () => { clearTimeout(timer); removeEventListener("keydown", onKey, true); if (!el.isConnected) return; el.classList.add("out"); setTimeout(() => el.remove(), 220); };
+  let closed = false;
+  const close = (now = false) => {
+    clearTimeout(timer); if (closed) return; closed = true;
+    try { opts.onClose?.({ undone }); } catch (e) { console.warn(e); }
+    if (!el.isConnected) return;
+    if (now === true) el.remove(); else { el.classList.add("out"); setTimeout(() => el.remove(), 220); }
+  };
+  el._close = close;
   const arm = () => { started = Date.now(); timer = setTimeout(close, left); };
   const hold = () => { clearTimeout(timer); left = Math.max(1500, left - (Date.now() - started)); };
   el.addEventListener("pointerenter", hold); el.addEventListener("pointerleave", arm);
   el.addEventListener("focusin", hold); el.addEventListener("focusout", arm);
-  let undone = false;
-  const undo = () => { if (undone) return; undone = true; close(); try { opts.undo(); } catch (e) { console.warn(e); } toast("Undone", { tone: "ok", key: "gx-undone", timeout: 1800, icon: "undo" }); };
-  const onKey = (e) => {
-    if (!opts.undo || !(e.key === "z" || e.key === "Z") || !(e.metaKey || e.ctrlKey) || e.shiftKey) return;
-    if (e.target.closest?.("input, textarea, [contenteditable]")) return;   // their own undo
-    e.preventDefault(); undo();
+  let undone = false, undoing = false;
+  // "Undone" is said only once the undo has really happened; undo() may return false (too late) or fail
+  const undo = async () => {
+    if (undone || undoing) return; undoing = true;
+    let r;
+    try { r = await opts.undo(); } catch (e) { console.warn(e); r = "failed"; }
+    undoing = false;
+    if (r === false) { close(); toast("That can't be undone any more.", { key: "gx-undone", timeout: 2600 }); return; }
+    if (r === "failed") { toast("Couldn't undo that. Try again.", { tone: "warn", key: "gx-undone", timeout: 2600 }); return; }
+    undone = true; close();
+    toast("Undone", { tone: "ok", key: "gx-undone", timeout: 1800, icon: "undo" });
   };
-  if (opts.undo) addEventListener("keydown", onKey, true);
+  if (opts.undo) {
+    undoable.push({ el, undo, done: () => undone || closed });
+    if (!undoKeyOn) { undoKeyOn = true; addEventListener("keydown", onUndoKey, true); }
+  }
   el.querySelector("[data-undo]")?.addEventListener("click", undo);
   el.querySelector("[data-act]")?.addEventListener("click", () => { close(); opts.action.run(); });
-  el.querySelector(".gx-tx").addEventListener("click", close);
+  el.querySelector(".gx-tx").addEventListener("click", () => close());
   arm();
   return { close, el };
 }

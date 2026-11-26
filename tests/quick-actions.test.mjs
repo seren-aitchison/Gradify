@@ -45,3 +45,58 @@ test("a page's actions belong to the screen they were set on", () => {
   assert.equal(routeKey("#/deck/abc?card=1"), "#/deck/abc");
   assert.equal(routeKey(""), "#/");
 });
+
+// ---------- the outbox: reports and feedback kept on this device until they can be sent ----------
+function memStorage({ blocked = false } = {}) {
+  const m = new Map();
+  return { getItem: (k) => (m.has(k) ? m.get(k) : null), setItem: (k, v) => { if (blocked) throw new Error("QuotaExceeded"); m.set(k, String(v)); }, removeItem: (k) => m.delete(k), _m: m };
+}
+function fakeAccount(id, { fail = false, sent = [] } = {}) {
+  const db = { from: (table) => ({ insert: async (row) => { await new Promise((r) => setTimeout(r, 5)); if (fail) throw new Error("offline"); sent.push([table, row.note, id]); return { error: null }; } }) };
+  return { mode: "cloud", db, user: async () => (id ? { id } : null), sent };
+}
+const outbox = () => JSON.parse(globalThis.localStorage.getItem("gradify.outbox") || "[]");
+
+test("outbox: kept on this device first; sent only with the account it belongs to; never two writes lost", async () => {
+  globalThis.localStorage = memStorage();
+  const { sendOrKeep } = await import("../kit/ui/quick-actions.js");
+  // signed out: kept, with no owner, and sent with the next account that signs in here
+  assert.equal(await sendOrKeep(fakeAccount(null), "app_feedback", { note: "a" }), "waiting");
+  assert.equal(outbox().length, 1); assert.equal(outbox()[0].owner, null);
+  // Ben signs in while offline: Ben's own feedback is kept as Ben's
+  assert.equal(await sendOrKeep(fakeAccount("ben", { fail: true }), "app_feedback", { note: "b" }), "waiting");
+  assert.deepEqual(outbox().map((x) => [x.row.note, x.owner]), [["a", null], ["b", "ben"]]);
+  // Ana signs in: the ownerless one goes with Ana; Ben's waits for Ben
+  const ana = fakeAccount("ana");
+  assert.equal(await sendOrKeep(ana, "app_feedback", { note: "c" }), "sent");
+  assert.deepEqual(ana.sent.map((x) => x[1]).sort(), ["a", "c"]);
+  assert.deepEqual(outbox().map((x) => x.row.note), ["b"]);
+  // two at once: both are sent, neither overwrites the other in the outbox
+  const ben = fakeAccount("ben");
+  const [r1, r2] = await Promise.all([sendOrKeep(ben, "app_feedback", { note: "d" }), sendOrKeep(ben, "app_feedback", { note: "e" })]);
+  assert.deepEqual([r1, r2], ["sent", "sent"]);
+  assert.deepEqual(ben.sent.map((x) => x[1]).sort(), ["b", "d", "e"]);
+  assert.deepEqual(outbox(), []);
+});
+
+test("outbox: when this browser can't keep anything, it says so instead of claiming it's saved", async () => {
+  globalThis.localStorage = memStorage({ blocked: true });
+  const { sendOrKeep } = await import("../kit/ui/quick-actions.js");
+  assert.equal(await sendOrKeep(fakeAccount(null), "lesson_reports", { note: "x" }), "failed");
+  const ana = fakeAccount("ana");
+  assert.equal(await sendOrKeep(ana, "lesson_reports", { note: "y" }), "sent");   // signed in: sent straight away
+});
+
+test("undo: a failed undo isn't used up, a done one can't run twice, and too late says so", async () => {
+  const { undoable, undoLast, _undos } = await import("../kit/ui/quick-actions.js");
+  _undos().length = 0;
+  let tries = 0;
+  undoable("x", async () => { tries++; if (tries === 1) throw new Error("network"); });
+  assert.equal(await undoLast(), false);   // failed: still there
+  assert.equal(await undoLast(), true);    // tried again: done
+  assert.equal(await undoLast(), false);   // nothing left
+  assert.equal(tries, 2);
+  undoable("y", () => false);              // too late
+  assert.equal(await undoLast(), false);
+  assert.equal(_undos().every((u) => u.done), true);
+});
