@@ -50,6 +50,20 @@ export function renderQuestion(Q, key, { mode = "practice", levels = DEFAULT_LEV
 export function markQuestion(Q, response) { Q = normalize(Q); return { status: "final", method: "auto", ...handlerFor(Q).mark(Q, response) }; }
 export const answerText = (Q) => handlerFor(normalize(Q)).answer(normalize(Q));
 
+/** Practice feedback in two stages: a first wrong answer gets a nudge (what's wrong with that choice, or a hint; the
+ *  answer stays hidden) and another go; the full feedback, with the answer, comes when it's right, on the second
+ *  try, or at once where there is only one try (data-one-try), in exams, and for self-marked answers. */
+export function feedbackStage({ attempt, correct, self = false, oneTry = false }) {
+  return correct || self || oneTry || attempt >= 2 ? "final" : "nudge";
+}
+/** the nudge's words: why the chosen option is wrong, else the question's hint, else a prompt to look again */
+export function nudgeText(Q, response) {
+  const picked = Array.isArray(Q?.options) ? Q.options.find((o) => o.text === response) : null;
+  if (picked?.why) return picked.why;
+  if (Q?.hint) return Q.hint;
+  return "Look back at the key idea above, then try again.";
+}
+
 export function wireQuestions(el, lookup, onAnswer) {
   el.querySelectorAll(".aq").forEach((box) => {
     if (box.dataset.wired) return; box.dataset.wired = "1";
@@ -63,15 +77,26 @@ export function wireQuestions(el, lookup, onAnswer) {
       if (silent || solved) return;
       attempt++;
       const res = markQuestion(Q, response), out = box.querySelector(".aq-result");
-      out.textContent = res.self ? `Self-assessed: ${Math.round(res.score * 100)}% of the marking points (provisional).` : res.correct ? "Correct." : `Not quite${res.detail ? `: ${res.detail}` : ""}.${box.closest("[data-one-try]") ? " Here's why." : " Here's why, and you can try again."}`;
+      const stage = feedbackStage({ attempt, correct: res.correct, self: res.self, oneTry: Boolean(box.closest("[data-one-try]")) });
+      if (stage === "nudge") {
+        // not this one: say why (or hint), keep the answer hidden, and let them think again
+        out.innerHTML = `<b>Not this one.</b> ${inline(nudgeText(Q, response))} <span class="aq-again">Have another go.</span>`;
+        out.className = "aq-result nudge";
+        const chosen = box.querySelector(".aq-opts button[aria-pressed='true']");
+        if (chosen) { chosen.classList.add("wrong"); chosen.disabled = true; chosen.setAttribute("aria-label", `${chosen.textContent}: not this one`); }
+        box.querySelectorAll(".aq-opts button[aria-pressed='true']").forEach((b) => b.setAttribute("aria-pressed", "false"));
+        onAnswer?.(Q, res, attempt === 1, box, { response, confidence: confidence(), ms: Date.now() - shown, attempt, final: false });
+        return;
+      }
+      out.textContent = res.self ? `Self-assessed: ${Math.round(res.score * 100)}% of the marking points (provisional).` : res.correct ? (attempt > 1 ? "Got it on the second go." : "Correct.") : `Close${res.detail ? `: ${res.detail}` : ""}. Here's the key idea.`;
       out.className = `aq-result ${res.self ? "" : res.correct ? "ok" : "no"}`;
       h.paint(box, Q, response, res);
       box.querySelector(".aq-detail").innerHTML = h.feedback(Q, response, res);
       box.querySelector(".aq-why").hidden = false;
       if (res.correct || res.self) { solved = true; box.classList.add("solved"); }
       const after = box.querySelector(".aq-conf-after");
-      if (after && attempt === 1) { after.hidden = false; after.addEventListener("change", () => box.dispatchEvent(new CustomEvent("aq-confidence", { detail: confidence() })), { once: true }); }
-      onAnswer?.(Q, res, attempt === 1, box, { response, confidence: confidence(), ms: Date.now() - shown, attempt });
+      if (after && after.hidden) { after.hidden = false; after.addEventListener("change", () => box.dispatchEvent(new CustomEvent("aq-confidence", { detail: confidence() })), { once: true }); }
+      onAnswer?.(Q, res, attempt === 1, box, { response, confidence: confidence(), ms: Date.now() - shown, attempt, final: true });
     }, { mode: box.dataset.mode });
   });
 }

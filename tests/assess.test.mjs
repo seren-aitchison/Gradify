@@ -93,3 +93,18 @@ test("calculation answers keep their tolerance at every scale, including very sm
   assert.equal(TYPES.num.mark(exact, "146.1").correct, false);
   assert.equal(TYPES.num.mark(num("Zero? | 0 | 0 |  | why"), "0").correct, true);
 });
+
+test("a first wrong answer gets a nudge, and the answer only comes with the final feedback", async () => {
+  const { feedbackStage, nudgeText } = await import("../kit/assess/questions.js");
+  assert.equal(feedbackStage({ attempt: 1, correct: false }), "nudge", "first miss: think again, answer hidden");
+  assert.equal(feedbackStage({ attempt: 2, correct: false }), "final", "second miss: the answer and why");
+  assert.equal(feedbackStage({ attempt: 1, correct: true }), "final");
+  assert.equal(feedbackStage({ attempt: 1, correct: false, oneTry: true }), "final", "one-try questions explain at once");
+  assert.equal(feedbackStage({ attempt: 1, correct: false, self: true }), "final", "self-marked answers are never nudged");
+  const Q = { q: "Which structure is found in prokaryotic cells?", hint: "Think about what every cell needs to make proteins.",
+    options: [{ text: "A nucleus", why: "Prokaryotes have no nucleus: their DNA sits in the nucleoid." }, { text: "70S ribosomes", correct: true }, { text: "Mitochondria" }] };
+  assert.match(nudgeText(Q, "A nucleus"), /no nucleus/, "the chosen option's own why, when it has one");
+  assert.match(nudgeText(Q, "Mitochondria"), /proteins/, "else the question's hint");
+  assert.doesNotMatch(nudgeText(Q, "Mitochondria"), /70S/, "the nudge never gives the answer away");
+  assert.match(nudgeText({ q: "x" }, "y"), /try again/, "else a prompt to look again");
+});

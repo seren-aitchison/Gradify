@@ -299,7 +299,7 @@ export function mountCourse(root, cfg) {
   const lessonRun = (id) => { if (!runs.has(id)) runs.set(id, { xp: 0, right: 0, tried: 0, best: 0 }); return runs.get(id); };
   function wirePractice(el, context, contextId, xp = XP.check, onAnswer = null) {
     wireQuestions(el, (k) => pageQs.get(k)?.Q, (Q, res, first, box, meta) => {
-      const it = pageQs.get(box.dataset.key), a = record(it, context, contextId, res, meta); onAnswer?.(it, res);
+      const it = pageQs.get(box.dataset.key), a = record(it, context, contextId, res, meta); onAnswer?.(it, res, meta);
       // "How sure were you?" asked after the answer: the pick is kept on that first attempt (calibration reads it)
       if (first && !box.dataset.confWired) { box.dataset.confWired = "1"; box.addEventListener("aq-confidence", (e) => { if (e.detail) { a.confidence = e.detail; save(); } }); }
       if (first && !res.self && it.l) { const r = lessonRun(it.l.id); r.tried++; if (res.score >= 0.7) r.right++; }
@@ -309,8 +309,11 @@ export function mountCourse(root, cfg) {
           if ([3, 5, 8, 12].includes(combo)) { comboPop(combo); setTimeout(() => feel(combo >= 5 ? "levelup" : "achievement"), 260); } } else { combo = 0; root.querySelectorAll(".cx-combo").forEach((x) => x.classList.remove("hot")); } root.querySelectorAll(".cx-combo-n").forEach((x) => { x.textContent = combo; x.closest(".cx-combo").hidden = !combo; }); }
       // an explanation shown in this lesson is judged by the next answer (kit/learning/explain.js)
       if (it.l && !res.self) { const credited = wayAnswered(it.l.id, res.correct); if (credited) logWay("explanation_outcome", credited, it.l.id, res.correct); }
-      if (!res.correct && !res.self && it.l && !box.querySelector(".co-anotherw")) offerAnotherWay(box, Q, it);
-      if (!res.correct && !res.self && Q.options && it.l && !box.querySelector(".co-whyw")) offerDiagnosis(box, Q, it, meta.response);
+      // after a nudge the learner is still thinking: the extra help comes with the full feedback
+      const final = meta.final !== false;
+      if (final && !res.correct && !res.self && it.l && !box.querySelector(".co-anotherw") && !box.closest(".ls")) offerAnotherWay(box, Q, it);
+      if (final && !res.correct && !res.self && Q.options && it.l && !box.querySelector(".co-whyw")) offerDiagnosis(box, Q, it, meta.response);
+      if (!res.correct && !res.self && box.closest(".ls")) askWhyChip(box, Q, final);
       if (first && res.score >= 0.7 && !S.solved[it.key]) { S.solved[it.key] = Date.now(); save(); award(xp, "check", it.key); }
     });
   }
@@ -369,6 +372,22 @@ export function mountCourse(root, cfg) {
   }
 
   // "Why was I wrong?": Gradify AI names the likely misconception behind a wrong choice and gives a check question
+  // Learn mode: after a wrong answer the tutor button says what it can do right now, and opening it starts the
+  // question for the learner (filled in, not sent: they choose whether to spend an AI use on it)
+  function askWhyChip(box, Q, final) {
+    const fab = document.querySelector(".gai-fab"), t = fab?.querySelector(".gai-fabt"); if (!fab || !t) return;
+    const plain = (x) => String(x || "").replace(/[*_`]/g, "").trim();
+    t.textContent = final ? "Ask why" : "Stuck? Get a hint"; fab.classList.add("gai-now");
+    const prompt = final ? `Why isn't "${plain(box.response)}" the answer to: ${plain(Q.q)}` : `Give me a hint, not the answer, for: ${plain(Q.q)}`;
+    fab.onclick = () => setTimeout(() => {
+      const ta = document.getElementById("gai-q"); if (ta && !ta.value) { ta.value = prompt; ta.dispatchEvent(new Event("input", { bubbles: true })); ta.focus(); }
+      resetAskChip();
+    }, 60);
+  }
+  function resetAskChip() {
+    const fab = document.querySelector(".gai-fab"), t = fab?.querySelector(".gai-fabt"); if (!fab || !t) return;
+    t.textContent = "Ask Gradify AI"; fab.classList.remove("gai-now"); fab.onclick = null;
+  }
   function offerDiagnosis(box, Q, it, chosen) {
     const wrap = document.createElement("div"); wrap.className = "co-whyw";
     wrap.innerHTML = `<button type="button" class="btn btn-ghost btn-sm"><span>Why was I wrong?</span></button><div class="co-whyout" aria-live="polite"></div>`;
@@ -1554,7 +1573,7 @@ export function mountCourse(root, cfg) {
         ${buildsOnHtml(id)}`;
       primary = F.diagnose.length ? "Start with a quick check" : "Start";
     } else if (s.kind === "diagnose") {
-      body = `<span class="ls-kicker">Before you start</span><h1 class="ls-title" tabindex="-1">What do you already know?</h1><p class="ls-lead">A quick check. It doesn't count against you: it shows what to focus on.</p>${qBlock(s.questions)}`;
+      body = `<span class="ls-kicker">Before you start</span><h1 class="ls-title" tabindex="-1">What do you already know?</h1><p class="ls-lead">A quick check. It doesn't count against you: it shows what to focus on.</p><div data-one-try>${qBlock(s.questions)}</div>`;   // measuring what they know: one try, no nudge
       needsAnswer = s.questions.length;
     } else if (s.kind === "block") {
       const B = s.block, partsHtml = lessonHtml({ blocks: B.parts }), ob = B.objectives.length ? `<p class="ls-obtag">${ic("target")} ${B.objectives.map((o) => esc(N.objectives[o - 1] || `Objective ${o}`)).join(" · ")}</p>` : "";
@@ -1576,7 +1595,7 @@ export function mountCourse(root, cfg) {
         ${C.pitfalls.length ? `<section class="ls-card ls-pits"><h2>Common mistakes</h2><ul>${C.pitfalls.map((x) => `<li>${inline(x)}</li>`).join("")}</ul></section>` : ""}
         ${C.cards ? `<button type="button" class="ls-tool" data-cards>${ic("cards")} Flashcards (${C.cards})</button>` : ""}`;
     } else if (s.kind === "prove") {
-      body = `<span class="ls-kicker">Prove it</span><h1 class="ls-title" tabindex="-1">The final check</h1><p class="ls-lead">No hints this time. Answer them all to finish the lesson.</p>${qBlock(s.questions, { confidence: true })}`;
+      body = `<span class="ls-kicker">Prove it</span><h1 class="ls-title" tabindex="-1">The final check</h1><p class="ls-lead">No hints this time. Answer them all to finish the lesson.</p><div data-one-try>${qBlock(s.questions, { confidence: "after" })}</div>`;   // no hints: one try
       needsAnswer = s.questions.length;
     } else {
       const shown = new Set((S.attempts || []).filter((a) => a.lesson === id && a.score >= 0.7).flatMap((a) => a.question?.objectives || []));
@@ -1591,7 +1610,7 @@ export function mountCourse(root, cfg) {
           <a class="ls-endlink" href="#/lesson/${id}">${ic("notes")} Read as notes</a></div>`;
       primary = "";
     }
-    const sk = streak();
+    const sk = streak(); resetAskChip();
     main.innerHTML = `<article class="ls" style="--a:${t.from};--b:${t.to}">
       <header class="ls-bar"><a class="ls-back" href="${n ? href(n - 1) : `#/lesson/${id}`}" aria-label="${n ? "Previous step" : "Back to the lesson"}">${ic("left")}</a>
         <ol class="ls-prog" aria-label="Step ${n + 1} of ${steps.length}">${steps.map((x, k) => `<li class="${k < n ? "done" : k === n ? "here" : ""}"><a href="${href(k)}" tabindex="${k <= (S.step[id] || 0) ? 0 : -1}" aria-label="Step ${k + 1}${k === n ? " (current)" : ""}"></a></li>`).join("")}</ol>
@@ -1606,7 +1625,8 @@ export function mountCourse(root, cfg) {
     // Continue unlocks once every question on the step has an answer (right or wrong: the feedback teaches)
     const answered = new Set(), go_ = main.querySelector(".ls-go");
     const pits = s.kind === "block" ? s.block.parts.filter((p) => p.t === "pit").map((p) => p.x) : [];
-    wirePractice(main, s.kind === "diagnose" ? "diagnostic" : "lesson", id, s.kind === "diagnose" ? 0 : XP.check, (it, res) => {
+    wirePractice(main, s.kind === "diagnose" ? "diagnostic" : "lesson", id, s.kind === "diagnose" ? 0 : XP.check, (it, res, meta) => {
+      if (meta?.final === false) return;   // a nudge: still thinking
       answered.add(it.key);
       // a wrong answer in a concept block: what to think about, from this concept's own misconceptions, and a way back
       // to the explanation. Never a penalty: Continue still unlocks.
