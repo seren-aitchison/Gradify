@@ -132,7 +132,8 @@ below). The learner record links to them by id. It doesn't copy them.
 | A plan block made by Schedule is deleted | Completing the resource finds it gone and drops the scheduling entry |
 | Moved within its course or Notes | Nothing changes: ids are the course's locked lesson ids and the notes' own ids, not places |
 
-Undoing a Notes delete (Ctrl+Z) brings the page back, but not its links.
+Undoing a Notes delete (Ctrl+Z) brings its links, collection places, note, schedule and pin back with the page;
+Redo removes them again (`forget` returns what it removed, `restore` puts it back; `tests/links-store.test.mjs`).
 
 ## Migration impact
 
@@ -141,9 +142,30 @@ Undoing a Notes delete (Ctrl+Z) brings the page back, but not its links.
 - **Adds:** one table (`learner_state`), one index, one trigger function and its trigger, row-level security, and policies matching every other learner table (own rows only; on Free, writes only from the active study device).
 - **Changes nothing existing:** no other table, row, function or policy is touched. The repository's rehearsal applies it to a copy of real data and checks every existing value is unchanged (`tests/pg-rehearsal.test.mjs`). It passes the migration allowlist.
 - **All or nothing:** `scripts/supabase-admin.mjs migrate` applies it in one transaction with its ledger entry and checks. A failure partway through leaves the database as it was.
-- **Reversible:** `drop table public.learner_state; drop function public.learner_state_keep_newer();`. The app treats a missing table as "keep the record on this device", so devices carry on with nothing lost there.
-- **After it's applied:** a signed-in learner's device uploads its record on its next visit (pins, tabs, up to 600 history lines, links, collections, notes on resources, mistakes, scheduling) and merges it with their other devices'.
-- **Already happening without it, on the device:** this branch moves pins, workspace tabs and history into one key (`gradify.state`), importing the old keys once and leaving them in place. If the branch were reverted, the old keys would still be there, but pins, tabs and history added after the switch would only be in the new key.
+- **Undoing it in the database:** `drop table public.learner_state; drop function public.learner_state_keep_newer();`. The app treats a missing table as "keep the record on this device". What had synced to the account goes with the table; every device still has its own copy.
+- **After it's applied:** a signed-in learner's device uploads its record on its next visit (pins, tabs, history, links, collections, notes on resources, mistakes, scheduling) and merges it with their other devices'.
+
+## Rolling the app back
+
+The record lives in one device key (`gradify.state`). Until it has proven itself, the keys the previous version read
+are **kept current in their old formats** on every save and sync: `gradify.pins` (pins, in order),
+`gradify.workspace` (`{ tabs, active }`) and `gradify.history` (newest first, the old 500-line limit).
+
+- **What the live version (`main`) reads:** only `gradify.pins`. Workspace tabs and History arrived with this branch, so `main` has nothing of them to lose; their keys are kept current anyway, for any in-between version.
+- **Rolled back:** the previous version reads its keys and finds every pin (and tab and history line) made since.
+- **Forward again:** if the previous version changed those keys meanwhile, the record notices (it fingerprints what it last wrote) and takes the older version's changes as the newer ones: pins and tabs added and removed, history lines added (never removed, since that key holds only the newest 500). Kinds it didn't touch are left alone.
+- **Lost on a rollback:** only what the previous version never had: links, collections, notes on resources, mistakes and scheduling. They stay in `gradify.state`, untouched, and come back when the app does. History lines beyond the newest 500 aren't shown by the previous version, but stay in the record.
+
+Tested end to end on a simulated device: new version, rollback, changes by the older version, forward again
+(`tests/learner-state-rollback.test.mjs`).
+
+## History limits
+
+- **On a device:** the newest 600 lines, none older than a year. Older lines are dropped from that device's copy only; nothing is sent as a deletion, so the account keeps them.
+- **In the account:** every line that reached it. Today there's no server-side limit: each line is one small row, under the 16 KB value limit.
+- **What can be lost:** a line that falls out of the newest 600 before it's ever synced (more than 600 lines on a device that's offline or signed out). Before this branch, history kept 500 lines on the device and none in the account.
+
+Covered: the 600 cap and newest-first pruning, older account lines surviving a device's pruning, a sync failing partway then finishing, another device's changes merging, an inactive Free device, and an account without the table (`tests/learner-state-sync.test.mjs`).
 
 ## Attempted, completed, mastered, verified
 

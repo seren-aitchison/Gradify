@@ -56,6 +56,44 @@ export function prune(entries, { now = Date.now(), cap = 600, days = 365 } = {})
   return Object.fromEntries(Object.entries(entries).filter(([k]) => !drop.has(k)));
 }
 
+// ---------- the older keys, kept in step (rollback safety) ----------
+// Until this record has proven itself, the keys the previous version read are kept current in their old formats:
+// "gradify.pins" (the pins, in order), "gradify.workspace" ({ tabs, active }) and "gradify.history" (newest first,
+// the old 500 limit). So if the app is rolled back to that version, it finds every pin, tab and history line made
+// since. And if that older version changes them, coming forward again brings its changes in (reconcile).
+export const LEGACY = { pin: "gradify.pins", tab: "gradify.workspace", activity: "gradify.history" };
+const strip = (o, k) => { const { [k]: _, ...rest } = o || {}; return rest; };
+/** what the older keys should hold now, from the record. Pure. */
+export function mirrorOf(entries, { active = null, historyCap = 500 } = {}) {
+  return {
+    pin: valuesOf(entries, "pin").map((e) => e.value).sort((a, b) => (a.order ?? 0) - (b.order ?? 0)).map((p) => strip(p, "order")),
+    tab: { tabs: valuesOf(entries, "tab").map((e) => e.value).sort((a, b) => (a.pos ?? 0) - (b.pos ?? 0)).map((t) => strip(t, "pos")), active },
+    activity: valuesOf(entries, "activity").map((e) => e.value).slice(0, historyCap),
+  };
+}
+export const fingerprint = (v) => { let h = 2166136261; for (const ch of JSON.stringify(v ?? null)) h = Math.imul(h ^ ch.charCodeAt(0), 16777619); return (h >>> 0).toString(36); };
+/**
+ * Bring in what an older version of the app changed in the older keys. For each kind whose key no longer matches
+ * what this record last wrote there (fingerprints), that key is the newer truth: its items become entries (newer
+ * than what the record has), and what it no longer holds is removed (pins, tabs; history only gains lines, since its
+ * older key holds just the newest 500). Kinds nobody else touched are left alone. Pure.
+ */
+export function reconcile(entries, legacy, written = {}, { dev = "?", now = Date.now() } = {}) {
+  const out = { ...entries }, kinds = [];
+  for (const kind of Object.keys(LEGACY)) {
+    if (!written[kind] || legacy[kind] === undefined || fingerprint(legacy[kind]) === written[kind]) continue;
+    kinds.push(kind);
+    const src = kind === "pin" ? { pins: legacy.pin || [] } : kind === "tab" ? { workspace: legacy.tab || { tabs: [] } } : { history: legacy.activity || [] };
+    const fresh = importLegacy(src, { dev, now });
+    let i = 0;
+    for (const [k, e] of Object.entries(fresh)) out[k] = { ...e, t: now + (i++) };            // the older version's change is the newer one
+    // history only ever gains lines here: the older key holds at most 500, so a line missing from it isn't one the
+    // older version deleted
+    if (kind !== "activity") for (const [k, e] of Object.entries(out)) if (e.kind === kind && !e.del && !fresh[k]) out[k] = tombstone(kind, e.key, { dev, t: now + (i++) });
+  }
+  return { entries: out, kinds };
+}
+
 // ---------- this device ----------
 const ls = () => { try { return globalThis.localStorage || null; } catch { return null; } };
 const read = (k, d) => { try { const v = ls()?.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } };
@@ -68,17 +106,33 @@ export function deviceId() {
 let cache = null, status = { state: "local", at: null, waiting: 0 };
 const listeners = new Set(), statusListeners = new Set();
 const emit = (kinds) => listeners.forEach((f) => { try { f(kinds); } catch { /* a listener's own problem */ } });
+const readLegacy = () => ({ pin: read(LEGACY.pin, []), tab: read(LEGACY.tab, null), activity: read(LEGACY.activity, []) });
+// write the older keys from the record, and remember what was written there
+function writeMirror(rec) {
+  const m = mirrorOf(rec.entries, { active: read("gradify.workspace.active", null) });
+  rec.written = {};
+  for (const kind of Object.keys(LEGACY)) { write(LEGACY[kind], m[kind]); rec.written[kind] = fingerprint(m[kind]); }
+}
 function load() {
   if (cache) return cache;
   const rec = read(KEY, null);
-  if (rec?.entries) { cache = rec; return cache; }
-  // first run on this device: bring in what the older keys held
+  if (rec?.entries) {
+    cache = rec;
+    // an older version of the app wrote the older keys since this record last did (a rollback, then forward again)
+    if (rec.written) { const r = reconcile(rec.entries, readLegacy(), rec.written, { dev: deviceId(), now: stamp() }); if (r.kinds.length) { rec.entries = r.entries; last = Math.max(last, ...Object.values(rec.entries).map((e) => e.t)); } }
+    writeMirror(rec); write(KEY, rec);
+    return cache;
+  }
+  // first run on this device: bring in what the older keys held (they're kept, and kept current from now on)
   cache = { v: 1, entries: importLegacy({ pins: read("gradify.pins", []), workspace: read("gradify.workspace", null), history: read("gradify.history", []) }, { dev: deviceId() }), pushed: 0, pulled: null };
-  write(KEY, cache);
+  writeMirror(cache); write(KEY, cache);
   return cache;
 }
+/** forget the copy in memory (another tab or version changed the record): the next read loads it again */
+export function reload() { cache = null; }
 function save(kinds) {
   cache.entries = prune(cache.entries);
+  writeMirror(cache);
   write(KEY, cache);
   emit(kinds);
   if (account) { setStatus({ ...status, waiting: pendingCount() }); soon(); }
@@ -105,7 +159,7 @@ const pendingCount = () => Object.values(load().entries).filter((e) => SYNCED.ha
 const setStatus = (s) => { status = { ...status, ...s }; statusListeners.forEach((f) => { try { f(status); } catch { /* */ } }); };
 export const syncStatus = () => status;
 export function onSyncStatus(f) { statusListeners.add(f); f(status); return () => statusListeners.delete(f); }
-const soon = (ms = 1500) => { clearTimeout(timer); timer = setTimeout(syncNow, ms); };
+const soon = (ms = 1500) => { clearTimeout(timer); timer = setTimeout(syncNow, ms); timer?.unref?.(); };
 
 export async function attachAccount(store) {
   const db = store?.db || store?.cloud?.db;
@@ -132,6 +186,7 @@ export async function syncNow() {
     const { entries, changed } = merge(rec.entries, theirs);
     rec.entries = entries;
     if (data?.length) rec.pulled = data.at(-1).updated_at;
+    writeMirror(rec);
     // push: what this device changed since its last push (the server keeps the newer of two changes: see the migration)
     const mine = Object.values(rec.entries).filter((e) => SYNCED.has(e.kind) && e.dev === deviceId() && e.t > (rec.pushed || 0));
     for (let i = 0; i < mine.length; i += 200) {

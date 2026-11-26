@@ -12,7 +12,16 @@ import * as M from "./model.js";
 import * as S from "./store.js";
 import { icon } from "../../core/icons.js";
 import { resource as gResource, rid as gRid, hrefOf } from "../../core/resource.js";
-import { link as gLink, linksOf, forget as gForget, retitle as gRetitle } from "../../data/links.js";
+import { link as gLink, linksOf, forget as gForget, restore as gRestore, retitle as gRetitle } from "../../data/links.js";
+// pages deleted while this view is open, with what forget() removed for each, so Undo can put their links back
+// (and Redo take them away again)
+const forgotten = new Map();
+function syncForgotten() {
+  for (const [id, f] of forgotten) {
+    if (kb.rems[id] && f.gone) { gRestore(f.gone); f.gone = null; }
+    else if (!kb.rems[id] && !f.gone) f.gone = gForget(`note:${id}`, { href: f.href });
+  }
+}
 import { runResourceAction } from "../../ui/resource-actions.js";
 // this page as a universal resource (kit/core/resource.js), for links, collections, the plan and history
 const noteRes = (id) => gResource(gRid("note", id), { title: M.nameOf(kb, id) || "Untitled", sub: "Note in Gradify Notes", href: `${location.pathname}#/notes/${id}` });
@@ -50,6 +59,7 @@ function doUndo(redo = false) {
   const from = redo ? hist.redo : hist.undo, to = redo ? hist.undo : hist.redo;
   const step = from.pop(); if (!step) { ctx.toast(redo ? "Nothing to redo." : "Nothing to undo."); return; }
   to.push(M.undo(kb, step)); S.save(); scheduleCards();
+  syncForgotten();
   if (!kb.rems[root]) { location.hash = "#/notes"; return; }
   drawTree();
 }
@@ -760,7 +770,7 @@ function moreMenu(btn) {
     ["Delete", () => { if (!confirm(`Delete “${M.nameOf(kb, root)}” and everything in it? Its flashcards are suspended; Ctrl+Z puts it back while this page is open.`)) return; const parent = r.parent, ids = []; (function walk(x) { ids.push(x); for (const k of kb.rems[x]?.kids || []) walk(k); })(root);
       change(() => M.remove(kb, root), { draw: "none" });
       // the page and the pages inside it are gone: so are their links, collection places, schedules and pins
-      for (const x of ids) gForget(`note:${x}`, { href: `${location.pathname}#/notes/${x}` }); location.hash = parent ? `#/notes/${parent}` : "#/notes"; }],
+      for (const x of ids) { const href = `${location.pathname}#/notes/${x}`; forgotten.set(x, { href, gone: gForget(`note:${x}`, { href }) }); } location.hash = parent ? `#/notes/${parent}` : "#/notes"; }],
   ]);
 }
 async function templatePicker() {

@@ -136,14 +136,16 @@ export { R as resource, parseRid };
  */
 export function forget(rid, { href = null } = {}) {
   const gone = [];
-  for (const e of LS.list("link")) if (e.value.a?.rid === rid || e.value.b?.rid === rid) gone.push(["link", e.key]);
-  for (const e of LS.list("collitem")) if (e.value.r?.rid === rid) gone.push(["collitem", e.key]);
-  for (const e of LS.list("sched")) if (e.value.r?.rid === rid) gone.push(["sched", e.key]);
-  if (LS.get("note", rid)) gone.push(["note", rid]);
-  if (href && LS.get("pin", href)) gone.push(["pin", href]);
+  for (const e of LS.list("link")) if (e.value.a?.rid === rid || e.value.b?.rid === rid) gone.push(["link", e.key, e.value]);
+  for (const e of LS.list("collitem")) if (e.value.r?.rid === rid) gone.push(["collitem", e.key, e.value]);
+  for (const e of LS.list("sched")) if (e.value.r?.rid === rid) gone.push(["sched", e.key, e.value]);
+  if (LS.get("note", rid)) gone.push(["note", rid, LS.get("note", rid)]);
+  if (href && LS.get("pin", href)) gone.push(["pin", href, LS.get("pin", href)]);
   if (gone.length) LS.batch((b) => gone.forEach(([k, key]) => b.del(k, key)));
-  return gone.length;
+  return gone;   // what was removed, so an undo can put it back (restore)
 }
+/** put back what forget removed (the thing came back: an undo) */
+export function restore(gone = []) { if (gone.length) LS.batch((b) => gone.forEach(([k, key, v]) => b.put(k, key, v))); }
 /** retitled pure: the entries whose copy of this resource's title is out of date, with the new value */
 export function staleTitles(entries, rid, title) {
   const out = [];
