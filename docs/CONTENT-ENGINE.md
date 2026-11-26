@@ -150,6 +150,24 @@ The workflow runs one job per subject, publishes into `content/rolling` and rest
 - **AQA layout only.** `scripts/curriculum/aqa.mjs` reads AQA's science specifications (biology and chemistry checked). Other bodies need AI extraction with a script check, which isn't built yet (M2).
 - **NCBI Bookshelf's licence page** returns a reCAPTCHA to automated requests, so its row has no quoted licence and stays facts-only until a person checks it.
 - **The PGlite rehearsal isn't a real deploy.** The migration passes it; applying it to the live database is the owner's step.
+- **Four tests skip in CI.** They need the AQA GCSE Biology statement text, which is the awarding body's copyright and never committed (`data/curriculum/specs/` is local only), so CI reports them as skipped, not passed. A green CI run with these four skips isn't every test passing:
+
+  | Test | File | Checks |
+  |---|---|---|
+  | the local statement text, when imported here, is exactly what the index fingerprinted | `tests/curriculum-aqa.test.mjs` | the text matches the committed fingerprints (`hash`) that decisions are tied to |
+  | rebuilding every AQA lesson gives the committed notes and passes QA | `tests/knowledge.test.mjs` | the AQA knowledge lessons rebuild from the text exactly |
+  | QA holds a practical to being a practical | `tests/knowledge.test.mjs` | required practicals are taught as practicals |
+  | the production report measures knowledge coverage per statement | `tests/knowledge.test.mjs` | the production report's per-statement coverage |
+
+  To run them, fetch and import the text (the awarding body's host must be reachable), then run the two files or the whole suite. With the text present they run and must pass (they did on 26 Nov 2026: 0 skipped):
+
+  ```bash
+  NODE_USE_ENV_PROXY=1 node scripts/curriculum/engine.mjs fetch aqa-gcse-biology
+  node scripts/curriculum/engine.mjs import aqa-gcse-biology
+  node --test tests/curriculum-aqa.test.mjs tests/knowledge.test.mjs
+  ```
+
+  Run them before merging anything that changes the importer, the index, the knowledge lessons or how decisions are fingerprinted.
 
 ## When the rolling PR reports a systematic failure
 
