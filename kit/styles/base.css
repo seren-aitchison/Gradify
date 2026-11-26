@@ -808,3 +808,14 @@ body.ds { font-family: var(--ds-font-text); }
 :root:not([data-theme="light"]) .g-art { --art-p: #ff6aa8; --art-o: #ff9a4d; --art-c: #ffcc33; --art-t: #3fd6c6; }
 .g-art { --art-a: color-mix(in oklab, var(--accent, #4641ff) 92%, #1b1b26); }
 :root:not([data-theme="light"]) .g-art { --art-a: color-mix(in oklab, var(--accent, #6d74d6) 85%, #fff); }
+
+/* ---------- Calm by default (Lesson System Brief v2, principle 10) ----------
+   The gleaming edge is emphasis, and emphasis only works once: it stays on the one card that says what to do next
+   (.g-action, a course's hero, "Start here"), and leaves the top bar and the tiles, which take a plain hairline. */
+:root header.bar.glass::before, :root header.sub-nav.glass::before { content: none !important; }
+:root header.bar.glass, :root header.sub-nav.glass { border-color: var(--line-strong, var(--line)) !important; }
+:root :is(#groups .card, .sub-page .sm-topic, .sub-page .sm-steps li, .g-tiles a)::before { content: none !important; }
+:root :is(#groups .card, .sub-page .sm-topic, .sub-page .sm-steps li, .g-tiles a) { border-color: var(--line) !important; }
+/* no glow pooled under buttons: a solid, crisp control reads as more premium than a lit one (the top shine stays) */
+:root .lg::after, :root .btn:not(.lg)::after { content: none !important; }
+:root .lg { box-shadow: inset 0 1px 0 rgba(255, 255, 255, .38), inset 0 -1px 0 rgba(255, 255, 255, .08); }

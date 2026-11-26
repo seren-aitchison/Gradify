@@ -3114,3 +3114,67 @@ body:has(.co.co-stepmode) .gx-totop { display: none !important; }
 :root:not([data-theme="light"]) .co.co-stepmode .vx .vx-pbtn { background: color-mix(in srgb, var(--vx-a1) 22%, #161b2e); border-color: color-mix(in srgb, var(--vx-a1) 55%, transparent); color: #eef1fb; }
 :root:not([data-theme="light"]) .co.co-stepmode .vx .vx-pbtn:hover { background: color-mix(in srgb, var(--vx-a1) 32%, #161b2e); }
 :root:not([data-theme="light"]) .co.co-stepmode .vx .vx-pbtn small { background: rgba(255, 255, 255, .14); color: #eef1fb; }
+
+/* ---- the lesson's one breadcrumb trail ---- */
+/* the current page never shortens; the middle steps give way first (they're one tap back either way) */
+.cx-bc > [aria-current] { flex: 0 0 auto; max-width: 48%; }
+/* the course name stays whole; the unit and topic give way first, then the Gradify and site steps disappear
+   on screens too narrow to hold them (the site bar above already leads to both) */
+.cx-bc > a:not(.cx-bcroot) { flex: none; }
+.cx-bc > a.cx-bcm, .cx-bc > a:not(.cx-bcroot):not(:first-of-type):not([href="#/home"]) { flex: 0 1 auto; min-width: 6ch; overflow: hidden; text-overflow: ellipsis; }
+.cx-bc > a.cx-bcroot { flex: none; }
+@media (max-width: 1500px) { .cx-bc > a.cx-bcroot { display: none; } .cx-bc > a[href="#/home"]::before { content: none; } }
+/* phones: just the way back, to the unit */
+@media (max-width: 640px) {
+  .cx-lbar .cx-bc { display: flex; flex: 1; }
+  .cx-bc > * { display: none !important; }
+  .cx-bc > a:nth-last-child(2) { display: inline-flex !important; max-width: 100%; overflow: hidden; text-overflow: ellipsis; color: var(--fg); font-weight: 600; }
+  .cx-bc > a:nth-last-child(2)::before { content: "‹"; margin-right: 6px; font-size: 18px; line-height: 1; opacity: .8; }
+  .cx-bc .cx-bcl { display: none; }
+}
+
+/* ---- the lesson toolbar: Bookmark and Search as icons, the view options in one labelled menu ---- */
+.cx-view { position: relative; }
+.cx-viewb { list-style: none; display: inline-flex; align-items: center; gap: 4px; height: 36px; padding: 0 10px; border-radius: 10px; font: 600 13.5px var(--sans); color: var(--fg); cursor: pointer; }
+.cx-viewb::-webkit-details-marker { display: none; }
+.cx-viewb::after { content: "▾"; font-size: 11px; opacity: .7; }
+.cx-viewb:hover, .cx-view[open] .cx-viewb { background: rgba(var(--ink-rgb), .07); }
+.cx-viewm { position: absolute; right: 0; top: calc(100% + 6px); z-index: 50; min-width: 230px; display: grid; padding: 6px; border-radius: 14px; background: var(--bg, #fff); border: 1px solid var(--line); box-shadow: 0 18px 40px -16px rgba(0, 0, 0, .35); }
+.cx-viewm button { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border: 0; border-radius: 10px; background: none; color: var(--fg); font: 500 14px var(--sans); text-align: left; cursor: pointer; }
+.cx-viewm button:hover { background: rgba(var(--ink-rgb), .07); }
+.cx-viewm button[aria-pressed="true"] { font-weight: 700; }
+.cx-viewm button[aria-pressed="true"]::after { content: "✓"; margin-left: auto; }
+.cx-viewm .co-ic { width: 18px; height: 18px; }
+
+/* ---- phones: one navigation bar ---- */
+@media (max-width: 640px) {
+  .co .co-tabs { display: none !important; }   /* the dock and its More sheet carry everything the strip held */
+}
+.cx-dmorelist { display: grid; gap: 2px; }
+.cx-dmore { display: flex; align-items: center; min-height: 48px; padding: 0 14px; border: 0; border-radius: 12px; background: none; color: var(--fg); font: 600 16px var(--sans); text-align: left; text-decoration: none; cursor: pointer; }
+.cx-dmore:hover, .cx-dmore:focus-visible { background: rgba(var(--ink-rgb), .07); }
+.cx-dmorelist hr { border: 0; border-top: 1px solid var(--line); margin: 8px 0; }
+
+/* calm by default: the course tabs and the side measures take a hairline; the hero keeps the one gleaming edge */
+:root .co :is(.co-tabs, .sm-measure, .sm-note, .co-school, .co-pcard)::before { content: none !important; }
+/* the page's line ribbons are decoration: they step away on course pages, as in Learn mode */
+body:has(.co) .g-motifs { display: none !important; }
+:root .co :is(.co-tabs, .sm-measure, .sm-note, .co-school, .co-pcard) { border-color: var(--line-strong, var(--line)) !important; }
+/* a new learner sees what's about to happen, not a row of zeros */
+.cx-welcome { display: flex; align-items: center; gap: 14px; }
+.cx-welcome .cx-flame { display: inline-grid; place-items: center; width: 44px; height: 44px; flex: none; border-radius: 14px; background: rgba(255, 192, 2, .18); }
+.cx-welcome .cx-flame .co-ic { width: 22px; height: 22px; color: #e6a100; }
+.cx-welcome b { display: block; font-size: 16px; }
+.cx-welcome small { color: var(--fg); opacity: .8; }
+
+/* ---- the lesson's side panel: one card, its parts divided by hairlines ---- */
+.cx-w-one { display: grid; gap: 0; }
+.cx-w-one > .cx-w-page { padding-bottom: 14px; }
+.cx-w-one .cx-sub { margin: 0; padding: 14px 0 0; border: 0; border-top: 1px solid var(--line); border-radius: 0; background: none !important; box-shadow: none !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+.cx-w-one .cx-sub + .cx-sub { margin-top: 14px; }
+.cx-w-one .cx-w-next { display: grid; gap: 2px; position: relative; padding-right: 28px; color: var(--fg); text-decoration: none; }
+.cx-w-one .cx-w-next .cx-w-go { position: absolute; right: 0; top: 50%; }
+.cx-w-one .cx-w-topic > .co-kicker { display: block; margin-bottom: 2px; }
+.cx-w-one .cx-w-topic > .cx-w-title { display: block; }
+/* phones: the dock has Previous and Next and the course search lives under More, so the lesson bar keeps the way back */
+@media (max-width: 640px) { .cx-lact .cx-pn, .cx-lact [data-pal-open] { display: none !important; } }

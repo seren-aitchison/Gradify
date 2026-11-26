@@ -31,7 +31,7 @@ export async function renderCurriculum({ view, store, toast, profile }) {
   const L = learnerOf(profile), mine = L.curriculum?.qualification ? find(L.curriculum.qualification) : null;
   const st = stats();
   view.innerHTML = `<section class="cu">
-    <div class="deck-head"><div><span class="kicker lo-kicker">${icon("cap")}My curriculum</span><h1>What are you studying?</h1>
+    <div class="deck-head"><div><span class="kicker lo-kicker">${icon("cap")}My specification</span><h1>What are you studying?</h1>
       <p class="sub">Find your qualification in Gradify's database of ${st.countries} countries' education systems: ${st.qualifications} qualifications, from GCSEs and the IB to the gaokao and the USMLE. Gradify then shows you what it has for it, and how far you can rely on it.</p></div></div>
     ${mine ? `<article class="panel glass cu-mine"><span class="tl-k">You're studying</span><h2>${esc(mine.name)}</h2><p class="sub">${esc(mine.country)} · ${esc(mine.system)}${L.curriculum.institution ? ` · ${esc(L.curriculum.institution)}` : ""}${L.curriculum.year ? ` · ${esc(L.curriculum.year)}` : ""}</p>${detail(mine, courses, scores)}<button type="button" class="tl-mini" data-change>Change</button></article>` : ""}
     <form class="tl-search panel glass cu-search" role="search"><input type="search" placeholder="Search: A level, IB, HSC, NCEA, SAT, gaokao, SQE…" aria-label="Search qualifications"><select aria-label="Country"><option value="">Every country</option>${WORLD.map((c) => `<option>${esc(c.country)}</option>`).join("")}</select></form>
