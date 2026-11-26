@@ -39,8 +39,11 @@ export const indexPath = (id) => new URL(`kit/curriculum/specs/${id}.json`, root
 export const sourcePath = (id) => new URL(`data/curriculum/sources/${id}.pdf`, root);
 export const reviewPath = (id) => new URL(`data/curriculum/review/${id}.csv`, root);
 export const mapPath = (id) => new URL(`kit/curriculum/maps/${id}.json`, root);
-const load = (u) => (existsSync(u) ? JSON.parse(readFileSync(u, "utf8")) : null);
-const write = (u, data) => { mkdirSync(new URL("./", u), { recursive: true }); writeFileSync(u, typeof data === "string" ? data : `${JSON.stringify(data, null, 1)}\n`); };
+// under GRADIFY_OUT (tests), a file this engine would write in the repository goes under that folder instead, so the
+// command line can be tested end to end without touching the repository
+const outOf = (u) => (process.env.GRADIFY_OUT && u.href.startsWith(root.href) ? new URL(u.href.slice(root.href.length), new URL(`file://${process.env.GRADIFY_OUT.replace(/\/$/, "")}/`)) : u);
+const load = (u) => { const o = outOf(u), f = existsSync(o) ? o : u; return existsSync(f) ? JSON.parse(readFileSync(f, "utf8")) : null; };   // GRADIFY_OUT overlays the repository
+const write = (u, data) => { u = outOf(u); mkdirSync(new URL("./", u), { recursive: true }); writeFileSync(u, typeof data === "string" ? data : `${JSON.stringify(data, null, 1)}\n`); };
 export const loadIndex = (id) => load(indexPath(id));
 /** the statements with their text when they've been imported here, else the committed index (refs, no text) */
 export const loadStatements = (id) => load(statementsPath(id)) || loadIndex(id);
@@ -519,7 +522,10 @@ if (import.meta.url === `file://${process.argv[1]}`) {
       write(reviewPath(a), reviewSheet(st, loadMap(a), new Map(inv.map((l) => [l.id, l]))));
       console.log(`data/curriculum/review/${a}.csv (local: it holds the specification's text). Fill in decision, lessons, note, reviewer, reviewed_on; then engine.mjs apply ${a} <file>.`);
     } else if (cmd === "apply") {
-      const st = loadStatements(a), s = SPECS.find((x) => x.id === a), inv = await inventory(s.subject);
+      // decisions need each statement's ref and fingerprint, which the committed index has: the text (local only) isn't
+      // needed, so a review can be recorded anywhere, CI included
+      const st = loadStatements(a) || loadIndex(a), s = SPECS.find((x) => x.id === a), inv = await inventory(s.subject);
+      if (!st) throw new Error(`${a} has no statement index: import it first`);
       const res = applyReview(st, loadMap(a) || { spec: a, specVersion: st.version, links: {} }, parseTable(readText(readFileSync(b))), new Set(inv.map((l) => l.id)));
       if (res.problems.length) { console.error(`Nothing applied. ${res.problems.length} problems:\n  ${res.problems.join("\n  ")}`); process.exit(1); }
       write(mapPath(a), res.map); console.log(`${res.applied} decisions recorded in kit/curriculum/maps/${a}.json.`);
