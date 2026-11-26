@@ -62,6 +62,11 @@ import { calendarPanelHtml, wireCalendar, intelStripHtml, nextHtml, upcomingHtml
 const $ = (s, el = document) => el.querySelector(s);
 import { esc } from "../core/text.js";
 import { mountAppNav } from "./app-nav.js";
+import { attachAccount, exportState, list as stateList, batch as stateBatch, SYNCED } from "../data/learner-state.js";
+import { renderCollections } from "./collections-view.js";
+import { mountConnections } from "../ui/connections.js";
+import { mistakes, mistakesByLesson } from "../data/links.js";
+import { resource, rid as makeRid } from "../core/resource.js";
 import { logEvent, history as activity } from "../ui/history.js";
 import { continueItems, continueHtml } from "./continue-view.js";
 import { myCourses } from "../ui/global-nav.js";
@@ -130,7 +135,7 @@ const SECTIONS = [
   ["today", "Today", "home", [["today", "Today", "home"], ...(MY_CHILD.test(SITE || "") ? [] : [["my", "MyGradify", "cap"]]), ["plan", "Smart Plan", "calendar"], ["goals", "Path", "route"]]],
   ["learn", "Learn", "cap", [["learning", "Courses", "cap"], ["curriculum", "My curriculum", "book"], ["knowledge", "My Knowledge", "brain"], ["earth", "Earth", "globe"]]],
   ["study", "Study", "layers", [["study", "Flashcards", "layers"], ["revise", "Revision Centre", "checklist"], ["tools", "Tools", "forge"], ["ai", "Gradify AI", "bulb"]]],
-  ["library", "Library", "book", [["notes", "Notes", "feather"], ["library", "Your library", "book"], ["new", "Add notes", "upload"], ["community", "Community", "people"]]],
+  ["library", "Library", "book", [["notes", "Notes", "feather"], ["library", "Your library", "book"], ["collections", "Collections", "board"], ["new", "Add notes", "upload"], ["community", "Community", "people"]]],
   ["progress", "Progress", "trend", [["progress", "Progress", "trend"], ["intel", "Intelligence", "sparkles"], ["history", "History", "clock"]]],
 ];
 const SETTINGS = ["account", "Settings", "cog"];
@@ -154,7 +159,7 @@ function markLocks() {
 }
 // the sidebar (a rail of icons, folding sections, Pinned and Recent), the phone's drawer and tab bar, breadcrumbs and
 // ⌘K search: kit/app/app-nav.js
-const appNav = mountAppNav({ sections: SECTIONS, settings: SETTINGS, screenOf, sectionOf, icon, haptic, appName: SITE || "Gradify", afterPaint: () => markLocks(), advanced: ADVANCED });
+const appNav = mountAppNav({ sections: SECTIONS, settings: SETTINGS, screenOf, sectionOf, icon, haptic, appName: SITE || "Gradify", afterPaint: () => markLocks(), advanced: ADVANCED, store: async () => store });
 // the pricing page lives on getgradify.com; sub-sites served elsewhere link to it there
 const PRICING = /(^|\.)getgradify\.com$|^localhost/.test(location.hostname) ? "/pricing.html" : "https://getgradify.com/pricing.html";
 
@@ -594,6 +599,12 @@ async function renderDeck(id) {
   </section>`;
   wireSavePanel();
   wireSharePanel();
+  // what this set goes with: the lessons on the same topic in every course, and whatever the learner linked it to
+  {
+    const host = document.createElement("section"); host.className = "panel glass deck-conn";
+    view.querySelector(".deck-tools")?.after(host);
+    mountConnections(host, resource(makeRid("pack", id), { title: doc.title, sub: `Flashcard set · ${cards.length} cards`, href: `${location.pathname}#/deck/${id}` }), { app: location.pathname });
+  }
   const list = view.querySelector(".deck");
   list.addEventListener("click", async (e) => {
     const row = e.target.closest(".c-row");
@@ -971,7 +982,7 @@ async function renderToday() {
       <h1>${hour < 12 ? "Good morning" : hour < 18 ? "Good afternoon" : "Good evening"}${profile.display_name ? `, ${esc(profile.display_name)}` : ""} <span class="wave" aria-hidden="true">👋</span></h1>
       <p class="sub lo-hello">${s.cards.length ? `${n0(s.cards.length)} flashcards across ${n0(s.docs.length)} study ${s.docs.length === 1 ? "pack" : "packs"}${streakDays ? ` · ${streakDays}-day streak` : ""}.` : "Nice to have you here."}</p></div>
       ${heroArt(firstRun ? "path" : streakDays ? "streak" : "cards", { cls: "today-art" })}</div>
-    ${continueHtml(continueItems({ course: myCourses()[0] || null, hist: activity(), session: (() => { try { return JSON.parse(localStorage.getItem("gradify.session")); } catch { return null; } })(), blocks: ahead.filter((b) => b.day === today()) }), { appPath: location.pathname })}
+    ${continueHtml(continueItems({ course: myCourses()[0] || null, hist: activity(), mistakes: mistakes(), session: (() => { try { return JSON.parse(localStorage.getItem("gradify.session")); } catch { return null; } })(), blocks: ahead.filter((b) => b.day === today()) }), { appPath: location.pathname })}
     ${offerCardHtml()}
     ${needsSetup(profile) ? setupNudgeHtml("Tell it your goal and exam date, and it plans your study around them. About a minute, whenever you like.") : ""}
     ${firstRun ? welcomeHtml(profile.display_name) : ""}
@@ -1557,6 +1568,7 @@ async function renderAccount() {
     <div id="notify-slot"></div>
     <article class="panel glass"><h3>Your data</h3><p class="sub">${SITE ? `It's yours. Download or delete everything you've added on ${esc(SITE)}. Your notes on other Gradify sites stay as they are.` : "It's yours. Download everything, or delete it."}</p>
       <div class="row-actions"><button type="button" class="btn btn-light lg btn-sm" id="export"><span>Download my data</span></button><button type="button" class="btn btn-ghost lg btn-sm danger" id="wipe"><span>Delete all my data</span></button></div></article>
+    ${workspaceDataHtml()}
     ${consentPanelHtml(consentNow, esc)}
   </section>`;
   if (user) renderBillingPlan();
@@ -1575,6 +1587,7 @@ async function renderAccount() {
   $("#haptics")?.addEventListener("change", (e) => { setHaptics(e.target.checked); haptic("success"); });
   { const nm = { intel: intelOf(learnerOf(profile)), storeMode: store.mode }; const slot = $("#notify-slot"); if (slot) { slot.outerHTML = notifyPanelHtml(nm); wireNotify(view, nm, apctx()); } }
   wireConsent(view, store, toast);
+  wireWorkspaceData();
   $("#export").addEventListener("click", async () => {
     const a = document.createElement("a");
     a.href = URL.createObjectURL(new Blob([JSON.stringify({ ...(await store.exportAll()), quick_notes: exportJots() }, null, 2)], { type: "application/json" }));
@@ -1677,7 +1690,7 @@ routes.intel = async () => {
   if (!ACCESS.has("intelligence")) { view.innerHTML = `<section class="intel-page"><div class="deck-head"><div><span class="kicker lo-kicker">${icon("sparkles")}Gradify Intelligence</span><h1>Let Gradify run your studying</h1></div></div>${plusPanelHtml("intelligence", { pricing: PRICING })}${plusPanelHtml("calendar", { pricing: PRICING, compact: true })}</section>`; promptPlus("intelligence", { pricing: PRICING, signedIn: store.mode === "cloud" }); return; }
   const m = await model(); renderIntelPage(view, m, { toast, saveIntel, modes: modesHtml(m) }); view.querySelector(".intel-page .learned")?.insertAdjacentHTML("beforebegin", notifyPanelHtml(m)); mountIntel3(view, m, apctx()); wireAutopilot(view, m, apctx()); wireNotify(view, m, apctx()); };
 routes.knowledge = async () => { const m = await model({ autoMove: false }); renderKnowledgePage(view, m, { courses: m.L?.courses || [] }); };
-routes.revise = async (arg) => { const m = await model({ autoMove: false }); renderRevisePage(view, m, arg); view.querySelector(".revise-page .seg-chips")?.insertAdjacentHTML("beforebegin", decomposeHtml()); wireDecompose(view, m, apctx()); };
+routes.revise = async (arg) => { const m = await model({ autoMove: false }); renderRevisePage(view, m, arg); view.querySelector(".revise-page .seg-chips")?.insertAdjacentHTML("beforebegin", mistakesHtml() + decomposeHtml()); wireDecompose(view, m, apctx()); };
 
 // ---------- Community (kit/app/community.js): chats, study groups, friends' and school leaderboards, tutors, mentors, internships ----------
 let catalogueP = null;
@@ -1694,6 +1707,34 @@ async function renderCommunity(arg) {
 }
 routes.community = renderCommunity;
 routes.history = () => renderHistory(view, { toast });
+routes.collections = (arg) => renderCollections(view, arg, { toast });
+// Settings › Your data: the learner's workspace record (kit/data/learner-state.js), what's in it, a copy of it, and
+// removing it from every device. Not content: notes, cards and progress are listed and deleted above.
+const STATE_NAMES = { pin: "pins", tab: "workspace tabs", activity: "history lines", link: "links between resources", collection: "collections", collitem: "items in collections", note: "notes on resources", mistake: "mistakes to revisit", sched: "scheduled resources" };
+function workspaceDataHtml() {
+  const counts = [...SYNCED].map((k) => [k, stateList(k).length]).filter(([, n]) => n);
+  return `<article class="panel glass" data-pane="data" id="ws-data"><h3>Your workspace record</h3>
+    <p class="sub">What Gradify keeps so it can pick up where you left off: ${counts.length ? counts.map(([k, n]) => `${n} ${STATE_NAMES[k]}`).join(", ") : "nothing yet"}. Signed in, it's kept in your account so it's the same on every device; it holds titles, places and states, never the content of your notes or answers.</p>
+    <div class="row-actions"><button type="button" class="btn btn-light lg btn-sm" id="ws-export"><span>Download it</span></button><button type="button" class="btn btn-ghost lg btn-sm danger" id="ws-clear"><span>Clear it everywhere</span></button></div></article>`;
+}
+function wireWorkspaceData() {
+  view.querySelector("#ws-export")?.addEventListener("click", () => {
+    const a = Object.assign(document.createElement("a"), { href: URL.createObjectURL(new Blob([JSON.stringify(exportState(), null, 2)], { type: "application/json" })), download: "gradify-workspace.json" });
+    a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  });
+  view.querySelector("#ws-clear")?.addEventListener("click", () => {
+    if (!confirm("Clear your pins, workspace tabs, history, links, collections, notes on resources and mistakes to revisit, on every device? Your notes, flashcards, plan and progress aren't affected.")) return;
+    stateBatch((b) => { for (const k of SYNCED) for (const e of stateList(k)) b.del(k, e.key); });
+    toast("Workspace record cleared."); route();
+  });
+}
+// mistakes from every course (kit/data/links.js), by the lesson that teaches them, on the Revision Centre's queue
+function mistakesHtml() {
+  const groups = mistakesByLesson(mistakes()); if (!groups.length) return "";
+  const n = groups.reduce((a, g) => a + g.items.length, 0);
+  return `<article class="panel glass r-mist"><div class="panel-head"><div><h3>${icon("alert")} Mistakes to revisit</h3><p class="sub">${n} question${n === 1 ? "" : "s"} you got wrong in your courses and haven't got right since. Each goes when you answer it correctly.</p></div></div>
+    <ul class="r-mistl">${groups.slice(0, 8).map((g) => `<li><a href="${esc(g.items[0].href || g.lesson?.href || "#")}"><b>${esc(g.lesson?.title || "A lesson")}</b><small>${g.items.length} question${g.items.length === 1 ? "" : "s"} · ${esc(g.lesson?.sub || "")}</small></a></li>`).join("")}</ul></article>`;
+}
 routes.session = () => renderSession({ view, store, toast });
 routes.curriculum = async () => (await import("./curriculum-views.js")).renderCurriculum({ view, store, toast, profile: await store.getProfile() });
 
@@ -1756,6 +1797,8 @@ async function start() {
   // goals made on this device move into the account; retried on every signed-in visit until they're all there
   if (user) { try { const r = await cloud.moveGoals(local); if (r.moved) toast(`Moved ${r.moved} goal${r.moved === 1 ? "" : "s"} from this device into your account.`); } catch (e) { console.warn("Goals stay on this device for now", e?.message); } }
   if (user) recordFirstTouch(cloud.db, user);
+  // the learner's record (pins, tabs, history, links, collections…) syncs with the account (kit/data/learner-state.js)
+  if (user) attachAccount(cloud).catch(() => {});
   cloud?.onAuth((u) => { if (Boolean(u) !== Boolean(user)) location.reload(); });
   // on a sub-site, the app only sees that site's notes and progress
   if (SITE) { store = scopeToSite(store, SITE); picks.site = SITE; }

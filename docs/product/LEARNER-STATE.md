@@ -1,98 +1,146 @@
-# Learner state: one record of where a learner is, on every device
+# Learner state: one learner context for all of Gradify
 
-Status: **requirements, not built.** The navigation work (sidebar, history, workspace tabs, "Pick up where you left
-off", recent courses) keeps its state on the device today. This document says what that state is, which parts already
-reach the account, and what one account-level learner-state system needs, so that it can be built once rather than
-as a separate sync for each feature.
+Status: **built on the branch, account sync waiting for one migration.** The learner's record, the universal
+resource ids and the connected-learning features run today on the device. Account sync is written and tested
+against its merge rules, but stays off until `supabase/migrations/20261126120000_learner_state.sql` is applied.
+Until then every device keeps its own copy and says so ("Saved on this device"); nothing is lost.
 
-## What it's for
+## The goal
 
-A learner should never have to tell Gradify again what they're studying, where they are, what they've finished or
-what's next. Concretely:
+A learner never has to tell Gradify again what they're studying, where they are, what they've finished or what's
+next. Concretely:
 
-- Start a lesson on a laptop, carry on from the same section on a phone.
-- Open a flashcard set on a laptop, carry on revising it on a phone.
-- A quiz answered halfway on one device shows as in progress, with the same count, on another.
-- Planner, notes, courses and unfinished assessments agree on every device.
-- Using two devices at once never duplicates progress, loses a completion or brings back something deleted.
+- Open a lesson, and the planner, Continue and History know what you're working on.
+- Complete a lesson, and a plan block you scheduled for it is ticked off.
+- Get a question wrong, and it becomes a mistake to revisit (Continue and the Revision Centre) until you get it right.
+- Start a quiz, and it shows as in progress, with the count, until you finish it.
+- Open another device, and your pins, tabs, history, links, collections, notes and mistakes are there.
 
-## What already reaches the account
+The rule that makes this hold: **one canonical record, and screens use it only through defined interfaces.** No
+screen keeps its own competing copy of learner state.
 
-These sync today, each with its own merge. The learner-state system reads from them; it doesn't replace them.
+## Three layers
 
-| Data | Where in the account | How two devices are merged |
+| Layer | What it is | Module |
 |---|---|---|
-| Course progress (lessons done, quizzes, reading positions, bookmarks) | `course_progress`, one row per learner per course | `kit/course/progress.js mergeProgress`: completions are unions, the best score wins, settings come from the newer copy |
-| Question attempts | `assessment_attempts` | Each attempt has its own id; uploads are idempotent (`kit/course/progress.js` outbox) |
-| Flashcards, packs, reviews | `cards`, `packs`, `documents`, `reviews` | One row each; reviews are append-only |
-| Planner blocks and goals | `plan_blocks`, `goals` | One row each; goals use `updated_at` as an expected version |
-| Notes | `tool_items` (kind `kb`) | `kit/notes/kb/model.js merge`, rem by rem |
-| Learning events | `learning_events` | Append-only |
+| **Universal resource** | One stable id for every meaningful thing (lesson, topic, course, quiz, target test, spec point, flashcard set, card, note, mind map, plan block, goal, session, mistake, collection), with the same metadata wherever it appears | `kit/core/resource.js` |
+| **Learner record** | The learner's state as entries, on the device and in the account, merged entry by entry | `kit/data/learner-state.js` |
+| **Domain interfaces** | What features call: pins, tabs, history, links, collections, notes, mistakes, scheduling | `kit/ui/places.js`, `kit/ui/workspace.js`, `kit/ui/history.js`, `kit/data/links.js` |
 
-## What is only on the device
+Content stays in its own tables (notes, cards, packs, plan blocks, goals, course progress, attempts). The learner
+record holds ids, titles, places, states and counts: what the learner did with things, not the things themselves.
 
-| Key (localStorage unless noted) | Holds | Written by |
+## The data model
+
+### Resource ids (`kit/core/resource.js`)
+
+An id is `<kind>:<where>`. Course content uses the course's path then the item's own id. The learner's own things
+use the id their store gave them. Ids never contain titles, so renaming something doesn't break a link to it.
+
+| Kind | Example id | Opens at |
 |---|---|---|
-| `gradify.history` | Viewed, studied, created and edited events, including quiz and test states | `kit/ui/history.js` |
-| `gradify.recent` | Each course's last lesson, progress and recommended next step | `kit/course/course.js shareProgress` |
-| `gradify.visited` | Recently visited places | `kit/ui/places.js` |
-| `gradify.pins` | Pinned courses, lessons and screens, in the learner's order | `kit/ui/places.js` |
-| `gradify.workspace` | Workspace tabs, each with its place and scroll position | `kit/ui/workspace.js` |
-| `gradify.session` | A study session from the planner and the step it's on | `kit/app/session-views.js` |
-| `gradify.ui` | Sidebar rail, folded sections, extras opened, extras used and the learner's sidebar choices; History filters | `kit/ui/prefs.js` |
-| `gradify.places` (sessionStorage) | This tab's trail, for "Back to where I was" | `kit/ui/places.js` |
+| course | `course:/scigradify/biology/` | `/scigradify/biology/#/home` |
+| unit (topic) | `unit:/scigradify/biology/u02` | `…#/learn/u02` |
+| lesson | `lesson:/scigradify/biology/u02-03` | `…#/lesson/u02-03` |
+| quiz | `quiz:/scigradify/biology/u02` | `…#/quiz/u02` |
+| spec point | `spec:/scigradify/biology/4.1.3.1` | `…#/spec/4.1.3.1` |
+| flashcard set | `pack:<document id>` | `app.html#/deck/<id>` |
+| note | `note:<rem id>` | `app.html#/notes/<id>` |
+| collection | `collection:<id>` | `app.html#/collections/<id>` |
+| a screen | `screen:/app.html#/plan` | itself |
 
-## The model to build
+`ridFromHref(href)` turns any link Gradify already makes (pins, history, tabs) into an id, so older data needs no
+migration. `resource(rid, meta)` gives every tool the same shape:
+`{ rid, kind, label, icon, title, href, subject, qualification, topic, difficulty, refs }`, where `refs` are
+curriculum point ids.
 
-One learner-state record per learner, made of a few kinds of entry. Each entry has a stable key that means the same
-thing on every device, so two devices write to the same entry instead of creating two.
+### The learner record (`kit/data/learner-state.js`)
 
-| Entry | Key | Fields | Merge rule |
+One record: a map of entries, each `{ kind, key, value, t, dev, del }`.
+
+| Kind | Key | Value | Written by |
 |---|---|---|---|
-| **Place**: where the learner was in something | the place's path without the domain, e.g. `/scigradify/biology/#/lesson/u01-01` | title, kind, subject, section and scroll position, `t` | Newest `t` wins |
-| **Assessment**: a quiz, target test or exam | its path plus the attempt's start time | state (`in-progress`, `completed`), answered, total, score, pass, `t` | Within one attempt, `answered` only goes up and `completed` beats `in-progress`. A new attempt is a new entry. Status: not started, in progress, completed, or available to retry (finished under the pass mark), as `kit/app/continue-view.js assessmentStatus` |
-| **Session**: a planned study session | its start time | steps, the current step, what the learner said about each | The step only goes forwards; feedback is a union |
-| **Activity**: viewed, studied, created, edited | a generated id | act, place key, title, subject, count, `t` | Append-only, deduplicated by id; the half-hour merge stays a display rule |
-| **Workspace**: the open tabs | slot (`kind:scope`, as `kit/ui/workspace.js slotOf`) | place key, title, scroll, `t` | Per slot, newest `t` wins; closing a tab is a tombstone with its own `t`, so a close isn't undone by an older copy |
-| **Pins** | place key | title, order, pinned or unpinned and `t` | Per key, newest wins; order from the device that changed it last |
-| **Preferences** | scope and name, e.g. `app.navChoice` | value, `t` | Per preference, newest wins |
+| `pin` | the place's href | title, sub, kind, order | `places.js` pin, setPins |
+| `tab` | slot (`lesson:/course/`, `notes:/app.html`, …) | href, title, kind, scroll, position | `workspace.js` |
+| `activity` | generated id | act (viewed, studied, created, edited), href, title, subject, where, count, quiz or test state, session | `history.js` logEvent |
+| `link` | the two resource ids, sorted | both ends' summaries; made by `you` or `source` | `links.js` link |
+| `collection` | collection id | name | `links.js` |
+| `collitem` | `collection id\|resource id` | the resource's summary | `links.js` |
+| `note` | resource id | the learner's note, the resource's summary | `links.js` setNote |
+| `mistake` | `course:question key` | question, lesson, link, times wrong, resolved | `course.js` record |
+| `sched` | plan block id | the resource, the block's day and time | `resource-actions.js` schedule |
 
-Rules that hold for all of them:
+**Device-only, deliberately:** which workspace tab is open on this screen, this tab's trail ("Back to where I
+was"), sidebar layout preferences, recently visited places (`gradify.visited`, next to fold into `activity`).
 
-- **Each device has an id**, and every write carries it with its time, so it's always possible to tell which device
-  changed what and when, and to explain a conflict.
-- **Nothing finished is lost.** Completions, best scores and solved questions stay unions or maximums, as course
-  progress is today.
-- **Deletions are tombstones**, never missing rows, so an old copy can't bring something back.
-- **Device-only state stays on the device:** a tab's trail, the scroll position for a size of screen that isn't
-  shared, and anything about which window is open.
-- **Small and private.** The record holds places, titles, states and counts, never the content of notes, answers or
-  documents, which stay in their own tables. Entries older than about a year can go.
-- **Offline first.** The device copy is always used straight away and works signed out. Syncing happens in the
-  background (on change, on focus and on `pagehide`, as course progress does), and the merge is the same function
-  wherever it runs.
+### Merge and conflict rules
 
-## How the code should reach it
+- **Each entry merges on its own.** Two devices changing different things never conflict.
+- **The newer change wins** (`t`). On an exact tie, the larger device id wins, so every device reaches the same result.
+- **Deletions are tombstones** (`del: true`) with their own time, kept for 30 days, so an older copy can't bring a deleted thing back.
+- **The server keeps the newer change too.** A trigger ignores an update older than what's stored, so a device that comes back online with old changes can't overwrite newer ones.
+- **Devices pull by the server's clock** (`updated_at`), so a device whose clock is wrong still has its changes picked up. Which change wins is still decided by `t`.
+- **One-way facts stay one-way in their own stores.** Lessons done, best quiz scores and solved questions are unions or maximums in course progress (`kit/course/progress.js`). Attempts are append-only with unique ids.
 
-One module, `kit/ui/learner-state.js`, with `get(kind, key)`, `put(kind, key, value)`, `list(kind)` and
-`subscribe(f)`, backed by the device and, when signed in, by one account table. History, places, pins, workspace,
-the session, sidebar preferences and Continue all read and write through it. None of them should have its own sync.
+Every rule has a test in `tests/learner-state.test.mjs`.
 
-The account side is one table (for example `learner_state`: user id, kind, key, value, updated at, device id; its
-primary key is user id, kind and key) with row-level security like `course_progress`, plus an append-only table for
-activity if the volume needs it. The merge rules above run on the device before writing, so the database only
-stores the result.
+### Offline and interruption
 
-## Migration
+- Every change is written to the device first, synchronously, before anything else happens. Closing the tab can't lose it.
+- With an account, the record pulls and pushes 1.5 seconds after a change, when the page is hidden, when it comes back, and when the device reconnects. A failed sync retries every 30 seconds.
+- The status is always visible in the app's top bar (`kit/ui/sync-status.js`): saved on this device, saving, saved, offline (saved here), or retrying, with the number of changes waiting.
 
-1. Add `kit/ui/learner-state.js` over the existing local keys, with no change in behaviour, and move the features onto
-   it one at a time. The local keys above become its device copy.
-2. Add the account table and background sync, signed-in learners only, behind a flag, and compare the two copies.
-3. Turn it on. On a learner's first sync, upload the device copy and merge it with any other device's.
+## How each feature uses it
 
-## Done when
+| Feature | Reads | Writes | Through |
+|---|---|---|---|
+| Sidebar Pinned, palette, home "Your learning" | pins | pin, unpin, reorder | `places.js` |
+| Sidebar Recent, palette Recent | recent places (device) | visits | `places.js` |
+| Workspace tabs | tabs | open, move, close, scroll | `workspace.js` |
+| History screen | activity | clear | `history.js` |
+| Every screen and course page | (nothing) | a "viewed" line | `history.js` logEvent |
+| Quizzes, target tests | (nothing) | in progress from the first answer, then completed or retry | `course.js` assessState → `history.js` |
+| Continue (Today, ⌘K) | activity, mistakes, course list, session, today's blocks | (nothing) | `continue-view.js` |
+| Questions in every course | (nothing) | a mistake on a wrong answer, resolved on a right one | `course.js` record → `links.js` |
+| Revision Centre | mistakes | (nothing) | `links.js` |
+| Resource menu (•••) on lessons, courses, packs and every app screen | pins, collections, notes | pin, save to a collection, note, schedule | `resource-actions.js` → `places.js`, `links.js` |
+| Connections panel (lesson panel, flashcard sets, any ••• menu) | links, collections, notes, every course's lessons and topics | link, unlink | `connections.js` → `links.js` |
+| Collections screen | collections, items | create, rename, delete, remove | `links.js` |
+| Completing a lesson | scheduled resources | ticks the plan block off | `course.js` → `links.js`, store |
+| Settings › Your data | every kind (counts) | export, clear everywhere | `learner-state.js` |
 
-- The four behaviours under "What it's for" work between a laptop and a phone signed in to the same account.
-- Two devices answering the same quiz, opening and closing tabs, and pinning and unpinning, in any order and
-  offline, end in the same state with nothing duplicated or lost (tests for each merge rule).
-- No feature has a sync path of its own.
+Course progress, flashcards, the plan, goals and notes keep their own tables and merges (listed in the table
+below). The learner record links to them by id. It doesn't copy them.
+
+| Already in the account | Table | Merge |
+|---|---|---|
+| Course progress (done, quizzes, positions, bookmarks) | `course_progress` | `kit/course/progress.js mergeProgress`: unions and maximums |
+| Question attempts | `assessment_attempts` | unique ids, idempotent upload |
+| Flashcards, packs, reviews | `cards`, `packs`, `documents`, `reviews` | one row each; reviews append-only |
+| Plan blocks, goals | `plan_blocks`, `goals` | one row each; goals carry a version |
+| Notes | `tool_items` (kind `kb`) | rem by rem |
+
+## Attempted, completed, mastered, verified
+
+These four are separate measures, and nothing in Gradify should report one as another:
+
+- **Attempted:** at least one answer submitted (an attempt in `assessment_attempts`; a quiz "in progress").
+- **Completed:** the learner finished it (a lesson marked done; a quiz finished, passed or not).
+- **Mastered:** what the evidence says the learner can do. It comes from their answers (the Mastery Engine, spec mastery) and is never inferred from opening or finishing something.
+- **Verified coverage:** a specification point Gradify teaches, checked against the board's specification (the spec model's `verified` and wording flags).
+
+The learner record holds attempted and completed states for Continue. Mastery and coverage stay in their engines.
+
+## Privacy and the learner's control
+
+- **Settings › Your data › Your workspace record** says what's kept, in counts per kind. It can be downloaded as JSON, or cleared on every device (tombstones sync the deletion).
+- The record holds no content: no note text other than the learner's own short notes on resources, no answers, no documents.
+- Row-level security in the account: a learner can read and write only their own rows. Anonymous visitors can do neither.
+- Attempts record `assist: "hint"` on the device for answers given after a hint. It isn't uploaded until the attempts table has a column for it.
+
+## What's left
+
+1. **Apply the migration** (`20261126120000_learner_state.sql`). Sync then switches on by itself for signed-in learners.
+2. Fold `gradify.visited` (recently visited) into `activity`, so Recent is the same on every device.
+3. Add the `assist` column to `assessment_attempts`, so mastery can weigh answers given after a hint.
+4. Record "made from" links where tools create things from a lesson (a mind map or a flashcard set from a lesson), using `link(a, b, { by: "source" })`.

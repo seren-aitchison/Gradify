@@ -1,4 +1,4 @@
-// Everything the learner has done in Gradify on this device, newest first ("gradify.history"): what they viewed,
+// Everything the learner has done in Gradify, newest first: what they viewed,
 // studied, created and edited, in the study app and on every course page. The app's History screen
 // (kit/app/history-view.js) filters it by activity, subject and date.
 //
@@ -8,11 +8,14 @@
 // The same thing done again soon after (the same act on the same place within half an hour) updates one entry
 // instead of adding another, so a page opened ten times in a sitting is one line. The list helpers are pure
 // (tests/history.test.mjs).
-import { readJson, writeJson, local } from "./store.js";
+import * as LS from "../data/learner-state.js";
+// Kept in the learner's record (kit/data/learner-state.js, kind "activity"), one entry per line, so it follows the
+// learner to every device. A line done during a study session carries that session's id (session), so History can
+// show what one sitting held.
 
 export const ACTS = [["viewed", "Viewed"], ["studied", "Studied"], ["created", "Created"], ["edited", "Edited"]];
 export const RANGES = [["all", "Any time"], ["today", "Today"], ["week", "Last 7 days"], ["month", "Last 30 days"]];
-const KEY = "gradify.history", LIMIT = 500, MERGE = 30 * 60e3, DAY = 864e5;
+const LIMIT = 500, MERGE = 30 * 60e3, DAY = 864e5;
 
 // ---------- pure ----------
 /** add one event at the front; the same act on the same place within `merge` ms updates the latest entry */
@@ -66,11 +69,19 @@ export function groupByDay(list = [], now = Date.now()) {
   return out;
 }
 
-// ---------- this device ----------
-const listeners = new Set();
-export const history = () => readJson(KEY, [], local());
-export function logEvent(ev) {
-  try { writeJson(KEY, addEvent(history(), ev)); listeners.forEach((f) => { try { f(); } catch { /* a listener's own problem */ } }); } catch { /* storage full or blocked */ }
+// ---------- the learner's record ----------
+export const history = () => LS.list("activity").map((e) => e.value);
+const currentSession = () => { try { const s = JSON.parse(globalThis.localStorage?.getItem("gradify.session") || "null"); return s && s.i < s.steps?.length ? s.started || null : null; } catch { return null; } };
+export function logEvent(ev, { now = Date.now() } = {}) {
+  try {
+    if (!ev?.href || !ev.act) return;
+    const cur = history(), session = ev.session ?? currentSession();
+    const row = addEvent(cur, session ? { ...ev, session } : ev, { now })[0];
+    // the same act on the same place a moment ago is the same line: it keeps its id
+    const prev = cur.find((x) => x.href === row.href && x.act === row.act && now - (x.t || 0) < MERGE);
+    const id = prev?.id || `${now.toString(36)}-${Math.random().toString(36).slice(2, 7)}`;
+    LS.put("activity", id, { ...row, id });
+  } catch { /* storage full or blocked */ }
 }
-export function clearHistory() { writeJson(KEY, []); listeners.forEach((f) => f()); }
-export function onHistoryChange(f) { listeners.add(f); return () => listeners.delete(f); }
+export function clearHistory() { LS.batch((b) => { for (const e of LS.list("activity")) b.del("activity", e.key); }); }
+export function onHistoryChange(f) { return LS.subscribe((kinds) => { if (!kinds || kinds.includes("activity")) f(); }); }

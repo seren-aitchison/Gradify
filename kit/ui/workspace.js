@@ -6,16 +6,19 @@
 // Moving to the next lesson in Biology moves that tab along with you rather than opening another. Opening one of
 // these kinds of place opens its tab; × closes it; at most six, the longest unused going first. The strip shows
 // once there are two. Shared by the study app (kit/app/app-nav.js) and every course page (kit/course/course.js),
-// on this device ("gradify.workspace"). The list helpers are pure (tests/workspace.test.mjs).
+// in the learner's record (kit/data/learner-state.js, kind "tab"), so the same tabs, each at its place, are there on
+// every device. Which tab is open is this device's own ("gradify.workspace.active"). The list helpers are pure
+// (tests/workspace.test.mjs).
 //
 //   const ws = mountWorkspace(host, { label: "Biology" });   ws.arrived({ href, title, kind, scope, scopeLabel })
 import { esc, readJson, writeJson, local, session, ensureStyles } from "./store.js";
 import { uiIcon } from "./icons.js";
 import { shortcuts } from "./keys.js";
+import * as LS from "../data/learner-state.js";
 
 // the kinds of place that get a tab, what they're called and their icon
 export const KINDS = { lesson: ["Lesson", "book"], notes: ["Notes", "notes"], plan: ["Plan", "clock"], questions: ["Questions", "target"], flashcards: ["Flashcards", "cards"] };
-const KEY = "gradify.workspace", RESTORE = "gradify.workspace.restore", MAX = 6;
+const RESTORE = "gradify.workspace.restore", MAX = 6;
 
 // ---------- pure ----------
 /** a tab's identity: its kind of work within its place (a course, or the study app) */
@@ -55,8 +58,17 @@ export function stepTab(ws, step) {
 }
 
 // ---------- this device ----------
-export const workspace = () => readJson(KEY, { tabs: [], active: null }, local());
-const saveWs = (ws) => writeJson(KEY, ws, local());
+const ACTIVE = "gradify.workspace.active";
+export const workspace = () => ({ tabs: LS.list("tab").map((e) => e.value).sort((a, b) => (a.pos ?? 0) - (b.pos ?? 0)).map(({ pos, ...t }) => t), active: readJson(ACTIVE, null, local()) });
+// one change to the record: the tabs that changed (a scroll moves one tab's y), and those closed
+function saveWs(ws) {
+  const before = new Map(LS.list("tab").map((e) => [e.key, e.value]));
+  const keep = new Set(ws.tabs.map((t) => t.id));
+  const changed = ws.tabs.map((t, i) => ({ ...t, pos: i })).filter((t) => JSON.stringify(before.get(t.id)) !== JSON.stringify(t));
+  const gone = [...before.keys()].filter((k) => !keep.has(k));
+  if (changed.length || gone.length) LS.batch((b) => { changed.forEach((t) => b.put("tab", t.id, t)); gone.forEach((k) => b.del("tab", k)); });
+  writeJson(ACTIVE, ws.active, local());
+}
 
 /** go to a tab: where it was, put back at its scroll position once the page has drawn (see arrived) */
 export function switchTo(tab) {
@@ -109,7 +121,7 @@ export function mountWorkspace(host, { where = "beforebegin" } = {}) {
   // the scroll position is kept as the learner reads, so a tab switched away from by any route comes back to it
   let timer = 0;
   addEventListener("scroll", () => { clearTimeout(timer); timer = setTimeout(() => { const ws = workspace(); if (ws.active && ws.tabs.find((t) => t.id === ws.active)?.href === here()) saveWs(noteScroll(ws, scrollY)); }, 250); }, { passive: true });
-  addEventListener("storage", (e) => { if (e.key === KEY) paint(); });
+  LS.subscribe((kinds) => { if (!kinds || kinds.includes("tab")) paint(); });
   addEventListener("resize", () => strip.querySelector("ul")?.dispatchEvent(new Event("scroll")), { passive: true });
   if (!wiredKeys) {
     wiredKeys = true;

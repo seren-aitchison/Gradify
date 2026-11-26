@@ -534,3 +534,78 @@ section.gx-shut > h3 { opacity: .8; }
 .aq-show:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; border-radius: 4px; }
 .aq-opts button.ruled { opacity: .45; text-decoration: line-through; cursor: not-allowed; }
 .aq-why:focus { outline: none; }
+
+/* ---------- Connections beside a resource (kit/ui/connections.js) ---------- */
+.gx-cn { display: grid; gap: 8px; }
+.gx-cn-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.gx-cn-head h3 { margin: 0; font-size: 16px; }
+.gx-cn-head .gx-link .gx-ic { width: 15px; height: 15px; margin-right: 4px; }
+.gx-cn-k { margin: 10px 0 2px; font: 600 10.5px var(--mono, monospace); letter-spacing: .1em; text-transform: uppercase; color: var(--faint); }
+.gx-cn-l { display: grid; gap: 4px; margin: 0; padding: 0; list-style: none; }
+.gx-cn-i { display: flex; align-items: center; gap: 6px; border-radius: 12px; border: 1px solid var(--line); }
+.gx-cn-i > a { flex: 1; min-width: 0; display: flex; align-items: center; gap: 10px; padding: 8px 10px; color: var(--fg); text-decoration: none; border-radius: 12px; }
+.gx-cn-i > a:hover { background: rgba(var(--ink-rgb), .04); }
+.gx-cn-i > a:focus-visible { outline: 2px solid var(--fg); outline-offset: 1px; }
+.gx-cn-ic { display: grid; place-items: center; flex: none; width: 30px; height: 30px; border-radius: 9px; background: rgba(var(--ink-rgb), .06); color: var(--mute); }
+.gx-cn-ic .gx-ic { width: 15px; height: 15px; }
+.gx-cn-t { display: grid; min-width: 0; }
+.gx-cn-t b { font-size: 14px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.gx-cn-t small { font-size: 12px; color: var(--mute); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.gx-cn-x, .gx-cn-ln { flex: none; margin-right: 6px; border: 0; cursor: pointer; }
+.gx-cn-x { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 8px; background: none; color: var(--faint); }
+.gx-cn-x:hover { color: var(--fg); background: rgba(var(--ink-rgb), .07); }
+.gx-cn-x .gx-ic { width: 13px; height: 13px; }
+.gx-cn-ln { padding: 5px 12px; border-radius: 999px; border: 1px solid var(--line-strong); background: none; color: var(--fg); font: 600 12.5px var(--sans); }
+.gx-cn-ln:hover { background: rgba(var(--ink-rgb), .07); }
+.gx-cn-none { margin: 0; font-size: 13.5px; color: var(--mute); list-style: none; }
+.gx-cn-pick { display: grid; gap: 6px; }
+.gx-cn-pick[hidden] { display: none; }
+.gx-cn-q { display: flex; align-items: center; gap: 8px; padding: 0 10px; border-radius: 12px; border: 1px solid var(--line-strong); }
+.gx-cn-q .gx-ic { width: 15px; height: 15px; color: var(--mute); }
+.gx-cn-q input { flex: 1; min-width: 0; min-height: 40px; border: 0; background: none; padding: 0; box-shadow: none; color: var(--fg); }
+.gx-cn-cols { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; }
+.gx-cn-cols a { display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border-radius: 999px; border: 1px solid var(--line); color: var(--fg); text-decoration: none; font-size: 13px; }
+.gx-cn-cols .gx-ic { width: 13px; height: 13px; }
+.gx-cn-note { margin: 0; padding: 10px 12px; border-radius: 12px; background: rgba(var(--ink-rgb), .04); white-space: pre-wrap; font-size: 14px; }
+.gx-cn-map { display: block; width: 100%; max-width: 300px; margin: 10px auto 0; overflow: visible; }
+.gx-cn-map line { stroke: var(--line-strong); stroke-width: 1.5; }
+.gx-cn-map line.sug { stroke-dasharray: 4 4; }
+.gx-cn-map circle { fill: var(--fg); }
+.gx-cn-map circle.sug { fill: none; stroke: var(--fg); stroke-width: 1.5; }
+.gx-cn-map circle.mid { fill: #6c63ff; }
+.gx-cn-map text { font: 600 9.5px var(--sans); fill: var(--mute); }
+.gx-cn-map text.mid { fill: var(--fg); font-size: 11px; }
+.gx-cn-map a:focus-visible circle { stroke: var(--fg); stroke-width: 3; }
+
+/* ---------- the same actions on every resource (kit/ui/resource-actions.js) ---------- */
+.gx-ra { position: relative; display: inline-flex; }
+.gx-rab { display: grid; place-items: center; width: 34px; height: 34px; padding: 0; border-radius: 10px; border: 1px solid var(--line); background: none; color: var(--mute); cursor: pointer; }
+.gx-rab:hover, .gx-rab[aria-expanded="true"] { color: var(--fg); border-color: var(--line-strong); }
+.gx-rab:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
+.gx-rab .gx-ic { width: 17px; height: 17px; }
+.gx-ram { position: absolute; z-index: 95; top: calc(100% + 6px); right: 0; width: min(300px, calc(100vw - 24px)); padding: 6px; border-radius: 16px; border: 1px solid var(--line-strong);
+  background: light-dark(#fff, #141416); box-shadow: 0 24px 60px -18px rgba(0, 0, 0, .6); animation: gx-pop .15s var(--gx-ease, ease); }
+.gx-ram[hidden] { display: none; }
+.gx-ram-h { margin: 6px 10px 6px; font-size: 12px; color: var(--faint); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.gx-ram button { display: flex; align-items: center; gap: 10px; width: 100%; padding: 8px 10px; border: 0; border-radius: 11px; background: none; color: var(--fg); text-align: left; font: inherit; cursor: pointer; }
+.gx-ram button:hover, .gx-ram button:focus { background: rgba(var(--ink-rgb), .07); outline: none; }
+.gx-ram button:focus-visible { box-shadow: inset 0 0 0 2px var(--fg); }
+.gx-ram button .gx-ic { width: 16px; height: 16px; flex: none; color: var(--mute); }
+.gx-ram button span { display: grid; min-width: 0; }
+.gx-ram button b { font-size: 14px; font-weight: 600; }
+.gx-ram button small { font-size: 12px; color: var(--mute); }
+.gx-ra-cols { display: grid; gap: 6px; margin: 10px 0; padding: 0; list-style: none; }
+.gx-ra-cols label { display: flex; gap: 10px; align-items: center; }
+.gx-ra-new { display: flex; gap: 8px; margin-top: 8px; }
+.gx-ra-new input { flex: 1; min-width: 0; }
+.gx-ra-sched { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; }
+.gx-ra-sched label { display: grid; gap: 4px; font-size: 13px; color: var(--mute); }
+.gx-dialog textarea#gx-ra-note { width: 100%; }
+
+/* ---------- where the workspace record is saved (kit/ui/sync-status.js) ---------- */
+.gx-sync { display: inline-flex; align-items: center; gap: 6px; flex: none; padding: 6px 10px; border-radius: 999px; border: 1px solid transparent; background: none; color: var(--mute); font: 500 12.5px var(--sans); cursor: pointer; }
+.gx-sync:hover { border-color: var(--line); color: var(--fg); }
+.gx-sync .gx-ic { width: 14px; height: 14px; }
+.gx-sync[data-tone="warn"] { color: #b26a00; color: light-dark(#9a5d00, #ffb547); }
+.gx-sync:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
+@media (max-width: 900px) { .gx-sync span { display: none; } }

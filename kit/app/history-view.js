@@ -14,7 +14,7 @@ const hrefOf = (h) => (h.startsWith(`${location.pathname}#`) ? h.slice(location.
 
 export function renderHistory(view, { toast }) {
   const all = history();
-  const f = { act: pref("app", "histAct", "all"), subject: pref("app", "histSubject", "all"), range: pref("app", "histRange", "all"), q: "" };
+  const f = { act: pref("app", "histAct", "all"), subject: pref("app", "histSubject", "all"), range: pref("app", "histRange", "all"), q: new URLSearchParams(location.hash.split("?")[1] || "").get("q") || "" };
   const subjects = subjectsOf(all);
   if (f.subject !== "all" && f.subject !== "none" && !subjects.some(([s]) => s === f.subject)) f.subject = "all";
   view.innerHTML = `<section class="hist">
@@ -24,7 +24,7 @@ export function renderHistory(view, { toast }) {
     ${all.length ? `<div class="hist-tools">
       <div class="seg-chips" role="group" aria-label="Activity">${[["all", "Everything"], ...ACTS].map(([k, l]) => `<button type="button" class="chip" data-act="${k}" aria-pressed="${k === f.act}">${l}</button>`).join("")}</div>
       <div class="hist-row">
-        <label class="hist-q">${uiIcon("search")}<input type="search" placeholder="Search your history" aria-label="Search your history"></label>
+        <label class="hist-q">${uiIcon("search")}<input type="search" placeholder="Search your history" aria-label="Search your history" value="${esc(f.q)}"></label>
         <label><span class="sr-only">Subject</span><select data-subject aria-label="Subject"><option value="all">Every subject</option>${subjects.map(([s, n]) => `<option value="${esc(s)}" ${s === f.subject ? "selected" : ""}>${esc(s)} (${n})</option>`).join("")}<option value="none" ${f.subject === "none" ? "selected" : ""}>Study app</option></select></label>
         <label><span class="sr-only">When</span><select data-range aria-label="When">${RANGES.map(([k, l]) => `<option value="${k}" ${k === f.range ? "selected" : ""}>${l}</option>`).join("")}</select></label>
       </div></div>
@@ -38,7 +38,7 @@ export function renderHistory(view, { toast }) {
     out.innerHTML = rows.length ? groupByDay(rows).map((g) => `<section class="hist-day"><h2 class="lo-h">${esc(g.label)}</h2><ol>${g.items.map((h) => {
       const act = ACTS.find(([k]) => k === h.act)?.[1] || h.act;
       const state = h.state === "in-progress" ? ` · in progress, ${h.answered} of ${h.total} answered` : h.state === "completed" ? ` · ${h.pass === false ? "finished under the pass mark" : "completed"}${h.score != null ? `, ${h.score}%` : ""}` : "";
-      const extra = state || (h.n && h.unit ? ` · ${h.n} ${esc(h.unit)}` : "");
+      const extra = (state || (h.n && h.unit ? ` · ${h.n} ${esc(h.unit)}` : "")) + (h.session ? " · in a study session" : "");
       return `<li><a href="${esc(hrefOf(h.href))}" class="hist-i a-${esc(h.act)}"><span class="hist-ic" aria-hidden="true">${icon(ACT_ICON[h.act] || "clock")}</span><span class="hist-t"><b>${esc(h.title)}</b><small>${esc(act)}${h.where ? ` · ${esc(h.where)}` : ""}${extra}</small></span><time datetime="${new Date(h.t).toISOString()}">${time(h.t)}</time></a></li>`;
     }).join("")}</ol></section>`).join("")
       : `<p class="sub hist-none">Nothing matches these filters. <button type="button" class="gx-link" data-reset>Show everything</button></p>`;

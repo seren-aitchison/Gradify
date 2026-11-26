@@ -32,6 +32,10 @@ import { mountWorkspace, workspace, switchTo, KINDS } from "../ui/workspace.js";
 import { logEvent, history } from "../ui/history.js";
 import { mountCourseSwitcher } from "../ui/switcher.js";
 import { continueItems } from "./continue-view.js";
+import { mountResourceActions } from "../ui/resource-actions.js";
+import { mountSyncStatus } from "../ui/sync-status.js";
+import { resourceFromPlace } from "../core/resource.js";
+import { mistakes } from "../data/links.js";
 
 const norm = (s) => String(s || "").toLowerCase().normalize("NFKD").replace(/[̀-ͯ]/g, "");
 
@@ -121,7 +125,7 @@ export function matchActions(list, raw) {
 // ---------- the page ----------
 const P = "app";   // prefs scope
 
-export function mountAppNav({ sections, settings, screenOf, sectionOf, icon, haptic = () => {}, home = "#/today", appName = "Gradify", afterPaint = () => {}, advanced = new Set() }) {
+export function mountAppNav({ sections, settings, screenOf, sectionOf, icon, haptic = () => {}, home = "#/today", appName = "Gradify", afterPaint = () => {}, advanced = new Set(), store = null }) {
   ensureStyles();
   const view = document.querySelector("#view"), shell = view?.parentElement;
   if (!view || !shell) return { arrived() {}, markCurrent() {} };
@@ -295,18 +299,23 @@ export function mountAppNav({ sections, settings, screenOf, sectionOf, icon, hap
   find.innerHTML = `${uiIcon("search")}<span>Search</span><kbd>${isMac() ? "⌘K" : "/"}</kbd>`;
   find.addEventListener("click", () => pal.open());
   bar?.querySelector(".mode-chip")?.before(find);
+  // where the learner's workspace record is saved: this device, the account, offline, or waiting to retry
+  mountSyncStatus(find, { where: "afterend" });
   const switcher = mountCourseSwitcher(bar?.querySelector(".brand"), { where: "afterend" });
 
   // ----- breadcrumbs -----
   const crumbs = document.createElement("nav");
   crumbs.className = "lo-crumbs"; crumbs.setAttribute("aria-label", "Breadcrumb");
   view.before(crumbs);
+  // the breadcrumb and pin are redrawn for each screen; the screen's resource menu (•••) stays
+  crumbs.innerHTML = `<div class="lo-cr"></div><span class="lo-cracts"></span>`;
+  mountResourceActions(crumbs.querySelector(".lo-cracts"), () => resourceFromPlace(currentPlace()), { store, app: appPath });
   const tabs = mountWorkspace(crumbs, { where: "beforebegin" });
   function paintCrumbs(title) {
     const trail = crumbTrail(location.hash, { sections, settings, screenOf, home, itemTitle: title });
     const place = currentPlace(trail), on = pinned(place.href);
     crumbs.classList.toggle("deep", Boolean(title) && trail.length > 2);
-    crumbs.innerHTML = `<ol>${trail.map((c, i) => i === trail.length - 1 ? `<li><span aria-current="page">${esc(c.label)}</span></li>` : `<li><a href="${esc(c.href)}">${esc(c.label)}</a></li>`).join("")}</ol>
+    crumbs.querySelector(".lo-cr").innerHTML = `<ol>${trail.map((c, i) => i === trail.length - 1 ? `<li><span aria-current="page">${esc(c.label)}</span></li>` : `<li><a href="${esc(c.href)}">${esc(c.label)}</a></li>`).join("")}</ol>
       <button type="button" class="lo-pin" data-pin aria-pressed="${on}" title="${on ? "Unpin" : "Pin"} this to your sidebar">${uiIcon(on ? "pinned" : "pin")}<span>${on ? "Pinned" : "Pin"}</span></button>`;
   }
   const currentPlace = (trail = crumbTrail(location.hash, { sections, settings, screenOf, home, itemTitle: lastTitle })) => {
@@ -344,7 +353,7 @@ export function mountAppNav({ sections, settings, screenOf, sectionOf, icon, hap
       const r = resume();
       // everything the learner was in the middle of (the same as Today's "Pick up where you left off")
       let session = null; try { session = JSON.parse(localStorage.getItem("gradify.session")); } catch { /* none */ }
-      const cont = continueItems({ course: r, hist: history(), session }).map((x) => ({ type: "action", t: x.kind === "lesson" ? `Resume: ${x.title}` : `${x.label}: ${x.title}`, k: x.sub || x.label, href: local(x.href) }));
+      const cont = continueItems({ course: r, hist: history(), session, mistakes: mistakes() }).map((x) => ({ type: "action", t: x.kind === "lesson" ? `Resume: ${x.title}` : `${x.label}: ${x.title}`, k: x.sub || x.label, href: local(x.href) }));
       return [
         { title: "Continue", items: cont },
         { title: "Workspace", items: workspace().tabs.filter((t) => t.id !== workspace().active).map((t) => ({ type: "tab", t: t.title, k: `${KINDS[t.kind]?.[0] || ""}${t.scopeLabel ? ` · ${t.scopeLabel}` : ""} · workspace tab`, href: local(t.href), run: () => switchTo(t) })) },

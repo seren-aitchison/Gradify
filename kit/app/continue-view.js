@@ -41,7 +41,7 @@ const hm = (m) => `${String(Math.floor(m / 60)).padStart(2, "0")}:${String(m % 6
  * course: the courses' list's newest entry ({ title, href, course, site, course_pct, t }); hist: kit/ui/history.js
  * entries, newest first; session: { steps, i } or null; blocks: today's plan blocks; now: for "today".
  */
-export function continueItems({ course = null, hist = [], session = null, blocks = [], limit = 6, now = Date.now() } = {}) {
+export function continueItems({ course = null, hist = [], session = null, blocks = [], mistakes = [], limit = 6, now = Date.now() } = {}) {
   const out = [], seen = new Set();
   const add = (x) => { if (!x?.href || seen.has(x.href)) return; seen.add(x.href); out.push(x); };
   if (session && session.i < session.steps?.length) {
@@ -66,6 +66,9 @@ export function continueItems({ course = null, hist = [], session = null, blocks
   if (going) rest.push({ kind: "questions", icon: "target", label: "Questions in progress", title: going.title, sub: [`${going.answered} of ${going.total} answered`, going.where].filter(Boolean).join(" · "), href: going.href, t: going.t });
   const again = qs.find((h) => assessmentStatus(h) === "retry" && now - h.t < RETRY_FOR);
   if (again) rest.push({ kind: "retry", icon: "undo", label: "Available to retry", title: again.title, sub: [`${again.score}% last time`, again.where].filter(Boolean).join(" · "), href: again.href, t: again.t - 1 });
+  // questions got wrong in a course and not got right since (kit/data/links.js): one tile, to the newest one's lesson
+  const open = mistakes.filter((m) => !m.resolved).sort((a, b) => b.t - a.t);
+  if (open.length) rest.push({ kind: "mistakes", icon: "alert", label: "Mistakes to revisit", title: open.length === 1 ? open[0].lesson?.title || "1 question" : `${open.length} questions to get right`, sub: open.length === 1 ? (open[0].question || "") : `Newest: ${open[0].lesson?.title || ""}`, href: open[0].href || open[0].lesson?.href, t: open[0].t });
   const notes = first((h) => h.act === "viewed" && NOTES_PAGE.test(h.href));
   if (notes) rest.push({ kind: "notes", icon: "notes", label: "Last opened in Notes", title: notes.title, sub: "Notes", href: notes.href, t: notes.t });
   const subj = first((h) => h.subject);

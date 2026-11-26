@@ -587,7 +587,7 @@ button.lo-sec-label:focus-visible, .lo-side :is(a, button):focus-visible { outli
   .lo-scrim { position: fixed; inset: 0; z-index: 79; background: rgba(var(--sink-rgb), .45); -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px); animation: gx-fade .2s; }
   body.side-open { overflow: hidden; }
   /* a phone has the section's screens as pills; the breadcrumb shows once you're deeper than a screen */
-  .lo-crumbs:not(.deep) ol { display: none; }
+  .lo-crumbs:not(.deep) .lo-cr > ol { display: none; }
   .lo-crumbs:not(.deep) { justify-content: flex-end; margin: 10px 0 -18px; }
   .lo-crumbs.deep { margin: 14px 0 -6px; }
 }
@@ -1747,3 +1747,26 @@ body.side-open body.side-open /* phones: set-up's Continue stays in reach at the
 .wd.wd-folded { min-height: 0 !important; align-self: start; }
 .wd.wd-folded > :not(.wd-h) { display: none !important; }
 .wd.wd-folded .wd-fold svg { transform: rotate(180deg); }
+/* the breadcrumb row: the trail and pin, then the screen's ••• menu (kit/app/app-nav.js) */
+.lo-cr { display: flex; align-items: center; gap: 10px; flex: 1; min-width: 0; }
+.lo-cracts { flex: none; display: inline-flex; }
+.lo-crumbs .gx-rab { width: 30px; height: 30px; border-radius: 999px; }
+@media (max-width: 1099px) { .lo-crumbs:not(.deep) .lo-cr ol { display: none; } }
+/* Collections (kit/app/collections-view.js) */
+.col-new { display: flex; gap: 8px; margin: 16px 0; padding: 10px; }
+.col-new input { flex: 1; min-width: 0; }
+.col-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; margin: 0; padding: 0; list-style: none; }
+.col-card { display: grid; gap: 4px; padding: 16px; color: var(--fg); text-decoration: none; height: 100%; }
+.col-card b { font-size: 16px; }
+.col-card small { color: var(--mute); }
+.col-kinds { display: flex; gap: 6px; margin-top: 6px; color: var(--mute); }
+.col-kinds svg { width: 15px; height: 15px; }
+.col-items { display: grid; gap: 4px; margin: 0 0 12px; padding: 0; list-style: none; }
+.col-items li { display: flex; align-items: center; border-radius: 14px; border: 1px solid var(--line); }
+.col-items li > a { flex: 1; min-width: 0; display: flex; align-items: center; gap: 12px; padding: 10px 12px; color: var(--fg); text-decoration: none; }
+/* mistakes from the courses, on the Revision Centre (kit/app/main.js mistakesHtml) */
+.r-mistl { display: grid; gap: 4px; margin: 10px 0 0; padding: 0; list-style: none; }
+.r-mistl a { display: grid; gap: 1px; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--line); color: var(--fg); text-decoration: none; }
+.r-mistl a:hover { border-color: var(--line-strong); }
+.r-mistl small { color: var(--mute); }
+.deck-conn { margin: 14px 0; padding: 16px; }
