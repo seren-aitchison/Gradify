@@ -63,7 +63,12 @@ export function withPreloads(pagePath, html) {
   const at = head.search(/\n[ \t]*<script\b(?![^>]*theme-boot\.js)/);
   const pos = at >= 0 ? at : head.length;
   const indent = (clean.slice(pos + 1).match(/^[ \t]*/) || ["  "])[0] || "  ";
-  const block = `\n${indent}${START}\n${files.map((f) => `${indent}<link rel="modulepreload" href="${href(f)}">`).join("\n")}\n${indent}${END}`;
+  // a course page opened on a lesson also starts that lesson's notes straight away (#/lesson/u02-03 → notes/u02.js),
+  // instead of after course.js has loaded and asked for them: the notes are what the lesson's first paint waits for
+  const course = files.find((f) => /[\\/]kit[\\/]courses[\\/][^\\/]+[\\/]course\.js$/.test(f));
+  const notesDir = course && existsSync(resolve(dirname(course), "notes")) ? href(resolve(dirname(course), "notes")) + "/" : null;
+  const early = notesDir ? `\n${indent}<script>(function(){var m=/^#\\/(?:lesson|step)\\/(u\\d+)-/.exec(location.hash);if(m){var l=document.createElement("link");l.rel="modulepreload";l.href="${notesDir}"+m[1]+".js";document.head.appendChild(l)}})()</script>` : "";
+  const block = `\n${indent}${START}${early}\n${files.map((f) => `${indent}<link rel="modulepreload" href="${href(f)}">`).join("\n")}\n${indent}${END}`;
   return clean.slice(0, pos) + block + clean.slice(pos);
 }
 
