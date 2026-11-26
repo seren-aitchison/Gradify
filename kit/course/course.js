@@ -124,8 +124,9 @@ export function mountCourse(root, cfg) {
   const staticH1 = document.querySelector("[data-static-h1]");
   if (staticH1) { const h2 = document.createElement("h2"); h2.id = staticH1.id; h2.className = "co-ov-title"; h2.textContent = staticH1.textContent; staticH1.replaceWith(h2); }
   const KEY = `gradify.course.${cfg.slug}`;
-  // what a course calls its units ("Unit" for physics, "School" for law and nursing)
-  const U = cfg.unitWord || "Unit", u1 = U.toLowerCase();
+  // what a course calls its units. "School" (law, nursing and others) reads strangely to a learner who is at school,
+  // so it's shown as "Unit" everywhere; the course data keeps its own word.
+  const U = cfg.unitWord && cfg.unitWord !== "School" ? cfg.unitWord : "Unit", u1 = U.toLowerCase();
   // what a course calls its tracks ("Track" by default, "Stage" for the SciGradify sciences)
   const TW = cfg.trackWord || "Track", tw1 = TW.toLowerCase();
   // the interactives tab: "Practice" (law, nursing) or "Lab" (sciences); interactives can also sit inside lessons (IX: lines)
@@ -502,7 +503,7 @@ export function mountCourse(root, cfg) {
   // Progress), and the rest under More. Every older address (#/review, #/paths, …) still works.
   // the examination specifications this course is mapped onto (kit/specs/), for Specification Mastery (#/spec)
   const SPECS = specsFor(cfg.slug);
-  const PRIMARY = [["home", "Home"], ["learn", "Syllabus"], ["revise", "Revise"], ...(cfg.workspace ? [[cfg.workspace.route, cfg.workspace.label]] : []), ...(cfg.exams ? [["exams", "Exams"]] : []), ...(cfg.interactives ? [["practice", PL]] : []), ...(SPECS.length ? [["spec", "Specification"]] : []), ["me", "Progress"]];
+  const PRIMARY = [["home", "Home"], ["learn", "Syllabus"], ["revise", "Practise"], ...(cfg.workspace ? [[cfg.workspace.route, cfg.workspace.label]] : []), ...(cfg.exams ? [["exams", "Exams"]] : []), ...(cfg.interactives ? [["practice", PL]] : []), ...(SPECS.length ? [["spec", "Specification"]] : []), ["me", "Progress"]];
   const MORE = [...(cfg.overview ? [["overview", "About this course"]] : []), ["review", "Flashcard review"], ["problems", "Problem bank"], ...(cfg.authorities ? [["cases", cfg.authorities]] : []), ...(cfg.writing?.length ? [["write", "Written practice"]] : []), ...(cfg.revalidation ? [["revalidation", "Revalidation"]] : []), ["paths", "Paths"], ["tracks", `${TW}s`], ["leaderboard", "Leaderboard"], ["features", "Features"]];
   const VIEWS = [...PRIMARY, ...MORE];
   // which tab a view belongs to
@@ -620,7 +621,7 @@ export function mountCourse(root, cfg) {
   }, 220));
   // ---------- search: one set of results for the tab search, the palette (/ or ⌘K) and the overview ----------
   const ACTIONS = () => [
-    ["Home", "#/home", "launchpad continue today"], ["Syllabus", "#/learn", "outline course units lessons"], ["Revise", "#/revise", "revision"],
+    ["Home", "#/home", "launchpad continue today"], ["Syllabus", "#/learn", "outline course units lessons"], ["Practise", "#/revise", "revision revise practise"],
     ["Review flashcards", "#/review", "cards spaced repetition", dueCards().length ? `${dueCards().length} due` : ""],
     ["Target test", `#/target/${encodeTest({ minutes: 10, scope: weakTargets().length ? "weak" : "studied" })}`, "quiz test practice weak"],
     ["Target my weaknesses", "#/review/weak", "weak spots gaps"], ["Revisit questions", "#/review/questions", "retrieval spaced"],
@@ -785,7 +786,7 @@ export function mountCourse(root, cfg) {
     { keys: "u", label: `Up to the ${u1}`, group: "In a lesson", when: inLesson, run: () => go(`learn/${curLesson.unit.id}`) },
     { keys: "g h", label: "Course home", group: "Go to", run: () => go("home") },
     { keys: "g s", label: "Syllabus", group: "Go to", run: () => go("learn") },
-    { keys: "g r", label: "Revise", group: "Go to", run: () => go("revise") },
+    { keys: "g r", label: "Practise", group: "Go to", run: () => go("revise") },
     { keys: "g p", label: "Progress", group: "Go to", run: () => go("me") },
     ...(cfg.exams ? [{ keys: "g e", label: "Exams", group: "Go to", run: () => go("exams") }] : []),
     { keys: "g b", label: "Back to where I was", group: "Go to", when: () => Boolean(backPlace({ kinds: null })), run: () => { const p = backPlace({ kinds: null }); if (p) location.hash = p.href; } },
@@ -808,10 +809,21 @@ export function mountCourse(root, cfg) {
     const a = (href, icon, t, cur, extra = "") => `<a href="${href}" ${cur ? 'aria-current="page"' : ""} ${extra}>${ic(icon)}<span>${t}</span></a>`;
     dock.innerHTML = view === "lesson" && l
       ? `<button type="button" data-tree-open>${ic("menu")}<span>Outline</span></button>${prev ? a(`#/lesson/${prev.id}`, "left", "Previous") : `<span class="off">${ic("left")}<span>Previous</span></span>`}<button type="button" data-ai-open aria-label="Ask Gradify AI">${ic("ai")}<span>Ask AI</span></button>${next ? a(`#/lesson/${next.id}`, "right", "Next") : `<span class="off">${ic("right")}<span>Next</span></span>`}${a("#/home", "home", "Home")}`
-      : `${a("#/home", "home", "Home", view === "home")}${a("#/learn", "book", "Syllabus", ["learn", "quiz"].includes(view))}<button type="button" data-ai-open aria-label="Ask Gradify AI">${ic("ai")}<span>Ask AI</span></button>${a("#/revise", "cards", "Revise", ["revise", "review", "target", "problems"].includes(view), "")}${a("#/me", "chart", "Progress", view === "me")}`;
+      : `${a("#/home", "home", "Home", view === "home")}${a("#/learn", "book", "Syllabus", ["learn", "quiz"].includes(view))}<button type="button" data-ai-open aria-label="Ask Gradify AI">${ic("ai")}<span>Ask AI</span></button>${a("#/revise", "cards", "Practise", ["revise", "review", "target", "problems"].includes(view), "")}<button type="button" data-dock-more ${["me", "exams", "practice", "spec", ...MORE.map(([id]) => id)].includes(view) ? 'aria-current="page"' : ""}>${ic("more")}<span>More</span></button>`;
     if (due) dock.querySelector('a[href="#/revise"]')?.insertAdjacentHTML("beforeend", `<i class="cx-dot">${due > 99 ? "99+" : due}</i>`);
   }
   root.addEventListener("click", (e) => { if (e.target.closest("[data-pal-open]")) { e.preventDefault(); palette.open(); } });
+  // phones have one navigation bar (the dock); everything the tab strip held is one tap away under More
+  root.addEventListener("click", (e) => {
+    if (!e.target.closest("[data-dock-more]")) return;
+    const row = ([id, t]) => `<a class="cx-dmore" href="#/${id}">${esc(t)}</a>`;
+    const rest = PRIMARY.filter(([id]) => !["home", "learn", "revise"].includes(id));
+    const d = openDrawer({ title: cfg.name, body: `<nav class="cx-dmorelist" aria-label="${esc(cfg.name)}">${rest.map(row).join("")}<button type="button" class="cx-dmore" data-pal-open>Search ${lessons.length.toLocaleString()} lessons</button><hr>${MORE.map(row).join("")}</nav>` });
+    d?.el?.addEventListener?.("click", (ev) => {
+      if (ev.target.closest("[data-pal-open]")) { ev.preventDefault(); d.close(); palette.open(); return; }
+      if (ev.target.closest("a")) d.close();
+    });
+  });
   dock.addEventListener("click", (e) => { if (e.target.closest("[data-ai-open]")) { e.preventDefault(); document.querySelector(".gai-fab")?.click(); } });
   // bookmarks (S.marks: + time on, − time off, so the latest change wins across devices) and recently viewed lessons
   const marked = (id) => (S.marks?.[id] || 0) > 0;
@@ -890,10 +902,10 @@ export function mountCourse(root, cfg) {
     const goalP = Math.min(1, tx / S.goal), R = 30, C = 2 * Math.PI * R;
     const got = new Set(earned().map((b) => b.id));
     side.innerHTML = `
-      <section class="co-card co-me">
+      ${xp === 0 ? `<section class="co-card co-me cx-welcome"><span class="cx-flame">${ic("bolt")}</span><div><b>Your first lesson earns +${XP.lesson} XP</b><small>Levels, streaks and missions start from there.</small></div></section>` : `<section class="co-card co-me">
         <div class="co-lvbadge"><b>${L.n}</b><small>level</small></div>
         <div><b>${xp.toLocaleString()} XP</b><div class="co-bar"><i style="width:${((xp - L.from) / (L.to - L.from)) * 100}%"></i></div><small>${(L.to - xp).toLocaleString()} XP to level ${L.n + 1}</small></div>
-      </section>
+      </section>`}
       <section class="co-card co-goal">
         <svg viewBox="0 0 76 76" class="co-ring"><circle cx="38" cy="38" r="${R}" class="bg"/><circle cx="38" cy="38" r="${R}" class="fg" stroke-dasharray="${C}" stroke-dashoffset="${C * (1 - goalP)}"/></svg>
         <div><span class="co-kicker">Daily goal</span><b>${tx} / ${S.goal} XP</b>
@@ -997,7 +1009,7 @@ export function mountCourse(root, cfg) {
       <button class="co-bbtn ghost" data-toggle="${u.id}" aria-expanded="${open}">${open ? "Hide path" : "Show path"}</button></div></div>`;
   }
   // the switch between the syllabus outline and the road, at the top of both
-  const viewSwitch = () => `<div class="cx-views" role="group" aria-label="Show the syllabus as"><button type="button" data-lv="next" aria-pressed="${S.learnView === "next"}" title="Just what to do next">${ic("play")} Next up</button><button type="button" data-lv="list" aria-pressed="${!S.learnView || S.learnView === "list"}" title="The complete syllabus">${ic("menu")} Outline</button><button type="button" data-lv="road" aria-pressed="${S.learnView === "road"}">${ic("flag")} Road</button></div>`;
+  const viewSwitch = () => `<div class="cx-views" role="group" aria-label="Show the syllabus as"><button type="button" data-lv="next" aria-pressed="${S.learnView === "next"}" title="Just what to do next">${ic("play")} Next up</button><button type="button" data-lv="list" aria-pressed="${!S.learnView || S.learnView === "list"}" title="The complete syllabus">${ic("menu")} Outline</button><button type="button" data-lv="road" aria-pressed="${S.learnView === "road"}">${ic("flag")} Map</button></div>`;
   const wireSwitch = () => main.querySelectorAll("[data-lv]").forEach((b) => b.addEventListener("click", () => { S.learnView = b.dataset.lv; keep(); viewLearn(); }));
   function viewLearn(focus, keep) {
     if (S.learnView === "next" && !focus) return viewNextUp();
@@ -1169,7 +1181,9 @@ export function mountCourse(root, cfg) {
       return `<a class="cx-wday${w.today ? " today" : ""}${w.future ? " future" : ""}${w.p >= 1 ? " met" : ""}" href="#/me" style="--p:${w.p}" aria-label="${dt.toLocaleDateString(undefined, { weekday: "long", day: "numeric", month: "long" })}: ${w.v} XP${w.p >= 1 ? ", daily goal reached" : ""}"><small>${w.today ? "Today" : esc(wd)}</small><b>${dt.getDate()}</b><em>${w.future ? "" : `${w.v} XP`}</em>${w.p >= 1 ? `<i class="cx-wok" aria-hidden="true">${ic("check")}</i>` : ""}</a>`; }).join("")}</nav>`;
     // what's next, as a row of cards you can flick through (cover-flow): the one in the middle stands forward
     const flowList = nl ? [nl, ...lessons.slice(lessons.indexOf(nl) + 1).filter((l) => !S.done[l.id]).slice(0, 9)] : [];
-    const flowHtml = flowList.length > 1 ? `<section class="cx-sec cx-flowsec"><div class="cx-sech"><h3>${ic("play")} Up next</h3><p>Swipe or use the arrows: the card in the middle is the next lesson.</p></div>
+    // the swipe carousel needed instructions to be understood: the hero's own "Then" list says the same plainly
+    // (a course can still ask for it with cfg.flowCarousel)
+    const flowHtml = cfg.flowCarousel && flowList.length > 1 ? `<section class="cx-sec cx-flowsec"><div class="cx-sech"><h3>${ic("play")} Up next</h3><p>Swipe or use the arrows: the card in the middle is the next lesson.</p></div>
       <div class="cx-flowwrap"><button type="button" class="cx-flowbtn prev" data-flow="-1" aria-label="Previous lessons">${ic("left")}</button>
       <div class="cx-flow" tabindex="0" aria-label="Your next lessons">${flowList.map((l, k) => { const t = trackOf(l.unit); return `<a class="cx-fcard" href="${k === 0 ? resumeHref(l) : `#/lesson/${l.id}`}" style="--a:${t.from};--b:${t.to}"><span class="co-kicker">${k === 0 ? "Next" : `Then · ${k}`}</span><b>${esc(l.title)}</b><small>${U} ${l.unit.n} · ${esc(l.module || l.unit.title)}</small><span class="cx-fstat">${dot(statusOf(l.id))}${STATUS[statusOf(l.id)].label}</span></a>`; }).join("")}</div>
       <button type="button" class="cx-flowbtn next" data-flow="1" aria-label="Next lessons">${ic("right")}</button></div></section>` : "";
@@ -1193,9 +1207,11 @@ export function mountCourse(root, cfg) {
           : `<h2>Course complete</h2><p class="cx-herometa">Every lesson is done. Keep it fresh with Revise, and push your mastery with target tests.</p><div class="co-row"><a class="btn btn-light lg" href="#/revise"><span>Revise</span></a></div>`}
         </div>
         <div class="cx-heror">
+          ${xp === 0 ? `<div class="cx-habit cx-welcome"><span class="cx-flame">${ic("bolt")}</span><div><b>Your first lesson earns +${XP.lesson} XP</b><small>and starts your streak. Daily goal: ${S.goal} XP.</small></div></div>` : `
           <div class="cx-habit"><div class="co-lvbadge"><b>${L.n}</b><small>level</small></div><div><b>${xp.toLocaleString()} XP</b><div class="co-bar"><i style="width:${((xp - L.from) / (L.to - L.from)) * 100}%"></i></div><small>${(L.to - xp).toLocaleString()} XP to level ${L.n + 1}</small></div></div>
           <div class="cx-habit">${ring(Math.min(1, tx / S.goal), 58, 7, "goal")}<div><b>${tx} / ${S.goal} XP</b><small>${tx >= S.goal ? "Daily goal reached" : "today's goal"}</small></div></div>
           <div class="cx-habit"><span class="cx-flame ${sk.today ? "lit" : ""}">${ic("flame")}<b>${sk.n}</b></span><div><b>${sk.n}-day streak</b><small>${sk.today ? "Kept today" : sk.n ? "Learn today to keep it" : "Start one today"}${sk.rest ? ` · ${sk.rest} rest day${sk.rest > 1 ? "s" : ""} banked` : ""}</small></div></div>
+          `}
         </div>
       </section>
       ${booksHtml}
@@ -1219,7 +1235,7 @@ export function mountCourse(root, cfg) {
         <div class="cx-col">
           ${(() => { const tq = missions().filter((q) => q.kind === "topic"); if (!tq.length) return ""; const cur = tq.filter((q) => !q.earlier), q0 = tq[0].quest, got = cur.filter((q) => q.done).length;
             return `<section class="cx-panel cx-tquest"><div class="cx-sech"><h3>${ic("flag")} Today's topic quest</h3><span class="cx-tqxp">${got} / ${cur.length} · +${q0.xp} XP</span></div><p class="cx-tqname"><b>${esc(q0.topic)}</b> Understand it, remember it, apply it: each step pays only for learning.</p>${missionsHtml("topic", true)}</section>`; })()}
-          <section class="cx-panel"><div class="cx-sech"><h3>${ic("target")} Today's missions</h3><a href="/journey.html">Journey →</a></div>${missionsHtml("daily") || `<p class="co-empty">Missions appear once you've started.</p>`}</section>
+          <section class="cx-panel"><div class="cx-sech"><h3>${ic("target")} Today's missions</h3><a href="/journey.html">All progress →</a></div>${missionsHtml("daily") || `<p class="co-empty">Missions appear once you've started.</p>`}</section>
         </div>
       </div>
       ${marks.length ? `<div class="cx-cols">
@@ -1293,25 +1309,26 @@ export function mountCourse(root, cfg) {
     // steps in this lesson, the topic it belongs to, and what comes next
     const topic = g?.lessons?.length > 1 ? (() => {
       const done = g.lessons.filter((x) => S.done[x.id]).length;
-      return `<section class="cx-widget cx-w-topic" aria-label="This topic">
+      return `<section class="cx-sub cx-w-topic" aria-label="This topic">
         <span class="co-kicker">This topic</span><b class="cx-w-title">${esc(g.title || u?.title || "")}</b>
         <ol class="cx-w-dots">${g.lessons.map((x) => `<li><a href="#/lesson/${x.id}" class="${S.done[x.id] ? "done" : ""} ${x.id === l.id ? "here" : ""}" title="${esc(x.title)}" aria-label="${esc(x.title)}${S.done[x.id] ? " (done)" : ""}${x.id === l.id ? " (this lesson)" : ""}"></a></li>`).join("")}</ol>
         <small>${done} of ${g.lessons.length} lessons done</small></section>`;
     })() : "";
-    const upNext = quizNext && u ? `<a class="cx-widget cx-w-next" href="#/quiz/${u.id}"><span class="co-kicker">Up next</span><b class="cx-w-title">The ${esc(U)} ${u.n} quiz</b><small>Lock in ${esc(u.title)}</small><span class="cx-w-go" aria-hidden="true">${ic("right")}</span></a>`
-      : nextL ? `<a class="cx-widget cx-w-next" href="#/lesson/${nextL.id}"><span class="co-kicker">Up next</span><b class="cx-w-title">${esc(nextL.title)}</b><small>${esc(nextL.module || `${U} ${nextL.unit?.n}`)}</small><span class="cx-w-go" aria-hidden="true">${ic("right")}</span></a>` : "";
-    return `<div class="co-rail cx-widgets">
-      ${!links.length ? "" : `<section class="cx-widget cx-w-page" aria-label="On this page"><div class="co-railtop"><svg viewBox="0 0 56 56" class="co-ring sm" aria-hidden="true"><circle cx="28" cy="28" r="${R}" class="bg"/><circle cx="28" cy="28" r="${R}" class="fg" stroke-dasharray="${C}" stroke-dashoffset="${C}" data-c="${C}"/></svg>
+    const upNext = quizNext && u ? `<a class="cx-sub cx-w-next" href="#/quiz/${u.id}"><span class="co-kicker">Up next</span><b class="cx-w-title">The ${esc(U)} ${u.n} quiz</b><small>Lock in ${esc(u.title)}</small><span class="cx-w-go" aria-hidden="true">${ic("right")}</span></a>`
+      : nextL ? `<a class="cx-sub cx-w-next" href="#/lesson/${nextL.id}"><span class="co-kicker">Up next</span><b class="cx-w-title">${esc(nextL.title)}</b><small>${esc(nextL.module || `${U} ${nextL.unit?.n}`)}</small><span class="cx-w-go" aria-hidden="true">${ic("right")}</span></a>` : "";
+    // one panel, not five: where you are on the page, your steps, the topic and what's next, divided by hairlines
+    return `<div class="co-rail cx-widgets"><div class="cx-widget cx-w-one">
+      ${!links.length ? "" : `<section class="cx-w-page" aria-label="On this page"><div class="co-railtop"><svg viewBox="0 0 56 56" class="co-ring sm" aria-hidden="true"><circle cx="28" cy="28" r="${R}" class="bg"/><circle cx="28" cy="28" r="${R}" class="fg" stroke-dasharray="${C}" stroke-dashoffset="${C}" data-c="${C}"/></svg>
         <div><span class="co-kicker">On this page</span><b class="co-readpct">0% read</b>${mins ? `<small>About ${mins} min</small>` : ""}</div></div>
       <ol class="co-toc">${links.map(([href, t]) => `<li><a href="#${href}" data-jump="${href}">${inline(t)}</a></li>`).join("")}</ol></section>`}
-      <section class="cx-widget cx-w-steps" aria-label="Your steps">
+      <section class="cx-sub cx-w-steps" aria-label="Your steps">
         ${nQ ? `<p class="co-railq"><span class="co-checkn"></span></p>` : ""}
         ${loopHtml(l, N, nQ)}
         <button class="btn btn-light lg btn-sm co-railgo" ${S.done[l.id] ? "disabled" : ""}><span>${S.done[l.id] ? "Completed ✓" : `Complete · +${XP.lesson} XP`}</span></button>
       </section>
       ${topic}
       ${upNext}
-    </div>`;
+    </div></div>`;
   }
   // the learning loop for one lesson: read it, check yourself, recall it with the flashcards, complete it. Each step
   // lights up as it happens (reading from scroll depth, checking from right answers, recall from going through the cards)
@@ -1559,7 +1576,7 @@ export function mountCourse(root, cfg) {
     const N = await notesFor(l); if (!N) { location.replace(`#/lesson/${id}`); return; }
     curLesson = l; curN = N; lt.start(id);
     const { flow: F, steps } = lessonSteps(N), u = l.unit, t = trackOf(u), n = Math.max(0, Math.min(steps.length - 1, at || 0)), s = steps[n];
-    S.step ||= {}; if (n > (S.step[id] || 0)) { S.step[id] = n; save(true); }
+    S.step ||= {}; if (S.step[id] === undefined || n > S.step[id]) { S.step[id] = n; save(true); }   // also marks Learn mode as opened
     const mins = Math.max(2, Math.round(lessonText(N).split(/\s+/).length / 200 + (N.items?.length || 0) * 0.75));
     const nextL = u.lessons[l.i + 1] && byId[u.lessons[l.i + 1].id];
     const href = (k) => `#/step/${id}/${k}`;
@@ -1707,14 +1724,16 @@ export function mountCourse(root, cfg) {
       <div class="co-lbar cx-lbar">
         <div class="cx-lrow">
           <button type="button" class="cx-ob" data-tree-open aria-label="Course outline">${ic("menu")}<span>Outline</span></button>
-          <nav class="cx-bc" aria-label="Breadcrumb"><a href="#/home">${esc(cfg.name)}</a><a href="#/learn/${u.id}">${U} ${u.n}<span class="cx-bcl">: ${esc(u.title)}</span></a>${g?.title ? `<a href="#/learn/${u.id}" class="cx-bcm">${u.n}.${gi + 1} ${esc(g.title)}</a>` : ""}<span aria-current="page">${esc(l.title)}</span></nav>
+          <nav class="cx-bc" aria-label="Breadcrumb"><a href="/" class="cx-bcroot">Gradify</a>${cfg.site ? `<a href="../" class="cx-bcroot">${esc(cfg.site)}</a>` : ""}<a href="#/home">${esc(cfg.name)}</a><a href="#/learn/${u.id}">${U} ${u.n}<span class="cx-bcl">: ${esc(u.title)}</span></a>${g?.title ? `<a href="#/learn/${u.id}" class="cx-bcm">${u.n}.${gi + 1} ${esc(g.title)}</a>` : ""}<span aria-current="page">${esc(l.title)}</span></nav>
           <span class="cx-secname" aria-hidden="true" hidden></span>
           <div class="cx-lact">
             <span class="cx-save" hidden></span>
             <button type="button" class="cx-ib" data-mark aria-pressed="${marked(id)}" title="Bookmark (B)" aria-label="Bookmark this lesson">${ic(marked(id) ? "bookmarked" : "bookmark")}</button>
-            ${N ? `<button type="button" class="cx-ib" data-revnotes title="Revision notes (R)" aria-label="Revision notes">${ic("notes")}</button>` : ""}
-            ${N && (nQ || N.cards.length) ? `<button type="button" class="cx-ib cx-splitb" data-split aria-pressed="${splitOn()}" title="Split screen: notes beside questions (S)" aria-label="Split screen">${ic("split")}</button>` : ""}
-            <button type="button" class="cx-ib" data-focus aria-pressed="${focusOn()}" title="Focus mode (F)" aria-label="Focus mode">${ic("expand")}</button>
+            <details class="cx-view"><summary class="cx-viewb">View</summary><div class="cx-viewm">
+              ${N ? `<button type="button" data-revnotes title="Revision notes (R)">${ic("notes")}<span>Revision notes</span></button>` : ""}
+              ${N && (nQ || N.cards.length) ? `<button type="button" class="cx-splitb" data-split aria-pressed="${splitOn()}" title="Split screen (S)">${ic("split")}<span>Notes beside questions</span></button>` : ""}
+              <button type="button" data-focus aria-pressed="${focusOn()}" title="Focus mode (F)">${ic("expand")}<span>Focus mode</span></button>
+            </div></details>
             <button type="button" class="cx-ib" data-pal-open title="Search (/)" aria-label="Search the course">${ic("search")}</button>
             <span class="cx-pn">${prev ? `<a class="cx-ib" href="#/lesson/${prev.id}" title="Previous: ${esc(prev.title)} (←)" aria-label="Previous lesson">${ic("left")}</a>` : `<span class="cx-ib off">${ic("left")}</span>`}<small>${l.i + 1} / ${u.lessons.length}</small>${next ? `<a class="cx-ib" href="#/lesson/${next.id}" title="Next: ${esc(next.title)} (→)" aria-label="Next lesson">${ic("right")}</a>` : `<span class="cx-ib off">${ic("right")}</span>`}</span>
           </div>
@@ -1723,10 +1742,13 @@ export function mountCourse(root, cfg) {
       </div>
       <div class="mv-page co-notes" style="--c:${t.from}">
         <header class="co-lhead"><span class="co-licon co-lart">${(() => { const k = subjectOf(`${l.title} ${l.module || ""} ${u.title}`); return heroArt(k !== "course" ? k : `${cfg.name} ${cfg.site}`); })()}</span>
-          <span class="kicker">${esc(t.name)} · ${U} ${u.n}${l.module ? ` · ${esc(l.module)}` : ""}</span><h1>${esc(l.title)}</h1>${N?.lead ? `<p class="mv-lead">${inline(N.lead)}</p>` : ""}
+          <h1>${esc(l.title)}</h1>${N?.lead ? `<p class="mv-lead">${inline(N.lead)}</p>` : ""}
           <div class="mv-chips"><span class="co-chip cx-stchip s-${statusOf(id)}">${dot(statusOf(id))} ${STATUS[statusOf(id)].label}</span>${S.done[id] ? "" : `<span class="co-chip">${ic("bolt")} +${XP.lesson} XP</span>`}${mins ? `<span class="co-chip">${ic("clock")} About ${mins} min</span>` : ""}${N?.level ? `<span class="co-chip">${esc(N.level)}</span>` : ""}</div></header>
         ${N && cfg.reviewLine ? `<p class="co-reviewed">${reviewLine(u)}</p>` : ""}
-        ${N && (LEARN_PILOTS[cfg.slug] || []).includes(id) ? `<a class="btn btn-light lg co-learnstep" href="#/step/${id}/0">${ic("play")} Learn it step by step <small>New · one idea at a time, with a check after each</small></a>` : ""}
+        ${N && (LEARN_PILOTS[cfg.slug] || []).includes(id) ? (() => {
+          const at = S.step?.[id] || 0, total = lessonSteps(N).steps.length, resume = !S.done[id] && at > 0 && at < total;
+          return `<a class="btn btn-light lg co-learnstep" href="#/step/${id}/${resume ? at : 0}">${ic("play")} ${resume ? `Pick up where you left off <small>Step ${at + 1} of ${total}</small>` : `${S.done[id] ? "Go through it again" : "Learn it step by step"} <small>One idea at a time, with a check after each</small>`}</a>`;
+        })() : ""}
         ${buildsOnHtml(id)}
         ${N ? F.top.replace(/<(\/?)h3>/g, "<$1h2>") : ""}
         ${N ? `<div class="mv-cols co-prose">${lessonDiagrams(N, id)}</div>${F.end || recapDiagrams(N, id).length ? `<section class="co-recap" id="co-recap"><h3 class="co-part">${ic("check")} Recap</h3>${recapHtml(N, id)}${F.end}</section>` : ""}` : `<p class="co-empty">The notes for this lesson are still being written. You can still mark it done and come back later.</p>`}
@@ -1820,6 +1842,13 @@ export function mountCourse(root, cfg) {
     { const sw = main.querySelector("#co-next"); if (sw) wireActions(sw, res); }
     main.querySelector("[data-revnotes]")?.addEventListener("click", () => revisionNotes());
     main.querySelector("[data-split]")?.addEventListener("click", () => setSplit(!splitOn()));
+    // the View menu closes once a choice is made, and on a click elsewhere or Escape
+    const viewMenu = main.querySelector(".cx-view");
+    viewMenu?.querySelectorAll(".cx-viewm button").forEach((b) => b.addEventListener("click", () => viewMenu.removeAttribute("open")));
+    if (viewMenu) {
+      const shut = (e) => { if (!viewMenu.isConnected) { document.removeEventListener("click", shut); document.removeEventListener("keydown", shut); return; } if (e.type === "keydown" ? e.key === "Escape" : !viewMenu.contains(e.target)) viewMenu.removeAttribute("open"); };
+      document.addEventListener("click", shut); document.addEventListener("keydown", shut);
+    }
     if (splitOn() || pref(cfg.slug, "split")) setSplit(splitFits(), false);
     const tp = main.querySelector(".co-tutor");
     if (tp) mountTutorPanel(tp, {
@@ -2937,6 +2966,11 @@ export function mountCourse(root, cfg) {
     if (moved && (view === "lesson" || view === "quiz" || view === "exam")) globalThis.gradifyConsent?.event(view === "lesson" ? "lesson_start" : `${view}_start`);
     if (view === "learn") { if (arg) openUnit(arg); viewLearn(arg); }
     else if (view === "step") await viewStep(arg, Number(sec) || 0);
+    else if (view === "lesson" && !sec && (LEARN_PILOTS[cfg.slug] || []).includes(arg) && !S.done[arg] && S.step?.[arg] === undefined) {
+      // a first visit to a lesson that has Learn mode opens it step by step (the better way to learn something new);
+      // the notes are one tap away, and every later visit opens the notes with a way back to the step you reached
+      location.replace(`#/step/${arg}/0`); return;
+    }
     else if (view === "lesson") {
       await viewLesson(arg);
       if (sec) setTimeout(() => {

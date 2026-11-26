@@ -28,6 +28,8 @@ if (bar && btn && menu && !bar.dataset.wired) {
   // signed in (a Supabase session in this browser): the link goes to the account, under that name
   const signedIn = (() => { try { return Object.keys(localStorage).some((k) => /^sb-.*-auth-token$/.test(k) && localStorage.getItem(k)); } catch { return false; } })();
   if (signedIn) document.querySelectorAll(".hub-signin").forEach((a) => { a.textContent = "Account"; });
+  // one name per action on every site: signed out, "Start free" starts set-up; signed in, "Today" goes back to your plan
+  if (signedIn) document.querySelectorAll(".hub-open").forEach((a) => { a.href = "/app.html#/today"; const t = a.querySelector("span") || a; t.textContent = "Today"; });
 }
 
 // the footer's year, on every hub page

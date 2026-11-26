@@ -231,7 +231,7 @@ export function renderKnowledgePage(view, m, { courses = [] } = {}) {
   for (const c of m.concepts) { const k = `${c.pack || "Your notes"}${c.site ? ` · ${c.site}` : ""}`; if (!groups.has(k)) groups.set(k, []); groups.get(k).push(c); }
   const count = (k) => m.concepts.filter((c) => c.stage === k || (k === "seen" && c.stage === "seen")).length;
   view.innerHTML = `<section class="knowledge-page">
-    <span class="kicker lo-kicker">${icon("brain")}My Knowledge</span>
+    <span class="kicker lo-kicker">${icon("brain")}What you know</span>
     <h1>Everything you know, and how well</h1>
     <p class="sub">Each concept moves through four stages, and only on evidence: <b>seen</b> (you've been tested), <b>understood</b> (right, and no misconceptions), <b>retained</b> (still right after time has passed), <b>applied</b> (used on a new problem).</p>
     <div class="k-funnel">${[["new", "Not started"], ...STAGES].map(([k, l], ix) => { const n = m.concepts.filter((c) => c.stage === k).length; return `<div class="k-step s${ix}"><b>${n}</b><span>${l}</span></div>`; }).join("")}</div>
@@ -252,7 +252,7 @@ export function renderRevisePage(view, m, arg) {
   const list = m.prio.items.filter((x) => pick === "all" || of(x) === pick);
   const total = list.reduce((a, x) => a + x.mins, 0);
   view.innerHTML = `<section class="revise-page">
-    <span class="kicker lo-kicker">${icon("checklist")}Revision Centre</span>
+    <span class="kicker lo-kicker">${icon("checklist")}Revision</span>
     <h1>Everything worth doing, best first</h1>
     <p class="sub">Cards, lessons, deadlines and stretch questions from every Gradify site, ranked by how much each will move your learning. About ${total} min in all.</p>
     <div class="seg-chips">${kinds.map(([k, l]) => `<a class="chip" href="#/revise/${k}" aria-pressed="${k === pick}">${l} <small>${k === "all" ? m.prio.items.length : m.prio.items.filter((x) => of(x) === k).length}</small></a>`).join("")}</div>

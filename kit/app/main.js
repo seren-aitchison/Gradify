@@ -116,18 +116,19 @@ async function stats() {
 }
 
 // ---------- LifeOS sections ----------
-// One navigation for every Gradify site's app, drawn here so the 33 app pages share it. Five sections, each a plain
-// group of the screens it holds, so every screen is one click from anywhere and nothing waits behind a "More":
+// One navigation for every Gradify site's app, drawn here so the 33 app pages share it. The five destinations of the
+// Lesson System Brief v2, with one name for each thing, so every screen is one click from anywhere:
 //   Today     what to do now and when        Learn     what you study from
-//   Study     what you practise with         Library   what you keep        Progress  how it's going
-// Settings sits on its own at the end (and behind the account button in the top bar). Every screen keeps its own URL.
+//   Practise  what you practise with         Brain     what you keep        Progress  how it's going
+// Settings sits on its own at the end (and behind the account button in the top bar). Every screen keeps its own URL
+// and section id (study, library), so old links and bookmarks still land in the right place.
 // [section id, label, icon, [[route, label, icon], …]]; a section opens its first screen
 const SECTIONS = [
-  ["today", "Today", "home", [["today", "Today", "home"], ...(MY_CHILD.test(SITE || "") ? [] : [["my", "MyGradify", "cap"]]), ["plan", "Smart Plan", "calendar"], ["goals", "Path", "route"]]],
-  ["learn", "Learn", "cap", [["learning", "Courses", "cap"], ["curriculum", "My curriculum", "book"], ["knowledge", "My Knowledge", "brain"], ["earth", "Earth", "globe"]]],
-  ["study", "Study", "layers", [["study", "Flashcards", "layers"], ["revise", "Revision Centre", "checklist"], ["tools", "Tools", "forge"], ["ai", "Gradify AI", "bulb"]]],
-  ["library", "Library", "book", [["notes", "Notes", "feather"], ["library", "Your library", "book"], ["new", "Add notes", "upload"], ["community", "Community", "people"]]],
-  ["progress", "Progress", "trend", [["progress", "Progress", "trend"], ["intel", "Intelligence", "sparkles"]]],
+  ["today", "Today", "home", [["today", "Today", "home"], ...(MY_CHILD.test(SITE || "") ? [] : [["my", "My course", "cap"]]), ["plan", "Plan", "calendar"], ["goals", "Goals", "route"]]],
+  ["learn", "Learn", "cap", [["learning", "Courses", "cap"], ["curriculum", "My specification", "book"], ["community", "Study together", "people"]]],
+  ["study", "Practise", "layers", [["study", "Flashcards", "layers"], ["revise", "Revision", "checklist"], ["tools", "Tools", "forge"], ["ai", "Gradify AI", "bulb"]]],
+  ["library", "Brain", "brain", [["notes", "Notes", "feather"], ["library", "Library", "book"], ["new", "Add notes", "upload"], ["knowledge", "What you know", "brain"]]],
+  ["progress", "Progress", "trend", [["progress", "Progress", "trend"], ["intel", "Insights", "sparkles"], ["earth", "Mastery map", "globe"]]],
 ];
 const SETTINGS = ["account", "Settings", "cog"];
 // screens that belong to another screen's place in the navigation (a pack lives in your library, a topic in Progress)
@@ -741,7 +742,7 @@ async function renderNotes() {
   const topics = topicProfiles(cards, reviews);
   const masteryOf = (docId) => { const ts = topics.filter((t) => t.documentId === docId), n = ts.reduce((a, t) => a + t.cards, 0); return n ? ts.reduce((a, t) => a + t.mastery * t.cards, 0) / n : 0; };
   view.innerHTML = `<section class="notes">
-    <div class="deck-head"><div><span class="kicker lo-kicker">${icon("layers")}Library</span><h1>Your library</h1><p class="sub">Your own notes and their flashcards, and the flashcards and questions you're revising in each Gradify course.</p></div><a class="btn btn-primary lg" href="#/new"><span>+ Add notes</span></a></div>
+    <div class="deck-head"><div><span class="kicker lo-kicker">${icon("brain")}Brain</span><h1>Your library</h1><p class="sub">Your own notes and their flashcards, and the flashcards and questions you're revising in each Gradify course.</p></div><a class="btn btn-primary lg" href="#/new"><span>+ Add notes</span></a></div>
     ${jotStripHtml()}
     ${courseCards.length ? `<h2 class="lo-h">From your courses</h2><div class="lo-grid">${courseCards.map((c) => `<article class="panel glass course-card"><div class="cc-top"><span class="cc-site">${esc(c.site)}</span></div><h3>${esc(c.name)}</h3>
       <p class="sub">${c.cards} flashcard${c.cards === 1 ? "" : "s"}${c.dueCards ? ` · ${c.dueCards} due` : " · nothing due"}${c.revisit ? ` · ${c.revisit} question${c.revisit === 1 ? "" : "s"} to revisit` : ""}</p>
@@ -1480,7 +1481,7 @@ async function renderPlan(arg) {
   ].sort((a, b) => a.day.localeCompare(b.day)).slice(0, 8);
   const paced = (L?.courses || []).filter((c) => c.examDate && c.pace && !["done", "no-date"].includes(c.pace.status));
   view.innerHTML = `<section class="planner">
-    <div class="deck-head"><div><span class="kicker lo-kicker">${icon("calendar")}Smart Plan</span><h1>${ACCESS.has("intelligence") ? "Your plan, worked out for you" : "Your study plan"}</h1><p class="sub">${ACCESS.has("intelligence") ? `Gradify builds each day from what matters most (misconceptions, fading memory, deadlines, due cards and new material) and fits it into your free time, with breaks. <a href="#/intel">Change your hours and energy</a>.` : "Plan your study blocks for the week. With Gradify Pro, Gradify works out the plan for you."}</p></div>${ACCESS.has("intelligence") ? `<button type="button" class="btn btn-primary lg" id="autoplan"><span>Plan my week</span></button>` : ""}</div>
+    <div class="deck-head"><div><span class="kicker lo-kicker">${icon("calendar")}Plan</span><h1>${ACCESS.has("intelligence") ? "Your plan, worked out for you" : "Your study plan"}</h1><p class="sub">${ACCESS.has("intelligence") ? `Gradify builds each day from what matters most (misconceptions, fading memory, deadlines, due cards and new material) and fits it into your free time, with breaks. <a href="#/intel">Change your hours and energy</a>.` : "Plan your study blocks for the week. With Gradify Pro, Gradify works out the plan for you."}</p></div>${ACCESS.has("intelligence") ? `<button type="button" class="btn btn-primary lg" id="autoplan"><span>Plan my week</span></button>` : ""}</div>
     ${ACCESS.has("intelligence") ? `${catchUpHtml(M) || rescheduleHtml(M)}
     ${tellHtml()}
     ${smartPlanHtml(M, arg)}` : ""}
@@ -1667,7 +1668,7 @@ async function renderEarth(arg) {
   const mine = [...new Set([profile.site, ...learnerOf(profile).subjects, ...(L?.courses || []).map((c) => c.site)])].map(siteOf).filter((x) => x.built);
   const choice = mine.find((x) => x.n === decodeURIComponent(arg || "")) || mine[0];
   view.innerHTML = `<section class="earth-route">
-    <span class="kicker lo-kicker">${icon("globe")}Gradify Earth</span>
+    <span class="kicker lo-kicker">${icon("globe")}Mastery map</span>
     <h1>Your subject, as a world</h1>
     <p class="sub">Each area of ${choice ? esc(choice.n) : "your subject"} is a region and each topic is a pin. Topics from your own notes take the place of the ones they match, lit by your real mastery. Pins you haven't studied yet show example progress, and say so.</p>
     ${mine.length > 1 ? `<div class="seg-chips">${mine.map((x) => `<a class="chip" href="#/earth/${encodeURIComponent(x.n)}" aria-pressed="${x === choice}">${esc(x.n)}</a>`).join("")}</div>` : ""}

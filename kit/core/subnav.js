@@ -18,6 +18,14 @@ export function mountSubNav(doc = document) {
   menu.hidden = true;
   menu.setAttribute("aria-label", `${links.getAttribute("aria-label") || "Site"} menu`);
   for (const a of links.querySelectorAll("a")) menu.append(a.cloneNode(true));
+  // signed in: "Sign in" becomes Account and "Start free" becomes Today, so your plan is one tap from every site
+  // (before the phone menu copies them)
+  const signedIn = (() => { try { return Object.keys(localStorage).some((k) => /^sb-.*-auth-token$/.test(k) && localStorage.getItem(k)); } catch { return false; } })();
+  if (signedIn) {
+    const si = right.querySelector(".signin"), ct = right.querySelector(".sub-cta");
+    if (si) si.textContent = "Account";
+    if (ct) { ct.href = "/app.html#/today"; (ct.querySelector("span") || ct).textContent = "Today"; }
+  }
   const signin = right.querySelector(".signin");
   if (signin) { const s = signin.cloneNode(true); s.className = "sub-menu-signin"; menu.append(s); }
   const cta = right.querySelector(".sub-cta");

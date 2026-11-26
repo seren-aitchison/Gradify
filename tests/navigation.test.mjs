@@ -28,7 +28,7 @@ test("the header has the same links, in the same order, everywhere, and every ac
   const bar = h.match(/<nav class="sections"[\s\S]*?<\/nav>/)[0], menu = h.match(/<nav class="menu"[\s\S]*?<\/nav>/)[0];
   const labels = (s) => [...s.matchAll(/>([^<>]+)<\/a>/g)].map((m) => m[1]);
   assert.deepEqual(labels(bar), HUB_LINKS.map((l) => l[2]));
-  assert.deepEqual(labels(menu), [...HUB_LINKS.map((l) => l[2]), "Sign in", "Open Gradify"]);
+  assert.deepEqual(labels(menu), [...HUB_LINKS.map((l) => l[2]), "Sign in", "Start free"]);   // signed in, hubnav.js makes these Account and Today
   assert.match(h, /kit\/core\/hubnav\.js/);
 });
 
