@@ -64,6 +64,9 @@ import { mountToTop, copyLink, jumpTo, reduced } from "../ui/motion.js";
 import { arriveHere, rememberScroll, backPlace, trail, pin, pinned, pins, setPins, restoreAt, onPlacesChange } from "../ui/places.js";
 import { offerBack, hideBack, restoreScroll } from "../ui/wayfinding.js";
 import { resourceSwitcher, wireActions } from "../ui/resources.js";
+import { mountWorkspace } from "../ui/workspace.js";
+import { logEvent } from "../ui/history.js";
+import { mountContextBar } from "../ui/context-bar.js";
 import { pref, setPref } from "../ui/prefs.js";
 import { openModal, openDrawer } from "../ui/overlay.js";
 import { tabsHtml, wireTabs } from "../ui/disclosure.js";
@@ -414,6 +417,7 @@ export function mountCourse(root, cfg) {
   async function award(xp, k, id, detail) {
     const before = { lvl: levelOf(totalXp()).n, badges: new Set(earned().map((b) => b.id)), goal: todayXp() >= S.goal };
     S.log.push({ t: Date.now(), xp, k, id }); save();
+    logEvent({ act: "studied", href: `${location.pathname}${location.hash || "#/home"}`, title: placeTitle || cfg.name, kind: k, subject: cfg.name, where: `${cfg.site} · ${cfg.name}`, n: xp, unit: "XP" });
     pop(`+${xp} XP`);
     store().then((s) => s.logActivity({ site: cfg.site, kind: `${cfg.slug}-${k}`, xp, detail: detail || id })).catch(() => {});
     const lvl = levelOf(totalXp()).n;
@@ -491,6 +495,10 @@ export function mountCourse(root, cfg) {
     <div class="cx-scrim" hidden></div>
     <nav class="cx-dock" aria-label="${esc(cfg.name)} quick navigation"></nav>`;
   const main = root.querySelector(".co-main"), side = root.querySelector(".co-side"), hud = root.querySelector(".co-hud"), treeEl = root.querySelector(".cx-tree"), dock = root.querySelector(".cx-dock"), scrim = root.querySelector(".cx-scrim");
+  // the learner's workspace tabs (kit/ui/workspace.js): this course's lesson, its questions and flashcards, beside
+  // their notes and plan in the study app; and, in a lesson, its tools in a bar that follows you (kit/ui/context-bar.js)
+  const workspaceTabs = mountWorkspace(root, { where: "afterbegin" });
+  let ctxBar = null, placeTitle = "";
   addSave(root.querySelector(".co-head .cx-save"));
   // pin this course to the top of the Gradify homepage and the subject site's (kit/ui/places.js); Undo, no confirm
   const pinBtn = root.querySelector("[data-pincourse]"), courseHref = location.pathname;
@@ -760,12 +768,12 @@ export function mountCourse(root, cfg) {
     const due = dueCards().length;
     const a = (href, icon, t, cur, extra = "") => `<a href="${href}" ${cur ? 'aria-current="page"' : ""} ${extra}>${ic(icon)}<span>${t}</span></a>`;
     dock.innerHTML = view === "lesson" && l
-      ? `<button type="button" data-tree-open>${ic("menu")}<span>Outline</span></button>${prev ? a(`#/lesson/${prev.id}`, "left", "Previous") : `<span class="off">${ic("left")}<span>Previous</span></span>`}<button type="button" data-ai-open aria-label="Ask Gradify AI">${ic("ai")}<span>Ask AI</span></button>${next ? a(`#/lesson/${next.id}`, "right", "Next") : `<span class="off">${ic("right")}<span>Next</span></span>`}${a("#/home", "home", "Home")}`
+      ? `<button type="button" data-tree-open>${ic("menu")}<span>Outline</span></button>${prev ? a(`#/lesson/${prev.id}`, "left", "Previous") : `<span class="off">${ic("left")}<span>Previous</span></span>`}<button type="button" data-ai-open aria-label="Ask Gradify AI">${ic("ai")}<span>Ask AI</span></button>${next ? a(`#/lesson/${next.id}`, "right", "Next") : `<span class="off">${ic("right")}<span>Next</span></span>`}<button type="button" data-ctx-open aria-label="This lesson's tools">${ic("grid")}<span>Tools</span></button>`
       : `${a("#/home", "home", "Home", view === "home")}${a("#/learn", "book", "Syllabus", ["learn", "quiz"].includes(view))}<button type="button" data-ai-open aria-label="Ask Gradify AI">${ic("ai")}<span>Ask AI</span></button>${a("#/revise", "cards", "Revise", ["revise", "review", "target", "problems"].includes(view), "")}${a("#/me", "chart", "Progress", view === "me")}`;
     if (due) dock.querySelector('a[href="#/revise"]')?.insertAdjacentHTML("beforeend", `<i class="cx-dot">${due > 99 ? "99+" : due}</i>`);
   }
   root.addEventListener("click", (e) => { if (e.target.closest("[data-pal-open]")) { e.preventDefault(); palette.open(); } });
-  dock.addEventListener("click", (e) => { if (e.target.closest("[data-ai-open]")) { e.preventDefault(); document.querySelector(".gai-fab")?.click(); } });
+  dock.addEventListener("click", (e) => { if (e.target.closest("[data-ai-open]")) { e.preventDefault(); document.querySelector(".gai-fab")?.click(); } if (e.target.closest("[data-ctx-open]")) ctxBar?.toggle(); });
   // bookmarks (S.marks: + time on, − time off, so the latest change wins across devices) and recently viewed lessons
   const marked = (id) => (S.marks?.[id] || 0) > 0;
   // a bookmark changes at once and can be undone (no "are you sure?"); the lesson's own button follows
@@ -1653,7 +1661,7 @@ export function mountCourse(root, cfg) {
     if (N) wireMaps(main, N, mapOpts(l));
     main.querySelectorAll("[data-cards]").forEach((b) => b.addEventListener("click", async () => { if (await gate("flashcards", `${cfg.slug}:${l.id}`, { store })) flashcards(N.cards, l, N); }));
     main.querySelector("[data-save]")?.addEventListener("click", (e) => saveLesson(l, N, e.currentTarget));
-    { const sw = main.querySelector("#co-next"); if (sw) wireActions(sw, res); }
+    { const sw = main.querySelector("#co-next"); if (sw) wireActions(sw, res); ctxBar?.stop(); ctxBar = mountContextBar(root, res, { label: l.title, hideWhen: sw }); }
     main.querySelector("[data-revnotes]")?.addEventListener("click", () => revisionNotes());
     main.querySelector("[data-split]")?.addEventListener("click", () => setSplit(!splitOn()));
     if (splitOn() || pref(cfg.slug, "split")) setSplit(splitFits(), false);
@@ -2756,6 +2764,7 @@ export function mountCourse(root, cfg) {
     paintCrumbs(view, arg);
     const fpref = (() => { try { return localStorage.getItem(FK) === "1"; } catch { return false; } })();
     if (view === "lesson") { if (fpref !== focusOn()) setFocus(fpref); } else if (focusOn()) { document.documentElement.classList.remove("cx-focus"); document.querySelector(".cx-focusx")?.remove(); }
+    ctxBar?.stop(); ctxBar = null;
     paintDock(view);
     // the trail of places (kit/ui/places.js): coming back to the previous place puts you where you were on it
     const arrived = arriveHere({ href: location.hash || "#/", kind: view, title: "" });
@@ -2801,6 +2810,11 @@ export function mountCourse(root, cfg) {
     // what this place is called (for "Back to …"), then where to put the page
     const title = view === "lesson" ? byId[arg]?.title : view === "quiz" ? `${U} ${units.find((u) => u.id === arg)?.n ?? ""} quiz` : (VIEWS.find(([id]) => id === view)?.[1] || main.querySelector("h2")?.textContent || cfg.name);
     arriveHere({ href: location.hash || "#/", kind: view, title: `${title}` });
+    // a workspace tab for a lesson, a question set or flashcards; and a line in the learner's history
+    placeTitle = `${title}`;
+    const workKind = { lesson: "lesson", quiz: "questions", target: "questions", practice: "questions", exam: "questions", problems: "questions", review: "flashcards", revise: "flashcards" }[view];
+    workspaceTabs.arrived({ href: `${location.pathname}${location.hash}`, title: placeTitle, kind: workKind, scope: location.pathname, scopeLabel: cfg.name });
+    logEvent({ act: "viewed", href: `${location.pathname}${location.hash || "#/home"}`, title: placeTitle, kind: view, subject: cfg.name, where: `${cfg.site} · ${cfg.name}` });
     if (arrived.back && arrived.y && !sec) restoreScroll(arrived.y);
     // followed a link away from a lesson to an activity (its quiz, a target test, the flashcards…): offer the way back
     else if (!arrived.back && ["quiz", "target", "review", "practice", "exam", "problems", "cases", "write"].includes(view)) {

@@ -401,3 +401,49 @@ html[data-motion="reduce"] :is(.gx-toast, .gx-layer, .gx-dialog, .gx-panel, .gx-
   .gx-ex-crumbs > :nth-last-child(2):not(:nth-child(2))::before { content: "› … ›"; }
   .gx-pw-head { flex-direction: column; gap: 10px; }
 }
+
+/* ---------- workspace tabs (kit/ui/workspace.js) ---------- */
+.gx-ws { display: flex; align-items: center; gap: 10px; min-width: 0; margin: 18px 0 0; }
+.gx-ws[hidden] { display: none; }
+.gx-wsl { flex: none; font: 600 10.5px var(--mono, monospace); letter-spacing: .12em; text-transform: uppercase; color: var(--faint); }
+.gx-ws ul { display: flex; gap: 6px; flex: 1; min-width: 0; margin: 0; padding: 2px; list-style: none; overflow-x: auto; scrollbar-width: none; }
+.gx-ws ul::-webkit-scrollbar { display: none; }
+.gx-ws li { flex: 0 1 220px; min-width: 120px; display: flex; align-items: center; border-radius: 12px; border: 1px solid var(--line); background: rgba(var(--ink-rgb), .03); }
+.gx-ws li.on { border-color: var(--line-strong); background: rgba(var(--ink-rgb), .09); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .18); }
+.gx-ws li a { flex: 1; min-width: 0; display: flex; align-items: center; gap: 8px; padding: 6px 4px 6px 10px; color: var(--mute); text-decoration: none; border-radius: 12px; }
+.gx-ws li.on a, .gx-ws li a:hover { color: var(--fg); }
+.gx-ws li a .gx-ic { flex: none; width: 16px; height: 16px; }
+.gx-ws li a span { display: grid; min-width: 0; font-size: 13px; font-weight: 600; line-height: 1.2; }
+.gx-ws li a span, .gx-ws li a small { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.gx-ws li a small { font-size: 11px; font-weight: 500; color: var(--faint); }
+.gx-ws li button { flex: none; display: grid; place-items: center; width: 26px; height: 26px; margin-right: 4px; padding: 0; border: 0; border-radius: 8px; background: none; color: var(--faint); cursor: pointer; }
+.gx-ws li button:hover { color: var(--fg); background: rgba(var(--ink-rgb), .08); }
+.gx-ws li button .gx-ic { width: 13px; height: 13px; }
+.gx-ws :is(a, button):focus-visible { outline: 2px solid var(--fg); outline-offset: 1px; }
+@media (max-width: 640px) { .gx-wsl { display: none; } .gx-ws li { flex-basis: 170px; min-width: 110px; } }
+
+/* ---------- floating lesson tools (kit/ui/context-bar.js) ---------- */
+.gx-ctxbar { position: fixed; left: 50%; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); z-index: 145; display: flex; align-items: center; max-width: calc(100vw - 220px);
+  padding: 5px; border-radius: 18px; border: 1px solid var(--line-strong); background: rgba(var(--surface-rgb), .92); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
+  box-shadow: 0 18px 44px -16px rgba(0, 0, 0, .55); transform: translate(-50%, 140%); opacity: 0; pointer-events: none; transition: transform .25s var(--gx-ease, ease), opacity .2s; }
+.gx-ctxbar.shown { transform: translate(-50%, 0); opacity: 1; pointer-events: auto; }
+.gx-ctxbar ul { display: flex; gap: 2px; margin: 0; padding: 0; list-style: none; overflow-x: auto; scrollbar-width: none; }
+.gx-ctxbar ul::-webkit-scrollbar { display: none; }
+.gx-ctxbar li > * { display: inline-flex; align-items: center; gap: 7px; padding: 8px 12px; border: 0; border-radius: 13px; background: none; color: var(--mute); font: 500 13px var(--sans); white-space: nowrap; text-decoration: none; cursor: pointer; }
+.gx-ctxbar li > *:hover { color: var(--fg); background: rgba(var(--ink-rgb), .07); }
+.gx-ctxbar li > .primary { color: var(--invert-fg); background: var(--invert-bg); }
+.gx-ctxbar li > :focus-visible { outline: 2px solid var(--fg); outline-offset: 1px; }
+.gx-ctxbar .gx-ic { width: 16px; height: 16px; flex: none; }
+.gx-ctxt, .gx-ctxx { display: none; }
+html.cx-focus .gx-ctxbar { display: none; }
+/* a phone: the course dock's Tools button opens the same list as a sheet */
+@media (max-width: 760px) {
+  .gx-ctxbar, .gx-ctxbar.shown { left: 8px; right: 8px; max-width: none; bottom: calc(84px + env(safe-area-inset-bottom, 0px)); display: grid; grid-template-columns: 1fr auto; gap: 6px; padding: 12px; border-radius: 22px;
+    transform: translateY(16px); opacity: 0; pointer-events: none; }
+  .gx-ctxbar.open { transform: none; opacity: 1; pointer-events: auto; }
+  .gx-ctxt { display: block; align-self: center; padding-left: 6px; font-weight: 700; font-size: 15px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .gx-ctxx { display: grid; place-items: center; width: 34px; height: 34px; border: 0; border-radius: 10px; background: rgba(var(--ink-rgb), .07); color: var(--fg); cursor: pointer; }
+  .gx-ctxbar ul { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 6px; overflow: visible; }
+  .gx-ctxbar li > * { width: 100%; padding: 12px; font-size: 14px; border: 1px solid var(--line); white-space: normal; text-align: left; }
+}
+@media (prefers-reduced-motion: reduce) { .gx-ctxbar { transition: none; } }

@@ -7,6 +7,9 @@
 //   Crumbs    Gradify › section › screen › the thing you opened (a pack, a topic), every level a link, with a pin.
 //   Search    ⌘K / Ctrl+K or / anywhere: screens, actions ("Create flashcards", "Resume last lesson", "Start a
 //             timed test"), pins, recent places, and every course and lesson in Gradify (kit/ui/global-nav.js).
+//   Workspace tabs over the page: the notes, plan, flashcards and question set you're working between, each kept
+//             where you were (kit/ui/workspace.js), shared with the lessons on every course page.
+//   History   every screen opened goes into the learner's history (kit/ui/history.js, the History screen).
 //
 //   const nav = mountAppNav({ sections, settings, screenOf, sectionOf, icon, haptic, home });
 //   nav.arrived(name, view)       // after each screen draws: highlight it, breadcrumbs, note it in Recent
@@ -21,6 +24,8 @@ import { createCommandPalette, mark } from "../ui/palette.js";
 import { shortcuts } from "../ui/keys.js";
 import { toast } from "../ui/feedback.js";
 import { loadIndex, searchIndex, myCourses, score } from "../ui/global-nav.js";
+import { mountWorkspace, workspace, switchTo, KINDS } from "../ui/workspace.js";
+import { logEvent } from "../ui/history.js";
 
 const norm = (s) => String(s || "").toLowerCase().normalize("NFKD").replace(/[̀-ͯ]/g, "");
 
@@ -77,6 +82,7 @@ export function appActions({ resume = null } = {}) {
     { type: "action", t: "Plan a study session", k: "Tell Gradify how long you've got", href: "#/session", words: "focus pomodoro" },
     { type: "action", t: "Make a mind map", k: "From a topic or your notes", href: "#/tools/map/new", words: "diagram" },
     { type: "action", t: "Ask Gradify", k: "A question about anything you study", href: "#/ai", words: "ai tutor help explain" },
+    { type: "action", t: "Activity history", k: "Everything you've viewed, studied, created and edited", href: "#/history", words: "recent recently viewed edited created studied log" },
     { type: "action", t: "Explore every course", k: "Chapters, topics and lessons, with your progress", href: "/explore.html", words: "browse catalogue subjects" },
     { type: "action", t: "Keyboard shortcuts", k: "Press ? on any screen", run: () => import("../ui/keys.js").then((m) => m.showShortcuts()), words: "keys help" },
   );
@@ -234,6 +240,7 @@ export function mountAppNav({ sections, settings, screenOf, sectionOf, icon, hap
   const crumbs = document.createElement("nav");
   crumbs.className = "lo-crumbs"; crumbs.setAttribute("aria-label", "Breadcrumb");
   view.before(crumbs);
+  const tabs = mountWorkspace(crumbs, { where: "beforebegin" });
   function paintCrumbs(title) {
     const trail = crumbTrail(location.hash, { sections, settings, screenOf, home, itemTitle: title });
     const place = currentPlace(trail), on = pinned(place.href);
@@ -259,7 +266,7 @@ export function mountAppNav({ sections, settings, screenOf, sectionOf, icon, hap
     name: appName, placeholder: "Search screens, actions, courses and lessons…",
     kinds: [["all", "All"], ["screen", "Screens"], ["action", "Actions"], ["lesson", "Lessons"], ["course", "Courses"]],
     groups: [["Actions", "action", 5], ["Screens", "screen", 6], ["Pinned", "pin", 5], ["Recent", "recent", 4], ["Courses", "course", 5], ["Lessons", "lesson", 8], ["Topics", "topic", 5]],
-    icons: { screen: "grid", action: "bolt", course: "book", lesson: "play", topic: "flag", recent: "clock", pin: "pinned" },
+    icons: { tab: "split", screen: "grid", action: "bolt", course: "book", lesson: "play", topic: "flag", recent: "clock", pin: "pinned" },
     lead: (h) => (h.icon ? `<span class="gx-oi">${icon(h.icon)}</span>` : ""),
     search: (raw) => {
       const words = norm(raw).split(/\s+/).filter(Boolean);
@@ -277,6 +284,7 @@ export function mountAppNav({ sections, settings, screenOf, sectionOf, icon, hap
       const cont = r ? [{ type: "action", t: "Resume last lesson", k: [r.course, r.next?.label || r.title].filter(Boolean).join(" · "), href: r.next?.href || r.href }] : [];
       return [
         { title: "Continue", items: cont },
+        { title: "Workspace", items: workspace().tabs.filter((t) => t.id !== workspace().active).map((t) => ({ type: "tab", t: t.title, k: `${KINDS[t.kind]?.[0] || ""}${t.scopeLabel ? ` · ${t.scopeLabel}` : ""} · workspace tab`, href: local(t.href), run: () => switchTo(t) })) },
         { title: "Pinned", items: pins().slice(0, 5).map((p) => placeHit(p, "pin")) },
         { title: "Recent", items: recent().filter((p) => local(p.href) !== local(here()) && !pinned(p.href)).slice(0, 4).map((p) => placeHit(p, "recent")) },
         { title: "Quick actions", items: appActions().slice(0, 6) },
@@ -316,6 +324,12 @@ export function mountAppNav({ sections, settings, screenOf, sectionOf, icon, hap
       paintCrumbs(lastTitle);
       const p = currentPlace();
       if (name !== "start" && name !== "offer") visit(p);
+      // a workspace tab for the kinds of place you work between, and a line in History
+      const arg = location.hash.replace(/^#\/?/, "").split("?")[0].split("/")[1];
+      const kind = { deck: "flashcards", study: "flashcards", session: "flashcards", notes: "notes", jot: "notes", plan: "plan" }[name]
+        || (name === "tools" && arg === "quiz" ? "questions" : name === "tools" && arg === "notebook" ? "notes" : null);
+      tabs.arrived({ href: here(), title: p.title, kind, scope: appPath, scopeLabel: appName === "Gradify" ? "" : appName });
+      if (!["start", "offer", "history"].includes(name)) logEvent({ act: "viewed", href: here(), title: p.title, kind: name, where: p.sub });
       markCurrent();
     },
   };

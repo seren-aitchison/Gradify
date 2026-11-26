@@ -62,6 +62,8 @@ import { calendarPanelHtml, wireCalendar, intelStripHtml, nextHtml, upcomingHtml
 const $ = (s, el = document) => el.querySelector(s);
 import { esc } from "../core/text.js";
 import { mountAppNav } from "./app-nav.js";
+import { logEvent } from "../ui/history.js";
+import { renderHistory } from "./history-view.js";
 const DAY = 864e5;
 const dayKey = (d) => { const x = new Date(d); return `${x.getFullYear()}-${String(x.getMonth() + 1).padStart(2, "0")}-${String(x.getDate()).padStart(2, "0")}`; };
 const today = () => dayKey(new Date());
@@ -127,7 +129,7 @@ const SECTIONS = [
   ["learn", "Learn", "cap", [["learning", "Courses", "cap"], ["curriculum", "My curriculum", "book"], ["knowledge", "My Knowledge", "brain"], ["earth", "Earth", "globe"]]],
   ["study", "Study", "layers", [["study", "Flashcards", "layers"], ["revise", "Revision Centre", "checklist"], ["tools", "Tools", "forge"], ["ai", "Gradify AI", "bulb"]]],
   ["library", "Library", "book", [["notes", "Notes", "feather"], ["library", "Your library", "book"], ["new", "Add notes", "upload"], ["community", "Community", "people"]]],
-  ["progress", "Progress", "trend", [["progress", "Progress", "trend"], ["intel", "Intelligence", "sparkles"]]],
+  ["progress", "Progress", "trend", [["progress", "Progress", "trend"], ["intel", "Intelligence", "sparkles"], ["history", "History", "clock"]]],
 ];
 const SETTINGS = ["account", "Settings", "cog"];
 // screens that belong to another screen's place in the navigation (a pack lives in your library, a topic in Progress)
@@ -531,6 +533,7 @@ async function renderNew(arg) {
       if (out.notice) toast(esc(out.notice));
       record(store, { event: "pack_made", site: profile.site, concept: doc.id, source: out.engine, detail: { cards: out.cards.length, title: doc.title.slice(0, 120) } });
       setTimeout(() => offerInstall({ reason: "Revise this pack anywhere: get the Gradify app for iPhone, iPad and Mac." }), 2600);
+      logEvent({ act: "created", href: `${location.pathname}#/deck/${doc.id}`, title: doc.title, kind: "pack", where: `Study pack · ${out.cards.length} flashcards` });
       location.hash = `#/deck/${doc.id}`;
     } catch (err) {
       status.textContent = err.message;
@@ -637,6 +640,7 @@ async function renderDeck(id) {
       // "Recall" covers definition and reverse cards, so a reverse card keeps its kind
       await store.updateCard(card.id, { front, back, edited: true, kind: kind === "definition" && card.kind === "reverse" ? "reverse" : kind, grounded: card.grounded === "no" || card.grounded === "partly" ? "bonus" : card.grounded });
       toast("Saved.");
+      logEvent({ act: "edited", href: `${location.pathname}#/deck/${id}`, title: view.querySelector("h1")?.textContent?.trim() || "A study pack", kind: "pack", where: "Study pack · flashcards", n: 1, unit: "cards" });
       renderDeck(id);
     } else if (act === "regen") {
       e.target.closest("button").disabled = true;
@@ -832,6 +836,7 @@ async function renderStudy(arg) {
     xp += 10;
     await store.logActivity({ site: profile.site, kind: "session", xp: Math.min(xp, 500), detail: { cards: answered, ...results, practice: Boolean(practice), topic: topicName } });
     finished = true;
+    logEvent({ act: "studied", href: `${location.pathname}${deckId ? `#/deck/${deckId}` : "#/study"}`, title: topicName || "Flashcards", kind: "flashcards", where: practice ? "Flashcards · practice" : "Flashcards", n: answered, unit: "cards" });
     record(store, { event: "session_finished", site: profile.site, concept: topicKey, detail: { answered, ...results } });
     globalThis.gradifyConsent?.event("flashcard_session_complete", { cards: answered, practice: Boolean(practice) });
     if (before) { const after = learnerMemory({ cards: await store.listCards(deckId ? { documentId: deckId } : {}), reviews: await store.listReviews(400) }); for (const e of stageEvents(before, after, profile.site)) record(store, e); }
@@ -1197,6 +1202,7 @@ async function renderGoalForm(arg, more = []) {
     if (goal.metric?.course) goal.site = SITES.find((x) => COURSES[goal.metric.course]?.startsWith(`/${x.n.toLowerCase()}`))?.n || goal.site || null;
     try {
       await store.saveGoal(goal, { expect: g ? g.updated_at : null });
+      logEvent({ act: g ? "edited" : "created", href: `${location.pathname}#/goals`, title: goal.title || "A goal", kind: "goal", where: "Path · goal" });
       toast(g ? "Goal saved." : "Goal created."); location.hash = "#/goals";
     } catch (err) { view.querySelector("#gf-errors").textContent = err.conflict ? err.message : `Couldn't save: ${err.message}`; }
   });
@@ -1470,6 +1476,7 @@ async function renderPlan(arg) {
     const a = toMin(f.get("from")), b = toMin(f.get("to"));
     if (b <= a) { toast("The end time needs to be after the start."); return; }
     await store.saveBlock({ day: f.get("day"), start_min: a, end_min: b, title: String(f.get("title")).trim(), cal: "study" });
+    logEvent({ act: "created", href: `${location.pathname}#/plan`, title: String(f.get("title")).trim() || "A study block", kind: "block", where: `Smart Plan · ${f.get("day")}` });
     renderPlan();
   });
   view.querySelector(".week-list").addEventListener("click", async (e) => {
@@ -1680,6 +1687,7 @@ async function renderCommunity(arg) {
   wireSharePanel();
 }
 routes.community = renderCommunity;
+routes.history = () => renderHistory(view, { toast });
 routes.session = () => renderSession({ view, store, toast });
 routes.curriculum = async () => (await import("./curriculum-views.js")).renderCurriculum({ view, store, toast, profile: await store.getProfile() });
 
