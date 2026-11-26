@@ -3045,3 +3045,16 @@ body:has(.co.co-stepmode) .gai-orb > i { animation: none; }
   body:has(.co.co-stepmode) .gai-fab { bottom: calc(108px + env(safe-area-inset-bottom)); width: auto; height: 48px; padding: 4px 14px 4px 4px; }
   body:has(.co.co-stepmode) .gai-fab .gai-orb { width: 38px; height: 38px; }
 }
+
+/* a right answer is a moment: the question glows green and springs (reduced motion: the glow only) */
+.aq-win { animation: aq-win .7s cubic-bezier(.2, 1.4, .4, 1); box-shadow: 0 0 0 2px #16a34a, 0 12px 40px -12px rgba(22, 163, 74, .55); border-radius: 14px; transition: box-shadow .6s ease; }
+@keyframes aq-win { 0% { transform: scale(1); } 35% { transform: scale(1.025); } 100% { transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) { .aq-win { animation: none; } }
+
+/* Learn mode's end-of-lesson summary: what this lesson earned, in three numbers */
+.ls-run { border: 1.5px solid var(--a); background: linear-gradient(160deg, rgba(var(--ink-rgb), .02), rgba(var(--ink-rgb), .05)); }
+.ls-runstats { list-style: none; margin: 8px 0 10px; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.ls-runstats li { display: grid; gap: 2px; text-align: center; padding: 12px 6px; border-radius: 12px; background: var(--bg, #fff); }
+.ls-runstats b { font: 800 26px var(--sans); color: var(--fg); font-variant-numeric: tabular-nums; }
+.ls-runstats span { font-size: 13px; color: var(--fg); opacity: .8; }
+.ls-runline { margin: 0; color: var(--fg); }

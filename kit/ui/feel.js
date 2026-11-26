@@ -12,7 +12,7 @@ import { haptic } from "../core/haptics.js";
 export const MOMENTS = {
   select: { haptic: "select", notes: null },
   correct: { haptic: "success", notes: [659, 880] },
-  wrong: { haptic: "warn", notes: [330, 262], soft: true },
+  wrong: { haptic: null, notes: [330, 262], soft: true },   // never a buzz for a wrong answer: the feedback teaches, it doesn't punish
   complete: { haptic: "complete", notes: [523, 659, 784] },
   levelup: { haptic: "complete", notes: [523, 659, 784, 1047] },
   achievement: { haptic: "success", notes: [784, 1175] },
@@ -44,6 +44,6 @@ function chime(notes, soft) {
 /** play one feedback moment; quiet by default where the learner hasn't asked for it */
 export function feel(kind) {
   const m = MOMENTS[kind]; if (!m) return;
-  if (hapticsWanted()) haptic(m.haptic);
+  if (m.haptic && hapticsWanted()) haptic(m.haptic);
   if (m.notes && soundOn() && !reduced()) chime(m.notes, m.soft);
 }
