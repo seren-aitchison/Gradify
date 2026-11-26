@@ -98,6 +98,45 @@ Only a person's confirmation counts as coverage (owner, 26 Nov 2026). A false "a
 
 Decisions are recorded in the mapping store, `kit/curriculum/maps/<framework>.json` (`scripts/content/mapstore.mjs`).
 
+## Evidence and approval (owner's decisions A–D and P0, 26 Nov 2026)
+
+**Governance rules (owner, 26 Nov 2026).** These are hard requirements, not recommendations. Later work must not weaken them, and only the owner can change them.
+
+1. No verified human approval, no lesson generation.
+2. No live GitHub verification, no lesson generation.
+3. No current matching fingerprint, no lesson generation.
+4. No qualified expert where one is required, no high-risk publication.
+5. No accepted evidence gap without a recorded explanation.
+6. No source-registry change without the owner's explicit approval.
+
+Until the GitHub App's identity (including its numeric bot account ID) and the CI verification job exist, review verification is NOT RUN and must never be treated as passed. A local test run is not a substitute for CI evidence: tests that CI skips (the AQA statement text tests, under "Known gaps") count as locally verified only, not CI-verified.
+
+A brief that passes its format checks shows how the evidence is written down, not whether it holds up. Nothing is written, templated, ingested or published from a brief until a person has approved its evidence and a live GitHub review check has verified that approval (`scripts/content/evidence.mjs`, `gradify evidence`, `gradify approve-evidence`).
+
+- **Retrieval.** The engine retrieves each cited source itself and keeps every attempt. A failed attempt never erases an earlier success; the freshness policy (`evidence.freshnessDays`, 90 by default) decides whether that success still counts. A bot check or near-empty page is a failure. Retrieved text is cached locally only (`data/research-cache/`). A named person can record a source they opened by hand.
+- **Claims.** Each `F`, `BG`, `NUM` and `EXAM` line is assessed. A source counts for a claim only when it's fresh, a person recorded that it supports that exact claim on that version of the page, it isn't suspended (`scripts/content/source-policy.mjs`), and it's a knowledge source: requirement sources such as AQA count only for `EXAM` lines. Publishers are counted, not URLs.
+- **Checks** report PASS, FAIL or NOT RUN: requirements resolved, source evidence current, evidence sufficient, no copying from the whole specification, no copying from the retrieved sources; for publishing also a verified review identity and expert authority where needed. A mandatory check that didn't run (no specification text here, a stale source) blocks approval and publishing; it's never a silent pass. Evidence gaps (a FAIL) may be accepted only with a recorded reason.
+- **Material inputs.** An approval binds the brief, the topic's requirements (each statement's fingerprint and the specification's version), each source's evidence, the verdicts, the source policy, the registry rows cited and the evidence rules. Any change voids it, the report names each changed input, and re-approval must acknowledge every changed input (`--acknowledge source:S2,requirements`). Approval and publishing both re-retrieve the sources first.
+- **Accountability**, kept as three things: technical authorship (the git commit of the record, noted with each verification), review identity (a live GitHub review check, below), and expert authority (only from the owner's register, `content/reviewers.json`; a GitHub account is never a qualification, and a GitHub review is not independent scientific expertise).
+- **The approval record.** Each approval carries an `approvalId`: a fingerprint of its inputs, approver, GitHub login, date, note, accepted gaps and acknowledgements. A record edited after it was made, or one made before review verification existed, authorises nothing and must be re-approved. Old approvals and verification results are kept; new ones are appended (`approvals`, `verifications`).
+- **Review verification** (owner's decisions, 26 Nov 2026). `gradify approve-evidence` unlocks nothing by itself. The evidence record (`content/research/<topic>.evidence.json`) goes up in a pull request opened by the project's GitHub App, and the owner reviews it on GitHub. `gradify verify-approval <topic> --pr <n>` then asks the GitHub API, live, every time it's needed (the result is cached only for the running process), and passes only when all of these hold:
+  - the PR is in `evidence.github.repo` and its head is in the same repository (not a fork);
+  - the PR was opened by `evidence.github.prAuthor`, the App's bot login, and GitHub reports that account as a Bot;
+  - the PR is open or merged, not closed unmerged;
+  - the evidence record at the PR's current head carries this approval's `approvalId` as its latest approval;
+  - the approver named in the record (`--github` on approval) is on the reviewer allowlist, `evidence.github.reviewers`: the owner's account only, pinned by numeric GitHub account id as well as login (a login can be renamed and claimed by someone else; an id can't). Being the repository's owner, a member or a collaborator isn't enough, and approval refuses anyone else up front;
+  - that account isn't the PR's author;
+  - that account's latest decisive review (APPROVED, CHANGES_REQUESTED or DISMISSED), matched by account id, is APPROVED, not dismissed or superseded by a request for changes. A review by another account using the same login doesn't count. If the account has been renamed, the check fails until the allowlist is updated;
+  - GitHub reports the reviewer as a person (not a bot) with a role on the repository;
+  - the evidence record at the reviewed commit carries the same `approvalId`. Commits after the review that leave the approval untouched keep it valid; a changed approval needs a new review.
+
+  The review's own timestamp and any login written in the record are never taken as proof: only what the API returns counts. The stored `verifications` are a record, not evidence: a gate takes only the linked PR number from them and asks GitHub again. If the App isn't configured, no reviewer is allowlisted, no PR is linked, the API can't be reached or no read credential is available, the check is NOT RUN. Lesson writing, templating, ingestion and publishing all use this one gate (`gateState`), so NOT RUN or FAIL blocks every one of them.
+- **Live only.** The GitHub client and the trusted identities (repository, App bot, reviewer allowlist) live in `scripts/content/github-review.mjs`, read from the committed `scripts/content/config.json` only (never from `GRADIFY_OUT`, a variable or an option). That module and the evidence module have no override, test hook or client option. Tests swap the whole module for a recorded one at import time with a module loader hook registered by the test files (`tests/helpers/use-recorded-github.mjs`). The recorded GitHub serves only sandboxed (`GRADIFY_OUT`) runs, and a test checks that no production file refers to it. As with any Node program, code that someone deliberately loads into the process (`node --import …`), or an edited checkout, can change anything. The protection is that the committed code offers no switch; the stronger answer is running the gate in CI from the reviewed commit, which belongs with the App workflow.
+- **Setting it up (owner).** Create a GitHub App installed on this repository only, with Pull requests read and write and Contents read and write (it pushes the evidence branch and opens the PR), and set `evidence.github.prAuthor` in `scripts/content/config.json` to `<app-slug>[bot]`. Verification needs a read-only token for api.github.com (`GITHUB_TOKEN` or `GH_TOKEN`: fine-grained, this repository only, Pull requests, Contents and Metadata read). It's read from the environment and sent to curl on stdin, never on the command line or in logs. The workflow that has the App open evidence PRs isn't built yet.
+- **Publishing** re-runs the checks and re-checks each lesson for copying against the corpus as it is now; a copying check that can't run blocks the lesson.
+
+Not yet assessed: definitions, misconceptions and scope notes (the brief format gives them no citations; a format change is proposed, not made).
+
 ## Student data as QA
 
 `gradify signals` reads two sources with the Supabase service role:

@@ -1,0 +1,4 @@
+{
+  "about": "The owner's register of reviewers who hold expert authority, by subject (scripts/content/evidence.mjs, expertAuthority). A GitHub account is an identity, never a qualification: a reviewer counts as an expert only when listed here with their qualification, the subjects it covers, and the owner's verification (verifiedBy, verifiedOn YYYY-MM-DD). Entries are added by pull request; merging is the owner's approval. Fields: github, name, subjects [\"biology\", ...], qualification, verifiedBy, verifiedOn.",
+  "reviewers": []
+}

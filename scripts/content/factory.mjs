@@ -19,6 +19,7 @@ import { CONFIG, at, out, save, slug, today, briefPath, inboxDir } from "./lib.m
 import { splitUnit } from "./shorthand.mjs";
 import { nextTopics, frameworksFor, topicsFor } from "./queue.mjs";
 import { packetFor, researchRequest, checkBrief, stampBrief, currentBrief, runTopic, parentOf } from "./loop.mjs";
+import { evidenceApproved, gateNote } from "./evidence.mjs";
 import { examplesFor, promptText } from "./build.mjs";
 
 const STD = () => ({ flashcardsPerTopic: 20, diagramsPerLesson: 3, ...(CONFIG.standards || {}) });
@@ -62,11 +63,13 @@ export function writeTemplate(topic, brief) {
 
 /** a subject's start file: the handover instructions, then its templates in the order to work through them */
 export function startFile(subject, res) {
-  const rows = res.filter((r) => r.subject === subject), n = (k) => rows.filter((r) => r.kind === k).length;
+  // topics awaiting evidence approval have no template: they're listed after the table, for the person approving
+  const all = res.filter((r) => r.subject === subject), rows = all.filter((r) => r.file), waiting = all.filter((r) => r.kind === "approval"), n = (k) => rows.filter((r) => r.kind === k).length;
   return [promptText("handover.md").trim(), "", `## ${subject[0].toUpperCase()}${subject.slice(1)}: the templates in this folder`, "",
     `Made ${today()} by \`gradify template\`: ${rows.length} topic${rows.length === 1 ? "" : "s"}, ${n("research")} needing research first and ${n("write")} ready to write. Work through them in this order, which follows the specification. Give the model this file once, then one template at a time.`, "",
     "| # | Topic | Template | Save the reply as |", "|---|---|---|---|",
     ...rows.map((r, i) => `| ${i + 1} | ${r.title} (${r.section}, ${r.reqs} requirement${r.reqs === 1 ? "" : "s"}) | \`${r.file.split("/").pop()}\` | \`content/inbox/${r.save}\` |`), "",
+    ...(waiting.length ? ["Not here yet, because their research is awaiting a person's approval of its evidence (`gradify evidence <topic>`, then `gradify approve-evidence`):", "", ...waiting.map((r) => `- ${r.title} (${r.section})`), ""] : []),
     "After saving replies to the inbox, run `gradify ingest`. Each file gets a report in `content/inbox/done/` or `content/inbox/rejected/`. When briefs have been accepted, run `gradify template` again to get those topics' lesson templates.", ""].join("\n");
 }
 
@@ -77,6 +80,8 @@ export function exportTemplates(subjects, { limit = 5, topicId = null } = {}) {
     const topics = topicId ? frameworksFor(subject).flatMap((fw) => topicsFor(fw)).filter((t) => t.id === topicId) : nextTopics(subject, { limit });
     for (const topic of topics) {
       const brief = currentBrief(topic), kind = brief ? "write" : "research";
+      // a lesson template only once a person has approved the brief's evidence (scripts/content/evidence.mjs)
+      if (kind === "write" && !evidenceApproved(topic.id, { topic })) { res.push({ subject, topic: topic.id, title: topic.title, section: topic.section, reqs: topic.reqs.length, kind: "approval", file: null, awaiting: gateNote(topic.id, { topic }) }); continue; }
       const file = new URL(`${slug(topic.id.split("/").pop())}.${kind}.md`, templateDir(subject));
       save(file, kind === "write" ? writeTemplate(topic, brief) : researchTemplate(topic));
       res.push({ subject, topic: topic.id, title: topic.title, section: topic.section, reqs: topic.reqs.length, kind, file: file.pathname, save: submissionName(topic, kind) });
@@ -119,6 +124,7 @@ export async function ingestFile(name, raw, { all = [], ask = null, askMany = nu
   if (!topic) return { ok: false, kind: "unit", report: [...lines, `**Rejected.** No \`REQ:\` line names a queued requirement${reqIds.length ? ` (found ${[...new Set(reqIds)].join(", ")})` : " (the file has none)"}.`, ""].join("\n") };
   const brief = currentBrief(topic);
   if (!brief) return { ok: false, kind: "unit", topic: topic.id, report: [...lines, `**Rejected.** \`${topic.id}\` has no current research brief: run \`gradify template\` for its research template first.`, ""].join("\n") };
+  if (!evidenceApproved(topic.id, { topic })) return { ok: false, kind: "unit", topic: topic.id, report: [...lines, `**Rejected.** ${gateNote(topic.id, { topic })}. Lessons are ingested only once the brief's evidence is approved.`, ""].join("\n") };
   const fake = async (job) => { if (job === "write") return `${sub.text.replace(/\nEND\s*$/, "")}\nEND`; if (job === "research") return brief.brief.replace(/^#.*\n/, ""); throw new Error(`${job} isn't available while ingesting`); };
   // repairs are the writer's job: a failing lesson is reported, never rewritten here
   const noRepair = async (job, items) => new Map(items.map((it) => [it.key, job === "review" ? `REV ${it.key} OK` : new Error("repairs come back as a resubmitted file")]));

@@ -14,6 +14,14 @@
 //                                           lesson, by course (and per lesson into f.tsv); read-only
 //   gradify preview <subject> [--topic t] [--out dir]   filed lessons drawn by the real course engine, desktop and
 //                                           mobile screenshots; publishes only into a scratch copy (preview.mjs)
+//   gradify evidence <topic> [--brief f] [--retrieve] [--sheet] [--apply f]   the evidence behind a brief: retrieve its
+//                                           sources, report claim by claim, and the sheet a person fills in to check them
+//   gradify approve-evidence <topic> --by <name> --github <login> [--accept-gaps <reason>] [--acknowledge <inputs>]
+//                                           a person approves the evidence: unlocks lesson writing for that exact brief,
+//                                           evidence and every other material input (revoke-evidence --why)
+//   gradify verify-approval <topic> --pr <n>   links the approval to its evidence-review PR (opened by the GitHub App)
+//                                           and runs the live review check every gate runs; writing and publishing
+//                                           need it to PASS. Expert authority comes only from content/reviewers.json
 //   gradify template [--subject s] [--limit n] [--topic t]   self-contained templates for an external model to write
 //                                           from: a research template, or once the brief is in, a lesson template
 //   gradify ingest [files…] [--review]      check and install the returned .md files from content/inbox/ (factory.mjs)
@@ -32,6 +40,7 @@ import { runTopic, research } from "./content/loop.mjs";
 import { runGates } from "./content/gates.mjs";
 import { packet, splitUnit, fixList, parseVerdicts, numbered, parentOf } from "./content/shorthand.mjs";
 import { status, writeHandover, prBody } from "./content/report.mjs";
+import { evidenceApproved, gateNote } from "./content/evidence.mjs";
 
 const argv = process.argv.slice(2), cmd = argv[0];
 const opt = (k, d = null) => { const i = argv.indexOf(`--${k}`); return i > 0 ? argv[i + 1] : d; };
@@ -83,6 +92,7 @@ async function next() {
   if (!tp) return log("Nothing queued.");
   if (tp.reqs.every((r) => !r.text)) log(`# Note: the specification text isn't imported here, so the packet names requirements by reference only.\n#   node scripts/curriculum/engine.mjs fetch ${tp.fw} && node scripts/curriculum/engine.mjs import ${tp.fw}\n`);
   if (!existsSync(briefPath(tp.id))) return log(`# No research brief for ${tp.id} yet. Paste this into the Researcher project, save the reply to content/research/${tp.id}.txt, then run gradify next again:\n\nRESEARCH ${tp.id} | levels=${tp.level} | reqs=${tp.reqs.map((r) => r.id).join(",")} | ctry=${tp.country}\n${tp.reqs.map((r) => `REQ ${r.id} | ${r.asks}`).join("\n")}\nEND`);
+  if (!evidenceApproved(tp.id, { topic: tp })) return log(`# ${gateNote(tp.id, { topic: tp })}.`);
   const { diagrams, renderers } = diagramsFor(tp);
   log(packet({ id: `${tp.fw}/${tp.section}`, subject: tp.subject, level: tp.level, country: tp.country, framework: tp.fw, reqs: tp.reqs, reuse: tp.reuse, diagrams, renderers, brief: readFileSync(briefPath(tp.id), "utf8").replace(/^#.*\n/, "") }));
 }
@@ -90,6 +100,23 @@ async function next() {
 // files written by an external model (gradify template), saved to content/inbox/ as .md or .txt: briefs are checked
 // and stored; unit files go through every gate (and the review with --review) and passing lessons are filed. Each file
 // moves to content/inbox/done/ or rejected/ with a report (scripts/content/factory.mjs)
+// the evidence behind a topic's brief (scripts/content/evidence.mjs): retrieve its sources, report, and the sheet a
+// person fills in to check each claim against its sources. --brief <file> assesses a brief that isn't stored yet.
+async function evidence() {
+  const E = await import("./content/evidence.mjs"), { parseTable } = await import("./growth/sources.mjs"), id = argv[1];
+  if (!id || id.startsWith("--")) throw new Error("usage: gradify evidence <subject/topic> [--brief file] [--retrieve] [--manual <source id> --url <url> --by <name> --on <date> --note <how>] [--sheet] [--apply <sheet.csv>]");
+  const briefText = opt("brief") ? readFileSync(opt("brief"), "utf8") : existsSync(briefPath(id)) ? readFileSync(briefPath(id), "utf8") : null;
+  if (!briefText) throw new Error(`${id} has no stored research brief: pass one with --brief <file>`);
+  const fw = subjects().flatMap((s) => frameworksFor(s).flatMap((f) => topicsFor(f))).find((t) => t.id === id)?.fw || null, dir = out("content/inbox/evidence/"), name = id.split("/").pop();
+  if (flag("retrieve")) { const e = E.retrieveAll(id, briefText); for (const s of Object.values(e.sources)) log(`${s.id}: ${s.retrieval}${s.reason ? ` (${s.reason})` : ""}`); }
+  if (opt("manual")) log(`${opt("manual")}: recorded as opened by ${E.recordManual(id, opt("manual"), { url: opt("url"), by: opt("by"), on: opt("on"), note: opt("note") }).by}`);
+  if (opt("apply")) { const r = E.applySheet(id, briefText, parseTable(readFileSync(opt("apply"), "utf8"))); if (r.problems.length) throw new Error(`Nothing recorded. ${r.problems.length} problem(s):\n  ${r.problems.join("\n  ")}`); log(`${r.applied} verdict(s) recorded.`); }
+  if (flag("sheet")) { const f = new URL(`${name}.claims.csv`, dir); save(f, E.claimSheet(briefText, E.loadEvidence(id))); log(`Sheet: ${f.pathname} (fill in verdict, note, by and on for each source you checked, then --apply it)`); }
+  const r = E.evidenceReport(id, briefText, E.loadEvidence(id), { fw }), f = new URL(`${name}.md`, dir);
+  save(f, r.markdown);
+  log(`${r.assessment.sufficient ? "Sufficient" : `Not sufficient: ${r.assessment.gaps.length} gap(s)`} · ${r.copies.filter((m) => m.severity === "block").length} blocking copy match(es) · report: ${f.pathname}`);
+}
+
 async function ingest() {
   const { ingestAll } = await import("./content/factory.mjs");
   const files = argv.slice(1).filter((a) => !a.startsWith("--"));
@@ -111,6 +138,7 @@ async function agentWork(subject, { print = true } = {}) {
   if (!print) return r;
   if (flag("json")) { log(JSON.stringify(r, null, 1)); return r; }
   for (const f of r.filed) log(`filed ${f.topic}: ${f.status}, ${f.lessons.length} lessons passed${f.failures.length ? `, ${f.failures.length} failed` : ""}`);
+  for (const w of r.awaiting || []) log(`waiting: ${w}`);
   for (const m of r.mapped) log(`mapped ${m}`);
   for (const x of r.reviewed || []) log(`reviewed ${x.topic}: "${x.title}" passed → ${x.tier}`);
   for (const x of r.reviewFailed || []) log(`reviewed ${x.topic}: "${x.title}" failed (${x.issues.map((i) => i.code).join(", ")}): report in content/inbox/rejected/${x.topic.split("/").pop()}.review.md for the writing model`);
@@ -158,6 +186,20 @@ try {
     // wiring a course adds an import, which changes its page's module preloads (tests/smooth-load.test.mjs)
     if (r.hooks?.length) { const { execFileSync } = await import("node:child_process"); execFileSync("node", ["scripts/preload-modules.mjs"], { cwd: at("./").pathname, stdio: "inherit" }); } }
   else if (cmd === "ingest") await ingest();
+  else if (cmd === "evidence") await evidence();
+  else if (cmd === "approve-evidence" || cmd === "revoke-evidence") {
+    const E = await import("./content/evidence.mjs"), id = argv[1];
+    if (!id || id.startsWith("--")) throw new Error(`usage: gradify ${cmd} <subject/topic> --by "<name>" --github <login> --on YYYY-MM-DD ${cmd === "approve-evidence" ? '[--note "…"] [--accept-gaps "<reason>"] [--acknowledge <changed inputs, comma-separated>]' : '--why "<reason>"'}`);
+    const r = cmd === "approve-evidence" ? E.approveEvidence(id, { by: opt("by"), github: opt("github"), on: opt("on", today()), note: opt("note", ""), acceptGaps: opt("accept-gaps"), acknowledge: String(opt("acknowledge", "")).split(",").map((x) => x.trim()).filter(Boolean) }) : E.revokeEvidence(id, { by: opt("by"), github: opt("github"), on: opt("on", today()), why: opt("why") });
+    log(cmd === "approve-evidence" ? `Evidence for ${id} approved by ${r.by} on ${r.on}${r.sufficient ? "" : `, accepting ${r.acceptedGaps.length} gap(s): ${r.acceptGaps}`}. Approval ${r.approvalId}. Nothing is unlocked until ${r.github} approves the evidence-review PR opened by the GitHub App and the live check passes: gradify verify-approval ${id} --pr <n>.` : `Approval for ${id} revoked by ${r.by} on ${r.on}. Lesson writing and publishing are locked again.`);
+  }
+  else if (cmd === "verify-approval") {
+    const E = await import("./content/evidence.mjs"), id = argv[1];
+    if (!id || id.startsWith("--")) throw new Error("usage: gradify verify-approval <subject/topic> --pr <number>   (an APPROVED review on that PR by the allowlisted reviewer's GitHub account)");
+    const r = E.verifyApproval(id, { pr: Number(opt("pr")) });
+    log(`Review verification ${r.status}: ${r.detail}`);
+    if (r.status !== "PASS") process.exitCode = 2;
+  }
   else if (cmd === "standards") { const { report } = await import("./content/standards.mjs"); log(await report({ lessonsFile: opt("lessons") })); }
   else if (cmd === "preview") {
     const { preview } = await import("./content/preview.mjs"), subject = argv[1] && !argv[1].startsWith("--") ? argv[1] : subjects()[0];
@@ -169,7 +211,7 @@ try {
     const { exportTemplates } = await import("./content/factory.mjs");
     const res = exportTemplates(subjects(), { limit: Number(opt("limit", 5)), topicId: opt("topic") });
     if (!res.length) log("Nothing queued.");
-    for (const r of res) log(`${r.topic}: ${r.kind} template → ${r.file.replace(out("").pathname, "")}`);
+    for (const r of res) log(r.kind === "approval" ? `${r.topic}: no lesson template: ${r.awaiting}` : `${r.topic}: ${r.kind} template → ${r.file.replace(out("").pathname, "")}`);
     if (res.length) log("Give each file to the writing model, save its reply to content/inbox/ as the .md name the template gives, then run gradify ingest.");
   }
   else if (cmd === "map") {
