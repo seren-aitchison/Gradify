@@ -17,6 +17,8 @@ data/growth/inputs/
 data/curriculum/specs/
 data/curriculum/sources/
 data/curriculum/review/
+# retrieved source text for evidence checks (the publishers' copyright: local only)
+data/research-cache/
 # sources retrieved by the knowledge engine: text whose licence may not allow redistribution stays local
 data/knowledge/raw/
 

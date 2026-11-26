@@ -12,6 +12,7 @@ import { pathToFileURL } from "node:url";
 import { at, out, fp, today, loadLedger } from "./lib.mjs";
 import { splitUnit, PART } from "./shorthand.mjs";
 import { loadStore, saveStore, linkPublished } from "./mapstore.mjs";
+import { evidenceApproved, gateNote } from "./evidence.mjs";
 import { loadIndex } from "../curriculum/engine.mjs";
 import { checkTiers } from "./report.mjs";
 import { titleKey } from "../../kit/course/syllabus.js";
@@ -73,6 +74,8 @@ export async function publish(subject, { preview = false, topic = null } = {}) {
   const linked = [];           // lessons published in this run, for their provisional links in the mapping store
   for (const [topicId, e] of Object.entries(led.topics)) {
     if (topic && topicId !== topic) continue;
+    // nothing is published from a brief whose evidence no person has approved (scripts/content/evidence.mjs)
+    if (!evidenceApproved(topicId)) { for (const l of e.lessons || []) skipped.push(`${l.title} (${gateNote(topicId)})`); continue; }
     const draft = e.file && out(e.file); if (!draft || !existsSync(draft)) continue;
     const lessons = new Map(splitUnit(readFileSync(draft, "utf8")).map((l) => [l.title, l.text]));
     for (const l of e.lessons || []) {

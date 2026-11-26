@@ -10,7 +10,30 @@ process.env.GRADIFY_OUT = mkdtempSync(join(tmpdir(), "gradify-content-"));
 const { parseNotes } = await import("../kit/course/notes.js");
 const S = await import("../scripts/content/shorthand.mjs");
 const G = await import("../scripts/content/gates.mjs");
-const { runTopic, research } = await import("../scripts/content/loop.mjs");
+const { runTopic: runTopicGated, research } = await import("../scripts/content/loop.mjs");
+// Lesson writing needs a person's approval of the brief's evidence (scripts/content/evidence.mjs). These tests exercise
+// the engine after that approval, so each fixture brief is approved the way a person approves one (approveEvidence,
+// with its gaps accepted and the reason recorded). The gate itself is tested on its own, without these wrappers.
+const EVIDENCE = await import("../scripts/content/evidence.mjs");
+const FIXTURE_APPROVAL = "test fixture: the evidence itself is not under test here";
+const approveText = (text) => {
+  const id = String(text || "").match(/^TOPIC (\S+)/m)?.[1];
+  if (id && !EVIDENCE.evidenceApproved(id, { briefText: text })) EVIDENCE.approveEvidence(id, { by: "Test fixture", on: "2026-11-26", acceptGaps: FIXTURE_APPROVAL, briefText: text });
+};
+const approveStored = () => {
+  const { readdirSync, readFileSync: rf, existsSync: ex } = require_fs;
+  for (const dir of ["content/research", "content/queue"]) {
+    const root = join(process.env.GRADIFY_OUT, dir); if (!ex(root)) continue;
+    for (const f of readdirSync(root, { recursive: true })) if (/(^|\/)[^/]+\.txt$/.test(f) && (dir === "content/research" || f.endsWith("research.out.txt"))) approveText(rf(join(root, f), "utf8"));
+  }
+};
+const require_fs = await import("node:fs");
+const approving = (ask) => async (job, x) => { const r = await ask(job, x); if (job === "research") approveText(r); return r; };
+const runTopic = (topic, o = {}) => runTopicGated(topic, { ...o, ask: approving(o.ask) });
+const gated = async (path) => {
+  const m = await import(path), before = (f) => async (...a) => { approveStored(); const r = await f(...a); approveStored(); return r; };
+  return { ...m, ...Object.fromEntries(["advance", "ingestFile", "ingestAll", "publish", "work"].filter((k) => typeof m[k] === "function").map((k) => [k, before(m[k])])) };
+};
 const { suspects } = await import("../scripts/content/signals.mjs");
 const { prBody } = await import("../scripts/content/report.mjs");
 const { topicsFor } = await import("../scripts/content/queue.mjs");
@@ -286,7 +309,10 @@ test("source allowlist: briefs cite only listed publications, whose class the re
   const two = checkBrief(BRIEF.replace("https://www.bbc.co.uk/bitesize/x", "https://filestore.aqa.org.uk/x").replace("https://www.ncbi.nlm.nih.gov/books/x", "https://www.aqa.org.uk/x"));
   assert.ok(two.problems.some((p) => /2 publishers/.test(p)));
   // the research request lists what may be cited; a row marked none isn't offered
-  assert.match(researchRequest(TOPIC), /^ALLOW openstax-biology-2e \| .* \| licence=facts$/m);
+  assert.match(researchRequest(TOPIC), /^ALLOW ncbi-bookshelf \| .* \| licence=facts$/m);
+  // OpenStax is suspended for new research by the owner's interim policy (scripts/content/source-policy.mjs): it isn't
+  // offered, though the registry row is unchanged and existing briefs citing it still parse
+  assert.doesNotMatch(researchRequest(TOPIC), /^ALLOW openstax-/m); assert.ok(SOURCES.some((x) => x.id === "openstax-biology-2e"));
   assert.ok(checkSources([{ ...by, id: "x", confirmedBy: "A" }]).some((p) => /confirmation needs/.test(p)));
   assert.ok(checkSources([{ ...by, id: "y", commercial: false }]).some((p) => /adapt needs a licence/.test(p)));
 });
@@ -319,7 +345,7 @@ test("publish: AI-checked and expert-reviewed drafts become a labelled course un
   const dir = join(process.env.GRADIFY_OUT, "kit/courses/biology");
   mkdirSync(join(dir, "notes"), { recursive: true });
   for (const f of ["syllabus.js", "ids.js", "qa.js", "course.js"]) cpSync(new URL(`../kit/courses/biology/${f}`, import.meta.url), join(dir, f));
-  const { publish } = await import("../scripts/content/publish.mjs");
+  const { publish } = await gated("../scripts/content/publish.mjs");
   const r = await publish("biology");
   assert.equal(r.unit, "u15");
   // ai-verified lessons are published; expert-required, gates-only and edited ones are not; a repeated title is skipped
@@ -346,7 +372,7 @@ test("lesson reports: one 'wrong' report or two of any kind send a lesson to the
 });
 
 test("agent mode: a topic moves through files from research to filing, and each step says which model runs it", async () => {
-  const { advance, BRIEFS, addReqLine } = await import("../scripts/content/agent.mjs");
+  const { advance, BRIEFS, addReqLine } = await gated("../scripts/content/agent.mjs");
   const { writeFileSync, mkdirSync } = await import("node:fs");
   const topic = { ...TOPIC, id: "biology/test-agent", title: "Test agent" }, Q = join(process.env.GRADIFY_OUT, "content/queue/biology/test-agent");
   const reply = (name, text) => writeFileSync(join(Q, name), text);
@@ -386,7 +412,7 @@ test("agent mode: a topic moves through files from research to filing, and each 
 });
 
 test("mapping replies: NO lines are recorded, and a rejected strong match joins the write queue", async () => {
-  const { parseMapLine, mapCandidates } = await import("../scripts/content/agent.mjs");
+  const { parseMapLine, mapCandidates } = await gated("../scripts/content/agent.mjs");
   const { writeFileSync, mkdirSync } = await import("node:fs");
   // these tests start from the matcher's proposals, whatever has been decided in the real store since: the store is
   // copied into this run's output with every AI decision put back to its candidates (a person's check is kept)
@@ -419,7 +445,7 @@ test("mapping replies: NO lines are recorded, and a rejected strong match joins 
 
 test("review fixes on #208: citations, stale inputs, outdated coverage, timeouts, learners", async () => {
   const { checkBrief } = await import("../scripts/content/loop.mjs");
-  const { advance } = await import("../scripts/content/agent.mjs");
+  const { advance } = await gated("../scripts/content/agent.mjs");
   const { reportQueue } = await import("../scripts/content/signals.mjs");
   const { writeFileSync } = await import("node:fs");
   // a non-fact line citing a source the brief doesn't list is refused
@@ -453,13 +479,16 @@ test("review fixes on #208: citations, stale inputs, outdated coverage, timeouts
 });
 
 test("publish: titles differing only in case share an identity, and one TIER label survives", async () => {
-  const { publish } = await import("../scripts/content/publish.mjs");
+  const { publish } = await gated("../scripts/content/publish.mjs");
   const { writeFileSync, mkdirSync } = await import("node:fs");
   const ledPath = join(process.env.GRADIFY_OUT, "content/ledger/biology.json"), led = JSON.parse(readFileSync(ledPath, "utf8"));
   const text = LESSON("3 × 4 = 12").replace("## Prokaryotes up close", "## prokaryotes UP CLOSE").replace("LV: GCSE", "TIER: Expert-reviewed\nLV: GCSE");
   mkdirSync(join(process.env.GRADIFY_OUT, "content/drafts/biology/aqa-gcse-biology"), { recursive: true });
   writeFileSync(join(process.env.GRADIFY_OUT, "content/drafts/biology/aqa-gcse-biology/test-case.txt"), `# draft\n\n${text}\n`);
   const { fp } = await import("../scripts/content/lib.mjs");
+  // a topic filed by hand still needs a stored brief for its evidence approval (the gated publish approves it)
+  mkdirSync(join(process.env.GRADIFY_OUT, "content/research/biology"), { recursive: true });
+  writeFileSync(join(process.env.GRADIFY_OUT, "content/research/biology/test-case.txt"), BRIEF.replace("test-prokaryotes", "test-case"));
   led.topics["biology/test-case"] = { file: "content/drafts/biology/aqa-gcse-biology/test-case.txt", title: "Test case", lessons: [{ title: "prokaryotes UP CLOSE", tier: "ai-verified", hash: fp(text), reqs: [REQ.id] }], status: "filed" };
   writeFileSync(ledPath, JSON.stringify(led));
   const r = await publish("biology");
@@ -470,7 +499,7 @@ test("publish: titles differing only in case share an identity, and one TIER lab
 
 test("review fixes after #208 merged: mapping replies, publish wiring and duplicates, verified links, spend", async () => {
   const { writeFileSync, mkdirSync, cpSync } = await import("node:fs");
-  const { applyMapping, mapCandidates } = await import("../scripts/content/agent.mjs");
+  const { applyMapping, mapCandidates } = await gated("../scripts/content/agent.mjs");
   const { loadStore } = await import("../scripts/content/mapstore.mjs");
   const { loadIndex, applyReview } = await import("../scripts/curriculum/engine.mjs");
   const fw = "aqa-gcse-biology", hash = new Map(loadIndex(fw).statements.map((x) => [x.ref, x.hash]));
@@ -484,7 +513,7 @@ test("review fixes after #208 merged: mapping replies, publish wiring and duplic
   assert.equal(M.links[d]?.status, "proposed"); assert.ok(res.some((x) => x.includes(d) && /dropped/.test(x)), "a reply about changed text is dropped and asked again");
   assert.ok(mapCandidates(fw).some((x) => x.ref === d));
   // a course file that imports published.js without its hook is refused, not accepted as wired
-  const { installHooks, publish } = await import("../scripts/content/publish.mjs");
+  const { installHooks, publish } = await gated("../scripts/content/publish.mjs");
   const cdir = join(process.env.GRADIFY_OUT, "kit/courses/halfwired");
   mkdirSync(cdir, { recursive: true });
   for (const f of ["syllabus.js", "ids.js", "qa.js", "course.js"]) cpSync(new URL(`../kit/courses/biology/${f}`, import.meta.url), join(cdir, f));
@@ -495,6 +524,8 @@ test("review fixes after #208 merged: mapping replies, publish wiring and duplic
   const { fp } = await import("../scripts/content/lib.mjs");
   const one = LESSON("3 × 4 = 12").replace("## Prokaryotes up close", "## Cell division"), two = LESSON("3 × 4 = 12").replace("## Prokaryotes up close", "## Cell-division");
   writeFileSync(join(process.env.GRADIFY_OUT, "content/drafts/biology/aqa-gcse-biology/test-dupe.txt"), `# draft\n\n${one}\n\n${two}\n`);
+  mkdirSync(join(process.env.GRADIFY_OUT, "content/research/biology"), { recursive: true });
+  writeFileSync(join(process.env.GRADIFY_OUT, "content/research/biology/test-dupe.txt"), BRIEF.replace("test-prokaryotes", "test-dupe"));
   led.topics["biology/test-dupe"] = { file: "content/drafts/biology/aqa-gcse-biology/test-dupe.txt", title: "Test dupe", status: "filed", lessons: [{ title: "Cell division", tier: "ai-verified", hash: fp(one), reqs: [REQ.id] }, { title: "Cell-division", tier: "ai-verified", hash: fp(two), reqs: [REQ.id] }] };
   writeFileSync(ledPath, JSON.stringify(led));
   const r = await publish("biology");
@@ -602,13 +633,13 @@ test("a second subject from registry rows: AQA GCSE Chemistry queues with the sa
 
 test("a waiting research request is rebuilt each run, so one written by an older engine gets the ALLOW list", async () => {
   const { writeFileSync, mkdirSync } = await import("node:fs");
-  const { advance } = await import("../scripts/content/agent.mjs");
+  const { advance } = await gated("../scripts/content/agent.mjs");
   const T = { ...TOPIC, id: "biology/test-stale-request", title: "Test stale request" }, dir = join(process.env.GRADIFY_OUT, "content/queue/biology/test-stale-request");
   mkdirSync(dir, { recursive: true });
   writeFileSync(join(dir, "research.req.txt"), `RESEARCH ${T.id} | levels=GCSE\nEND\n`);
   const r = await advance(T);
   assert.equal(r.actions[0].kind, "research");
-  assert.match(readFileSync(join(dir, "research.req.txt"), "utf8"), /^ALLOW openstax-biology-2e /m);
+  assert.match(readFileSync(join(dir, "research.req.txt"), "utf8"), /^ALLOW ncbi-bookshelf /m);
   assert.match(r.actions[0].prompt, /fetchtext\.sh/);
 });
 
@@ -830,7 +861,7 @@ test("diagram references are file names, not teaching text: D: bio-amino-acids d
 });
 
 test("the content factory: a template carries everything an external model needs; returned Markdown is checked, installed once, or rejected with a report", async () => {
-  const { writeTemplate, researchTemplate, readSubmission, ingestFile, ingestAll } = await import("../scripts/content/factory.mjs");
+  const { writeTemplate, researchTemplate, readSubmission, ingestFile, ingestAll } = await gated("../scripts/content/factory.mjs");
   const { currentBrief } = await import("../scripts/content/loop.mjs");
   const { readFileSync, existsSync, writeFileSync, mkdirSync } = await import("node:fs");
   const topic = { ...TOPIC, id: "biology/test-factory", title: "Test factory" };
@@ -874,7 +905,7 @@ test("the library's standard is measured per course and per lesson, without chan
 });
 
 test("each subject's template folder starts with the handover instructions and its templates in order", async () => {
-  const { startFile } = await import("../scripts/content/factory.mjs");
+  const { startFile } = await gated("../scripts/content/factory.mjs");
   const f = startFile("biology", [{ subject: "biology", topic: "biology/a", title: "Cells", section: "4.1.1.1", reqs: 3, kind: "research", file: "/x/cells.research.md", save: "cells.brief.md" }, { subject: "chemistry", topic: "c", title: "Atoms", section: "5.1", reqs: 1, kind: "write", file: "/x/atoms.write.md", save: "atoms.md" }]);
   assert.match(f, /^# Gradify handover: instructions for the lesson-writing model/);
   assert.match(f, /At least 20 distinct flashcards across the topic/); assert.match(f, /At least 3 distinct diagrams in every lesson/);
@@ -883,7 +914,7 @@ test("each subject's template folder starts with the handover instructions and i
 });
 
 test("in-session review of ingested lessons: a pass takes its tier, a fail is reported for the writer, nothing is rewritten", async () => {
-  const { ingestFile } = await import("../scripts/content/factory.mjs");
+  const { ingestFile } = await gated("../scripts/content/factory.mjs");
   const { reviewStep, awaiting } = await import("../scripts/content/review.mjs");
   const { readFileSync, writeFileSync, existsSync } = await import("node:fs");
   const { CONFIG } = await import("../scripts/content/lib.mjs");
@@ -971,7 +1002,7 @@ test("a filed topic that gains a requirement writes only the new one, and adds i
 });
 
 test("a published lesson becomes a provisional link, never coverage, and the specification pages refresh", async () => {
-  const { linkLessons } = await import("../scripts/content/publish.mjs");
+  const { linkLessons } = await gated("../scripts/content/publish.mjs");
   const { loadStore, saveStore, confirmedTaught } = await import("../scripts/content/mapstore.mjs");
   const { loadIndex } = await import("../scripts/curriculum/engine.mjs");
   const { statusOf } = await import("../kit/curriculum/mapping.js");

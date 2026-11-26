@@ -11,6 +11,8 @@ import { packet, parseBrief, parseVerdicts, fixList, parseRepairs, applyRepair, 
 import { runGates, topicFlashcards, SKILL_WORDS } from "./gates.mjs";
 import { diagramsFor, reqHash, TYPE } from "./queue.mjs";
 import { longestSharedRun } from "../knowledge/lib.mjs";
+import { copyCorpus, copyingReport, loadEvidence, evidenceApproved, gateNote } from "./evidence.mjs";
+import { suspensionOf } from "./source-policy.mjs";
 import { SOURCES, sourceFor, classOf } from "../../kit/curriculum/sources.js";
 
 import { briefKey, buildRecord, currentModels, targetKey } from "./build.mjs";
@@ -55,13 +57,21 @@ export function allowlistProblems(b, rows = SOURCES) {
   return out;
 }
 /** the allowlist as the research request gives it: one ALLOW line per usable publication */
-export const allowLines = (rows = SOURCES) => rows.filter((r) => classOf(r)).map((r) => `ALLOW ${r.id} | ${r.title} | ${r.urls.join(" ")} | licence=${classOf(r)}`);
+// a source suspended by policy isn't offered for new research (scripts/content/source-policy.mjs); briefs that already
+// cite it keep their provenance, and the evidence check doesn't count it
+export const allowLines = (rows = SOURCES) => rows.filter((r) => classOf(r) && !suspensionOf(r)).map((r) => `ALLOW ${r.id} | ${r.title} | ${r.urls.join(" ")} | licence=${classOf(r)}`);
 /** a brief's text → { parsed, problems }: format, allowlist, licence, and (given the topic) no 8-word run of the
  * specification, since briefs are committed and the specification's text is the awarding body's copyright */
 export function checkBrief(text, topic = null) {
   const parsed = parseBrief(text), allow = parsed.problems.length ? [] : allowlistProblems(parsed);
   const problems = [...parsed.problems, ...allow, ...(parsed.problems.length ? [] : licenceProblems(parsed))];
   const briefWords = new Set(tokens(text));
+  // copying: every statement of the specification, not just the topic's own (scripts/content/evidence.mjs, decision D)
+  if (topic?.fw) {
+    const own = new Set((topic.reqs || []).map((r) => r.id)), corpus = copyCorpus(topic.fw);
+    corpus.items = corpus.items.filter((c) => !own.has(c.id));
+    for (const m of copyingReport(text, corpus)) if (m.severity === "block") problems.push(`line ${m.line} copies ${m.words} words of ${m.source} ("${m.passage.split(" ").slice(0, 6).join(" ")}…"): condense it in your own words`);
+  }
   for (const r of topic?.reqs || []) if (r.text) {
     const run = longestSharedRun(text, r.text); if (run.words >= 8) problems.push(`copies ${run.words} words of ${r.id}'s wording ("${run.run.split(" ").slice(0, 6).join(" ")}…"): condense it in your own words`);
     // evidence: a lesson is written from the brief alone, so the brief must cover what each requirement names (the
@@ -112,7 +122,10 @@ export function diagramLines(text) {
   return [...new Set([...String(text).matchAll(/^D:\s*(\S+)/gm)].map((m) => m[1]))].map((id) => { const d = MANIFEST[id]; return d ? `DIAG ${id} | ${one(d.title)} | ${one(d.caption)} | alt: ${one(d.alt)}` : `DIAG ${id} | not in the diagram library`; });
 }
 export const repairRequest = (s, pkt) => [fixList(s.key, s.issues), `LESSON ${s.key}`, numbered(s.text), pkt].join("\n");
-export const gateOptions = (topic, { siblings = [], brief = null, ...extra } = {}) => ({ reqs: topic.reqs, sources: brief ? (brief.sources || []).map((x) => x.url) : null, allowed: new Set(topic.reqs.map((x) => x.id)), prereq: prereqResolver(topic.subject, siblings), taken: takenTitle(topic.subject), ...extra });
+export const gateOptions = (topic, { siblings = [], brief = null, ...extra } = {}) => ({ reqs: topic.reqs, sources: brief ? (brief.sources || []).map((x) => x.url) : null, allowed: new Set(topic.reqs.map((x) => x.id)), prereq: prereqResolver(topic.subject, siblings), taken: takenTitle(topic.subject), corpus: lessonCorpus(topic), ...extra });
+// what a lesson mustn't copy beyond its own requirements (those are the spec gate's): the rest of the specification
+// and the topic's retrieved sources
+const lessonCorpus = (topic) => { const own = new Set((topic.reqs || []).map((r) => r.id)), c = copyCorpus(topic.fw, loadEvidence(topic.id)); c.items = c.items.filter((x) => !own.has(x.id)); return c; };
 /** the course's own lesson titles, keyed as the syllabus keys them; the engine's published unit is left out, since a
  * lesson published there keeps its title when it's rebuilt */
 export function courseTitles(subject, { withPublished = true } = {}) {
@@ -191,6 +204,8 @@ export const lessonRisk = (topic, s, parsedBrief) => {
 export async function runTopic(topic, { ask, askMany, render = null, legible = null, log = () => {}, reviewed = true } = {}) {
   const r = await research(topic, { ask });
   if (!r.brief) return fileTopic(topic, [], { failures: [{ title: "(research)", gate: "brief", issues: (r.problems || []).map((p) => ({ code: "SRC", line: null, note: p })) }] });
+  // nothing is written from a brief until a person has approved its evidence (scripts/content/evidence.mjs, decision C)
+  if (!evidenceApproved(topic.id)) return { topic: topic.id, status: "awaiting-approval", awaiting: gateNote(topic.id), lessons: [], failures: [], uncovered: topic.reqs.map((x) => x.id), gaps: [], needs: [] };
   const pkt = packetFor(topic, r.brief);
   const states = splitUnit(await ask("write", pkt)).map((l, i) => ({ ...lessonState(l, i), models: { write: CONFIG.models.write, review: CONFIG.models.review } }));
   if (!states.length) return fileTopic(topic, [], { brief: r, failures: [{ title: "(unit)", gate: "parse", issues: [{ code: "FMT", line: null, note: "the Writer returned no lessons" }] }] });

@@ -12,6 +12,7 @@ import { splitUnit, fixList, numbered } from "./shorthand.mjs";
 import { parseNotes } from "../../kit/course/notes.js";
 import { runGates } from "./gates.mjs";
 import { nextTopics, frameworksFor, topicsFor, reqHash } from "./queue.mjs";
+import { evidenceApproved, gateNote } from "./evidence.mjs";
 import { currentBrief, checkBrief, stampBrief, researchRequest, packetFor, reviewRequest, gateOptions, lessonState, applyRepairReply, verdictOf, fileTopic, retier } from "./loop.mjs";
 import { loadStatements, loadMap, loadIndex, statementsPath } from "../curriculum/engine.mjs";
 import { SPECS } from "../../kit/curriculum/uk.js";
@@ -64,6 +65,8 @@ export async function advance(topic, { render = null, legible = null } = {}) {
       keep(); return { actions: [action("research", topic.id, { req: rel(f("research.req.txt")), out: rel(f("research.out.txt")) })], filed: null };
     }
   }
+  // nothing is written from a brief until a person has approved its evidence (scripts/content/evidence.mjs, decision C)
+  if (!evidenceApproved(topic.id)) { keep(); return { actions: [], filed: null, awaiting: gateNote(topic.id) }; }
   // in-flight work is valid only for the inputs it was made from: if the requirements or the brief changed, the
   // drafts, repairs and reviews in progress describe something else, so they're discarded and the topic restarts
   const inputs = `${reqHash(topic)}|${brief.key}`;
@@ -218,11 +221,12 @@ export async function work(subject, { limit = CONFIG.topicsPerRun, render = null
   const actions = [], filed = [], external = (CONFIG.writer || "external") === "external";
   // the external writer (config.writer): no subagent researches, writes or repairs lessons; they come in through
   // gradify ingest, and this pass reviews them (scripts/content/review.mjs)
-  if (!external) for (const t of workTopics(subject, { limit })) { const r = await advance(t, { render, legible }); actions.push(...r.actions); if (r.filed) filed.push(r.filed); }
+  const awaiting = [];
+  if (!external) for (const t of workTopics(subject, { limit })) { const r = await advance(t, { render, legible }); actions.push(...r.actions); if (r.filed) filed.push(r.filed); if (r.awaiting) awaiting.push(r.awaiting); }
   const rev = reviewStep(subject, { action });
   actions.push(...rev.actions);
   if (map) actions.push(...(await mapActions(subject)));
   const writing = !external && nextTopics(subject, { limit: 1 }).length;
-  return { subject, actions, filed, mapped, retiered, reviewed: rev.reviewed, reviewFailed: rev.failed.map(({ text, ...f }) => f), external,
+  return { subject, actions, filed, mapped, retiered, reviewed: rev.reviewed, reviewFailed: rev.failed.map(({ text, ...f }) => f), external, awaiting,
     done: !actions.length && !writing && !(map && frameworksFor(subject).some((fw) => mapCandidates(fw).length)) };
 }

@@ -4,6 +4,7 @@
 // where line is the lesson line (L1 = "## Title") the fix list points the Writer at.
 import { parseNotes, norm } from "../../kit/course/notes.js";
 import { longestSharedRun } from "../knowledge/lib.mjs";
+import { copyingReport } from "./evidence.mjs";
 import { tokens } from "../curriculum/engine.mjs";
 import { parentOf } from "./shorthand.mjs";
 import { CONFIG } from "./lib.mjs";
@@ -226,10 +227,17 @@ export function topicFlashcards(texts) {
 /** whether a filed lesson may be published: its diagrams must be drawn, not only specified */
 export const drawnEnough = (text) => diagramsOf(text).drawn >= STD().diagramsPerLesson;
 
-export async function runGates(text, { reqs = [], allowed = null, render = null, legible = null, prereq = null, taken = null, sources = null } = {}) {
+/** copying beyond the lesson's own requirements: every other statement of the specification and the brief's retrieved
+ * sources (scripts/content/evidence.mjs, decision D). A run of `block` words fails; shorter shared runs are left to review */
+export function copyGate(text, corpus) {
+  const issues = corpus ? copyingReport(text, corpus).filter((m) => m.severity === "block").map((m) => issue("COPY", m.line, `${m.words} words copied from ${m.source}`)) : [];
+  return result("copy", issues);
+}
+
+export async function runGates(text, { reqs = [], allowed = null, render = null, legible = null, prereq = null, taken = null, sources = null, corpus = null } = {}) {
   const p = parseGate(text); if (!p.ok) return { ok: false, failed: p, results: [p] };
   const L = p.lesson, results = [p];
-  for (const g of [() => coverageGate(L, text, { allowed, prereq, taken }), () => qaGate(L, text), () => sourcesGate(L, text, sources), () => standardsGate(L, text), () => specGate(L, text, reqs), () => mathsDiagramGate(L, text, { render, legible })]) {
+  for (const g of [() => coverageGate(L, text, { allowed, prereq, taken }), () => qaGate(L, text), () => sourcesGate(L, text, sources), () => standardsGate(L, text), () => specGate(L, text, reqs), () => copyGate(text, corpus), () => mathsDiagramGate(L, text, { render, legible })]) {
     const r = await g(); results.push(r); if (!r.ok) return { ok: false, failed: r, results, lesson: L };
   }
   return { ok: true, results, lesson: L };
