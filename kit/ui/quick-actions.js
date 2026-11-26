@@ -239,7 +239,11 @@ function flush(store) {
   const run = flushing.then(async () => {
     const me = await account(store); if (!me) return new Set();
     const settled = new Set();
+    // entries kept before each had an id get one now, saved once, so each is sent and taken out on its own
+    const box = readBox();
+    if (box.some((x) => !x.id)) writeBox(box.map((x, i) => (x.id ? x : { ...x, id: `l${Date.now().toString(36)}${i}${Math.random().toString(36).slice(2, 7)}` })));
     for (const x of readBox().filter(fresh)) {
+      if (!x.id) continue;   // couldn't be saved with one (storage blocked): left as it is
       if (x.owner && x.owner !== me.id) continue;   // someone else's: it waits for them
       try { const { error } = await me.db.from(x.table).insert(x.row); if (!error || FOREVER.has(error.code)) { settled.add(x.id); delivered.add(x.id); } }
       catch { /* offline: it stays */ }

@@ -56,7 +56,12 @@ export function toast(message, opts = {}) {
   let timer = null, left = opts.timeout ?? (opts.undo || opts.action ? 7000 : 4000), started = Date.now();
   let closed = false;
   const close = (now = false) => {
-    clearTimeout(timer); if (closed) return; closed = true;
+    clearTimeout(timer);
+    // a notice already on its way out still goes at once when it has to (the three-notice limit), or the limit's
+    // loop would wait on it forever; whoever waits on it hears that it closed only once
+    if (closed) { if (now === true) el.remove(); return; }
+    closed = true;
+    const at = undoable.findIndex((n) => n.el === el); if (at >= 0) undoable.splice(at, 1);
     try { opts.onClose?.({ undone }); } catch (e) { console.warn(e); }
     if (!el.isConnected) return;
     if (now === true) el.remove(); else { el.classList.add("out"); setTimeout(() => el.remove(), 220); }

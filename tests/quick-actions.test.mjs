@@ -100,3 +100,15 @@ test("undo: a failed undo isn't used up, a done one can't run twice, and too lat
   assert.equal(await undoLast(), false);
   assert.equal(_undos().every((u) => u.done), true);
 });
+
+test("outbox: entries kept before ids existed are given one, so a failed one stays and a sent one goes", async () => {
+  globalThis.localStorage = memStorage();
+  globalThis.localStorage.setItem("gradify.outbox", JSON.stringify([{ table: "app_feedback", row: { note: "old-ok" }, t: Date.now(), owner: null }, { table: "app_feedback", row: { note: "old-fails" }, t: Date.now(), owner: null }]));
+  const { sendOrKeep } = await import("../kit/ui/quick-actions.js");
+  const sent = [];
+  const db = { from: () => ({ insert: async (row) => { if (row.note === "old-fails") throw new Error("offline"); sent.push(row.note); return { error: null }; } }) };
+  await sendOrKeep({ mode: "cloud", db, user: async () => ({ id: "ana" }) });
+  assert.deepEqual(sent, ["old-ok"]);
+  assert.deepEqual(outbox().map((x) => x.row.note), ["old-fails"]);
+  assert.ok(outbox()[0].id);
+});
