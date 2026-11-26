@@ -394,7 +394,7 @@ test("mapping replies: NO lines are recorded, and a rejected strong match joins 
   assert.equal(parseMapLine("MAP aqa-gcse-biology:4.1.1.2.b u02-04 NO too shallow").verdict, "NO");
   assert.equal(parseMapLine("END"), null);
   const [a, b] = mapCandidates("aqa-gcse-biology").map((c) => c.ref), inQueue = (ref) => topicsFor("aqa-gcse-biology").some((t) => t.reqs.some((r) => r.ref === ref));
-  assert.ok(!inQueue(a) && !inQueue(b), "unconfirmed strong matches wait for their check");
+  assert.ok(inQueue(a) && inQueue(b), "an unconfirmed strong match is not coverage: it's written");
   mkdirSync(join(process.env.GRADIFY_OUT, "content/mapping"), { recursive: true });
   writeFileSync(join(process.env.GRADIFY_OUT, "content/mapping/aqa-gcse-biology.json"), JSON.stringify({ confirmed: { [a]: { ok: false, why: "not taught" }, [b]: { ok: true, lesson: "u02-04", objectives: [1] } } }));
   assert.ok(inQueue(a), "a rejected match is written"); assert.ok(!inQueue(b), "a confirmed match is not");
@@ -927,4 +927,24 @@ test("quality checks: sources trace to the brief, diagrams exist in the library,
   assert.match(reviewRequest({ key: "k", text: base }, TOPIC, BRIEF), /^DIAG bio-animal-cell \| An animal cell \| .* \| alt: /m);
   const v = S.parseVerdicts("REV k FAIL CARD L30 trivial card; DIAG L40 decorative; TEACH L8 three concepts in one section")[0];
   assert.deepEqual(v.issues.map((i) => i.code), ["CARD", "DIAG", "TEACH"]);
+});
+
+test("a filed topic that gains a requirement writes only the new one, and adds it to the draft", async () => {
+  const { nextTopics, reqHash } = await import("../scripts/content/queue.mjs");
+  const { loadLedger, saveLedger } = await import("../scripts/content/lib.mjs");
+  const t = topicsFor("aqa-gcse-biology").find((x) => x.id === "biology/chromosomes");
+  assert.ok(t && t.reqs.length >= 2, "both Chromosomes statements are queued: the strong match on 4.1.2.1.a is unconfirmed");
+  const [first, ...rest] = t.reqs, L = loadLedger("biology");
+  // filed before the topic grew: its ledger knew only the last requirement
+  L.topics[t.id] = { status: "filed", reqHash: reqHash({ reqs: rest }), uncovered: [], lessons: [] }; saveLedger(L);
+  const q = nextTopics("biology", { limit: 9999 }).find((x) => x.id === t.id);
+  assert.ok(q?.append, "added to the draft, not written afresh");
+  assert.deepEqual(q.reqs.map((r) => r.id), [first.id], "only the new requirement is written");
+  assert.equal(reqHash(q.full), reqHash(t), "the whole topic is recorded when it's filed");
+  // once the ledger has the whole topic, it isn't queued again
+  L.topics[t.id].reqHash = reqHash(t); saveLedger(L);
+  assert.ok(!nextTopics("biology", { limit: 9999 }).some((x) => x.id === t.id));
+  // a topic that lost or changed a requirement is still written afresh
+  L.topics[t.id].reqHash = reqHash({ reqs: [{ ...first, hash: "old" }, ...rest] }); saveLedger(L);
+  assert.ok(!nextTopics("biology", { limit: 9999 }).find((x) => x.id === t.id).append);
 });
