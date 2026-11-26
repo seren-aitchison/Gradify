@@ -54,7 +54,7 @@ function siteMapPage(pages, courses) {
     <h2>Practice and exams</h2>${list([["questions/", "Practice questions"], ["exam-traps/", "Exam traps"], ["exam-boards/", "Exam boards and qualifications"], ["terms/", "Key terms A to Z"], ["research/", "Research: common mistakes across subjects"], ["creategradify/briefs/", "Design briefs"], ["changelog/", "What's new"]])}
     <h2>Glossary</h2>${list(TERMS.map(([s, n]) => [`glossary/${s}/`, n]))}
     <h2>Templates</h2>${list(TEMPLATES.map(([s, n]) => [`templates/${s}/`, n]))}
-    <h2>Topics by subject</h2>${list(courses.map((p) => [p.path.replace(/index\.html$/, ""), p.title.replace(/ Revision:.*$/, "")]))}
+    <h2>Topics by subject</h2>${list(courses.map((p) => [p.path.replace(/index\.html$/, ""), p.title.replace(/ Revision( Notes)?\b.*$/, "")]))}
     <h2>Study plans</h2>${list([["study-plan/", "All study plans"]])}`,
   });
 }
@@ -141,6 +141,8 @@ export function withHeadTags(html, href) {
     [/hreflang="en-GB"/, `<link rel="alternate" hreflang="en-GB" href="${href}">`],
     [/hreflang="x-default"/, `<link rel="alternate" hreflang="x-default" href="${href}">`],
     [/name="twitter:card"/, '<meta name="twitter:card" content="summary_large_image">'],
+    [/name="twitter:image"/, `<meta name="twitter:image" content="${html.match(/<meta property="og:image" content="([^"]+)"/)?.[1] || img || "https://getgradify.com/assets/og.png"}">`],
+    [/rel="icon"[^>]*image\/png/, '<link rel="icon" href="/assets/icons/favicon-48.png" type="image/png" sizes="48x48">'],
   ].filter(([re, tag]) => tag && !re.test(html)).map(([, tag]) => tag);
   if (!want.length) return html;
   return html.replace(/(\n?)(\s*)<title>[^<]*<\/title>/, (m, nl, sp) => `${m}\n${sp.replace(/^\n/, "") || "  "}<!-- head-tags: canonical and link previews, added by scripts/build-seo.mjs -->\n${want.map((t) => `${sp.replace(/^\n/, "") || "  "}${t}`).join("\n")}`);
