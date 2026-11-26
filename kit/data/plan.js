@@ -133,7 +133,7 @@ export function readOnly(store, message) {
       if (typeof v !== "function" || typeof prop !== "string") return v;
       if (/^(log|record)/.test(prop)) return async () => null;
       // settings (the profile) aren't study data: they save from any device, as the database allows
-      if (prop !== "saveProfile" && /^(add|update|delete|save|wipe|import|link|set|upsert|remove|suspend|edit|move)/.test(prop)) return async () => { throw new Error(message); };
+      if (prop !== "saveProfile" && /^(add|update|delete|save|wipe|import|link|set|upsert|remove|suspend|edit|move|rename)/.test(prop)) return async () => { throw new Error(message); };
       return v.bind(target);
     },
   });

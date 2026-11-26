@@ -1,5 +1,8 @@
 // The same actions for every resource, wherever it appears (kit/core/resource.js): a "•••" button that opens
 //   Pin · Save to a collection · Link to… (Connections) · Schedule · Add a note · Share · See its history
+// and, where the page can do them for this kind of thing (o.ops), Rename · Duplicate · Move · Export · Report a
+// problem · Delete. Each has a key while the menu is open (P, S, L, …); "." opens the page's menu
+// (kit/ui/quick-actions.js).
 // Every action goes through the learner's record (kit/data/learner-state.js via kit/ui/places.js and
 // kit/data/links.js), so a pin, a link, a collection or a note made here shows everywhere else, on every device.
 //
@@ -12,16 +15,17 @@ import { toast } from "./feedback.js";
 import { pin, pinned, pins, setPins, restoreAt } from "./places.js";
 import { collections, createCollection, addToCollection, removeFromCollection, collectionsOf, noteOf, setNote, schedule } from "../data/links.js";
 import { mountConnections } from "./connections.js";
+import { EXTRA, MENU_KEYS, registerPageMenu } from "./quick-actions.js";
 
 // what History records: places opened and studied. A single card or question is part of its set or lesson, so it
 // has no history of its own and doesn't offer one.
 export const HAS_HISTORY = new Set(["course", "unit", "lesson", "quiz", "test", "spec", "pack", "note", "map", "collection", "screen", "page"]);
 /** the actions a resource's menu offers, in order (pure; tests/links.test.mjs) */
-export const actionsFor = (r, { canSchedule = false } = {}) => ["pin", "save", "link", ...(canSchedule ? ["schedule"] : []), "note", "share", ...(HAS_HISTORY.has(r?.kind) ? ["history"] : [])];
+export const actionsFor = (r, { canSchedule = false, ops = {} } = {}) => ["pin", "save", "link", ...(canSchedule ? ["schedule"] : []), "note", "share", ...(HAS_HISTORY.has(r?.kind) ? ["history"] : []), ...EXTRA.map(([a]) => a).filter((a) => typeof ops?.[a] === "function")];
 const today = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`; };
 const abs = (href) => { try { return new URL(href, location.href).href; } catch { return href; } };
 
-export function mountResourceActions(host, getRes, { store = null, app = "/app.html", where = "beforeend", label = "More actions" } = {}) {
+export function mountResourceActions(host, getRes, { store = null, app = "/app.html", where = "beforeend", label = "More actions", ops = null, page = false } = {}) {
   if (!host) return null;
   ensureStyles();
   const wrap = document.createElement("div"); wrap.className = "gx-ra";
@@ -29,10 +33,12 @@ export function mountResourceActions(host, getRes, { store = null, app = "/app.h
   host.insertAdjacentElement(where, wrap);
   const btn = wrap.querySelector(".gx-rab"), menu = wrap.querySelector(".gx-ram");
   const items = () => [...menu.querySelectorAll("[role=menuitem]")];
+  const opsNow = () => (typeof ops === "function" ? ops() : ops) || {};
+  const acts = () => { const r = getRes(); return r ? actionsFor(r, { canSchedule: Boolean(store), ops: opsNow() }) : []; };
   function paint() {
     const r = getRes(); if (!r) return;
     const on = pinned(r.href), inCols = collectionsOf(r.rid).length, hasNote = Boolean(noteOf(r.rid));
-    const it = (act, ic, text, sub = "") => `<button type="button" role="menuitem" data-ra="${act}">${uiIcon(ic)}<span><b>${text}</b>${sub ? `<small>${sub}</small>` : ""}</span></button>`;
+    const it = (act, ic, text, sub = "") => `<button type="button" role="menuitem" data-ra="${act}" aria-keyshortcuts="${esc(MENU_KEYS[act] || "")}">${uiIcon(ic)}<span><b>${text}</b>${sub ? `<small>${sub}</small>` : ""}</span>${MENU_KEYS[act] ? `<kbd aria-hidden="true">${esc(MENU_KEYS[act].toUpperCase())}</kbd>` : ""}</button>`;
     // one list of actions for every resource (actionsFor), so every menu offers the same things in the same order
     const ITEM = {
       pin: () => it("pin", on ? "pinned" : "pin", on ? "Unpin" : "Pin", on ? "Pinned to your sidebar and home" : "Keep it in your sidebar and home"),
@@ -42,8 +48,10 @@ export function mountResourceActions(host, getRes, { store = null, app = "/app.h
       note: () => it("note", "notes", hasNote ? "Edit your note" : "Add a note", "Your own words on it"),
       share: () => it("share", "up", "Share", "Copy a link to it"),
       history: () => it("history", "back", "See its history", "When you opened and studied it"),
+      ...Object.fromEntries(EXTRA.map(([a, ic, text, sub]) => [a, () => it(a, ic, text, sub)])),
     };
-    menu.innerHTML = `<p class="gx-ram-h">${esc(r.label)} · ${esc(r.title)}</p>${actionsFor(r, { canSchedule: Boolean(store) }).map((a) => ITEM[a]()).join("")}`;
+    const list = acts(), firstExtra = list.findIndex((a) => EXTRA.some(([x]) => x === a));
+    menu.innerHTML = `<p class="gx-ram-h">${esc(r.label)} · ${esc(r.title)}</p>${list.map((a, i) => `${i === firstExtra ? `<hr class="gx-ram-sep">` : ""}${ITEM[a]()}`).join("")}`;
   }
   const open = () => { paint(); menu.hidden = false; btn.setAttribute("aria-expanded", "true"); items()[0]?.focus(); };
   const close = (refocus = false) => { if (menu.hidden) return; menu.hidden = true; btn.setAttribute("aria-expanded", "false"); if (refocus) btn.focus(); };
@@ -54,11 +62,24 @@ export function mountResourceActions(host, getRes, { store = null, app = "/app.h
     else if (e.key === "ArrowDown") { e.preventDefault(); xs[(i + 1) % xs.length]?.focus(); }
     else if (e.key === "ArrowUp") { e.preventDefault(); xs[(i - 1 + xs.length) % xs.length]?.focus(); }
     else if (e.key === "Tab") close();
+    else if (e.key.length === 1 && !e.metaKey && !e.ctrlKey && !e.altKey) {
+      // each action's own key, while the menu is open
+      const act = Object.keys(MENU_KEYS).find((a) => MENU_KEYS[a] === e.key.toLowerCase() && acts().includes(a));
+      if (act) { e.preventDefault(); close(true); run(act); }
+    }
   });
   document.addEventListener("click", (e) => { if (!wrap.contains(e.target)) close(); });
-  menu.addEventListener("click", (e) => { const b = e.target.closest("[data-ra]"); if (!b) return; close(); runResourceAction(b.dataset.ra, getRes(), { store, app }); });
-
-  return { open, close, el: wrap };
+  menu.addEventListener("click", (e) => { const b = e.target.closest("[data-ra]"); if (!b) return; close(); run(b.dataset.ra); });
+  // an action the page does itself (rename, duplicate, delete…) or one every resource has
+  function run(act) {
+    const r = getRes(); if (!r || !acts().includes(act)) return false;
+    const own = opsNow()[act];
+    if (typeof own === "function") own(r); else runResourceAction(act, r, { store, app });
+    return true;
+  }
+  const api = { open, close, el: wrap, run, has: (act) => acts().includes(act) };
+  if (page) registerPageMenu(api);
+  return api;
 }
 
 /**
@@ -69,7 +90,7 @@ export async function runResourceAction(what, r, { store = null, app = "/app.htm
   if (!r) return;
   if (what === "pin") {
     const x = pin({ href: r.href, title: r.title, sub: r.sub || r.label, kind: r.kind });
-    toast(`${x.pinned ? "Pinned" : "Unpinned"} <b>${esc(r.title)}</b>`, { undo: () => setPins(x.pinned ? pins().filter((p) => p.href !== r.href) : restoreAt(pins(), x.item, x.index)) });
+    toast({ html: `${x.pinned ? "Pinned" : "Unpinned"} <b>${esc(r.title)}</b>` }, { undo: () => setPins(x.pinned ? pins().filter((p) => p.href !== r.href) : restoreAt(pins(), x.item, x.index)) });
   } else if (what === "save") saveDialog(r);
   else if (what === "link") openConnections(r, app);
   else if (what === "schedule") scheduleDialog(r, store);
@@ -77,7 +98,7 @@ export async function runResourceAction(what, r, { store = null, app = "/app.htm
   else if (what === "share") {
     const url = abs(r.href);
     try { if (navigator.share && matchMedia("(pointer: coarse)").matches) await navigator.share({ title: r.title, url }); else { await navigator.clipboard.writeText(url); toast("Link copied."); } }
-    catch { toast(`Copy this link: ${esc(url)}`); }
+    catch { toast(`Copy this link: ${url}`); }
   } else if (what === "history") location.href = `${app}#/history?q=${encodeURIComponent(r.title)}`;
 }
 function saveDialog(r) {
@@ -86,7 +107,7 @@ function saveDialog(r) {
     <form class="gx-ra-new"><label class="sr-only" for="gx-ra-cn">New collection</label><input id="gx-ra-cn" placeholder="New collection, e.g. Mock exam week" maxlength="80"><button type="submit" class="btn btn-ghost lg btn-sm"><span>Create and add</span></button></form>`; };
   const m = openModal({ title: `Save “${r.title}”`, body: draw(), actions: [{ label: "Done", primary: true }] });
   m.box.addEventListener("change", (e) => { const x = e.target.closest("[data-col]"); if (!x) return; if (x.checked) addToCollection(x.dataset.col, r); else removeFromCollection(x.dataset.col, r.rid); });
-  m.box.addEventListener("submit", (e) => { e.preventDefault(); const name = m.box.querySelector("#gx-ra-cn").value.trim(); if (!name) return; const id = createCollection(name); addToCollection(id, r); m.box.querySelector(".gx-body").innerHTML = draw(); m.box.querySelector("#gx-ra-cn")?.focus(); toast(`Added to <b>${esc(name)}</b>`); });   // focus stays in the dialog, so Escape and Tab still work
+  m.box.addEventListener("submit", (e) => { e.preventDefault(); const name = m.box.querySelector("#gx-ra-cn").value.trim(); if (!name) return; const id = createCollection(name); addToCollection(id, r); m.box.querySelector(".gx-body").innerHTML = draw(); m.box.querySelector("#gx-ra-cn")?.focus(); toast({ html: `Added to <b>${esc(name)}</b>` }); });   // focus stays in the dialog, so Escape and Tab still work
 }
 function noteDialog(r) {
   const m = openModal({ title: `Your note on “${r.title}”`, body: `<label class="sr-only" for="gx-ra-note">Your note</label><textarea id="gx-ra-note" rows="6" maxlength="4000" placeholder="What to remember, what to ask, where you got stuck…">${esc(noteOf(r.rid))}</textarea><p class="aq-note">It's shown with this ${esc(r.label.toLowerCase())} wherever it appears, and in its Connections.</p>`,
@@ -103,7 +124,7 @@ function scheduleDialog(r, store) {
       const block = await s.saveBlock({ day: f.get("day"), start_min: start, end_min: end, title: `${r.label}: ${r.title}`.slice(0, 120), cal: "study" });
       if (block?.id) schedule(r, block);
       m.close(); toast(`In your plan for ${new Date(`${f.get("day")}T12:00`).toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" })}.`);
-    } catch (err) { toast(`Couldn't add it to your plan: ${esc(err.message || "try again")}`); }
+    } catch (err) { toast(`Couldn't add it to your plan: ${err.message || "try again"}`); }
   }
 }
 

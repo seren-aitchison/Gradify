@@ -33,6 +33,7 @@ import { logEvent, history } from "../ui/history.js";
 import { mountCourseSwitcher } from "../ui/switcher.js";
 import { continueItems } from "./continue-view.js";
 import { mountResourceActions } from "../ui/resource-actions.js";
+import { pageOps } from "../ui/quick-actions.js";
 import { mountSyncStatus } from "../ui/sync-status.js";
 import { resourceFromPlace } from "../core/resource.js";
 import { mistakes } from "../data/links.js";
@@ -309,7 +310,8 @@ export function mountAppNav({ sections, settings, screenOf, sectionOf, icon, hap
   view.before(crumbs);
   // the breadcrumb and pin are redrawn for each screen; the screen's resource menu (•••) stays
   crumbs.innerHTML = `<div class="lo-cr"></div><span class="lo-cracts"></span>`;
-  mountResourceActions(crumbs.querySelector(".lo-cracts"), () => resourceFromPlace(currentPlace()), { store, app: appPath });
+  // what this screen can do with its resource (rename, duplicate, export, delete…) comes from the screen itself
+  mountResourceActions(crumbs.querySelector(".lo-cracts"), () => resourceFromPlace(currentPlace()), { store, app: appPath, ops: pageOps, page: true });
   const tabs = mountWorkspace(crumbs, { where: "beforebegin" });
   function paintCrumbs(title) {
     const trail = crumbTrail(location.hash, { sections, settings, screenOf, home, itemTitle: title });

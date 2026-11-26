@@ -7,12 +7,33 @@ import { esc } from "../core/text.js";
 import { uiIcon } from "../ui/icons.js";
 import { collections, itemsOf, createCollection, renameCollection, deleteCollection, removeFromCollection, addToCollection, noteOf } from "../data/links.js";
 import { KINDS } from "../core/resource.js";
+import { setPageOps, renameInPlace, deferredDelete, undoable, pickCollection, download, resourcesMd, fileName, mountMultiSelect } from "../ui/quick-actions.js";
+
+// a deleted collection is hidden at once and really deleted once its notice has gone (so Undo needs nothing rebuilt)
+const hidden = new Set();
+function deleteWithUndo(cs, after) {
+  const one = cs.length === 1;
+  deferredDelete({
+    html: one ? `Deleted the collection <b>${esc(cs[0].name)}</b>. The things in it are still where they were.` : `Deleted ${cs.length} collections. The things in them are still where they were.`,
+    label: one ? cs[0].name : `${cs.length} collections`,
+    hide: () => { cs.forEach((c) => hidden.add(c.id)); after(); },
+    restore: () => { cs.forEach((c) => hidden.delete(c.id)); after(); },
+    commit: () => cs.forEach((c) => { deleteCollection(c.id); hidden.delete(c.id); }),
+  });
+}
+function duplicate(c) {
+  const id = createCollection(`${c.name} (copy)`);
+  for (const it of itemsOf(c.id)) addToCollection(id, it);
+  undoable(`Made <a href="#/collections/${esc(id)}">${esc(c.name)} (copy)</a>.`, () => deleteCollection(id), { label: `${c.name} (copy)` });
+  return id;
+}
+const exportMd = (c, items = itemsOf(c.id)) => download(fileName(c.name, "md"), resourcesMd(c.name, items, location.origin), "text/markdown");
 
 const local = (h) => (h && h.startsWith(`${location.pathname}#`) ? h.slice(location.pathname.length) : h || "#");
 const kindIcon = (k) => KINDS[k]?.[1] || "link";
 
 export function renderCollections(view, id, { toast }) {
-  const all = collections();
+  const all = collections().filter((x) => !hidden.has(x.id));
   const c = id && all.find((x) => x.id === id);
   if (id && !c) { location.replace("#/collections"); return; }
   if (c) return renderOne(view, c, { toast });
@@ -27,6 +48,17 @@ export function renderCollections(view, id, { toast }) {
     e.preventDefault(); const name = view.querySelector("#col-name").value.trim(); if (!name) return;
     const nid = createCollection(name); toast?.(`Made <b>${esc(name)}</b>.`); location.hash = `#/collections/${nid}`;
   });
+  const grid = view.querySelector(".col-grid");
+  if (grid && all.length > 1) {
+    const pick = (ids) => all.filter((x) => ids.includes(x.id)), redraw = () => renderCollections(view, null, { toast });
+    const head = document.createElement("div"); head.className = "gx-ms-head"; grid.before(head);
+    grid.querySelectorAll(".col-card").forEach((a) => { a.dataset.col = a.getAttribute("href").split("/").pop(); });
+    mountMultiSelect(grid, { item: ".col-card", key: (el) => el.dataset.col, name: (el) => el.querySelector("b")?.textContent || "", toggleHost: head, actions: [
+      { id: "dup", label: "Duplicate", icon: "copy", run: (ids) => { pick(ids).forEach(duplicate); redraw(); } },
+      { id: "export", label: "Export", icon: "download", run: (ids) => pick(ids).forEach((x) => exportMd(x)) },
+      { id: "delete", label: "Delete", icon: "trash", run: (ids) => deleteWithUndo(pick(ids), redraw) },
+    ] });
+  }
 }
 
 // a contextual widget at the top of a collection: a way to start on what's in it, not just a list of it
@@ -46,15 +78,40 @@ function renderOne(view, c, { toast }) {
   view.innerHTML = `<section class="cols">
     <span class="kicker lo-kicker">${icon("book")}Collection</span>
     <div class="deck-head"><div><h1>${esc(c.name)}</h1><p class="sub">${items.length} ${items.length === 1 ? "item" : "items"} from across Gradify. Each opens the real thing: nothing here is a copy.</p></div>
-      <div class="row-actions"><button type="button" class="btn btn-ghost lg btn-sm" data-rename><span>Rename</span></button><button type="button" class="btn btn-ghost lg btn-sm" data-delete><span>Delete</span></button></div></div>
+      <div class="row-actions"><button type="button" class="btn btn-ghost lg btn-sm" data-rename title="Rename (F2)"><span>Rename</span></button><button type="button" class="btn btn-ghost lg btn-sm" data-delete><span>Delete</span></button></div></div>
     ${studyHtml(items)}
-    ${items.length ? [...byKind].map(([k, xs]) => `<h2 class="lo-h">${esc(k)}${xs.length > 1 ? "s" : ""}</h2><ul class="col-items">${xs.map((it) => `<li><a href="${esc(local(it.href))}"><span class="hist-ic" aria-hidden="true">${uiIcon(kindIcon(it.kind))}</span><span class="hist-t"><b>${esc(it.title)}</b><small>${esc([it.sub, noteOf(it.rid) ? "has your note" : ""].filter(Boolean).join(" · "))}</small></span></a><button type="button" class="gx-cn-x" data-remove="${esc(it.rid)}" aria-label="Remove ${esc(it.title)} from this collection" title="Remove">${uiIcon("close")}</button></li>`).join("")}</ul>`).join("")
+    ${items.length ? [...byKind].map(([k, xs]) => `<h2 class="lo-h">${esc(k)}${xs.length > 1 ? "s" : ""}</h2><ul class="col-items">${xs.map((it) => `<li><a data-rid="${esc(it.rid)}" href="${esc(local(it.href))}"><span class="hist-ic" aria-hidden="true">${uiIcon(kindIcon(it.kind))}</span><span class="hist-t"><b>${esc(it.title)}</b><small>${esc([it.sub, noteOf(it.rid) ? "has your note" : ""].filter(Boolean).join(" · "))}</small></span></a><button type="button" class="gx-cn-x" data-remove="${esc(it.rid)}" aria-label="Remove ${esc(it.title)} from this collection" title="Remove">${uiIcon("close")}</button></li>`).join("")}</ul>`).join("")
       : `<div class="panel glass hist-empty"><h3>Empty for now</h3><p class="sub">Open a lesson, a flashcard set or a note, choose ••• and then “Save to a collection”.</p></div>`}
     <p><a href="#/collections">← Every collection</a></p></section>`;
+  const redraw = () => { const now = collections().find((x) => x.id === c.id); if (now && !hidden.has(c.id)) renderOne(view, now, { toast }); };
+  const rename = () => renameInPlace(view.querySelector(".deck-head h1"), c.name, (t) => { renameCollection(c.id, t); c.name = t; }, { label: "Collection name" });
+  const del = () => deleteWithUndo([c], () => { if (hidden.has(c.id)) location.hash = "#/collections"; else if (location.hash === "#/collections") location.hash = `#/collections/${c.id}`; else redraw(); });
+  // what this collection can do: in the page's ••• menu and on the keyboard
+  setPageOps({ rename, duplicate: () => { location.hash = `#/collections/${duplicate(c)}`; }, export: () => exportMd(c), delete: del });
   view.querySelector(".cols").addEventListener("click", (e) => {
     const r = e.target.closest("[data-remove]");
-    if (r) { const it = items.find((x) => x.rid === r.dataset.remove); removeFromCollection(c.id, r.dataset.remove); toast?.(`Removed <b>${esc(it?.title || "it")}</b>`, { undo: () => { if (it) addToCollection(c.id, it); renderOne(view, c, { toast }); } }); renderOne(view, c, { toast }); return; }
-    if (e.target.closest("[data-rename]")) { const n = prompt("Rename the collection", c.name); if (n && n.trim()) { renameCollection(c.id, n); renderOne(view, { ...c, name: n.trim() }, { toast }); } return; }
-    if (e.target.closest("[data-delete]")) { if (!confirm(`Delete “${c.name}”? The things in it aren't deleted, only the collection.`)) return; deleteCollection(c.id); toast?.("Collection deleted."); location.hash = "#/collections"; }
+    if (r) { const it = items.find((x) => x.rid === r.dataset.remove); removeFromCollection(c.id, r.dataset.remove); undoable(`Removed <b>${esc(it?.title || "it")}</b>`, () => { if (it) addToCollection(c.id, it); redraw(); }, { label: it?.title }); redraw(); return; }
+    if (e.target.closest("[data-rename]")) { rename(); return; }
+    if (e.target.closest("[data-delete]")) del();
   });
+  // several items at once: move or copy them to another collection, remove them, or export them
+  const lists = view.querySelector(".cols");
+  if (items.length > 1) {
+    const pick = (rids) => items.filter((x) => rids.includes(x.rid));
+    const head = document.createElement("div"); head.className = "gx-ms-head"; view.querySelector(".col-items")?.previousElementSibling?.before(head);
+    const moveOrCopy = async (rids, move) => {
+      const to = await pickCollection({ title: `${move ? "Move" : "Copy"} ${rids.length} to…`, exclude: c.id }); if (!to) return;
+      const name = collections().find((x) => x.id === to)?.name || "the collection", xs = pick(rids);
+      const had = new Set(itemsOf(to).map((x) => x.rid)), added = xs.filter((x) => !had.has(x.rid));
+      added.forEach((x) => addToCollection(to, x)); if (move) xs.forEach((x) => removeFromCollection(c.id, x.rid));
+      undoable(`${move ? "Moved" : "Copied"} ${xs.length} to <a href="#/collections/${esc(to)}">${esc(name)}</a>.`, () => { added.forEach((x) => removeFromCollection(to, x.rid)); if (move) xs.forEach((x) => addToCollection(c.id, x)); redraw(); }, { label: `${move ? "moved" : "copied"} to ${name}` });
+      redraw();
+    };
+    mountMultiSelect(lists, { item: ".col-items a[data-rid]", key: (el) => el.dataset.rid, name: (el) => el.querySelector("b")?.textContent || "", toggleHost: head, actions: [
+      { id: "move", label: "Move to…", icon: "inbox", run: (rids) => moveOrCopy(rids, true) },
+      { id: "copy", label: "Copy to…", icon: "copy", run: (rids) => moveOrCopy(rids, false) },
+      { id: "export", label: "Export", icon: "download", run: (rids) => exportMd(c, pick(rids)) },
+      { id: "remove", label: "Remove", icon: "close", run: (rids) => { const xs = pick(rids); xs.forEach((x) => removeFromCollection(c.id, x.rid)); undoable(`Removed ${xs.length} from <b>${esc(c.name)}</b>.`, () => { xs.forEach((x) => addToCollection(c.id, x)); redraw(); }, { label: `removed ${xs.length}` }); redraw(); } },
+    ] });
+  }
 }
