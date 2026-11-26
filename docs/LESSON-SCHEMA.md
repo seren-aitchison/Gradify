@@ -21,6 +21,13 @@ v2 adds five optional lines. They turn a section into a concept block:
 | `MORE: …` | Detail revealed on request (progressive disclosure) | A paragraph | Behind "More detail" |
 | `ALT: style \| …` | A written alternative explanation (`simpler`, `analogy`, `example`, `real world`, `advanced`) | A collapsed "Analogy" etc. | First in "Explain it differently" |
 | a question inside a block | The block's check | Listed with the lesson's questions | The block's check |
+| `option :: why` on each wrong option | Why that option is wrong, without naming the answer | Shown with the answer | The nudge after a first miss on that option |
+| `QH: …` after a question | A hint towards the idea the question tests, never the answer | Not shown | The nudge after a first miss, when the option has no reason |
+
+**The second chance** (`kit/assess/questions.js` `feedbackStage`): in practice, a first wrong answer marks that option, shows
+its reason (or the `QH:` hint) and lets the learner try again; the answer and explanation come when they get it right or on
+the second try. Diagnostics, final checks, exams and self-marked answers explain at once. The gates require a reason on
+every wrong single-choice option and a `QH:` hint on every question in newly imported lessons (`scripts/content/gates.mjs`).
 
 Every block is tagged with its objective (from `@n`, or inferred), its prerequisites (the lesson's `PRE:`), its
 difficulty (its questions' levels), its sources (the lesson's `SRC:`) and its verification status (the lesson's tier).

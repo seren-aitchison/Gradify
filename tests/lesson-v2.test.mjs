@@ -121,3 +121,17 @@ SUM: Enzymes speed up reactions; heat denatures them.
   assert.deepEqual(F.blocks.map((B) => B.checks.length), [1, 1], "each concept is followed by the question about it");
   assert.match(L.mcq[F.blocks[0].checks[0].i].Q?.q || L.mcq[F.blocks[0].checks[0].i].q, /substrate/);
 });
+
+test("a QH: line gives the question above it a hint, and option reasons stay on their options", () => {
+  const [L] = parseNotes(`## Cells
+O: Describe prokaryotic cells
+H: Parts of a prokaryotic cell
+P: Prokaryotic cells have ribosomes but no nucleus.
+M1@1: Which structure is found in prokaryotic cells? | 70S ribosomes | A nucleus :: Prokaryotes have no nucleus. | Mitochondria :: Only eukaryotic cells have mitochondria. | Golgi apparatus :: Prokaryotes have no membrane-bound organelles. | Prokaryotes have ribosomes but no membrane-bound organelles.
+QH: Think about what every cell needs to make proteins.
+SUM: Prokaryotes have ribosomes and no nucleus.
+`);
+  const Q = L.mcq[0].Q;
+  assert.equal(Q.hint, "Think about what every cell needs to make proteins.");
+  assert.equal(Q.options.find((o) => o.text === "A nucleus").why, "Prokaryotes have no nucleus.");
+});
