@@ -70,8 +70,9 @@ import { mountContextBar } from "../ui/context-bar.js";
 import { mountCourseSwitcher } from "../ui/switcher.js";
 import { attachAccount } from "../data/learner-state.js";
 import { resource as makeResource, rid as makeRid } from "../core/resource.js";
-import { recordMistake, resolveMistake, scheduledFor, unschedule, retitle } from "../data/links.js";
-import { mountResourceActions } from "../ui/resource-actions.js";
+import { recordMistake, resolveMistake, scheduledFor, unschedule, retitle, mistakes, noteOf, linksOf, collectionsOf, onConnections } from "../data/links.js";
+import { mountQuickDock } from "../ui/quick-dock.js";
+import { mountResourceActions, runResourceAction } from "../ui/resource-actions.js";
 import { mountConnections } from "../ui/connections.js";
 import { pref, setPref } from "../ui/prefs.js";
 import { openModal, openDrawer } from "../ui/overlay.js";
@@ -535,6 +536,25 @@ export function mountCourse(root, cfg) {
   const lessonRes = (l) => makeResource(makeRid("lesson", coursePath, l.id), { title: l.title, subject: cfg.name, sub: `${cfg.name} · ${U} ${l.unit.n}: ${l.unit.title}`, refs: pointsOf(l.id), href: `${coursePath}#/lesson/${l.id}` });
   const courseRes = () => makeResource(makeRid("course", coursePath), { title: cfg.name, subject: cfg.name, sub: `${cfg.site} · course`, href: `${coursePath}#/home` });
   mountResourceActions(root.querySelector(".cx-headrow"), courseRes, { store, app: appHref, label: `${cfg.name}: more actions` });
+  // the floating quick tools (timer, quick note, capture, search), here as in the study app
+  mountQuickDock({ app: appHref }).classList.add("qd-course");
+  // the rail's "Yours here" stays current: a mistake made, a note saved or a link added while reading shows at once
+  let yoursT = 0;
+  onConnections(() => { clearTimeout(yoursT); yoursT = setTimeout(() => {
+    if (!lessonRail || root.dataset.view !== "lesson") return;
+    const box = side.querySelector(".co-rail"); if (!box) return;
+    const now = side.querySelector(".cx-w-yours"), html = yoursHtml(curLesson);
+    if (!curLesson || (now?.outerHTML || "") === html.trim()) return;
+    if (now) { if (html) now.outerHTML = html; else now.remove(); }
+    else if (html) (side.querySelector(".cx-w-next") || null) ? side.querySelector(".cx-w-next").insertAdjacentHTML("beforebegin", html) : box.insertAdjacentHTML("beforeend", html);
+  }, 150); });
+  // the rail's "Yours here": its lines open what they're about
+  side.addEventListener("click", (e) => {
+    const y = e.target.closest("[data-yours]"); if (!y) return;
+    if (y.dataset.yours === "mistakes") { jumpTo(document.getElementById("co-check")); return; }
+    if (y.dataset.yours === "note") { runResourceAction("note", lessonRes(curLesson), { store, app: appHref }); return; }
+    setPref(cfg.slug, "panelTab", "conn"); lessonPanel();
+  });
   // the learner's other courses, one click away from this one's header (kit/ui/switcher.js)
   mountCourseSwitcher(root.querySelector(".cx-headrow"), { current: location.pathname, where: "afterbegin" });
   let ctxBar = null, placeTitle = "", sectionFold = null;
@@ -1311,8 +1331,23 @@ export function mountCourse(root, cfg) {
         <button class="btn btn-light lg btn-sm co-railgo" ${S.done[l.id] ? "disabled" : ""}><span>${S.done[l.id] ? "Completed ✓" : `Complete · +${XP.lesson} XP`}</span></button>
       </section>
       ${topic}
+      ${yoursHtml(l)}
       ${upNext}
     </div>`;
+  }
+  // a contextual widget: what the learner has of their own on this lesson, from the rest of Gradify (mistakes still
+  // to put right, their note, their links and collections). Nothing at all when they have none, so it never adds an
+  // empty box; each line opens the thing where it lives
+  function yoursHtml(l) {
+    const rid = lessonRes(l).rid;
+    const open = mistakes().filter((m) => !m.resolved && m.lesson?.rid === rid).length, note = noteOf(rid), nLinks = linksOf(rid).length, nCols = collectionsOf(rid).length;
+    if (!open && !note && !nLinks && !nCols) return "";
+    const row = (what, label, sub) => `<li><button type="button" data-yours="${what}"><b>${label}</b>${sub ? `<small>${esc(sub)}</small>` : ""}</button></li>`;
+    return `<section class="cx-widget cx-w-yours" aria-label="Yours here"><span class="co-kicker">Yours here</span><ul>
+      ${open ? row("mistakes", `${open} mistake${open > 1 ? "s" : ""} to put right`, "In this lesson's questions") : ""}
+      ${note ? row("note", "Your note", note.length > 60 ? `${note.slice(0, 59)}…` : note) : ""}
+      ${nLinks ? row("conn", `${nLinks} linked`, "Notes, flashcards, maps…") : ""}
+      ${nCols ? row("conn", `In ${nCols} collection${nCols > 1 ? "s" : ""}`, "") : ""}</ul></section>`;
   }
   // the learning loop for one lesson: read it, check yourself, recall it with the flashcards, complete it. Each step
   // lights up as it happens (reading from scroll depth, checking from right answers, recall from going through the cards)

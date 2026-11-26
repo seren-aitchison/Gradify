@@ -29,6 +29,17 @@ export function renderCollections(view, id, { toast }) {
   });
 }
 
+// a contextual widget at the top of a collection: a way to start on what's in it, not just a list of it
+function studyHtml(items) {
+  const packs = items.filter((x) => x.kind === "pack"), lessons = items.filter((x) => x.kind === "lesson"), qs = items.filter((x) => x.kind === "question");
+  const acts = [
+    // a pack's revise page is in the app it was made in (each app keeps its own packs), so build it from the pack's own address
+    ...packs.slice(0, 3).map((p) => [`${(p.href || location.pathname).split("#")[0] || location.pathname}#/study/${encodeURIComponent(p.rid.slice(5))}`, `Revise ${p.title}`]),
+    lessons[0] ? [lessons[0].href, `Open ${lessons[0].title}`] : null,
+    qs[0] ? [qs[0].href, `${qs.length} question${qs.length > 1 ? "s" : ""} saved: start with the first`] : null,
+  ].filter(Boolean);
+  return acts.length ? `<section class="panel glass col-study" aria-label="Study this collection"><p class="wd-k">Study this collection</p><div class="wd-launch">${acts.map(([h, t], i) => `<a class="cp-pill${i ? "" : " dark"}" href="${esc(local(h))}">${esc(t)}</a>`).join("")}</div></section>` : "";
+}
 function renderOne(view, c, { toast }) {
   const items = itemsOf(c.id).sort((a, b) => b.added - a.added);
   const byKind = new Map(); for (const it of items) { const k = KINDS[it.kind]?.[0] || "Other"; if (!byKind.has(k)) byKind.set(k, []); byKind.get(k).push(it); }
@@ -36,6 +47,7 @@ function renderOne(view, c, { toast }) {
     <span class="kicker lo-kicker">${icon("book")}Collection</span>
     <div class="deck-head"><div><h1>${esc(c.name)}</h1><p class="sub">${items.length} ${items.length === 1 ? "item" : "items"} from across Gradify. Each opens the real thing: nothing here is a copy.</p></div>
       <div class="row-actions"><button type="button" class="btn btn-ghost lg btn-sm" data-rename><span>Rename</span></button><button type="button" class="btn btn-ghost lg btn-sm" data-delete><span>Delete</span></button></div></div>
+    ${studyHtml(items)}
     ${items.length ? [...byKind].map(([k, xs]) => `<h2 class="lo-h">${esc(k)}${xs.length > 1 ? "s" : ""}</h2><ul class="col-items">${xs.map((it) => `<li><a href="${esc(local(it.href))}"><span class="hist-ic" aria-hidden="true">${uiIcon(kindIcon(it.kind))}</span><span class="hist-t"><b>${esc(it.title)}</b><small>${esc([it.sub, noteOf(it.rid) ? "has your note" : ""].filter(Boolean).join(" · "))}</small></span></a><button type="button" class="gx-cn-x" data-remove="${esc(it.rid)}" aria-label="Remove ${esc(it.title)} from this collection" title="Remove">${uiIcon("close")}</button></li>`).join("")}</ul>`).join("")
       : `<div class="panel glass hist-empty"><h3>Empty for now</h3><p class="sub">Open a lesson, a flashcard set or a note, choose ••• and then “Save to a collection”.</p></div>`}
     <p><a href="#/collections">← Every collection</a></p></section>`;
