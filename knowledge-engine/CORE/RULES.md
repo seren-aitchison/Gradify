@@ -33,3 +33,11 @@ Also from the plan: new ideas go into the Deferred list, not the active brief, u
   - A brief `CONFLICT:` sends a lesson to an expert only if the lesson relies on it and doesn't resolve it. It's resolved when the reviewer names the `!:` line that identifies the disagreement, represents each account accurately, explains why they differ or that it's unsettled, and presents no disputed point as fact (`Cn=L<n>`). The engine must also confirm that the Researcher marked it `stakes=low`, that it names no high-risk keyword, that the line is a `!:` line, and that the lesson cites at least two of its sources (`conflictsOf`, `scripts/content/loop.mjs`). An unmarked, high-stakes or unverified conflict still goes to an expert, and merely mentioning one isn't enough.
   - Briefs carry the sourced background a complete lesson needs (`BG:` lines, held to the same sourcing as `F:`), kept separate from the core facts the requirements teach. Writers still use only the brief, and background never becomes an objective or an assessed point.
 - **Sources:** briefs cite only publications on the allowlist (`kit/curriculum/sources.js`). Each source's licence class comes from its row there. Nothing gets "adapt" without a named person's confirmation.
+
+## Coverage (owner's decision, 26 Nov 2026)
+
+- **H. What counts as covered.** A specification statement is covered only when there is verified evidence that the teaching content addresses its full requirements. A related lesson, an AI match or a learner's confidence is not sufficient evidence.
+  - Verified evidence is a person's confirmation, made for that statement alone and on its current text, that a lesson teaches all of it, with their evidence recorded (`verified`, coverage `full`: `scripts/content/mapstore.mjs` `confirmedTaught`, `docs/curriculum/REVIEW.md`).
+  - Until then the statement is uncovered: the content engine writes it, and it never counts towards coverage or a coverage claim. A duplicate lesson can be merged later; a hidden gap can't be seen.
+  - Matches the matcher proposes and matches an AI checks are evidence for the person reviewing, kept in their own fields. Learners see them as "Provisionally mapped — awaiting verification", never as coverage.
+  - A learner's mastery and Gradify's confidence in a mapping are separate measures, and neither is ever computed from the other.
