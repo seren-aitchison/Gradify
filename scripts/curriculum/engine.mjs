@@ -471,6 +471,15 @@ ${statementRows.join("\n")}
 `;
 }
 
+/** write a subject's coverage report and one per imported specification; returns the files written */
+async function writeReports(subject, date) {
+  const files = [`docs/curriculum/${subject.toUpperCase()}-COVERAGE.md`];
+  write(new URL(files[0], root), await subjectReport(subject, date));
+  const inv = await inventory(subject);
+  for (const s of specsFor(subject)) { const md = specReport(s.id, inv, date); if (md) { write(new URL(`docs/curriculum/${reportName(s.id)}`, root), md); files.push(`docs/curriculum/${reportName(s.id)}`); } }
+  return files;
+}
+
 if (import.meta.url === `file://${process.argv[1]}`) {
   const [cmd, a, b] = process.argv.slice(2), arg = (k) => { const i = process.argv.indexOf(k); return i > 0 ? process.argv[i + 1] : null; };
   const date = new Date().toISOString().slice(0, 10);
@@ -491,16 +500,15 @@ if (import.meta.url === `file://${process.argv[1]}`) {
       const st = loadStatements(a), s = SPECS.find((x) => x.id === a), inv = await inventory(s.subject);
       const res = applyReview(st, loadMap(a) || { spec: a, specVersion: st.version, links: {} }, parseTable(readText(readFileSync(b))), new Set(inv.map((l) => l.id)));
       if (res.problems.length) { console.error(`Nothing applied. ${res.problems.length} problems:\n  ${res.problems.join("\n  ")}`); process.exit(1); }
-      write(mapPath(a), res.map); console.log(`${res.applied} decisions recorded in kit/curriculum/maps/${a}.json. Run engine.mjs report ${s.subject}.`);
+      write(mapPath(a), res.map); console.log(`${res.applied} decisions recorded in kit/curriculum/maps/${a}.json.`);
+      // every view derived from the map is rewritten in the same step: the coverage reports here, the specification
+      // pages below, so a verification or a revocation never leaves a stale count anywhere
+      for (const f of await writeReports(s.subject, date)) console.log(`Updated ${f}`);
       // the specification pages read the map through a generated file: refresh it now, so a verification or a
       // revocation shows there in the same commit
       const views = await (await import("./spec-view.mjs")).refreshLinks(a);
       if (views.length) console.log(`Specification pages updated: ${views.map((v) => `kit/specs/${v}.links.js`).join(", ")}.`);
     } else if (cmd === "inventory") { const inv = await inventory(a); write(new URL(`data/curriculum/inventory/${a}.json`, root), inv); console.log(`${inv.length} ${a} lessons → data/curriculum/inventory/${a}.json`); }
-    else if (cmd === "report") {
-      write(new URL(`docs/curriculum/${a.toUpperCase()}-COVERAGE.md`, root), await subjectReport(a, date)); console.log(`docs/curriculum/${a.toUpperCase()}-COVERAGE.md`);
-      const inv = await inventory(a);
-      for (const s of specsFor(a)) { const md = specReport(s.id, inv, date); if (md) { write(new URL(`docs/curriculum/${reportName(s.id)}`, root), md); console.log(`docs/curriculum/${reportName(s.id)}`); } }
-    } else { console.error("usage: fetch | import | propose | review | apply | inventory | report (see the top of this file)"); process.exit(2); }
+    else if (cmd === "report") for (const f of await writeReports(a, date)) console.log(f); else { console.error("usage: fetch | import | propose | review | apply | inventory | report (see the top of this file)"); process.exit(2); }
   } catch (e) { console.error(e.message); process.exit(1); }
 }

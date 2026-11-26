@@ -78,7 +78,9 @@ export function linkPublished(m, ref, d) {
   if (prev?.status === "verified") return prev;
   const entry = { id: d.lesson, coverage: d.coverage || "full", objectives: d.objectives || [], published: true };
   if (prev?.status === "ai-confirmed" && (!prev.hash || prev.hash === d.hash)) {
-    prev.lessons = [...(prev.lessons || []).filter((l) => l.id !== d.lesson), entry];
+    // republishing updates the lesson's entry where it is: never a second entry, and the order stays stable
+    const ls = prev.lessons || [], at = ls.findIndex((l) => l.id === d.lesson);
+    prev.lessons = at >= 0 ? ls.map((l, i) => (i === at ? entry : l)) : [...ls, entry];
     return prev;
   }
   const l = decide(m, ref, { ok: true, lesson: d.lesson, objectives: d.objectives, coverage: entry.coverage, hash: d.hash, by: d.by, on: d.on });

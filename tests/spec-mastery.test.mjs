@@ -289,3 +289,16 @@ test("the learner's progress and Gradify's coverage are shown as two lists, neve
   }
   assert.doesNotMatch(pointPageHtml(m, m.points[0]), /Completing a lesson is coverage/);
 });
+
+test("every specification view has a framework, its committed links match the store, and generating them is deterministic", async () => {
+  const { SPECS } = await import("../kit/specs/index.js");
+  const { buildLinks, linksSource, linksPath } = await import("../scripts/curriculum/spec-view.mjs");
+  const { readFileSync: rf } = await import("node:fs");
+  assert.ok(SPECS.length >= 1);
+  for (const view of SPECS) {
+    assert.ok(view.framework, `${view.id} names the framework whose mapping store links it`);
+    const once = linksSource(view, buildLinks(view)), twice = linksSource(view, buildLinks(view));
+    assert.equal(once, twice, `${view.id}: the same store always gives the same file`);
+    assert.equal(rf(linksPath(view.id), "utf8"), once, `${view.id}: kit/specs/${view.id}.links.js is out of date (node scripts/curriculum/spec-view.mjs ${view.id})`);
+  }
+});

@@ -998,4 +998,13 @@ test("a published lesson becomes a provisional link, never coverage, and the spe
   assert.equal(point.evidence, "ai-mapped"); assert.ok(point.partial.includes("u20-01") || point.lessons.includes("u20-01"));
   const { refreshLinks } = await import("../scripts/curriculum/spec-view.mjs");
   assert.deepEqual(await refreshLinks(fw), [], "unchanged store, unchanged file");
+  // republishing the same lesson adds no duplicate link
+  await linkLessons([{ id: "u20-01", reqs: [`${fw}:4.1.2.1.a`], text, by: "agent:sonnet" }]);
+  assert.deepEqual(loadStore(fw).links["4.1.2.1.a"].lessons.map((l) => l.id), ["u20-01", "u20-02"]);
+  // a person revoked a verification: republishing makes it provisional again, never verified, and keeps the revocation
+  const S1 = loadStore(fw); S1.links["4.1.2.3.a"] = { status: "proposed", lessons: [], revoked: [{ reviewer: "B Reviewer", on: "2026-11-26", why: "misses the second clause", was: { reviewer: "A Reviewer" } }] }; saveStore(fw, S1);
+  await linkLessons([{ id: "u20-03", reqs: [`${fw}:4.1.2.3.a`], text: `REQ: ${fw}:4.1.2.3.a @1`, by: "agent:sonnet" }]);
+  const rv = loadStore(fw).links["4.1.2.3.a"];
+  assert.equal(rv.status, "ai-confirmed"); assert.equal(rv.revoked.length, 1, "the revocation stays on record");
+  assert.ok(!confirmedTaught(loadStore(fw), "4.1.2.3.a", hash("4.1.2.3.a")), "publishing never restores a verification");
 });
