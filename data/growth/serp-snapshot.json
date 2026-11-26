@@ -143,6 +143,10 @@
   "Explore · Gradify",
   "Browse every Gradify course: chapters, topics and lessons, with estimated study time and your progress. Open anything."
  ],
+ "features/3d-visuals-on-demand/index.html": [
+  "See Any Science Concept in 3D, on Demand | Gradify",
+  "Visualise lets you ask to see a concept, such as benzene, an electric field or the heart, and shows the best visual Gradify already has: a 3D molecule, a…"
+ ],
  "features/adaptive-difficulty/index.html": [
   "Adaptive Revision Quizzes That Adjust | Gradify",
   "Adaptive quizzes get harder or easier as you answer: two right in a row and the questions step up, one wrong and they step down."
@@ -204,7 +208,7 @@
   "The heatmap shows every day you've learned across every Gradify site, in one calendar grid, so gaps and streaks are easy to see. Free."
  ],
  "features/index.html": [
-  "Every Gradify Feature: 38 Study Tools | Gradify",
+  "Every Gradify Feature: 39 Study Tools | Gradify",
   "Every Gradify feature on one page: courses, Notes Studio, flashcards with spaced repetition, quizzes, mind maps, planning, progress and community."
  ],
  "features/interim-quizzes/index.html": [
@@ -508,8 +512,8 @@
   "Revise British, European and world history from medieval Britain to the modern world, with sources, interpretations, flashcards and essay practice."
  ],
  "index.html": [
-  "Gradify · Turn your notes into flashcards, free",
-  "Upload your notes and Gradify turns them into flashcards checked against what you wrote, then schedules your revision around your exam. Free, no card."
+  "Gradify · Learn it, plan it, pass it. Free",
+  "Tell Gradify your exam and date. It teaches every topic on your specification, plans your revision around your exam and shows what you know. Free, no card."
  ],
  "internshipgradify/course/index.html": [
   "Careers and Employability Course",
