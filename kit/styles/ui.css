@@ -483,3 +483,47 @@ html.cx-focus .gx-ctxbar { display: none; }
 .gx-csall .gx-ic { width: 16px; height: 16px; color: var(--mute); }
 @media (prefers-reduced-motion: reduce) { .gx-csm { animation: none; } }
 .co > .gx-ws { margin: 14px 0 12px; }
+
+/* ---------- sections that fold (kit/ui/disclosure.js wireSections) ---------- */
+.gx-sech { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; margin: 0; padding: 0; border: 0; background: none; color: inherit; font: inherit; letter-spacing: inherit; text-align: left; cursor: pointer; }
+.gx-sech > span { min-width: 0; }
+.gx-sech:focus-visible { outline: 2px solid var(--fg); outline-offset: 4px; border-radius: 6px; }
+.gx-sechv { flex: none; width: 20px; height: 20px; color: var(--faint); transform: rotate(90deg); transition: transform .18s; }
+.gx-sech:hover .gx-sechv { color: var(--fg); }
+.gx-shut .gx-sechv { transform: none; }
+section.gx-shut { padding-bottom: 4px; }
+section.gx-shut > h3 { opacity: .8; }
+
+/* ---------- worked solutions one step at a time (wireSteps) ---------- */
+.gx-stepbar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 10px; }
+.gx-stepbar small { font-size: 12.5px; color: var(--mute); }
+.gx-stepb { display: inline-flex; align-items: center; min-height: 36px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--line-strong); background: var(--invert-bg); color: var(--invert-fg); font: 600 13px var(--sans); cursor: pointer; }
+.gx-stepb.ghost { background: none; color: var(--fg); border-color: var(--line); }
+.gx-stepb:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
+[data-steps] li:focus { outline: none; }
+[data-steps] li.gx-ans::before { content: "Answer"; display: block; font: 700 10.5px var(--mono, monospace); letter-spacing: .12em; text-transform: uppercase; color: var(--mute); margin-bottom: 2px; }
+@media (prefers-reduced-motion: no-preference) { [data-steps] li:not([hidden]) { animation: gx-fade .25s; } }
+
+/* ---------- show more / show less (a details.gx-more) ---------- */
+.gx-more { margin: 12px 0; border-radius: 14px; border: 1px dashed var(--line-strong); }
+.gx-more > summary { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; list-style: none; }
+.gx-more > summary::-webkit-details-marker { display: none; }
+.gx-more > summary b { font-weight: 600; }
+.gx-more-l { font: 700 10.5px var(--mono, monospace); letter-spacing: .1em; text-transform: uppercase; color: var(--mute); }
+.gx-more[open] .gx-more-l { font-size: 0; }
+.gx-more[open] .gx-more-l::after { content: "Show less"; font-size: 10.5px; }
+.gx-more > summary:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; border-radius: 12px; }
+.gx-more > div { padding: 0 14px 12px; }
+
+/* ---------- rows that open (wireRows) ---------- */
+[data-row] { display: grid; place-items: center; flex: none; width: 30px; height: 30px; padding: 0; border: 0; border-radius: 9px; background: none; color: var(--mute); cursor: pointer; }
+[data-row]:hover { color: var(--fg); background: rgba(var(--ink-rgb), .07); }
+[data-row]:focus-visible { outline: 2px solid var(--fg); outline-offset: 1px; }
+[data-row] svg { width: 16px; height: 16px; transition: transform .15s; }
+[data-row][aria-expanded="true"] svg { transform: rotate(90deg); }
+
+/* a wrong answer's explanation, on request (kit/assess/questions.js) */
+.aq-whyb { display: inline-flex; align-items: center; min-height: 34px; margin: 6px 0 2px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--line-strong); background: none; color: var(--fg); font: 600 13px var(--sans); cursor: pointer; }
+.aq-whyb:hover { background: rgba(var(--ink-rgb), .06); }
+.aq-whyb:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
+.aq-why:focus { outline: none; }

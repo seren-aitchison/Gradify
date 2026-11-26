@@ -62,11 +62,21 @@ export function wireQuestions(el, lookup, onAnswer) {
       if (silent || solved) return;
       attempt++;
       const res = markQuestion(Q, response), out = box.querySelector(".aq-result");
-      out.textContent = res.self ? `Self-assessed: ${Math.round(res.score * 100)}% of the marking points (provisional).` : res.correct ? "Correct." : `Not quite${res.detail ? `: ${res.detail}` : ""}.${box.closest("[data-one-try]") ? " Here's why." : " Here's why, and you can try again."}`;
+      out.textContent = res.self ? `Self-assessed: ${Math.round(res.score * 100)}% of the marking points (provisional).` : res.correct ? "Correct." : `Not quite${res.detail ? `: ${res.detail}` : ""}.${box.closest("[data-one-try]") ? " Here's why." : " Try again, or see why."}`;
       out.className = `aq-result ${res.self ? "" : res.correct ? "ok" : "no"}`;
       h.paint(box, Q, response, res);
       box.querySelector(".aq-detail").innerHTML = h.feedback(Q, response, res);
-      box.querySelector(".aq-why").hidden = false;
+      // a wrong answer in practice: the explanation waits behind "Why isn't that right?", so the learner can try
+      // again first. In a one-try quiz, after a right answer and for a self-assessed one, it shows straight away.
+      const why = box.querySelector(".aq-why"), oneTry = Boolean(box.closest("[data-one-try]"));
+      box.querySelector(".aq-whyb")?.remove();
+      if (res.correct || res.self || oneTry || !why.textContent.trim()) why.hidden = false;
+      else {
+        why.hidden = true;
+        out.insertAdjacentHTML("afterend", `<button type="button" class="aq-whyb" aria-expanded="false">Why isn't that right?</button>`);
+        const wb = box.querySelector(".aq-whyb");
+        wb.addEventListener("click", () => { why.hidden = false; wb.remove(); why.setAttribute("tabindex", "-1"); why.focus({ preventScroll: true }); });
+      }
       if (res.correct || res.self) { solved = true; box.classList.add("solved"); }
       onAnswer?.(Q, res, attempt === 1, box, { response, confidence: confidence(), ms: Date.now() - shown, attempt });
     }, { mode: box.dataset.mode });

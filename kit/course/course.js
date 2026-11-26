@@ -70,7 +70,7 @@ import { mountContextBar } from "../ui/context-bar.js";
 import { mountCourseSwitcher } from "../ui/switcher.js";
 import { pref, setPref } from "../ui/prefs.js";
 import { openModal, openDrawer } from "../ui/overlay.js";
-import { tabsHtml, wireTabs } from "../ui/disclosure.js";
+import { tabsHtml, wireTabs, wireSections, wireSteps, densityHtml, wireDensity, wireRows } from "../ui/disclosure.js";
 import { feel } from "../ui/feel.js";
 import { CHAPTER_PREREQS, chapterPrereqsFromConcepts } from "../learning/chapter-map.js";
 import { masteryMap } from "../learning/mastery-map.js";
@@ -505,7 +505,7 @@ export function mountCourse(root, cfg) {
   const workspaceTabs = mountWorkspace(root, { where: "afterbegin" });
   // the learner's other courses, one click away from this one's header (kit/ui/switcher.js)
   mountCourseSwitcher(root.querySelector(".cx-headrow"), { current: location.pathname, where: "afterbegin" });
-  let ctxBar = null, placeTitle = "";
+  let ctxBar = null, placeTitle = "", sectionFold = null;
   addSave(root.querySelector(".co-head .cx-save"));
   // pin this course to the top of the Gradify homepage and the subject site's (kit/ui/places.js); Undo, no confirm
   const pinBtn = root.querySelector("[data-pincourse]"), courseHref = location.pathname;
@@ -749,6 +749,7 @@ export function mountCourse(root, cfg) {
     { keys: "s", label: "Split screen: notes beside questions", group: "In a lesson", when: () => inLesson() && splitFits(), run: () => setSplit(!splitOn()) },
     { keys: "e", label: "Explore related topics", group: "In a lesson", when: inLesson, run: () => relatedTopics() },
     { keys: "r", label: "Revision notes for the lesson", group: "In a lesson", when: () => inLesson() && Boolean(curN), run: () => revisionNotes() },
+    { keys: "p", label: "Lesson panel: definitions, specification, questions", group: "In a lesson", when: () => inLesson(), run: () => lessonPanel() },
     { keys: "o", label: "Show or hide the course outline", group: "In a lesson", when: () => !treeEl.hidden, run: toggleOutline },
     { keys: "u", label: `Up to the ${u1}`, group: "In a lesson", when: inLesson, run: () => go(`learn/${curLesson.unit.id}`) },
     { keys: "g h", label: "Course home", group: "Go to", run: () => go("home") },
@@ -1451,6 +1452,38 @@ export function mountCourse(root, cfg) {
   // related topics: what this lesson builds on, the rest of its topic, and lessons named after its own key terms,
   // each previewable in place; opening one keeps a way back to the exact spot in this lesson (kit/ui/wayfinding.js)
   let returnTo = null;
+  // the lesson panel: what goes with the lesson, beside it, without leaving it. Definitions, the specification points
+  // it teaches, its questions, the lessons around it and the learner's own things. The open tab is remembered.
+  function lessonPanel() {
+    const l = curLesson, N = curN; if (!l) return;
+    const nQ = (N?.items || []).length, nC = N?.cards?.length || 0;
+    let points = [];
+    try { const m = specModel(); points = m.points.filter((p) => p.lessons.includes(l.id) || p.partial.includes(l.id)); } catch { /* this course has no specification */ }
+    const g = groupsOf(l.unit).find((x) => x.lessons.some((y) => y.id === l.id)), near = (g?.lessons || l.unit.lessons).map((x) => byId[x.id] || x).filter((x) => x.id !== l.id);
+    const pre = (N?.prereq || []).map((t) => lessons.find((x) => norm(x.title) === norm(String(t).replace(/\*\*/g, ""))) || t);
+    const row = (href, label, sub = "", attrs = "") => `<li><a href="${esc(href)}" ${attrs}><b>${label}</b>${sub ? `<small>${sub}</small>` : ""}</a></li>`;
+    const mine = (S.attempts || []).filter((a) => a.lesson === l.id), right = mine.filter((a) => a.correct).length;
+    const tabs = [
+      { id: "terms", label: "Definitions", badge: N?.terms?.length || "", html: N?.terms?.length ? `<dl class="cx-pterms">${N.terms.map(([t, d]) => `<dt>${inline(t)}</dt><dd>${inline(d)}</dd>`).join("")}</dl>` : `<p class="co-empty">This lesson doesn't list key terms.</p>` },
+      { id: "spec", label: "Specification", badge: points.length || "", html: points.length ? `<ul class="cx-plist">${points.map((p) => row(`#/spec/${p.id}`, `<span class="sm-id">${esc(p.id)}</span> ${esc(p.title)}`, esc(p.estimate == null ? "Not assessed yet" : `${Math.round(p.estimate * 100)}% mastery`), "data-pclose")).join("")}</ul>` : `<p class="co-empty">No exam specification points are linked to this lesson${cfg.spec ? "" : " (this course has no specification set up)"}.</p>` },
+      { id: "qs", label: "Questions", html: `<ul class="cx-plist">${nQ ? row("#co-check", "Check yourself", `${nQ} questions in this lesson`, 'data-jump="co-check" data-pclose') : ""}${nC ? `<li><button type="button" data-pcards><b>Flashcards</b><small>${nC} cards from this lesson</small></button></li>` : ""}${row(`#/target/${encodeTest({ minutes: 5, scope: "lessons", lessons: (g?.lessons || [l]).map((x) => x.id) })}`, "Target test", `5 minutes on ${esc(g?.title || l.title)}`, "data-pclose")}${row(`#/quiz/${l.unit.id}`, `${esc(U)} ${l.unit.n} quiz`, S.quiz[l.unit.id] ? `best ${pc(S.quiz[l.unit.id].best)}` : esc(l.unit.title), "data-pclose")}</ul>` },
+      { id: "related", label: "Related", html: `${pre.length ? `<p class="cx-pk">Builds on</p><ul class="cx-plist">${pre.map((x) => (typeof x === "string" ? `<li><span>${inline(x)}</span></li>` : row(`#/lesson/${x.id}`, esc(x.title), esc(`${U} ${x.unit.n}`), "data-pclose"))).join("")}</ul>` : ""}
+        ${near.length ? `<p class="cx-pk">Alongside it${g?.title ? `: ${esc(g.title)}` : ""}</p><ul class="cx-plist">${near.slice(0, 12).map((x) => row(`#/lesson/${x.id}`, esc(x.title), esc(STATUS[statusOf(x.id)]?.label || ""), "data-pclose")).join("")}</ul>` : ""}
+        <button type="button" class="gx-link" data-prelated>Explore everything it connects to</button>` },
+      { id: "mine", label: "Yours", html: `<ul class="cx-plist"><li><span><b>${marked(l.id) ? "Bookmarked" : "Not bookmarked"}</b><small>Press B to ${marked(l.id) ? "remove the bookmark" : "bookmark it"}</small></span></li>
+        <li><span><b>Your answers here</b><small>${mine.length ? `${mine.length} answered, ${right} right` : "None yet"}</small></span></li>
+        ${row(`${cfg.app || "app.html"}#/notes`, "Your notes", "Write or open your own notes in Gradify Notes")}${row(`${cfg.app || "app.html"}#/history`, "Your history", "Everything you've opened and studied")}</ul>` },
+    ];
+    const d = openDrawer({ title: l.title, side: "right", label: `Lesson panel: ${l.title}`, body: tabsHtml("cx-panel", tabs, pref(cfg.slug, "panelTab", N?.terms?.length ? "terms" : "qs")) });
+    const box = d.box || d.el;
+    wireTabs(box, { scope: cfg.slug, key: "panelTab" });
+    box.addEventListener("click", (e) => {
+      if (e.target.closest("[data-pcards]")) { d.close(); setTimeout(() => main.querySelector("[data-cards]")?.click(), 120); return; }
+      if (e.target.closest("[data-prelated]")) { d.close(); setTimeout(relatedTopics, 120); return; }
+      const j = e.target.closest("[data-jump]"); if (j) { e.preventDefault(); d.close(); setTimeout(() => jumpTo(document.getElementById(j.dataset.jump)), 120); return; }
+      if (e.target.closest("[data-pclose]")) d.close();
+    });
+  }
   function relatedTopics() {
     const l = curLesson, N = curN; if (!l) return;
     const seen = new Set([l.id]), take = (ls) => ls.filter((x) => x && !seen.has(x.id) && seen.add(x.id));
@@ -1565,6 +1598,7 @@ export function mountCourse(root, cfg) {
             <span class="cx-save" hidden></span>
             <button type="button" class="cx-ib" data-mark aria-pressed="${marked(id)}" title="Bookmark (B)" aria-label="Bookmark this lesson">${ic(marked(id) ? "bookmarked" : "bookmark")}</button>
             ${N ? `<button type="button" class="cx-ib" data-revnotes title="Revision notes (R)" aria-label="Revision notes">${ic("notes")}</button>` : ""}
+            <button type="button" class="cx-ib" data-panel title="Lesson panel: definitions, specification, questions (P)" aria-label="Lesson panel">${ic("inbox")}</button>
             ${N && (nQ || N.cards.length) ? `<button type="button" class="cx-ib cx-splitb" data-split aria-pressed="${splitOn()}" title="Split screen: notes beside questions (S)" aria-label="Split screen">${ic("split")}</button>` : ""}
             <button type="button" class="cx-ib" data-focus aria-pressed="${focusOn()}" title="Focus mode (F)" aria-label="Focus mode">${ic("expand")}</button>
             <button type="button" class="cx-ib" data-pal-open title="Search (/)" aria-label="Search the course">${ic("search")}</button>
@@ -1580,6 +1614,7 @@ export function mountCourse(root, cfg) {
         ${N && cfg.reviewLine ? `<p class="co-reviewed">${reviewLine(u)}</p>` : ""}
         ${buildsOnHtml(id)}
         ${N ? F.top : ""}
+        ${N && N.blocks.filter((b) => b.t === "h").length > 1 ? `<div class="co-viewbar">${densityHtml("lesson-view")}<button type="button" class="gx-link" data-secall aria-pressed="false">Collapse all sections</button></div><p class="co-compactnote" hidden>Key points only: the first paragraph, lists, key ideas and equations of each section. Worked examples, mistakes and diagrams are in the full lesson.</p>` : ""}
         ${N ? `<div class="mv-cols co-prose">${lessonDiagrams(N, id)}</div>${F.end || recapDiagrams(N, id).length ? `<section class="co-recap" id="co-recap"><h3 class="co-part">${ic("check")} Recap</h3>${recapHtml(N, id)}${F.end}</section>` : ""}` : `<p class="co-empty">The notes for this lesson are still being written. You can still mark it done and come back later.</p>`}
         ${N && cfg.anatomy3d?.lessons && id in cfg.anatomy3d.lessons ? anatomyPanel(cfg.anatomy3d.lessons[id]) : ""}
         ${N ? `<nav class="cx-kit" aria-label="Practise this lesson"><h3 class="co-part cx-kith">${ic("target")} Practise this lesson</h3>
@@ -1661,6 +1696,7 @@ export function mountCourse(root, cfg) {
     { const lab = main.querySelector(".co-trylab, .co-lesson .co-lab"); if (lab) lab.id ||= "co-trylab"; else main.querySelector("[data-kit-lab]")?.remove(); }
     main.querySelector("[data-mark]").addEventListener("click", () => toggleMark(id));
     main.querySelector("[data-focus]").addEventListener("click", () => setFocus(!focusOn()));
+    main.querySelector("[data-panel]")?.addEventListener("click", () => lessonPanel());
     paintDock("lesson", l, prev && byId[prev.id], next && byId[next.id]);
     freshTree(true);
     wireReading(id, nQ, N, prev && byId[prev.id], next && byId[next.id]);
@@ -1668,6 +1704,14 @@ export function mountCourse(root, cfg) {
     if (N) wireMaps(main, N, mapOpts(l));
     main.querySelectorAll("[data-cards]").forEach((b) => b.addEventListener("click", async () => { if (await gate("flashcards", `${cfg.slug}:${l.id}`, { store })) flashcards(N.cards, l, N); }));
     main.querySelector("[data-save]")?.addEventListener("click", (e) => saveLesson(l, N, e.currentTarget));
+    // less at once without losing anything (kit/ui/disclosure.js): sections fold (remembered for this lesson, never by
+    // themselves), worked solutions open a step at a time, and the lesson can be read as key points only
+    {
+      const prose = main.querySelector(".co-prose");
+      wireSteps(prose);
+      sectionFold?.stop(); sectionFold = wireSections(prose, { scope: cfg.slug, key: `shut:${id}`, allBtn: main.querySelector("[data-secall]") });
+      wireDensity(main.querySelector(".co-viewbar"), { target: main.querySelector(".co-lesson"), scope: cfg.slug, key: "compact", onChange: (v) => { const n = main.querySelector(".co-compactnote"); if (n) n.hidden = v !== "compact"; } });
+    }
     { const sw = main.querySelector("#co-next"); if (sw) wireActions(sw, res); ctxBar?.stop(); ctxBar = mountContextBar(root, res, { label: l.title, hideWhen: sw }); }
     main.querySelector("[data-revnotes]")?.addEventListener("click", () => revisionNotes());
     main.querySelector("[data-split]")?.addEventListener("click", () => setSplit(!splitOn()));
@@ -2384,7 +2428,7 @@ export function mountCourse(root, cfg) {
     const m = specModel(), id = ref ? decodeURIComponent(ref) : null;
     const topic = id && m.topics.find((t) => t.id === id), p = id && !topic && m.points.find((x) => x.id === id);
     if (id && !topic && !p) { main.innerHTML = `<div class="co-panel"><h2>That requirement isn't in your specification</h2><p>It may not be part of the options you've chosen (a tier, say), or the link is out of date.</p><a class="btn btn-light lg btn-sm" href="#/spec"><span>Back to your specification</span></a></div>`; return; }
-    if (topic) { main.innerHTML = topicPageHtml(m, topic, { practiseHref: specPractise }); return; }
+    if (topic) { main.innerHTML = topicPageHtml(m, topic, { practiseHref: specPractise, titleOf: (l) => byId[l]?.title || l, statusOf: (l) => (byId[l] ? STATUS[statusOf(l)].label : null) }); wireRows(main, { scope: cfg.slug, key: "specOpen" }); return; }
     if (p) {
       main.innerHTML = pointPageHtml(m, p, { titleOf: (l) => byId[l]?.title || l, statusOf: (l) => (byId[l] ? STATUS[statusOf(l)].label : null), practiseHref: specPractise });
       // what each lesson offers to practise this point with: its check questions and flashcards
@@ -2775,7 +2819,7 @@ export function mountCourse(root, cfg) {
     paintCrumbs(view, arg);
     const fpref = (() => { try { return localStorage.getItem(FK) === "1"; } catch { return false; } })();
     if (view === "lesson") { if (fpref !== focusOn()) setFocus(fpref); } else if (focusOn()) { document.documentElement.classList.remove("cx-focus"); document.querySelector(".cx-focusx")?.remove(); }
-    ctxBar?.stop(); ctxBar = null;
+    ctxBar?.stop(); ctxBar = null; sectionFold?.stop(); sectionFold = null;
     paintDock(view);
     // the trail of places (kit/ui/places.js): coming back to the previous place puts you where you were on it
     const arrived = arriveHere({ href: location.hash || "#/", kind: view, title: "" });

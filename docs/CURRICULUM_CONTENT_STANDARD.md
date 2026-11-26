@@ -15,7 +15,8 @@ One file per unit (school): `kit/courses/<slug>/notes/uNN.js`, `export default \
 | `P:` or no tag | A paragraph |
 | `- ` | A bullet |
 | `E:` | A formula, rule or statutory test, optionally `text :: what it means` |
-| `X:` | A worked example; following `> ` lines are its steps |
+| `X:` | A worked example; following `> ` lines are its steps. Learners reveal them one at a time, so write each step so it can be checked on its own, and make the last step the answer |
+| `DEEP:` | More for whoever wants it, folded under "Show more": `label | text`, the label saying what it is (Derivation, Deeper theory, Another example, Exam detail); following `> ` lines are more paragraphs. Keep what every learner needs out of it |
 | `K:` | A key point, boxed |
 | `!:` | A common mistake |
 | `Q:` | A flashcard: `question \| answer` |

@@ -1738,3 +1738,12 @@ body.side-open body.side-open /* phones: set-up's Continue stays in reach at the
 .lo-cust-row > span svg { width: 16px; height: 16px; }
 .lo-cust-row select { width: auto; min-height: 36px; padding: 0 30px 0 10px; border-radius: 10px; border: 1px solid var(--line); background-color: rgba(var(--ink-rgb), .03); color: var(--fg); font: 500 13px var(--sans); }
 .lo-cust-row em { font-style: normal; font-size: 13px; color: var(--faint); }
+/* a folded widget keeps its title bar (kit/app/widgets.js) */
+.wd-h .wd-fold { display: grid; place-items: center; flex: none; width: 28px; height: 28px; margin-left: 2px; padding: 0; border: 0; border-radius: 8px; background: none; color: var(--faint); cursor: pointer; }
+.wd-h .wd-fold:hover { color: var(--fg); background: rgba(var(--ink-rgb), .07); }
+.wd-h .wd-fold:focus-visible { outline: 2px solid var(--fg); outline-offset: 1px; }
+.wd-h .wd-fold svg { width: 16px; height: 16px; transition: transform .15s; }
+.wd-h h3 { margin-right: auto; }
+.wd.wd-folded { min-height: 0 !important; align-self: start; }
+.wd.wd-folded > :not(.wd-h) { display: none !important; }
+.wd.wd-folded .wd-fold svg { transform: rotate(180deg); }

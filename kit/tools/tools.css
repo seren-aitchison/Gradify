@@ -395,3 +395,12 @@
 /* a search form on a glass panel stays one row: the panel's column layout would turn the input's flex basis into its height */
 .tl-search.panel { flex-direction: row; flex-wrap: wrap; align-items: center; }
 .tl-search.panel input { flex: 1 1 220px; height: auto; }
+/* settings most people never change, folded until wanted (kit/tools/learn.js) */
+.tl-adv { position: relative; }
+.tl-adv > summary { display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--line); color: var(--mute); font: 500 13px var(--sans); cursor: pointer; list-style: none; }
+.tl-adv > summary::-webkit-details-marker { display: none; }
+.tl-adv > summary::after { content: "›"; transition: transform .15s; }
+.tl-adv[open] > summary { color: var(--fg); border-color: var(--line-strong); }
+.tl-adv[open] > summary::after { transform: rotate(90deg); }
+.tl-adv > summary:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
+.tl-adv > div { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }

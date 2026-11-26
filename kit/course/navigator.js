@@ -15,6 +15,7 @@
 
 import { STATUS } from "../learning/topic-status.js";
 import { createCommandPalette } from "../ui/palette.js";
+import { prefSet } from "../ui/prefs.js";
 
 /** A unit's lessons in modules: the unit's own module list when it covers every lesson, else runs of l.module. */
 export function moduleGroups(u, byId) {
@@ -39,6 +40,9 @@ export function ring(p, size = 44, stroke = 5, cls = "") {
 // ---------- the outline ----------
 export function createOutline(api) {
   const { esc, ic, U } = api;
+  // course → unit → module → lesson: a unit opens to its modules, and each module folds too (remembered for this
+  // course on this device); the module holding the current lesson is always open
+  const modShut = prefSet(`outline:${globalThis.location?.pathname || api.name}`, "modShut");
   const lessonRow = (l, cur) => {
     const st = api.status(l.id), here = cur?.id === l.id, mark = api.marks()[l.id] > 0;
     return `<li><a href="#/lesson/${l.id}" class="cx-l s-${st}${here ? " here" : ""}" ${here ? 'aria-current="page"' : ""} title="${esc(stLabel(st))}">${dot(st)}<span>${esc(l.title)}</span>${mark ? `<b class="cx-mk" aria-label="Bookmarked">${ic("star")}</b>` : ""}</a>${here ? toolkit(l) : ""}</li>`;
@@ -50,7 +54,10 @@ export function createOutline(api) {
   };
   const unitBody = (u, cur) => moduleGroups(u, api.byId).map((g, mi) => {
     const r = api.roll(g.lessons.map((l) => l.id));
-    return `<div class="cx-mod">${g.title ? `<p class="cx-mt"><span class="cx-n">${u.n}.${mi + 1}</span><span class="cx-mtt">${esc(g.title)}</span><small>${r.done}/${r.total}</small></p>` : ""}<ol>${g.lessons.map((l) => lessonRow(l, cur)).join("")}</ol></div>`;
+    const list = `<ol>${g.lessons.map((l) => lessonRow(l, cur)).join("")}</ol>`;
+    if (!g.title) return `<div class="cx-mod">${list}</div>`;
+    const open = !modShut.has(g.id) || g.lessons.some((l) => l.id === cur?.id);
+    return `<details class="cx-mod" data-mod="${esc(g.id)}" ${open ? "open" : ""}><summary class="cx-mt"><span class="cx-n">${u.n}.${mi + 1}</span><span class="cx-mtt">${esc(g.title)}</span><small>${r.done}/${r.total}</small></summary>${list}</details>`;
   }).join("") + `<a class="cx-qz" href="#/quiz/${u.id}">${ic("trophy")}<span>${esc(U)} ${u.n} quiz</span>${api.quiz(u.id) ? `<small>best ${pct(api.quiz(u.id).best)}</small>` : ""}</a>`;
   const unitRow = (u, cur, open) => {
     const r = api.roll(u.lessons.map((l) => l.id));
@@ -77,6 +84,7 @@ export function createOutline(api) {
       el.innerHTML = `<div class="cx-treehead"></div><label class="cx-tf">${ic("search")}<input type="search" placeholder="Filter lessons" aria-label="Filter the outline"></label><div class="cx-tb"></div>`;
       const input = el.querySelector(".cx-tf input");
       el.addEventListener("toggle", (e) => {
+        if (e.target.matches?.(".cx-mod[data-mod]")) { modShut.toggle(e.target.dataset.mod, !e.target.open); return; }
         const d = e.target.closest?.(".cx-unit"); if (!d || input.value.trim().length >= 2) return;
         api.setOpen(d.dataset.u, d.open);
         if (d.open && !d.querySelector(".cx-ub")) d.insertAdjacentHTML("beforeend", `<div class="cx-ub">${unitBody(api.units.find((u) => u.id === d.dataset.u), api.current())}</div>`);

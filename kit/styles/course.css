@@ -2955,3 +2955,54 @@ body:has(.co-modal) .cx-dock { visibility: hidden; }
 .co .co-school p { display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
 .co .co-hero .co-herotext > p:first-of-type { display: none; }   /* the headline says it; the intro stays in the static overview */
 .co .sm-note a { white-space: nowrap; }
+
+/* ---------- a lesson, less at once (kit/ui/disclosure.js): the view bar, the compact view ---------- */
+.co-viewbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin: 6px 0 10px; }
+.co-compactnote { margin: 0 0 12px; font-size: 13.5px; color: var(--mute); }
+.co-compactnote[hidden] { display: none; }
+/* key points: each section's first paragraph, its lists, key ideas and equations */
+.gx-compact .co-prose .gx-secb > :not(p:first-of-type):not(ul):not(ol):not(.mv-key):not(.co-eq) { display: none !important; }
+.gx-compact .co-prose .gx-secb > p:first-of-type { font-size: 1em; }
+.gx-compact .co-prose > section { margin-bottom: 18px; }
+.co-deep { background: rgba(var(--ink-rgb), .02); }
+/* a module folds inside its unit in the outline (kit/course/navigator.js) */
+summary.cx-mt { cursor: pointer; list-style: none; border-radius: 8px; padding: 3px 4px; margin-left: 2px; }
+summary.cx-mt::-webkit-details-marker { display: none; }
+summary.cx-mt:hover { background: rgba(var(--ink-rgb), .05); }
+summary.cx-mt:focus-visible { outline: 2px solid var(--fg); outline-offset: 1px; }
+details.cx-mod:not([open]) > summary.cx-mt .cx-mtt { color: var(--mute); }
+summary.cx-mt { grid-template-columns: 10px auto 1fr auto; }
+summary.cx-mt::before { content: "›"; color: var(--faint); font-weight: 700; transition: transform .15s; display: inline-block; }
+details.cx-mod[open] > summary.cx-mt::before { transform: rotate(90deg); }
+/* a requirement's row opens in place: what teaches it, and a way to practise (kit/course/spec-view.js rowMore) */
+.sm-rows li.sm-xrow { grid-template-columns: auto auto 1fr auto auto; }
+.sm-xrow .sm-x { margin-left: -6px; }
+.sm-more { grid-column: 1 / -1; display: grid; gap: 8px; margin-top: 4px; padding: 12px 0 2px; border-top: 1px solid var(--line); }
+.sm-more[hidden] { display: none; }
+.sm-mtext { margin: 0; color: var(--fg); font-size: 14px; line-height: 1.5; }
+.sm-mk { margin: 4px 0 0; font: 600 10.5px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--faint); }
+.sm-mls { display: grid; gap: 4px; margin: 0; padding: 0; list-style: none; }
+.sm-mls li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; padding: 0; background: none; border: 0; }
+.sm-mls small { color: var(--mute); font-size: 12.5px; }
+@media (max-width: 640px) { .sm-rows li.sm-xrow { grid-template-columns: auto auto 1fr; } .sm-xrow .sm-rs, .sm-xrow .sm-act { grid-column: 3; } }
+/* "What Gradify AI is using" in the tutor panel (kit/course/tutor-panel.js contextHtml) */
+.co-tctx { margin: 10px 0 0; border-radius: 12px; border: 1px solid var(--line); font-size: 13.5px; }
+.co-tctx > summary { padding: 8px 12px; cursor: pointer; color: var(--mute); font-weight: 600; }
+.co-tctx > summary:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; border-radius: 10px; }
+.co-tctx ul { margin: 0; padding: 0 12px 0 30px; display: grid; gap: 4px; }
+.co-tctxf { display: flex; gap: 8px; align-items: flex-start; margin: 10px 12px 0; }
+.co-tctxn { margin: 8px 12px 10px; color: var(--faint); font-size: 12.5px; }
+/* the lesson panel (kit/course/course.js lessonPanel) */
+.cx-pterms { display: grid; gap: 2px 0; margin: 0; }
+.cx-pterms dt { margin-top: 12px; font-weight: 700; }
+.cx-pterms dd { margin: 2px 0 0; color: var(--mute); line-height: 1.5; }
+.cx-plist { display: grid; gap: 4px; margin: 0 0 10px; padding: 0; list-style: none; }
+.cx-plist li > :is(a, button, span) { display: grid; gap: 1px; width: 100%; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--line); background: none; color: var(--fg); text-decoration: none; text-align: left; font: inherit; cursor: pointer; }
+.cx-plist li > span { cursor: default; }
+.cx-plist li > :is(a, button):hover { border-color: var(--line-strong); background: rgba(var(--ink-rgb), .04); }
+.cx-plist li > :is(a, button):focus-visible { outline: 2px solid var(--fg); outline-offset: 1px; }
+.cx-plist small { color: var(--mute); font-size: 12.5px; }
+.cx-pk { margin: 14px 0 6px; font: 600 10.5px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--faint); }
+.co-prose > section.gx-shut, .cx-part2 > section.gx-shut { margin-bottom: 6px !important; padding-bottom: 0 !important; min-height: 0 !important; }
+.co-prose > section.gx-shut > h3 { margin-bottom: 0; }
+.gx-panel [data-tabs="cx-panel"] .gx-tablist { flex-wrap: wrap; overflow: visible; }
