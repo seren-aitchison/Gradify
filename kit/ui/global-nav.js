@@ -22,7 +22,9 @@ const siteColour = (n) => { const s = SITES.find((x) => x.n === n); return s ? `
 const norm = (s) => String(s || "").toLowerCase().normalize("NFKD").replace(/[̀-ͯ]/g, "");
 const INDEX_URL = new URL("../data/search-index.json", import.meta.url).href;
 let indexP = null;
-export const loadIndex = () => (indexP ||= fetch(INDEX_URL).then((r) => (r.ok ? r.json() : { courses: [] })).catch(() => { indexP = null; return { courses: [] }; }));
+// units a course calls "School" are shown as "Unit" everywhere (as in kit/course/course.js): it reads strangely at school
+const unitWords = (x) => { for (const c of x.courses || []) if (c.U === "School") c.U = "Unit"; return x; };
+export const loadIndex = () => (indexP ||= fetch(INDEX_URL).then((r) => (r.ok ? r.json() : { courses: [] })).then(unitWords).catch(() => { indexP = null; return { courses: [] }; }));
 
 /** score how well a title matches the query words (every word must appear); higher is better. Pure. */
 export function score(title, words) {
