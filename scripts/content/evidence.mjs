@@ -30,8 +30,9 @@ import { SOURCES, sourceFor } from "../../kit/curriculum/sources.js";
 import { SUSPENDED, REQUIREMENT_SOURCES, suspensionOf, evidenceKindOf } from "./source-policy.mjs";
 import { loadStatements, loadIndex } from "../curriculum/engine.mjs";
 import { topicsFor, frameworksFor } from "./queue.mjs";
+import { TRUST, githubClient } from "./github-review.mjs";
 
-const EV = { briefPublishers: 3, block: 8, review: 6, freshnessDays: 90, github: { repo: null, prAuthor: null }, thresholds: { standard: { sources: 2, publishers: 2 }, high: { sources: 2, publishers: 2, expert: true }, requirement: { sources: 1, publishers: 1 } }, ...(CONFIG.evidence || {}) };
+const EV = { briefPublishers: 3, block: 8, review: 6, freshnessDays: 90, github: { repo: null, prAuthor: null, reviewers: [] }, thresholds: { standard: { sources: 2, publishers: 2 }, high: { sources: 2, publishers: 2, expert: true }, requirement: { sources: 1, publishers: 1 } }, ...(CONFIG.evidence || {}) };
 export const EVIDENCE_RULES = EV;
 export const VERDICTS = ["supports", "partly", "does-not-support", "contradicts"];
 export const PASS = "PASS", FAIL = "FAIL", NOT_RUN = "NOT RUN";
@@ -294,6 +295,7 @@ export function approveEvidence(topicId, { by, github = null, on, note = "", acc
   }
   const a = assess(briefText, e, { now });
   if (!String(github || "").trim()) throw new Error("an approval needs the approver's GitHub login (--github): their review of the evidence PR is what verifies it");
+  if (TRUST.reviewers.length && !allowlistedReviewer(github)) throw new Error(`${github} isn't an allowlisted reviewer (scripts/content/config.json evidence.github.reviewers: ${TRUST.reviewers.map((r) => r.login).join(", ")})`);
   const rec = { kind: "approval", inputs, evidenceHash: evidenceHash(e), by: by.trim(), github: github.trim(), on, recordedAt: now.toISOString(), note: String(note).trim(), checks: checks.map(({ id, status }) => ({ id, status })),
     sufficient: a.sufficient, ...(a.sufficient ? {} : { acceptedGaps: a.gaps, acceptGaps: String(acceptGaps).trim() }), ...(last?.inputs ? { acknowledged: acknowledge } : {}) };
   e.approvals.push({ ...rec, approvalId: approvalIdOf(rec) });
@@ -355,34 +357,11 @@ export function publishCheck(topicId, { reqIds = null, fw = null, fetcher = fetc
 }
 
 // ---------- review verification (live, against GitHub) ----------
-/** a GitHub API client: { pr(n), reviews(n), file(path, ref) }. The default calls the REST API with curl; a token
- * (GITHUB_TOKEN or GH_TOKEN, read-only) is passed on stdin, never in arguments or logs. In a cloud session the
- * network proxy can add the credential instead. Any failure throws, and the check reports NOT RUN */
-export function githubClient({ repo = EV.github.repo, token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN || null } = {}) {
-  const call = (path, { raw = false } = {}) => {
-    const args = ["-sS", "--max-time", "30", "-w", "\n%{http_code}", "-H", `Accept: application/vnd.github${raw ? ".raw" : ""}+json`, "-H", "X-GitHub-Api-Version: 2022-11-28", ...(token ? ["-H", "@-"] : []), `https://api.github.com/repos/${repo}/${path}`];
-    const r = spawnSync("curl", args, { encoding: "utf8", input: token ? `Authorization: Bearer ${token}\n` : undefined, timeout: 45_000 });
-    const out_ = String(r.stdout || ""), cut = out_.lastIndexOf("\n"), code = Number(out_.slice(cut + 1)), body = out_.slice(0, cut);
-    if (r.status !== 0 || !code) throw new Error("the GitHub API couldn't be reached");
-    if (code === 404 && raw) return null;
-    if (code !== 200) throw new Error(`the GitHub API answered HTTP ${code}`);
-    return raw ? body : JSON.parse(body);
-  };
-  return {
-    repo,
-    pr: (n) => call(`pulls/${n}`),
-    reviews: (n) => { const all = []; for (let p = 1; p < 20; p++) { const page = call(`pulls/${n}/reviews?per_page=100&page=${p}`); all.push(...page); if (page.length < 100) break; } return all; },
-    file: (path, ref) => call(`contents/${path.split("/").map(encodeURIComponent).join("/")}?ref=${encodeURIComponent(ref)}`, { raw: true }),
-  };
-}
-let clientOverride = null, githubOverride = null;
-/** tests only: a recorded GitHub client and the repository and bot it answers for. Refused outside the Node test
- * runner, so no production path can swap the live check for a recorded one */
-export function useGitHubClientForTests(client, github = null) {
-  if (!process.env.NODE_TEST_CONTEXT) throw new Error("a recorded GitHub client can only be used inside node --test");
-  clientOverride = client; githubOverride = github; reviewCache.clear();
-}
+// The GitHub client and the trusted identities live in github-review.mjs, which has no override: every check here asks
+// the GitHub API, and nothing in this file can be handed a different client.
 const reviewCache = new Map();
+/** the allowlisted reviewer (github-review.mjs TRUST.reviewers) with this login, or null */
+export const allowlistedReviewer = (login) => TRUST.reviewers.find((r) => r.login.toLowerCase() === String(login || "").toLowerCase()) || null;
 /** the current approval in an evidence record as GitHub serves it at a revision: its approvalId, or null */
 function approvalIdAt(client, topicId, ref) {
   const text = client.file(evidenceRepoPath(topicId), ref);
@@ -395,25 +374,29 @@ function approvalIdAt(client, topicId, ref) {
  * The live review check, run by every gate (lesson writing and publishing alike). It establishes, against the GitHub
  * API now: the repository; the PR (opened by the configured GitHub App bot, from that repository, open or merged);
  * its head commit; that the evidence record at the head carries this approval as current; the approver's latest
- * review (by login, never the PR's author, and someone with a role on the repository) is APPROVED, not dismissed or
- * superseded by a later review; and that the
+ * review is APPROVED, not dismissed or superseded by a later review, where the approver is an allowlisted account (by
+ * GitHub account id), a person with a role on the repository and not the PR's author; and that the
  * reviewed revision carried this same approval. Anything it can't establish is NOT RUN; anything it finds wrong is FAIL.
  * { status, detail, reviewer, pr, headSha, reviewId, reviewCommit }. Results are cached for this process only.
  */
-export function reviewCheck(topicId, { approval = null, pr = null, client = null } = {}) {
+export function reviewCheck(topicId, { approval = null, pr = null } = {}) {
   approval ||= approvalOf(topicId).approval;
   if (!approval) return { status: NOT_RUN, detail: "no current approval" };
   if (!approval.approvalId) return { status: NOT_RUN, detail: "the approval predates review verification: re-approve it" };
   const e = loadEvidence(topicId), num = pr ?? e.verifications.filter((v) => v.approvalId === approval.approvalId && v.pr).at(-1)?.pr ?? null;
   if (!num) return { status: NOT_RUN, detail: "no evidence-review PR is linked to this approval yet (gradify verify-approval <topic> --pr <n>)" };
-  const { repo, prAuthor } = githubOverride || EV.github || {};
+  const { repo, prAuthor, reviewers } = TRUST;
   if (!repo || !prAuthor) return { status: NOT_RUN, detail: `the GitHub App isn't configured (scripts/content/config.json evidence.github: repo ${repo || "unset"}, prAuthor ${prAuthor || "unset"})` };
+  if (!reviewers.length) return { status: NOT_RUN, detail: "no reviewer is allowlisted (scripts/content/config.json evidence.github.reviewers)" };
   const key = `${approval.approvalId}|${num}`;
-  if (!client && reviewCache.has(key)) return reviewCache.get(key);
-  const gh = client || clientOverride || githubClient({ repo });
-  const res = (status, detail, extra = {}) => { const r = { status, detail, pr: Number(num), ...extra }; if (!client) reviewCache.set(key, r); return r; };
+  if (reviewCache.has(key)) return reviewCache.get(key);
+  const res = (status, detail, extra = {}) => { const r = { status, detail, pr: Number(num), ...extra }; reviewCache.set(key, r); return r; };
+  // the approver named in the record is only a claim: it must be an allowlisted account, and GitHub must show that
+  // account (by id) approving
+  const who = allowlistedReviewer(approval.github);
+  if (!who) return res(FAIL, `${approval.github || "the approver"} isn't an allowlisted reviewer (scripts/content/config.json evidence.github.reviewers): only ${reviewers.map((r) => r.login).join(", ")} can approve evidence`);
   try {
-    const p = gh.pr(num);
+    const gh = githubClient(), p = gh.pr(num);
     if (p.base?.repo?.full_name !== repo) return res(FAIL, `PR #${num} is for ${p.base?.repo?.full_name}, not ${repo}`);
     if (p.head?.repo?.full_name !== repo) return res(FAIL, `PR #${num}'s head is in ${p.head?.repo?.full_name || "a deleted fork"}, not ${repo}`);
     if (String(p.user?.login).toLowerCase() !== String(prAuthor).toLowerCase() || p.user?.type !== "Bot") return res(FAIL, `PR #${num} was opened by ${p.user?.login} (${p.user?.type}), not the GitHub App bot ${prAuthor}`);
@@ -421,32 +404,32 @@ export function reviewCheck(topicId, { approval = null, pr = null, client = null
     const headSha = p.head.sha, atHead = approvalIdAt(gh, topicId, headSha);
     if (!atHead.found) return res(FAIL, `the PR head (${headSha.slice(0, 9)}) has no evidence record for ${topicId}`, { headSha });
     if (atHead.id !== approval.approvalId) return res(FAIL, `the evidence record at the PR head (${headSha.slice(0, 9)}) ${atHead.why || `carries approval ${atHead.id || "none"}, not ${approval.approvalId}`}: a changed approval needs a new review`, { headSha });
-    const login = String(approval.github || "").toLowerCase();
-    if (!login) return res(NOT_RUN, "the approval names no GitHub login", { headSha });
-    if (login === String(p.user?.login).toLowerCase()) return res(FAIL, "the approver is the PR's author: an author can't approve their own PR", { headSha });
-    // the approver's latest decisive review (a later comment-only review doesn't change it)
-    const mine = gh.reviews(num).filter((r) => String(r.user?.login).toLowerCase() === login && ["APPROVED", "CHANGES_REQUESTED", "DISMISSED"].includes(r.state)).sort((a, b) => Date.parse(a.submitted_at) - Date.parse(b.submitted_at));
+    if (p.user?.id === who.id || String(p.user?.login).toLowerCase() === who.login.toLowerCase()) return res(FAIL, "the approver is the PR's author: an author can't approve their own PR", { headSha });
+    // the allowlisted account's latest decisive review, matched by account id (a later comment-only review doesn't
+    // change it; a review by another account that has, or once had, the same login doesn't count)
+    const mine = gh.reviews(num).filter((r) => r.user?.id === who.id && ["APPROVED", "CHANGES_REQUESTED", "DISMISSED"].includes(r.state)).sort((a, b) => Date.parse(a.submitted_at) - Date.parse(b.submitted_at));
     const latest = mine.at(-1);
-    if (!latest) return res(FAIL, `${approval.github} hasn't approved PR #${num}`, { headSha });
-    if (latest.state === "DISMISSED") return res(FAIL, `${approval.github}'s review of PR #${num} was dismissed`, { headSha, reviewId: latest.id });
-    if (latest.state === "CHANGES_REQUESTED") return res(FAIL, `${approval.github}'s latest review of PR #${num} requests changes`, { headSha, reviewId: latest.id });
-    // a login is only an identity: the reviewer must also hold a role on the repository (anyone can review a public PR)
-    if (!["OWNER", "MEMBER", "COLLABORATOR"].includes(latest.author_association)) return res(FAIL, `${approval.github} has no role on ${repo} (GitHub reports ${latest.author_association || "no association"}): only its owner, members or collaborators can approve evidence`, { headSha, reviewId: latest.id });
+    if (!latest) return res(FAIL, `${who.login} (GitHub account ${who.id}) hasn't approved PR #${num}`, { headSha });
+    if (latest.state === "DISMISSED") return res(FAIL, `${who.login}'s review of PR #${num} was dismissed`, { headSha, reviewId: latest.id });
+    if (latest.state === "CHANGES_REQUESTED") return res(FAIL, `${who.login}'s latest review of PR #${num} requests changes`, { headSha, reviewId: latest.id });
+    if (String(latest.user.login).toLowerCase() !== who.login.toLowerCase()) return res(FAIL, `GitHub account ${who.id} is now ${latest.user.login}, not ${who.login}: the allowlist needs updating by a reviewed commit`, { headSha, reviewId: latest.id });
+    if (latest.user.type !== "User") return res(FAIL, `the approving account ${who.login} is a ${latest.user.type}, not a person`, { headSha, reviewId: latest.id });
+    if (!["OWNER", "MEMBER", "COLLABORATOR"].includes(latest.author_association)) return res(FAIL, `${who.login} has no role on ${repo} (GitHub reports ${latest.author_association || "no association"})`, { headSha, reviewId: latest.id });
     const atReview = approvalIdAt(gh, topicId, latest.commit_id);
-    if (atReview.id !== approval.approvalId) return res(FAIL, `the revision ${approval.github} approved (${String(latest.commit_id).slice(0, 9)}) doesn't carry this approval${atReview.found ? ` (it has ${atReview.id || "none"})` : " (no evidence record there)"}: it needs a new review`, { headSha, reviewId: latest.id });
-    return res(PASS, `${approval.github} approved PR #${num} (${latest.html_url}) at ${String(latest.commit_id).slice(0, 9)}; the head ${headSha.slice(0, 9)} carries the same approval ${approval.approvalId}`, { reviewer: latest.user.login, headSha, reviewId: latest.id, reviewCommit: latest.commit_id, url: latest.html_url });
+    if (atReview.id !== approval.approvalId) return res(FAIL, `the revision ${who.login} approved (${String(latest.commit_id).slice(0, 9)}) doesn't carry this approval${atReview.found ? ` (it has ${atReview.id || "none"})` : " (no evidence record there)"}: it needs a new review`, { headSha, reviewId: latest.id });
+    return res(PASS, `${who.login} (GitHub account ${who.id}) approved PR #${num} (${latest.html_url}) at ${String(latest.commit_id).slice(0, 9)}; the head ${headSha.slice(0, 9)} carries the same approval ${approval.approvalId}`, { reviewer: latest.user.login, reviewerId: who.id, headSha, reviewId: latest.id, reviewCommit: latest.commit_id, url: latest.html_url });
   } catch (err) { return res(NOT_RUN, `live verification unavailable: ${err.message}`); }
 }
 /** link an approval to its evidence-review PR and record the live check's result alongside the approval (append-only).
  * Technical authorship (the git commit of the record) is recorded too. Returns the check */
-export function verifyApproval(topicId, { pr, client = null, ...o } = {}) {
+export function verifyApproval(topicId, { pr, ...o } = {}) {
   if (!Number.isInteger(Number(pr)) || Number(pr) < 1) throw new Error("verify-approval needs the evidence-review PR's number (--pr <n>)");
   const ap = approvalOf(topicId, o);
   if (!ap.approval) throw new Error(`${topicId} has no current approval to verify (${ap.why})`);
   reviewCache.clear();
-  const r = reviewCheck(topicId, { approval: ap.approval, pr: Number(pr), client });
+  const r = reviewCheck(topicId, { approval: ap.approval, pr: Number(pr) });
   const e = loadEvidence(topicId);
-  e.verifications.push({ approvalId: ap.approval.approvalId, pr: Number(pr), status: r.status, detail: r.detail, checkedAt: new Date().toISOString(), ...(r.headSha ? { headSha: r.headSha } : {}), ...(r.reviewId ? { reviewId: r.reviewId, reviewCommit: r.reviewCommit || null, reviewer: r.reviewer || null } : {}), technical: gitAuthor(evidencePath(topicId)) });
+  e.verifications.push({ approvalId: ap.approval.approvalId, pr: Number(pr), status: r.status, detail: r.detail, checkedAt: new Date().toISOString(), ...(r.headSha ? { headSha: r.headSha } : {}), ...(r.reviewId ? { reviewId: r.reviewId, reviewCommit: r.reviewCommit || null, reviewer: r.reviewer || null, reviewerId: r.reviewerId || null } : {}), technical: gitAuthor(evidencePath(topicId)) });
   saveEvidence(e); reviewCache.clear();
   return r;
 }

@@ -195,7 +195,7 @@ try {
   }
   else if (cmd === "verify-approval") {
     const E = await import("./content/evidence.mjs"), id = argv[1];
-    if (!id || id.startsWith("--")) throw new Error("usage: gradify verify-approval <subject/topic> --pr <number>   (an APPROVED review on that PR by the approver's GitHub login)");
+    if (!id || id.startsWith("--")) throw new Error("usage: gradify verify-approval <subject/topic> --pr <number>   (an APPROVED review on that PR by the allowlisted reviewer's GitHub account)");
     const r = E.verifyApproval(id, { pr: Number(opt("pr")) });
     log(`Review verification ${r.status}: ${r.detail}`);
     if (r.status !== "PASS") process.exitCode = 2;

@@ -7,6 +7,8 @@ import assert from "node:assert/strict";
 import { mkdtempSync, mkdirSync, writeFileSync, existsSync, readFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
+// first, before the evidence module loads: the live GitHub module is replaced by the recorded one (tests only)
+import { TRUST, useRecorded } from "./helpers/use-recorded-github.mjs";
 
 process.env.GRADIFY_OUT = mkdtempSync(join(tmpdir(), "gradify-evidence-"));
 const OUT = process.env.GRADIFY_OUT;
@@ -53,8 +55,11 @@ const client = {
   reviews: () => GH.reviews,
   file: (path, ref) => SNAP.get(`${ref}|${path}`) ?? null,
 };
-const review = (login, state, commit, at = "2026-11-26T12:00:00Z", id = 1, author_association = "OWNER") => ({ id, state, author_association, user: { login }, commit_id: commit, submitted_at: at, html_url: `https://github.com/${REPO}/pull/9#pullrequestreview-${id}` });
-E.useGitHubClientForTests(client, { repo: REPO, prAuthor: BOT });
+// GitHub accounts by numeric id: the allowlist pins the reviewer by id, not by login
+const ACCOUNT = { "a-reviewer": 501, "someone-else": 502 };
+const review = (login, state, commit, at = "2026-11-26T12:00:00Z", id = 1, author_association = "OWNER", user = {}) => ({ id, state, author_association, user: { login, id: ACCOUNT[login] ?? 999, type: "User", ...user }, commit_id: commit, submitted_at: at, html_url: `https://github.com/${REPO}/pull/9#pullrequestreview-${id}` });
+const ALLOWED = [{ login: "a-reviewer", id: 501 }];
+useRecorded({ trust: { repo: REPO, prAuthor: BOT, reviewers: ALLOWED }, ...client });
 /** the approval's record reviewed at commit "rev1" and carried at the head "head1", approved by a-reviewer, then
  * linked and checked; returns the check */
 const reviewed = (id) => { snap(id, "rev1"); snap(id, "head1"); resetGH({ reviews: [review("a-reviewer", "APPROVED", "rev1")] }); return E.verifyApproval(id, { pr: 9, ...CTX }); };
@@ -208,11 +213,12 @@ test("C. review verification: the live check establishes every point, or reports
   const expect = (status, re, why) => { const r = check(); assert.equal(r.status, status, `${why}: ${r.detail}`); if (re) assert.match(r.detail, re, why); assert.equal(E.evidenceApproved(id, CTX), status === "PASS", `${why}: the gate`); };
   // nothing linked yet: the claimed login proves nothing
   expect("NOT RUN", /no evidence-review PR is linked/, "an approval alone");
-  assert.equal(reviewed(id).status, "PASS"); expect("PASS", /a-reviewer approved PR #9 .* at rev1; the head head1 carries the same approval/, "everything established");
+  assert.equal(reviewed(id).status, "PASS"); expect("PASS", /a-reviewer \(GitHub account 501\) approved PR #9 .* at rev1; the head head1 carries the same approval/, "everything established");
   const run = (over, status, re, why) => { resetGH({ reviews: [review("a-reviewer", "APPROVED", "rev1")], ...over }); E.verifyApproval(id, { pr: 9, ...CTX }); expect(status, re, why); };
   // GitHub unavailable, or the App not configured
   run({ down: true }, "NOT RUN", /live verification unavailable: the GitHub API couldn't be reached/, "GitHub unreachable");
-  E.useGitHubClientForTests(client, { repo: REPO, prAuthor: null }); run({}, "NOT RUN", /GitHub App isn't configured/, "no bot configured"); E.useGitHubClientForTests(client, { repo: REPO, prAuthor: BOT });
+  TRUST.prAuthor = null; run({}, "NOT RUN", /GitHub App isn't configured/, "no bot configured"); TRUST.prAuthor = BOT;
+  TRUST.reviewers = []; run({}, "NOT RUN", /no reviewer is allowlisted/, "no reviewer allowlisted"); TRUST.reviewers = ALLOWED;
   // the PR itself
   run({ pr: { ...PR(), base: { repo: { full_name: "someone/else" } } } }, "FAIL", /is for someone\/else, not example\/gradify/, "another repository");
   run({ pr: { ...PR(), head: { sha: "head1", repo: { full_name: "fork/gradify" } } } }, "FAIL", /head is in fork\/gradify/, "a fork");
@@ -222,18 +228,25 @@ test("C. review verification: the live check establishes every point, or reports
   run({ pr: { ...PR(), state: "closed", merged_at: "2026-11-27T00:00:00Z" } }, "PASS", null, "merged is fine");
   // the approver's reviews
   run({ reviews: [] }, "FAIL", /hasn't approved PR #9/, "no review");
-  run({ reviews: [review("someone-else", "APPROVED", "rev1")] }, "FAIL", /hasn't approved/, "another person's approval");
+  run({ reviews: [review("someone-else", "APPROVED", "rev1")] }, "FAIL", /a-reviewer \(GitHub account 501\) hasn't approved/, "an owner or collaborator who isn't allowlisted");
+  run({ reviews: [review("a-reviewer", "APPROVED", "rev1", undefined, 1, "OWNER", { id: 999 })] }, "FAIL", /hasn't approved/, "another account using (or reclaiming) the allowlisted login");
+  run({ reviews: [review("a-reviewer", "APPROVED", "rev1", undefined, 1, "OWNER", { login: "a-reviewer-renamed" })] }, "FAIL", /GitHub account 501 is now a-reviewer-renamed, not a-reviewer: the allowlist needs updating/, "the allowlisted account renamed");
+  run({ reviews: [review("a-reviewer", "APPROVED", "rev1", undefined, 1, "OWNER", { type: "Bot" })] }, "FAIL", /is a Bot, not a person/, "an approval by a bot account");
+  // the allowlist decides who may approve, not the login written in the record
+  TRUST.reviewers = [{ login: "someone-else", id: 502 }]; run({}, "FAIL", /a-reviewer isn't an allowlisted reviewer .*only someone-else can approve/, "the record's approver is no longer allowlisted"); TRUST.reviewers = ALLOWED;
+  assert.throws(() => E.approveEvidence(id, { by: "S Else", github: "someone-else", on: ON, acceptGaps: "x", fetcher, acknowledge: ["verdicts"], ...CTX }), /someone-else isn't an allowlisted reviewer/, "approval refuses an approver who isn't allowlisted");
   run({ reviews: [review("a-reviewer", "DISMISSED", "rev1")] }, "FAIL", /was dismissed/, "dismissed");
   run({ reviews: [review("a-reviewer", "APPROVED", "rev1", undefined, 1, "NONE")] }, "FAIL", /has no role on example\/gradify \(GitHub reports NONE\)/, "an approval from someone with no role on the repository");
   run({ reviews: [review("a-reviewer", "APPROVED", "rev1", undefined, 1, "CONTRIBUTOR")] }, "FAIL", /has no role/, "a past contributor isn't a reviewer");
-  run({ reviews: [review("a-reviewer", "APPROVED", "rev1", undefined, 1, "COLLABORATOR")] }, "PASS", null, "a collaborator's approval");
+  run({ reviews: [review("a-reviewer", "APPROVED", "rev1", undefined, 1, "COLLABORATOR")] }, "PASS", null, "the allowlisted reviewer as a collaborator");
   run({ reviews: [review("a-reviewer", "APPROVED", "rev1"), review("a-reviewer", "CHANGES_REQUESTED", "head1", "2026-11-26T13:00:00Z", 2)] }, "FAIL", /requests changes/, "superseded by changes requested");
   run({ reviews: [review("a-reviewer", "APPROVED", "rev1"), review("a-reviewer", "COMMENTED", "head1", "2026-11-26T13:00:00Z", 2)] }, "PASS", null, "a later comment doesn't supersede an approval");
   run({ reviews: [review("a-reviewer", "APPROVED", "old0")] }, "FAIL", /approved \(old0\) doesn't carry this approval \(no evidence record there\)/, "the reviewed revision lacked the record");
   // the record at the head
   SNAP.delete(`head1|${E.evidenceRepoPath(id)}`); run({}, "FAIL", /has no evidence record/, "the head has no record"); snap(id, "head1");
   // the approver can't be the PR's author
-  run({ pr: { ...PR(), user: { login: "a-reviewer", type: "Bot" } }, }, "FAIL", /not the GitHub App bot|author can't approve their own PR/, "self-approval");
+  run({ pr: { ...PR(), user: { login: "a-reviewer", type: "Bot" } } }, "FAIL", /not the GitHub App bot/, "a PR opened by the reviewer");
+  run({ pr: { ...PR(), user: { login: BOT, type: "Bot", id: 501 } } }, "FAIL", /author can't approve their own PR/, "self-approval: the reviewer's own account is the PR's author");
   run({}, "PASS", null, "back to everything established");
   // a new approval (a material change re-approved) needs a new review: the old review was of a different approvalId
   const e = E.loadEvidence(id); E.recordVerdict(e, E.assess(E.loadEvidence(id) && readFileSync(join(OUT, `content/research/${id}.txt`), "utf8"), e).claims[1], "S1", { verdict: "partly", by: "B Reviewer", on: ON }); E.saveEvidence(e);
@@ -249,7 +262,7 @@ test("C. review verification: the live check establishes every point, or reports
   const t = E.loadEvidence(id); t.approvals.at(-1).note = "edited later"; E.saveEvidence(t);
   assert.match(E.approvalOf(id, CTX).why, /altered after it was made/);
   // every check is kept alongside the approval: nothing overwritten
-  assert.ok(E.loadEvidence(id).verifications.length >= 20); assert.ok(E.loadEvidence(id).approvals.length >= 2);
+  assert.ok(E.loadEvidence(id).verifications.length >= 25); assert.ok(E.loadEvidence(id).approvals.length >= 2);
 });
 
 test("C. writing and publishing use the same review gate; expert authority stays separate from a GitHub review", async () => {
@@ -286,11 +299,36 @@ test("C. revocation is kept on record and shuts writing and publishing at once",
   assert.equal(E.evidenceApproved(id, CTX), false); assert.match(E.publishCheck(id, { ...CTX, fetcher }).reasons[0], /revoked by B Reviewer/);
 });
 
-test("the recorded GitHub client is refused outside the test runner", async () => {
-  const { spawnSync } = await import("node:child_process");
-  const env = { ...process.env }; delete env.NODE_TEST_CONTEXT;
-  const r = spawnSync(process.execPath, ["-e", 'import("./scripts/content/evidence.mjs").then((E) => E.useGitHubClientForTests({})).then(() => console.log("accepted"), (e) => console.log(e.message))'], { cwd: new URL("../", import.meta.url).pathname, env, encoding: "utf8" });
-  assert.match(r.stdout, /can only be used inside node --test/);
+test("production verification can't be handed a recorded client, by a variable, an option or a stored result", async () => {
+  const { spawnSync } = await import("node:child_process"), ROOT_ = new URL("../", import.meta.url).pathname;
+  // a topic approved and verified here (recorded GitHub), so its record carries a stored PASS verification
+  const id = "biology/ev-live-only"; approved(id); assert.equal(reviewed(id).status, "PASS"); assert.ok(E.evidenceApproved(id, CTX));
+  // the same sandbox in a fresh process that loads the real modules, with the test runner's own variable set and a
+  // would-be client passed as an option: the evidence module has no override, the stored PASS counts for nothing, and
+  // the live check runs against the committed configuration (no App yet, so NOT RUN and the gate shut)
+  const script = `const E = await import("./scripts/content/evidence.mjs"), G = await import("./scripts/content/github-review.mjs");
+    const fake = { pr: () => ({}), reviews: () => [], file: () => null };
+    console.log(JSON.stringify({ exports: Object.keys(G).sort(), frozen: Object.isFrozen(G.TRUST) && Object.isFrozen(G.TRUST.reviewers), reviewers: G.TRUST.reviewers,
+      overrides: Object.keys(E).filter((k) => /ForTests|override|recorded|mock|fake/i.test(k)),
+      check: E.reviewCheck(${JSON.stringify(id)}, { pr: 9, client: fake }), gate: E.evidenceApproved(${JSON.stringify(id)}, ${JSON.stringify(CTX)}) }));`;
+  const r = spawnSync(process.execPath, ["--input-type=module", "-e", script], { cwd: ROOT_, env: { ...process.env, NODE_TEST_CONTEXT: "child-v8", GRADIFY_OUT: OUT }, encoding: "utf8" });
+  const o = JSON.parse(r.stdout || "{}");
+  assert.deepEqual(o.exports, ["TRUST", "githubClient"], "the live module exports the trust anchors and the live client only");
+  assert.ok(o.frozen, "the trust anchors can't be changed at run time");
+  assert.deepEqual(o.reviewers, [{ login: "seren-aitchison", id: 161163640 }], "the committed allowlist is the owner's account only");
+  assert.deepEqual(o.overrides, [], "the evidence module exports no test or override hook");
+  assert.equal(o.check.status, "NOT RUN"); assert.match(o.check.detail, /GitHub App isn't configured/);
+  assert.equal(o.gate, false, "a stored PASS from a recorded review unlocks nothing outside the test that made it");
+  // no production file mentions the test runner's variable or the recorded module
+  const { readdirSync } = await import("node:fs");
+  for (const dir of ["scripts", "kit"]) for (const f of readdirSync(join(ROOT_, dir), { recursive: true })) if (/\.(m?js|cjs)$/.test(f)) {
+    const src = readFileSync(join(ROOT_, dir, f), "utf8");
+    assert.ok(!/NODE_TEST_CONTEXT|recorded-github|use-recorded-github|tests\/helpers/.test(src), `${dir}/${f} refers to a test hook`);
+  }
+  // and the recorded GitHub itself won't serve a run outside a sandbox
+  const env = { ...process.env }; delete env.GRADIFY_OUT;
+  const r2 = spawnSync(process.execPath, ["--input-type=module", "-e", 'const R = await import("./tests/helpers/recorded-github.mjs"); try { R.githubClient(); console.log("served"); } catch (e) { console.log(e.message); }'], { cwd: ROOT_, env, encoding: "utf8" });
+  assert.match(r2.stdout, /serves sandboxed test runs only/);
 });
 
 test("D. copying: every line against the whole specification and retrieved sources, with severity", () => {

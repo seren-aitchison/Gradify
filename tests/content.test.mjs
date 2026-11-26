@@ -5,6 +5,8 @@ import assert from "node:assert/strict";
 import { mkdtempSync, readFileSync, existsSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
+// first, before the evidence module loads: the live GitHub module is replaced by the recorded one (tests only)
+import { useRecorded } from "./helpers/use-recorded-github.mjs";
 
 process.env.GRADIFY_OUT = mkdtempSync(join(tmpdir(), "gradify-content-"));
 const { parseNotes } = await import("../kit/course/notes.js");
@@ -42,11 +44,12 @@ const approveText = (text, topic = null) => {
 };
 // a recorded GitHub: the App's bot opened PR #1, and the test reviewer approved a revision whose evidence records are
 // the sandbox's own (the live check reads them as GitHub would serve them)
-EVIDENCE.useGitHubClientForTests({
-  pr: () => ({ number: 1, state: "open", user: { login: "gradify-test-app[bot]", type: "Bot" }, base: { repo: { full_name: "example/gradify" } }, head: { sha: "headsha0000", repo: { full_name: "example/gradify" } } }),
-  reviews: () => [{ id: 1, state: "APPROVED", author_association: "OWNER", user: { login: "test-reviewer" }, commit_id: "reviewed000", submitted_at: new Date().toISOString(), html_url: "https://github.com/example/gradify/pull/1#pullrequestreview-1" }],
+useRecorded({
+  trust: { repo: "example/gradify", prAuthor: "gradify-test-app[bot]", reviewers: [{ login: "test-reviewer", id: 7001 }] },
+  pr: () => ({ number: 1, state: "open", user: { login: "gradify-test-app[bot]", id: 9001, type: "Bot" }, base: { repo: { full_name: "example/gradify" } }, head: { sha: "headsha0000", repo: { full_name: "example/gradify" } } }),
+  reviews: () => [{ id: 1, state: "APPROVED", author_association: "OWNER", user: { login: "test-reviewer", id: 7001, type: "User" }, commit_id: "reviewed000", submitted_at: new Date().toISOString(), html_url: "https://github.com/example/gradify/pull/1#pullrequestreview-1" }],
   file: (path) => { const f = join(process.env.GRADIFY_OUT, path); return require_fs.existsSync(f) ? require_fs.readFileSync(f, "utf8") : null; },
-}, { repo: "example/gradify", prAuthor: "gradify-test-app[bot]" });
+});
 const approveStored = (hints = []) => {
   const { readdirSync, readFileSync: rf, existsSync: ex } = require_fs;
   for (const dir of ["content/research", "content/queue"]) {
