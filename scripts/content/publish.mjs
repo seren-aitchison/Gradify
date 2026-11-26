@@ -147,8 +147,9 @@ export async function linkLessons(lessons, { on = today() } = {}) {
       out_.push(`${fw}:${ref} → ${r.lesson} (${l.status === "verified" ? "a person's verification kept" : `provisional, ${coverage}`})`);
     }
     saveStore(fw, M);
-    const { refreshLinks } = await import("../curriculum/spec-view.mjs");
-    await refreshLinks(fw);
+    // the map is saved: if the pages can't be rewritten, say so loudly rather than leave them showing old links
+    try { const { refreshLinks } = await import("../curriculum/spec-view.mjs"); await refreshLinks(fw); }
+    catch (e) { throw new Error(`STALE COVERAGE: provisional links for ${fw} are recorded, but the specification pages weren't rewritten (${e.message}). Fix the cause, then run: node scripts/curriculum/engine.mjs refresh ${fw}`); }
   }
   return out_;
 }

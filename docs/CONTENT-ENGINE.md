@@ -92,7 +92,9 @@ Only a person's confirmation counts as coverage (owner, 26 Nov 2026). A false "a
 - A person can withdraw a confirmation with `revoke` and a reason. The statement is uncovered and written again, and the withdrawn verification is kept in `revoked`.
 - AI confidence and a person's decision stay in separate fields (`matcherConfidence`, `aiCheck`, `reviewer`): an AI's yes never becomes a verification.
 - A lesson the engine publishes is linked provisionally to each statement its `REQ:` lines name (`ai-confirmed`, `published: true`), so learners see "Provisionally mapped — awaiting verification" rather than "Not mapped". It never counts as coverage, and a person's verification is never changed by it.
-- Recording decisions (`engine.mjs apply`) and publishing both rewrite the specification pages' links (`kit/specs/<view>.links.js`, `scripts/curriculum/spec-view.mjs` `refreshLinks`), so a verification or a revocation shows on the pages in the same commit.
+- Recording decisions (`engine.mjs apply`) rewrites everything derived from the map: the coverage reports (`docs/curriculum/`) and the specification pages' links (`kit/specs/<view>.links.js`). Publishing rewrites the links. A verification or a revocation shows everywhere in the same commit.
+- If a derived output can't be rewritten, the decisions stay recorded and the command fails loudly (exit 2, "STALE COVERAGE"), naming each output that wasn't updated. Fix the cause, then run `node scripts/curriculum/engine.mjs refresh <framework>`. The tests also fail on a committed report or links file that doesn't match the map, so stale figures can't be merged unnoticed.
+- **Tested views.** AQA GCSE Biology (`kit/specs/aqa-gcse-biology-8461.js`) is the only specification view so far, so it's the only one the shared generator has been tested against. The tests check every view in `kit/specs/index.js`, but passing for one view doesn't prove the next framework's structure will work: validate the generator, its reports and its pages against each new framework as it's added.
 
 Decisions are recorded in the mapping store, `kit/curriculum/maps/<framework>.json` (`scripts/content/mapstore.mjs`).
 

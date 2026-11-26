@@ -9,6 +9,7 @@
 //   node scripts/curriculum/engine.mjs review <specId>         a review sheet (CSV, local: it holds the statement text)
 //   node scripts/curriculum/engine.mjs apply <specId> <file.csv>   record a reviewer's decisions from a review sheet
 //   node scripts/curriculum/engine.mjs inventory <subject>     every lesson with objectives, diagrams and questions
+//   node scripts/curriculum/engine.mjs refresh <specId>        rewrite everything derived from the map (reports, pages)
 //   node scripts/curriculum/engine.mjs report <subject>        docs/curriculum/<SUBJECT>-COVERAGE.md and one report per
 //                                                              imported specification
 //
@@ -24,6 +25,10 @@ import { execFileSync } from "node:child_process";
 import { lessonsOf } from "../growth/lesson-readiness.mjs";
 import { parseTable, readText } from "../growth/sources.mjs";
 import { SPECS, BODIES, QUAL_TYPES, specsFor, nationsOf, NATIONS } from "../../kit/curriculum/uk.js";
+// static, not a dynamic import inside the command line below: spec-view.mjs imports this file, and a dynamic import
+// while this module's top-level await is running would wait on itself forever. Both sides only call each other's
+// functions, so the static cycle is safe
+import { refreshLinks } from "./spec-view.mjs";
 import { coverageReport, claimFor, checkMap, COVERAGE } from "../../kit/curriculum/mapping.js";
 import { pdfLayout, fileHash, textHash } from "./layout.mjs";
 import { extractAqa } from "./aqa.mjs";
@@ -471,6 +476,23 @@ ${statementRows.join("\n")}
 `;
 }
 
+/**
+ * Rewrite everything derived from a framework's map: the subject's coverage reports and the specification pages'
+ * links. Each output is tried on its own; any that fails is named, with the command that redoes it, and the result is
+ * false, so a caller can't carry on as if the figures were current. Returns true when everything is up to date.
+ */
+export async function refreshDerived(fw, subject, date, { log = console.log, warn = console.error, steps = null } = {}) {
+  const failed = [];
+  steps ||= [
+    [`docs/curriculum coverage reports for ${subject}`, async () => { for (const f of await writeReports(subject, date)) log(`Updated ${f}`); }],
+    [`specification page links for ${fw} (kit/specs/*.links.js)`, async () => { const views = await refreshLinks(fw); if (views.length) log(`Specification pages updated: ${views.map((v) => `kit/specs/${v}.links.js`).join(", ")}.`); }],
+  ];
+  for (const [what, run] of steps) { try { await run(); } catch (e) { failed.push([what, e]); } }
+  if (!failed.length) return true;
+  warn(`STALE COVERAGE: the map for ${fw} is updated, but ${failed.length === 1 ? "this derived output was" : "these derived outputs were"} not rewritten, so ${failed.length === 1 ? "it shows" : "they show"} the old figures:\n${failed.map(([what, e]) => `  - ${what}: ${e.message}`).join("\n")}\nFix the cause, then run: node scripts/curriculum/engine.mjs refresh ${fw}\nDon't commit the map without its derived files (the tests check the specification pages against the map).`);
+  return false;
+}
+
 /** write a subject's coverage report and one per imported specification; returns the files written */
 async function writeReports(subject, date) {
   const files = [`docs/curriculum/${subject.toUpperCase()}-COVERAGE.md`];
@@ -501,14 +523,13 @@ if (import.meta.url === `file://${process.argv[1]}`) {
       const res = applyReview(st, loadMap(a) || { spec: a, specVersion: st.version, links: {} }, parseTable(readText(readFileSync(b))), new Set(inv.map((l) => l.id)));
       if (res.problems.length) { console.error(`Nothing applied. ${res.problems.length} problems:\n  ${res.problems.join("\n  ")}`); process.exit(1); }
       write(mapPath(a), res.map); console.log(`${res.applied} decisions recorded in kit/curriculum/maps/${a}.json.`);
-      // every view derived from the map is rewritten in the same step: the coverage reports here, the specification
-      // pages below, so a verification or a revocation never leaves a stale count anywhere
-      for (const f of await writeReports(s.subject, date)) console.log(`Updated ${f}`);
-      // the specification pages read the map through a generated file: refresh it now, so a verification or a
-      // revocation shows there in the same commit
-      const views = await (await import("./spec-view.mjs")).refreshLinks(a);
-      if (views.length) console.log(`Specification pages updated: ${views.map((v) => `kit/specs/${v}.links.js`).join(", ")}.`);
+      // every view derived from the map is rewritten in the same step, so a verification or a revocation never leaves
+      // a stale count anywhere. If one fails, the decisions stay recorded and the failure is loud: refresh redoes it
+      if (!(await refreshDerived(a, s.subject, date))) process.exit(2);
+    } else if (cmd === "refresh") {
+      const s = SPECS.find((x) => x.id === a); if (!s) throw new Error(`no framework ${a} in the registry`);
+      if (!(await refreshDerived(a, s.subject, date))) process.exit(2);
     } else if (cmd === "inventory") { const inv = await inventory(a); write(new URL(`data/curriculum/inventory/${a}.json`, root), inv); console.log(`${inv.length} ${a} lessons → data/curriculum/inventory/${a}.json`); }
-    else if (cmd === "report") for (const f of await writeReports(a, date)) console.log(f); else { console.error("usage: fetch | import | propose | review | apply | inventory | report (see the top of this file)"); process.exit(2); }
+    else if (cmd === "report") for (const f of await writeReports(a, date)) console.log(f); else { console.error("usage: fetch | import | propose | review | apply | refresh | inventory | report (see the top of this file)"); process.exit(2); }
   } catch (e) { console.error(e.message); process.exit(1); }
 }

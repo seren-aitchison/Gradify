@@ -265,3 +265,33 @@ test("where you stand: not mapped, provisionally mapped and verified are separat
   assert.equal(after.rows[0].mastery, s.rows[0].mastery);
   assert.equal(MAPPING.provisional.name, "Provisionally mapped \u2014 awaiting verification"); assert.equal(MAPPING.none.name, "Not mapped"); assert.equal(MAPPING.verified.name, "Verified mapping");
 });
+
+test("the committed coverage reports match the map: a stale count can't be committed unnoticed", async () => {
+  const { subjectReport, specReport, inventory, reportName } = await import("../scripts/curriculum/engine.mjs");
+  const { readFileSync: rf, existsSync: ex } = await import("node:fs");
+  const date = "DATE", undate = (t) => t.replace(/ on \d{4}-\d{2}-\d{2}\./, " on DATE.");
+  const at = (f) => new URL(`../docs/curriculum/${f}`, import.meta.url), fix = "run node scripts/curriculum/engine.mjs refresh <framework> (or report <subject>)";
+  for (const subject of ["biology"]) {
+    assert.equal(undate(rf(at(`${subject.toUpperCase()}-COVERAGE.md`), "utf8")), await subjectReport(subject, date), `docs/curriculum/${subject.toUpperCase()}-COVERAGE.md is out of date: ${fix}`);
+    const inv = await inventory(subject);
+    for (const s of SPECS.filter((x) => x.subject === subject && x.statements === "imported")) {
+      const md = specReport(s.id, inv, date); if (!md) continue;
+      assert.ok(ex(at(reportName(s.id))), `docs/curriculum/${reportName(s.id)} is missing: ${fix}`);
+      assert.equal(undate(rf(at(reportName(s.id)), "utf8")), md, `docs/curriculum/${reportName(s.id)} is out of date: ${fix}`);
+    }
+  }
+});
+
+test("a derived output that fails to regenerate is named, with how to redo it, and the others still run", async () => {
+  const { refreshDerived } = await import("../scripts/curriculum/engine.mjs");
+  const ran = [], warned = [];
+  const ok = await refreshDerived("aqa-gcse-biology", "biology", "2026-11-26", { log: () => {}, warn: (m) => warned.push(m), steps: [
+    ["coverage reports", async () => { throw new Error("disk full"); }],
+    ["specification page links", async () => { ran.push("links"); }],
+  ] });
+  assert.equal(ok, false, "the caller is told the figures aren't current");
+  assert.deepEqual(ran, ["links"], "one failure doesn't stop the other outputs");
+  assert.match(warned[0], /^STALE COVERAGE: the map for aqa-gcse-biology is updated/);
+  assert.match(warned[0], /coverage reports: disk full/); assert.match(warned[0], /engine\.mjs refresh aqa-gcse-biology/);
+  assert.equal(await refreshDerived("aqa-gcse-biology", "biology", "2026-11-26", { log: () => {}, warn: () => {}, steps: [["x", async () => {}]] }), true);
+});
