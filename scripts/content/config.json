@@ -34,5 +34,6 @@
  "examplesPerLevel": 2,
  "writer": "external",
  "writerNote": "owner, 25 Nov 2026: lessons and research briefs are written by an external model (gradify template, gradify ingest); agent mode only maps existing lessons and reviews what was ingested. \"session\" restores the old path, where subagents research, write and repair",
+ "evidence": { "freshnessDays": 90, "github": { "repo": "seren-aitchison/Gradify", "prAuthor": null, "note": "owner, 26 Nov 2026: evidence-review PRs are opened by a GitHub App; prAuthor is its bot login (\"<app-slug>[bot]\"). Until it is set, review verification is NOT RUN and lesson writing and publishing are blocked." } },
  "standards": { "flashcardsPerTopic": 20, "diagramsPerLesson": 3, "note": "owner, 25 Nov 2026: every topic 20+ distinct flashcards; every lesson 3+ distinct diagrams to file (a DNEED: specification counts) and 3+ drawn ones (D: or DIA:) to publish" }
 }

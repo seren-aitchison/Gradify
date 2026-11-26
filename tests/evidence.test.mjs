@@ -41,9 +41,23 @@ END
 `;
 const store = (id, text) => { const f = join(OUT, `content/research/${id}.txt`); mkdirSync(join(f, ".."), { recursive: true }); writeFileSync(f, `# fp=test\n${text}`); return text; };
 const ON = "2026-11-26";
-const REVIEW = (login, at = Date.now() + 1000) => [{ state: "APPROVED", user: { login }, id: 7, html_url: "https://github.com/example/example/pull/9#review-7", submitted_at: new Date(at).toISOString(), commit_id: "abc" }];
-const AUTHOR = { commit: "1".repeat(40), name: "Someone", email: "someone@example.com" };
-/** a topic whose evidence is retrieved, checked for both facts and approved with its gaps accepted */
+// a recorded GitHub (the live check's client in these tests): PR #9 on example/gradify, opened by the App's bot. Its
+// evidence records are served as they were at each commit: snap() records the sandbox's record at a commit
+const REPO = "example/gradify", BOT = "gradify-review-app[bot]", SNAP = new Map();
+const snap = (id, sha) => SNAP.set(`${sha}|${E.evidenceRepoPath(id)}`, readFileSync(join(OUT, E.evidenceRepoPath(id)), "utf8"));
+const GH = { pr: null, reviews: [], down: false };
+const PR = () => ({ number: 9, state: "open", merged_at: null, user: { login: BOT, type: "Bot" }, base: { repo: { full_name: REPO } }, head: { sha: "head1", repo: { full_name: REPO } } });
+const resetGH = (over = {}) => Object.assign(GH, { down: false, reviews: [], pr: PR() }, over);
+const client = {
+  pr: () => { if (GH.down) throw new Error("the GitHub API couldn't be reached"); return GH.pr; },
+  reviews: () => GH.reviews,
+  file: (path, ref) => SNAP.get(`${ref}|${path}`) ?? null,
+};
+const review = (login, state, commit, at = "2026-11-26T12:00:00Z", id = 1, author_association = "OWNER") => ({ id, state, author_association, user: { login }, commit_id: commit, submitted_at: at, html_url: `https://github.com/${REPO}/pull/9#pullrequestreview-${id}` });
+E.useGitHubClientForTests(client, { repo: REPO, prAuthor: BOT });
+/** the approval's record reviewed at commit "rev1" and carried at the head "head1", approved by a-reviewer, then
+ * linked and checked; returns the check */
+const reviewed = (id) => { snap(id, "rev1"); snap(id, "head1"); resetGH({ reviews: [review("a-reviewer", "APPROVED", "rev1")] }); return E.verifyApproval(id, { pr: 9, ...CTX }); };
 const approved = (id, o = {}) => {
   const text = store(id, brief(id)), e = E.retrieveAll(id, text, { fetcher }), c = E.assess(text, e).claims;
   for (const [cl, s] of [[c[0], "S1"], [c[0], "S2"], [c[2], "S5"]]) E.recordVerdict(e, cl, s, { verdict: "supports", by: "A Reviewer", on: ON });
@@ -118,7 +132,7 @@ test("C. checks report PASS, FAIL or NOT RUN, with and without the specification
 
 test("C. every material input voids an approval, the change is named, and re-approval must acknowledge it", async () => {
   const id = "biology/ev-inputs", text = approved(id);
-  assert.ok(E.evidenceApproved(id, CTX));
+  assert.ok(!!E.approvalOf(id, CTX).approval);
   const voided = (why, key) => { const a = E.approvalOf(id, CTX); assert.equal(a.approval, null, why); assert.ok(a.changes.some((c) => c.key === key), `${why}: names ${key} (${JSON.stringify(a.changes)})`); return a; };
   // a source's content changes and is re-retrieved
   pages[URL_.ncbi] = PAGE("Genes are short stretches of DNA carried along a chromosome");
@@ -129,20 +143,27 @@ test("C. every material input voids an approval, the change is named, and re-app
   assert.throws(() => E.approveEvidence(id, { by: "A Reviewer", github: "a-reviewer", on: ON, acceptGaps: "x", fetcher, ...CTX }), /must be re-reviewed and acknowledged \(--acknowledge source:S1,verdicts\)|--acknowledge source:S1/);
   assert.equal(E.assess(text, E.loadEvidence(id)).claims[0].support.find((x) => x.id === "S1").counts, false);
   E.approveEvidence(id, { by: "A Reviewer", github: "a-reviewer", on: ON, acceptGaps: "x", fetcher, acknowledge: ["source:S1"], ...CTX });
-  assert.ok(E.evidenceApproved(id, CTX));
+  assert.ok(!!E.approvalOf(id, CTX).approval);
   // the topic's requirements change (scope) or a statement's text changes (the index)
   const wider = E.approvalOf(id, { reqIds: [REQ_A, `${FW}:4.1.2.1.b`], fw: FW });
   assert.equal(wider.approval, null); assert.match(wider.changes[0].change, /4\.1\.2\.1\.b was added to the topic's requirements/);
-  assert.ok(E.evidenceApproved(id, CTX), "the approved scope still holds");
-  const was = E.loadEvidence(id).approvals.at(-1).inputs.requirements.items[REQ_A];
-  const ev = E.loadEvidence(id); ev.approvals.at(-1).inputs.requirements.items[REQ_A] = "0000000000000000"; E.saveEvidence(ev);
-  assert.match(E.approvalOf(id, CTX).changes[0].change, new RegExp(`${REQ_A.replace(/\./g, "\\.")}'s statement changed \\(0000000000000000 → ${was}\\)`));
-  ev.approvals.at(-1).inputs.requirements.items[REQ_A] = was; E.saveEvidence(ev);
-  // the brief, the policy, a registry row, the rules
+  assert.ok(!!E.approvalOf(id, CTX).approval, "the approved scope still holds");
+  // an AQA statement's text changes: the committed index (read through the sandbox) gives it a new fingerprint
+  const idxFile = join(OUT, "kit/curriculum/specs/aqa-gcse-biology.json"); mkdirSync(join(idxFile, ".."), { recursive: true });
+  writeFileSync(idxFile, JSON.stringify({ ...IDX, statements: IDX.statements.map((x) => (x.ref === "4.1.2.1.a" ? { ...x, hash: "feedfacefeedface" } : x)) }));
+  const was = IDX.statements.find((x) => x.ref === "4.1.2.1.a").hash;
+  assert.match(E.approvalOf(id, CTX).changes[0].change, new RegExp(`4\\.1\\.2\\.1\\.a's statement changed \\(${was} → feedfacefeedface\\)`));
+  writeFileSync(idxFile, JSON.stringify({ ...IDX, version: "2.0" })); voided("a new specification version", "requirements");
+  const { rmSync } = await import("node:fs"); rmSync(idxFile); assert.ok(!!E.approvalOf(id, CTX).approval);
+  // the brief
   store(id, text.replace("23 pairs", "twenty-three pairs")); voided("the brief changed", "brief"); store(id, text);
-  for (const key of ["policy", "rules"]) { const v = E.loadEvidence(id); const keep = v.approvals.at(-1).inputs[key]; v.approvals.at(-1).inputs[key] = "x"; E.saveEvidence(v); voided(`the ${key} changed`, key); v.approvals.at(-1).inputs[key] = keep; E.saveEvidence(v); }
-  const v = E.loadEvidence(id), row = Object.keys(v.approvals.at(-1).inputs.registry)[0], keep = v.approvals.at(-1).inputs.registry[row];
-  v.approvals.at(-1).inputs.registry[row] = "x"; E.saveEvidence(v); voided("a registry row changed", `registry:${row}`); v.approvals.at(-1).inputs.registry[row] = keep; E.saveEvidence(v);
+  // the source policy, a registry row, the evidence rules: each is its own named fingerprint
+  const ins = E.loadEvidence(id).approvals.at(-1).inputs, row = Object.keys(ins.registry)[0];
+  assert.deepEqual(E.diffInputs(ins, { ...ins, policy: "x", rules: "y", registry: { ...ins.registry, [row]: "z" } }).map((c) => c.key).sort(), ["policy", `registry:${row}`, "rules"].sort());
+  // and an approval record edited after the fact authorises nothing
+  const t = E.loadEvidence(id), keep = t.approvals.at(-1).inputs.policy; t.approvals.at(-1).inputs.policy = "edited"; E.saveEvidence(t);
+  assert.match(E.approvalOf(id, CTX).why, /altered after it was made/); t.approvals.at(-1).inputs.policy = keep; E.saveEvidence(t);
+  assert.ok(!!E.approvalOf(id, CTX).approval);
   // a new verdict
   const e = E.loadEvidence(id); E.recordVerdict(e, E.assess(text, e).claims[1], "S1", { verdict: "partly", by: "B Reviewer", on: ON }); E.saveEvidence(e);
   voided("a verdict changed", "verdicts");
@@ -176,37 +197,100 @@ test("C. the gate: no path writes, templates, ingests or publishes from an unapp
   assert.deepEqual(p.added, []); assert.ok(p.skipped.some((x) => /^A lesson \(not published: the evidence hasn't been approved\)$/.test(x)), JSON.stringify(p.skipped));
   // once a person approves, writing goes ahead
   E.approveEvidence(T.id, { by: "A Reviewer", github: "a-reviewer", on: ON, acceptGaps: "testing the unlock", fetcher, topic: T });
+  assert.equal(reviewed(T.id).status, "PASS", "the approver's review of the App's PR is verified");
   jobs.length = 0; await runTopic(T, { ask, askMany: async () => new Map() });
   assert.ok(jobs.includes("write"), "approved: the writer is asked");
 });
 
-test("C. publishing needs a verified GitHub review identity, and expert authority where the content needs it", () => {
-  const id = "biology/ev-identity"; approved(id);
-  const pc = E.publishCheck(id, { ...CTX, fetcher });
-  assert.equal(pc.ok, false); assert.ok(pc.reasons.some((r) => /^NOT RUN Approval made by an identifiable GitHub reviewer/.test(r)), "a claimed identity isn't enough to publish");
-  assert.throws(() => E.verifyApproval(id, { pr: 9, reviews: REVIEW("someone-else"), author: AUTHOR }), /no APPROVED review by a-reviewer/);
-  assert.throws(() => E.verifyApproval(id, { pr: 9, reviews: REVIEW("a-reviewer", Date.parse("2020-01-01")), author: AUTHOR }), /after the approval was recorded/);
-  const idn = E.verifyApproval(id, { pr: 9, reviews: REVIEW("a-reviewer"), author: AUTHOR });
-  assert.equal(idn.review.status, "verified"); assert.equal(idn.technical.name, "Someone"); assert.equal(idn.expert.status, "not established", "a GitHub account is never a qualification");
-  assert.ok(E.publishCheck(id, { ...CTX, fetcher }).ok);
-  // a high-risk claim that's sufficient needs an expert: only the owner's register establishes one
-  const hid = "biology/ev-expert", text = store(hid, brief(hid, "A drug dose depends on the patient's chromosomes and genes."));
-  const e = E.retrieveAll(hid, text, { fetcher }), c = E.assess(text, e).claims;
+test("C. review verification: the live check establishes every point, or reports NOT RUN / FAIL and the gate stays shut", () => {
+  const id = "biology/ev-review"; approved(id);
+  const check = () => E.reviewCheck(id, { approval: E.approvalOf(id, CTX).approval });
+  const expect = (status, re, why) => { const r = check(); assert.equal(r.status, status, `${why}: ${r.detail}`); if (re) assert.match(r.detail, re, why); assert.equal(E.evidenceApproved(id, CTX), status === "PASS", `${why}: the gate`); };
+  // nothing linked yet: the claimed login proves nothing
+  expect("NOT RUN", /no evidence-review PR is linked/, "an approval alone");
+  assert.equal(reviewed(id).status, "PASS"); expect("PASS", /a-reviewer approved PR #9 .* at rev1; the head head1 carries the same approval/, "everything established");
+  const run = (over, status, re, why) => { resetGH({ reviews: [review("a-reviewer", "APPROVED", "rev1")], ...over }); E.verifyApproval(id, { pr: 9, ...CTX }); expect(status, re, why); };
+  // GitHub unavailable, or the App not configured
+  run({ down: true }, "NOT RUN", /live verification unavailable: the GitHub API couldn't be reached/, "GitHub unreachable");
+  E.useGitHubClientForTests(client, { repo: REPO, prAuthor: null }); run({}, "NOT RUN", /GitHub App isn't configured/, "no bot configured"); E.useGitHubClientForTests(client, { repo: REPO, prAuthor: BOT });
+  // the PR itself
+  run({ pr: { ...PR(), base: { repo: { full_name: "someone/else" } } } }, "FAIL", /is for someone\/else, not example\/gradify/, "another repository");
+  run({ pr: { ...PR(), head: { sha: "head1", repo: { full_name: "fork/gradify" } } } }, "FAIL", /head is in fork\/gradify/, "a fork");
+  run({ pr: { ...PR(), user: { login: "seren-example", type: "User" } } }, "FAIL", /opened by seren-example \(User\), not the GitHub App bot/, "opened by a person");
+  run({ pr: { ...PR(), user: { login: BOT, type: "User" } } }, "FAIL", /not the GitHub App bot/, "a user named like the bot");
+  run({ pr: { ...PR(), state: "closed", merged_at: null } }, "FAIL", /closed without merging/, "closed unmerged");
+  run({ pr: { ...PR(), state: "closed", merged_at: "2026-11-27T00:00:00Z" } }, "PASS", null, "merged is fine");
+  // the approver's reviews
+  run({ reviews: [] }, "FAIL", /hasn't approved PR #9/, "no review");
+  run({ reviews: [review("someone-else", "APPROVED", "rev1")] }, "FAIL", /hasn't approved/, "another person's approval");
+  run({ reviews: [review("a-reviewer", "DISMISSED", "rev1")] }, "FAIL", /was dismissed/, "dismissed");
+  run({ reviews: [review("a-reviewer", "APPROVED", "rev1", undefined, 1, "NONE")] }, "FAIL", /has no role on example\/gradify \(GitHub reports NONE\)/, "an approval from someone with no role on the repository");
+  run({ reviews: [review("a-reviewer", "APPROVED", "rev1", undefined, 1, "CONTRIBUTOR")] }, "FAIL", /has no role/, "a past contributor isn't a reviewer");
+  run({ reviews: [review("a-reviewer", "APPROVED", "rev1", undefined, 1, "COLLABORATOR")] }, "PASS", null, "a collaborator's approval");
+  run({ reviews: [review("a-reviewer", "APPROVED", "rev1"), review("a-reviewer", "CHANGES_REQUESTED", "head1", "2026-11-26T13:00:00Z", 2)] }, "FAIL", /requests changes/, "superseded by changes requested");
+  run({ reviews: [review("a-reviewer", "APPROVED", "rev1"), review("a-reviewer", "COMMENTED", "head1", "2026-11-26T13:00:00Z", 2)] }, "PASS", null, "a later comment doesn't supersede an approval");
+  run({ reviews: [review("a-reviewer", "APPROVED", "old0")] }, "FAIL", /approved \(old0\) doesn't carry this approval \(no evidence record there\)/, "the reviewed revision lacked the record");
+  // the record at the head
+  SNAP.delete(`head1|${E.evidenceRepoPath(id)}`); run({}, "FAIL", /has no evidence record/, "the head has no record"); snap(id, "head1");
+  // the approver can't be the PR's author
+  run({ pr: { ...PR(), user: { login: "a-reviewer", type: "Bot" } }, }, "FAIL", /not the GitHub App bot|author can't approve their own PR/, "self-approval");
+  run({}, "PASS", null, "back to everything established");
+  // a new approval (a material change re-approved) needs a new review: the old review was of a different approvalId
+  const e = E.loadEvidence(id); E.recordVerdict(e, E.assess(E.loadEvidence(id) && readFileSync(join(OUT, `content/research/${id}.txt`), "utf8"), e).claims[1], "S1", { verdict: "partly", by: "B Reviewer", on: ON }); E.saveEvidence(e);
+  assert.equal(E.evidenceApproved(id, CTX), false, "the verdict change voids the approval");
+  E.approveEvidence(id, { by: "A Reviewer", github: "a-reviewer", on: ON, acceptGaps: "x", fetcher, acknowledge: ["verdicts"], ...CTX });
+  E.verifyApproval(id, { pr: 9, ...CTX });
+  expect("FAIL", /carries approval [0-9a-f]+, not [0-9a-f]+: a changed approval needs a new review/, "the PR head still carries the old approval");
+  snap(id, "head1"); E.verifyApproval(id, { pr: 9, ...CTX });
+  expect("FAIL", /approved \(rev1\) doesn't carry this approval/, "the head is updated but the old review was of the old approval");
+  snap(id, "rev2"); resetGH({ reviews: [review("a-reviewer", "APPROVED", "rev1"), review("a-reviewer", "APPROVED", "rev2", "2026-11-26T14:00:00Z", 3)] }); E.verifyApproval(id, { pr: 9, ...CTX });
+  expect("PASS", null, "re-reviewed: the new approval is verified");
+  // tampering: an edited approval record no longer matches its own fingerprint
+  const t = E.loadEvidence(id); t.approvals.at(-1).note = "edited later"; E.saveEvidence(t);
+  assert.match(E.approvalOf(id, CTX).why, /altered after it was made/);
+  // every check is kept alongside the approval: nothing overwritten
+  assert.ok(E.loadEvidence(id).verifications.length >= 20); assert.ok(E.loadEvidence(id).approvals.length >= 2);
+});
+
+test("C. writing and publishing use the same review gate; expert authority stays separate from a GitHub review", async () => {
+  const req = { id: REQ_A, ref: "4.1.2.1.a", asks: "x", text: null, title: "Gate", type: "concept", status: "official", hash: "h1" };
+  const T = { id: "biology/ev-same-gate", subject: "biology", fw: FW, section: "4.1.2.1", title: "Same gate", level: "GCSE", country: "uk", reqs: [req], reuse: [] };
+  const text = approved(T.id), jobs = [], ask = async (job) => { jobs.push(job); return job === "research" ? text : "## A lesson\nEND"; };
+  // approved, but no verified review: writing is refused exactly as publishing is
+  let r = await runTopic(T, { ask, askMany: async () => new Map() });
+  assert.equal(r.status, "awaiting-approval"); assert.match(r.awaiting, /review verification NOT RUN: no evidence-review PR is linked/); assert.ok(!jobs.includes("write"));
+  assert.match(E.publishCheck(T.id, { ...CTX, fetcher }).reasons[0], /NOT RUN Approval verified by a live GitHub review check: no evidence-review PR is linked/);
+  // a dismissed review shuts both
+  reviewed(T.id); resetGH({ reviews: [review("a-reviewer", "DISMISSED", "rev1")] }); E.verifyApproval(T.id, { pr: 9, ...CTX });
+  r = await runTopic(T, { ask, askMany: async () => new Map() }); assert.match(r.awaiting, /was dismissed/);
+  assert.match(E.publishCheck(T.id, { ...CTX, fetcher }).reasons[0], /was dismissed/);
+  // verified: both open
+  assert.equal(reviewed(T.id).status, "PASS");
+  jobs.length = 0; await runTopic(T, { ask, askMany: async () => new Map() }); assert.ok(jobs.includes("write"), "writing proceeds");
+  assert.ok(E.publishCheck(T.id, { ...CTX, fetcher }).ok, "publishing proceeds");
+  // a high-risk claim needs expert authority: a verified GitHub review isn't a qualification
+  const hid = "biology/ev-expert", htext = store(hid, brief(hid, "A drug dose depends on the patient's chromosomes and genes."));
+  const e = E.retrieveAll(hid, htext, { fetcher }), c = E.assess(htext, e).claims;
   for (const [cl, s] of [[c[0], "S1"], [c[0], "S2"], [c[2], "S5"]]) E.recordVerdict(e, cl, s, { verdict: "supports", by: "A Reviewer", on: ON }); E.saveEvidence(e);
-  assert.equal(E.assess(text, e).claims[0].risk, "high");
   E.approveEvidence(hid, { by: "A Reviewer", github: "a-reviewer", on: ON, acceptGaps: "x", fetcher, ...CTX });
-  E.verifyApproval(hid, { pr: 9, reviews: REVIEW("a-reviewer"), author: AUTHOR });
-  assert.ok(E.publishCheck(hid, { ...CTX, fetcher }).reasons.some((r) => /^FAIL Expert authority .*a-reviewer isn't in the reviewer register for biology/.test(r)));
+  assert.equal(reviewed(hid).status, "PASS");
+  assert.ok(E.publishCheck(hid, { ...CTX, fetcher }).reasons.some((x) => /^FAIL Expert authority .*a-reviewer isn't in the reviewer register for biology/.test(x)));
   writeFileSync(join(OUT, "content/reviewers.json"), JSON.stringify({ reviewers: [{ github: "a-reviewer", name: "Dr A Reviewer", subjects: ["biology"], qualification: "PhD genetics; GCSE examiner", verifiedBy: "owner", verifiedOn: ON }] }));
-  E.verifyApproval(hid, { pr: 9, reviews: REVIEW("a-reviewer"), author: AUTHOR });
   assert.ok(E.publishCheck(hid, { ...CTX, fetcher }).ok, "with the owner's register entry, expert authority is established");
 });
 
-test("C. revocation is kept on record and stops publishing at once", () => {
-  const id = "biology/ev-revoke"; approved(id); E.verifyApproval(id, { pr: 9, reviews: REVIEW("a-reviewer"), author: AUTHOR });
-  assert.ok(E.publishCheck(id, { ...CTX, fetcher }).ok);
+test("C. revocation is kept on record and shuts writing and publishing at once", () => {
+  const id = "biology/ev-revoke"; approved(id); assert.equal(reviewed(id).status, "PASS");
+  assert.ok(E.evidenceApproved(id, CTX));
   E.revokeEvidence(id, { by: "B Reviewer", on: ON, why: "S1 is a review article" });
-  assert.match(E.publishCheck(id, { ...CTX, fetcher }).reasons[0], /revoked by B Reviewer/);
+  assert.equal(E.evidenceApproved(id, CTX), false); assert.match(E.publishCheck(id, { ...CTX, fetcher }).reasons[0], /revoked by B Reviewer/);
+});
+
+test("the recorded GitHub client is refused outside the test runner", async () => {
+  const { spawnSync } = await import("node:child_process");
+  const env = { ...process.env }; delete env.NODE_TEST_CONTEXT;
+  const r = spawnSync(process.execPath, ["-e", 'import("./scripts/content/evidence.mjs").then((E) => E.useGitHubClientForTests({})).then(() => console.log("accepted"), (e) => console.log(e.message))'], { cwd: new URL("../", import.meta.url).pathname, env, encoding: "utf8" });
+  assert.match(r.stdout, /can only be used inside node --test/);
 });
 
 test("D. copying: every line against the whole specification and retrieved sources, with severity", () => {

@@ -19,8 +19,9 @@
 //   gradify approve-evidence <topic> --by <name> --github <login> [--accept-gaps <reason>] [--acknowledge <inputs>]
 //                                           a person approves the evidence: unlocks lesson writing for that exact brief,
 //                                           evidence and every other material input (revoke-evidence --why)
-//   gradify verify-approval <topic> --pr <n>   links the approval to an APPROVED GitHub PR review by that login (needed
-//                                           to publish); expert authority comes only from content/reviewers.json
+//   gradify verify-approval <topic> --pr <n>   links the approval to its evidence-review PR (opened by the GitHub App)
+//                                           and runs the live review check every gate runs; writing and publishing
+//                                           need it to PASS. Expert authority comes only from content/reviewers.json
 //   gradify template [--subject s] [--limit n] [--topic t]   self-contained templates for an external model to write
 //                                           from: a research template, or once the brief is in, a lesson template
 //   gradify ingest [files…] [--review]      check and install the returned .md files from content/inbox/ (factory.mjs)
@@ -190,13 +191,14 @@ try {
     const E = await import("./content/evidence.mjs"), id = argv[1];
     if (!id || id.startsWith("--")) throw new Error(`usage: gradify ${cmd} <subject/topic> --by "<name>" --github <login> --on YYYY-MM-DD ${cmd === "approve-evidence" ? '[--note "…"] [--accept-gaps "<reason>"] [--acknowledge <changed inputs, comma-separated>]' : '--why "<reason>"'}`);
     const r = cmd === "approve-evidence" ? E.approveEvidence(id, { by: opt("by"), github: opt("github"), on: opt("on", today()), note: opt("note", ""), acceptGaps: opt("accept-gaps"), acknowledge: String(opt("acknowledge", "")).split(",").map((x) => x.trim()).filter(Boolean) }) : E.revokeEvidence(id, { by: opt("by"), github: opt("github"), on: opt("on", today()), why: opt("why") });
-    log(cmd === "approve-evidence" ? `Evidence for ${id} approved by ${r.by} on ${r.on}${r.sufficient ? "" : `, accepting ${r.acceptedGaps.length} gap(s): ${r.acceptGaps}`}. Lesson writing is unlocked for this exact brief and evidence. Review identity: ${r.identity.review.status}${r.identity.review.github ? ` (${r.identity.review.github})` : ""}; publishing also needs it verified (gradify verify-approval ${id} --pr <n>).` : `Approval for ${id} revoked by ${r.by} on ${r.on}. Lesson writing is locked again.`);
+    log(cmd === "approve-evidence" ? `Evidence for ${id} approved by ${r.by} on ${r.on}${r.sufficient ? "" : `, accepting ${r.acceptedGaps.length} gap(s): ${r.acceptGaps}`}. Approval ${r.approvalId}. Nothing is unlocked until ${r.github} approves the evidence-review PR opened by the GitHub App and the live check passes: gradify verify-approval ${id} --pr <n>.` : `Approval for ${id} revoked by ${r.by} on ${r.on}. Lesson writing and publishing are locked again.`);
   }
   else if (cmd === "verify-approval") {
     const E = await import("./content/evidence.mjs"), id = argv[1];
     if (!id || id.startsWith("--")) throw new Error("usage: gradify verify-approval <subject/topic> --pr <number>   (an APPROVED review on that PR by the approver's GitHub login)");
-    const r = E.verifyApproval(id, { pr: opt("pr") });
-    log(`Review identity verified: ${r.review.github} approved PR #${r.review.pr} (${r.review.url}). Technical author: ${r.technical ? `${r.technical.name} <${r.technical.email}>, ${r.technical.commit.slice(0, 9)}` : "not found in git"}. Expert authority: ${r.expert.status}${r.expert.qualification ? ` (${r.expert.qualification})` : ""}.`);
+    const r = E.verifyApproval(id, { pr: Number(opt("pr")) });
+    log(`Review verification ${r.status}: ${r.detail}`);
+    if (r.status !== "PASS") process.exitCode = 2;
   }
   else if (cmd === "standards") { const { report } = await import("./content/standards.mjs"); log(await report({ lessonsFile: opt("lessons") })); }
   else if (cmd === "preview") {
