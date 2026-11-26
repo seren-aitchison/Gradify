@@ -722,14 +722,19 @@ function deletePacks(docs, { leave = false } = {}) {
     hide: () => { ids.forEach((x) => hiddenPacks.add(x)); if (leave) location.hash = "#/library"; else route(); },
     restore: () => { ids.forEach((x) => hiddenPacks.delete(x)); route(); },
     commit: async () => {
+      // every set is tried even if one fails; the ones that couldn't be deleted come back (restore), the rest are gone
+      let failed = 0;
       for (const id of ids) {
-        const cards = await store.listCards({ documentId: id }).catch(() => []);
-        await store.deleteDocument(id);
-        // the set and its cards are gone: so are their links, collection places, notes, schedules and pins
-        forget(makeRid("pack", id), { href: `${location.pathname}#/deck/${id}` });
-        for (const c of cards) forget(makeRid("card", c.id), { href: `${location.pathname}#/deck/${id}?card=${c.id}` });
-        hiddenPacks.delete(id);
+        try {
+          const cards = await store.listCards({ documentId: id }).catch(() => []);
+          await store.deleteDocument(id);
+          // the set and its cards are gone: so are their links, collection places, notes, schedules and pins
+          forget(makeRid("pack", id), { href: `${location.pathname}#/deck/${id}` });
+          for (const c of cards) forget(makeRid("card", c.id), { href: `${location.pathname}#/deck/${id}?card=${c.id}` });
+          hiddenPacks.delete(id);
+        } catch (e) { failed++; console.warn("delete", e); }
       }
+      if (failed) throw new Error(`${failed} of ${ids.length} stayed`);
     },
   });
 }

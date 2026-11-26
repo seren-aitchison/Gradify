@@ -60,10 +60,11 @@ export const _undos = () => undos;   // tests
 export function deferredDelete({ html, label = "", hide, restore, commit, ms = 7000 }) {
   hide?.();
   let settled = false;
-  const off = () => { removeEventListener("pagehide", now); document.removeEventListener("visibilitychange", vis); };
+  const off = () => removeEventListener("pagehide", now);
   const now = () => { if (settled) return; settled = true; off(); Promise.resolve().then(commit).catch((e) => { console.warn("delete", e); restore?.(); toast(`Couldn't delete it: ${e.message || "try again"}`); }); };
-  const vis = () => { if (document.visibilityState === "hidden") now(); };
-  addEventListener("pagehide", now); document.addEventListener("visibilitychange", vis);
+  // only leaving the page commits; switching tabs doesn't, so Undo still works on return (a delete that never
+  // committed just leaves the item where it was)
+  addEventListener("pagehide", now);
   undoable(html, () => { if (settled) return false; settled = true; off(); restore?.(); }, { label, timeout: ms, onClose: ({ undone }) => { if (!undone) now(); } });
   return { now };
 }
@@ -228,16 +229,22 @@ const writeBox = (v) => { try { localStorage.setItem(OUTBOX, JSON.stringify(v.sl
 // a report waits at most 30 days; one the database refuses for what it says (a check) is dropped, not retried
 const FOREVER = new Set(["23514", "22001", "23502", "22P02"]);
 const fresh = (x) => Date.now() - x.t < 30 * 864e5;
-/** who's signed in now (null when no one is, or no account) */
+const LAST = "gradify.lastuser";   // the account last seen here, so a report can be saved before anyone is asked who it is
+const lastUser = () => { try { return localStorage.getItem(LAST) || null; } catch { return null; } };
+/** who's signed in now: { db, id }, null when confirmed signed out, { unverified: true } when it couldn't be checked */
 async function account(store) {
-  try { const s = await getStore(store); const u = s?.mode === "cloud" ? await s.user?.() : null; return u?.id ? { db: s.db, id: u.id } : null; } catch { return null; }
+  try {
+    const s = await getStore(store), u = s?.mode === "cloud" ? await s.user?.() : null;
+    try { u?.id ? localStorage.setItem(LAST, u.id) : localStorage.removeItem(LAST); } catch { /* fine */ }
+    return u?.id ? { db: s.db, id: u.id } : null;
+  } catch { return { unverified: true }; }
 }
 let flushing = Promise.resolve();
-const delivered = new Set();   // ids sent (or refused for good) by any flush on this page
+const delivered = new Set(), refused = new Set();   // ids sent / refused for good by any flush on this page
 /** send what's waiting for this account, one flush at a time; returns the ids it delivered or dropped */
 function flush(store) {
   const run = flushing.then(async () => {
-    const me = await account(store); if (!me) return new Set();
+    const me = await account(store); if (!me || me.unverified) return new Set();
     const settled = new Set();
     // entries kept before each had an id get one now, saved once, so each is sent and taken out on its own
     const box = readBox();
@@ -245,7 +252,12 @@ function flush(store) {
     for (const x of readBox().filter(fresh)) {
       if (!x.id) continue;   // couldn't be saved with one (storage blocked): left as it is
       if (x.owner && x.owner !== me.id) continue;   // someone else's: it waits for them
-      try { const { error } = await me.db.from(x.table).insert(x.row); if (!error || FOREVER.has(error.code)) { settled.add(x.id); delivered.add(x.id); } }
+      // an owned entry names its owner in the insert, so if the session has changed meanwhile the database refuses it
+      // (and it stays) instead of filing it under whoever is signed in
+      try {
+        const { error } = await me.db.from(x.table).insert(x.owner ? { ...x.row, user_id: x.owner } : x.row);
+        if (!error) { settled.add(x.id); delivered.add(x.id); } else if (FOREVER.has(error.code)) { settled.add(x.id); refused.add(x.id); }
+      }
       catch { /* offline: it stays */ }
     }
     // take out only what this flush settled, from the outbox as it is now (new entries may have arrived meanwhile)
@@ -257,21 +269,23 @@ function flush(store) {
 }
 /**
  * Keep a report or feedback (saved on this device first) and send it now if the learner is signed in; with no row,
- * send what's waiting. Resolves "sent" | "waiting" (kept, to send later) | "failed" (couldn't even be kept here).
+ * send what's waiting. Resolves "sent" | "waiting" (kept, to send later) | "rejected" (the database refused it for good) | "failed" (couldn't even be kept here).
  */
 export async function sendOrKeep(store, table, row) {
   let id = null;
   if (row) {
-    const me = await account(store);
+    // saved at once, before any waiting, so closing the page right now loses nothing; it's owned by the account last
+    // seen here (none if signed out), and only that account's session sends it
     id = `o${Date.now().toString(36)}${Math.random().toString(36).slice(2, 7)}`;
-    if (!writeBox([...readBox().filter(fresh), { id, table, row, t: Date.now(), owner: me?.id || null }])) {
+    if (!writeBox([...readBox().filter(fresh), { id, table, row, t: Date.now(), owner: lastUser() }])) {
       // storage is blocked or full: send straight away if we can, and say so if we can't
-      if (!me) return "failed";
-      try { const { error } = await me.db.from(table).insert(row); return !error || FOREVER.has(error.code) ? "sent" : "failed"; } catch { return "failed"; }
+      const me = await account(store);
+      if (!me || me.unverified) return "failed";
+      try { const { error } = await me.db.from(table).insert(row); return !error ? "sent" : FOREVER.has(error.code) ? "rejected" : "failed"; } catch { return "failed"; }
     }
   }
   await flush(store);
-  return id ? (delivered.has(id) ? "sent" : "waiting") : "sent";
+  return id ? (delivered.has(id) ? "sent" : refused.has(id) ? "rejected" : "waiting") : "sent";
 }
 export const waiting = () => readBox().length;
 
@@ -279,11 +293,11 @@ export const waiting = () => readBox().length;
 async function sending(m, go) {
   const btn = m.box.querySelector(".gx-dfoot [data-gx-act]:last-child"); if (btn) btn.disabled = true;
   const r = await go().catch(() => "failed");
-  if (r === "failed") {
+  if (r === "failed" || r === "rejected") {
     if (btn) btn.disabled = false;
     let note = m.box.querySelector(".gx-rep-err");
     if (!note) { note = Object.assign(document.createElement("p"), { className: "gx-rep-err aq-note" }); note.setAttribute("role", "alert"); m.box.querySelector("form")?.append(note); }
-    note.textContent = "Couldn't send or keep it: this browser isn't letting Gradify save anything. Sign in, or copy what you wrote, and try again.";
+    note.textContent = r === "rejected" ? "Couldn't send it: it wasn't accepted. Check what you wrote and try again." : "Couldn't send or keep it: this browser isn't letting Gradify save anything. Sign in, or copy what you wrote, and try again.";
     return null;
   }
   m.close();

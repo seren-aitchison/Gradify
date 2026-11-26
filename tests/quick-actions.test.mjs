@@ -63,16 +63,19 @@ test("outbox: kept on this device first; sent only with the account it belongs t
   // signed out: kept, with no owner, and sent with the next account that signs in here
   assert.equal(await sendOrKeep(fakeAccount(null), "app_feedback", { note: "a" }), "waiting");
   assert.equal(outbox().length, 1); assert.equal(outbox()[0].owner, null);
-  // Ben signs in while offline: Ben's own feedback is kept as Ben's
+  // Ben signs in while offline (the app has seen him sign in): Ben's own feedback is kept as Ben's
+  await sendOrKeep(fakeAccount("ben", { fail: true }));
   assert.equal(await sendOrKeep(fakeAccount("ben", { fail: true }), "app_feedback", { note: "b" }), "waiting");
   assert.deepEqual(outbox().map((x) => [x.row.note, x.owner]), [["a", null], ["b", "ben"]]);
   // Ana signs in: the ownerless one goes with Ana; Ben's waits for Ben
   const ana = fakeAccount("ana");
+  await sendOrKeep(ana);   // the app sees Ana sign in: "a" goes with her
   assert.equal(await sendOrKeep(ana, "app_feedback", { note: "c" }), "sent");
   assert.deepEqual(ana.sent.map((x) => x[1]).sort(), ["a", "c"]);
   assert.deepEqual(outbox().map((x) => x.row.note), ["b"]);
   // two at once: both are sent, neither overwrites the other in the outbox
   const ben = fakeAccount("ben");
+  await sendOrKeep(ben);   // Ben signs back in: Ben's own "b" goes
   const [r1, r2] = await Promise.all([sendOrKeep(ben, "app_feedback", { note: "d" }), sendOrKeep(ben, "app_feedback", { note: "e" })]);
   assert.deepEqual([r1, r2], ["sent", "sent"]);
   assert.deepEqual(ben.sent.map((x) => x[1]).sort(), ["b", "d", "e"]);
@@ -111,4 +114,46 @@ test("outbox: entries kept before ids existed are given one, so a failed one sta
   assert.deepEqual(sent, ["old-ok"]);
   assert.deepEqual(outbox().map((x) => x.row.note), ["old-fails"]);
   assert.ok(outbox()[0].id);
+});
+
+test("outbox: an owned entry names its owner in the insert, so a changed session can't file it under someone else", async () => {
+  globalThis.localStorage = memStorage();
+  const { sendOrKeep } = await import("../kit/ui/quick-actions.js");
+  await sendOrKeep(fakeAccount("ben", { fail: true }));   // Ben is seen signing in
+  const rows = [];
+  const db = { from: () => ({ insert: async (row) => { rows.push(row); return { error: null }; } }) };
+  assert.equal(await sendOrKeep({ mode: "cloud", db, user: async () => ({ id: "ben" }) }, "app_feedback", { note: "mine" }), "sent");
+  assert.deepEqual(rows, [{ note: "mine", user_id: "ben" }]);
+});
+
+test("outbox: a lookup that fails is not 'signed out', and what the database refuses for good is not 'sent'", async () => {
+  globalThis.localStorage = memStorage();
+  const { sendOrKeep } = await import("../kit/ui/quick-actions.js");
+  await sendOrKeep(fakeAccount("ben", { fail: true }));
+  // the account can't be checked: kept as Ben's (last seen), not sent, not ownerless
+  const broken = { mode: "cloud", db: {}, user: async () => { throw new Error("network"); } };
+  assert.equal(await sendOrKeep(broken, "app_feedback", { note: "x" }), "waiting");
+  assert.equal(outbox()[0].owner, "ben");
+  // a refusal for good is reported as such and leaves the outbox
+  globalThis.localStorage = memStorage();
+  const db = { from: () => ({ insert: async () => ({ error: { code: "23514" } }) }) };
+  assert.equal(await sendOrKeep({ mode: "cloud", db, user: async () => ({ id: "ana" }) }, "app_feedback", { note: "y" }), "rejected");
+  assert.deepEqual(outbox(), []);
+});
+
+test("delete: switching tabs does not commit it, but leaving the page does", async () => {
+  const listeners = {};
+  globalThis.addEventListener = (t, f) => { listeners[t] = f; }; globalThis.removeEventListener = () => {};
+  const stub = () => new Proxy(function () {}, { get: (_, k) => (k === Symbol.toPrimitive ? () => "" : stub()), apply: () => stub(), set: () => true });
+  globalThis.document = Object.assign(stub(), { visibilityState: "visible", addEventListener: (t, f) => { listeners[t] = f; }, removeEventListener() {} });
+  const { deferredDelete, _undos } = await import("../kit/ui/quick-actions.js");
+  _undos().length = 0;
+  let committed = 0;
+  deferredDelete({ html: "x", ms: 30, hide() {}, restore() {}, commit: async () => { committed++; } });
+  globalThis.document.visibilityState = "hidden"; listeners.visibilitychange?.();
+  await new Promise((r) => setTimeout(r, 5));
+  assert.equal(committed, 0);
+  listeners.pagehide();
+  await new Promise((r) => setTimeout(r, 5));
+  assert.equal(committed, 1);
 });
