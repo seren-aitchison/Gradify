@@ -56,13 +56,15 @@ export function parseNotes(text) {
     if (line.startsWith("> ") && ex) { ex.steps.push(line.slice(2)); continue; }
     ex = null;
     // block tags, then question tags (TAG_LINE, which includes any type a subject adapter has registered)
-    const m = line.match(/^(S|H|P|E|X|K|!|Q|O|PRE|T|SUM|SAFE|SRC|READ|IX|D|EV|LV|CASE|LAW|DRUG|REQ|DIA|DNEED|GAP|TIER|HOOK|MORE|ALT):\s*(.*)$/) || line.match(TAG_LINE);
+    const m = line.match(/^(S|H|P|E|X|K|!|Q|O|PRE|T|SUM|SAFE|SRC|READ|IX|D|EV|LV|CASE|LAW|DRUG|REQ|DIA|DNEED|GAP|TIER|HOOK|MORE|ALT|QH):\s*(.*)$/) || line.match(TAG_LINE);
     const [tag, body] = m ? [m[1], m[2]] : line.startsWith("- ") ? ["-", line.slice(2)] : ["P", line];
     const last = L.blocks.at(-1);
     if (tag === "S") L.lead += (L.lead ? " " : "") + body;
     // schema v2 (docs/LESSON-SCHEMA.md): "H: Title @2" tags the concept block with the objective it teaches
     else if (tag === "H") { const o = body.match(/\s+@(\d+(?:,\d+)*)\s*$/); L.blocks.push(o ? { t: "h", x: body.slice(0, o.index).trim(), obj: o[1].split(",").map(Number) } : { t: "h", x: body }); }
     else if (tag === "HOOK") L.blocks.push({ t: "hook", x: body });
+    // QH: a hint for the question just above it, shown when a first answer misses (it never gives the answer away)
+    else if (tag === "QH") { const at = L.placed.at(-1), Q = at && (at.kind === "mcq" ? L.mcq[at.i]?.Q : L.tasks[at.i]); if (Q && body) Q.hint = body; }
     else if (tag === "MORE") L.blocks.push({ t: "more", x: body });
     else if (tag === "ALT") { const i = body.indexOf(" | "); L.blocks.push(i > 0 ? { t: "alt", style: body.slice(0, i).trim().toLowerCase(), x: body.slice(i + 3).trim() } : { t: "alt", style: "another way", x: body }); }
     else if (tag === "P") L.blocks.push({ t: "p", x: body });

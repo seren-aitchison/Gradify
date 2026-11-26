@@ -47,10 +47,14 @@ T: Prokaryote | An organism made of a cell with no nucleus, such as a bacterium
 T: Plasmid | A small ring of DNA found in many bacteria, separate from the main loop
 Q: Where is the DNA in a prokaryotic cell? | In a single loop in the cytoplasm, often with plasmids
 Q: Which is usually larger, a bacterium or an animal cell? | An animal cell
-M1@1: Where is the main DNA found in a bacterial cell? | In a single loop in the cytoplasm | Inside the nucleus of the cell | Inside the cell's chloroplasts | Inside the cell's mitochondria | Bacteria are prokaryotes, so they have no nucleus or other membrane-bound organelles; the DNA is a loop in the cytoplasm.
-M2@2: A cell is 2 micrometres long. What kind of cell is it most likely to be? | A prokaryotic cell | A plant leaf cell | An animal cheek cell | A human egg cell | Prokaryotic cells are usually 1 to 10 micrometres long; plant and animal cells are usually much larger than that.
-M3@1: An antibiotic damages a structure found only in cells without a nucleus. Which cells does it target? | Bacterial cells | Human skin cells | Plant leaf cells | Yeast cells | Bacteria are prokaryotes with no nucleus, while human, plant and yeast cells are all eukaryotic cells with a nucleus.
+M1@1: Where is the main DNA found in a bacterial cell? | In a single loop in the cytoplasm | Inside the nucleus of the cell :: Bacteria are prokaryotes, and prokaryotes have no nucleus. | Inside the cell's chloroplasts :: Bacteria have no chloroplasts or other membrane-bound organelles. | Inside the cell's mitochondria :: Mitochondria are found only in eukaryotic cells. | Bacteria are prokaryotes, so they have no nucleus or other membrane-bound organelles; the DNA is a loop in the cytoplasm.
+QH: Think about which organelles a prokaryotic cell does not have.
+M2@2: A cell is 2 micrometres long. What kind of cell is it most likely to be? | A prokaryotic cell | A plant leaf cell :: Plant cells are usually tens of micrometres across. | An animal cheek cell :: Animal cells are usually 10 to 30 micrometres across. | A human egg cell :: A human egg is one of the largest human cells, about 100 micrometres across. | Prokaryotic cells are usually 1 to 10 micrometres long; plant and animal cells are usually much larger than that.
+QH: Compare 2 micrometres with the typical sizes of the different cell types.
+M3@1: An antibiotic damages a structure found only in cells without a nucleus. Which cells does it target? | Bacterial cells | Human skin cells :: Human cells have a nucleus. | Plant leaf cells :: Plant cells have a nucleus. | Yeast cells :: Yeast is a fungus, and its cells have a nucleus. | Bacteria are prokaryotes with no nucleus, while human, plant and yeast cells are all eukaryotic cells with a nucleus.
+QH: Which kind of cell has no nucleus?
 TF2@2: A typical animal cell is larger than a typical bacterium. | true | Most bacteria are 1 to 10 micrometres long, while animal cells are usually 10 to 30 micrometres across.
+QH: Recall the typical sizes of a bacterium and an animal cell.
 SUM: Prokaryotic cells have no nucleus and keep their DNA in a single loop.
 SUM: They are much smaller than eukaryotic cells.
 SRC: Open biology text | secondary | 2026-11-25 | https://openstax.org/books/biology-2e
