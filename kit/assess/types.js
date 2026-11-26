@@ -5,7 +5,11 @@
 //   wire(box, Q, emit, ctx)                       interaction; calls emit(response) when answered
 //   restore(box, Q, response)                     show a saved response (exams)
 //   mark(Q, response) → { score 0..1, correct, detail, status }
-//   feedback(Q, response, result) → html          explanation of the learner's specific answer
+//   feedback(Q, response, result, { reveal }) → html   explanation of the learner's specific answer; with reveal
+//                                                 false (a wrong first try in practice) it says why that answer
+//                                                 isn't right without giving the right one away
+//   paint(box, Q, response, result, { reveal })   marks the answer area; the right answer only with reveal
+//   hint(Q, response, result) → text              a nudge for the second try (optional), never the answer
 //   answer(Q) → text                              the correct answer, for results pages
 // To add a type: add a handler here and a tag in model.js. Nothing else changes.
 import { esc, inline } from "../core/text.js";
@@ -36,11 +40,16 @@ const choice = {
   },
   restore(box, Q, v) { box.querySelectorAll(".aq-opts button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.v === v))); },
   mark(Q, v) { const ok = Q.options.some((o) => o.correct && o.text === v); return { score: ok ? 1 : 0, correct: ok }; },
-  feedback(Q, v, res) {
+  feedback(Q, v, res, { reveal = true } = {}) {
     const picked = Q.options.find((o) => o.text === v), right = Q.options.find((o) => o.correct);
-    return `${!res.correct && picked?.why ? `<p class="aq-optwhy"><b>Why not “${inline(picked.text)}”:</b> ${inline(picked.why)}</p>` : ""}${!res.correct ? `<p><b>Answer:</b> ${inline(right.text)}</p>` : ""}`;
+    return `${!res.correct && picked?.why ? `<p class="aq-optwhy"><b>Why not “${inline(picked.text)}”:</b> ${inline(picked.why)}</p>` : ""}${!res.correct && reveal ? `<p><b>Answer:</b> ${inline(right.text)}</p>` : ""}`;
   },
-  paint(box, Q, v, res) { box.querySelectorAll(".aq-opts button").forEach((b) => { if (b.dataset.v === v) b.classList.add(res.correct ? "right" : "wrong"); if (!res.correct && Q.options.some((o) => o.correct && o.text === b.dataset.v)) b.classList.add("right"); }); },
+  paint(box, Q, v, res, { reveal = true } = {}) { box.querySelectorAll(".aq-opts button").forEach((b) => { if (b.dataset.v === v) b.classList.add(res.correct ? "right" : "wrong"); if (reveal && !res.correct && Q.options.some((o) => o.correct && o.text === b.dataset.v)) b.classList.add("right"); }); },
+  // the second try: the option already tried is crossed out, and with four or more, one more wrong one goes too
+  hint(Q, v) {
+    const wrong = Q.options.filter((o) => !o.correct && o.text !== v);
+    return Q.options.length >= 4 && wrong.length > 1 ? { text: `It isn't “${wrong[0].text}” either.`, rule: [v, wrong[0].text] } : { text: "One option is ruled out. Have another look at the rest.", rule: [v] };
+  },
   answer: (Q) => Q.options.find((o) => o.correct).text,
 };
 
@@ -75,8 +84,9 @@ export const TYPES = {
       const hits = right.filter((o) => chosen.has(o.text)).length, wrong = [...chosen].filter((x) => !right.some((o) => o.text === x)).length;
       return { score: Math.max(0, (hits - wrong) / right.length), correct: hits === right.length && !wrong, detail: `${hits} of ${right.length} correct options${wrong ? `, ${wrong} incorrect chosen` : ""}` };
     },
-    feedback(Q, v) { const chosen = new Set(v || []); return `<ul class="aq-optlist">${Q.options.map((o) => `<li class="${o.correct ? "ok" : ""}">${o.correct ? "Applies" : "Doesn't apply"}: ${inline(o.text)}${chosen.has(o.text) ? " <small>(you chose this)</small>" : ""}${o.why ? `<br><small>${inline(o.why)}</small>` : ""}</li>`).join("")}</ul>`; },
-    paint(box, Q) { box.querySelectorAll(".aq-checks label").forEach((l) => { const val = l.querySelector("input").value, ok = Q.options.some((o) => o.correct && o.text === val); l.classList.toggle("right", ok); l.classList.toggle("wrong", !ok && l.querySelector("input").checked); }); },
+    hint(Q) { const n = Q.options.filter((o) => o.correct).length; return { text: `${n} of the ${Q.options.length} options apply.` }; },
+    feedback(Q, v, res, { reveal = true } = {}) { if (!reveal) return ""; const chosen = new Set(v || []); return `<ul class="aq-optlist">${Q.options.map((o) => `<li class="${o.correct ? "ok" : ""}">${o.correct ? "Applies" : "Doesn't apply"}: ${inline(o.text)}${chosen.has(o.text) ? " <small>(you chose this)</small>" : ""}${o.why ? `<br><small>${inline(o.why)}</small>` : ""}</li>`).join("")}</ul>`; },
+    paint(box, Q, v, res, { reveal = true } = {}) { if (!reveal) return; box.querySelectorAll(".aq-checks label").forEach((l) => { const val = l.querySelector("input").value, ok = Q.options.some((o) => o.correct && o.text === val); l.classList.toggle("right", ok); l.classList.toggle("wrong", !ok && l.querySelector("input").checked); }); },
     answer: (Q) => Q.options.filter((o) => o.correct).map((o) => o.text).join("; "),
   },
   order: {
@@ -102,7 +112,8 @@ export const TYPES = {
     },
     restore(box, Q, v) { const ol = box.querySelector(".aq-steps"); for (const s of v || []) { const li = [...ol.children].find((x) => x.dataset.v === s); if (li) ol.append(li); } },
     mark(Q, v) { const ok = (v || []).filter((s, i) => s === Q.steps[i]).length; return { score: ok / Q.steps.length, correct: ok === Q.steps.length, detail: `${ok} of ${Q.steps.length} in the right place` }; },
-    feedback(Q, v, res) { return res.correct ? "" : `<p><b>Correct order:</b></p><ol>${Q.steps.map((s) => `<li>${inline(s)}</li>`).join("")}</ol>`; },
+    hint() { return { text: "Steps marked as right are already in place. Move the others." }; },
+    feedback(Q, v, res, { reveal = true } = {}) { return res.correct || !reveal ? "" : `<p><b>Correct order:</b></p><ol>${Q.steps.map((s) => `<li>${inline(s)}</li>`).join("")}</ol>`; },
     paint(box, Q) { box.querySelectorAll(".aq-steps li").forEach((li, i) => li.classList.toggle("right", li.dataset.v === Q.steps[i])); },
     answer: (Q) => Q.steps.map((s, i) => `${i + 1}. ${s}`).join("  "),
   },
@@ -117,7 +128,8 @@ export const TYPES = {
     },
     restore(box, Q, v) { box.querySelectorAll(".aq-match select").forEach((s) => { s.value = v?.[s.dataset.left] || ""; }); },
     mark(Q, v) { const ok = Q.pairs.filter(([l, r]) => v?.[l] === r).length; return { score: ok / Q.pairs.length, correct: ok === Q.pairs.length, detail: `${ok} of ${Q.pairs.length} matched` }; },
-    feedback(Q, v, res) { return res.correct ? "" : `<ul>${Q.pairs.map(([l, r]) => `<li>${inline(l)} → ${inline(r)}${v?.[l] && v[l] !== r ? ` <small>(you chose ${esc(v[l])})</small>` : ""}</li>`).join("")}</ul>`; },
+    hint() { return { text: "Pairs marked as right are already matched. Change the others." }; },
+    feedback(Q, v, res, { reveal = true } = {}) { return res.correct || !reveal ? "" : `<ul>${Q.pairs.map(([l, r]) => `<li>${inline(l)} → ${inline(r)}${v?.[l] && v[l] !== r ? ` <small>(you chose ${esc(v[l])})</small>` : ""}</li>`).join("")}</ul>`; },
     paint(box, Q) { box.querySelectorAll(".aq-match select").forEach((s) => s.parentElement.classList.toggle("right", Q.pairs.find(([l]) => l === s.dataset.left)?.[1] === s.value)); },
     answer: (Q) => Q.pairs.map(([a, b]) => `${a} → ${b}`).join("; "),
   },
@@ -143,7 +155,15 @@ export const TYPES = {
       const tol = Q.tol.rel != null ? Math.abs(Q.answer) * Q.tol.rel : Q.tol.abs, ok = Math.abs(x - Q.answer) <= tol + (1e-9 * Math.abs(Q.answer) || 1e-12);   // slack for floating-point rounding only, scaled to the answer so tiny answers keep their tolerance
       return { score: ok ? 1 : 0, correct: ok, detail: ok ? "Within tolerance" : `You gave ${v}` };
     },
-    feedback(Q, v, res) { return res.correct ? "" : `<p><b>Answer:</b> ${esc(fmtNum(Q.answer))}${Q.unit ? ` ${inline(Q.unit)}` : ""}${Q.tol.rel ? ` (within ${+(Q.tol.rel * 100).toFixed(2)}%)` : Q.tol.abs ? ` (± ${Q.tol.abs})` : ""}</p>`; },
+    // the second try: too high or too low, and a power of ten out says so
+    hint(Q, v) {
+      const x = numberOf(v); if (x == null) return { text: `Give a number${Q.unit ? ` in ${Q.unit}` : ""}.` };
+      const r = Q.answer ? x / Q.answer : null, pow = r && r > 0 ? Math.log10(r) : null;
+      if (pow != null && Math.abs(pow) >= 0.9 && Math.abs(pow - Math.round(pow)) < 0.02) return { text: `You're out by a factor of ten or more: check powers of ten and units${Q.unit ? ` (the answer is in ${Q.unit})` : ""}.` };
+      if (Q.answer && Math.sign(x) !== Math.sign(Q.answer) && x !== 0) return { text: "Check the sign of your answer." };
+      return { text: `Your answer is too ${x > Q.answer ? "high" : "low"}.` };
+    },
+    feedback(Q, v, res, { reveal = true } = {}) { return res.correct || !reveal ? "" : `<p><b>Answer:</b> ${esc(fmtNum(Q.answer))}${Q.unit ? ` ${inline(Q.unit)}` : ""}${Q.tol.rel ? ` (within ${+(Q.tol.rel * 100).toFixed(2)}%)` : Q.tol.abs ? ` (± ${Q.tol.abs})` : ""}</p>`; },
     paint(box, Q, v, res) { box.querySelector(".aq-num input").classList.toggle(res.correct ? "right" : "wrong", true); },
     answer: (Q) => `${fmtNum(Q.answer)}${Q.unit ? ` ${Q.unit}` : ""}`,
   },

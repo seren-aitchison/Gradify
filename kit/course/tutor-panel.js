@@ -28,13 +28,32 @@ import { upgradeLink } from "../data/functions.js";
 
 export const newConversation = () => globalThis.crypto?.randomUUID?.() ?? "10000000-1000-4000-8000-100000000000".replace(/[018]/g, (c) => (c ^ (Math.random() * 16) >> (c / 4)).toString(16));
 
+/** "What Gradify AI is using": exactly what the requests send (tutor.js builds them from these) */
+export function contextHtml(o) {
+  const words = (String(o.lesson?.text || "").match(/\S+/g) || []).length;
+  const n = (() => { try { return o.candidates?.().length || 0; } catch { return 0; } })();
+  const items = [
+    `This lesson, <b>${esc(o.lesson?.title || "")}</b>, and its notes${words ? ` (about ${words.toLocaleString()} words)` : ""}`,
+    "What you type or say to it in this panel",
+    o.lab ? "What an interactive lab on this page shows, when you've used one (Ask and Talk it through)" : "",
+    n ? `The titles of ${n} other lessons in this course, for Connections` : "",
+  ].filter(Boolean);
+  return `<details class="co-tctx"><summary>What Gradify AI is using</summary><ul>${items.map((x) => `<li>${x}</li>`).join("")}</ul>
+    ${o.focus ? `<label class="co-tctxf"><input type="checkbox" data-ctx-focus checked> Aim <i>Challenge me</i> at what your answers show you find hardest: ${esc(FOCUS_NAME[o.focus] || o.focus)}</label>` : ""}
+    <p class="co-tctxn">Not your own notes, your other courses or your plan. Signed in, your account is used to count your AI allowance.</p></details>`;
+}
+
 export function mountTutorPanel(el, o) {
   const modes = MODES.filter(([m]) => !o.modes || o.modes.includes(m));
   // conv: one id per conversation, so its turns share a single use of the learner's allowance (_shared/ai.js)
   let mode = modes[0][0], turns = [], conv = null;
   el.innerHTML = `<h3>${esc(o.heading || "Gradify AI tutor")}</h3>
     <div class="co-tmodes" role="tablist">${modes.map(([m, l]) => `<button type="button" role="tab" data-m="${m}" aria-selected="${m === mode}">${l}</button>`).join("")}</div>
-    <p class="co-tlab" hidden></p><div class="co-tbody"></div><p class="aq-note">${esc(o.note)}</p>`;
+    <p class="co-tlab" hidden></p><div class="co-tbody"></div>${contextHtml(o)}<p class="aq-note">${esc(o.note)}</p>`;
+  // what the tutor is told, folded away until asked for; the one optional part (aiming Challenge me at the learner's
+  // weakest kind of evidence) can be switched off here
+  let useFocus = true;
+  el.querySelector("[data-ctx-focus]")?.addEventListener("change", (e) => { useFocus = e.target.checked; });
   const body = el.querySelector(".co-tbody"), labLine = el.querySelector(".co-tlab");
   // what the tutor will be told about the lab, shown so the learner knows it can see it
   const lab = () => { const x = (mode === "explain" || mode === "socratic") ? o.lab?.() : null; labLine.hidden = !x; if (x) labLine.textContent = `The tutor can see what the “${x.title}” lab shows right now.`; return x || undefined; };
@@ -86,7 +105,7 @@ export function mountTutorPanel(el, o) {
       body.querySelector(".co-start").addEventListener("click", async (e) => {
         const out = body.querySelector(".co-tout"); e.currentTarget.disabled = true; out.innerHTML = busy("Writing your questions…");
         try {
-          const r = await o.ask({ mode: "challenge", lesson: o.lesson, focus: o.focus });
+          const r = await o.ask({ mode: "challenge", lesson: o.lesson, focus: useFocus ? o.focus : null });
           out.innerHTML = r.questions.length ? r.questions.map((q, i) => `<div class="co-chq" data-i="${i}"><p><b>${i + 1}.</b> ${esc(q.question)}</p>
             ${q.kind === "choice" ? `<div class="co-chopts">${q.options.map((op, j) => `<button type="button" data-j="${j}">${esc(op.text)}</button>`).join("")}</div>` : `<details><summary>Show a model answer</summary>${paras(q.answer)}</details>`}
             <p class="co-chwhy" hidden>${esc(q.why)}</p></div>`).join("") + `<p class="aq-note">Written by Gradify AI from the lesson notes. If a question looks wrong, trust the notes.</p>` : busy("The tutor couldn't write good questions for this lesson. Try again later.");

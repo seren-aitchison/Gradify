@@ -73,7 +73,9 @@ export function page({ path, title: rawTitle, description: rawDesc, crumbs = [],
   // Speakable: on guides, topics, comparisons and key terms, the heading and the answer-first summary are the parts a
   // voice assistant should read out
   const speak = /class="answer"/.test(body) && /^(guides|topics|vs|terms)\/./.test(path) ? { "@context": "https://schema.org", "@type": "WebPage", url: canonical, name: title, speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", ".answer"] } } : null;
-  const graph = [crumbLd, speak, ...schema.map((s) => ({ "@context": "https://schema.org", ...s }))].filter(Boolean);
+  // the page's preview image on its main structured data, so search engines can show it as the result's thumbnail
+  const IMAGED = new Set(["Article", "LearningResource", "Course", "HowTo", "WebPage", "CollectionPage", "DefinedTerm", "Quiz", "SoftwareApplication", "WebApplication"]);
+  const graph = [crumbLd, speak, ...schema.map((s) => ({ "@context": "https://schema.org", ...s, ...(IMAGED.has(s["@type"]) && !s.image ? { image: ogFor(path) } : {}) }))].filter(Boolean);
   return `<!doctype html>
 <html lang="en-GB">
 <head>
@@ -103,6 +105,7 @@ export function page({ path, title: rawTitle, description: rawDesc, crumbs = [],
   ${updated ? `<meta property="article:modified_time" content="${updated}">` : ""}
   <meta name="theme-color" content="#000000">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/icons/favicon-48.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
   <link rel="preload" href="/assets/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/kit/styles/base.css">

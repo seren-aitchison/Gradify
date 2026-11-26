@@ -116,10 +116,14 @@ async function answer(p, right) {
   const box = p.locator(".aq", { has: p.locator(".aq-opts") }).first();
   await box.scrollIntoViewIfNeeded();
   const opts = box.locator(".aq-opts button"), count = await opts.count();
+  // a wrong try in practice rules options out (disabled) and a second wrong try shows the answer and locks the
+  // question (kit/assess/questions.js), so only enabled options are tried, and an answered or revealed question is done
   for (let i = 0; i < count; i++) {
+    if (await opts.nth(i).isDisabled()) continue;
     await opts.nth(i).click(); await p.waitForTimeout(150);
     const correct = (await box.locator(".aq-result.ok").count()) > 0;
     if (correct === right || correct) return;
+    if (await box.evaluate((x) => x.classList.contains("revealed") || x.classList.contains("solved"))) return;
   }
 }
 

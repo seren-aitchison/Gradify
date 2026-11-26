@@ -354,3 +354,72 @@ test("every sitemap URL is a real, indexable page: canonical to itself, no noind
     assert.ok(t && !titles.has(t), `${p}: title "${t}" also on ${titles.get(t)}`); titles.set(t, p);
   }
 });
+
+// search wording (scripts/seo/serp.mjs, docs/SEO.md "Search wording")
+test("search wording: qualifications only where coverage.js claims them, content words only where the page has them", async () => {
+  const { quals, contents, caseName } = await import("../scripts/seo/serp.mjs");
+  assert.deepEqual(quals("biology"), []);
+  assert.ok(quals("law").includes("SQE"));
+  assert.equal(caseName("Fisher v Bell [1961] 1 QB 394"), "Fisher v Bell");
+  assert.equal(contents({ diagrams: 1, terms: 3, questions: 2 }), "a labelled diagram, key terms and 2 questions with answers");
+  // the generated pages (built once at the top of this file)
+  const QUAL = /\b(GCSE|A Level|SQE|MLA|NMC|GPhC)\b/;
+  const head = (h) => `${h.match(/<title>([^<]*)/)?.[1] || ""} ${h.match(/<meta name="description" content="([^"]*)"/)?.[1] || ""}`;
+  let lessonsSeen = 0;
+  for (const [path, html] of files) {
+    const m = path.match(/^(?:lessons|topics|questions)\/([a-z0-9-]+)\//); if (!m) continue;
+    // a topic or lesson may be named after a qualification ("A Level Historical Investigation"): that's the course's own
+    // data, not a claim made by the wording, so the page's own name is left out of the check
+    const own = (html.match(/<h1[^>]*>([^<]*)/)?.[1] || "").replace(/: revision notes$/, "");
+    const words = own ? head(html).split(own).join(" ").split(own.replace(/\b\w/g, (x) => x.toUpperCase())).join(" ") : head(html), claimed = quals(m[1]);
+    for (const q of words.match(new RegExp(QUAL, "g")) || []) assert.ok(claimed.includes(q), `${path}: "${q}" in title or description, but coverage.js doesn't claim it for ${m[1]}`);
+    if (!path.startsWith("lessons/")) continue;
+    lessonsSeen++;
+    const title = html.match(/<title>([^<]*)/)[1];
+    assert.ok(title.length <= 60, `${path}: title over 60 characters`);
+    assert.match(title, /Revision Notes|Notes and Key Case/, `${path}: title says what the page is`);
+    if (/Diagram/.test(title)) assert.match(html, /class="lesson-dg"/, `${path}: title promises a diagram`);
+    if (/Key Case/.test(title)) assert.match(html, /class="co-auth"/, `${path}: title promises a key case`);
+    if (/Worked Example/.test(title)) assert.match(html, /class="co-ex/, `${path}: title promises a worked example`);
+    assert.match(html.match(/<meta name="description" content="([^"]*)"/)[1], /revision notes/i, `${path}: description leads with the search phrase`);
+  }
+  assert.ok(lessonsSeen >= 80, "the lesson pages were checked");
+  // the course page and the topics hub answer different searches, so they never share a title shape
+  assert.match(files.get("topics/biology/index.html"), /<title>Biology Revision Notes/);
+  assert.match(files.get("scigradify/biology/index.html") || await readFile(new URL("../scigradify/biology/index.html", import.meta.url), "utf8"), /<title>Free Biology Course/);
+});
+
+test("every indexed page shows the Gradify G and a link-preview image wherever it's shared or listed", async () => {
+  const { existsSync: has } = await import("node:fs");
+  assert.ok(has(new URL("../favicon.ico", import.meta.url)), "a /favicon.ico for crawlers and apps that only look there");
+  assert.ok(PUBLISH.files.includes("favicon.ico"), "favicon.ico is published");
+  for (const f of ["assets/icons/favicon-48.png", "assets/icons/favicon-96.png", "assets/favicon.svg"]) assert.ok(has(new URL(`../${f}`, import.meta.url)), f);
+  for (const u of await sitemapUrls()) {
+    let p = u.replace("https://getgradify.com/", ""); if (!p || p.endsWith("/")) p += "index.html";
+    const html = files.get(p) ?? await readFile(new URL(`../${p}`, import.meta.url), "utf8");
+    assert.match(html, /<link rel="icon" href="[^"]*favicon\.svg"/, `${p}: SVG favicon`);
+    assert.match(html, /<link rel="icon" href="\/assets\/icons\/favicon-48\.png" type="image\/png" sizes="48x48">/, `${p}: 48px PNG favicon (Google asks for a multiple of 48px)`);
+    const og = html.match(/<meta property="og:image" content="https:\/\/getgradify\.com\/([^"]+)"/)?.[1];
+    assert.ok(og && has(new URL(`../${og}`, import.meta.url)), `${p}: og:image is a real file`);
+    assert.match(html, /<meta name="twitter:image" content="https:\/\/getgradify\.com\/[^"]+"/, `${p}: twitter:image`);
+  }
+});
+
+test("lesson pages answer questions the way students ask them, each a heading with its answer under it", () => {
+  let pages = 0, total = 0;
+  for (const [path, html] of files) {
+    if (!/^lessons\/[^/]+\/[^/]+\/index\.html$/.test(path)) continue;
+    pages++;
+    const sec = html.match(/<section class="lesson-qa">([\s\S]*?)<\/section>/)?.[1];
+    assert.ok(sec, `${path}: a "Questions this page answers" section`);
+    const qs = [...sec.matchAll(/<h3 id="([^"]+)">([^<]+)<\/h3><p>/g)];
+    assert.ok(qs.length >= 3, `${path}: at least three questions, each with its answer`);
+    assert.equal(new Set(qs.map((m) => m[1])).size, qs.length, `${path}: each question has its own anchor`);
+    for (const [, , q] of qs) assert.doesNotMatch(q, /^What is (a |the )?[A-Z][a-z]+\?$|“[A-Z][a-z]+” mean/, `${path}: "${q}" reads as a student would type it`);
+    total += qs.length;
+  }
+  assert.ok(pages >= 80 && total >= 500, `${pages} lesson pages, ${total} questions`);
+  const law = files.get("lessons/law/u01-12/index.html");
+  assert.match(law, /<h3 id="q-what-happened-in-pepper-v-hart">What happened in Pepper v Hart\?<\/h3>/);
+  assert.match(files.get("lessons/biology/u02-04/index.html"), /<li id="lysosomes"><b>Lysosomes<\/b>/);
+});

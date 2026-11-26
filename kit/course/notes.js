@@ -5,7 +5,10 @@
 //   P: a paragraph (a line with no prefix is a paragraph too)
 //   - a bullet point
 //   E: an equation, optionally "equation :: what it means"
-//   X: a worked example; following "> " lines are its steps
+//   X: a worked example; following "> " lines are its steps (on the page they're revealed one at a time; the last is
+//      the answer)
+//   DEEP: more for whoever wants it, folded under "Show more": "label | text", where the label says what it is
+//      ("Derivation", "Deeper theory", "Another example", "Exam detail"). Following "> " lines are more paragraphs
 //   K: a key idea, boxed
 //   !: a pitfall, a common mistake
 //   Q: a flashcard, "question | answer"
@@ -53,10 +56,10 @@ export function parseNotes(text) {
     if (!line) { ex = null; continue; }
     if (line.startsWith("## ")) { L = { title: line.slice(3).trim(), lead: "", blocks: [], cards: [], mcq: [], tasks: [], objectives: [], prereq: [], terms: [], summary: [], sources: [], reading: [], evidence: [], authorities: [], level: "", reqs: [], placed: [], needs: [], gaps: [], tier: "" }; lessons.push(L); ex = null; continue; }
     if (!L) continue;
-    if (line.startsWith("> ") && ex) { ex.steps.push(line.slice(2)); continue; }
+    if (line.startsWith("> ") && ex) { (ex.steps || ex.more).push(line.slice(2)); continue; }
     ex = null;
     // block tags, then question tags (TAG_LINE, which includes any type a subject adapter has registered)
-    const m = line.match(/^(S|H|P|E|X|K|!|Q|O|PRE|T|SUM|SAFE|SRC|READ|IX|D|EV|LV|CASE|LAW|DRUG|REQ|DIA|DNEED|GAP|TIER|HOOK|MORE|ALT):\s*(.*)$/) || line.match(TAG_LINE);
+    const m = line.match(/^(S|H|P|E|X|K|!|Q|O|PRE|T|SUM|SAFE|SRC|READ|IX|D|EV|LV|CASE|LAW|DRUG|REQ|DIA|DNEED|GAP|TIER|HOOK|MORE|ALT|DEEP):\s*(.*)$/) || line.match(TAG_LINE);
     const [tag, body] = m ? [m[1], m[2]] : line.startsWith("- ") ? ["-", line.slice(2)] : ["P", line];
     const last = L.blocks.at(-1);
     if (tag === "S") L.lead += (L.lead ? " " : "") + body;
@@ -70,6 +73,7 @@ export function parseNotes(text) {
     else if (tag === "E") { const [x, note] = body.split(" :: "); if (last?.t === "eq") last.rows.push([x, note]); else L.blocks.push({ t: "eq", rows: [[x, note]] }); }
     else if (tag === "X") { ex = { t: "ex", x: body, steps: [] }; L.blocks.push(ex); }
     else if (tag === "K") L.blocks.push({ t: "key", x: body });
+    else if (tag === "DEEP") { const i = body.indexOf(" | "); ex = { t: "deep", label: i > 0 ? body.slice(0, i).trim() : "More on this", x: i > 0 ? body.slice(i + 3).trim() : body.trim(), more: [] }; L.blocks.push(ex); }
     else if (tag === "!") L.blocks.push({ t: "pit", x: body });
     else if (tag === "Q") { const [q, a] = body.split(" | "); if (q && a) L.cards.push([q.trim(), a.trim()]); }
     else if (tag === "O") L.objectives.push(body);
@@ -151,7 +155,8 @@ function block(b) {
   if (b.t === "p") return `<p>${inline(b.x)}</p>`;
   if (b.t === "ul") return `<ul>${b.items.map((i) => `<li>${inline(i)}</li>`).join("")}</ul>`;
   if (b.t === "eq") return `<div class="co-eq lx-call lx-eq">${b.rows.map(([x, n]) => `<div><code>${inline(x)}</code>${n ? `<span>${inline(n)}</span>` : ""}</div>`).join("")}</div>`;
-  if (b.t === "ex") return `<div class="co-ex lx-call lx-ex">${head("ex", "Worked example")}<div class="lx-b"><p>${inline(b.x)}</p>${b.steps.length ? `<ol>${b.steps.map((s) => `<li>${inline(s)}</li>`).join("")}</ol>` : ""}</div></div>`;
+  if (b.t === "deep") return `<details class="co-deep gx-more"><summary><span class="gx-more-l">Show more</span><b>${inline(b.label)}</b></summary><div class="co-deepb">${[b.x, ...b.more].map((x) => `<p>${inline(x)}</p>`).join("")}</div></details>`;
+  if (b.t === "ex") return `<div class="co-ex lx-call lx-ex" data-steps>${head("ex", "Worked example")}<div class="lx-b"><p>${inline(b.x)}</p>${b.steps.length ? `<ol>${b.steps.map((s) => `<li>${inline(s)}</li>`).join("")}</ol>` : ""}</div></div>`;
   if (b.t === "key") return `<div class="mv-key lx-call lx-key">${head("key", "Key idea")}<p class="lx-b">${inline(b.x)}</p></div>`;
   if (b.t === "safe") return `<div class="co-safe lx-call lx-safe">${head("safe", "Competence and safety")}<div class="lx-b">${inline(b.x)}</div></div>`;
   if (b.t === "pit") return `<div class="mv-clin co-pit lx-call lx-pit">${head("pit", "Common mistake")}<div class="lx-b">${inline(b.x)}</div></div>`;
@@ -172,6 +177,7 @@ export function lessonText(L) {
     else if (b.t === "eq") out.push(...b.rows.map(([x, n]) => `${x}${n ? `  (${n})` : ""}`));
     else if (b.t === "ex") out.push(`Example: ${b.x}`, ...b.steps.map((s, i) => `  ${i + 1}. ${s}`));
     else if (b.t === "pit") out.push(`Mistake to avoid: ${b.x}`);
+    else if (b.t === "deep") out.push(`${b.label}: ${b.x}`, ...b.more);
     else if (b.t === "ix" || b.t === "dg" || b.t === "dia") continue;
     else out.push(b.x);
   }

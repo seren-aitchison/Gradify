@@ -1,1 +1,43 @@
-[]
+[
+ {
+  "date": "2026-11-25",
+  "pages": [
+   "artgradify/course/index.html",
+   "businessgradify/course/index.html",
+   "creategradify/course/index.html",
+   "dentalgradify/course/index.html",
+   "ecogradify/course/index.html",
+   "edugradify/course/index.html",
+   "engineergradify/course/index.html",
+   "financegradify/course/index.html",
+   "healthgradify/course/index.html",
+   "historygradify/course/index.html",
+   "internshipgradify/course/index.html",
+   "investorgradify/course/index.html",
+   "juniorgradify/course/index.html",
+   "languagegradify/course/index.html",
+   "languagegradify/japanese/index.html",
+   "lawgradify/course/index.html",
+   "litgradify/course/index.html",
+   "mathgradify/course/index.html",
+   "medgradify/course/index.html",
+   "musicgradify/course/index.html",
+   "nursegradify/course/index.html",
+   "pharmagradify/course/index.html",
+   "postgradify/course/index.html",
+   "progradify/course/index.html",
+   "psychgradify/course/index.html",
+   "scigradify/biology/index.html",
+   "scigradify/chemistry/index.html",
+   "scigradify/physics/index.html",
+   "socgradify/course/index.html",
+   "sportgradify/course/index.html",
+   "undergradify/course/index.html",
+   "vetgradify/course/index.html",
+   "youthgradify/course/index.html"
+  ],
+  "field": "title and description",
+  "reason": "Owner request: use the words students search with. Course pages now answer \"free <subject> course\" searches (\"Free Law Course for SQE and Law Degrees\"), so they stop competing with the /topics/<subject>/ hubs, which take \"<subject> revision notes\". Qualifications are named only where kit/curriculum/coverage.js claims them.",
+  "evidence": "No Search Console or keyword-volume data yet (autocomplete endpoints blocked from the build environment). Live search sample, 2026-11-25: pages ranking for subject revision searches are titled \"<topic> (<board> <level> <subject>): Revision Note\" (Save My Exams); course-intent results lead with \"Free <subject> course\". Re-measure in Search Console after 28 days (from 2026-12-23) and revert any page whose CTR falls."
+ }
+]

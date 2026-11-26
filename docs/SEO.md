@@ -184,3 +184,34 @@ The continuous system (search intelligence, CTR change control, lesson readiness
 - [ ] **GA4 / counts**: returning-visitor ratio, tool-to-tool journeys, and action rate (tool use, quiz finished, exports, shares, prints) per page type; build more of the formats that win, merge or prune the ones that don't.
 
 Not built yet (bigger product work): a Chrome extension, public shared study packs (`/pack/<topic>`), and an email sender for the study-tips list.
+
+## Search wording (25 November 2026)
+
+Titles, descriptions and headings now use the words students search with. The rules live in `scripts/seo/serp.mjs`.
+
+**Evidence.** No keyword-volume data is in the repository: Google, Bing and DuckDuckGo autocomplete were blocked from the build environment. The wording comes from a sample of live search results on 25 November 2026:
+- The pages that rank for subject searches are titled "<topic> (<board> <level> <subject>): Revision Note" (Save My Exams), with "topic questions", "past papers" and "model answers" in sub-pages.
+- Law students search for cases by name, as "<case> case summary". The ranking pages are case summaries with facts, decision and principle.
+- Nursing and pharmacy searches pair the subject with "flashcards" and "free".
+
+**What changed.**
+- **Lesson pages:** "<Lesson>: <Subject> Revision Notes and Diagram / Worked Examples / Key Case(s) / Questions". The extra phrase is the one thing the page has, in that order. The description starts "<Lesson> revision notes for <qualifications>", names up to three key cases, then lists what's on the page. LearningResource structured data now has `keywords`, taken from the lesson's key terms and cases.
+- **Topic pages:** "<Topic>: <Subject> Revision Notes and Flashcards". The heading is "<Topic>: revision notes".
+- **Subject hubs** (`/topics/<subject>/`): "<Subject> Revision Notes for <qualifications>", or "…: Free Topics and Flashcards".
+- **Course pages:** "Free <Subject> Course for <qualifications>", or "Free <Subject> Course Online: Notes and Flashcards". These target "free <subject> course" searches, so they never compete with the hub for "revision notes".
+- **Questions and traps:** "<Subject> Practice Questions with Answers: Free Quiz" and "Common <Subject> Exam Mistakes and How to Avoid Them".
+
+**Two rules (tested in `tests/seo.test.mjs`).**
+1. A qualification (GCSE, A Level, SQE, MLA, NMC, GPhC, Degree) is named only where `kit/curriculum/coverage.js` says the course serves it. Biology, chemistry and physics claim no qualification, so they say "for science students", not "A level biology". Mapping them to a specification is the single biggest search win left.
+2. A content word (diagram, worked example, key case, flashcards, questions) is used only when the page has one.
+
+**Next, once Search Console has data:** replace the estimates in `scripts/seo/keywords.mjs` with real queries and impressions, and rewrite the titles that get impressions but few clicks.
+
+**Questions this page answers (lesson pages).** Each lesson page has a section where every question is its own heading (`<h3 id="q-…">`) with the answer from the lesson directly under it. A page matches a search best when the search is a heading on the page and its answer follows. The questions come only from the lesson:
+- every flashcard written as a question;
+- "What does “<key term>” mean?" for each key term;
+- "What is the <part>?" / "What are <parts>?" for each named part the notes describe ("**Lysosomes**: digest…");
+- check questions not already shown in "Check your understanding";
+- in law, "What happened in <case>?" and "What principle does <case> establish?" for each case card.
+
+It replaces the old six-card flashcard list. Each named part in the notes also gets an anchor (`#lysosomes`), so search can link straight to it. Across the 85 pilot pages that's about 870 questions, 3 to 24 a page. Check the effect in Search Console under Performance, filtered by page, on the Queries tab.
