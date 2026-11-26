@@ -3077,3 +3077,8 @@ details.cx-mod[open] > summary.cx-mt::before { transform: rotate(90deg); }
 .co-prose > section.gx-shut, .cx-part2 > section.gx-shut { margin-bottom: 6px !important; padding-bottom: 0 !important; min-height: 0 !important; }
 .co-prose > section.gx-shut > h3 { margin-bottom: 0; }
 .gx-panel [data-tabs="cx-panel"] .gx-tablist { flex-wrap: wrap; overflow: visible; }
+/* "Yours here" in the lesson rail (kit/course/course.js yoursHtml) */
+.cx-w-yours ul { display: grid; gap: 4px; margin: 8px 0 0; padding: 0; list-style: none; }
+.cx-w-yours button { display: grid; gap: 1px; width: 100%; padding: 8px 10px; border-radius: 11px; border: 1px solid var(--line); background: none; color: var(--fg); text-align: left; font: inherit; cursor: pointer; }
+.cx-w-yours button:hover { border-color: var(--line-strong); }
+.cx-w-yours small { color: var(--mute); font-size: 12px; }

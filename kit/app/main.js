@@ -63,6 +63,7 @@ import { calendarPanelHtml, wireCalendar, intelStripHtml, nextHtml, upcomingHtml
 const $ = (s, el = document) => el.querySelector(s);
 import { esc } from "../core/text.js";
 import { mountAppNav } from "./app-nav.js";
+import { mountQuickDock, startTimer } from "../ui/quick-dock.js";
 import { attachAccount, exportState, list as stateList, batch as stateBatch, SYNCED } from "../data/learner-state.js";
 import { renderCollections } from "./collections-view.js";
 import { mountConnections } from "../ui/connections.js";
@@ -162,6 +163,8 @@ function markLocks() {
 // the sidebar (a rail of icons, folding sections, Pinned and Recent), the phone's drawer and tab bar, breadcrumbs and
 // ⌘K search: kit/app/app-nav.js
 const appNav = mountAppNav({ sections: SECTIONS, settings: SETTINGS, screenOf, sectionOf, icon, haptic, appName: SITE || "Gradify", afterPaint: () => markLocks(), advanced: ADVANCED, store: async () => store });
+// the floating quick tools: a timer that keeps running between screens, a quick note, capture and search
+mountQuickDock({ app: location.pathname });
 // the pricing page lives on getgradify.com; sub-sites served elsewhere link to it there
 const PRICING = /(^|\.)getgradify\.com$|^localhost/.test(location.hostname) ? "/pricing.html" : "https://getgradify.com/pricing.html";
 
@@ -920,6 +923,24 @@ async function ensureReviewBlock(s) {
   }
   return blocks;
 }
+// the widget board's data, fresh: what one widget's Refresh redraws from (renderToday builds the same for the page)
+async function boardData() {
+  const [s, L, G] = await Promise.all([stats(), learnerAcross().catch(() => null), journeySummary({ store }).catch(() => null)]);
+  const M = await model({ autoMove: false });
+  const xp = G ? G.xp : s.xp, lv = levelOf(xp);
+  return { m: M, s, G, L, streak: G ? G.streak : s.streak, xp, lv, xpForLevel, heat: heatmap(s.byDay), topicHref, studyHref };
+}
+// one flashcard answered outside a session (the Quick flashcards widget): the same records a session makes for it
+async function reviewOne(c, r, ms = null) {
+  const due = !c.reps || isDue(c) || r === "again";
+  const next = due ? schedule(c, r, srsOpts()) : {};
+  record(store, answerEvent(c, { rating: r, confidence: null, ms, mode: due ? "scheduled" : "practice", site: profile.site }));
+  const forgot = forgotEvent(c, r, profile.site); if (forgot) record(store, forgot);
+  if (due) await store.updateCard(c.id, next);
+  await store.addReview({ card_id: c.id, rating: r, interval_days: next.interval_days ?? null, ms, confidence: null, mode: due ? "scheduled" : "practice" });
+  await store.logActivity({ site: profile.site, kind: "review", xp: r === "again" ? 1 : 2, detail: { cards: 1, from: "widget" } });
+  logEvent({ act: "studied", href: `${location.pathname}#/study`, title: "Flashcards", kind: "flashcards", where: "Quick flashcards", n: 1, unit: "cards" });
+}
 function heatmap(byDay, weeks = 16) {
   const end = new Date(); const start = new Date(+end - (weeks * 7 - 1) * DAY);
   start.setDate(start.getDate() - ((start.getDay() + 6) % 7));
@@ -982,6 +1003,9 @@ async function renderToday() {
   const acrossNext = (L?.next || []).filter((x) => x.site);
   // nothing to revise and no course yet: the welcome card is the whole job, so nothing else competes with it
   const firstRun = !s.cards.length && !courses.length;
+  // the widget board: its data (also rebuilt for one widget's refresh: boardData) and the learner's widgets, in order
+  const boardD = { m: M, s, G, L, streak: streakDays, xp: gxp, lv, xpForLevel, heat: heatmap(s.byDay), topicHref, studyHref };
+  const boardIds = (Array.isArray(M.intel.widgets) ? M.intel.widgets : DEFAULT_WIDGETS).filter((id) => ACCESS.has("intelligence") || !INTEL_WIDGETS.has(id));
   view.innerHTML = `<section class="today">
     <div class="today-head"><div><span class="kicker lo-kicker">${icon("home")}Command Centre · ${fmtDate(Date.now(), { weekday: "long", day: "numeric", month: "long" })}</span>
       <h1>${hour < 12 ? "Good morning" : hour < 18 ? "Good afternoon" : "Good evening"}${profile.display_name ? `, ${esc(profile.display_name)}` : ""} <span class="wave" aria-hidden="true">👋</span></h1>
@@ -996,7 +1020,7 @@ async function renderToday() {
     ${catchUpHtml(M) || rescheduleHtml(M)}` : ""}
     ${firstRun ? "" : nextHtml(M)}
     ${firstRun ? "" : plannerHtml(M)}
-    ${boardHtml({ m: M, s, G, L, streak: streakDays, xp: gxp, lv, xpForLevel, heat: heatmap(s.byDay) }, (M.intel.widgets?.length ? M.intel.widgets : DEFAULT_WIDGETS).filter((id) => ACCESS.has("intelligence") || !INTEL_WIDGETS.has(id)))}
+    ${boardHtml(boardD, boardIds)}
     ${ACCESS.has("intelligence") ? "" : plusPanelHtml("intelligence", { pricing: PRICING, compact: true })}
   </section>`;
   wireOffer(view);
@@ -1006,7 +1030,7 @@ async function renderToday() {
   wireAutopilot(view, M, apctx());
   wireTell(view, M, apctx());
   wireNotifyAsk(view, M, apctx());
-  wireBoard(view, { ...apctx(), complete });
+  wireBoard(view, { ...apctx(), complete, chosen: boardIds, reviewOne, startTimer, reload: boardData }, boardD);
 }
 
 // ---------- LifeOS: across every Gradify site ----------
