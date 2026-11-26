@@ -15,6 +15,7 @@
 //   lesson?, created?, modified?, count?, countLabel?, preview?, weight? }
 // A hit is the document plus { score, html (title with the matched words marked), snippet (html), why }.
 import { words, TYPES } from "./query.js";
+import { esc } from "../core/text.js";
 
 // the order groups are shown in, and how many each shows before "Show all"
 export const GROUPS = [
@@ -26,7 +27,6 @@ const GROUP_OF = Object.fromEntries(GROUPS.map(([t], i) => [t, i]));
 // how much each kind of thing is worth when it matches equally well: what a learner most likely wants first
 const TYPE_WEIGHT = { lesson: 1.0, pack: 0.95, question: 0.9, note: 0.95, map: 0.9, curriculum: 0.85, topic: 0.9, course: 1.0, collection: 0.85, task: 0.8, action: 0.9, screen: 0.8 };
 
-const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 const fold = (s) => String(s ?? "").normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase();
 
 /** a light English stem, so "equilibria" ≈ "equilibrium", "reactions" ≈ "reaction", "catalysed" ≈ "catalyse" */
