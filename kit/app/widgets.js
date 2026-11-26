@@ -11,7 +11,8 @@ import { freeIntervals, windowsFor } from "../intel/schedule.js";
 import { dayKey, DAY, hhmm } from "../intel/memory.js";
 import { opportunities } from "../intel/autopilot.js";
 import { QUESTIONS } from "../intel/ask.js";
-import { prefSet } from "../ui/prefs.js";
+import { prefSet, pref, setPref } from "../ui/prefs.js";
+import { MORE } from "./widgets-more.js";
 
 // a widget folds to its title bar from the fold button in its header, so a board can stay calm without removing
 // anything; which are folded is remembered on this device
@@ -53,7 +54,7 @@ const SMALL = [
 ];
 
 // ---------- wide: a list or a strip ----------
-const shell = (w, body, { link = "", sub = "", cls = "" } = {}) => `<article class="wd wd-${w.size} ${w.tone ? `tone-${w.tone}` : ""} ${cls}" data-w="${w.id}"><header class="wd-h"><h3>${icon(w.icon)}${esc(w.name)}</h3>${link}<button type="button" class="wd-fold" data-wfold="${w.id}" aria-expanded="true" aria-label="Fold ${esc(w.name)}" title="Fold"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 15 6-6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></header>${sub ? `<p class="wd-intro">${sub}</p>` : ""}${body}</article>`;
+const shell = (w, body, { link = "", sub = "", cls = "" } = {}) => `<article class="wd wd-${w.size} ${w.tone ? `tone-${w.tone}` : ""} ${cls}" data-w="${w.id}"><header class="wd-h"><h3>${icon(w.icon)}${esc(w.name)}</h3>${link}<button type="button" class="wd-hb" data-wrefresh="${w.id}" aria-label="Refresh ${esc(w.name)}" title="Refresh"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 5v6h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button type="button" class="wd-hb" data-whide="${w.id}" aria-label="Hide ${esc(w.name)}" title="Hide"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><button type="button" class="wd-fold" data-wfold="${w.id}" aria-expanded="true" aria-label="Fold ${esc(w.name)}" title="Fold"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 15 6-6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></header>${sub ? `<p class="wd-intro">${sub}</p>` : ""}${body}</article>`;
 const chip = (href, t) => `<a class="wd-link" href="${href}">${t} →</a>`;
 const WIDE = [
   { id: "w-upcoming", name: "Your upcoming learning", icon: "clock", what: "The rest of today: what's planned, and what Gradify suggests.",
@@ -125,24 +126,72 @@ const BIG = [
       <ul class="i-why-list">${c.byLength.map((b) => `<li><span>${esc(b.label)}</span><span class="i-why-bar"><i style="width:${b.rate == null ? 0 : Math.round(b.rate * 100)}%"></i></span></li>`).join("")}</ul>`, { link: chip("#/intel", "More") }); } },
 ];
 
-export const WIDGETS = [...SMALL.map((w) => ({ ...w, size: "s" })), ...WIDE.map((w) => ({ ...w, size: "w" })), ...BIG.map((w) => ({ ...w, size: "b" }))];
+export const WIDGETS = [...SMALL.map((w) => ({ ...w, size: "s" })), ...WIDE.map((w) => ({ ...w, size: "w" })), ...MORE.map((w) => ({ ...w, body: true })), ...BIG.map((w) => ({ ...w, size: "b" }))];
 export const DEFAULT_WIDGETS = ["s-ready", "s-due", "s-streak", "s-deadline", "s-gaps", "s-velocity", "w-upcoming", "w-tell", "w-debt", "w-forecast", "b-hero", "b-packs", "b-exam", "b-workload"];
+
+// ---------- the board: what's on it, in the learner's order ----------
+// One widget can show everything another does: then the smaller one is left off while both are chosen, so the board
+// never says the same thing twice (it comes back if the bigger one is hidden).
+export const COVERS = { "b-exam": ["s-deadline"], "b-hero": ["s-due"], "w-flash": ["s-due"], "w-week": ["w-upcoming"] };
+/** the widgets to draw, in order, and the ones left off because another on the board covers them. Pure. */
+export function boardPlan(chosen = DEFAULT_WIDGETS, all = WIDGETS) {
+  const known = chosen.filter((id) => all.some((w) => w.id === id));
+  const covered = new Map();
+  for (const id of known) for (const c of COVERS[id] || []) if (known.includes(c)) covered.set(c, id);
+  return { show: known.filter((id) => !covered.has(id)), covered };
+}
+// presets: a board for what the learner is doing now. Each is just a starting point; any widget can be added after.
+export const PRESETS = [
+  ["revision", "Revision", "Cards due, weak topics, mistakes and a quick review", ["s-due", "s-streak", "s-gaps", "w-flash", "w-weak", "w-mistakes", "w-tasks", "w-forecast", "b-levels"]],
+  ["exam", "Exam preparation", "The countdown, readiness, timed practice and what's fading", ["s-ready", "s-deadline", "w-tasks", "w-quiz", "w-timer", "w-weak", "w-forecast", "b-exam", "b-workload"]],
+  ["organise", "Organisation", "Today's tasks, the week, deadlines and your saved things", ["s-deadline", "s-kept", "w-tasks", "w-week", "w-alerts", "w-collections", "w-saved", "w-pins", "b-coming"]],
+  ["calm", "Just the essentials", "Three widgets and nothing else", ["s-due", "w-tasks", "w-alerts"]],
+];
+// a widget's own settings (widget.settings), kept on this device
+export const settingOf = (id, key) => { const w = WIDGETS.find((x) => x.id === id), def = w?.settings?.find((x) => x.key === key)?.dflt ?? null; const v = pref("app", `w.${id}`, {})?.[key]; return v ?? def; };
+const setSetting = (id, key, v) => setPref("app", `w.${id}`, { ...(pref("app", `w.${id}`, {}) || {}), [key]: v });
+
+// a widget that couldn't draw: just that one says so, with Try again; the rest of the board is unaffected
+const failed = (w) => `<article class="wd wd-${w.size} wd-failed" data-w="${w.id}" role="status"><header class="wd-h"><h3>${icon(w.icon)}${esc(w.name)}</h3></header><p class="wd-empty">This widget couldn't load. <button type="button" class="wd-link" data-wretry="${w.id}">Try again</button></p></article>`;
+/** draw one widget, never throwing (pure apart from its own render) */
+export function drawWidget(w, d) {
+  try {
+    if (!w.body) return w.render({ ...d, w });
+    return shell({ ...w, size: w.size || "w" }, `<div class="wd-body">${w.render({ ...d, w })}</div>`, { cls: w.mount ? "wd-live" : "" });
+  } catch (e) { console.warn("widget", w.id, e); return failed(w); }
+}
 
 /** The board: chosen widgets, grouped by size so each row's boxes fit what's inside them. */
 export function boardHtml(d, chosen = DEFAULT_WIDGETS) {
-  const pick = (size) => chosen.map((id) => WIDGETS.find((w) => w.id === id)).filter((w) => w && w.size === size);
-  const draw = (w) => { try { return w.render({ ...d, w }); } catch (e) { console.warn("widget", w.id, e); return ""; } };
+  const { show, covered } = boardPlan(chosen);
+  const data = { ...d, chosen: show };
+  const pick = (size) => show.map((id) => WIDGETS.find((w) => w.id === id)).filter((w) => w && w.size === size);
   const s = pick("s"), wd = pick("w"), b = pick("b");
+  const nameOf = (id) => WIDGETS.find((w) => w.id === id)?.name || id;
+  const hidden = WIDGETS.filter((w) => !chosen.includes(w.id));
   return `<section class="board" aria-label="Your widgets">
-    ${s.length ? `<div class="board-s">${s.map(draw).join("")}</div>` : ""}
-    ${wd.length ? `<div class="board-w">${wd.map(draw).join("")}</div>` : ""}
-    ${b.length ? `<div class="board-b">${b.map(draw).join("")}</div>` : ""}
-    <details class="board-edit"><summary>${icon("cog")} Customise your widgets</summary>
-      <form id="widget-form">${[["s", "Small"], ["w", "Wide"], ["b", "Big"]].map(([k, l]) => `<fieldset><legend>${l}</legend><div class="gallery">${WIDGETS.filter((w) => w.size === k).map((w) => `<label class="gal ${w.tone ? `tone-${w.tone}` : ""}"><input type="checkbox" name="w" value="${w.id}" ${chosen.includes(w.id) ? "checked" : ""}><span><b>${icon(w.icon)}${esc(w.name)}</b><em>${esc(w.what)}</em></span></label>`).join("")}</div></fieldset>`).join("")}
+    ${s.length ? `<div class="board-s">${s.map((w) => drawWidget(w, data)).join("")}</div>` : ""}
+    ${wd.length ? `<div class="board-w">${wd.map((w) => drawWidget(w, data)).join("")}</div>` : ""}
+    ${b.length ? `<div class="board-b">${b.map((w) => drawWidget(w, data)).join("")}</div>` : ""}
+    ${!show.length ? `<p class="wd-empty">Your board is empty. Add widgets below, or start from a preset.</p>` : ""}
+    <details class="board-edit"><summary>${icon("cog")} Customise your widgets${hidden.length ? ` <small>${hidden.length} available</small>` : ""}</summary>
+      <div class="board-presets"><p class="wd-k">Start from a preset</p>${PRESETS.map(([id, l, what]) => `<button type="button" class="gal-preset" data-preset="${id}"><b>${esc(l)}</b><em>${esc(what)}</em></button>`).join("")}</div>
+      <div class="board-arrange"><p class="wd-k">On your board, in order</p>
+        ${show.length || covered.size ? `<ol class="arr">${chosen.filter((id) => WIDGETS.some((w) => w.id === id)).map((id, i, all) => { const w = WIDGETS.find((x) => x.id === id);
+          return `<li data-arr="${id}"><span class="arr-n">${icon(w.icon)}<b>${esc(w.name)}</b>${covered.has(id) ? `<small>Not shown while ${esc(nameOf(covered.get(id)))} is on the board: it shows the same</small>` : ""}</span>
+            ${(w.settings || []).map((st) => `<label class="arr-set">${esc(st.label)} <select data-wset="${id}" data-key="${st.key}">${st.options.map(([v, l]) => `<option value="${esc(v)}" ${String(settingOf(id, st.key)) === v ? "selected" : ""}>${esc(l)}</option>`).join("")}</select></label>`).join("")}
+            <span class="arr-b"><button type="button" data-move="-1" aria-label="Move ${esc(w.name)} up" ${i === 0 ? "disabled" : ""}>↑</button><button type="button" data-move="1" aria-label="Move ${esc(w.name)} down" ${i === all.length - 1 ? "disabled" : ""}>↓</button><button type="button" data-whide="${id}" aria-label="Hide ${esc(w.name)}">Hide</button></span></li>`; }).join("")}</ol>` : `<p class="wd-empty">Nothing on your board yet.</p>`}
+      </div>
+      <form id="widget-form"><p class="wd-k">Every widget</p>${[["s", "Small"], ["w", "Wide"], ["b", "Big"]].map(([k, l]) => `<fieldset><legend>${l}</legend><div class="gallery">${WIDGETS.filter((w) => w.size === k).map((w) => `<label class="gal ${w.tone ? `tone-${w.tone}` : ""}"><input type="checkbox" name="w" value="${w.id}" ${chosen.includes(w.id) ? "checked" : ""}><span><b>${icon(w.icon)}${esc(w.name)}</b><em>${esc(w.what)}</em></span></label>`).join("")}</div></fieldset>`).join("")}
         <div class="row-actions"><button class="cp-pill dark" type="submit">Save my board</button><button class="cp-pill" type="button" data-w-reset>Use the default</button></div></form></details>
   </section>`;
 }
-export function wireBoard(view, ctx) {
+
+/**
+ * ctx: { saveIntel, rerender, complete, toast, store, reviewOne, startTimer, reload: () => Promise<board data>,
+ * chosen: the board's widget ids in order }. d: the data the board was drawn from.
+ */
+export function wireBoard(view, ctx, d = null) {
   const set = (el, shut, remember = true) => {
     el.classList.toggle("wd-folded", shut);
     const b = el.querySelector("[data-wfold]"), name = el.querySelector(".wd-h h3")?.textContent.trim() || "widget";
@@ -150,8 +199,60 @@ export function wireBoard(view, ctx) {
     if (remember) folded().toggle(el.dataset.w, shut);
   };
   view.querySelectorAll("article.wd[data-w]").forEach((el) => set(el, folded().has(el.dataset.w), false));
-  view.addEventListener("click", (e) => { const b = e.target.closest("[data-wfold]"); if (!b) return; e.preventDefault(); const el = b.closest("article.wd"); set(el, !el.classList.contains("wd-folded")); });
+  const chosen = () => ctx.chosen || DEFAULT_WIDGETS;
+  const save = async (ids, msg) => { await ctx.saveIntel({ widgets: ids }); if (msg) ctx.complete?.(msg.title, { sub: msg.sub }); ctx.rerender(); };
+  let data = d;
+  const wctx = { ...ctx, setting: settingOf };
+  // a widget that does something (completes tasks, reviews cards) fills in after drawing; if it fails, only it says so
+  async function mountOne(el) {
+    const w = WIDGETS.find((x) => x.id === el.dataset.w);
+    if (!w?.mount || !data) return;
+    try { await w.mount(el, wctx, { ...data, chosen: chosen() }); } catch (e) { console.warn("widget", w.id, e); el.outerHTML = failed(w); }
+  }
+  view.querySelectorAll("article.wd[data-w]").forEach(mountOne);
+  // refresh one widget: fresh data, just this widget redrawn
+  async function refresh(id) {
+    const el = view.querySelector(`[data-w="${CSS.escape(id)}"]`), w = WIDGETS.find((x) => x.id === id); if (!el || !w) return;
+    el.classList.add("wd-busy");
+    try { data = ctx.reload ? await ctx.reload() : data; } catch (e) { console.warn("widget data", e); }
+    const tmp = document.createElement("div"); tmp.innerHTML = drawWidget(w, { ...data, chosen: chosen() });
+    const fresh = tmp.firstElementChild; if (!fresh) return;
+    el.replaceWith(fresh); set(fresh, folded().has(id), false); mountOne(fresh);
+  }
+  view.addEventListener("click", async (e) => {
+    const f = e.target.closest("[data-wfold]"); if (f) { e.preventDefault(); const el = f.closest("article.wd"); set(el, !el.classList.contains("wd-folded")); return; }
+    const r = e.target.closest("[data-wretry], [data-wrefresh]"); if (r) { e.preventDefault(); refresh(r.dataset.wretry || r.dataset.wrefresh); return; }
+    const h = e.target.closest("[data-whide]");
+    if (h) {
+      e.preventDefault(); const id = h.dataset.whide, before = chosen();
+      await ctx.saveIntel({ widgets: before.filter((x) => x !== id) });
+      ctx.toast?.(`Hidden: <b>${esc(WIDGETS.find((w) => w.id === id)?.name || id)}</b>. It's in Customise your widgets.`, { undo: async () => { await ctx.saveIntel({ widgets: before }); ctx.rerender(); } });
+      ctx.rerender(); return;
+    }
+    const mv = e.target.closest("[data-move]");
+    if (mv) {
+      const id = mv.closest("[data-arr]").dataset.arr, ids = chosen().filter((x) => WIDGETS.some((w) => w.id === x)), i = ids.indexOf(id), j = i + Number(mv.dataset.move);
+      if (j < 0 || j >= ids.length) return;
+      [ids[i], ids[j]] = [ids[j], ids[i]];
+      await ctx.saveIntel({ widgets: ids }); ctx.rerender();
+      // keep the arranging panel open and the focus on the moved widget's button
+      requestAnimationFrame(() => { const det = document.querySelector(".board-edit"); if (det) det.open = true; document.querySelector(`[data-arr="${CSS.escape(id)}"] [data-move="${mv.dataset.move}"]`)?.focus(); });
+      return;
+    }
+    const pr = e.target.closest("[data-preset]");
+    if (pr) { const p = PRESETS.find(([id]) => id === pr.dataset.preset); if (p) save(p[3], { title: `${p[1]} board`, sub: `${p[3].length} widgets` }); }
+  });
+  view.addEventListener("change", (e) => {
+    const s = e.target.closest("[data-wset]"); if (!s) return;
+    setSetting(s.dataset.wset, s.dataset.key, s.value);
+    refresh(s.dataset.wset);
+  });
   const form = view.querySelector("#widget-form");
-  form?.addEventListener("submit", async (e) => { e.preventDefault(); const ids = new FormData(form).getAll("w"); await ctx.saveIntel({ widgets: ids }); ctx.complete("Board saved", { sub: `${ids.length} widgets` }); ctx.rerender(); });
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    // keep the learner's order for what stays; new ones go at the end
+    const picked = new FormData(form).getAll("w"), ids = [...chosen().filter((x) => picked.includes(x)), ...picked.filter((x) => !chosen().includes(x))];
+    save(ids, { title: "Board saved", sub: `${ids.length} widgets` });
+  });
   view.querySelector("[data-w-reset]")?.addEventListener("click", async () => { await ctx.saveIntel({ widgets: null }); ctx.rerender(); });
 }
