@@ -60,7 +60,8 @@
 .co-streak { display: inline-flex; align-items: center; gap: 4px; } .co-streak .co-ic { width: 14px; height: 14px; color: #ff7a2f; }
 .co-ring { width: 76px; height: 76px; flex: none; transform: rotate(-90deg); }
 .co-ring circle { fill: none; stroke-width: 8; stroke-linecap: round; }
-.co-ring .bg { stroke: rgba(var(--ink-rgb), .08); } .co-ring .fg { stroke: #40d4b1; transition: stroke-dashoffset .6s; filter: drop-shadow(0 0 6px rgba(64, 212, 177, .6)); }
+/* no glow filter on the arc: Safari draws a CSS filter on an SVG shape as a tinted square behind the ring */
+.co-ring .bg { stroke: rgba(var(--ink-rgb), .08); } .co-ring .fg { stroke: #40d4b1; transition: stroke-dashoffset .6s; }
 .co-dots { display: grid; grid-template-columns: repeat(auto-fill, minmax(18px, 1fr)); gap: 6px; margin-top: 10px; }
 .co-dots a { aspect-ratio: 1; border-radius: 5px; background: linear-gradient(0deg, var(--a) calc(var(--p) * 100%), rgba(var(--ink-rgb), .07) calc(var(--p) * 100%)); border: 1px solid color-mix(in srgb, var(--a) 40%, transparent); }
 .co-dots a:hover { outline: 2px solid var(--fg); }
@@ -2863,8 +2864,9 @@ body:has(.co-modal) .cx-dock { visibility: hidden; }
    ===================================================================================================================== */
 .co.co-reading :is(.co-read .co-notes, .cx-tree, .cx-widget) {
   --gleam: color-mix(in oklab, var(--accent, #4641ff) 78%, var(--fg));
-  /* on panels this big the contrast stretch of the edge is softened, so it reads as a sheen, not a black line */
-  --g-contrast: color-mix(in srgb, var(--fg) 72%, var(--g-tile));
+  /* on panels this big the edge never passes through the ink colour: it fades into the panel instead, so it reads as a
+     sheen, not a heavy black line (it did in Safari and on wide screens) */
+  --g-contrast: color-mix(in srgb, var(--gleam) 30%, var(--g-tile));
   background: var(--g-tile) !important; border: 0 !important;
   -webkit-backdrop-filter: none !important; backdrop-filter: none !important;
   box-shadow: 0 1px 2px rgba(0, 0, 0, .05), 0 18px 40px -30px rgba(0, 0, 0, .4) !important;
@@ -2872,7 +2874,7 @@ body:has(.co-modal) .cx-dock { visibility: hidden; }
 .co.co-reading :is(.cx-tree, .cx-widget) { position: relative; }
 .co.co-reading :is(.co-read .co-notes, .cx-tree, .cx-widget)::after { content: none !important; }
 .co.co-reading :is(.co-read .co-notes, .cx-tree, .cx-widget)::before {
-  content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; padding: 2.5px; pointer-events: none;
+  content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; padding: 1px; pointer-events: none;
   background:
     linear-gradient(115deg, transparent 34%, var(--g-glint) 48%, transparent 62%) 0 0 / 260% 100% no-repeat,
     linear-gradient(115deg, var(--gleam) 0%, color-mix(in srgb, var(--gleam) 68%, #fff) 22%, var(--g-contrast) 46%, color-mix(in srgb, var(--gleam) 70%, #000) 68%, var(--gleam) 88%, color-mix(in srgb, var(--gleam) 68%, #fff) 100%) 0 0 / 220% 100%;
