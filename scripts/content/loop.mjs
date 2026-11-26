@@ -310,13 +310,15 @@ function finish(topic, rec) {
     for (const l of e.lessons) if (!rec.lessons.includes(l) && !l.superseded && l.reqs.length && l.reqs.every((id) => fresh.has(id))) l.superseded = rec.date;
     const key = targetKey(topic.full || topic); e.rebuilds = e.rebuildKey === key ? (e.rebuilds || 0) + 1 : 1; e.rebuildKey = key;
   }
-  // a requirement is covered by a lesson naming it, or naming one of its parts
+  // a requirement is covered only by a lesson naming the whole requirement: a lesson naming one of its parts
+  // (4.1.1.1.b.ii) teaches that part, but the index doesn't list a statement's parts, so the engine can't tell the
+  // rest are taught; the requirement stays uncovered and is written (owner, 26 Nov 2026, rule H)
   const all = (topic.full || topic).reqs, known = new Set(all.map((x) => x.id));
   // a lesson covers a requirement only if it was built from that requirement's current text: when a statement changes,
   // the old lesson stays in the draft but its requirement is queued again until a replacement passes
   const hashOf = new Map(all.map((x) => [x.id, x.hash]));
   const current = (l, id) => { const b = l.built?.reqs; if (!b) return true; return b.includes(`${id}@${hashOf.get(id)}`) || !b.some((x) => x.startsWith(`${id}@`)); };
-  const covered = new Set(e.lessons.flatMap((l) => l.reqs.map((id) => parentOf(id, known)).filter((id) => id && current(l, id))));
+  const covered = new Set(e.lessons.flatMap((l) => l.reqs.filter((id) => known.has(id) && current(l, id))));
   rec.uncovered = all.filter((x) => !covered.has(x.id)).map((x) => x.id);
   e.failures = rec.failures; e.uncovered = rec.uncovered; e.gaps = rec.gaps; e.needs = rec.needs;
   e.status = e.lessons.length ? (rec.uncovered.length ? "partial" : "filed") : e.runs >= CONFIG.repairs ? "blocked" : "failed";

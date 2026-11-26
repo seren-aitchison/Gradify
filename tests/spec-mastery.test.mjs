@@ -275,3 +275,17 @@ test("overall totals count each lesson once, and an average of early estimates s
   for (let i = 0; i < 20; i++) many.push(att(i % 2 ? "u02-20" : "u02-23", i % 7 ? 1 : 0, { q: `q${i % 10}`, d: 1 + (i % 3), type: ["sba", "short", "card", "num"][i % 4], ago: 30 - i, context: i % 3 ? "lesson" : "review" }));
   assert.equal(run(many).overall.provisional, false, "a measured point makes the headline a measurement");
 });
+
+test("the learner's progress and Gradify's coverage are shown as two lists, never one", async () => {
+  const { specPageHtml, pointPageHtml } = await import("../kit/course/spec-view.js");
+  const spec = specById("aqa-gcse-biology-8461"), m = specMastery(spec, { now: NOW });
+  for (const html of [specPageHtml(m), pointPageHtml(m, m.points[0])]) {
+    const card = html.match(/<section class="sm-measure" aria-label="Gradify's coverage and your progress">([\s\S]*?)<\/section>/)?.[1];
+    assert.ok(card, "the coverage card");
+    const [coverage, progress] = card.split('<h3 class="sm-h-progress">Your progress</h3>');
+    assert.match(coverage, /<h3>Gradify's coverage<\/h3>/); assert.ok(progress, "a separate Your progress list");
+    assert.doesNotMatch(coverage, /completed|answered/i, "nothing the learner did is in Gradify's coverage");
+    assert.match(progress, /Lessons you(?:'|&#39;)ve completed/); assert.doesNotMatch(progress, /Taught on Gradify|mapped/i);
+  }
+  assert.doesNotMatch(pointPageHtml(m, m.points[0]), /Completing a lesson is coverage/);
+});

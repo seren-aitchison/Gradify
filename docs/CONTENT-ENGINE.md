@@ -12,7 +12,7 @@ A topic is one section of a specification (AQA 4.1.1.1 *Eukaryotes and prokaryot
    - **Source allowlist** (`kit/curriculum/sources.js`): the request lists the publications that may be cited (`ALLOW` lines), and a brief citing anything else is refused. Each source's licence class is taken from its row, whatever the Researcher wrote. A row may say `adapt` only if its licence allows commercial reuse of the text, and it counts as `adapt` only once a named person has confirmed it (`confirmedBy`, `confirmedOn`); until then it's `facts`. The three independent sources must come from three different publishers on the list.
    - **Licence gate:** a brief isn't used if any non-fact line rests only on `noncommercial` or `unknown` sources. Facts (`F:`) may rest on any source. The research step is asked again, with the problem named.
 2. **Write** (`prompts/writer.md`, the content standard, the notes format, the shorthand and the example lessons for the level): a unit file with `REQ:` lines.
-   - A `REQ:` line may name a requirement or one part of it, such as `aqa-gcse-biology:4.1.1.1.b.ii`. A part counts toward its requirement.
+   - A `REQ:` line may name a requirement or one part of it, such as `aqa-gcse-biology:4.1.1.1.b.ii`. Only a lesson naming the whole requirement covers it: the index doesn't list a statement's parts, so parts alone leave the requirement uncovered and it's written again (rule H). On publishing, a part links its statement in part.
 3. **Gates**, cheapest first, stopping at the first failure (`scripts/content/gates.mjs`):
    1. `parse`: one lesson, known tags, a lead over 60 characters, `LV:`, two or more `O:` and `T:`, at least one `REQ:`, and every `DIA:` spec is JSON with a title, caption and alt text.
    2. `coverage`: every `REQ:` (or part) is in the packet and names objectives, each of those objectives has a question tagged with it, and every objective is tested. Every `PRE:` names a lesson in the course or the unit, or a requirement id in the registry.
@@ -91,6 +91,8 @@ Only a person's confirmation counts as coverage (owner, 26 Nov 2026). A false "a
 - A confirmation holds for the statement text it was made on: if the awarding body changes the statement, it's uncovered again.
 - A person can withdraw a confirmation with `revoke` and a reason. The statement is uncovered and written again, and the withdrawn verification is kept in `revoked`.
 - AI confidence and a person's decision stay in separate fields (`matcherConfidence`, `aiCheck`, `reviewer`): an AI's yes never becomes a verification.
+- A lesson the engine publishes is linked provisionally to each statement its `REQ:` lines name (`ai-confirmed`, `published: true`), so learners see "Provisionally mapped — awaiting verification" rather than "Not mapped". It never counts as coverage, and a person's verification is never changed by it.
+- Recording decisions (`engine.mjs apply`) and publishing both rewrite the specification pages' links (`kit/specs/<view>.links.js`, `scripts/curriculum/spec-view.mjs` `refreshLinks`), so a verification or a revocation shows on the pages in the same commit.
 
 Decisions are recorded in the mapping store, `kit/curriculum/maps/<framework>.json` (`scripts/content/mapstore.mjs`).
 

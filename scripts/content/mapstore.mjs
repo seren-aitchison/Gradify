@@ -68,6 +68,24 @@ function foldLegacy(m, confirmed) {
   }
 }
 
+/**
+ * A lesson the content engine wrote for a statement, passed its gates and AI review, and published: a provisional link
+ * (an AI-checked match, never coverage). d: { lesson, coverage, objectives, hash, by, on }. A person's verification is
+ * never touched; an AI-checked link on the same text gains this lesson beside the ones it had.
+ */
+export function linkPublished(m, ref, d) {
+  const prev = m.links[ref];
+  if (prev?.status === "verified") return prev;
+  const entry = { id: d.lesson, coverage: d.coverage || "full", objectives: d.objectives || [], published: true };
+  if (prev?.status === "ai-confirmed" && (!prev.hash || prev.hash === d.hash)) {
+    prev.lessons = [...(prev.lessons || []).filter((l) => l.id !== d.lesson), entry];
+    return prev;
+  }
+  const l = decide(m, ref, { ok: true, lesson: d.lesson, objectives: d.objectives, coverage: entry.coverage, hash: d.hash, by: d.by, on: d.on });
+  l.lessons = [entry];
+  return l;
+}
+
 /** the statement's decision if it holds for this text (a decision recorded without a hash still counts), else null */
 export function decisionOf(m, ref, hash) {
   const l = m?.links?.[ref];

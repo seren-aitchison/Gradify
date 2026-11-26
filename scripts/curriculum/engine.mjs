@@ -492,6 +492,10 @@ if (import.meta.url === `file://${process.argv[1]}`) {
       const res = applyReview(st, loadMap(a) || { spec: a, specVersion: st.version, links: {} }, parseTable(readText(readFileSync(b))), new Set(inv.map((l) => l.id)));
       if (res.problems.length) { console.error(`Nothing applied. ${res.problems.length} problems:\n  ${res.problems.join("\n  ")}`); process.exit(1); }
       write(mapPath(a), res.map); console.log(`${res.applied} decisions recorded in kit/curriculum/maps/${a}.json. Run engine.mjs report ${s.subject}.`);
+      // the specification pages read the map through a generated file: refresh it now, so a verification or a
+      // revocation shows there in the same commit
+      const views = await (await import("./spec-view.mjs")).refreshLinks(a);
+      if (views.length) console.log(`Specification pages updated: ${views.map((v) => `kit/specs/${v}.links.js`).join(", ")}.`);
     } else if (cmd === "inventory") { const inv = await inventory(a); write(new URL(`data/curriculum/inventory/${a}.json`, root), inv); console.log(`${inv.length} ${a} lessons → data/curriculum/inventory/${a}.json`); }
     else if (cmd === "report") {
       write(new URL(`docs/curriculum/${a.toUpperCase()}-COVERAGE.md`, root), await subjectReport(a, date)); console.log(`docs/curriculum/${a.toUpperCase()}-COVERAGE.md`);

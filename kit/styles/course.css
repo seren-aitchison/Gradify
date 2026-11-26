@@ -2324,6 +2324,7 @@ body:has(> .co-modal) .cx-rings { display: none !important; }
 .sm-cov b { color: var(--fg); font-size: 17px; } .sm-cov b small { font-size: 12px; color: var(--mute); font-weight: 500; }
 .sm-cov i { grid-column: 1 / -1; height: 5px; border-radius: 9px; background: linear-gradient(90deg, var(--fg) calc(var(--f) * 100%), rgba(var(--ink-rgb), .1) 0); opacity: .75; }
 .sm-cov li > small { grid-column: 1 / -1; font-size: 12px; }
+.sm-measure .sm-h-progress { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); }
 .sm-cov li.txt { grid-template-columns: 1fr; } .sm-cov li.txt b { font-size: 17px; }
 .sm-pill { display: inline-flex; align-items: center; padding: 2px 9px; border-radius: 999px; font: 600 11.5px var(--sans); white-space: nowrap; color: var(--fg); background: color-mix(in srgb, var(--sm-teal) calc(var(--v, .5) * 45%), rgba(var(--ink-rgb), .07)); }
 .sm-pill.b-emerging { --v: .22; } .sm-pill.b-building { --v: .4; } .sm-pill.b-developing { --v: .58; } .sm-pill.b-secure { --v: .78; } .sm-pill.b-strong { --v: 1; }
