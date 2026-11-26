@@ -70,7 +70,7 @@ import { mountContextBar } from "../ui/context-bar.js";
 import { mountCourseSwitcher } from "../ui/switcher.js";
 import { attachAccount } from "../data/learner-state.js";
 import { resource as makeResource, rid as makeRid } from "../core/resource.js";
-import { recordMistake, resolveMistake, scheduledFor, unschedule } from "../data/links.js";
+import { recordMistake, resolveMistake, scheduledFor, unschedule, retitle } from "../data/links.js";
 import { mountResourceActions } from "../ui/resource-actions.js";
 import { mountConnections } from "../ui/connections.js";
 import { pref, setPref } from "../ui/prefs.js";
@@ -315,7 +315,7 @@ export function mountCourse(root, cfg) {
   // a question is a resource too (kit/core/resource.js): its ••• menu pins it, saves it to a collection, links it
   // to notes or flashcards, schedules it, or takes a note on it. Its home is its lesson's questions.
   const questionRes = (it) => makeResource(makeRid("question", coursePath, it.key), { title: String(it.Q?.q || "Question").replace(/\*\*|`|\^\{|_\{|\}/g, "").slice(0, 90), subject: cfg.name,
-    sub: it.l ? `Question · ${it.l.title}` : `Question · ${cfg.name}`, refs: it.l ? pointsOf(it.l.id) : [], href: it.l ? `${coursePath}#/lesson/${it.l.id}/co-check` : `${coursePath}#/home` });
+    sub: it.l ? `Question · ${it.l.title}` : `Question · ${cfg.name}`, refs: it.l ? pointsOf(it.l.id) : [], href: it.l ? `${coursePath}#/lesson/${it.l.id}/co-check?q=${encodeURIComponent(it.key)}` : `${coursePath}#/home?q=${encodeURIComponent(it.key)}` });
   function questionMenus(el) {
     for (const box of el.querySelectorAll(".aq[data-key]")) {
       if (box.querySelector(":scope > .gx-ra") || box.dataset.mode === "exam") continue;
@@ -1741,6 +1741,7 @@ export function mountCourse(root, cfg) {
     main.querySelector("[data-mark]").addEventListener("click", () => toggleMark(id));
     main.querySelector("[data-focus]").addEventListener("click", () => setFocus(!focusOn()));
     main.querySelector("[data-panel]")?.addEventListener("click", () => lessonPanel());
+    retitle(lessonRes(l).rid, l.title);   // a lesson renamed in the course: what links to it says the new name
     mountResourceActions(main.querySelector(".cx-lact"), () => lessonRes(l), { store, app: appHref, where: "beforeend", label: "This lesson: more actions" });
     paintDock("lesson", l, prev && byId[prev.id], next && byId[next.id]);
     freshTree(true);
@@ -2845,7 +2846,8 @@ export function mountCourse(root, cfg) {
     // a learner who has started lands on Home; someone new lands on the course's overview when it has one
     const started = Object.keys(S.done).length || (S.log || []).length || (S.recent || []).length;
     const home = cfg.overview && !started ? "overview" : "home";
-    const [v0, arg, sec, how] = location.hash.replace(/^#\/?/, "").split("/"), v = v0 || home;
+    // a query after the route (#/lesson/x/co-check?q=…) names one thing on the page; it isn't part of the route
+    const [v0, arg, sec, how] = location.hash.replace(/^#\/?/, "").split("?")[0].split("/"), v = v0 || home;
     const view = VIEWS.some(([id]) => id === v) || ["lesson", "quiz", "exam", "target"].includes(v) ? v : home;
     const tab = TAB_OF[view] || view;
     // the static course overview below the app belongs to the course's front page, not to lessons, quizzes and the rest

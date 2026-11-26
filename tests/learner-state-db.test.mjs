@@ -15,13 +15,23 @@ async function db() {
   const dir = new URL("../supabase/migrations/", import.meta.url);
   for (const f of (await readdir(dir)).filter((f) => f.endsWith(".sql")).sort()) await d.sql(await readFile(new URL(f, dir), "utf8"));
   await d.sql(`insert into auth.users (id, email) values ('${ANA}', 'a@x'), ('${BEN}', 'b@x')`);
-  const as = (uid, q) => d.sql(`set role authenticated; set request.jwt.claim.sub = '${uid}'; ${q};`).finally(() => d.sql("reset role; reset request.jwt.claim.sub;"));
+  const as = (uid, q, device = null) => d.sql(`set role authenticated; set request.jwt.claim.sub = '${uid}'; ${device ? `set request.headers = '${JSON.stringify({ "x-gradify-device": device })}';` : ""} ${q};`).finally(() => d.sql("reset role; reset request.jwt.claim.sub; reset request.headers;"));
   const anon = (q) => d.sql(`set role anon; ${q};`).finally(() => d.sql("reset role;"));
   // what kit/data/learner-state.js sends: an upsert on (user_id, kind, key)
   const put = (uid, key, title, t, dev, del = false) => as(uid, `insert into public.learner_state (user_id, kind, key, value, t, dev, del) values ('${uid}', 'pin', '${key}', '${JSON.stringify({ title })}', ${t}, '${dev}', ${del})
     on conflict (user_id, kind, key) do update set value = excluded.value, t = excluded.t, dev = excluded.dev, del = excluded.del`);
   return { d, as, anon, put };
 }
+const row = (uid, key, t, dev) => `insert into public.learner_state (user_id, kind, key, value, t, dev) values ('${uid}', 'pin', '${key}', null, ${t}, '${dev}')`;
+test("on Free, only the learner's active study device writes their record, as for every other learner table", async () => {
+  const { d, as } = await db();
+  await d.sql("update public.billing_settings set plans_enforced = true");   // the one-device rule applies once plans are on
+  await d.sql(`insert into public.study_devices (user_id, device_id) values ('${ANA}', 'laptop-0001')`);
+  await as(ANA, row(ANA, "/from-laptop", 1, "laptop-0001"), "laptop-0001");
+  await assert.rejects(as(ANA, row(ANA, "/from-phone", 2, "phone-00001"), "phone-00001"), /row-level security/);
+  // the other device can still read it, so the app can show it there
+  assert.equal((await as(ANA, `select count(*)::int as n from public.learner_state`, "phone-00001"))[0].n, 1);
+});
 
 test("two devices: the newer change is kept, and an older one arriving late is ignored", async () => {
   const { as, put } = await db();

@@ -6,7 +6,7 @@ import { lessonPicker, factKey, useTool, backLink, takePicked, esc } from "./too
 import { map as loadMap, saveMap, deleteMap, uid } from "./store.js";
 import { mindElixir, elixirTheme, scene, toSvg, toPng, PALETTE } from "../maps/view.js";
 import { split } from "../maps/build.js";
-import { link, unlink, linksOf } from "../data/links.js";
+import { link, unlink, retitle } from "../data/links.js";
 import { resource, rid } from "../core/resource.js";
 import { loadIndex as lessonIndex } from "./search.js";
 
@@ -57,7 +57,7 @@ export async function renderMapMaker(view, ctx, [id = "new"]) {
   const save = () => { clearTimeout(timer); timer = setTimeout(() => {
     m = saveMap({ ...m, title: view.querySelector(".tl-title").value.trim() || "My mind map", data: mind.getData() });
     // renamed: its links say the new name
-    if (m.title !== linkedTitle) { linkedTitle = m.title; for (const l of linksOf(mapRes().rid)) if (l.by === "source") link(mapRes(), l.other, { by: "source" }); }
+    if (m.title !== linkedTitle) { linkedTitle = m.title; retitle(mapRes().rid, m.title); }
   }, 300); };
   mind.bus.addListener("operation", save);
   view.querySelector(".tl-title").addEventListener("input", (e) => { const d = mind.getData(); d.nodeData.topic = e.target.value || "My mind map"; mind.refresh(d); save(); });

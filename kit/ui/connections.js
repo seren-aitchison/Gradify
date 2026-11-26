@@ -7,7 +7,7 @@
 import { esc, ensureStyles } from "./store.js";
 import { uiIcon } from "./icons.js";
 import { linksOf, link, unlink, collectionsOf, collections, noteOf, suggest, onConnections, words } from "../data/links.js";
-import { resource, rid as makeRid, resourceFromPlace } from "../core/resource.js";
+import { resource, rid as makeRid, resourceFromPlace, parseRid } from "../core/resource.js";
 import { pins, recent } from "./places.js";
 import { history } from "./history.js";
 import { loadIndex } from "./global-nav.js";
@@ -69,13 +69,22 @@ export function mountConnections(el, res, { extra = [], app = "/app.html" } = {}
   async function draw() {
     const ls = linksOf(res.rid), linkedIds = ls.map((l) => l.other.rid);
     const cols = collectionsOf(res.rid), names = new Map(collections().map((c) => [c.id, c.name])), note = noteOf(res.rid);
-    const sug = suggest(res, await load(), { exclude: linkedIds, limit: 6 });
+    const pool = await load(), live = new Map(pool.map((r) => [r.rid, r]));
+    const sug = suggest(res, pool, { exclude: linkedIds, limit: 6 });
+    // course content is checked against the courses as they are now: a renamed lesson shows its new name, and one
+    // that's gone from its course says so (with Unlink) rather than linking nowhere
+    // (only when that course's lessons did load: offline, nothing is called gone)
+    const loaded = new Set(pool.filter((r) => r.kind === "lesson" || r.kind === "unit").map((r) => r.course)), anyCourse = pool.some((r) => r.kind === "course");
+    const gone = (o) => (o.kind === "course" ? anyCourse : ["lesson", "unit"].includes(o.kind) && loaded.has(parseRid(o.rid)?.course)) && !live.has(o.rid);
+    const shown = (o) => (live.get(o.rid) ? { ...o, title: live.get(o.rid).title } : o);
     // redrawing replaces what had focus (a Link button just pressed): it goes back into the panel, not to the page,
     // so the keyboard, Escape and a screen reader stay where they were
     const had = el.contains(document.activeElement) || document.activeElement === document.body;
     el.innerHTML = `<div class="gx-cn-head"><h3>Connections</h3><button type="button" class="gx-link" data-cn-add aria-expanded="${query !== null && el.dataset.adding === "1"}">${uiIcon("link")}Link something</button></div>
       <div class="gx-cn-pick" ${el.dataset.adding === "1" ? "" : "hidden"}><label class="gx-cn-q">${uiIcon("search")}<input type="search" placeholder="A lesson, topic, course or something of yours" aria-label="Find something to link" value="${esc(query || "")}"></label><ul class="gx-cn-l gx-cn-res"></ul></div>
-      ${ls.length ? `<p class="gx-cn-k">Linked</p><ul class="gx-cn-l">${ls.map((l) => row(l.other, `<button type="button" class="gx-cn-x" data-unlink="${esc(l.other.rid)}" aria-label="Unlink ${esc(l.other.title)}" title="Unlink">${uiIcon("close")}</button>`, l.dir === "made-into" ? "made from this" : l.dir === "made-from" ? "this was made from it" : "")).join("")}</ul>` : `<p class="gx-cn-none">Nothing linked yet. Link the notes, flashcards, questions and lessons that go with this, and they'll show here, and here from there.</p>`}
+      ${ls.length ? `<p class="gx-cn-k">Linked</p><ul class="gx-cn-l">${ls.map((l) => gone(l.other)
+        ? `<li class="gx-cn-i gx-cn-gone"><span class="gx-cn-t"><b>${esc(l.other.title)}</b><small>No longer in its course</small></span><button type="button" class="gx-cn-x" data-unlink="${esc(l.other.rid)}" aria-label="Unlink ${esc(l.other.title)}" title="Unlink">${uiIcon("close")}</button></li>`
+        : row(shown(l.other), `<button type="button" class="gx-cn-x" data-unlink="${esc(l.other.rid)}" aria-label="Unlink ${esc(l.other.title)}" title="Unlink">${uiIcon("close")}</button>`, l.dir === "made-into" ? "made from this" : l.dir === "made-from" ? "this was made from it" : "")).join("")}</ul>` : `<p class="gx-cn-none">Nothing linked yet. Link the notes, flashcards, questions and lessons that go with this, and they'll show here, and here from there.</p>`}
       ${cols.length ? `<p class="gx-cn-k">In your collections</p><p class="gx-cn-cols">${cols.map((id) => `<a href="${esc(app)}#/collections/${esc(id)}">${uiIcon("inbox")}${esc(names.get(id) || "Collection")}</a>`).join("")}</p>` : ""}
       ${note ? `<p class="gx-cn-k">Your note</p><p class="gx-cn-note">${esc(note)}</p>` : ""}
       ${sug.length ? `<p class="gx-cn-k">Suggested</p><ul class="gx-cn-l">${sug.map((s) => row(s, `<button type="button" class="gx-cn-ln" data-link="${esc(s.rid)}">Link</button>`, s.why)).join("")}</ul>` : ""}

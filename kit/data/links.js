@@ -103,7 +103,7 @@ export function createCollection(name) {
   return id;
 }
 export const renameCollection = (id, name) => LS.put("collection", id, { ...(LS.get("collection", id) || {}), name: String(name).trim().slice(0, 80) });
-export function deleteCollection(id) { LS.batch((b) => { b.del("collection", id); for (const e of LS.list("collitem")) if (e.value.cid === id) b.del("collitem", e.key); }); }
+export function deleteCollection(id) { LS.batch((b) => { b.del("collection", id); for (const e of LS.list("collitem")) if (e.value.cid === id) b.del("collitem", e.key); }); forget(`collection:${id}`); }
 export const addToCollection = (cid, r) => LS.put("collitem", `${cid}|${r.rid}`, { cid, r: summary(r) });
 export const removeFromCollection = (cid, rid) => LS.del("collitem", `${cid}|${rid}`);
 
@@ -128,3 +128,37 @@ export const unschedule = (blockId) => LS.del("sched", String(blockId));
 /** what changed, for anything showing connections */
 export const onConnections = (f) => LS.subscribe((kinds) => { if (!kinds || kinds.some((k) => ["link", "collection", "collitem", "note", "mistake", "sched"].includes(k))) f(); });
 export { R as resource, parseRid };
+
+// ---------- keeping connections true ----------
+/**
+ * A resource is gone (a map, a Notes page, a flashcard set or card deleted): every link to it, its place in
+ * collections, the note on it, its scheduling and its pin go too, so nothing points at something that isn't there.
+ */
+export function forget(rid, { href = null } = {}) {
+  const gone = [];
+  for (const e of LS.list("link")) if (e.value.a?.rid === rid || e.value.b?.rid === rid) gone.push(["link", e.key]);
+  for (const e of LS.list("collitem")) if (e.value.r?.rid === rid) gone.push(["collitem", e.key]);
+  for (const e of LS.list("sched")) if (e.value.r?.rid === rid) gone.push(["sched", e.key]);
+  if (LS.get("note", rid)) gone.push(["note", rid]);
+  if (href && LS.get("pin", href)) gone.push(["pin", href]);
+  if (gone.length) LS.batch((b) => gone.forEach(([k, key]) => b.del(k, key)));
+  return gone.length;
+}
+/** retitled pure: the entries whose copy of this resource's title is out of date, with the new value */
+export function staleTitles(entries, rid, title) {
+  const out = [];
+  for (const e of entries) {
+    const v = e.value; if (!v) continue;
+    if (e.kind === "link" && (v.a?.rid === rid && v.a.title !== title || v.b?.rid === rid && v.b.title !== title)) out.push([e.kind, e.key, { ...v, a: v.a?.rid === rid ? { ...v.a, title } : v.a, b: v.b?.rid === rid ? { ...v.b, title } : v.b }]);
+    else if ((e.kind === "collitem" || e.kind === "note" || e.kind === "sched") && v.r?.rid === rid && v.r.title !== title) out.push([e.kind, e.key, { ...v, r: { ...v.r, title } }]);
+  }
+  return out;
+}
+/** renamed (seen when it's opened, or when the learner renames it): every link and collection says the new name */
+export function retitle(rid, title) {
+  const t = String(title || "").trim(); if (!rid || !t) return 0;
+  const all = ["link", "collitem", "note", "sched"].flatMap((k) => LS.list(k).map((e) => ({ kind: k, key: e.key, value: e.value })));
+  const stale = staleTitles(all, rid, t);
+  if (stale.length) LS.batch((b) => stale.forEach(([k, key, v]) => b.put(k, key, v)));
+  return stale.length;
+}

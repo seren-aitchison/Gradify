@@ -13,6 +13,11 @@ import { pin, pinned, pins, setPins, restoreAt } from "./places.js";
 import { collections, createCollection, addToCollection, removeFromCollection, collectionsOf, noteOf, setNote, schedule } from "../data/links.js";
 import { mountConnections } from "./connections.js";
 
+// what History records: places opened and studied. A single card or question is part of its set or lesson, so it
+// has no history of its own and doesn't offer one.
+export const HAS_HISTORY = new Set(["course", "unit", "lesson", "quiz", "test", "spec", "pack", "note", "map", "collection", "screen", "page"]);
+/** the actions a resource's menu offers, in order (pure; tests/links.test.mjs) */
+export const actionsFor = (r, { canSchedule = false } = {}) => ["pin", "save", "link", ...(canSchedule ? ["schedule"] : []), "note", "share", ...(HAS_HISTORY.has(r?.kind) ? ["history"] : [])];
 const today = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`; };
 const abs = (href) => { try { return new URL(href, location.href).href; } catch { return href; } };
 
@@ -28,14 +33,17 @@ export function mountResourceActions(host, getRes, { store = null, app = "/app.h
     const r = getRes(); if (!r) return;
     const on = pinned(r.href), inCols = collectionsOf(r.rid).length, hasNote = Boolean(noteOf(r.rid));
     const it = (act, ic, text, sub = "") => `<button type="button" role="menuitem" data-ra="${act}">${uiIcon(ic)}<span><b>${text}</b>${sub ? `<small>${sub}</small>` : ""}</span></button>`;
-    menu.innerHTML = `<p class="gx-ram-h">${esc(r.label)} · ${esc(r.title)}</p>
-      ${it("pin", on ? "pinned" : "pin", on ? "Unpin" : "Pin", on ? "Pinned to your sidebar and home" : "Keep it in your sidebar and home")}
-      ${it("save", "inbox", "Save to a collection", inCols ? `In ${inCols} collection${inCols > 1 ? "s" : ""}` : "Group it with things from any tool")}
-      ${it("link", "link", "Connections", "Link it to notes, flashcards, lessons…")}
-      ${store ? it("schedule", "clock", "Schedule", "Put it in your plan") : ""}
-      ${it("note", "notes", hasNote ? "Edit your note" : "Add a note", "Your own words on it")}
-      ${it("share", "up", "Share", "Copy a link to it")}
-      ${it("history", "back", "See its history", "When you opened and studied it")}`;
+    // one list of actions for every resource (actionsFor), so every menu offers the same things in the same order
+    const ITEM = {
+      pin: () => it("pin", on ? "pinned" : "pin", on ? "Unpin" : "Pin", on ? "Pinned to your sidebar and home" : "Keep it in your sidebar and home"),
+      save: () => it("save", "inbox", "Save to a collection", inCols ? `In ${inCols} collection${inCols > 1 ? "s" : ""}` : "Group it with things from any tool"),
+      link: () => it("link", "link", "Connections", "Link it to notes, flashcards, lessons…"),
+      schedule: () => it("schedule", "clock", "Schedule", "Put it in your plan"),
+      note: () => it("note", "notes", hasNote ? "Edit your note" : "Add a note", "Your own words on it"),
+      share: () => it("share", "up", "Share", "Copy a link to it"),
+      history: () => it("history", "back", "See its history", "When you opened and studied it"),
+    };
+    menu.innerHTML = `<p class="gx-ram-h">${esc(r.label)} · ${esc(r.title)}</p>${actionsFor(r, { canSchedule: Boolean(store) }).map((a) => ITEM[a]()).join("")}`;
   }
   const open = () => { paint(); menu.hidden = false; btn.setAttribute("aria-expanded", "true"); items()[0]?.focus(); };
   const close = (refocus = false) => { if (menu.hidden) return; menu.hidden = true; btn.setAttribute("aria-expanded", "false"); if (refocus) btn.focus(); };

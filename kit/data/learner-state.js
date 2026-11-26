@@ -145,10 +145,14 @@ export async function syncNow() {
     setStatus({ state: "saved", at: Date.now(), waiting: 0 });
   } catch (err) {
     // the table isn't there yet: this device's copy is the record, and nothing is lost
-    const missing = /learner_state|42P01|PGRST20[0-9]|schema cache|does not exist/i.test(`${err?.code || ""} ${err?.message || ""}`);
-    setStatus(missing ? { state: "local", waiting: 0, note: "Account sync for your workspace isn't switched on yet." } : { state: globalThis.navigator?.onLine === false ? "offline" : "failed", waiting: pendingCount() });
-    if (!missing) soon(30000);
-    if (missing) account = null;
+    const text = `${err?.code || ""} ${err?.message || ""}`;
+    const missing = /42P01|PGRST20[0-9]|schema cache|relation .*learner_state.* does not exist/i.test(text);
+    // on Free, only the active study device writes to the account (public.may_write): this one keeps its copy
+    const readOnly = /42501|row-level security/i.test(text);
+    if (missing || readOnly) {
+      setStatus({ state: "local", waiting: 0, note: missing ? "Account sync for your workspace isn't switched on yet." : "On Free, your other device is the one that saves to your account. Changes here stay on this device." });
+      account = null;
+    } else { setStatus({ state: globalThis.navigator?.onLine === false ? "offline" : "failed", waiting: pendingCount() }); soon(30000); }
   } finally { busy = false; }
   return status;
 }

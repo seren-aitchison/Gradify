@@ -615,3 +615,5 @@ section.gx-shut > h3 { opacity: .8; }
 .aq:has(> .gx-ra) > .aq-q { padding-right: 44px; }
 /* a card's ••• menu sits with its other actions (kit/app/main.js renderDeck) */
 .c-actions .gx-rab { width: 32px; height: 32px; border: 0; }
+.gx-cn-gone { padding: 8px 10px 8px 50px; opacity: .75; border-style: dashed; }
+.gx-cn-gone .gx-cn-t { flex: 1; min-width: 0; }

@@ -122,6 +122,29 @@ below). The learner record links to them by id. It doesn't copy them.
 | Plan blocks, goals | `plan_blocks`, `goals` | one row each; goals carry a version |
 | Notes | `tool_items` (kind `kb`) | rem by rem |
 
+## Keeping connections true
+
+| When | What happens |
+|---|---|
+| A mind map, Notes page (and the pages inside it), flashcard set, card or collection is deleted | `forget(rid)`: its links, collection places, the learner's note on it, its scheduling and its pin go too |
+| It's renamed | `retitle(rid, title)`: every link and collection entry takes the new name, when the map is renamed and whenever a Notes page, flashcard set or lesson is opened |
+| A linked lesson, topic or course is no longer in its course | Connections shows it as "No longer in its course", with Unlink, instead of a link to nowhere (only when that course's index loaded: offline, nothing is called gone) |
+| A plan block made by Schedule is deleted | Completing the resource finds it gone and drops the scheduling entry |
+| Moved within its course or Notes | Nothing changes: ids are the course's locked lesson ids and the notes' own ids, not places |
+
+Undoing a Notes delete (Ctrl+Z) brings the page back, but not its links.
+
+## Migration impact
+
+`supabase/migrations/20261126120000_learner_state.sql`:
+
+- **Adds:** one table (`learner_state`), one index, one trigger function and its trigger, row-level security, and policies matching every other learner table (own rows only; on Free, writes only from the active study device).
+- **Changes nothing existing:** no other table, row, function or policy is touched. The repository's rehearsal applies it to a copy of real data and checks every existing value is unchanged (`tests/pg-rehearsal.test.mjs`). It passes the migration allowlist.
+- **All or nothing:** `scripts/supabase-admin.mjs migrate` applies it in one transaction with its ledger entry and checks. A failure partway through leaves the database as it was.
+- **Reversible:** `drop table public.learner_state; drop function public.learner_state_keep_newer();`. The app treats a missing table as "keep the record on this device", so devices carry on with nothing lost there.
+- **After it's applied:** a signed-in learner's device uploads its record on its next visit (pins, tabs, up to 600 history lines, links, collections, notes on resources, mistakes, scheduling) and merges it with their other devices'.
+- **Already happening without it, on the device:** this branch moves pins, workspace tabs and history into one key (`gradify.state`), importing the old keys once and leaving them in place. If the branch were reverted, the old keys would still be there, but pins, tabs and history added after the switch would only be in the new key.
+
 ## Attempted, completed, mastered, verified
 
 These four are separate measures, and nothing in Gradify should report one as another:
@@ -142,7 +165,7 @@ The learner record holds attempted and completed states for Continue. Mastery an
 
 ## What's left
 
-1. **Apply the migration** (`20261126120000_learner_state.sql`). Sync then switches on by itself for signed-in learners.
+1. **Apply the migration** (`20261126120000_learner_state.sql`), once approved. Sync then switches on by itself for signed-in learners.
 2. Fold `gradify.visited` (recently visited) into `activity`, so Recent is the same on every device.
 3. Add the `assist` column to `assessment_attempts`, so mastery can weigh answers given after a hint.
 4. Record "made from" for flashcard sets made from a lesson (mind maps and Notes pages do already), using `link(a, b, { by: "source" })`.

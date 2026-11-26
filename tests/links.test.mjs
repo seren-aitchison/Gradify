@@ -88,3 +88,27 @@ test("candidates merge what the page knows with what the indexes know", async ()
   const [m] = mergeByRid([resource("lesson:/a/x", { title: "X", rel: "builds-on", refs: ["1.1"] }), resource("lesson:/a/x", { title: "X", terms: ["t"], headings: ["h"] })]);
   assert.deepEqual([m.rel, m.refs, m.terms, m.headings], ["builds-on", ["1.1"], ["t"], ["h"]]);
 });
+
+test("renamed: every copy of its title is updated; nothing else is touched", async () => {
+  const { staleTitles } = await import("../kit/data/links.js");
+  const entries = [
+    { kind: "link", key: "a>b", value: { a: { rid: "map:m1", title: "Old" }, b: { rid: "lesson:/c/l1", title: "L" }, by: "source" } },
+    { kind: "link", key: "c>d", value: { a: { rid: "note:n1", title: "N" }, b: { rid: "lesson:/c/l1", title: "L" }, by: "you" } },
+    { kind: "collitem", key: "c1|map:m1", value: { cid: "c1", r: { rid: "map:m1", title: "Old" } } },
+    { kind: "note", key: "map:m1", value: { text: "x", r: { rid: "map:m1", title: "New" } } },
+  ];
+  const s = staleTitles(entries, "map:m1", "New");
+  assert.deepEqual(s.map(([k, key]) => `${k}|${key}`), ["link|a>b", "collitem|c1|map:m1"]);     // the note already says New
+  assert.equal(s[0][2].a.title, "New"); assert.equal(s[0][2].b.title, "L");
+  assert.deepEqual(staleTitles(entries, "map:zz", "Whatever"), []);
+});
+
+test("the same menu everywhere: the same actions in the same order, history only where there is one", async () => {
+  const { actionsFor } = await import("../kit/ui/resource-actions.js");
+  const lesson = actionsFor({ kind: "lesson" }, { canSchedule: true }), card = actionsFor({ kind: "card" }, { canSchedule: true }), q = actionsFor({ kind: "question" }, { canSchedule: true });
+  assert.deepEqual(lesson, ["pin", "save", "link", "schedule", "note", "share", "history"]);
+  assert.deepEqual(card, ["pin", "save", "link", "schedule", "note", "share"]);
+  assert.deepEqual(q, card);
+  assert.ok(!actionsFor({ kind: "pack" }).includes("schedule"));                  // only with somewhere to schedule into
+  assert.equal(new Set(lesson).size, lesson.length);                              // no action twice
+});

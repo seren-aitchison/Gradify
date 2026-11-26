@@ -66,7 +66,7 @@ import { attachAccount, exportState, list as stateList, batch as stateBatch, SYN
 import { renderCollections } from "./collections-view.js";
 import { mountConnections } from "../ui/connections.js";
 import { mountResourceActions } from "../ui/resource-actions.js";
-import { mistakes, mistakesByLesson } from "../data/links.js";
+import { mistakes, mistakesByLesson, forget, retitle } from "../data/links.js";
 import { resource, rid as makeRid } from "../core/resource.js";
 import { logEvent, history as activity } from "../ui/history.js";
 import { continueItems, continueHtml } from "./continue-view.js";
@@ -601,6 +601,7 @@ async function renderDeck(id) {
   wireSavePanel();
   wireSharePanel();
   // what this set goes with: the lessons on the same topic in every course, and whatever the learner linked it to
+  retitle(makeRid("pack", id), doc.title);
   {
     const host = document.createElement("section"); host.className = "panel glass deck-conn";
     view.querySelector(".deck-tools")?.after(host);
@@ -609,7 +610,7 @@ async function renderDeck(id) {
   // each card is a resource of its own: pin it, link it to a lesson, save it to a collection, note on it, schedule it
   for (const el of view.querySelectorAll(".c-row[data-id]")) {
     const c = cards.find((x) => x.id === el.dataset.id); if (!c) continue;
-    mountResourceActions(el.querySelector(".c-actions"), () => resource(makeRid("card", c.id), { title: c.front.length > 90 ? `${c.front.slice(0, 89)}…` : c.front, sub: `Flashcard · ${doc.title}`, href: `${location.pathname}#/deck/${id}` }), { store: async () => store, app: location.pathname, where: "afterbegin", label: "This card: more actions" });
+    mountResourceActions(el.querySelector(".c-actions"), () => resource(makeRid("card", c.id), { title: c.front.length > 90 ? `${c.front.slice(0, 89)}…` : c.front, sub: `Flashcard · ${doc.title}`, href: `${location.pathname}#/deck/${id}?card=${c.id}` }), { store: async () => store, app: location.pathname, where: "afterbegin", label: "This card: more actions" });
   }
   const list = view.querySelector(".deck");
   list.addEventListener("click", async (e) => {
@@ -643,6 +644,9 @@ async function renderDeck(id) {
     if (e.target.closest("#del-deck")) {
       if (!confirm(`Delete “${doc.title}” and its ${cards.length} cards? This can't be undone.`)) return;
       await store.deleteDocument(id);
+      // the set and its cards are gone: so are their links, collection places, notes, schedules and pins
+      forget(makeRid("pack", id), { href: `${location.pathname}#/deck/${id}` });
+      for (const c of cards) forget(makeRid("card", c.id), { href: `${location.pathname}#/deck/${id}?card=${c.id}` });
       toast("Deleted.");
       location.hash = "#/library";
       return;
@@ -673,6 +677,7 @@ async function renderDeck(id) {
       } catch (err) { toast(esc(err.message)); e.target.closest("button").disabled = false; }
     } else if (act === "del") {
       await store.deleteCard(card.id);
+      forget(makeRid("card", card.id), { href: `${location.pathname}#/deck/${id}?card=${card.id}` });
       row.remove();
       toast("Card deleted.");
     } else if (act === "ok") {

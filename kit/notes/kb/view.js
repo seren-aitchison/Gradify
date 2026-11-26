@@ -12,7 +12,7 @@ import * as M from "./model.js";
 import * as S from "./store.js";
 import { icon } from "../../core/icons.js";
 import { resource as gResource, rid as gRid, hrefOf } from "../../core/resource.js";
-import { link as gLink, linksOf } from "../../data/links.js";
+import { link as gLink, linksOf, forget as gForget, retitle as gRetitle } from "../../data/links.js";
 import { runResourceAction } from "../../ui/resource-actions.js";
 // this page as a universal resource (kit/core/resource.js), for links, collections, the plan and history
 const noteRes = (id) => gResource(gRid("note", id), { title: M.nameOf(kb, id) || "Untitled", sub: "Note in Gradify Notes", href: `${location.pathname}#/notes/${id}` });
@@ -183,6 +183,7 @@ function wireSide() {
 function openPage(main, id) {
   root = id;
   M.visit(kb, id); S.save();
+  gRetitle(`note:${id}`, M.nameOf(kb, id));   // renamed since it was linked or saved: links and collections say so
   const r = kb.rems[id];
   const crumbs = M.ancestors(kb, id).map((a) => `<a href="#/notes/${a}">${esc(M.nameOf(kb, a))}</a>`).join("<span>›</span>");
   main.innerHTML = `<div class="kb-page" data-root="${id}">
@@ -756,7 +757,10 @@ function moreMenu(btn) {
     ["Pin to your Gradify sidebar", () => runResourceAction("pin", noteRes(root), { app: location.pathname })],
     ["See its history", () => runResourceAction("history", noteRes(root), { app: location.pathname })],
     "-",
-    ["Delete", () => { if (!confirm(`Delete “${M.nameOf(kb, root)}” and everything in it? Its flashcards are suspended; Ctrl+Z puts it back while this page is open.`)) return; const parent = r.parent; change(() => M.remove(kb, root), { draw: "none" }); location.hash = parent ? `#/notes/${parent}` : "#/notes"; }],
+    ["Delete", () => { if (!confirm(`Delete “${M.nameOf(kb, root)}” and everything in it? Its flashcards are suspended; Ctrl+Z puts it back while this page is open.`)) return; const parent = r.parent, ids = []; (function walk(x) { ids.push(x); for (const k of kb.rems[x]?.kids || []) walk(k); })(root);
+      change(() => M.remove(kb, root), { draw: "none" });
+      // the page and the pages inside it are gone: so are their links, collection places, schedules and pins
+      for (const x of ids) gForget(`note:${x}`, { href: `${location.pathname}#/notes/${x}` }); location.hash = parent ? `#/notes/${parent}` : "#/notes"; }],
   ]);
 }
 async function templatePicker() {
