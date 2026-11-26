@@ -1,11 +1,18 @@
 // The mapping store: one file per framework, kit/curriculum/maps/<framework>.json, and the only place a decision about
 // whether a lesson teaches a requirement is kept (decision 6, owner, 25 Nov 2026). Each statement's link has one status:
 //   proposed       the matcher's candidates (scripts/curriculum/engine.mjs propose): never coverage
-//   ai-confirmed   an AI reviewer confirmed a lesson teaches it, naming the objectives: "Mapped, not independently
-//                  verified" to learners
-//   rejected       an AI reviewer found the candidate doesn't teach it; `missing` says what isn't taught, and the
-//                  statement joins the write queue
+//   ai-confirmed   an AI reviewer said a lesson teaches it, naming the objectives: "Mapped, not independently
+//                  verified" to learners. Evidence for a person's review only: never coverage, never stops writing
+//   rejected       an AI reviewer found the candidate doesn't teach it; `missing` says what isn't taught
 //   verified       a named person checked it (engine.mjs review): "Independently verified"; never overwritten by an AI
+// Only a person's confirmation is coverage (owner, 26 Nov 2026). The three stages, for each statement on its own:
+//   proposed       the matcher found a candidate lesson                    not taught; the statement is written
+//   ai-checked     an AI reviewer judged it: status ai-confirmed or rejected not taught; the statement is written
+//   human-confirmed status verified, with at least one lesson teaching all of it (coverage "full"): taught, so the
+//                  statement isn't written. A verified "partial" or "missing" is written, with the reviewer's note.
+// AI confidence and a person's decision are kept in separate fields: an AI check never becomes a verification, and a
+// verification keeps the AI check it was made after (`aiCheck`) as evidence. A person can revoke a verification
+// (engine.mjs apply, decision "revoke"): the statement goes back to proposed and the revocation is kept (`revoked`).
 // A decision holds for the statement text it was made on (`hash`): when the statement changes, it reads as undecided.
 // The matcher's candidates are kept under `candidates` once a decision is made, as the evidence it was made from.
 // Decisions made before this store existed were kept in content/mapping/<framework>.json; they're folded in on read
@@ -47,7 +54,7 @@ export function decide(m, ref, d) {
   if (prev.status === "verified") return prev;
   const candidates = prev.candidates || (prev.status === "proposed" ? prev.lessons || [] : []);
   const base = { ...(prev.proposedBy ? { proposedBy: prev.proposedBy } : {}), ...(prev.confidence ? { confidence: prev.confidence } : {}), candidates, ...(prev.nearest ? { nearest: prev.nearest } : {}),
-    ...(d.hash ? { hash: d.hash } : {}), ...(d.by ? { by: d.by } : {}), ...(d.on ? { on: d.on } : {}) };
+    ...(d.hash ? { hash: d.hash } : {}), ...(d.by ? { by: d.by } : {}), ...(d.on ? { on: d.on } : {}), ...(prev.revoked ? { revoked: prev.revoked } : {}) };
   m.links[ref] = d.ok
     ? { status: "ai-confirmed", ...base, lessons: [{ id: d.lesson, coverage: d.coverage || "full", objectives: d.objectives || [] }] }
     : { status: "rejected", ...base, lessons: [], missing: [d.why || "not taught"], ...(d.lesson ? { rejectedLesson: d.lesson } : {}) };
@@ -67,6 +74,15 @@ export function decisionOf(m, ref, hash) {
   if (!l || l.status === "proposed") return null;
   if (l.status === "verified") return l.hash === hash ? l : null;
   return !l.hash || l.hash === hash ? l : null;
+}
+/**
+ * Is the statement taught, as far as the engine may act on it? Only when a person confirmed, for this statement and its
+ * current text, that a lesson teaches all of it. Everything else (proposed, AI-checked, verified partial or missing) is
+ * uncovered: it's written, and it never counts towards verified coverage.
+ */
+export function confirmedTaught(m, ref, hash) {
+  const d = decisionOf(m, ref, hash);
+  return !!d && d.status === "verified" && (d.lessons || []).some((l) => l.coverage === "full");
 }
 /** a link's candidate lessons: the matcher's, kept as evidence once a decision is made */
 export const candidatesOf = (l) => (l?.candidates?.length ? l.candidates : l?.status === "proposed" ? l.lessons || [] : []);

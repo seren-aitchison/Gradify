@@ -8,7 +8,8 @@ import { extractAqa } from "../scripts/curriculum/aqa.mjs";
 import { parseBboxLayout, textHash } from "../scripts/curriculum/layout.mjs";
 import { loadIndex, loadMap, indexOf, statementsPath, applyReview, reviewSheet, proposalSummary, band, mergeProposals, REVIEW_COLUMNS } from "../scripts/curriculum/engine.mjs";
 import { SPECS, checkRegistry } from "../kit/curriculum/uk.js";
-import { coverageReport, claimFor, checkMap } from "../kit/curriculum/mapping.js";
+import { coverageReport, claimFor, checkMap, statusOf } from "../kit/curriculum/mapping.js";
+import * as mapstore from "../scripts/content/mapstore.mjs";
 import { specStanding, lessonMastery } from "../kit/curriculum/standing.js";
 import { parseTable } from "../scripts/growth/sources.mjs";
 
@@ -168,30 +169,61 @@ test("review sheet: every statement with its proposals and empty decisions, read
 });
 
 test("applying review decisions: full, partial and missing become verified; bad rows apply nothing", () => {
-  const ok = applyReview(tiny, tinyMap, [R({ ref: "9.1.a", decision: "full" }), R({ ref: "9.1.b", decision: "missing", note: "no lesson on this" }), R({ ref: "9.1.c", decision: "partial", lessons: "u02-05 u05-03", note: "no worked example" })], lessonIds);
+  const NOW = new Date("2026-12-01T10:00:00Z");
+  const ok = applyReview(tiny, tinyMap, [R({ ref: "9.1.a", decision: "full", note: "taught in its second section" }), R({ ref: "9.1.b", decision: "missing", note: "no lesson on this" }), R({ ref: "9.1.c", decision: "partial", lessons: "u02-05 u05-03", note: "no worked example" })], lessonIds, { now: NOW });
   assert.deepEqual(ok.problems, []); assert.equal(ok.applied, 3);
   assert.deepEqual(ok.map.links["9.1.a"].lessons, [{ id: "u02-03", coverage: "full" }], "blank lessons: the proposed ones");
   assert.equal(ok.map.links["9.1.a"].matcherConfidence, "strong", "the matcher's confidence is kept, to measure it later");
   assert.match(ok.map.links["9.1.b"].hash, /^[0-9a-f]{16}$/, "a reviewed link records the statement text it was reviewed on");
-  assert.deepEqual({ ...ok.map.links["9.1.b"], hash: undefined }, { status: "verified", hash: undefined, reviewer: "A. Reviewer", reviewedOn: "2026-12-01", lessons: [], gap: "no lesson on this", matcherConfidence: "none" });
+  assert.deepEqual({ ...ok.map.links["9.1.b"], hash: undefined }, { status: "verified", hash: undefined, reviewer: "A. Reviewer", reviewedOn: "2026-12-01", recordedAt: "2026-12-01T10:00:00.000Z", lessons: [], gap: "no lesson on this", matcherConfidence: "none" });
   assert.deepEqual(ok.map.links["9.1.c"].lessons.map((l) => [l.id, l.coverage]), [["u02-05", "partial"], ["u05-03", "partial"]]);
   assert.deepEqual(coverageReport(tiny, ok.map).totals, { statements: 3, covered: 1, partial: 1, missing: 1, mapped: 0, partiallyMapped: 0, rejected: 0, awaiting: 0 });
   assert.equal(claimFor(tiny, ok.map).line, "Covers 1 of 3 specification statements fully and 1 in part");
-  const mixed = applyReview(tiny, tinyMap, [R({ ref: "9.1.a", decision: "full", lessons: "u02-03=full u05-03" })], lessonIds);
+  const mixed = applyReview(tiny, tinyMap, [R({ ref: "9.1.a", decision: "full", lessons: "u02-03=full u05-03", note: "taught in its second section" })], lessonIds);
   assert.deepEqual(mixed.map.links["9.1.a"].lessons.map((l) => l.coverage), ["full", "partial"], "=full marks the lesson that teaches it fully");
   const blank = applyReview(tiny, tinyMap, [R({ ref: "9.1.a" })], lessonIds);
   assert.equal(blank.applied, 0); assert.equal(blank.map.links["9.1.a"].status, "proposed", "no decision: still awaiting");
   for (const [row, re] of [
-    [R({ ref: "9.9.z", decision: "full" }), /not a statement/], [R({ ref: "9.1.a", decision: "most" }), /full, partial or missing/],
-    [R({ ref: "9.1.a", decision: "full", reviewer: "" }), /reviewer and reviewed_on/], [R({ ref: "9.1.a", decision: "full", reviewed_on: "1 Dec" }), /reviewer and reviewed_on/],
+    [R({ ref: "9.9.z", decision: "full", note: "taught in its second section" }), /not a statement/], [R({ ref: "9.1.a", decision: "most" }), /full, partial, missing or revoke/],
+    [R({ ref: "9.1.a", decision: "full" }), /full needs a note \(the evidence/], [R({ ref: "9.1.a", decision: "revoke", note: "x" }), /revoke needs an earlier verification/],
+    [R({ ref: "9.1.a", decision: "full", reviewer: "", note: "taught in its second section" }), /reviewer and reviewed_on/], [R({ ref: "9.1.a", decision: "full", reviewed_on: "1 Dec", note: "taught in its second section" }), /reviewer and reviewed_on/],
     [R({ ref: "9.1.c", decision: "partial" }), /needs a note/], [R({ ref: "9.1.b", decision: "missing" }), /needs a note/],
-    [R({ ref: "9.1.a", decision: "full", lessons: "u99-99" }), /unknown lesson u99-99/], [R({ ref: "9.1.b", decision: "full" }), /needs the lessons/],
-    [R({ ref: "9.1.a", decision: "full", lessons: "u02-03 u02-03" }), /listed twice/],
+    [R({ ref: "9.1.a", decision: "full", lessons: "u99-99", note: "taught in its second section" }), /unknown lesson u99-99/], [R({ ref: "9.1.b", decision: "full", note: "taught in its second section" }), /needs the lessons/],
+    [R({ ref: "9.1.a", decision: "full", lessons: "u02-03 u02-03", note: "taught in its second section" }), /listed twice/],
   ]) {
     const bad = applyReview(tiny, tinyMap, [R({ ref: "9.1.c", decision: "full" }), row], lessonIds);
     assert.ok(bad.problems.some((p) => re.test(p)), String(re)); assert.equal(bad.applied, 0); assert.equal(bad.map, tinyMap, "nothing applied when any row is wrong");
   }
   assert.match(applyReview({ ...tiny, version: "2.0" }, tinyMap, [], lessonIds).problems[0], /version 1\.0/, "a map for another version must be proposed again");
+});
+
+test("human confirmation: an AI check is kept beside a person's decision, a verification can be revoked, and nothing spreads to other statements", () => {
+  const { confirmedTaught } = mapstore, H = textHash(tiny.statements[0].text);
+  // an AI reviewer said yes to 9.1.a: still awaiting for coverage, and the review sheet shows the AI's view on its own
+  const aiMap = { ...tinyMap, links: { ...tinyMap.links, "9.1.a": { status: "ai-confirmed", by: "agent:haiku", on: "2026-11-30", confidence: "strong", candidates: tinyMap.links["9.1.a"].lessons, lessons: [{ id: "u02-03", coverage: "full", objectives: [1] }] } } };
+  assert.equal(coverageReport(tiny, aiMap).totals.covered, 0, "an AI's yes is never verified coverage");
+  assert.ok(!confirmedTaught(aiMap, "9.1.a", H), "an AI's yes doesn't stop the engine writing the statement");
+  const sheet = parseTable(reviewSheet(tiny, aiMap, new Map()));
+  assert.equal(sheet[0].ai_check, "yes: u02-03 @1 (agent:haiku, 2026-11-30)"); assert.equal(sheet[0].decision, "", "the AI's view is evidence, not a decision");
+  // a person confirms 9.1.a only: the AI check stays as evidence in its own field, and 9.1.c (same lesson pool) is untouched
+  const NOW = new Date("2026-12-01T10:00:00Z");
+  const v = applyReview(tiny, aiMap, [R({ ref: "9.1.a", decision: "full", note: "section 2 teaches every part" })], lessonIds, { now: NOW }).map;
+  assert.equal(v.links["9.1.a"].status, "verified"); assert.equal(v.links["9.1.a"].recordedAt, "2026-12-01T10:00:00.000Z");
+  assert.deepEqual(v.links["9.1.a"].aiCheck, { verdict: "yes: u02-03", by: "agent:haiku", on: "2026-11-30" });
+  assert.equal(v.links["9.1.a"].note, "section 2 teaches every part"); assert.equal(v.links["9.1.a"].matcherConfidence, "strong");
+  assert.ok(confirmedTaught(v, "9.1.a", H)); assert.equal(v.links["9.1.c"], tinyMap.links["9.1.c"], "confirming one statement leaves the others as they were");
+  // revoked: uncovered again, with the withdrawn verification kept
+  const r = applyReview(tiny, v, [R({ ref: "9.1.a", decision: "revoke", note: "the lesson never explains the second clause", reviewer: "B. Reviewer", reviewed_on: "2026-12-05" })], lessonIds, { now: NOW });
+  assert.deepEqual(r.problems, []); const l = r.map.links["9.1.a"];
+  assert.equal(l.status, "proposed"); assert.ok(!confirmedTaught(r.map, "9.1.a", H), "a revoked statement is written again");
+  assert.equal(statusOf(l), "awaiting");
+  assert.deepEqual({ ...l.revoked[0], was: undefined }, { reviewer: "B. Reviewer", on: "2026-12-05", recordedAt: "2026-12-01T10:00:00.000Z", why: "the lesson never explains the second clause", was: undefined });
+  assert.equal(l.revoked[0].was.reviewer, "A. Reviewer"); assert.deepEqual(l.aiCheck, v.links["9.1.a"].aiCheck);
+  // the history survives a new proposal and a later verification
+  const again = mergeProposals(r.map, [{ ref: "9.1.a", candidates: [{ id: "u02-03", band: "strong", score: 20, share: 0.5, matched: ["test"] }], unmatched: [] }]);
+  assert.equal(again.links["9.1.a"].revoked.length, 1);
+  const re = applyReview(tiny, again, [R({ ref: "9.1.a", decision: "partial", lessons: "u02-03", note: "second clause still missing" })], lessonIds).map;
+  assert.equal(re.links["9.1.a"].revoked.length, 1); assert.ok(!confirmedTaught(re, "9.1.a", H));
 });
 
 // ---------- mastery → specification standing ----------
@@ -201,7 +233,7 @@ test("a learner's mastery becomes specification standing through verified links 
   const atts = [...[1, 2, 3, 4, 5, 6].map((q) => attempt("u02-03", q, true, q)), ...[1, 2, 3].map((q) => attempt("u02-05", q, q !== 2, q))];
   const m = lessonMastery(atts);
   assert.ok(m["u02-03"] > 0.8, `strong evidence on u02-03: ${m["u02-03"]}`); assert.ok(m["u02-05"] < m["u02-03"]);
-  const reviewed = applyReview(tiny, tinyMap, [R({ ref: "9.1.a", decision: "full" }), R({ ref: "9.1.b", decision: "missing", note: "x" })], lessonIds).map;
+  const reviewed = applyReview(tiny, tinyMap, [R({ ref: "9.1.a", decision: "full", note: "taught in its second section" }), R({ ref: "9.1.b", decision: "missing", note: "x" })], lessonIds).map;
   const s = specStanding(tiny, reviewed, atts);
   assert.deepEqual(s.rows.map((r) => r.standing), ["secure", "not-on-gradify", "unmapped"], "9.1.c is only proposed, so it's not mapped, whatever the learner did in u02-05");
   assert.match(s.summary, /1 of 2 mapped statements secure/);

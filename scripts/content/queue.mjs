@@ -7,7 +7,7 @@ import { loadIndex, loadStatements, loadMap, tokens, checkIndex } from "../curri
 import { CONFIG, at, out, load, slug, loadLedger, briefPath } from "./lib.mjs";
 import { staleness, targetKey } from "./build.mjs";
 import { titleKey } from "../../kit/course/syllabus.js";
-import { loadStore, decisionOf, candidatesOf } from "./mapstore.mjs";
+import { loadStore, confirmedTaught, candidatesOf } from "./mapstore.mjs";
 
 const LEVEL = { gcse: "GCSE", "a-level": "A level", "as-level": "AS level", n5: "National 5", higher: "Higher" };
 export const TYPE = (s) => (s.kind === "practical" ? "prac" : s.kind === "skill" ? (s.skills || []).some((k) => /math|calc/i.test(k)) ? "method" : "data" : "concept");
@@ -47,18 +47,15 @@ export function topicsFor(fwId, { titles = null } = {}) {
   const bad = checkIndex(idx); if (bad.length) throw new Error(`${fwId}: ${bad.join("; ")}`);
   const st = loadStatements(fwId), text = new Map((st.statements || []).map((x) => [x.ref, x])), map = loadStore(fwId);
   const sections = new Map((idx.sections || []).map((x) => [x.ref, x]));
-  // A statement counts as taught only on a decision: a confirmed match (scripts/content/agent.mjs, mapping, or a
-  // person's review) gets REQ: lines on the existing lesson and isn't written. Everything else is written, including a
-  // strong match nobody has confirmed yet: a keyword overlap is not coverage, and a duplicate lesson can be merged
-  // later where a missing one would be a hidden gap (owner, 26 Nov 2026). Every decision is in the mapping store
-  // (scripts/content/mapstore.mjs)
+  // A statement counts as taught only when a person confirmed, for that statement, that a lesson teaches all of it
+  // (scripts/content/mapstore.mjs, confirmedTaught). Everything else is written: a matcher's proposal, an AI check
+  // (yes or no), a person's "partial" or "missing". A keyword overlap or an AI's yes is not coverage, and a duplicate
+  // lesson can be merged later where a missing one would be a hidden gap (owner, 26 Nov 2026)
   const byTopic = new Map();
   for (const x of idx.statements) {
     const link = map.links[x.ref];
-    // a decision holds for the statement text it was made on (a person's review, or an AI reviewer's); a changed
-    // statement is undecided again, so it's checked or written afresh
-    const m = decisionOf(map, x.ref, x.hash);
-    if (m && m.status !== "rejected") continue;                                     // already taught: mapped, not written
+    // a confirmation holds for the statement text it was made on: a changed statement is uncovered again
+    if (confirmedTaught(map, x.ref, x.hash)) continue;                              // a person confirmed it's taught
     const sec = sections.get(x.section) || { ref: x.section, title: x.section };
     const id = `${s.subject}/${slug(sec.title)}`;
     if (!byTopic.has(id)) byTopic.set(id, { id, subject: s.subject, fw: fwId, section: sec.ref, title: sec.title, level: LEVEL[s.qual] || QUAL_TYPES[s.qual]?.name || s.qual, country: "uk", reqs: [], reuse: new Map() });

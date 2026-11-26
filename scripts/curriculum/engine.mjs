@@ -218,9 +218,11 @@ export function mergeProposals(map, proposals, { keep = 0.7 } = {}) {
     if (["verified", "ai-confirmed", "rejected"].includes(out.links[p.ref]?.status)) continue;
     const best = p.candidates[0], use = p.candidates.filter((c) => c.band !== "weak" && c.score >= keep * (best?.score || 0));
     const evidence = (c) => ({ id: c.id, coverage: "partial", confidence: c.band, score: c.score, share: c.share, matched: c.matched.slice(0, 8) });
-    out.links[p.ref] = use.length
+    // a withdrawn verification and an earlier AI check stay with the statement through new proposals
+    const was = out.links[p.ref], history = { ...(was?.revoked ? { revoked: was.revoked } : {}), ...(was?.aiCheck ? { aiCheck: was.aiCheck } : {}) };
+    out.links[p.ref] = { ...(use.length
       ? { status: "proposed", proposedBy: MATCHER, confidence: use[0].band, lessons: use.map(evidence) }
-      : { status: "proposed", proposedBy: MATCHER, confidence: "none", lessons: [], gap: "likely gap: no lesson shares enough of the statement's vocabulary (to confirm)", nearest: p.candidates.slice(0, 2).map(evidence), ...(p.unmatched.length ? { notInGradify: p.unmatched.slice(0, 8) } : {}) };
+      : { status: "proposed", proposedBy: MATCHER, confidence: "none", lessons: [], gap: "likely gap: no lesson shares enough of the statement's vocabulary (to confirm)", nearest: p.candidates.slice(0, 2).map(evidence), ...(p.unmatched.length ? { notInGradify: p.unmatched.slice(0, 8) } : {}) }), ...history };
   }
   return out;
 }
@@ -242,16 +244,20 @@ export async function proposeFor(id) {
 
 // ---------- review: a sheet per specification, and applying a reviewer's decisions ----------
 const cell = (v) => { const t = String(v ?? ""); return /[",\n]/.test(t) ? `"${t.replace(/"/g, '""')}"` : t; };
-export const REVIEW_COLUMNS = ["ref", "section", "section_title", "pdf_page", "kind", "tier", "biology_only", "statement", "aqa_limits", "matcher_confidence", "proposal_1", "evidence_1", "proposal_2", "evidence_2", "proposal_3", "evidence_3", "decision", "lessons", "note", "reviewer", "reviewed_on"];
+export const REVIEW_COLUMNS = ["ref", "section", "section_title", "pdf_page", "kind", "tier", "biology_only", "statement", "aqa_limits", "matcher_confidence", "ai_check", "proposal_1", "evidence_1", "proposal_2", "evidence_2", "proposal_3", "evidence_3", "decision", "lessons", "note", "reviewer", "reviewed_on"];
 /**
  * A review sheet: one row per statement, with the statement, AQA's limits on it, the matcher's proposals and their
  * evidence, and empty decision columns. Holds the specification's text, so it stays local (data/curriculum/review/).
- * A reviewer fills in, per row:
- *   decision     full | partial | missing (blank: not reviewed yet, stays awaiting)
+ * ai_check shows what an AI reviewer said, if one has looked: evidence only, never a decision. A reviewer fills in, per
+ * row, for that statement alone (confirming one statement never confirms another mapped to the same lesson):
+ *   decision     full | partial | missing (blank: not reviewed yet, stays awaiting), or revoke to withdraw an
+ *                earlier verification (the statement is uncovered again and will be written)
  *   lessons      the lesson ids that teach it, space-separated (blank: the proposed ones). For "partial", the ids
  *                that teach part of it; mark one as fully teaching it with "=full" ("u02-03=full u02-05")
- *   note         for partial: what isn't taught; for missing: what a lesson would need to teach
+ *   note         always: for full, the evidence (which part of the lesson teaches it); for partial, what isn't taught;
+ *                for missing, what a lesson would need to teach; for revoke, why
  *   reviewer, reviewed_on (YYYY-MM-DD)
+ * Only "full" counts as taught and stops the content engine writing the statement (scripts/content/mapstore.mjs).
  */
 export function reviewSheet(st, map, lessonsById) {
   const titles = new Map((st.sections || []).map((x) => [x.ref, x.title]));
@@ -260,7 +266,8 @@ export function reviewSheet(st, map, lessonsById) {
     const link = map?.links?.[x.ref] || {}, cand = link.lessons?.length ? link.lessons : link.nearest || [];
     const done = link.status === "verified";
     const props = [0, 1, 2].flatMap((i) => { const c = cand[i]; return c ? [lessonLine(c), `${c.confidence || ""}; score ${c.score}; shares ${Math.round((c.share || 0) * 100)}% of its distinctive words: ${(c.matched || []).join(", ")}`] : ["", ""]; });
-    return [x.ref, x.section, titles.get(x.section) || "", x.page, x.kind, x.higherTier ? "higher" : "both", x.biologyOnly ? "yes" : "no", x.text, (x.scope || []).join(" "), link.lessons?.length ? link.confidence : "likely gap", ...props,
+    const ai = link.status === "ai-confirmed" ? `yes: ${(link.lessons || []).map((l) => `${l.id}${l.objectives?.length ? ` @${l.objectives.join(",")}` : ""}`).join(" ")} (${link.by}, ${link.on})` : link.status === "rejected" ? `no: ${(link.missing || []).join("; ")} (${link.by}, ${link.on})` : link.aiCheck ? `${link.aiCheck.verdict} (${link.aiCheck.by}, ${link.aiCheck.on})` : "";
+    return [x.ref, x.section, titles.get(x.section) || "", x.page, x.kind, x.higherTier ? "higher" : "both", x.biologyOnly ? "yes" : "no", x.text, (x.scope || []).join(" "), link.status === "verified" ? link.matcherConfidence || "" : link.lessons?.length || link.candidates?.length ? link.confidence : "likely gap", ai, ...props,
       done ? (link.lessons.length ? (link.lessons.some((l) => l.coverage === "full") ? "full" : "partial") : "missing") : "", done ? link.lessons.map((l) => (l.coverage === "full" ? `${l.id}=full` : l.id)).join(" ") : "", done ? (link.gap || link.lessons.map((l) => l.note).filter(Boolean).join("; ")) : "", done ? link.reviewer : "", done ? link.reviewedOn : ""];
   });
   return `${[REVIEW_COLUMNS, ...rows].map((r) => r.map(cell).join(",")).join("\n")}\n`;
@@ -271,7 +278,7 @@ export function reviewSheet(st, map, lessonsById) {
  * Every decision is checked: a known statement, known lessons, a reviewer and a date, a note for partial and missing.
  * Returns { map, applied, problems }; nothing is applied when there are problems.
  */
-export function applyReview(st, map, rows, lessonIds) {
+export function applyReview(st, map, rows, lessonIds, { now = new Date() } = {}) {
   const out = { ...map, links: { ...(map.links || {}) } }, problems = [], refs = new Set(st.statements.map((x) => x.ref));
   if (map.specVersion && map.specVersion !== st.version) problems.push(`the map is for version ${map.specVersion}, the statements are version ${st.version}: propose again first`);
   let applied = 0;
@@ -279,11 +286,22 @@ export function applyReview(st, map, rows, lessonIds) {
     const d = (r.decision || "").trim().toLowerCase(); if (!d) continue;
     const ref = (r.ref || "").trim(), at = `${ref || "(no ref)"}`;
     if (!refs.has(ref)) { problems.push(`${at}: not a statement of ${st.spec}`); continue; }
-    if (!["full", "partial", "missing"].includes(d)) { problems.push(`${at}: decision must be full, partial or missing, not "${r.decision}"`); continue; }
+    if (!["full", "partial", "missing", "revoke"].includes(d)) { problems.push(`${at}: decision must be full, partial, missing or revoke, not "${r.decision}"`); continue; }
     if (!(r.reviewer || "").trim() || !/^\d{4}-\d{2}-\d{2}$/.test((r.reviewed_on || "").trim())) { problems.push(`${at}: a decision needs reviewer and reviewed_on (YYYY-MM-DD)`); continue; }
     const note = (r.note || "").trim();
-    if (d !== "full" && !note) { problems.push(`${at}: ${d} needs a note (${d === "partial" ? "what isn't taught" : "what a lesson would need to teach"})`); continue; }
+    // every decision records why: the evidence for full, what's missing for partial and missing, the reason for revoke
+    if (!note) { problems.push(`${at}: ${d} needs a note (${{ full: "the evidence: which part of the lesson teaches it", partial: "what isn't taught", missing: "what a lesson would need to teach", revoke: "why the verification is withdrawn" }[d]})`); continue; }
     const prior = out.links[ref] || {};
+    const recordedAt = now.toISOString();
+    // an AI check made before this decision is kept beside it, as evidence, never as the decision
+    const aiCheck = prior.status === "ai-confirmed" || prior.status === "rejected" ? { verdict: prior.status === "ai-confirmed" ? `yes: ${(prior.lessons || []).map((l) => l.id).join(" ")}` : `no: ${(prior.missing || []).join("; ")}`, by: prior.by, on: prior.on } : prior.aiCheck;
+    if (d === "revoke") {
+      if (prior.status !== "verified") { problems.push(`${at}: revoke needs an earlier verification to withdraw (this statement is ${prior.status || "unmapped"})`); continue; }
+      const was = { reviewer: prior.reviewer, reviewedOn: prior.reviewedOn, lessons: prior.lessons, ...(prior.note ? { note: prior.note } : {}), ...(prior.gap ? { gap: prior.gap } : {}) };
+      out.links[ref] = { status: "proposed", ...(prior.matcherConfidence ? { confidence: prior.matcherConfidence } : {}), lessons: (prior.lessons || []).map((l) => ({ id: l.id, coverage: "partial" })), ...(aiCheck ? { aiCheck } : {}),
+        revoked: [...(prior.revoked || []), { reviewer: r.reviewer.trim(), on: r.reviewed_on.trim(), recordedAt, why: note, was }] };
+      applied++; continue;
+    }
     const given = (r.lessons || "").trim().split(/[\s,;]+/).filter(Boolean).map((t) => { const [id, cov] = t.split("="); return { id, full: cov === "full" }; });
     const ids = d === "missing" ? [] : given.length ? given : (prior.lessons || []).map((l) => ({ id: l.id, full: false }));
     const unknown = ids.filter((l) => !lessonIds.has(l.id)).map((l) => l.id);
@@ -294,7 +312,8 @@ export function applyReview(st, map, rows, lessonIds) {
     const anyMarked = ids.some((l) => l.full);
     const lessons = ids.map((l) => ({ id: l.id, coverage: d === "full" && (!anyMarked || l.full) ? "full" : "partial", ...(d === "partial" ? { note } : {}) }));
     const sx = st.statements.find((x) => x.ref === ref), hash = sx?.hash || (sx?.text ? textHash(sx.text) : undefined);
-    out.links[ref] = { status: "verified", ...(hash ? { hash } : {}), reviewer: r.reviewer.trim(), reviewedOn: r.reviewed_on.trim(), lessons, ...(d === "missing" ? { gap: note } : d === "full" && note ? { note } : {}), ...(prior.confidence ? { matcherConfidence: prior.confidence } : {}) };
+    out.links[ref] = { status: "verified", ...(hash ? { hash } : {}), reviewer: r.reviewer.trim(), reviewedOn: r.reviewed_on.trim(), recordedAt, lessons, ...(d === "missing" ? { gap: note } : d === "full" ? { note } : {}),
+      ...(prior.confidence || prior.matcherConfidence ? { matcherConfidence: prior.confidence || prior.matcherConfidence } : {}), ...(aiCheck ? { aiCheck } : {}), ...(prior.revoked ? { revoked: prior.revoked } : {}) };
     applied++;
   }
   problems.push(...checkMap(st, out, lessonIds));

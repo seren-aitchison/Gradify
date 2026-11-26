@@ -397,7 +397,18 @@ test("mapping replies: NO lines are recorded, and a rejected strong match joins 
   assert.ok(inQueue(a) && inQueue(b), "an unconfirmed strong match is not coverage: it's written");
   mkdirSync(join(process.env.GRADIFY_OUT, "content/mapping"), { recursive: true });
   writeFileSync(join(process.env.GRADIFY_OUT, "content/mapping/aqa-gcse-biology.json"), JSON.stringify({ confirmed: { [a]: { ok: false, why: "not taught" }, [b]: { ok: true, lesson: "u02-04", objectives: [1] } } }));
-  assert.ok(inQueue(a), "a rejected match is written"); assert.ok(!inQueue(b), "a confirmed match is not");
+  assert.ok(inQueue(a), "a rejected match is written"); assert.ok(inQueue(b), "an AI's yes is not coverage: still written until a person confirms it");
+  // only a person's confirmation, for that statement, that a lesson teaches all of it stops the writing
+  const { loadStore, saveStore, confirmedTaught } = await import("../scripts/content/mapstore.mjs");
+  const { loadIndex } = await import("../scripts/curriculum/engine.mjs");
+  const hashOf = (ref) => loadIndex("aqa-gcse-biology").statements.find((x) => x.ref === ref).hash, S0 = loadStore("aqa-gcse-biology");
+  const person = (coverage) => ({ status: "verified", hash: hashOf(b), reviewer: "A Reviewer", reviewedOn: "2026-11-26", lessons: [{ id: "u02-04", coverage }], note: "taught in section 2" });
+  S0.links[b] = person("partial"); saveStore("aqa-gcse-biology", S0);
+  assert.ok(inQueue(b) && !confirmedTaught(S0, b, hashOf(b)), "a person's 'partial' is still written");
+  S0.links[b] = person("full"); saveStore("aqa-gcse-biology", S0);
+  assert.ok(!inQueue(b) && confirmedTaught(S0, b, hashOf(b)), "a person's 'full' is taught: not written");
+  assert.ok(!confirmedTaught(S0, b, "a-changed-statement"), "a confirmation holds only for the text it was made on");
+  assert.ok(!confirmedTaught(S0, a, hashOf(a)), "confirming one statement never confirms another");
   assert.ok(!mapCandidates("aqa-gcse-biology").some((c) => c.ref === a || c.ref === b), "decided matches aren't asked again");
 });
 
@@ -559,7 +570,12 @@ test("status ladder: frameworks by country, requirements by the highest rung rea
   const c = L.requirements["aqa-gcse-biology"];
   assert.deepEqual(Object.keys(c), LADDER.slice(2));
   assert.equal(Object.values(c).reduce((a, n) => a + n, 0), 475, "every statement sits on exactly one rung");
-  assert.ok(c.mapped >= 1, "confirmed matches count as mapped");
+  // mapped: only statements a person confirmed are fully taught; AI checks never count
+  const { loadStore, confirmedTaught } = await import("../scripts/content/mapstore.mjs");
+  const { loadIndex } = await import("../scripts/curriculum/engine.mjs");
+  const S1 = loadStore("aqa-gcse-biology"), byPerson = loadIndex("aqa-gcse-biology").statements.filter((x) => confirmedTaught(S1, x.ref, x.hash)).length;
+  assert.ok(byPerson >= 1, "the store has a person's confirmation (set by the mapping test)");
+  assert.equal(c.mapped, byPerson, "only a person's confirmation counts as mapped");
   // earlier tests edit a filed lesson after it was checked: its requirement needs update, which outranks published
   assert.ok(c["needs update"] >= 1);
 });
