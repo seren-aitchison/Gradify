@@ -3,6 +3,8 @@
 //   Note      a thought, straight into today's page in Notes (kit/notes/kb), without opening Notes
 //   Capture   a link or a question to come back to: links go to a "Captured" collection, the rest into Notes
 //   Search    the same ⌘K search every page has
+//   New       make a Notes page, a task, a flashcard set, a collection, a mind map or a quiz (kit/ui/quick-actions.js)
+//   and the keyboard shortcuts and a way to send feedback, from the Search tab
 // One round button opens them; while a timer runs, the button shows the time left.
 //
 //   mountQuickDock({ app: "/app.html" })      startTimer(25, "Focus")      timerState()
@@ -11,6 +13,8 @@ import { uiIcon } from "./icons.js";
 import { toast } from "./feedback.js";
 import { collections, createCollection, addToCollection } from "../data/links.js";
 import { resource } from "../core/resource.js";
+import { CREATE, openCreate, feedbackDialog } from "./quick-actions.js";
+import { showShortcuts } from "./keys.js";
 
 const KEY = "gradify.timer";
 // kept in the browser so it survives moving between pages; where storage is blocked, it still runs on this page
@@ -54,7 +58,7 @@ export async function capture(text) {
 }
 
 // ---------- the dock ----------
-let dock = null, panel = null, tick = 0, app = "/app.html";
+let dock = null, panel = null, tick = 0, app = "/app.html", store = null;
 function openPanel(tab) {
   if (!dock) return;
   panel.hidden = false; dock.querySelector(".qd-b").setAttribute("aria-expanded", "true");
@@ -91,28 +95,32 @@ function every() {
   paintTimer();
 }
 
-export function mountQuickDock({ app: appPath = "/app.html", where = document.body } = {}) {
+export function mountQuickDock({ app: appPath = "/app.html", where = document.body, store: st = null } = {}) {
   if (dock) return dock;
   ensureStyles();
-  app = appPath;
+  app = appPath; store = st;
   dock = document.createElement("div"); dock.className = "qd";
-  dock.innerHTML = `<button type="button" class="qd-b" aria-haspopup="dialog" aria-expanded="false" aria-controls="qd-panel" title="Quick tools: timer, note, capture, search">${uiIcon("bolt")}<span class="sr-only">Quick tools</span><span class="qd-t" hidden></span></button>
+  dock.innerHTML = `<button type="button" class="qd-b" aria-haspopup="dialog" aria-expanded="false" aria-controls="qd-panel" title="Quick tools: create, timer, note, capture, search">${uiIcon("bolt")}<span class="sr-only">Quick tools</span><span class="qd-t" hidden></span></button>
     <div class="qd-p" id="qd-panel" role="dialog" aria-label="Quick tools" hidden>
-      <div class="qd-tabs" role="tablist">${[["timer", "Timer"], ["note", "Note"], ["capture", "Capture"], ["search", "Search"]].map(([k, l]) => `<button type="button" role="tab" data-qtab="${k}" aria-selected="false">${l}</button>`).join("")}<button type="button" class="qd-x" data-qclose aria-label="Close">${uiIcon("close")}</button></div>
-      <div data-qpane="timer"></div>
+      <div class="qd-tabs" role="tablist">${[["new", "New"], ["timer", "Timer"], ["note", "Note"], ["capture", "Capture"], ["search", "More"]].map(([k, l]) => `<button type="button" role="tab" data-qtab="${k}" aria-selected="false">${l}</button>`).join("")}<button type="button" class="qd-x" data-qclose aria-label="Close">${uiIcon("close")}</button></div>
+      <div data-qpane="new" hidden><div class="qd-new">${CREATE.filter(([id]) => id !== "task" || st).map(([id, label, ic]) => `<button type="button" data-qnew="${id}">${uiIcon(ic)}${esc(label)}</button>`).join("")}</div><p class="qd-sub">Or press <kbd>C</kbd> on any page.</p></div>
+      <div data-qpane="timer" hidden></div>
       <form data-qpane="note" hidden><label class="sr-only" for="qd-note">A quick note</label><textarea id="qd-note" rows="3" placeholder="A thought, a question for later…" maxlength="2000"></textarea><div class="qd-row"><button class="cp-pill dark" type="submit">Add to today's notes</button><a class="qd-link" href="${esc(app)}#/notes/daily">Open today's notes</a></div></form>
       <form data-qpane="capture" hidden><label class="sr-only" for="qd-cap">A link or a question</label><input id="qd-cap" placeholder="Paste a link, or type a question to come back to" maxlength="1000"><p class="qd-sub">Links go to your Captured collection; anything else into today's notes.</p><div class="qd-row"><button class="cp-pill dark" type="submit">Capture</button></div></form>
-      <div data-qpane="search" hidden><p class="qd-sub">Search every screen, course, lesson and your own things.</p><div class="qd-row"><button type="button" class="cp-pill dark" data-qsearch>Search <kbd>${isMac() ? "⌘K" : "Ctrl K"}</kbd></button></div></div>
+      <div data-qpane="search" hidden><p class="qd-sub">Search every screen, course, lesson and your own things.</p><div class="qd-row"><button type="button" class="cp-pill dark" data-qsearch>Search <kbd>${isMac() ? "⌘K" : "Ctrl K"}</kbd></button><button type="button" class="cp-pill" data-qkeys>Keyboard shortcuts <kbd>?</kbd></button><button type="button" class="cp-pill" data-qfeedback>Send feedback</button></div></div>
     </div>`;
   where.append(dock);
   panel = dock.querySelector(".qd-p");
   const close = (refocus) => { panel.hidden = true; dock.querySelector(".qd-b").setAttribute("aria-expanded", "false"); if (refocus) dock.querySelector(".qd-b").focus(); };
-  dock.querySelector(".qd-b").addEventListener("click", () => (panel.hidden ? openPanel(timerState() ? "timer" : panel.dataset.tab || "note") : close()));
+  dock.querySelector(".qd-b").addEventListener("click", () => (panel.hidden ? openPanel(timerState() ? "timer" : panel.dataset.tab || "new") : close()));
   dock.addEventListener("click", (e) => {
     const tab = e.target.closest("[data-qtab]"); if (tab) { show(tab.dataset.qtab); return; }
     if (e.target.closest("[data-qclose]")) { close(true); return; }
     const st = e.target.closest("[data-qstart]"); if (st) { startTimer(Number(st.dataset.qstart), st.dataset.label); return; }
     const q = e.target.closest("[data-qt]"); if (q) { ({ pause: pauseTimer, resume: resumeTimer, stop: stopTimer })[q.dataset.qt](); return; }
+    const nw = e.target.closest("[data-qnew]"); if (nw) { close(); openCreate({ app, store, kind: nw.dataset.qnew }); return; }
+    if (e.target.closest("[data-qkeys]")) { close(); showShortcuts(); return; }
+    if (e.target.closest("[data-qfeedback]")) { close(); feedbackDialog({ about: document.title.split(/\s[|·–-]\s/)[0], store }); return; }
     if (e.target.closest("[data-qsearch]")) { close(); document.dispatchEvent(new KeyboardEvent("keydown", { key: "k", metaKey: isMac(), ctrlKey: !isMac(), bubbles: true })); }
   });
   dock.addEventListener("keydown", (e) => { if (e.key === "Escape" && !panel.hidden) { e.stopPropagation(); close(true); } });

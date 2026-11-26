@@ -70,6 +70,7 @@ export class LocalStore {
   async addDocument(d) { const doc = { id: uid(), created_at: now(), ...d }; this.mem.documents.push(doc); this.save(); return doc; }
   async listDocuments() { return [...this.mem.documents].sort((a, b) => b.created_at.localeCompare(a.created_at)); }
   async getDocument(id) { return { ...this.mem.documents.find((d) => d.id === id) }; }
+  async renameDocument(id, title) { const d = this.mem.documents.find((x) => x.id === id); if (d) { d.title = String(title).trim().slice(0, 200); this.save(); } return d ? { ...d } : null; }
   async deleteDocument(id) {
     const m = this.mem;
     m.documents = m.documents.filter((d) => d.id !== id);
@@ -207,6 +208,7 @@ export class CloudStore {
   async listDocuments() { return this.q(this.db.from("documents").select("id,title,site,file_name,pages,created_at").order("created_at", { ascending: false })); }
   async getDocument(id) { return this.q(this.db.from("documents").select("*").eq("id", id).single()); }
   async deleteDocument(id) { this.fresh(); await this.q(this.db.from("documents").delete().eq("id", id)); }
+  async renameDocument(id, title) { this.fresh(); return this.q(this.db.from("documents").update({ title: String(title).trim().slice(0, 200) }).eq("id", id).select("id,title").single()); }
   async addPack(p) { return this.q(this.db.from("packs").insert({ document_id: p.document_id, engine: p.engine, model: p.model, pack: p.pack, stats: p.stats }).select().single()); }
   async linkPack(packId, documentId) { await this.q(this.db.from("packs").update({ document_id: documentId }).eq("id", packId)); }
   async getPack(documentId) { const rows = await this.q(this.db.from("packs").select("*").eq("document_id", documentId).order("created_at", { ascending: false }).limit(1)); return rows[0] || null; }

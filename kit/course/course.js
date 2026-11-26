@@ -72,6 +72,7 @@ import { attachAccount } from "../data/learner-state.js";
 import { resource as makeResource, rid as makeRid } from "../core/resource.js";
 import { recordMistake, resolveMistake, scheduledFor, unschedule, retitle, mistakes, noteOf, linksOf, collectionsOf, onConnections } from "../data/links.js";
 import { mountQuickDock } from "../ui/quick-dock.js";
+import { mountQuickKeys, reportDialog, sendOrKeep } from "../ui/quick-actions.js";
 import { mountResourceActions, runResourceAction } from "../ui/resource-actions.js";
 import { mountConnections } from "../ui/connections.js";
 import { pref, setPref } from "../ui/prefs.js";
@@ -317,13 +318,15 @@ export function mountCourse(root, cfg) {
   }
   // a question is a resource too (kit/core/resource.js): its ••• menu pins it, saves it to a collection, links it
   // to notes or flashcards, schedules it, or takes a note on it. Its home is its lesson's questions.
+  // a problem in a lesson or one of its questions goes to the course's repair queue (lesson_reports)
+  const reportCtx = (l, question = null) => ({ site: cfg.site, subject: cfg.slug, lesson: l?.id, question, store });
   const questionRes = (it) => makeResource(makeRid("question", coursePath, it.key), { title: String(it.Q?.q || "Question").replace(/\*\*|`|\^\{|_\{|\}/g, "").slice(0, 90), subject: cfg.name,
     sub: it.l ? `Question · ${it.l.title}` : `Question · ${cfg.name}`, refs: it.l ? pointsOf(it.l.id) : [], href: it.l ? `${coursePath}#/lesson/${it.l.id}/co-check?q=${encodeURIComponent(it.key)}` : `${coursePath}#/home?q=${encodeURIComponent(it.key)}` });
   function questionMenus(el) {
     for (const box of el.querySelectorAll(".aq[data-key]")) {
       if (box.querySelector(":scope > .gx-ra") || box.dataset.mode === "exam") continue;
       const it = pageQs.get(box.dataset.key); if (!it) continue;
-      mountResourceActions(box, () => questionRes(it), { store, app: appHref, where: "afterbegin", label: "This question: more actions" });
+      mountResourceActions(box, () => questionRes(it), { store, app: appHref, where: "afterbegin", label: "This question: more actions", ops: { report: (r) => reportDialog(r, reportCtx(it.l, it.key)) } });
     }
   }
   function wirePractice(el, context, contextId, xp = XP.check, onAnswer = null) {
@@ -537,9 +540,11 @@ export function mountCourse(root, cfg) {
   const pointsOf = (lid) => { try { return specModel().points.filter((p) => p.lessons.includes(lid) || p.partial.includes(lid)).map((p) => p.id); } catch { return []; } };
   const lessonRes = (l) => makeResource(makeRid("lesson", coursePath, l.id), { title: l.title, subject: cfg.name, sub: `${cfg.name} · ${U} ${l.unit.n}: ${l.unit.title}`, refs: pointsOf(l.id), href: `${coursePath}#/lesson/${l.id}` });
   const courseRes = () => makeResource(makeRid("course", coursePath), { title: cfg.name, subject: cfg.name, sub: `${cfg.site} · course`, href: `${coursePath}#/home` });
-  mountResourceActions(root.querySelector(".cx-headrow"), courseRes, { store, app: appHref, label: `${cfg.name}: more actions` });
+  mountResourceActions(root.querySelector(".cx-headrow"), courseRes, { store, app: appHref, label: `${cfg.name}: more actions`, page: true });
   // the floating quick tools (timer, quick note, capture, search), here as in the study app
-  mountQuickDock({ app: appHref }).classList.add("qd-course");
+  mountQuickDock({ app: appHref, store }).classList.add("qd-course");
+  mountQuickKeys({ app: appHref, store });
+  sendOrKeep(store);   // reports and feedback that waited on this device
   // the rail's "Yours here" stays current: a mistake made, a note saved or a link added while reading shows at once
   let yoursT = 0;
   onConnections(() => { clearTimeout(yoursT); yoursT = setTimeout(() => {
@@ -1887,7 +1892,7 @@ export function mountCourse(root, cfg) {
     main.querySelector("[data-focus]").addEventListener("click", () => setFocus(!focusOn()));
     main.querySelector("[data-panel]")?.addEventListener("click", () => lessonPanel());
     retitle(lessonRes(l).rid, l.title);   // a lesson renamed in the course: what links to it says the new name
-    mountResourceActions(main.querySelector(".cx-lact"), () => lessonRes(l), { store, app: appHref, where: "beforeend", label: "This lesson: more actions" });
+    mountResourceActions(main.querySelector(".cx-lact"), () => lessonRes(l), { store, app: appHref, where: "beforeend", label: "This lesson: more actions", page: true, ops: { report: (r) => reportDialog(r, reportCtx(l)) } });
     paintDock("lesson", l, prev && byId[prev.id], next && byId[next.id]);
     freshTree(true);
     wireReading(id, nQ, N, prev && byId[prev.id], next && byId[next.id]);
@@ -2684,9 +2689,9 @@ export function mountCourse(root, cfg) {
       main.querySelector(".co-dayinfo").textContent = rows.length ? `${b.dataset.day}: ${rows.reduce((a, r) => a + r.xp, 0)} XP from ${Object.entries(kinds).map(([k, n]) => `${n} ${k}${n > 1 ? "s" : ""}`).join(", ")}.` : `${b.dataset.day}: nothing that day.`;
     }));
     try {
-      const s = await store(), docs = (await s.listDocuments()).filter((d) => d.title?.startsWith(`${cfg.name}: `)), cards = await s.listCards();
+      const s = await store(), docs = (await s.listDocuments()).filter((d) => d.file_name?.startsWith(`${cfg.slug}/`) || d.title?.startsWith(`${cfg.name}: `)), cards = await s.listCards();
       const count = (id) => cards.filter((c) => c.document_id === id).length;
-      main.querySelector(".co-saved").innerHTML = `<h3>Saved to your account · ${docs.length} lesson${docs.length === 1 ? "" : "s"}</h3>${docs.length ? `<ul class="co-docs">${docs.map((d) => { const lid = d.file_name?.split("/")[1]; return `<li><div><b>${esc(d.title.slice(cfg.name.length + 2))}</b><small>${count(d.id)} cards · saved ${new Date(d.created_at).toLocaleDateString()}</small></div>${lid && byId[lid] ? `<a href="#/lesson/${lid}">Notes</a>` : ""}<a href="${cfg.app || "app.html"}#/deck/${d.id}">Study the cards</a></li>`; }).join("")}</ul>` : `<p class="co-empty">Nothing saved yet. Use <b>Save notes and cards</b> on any lesson to keep it in your Gradify account, where the cards join your daily study.</p>`}
+      main.querySelector(".co-saved").innerHTML = `<h3>Saved to your account · ${docs.length} lesson${docs.length === 1 ? "" : "s"}</h3>${docs.length ? `<ul class="co-docs">${docs.map((d) => { const lid = d.file_name?.split("/")[1]; return `<li><div><b>${esc(d.title.startsWith(`${cfg.name}: `) ? d.title.slice(cfg.name.length + 2) : d.title)}</b><small>${count(d.id)} cards · saved ${new Date(d.created_at).toLocaleDateString()}</small></div>${lid && byId[lid] ? `<a href="#/lesson/${lid}">Notes</a>` : ""}<a href="${cfg.app || "app.html"}#/deck/${d.id}">Study the cards</a></li>`; }).join("")}</ul>` : `<p class="co-empty">Nothing saved yet. Use <b>Save notes and cards</b> on any lesson to keep it in your Gradify account, where the cards join your daily study.</p>`}
         <p class="co-acct ${syncText(s.mode)?.warn ? "co-warn" : ""}">${s.mode === "cloud" ? esc(syncText("cloud").text) : `Saved on this device. <a href="${cfg.app || "app.html"}#/account">Sign in</a> to keep it everywhere.`}</p>`;
     } catch { main.querySelector(".co-saved").innerHTML = `<h3>Saved to your account</h3><p class="co-empty">Your account isn't reachable from this browser.</p>`; }
   }

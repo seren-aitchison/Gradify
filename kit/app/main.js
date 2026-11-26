@@ -64,6 +64,7 @@ const $ = (s, el = document) => el.querySelector(s);
 import { esc } from "../core/text.js";
 import { mountAppNav } from "./app-nav.js";
 import { mountQuickDock, startTimer } from "../ui/quick-dock.js";
+import { mountQuickKeys, setPageOps, deferredDelete, undoable, download, cardsCsv, fileName, mountMultiSelect, stopMultiSelect, saveMany, sendOrKeep, renameInPlace } from "../ui/quick-actions.js";
 import { attachAccount, exportState, list as stateList, batch as stateBatch, SYNCED } from "../data/learner-state.js";
 import { renderCollections } from "./collections-view.js";
 import { mountConnections } from "../ui/connections.js";
@@ -164,7 +165,8 @@ function markLocks() {
 // ⌘K search: kit/app/app-nav.js
 const appNav = mountAppNav({ sections: SECTIONS, settings: SETTINGS, screenOf, sectionOf, icon, haptic, appName: SITE || "Gradify", afterPaint: () => markLocks(), advanced: ADVANCED, store: async () => store });
 // the floating quick tools: a timer that keeps running between screens, a quick note, capture and search
-mountQuickDock({ app: location.pathname });
+mountQuickDock({ app: location.pathname, store: async () => store });
+mountQuickKeys({ app: location.pathname, store: async () => store });
 // the pricing page lives on getgradify.com; sub-sites served elsewhere link to it there
 const PRICING = /(^|\.)getgradify\.com$|^localhost/.test(location.hostname) ? "/pricing.html" : "https://getgradify.com/pricing.html";
 
@@ -561,7 +563,7 @@ const GROUNDED = {
 async function renderDeck(id) {
   const docs = await store.listDocuments();
   const doc = docs.find((d) => d.id === id);
-  if (!id || !doc) return renderNotes();
+  if (!id || !doc || hiddenPacks.has(id)) return renderNotes();
   const [cards, pack] = await Promise.all([store.listCards({ documentId: id }), store.getPack(id)]);
   const st = pack?.stats || {};
   const flagged = cards.filter((c) => c.grounded === "no" || c.grounded === "partly");
@@ -609,6 +611,13 @@ async function renderDeck(id) {
     const c = cards.find((x) => x.id === el.dataset.id); if (!c) continue;
     mountResourceActions(el.querySelector(".c-actions"), () => resource(makeRid("card", c.id), { title: c.front.length > 90 ? `${c.front.slice(0, 89)}…` : c.front, sub: `Flashcard · ${doc.title}`, href: `${location.pathname}#/deck/${id}?card=${c.id}` }), { store: async () => store, app: location.pathname, where: "afterbegin", label: "This card: more actions" });
   }
+  // what this set can do, in the page's ••• menu and on the keyboard ("." then R, D, E, X; F2; ⌘⌫)
+  setPageOps({
+    ...(/^kb:/.test(doc.file_name || "") ? {} : { rename: () => renameInPlace(view.querySelector(".deck-head h1"), doc.title, async (t) => { await store.renameDocument(id, t); doc.title = t; retitle(makeRid("pack", id), t); }, { label: "Name of this flashcard set" }) }),
+    duplicate: () => duplicatePacks([doc]),
+    export: () => { download(fileName(doc.title, "csv"), cardsCsv(cards), "text/csv"); toast(`Downloaded ${cards.length} cards as a spreadsheet (CSV).`); },
+    delete: () => deletePacks([doc], { leave: true }),
+  });
   const list = view.querySelector(".deck");
   list.addEventListener("click", async (e) => {
     const row = e.target.closest(".c-row");
@@ -638,16 +647,7 @@ async function renderDeck(id) {
       } catch (err) { toast(esc(err.message)); renderDeck(id); }
       return;
     }
-    if (e.target.closest("#del-deck")) {
-      if (!confirm(`Delete “${doc.title}” and its ${cards.length} cards? This can't be undone.`)) return;
-      await store.deleteDocument(id);
-      // the set and its cards are gone: so are their links, collection places, notes, schedules and pins
-      forget(makeRid("pack", id), { href: `${location.pathname}#/deck/${id}` });
-      for (const c of cards) forget(makeRid("card", c.id), { href: `${location.pathname}#/deck/${id}?card=${c.id}` });
-      toast("Deleted.");
-      location.hash = "#/library";
-      return;
-    }
+    if (e.target.closest("#del-deck")) { deletePacks([doc], { leave: true }); return; }
     if (!row || !act) return;
     const card = cards.find((c) => c.id === row.dataset.id);
     if (act === "edit") {
@@ -712,8 +712,58 @@ function cardRow(c) {
 }
 
 // ---------- All notes ----------
+// ---------- flashcard sets: delete (with Undo), duplicate ----------
+// A deleted set is hidden at once and really deleted once its notice has gone, so Undo needs nothing rebuilt.
+const hiddenPacks = new Set();
+function deletePacks(docs, { leave = false } = {}) {
+  const ids = docs.map((d) => d.id), one = docs.length === 1;
+  deferredDelete({
+    html: one ? `Deleted <b>${esc(docs[0].title)}</b>.` : `Deleted ${docs.length} flashcard sets.`, label: one ? docs[0].title : `${docs.length} flashcard sets`,
+    hide: () => { ids.forEach((x) => hiddenPacks.add(x)); if (leave) location.hash = "#/library"; else route(); },
+    restore: () => { ids.forEach((x) => hiddenPacks.delete(x)); route(); },
+    commit: async () => {
+      // every set is tried even if one fails; the ones that couldn't be deleted come back (restore), the rest are gone
+      let failed = 0;
+      for (const id of ids) {
+        try {
+          const cards = await store.listCards({ documentId: id }).catch(() => []);
+          await store.deleteDocument(id);
+          // the set and its cards are gone: so are their links, collection places, notes, schedules and pins
+          forget(makeRid("pack", id), { href: `${location.pathname}#/deck/${id}` });
+          for (const c of cards) forget(makeRid("card", c.id), { href: `${location.pathname}#/deck/${id}?card=${c.id}` });
+          hiddenPacks.delete(id);
+        } catch (e) { failed++; console.warn("delete", e); }
+      }
+      if (failed) throw new Error(`${failed} of ${ids.length} stayed`);
+    },
+  });
+}
+/** a copy of each set with its cards (progress starts again: the copy is for changing, not a second schedule) */
+async function duplicatePacks(docs) {
+  // each copy is counted as soon as it exists, so one that fails half-way (its cards not added) is taken away again
+  // rather than left as a set with no cards
+  const made = [];
+  try {
+    for (const d of docs) {
+      const [full, pack, cards] = await Promise.all([store.getDocument(d.id), store.getPack(d.id), store.listCards({ documentId: d.id })]);
+      const copy = await store.addDocument({ title: `${d.title} (copy)`.slice(0, 200), site: d.site, file_name: null, pages: full?.pages ?? null, text: full?.text || "" });
+      made.push(copy);
+      if (pack) await store.addPack({ document_id: copy.id, engine: pack.engine, model: pack.model, pack: pack.pack, stats: pack.stats });
+      if (cards.length) await store.addCards(cards.map((c) => ({ document_id: copy.id, topic: c.topic, front: c.front, back: c.back, kind: c.kind, source_quote: c.source_quote ?? null, source_page: c.source_page ?? null, grounded: c.grounded, edited: Boolean(c.edited) })));
+    }
+    undoable(made.length === 1 ? `Made <a href="#/deck/${made[0].id}">${esc(made[0].title)}</a>.` : `Made ${made.length} copies.`, async () => { for (const c of made) await store.deleteDocument(c.id); route(); }, { label: made.length === 1 ? made[0].title : `${made.length} copies` });
+    if (made.length === 1 && location.hash.startsWith("#/deck/")) location.hash = `#/deck/${made[0].id}`; else route();
+  } catch (err) {
+    for (const c of made) await store.deleteDocument(c.id).catch(() => {});
+    toast(`Couldn't duplicate ${docs.length === 1 ? "it" : "them"}: ${esc(err.message || "try again")}. Nothing was copied.`);
+    route();
+  }
+}
+
 async function renderNotes() {
-  const [docs, cards, reviews, L] = await Promise.all([store.listDocuments(), store.listCards(), store.listReviews(400), learnerAcross()]);
+  const [allDocs, cards, reviews, L] = await Promise.all([store.listDocuments(), store.listCards(), store.listReviews(400), learnerAcross()]);
+  const docs = allDocs.filter((d) => !hiddenPacks.has(d.id));
+  stopMultiSelect();   // drawn again: the last selection ends, whether or not this one offers selecting
   const courseCards = (L?.courses || []).filter((c) => c.cards || c.revisit);
   // each deck's bar is its topics' mastery, weighted by how many cards each topic has
   const topics = topicProfiles(cards, reviews);
@@ -730,11 +780,24 @@ async function renderNotes() {
       const due = cs.filter((c) => isDue(c)).length;
       const s = siteOf(d.site);
       const m = masteryOf(d.id);
-      return `<a class="doc panel glass" href="#/deck/${d.id}" style="--c:#${s.c};--tile:${tile(s.c)};--ink:${ink(s.c)}"><span class="doc-g3d" data-g3d="${esc(d.title)}" data-g3d-size="52" data-g3d-site="${esc(d.site || profile.site || "Gradify")}" data-g3d-unique></span><b>${esc(d.title)}</b>
+      return `<a class="doc panel glass" href="#/deck/${d.id}" data-doc="${d.id}" style="--c:#${s.c};--tile:${tile(s.c)};--ink:${ink(s.c)}"><span class="doc-g3d" data-g3d="${esc(d.title)}" data-g3d-size="52" data-g3d-site="${esc(d.site || profile.site || "Gradify")}" data-g3d-unique></span><b>${esc(d.title)}</b>
         <span class="sub">${cs.length} cards · ${due ? `${due} due` : "nothing due"} · ${fmtDate(d.created_at)}</span><span class="goal-bar" title="${Math.round(m * 100)}% mastery"><i style="width:${Math.round(m * 100)}%"></i></span></a>`;
     }).join("")}</div>` : actionCard({ cls: "empty-action", kicker: "Start here", title: "No study packs yet", why: "Add a PDF or paste your notes, or turn a quick note into one, and Gradify makes flashcards from them.", iconSvg: icon("upload"), actions: [{ label: "Add notes", icon: "upload", href: "#/new" }] })}
   </section>`;
   wireJotStrip(view);
+  // select several sets and act on them together
+  const grid = view.querySelector(".doc-grid");
+  if (grid && docs.length > 1) {
+    const pick = (ids) => docs.filter((d) => ids.includes(d.id));
+    const packRes = (d) => resource(makeRid("pack", d.id), { title: d.title, sub: "Flashcard set", href: `${location.pathname}#/deck/${d.id}` });
+    const head = document.createElement("div"); head.className = "gx-ms-head"; grid.before(head);
+    mountMultiSelect(grid, { item: ".doc", key: (el) => el.dataset.doc, name: (el) => el.querySelector("b")?.textContent || "", toggleHost: head, actions: [
+      { id: "save", label: "Save to a collection", icon: "inbox", run: (ids) => saveMany(pick(ids).map(packRes)) },
+      { id: "dup", label: "Duplicate", icon: "copy", run: (ids) => duplicatePacks(pick(ids)) },
+      { id: "export", label: "Export", icon: "download", run: async (ids) => { const cs = cards.filter((c) => ids.includes(c.document_id)); download(fileName(ids.length === 1 ? pick(ids)[0].title : "gradify-flashcards", "csv"), cardsCsv(cs), "text/csv"); toast(`Downloaded ${cs.length} cards as a spreadsheet (CSV).`); } },
+      { id: "delete", label: "Delete", icon: "trash", run: (ids) => deletePacks(pick(ids)) },
+    ] });
+  }
 }
 routes.library = renderNotes;
 // Gradify Notes (kit/notes/kb): the knowledge base, loaded when opened. It reads the rest of the hash itself.
@@ -1835,6 +1898,7 @@ async function start() {
   ACCESS = await within(access(store), 8000, "Checking your plan").catch(() => ({ plan: "free", enforced: false, has: () => true }));
   profile = await within(store.getProfile(), 12000, "Loading your profile");
   markLocks();
+  sendOrKeep(async () => store).catch(() => {});   // reports and feedback that waited on this device
   syncMirror(profile);   // the account's settings, for every site in this browser
   // calendar links saved before November 2026 are removed from the account and this browser (a feed link works like
   // a password); events already imported from them stay in the plan, and the calendar panel says so once
