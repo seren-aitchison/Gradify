@@ -114,11 +114,14 @@ export async function lessonIndex() {
         const L = byTitle[norm(l.title)]; if (!L) continue;
         totals.cards += L.cards.length; totals.questions += L.mcq.length + L.tasks.length;
         const clean = (x) => String(x).replace(/\*\*|`/g, "").replace(/\|/g, "/").trim();
-        lessons.push([ci, u.id, l.id, clean(l.title), clean(l.module || ""), clean(u.title), L.terms.slice(0, 6).map((t) => clean(t[0])).join("|"), L.blocks.filter((b) => b.t === "h").slice(0, 6).map((b) => clean(b.x)).join("|")]);
+        // the last three are for Gradify-wide search (kit/search/sources.js): how many practice questions the lesson
+        // has, its level line (LV: stage · demand) and how many flashcards it gives
+        lessons.push([ci, u.id, l.id, clean(l.title), clean(l.module || ""), clean(u.title), L.terms.slice(0, 6).map((t) => clean(t[0])).join("|"), L.blocks.filter((b) => b.t === "h").slice(0, 6).map((b) => clean(b.x)).join("|"),
+          L.mcq.length + L.tasks.length, clean(L.level || ""), L.cards.length]);
       }
     }
   }
-  return { api: API_VERSION, fields: ["course", "unit", "lesson", "title", "module", "unitTitle", "terms", "headings"], courses, lessons,
+  return { api: API_VERSION, fields: ["course", "unit", "lesson", "title", "module", "unitTitle", "terms", "headings", "questions", "level", "cards"], courses, lessons,
     // for the homepage's numbers (assets/proof.js): what's on Gradify, counted from the courses themselves
     stats: { subjects: courses.length, lessons: lessons.length, mindMaps: lessons.length * 5, flashcards: totals.cards, questions: totals.questions } };
 }

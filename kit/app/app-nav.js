@@ -333,12 +333,18 @@ export function mountAppNav({ sections, settings, screenOf, sectionOf, icon, hap
 
   // ----- the command palette -----
   const resume = () => myCourses()[0] || null;
+  let search = null;
+  const MINE_ICON = { pack: "layers", note: "feather", map: "sparkles", collection: "board", task: "clock" };   // kit/core/icons.js names
+  async function mineHits(raw) {
+    search ||= (await import("../search/view.js")).createSearchService({ store, app: appPath });
+    return (await search.runMine(raw)).slice(0, 12).map((h) => ({ type: "mine", t: h.title, k: [h.sub, h.countLabel].filter(Boolean).join(" · "), href: local(h.href), html: h.html, icon: MINE_ICON[h.type] }));
+  }
   const placeHit = (p, type) => ({ type, t: p.title, k: p.sub || (type === "pin" ? "Pinned" : "Recently visited"), href: local(p.href) });
   const pal = createCommandPalette({
     name: appName, placeholder: "Search screens, actions, courses and lessons…",
-    kinds: [["all", "All"], ["screen", "Screens"], ["action", "Actions"], ["lesson", "Lessons"], ["course", "Courses"]],
-    groups: [["Actions", "action", 5], ["Screens", "screen", 6], ["Pinned", "pin", 5], ["Recent", "recent", 4], ["Courses", "course", 5], ["Lessons", "lesson", 8], ["Topics", "topic", 5]],
-    icons: { tab: "split", screen: "grid", action: "bolt", course: "book", lesson: "play", topic: "flag", recent: "clock", pin: "pinned" },
+    kinds: [["all", "All"], ["screen", "Screens"], ["action", "Actions"], ["lesson", "Lessons"], ["course", "Courses"], ["mine", "Yours"]],
+    groups: [["Actions", "action", 5], ["Screens", "screen", 6], ["Pinned", "pin", 5], ["Recent", "recent", 4], ["Yours", "mine", 6], ["Courses", "course", 5], ["Lessons", "lesson", 8], ["Topics", "topic", 5]],
+    icons: { tab: "split", screen: "grid", action: "bolt", course: "book", lesson: "play", topic: "flag", recent: "clock", pin: "pinned", mine: "notes" },
     lead: (h) => (h.icon ? `<span class="gx-oi">${icon(h.icon)}</span>` : ""),
     search: (raw) => {
       const words = norm(raw).split(/\s+/).filter(Boolean);
@@ -350,7 +356,9 @@ export function mountAppNav({ sections, settings, screenOf, sectionOf, icon, hap
         ...recent().filter((p) => has(p) && !pinned(p.href)).map((p) => ({ ...placeHit(p, "recent"), html: mark(p.title, raw) })),
       ];
     },
-    searchMore: (raw) => loadIndex().then((idx) => searchIndex(idx, raw, { site: appName === "Gradify" ? null : appName })),
+    // the learner's own flashcard sets, notes, mind maps, collections and plan, from the same engine as the Search screen
+    searchMore: (raw) => Promise.all([loadIndex().then((idx) => searchIndex(idx, raw, { site: appName === "Gradify" ? null : appName })), mineHits(raw).catch(() => [])]).then(([a, b]) => [...b, ...a]),
+    seeAll: (raw) => ({ t: `See all results for “${raw}”`, k: "Lessons, questions, flashcards, notes, mind maps, the curriculum and more", href: `#/search?q=${encodeURIComponent(raw)}` }),
     suggestions: () => {
       const r = resume();
       // everything the learner was in the middle of (the same as Today's "Pick up where you left off")

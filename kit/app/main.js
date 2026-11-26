@@ -62,7 +62,7 @@ import { calendarPanelHtml, wireCalendar, intelStripHtml, nextHtml, upcomingHtml
 
 const $ = (s, el = document) => el.querySelector(s);
 import { esc } from "../core/text.js";
-import { mountAppNav } from "./app-nav.js";
+import { mountAppNav, allScreens, appActions } from "./app-nav.js";
 import { mountQuickDock, startTimer } from "../ui/quick-dock.js";
 import { mountQuickKeys, setPageOps, deferredDelete, undoable, download, cardsCsv, fileName, mountMultiSelect, stopMultiSelect, saveMany, sendOrKeep, renameInPlace } from "../ui/quick-actions.js";
 import { attachAccount, exportState, list as stateList, batch as stateBatch, SYNCED } from "../data/learner-state.js";
@@ -136,7 +136,7 @@ async function stats() {
 // Settings sits on its own at the end (and behind the account button in the top bar). Every screen keeps its own URL.
 // [section id, label, icon, [[route, label, icon], …]]; a section opens its first screen
 const SECTIONS = [
-  ["today", "Today", "home", [["today", "Today", "home"], ...(MY_CHILD.test(SITE || "") ? [] : [["my", "MyGradify", "cap"]]), ["plan", "Smart Plan", "calendar"], ["goals", "Path", "route"]]],
+  ["today", "Today", "home", [["today", "Today", "home"], ["search", "Search", "search"], ...(MY_CHILD.test(SITE || "") ? [] : [["my", "MyGradify", "cap"]]), ["plan", "Smart Plan", "calendar"], ["goals", "Path", "route"]]],
   ["learn", "Learn", "cap", [["learning", "Courses", "cap"], ["curriculum", "My curriculum", "book"], ["knowledge", "My Knowledge", "brain"], ["earth", "Earth", "globe"]]],
   ["study", "Study", "layers", [["study", "Flashcards", "layers"], ["revise", "Revision Centre", "checklist"], ["tools", "Tools", "forge"], ["ai", "Gradify AI", "bulb"]]],
   ["library", "Library", "book", [["notes", "Notes", "feather"], ["library", "Your library", "book"], ["collections", "Collections", "board"], ["new", "Add notes", "upload"], ["community", "Community", "people"]]],
@@ -615,7 +615,8 @@ async function renderDeck(id) {
   setPageOps({
     ...(/^kb:/.test(doc.file_name || "") ? {} : { rename: () => renameInPlace(view.querySelector(".deck-head h1"), doc.title, async (t) => { await store.renameDocument(id, t); doc.title = t; retitle(makeRid("pack", id), t); }, { label: "Name of this flashcard set" }) }),
     duplicate: () => duplicatePacks([doc]),
-    export: () => { download(fileName(doc.title, "csv"), cardsCsv(cards), "text/csv"); toast(`Downloaded ${cards.length} cards as a spreadsheet (CSV).`); },
+    // the cards as they are now (one may have been deleted on this page since it was drawn)
+    export: async () => { const now = await store.listCards({ documentId: id }).catch(() => cards); download(fileName(doc.title, "csv"), cardsCsv(now), "text/csv"); toast(`Downloaded ${now.length} cards as a spreadsheet (CSV).`); },
     delete: () => deletePacks([doc], { leave: true }),
   });
   const list = view.querySelector(".deck");
@@ -726,7 +727,8 @@ function deletePacks(docs, { leave = false } = {}) {
       let failed = 0;
       for (const id of ids) {
         try {
-          const cards = await store.listCards({ documentId: id }).catch(() => []);
+          // if the cards can't be listed the set isn't deleted: their links, places, notes and pins would be left behind
+          const cards = await store.listCards({ documentId: id });
           await store.deleteDocument(id);
           // the set and its cards are gone: so are their links, collection places, notes, schedules and pins
           forget(makeRid("pack", id), { href: `${location.pathname}#/deck/${id}` });
@@ -1799,6 +1801,9 @@ async function renderCommunity(arg) {
 }
 routes.community = renderCommunity;
 routes.history = () => renderHistory(view, { toast });
+// Search (kit/search/view.js): everything in Gradify and everything of the learner's, grouped, filtered and previewed
+routes.search = async () => (await import("../search/view.js")).renderSearch(view, { store: async () => store, app: location.pathname, site: SITE || null, toast,
+  screens: allScreens(SECTIONS, SETTINGS), actions: appActions() });
 routes.collections = (arg) => renderCollections(view, arg, { toast });
 // Settings › Your data: the learner's workspace record (kit/data/learner-state.js), what's in it, a copy of it, and
 // removing it from every device. Not content: notes, cards and progress are listed and deleted above.

@@ -9,16 +9,23 @@
 //     search(raw) → hits,  searchMore?(raw) → Promise<hits>,           // fast results, then slower ones (notes, index)
 //     suggestions() → [{ title, items: hits }],                       // shown before typing: continue, recent, pinned, actions
 //     icons: { lesson: "play", … }, lead?(hit) → html,                // what sits at the start of a row
+//     seeAll?(raw) → { t, k, href } | [them],                         // "See all results" rows (Shift+Enter: the first)
 //   });
+// Searches the learner chooses a result from are remembered on this device (kit/search/memory.js) and offered again
+// under "Recent searches" before anything is typed.
 //
 // A hit: { type, t (title), k (context line), href | run(), html? (highlighted title) }.
-import { esc, ensureStyles, isMac } from "./store.js";
+import { esc, ensureStyles, isMac, readJson } from "./store.js";
 import { uiIcon } from "./icons.js";
 import { shortcuts } from "./keys.js";
+// past searches are kept by kit/search/memory.js ("gradify.search"); read here directly and written through it when a
+// result is chosen, so pages with quick search don't load the search engine to show them
+const searchHistory = () => readJson("gradify.search", {})?.history || [];
+const remember = (q) => import("../search/memory.js").then((m) => m.remember(q)).catch(() => {});
 
 let seqId = 0;
 export function createCommandPalette(o) {
-  const icons = { recent: "clock", mark: "bookmarked", pin: "pinned", next: "play", action: "bolt", ...(o.icons || {}) };
+  const icons = { recent: "clock", mark: "bookmarked", pin: "pinned", next: "play", action: "bolt", history: "clock", all: "search", ...(o.icons || {}) };
   const kinds = o.kinds || [["all", "All"]];
   const id = `gx-pal${++seqId}`;
   let box = null, list = null, input = null, sel = 0, hits = [], filter = "all", seq = 0;
@@ -34,13 +41,20 @@ export function createCommandPalette(o) {
     input.setAttribute("aria-activedescendant", hits.length ? `${id}-o${sel}` : "");
   }
   const grouped = (xs) => (o.groups || [["Results", null, 30]]).map(([title, type, n = 8]) => ({ title, items: xs.filter((h) => !type || h.type === type).slice(0, n) }));
+  // "See all results": the full Search screen, with this query
+  const allRows = (raw) => { const x = o.seeAll?.(raw); return (Array.isArray(x) ? x : x ? [x] : []).map((h) => ({ type: "all", ...h })); };
+  const withAll = (groups, raw) => { const rows = allRows(raw); return rows.length ? [...groups, { title: "Search", items: rows }] : groups; };
   function run() {
     const raw = input.value.trim(), my = ++seq;
-    if (raw.length < 2) { paint(o.suggestions?.() || []); return; }
+    if (raw.length < 2) {
+      const past = o.history === false ? [] : searchHistory().slice(0, 4).map((x) => ({ type: "history", t: x.q, k: "Recent search", fill: x.q }));
+      paint([...(past.length ? [{ title: "Recent searches", items: past }] : []), ...(o.suggestions?.() || [])]);
+      return;
+    }
     const want = (h) => filter === "all" || h.type === filter;
     const quick = (o.search?.(raw) || []).filter(want);
-    paint(grouped(quick));
-    o.searchMore?.(raw, filter)?.then((more) => { if (my === seq && box) paint(grouped([...quick, ...more.filter(want)])); }).catch(() => {});
+    paint(withAll(grouped(quick), raw));
+    o.searchMore?.(raw, filter)?.then((more) => { if (my === seq && box) paint(withAll(grouped([...quick, ...more.filter(want)]), raw)); }).catch(() => {});
   }
   function move(d) {
     if (!hits.length) return;
@@ -50,6 +64,8 @@ export function createCommandPalette(o) {
   }
   function choose(i, e) {
     const h = hits[i]; if (!h) return;
+    if (h.fill) { input.value = h.fill; sel = 0; run(); input.focus(); return; }   // a recent search: run it again here
+    const raw = input.value.trim(); if (raw.length > 1) remember(raw);
     if (e && (e.metaKey || e.ctrlKey) && h.href) { globalThis.open(h.href, "_blank", "noopener"); return; }   // ⌘/Ctrl-click: a new tab
     close();
     if (h.run) h.run(); else if (h.href) { if (h.href.startsWith("#")) location.hash = h.href.slice(1); else location.href = h.href; }
@@ -64,7 +80,7 @@ export function createCommandPalette(o) {
       <label class="gx-palin">${uiIcon("search")}<input type="text" role="combobox" aria-expanded="true" aria-controls="${id}-list" aria-autocomplete="list" autocomplete="off" spellcheck="false" placeholder="${esc(o.placeholder || "Search…")}"><kbd>Esc</kbd></label>
       ${kinds.length > 1 ? `<div class="gx-palf" role="group" aria-label="Show">${kinds.map(([k, t]) => `<button type="button" data-k="${k}" aria-pressed="${k === filter}">${esc(t)}</button>`).join("")}</div>` : ""}
       <div class="gx-pall" id="${id}-list" role="listbox"></div>
-      <p class="gx-palfoot"><span><kbd>↑</kbd><kbd>↓</kbd> move</span><span><kbd>↵</kbd> open</span>${kinds.length > 1 ? "<span><kbd>Tab</kbd> filter</span>" : ""}<span><kbd>/</kbd> or <kbd>${isMac() ? "⌘" : "Ctrl"}</kbd><kbd>K</kbd> from anywhere</span><span><kbd>?</kbd> all shortcuts</span></p></div>`;
+      <p class="gx-palfoot"><span><kbd>↑</kbd><kbd>↓</kbd> move</span><span><kbd>↵</kbd> open</span>${o.seeAll ? "<span><kbd>⇧</kbd><kbd>↵</kbd> see all results</span>" : ""}${kinds.length > 1 ? "<span><kbd>Tab</kbd> filter</span>" : ""}<span><kbd>/</kbd> or <kbd>${isMac() ? "⌘" : "Ctrl"}</kbd><kbd>K</kbd> from anywhere</span><span><kbd>?</kbd> all shortcuts</span></p></div>`;
     o.back = document.activeElement;
     document.body.append(box); document.documentElement.classList.add("gx-lock");
     list = box.querySelector(".gx-pall"); input = box.querySelector("input"); sel = 0;
@@ -72,6 +88,7 @@ export function createCommandPalette(o) {
     input.addEventListener("input", () => { sel = 0; run(); });
     input.addEventListener("keydown", (e) => {
       if (e.key === "ArrowDown") { e.preventDefault(); move(1); } else if (e.key === "ArrowUp") { e.preventDefault(); move(-1); }
+      else if (e.key === "Enter" && e.shiftKey && allRows(input.value.trim()).length && input.value.trim().length > 1) { e.preventDefault(); const i = hits.findIndex((h) => h.type === "all"); if (i >= 0) choose(i, {}); }
       else if (e.key === "Enter") { e.preventDefault(); choose(sel, e); } else if (e.key === "Escape") { e.preventDefault(); e.stopPropagation(); close(); }
       else if (e.key === "Tab" && kinds.length > 1) { e.preventDefault(); const i = kinds.findIndex(([k]) => k === filter); setFilter(kinds[(i + (e.shiftKey ? -1 : 1) + kinds.length) % kinds.length][0]); }
     });

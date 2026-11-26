@@ -104,6 +104,7 @@ export function mountGlobalNav({ site = null, button = null } = {}) {
       { title: "Pinned", items: pins().slice(0, 6).map((p) => ({ type: "pin", t: p.title, k: p.sub || "Pinned", href: p.href })) },
       { title: "Quick actions", items: actions(site) },
     ],
+    seeAll: (raw) => ({ t: `See all results for “${raw}”`, k: "Lessons, questions, flashcards, your notes, the curriculum and more", href: `${site ? "app.html" : "/app.html"}#/search?q=${encodeURIComponent(raw)}` }),
     onOpen: () => loadIndex(),   // start fetching while the learner types their first letters
   });
   if (button) {
