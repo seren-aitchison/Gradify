@@ -819,3 +819,42 @@ body.ds { font-family: var(--ds-font-text); }
 /* no glow pooled under buttons: a solid, crisp control reads as more premium than a lit one (the top shine stays) */
 :root .lg::after, :root .btn:not(.lg)::after { content: none !important; }
 :root .lg { box-shadow: inset 0 1px 0 rgba(255, 255, 255, .38), inset 0 -1px 0 rgba(255, 255, 255, .08); }
+
+/* ======================================================================================================
+   Gradify, refined: apple.com's clarity and Brilliant's friendliness, with Gradify's warmth.
+   One layer over the tokens above, so every site changes together:
+   - type: tighter display headings, balanced titles, smoothed text
+   - surfaces: an off-white page with white cards in light mode (depth without borders shouting); solid cards
+     instead of frosted ones (crisper, and cheaper to paint); blur kept for the floating bars only
+   - motion: one easing curve, gentle lift on cards you can open, nothing that moves without a reason
+   - speed: no frosted blur on cards, which every scroll had to repaint
+   ====================================================================================================== */
+:root { --ease: cubic-bezier(.25, .1, .25, 1); --ease-out: cubic-bezier(.2, .8, .2, 1); --r-card: 20px; }
+:root[data-theme="light"] { --bg: #fbfbfd; --fg: #1d1d1f; }
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
+:where(h1, h2) { letter-spacing: -0.028em; text-wrap: balance; }
+:where(h3, h4) { letter-spacing: -0.012em; text-wrap: balance; }
+:where(p, li) { text-wrap: pretty; }
+
+/* solid cards (the floating bars keep their glass) */
+:root body .co :is(.co-card, .cx-panel, .cx-ucard, .cx-sylhead, .cx-plank, .cx-fpanel, .cx-tree, .cx-widget, .co-pncard, .cx-kc, .cx-w-next, .cx-habit) {
+  -webkit-backdrop-filter: none !important; backdrop-filter: none !important;
+  background: rgb(var(--surface-rgb)) padding-box, var(--gg-rim) border-box !important;
+}
+:root[data-theme="light"] body .co :is(.co-card, .cx-panel, .cx-ucard, .cx-sylhead, .cx-plank, .cx-fpanel, .cx-widget, .co-pncard, .cx-kc, .cx-habit) {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .04), 0 10px 30px -18px rgba(0, 0, 0, .16) !important;
+}
+
+/* cards you can open lift a little, with one easing everywhere */
+:root :is(#groups .card, .sub-page .sm-topic, .g-tiles a, .cx-kc, .co-labtile, .onb-card, .cx-ucard) {
+  transition: transform .35s var(--ease-out), box-shadow .35s var(--ease-out), background-color .2s var(--ease);
+}
+@media (hover: hover) {
+  :root :is(#groups .card, .sub-page .sm-topic, .g-tiles a, .cx-kc, .co-labtile, .cx-ucard):hover { transform: translateY(-2px); }
+  :root[data-theme="light"] :is(#groups .card, .sub-page .sm-topic, .g-tiles a, .cx-kc, .co-labtile):hover { box-shadow: 0 2px 4px rgba(0, 0, 0, .04), 0 18px 40px -20px rgba(0, 0, 0, .22); }
+}
+:root .btn { transition: transform .2s var(--ease-out), background-color .2s var(--ease), color .2s var(--ease), box-shadow .2s var(--ease); }
+@media (hover: hover) { :root .btn:hover { transform: translateY(-1px); } }
+:root .btn:active { transform: scale(.98); }
+@media (prefers-reduced-motion: reduce) { :root :is(.btn, #groups .card, .sub-page .sm-topic, .g-tiles a, .cx-kc, .co-labtile, .cx-ucard) { transition: none !important; transform: none !important; } }
+

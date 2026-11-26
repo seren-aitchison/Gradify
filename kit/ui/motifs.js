@@ -1,7 +1,9 @@
-// Gradify motifs: a few line ribbons down the page, behind everything. Hundreds of hair-thin lines bend and twist into a
-// ribbon of light: iridescent glass on white in light mode, red, pink and white neon on black in dark. They are drawn
-// once per theme on a canvas (no SVG filters, nothing animated), turned into an image and placed at the page's edges,
-// half off-screen and faded out, about one every screen and a half, never more than six.
+// Gradify ribbons: a few bands of silk light behind the page, in the spirit of apple.com's product pages, in Gradify's
+// own warm colours. Each ribbon is a handful of smooth strokes that run together and pinch where the silk twists, over
+// a soft glow of the same colours, drifting very slowly. They are drawn as SVG (a few paths, built once per page with a
+// little arithmetic, so they cost almost nothing to draw), placed at the page's edges, half off-screen and faded out,
+// about one every screen and a half, never more than six. Only the transform moves, on the GPU, and only while a
+// ribbon is on screen; they stand still for reduced motion.
 //
 // The rule that matters: text never sits on a motif. A motif is only placed where it covers no text that isn't inside
 // a box of its own (a tile, a card, the lesson sheet, the bar). Text in a box is fine: the box is opaque. Loaded from
@@ -9,91 +11,70 @@
 //
 //   import { mountMotifs } from "kit/ui/motifs.js";   mountMotifs();   // idempotent; re-places itself as the page changes
 
-// each tone: a cycle of colours the lines shimmer through (thin-film light), one set for white and one for black.
-// The light-mode colours are deeper, so hair-thin lines still show on white.
+// each palette runs along the ribbon: Gradify's sunrise (pink, coral, amber), dusk (violet into pink), lagoon (teal
+// into blue and violet) and bloom (rose into periwinkle). Light mode takes slightly deeper colours, so silk shows on white.
 export const TONES = {
-  pink:   { light: ["#e8157a", "#f24fbf", "#9b38f0", "#ff6fae", "#e62e5c", "#c040ff"], dark: ["#ff1f8f", "#ff5fd2", "#b23cff", "#ff9ad5", "#ff3d6e", "#ffd1ec"] },
-  blue:   { light: ["#1361e8", "#1fa9e6", "#5b4cf0", "#12b5d4", "#2a46d8", "#3c8cff"], dark: ["#1f7bff", "#39d0ff", "#6a5cff", "#9ff3ff", "#2a5bff", "#5ee0e8"] },
-  lime:   { light: ["#4caf10", "#86c400", "#10b386", "#9fb400", "#2f9e3c", "#62c21a"], dark: ["#8dff2e", "#d4ff3a", "#2dffa8", "#f4ff8a", "#46e05a", "#b6ff6e"] },
-  yellow: { light: ["#d9a400", "#e3b800", "#e08a00", "#c99600", "#efb000", "#d27f00"], dark: ["#ffd60a", "#fff06a", "#ffab1f", "#fff6c2", "#ffc83d", "#ffe14d"] },
-  orange: { light: ["#e85a00", "#f08a1c", "#e0304f", "#e39a36", "#d94a10", "#f07a2a"], dark: ["#ff6a00", "#ffa040", "#ff3d5e", "#ffcf80", "#ff5020", "#ffb35c"] },
-  iris:   { light: ["#2fa8f5", "#8a6bff", "#f25aa8", "#ff9a4d", "#22c4ad", "#5468ff"], dark: ["#ff2d8a", "#b44cff", "#3fc5ff", "#2effb0", "#ffd400", "#ff6a00"] },
-  teal:    { light: ["#0e8f86", "#16a7a0", "#0f6fb0", "#2bb39a", "#0a7d74", "#3aa6c9"], dark: ["#19e3cf", "#5cffe4", "#2aa8ff", "#b8fff2", "#12c9b6", "#7ae7ff"] },
-  violet:  { light: ["#6a3fe0", "#8a4ff0", "#4b3bd0", "#a35ae6", "#5a2fc4", "#7c6cf0"], dark: ["#9b6cff", "#c79bff", "#6f5cff", "#e3d2ff", "#b07cff", "#8a8cff"] },
-  magenta: { light: ["#c4157f", "#e0279f", "#9a1fb8", "#ea4ca8", "#b0126c", "#d43cc4"], dark: ["#ff2fb2", "#ff7ad8", "#d23cff", "#ffc2ec", "#ff4fa0", "#f07cff"] },
-  coral:   { light: ["#e2503b", "#f06a4f", "#d9365f", "#f0866a", "#c9432e", "#ee5c7a"], dark: ["#ff6b55", "#ff9a80", "#ff4f7a", "#ffd0c2", "#ff7d5c", "#ff8aa8"] },
-  emerald: { light: ["#118a4f", "#1fa864", "#0c7a6a", "#3cb878", "#0a6e43", "#29a38c"], dark: ["#21e38a", "#7dffb8", "#14d6b0", "#c8ffe0", "#3cf08f", "#5cf0d0"] },
-  gold:    { light: ["#b8860b", "#d19a10", "#a86a00", "#c9a227", "#9c7400", "#d4a531"], dark: ["#ffc62e", "#ffe27a", "#ffae2e", "#fff1c2", "#ffd24f", "#f5c56a"] },
-  cyan:    { light: ["#0a86c2", "#1aa3d9", "#0b65b8", "#22b7d6", "#086f9e", "#3b8ff0"], dark: ["#21c8ff", "#8be6ff", "#3d8bff", "#d2f6ff", "#3fdcff", "#6fb0ff"] },
-  red:    { light: ["#e8173a", "#f2457e", "#c4124b", "#ff7a8f", "#d8204a", "#f06a8c"], dark: ["#ff1f45", "#ff4f8b", "#e8173a", "#ff9fb8", "#ff3d7f", "#ffb3c4"] },
+  sunrise: { light: ["#ff2e88", "#ff5a3c", "#ff9a1f", "#ffc23a"], dark: ["#ff3d95", "#ff6b4a", "#ffab3a", "#ffd76a"] },
+  dusk:    { light: ["#6a4cff", "#b13cff", "#ff3f97", "#ff8a4c"], dark: ["#8a6cff", "#c95cff", "#ff5fa8", "#ffa06a"] },
+  lagoon:  { light: ["#0fb3a6", "#1f86ff", "#5a52ff", "#a85cff"], dark: ["#2ae0cf", "#3a9bff", "#7a6cff", "#c47cff"] },
+  bloom:   { light: ["#ff4f9a", "#ff7fbc", "#9a6bff", "#4f8dff"], dark: ["#ff6aab", "#ff9ccd", "#b28aff", "#6fa4ff"] },
 };
 export const TONE_NAMES = Object.keys(TONES);
-const MAX = 7;          // at most this many on a page
+const MAX = 6;          // at most this many on a page
 const EVERY = 1.7;      // one per this many screen heights, at most
 const TEXT = "h1,h2,h3,h4,h5,h6,p,li,dt,dd,label,blockquote,figcaption,td,th,summary,a,button,small,b,strong,em,span,input,textarea,select";
 
 const rng = (s) => () => ((s = (s * 1664525 + 1013904223) >>> 0) / 4294967296);
 const lightMode = () => document.documentElement.getAttribute("data-theme") === "light";
+const f1 = (n) => Math.round(n * 10) / 10;
 
-const hex = (h) => [parseInt(h.slice(1, 3), 16), parseInt(h.slice(3, 5), 16), parseInt(h.slice(5, 7), 16)];
-// a colour from a cycle of colours, blended smoothly (h wraps round)
-function cycle(cols, h) {
-  const n = cols.length, x = ((h % 1) + 1) % 1 * n, i = Math.floor(x), f = x - i, a = cols[i % n], b = cols[(i + 1) % n];
-  const k = f * f * (3 - 2 * f);
-  return [a[0] + (b[0] - a[0]) * k, a[1] + (b[1] - a[1]) * k, a[2] + (b[2] - a[2]) * k];
+// a smooth path through points (Catmull-Rom, as cubic Béziers)
+function smooth(pts) {
+  let d = `M${f1(pts[0][0])} ${f1(pts[0][1])}`;
+  for (let i = 0; i < pts.length - 1; i++) {
+    const p0 = pts[Math.max(0, i - 1)], p1 = pts[i], p2 = pts[i + 1], p3 = pts[Math.min(pts.length - 1, i + 2)];
+    d += `C${f1(p1[0] + (p2[0] - p0[0]) / 6)} ${f1(p1[1] + (p2[1] - p0[1]) / 6)} ${f1(p2[0] - (p3[0] - p1[0]) / 6)} ${f1(p2[1] - (p3[1] - p1[1]) / 6)} ${f1(p2[0])} ${f1(p2[1])}`;
+  }
+  return d;
 }
 
 /**
- * Draws one ribbon onto a square canvas of `size` pixels and returns it: a band of hair-thin wavy lines whose ripples
- * slide across them, so they crowd into bright folds; the colour shimmers through the tone's cycle along and across the
- * band (thin-film light), a soft haze glows beneath it, and its edges and ends fade away. `seed` picks the shape.
+ * One ribbon as SVG markup in a 1000 × 1000 box: a band that sweeps across on a meandering curve, tapers at its ends
+ * and twists (its strokes run together where it turns edge-on, which is where the light gathers), over a blurred glow.
+ * `seed` picks the shape, `tone` the palette.
  */
-export function drawRibbon(size, { light = true, seed = 1, tone = light ? "iris" : "red", lines = 96 } = {}) {
-  const cols = (TONES[tone] || TONES.iris)[light ? "light" : "dark"].map(hex), r = rng(seed * 7919 + 13);
-  const cv = document.createElement("canvas"); cv.width = cv.height = size;
-  const g = cv.getContext("2d"); if (!g) return cv;
-  // the shape: a band crossing the square at an angle, meandering (two slow waves), with ripples that drift across it
-  const ang = (-0.7 + r() * 1.4) + (r() < 0.5 ? 0 : Math.PI / 2), ca = Math.cos(ang), sa = Math.sin(ang);
-  const A1 = 0.09 + r() * 0.08, f1 = 0.7 + r() * 0.6, p1 = r() * 6.28, A2 = 0.04 + r() * 0.04, f2 = 1.6 + r() * 1.2, p2 = r() * 6.28;
-  const B = 0.05 + r() * 0.04, f3 = 1.3 + r() * 1.4, gv = 0.6 + r() * 1.1, p3 = r() * 6.28, W0 = 0.5 + r() * 0.2;
-  const hc1 = 1.1 + r() * 1.1, hc2 = 1.3 + r() * 1.1, hp = r();
-  const N = 120, M = lines;
-  const at = (t, v) => {
-    const yc = A1 * Math.sin(6.283 * f1 * t + p1) + A2 * Math.sin(6.283 * f2 * t + p2);
-    const W = W0 * (0.65 + 0.35 * Math.sin(Math.PI * t)) * (0.9 + 0.1 * Math.sin(9 * t + p1));
-    const y = yc + v * W + B * Math.sin(6.283 * (f3 * t + gv * v) + p3) * (1 - 2 * Math.abs(v)) ;
-    const x = t - 0.5;
-    return [0.5 + (x * ca - y * sa) * 1.18, 0.5 + (x * sa + y * ca) * 1.18, W];
-  };
-  const pts = [];
-  for (let i = 0; i < M; i++) { const v = i / (M - 1) - 0.5, row = []; for (let k = 0; k <= N; k++) row.push(at(k / N, v)); pts.push(row); }
-  const S = size, lw = S / 900;
-  g.lineCap = "round"; g.lineJoin = "round";
-  // two passes: a broad soft haze (the glow beneath), then the lines themselves
-  for (const pass of [0, 1]) {
-    g.globalCompositeOperation = light ? (pass ? "source-over" : "multiply") : "lighter";
-    for (let i = pass ? 0 : 2; i < M; i += pass ? 1 : 4) {
-      const v = i / (M - 1) - 0.5, edge = Math.pow(Math.max(0, 1 - Math.abs(v) * 2), 0.7);
-      const row = pts[i], nb = pts[Math.min(M - 1, i + 1)];
-      for (let k = 0; k < N; k++) {
-        const t = k / N, ends = Math.sin(Math.PI * Math.min(1, Math.max(0, (t - 0.02) / 0.96)));
-        // the fold: where neighbouring lines crowd together the band is turning edge-on, and catches the light
-        const gap = Math.hypot(nb[k][0] - row[k][0], nb[k][1] - row[k][1]) * M / Math.max(0.05, row[k][2]);
-        const fold = Math.max(0, Math.min(1, 1.25 - gap));
-        const c = cycle(cols, hc1 * t + hc2 * v + 0.25 * Math.sin(6 * t + 4 * v + p3) + hp);
-        const hi = fold * fold;
-        // towards white at a fold (in dark: a white-hot highlight; on white: a lighter, pearly line)
-        const mix = light ? hi * 0.22 : hi * 0.5;
-        const R = c[0] + (255 - c[0]) * mix, G = c[1] + (255 - c[1]) * mix, Bc = c[2] + (255 - c[2]) * mix;
-        const al = Math.min(1, (pass ? (light ? 0.8 + 0.25 * fold : 0.62 + 0.4 * fold) : (light ? 0.075 : 0.12)) * edge * ends * 1.08);
-        if (al < 0.01) continue;
-        g.strokeStyle = `rgba(${R | 0},${G | 0},${Bc | 0},${al.toFixed(3)})`;
-        g.lineWidth = pass ? lw * (light ? 1.9 : 1.6) * (1 + 0.3 * fold) : lw * 40;
-        g.beginPath(); g.moveTo(row[k][0] * S, row[k][1] * S); g.lineTo(row[k + 1][0] * S, row[k + 1][1] * S); g.stroke();
-      }
-    }
+export function drawRibbon({ light = true, seed = 1, tone = "sunrise", id = "r", w = 1000, h = 1000 } = {}) {
+  const cols = (TONES[tone] || TONES.sunrise)[light ? "light" : "dark"], r = rng(seed * 7919 + 13);
+  // the centre line: a cubic sweeping from one side to the other, with generous swings that stay inside the box
+  const y0 = h * (0.3 + r() * 0.4), y3 = h * (0.3 + r() * 0.4);
+  const P = [[-0.08 * w, y0], [w * (0.26 + r() * 0.16), y0 + (r() - 0.5) * h * 0.9], [w * (0.6 + r() * 0.16), y3 + (r() - 0.5) * h * 0.9], [1.08 * w, y3]];
+  const at = (t) => { const u = 1 - t; return [0, 1].map((k) => u * u * u * P[0][k] + 3 * u * u * t * P[1][k] + 3 * u * t * t * P[2][k] + t * t * t * P[3][k]); };
+  const N = Math.round(44 * Math.max(1, w / h / 1.6)), W = h * (0.11 + r() * 0.07), turns = (0.8 + r() * 0.9) * Math.max(1, w / h / 2), phase = r() * 6.283, L = 21;
+  const centre = [], normal = [], width = [];
+  for (let i = 0; i <= N; i++) {
+    const t = i / N, a = at(Math.max(0, t - 0.002)), b = at(Math.min(1, t + 0.002)), dx = b[0] - a[0], dy = b[1] - a[1], m = Math.hypot(dx, dy) || 1;
+    centre.push(at(t)); normal.push([-dy / m, dx / m]);
+    width.push(W * (0.28 + 0.72 * Math.sin(Math.PI * t)) * Math.cos(turns * 6.283 * t + phase));   // taper × twist
   }
-  return cv;
+  const line = (u) => smooth(centre.map((c, i) => [c[0] + normal[i][0] * width[i] * u, c[1] + normal[i][1] * width[i] * u]));
+  const edgeA = centre.map((c, i) => [c[0] + normal[i][0] * width[i], c[1] + normal[i][1] * width[i]]);
+  const edgeB = centre.map((c, i) => [c[0] - normal[i][0] * width[i], c[1] - normal[i][1] * width[i]]).reverse();
+  const body = `${smooth(edgeA)}L${f1(edgeB[0][0])} ${f1(edgeB[0][1])}${smooth(edgeB).slice(smooth(edgeB).indexOf("C"))}Z`;
+  const g = `${id}g`, f = `${id}f`;
+  const stops = cols.map((c, i) => `<stop offset="${f1((i / (cols.length - 1)) * 100)}%" stop-color="${c}"/>`).join("");
+  let strokes = "";
+  for (let i = 0; i < L; i++) {
+    const u = -1 + (2 * i) / (L - 1), edge = Math.abs(u);
+    strokes += `<path d="${line(u)}" stroke-width="${f1((1.1 + (1 - edge) * 1.6) * h / 1000 * 1.4)}" stroke-opacity="${f1(0.35 + (1 - edge) * 0.5)}"/>`;
+  }
+  return `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" aria-hidden="true" focusable="false">
+<defs><linearGradient id="${g}" gradientUnits="userSpaceOnUse" x1="${f1(P[0][0])}" y1="${f1(P[0][1])}" x2="${f1(P[3][0])}" y2="${f1(P[3][1])}">${stops}</linearGradient>
+<filter id="${f}" x="-20%" y="-40%" width="140%" height="180%"><feGaussianBlur stdDeviation="${f1(h * 0.026)}"/></filter></defs>
+<path d="${body}" fill="url(#${g})" opacity="${light ? 0.36 : 0.5}" filter="url(#${f})"/>
+<path d="${body}" fill="url(#${g})" opacity="${light ? 0.14 : 0.2}"/>
+<g fill="none" stroke="url(#${g})" stroke-linecap="round">${strokes}</g>
+<path d="${line(0)}" fill="none" stroke="#fff" stroke-opacity="${light ? 0.55 : 0.4}" stroke-width="${f1(2.2 * h / 1000 * 1.4)}" stroke-linecap="round"/>
+</svg>`;
 }
 
 // a box: something opaque enough that text inside it reads whatever is behind it
@@ -154,7 +135,24 @@ export function placements({ vw, vh, docH, text, seed = 1 }) {
   return out;
 }
 
-let layer = null, cache = {}, timer = 0, lastKey = "";
+/** Where the bands go: full-width strips with no bare text in them, at least a screen apart, at most four. */
+export function bands({ vh, docH, text, min = 200, max = 560 }) {
+  const cover = text.map((b) => [b.t - 28, b.b + 28]).sort((a, b) => a[0] - b[0]), free = [];
+  let y = 0;
+  for (const [t, b] of cover) { if (t > y) free.push([y, t]); y = Math.max(y, b); }
+  if (docH > y) free.push([y, docH]);
+  const out = [];
+  for (const [t, b] of free) {
+    const hgt = Math.min(max, b - t); if (hgt < min) continue;
+    const top = t + (b - t - hgt) / 2;
+    if (out.length && top - out.at(-1).y < vh * 0.9) continue;
+    out.push({ y: top, h: hgt });
+    if (out.length >= 4) break;
+  }
+  return out;
+}
+
+let layer = null, cache = {}, timer = 0, lastKey = "", seen = null;
 const allowed = () => {
   const h = document.documentElement, mq = (q) => window.matchMedia && matchMedia(q).matches;
   if (h.getAttribute("data-a-contrast") === "high" || mq("(prefers-contrast: more)") || mq("(prefers-reduced-transparency: reduce)") || mq("(forced-colors: active)")) return false;
@@ -163,14 +161,20 @@ const allowed = () => {
   return true;
 };
 
-// drawn once per tone, theme and shape, then copied onto each motif's own canvas. Canvases, not image backgrounds:
-// a large background image painted after load would count as the page's "largest contentful paint" and make every
-// page look slow to Core Web Vitals (scripts/perf-check.cjs caught it); a canvas never does
-function sourceFor(light, seed, tone) {
+// built once per tone, theme and shape, then reused. SVG, not a background image: a large image painted after load
+// would count as the page's "largest contentful paint" (scripts/perf-check.cjs caught it); plain paths never do
+function sourceFor(light, seed, tone, id) {
   const k = `${light ? "l" : "d"}${tone}${seed % 5}`;
-  if (!cache[k]) cache[k] = drawRibbon(Math.round(Math.min(1.5, devicePixelRatio || 1) * 760), { light, seed: (seed % 5) + 1, tone });
-  return cache[k];
+  if (!cache[k]) cache[k] = drawRibbon({ light, seed: (seed % 5) + 1, tone, id: "R" });
+  return cache[k].replaceAll('id="Rg"', `id="${id}g"`).replaceAll("url(#Rg)", `url(#${id}g)`).replaceAll('id="Rf"', `id="${id}f"`).replaceAll("url(#Rf)", `url(#${id}f)`);
 }
+
+// the drift: very slow, a few pixels and a fraction of a degree, so the silk seems to breathe (transform only, on the GPU)
+const STYLE = `.g-silk{position:absolute;will-change:transform;animation:g-silk-drift var(--d,34s) cubic-bezier(.45,0,.55,1) var(--dl,0s) infinite alternate;animation-play-state:paused}
+.g-silk.on{animation-play-state:running}
+@keyframes g-silk-drift{from{transform:translate3d(0,0,0) rotate(0deg) scale(1)}to{transform:translate3d(var(--dx,14px),var(--dy,-10px),0) rotate(var(--dr,1.2deg)) scale(1.025)}}
+@media (prefers-reduced-motion:reduce){.g-silk{animation:none}}
+:root[data-motion="reduce"] .g-silk{animation:none}`;
 
 function place() {
   timer = 0;
@@ -178,7 +182,10 @@ function place() {
   if (!layer) {
     layer = document.createElement("div"); layer.className = "g-motifs"; layer.setAttribute("aria-hidden", "true");
     layer.style.cssText = "position:absolute;left:0;top:0;width:100%;height:0;overflow:hidden;pointer-events:none;z-index:-2;contain:strict";
+    if (!document.getElementById("g-silk-css")) { const st = document.createElement("style"); st.id = "g-silk-css"; st.textContent = STYLE; document.head.append(st); }
     document.body.prepend(layer);
+    // a ribbon only moves while it's on screen
+    seen = "IntersectionObserver" in window ? new IntersectionObserver((es) => es.forEach((e) => e.target.classList.toggle("on", e.isIntersecting)), { rootMargin: "120px" }) : null;
   }
   layer.style.height = "0px";
   const vw = document.documentElement.clientWidth, vh = innerHeight, docH = document.documentElement.scrollHeight, light = lightMode();
@@ -188,20 +195,33 @@ function place() {
   if (key === lastKey) return;
   lastKey = key;
   const seed = [...location.pathname].reduce((s, c) => s * 31 + c.charCodeAt(0), 7) >>> 0;
-  const spots = placements({ vw, vh, docH, text, seed });
   const rr = rng(seed + 99), order = [...TONE_NAMES].sort(() => rr() - 0.5);
+  seen?.disconnect();
   layer.textContent = "";
+  const strips = bands({ vh, docH, text });
+  strips.forEach((b, n) => {
+    const tone = order[n % order.length], k = rng(seed + n * 101), w = Math.round(vw * 1.1);
+    const el = document.createElement("div");
+    el.className = "g-silk";
+    const fade = "linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent), linear-gradient(transparent, #000 22%, #000 78%, transparent)";
+    el.style.cssText = `left:${Math.round(-vw * 0.05)}px;top:${Math.round(b.y)}px;width:${w}px;height:${Math.round(b.h)}px;-webkit-mask:${fade};-webkit-mask-composite:source-in;mask:${fade};mask-composite:intersect;--d:${Math.round(30 + k() * 14)}s;--dl:-${Math.round(k() * 20)}s;--dx:${Math.round((k() - 0.5) * 40)}px;--dy:${Math.round((k() - 0.5) * 16)}px;--dr:${f1((k() - 0.5) * 1.2)}deg`;
+    el.innerHTML = drawRibbon({ light, seed: (seed + n * 7) % 997 + 1, tone, id: `b${n}`, w: 1600, h: Math.round(1600 * b.h / w) });
+    layer.append(el);
+    seen?.observe(el);
+  });
+  const spots = strips.length ? [] : placements({ vw, vh, docH, text, seed });
   spots.forEach((p, n) => {
-    const tone = order[n % order.length], src = sourceFor(light, p.seed, tone);
-    const fade = p.side ? "radial-gradient(closest-side at 62% 50%, #000 38%, transparent 100%)" : "radial-gradient(closest-side at 38% 50%, #000 38%, transparent 100%)";
-    const cv = document.createElement("canvas");
-    cv.width = src.width; cv.height = src.height;
-    cv.style.cssText = `position:absolute;left:${p.x}px;top:${p.y}px;width:${p.size}px;height:${p.size}px;-webkit-mask:${fade};mask:${fade}`;
-    cv.getContext("2d")?.drawImage(src, 0, 0);
-    layer.append(cv);
+    const tone = order[n % order.length];
+    const fade = p.side ? "radial-gradient(closest-side at 62% 50%, #000 42%, transparent 100%)" : "radial-gradient(closest-side at 38% 50%, #000 42%, transparent 100%)";
+    const el = document.createElement("div");
+    el.className = "g-silk";
+    const k = rng(p.seed);
+    el.style.cssText = `left:${p.x}px;top:${p.y}px;width:${p.size}px;height:${p.size}px;-webkit-mask:${fade};mask:${fade};--d:${Math.round(28 + k() * 16)}s;--dl:-${Math.round(k() * 20)}s;--dx:${Math.round((k() - 0.5) * 36)}px;--dy:${Math.round((k() - 0.5) * 28)}px;--dr:${f1((k() - 0.5) * 3)}deg`;
+    el.innerHTML = sourceFor(light, p.seed, tone, `m${n}`);
+    layer.append(el);
+    seen?.observe(el);
   });
 }
-
 const soon = (ms = 400) => { clearTimeout(timer); timer = setTimeout(() => ("requestIdleCallback" in window ? requestIdleCallback(place, { timeout: 1200 }) : place()), ms); };
 
 /** Puts the motifs on the page and keeps them placed as it changes (routes, resizes, the theme). */

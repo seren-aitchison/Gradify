@@ -3024,7 +3024,8 @@ body:has(.co-modal) .cx-dock { visibility: hidden; }
 
 /* Learn mode is for thinking: decoration with no teaching purpose steps away (Lesson System Brief v2, principle 10).
    The page's line ribbons and glows, the bar's moving rim (a plain line instead), and the tutor is named, not an orb. */
-body:has(.co.co-stepmode) :is(.g-motifs, .aurora) { display: none !important; }
+body:has(.co.co-stepmode) .aurora { display: none !important; }
+body:has(.co.co-stepmode) .g-motifs { opacity: .45; }   /* the silk stays, quietly, at the edges: the lesson leads */
 .co.co-stepmode::before, .co.co-stepmode::after { content: none; }
 :root body:has(.co.co-stepmode) header.sub-nav.glass::before, :root body:has(.co.co-stepmode) header.bar.glass::before { content: none; }
 :root body:has(.co.co-stepmode) :is(header.sub-nav.glass, header.bar.glass) { border-color: var(--line-strong, var(--line)) !important; }
@@ -3157,8 +3158,6 @@ body:has(.co.co-stepmode) .gx-totop { display: none !important; }
 
 /* calm by default: the course tabs and the side measures take a hairline; the hero keeps the one gleaming edge */
 :root .co :is(.co-tabs, .sm-measure, .sm-note, .co-school, .co-pcard)::before { content: none !important; }
-/* the page's line ribbons are decoration: they step away on course pages, as in Learn mode */
-body:has(.co) .g-motifs { display: none !important; }
 :root .co :is(.co-tabs, .sm-measure, .sm-note, .co-school, .co-pcard) { border-color: var(--line-strong, var(--line)) !important; }
 /* a new learner sees what's about to happen, not a row of zeros */
 .cx-welcome { display: flex; align-items: center; gap: 14px; }
