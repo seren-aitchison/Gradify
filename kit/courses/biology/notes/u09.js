@@ -470,6 +470,7 @@ S: Protozoa are single-celled eukaryotes, some of which cause major diseases. Th
 O: Describe the features of protozoa
 O: Describe how protozoa move and feed
 O: Describe the life cycle of the malaria parasite
+REQ: aqa-gcse-biology:4.3.1.5.a @1,3
 H: Features
 - Protozoa are single-celled, heterotrophic **eukaryotes**.
 - They live in water, soil and inside other organisms.
@@ -1014,6 +1015,8 @@ S: Microbes are grown in the laboratory to study and identify them. This lesson 
 O: Describe types of culture media
 O: Describe aseptic technique
 O: Explain how to obtain a pure culture and count bacteria
+REQ: aqa-gcse-biology:4.1.1.6.d @2,3
+REQ: aqa-gcse-biology:4.1.1.6.b @1
 H: Media
 - **Broth**: liquid medium.
 - **Agar**: solid medium made with seaweed-derived agar.

@@ -718,6 +718,7 @@ S: Good graphs communicate data clearly and honestly. This lesson explains how t
 O: Choose an appropriate graph type for data
 O: Show variation and uncertainty correctly
 O: Recognise misleading graphs
+REQ: aqa-gcse-biology:4.1.3.2.c @1,2,3
 H: Choosing graphs
 - **Bar charts**: comparing categories, though they can hide data spread.
 - **Box plots** and **dot plots**: show distributions and individual points.

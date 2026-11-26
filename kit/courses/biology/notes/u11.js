@@ -340,6 +340,7 @@ S: Trophic levels describe an organism's position in a food chain. This lesson e
 O: Define trophic level
 O: Compare pyramids of numbers, biomass and energy
 O: Explain biomagnification
+REQ: aqa-gcse-biology:4.7.4.2.a @1,2
 H: Trophic levels
 - **Level 1**: producers.
 - **Level 2**: primary consumers.
@@ -847,6 +848,7 @@ S: Biodiversity is the variety of life at all levels. This lesson explains the l
 O: Describe genetic, species and ecosystem diversity
 O: Explain why biodiversity is important
 O: Describe the main threats to biodiversity
+REQ: aqa-gcse-biology:4.7.3.1.a @1
 H: Levels
 - **Genetic diversity**: variety of alleles within a species.
 - **Species diversity**: number and abundance of species.

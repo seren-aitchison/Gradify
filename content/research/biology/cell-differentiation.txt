@@ -1,0 +1,29 @@
+# fp=dd0e97cd375a0393 · 2026-11-25
+TOPIC biology/cell-differentiation | levels=GCSE | checked=2026-11-25
+F: A multicellular organism begins as one fertilised egg cell (zygote) that divides many times and whose daughter cells also differentiate into cells with different roles | aqa,bbc | conf=high
+F: Differentiation means an unspecialised cell becoming a more specialised cell type, with features that suit a specific job | aqa,bbc | conf=high
+F: A differentiating cell gains different sub-cellular structures, which let it carry out its particular function; once it has done so it is a specialised cell | aqa | conf=high
+F: Importance: differentiation is what lets a multicellular organism have cells, tissues and organ systems each doing a distinct job (transport, movement, nerve signalling, reproduction, photosynthesis and so on) | aqa,bbc | conf=med
+F: Most types of animal cell differentiate early in development | aqa | conf=high
+F: Many plant cells keep the ability to differentiate throughout life; meristem cells near shoot and root tips divide and can become any plant cell type at any time | aqa,bbc | conf=high
+F: In plants, new cells made near a shoot tip become differentiated as they age and move away from the tip (they enlarge and develop vacuoles) | bbc | conf=med
+F: In mature animals, cell division is mainly limited to repair and replacement | aqa | conf=high
+F: Adult stem cells exist in limited numbers in some tissues and form only related cell types (e.g. bone marrow gives blood and immune cells) | aqa,bbc | conf=high
+F: Cells do not all make every protein: each cell expresses only a subset of its genes, which saves energy and space, so differences between cell types come from which genes are used, not from which genes are present | os | conf=med
+DEF: differentiation | process by which an unspecialised cell becomes a specialised cell type with structures suited to a function | GCSE
+DEF: specialised cell | a cell that has differentiated and has sub-cellular structures that let it do a particular job | GCSE
+DEF: undifferentiated cell | a cell not yet specialised, e.g. a stem cell | GCSE
+DEF: stem cell | undifferentiated cell that can produce more cells of its own type and cells that go on to differentiate | GCSE
+DEF: meristem | plant region (near shoot and root tips) where cells divide and can differentiate into any plant cell type | GCSE
+MIS: differentiated cells in an organism have different DNA | all body cells carry the same genetic information; they differ in which genes are expressed (os; mitosis gives cells with the same genetic information, bbc)
+MIS: animals and plants keep differentiating equally | most animal cell types differentiate early; many plant cells keep the ability for life (aqa)
+MIS: specialised animal cells keep dividing freely in adults | adult division is mostly repair and replacement (aqa)
+EXAM: AQA lists examples to know: sperm, nerve and muscle cells in animals; root hair, xylem and phloem cells in plants; answers should link a structure to a function | aqa
+EXAM: command word explain the importance of differentiation: link specialisation to carrying out a function in an organism with many cell types | aqa
+VAR: Wording differs across boards and the spec names its cell-differentiation content under 4.1.1.4 with stem cells in 4.1.2.3; other boards may phrase the topic differently (unchecked) | aqa
+NUM: none required at GCSE for this topic | aqa
+CONFLICT: none found between opened sources; gene-expression detail goes beyond the AQA GCSE spec so keep to a simple idea | aqa,os
+SRC: aqa | GCSE Biology 8461 Specification (2016), sections 4.1.1.3, 4.1.1.4, 4.1.2.3 | https://filestore.aqa.org.uk/resources/biology/specifications/AQA-8461-SP-2016.PDF | AQA | licence=facts | 2026-11-25
+SRC: bbc | BBC Bitesize GCSE Biology AQA: Cell division, Stem cells and Cell differentiation pages | https://www.bbc.co.uk/bitesize/guides/zs8y4qt/revision/4 | BBC | licence=facts | 2026-11-25
+SRC: os | OpenStax Biology 2e, 16.1 Regulation of Gene Expression | https://openstax.org/books/biology-2e/pages/16-1-regulation-of-gene-expression | OpenStax | licence=facts | 2026-11-25
+END

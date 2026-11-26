@@ -970,6 +970,7 @@ S: Enzymes bind their substrates with great specificity. This lesson explains th
 O: Describe the formation of enzyme-substrate complexes
 O: Compare the lock and key and induced fit models
 O: Explain enzyme specificity
+REQ: aqa-gcse-biology:4.2.2.1.f @1,2,3
 H: Binding and specificity
 - The substrate binds to the **active site**, forming an **enzyme-substrate complex**.
 - The reaction occurs, forming an **enzyme-product complex**.

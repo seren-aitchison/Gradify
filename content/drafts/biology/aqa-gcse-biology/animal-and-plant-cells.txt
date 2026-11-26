@@ -1,0 +1,56 @@
+# draft · aqa-gcse-biology 4.1.1.2 Animal and plant cells · written by the content engine (scripts/gradify.mjs) · not yet published
+# tiers and review history: content/ledger/biology.json
+
+## Required practical: observing cells with a light microscope
+LV: GCSE · Foundation
+S: Looking at real plant and animal cells under a light microscope, then drawing and labelling what you see, is one of the required practicals in AQA GCSE Biology and builds the skills examiners test on microscopy.
+O: Use a light microscope in the right order to bring cells into clear focus
+O: Make a clear, labelled biological drawing that includes a magnification scale
+O: Work out the real size of a cell from its image size and the magnification
+REQ: aqa-gcse-biology:4.1.1.2.RP1 @1,2,3
+T: magnification | How many times bigger an image appears than the real object, found by dividing image size by real size
+T: field of view | The circular area you can see when you look down the eyepiece of a microscope
+T: biological drawing | A clear scientific record of a specimen, drawn with single lines and labels rather than shading
+H: Using the microscope
+P: In this required practical you look at several kinds of plant and animal cell under a light microscope, then draw and label them with a magnification scale. AQA links it to its apparatus and technique skills 1 and 7.
+- Start with the **lowest-power objective lens**.
+- Focus the image, then move to a **higher-power** objective lens to see more detail.
+- You can compare what you see with micrographs, photographs or video of the same kinds of cell.
+K: Always begin on the lowest-power objective lens and only then move to higher power.
+SAFE: Follow your teacher's instructions and your school's risk assessment when handling slides, glass and any stains or specimens.
+H: Drawing what you see
+P: A biological drawing is a scientific record, not a piece of art. Examiners want to see what is really there, clearly.
+- Draw large, using most of the space on the page.
+- Use clear, single, continuous lines.
+- Do not shade or colour in.
+- Label the structures you can see.
+- Add a **magnification scale** to every drawing; this is required for the practical.
+!: Shading and sketchy lines make a drawing look artistic but lose marks. Use clean single lines and labels only.
+D: bio-plant-cell
+D: bio-animal-cell
+DNEED: A labelled light microscope showing the eyepiece, objective lenses, stage and focusing knobs, with an arrow showing the move from low to high power
+H: From drawing to real size
+E: real size = image size ÷ magnification :: rearranged from magnification = image size ÷ real size
+X: An onion cell viewed at ×400 is 14.8 mm wide in your image. How wide is the real cell?
+> Divide image size by magnification: 14.8 ÷ 400 = 0.037, so the real cell is 0.037 mm wide.
+> Convert to micrometres: 0.037 × 1000 = 37.
+> The real cell is about 37 micrometres wide, or 3.7 × 10^{-2} mm in standard form.
+!: Forgetting to convert units. Put both lengths in the same unit before you divide, then give the answer in the unit asked for.
+!: The specification point number for this practical differs between resources: it appears here under 4.1.1.2, but some revision material lists it under 4.1.1.5. Check the current AQA specification for the reference your school uses.
+GAP: The brief does not cover how to prepare and stain a slide, which stains to use, or which specific cells to observe, so these practical steps are not taught here
+SUM: Find cells on the lowest-power objective lens first, then switch to higher power for detail.
+SUM: A biological drawing uses clear single lines, no shading, labels and a magnification scale.
+SUM: Real size equals image size divided by magnification, after converting both lengths to the same unit.
+SRC: AQA, GCSE Biology 8461 specification, Cell biology subject content | standard | 2026-11-25 | https://www.aqa.org.uk/subjects/science/gcse/biology-8461/specification/subject-content/cell-biology
+SRC: Save My Exams, Required Practical: Microscopy (AQA GCSE Biology) revision note | secondary | 2026-11-25 | https://www.savemyexams.com/gcse/biology/aqa/18/revision-notes/1-cell-biology/1-1-cell-structure/1-1-6-required-practical-microscopy
+SRC: Save My Exams, Microscopy (AQA GCSE Biology) revision note | secondary | 2026-11-25 | https://www.savemyexams.com/gcse/biology/aqa/18/revision-notes/1-cell-biology/1-1-cell-structure/1-1-5-microscopy/
+Q: Which objective lens should you start with? | The lowest-power objective lens, then move to higher power.
+Q: What must every drawing in the microscopy practical include? | A magnification scale, as well as labels.
+Q: Should a biological drawing be shaded? | No. Use clear single lines and labels with no shading.
+Q: How do you find the real size of a cell from its image? | Divide the image size by the magnification, with both in the same unit.
+M1@1: Which objective lens should you use first when looking at a new slide? | The lowest-power lens | The highest-power lens | Any lens, it does not matter | The medium-power lens | The method is to begin on the lowest-power objective lens and only then move to a higher-power lens.
+M1@2: Which feature should a biological drawing of cells include? | Labels and a magnification scale | Careful shading to show depth | Colour to match the stain used | Sketchy lines to show texture | Biological drawings are scientific records, so they need labels and a scale, not artistic shading or colour.
+M2@2: A student's drawing is small, shaded and has no labels. Which change would improve it most for the practical? | Redraw it large with single lines, labels and a scale | Add more shading to make it look realistic | Colour it in to show the different structures | Trace a textbook photo instead of the slide | A good drawing is large, uses clear single lines, is labelled and includes a magnification scale.
+M2@3: A cell is 12 mm wide in an image at ×200. What is its real width? | 60 micrometres | 2400 micrometres | 6 micrometres | 600 micrometres | Real size is 12 ÷ 200 = 0.06 mm, and 0.06 × 1000 = 60 micrometres.
+M3@1,3: A student finds cells on high power, measures an image 20 mm wide at ×100 and gives the real size as 0.2 micrometres. What went wrong? | They began on high power and gave 0.2 mm as micrometres | They used the right lens order and made no unit error | They should have multiplied 20 by 100 to find real size | They should start on high power and the answer is correct | They should start on low power, and 20 ÷ 100 = 0.2 mm, which is 200 micrometres, not 0.2 micrometres.
+SA2@2: Describe how to produce a good biological drawing of cells seen under a light microscope. | Draw large on the page using clear, single, continuous lines with no shading. Label the visible structures and include a magnification scale on the drawing. | Large drawing ; Single clear lines ; No shading ; Labels ; Magnification scale

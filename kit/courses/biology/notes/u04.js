@@ -215,6 +215,7 @@ S: Genes come in different versions called alleles. This lesson explains genes, 
 O: Define gene, allele and locus
 O: Distinguish homozygous and heterozygous genotypes
 O: Explain how new alleles arise and contribute to variation
+REQ: aqa-gcse-biology:4.6.1.6.e @2
 H: Key terms
 - A **gene** is a DNA sequence that codes for a product.
 - An **allele** is a version of a gene with a different base sequence.
@@ -837,6 +838,7 @@ S: Some alleles mask others in heterozygotes. This lesson explains dominant and 
 O: Define dominant and recessive alleles
 O: Describe autosomal dominant and recessive inheritance patterns
 O: Explain carriers and the probability of inheriting recessive conditions
+REQ: aqa-gcse-biology:4.6.1.6.d @1
 H: Dominance
 - A **dominant** allele is expressed in the phenotype when only one copy is present.
 - A **recessive** allele is expressed only when two copies are present (homozygous recessive).
@@ -879,6 +881,7 @@ S: Genotype describes the alleles an organism has, while phenotype describes its
 O: Define genotype and phenotype
 O: Explain how genotype and environment together determine phenotype
 O: Distinguish discontinuous and continuous variation
+REQ: aqa-gcse-biology:4.6.1.6.c @2
 H: Definitions
 - **Genotype**: the alleles an organism has for a gene, such as Aa.
 - **Phenotype**: the observable characteristics, such as flower colour or blood group.
@@ -919,6 +922,7 @@ S: A monohybrid cross follows the inheritance of one gene. This lesson shows how
 O: Construct genetic diagrams and Punnett squares for monohybrid crosses
 O: Predict genotype and phenotype ratios
 O: Use a test cross to determine an unknown genotype
+REQ: aqa-gcse-biology:4.6.1.6.j @1,2
 H: Setting up a cross
 - Choose symbols: a capital letter for the dominant allele, the same lower-case letter for the recessive.
 - Write parental genotypes and phenotypes.
@@ -1085,6 +1089,8 @@ S: Genes on the sex chromosomes are inherited differently in males and females. 
 O: Explain how sex is determined in humans
 O: Describe X-linked recessive inheritance
 O: Predict outcomes of crosses involving X-linked genes
+REQ: aqa-gcse-biology:4.6.1.8.c @1,3
+REQ: aqa-gcse-biology:4.6.1.8.b @1
 H: Sex determination and X-linked genes
 - Females are **XX** and males **XY**; the **SRY** gene on the Y chromosome triggers male development.
 - The X chromosome carries many genes not found on the Y.

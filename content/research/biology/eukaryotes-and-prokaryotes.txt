@@ -1,0 +1,34 @@
+# fp=e7b599aa1c329da3 · 2026-11-25
+TOPIC biology/eukaryotes-and-prokaryotes | levels=GCSE | checked=2026-11-25
+F: Spec 4.1.1.1 requires: plant and animal cells = eukaryotic, with membrane, cytoplasm and genetic material held inside a nucleus | aqa-spec,openstax-bio2e-4-2,bbc-ccea-cells | conf=high
+F: Bacterial cells = prokaryotic; spec lists cytoplasm, membrane and a cell wall; DNA not in a nucleus; it is one DNA loop, plus optionally one or more small DNA rings (plasmids) | aqa-spec,bbc-ccea-cells | conf=high
+F: Prokaryote means lacking a nucleus and any membrane-bound organelle; its main DNA sits in a central region called the nucleoid | openstax-bio2e-4-2 | conf=high
+F: Every cell type shares four parts: plasma membrane, cytoplasm, DNA, ribosomes | openstax-bio2e-4-2,bbc-ccea-cells | conf=med
+F: Most bacteria have a peptidoglycan wall, many also a capsule; the wall gives shape and protection; some have flagella for movement | openstax-bio2e-4-2 | conf=med
+F: Bacterial wall is not made of cellulose (unlike plant cell walls); plasmids float free in the cytoplasm | bbc-ccea-cells | conf=med
+F: Eukaryotes include animals, plants, fungi, protists; prokaryotes are Bacteria and Archaea | openstax-bio2e-4-2 | conf=high
+F: Prokaryotic cells are far smaller: about 0.1 to 5 micrometres across versus about 10 to 100 micrometres for eukaryotic cells | openstax-bio2e-4-2 | conf=high
+F: Scale anchors: red blood cell about 8 micrometres wide, pinhead about 2 mm, so roughly 250 red cells span a pinhead | openstax-bio2e-4-1 | conf=high
+F: Light microscope resolves down to about 200 nm; electron microscopes show finer detail | openstax-bio2e-4-1,bbc-ccea-micro | conf=med
+F: Magnification = image size / real size; use one unit throughout; 1 m = 1000 mm, 1 mm = 1000 micrometres | bbc-ccea-micro,aqa-spec | conf=high
+F: Small cells keep a high surface area to volume ratio, so substances diffuse quickly; the ratio falls as a cell grows | openstax-bio2e-4-2 | conf=high
+DEF: eukaryotic cell | cell with its DNA enclosed in a nucleus; plant and animal cells | GCSE
+DEF: prokaryotic cell | cell without a nucleus; DNA as a single loop; bacteria | GCSE
+DEF: plasmid | small extra ring of DNA separate from the main DNA loop; may be several | GCSE
+DEF: standard form | number written as A x 10^n with 1 <= A < 10; used for very small cell sizes (applies the spec wording) | GCSE
+NUM: 1 micrometre = 1 x 10^-6 m; 1 mm = 1 x 10^-3 m (derived from the mm/micrometre/m steps of 1000) | bbc-ccea-micro | conf=med
+NUM: bacterium 1 micrometre vs animal cell 10 to 100 micrometres: eukaryote about 10 to 100 times wider (one to two orders of magnitude); derived from size ranges | openstax-bio2e-4-2 | conf=med
+NUM: spec skills list: prefixes centi, milli, micro, nano; standard form where appropriate; MS 1b, 2a, 2h; WS 4.4 | aqa-spec
+MIS: prokaryote = bacteria only | prokaryotes also include Archaea; bacteria are the GCSE example
+MIS: prokaryotes have no DNA | they have DNA, just not enclosed in a nucleus
+MIS: only plants have cell walls | bacteria have walls too, made of different material from cellulose
+VAR: AQA spec names the bacterial wall, membrane, cytoplasm, loop, plasmids; OpenStax adds nucleoid, ribosomes, capsule as extension | aqa-spec,openstax-bio2e-4-2
+VAR: BBC page opened is for CCEA GCSE Biology, not AQA; use only for shared facts | bbc-ccea-cells
+CONFLICT: wall material wording: spec says only cell wall; OpenStax peptidoglycan for most bacteria; BBC non-cellulose | aqa-spec,openstax-bio2e-4-2,bbc-ccea-cells
+CONFLICT: size ranges are approximate; no opened source gives one fixed figure for all cells | openstax-bio2e-4-2
+SRC: aqa-spec | GCSE Biology 8461 Specification (2016), section 4.1.1.1 | https://filestore.aqa.org.uk/resources/biology/specifications/AQA-8461-SP-2016.PDF | AQA | licence=facts | 2026-11-25
+SRC: openstax-bio2e-4-2 | 4.2 Prokaryotic Cells, Biology 2e | https://openstax.org/books/biology-2e/pages/4-2-prokaryotic-cells | OpenStax | licence=facts | 2026-11-25
+SRC: openstax-bio2e-4-1 | 4.1 Studying Cells, Biology 2e | https://openstax.org/books/biology-2e/pages/4-1-studying-cells | OpenStax | licence=facts | 2026-11-25
+SRC: bbc-ccea-cells | Cells and specialisation (CCEA), GCSE Biology | https://www.bbc.co.uk/bitesize/topics/zky77p3/articles/zmgxg2p | BBC Bitesize | licence=facts | 2026-11-25
+SRC: bbc-ccea-micro | Microscopy, size and magnification (CCEA), GCSE Biology | https://www.bbc.co.uk/bitesize/topics/zky77p3/articles/zmmfdnb | BBC Bitesize | licence=facts | 2026-11-25
+END

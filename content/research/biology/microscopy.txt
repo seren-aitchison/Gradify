@@ -1,0 +1,35 @@
+# fp=7e73827dc5b9d00a · 2026-11-25
+TOPIC biology/microscopy | levels=GCSE | checked=2026-11-25
+F: Spec scope for 4.1.1.5: how microscopy developed; how electron microscopy improved understanding of sub-cellular structures; limited to differences in magnification and resolution | aqa-spec,bbc-cellmeas | conf=high
+F: Magnification calculations (image size, real size) are required, with standard form where appropriate, and use of prefixes centi, milli, micro, nano | aqa-spec,bbc-cellmeas | conf=high
+F: Light microscope history, simplified: Janssen spectacle makers tried lenses in tubes in 1590s giving roughly x3 to x9; Hooke drew cells with a compound microscope in 1650 (BBC date); van Leeuwenhoek used a single spherical lens up to about x275; lens quality improved through the 1800s | bbc-cellmeas | conf=med
+F: Hooke named "cell" from cork in his 1665 Micrographia; van Leeuwenhoek found bacteria and protozoa in the 1670s; Schleiden and Schwann proposed cell theory in the late 1830s | os-bio2e | conf=high
+F: Staining adds contrast to colourless cells in light microscopy; staining usually kills cells; a coverslip prevents drying and protects the lens | bbc-cellmeas,os-bio2e | conf=high
+F: Electron microscopes use electron beams not light; electrons have much shorter wavelength than light so resolve finer detail | os-bio2e,os-micro | conf=high
+F: Transmission EM (TEM) beam passes through very thin sections and shows internal structure; scanning EM (SEM) scans surfaces and gives 3D surface views | bbc-cellmeas,os-bio2e,os-micro | conf=high
+F: Electron microscope specimens are prepared in ways that kill them and need a vacuum, so living cells cannot be viewed | os-bio2e,os-micro | conf=high
+F: Electron microscopes are bulkier and more expensive than light microscopes | os-bio2e | conf=high
+F: Ribosomes are visible only with an electron microscope; mitochondria are visible with light microscope but not in detail | bbc-cellmeas | conf=high
+F: Light microscope stops being useful beyond about x1000 to x1500 because enlarging further adds no detail | bbc-cellmeas,os-micro | conf=high
+DEF: magnification | how many times larger an image appears than the real object | GCSE
+DEF: resolution (resolving power) | ability to see two close points as separate; higher means finer detail and a clearer image | GCSE
+DEF: micrograph | photograph of a microscope image | GCSE
+DEF: sub-cellular structure | structure smaller than a cell found inside it, e.g. ribosome | GCSE
+MIS: more magnification always gives more detail | detail needs resolution; enlarging beyond resolution only gives a bigger blur
+MIS: electron microscopes simply magnify more, nothing else | they also have far better resolving power, which is what reveals new structures
+MIS: electron microscopes can look at live cells | preparation and vacuum kill the specimen
+EXAM: Mixing units in magnification = image / real size loses marks; convert both to same unit first (mm to um multiply by 1000) | bbc-cellmeas
+EXAM: Spec limits explanation to magnification and resolution, so answers should compare these two, and link better resolution to seeing sub-cellular structures such as ribosomes | aqa-spec,bbc-cellmeas
+VAR: BBC says light microscope maximum about x1500; OpenStax Biology 2e says college lab microscopes about x400, x1000 with oil immersion; quote as range
+NUM: light microscope resolution about 0.2 um (200 nm); TEM resolution now below 1 nm; TEM magnification up to about x1 000 000 | bbc-cellmeas
+NUM: OpenStax gives light about x400 and 200 nm; electron about x100 000 and 50 pm | os-bio2e
+NUM: total magnification of compound microscope = eyepiece x objective, e.g. x10 and x40 gives x400 | bbc-cellmeas,os-micro
+NUM: worked example: micrograph 100 mm, real cell 0.05 mm gives 100/0.05 = x2000; in um 100 000 um / 50 um = x2000 | bbc-cellmeas
+NUM: 1 mm = 1000 um; 1 um = 1 x 10^-6 m; 1 nm = 1 x 10^-9 m; red blood cell 7 um = 7 x 10^-6 m | bbc-cellmeas
+NUM: typical animal cells 0.01 to 0.05 mm, plant cells 0.01 to 0.10 mm; naked eye limit about 0.05 mm | bbc-cellmeas
+CONFLICT: maximum light microscope magnification differs (x400, x1000, x1500) by source and lens type | bbc-cellmeas,os-bio2e,os-micro
+SRC: aqa-spec | AQA GCSE Biology 8461 specification | https://filestore.aqa.org.uk/resources/biology/specifications/AQA-8461-SP-2016.PDF | AQA | licence=facts | 2026-11-25
+SRC: bbc-cellmeas | Cell measurement - Cell structure - AQA GCSE Biology (BBC Bitesize) | https://www.bbc.co.uk/bitesize/guides/z84jtv4/revision/1 | BBC Bitesize | licence=facts | 2026-11-25
+SRC: os-bio2e | 4.1 Studying Cells - Biology 2e | https://openstax.org/books/biology-2e/pages/4-1-studying-cells | OpenStax | licence=facts | 2026-11-25
+SRC: os-micro | 2.3 Instruments of Microscopy - Microbiology | https://openstax.org/books/microbiology/pages/2-3-instruments-of-microscopy | OpenStax Microbiology | licence=facts | 2026-11-25
+END

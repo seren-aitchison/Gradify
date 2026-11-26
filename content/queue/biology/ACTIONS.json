@@ -1,0 +1,113 @@
+{
+ "generated": "2026-11-25T03:54:09.647Z",
+ "actions": [
+  {
+   "kind": "repair",
+   "topic": "biology/eukaryotes-and-prokaryotes",
+   "model": "opus",
+   "pairs": [
+    [
+     "content/queue/biology/eukaryotes-and-prokaryotes/repair-1.req.txt",
+     "content/queue/biology/eukaryotes-and-prokaryotes/repair-1.out.txt"
+    ]
+   ],
+   "prompt": "You are Gradify's Writer, repairing lessons. Read prompts/writer.md (Repairs) and prompts/shorthand.md. For each request file below, read its FIX list, numbered lesson and packet, and save ONLY the REPAIR block (changed lines only) to the matching reply file:\n  content/queue/biology/eukaryotes-and-prokaryotes/repair-1.req.txt → content/queue/biology/eukaryotes-and-prokaryotes/repair-1.out.txt\nDo nothing else."
+  },
+  {
+   "kind": "review",
+   "topic": "biology/eukaryotes-and-prokaryotes",
+   "model": "sonnet",
+   "pairs": [
+    [
+     "content/queue/biology/eukaryotes-and-prokaryotes/review-2.req.txt",
+     "content/queue/biology/eukaryotes-and-prokaryotes/review-2.out.txt"
+    ]
+   ],
+   "prompt": "You are Gradify's Reviewer. You did not write these lessons and must judge them only against the requirements and the research brief in each request: no web search, and don't open drafts or other files. Read prompts/review.md and prompts/shorthand.md. For each request file below, save ONLY its REV line to the matching reply file:\n  content/queue/biology/eukaryotes-and-prokaryotes/review-2.req.txt → content/queue/biology/eukaryotes-and-prokaryotes/review-2.out.txt\nDo nothing else."
+  },
+  {
+   "kind": "review",
+   "topic": "biology/animal-and-plant-cells",
+   "model": "sonnet",
+   "pairs": [
+    [
+     "content/queue/biology/animal-and-plant-cells/review-1.req.txt",
+     "content/queue/biology/animal-and-plant-cells/review-1.out.txt"
+    ],
+    [
+     "content/queue/biology/animal-and-plant-cells/review-2.req.txt",
+     "content/queue/biology/animal-and-plant-cells/review-2.out.txt"
+    ],
+    [
+     "content/queue/biology/animal-and-plant-cells/review-3.req.txt",
+     "content/queue/biology/animal-and-plant-cells/review-3.out.txt"
+    ]
+   ],
+   "prompt": "You are Gradify's Reviewer. You did not write these lessons and must judge them only against the requirements and the research brief in each request: no web search, and don't open drafts or other files. Read prompts/review.md and prompts/shorthand.md. For each request file below, save ONLY its REV line to the matching reply file:\n  content/queue/biology/animal-and-plant-cells/review-1.req.txt → content/queue/biology/animal-and-plant-cells/review-1.out.txt\n  content/queue/biology/animal-and-plant-cells/review-2.req.txt → content/queue/biology/animal-and-plant-cells/review-2.out.txt\n  content/queue/biology/animal-and-plant-cells/review-3.req.txt → content/queue/biology/animal-and-plant-cells/review-3.out.txt\nDo nothing else."
+  },
+  {
+   "kind": "repair",
+   "topic": "biology/cell-differentiation",
+   "model": "opus",
+   "pairs": [
+    [
+     "content/queue/biology/cell-differentiation/repair-1.req.txt",
+     "content/queue/biology/cell-differentiation/repair-1.out.txt"
+    ]
+   ],
+   "prompt": "You are Gradify's Writer, repairing lessons. Read prompts/writer.md (Repairs) and prompts/shorthand.md. For each request file below, read its FIX list, numbered lesson and packet, and save ONLY the REPAIR block (changed lines only) to the matching reply file:\n  content/queue/biology/cell-differentiation/repair-1.req.txt → content/queue/biology/cell-differentiation/repair-1.out.txt\nDo nothing else."
+  },
+  {
+   "kind": "repair",
+   "topic": "biology/microscopy",
+   "model": "opus",
+   "pairs": [
+    [
+     "content/queue/biology/microscopy/repair-1.req.txt",
+     "content/queue/biology/microscopy/repair-1.out.txt"
+    ]
+   ],
+   "prompt": "You are Gradify's Writer, repairing lessons. Read prompts/writer.md (Repairs) and prompts/shorthand.md. For each request file below, read its FIX list, numbered lesson and packet, and save ONLY the REPAIR block (changed lines only) to the matching reply file:\n  content/queue/biology/microscopy/repair-1.req.txt → content/queue/biology/microscopy/repair-1.out.txt\nDo nothing else."
+  },
+  {
+   "kind": "review",
+   "topic": "biology/microscopy",
+   "model": "sonnet",
+   "pairs": [
+    [
+     "content/queue/biology/microscopy/review-2.req.txt",
+     "content/queue/biology/microscopy/review-2.out.txt"
+    ]
+   ],
+   "prompt": "You are Gradify's Reviewer. You did not write these lessons and must judge them only against the requirements and the research brief in each request: no web search, and don't open drafts or other files. Read prompts/review.md and prompts/shorthand.md. For each request file below, save ONLY its REV line to the matching reply file:\n  content/queue/biology/microscopy/review-2.req.txt → content/queue/biology/microscopy/review-2.out.txt\nDo nothing else."
+  },
+  {
+   "kind": "repair",
+   "topic": "biology/culturing-microorganisms",
+   "model": "opus",
+   "pairs": [
+    [
+     "content/queue/biology/culturing-microorganisms/repair-1.req.txt",
+     "content/queue/biology/culturing-microorganisms/repair-1.out.txt"
+    ],
+    [
+     "content/queue/biology/culturing-microorganisms/repair-3.req.txt",
+     "content/queue/biology/culturing-microorganisms/repair-3.out.txt"
+    ]
+   ],
+   "prompt": "You are Gradify's Writer, repairing lessons. Read prompts/writer.md (Repairs) and prompts/shorthand.md. For each request file below, read its FIX list, numbered lesson and packet, and save ONLY the REPAIR block (changed lines only) to the matching reply file:\n  content/queue/biology/culturing-microorganisms/repair-1.req.txt → content/queue/biology/culturing-microorganisms/repair-1.out.txt\n  content/queue/biology/culturing-microorganisms/repair-3.req.txt → content/queue/biology/culturing-microorganisms/repair-3.out.txt\nDo nothing else."
+  },
+  {
+   "kind": "review",
+   "topic": "biology/culturing-microorganisms",
+   "model": "sonnet",
+   "pairs": [
+    [
+     "content/queue/biology/culturing-microorganisms/review-2.req.txt",
+     "content/queue/biology/culturing-microorganisms/review-2.out.txt"
+    ]
+   ],
+   "prompt": "You are Gradify's Reviewer. You did not write these lessons and must judge them only against the requirements and the research brief in each request: no web search, and don't open drafts or other files. Read prompts/review.md and prompts/shorthand.md. For each request file below, save ONLY its REV line to the matching reply file:\n  content/queue/biology/culturing-microorganisms/review-2.req.txt → content/queue/biology/culturing-microorganisms/review-2.out.txt\nDo nothing else."
+  }
+ ]
+}

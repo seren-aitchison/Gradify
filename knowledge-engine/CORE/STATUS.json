@@ -210,15 +210,15 @@
   ],
   "requirements": {
    "aqa-gcse-biology": {
-    "spec imported": 475,
-    "mapped": 0,
-    "drafted": 0,
+    "spec imported": 401,
+    "mapped": 54,
+    "drafted": 18,
     "gates passed": 0,
     "AI-verified": 0,
-    "expert-required": 0,
+    "expert-required": 1,
     "expert-approved": 0,
     "published": 0,
-    "needs update": 0
+    "needs update": 1
    },
    "aqa-gcse-chemistry": {
     "spec imported": 439,
@@ -233,11 +233,11 @@
    }
   }
  },
- "branch": "claude/determined-clarke-y76qwz",
- "commit": "bfe3b50cd",
- "dirty": false,
- "briefs": 0,
- "drafts": 0,
+ "branch": "content/rolling",
+ "commit": "58129ddba",
+ "dirty": true,
+ "briefs": 6,
+ "drafts": 2,
  "mode": "fast",
  "budgetUsd": 25,
  "subjects": [
@@ -246,25 +246,25 @@
    "frameworks": [
     "aqa-gcse-biology"
    ],
-   "topicsToWrite": 95,
-   "requirementsToWrite": 364,
+   "topicsToWrite": 97,
+   "requirementsToWrite": 421,
    "topics": {
-    "filed": 0,
-    "partial": 0,
+    "filed": 1,
+    "partial": 1,
     "filed-with-gaps": 0,
-    "failed": 0,
+    "failed": 1,
     "blocked": 0
    },
    "lessons": {
-    "total": 0,
+    "total": 2,
     "aiVerified": 0,
-    "expertRequired": 0,
+    "expertRequired": 2,
     "expertApproved": 0,
-    "disagreements": 0
+    "disagreements": 1
    },
    "editedSinceChecked": [],
    "next": "biology/eukaryotes-and-prokaryotes",
-   "mappingPending": 111
+   "mappingPending": 0
   },
   {
    "subject": "chemistry",
