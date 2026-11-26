@@ -169,7 +169,9 @@ test("Explore: a course as chapters → topics → lessons, with progress, time 
 
 test("feedback moments: every one has a haptic; sounds and haptics are learner settings", async () => {
   const { MOMENTS } = await import("../kit/ui/feel.js");
-  for (const k of ["select", "correct", "wrong", "complete", "levelup", "achievement"]) assert.ok(MOMENTS[k]?.haptic, k);
+  for (const k of ["select", "correct", "complete", "levelup", "achievement"]) assert.ok(MOMENTS[k]?.haptic, k);
+  assert.equal(MOMENTS.wrong.haptic, null, "a wrong answer never buzzes: the feedback teaches, it doesn't punish");
+  assert.ok(MOMENTS.wrong.notes, "a wrong answer keeps its soft, low sound (when sounds are on)");
   const { SETTINGS } = await import("../kit/core/access-panel.js");
   assert.equal(SETTINGS.find((s) => s.k === "sound").opts[0][1], "Off", "sounds are off unless turned on");
   assert.equal(SETTINGS.find((s) => s.k === "haptics").opts[0][1], "On");

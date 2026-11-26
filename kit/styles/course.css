@@ -373,6 +373,7 @@ a.co-feat:hover { border-color: var(--line-strong); background: rgba(var(--ink-r
 .aq-submit, .aq-self { margin-top: 10px; }
 .aq-result { margin-top: 8px; font-weight: 600; }
 .aq-result.ok { color: #2ecc71; } .aq-result.no { color: #ff8a7a; color: light-dark(#b81600, #ff8a7a); }
+.aq-result.nudge { color: var(--fg); } .aq-result.nudge b { color: light-dark(#92400e, #fbbf24); }   /* a first miss: think again (kit/assess/questions.js) */
 .aq-why { margin: 8px 0 0; color: var(--mute); }
 .aq-model { margin-top: 10px; padding: 12px; border-radius: 12px; background: rgba(var(--ink-rgb), .04); }
 .aq-model label { display: flex; gap: 8px; margin: 4px 0; }
@@ -2960,16 +2961,18 @@ body:has(.co-modal) .cx-dock { visibility: hidden; }
    One column, one thing to do, one primary action. The course chrome, the outline, the rail and the dock fold away. */
 .co.co-stepmode .co-side, .co.co-stepmode .co-tree, .co.co-stepmode .cx-dock, .co.co-stepmode .cx-rings { display: none !important; }
 .co.co-stepmode .co-body { grid-template-columns: minmax(0, 1fr) !important; margin-top: 8px; }
-.ls { max-width: 720px; margin: 0 auto; padding-bottom: 120px; }
+.ls { max-width: 720px; margin: 0 auto; padding-bottom: calc(170px + env(safe-area-inset-bottom, 0px)); }
 .ls-bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; display: flex; align-items: center; gap: 14px; padding: 14px 0; background: var(--bg, #fff); }
 .ls-back, .ls-close { display: inline-grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; color: var(--fg); flex: none; }
+.ls-close { display: inline-flex; gap: 6px; width: auto; padding: 0 10px; font: 600 14px var(--sans); text-decoration: none; }
+.ls-count { flex: none; font: 600 13px var(--sans); color: var(--fg); font-variant-numeric: tabular-nums; }
 .ls-back:hover, .ls-close:hover { background: rgba(var(--ink-rgb), .06); }
 .ls-back:focus-visible, .ls-close:focus-visible, .ls-prog a:focus-visible, .ls-tool:focus-visible, .ls-go:focus-visible { outline: 3px solid var(--a); outline-offset: 2px; }
 .ls-back .co-ic, .ls-close .co-ic { width: 22px; height: 22px; }
 .ls-prog { flex: 1; display: flex; gap: 6px; list-style: none; margin: 0; padding: 0; min-width: 0; }
 .ls-prog li { flex: 1; height: 8px; border-radius: 99px; background: rgba(var(--ink-rgb), .1); overflow: hidden; }
 .ls-prog li.done, .ls-prog li.here { background: var(--a); }
-.ls-prog li.here { background: linear-gradient(90deg, var(--a) 45%, rgba(var(--ink-rgb), .1) 45%); }
+.ls-prog li.here { background: var(--a); box-shadow: 0 0 0 2px var(--bg, #fff), 0 0 0 3.5px var(--a); }   /* the current step: full, ringed (a half-filled bar read as half done) */
 .ls-prog a { display: block; height: 100%; }
 .ls-body { padding: 8px 0 0; }
 .ls-kicker { display: block; font: 600 13px var(--sans); letter-spacing: .04em; text-transform: uppercase; color: var(--mute); margin-bottom: 8px; }
@@ -2985,7 +2988,7 @@ body:has(.co-modal) .cx-dock { visibility: hidden; }
 .ls-objs li small { grid-column: 2; color: var(--mute); font-size: 13px; }
 .ls-ob { display: inline-grid; place-items: center; width: 26px; height: 26px; border-radius: 99px; background: rgba(var(--ink-rgb), .08); font: 700 13px var(--sans); }
 .ls-objs li.ok .ls-ob { background: var(--s-mastered, var(--a)); color: #fff; }
-.ls-obtag { display: flex; gap: 8px; align-items: flex-start; color: var(--mute); font-size: 14px; margin: -4px 0 18px; }
+.ls-obtag { display: flex; gap: 8px; align-items: flex-start; color: var(--fg); font-size: 15px; line-height: 1.45; margin: -4px 0 18px; }
 .ls-obtag .co-ic { width: 16px; height: 16px; flex: none; margin-top: 3px; }
 .ls-hook { border-left: 4px solid var(--a); background: rgba(var(--ink-rgb), .04); border-radius: 0 14px 14px 0; padding: 14px 18px; margin: 0 0 20px; }
 .ls-hook b { display: block; font-size: 13px; text-transform: uppercase; letter-spacing: .05em; color: var(--mute); margin-bottom: 4px; }
@@ -3004,10 +3007,13 @@ body:has(.co-modal) .cx-dock { visibility: hidden; }
 .ls-way h3 { font-size: 15px; margin: 14px 0 6px; }
 .ls-check { margin: 26px 0 0; padding-top: 18px; border-top: 1px solid var(--line); }
 .ls-q { margin: 0 0 18px; }
-.ls-foot { position: fixed; left: 0; right: 0; bottom: 0; z-index: 6; display: grid; justify-items: center; gap: 6px; padding: 14px max(16px, env(safe-area-inset-right, 0px)) calc(14px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); background: linear-gradient(transparent, var(--bg, #fff) 30%); }
+/* the bar fades in over the last 36px above it, so text running under it reads as "more below", never as cut off */
+.ls-foot { position: fixed; left: 0; right: 0; bottom: 0; z-index: 6; display: grid; justify-items: center; gap: 6px; padding: 36px max(16px, env(safe-area-inset-right, 0px)) calc(14px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); background: linear-gradient(to bottom, transparent, var(--bg, #fff) 36px); pointer-events: none; }
+.ls-foot > * { pointer-events: auto; }
 .ls-go { width: min(720px, 100%); justify-content: center; font-size: 17px; min-height: 54px; }
-.ls-go.off { opacity: .45; cursor: not-allowed; }
-.ls-why { margin: 0; font-size: 13px; color: var(--mute); }
+/* waiting for an answer: readable and clearly not yet the next step (no faded grey) */
+.ls-go.off { opacity: 1; cursor: not-allowed; background: var(--bg, #fff) !important; color: var(--fg) !important; border: 1.5px solid rgba(var(--ink-rgb), .28) !important; box-shadow: none !important; }
+.ls-why { margin: 0; font-size: 14px; color: var(--fg); }
 .co-learnstep { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; margin: 4px 0 18px; width: fit-content; max-width: 100%; }
 .co-learnstep small { font-weight: 500; opacity: .8; }
 .lx-hook { border-left: 4px solid var(--a); }
@@ -3025,3 +3031,96 @@ body:has(.co-modal) .cx-dock { visibility: hidden; }
 /* lesson dots: each target at least 24px square (WCAG 2.2, 2.5.8); a long topic wraps onto a second row */
 .co-steps { flex-wrap: wrap; row-gap: 0; }
 .co-steps a, .co-read .co-steps a { min-width: 24px; }
+
+/* Learn mode is for thinking: decoration with no teaching purpose steps away (Lesson System Brief v2, principle 10).
+   The page's line ribbons and glows, the bar's moving rim (a plain line instead), and the tutor is named, not an orb. */
+body:has(.co.co-stepmode) :is(.g-motifs, .aurora) { display: none !important; }
+.co.co-stepmode::before, .co.co-stepmode::after { content: none; }
+:root body:has(.co.co-stepmode) header.sub-nav.glass::before, :root body:has(.co.co-stepmode) header.bar.glass::before { content: none; }
+:root body:has(.co.co-stepmode) :is(header.sub-nav.glass, header.bar.glass) { border-color: var(--line-strong, var(--line)) !important; }
+body:has(.co.co-stepmode) .gai-fab { bottom: calc(112px + env(safe-area-inset-bottom)); gap: 10px; padding: 6px 18px 6px 6px; }
+body:has(.co.co-stepmode) .gai-fab .gai-fabt { max-width: 160px; opacity: 1; }
+body:has(.co.co-stepmode) .gai-orb > i { animation: none; }
+@media (max-width: 640px) {
+  .ls-kstep { display: none; }
+  body:has(.co.co-stepmode) .gai-fab { bottom: calc(108px + env(safe-area-inset-bottom)); width: auto; height: 48px; padding: 4px 14px 4px 4px; }
+  body:has(.co.co-stepmode) .gai-fab .gai-orb { width: 38px; height: 38px; }
+}
+
+/* a right answer is a moment: the question glows green and springs (reduced motion: the glow only) */
+.aq-win { animation: aq-win .7s cubic-bezier(.2, 1.4, .4, 1); box-shadow: 0 0 0 2px #16a34a, 0 12px 40px -12px rgba(22, 163, 74, .55); border-radius: 14px; transition: box-shadow .6s ease; }
+@keyframes aq-win { 0% { transform: scale(1); } 35% { transform: scale(1.025); } 100% { transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) { .aq-win { animation: none; } }
+
+/* Learn mode's end-of-lesson summary: what this lesson earned, in three numbers */
+.ls-run { border: 1.5px solid var(--a); background: linear-gradient(160deg, rgba(var(--ink-rgb), .02), rgba(var(--ink-rgb), .05)); }
+.ls-runstats { list-style: none; margin: 8px 0 10px; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; }
+.ls-runstats li { display: grid; gap: 2px; text-align: center; padding: 12px 6px; border-radius: 12px; background: var(--bg, #fff); }
+.ls-runstats b { font: 800 26px var(--sans); color: var(--fg); font-variant-numeric: tabular-nums; }
+.ls-runstats span { font-size: 13px; color: var(--fg); opacity: .8; }
+.ls-runline { margin: 0; color: var(--fg); }
+
+/* Learn mode: the lesson is the page. The site bar keeps its logo and the Aa and theme controls; its subject links
+   and sign-in calls step away, and the lesson's own bar (progress, XP, Notes) is the navigation. */
+body:has(.co.co-stepmode) header.sub-nav :is(.sub-links, .sub-right > a) { display: none !important; }
+
+/* the XP counter in the lesson bar: rewards land here, and it bumps as they do */
+.ls-xp { flex: none; display: inline-flex; align-items: center; gap: 4px; padding: 4px 10px; border-radius: 999px; background: rgba(var(--ink-rgb), .06); font: 700 13px var(--sans); color: var(--fg); font-variant-numeric: tabular-nums; }
+.ls-xp .co-ic { width: 15px; height: 15px; color: #e6a100; }
+.ls-streak { display: inline-flex; align-items: center; gap: 2px; margin-left: 6px; font-style: normal; }
+.ls-streak .co-ic { color: #ff5600; }
+.ls-xp.bump { animation: ls-bump .45s cubic-bezier(.2, 1.6, .4, 1); }
+@keyframes ls-bump { 0% { transform: scale(1); } 40% { transform: scale(1.22); background: rgba(255, 192, 2, .3); } 100% { transform: scale(1); } }
+.co-pop.co-pop-fly { animation: none; top: 46%; }
+/* phones: the progress bar keeps its room; the step counter and the streak step aside (the bar shows the step, the XP stays) */
+@media (max-width: 640px) { .ls-count, .ls-streak { display: none; } .ls-prog { min-width: 110px; } .ls-close { padding: 0 6px; } .ls-xp { padding: 4px 8px; } }
+@media (prefers-reduced-motion: reduce) { .ls-xp.bump { animation: none; } }
+
+/* the last step: one obvious next action, and reading as notes a quiet link */
+.ls-end { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 8px; }
+.ls-endlink { display: inline-flex; align-items: center; gap: 6px; color: var(--fg); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.ls-endlink .co-ic { width: 16px; height: 16px; }
+
+/* Learn mode buttons: solid, no glow (no decoration without a teaching purpose) */
+.co.co-stepmode .btn.lg { box-shadow: none !important; }
+.co.co-stepmode .btn.lg::after, .co.co-stepmode .btn.lg::before { display: none !important; }
+
+/* diagrams say they can be opened full size (the whole picture is already a button) */
+.vx-art { position: relative; }
+.vx-art::after { content: "Enlarge"; position: absolute; right: 10px; bottom: 10px; padding: 5px 10px 5px 26px; border-radius: 999px; font: 600 12px var(--sans); color: var(--fg);
+  background: var(--bg, #fff) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23111' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7'/%3E%3C/svg%3E") 9px center / 12px no-repeat;
+  box-shadow: 0 0 0 1px rgba(var(--ink-rgb), .14); }
+:root[data-theme="dark"] .vx-art::after { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7'/%3E%3C/svg%3E"); }
+@media (hover: none) { .vx-art::after { content: "Tap to enlarge"; } }
+
+/* ---- Learn mode answers (Lesson System Brief v2: feedback teaches, never punishes) ---- */
+/* right and wrong carry a tick or a cross as well as colour (colour-blind learners) */
+.ls .aq-opts button { position: relative; }
+.ls .aq-opts button:is(.right, .wrong) { padding-right: 48px; }
+.ls .aq-opts button:is(.right, .wrong)::after { content: ""; position: absolute; right: 14px; top: 50%; width: 24px; height: 24px; margin-top: -12px; border-radius: 50%;
+  background: #12a37f url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5 10 17 19 7'/%3E%3C/svg%3E") center / 15px no-repeat; }
+.ls .aq-opts button.wrong { border-color: #d97706 !important; background: color-mix(in srgb, #f59e0b 10%, transparent) !important; color: var(--fg) !important; }
+.ls .aq-opts button.wrong::after { background: #d97706 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round'%3E%3Cpath d='M7 7l10 10M17 7 7 17'/%3E%3C/svg%3E") center / 13px no-repeat; }
+.ls .aq-opts button.wrong:disabled { opacity: .75; cursor: default; }
+/* a calm amber, not an alarm: "Not this one" and "Close. Here's the key idea." */
+.ls .aq-result.no, .ls .aq-result.nudge { color: light-dark(#92400e, #fbbf24); font-weight: 600; }
+.ls .aq-result.nudge { display: block; padding: 10px 14px; border-radius: 12px; background: color-mix(in srgb, #f59e0b 12%, transparent); font-weight: 500; color: var(--fg); }
+.ls .aq-result.nudge b { color: light-dark(#92400e, #fbbf24); }
+.ls .aq-again { font-weight: 600; }
+/* the question's type and level labels say nothing a learner needs here */
+.ls .aq-q small { display: none; }
+/* the concept's tools: a quiet row of links, so teaching flows straight into the check */
+.ls .ls-tools { gap: 6px 18px; margin: 4px 0 18px; }
+.ls .ls-tools .ls-tool { padding: 4px 0; border: 0; background: none; box-shadow: none; font: 600 14px var(--sans); color: var(--fg); opacity: .85; text-decoration: underline; text-underline-offset: 3px; }
+.ls .ls-tools .ls-tool:hover { opacity: 1; }
+/* no back-to-top button over the explanation: Learn mode's steps are short */
+body:has(.co.co-stepmode) .gx-totop { display: none !important; }
+/* the tutor button, when it can help with what just happened */
+.gai-fab.gai-now { box-shadow: 0 0 0 2px #f59e0b, 0 12px 30px -12px rgba(245, 158, 11, .6); }
+.gai-fab.gai-now .gai-fabt { max-width: 200px; opacity: 1; }
+/* dark theme: diagram cards go dark in Learn mode (their colours have dark values; the light card glared) */
+:root:not([data-theme="light"]) .co.co-stepmode .vx { color-scheme: dark; background: linear-gradient(160deg, #161b2e, #11152a); border-color: rgba(255, 255, 255, .1); box-shadow: 0 18px 40px -18px rgba(0, 0, 0, .6); }
+:root:not([data-theme="light"]) .co.co-stepmode .vx::before { display: none; }
+:root:not([data-theme="light"]) .co.co-stepmode .vx .vx-pbtn { background: color-mix(in srgb, var(--vx-a1) 22%, #161b2e); border-color: color-mix(in srgb, var(--vx-a1) 55%, transparent); color: #eef1fb; }
+:root:not([data-theme="light"]) .co.co-stepmode .vx .vx-pbtn:hover { background: color-mix(in srgb, var(--vx-a1) 32%, #161b2e); }
+:root:not([data-theme="light"]) .co.co-stepmode .vx .vx-pbtn small { background: rgba(255, 255, 255, .14); color: #eef1fb; }

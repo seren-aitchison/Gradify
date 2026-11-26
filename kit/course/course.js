@@ -294,14 +294,26 @@ export function mountCourse(root, cfg) {
     setTimeout(() => el.remove(), 1600);
     root.querySelectorAll(".cx-combo-n").forEach((x) => { x.textContent = n; x.closest(".cx-combo")?.classList.add("hot"); });
   }
+  // what this visit to a lesson has earned, for Learn mode's end-of-lesson summary (memory only: it is a moment, not a record)
+  const runs = new Map();
+  const lessonRun = (id) => { if (!runs.has(id)) runs.set(id, { xp: 0, right: 0, tried: 0, best: 0 }); return runs.get(id); };
   function wirePractice(el, context, contextId, xp = XP.check, onAnswer = null) {
     wireQuestions(el, (k) => pageQs.get(k)?.Q, (Q, res, first, box, meta) => {
-      const it = pageQs.get(box.dataset.key); record(it, context, contextId, res, meta); onAnswer?.(it, res);
-      if (first) { if (res.score >= 0.7) { combo++; comboBest = Math.max(comboBest, combo); if ([3, 5, 8, 12].includes(combo)) comboPop(combo); } else { combo = 0; root.querySelectorAll(".cx-combo").forEach((x) => x.classList.remove("hot")); } root.querySelectorAll(".cx-combo-n").forEach((x) => { x.textContent = combo; x.closest(".cx-combo").hidden = !combo; }); }
+      const it = pageQs.get(box.dataset.key), a = record(it, context, contextId, res, meta); onAnswer?.(it, res, meta);
+      // "How sure were you?" asked after the answer: the pick is kept on that first attempt (calibration reads it)
+      if (first && !box.dataset.confWired) { box.dataset.confWired = "1"; box.addEventListener("aq-confidence", (e) => { if (e.detail) { a.confidence = e.detail; save(); } }); }
+      if (first && !res.self && it.l) { const r = lessonRun(it.l.id); r.tried++; if (res.score >= 0.7) r.right++; }
+      if (first && res.score >= 0.7 && !res.self) { box.classList.remove("aq-win"); void box.offsetWidth; box.classList.add("aq-win"); }
+      if (first) { if (res.score >= 0.7) { combo++; comboBest = Math.max(comboBest, combo); if (it.l) { const r = lessonRun(it.l.id); r.best = Math.max(r.best, combo); }
+          // the answer's own moment (feel("correct")) plays in record(); a run of 3, 5, 8 or 12 adds a bigger one just after
+          if ([3, 5, 8, 12].includes(combo)) { comboPop(combo); setTimeout(() => feel(combo >= 5 ? "levelup" : "achievement"), 260); } } else { combo = 0; root.querySelectorAll(".cx-combo").forEach((x) => x.classList.remove("hot")); } root.querySelectorAll(".cx-combo-n").forEach((x) => { x.textContent = combo; x.closest(".cx-combo").hidden = !combo; }); }
       // an explanation shown in this lesson is judged by the next answer (kit/learning/explain.js)
       if (it.l && !res.self) { const credited = wayAnswered(it.l.id, res.correct); if (credited) logWay("explanation_outcome", credited, it.l.id, res.correct); }
-      if (!res.correct && !res.self && it.l && !box.querySelector(".co-anotherw")) offerAnotherWay(box, Q, it);
-      if (!res.correct && !res.self && Q.options && it.l && !box.querySelector(".co-whyw")) offerDiagnosis(box, Q, it, meta.response);
+      // after a nudge the learner is still thinking: the extra help comes with the full feedback
+      const final = meta.final !== false;
+      if (final && !res.correct && !res.self && it.l && !box.querySelector(".co-anotherw") && !box.closest(".ls")) offerAnotherWay(box, Q, it);
+      if (final && !res.correct && !res.self && Q.options && it.l && !box.querySelector(".co-whyw")) offerDiagnosis(box, Q, it, meta.response);
+      if (!res.correct && !res.self && box.closest(".ls")) askWhyChip(box, Q, final);
       if (first && res.score >= 0.7 && !S.solved[it.key]) { S.solved[it.key] = Date.now(); save(); award(xp, "check", it.key); }
     });
   }
@@ -360,6 +372,22 @@ export function mountCourse(root, cfg) {
   }
 
   // "Why was I wrong?": Gradify AI names the likely misconception behind a wrong choice and gives a check question
+  // Learn mode: after a wrong answer the tutor button says what it can do right now, and opening it starts the
+  // question for the learner (filled in, not sent: they choose whether to spend an AI use on it)
+  function askWhyChip(box, Q, final) {
+    const fab = document.querySelector(".gai-fab"), t = fab?.querySelector(".gai-fabt"); if (!fab || !t) return;
+    const plain = (x) => String(x || "").replace(/[*_`]/g, "").trim();
+    t.textContent = final ? "Ask why" : "Stuck? Get a hint"; fab.classList.add("gai-now");
+    const prompt = final ? `Why isn't "${plain(box.response)}" the answer to: ${plain(Q.q)}` : `Give me a hint, not the answer, for: ${plain(Q.q)}`;
+    fab.onclick = () => setTimeout(() => {
+      const ta = document.getElementById("gai-q"); if (ta && !ta.value) { ta.value = prompt; ta.dispatchEvent(new Event("input", { bubbles: true })); ta.focus(); }
+      resetAskChip();
+    }, 60);
+  }
+  function resetAskChip() {
+    const fab = document.querySelector(".gai-fab"), t = fab?.querySelector(".gai-fabt"); if (!fab || !t) return;
+    t.textContent = "Ask Gradify AI"; fab.classList.remove("gai-now"); fab.onclick = null;
+  }
   function offerDiagnosis(box, Q, it, chosen) {
     const wrap = document.createElement("div"); wrap.className = "co-whyw";
     wrap.innerHTML = `<button type="button" class="btn btn-ghost btn-sm"><span>Why was I wrong?</span></button><div class="co-whyout" aria-live="polite"></div>`;
@@ -416,6 +444,7 @@ export function mountCourse(root, cfg) {
   async function award(xp, k, id, detail) {
     const before = { lvl: levelOf(totalXp()).n, badges: new Set(earned().map((b) => b.id)), goal: todayXp() >= S.goal };
     S.log.push({ t: Date.now(), xp, k, id }); save();
+    if (curLesson?.id && runs.has(curLesson.id)) runs.get(curLesson.id).xp += xp;
     pop(`+${xp} XP`);
     store().then((s) => s.logActivity({ site: cfg.site, kind: `${cfg.slug}-${k}`, xp, detail: detail || id })).catch(() => {});
     const lvl = levelOf(totalXp()).n;
@@ -433,7 +462,23 @@ export function mountCourse(root, cfg) {
   // ---------- feedback ----------
   function pop(text) {
     const el = document.createElement("div"); el.className = "co-pop"; el.textContent = text; document.body.append(el);
+    // in Learn mode the points fly into the XP counter in the bar, which then counts up: progress you can see land
+    const chip = root.querySelector(".ls-xp");
+    if (chip && el.animate && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      el.classList.add("co-pop-fly");
+      const a = el.getBoundingClientRect(), b = chip.getBoundingClientRect();
+      const dx = b.left + b.width / 2 - (a.left + a.width / 2), dy = b.top + b.height / 2 - (a.top + a.height / 2);
+      el.animate([{ transform: "translate(-50%, 0) scale(1)", opacity: 1 }, { transform: "translate(-50%, -14px) scale(1.08)", opacity: 1, offset: 0.25 },
+        { transform: `translate(calc(-50% + ${dx}px), ${dy}px) scale(.35)`, opacity: 0.2 }], { duration: 900, easing: "cubic-bezier(.5, 0, .2, 1)", fill: "forwards" })
+        .finished.then(() => { el.remove(); bumpXp(chip); }).catch(() => el.remove());
+      return;
+    }
+    if (chip) bumpXp(chip);
     setTimeout(() => el.remove(), 1400);
+  }
+  function bumpXp(chip) {
+    const b = chip.querySelector("b"); if (b) b.textContent = totalXp().toLocaleString();
+    chip.classList.remove("bump"); void chip.offsetWidth; chip.classList.add("bump");
   }
   // the shared toast (kit/ui/feedback.js): opts.undo adds Undo (and ⌘Z / Ctrl+Z while it shows)
   const toast = (html, opts = {}) => uiToast({ html }, opts);
@@ -1518,7 +1563,7 @@ export function mountCourse(root, cfg) {
     const mins = Math.max(2, Math.round(lessonText(N).split(/\s+/).length / 200 + (N.items?.length || 0) * 0.75));
     const nextL = u.lessons[l.i + 1] && byId[u.lessons[l.i + 1].id];
     const href = (k) => `#/step/${id}/${k}`;
-    const qBlock = (qs, opts = {}) => qs.map((q, k) => `<div class="ls-q" data-qn="${q.n}">${qHtml(N.items[q.n], { confidence: true, ...opts })}</div>`).join("");
+    const qBlock = (qs, opts = {}) => qs.map((q, k) => `<div class="ls-q" data-qn="${q.n}">${qHtml(N.items[q.n], { confidence: "after", ...opts })}</div>`).join("");
     const objList = (os) => os.map((o) => `<li><span class="ls-ob">${o}</span>${inline(N.objectives[o - 1] || "")}</li>`).join("");
     let body = "", needsAnswer = 0, primary = n < steps.length - 1 ? "Continue" : "";
     if (s.kind === "orient") {
@@ -1528,7 +1573,7 @@ export function mountCourse(root, cfg) {
         ${buildsOnHtml(id)}`;
       primary = F.diagnose.length ? "Start with a quick check" : "Start";
     } else if (s.kind === "diagnose") {
-      body = `<span class="ls-kicker">Before you start</span><h1 class="ls-title" tabindex="-1">What do you already know?</h1><p class="ls-lead">A quick check. It doesn't count against you: it shows what to focus on.</p>${qBlock(s.questions)}`;
+      body = `<span class="ls-kicker">Before you start</span><h1 class="ls-title" tabindex="-1">What do you already know?</h1><p class="ls-lead">A quick check. It doesn't count against you: it shows what to focus on.</p><div data-one-try>${qBlock(s.questions)}</div>`;   // measuring what they know: one try, no nudge
       needsAnswer = s.questions.length;
     } else if (s.kind === "block") {
       const B = s.block, partsHtml = lessonHtml({ blocks: B.parts }), ob = B.objectives.length ? `<p class="ls-obtag">${ic("target")} ${B.objectives.map((o) => esc(N.objectives[o - 1] || `Objective ${o}`)).join(" · ")}</p>` : "";
@@ -1550,21 +1595,28 @@ export function mountCourse(root, cfg) {
         ${C.pitfalls.length ? `<section class="ls-card ls-pits"><h2>Common mistakes</h2><ul>${C.pitfalls.map((x) => `<li>${inline(x)}</li>`).join("")}</ul></section>` : ""}
         ${C.cards ? `<button type="button" class="ls-tool" data-cards>${ic("cards")} Flashcards (${C.cards})</button>` : ""}`;
     } else if (s.kind === "prove") {
-      body = `<span class="ls-kicker">Prove it</span><h1 class="ls-title" tabindex="-1">The final check</h1><p class="ls-lead">No hints this time. Answer them all to finish the lesson.</p>${qBlock(s.questions, { confidence: true })}`;
+      body = `<span class="ls-kicker">Prove it</span><h1 class="ls-title" tabindex="-1">The final check</h1><p class="ls-lead">No hints this time. Answer them all to finish the lesson.</p><div data-one-try>${qBlock(s.questions, { confidence: "after" })}</div>`;   // no hints: one try
       needsAnswer = s.questions.length;
     } else {
       const shown = new Set((S.attempts || []).filter((a) => a.lesson === id && a.score >= 0.7).flatMap((a) => a.question?.objectives || []));
-      body = `<span class="ls-kicker">Next</span><h1 class="ls-title" tabindex="-1">${S.done[id] ? "Lesson complete" : "Almost there"}</h1>
+      const run = runs.get(id), runCard = run && run.tried ? `<section class="ls-card ls-run" aria-label="This lesson so far"><h2>This lesson</h2><ul class="ls-runstats">
+          <li><b>+${run.xp}</b><span>XP earned</span></li><li><b>${run.right}/${run.tried}</b><span>right first time</span></li>${run.best >= 2 ? `<li><b>${run.best}</b><span>best run in a row</span></li>` : ""}</ul>
+          <p class="ls-runline">${run.right === run.tried ? "Every answer right first time. Brilliant work." : run.right / run.tried >= 0.6 ? "Strong work. The ones you missed come back in your review, so they stick." : "Good effort. The ones you missed come back in your review until they stick."}</p></section>` : "";
+      body = `<span class="ls-kicker">Next</span><h1 class="ls-title" tabindex="-1">${S.done[id] ? "Lesson complete" : "Nice work: one step left"}</h1>${runCard}
         ${N.objectives.length ? `<section class="ls-card"><h2>What you've shown</h2><ul class="ls-objs">${N.objectives.map((o, k) => { const ok = shown.has(k + 1), at = ok ? -1 : steps.findIndex((x) => x.kind === "block" && x.block.objectives.includes(k + 1));
-          return `<li class="${ok ? "ok" : ""}"><span class="ls-ob">${ok ? "✓" : k + 1}</span>${inline(o)}<small>${ok ? "Shown in your answers" : at >= 0 ? `Not shown yet · <a href="${href(at)}">Revisit this concept</a>` : "Not shown yet"}</small></li>`; }).join("")}</ul></section>` : ""}
+          return `<li class="${ok ? "ok" : ""}"><span class="ls-ob">${ok ? "✓" : k + 1}</span>${inline(o)}<small>${ok ? "Shown in your answers" : at >= 0 ? `Comes up in your review · <a href="${href(at)}">Revisit this concept</a>` : "Comes up in your review"}</small></li>`; }).join("")}</ul></section>` : ""}
         ${(() => { const b = buildsOnHtml(id); return b && b.includes("review first") ? `<section class="ls-card"><h2>Worth revisiting first</h2><p>This lesson builds on these. Your answers there suggest a quick review would help.</p>${b}</section>` : ""; })()}
-        <div class="ls-tools">${S.done[id] ? "" : `<button type="button" class="btn btn-light lg" data-done>Complete lesson · +${XP.lesson} XP</button>`}${nextL ? `<a class="btn btn-ghost lg" href="${href(0).replace(id, nextL.id)}">Next lesson: ${esc(nextL.title)}</a>` : ""}<a class="ls-tool" href="#/lesson/${id}">${ic("notes")} Read as notes</a></div>`;
+        <div class="ls-end">${S.done[id] ? (nextL ? `<a class="btn btn-light lg ls-endgo" href="${href(0).replace(id, nextL.id)}">Next lesson: ${esc(nextL.title)}</a>` : "") : `<button type="button" class="btn btn-light lg ls-endgo" data-done>Complete lesson · +${XP.lesson} XP</button>`}
+          <a class="ls-endlink" href="#/lesson/${id}">${ic("notes")} Read as notes</a></div>`;
       primary = "";
     }
+    const sk = streak(); resetAskChip();
     main.innerHTML = `<article class="ls" style="--a:${t.from};--b:${t.to}">
       <header class="ls-bar"><a class="ls-back" href="${n ? href(n - 1) : `#/lesson/${id}`}" aria-label="${n ? "Previous step" : "Back to the lesson"}">${ic("left")}</a>
         <ol class="ls-prog" aria-label="Step ${n + 1} of ${steps.length}">${steps.map((x, k) => `<li class="${k < n ? "done" : k === n ? "here" : ""}"><a href="${href(k)}" tabindex="${k <= (S.step[id] || 0) ? 0 : -1}" aria-label="Step ${k + 1}${k === n ? " (current)" : ""}"></a></li>`).join("")}</ol>
-        <a class="ls-close" href="#/lesson/${id}" aria-label="Leave step-by-step and read as notes">${ic("notes")}</a></header>
+        <span class="ls-count" aria-hidden="true">${n + 1}/${steps.length}</span>
+        <span class="ls-xp" title="Your XP${sk.n ? ` · ${sk.n}-day streak` : ""}">${ic("bolt")}<b>${totalXp().toLocaleString()}</b>${sk.n ? `<i class="ls-streak">${ic("flame")}${sk.n}</i>` : ""}</span>
+        <a class="ls-close" href="#/lesson/${id}" aria-label="Leave step-by-step and read as notes">${ic("notes")}<span>Notes</span></a></header>
       <div class="ls-body">${body}</div>
       ${primary ? `<footer class="ls-foot"><a class="btn btn-light lg ls-go${needsAnswer ? " off" : ""}" href="${href(n + 1)}" ${needsAnswer ? 'aria-disabled="true"' : ""}>${esc(primary)}</a>${needsAnswer ? `<p class="ls-why">Answer ${needsAnswer === 1 ? "the question" : "each question"} to continue</p>` : ""}</footer>` : ""}
     </article>`;
@@ -1573,7 +1625,8 @@ export function mountCourse(root, cfg) {
     // Continue unlocks once every question on the step has an answer (right or wrong: the feedback teaches)
     const answered = new Set(), go_ = main.querySelector(".ls-go");
     const pits = s.kind === "block" ? s.block.parts.filter((p) => p.t === "pit").map((p) => p.x) : [];
-    wirePractice(main, s.kind === "diagnose" ? "diagnostic" : "lesson", id, s.kind === "diagnose" ? 0 : XP.check, (it, res) => {
+    wirePractice(main, s.kind === "diagnose" ? "diagnostic" : "lesson", id, s.kind === "diagnose" ? 0 : XP.check, (it, res, meta) => {
+      if (meta?.final === false) return;   // a nudge: still thinking
       answered.add(it.key);
       // a wrong answer in a concept block: what to think about, from this concept's own misconceptions, and a way back
       // to the explanation. Never a penalty: Continue still unlocks.
@@ -1601,6 +1654,7 @@ export function mountCourse(root, cfg) {
       if (untried(F.prove.map((q) => N.items[q.n].key), S.attempts, id).length) { location.hash = href(steps.findIndex((x) => x.kind === "prove")); return; }
       S.done[id] = Date.now(); save(); track("lesson_complete", cfg.site);
       ledger({ event: "lesson_completed", concept: `${cfg.slug}:${id}`, source: "course", detail: { mode: "learn", seconds: Math.round((lt.current()?.ms || 0) / 1000) + (S.time?.[id]?.s || 0) } });
+      confetti();   // the haptic and sound for completing come with the award (feel("complete"))
       await award(XP.lesson, "lesson", id, `${cfg.name}: ${l.title}`); shareProgress(l);
       e.currentTarget.remove(); viewStep(id, n);
     });

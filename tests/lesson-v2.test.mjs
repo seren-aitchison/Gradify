@@ -141,3 +141,17 @@ test("onboarding saves the same profile fields as before", () => {
   assert.equal(onboardingPatch({ site: "", level: "school", deadline: "", week: "?" }).daily_minutes, WEEK[1][3]);
   assert.equal(onboardingPatch({ site: "", level: "school", deadline: "" }).exam_date, null);
 });
+
+test("a QH: line gives the question above it a hint, and option reasons stay on their options", () => {
+  const [L] = parseNotes(`## Cells
+O: Describe prokaryotic cells
+H: Parts of a prokaryotic cell
+P: Prokaryotic cells have ribosomes but no nucleus.
+M1@1: Which structure is found in prokaryotic cells? | 70S ribosomes | A nucleus :: Prokaryotes have no nucleus. | Mitochondria :: Only eukaryotic cells have mitochondria. | Golgi apparatus :: Prokaryotes have no membrane-bound organelles. | Prokaryotes have ribosomes but no membrane-bound organelles.
+QH: Think about what every cell needs to make proteins.
+SUM: Prokaryotes have ribosomes and no nucleus.
+`);
+  const Q = L.mcq[0].Q;
+  assert.equal(Q.hint, "Think about what every cell needs to make proteins.");
+  assert.equal(Q.options.find((o) => o.text === "A nucleus").why, "Prokaryotes have no nucleus.");
+});

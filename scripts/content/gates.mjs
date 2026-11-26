@@ -9,7 +9,7 @@ import { parentOf } from "./shorthand.mjs";
 import { CONFIG } from "./lib.mjs";
 import { readFileSync } from "node:fs";
 
-const KNOWN = new Set(["S", "H", "HOOK", "MORE", "ALT", "P", "E", "X", "K", "!", "Q", "O", "PRE", "T", "SUM", "SAFE", "SRC", "READ", "IX", "D", "EV", "LV", "CASE", "LAW", "DRUG", "REQ", "DIA", "DNEED", "GAP"]);
+const KNOWN = new Set(["S", "H", "HOOK", "MORE", "ALT", "QH", "P", "E", "X", "K", "!", "Q", "O", "PRE", "T", "SUM", "SAFE", "SRC", "READ", "IX", "D", "EV", "LV", "CASE", "LAW", "DRUG", "REQ", "DIA", "DNEED", "GAP"]);
 const QTAG = /^(M|TF|MS|SEQ|MATCH|SA|NUM)[123]?(#[a-z0-9-]+)?(@[\d,]+)?:/;
 const lineOf = (text, re) => { const i = text.split("\n").findIndex((l) => re.test(l)); return i < 0 ? null : i + 1; };
 const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -93,7 +93,12 @@ export function qaGate(L, text) {
     if (m.right.length > 12 && norm(m.right).length > 8 && norm(m.q).includes(norm(m.right))) issues.push(issue("Q", where, "answer appears in the question"));
     if (m.right.length > 1.3 * Math.max(...m.wrong.map((w) => w.length))) issues.push(issue("Q", where, "right answer is much the longest option"));
     const k = norm(m.q); if (seen.has(k)) issues.push(issue("Q", where, "duplicate question")); seen.add(k);
+    // the lesson standard's second chance (kit/assess/questions.js): a first miss shows that option's reason or the hint
+    const bare = (m.Q?.options || []).filter((o) => !o.correct && !(o.why || "").trim());
+    if (bare.length) issues.push(issue("Q", where, `${bare.length} wrong option${bare.length === 1 ? "" : "s"} without a reason (option :: why)`));
+    if (!(m.Q?.hint || "").trim()) issues.push(issue("Q", where, "no QH: hint"));
   }
+  for (const q of L.tasks) if (!(q.hint || "").trim()) issues.push(issue("Q", at(q.q), "no QH: hint"));
   if (text.length < 1200) issues.push(issue("QA", null, `lesson too short (${text.length} characters)`));
   // the course's lesson standard (tests/sciences.test.mjs), so a filed lesson can be published without breaking it
   const all = [...L.mcq.map((m) => m.Q), ...L.tasks];
