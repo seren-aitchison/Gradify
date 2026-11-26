@@ -609,3 +609,9 @@ section.gx-shut > h3 { opacity: .8; }
 .gx-sync[data-tone="warn"] { color: #b26a00; color: light-dark(#9a5d00, #ffb547); }
 .gx-sync:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
 @media (max-width: 900px) { .gx-sync span { display: none; } }
+/* a question's ••• menu, top right of the question (kit/course/course.js questionMenus) */
+.aq:has(> .gx-ra) { position: relative; }
+.aq > .gx-ra { position: absolute; top: 10px; right: 10px; z-index: 2; }
+.aq:has(> .gx-ra) > .aq-q { padding-right: 44px; }
+/* a card's ••• menu sits with its other actions (kit/app/main.js renderDeck) */
+.c-actions .gx-rab { width: 32px; height: 32px; border: 0; }

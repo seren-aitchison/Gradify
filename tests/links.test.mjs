@@ -61,3 +61,30 @@ test("the map of neighbours draws linked ones solid and suggestions dashed, and 
   assert.match(svg, /role="img" aria-label="Cell membranes and transport: 1 linked, 1 suggested"/);
   assert.equal((svg.match(/class="sug"/g) || []).length, 1);
 });
+
+test("without a specification, suggestions still have reasons: the curriculum, key terms, the topic, headings", () => {
+  const here = resource("lesson:/sci/phys/u01-03", { title: "SI base and derived units", subject: "Physics", unit: "u01", module: "Units", terms: ["SI unit", "Base unit"], headings: ["The seven base units", "Derived units"] });
+  const c = (id, title, o = {}) => resource(`lesson:/sci/phys/${id}`, { title, subject: "Physics", unit: "u01", ...o });
+  const s = suggest(here, [
+    c("u01-02", "Physical quantities", { rel: "builds-on" }),
+    c("u01-04", "Dimensional analysis", { terms: ["Base unit", "Dimension"] }),
+    c("u01-05", "Prefixes", { module: "Units" }),
+    c("u01-06", "Significant figures", { headings: ["Rounding derived quantities"] }),
+    c("u05-01", "Kinematics", { unit: "u05" }),
+    resource("lesson:/sci/chem/u01-02", { title: "Amount of substance", subject: "Chemistry", terms: ["SI unit"] }),
+    resource("lesson:/sci/chem/u02-01", { title: "Atomic structure", subject: "Chemistry" }),
+  ]);
+  const by = Object.fromEntries(s.map((x) => [x.title, x.why]));
+  assert.equal(s[0].title, "Physical quantities"); assert.equal(by["Physical quantities"], "This lesson builds on it");
+  assert.equal(by["Dimensional analysis"], "key term base unit");
+  assert.equal(by.Prefixes, "Same topic: Units");
+  assert.match(by["Significant figures"], /Covers derived too/);
+  assert.equal(by["Amount of substance"], "Also in Chemistry: key term si unit");   // another subject, by a shared key term
+  assert.ok(!("Kinematics" in by) && !("Atomic structure" in by));                 // the same course alone isn't a reason
+});
+
+test("candidates merge what the page knows with what the indexes know", async () => {
+  const { mergeByRid } = await import("../kit/ui/connections.js");
+  const [m] = mergeByRid([resource("lesson:/a/x", { title: "X", rel: "builds-on", refs: ["1.1"] }), resource("lesson:/a/x", { title: "X", terms: ["t"], headings: ["h"] })]);
+  assert.deepEqual([m.rel, m.refs, m.terms, m.headings], ["builds-on", ["1.1"], ["t"], ["h"]]);
+});

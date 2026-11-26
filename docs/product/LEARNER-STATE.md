@@ -103,8 +103,10 @@ Every rule has a test in `tests/learner-state.test.mjs`.
 | Continue (Today, ⌘K) | activity, mistakes, course list, session, today's blocks | (nothing) | `continue-view.js` |
 | Questions in every course | (nothing) | a mistake on a wrong answer, resolved on a right one | `course.js` record → `links.js` |
 | Revision Centre | mistakes | (nothing) | `links.js` |
-| Resource menu (•••) on lessons, courses, packs and every app screen | pins, collections, notes | pin, save to a collection, note, schedule | `resource-actions.js` → `places.js`, `links.js` |
-| Connections panel (lesson panel, flashcard sets, any ••• menu) | links, collections, notes, every course's lessons and topics | link, unlink | `connections.js` → `links.js` |
+| Resource menu (•••) on lessons, courses, flashcard sets, single flashcards, course questions and every app screen; the same actions in Notes' own ⋯ menu | pins, collections, notes | pin, save to a collection, note, schedule | `resource-actions.js` (`mountResourceActions`, `runResourceAction`) → `places.js`, `links.js` |
+| Notes on a lesson (lesson panel › Yours) | links | a Notes page made from the lesson, once; the next time it opens again | `kit/notes/kb/view.js` `#/notes/from/<resource>` → `links.js` |
+| Mind map creator | (nothing) | a "made from" link to each lesson it has facts from, removed with the lesson's last fact, renamed with the map | `kit/tools/mapmaker.js` → `links.js` |
+| Connections panel (lesson panel, flashcard sets, any ••• menu) | links, collections, notes; every lesson with its key terms, topic, module and headings (`kit/api/v1/lessons.json`); the course's curriculum graph and specification | link, unlink | `connections.js` → `links.js` (`suggest`: the curriculum's prerequisites, then shared specification points, key terms, topic, title and heading words) |
 | Collections screen | collections, items | create, rename, delete, remove | `links.js` |
 | Completing a lesson | scheduled resources | ticks the plan block off | `course.js` → `links.js`, store |
 | Settings › Your data | every kind (counts) | export, clear everywhere | `learner-state.js` |
@@ -143,4 +145,4 @@ The learner record holds attempted and completed states for Continue. Mastery an
 1. **Apply the migration** (`20261126120000_learner_state.sql`). Sync then switches on by itself for signed-in learners.
 2. Fold `gradify.visited` (recently visited) into `activity`, so Recent is the same on every device.
 3. Add the `assist` column to `assessment_attempts`, so mastery can weigh answers given after a hint.
-4. Record "made from" links where tools create things from a lesson (a mind map or a flashcard set from a lesson), using `link(a, b, { by: "source" })`.
+4. Record "made from" for flashcard sets made from a lesson (mind maps and Notes pages do already), using `link(a, b, { by: "source" })`.

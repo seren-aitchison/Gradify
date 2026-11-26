@@ -11,26 +11,41 @@ import { resource, rid as makeRid, resourceFromPlace } from "../core/resource.js
 import { pins, recent } from "./places.js";
 import { history } from "./history.js";
 import { loadIndex } from "./global-nav.js";
+import { loadIndex as lessonIndex } from "../tools/search.js";
 
 const KIND_ICON = (k) => ({ lesson: "book", course: "book", unit: "flag", pack: "cards", card: "cards", note: "notes", quiz: "trophy", test: "bolt", spec: "target", collection: "inbox", map: "grid", block: "clock", goal: "flag" })[k] || "link";
 
-/** everything a link or a suggestion could point at: every lesson, topic and course, and the learner's own places */
+/**
+ * everything a link or a suggestion could point at: every course and topic (the search index), every lesson with its
+ * key terms, topic, module and headings (the lesson index, kit/tools/search.js), and the learner's own places
+ */
 export async function candidates(extra = []) {
-  const idx = await loadIndex().catch(() => ({ courses: [] }));
+  const [idx, lix] = await Promise.all([loadIndex().catch(() => ({ courses: [] })), lessonIndex().catch(() => null)]);
   const out = [...extra];
   for (const c of idx.courses || []) {
     out.push(resource(makeRid("course", c.u), { title: c.n, subject: c.n, sub: `${c.site} · course`, href: c.u }));
     for (const [uid, n, title, lessons] of c.units || []) {
       out.push(resource(makeRid("unit", c.u, uid), { title, subject: c.n, sub: `${c.n} · ${c.U || "Unit"} ${n}`, href: `${c.u}#/learn/${uid}` }));
-      for (const [lid, lt] of lessons) out.push(resource(makeRid("lesson", c.u, lid), { title: lt, subject: c.n, sub: `${c.n} · ${c.U || "Unit"} ${n}: ${title}`, href: `${c.u}#/lesson/${lid}` }));
+      // lessons come from the lesson index when it's there (it knows what each lesson is about)
+      if (!lix) for (const [lid, lt] of lessons) out.push(resource(makeRid("lesson", c.u, lid), { title: lt, subject: c.n, unit: uid, sub: `${c.n} · ${c.U || "Unit"} ${n}: ${title}`, href: `${c.u}#/lesson/${lid}` }));
     }
+  }
+  if (lix) for (const L of lix.lessons) {
+    const c = L.c || lix.courses[L.course]; if (!c?.page) continue;
+    out.push(resource(makeRid("lesson", c.page, L.lesson), { title: L.title, subject: c.name, unit: L.unit, module: L.module, terms: L.terms, headings: L.headings, sub: `${c.name} · ${L.unitTitle || L.unit}`, href: `${c.page}#/lesson/${L.lesson}` }));
   }
   const mine = [...pins(), ...recent(), ...history().filter((h) => h.act !== "viewed" || h.kind === "deck" || h.kind === "notes")];
   for (const p of mine) { const r = resourceFromPlace(p); if (r && r.kind !== "screen" && r.kind !== "page") out.push(r); }
-  return out.filter(Boolean);
+  return mergeByRid(out);
+}
+/** one candidate per resource: what the page knows (a relationship, specification points) with what the indexes know */
+export function mergeByRid(list) {
+  const m = new Map();
+  for (const r of list) { if (!r?.rid) continue; const was = m.get(r.rid); m.set(r.rid, was ? { ...r, ...was, terms: was.terms || r.terms, headings: was.headings || r.headings, refs: was.refs || r.refs } : r); }
+  return [...m.values()];
 }
 
-const row = (r, right = "", why = "") => `<li class="gx-cn-i"><a href="${esc(r.href || "#")}"><span class="gx-cn-ic" aria-hidden="true">${uiIcon(KIND_ICON(r.kind))}</span><span class="gx-cn-t"><b>${esc(r.title)}</b><small>${esc([r.label || r.kind, why || r.sub].filter(Boolean).join(" · "))}</small></span></a>${right}</li>`;
+const row = (r, right = "", why = "") => `<li class="gx-cn-i"><a href="${esc(r.href || "#")}"><span class="gx-cn-ic" aria-hidden="true">${uiIcon(KIND_ICON(r.kind))}</span><span class="gx-cn-t"><b>${esc(r.title)}</b><small>${esc([r.label || r.kind, why ? [r.subject, why].filter(Boolean).join(" · ") : r.sub].filter(Boolean).join(" · "))}</small></span></a>${right}</li>`;
 
 /** a small map: this resource in the middle, its links and the best suggestions around it (dashed). Pure. */
 export function graphSvg(center, linked = [], suggested = [], { size = 260 } = {}) {
@@ -60,7 +75,7 @@ export function mountConnections(el, res, { extra = [], app = "/app.html" } = {}
     const had = el.contains(document.activeElement) || document.activeElement === document.body;
     el.innerHTML = `<div class="gx-cn-head"><h3>Connections</h3><button type="button" class="gx-link" data-cn-add aria-expanded="${query !== null && el.dataset.adding === "1"}">${uiIcon("link")}Link something</button></div>
       <div class="gx-cn-pick" ${el.dataset.adding === "1" ? "" : "hidden"}><label class="gx-cn-q">${uiIcon("search")}<input type="search" placeholder="A lesson, topic, course or something of yours" aria-label="Find something to link" value="${esc(query || "")}"></label><ul class="gx-cn-l gx-cn-res"></ul></div>
-      ${ls.length ? `<p class="gx-cn-k">Linked</p><ul class="gx-cn-l">${ls.map((l) => row(l.other, `<button type="button" class="gx-cn-x" data-unlink="${esc(l.other.rid)}" aria-label="Unlink ${esc(l.other.title)}" title="Unlink">${uiIcon("close")}</button>`, l.dir === "made-from" ? "made from this" : l.dir === "made-into" ? "this was made from it" : "")).join("")}</ul>` : `<p class="gx-cn-none">Nothing linked yet. Link the notes, flashcards, questions and lessons that go with this, and they'll show here, and here from there.</p>`}
+      ${ls.length ? `<p class="gx-cn-k">Linked</p><ul class="gx-cn-l">${ls.map((l) => row(l.other, `<button type="button" class="gx-cn-x" data-unlink="${esc(l.other.rid)}" aria-label="Unlink ${esc(l.other.title)}" title="Unlink">${uiIcon("close")}</button>`, l.dir === "made-into" ? "made from this" : l.dir === "made-from" ? "this was made from it" : "")).join("")}</ul>` : `<p class="gx-cn-none">Nothing linked yet. Link the notes, flashcards, questions and lessons that go with this, and they'll show here, and here from there.</p>`}
       ${cols.length ? `<p class="gx-cn-k">In your collections</p><p class="gx-cn-cols">${cols.map((id) => `<a href="${esc(app)}#/collections/${esc(id)}">${uiIcon("inbox")}${esc(names.get(id) || "Collection")}</a>`).join("")}</p>` : ""}
       ${note ? `<p class="gx-cn-k">Your note</p><p class="gx-cn-note">${esc(note)}</p>` : ""}
       ${sug.length ? `<p class="gx-cn-k">Suggested</p><ul class="gx-cn-l">${sug.map((s) => row(s, `<button type="button" class="gx-cn-ln" data-link="${esc(s.rid)}">Link</button>`, s.why)).join("")}</ul>` : ""}

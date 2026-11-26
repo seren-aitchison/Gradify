@@ -312,7 +312,19 @@ export function mountCourse(root, cfg) {
     setTimeout(() => el.remove(), 1600);
     root.querySelectorAll(".cx-combo-n").forEach((x) => { x.textContent = n; x.closest(".cx-combo")?.classList.add("hot"); });
   }
+  // a question is a resource too (kit/core/resource.js): its ••• menu pins it, saves it to a collection, links it
+  // to notes or flashcards, schedules it, or takes a note on it. Its home is its lesson's questions.
+  const questionRes = (it) => makeResource(makeRid("question", coursePath, it.key), { title: String(it.Q?.q || "Question").replace(/\*\*|`|\^\{|_\{|\}/g, "").slice(0, 90), subject: cfg.name,
+    sub: it.l ? `Question · ${it.l.title}` : `Question · ${cfg.name}`, refs: it.l ? pointsOf(it.l.id) : [], href: it.l ? `${coursePath}#/lesson/${it.l.id}/co-check` : `${coursePath}#/home` });
+  function questionMenus(el) {
+    for (const box of el.querySelectorAll(".aq[data-key]")) {
+      if (box.querySelector(":scope > .gx-ra") || box.dataset.mode === "exam") continue;
+      const it = pageQs.get(box.dataset.key); if (!it) continue;
+      mountResourceActions(box, () => questionRes(it), { store, app: appHref, where: "afterbegin", label: "This question: more actions" });
+    }
+  }
   function wirePractice(el, context, contextId, xp = XP.check) {
+    questionMenus(el);
     wireQuestions(el, (k) => pageQs.get(k)?.Q, (Q, res, first, box, meta) => {
       const it = pageQs.get(box.dataset.key); record(it, context, contextId, res, meta);
       if (first) { if (res.score >= 0.7) { combo++; comboBest = Math.max(comboBest, combo); if ([3, 5, 8, 12].includes(combo)) comboPop(combo); } else { combo = 0; root.querySelectorAll(".cx-combo").forEach((x) => x.classList.remove("hot")); } root.querySelectorAll(".cx-combo-n").forEach((x) => { x.textContent = combo; x.closest(".cx-combo").hidden = !combo; }); }
@@ -1492,7 +1504,7 @@ export function mountCourse(root, cfg) {
         <button type="button" class="gx-link" data-prelated>Explore everything it connects to</button>` },
       { id: "mine", label: "Yours", html: `<ul class="cx-plist"><li><span><b>${marked(l.id) ? "Bookmarked" : "Not bookmarked"}</b><small>Press B to ${marked(l.id) ? "remove the bookmark" : "bookmark it"}</small></span></li>
         <li><span><b>Your answers here</b><small>${mine.length ? `${mine.length} answered, ${right} right` : "None yet"}</small></span></li>
-        ${row(`${cfg.app || "app.html"}#/notes`, "Your notes", "Write or open your own notes in Gradify Notes")}${row(`${cfg.app || "app.html"}#/history`, "Your history", "Everything you've opened and studied")}</ul>` },
+        ${row(`${appHref}#/notes/from/${encodeURIComponent(lessonRes(l).rid)}?t=${encodeURIComponent(l.title)}`, "Notes on this lesson", "A page in Gradify Notes that remembers it came from this lesson")}${row(`${cfg.app || "app.html"}#/history`, "Your history", "Everything you've opened and studied")}</ul>` },
     ];
     tabs.splice(4, 0, { id: "conn", label: "Connections", html: `<div class="cx-pconn"></div>` });
     const d = openDrawer({ title: l.title, side: "right", label: `Lesson panel: ${l.title}`, body: tabsHtml("cx-panel", tabs, pref(cfg.slug, "panelTab", N?.terms?.length ? "terms" : "qs")) });
@@ -1500,8 +1512,14 @@ export function mountCourse(root, cfg) {
     wireTabs(box, { scope: cfg.slug, key: "panelTab" });
     // this lesson's connections: what the learner linked it to, from any tool, and the course's lessons that share its
     // specification points (they carry those points here, so the suggestion can say so)
-    const extra = []; try { for (const p of specModel().points) for (const lid of [...p.lessons, ...p.partial]) if (byId[lid] && lid !== l.id) extra.push(lessonRes(byId[lid])); } catch { /* no specification */ }
-    const conn = mountConnections(box.querySelector(".cx-pconn"), lessonRes(l), { app: appHref, extra });
+    // what this lesson is about (its key terms, headings, topic and module), what it builds on in the curriculum
+    // graph, and the lessons sharing its specification points, so suggestions can say why
+    const clean = (t) => String(t).replace(/\*\*|`/g, "").trim();
+    const here = makeResource(lessonRes(l).rid, { ...lessonRes(l), terms: (N?.terms || []).map(([t]) => clean(t)), headings: (N?.blocks || []).filter((b) => b.t === "h").map((b) => clean(b.x)), unit: l.unit.id, module: l.module });
+    const extra = [];
+    try { if (graph) for (const k of prerequisitesOfLesson(graph, l.id).modules) { const n = graph.nodes.get(k), x = n && byId[n.lessons[0]]; if (x && x.id !== l.id) extra.push(makeResource(lessonRes(x).rid, { ...lessonRes(x), rel: "builds-on" })); } } catch { /* no graph */ }
+    try { for (const p of specModel().points) for (const lid of [...p.lessons, ...p.partial]) if (byId[lid] && lid !== l.id) extra.push(lessonRes(byId[lid])); } catch { /* no specification */ }
+    const conn = mountConnections(box.querySelector(".cx-pconn"), here, { app: appHref, extra });
     d.done?.then(() => conn?.stop?.());
     box.addEventListener("click", (e) => {
       if (e.target.closest("[data-pcards]")) { d.close(); setTimeout(() => main.querySelector("[data-cards]")?.click(), 120); return; }

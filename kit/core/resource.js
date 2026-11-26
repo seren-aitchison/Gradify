@@ -47,8 +47,9 @@ const isApp = (path) => /(^|\/)app\.html$/.test(path);
 export function ridFromHref(href) {
   const h = clean(href); if (!h) return null;
   const [path, hash = ""] = h.split("#");
-  const [route, arg] = hash.replace(/^\/?/, "").split("?")[0].split("/").map(decodeURIComponent);
+  const [route, arg, sub] = hash.replace(/^\/?/, "").split("?")[0].split("/").map(decodeURIComponent);
   if (isApp(path)) {
+    if (route === "tools" && arg === "map" && sub && sub !== "new") return rid("map", sub);
     if (APP_ROUTES[route] && arg && !(route === "notes" && /^(daily|tasks|tag|cards|exams?|help|ask|io|pdf|guided|shared)$/.test(arg))) return rid(APP_ROUTES[route], arg);
     return `screen:${path}#/${route || "today"}`;
   }
@@ -62,6 +63,7 @@ export function hrefOf(r, { app = "/app.html" } = {}) {
   if (p.kind === "screen" || p.kind === "page") return p.id;
   if (p.kind === "course") return `${p.course}#/home`;
   if (p.course) { const route = Object.entries(COURSE_ROUTES).find(([, k]) => k === p.kind)?.[0]; return route ? `${p.course}#/${route}/${encodeURIComponent(p.id)}` : `${p.course}#/home`; }
+  if (p.kind === "map") return `${app}#/tools/map/${encodeURIComponent(p.id)}`;
   const route = Object.entries(APP_ROUTES).find(([, k]) => k === p.kind)?.[0];
   return route ? `${app}#/${route}/${encodeURIComponent(p.id)}` : null;
 }
@@ -74,7 +76,10 @@ export function resource(r, meta = {}) {
   const p = parseRid(r); if (!p) return null;
   const [label, icon] = KINDS[p.kind];
   const out = { rid: r, kind: p.kind, label, icon, title: clean(meta.title) || label, href: meta.href || hrefOf(r), course: p.course };
-  for (const k of ["sub", "subject", "qualification", "topic", "difficulty"]) if (meta[k] != null && meta[k] !== "") out[k] = meta[k];
+  for (const k of ["sub", "subject", "qualification", "topic", "difficulty", "unit", "module", "rel"]) if (meta[k] != null && meta[k] !== "") out[k] = meta[k];
+  // what it's about, for connecting it to other things: its key terms and its section headings
+  if (meta.terms?.length) out.terms = [...new Set(meta.terms.map((t) => String(t).trim()).filter(Boolean))];
+  if (meta.headings?.length) out.headings = meta.headings.filter(Boolean);
   if (meta.refs?.length) out.refs = [...new Set(meta.refs)];
   return out;
 }

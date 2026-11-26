@@ -31,25 +31,44 @@ const STOP = new Set("a an and the of in on to for with from by is are be what h
 export const words = (s) => [...new Set(norm(s).split(/[^a-z0-9]+/).filter((w) => w.length > 2 && !STOP.has(w)))];
 
 /**
- * Other resources that go with this one, best first, each with why: the same curriculum point, a title in common,
- * the same course, the same subject. Things already linked are left out. A connection to another subject needs a
- * real overlap (a shared point or two title words), so "related" stays meaningful.
+ * Other resources that go with this one, best first, each with why. In order of weight: a relationship the curriculum
+ * states (rel: "builds-on", this builds on it; "leads-to", it builds on this), the same specification point, shared
+ * key terms, the same module or topic of the same course, then words in common in titles and section headings.
+ * Things already linked are left out. Another subject needs a real overlap (a shared point or key term, or two
+ * title words), so "related" stays meaningful.
  */
+const lc = (xs) => new Set((xs || []).map((t) => norm(t).trim()).filter(Boolean));
 export function suggest(res, candidates = [], { limit = 8, exclude = [] } = {}) {
   if (!res) return [];
-  const skip = new Set([res.rid, ...exclude]), mine = words(res.title), refs = new Set(res.refs || []);
+  const skip = new Set([res.rid, ...exclude]), mine = words(res.title), myHead = words((res.headings || []).join(" ")), refs = new Set(res.refs || []), terms = lc(res.terms);
   const out = [];
   for (const c of candidates) {
     if (!c?.rid || skip.has(c.rid)) continue;
     skip.add(c.rid);
     const shared = words(c.title).filter((w) => mine.includes(w)), sharedRefs = (c.refs || []).filter((x) => refs.has(x));
     const sameCourse = Boolean(res.course && c.course && res.course === c.course), sameSubject = Boolean(res.subject && c.subject && res.subject === c.subject);
+    const sameUnit = sameCourse && res.unit && c.unit === res.unit, sameModule = sameUnit && res.module && c.module === res.module;
     const otherSubject = res.subject && c.subject && !sameSubject;
-    if (otherSubject && !sharedRefs.length && shared.length < 2) continue;
-    let score = sharedRefs.length * 5 + shared.length * 2 + (sameCourse ? 1 : 0) + (sameSubject ? 0.5 : 0);
-    if (!sharedRefs.length && !shared.length) score = 0;
+    // a key term counts when both have it, or when it's in this one's title as a phrase (two words or more), or as a
+    // distinctive word in the same subject. A one-word term like "base" in another subject's lesson isn't a link.
+    const myTitle = ` ${norm(res.title)} `;
+    const sharedTerms = [...lc(c.terms)].filter((t) => terms.has(t) || (t.includes(" ") && myTitle.includes(` ${t} `)) || (!otherSubject && t.length >= 6 && mine.includes(t)));
+    // headings: two words in common, or one within the same topic
+    let headWords = words((c.headings || []).join(" ")).filter((w) => (myHead.includes(w) || mine.includes(w)) && !shared.includes(w));
+    if (headWords.length < 2 && !sameUnit) headWords = [];
+    if (otherSubject && !sharedRefs.length && !sharedTerms.length && shared.length < 2) continue;
+    const rel = c.rel === "builds-on" || c.rel === "leads-to";
+    let score = (rel ? 8 : 0) + sharedRefs.length * 5 + sharedTerms.length * 4 + (sameModule ? 2.5 : sameUnit ? 1 : 0) + shared.length * 2 + Math.min(3, headWords.length) * 0.75 + (sameCourse ? 0.5 : 0) + (sameSubject ? 0.25 : 0);
+    // the course, the unit or the subject alone isn't a reason to suggest something
+    if (!rel && !sharedRefs.length && !sharedTerms.length && !shared.length && !headWords.length && !sameModule) score = 0;
     if (score <= 0) continue;
-    const why = sharedRefs.length ? `Same specification point${sharedRefs.length > 1 ? "s" : ""}: ${sharedRefs.slice(0, 2).join(", ")}` : otherSubject ? `Also in ${c.subject}: ${shared.slice(0, 3).join(", ")}` : `In common: ${shared.slice(0, 3).join(", ")}`;
+    const list = (xs) => xs.slice(0, 3).join(", ");
+    const why = rel ? (c.rel === "builds-on" ? "This lesson builds on it" : "It builds on this lesson")
+      : sharedRefs.length ? `Same specification point${sharedRefs.length > 1 ? "s" : ""}: ${sharedRefs.slice(0, 2).join(", ")}`
+      : sharedTerms.length ? `${otherSubject ? `Also in ${c.subject}: ` : ""}key term${sharedTerms.length > 1 ? "s" : ""} ${list(sharedTerms)}`
+      : sameModule ? `Same topic${c.module ? `: ${c.module}` : ""}`
+      : otherSubject ? `Also in ${c.subject}: ${list(shared)}`
+      : shared.length ? `In common: ${list(shared)}` : `Covers ${list(headWords)} too`;
     out.push({ ...c, score, why, cross: Boolean(otherSubject) });
   }
   return out.sort((a, b) => b.score - a.score).slice(0, limit);

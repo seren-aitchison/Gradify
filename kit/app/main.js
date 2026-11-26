@@ -65,6 +65,7 @@ import { mountAppNav } from "./app-nav.js";
 import { attachAccount, exportState, list as stateList, batch as stateBatch, SYNCED } from "../data/learner-state.js";
 import { renderCollections } from "./collections-view.js";
 import { mountConnections } from "../ui/connections.js";
+import { mountResourceActions } from "../ui/resource-actions.js";
 import { mistakes, mistakesByLesson } from "../data/links.js";
 import { resource, rid as makeRid } from "../core/resource.js";
 import { logEvent, history as activity } from "../ui/history.js";
@@ -603,7 +604,12 @@ async function renderDeck(id) {
   {
     const host = document.createElement("section"); host.className = "panel glass deck-conn";
     view.querySelector(".deck-tools")?.after(host);
-    mountConnections(host, resource(makeRid("pack", id), { title: doc.title, sub: `Flashcard set · ${cards.length} cards`, href: `${location.pathname}#/deck/${id}` }), { app: location.pathname });
+    mountConnections(host, resource(makeRid("pack", id), { title: doc.title, sub: `Flashcard set · ${cards.length} cards`, href: `${location.pathname}#/deck/${id}`, terms: topics.filter((t) => t !== "Cards"), headings: cards.slice(0, 40).map((c) => c.front) }), { app: location.pathname });
+  }
+  // each card is a resource of its own: pin it, link it to a lesson, save it to a collection, note on it, schedule it
+  for (const el of view.querySelectorAll(".c-row[data-id]")) {
+    const c = cards.find((x) => x.id === el.dataset.id); if (!c) continue;
+    mountResourceActions(el.querySelector(".c-actions"), () => resource(makeRid("card", c.id), { title: c.front.length > 90 ? `${c.front.slice(0, 89)}…` : c.front, sub: `Flashcard · ${doc.title}`, href: `${location.pathname}#/deck/${id}` }), { store: async () => store, app: location.pathname, where: "afterbegin", label: "This card: more actions" });
   }
   const list = view.querySelector(".deck");
   list.addEventListener("click", async (e) => {

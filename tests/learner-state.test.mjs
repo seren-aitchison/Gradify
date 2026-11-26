@@ -21,11 +21,14 @@ test("resource ids: the same thing has the same id wherever it's linked from, an
     ["/medgradify/app.html#/notes/r9", "note:r9"],
     ["/app.html#/notes/daily", "screen:/app.html#/notes"],
     ["/app.html#/plan", "screen:/app.html#/plan"],
+    ["/app.html#/tools/map/m42", "map:m42"],
+    ["/app.html#/tools/map/new", "screen:/app.html#/tools"],
     ["/scigradify/biology/#/revise", "page:/scigradify/biology/#/revise"],
   ]) assert.equal(ridFromHref(href), want, href);
   assert.equal(hrefOf("lesson:/scigradify/biology/u01-01"), "/scigradify/biology/#/lesson/u01-01");
   assert.equal(hrefOf("pack:abc", { app: "/medgradify/app.html" }), "/medgradify/app.html#/deck/abc");
   assert.equal(hrefOf("course:/scigradify/biology/"), "/scigradify/biology/#/home");
+  assert.equal(hrefOf("map:m42"), "/app.html#/tools/map/m42");
   assert.deepEqual(parseRid("spec:/scigradify/biology/4.1.1.1"), { kind: "spec", course: "/scigradify/biology/", id: "4.1.1.1" });
   assert.equal(parseRid("nonsense"), null);
 });
