@@ -20,8 +20,8 @@ X: How does cooling rate decide whether silica forms quartz or glass?
 !: Glass isn't a slow-flowing liquid; medieval windows thicker at the bottom were made that way, not shaped by flow.
 Q: What distinguishes crystalline from amorphous solids? | Long-range periodic order in crystals; only short-range order in amorphous solids.
 Q: What is a quasicrystal? | A solid with long-range order but no periodic repetition, allowing symmetries like five-fold.
-M1: Window glass is: | Amorphous | Crystalline | A quasicrystal | A liquid crystal | No long-range order.
-M2: A sharp melting point is typical of: | Crystalline solids | Amorphous solids | Polymers | Gases | Uniform bonding.
+M1#physics-u27-01-q1: Window glass is: | Amorphous | Crystalline | A quasicrystal | A liquid crystal | No long-range order.
+M2#physics-u27-01-q2: A sharp melting point is typical of: | Crystalline solids | Amorphous solids | Polymers | Gases | Uniform bonding.
 
 ## Crystal lattices and unit cells
 S: A crystal is a lattice (an infinite array of points with identical surroundings) plus a basis (the group of atoms attached to each point). The unit cell is the repeating box that builds the whole crystal.
@@ -45,8 +45,8 @@ X: Density of copper (FCC, a = 0.361 nm, M = 63.5 g mol^{-1})?
 !: A lattice is a set of points, not atoms; the crystal structure is lattice + basis.
 Q: What is a basis in crystallography? | The group of atoms associated with each lattice point.
 Q: How many atoms per conventional cell in FCC? | Four.
-M1: The packing fraction of FCC is: | 74% | 68% | 52% | 34% | Close-packed.
-M2: Silicon has the: | Diamond structure | FCC metal structure | BCC structure | Rock salt structure | Tetrahedral bonding.
+M1#physics-u27-02-q1: The packing fraction of FCC is: | 74% | 68% | 52% | 34% | Close-packed.
+M2#physics-u27-02-q2: Silicon has the: | Diamond structure | FCC metal structure | BCC structure | Rock salt structure | Tetrahedral bonding.
 
 ## Bravais lattices
 S: In three dimensions there are exactly 14 distinct ways to arrange points so every point has identical surroundings: the Bravais lattices. They fall into seven crystal systems by shape of the unit cell.
@@ -70,8 +70,8 @@ X: Why can't you tile a floor with regular pentagons?
 !: Base-centred cubic isn't a separate Bravais lattice; it breaks cubic symmetry and is equivalent to simple tetragonal.
 Q: How many Bravais lattices are there in 3D? | 14.
 Q: Which rotational symmetries are allowed for periodic lattices? | 1, 2, 3, 4 and 6-fold.
-M1: The number of crystallographic space groups in 3D is: | 230 | 14 | 32 | 7 | Fedorov and Schoenflies.
-M2: How many Bravais lattices are cubic? | 3 | 1 | 2 | 4 | Simple, BCC, FCC.
+M1#physics-u27-03-q1: The number of crystallographic space groups in 3D is: | 230 | 14 | 32 | 7 | Fedorov and Schoenflies.
+M2#physics-u27-03-q2: How many Bravais lattices are cubic? | 3 | 1 | 2 | 4 | Simple, BCC, FCC.
 
 ## Miller indices
 S: Miller indices (hkl) label planes and directions in a crystal using whole numbers. They're used to specify crystal faces, cutting directions for wafers, and diffraction peaks.
@@ -95,8 +95,8 @@ X: Miller indices of a plane cutting the axes at 2a, 3a and ∞?
 !: Miller indices describe orientation, not position: parallel planes share the same indices.
 Q: How are Miller indices found? | Take the reciprocals of the plane's axial intercepts and clear fractions.
 Q: What is the spacing of (hkl) planes in a cubic crystal? | d = a/√(h^{2} + k^{2} + l^{2}).
-M1: The (100) plane in a cubic crystal is: | Perpendicular to the x-axis | Parallel to the x-axis | Diagonal | At 45° to all axes | Intercept only at x.
-M2: In FCC, the first allowed diffraction peak is: | (111) | (100) | (110) | (210) | All odd.
+M1#physics-u27-04-q1: The (100) plane in a cubic crystal is: | Perpendicular to the x-axis | Parallel to the x-axis | Diagonal | At 45° to all axes | Intercept only at x.
+M2#physics-u27-04-q2: In FCC, the first allowed diffraction peak is: | (111) | (100) | (110) | (210) | All odd.
 
 ## Crystal symmetry
 S: Crystal symmetry describes the operations (rotations, reflections, inversions, translations, screw axes and glide planes) that map a crystal onto itself. Symmetry determines which physical properties a crystal can have.
@@ -116,8 +116,8 @@ X: Can a cubic crystal like NaCl be birefringent?
 !: High symmetry doesn't mean simple physics; symmetry constrains which tensor components can be non-zero but not their values.
 Q: State Neumann's principle. | A crystal's physical properties must include all the symmetries of its point group.
 Q: Why can't crystals with an inversion centre be piezoelectric? | Inversion symmetry forbids a linear relation between strain and polarisation.
-M1: A screw axis combines: | Rotation and translation | Two reflections | Inversion and rotation | Only translation | Space-group operation.
-M2: Cubic crystals are: | Optically isotropic | Always birefringent | Piezoelectric | Chiral | High symmetry.
+M1#physics-u27-05-q1: A screw axis combines: | Rotation and translation | Two reflections | Inversion and rotation | Only translation | Space-group operation.
+M2#physics-u27-05-q2: Cubic crystals are: | Optically isotropic | Always birefringent | Piezoelectric | Chiral | High symmetry.
 
 ## Reciprocal lattices
 S: The reciprocal lattice is the Fourier transform of the crystal lattice: a lattice in wavevector space. It makes diffraction, electron waves in crystals and lattice vibrations easy to describe.
@@ -139,8 +139,8 @@ X: Reciprocal lattice of a simple cubic lattice with spacing a?
 !: Reciprocal space has units of inverse length; distances there are wavevectors, not positions.
 Q: What is the reciprocal lattice? | The set of wavevectors G for which e^{iG·R} = 1 for all lattice vectors R.
 Q: What is the first Brillouin zone? | The Wigner–Seitz cell of the reciprocal lattice.
-M1: The reciprocal lattice of FCC is: | BCC | FCC | Simple cubic | Hexagonal | Duality.
-M2: |G_{hkl}| equals: | 2π/d_{hkl} | d_{hkl} | 2πd_{hkl} | 1/d^{2} | Plane spacing.
+M1#physics-u27-06-q1: The reciprocal lattice of FCC is: | BCC | FCC | Simple cubic | Hexagonal | Duality.
+M2#physics-u27-06-q2: |G_{hkl}| equals: | 2π/d_{hkl} | d_{hkl} | 2πd_{hkl} | 1/d^{2} | Plane spacing.
 
 ## X-ray diffraction
 S: X-rays have wavelengths similar to atomic spacings, so crystals diffract them into sharp beams. The angles and intensities reveal crystal structures, from simple salts to DNA and proteins.
@@ -164,8 +164,8 @@ X: Copper Kα X-rays (0.154 nm) diffract from (111) planes of silicon (d = 0.314
 !: Bragg's "reflection" is constructive interference from many planes, not mirror reflection; it only occurs at precise angles.
 Q: State Bragg's law. | 2d sin θ = nλ.
 Q: What is the phase problem? | Diffraction measures intensities, losing the phases needed to reconstruct the structure directly.
-M1: X-ray crystallography revealed the structure of: | DNA | Electrons | Neutrinos | Quarks | Photo 51.
-M2: Neutron diffraction is especially useful for locating: | Hydrogen atoms and magnetic order | Heavy atoms only | Electrons | Photons | Neutrons scatter from nuclei.
+M1#physics-u27-07-q1: X-ray crystallography revealed the structure of: | DNA | Electrons | Neutrinos | Quarks | Photo 51.
+M2#physics-u27-07-q2: Neutron diffraction is especially useful for locating: | Hydrogen atoms and magnetic order | Heavy atoms only | Electrons | Photons | Neutrons scatter from nuclei.
 
 ## Phonons and lattice vibrations
 S: Atoms in a crystal vibrate collectively in waves. Quantised, these vibrations are phonons, quasiparticles that carry sound and heat and interact with electrons, light and neutrons.
@@ -187,8 +187,8 @@ D: phys-u27-chain-dispersion
 !: Crystal momentum ħk isn't true momentum; it's conserved only modulo reciprocal lattice vectors (Umklapp processes).
 Q: What is a phonon? | A quantum of collective lattice vibration.
 Q: What's the difference between acoustic and optical phonons? | Acoustic: neighbouring atoms move together, ω → 0 at small k. Optical: atoms in a cell move oppositely, finite ω at k = 0.
-M1: At long wavelengths, acoustic phonons have: | ω ∝ k (sound) | Constant ω | ω = 0 | ω ∝ k^{2} | Linear dispersion.
-M2: Optical phonons interact strongly with infrared light in: | Ionic crystals | Metals only | Vacuum | Monatomic chains | Oscillating dipoles.
+M1#physics-u27-08-q1: At long wavelengths, acoustic phonons have: | ω ∝ k (sound) | Constant ω | ω = 0 | ω ∝ k^{2} | Linear dispersion.
+M2#physics-u27-08-q2: Optical phonons interact strongly with infrared light in: | Ionic crystals | Metals only | Vacuum | Monatomic chains | Oscillating dipoles.
 
 ## Specific heat of solids
 S: The heat capacity of solids is constant at high temperatures but falls towards zero as temperature drops. Explaining this required quantum theory: Einstein and Debye's models of quantised lattice vibrations.
@@ -213,8 +213,8 @@ D: phys-u27-einstein-heat-capacity
 !: Dulong–Petit is a high-temperature limit; "room temperature" isn't always high compared with θ_{D}.
 Q: What does the Debye model predict at low temperatures? | Heat capacity ∝ T^{3}.
 Q: Why is the electronic heat capacity of metals small? | Only electrons near the Fermi energy (within ~k_{B}T) can be thermally excited.
-M1: At high temperatures, molar heat capacity of a solid approaches: | 3R | R | (3/2)R | 0 | Dulong–Petit.
-M2: Plotting C/T against T^{2} for a metal gives intercept: | The electronic coefficient γ | The Debye temperature | Zero | The Fermi energy | Linear term.
+M1#physics-u27-09-q1: At high temperatures, molar heat capacity of a solid approaches: | 3R | R | (3/2)R | 0 | Dulong–Petit.
+M2#physics-u27-09-q2: Plotting C/T against T^{2} for a metal gives intercept: | The electronic coefficient γ | The Debye temperature | Zero | The Fermi energy | Linear term.
 
 ## Thermal conductivity
 S: Heat in solids is carried by phonons and, in metals, mostly by electrons. Their mean free paths, limited by scattering, set how well materials conduct heat: from diamond's record to aerogels' insulation.
@@ -235,8 +235,8 @@ X: Copper (σ = 6 × 10^{7} S m^{-1}) at 300 K: predict κ from Wiedemann–Fran
 !: Electrical insulators can be excellent thermal conductors (diamond, sapphire): electrons aren't needed for heat flow.
 Q: What is Umklapp scattering? | Phonon–phonon scattering that changes total crystal momentum by a reciprocal lattice vector, limiting heat flow.
 Q: State the Wiedemann–Franz law. | The ratio of electronic thermal conductivity to electrical conductivity is proportional to temperature.
-M1: At high temperatures phonon thermal conductivity typically: | Falls as 1/T | Rises as T^{3} | Is constant | Vanishes | Umklapp.
-M2: Thermoelectric materials aim for: | High electrical and low thermal conductivity | High thermal conductivity | Low electrical conductivity | Zero Seebeck coefficient | ZT.
+M1#physics-u27-10-q1: At high temperatures phonon thermal conductivity typically: | Falls as 1/T | Rises as T^{3} | Is constant | Vanishes | Umklapp.
+M2#physics-u27-10-q2: Thermoelectric materials aim for: | High electrical and low thermal conductivity | High thermal conductivity | Low electrical conductivity | Zero Seebeck coefficient | ZT.
 
 ## Electronic band structure
 S: In a crystal, electrons' allowed energies form bands separated by gaps, because their waves interact with the periodic lattice. Band structure explains why materials are metals, insulators or semiconductors.
@@ -257,8 +257,8 @@ X: An electron in GaAs has m* = 0.067m_{e}. Why does that help fast transistors?
 !: Electrons in bands aren't free, but near band edges they behave as if free with an effective mass, which can even be negative.
 Q: State Bloch's theorem. | Electron wavefunctions in a periodic potential are plane waves times functions with the lattice periodicity.
 Q: What is effective mass? | The mass describing how an electron accelerates in a band, set by the band's curvature.
-M1: Band gaps open at: | Brillouin zone boundaries | Zone centre only | Random energies | The Fermi energy always | Bragg reflection.
-M2: Silicon is a poor light emitter because its band gap is: | Indirect | Direct | Zero | Too large | Phonon needed.
+M1#physics-u27-11-q1: Band gaps open at: | Brillouin zone boundaries | Zone centre only | Random energies | The Fermi energy always | Bragg reflection.
+M2#physics-u27-11-q2: Silicon is a poor light emitter because its band gap is: | Indirect | Direct | Zero | Too large | Phonon needed.
 
 ## Metals, insulators and semiconductors
 S: Whether a material conducts depends on how electrons fill its bands. Metals have partly filled bands; insulators have filled bands and large gaps; semiconductors have small gaps that thermal energy, light or doping can bridge.
@@ -279,8 +279,8 @@ X: Ratio of intrinsic carrier densities in silicon and germanium at 300 K (ignor
 !: Semiconductor resistance falls with temperature; metal resistance rises: a quick experimental test.
 Q: Why are metals conductors in band theory? | Their highest occupied band is only partly filled.
 Q: What is n-type doping? | Adding donor impurities that contribute free electrons.
-M1: Silicon's band gap at room temperature is: | 1.12 eV | 5.5 eV | 0.01 eV | 3.4 eV | Standard value.
-M2: A Mott insulator insulates because of: | Strong electron repulsion | A full band | Doping | Disorder | Correlations.
+M1#physics-u27-12-q1: Silicon's band gap at room temperature is: | 1.12 eV | 5.5 eV | 0.01 eV | 3.4 eV | Standard value.
+M2#physics-u27-12-q2: A Mott insulator insulates because of: | Strong electron repulsion | A full band | Doping | Disorder | Correlations.
 
 ## Fermi energy and Fermi surfaces
 S: The Fermi energy is the highest occupied electron energy at absolute zero; the Fermi surface is the surface in momentum space separating filled from empty states. Almost all of a metal's electronic properties come from electrons near the Fermi surface.
@@ -301,8 +301,8 @@ D: phys-u27-fermi-dirac
 !: Fermi energy depends only on electron density (for free electrons), not on temperature; Fermi–Dirac smearing is just ~k_{B}T wide.
 Q: What is the Fermi surface? | The constant-energy surface in k-space separating occupied from unoccupied states at T = 0.
 Q: How are Fermi surfaces measured? | Quantum oscillations in strong fields and angle-resolved photoemission (ARPES).
-M1: Fermi temperatures of metals are typically: | 10^{4}–10^{5} K | 300 K | 1 K | 10^{9} K | Much higher than room T.
-M2: The de Haas–van Alphen effect oscillates periodically in: | 1/B | B | T | E | Onsager relation.
+M1#physics-u27-13-q1: Fermi temperatures of metals are typically: | 10^{4}–10^{5} K | 300 K | 1 K | 10^{9} K | Much higher than room T.
+M2#physics-u27-13-q2: The de Haas–van Alphen effect oscillates periodically in: | 1/B | B | T | E | Onsager relation.
 
 ## Density of states
 S: The density of states counts how many electron (or phonon) states there are per unit energy. It controls heat capacity, conductivity, optical absorption and how a material responds to doping or light.
@@ -323,8 +323,8 @@ X: How does the electronic heat capacity coefficient depend on g(E_{F})?
 !: Density of states counts available states, not occupied ones; occupation needs the Fermi–Dirac function too.
 Q: How does the 3D free-electron density of states depend on energy? | g(E) ∝ √E.
 Q: What does scanning tunnelling spectroscopy measure? | The local density of electronic states (dI/dV).
-M1: In 2D, the free-electron density of states is: | Constant | ∝ √E | ∝ 1/√E | Discrete | Step-like.
-M2: Quantum dots have a density of states that is: | Discrete, atom-like | Continuous | Constant | Zero | 0D confinement.
+M1#physics-u27-14-q1: In 2D, the free-electron density of states is: | Constant | ∝ √E | ∝ 1/√E | Discrete | Step-like.
+M2#physics-u27-14-q2: Quantum dots have a density of states that is: | Discrete, atom-like | Continuous | Constant | Zero | 0D confinement.
 
 ## Electron transport
 S: Electron transport describes how electrons carry current and heat through materials under fields and temperature gradients. Scattering by phonons, impurities and other electrons sets resistance; at small scales, quantum effects take over.
@@ -345,8 +345,8 @@ X: Mean free path of electrons in pure copper at 4 K, if resistivity drops 1000-
 !: Resistance isn't caused by electrons bumping into ions of a perfect lattice; Bloch waves pass through it freely. Imperfections and vibrations cause scattering.
 Q: What causes electrical resistance in metals? | Scattering of electrons by phonons, impurities and defects.
 Q: What is the conductance quantum? | G_{0} = 2e^{2}/h ≈ 77.5 μS.
-M1: In the Drude model, conductivity is proportional to: | Scattering time τ | Mass | 1/n | Temperature always | σ = ne^{2}τ/m.
-M2: Ballistic transport occurs when the device is: | Shorter than the mean free path | Longer than it | Very hot | Superconducting only | No scattering.
+M1#physics-u27-15-q1: In the Drude model, conductivity is proportional to: | Scattering time τ | Mass | 1/n | Temperature always | σ = ne^{2}τ/m.
+M2#physics-u27-15-q2: Ballistic transport occurs when the device is: | Shorter than the mean free path | Longer than it | Very hot | Superconducting only | No scattering.
 
 ## Electrical resistivity
 S: Resistivity measures how strongly a material opposes current. In metals it rises with temperature as phonons scatter electrons; in semiconductors it falls as more carriers are freed; in superconductors it vanishes.
@@ -371,8 +371,8 @@ D: phys-u27-copper-resistance
 !: Matthiessen's rule is approximate; scattering mechanisms aren't always independent.
 Q: What is Matthiessen's rule? | Resistivity is the sum of contributions from independent scattering mechanisms.
 Q: What is the Kondo effect? | A rise in resistivity at low temperature caused by magnetic impurities.
-M1: In a metal at high T, resistivity is roughly: | ∝ T | ∝ T^{5} | Constant | Exponential | Phonon scattering.
-M2: Residual resistivity comes from: | Impurities and defects | Phonons | Superconductivity | Light | T-independent.
+M1#physics-u27-16-q1: In a metal at high T, resistivity is roughly: | ∝ T | ∝ T^{5} | Constant | Exponential | Phonon scattering.
+M2#physics-u27-16-q2: Residual resistivity comes from: | Impurities and defects | Phonons | Superconductivity | Light | T-independent.
 
 ## Hall effect
 S: When current flows through a conductor in a perpendicular magnetic field, a voltage appears across it. The Hall effect reveals the sign and density of charge carriers and is used in countless magnetic sensors.
@@ -392,8 +392,8 @@ X: A copper strip (n = 8.5 × 10^{28} m^{-3}, t = 0.1 mm) carries 5 A in 1 T. Ha
 !: The Hall effect can show positive carriers even in metals, because "holes" in nearly full bands behave as positive charges.
 Q: What does the sign of the Hall voltage reveal? | Whether the charge carriers are positive (holes) or negative (electrons).
 Q: Why are semiconductors used in Hall sensors? | Their low carrier density gives large Hall voltages.
-M1: The Hall voltage is inversely proportional to: | Carrier density | Magnetic field | Current | Charge sign only | V_{H} = IB/(nqt).
-M2: Hall sensors in phones are used as: | Magnetometers (compasses, cover detection) | Microphones | Cameras | Batteries | Magnetic field sensing.
+M1#physics-u27-17-q1: The Hall voltage is inversely proportional to: | Carrier density | Magnetic field | Current | Charge sign only | V_{H} = IB/(nqt).
+M2#physics-u27-17-q2: Hall sensors in phones are used as: | Magnetometers (compasses, cover detection) | Microphones | Cameras | Batteries | Magnetic field sensing.
 
 ## Magnetic ordering
 S: In many materials, electron spins order spontaneously below a critical temperature into patterns: all parallel (ferromagnets), alternating (antiferromagnets), unequal antiparallel (ferrimagnets) or more complex spirals and frustrated states.
@@ -416,8 +416,8 @@ X: Why do antiferromagnets have no net magnetisation but still order?
 !: Antiferromagnets are increasingly important in spintronics because they're fast and immune to stray fields.
 Q: What is the exchange interaction? | An effective spin–spin interaction from Pauli exclusion and Coulomb repulsion that aligns or anti-aligns neighbouring spins.
 Q: What is a magnon? | A quantised spin wave.
-M1: Antiferromagnetic order disappears above the: | Néel temperature | Curie temperature | Debye temperature | Fermi temperature | T_{N}.
-M2: Antiferromagnetic order was first directly observed using: | Neutron diffraction | X-rays | Optical microscopes | Hall probes | Magnetic Bragg peaks.
+M1#physics-u27-18-q1: Antiferromagnetic order disappears above the: | Néel temperature | Curie temperature | Debye temperature | Fermi temperature | T_{N}.
+M2#physics-u27-18-q2: Antiferromagnetic order was first directly observed using: | Neutron diffraction | X-rays | Optical microscopes | Hall probes | Magnetic Bragg peaks.
 
 ## Ferromagnetic and antiferromagnetic materials
 S: Ferromagnets and antiferromagnets are the workhorses of magnetic technology: permanent magnets, transformer cores, hard drives and new spintronic memories. Their properties come from exchange, anisotropy and domain structure.
@@ -437,8 +437,8 @@ X: Why are hard-disk bits very small but stable for years?
 !: Making magnetic bits smaller reduces their energy barrier (superparamagnetic limit); higher anisotropy materials and heat-assisted recording push this back.
 Q: What is magnetic anisotropy? | Dependence of a magnet's energy on magnetisation direction, giving easy axes.
 Q: Why are antiferromagnets attractive for spintronics? | No stray fields, robustness to external fields and ultrafast (THz) dynamics.
-M1: Giant magnetoresistance was used first in: | Hard-disk read heads | Solar cells | LEDs | Batteries | 1997 onwards.
-M2: The superparamagnetic limit concerns: | Thermal instability of very small magnetic bits | Magnets at high field | Superconductors | Paramagnets only | KV vs k_{B}T.
+M1#physics-u27-19-q1: Giant magnetoresistance was used first in: | Hard-disk read heads | Solar cells | LEDs | Batteries | 1997 onwards.
+M2#physics-u27-19-q2: The superparamagnetic limit concerns: | Thermal instability of very small magnetic bits | Magnets at high field | Superconductors | Paramagnets only | KV vs k_{B}T.
 
 ## Dielectric properties
 S: Dielectrics are insulators that polarise in electric fields, storing energy and slowing light. Their permittivity and losses, which depend strongly on frequency, decide their use in capacitors, cables, microwave devices and optics.
@@ -461,8 +461,8 @@ X: A capacitor's SiO_{2} gate (κ = 3.9, 1.2 nm) is replaced by HfO_{2} (κ = 25
 !: Permittivity values depend on frequency; using a DC value for an optical calculation gives wrong answers.
 Q: What is the loss tangent? | The ratio of the imaginary to real permittivity, measuring dielectric energy loss.
 Q: Why did chipmakers switch to high-κ gate dielectrics? | To keep capacitance high with a thicker layer that reduces tunnelling leakage.
-M1: Electronic polarisation responds up to: | Ultraviolet frequencies | Only DC | Microwaves only | Radio | Light electrons.
-M2: The Clausius–Mossotti relation links permittivity to: | Molecular polarisability | Conductivity | Magnetisation | Density of states | Microscopic to macroscopic.
+M1#physics-u27-20-q1: Electronic polarisation responds up to: | Ultraviolet frequencies | Only DC | Microwaves only | Radio | Light electrons.
+M2#physics-u27-20-q2: The Clausius–Mossotti relation links permittivity to: | Molecular polarisability | Conductivity | Magnetisation | Density of states | Microscopic to macroscopic.
 
 ## Piezoelectricity
 S: Piezoelectric materials produce a voltage when squeezed and change shape when a voltage is applied. They're in quartz watches, ultrasound probes, inkjet printers, gas lighters and precision positioners.
@@ -489,8 +489,8 @@ X: A PZT stack (d = 500 pm V^{-1}, 100 layers) gets 100 V. Expansion?
 !: Piezoelectricity needs a non-centrosymmetric structure; ceramics like PZT must be "poled" to align their domains, or the effects cancel.
 Q: What is the converse piezoelectric effect? | An applied electric field produces mechanical strain.
 Q: Why do quartz oscillators keep accurate time? | Quartz's piezoelectric resonance is very stable and high-Q.
-M1: Quartz watches oscillate at: | 32 768 Hz | 50 Hz | 1 MHz | 1 Hz | 2^{15} Hz.
-M2: Piezoelectricity requires a crystal lacking: | An inversion centre | Any symmetry | Mirrors | Electrons | Non-centrosymmetric.
+M1#physics-u27-21-q1: Quartz watches oscillate at: | 32 768 Hz | 50 Hz | 1 MHz | 1 Hz | 2^{15} Hz.
+M2#physics-u27-21-q2: Piezoelectricity requires a crystal lacking: | An inversion centre | Any symmetry | Mirrors | Electrons | Non-centrosymmetric.
 
 ## Ferroelectricity
 S: Ferroelectrics have a spontaneous electric polarisation that can be reversed by an applied field. Like ferromagnets with magnetisation, they show domains, hysteresis and a critical (Curie) temperature.
@@ -516,8 +516,8 @@ X: Why does BaTiO_{3}'s permittivity peak sharply near 120 °C?
 !: Ferroelectrics don't contain iron; the name comes from the analogy with ferromagnetism.
 Q: What is ferroelectricity? | Spontaneous electric polarisation reversible by an applied field.
 Q: Why are ferroelectrics used in memory? | Their two stable polarisation states store bits without power.
-M1: Barium titanate's ferroelectricity arises from: | Off-centre displacement of Ti ions | Iron atoms | Free electrons | Magnetic spins | Perovskite distortion.
-M2: All ferroelectrics are also: | Piezoelectric and pyroelectric | Magnetic | Superconducting | Metallic | Symmetry.
+M1#physics-u27-22-q1: Barium titanate's ferroelectricity arises from: | Off-centre displacement of Ti ions | Iron atoms | Free electrons | Magnetic spins | Perovskite distortion.
+M2#physics-u27-22-q2: All ferroelectrics are also: | Piezoelectric and pyroelectric | Magnetic | Superconducting | Metallic | Symmetry.
 
 ## Superconductivity
 S: Below a critical temperature, superconductors carry current with exactly zero resistance and expel magnetic fields. Discovered in 1911, superconductivity is a macroscopic quantum state used in MRI magnets, particle accelerators and quantum computers.
@@ -540,8 +540,8 @@ X: Energy gap of niobium (T_{c} = 9.3 K)?
 !: A superconductor isn't just a perfect conductor; perfect conductors would trap fields, but superconductors actively expel them.
 Q: What is the Meissner effect? | The expulsion of magnetic flux from a superconductor below T_{c}.
 Q: How do type II superconductors carry large currents in high fields? | Flux enters as pinned vortices, while superconductivity persists.
-M1: The flux quantum in superconductors is h/2e because: | Charge carriers are pairs of electrons | Electrons are halved | Flux is doubled | Holes carry charge | Cooper pairs.
-M2: MRI magnets typically use: | NbTi at about 4 K | Copper at room temperature | Iron cores | Permanent magnets only | Superconducting wire.
+M1#physics-u27-23-q1: The flux quantum in superconductors is h/2e because: | Charge carriers are pairs of electrons | Electrons are halved | Flux is doubled | Holes carry charge | Cooper pairs.
+M2#physics-u27-23-q2: MRI magnets typically use: | NbTi at about 4 K | Copper at room temperature | Iron cores | Permanent magnets only | Superconducting wire.
 
 ## Conventional and unconventional superconductors
 S: Conventional superconductors are explained by BCS theory, with electrons paired by lattice vibrations. Unconventional ones (cuprates, iron-based, heavy fermions) pair through other mechanisms, often magnetic, and reach much higher critical temperatures.
@@ -562,8 +562,8 @@ X: Why was YBCO's 93 K T_{c} a technological breakthrough?
 !: High-T_{c} doesn't mean room temperature; the record at ambient pressure is still ~133 K.
 Q: What is the isotope effect? | T_{c} ∝ M^{−1/2}, showing phonons are involved in conventional pairing.
 Q: What symmetry does pairing have in cuprates? | d-wave (the gap changes sign around the Fermi surface).
-M1: The first cuprate superconductor was discovered in: | 1986 | 1911 | 1957 | 2008 | Bednorz and Müller.
-M2: MgB_{2} is notable as: | A conventional superconductor with T_{c} = 39 K | A cuprate | A room-temperature superconductor | An insulator | 2001 discovery.
+M1#physics-u27-24-q1: The first cuprate superconductor was discovered in: | 1986 | 1911 | 1957 | 2008 | Bednorz and Müller.
+M2#physics-u27-24-q2: MgB_{2} is notable as: | A conventional superconductor with T_{c} = 39 K | A cuprate | A room-temperature superconductor | An insulator | 2001 discovery.
 
 ## Cooper pairs
 S: Cooper pairs are bound pairs of electrons with opposite momenta and spins, formed by a weak effective attraction in a metal. Their condensation into a single coherent quantum state produces superconductivity.
@@ -583,8 +583,8 @@ X: Gap-to-photon conversion: what frequency breaks pairs in aluminium (Δ ≈ 0.
 !: Cooper pairs aren't tightly bound molecules; they're huge, overlapping correlations among millions of electrons.
 Q: What binds electrons into Cooper pairs in conventional superconductors? | An effective attraction mediated by lattice vibrations (phonons).
 Q: How large are Cooper pairs in conventional superconductors? | Hundreds of nanometres to micrometres (the coherence length).
-M1: BCS theory was developed by: | Bardeen, Cooper and Schrieffer | Bednorz and Müller | Josephson | Onnes | 1957.
-M2: Cooper pairs have total spin: | 0 (in conventional s-wave pairing) | ½ | 1 always | 2 | Opposite spins.
+M1#physics-u27-25-q1: BCS theory was developed by: | Bardeen, Cooper and Schrieffer | Bednorz and Müller | Josephson | Onnes | 1957.
+M2#physics-u27-25-q2: Cooper pairs have total spin: | 0 (in conventional s-wave pairing) | ½ | 1 always | 2 | Opposite spins.
 
 ## Josephson effect
 S: When two superconductors are separated by a thin barrier, Cooper pairs tunnel through it, creating a supercurrent with no voltage. Josephson junctions are the basis of superconducting qubits, SQUID magnetometers and the voltage standard.
@@ -604,8 +604,8 @@ X: Josephson frequency for 10 μV across a junction?
 !: The DC Josephson current flows with zero voltage across the junction; it's a pure quantum tunnelling supercurrent.
 Q: What is the AC Josephson effect? | A voltage V across a junction makes the supercurrent oscillate at f = 2eV/h.
 Q: What do SQUIDs measure? | Extremely small magnetic fluxes and fields.
-M1: The Josephson constant 2e/h is about: | 483.6 GHz per mV | 1 Hz per V | 50 Hz per V | 1 THz per μV | 483.6 MHz per μV.
-M2: Transmon qubits use Josephson junctions to provide: | Nonlinearity (anharmonic energy levels) | Resistance | Light emission | Magnetism | Distinct qubit levels.
+M1#physics-u27-26-q1: The Josephson constant 2e/h is about: | 483.6 GHz per mV | 1 Hz per V | 50 Hz per V | 1 THz per μV | 483.6 MHz per μV.
+M2#physics-u27-26-q2: Transmon qubits use Josephson junctions to provide: | Nonlinearity (anharmonic energy levels) | Resistance | Light emission | Magnetism | Distinct qubit levels.
 
 ## Semiconductor heterostructures
 S: Heterostructures stack different semiconductors in nanometre-thin layers, engineering band edges to confine electrons. They're behind laser diodes, LEDs, high-speed transistors and the discovery of the quantum Hall effects.
@@ -626,8 +626,8 @@ X: Ground-state energy of an electron in a 10 nm GaAs well (m* = 0.067m_{e}, inf
 !: Heterostructure interfaces must be atomically sharp and lattice-matched; defects there destroy performance.
 Q: What is a quantum well? | A thin layer of narrow-gap semiconductor between wider-gap layers, confining carriers in one dimension.
 Q: What is modulation doping? | Placing dopants in barriers so carriers in the well scatter little from ionised impurities.
-M1: Blue LEDs, enabling white LED lighting, are made from: | InGaN heterostructures | Silicon | Germanium | Copper | Nobel 2014.
-M2: HEMTs achieve high speed using: | A high-mobility 2D electron gas | Heavy doping in the channel | Superconductivity | Optical fibres | Modulation doping.
+M1#physics-u27-27-q1: Blue LEDs, enabling white LED lighting, are made from: | InGaN heterostructures | Silicon | Germanium | Copper | Nobel 2014.
+M2#physics-u27-27-q2: HEMTs achieve high speed using: | A high-mobility 2D electron gas | Heavy doping in the channel | Superconductivity | Optical fibres | Modulation doping.
 
 ## Quantum Hall effect
 S: In a two-dimensional electron gas at low temperature and high magnetic field, the Hall resistance takes exactly quantised values h/(νe^{2}). Its precision makes it the standard of resistance, and it revealed topology in condensed matter.
@@ -649,8 +649,8 @@ D: phys-u27-quantum-hall
 !: The quantisation doesn't depend on the sample's shape, impurities or material; that universality comes from topology.
 Q: What is the von Klitzing constant? | R_{K} = h/e^{2} ≈ 25 812.807 Ω.
 Q: Why is the quantum Hall resistance so precise? | It's a topological invariant (Chern number), insensitive to disorder.
-M1: The fractional quantum Hall effect arises from: | Strong electron interactions | Disorder alone | Classical orbits | Phonons | Correlated states.
-M2: Quantum Hall edge states: | Carry current without backscattering | Are insulating | Only exist at the centre | Are classical | Chiral.
+M1#physics-u27-28-q1: The fractional quantum Hall effect arises from: | Strong electron interactions | Disorder alone | Classical orbits | Phonons | Correlated states.
+M2#physics-u27-28-q2: Quantum Hall edge states: | Carry current without backscattering | Are insulating | Only exist at the centre | Are classical | Chiral.
 
 ## Topological insulators
 S: Topological insulators are insulating inside but conduct along their surfaces or edges through special states protected by symmetry and topology. These states resist disorder and have spin locked to momentum.
@@ -674,8 +674,8 @@ X: Why do surface states of a TI survive non-magnetic disorder?
 !: Topological insulators are real insulators in their bulk; only the boundary conducts.
 Q: What is a topological insulator? | A material insulating in its bulk with protected conducting surface or edge states due to band topology.
 Q: What is spin–momentum locking? | Surface electrons' spin direction is fixed by their momentum.
-M1: Bi_{2}Se_{3} surface states form: | A Dirac cone | A flat band | A band gap | Nothing | Linear dispersion.
-M2: Topological protection of TI surface states relies on: | Time-reversal symmetry | Magnetism | High temperature | Doping | Kramers pairs.
+M1#physics-u27-29-q1: Bi_{2}Se_{3} surface states form: | A Dirac cone | A flat band | A band gap | Nothing | Linear dispersion.
+M2#physics-u27-29-q2: Topological protection of TI surface states relies on: | Time-reversal symmetry | Magnetism | High temperature | Doping | Kramers pairs.
 
 ## Strongly correlated electron systems
 S: In strongly correlated materials, electron–electron interactions dominate over kinetic energy, so simple band theory fails. They produce high-temperature superconductivity, colossal magnetoresistance, heavy fermions and exotic quantum phases.
@@ -697,8 +697,8 @@ X: Why is NiO an insulator though band theory says it should be a metal?
 !: Being half-filled isn't enough to be a metal; correlations can open a gap where band theory predicts none.
 Q: What is a Mott insulator? | A material that band theory predicts to be metallic but insulates because of strong electron repulsion.
 Q: What does the Hubbard model capture? | Competition between electron hopping (t) and on-site repulsion (U).
-M1: Heavy fermion materials have electrons with: | Very large effective masses | Zero mass | Negative charge only | No spin | Strong correlations.
-M2: Twisted bilayer graphene shows correlated states because of: | Flat bands at the magic angle | High temperatures | Doping only | Magnetism | Moiré.
+M1#physics-u27-30-q1: Heavy fermion materials have electrons with: | Very large effective masses | Zero mass | Negative charge only | No spin | Strong correlations.
+M2#physics-u27-30-q2: Twisted bilayer graphene shows correlated states because of: | Flat bands at the magic angle | High temperatures | Doping only | Magnetism | Moiré.
 
 ## Low-dimensional materials
 S: When electrons or atoms are confined to two, one or zero dimensions, new quantum effects emerge. Low-dimensional materials range from atomically thin sheets to nanowires and quantum dots, with properties tunable by size.
@@ -721,8 +721,8 @@ X: Why do smaller CdSe quantum dots glow bluer?
 !: Low-dimensional doesn't mean mathematically 2D; it means confined so that motion in some directions is quantised.
 Q: What is a Luttinger liquid? | The 1D interacting electron state where spin and charge excitations travel separately.
 Q: What is the BKT transition? | A 2D phase transition driven by unbinding of vortex–antivortex pairs.
-M1: Long-range magnetic order at finite T in 1D is: | Impossible (for short-range interactions) | Common | Stronger than 3D | Required | Fluctuations dominate.
-M2: MoS_{2} monolayers are: | Direct-gap 2D semiconductors | Metals | Superconductors | Insulators with no gap | TMD.
+M1#physics-u27-31-q1: Long-range magnetic order at finite T in 1D is: | Impossible (for short-range interactions) | Common | Stronger than 3D | Required | Fluctuations dominate.
+M2#physics-u27-31-q2: MoS_{2} monolayers are: | Direct-gap 2D semiconductors | Metals | Superconductors | Insulators with no gap | TMD.
 
 ## Graphene and two-dimensional materials
 S: Graphene is a single layer of carbon atoms in a honeycomb lattice: the first true 2D material, isolated in 2004 with sticky tape (Geim and Novoselov, Nobel 2010). Its electrons behave like massless relativistic particles, and it's exceptionally strong and conductive.
@@ -745,8 +745,8 @@ X: Fraction of light transmitted through 5 graphene layers?
 !: Graphene's lack of a band gap makes it unsuitable for conventional digital transistors, despite its high mobility.
 Q: How was graphene first isolated? | By mechanical exfoliation of graphite with sticky tape (2004).
 Q: What is unusual about graphene's electrons? | Near the Dirac points they behave as massless relativistic particles with linear dispersion.
-M1: A single graphene layer absorbs about: | 2.3% of visible light | 50% | 0.01% | 23% | πα.
-M2: The magic angle for twisted bilayer graphene is about: | 1.1° | 45° | 10° | 0.01° | Flat bands.
+M1#physics-u27-32-q1: A single graphene layer absorbs about: | 2.3% of visible light | 50% | 0.01% | 23% | πα.
+M2#physics-u27-32-q2: The magic angle for twisted bilayer graphene is about: | 1.1° | 45° | 10° | 0.01° | Flat bands.
 
 ## Nanomaterials
 S: Nanomaterials have structures between about 1 and 100 nm. At this scale, surface effects and quantum confinement change optical, electronic, magnetic, mechanical and chemical properties, opening uses from medicine to energy.
@@ -770,8 +770,8 @@ X: Fraction of atoms at the surface of a 3 nm gold particle (atom size 0.29 nm)?
 !: Nanoscale effects aren't just miniaturisation; properties qualitatively change, which can be useful or hazardous.
 Q: Why are nanoparticles good catalysts? | Their large surface-to-volume ratio exposes many active atoms.
 Q: Why do gold nanoparticles look red? | Localised surface plasmon resonance absorbs green light.
-M1: Nanomaterials have structures roughly: | 1–100 nm | 1–100 μm | 1–100 mm | Below 0.01 nm | Definition.
-M2: mRNA vaccines are delivered using: | Lipid nanoparticles | Gold nanoparticles | Carbon nanotubes | Quantum dots | LNPs.
+M1#physics-u27-33-q1: Nanomaterials have structures roughly: | 1–100 nm | 1–100 μm | 1–100 mm | Below 0.01 nm | Definition.
+M2#physics-u27-33-q2: mRNA vaccines are delivered using: | Lipid nanoparticles | Gold nanoparticles | Carbon nanotubes | Quantum dots | LNPs.
 
 ## Soft condensed matter
 S: Soft condensed matter covers materials easily deformed by thermal fluctuations or small forces: polymers, colloids, gels, foams, liquid crystals and biological matter. Their physics is dominated by entropy, weak interactions and self-assembly at mesoscopic scales.
@@ -794,8 +794,8 @@ X: Why does mayonnaise behave like a solid until you spread it?
 !: "Soft" doesn't mean simple; soft materials often have complex, non-equilibrium behaviour.
 Q: What makes soft matter "soft"? | Interaction energies comparable to k_{B}T, so thermal fluctuations and small forces deform it.
 Q: What is a depletion force? | An effective attraction between large particles caused by smaller particles' entropy.
-M1: Which is a colloid? | Milk | Pure water | Copper | Diamond | Fat droplets dispersed.
-M2: Hard spheres crystallise at high density because of: | Entropy | Attraction | Magnetism | Gravity | More free volume per particle.
+M1#physics-u27-34-q1: Which is a colloid? | Milk | Pure water | Copper | Diamond | Fat droplets dispersed.
+M2#physics-u27-34-q2: Hard spheres crystallise at high density because of: | Entropy | Attraction | Magnetism | Gravity | More free volume per particle.
 
 ## Polymers, colloids and liquid crystals
 S: Polymers are long chain molecules; colloids are particles suspended in a fluid; liquid crystals flow like liquids but have orientational order like crystals. These soft materials underpin plastics, biology and display technology.
@@ -819,6 +819,6 @@ X: Size of a polymer with N = 10 000 segments of 0.5 nm (ideal chain)?
 !: A polymer coil isn't stretched out; random-walk statistics make it compact, which is why rubber stores elastic energy in entropy.
 Q: How does an ideal polymer's size scale with chain length? | R ∝ N^{1/2}.
 Q: What distinguishes a nematic liquid crystal? | Molecules share a common orientation but have no positional order.
-M1: Rubber's elasticity is mainly: | Entropic | Due to bond stretching | Magnetic | Electrostatic | Coiled chains.
-M2: Perrin's study of colloids confirmed: | The existence of atoms (Avogadro's number) | Quantum mechanics | Relativity | Superconductivity | Brownian motion.
+M1#physics-u27-35-q1: Rubber's elasticity is mainly: | Entropic | Due to bond stretching | Magnetic | Electrostatic | Coiled chains.
+M2#physics-u27-35-q2: Perrin's study of colloids confirmed: | The existence of atoms (Avogadro's number) | Quantum mechanics | Relativity | Superconductivity | Brownian motion.
 `;

@@ -1,4 +1,4 @@
-// TechGradify · ForgeLab Computer Science: the curriculum, notes, interactives and quality record, handed to the shared course engine
+// TechGradify Computer Science: the curriculum, notes, interactives and quality record, handed to the shared course engine
 // (kit/course/course.js), the same engine and lesson renderer that runs every Gradify course. Created by
 // scripts/new-course.mjs from the PsychGradify pattern (content standard 2).
 import { UNITS, TRACKS, PATHS, BLURBS } from "./syllabus.js";
@@ -8,7 +8,7 @@ import { QUESTIONS, LESSONS } from "./registry.js";
 import { EVIDENCE } from "./evidence.js";
 import { CONCEPTS } from "./concepts.js";
 export default {
-  site: "TechGradify · ForgeLab", slug: "computing", name: "Computer Science", app: "../app.html", page: "/techgradify/course/", unitWord: "School", trackWord: "Stage",
+  site: "TechGradify", slug: "computing", name: "Computer Science", app: "../app.html", page: "/techgradify/course/", unitWord: "School", trackWord: "Stage",
   // who must sign a school off before it counts as published (docs/CURRICULUM_QA.md)
   expert: "a university computer science lecturer",
   units: UNITS, tracks: TRACKS, paths: PATHS, blurbs: BLURBS,
@@ -16,7 +16,7 @@ export default {
   questionVersions: QUESTIONS, lessonVersions: LESSONS,
   levels: ["Foundation", "Application", "Evaluation"],
   theme: { accent: "#ff5a4d", spectrum: "linear-gradient(90deg, #ff5a4d, #f97316 25%, #f59e0b 50%, #f472b6 75%, #22d3ee)" },
-  notice: "<b>Study material, not a qualification or legal advice.</b> ForgeLab teaches computer science for GCSE, A level and the first year of university, but it isn't an exam board resource or an accredited course: check the details of your own specification with your teacher or exam board. The lessons were drafted with AI assistance and haven't yet been reviewed by subject experts, so they may contain errors. Security lessons explain attacks so that you can defend against them: trying them on systems you don't own or have permission to test can be a criminal offence under the Computer Misuse Act 1990. The law lessons describe UK law for study; for a real data protection question, see the ICO or a qualified adviser.",
+  notice: "<b>Study material, not a qualification or legal advice.</b> TechGradify teaches computer science for GCSE, A level and the first year of university, but it isn't an exam board resource or an accredited course: check the details of your own specification with your teacher or exam board. The lessons were drafted with AI assistance and haven't yet been reviewed by subject experts, so they may contain errors. Security lessons explain attacks so that you can defend against them: trying them on systems you don't own or have permission to test can be a criminal offence under the Computer Misuse Act 1990. The law lessons describe UK law for study; for a real data protection question, see the ICO or a qualified adviser.",
   interactives: INTERACTIVES, evidence: EVIDENCE,
   // what each module builds on (kit/learning/concepts.js): "Builds on" in every lesson, and weak foundations flagged
   concepts: CONCEPTS,
@@ -45,8 +45,8 @@ export default {
     tools: [["Notes Studio", "Turn your own notes and PDFs into flashcards and questions.", "../app.html#/notes"]],
   },
   extras: [
-    ["ForgeLab", "TechGradify's hands-on coding, data science and AI home.", "../index.html"],
-    ["Learning map", "TechGradify · ForgeLab's subjects on one map.", "../map.html"],
+    ["TechGradify", "Hands-on coding, data science and AI, with instant feedback.", "../index.html"],
+    ["Learning map", "TechGradify's subjects on one map.", "../map.html"],
     ["Notes Studio", "Turn your own notes and PDFs into flashcards and questions.", "../app.html#/notes"],
   ],
 };

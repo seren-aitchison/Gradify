@@ -18,8 +18,8 @@ X: How many fundamental fermions, counting particles and antiparticles but not c
 !: Protons and neutrons aren't fundamental; they're bound states of quarks and gluons.
 Q: What are the fundamental fermions of the Standard Model? | Six quarks and six leptons.
 Q: How do we know electrons are point-like? | Scattering experiments show no structure down to ~10^{-19} m.
-M1: Which is not fundamental? | Proton | Electron | Up quark | Photon | uud bound state.
-M2: The Standard Model has how many gluon types? | 8 | 1 | 3 | 6 | SU(3) octet.
+M1#physics-u24-01-q1: Which is not fundamental? | Proton | Electron | Up quark | Photon | uud bound state.
+M2#physics-u24-01-q2: The Standard Model has how many gluon types? | 8 | 1 | 3 | 6 | SU(3) octet.
 
 ## Quarks and leptons
 S: Quarks feel the strong force and are always confined inside hadrons; leptons don't feel it and can exist freely. Both come in three generations of increasing mass.
@@ -39,8 +39,8 @@ X: Charge of the Ω^{−} (sss)?
 !: Quark masses inside protons are tiny; most of the proton's mass comes from gluon field energy and quark kinetic energy.
 Q: What charges do quarks carry? | +⅔e for up-type, −⅓e for down-type.
 Q: Why does the top quark not form hadrons? | It decays faster than the time needed to hadronise.
-M1: The muon is: | A heavier cousin of the electron | A quark | A boson | Stable | Second-generation lepton.
-M2: Which quark is heaviest? | Top | Bottom | Charm | Strange | ~173 GeV.
+M1#physics-u24-02-q1: The muon is: | A heavier cousin of the electron | A quark | A boson | Stable | Second-generation lepton.
+M2#physics-u24-02-q2: Which quark is heaviest? | Top | Bottom | Charm | Strange | ~173 GeV.
 
 ## Fermions and bosons
 S: Particles are either fermions (half-integer spin, obeying Pauli exclusion) or bosons (integer spin, able to share states). In the Standard Model, matter particles are fermions and force carriers are bosons.
@@ -60,8 +60,8 @@ X: Is a pion (quark + antiquark) a boson or fermion?
 !: Being a boson isn't the same as being a force carrier; mesons and helium-4 atoms are bosons too.
 Q: What spin do the Standard Model's force carriers have? | Spin 1 (the Higgs is spin 0).
 Q: Why is gravity always attractive in particle terms? | It's mediated by a spin-2 field, and even-spin exchanges between like sources attract.
-M1: The Higgs boson has spin: | 0 | ½ | 1 | 2 | Scalar.
-M2: Mesons are: | Bosons | Fermions | Leptons | Gauge bosons | q q̄.
+M1#physics-u24-03-q1: The Higgs boson has spin: | 0 | ½ | 1 | 2 | Scalar.
+M2#physics-u24-03-q2: Mesons are: | Bosons | Fermions | Leptons | Gauge bosons | q q̄.
 
 ## Fundamental interactions
 S: All known physics arises from four interactions: gravity, electromagnetism, the weak force and the strong force. They differ hugely in strength and range, and three are described by quantum gauge theories in the Standard Model.
@@ -84,8 +84,8 @@ X: Why does the weak force have such a short range?
 !: The weak force isn't intrinsically weak: its coupling is similar to electromagnetism's; it seems weak at low energy because its carriers are heavy.
 Q: Which interaction has the longest range and weakest strength? | Gravity.
 Q: Why is the weak force short-ranged? | Its carriers, the W and Z bosons, are very massive.
-M1: Which forces were unified in electroweak theory? | Electromagnetic and weak | Strong and weak | Gravity and electromagnetism | Strong and gravity | Glashow–Weinberg–Salam.
-M2: The strong force coupling at higher energy: | Decreases | Increases | Is constant | Becomes infinite | Asymptotic freedom.
+M1#physics-u24-04-q1: Which forces were unified in electroweak theory? | Electromagnetic and weak | Strong and weak | Gravity and electromagnetism | Strong and gravity | Glashow–Weinberg–Salam.
+M2#physics-u24-04-q2: The strong force coupling at higher energy: | Decreases | Increases | Is constant | Becomes infinite | Asymptotic freedom.
 
 ## Electromagnetic interaction
 S: The electromagnetic interaction acts between electrically charged particles through the exchange of photons. Described by quantum electrodynamics, it governs atoms, chemistry, light and almost everything in everyday life.
@@ -106,8 +106,8 @@ X: Why can't a single photon turn into an electron–positron pair in empty spac
 !: The photon itself carries no electric charge, so photons don't interact directly with each other (except via quantum loops: light-by-light scattering, observed at the LHC).
 Q: What particle mediates electromagnetism? | The photon.
 Q: Why is π^{0} → γγ an electromagnetic decay? | It produces photons and conserves the quantum numbers that the weak force would violate; it's fast (~10^{-17} s).
-M1: Which particle doesn't feel electromagnetism? | Neutrino | Electron | Up quark | W boson | Neutral.
-M2: Light-by-light scattering happens through: | Virtual charged particle loops | Direct photon charge | Gravity | The strong force | Higher-order QED.
+M1#physics-u24-05-q1: Which particle doesn't feel electromagnetism? | Neutrino | Electron | Up quark | W boson | Neutral.
+M2#physics-u24-05-q2: Light-by-light scattering happens through: | Virtual charged particle loops | Direct photon charge | Gravity | The strong force | Higher-order QED.
 
 ## Weak interaction
 S: The weak interaction changes one type of quark or lepton into another, causing beta decay and powering the Sun's first fusion step. It's carried by the massive W and Z bosons and is the only force that violates parity and distinguishes particles from antiparticles.
@@ -128,8 +128,8 @@ X: Beta decay at the quark level for a neutron.
 !: The weak force doesn't only cause decays; neutral currents scatter particles too, and weak processes are essential in supernova explosions.
 Q: What did Wu's experiment show? | The weak interaction violates parity symmetry.
 Q: What's the difference between charged and neutral currents? | Charged currents (W) change particle charge and flavour; neutral currents (Z) don't.
-M1: The W boson mass is about: | 80 GeV | 0.5 MeV | 1 TeV | 125 GeV | M_{W} ≈ 80.4 GeV.
-M2: Neutrinos in the Standard Model are produced: | Left-handed | Right-handed | Unpolarised | With either handedness | Parity violation.
+M1#physics-u24-06-q1: The W boson mass is about: | 80 GeV | 0.5 MeV | 1 TeV | 125 GeV | M_{W} ≈ 80.4 GeV.
+M2#physics-u24-06-q2: Neutrinos in the Standard Model are produced: | Left-handed | Right-handed | Unpolarised | With either handedness | Parity violation.
 
 ## Strong interaction
 S: The strong interaction binds quarks into protons, neutrons and other hadrons, and indirectly binds nuclei. It's carried by gluons, which themselves carry colour charge, leading to confinement at long distances and asymptotic freedom at short distances.
@@ -149,8 +149,8 @@ X: Why do energetic quarks produce jets?
 !: The strong force between nucleons (nuclear force) is a residual effect; the fundamental strong force acts between quarks and gluons.
 Q: What is confinement? | Quarks and gluons can't be isolated; they're always bound in colour-neutral hadrons.
 Q: What is asymptotic freedom? | The strong coupling becomes weak at high energies (short distances).
-M1: Gluons differ from photons because they: | Carry colour charge and interact with each other | Are massive | Have spin 2 | Are fermions | Non-abelian.
-M2: Strong decays typically take about: | 10^{-23} s | 10^{-8} s | 1 s | 10^{-16} s | Fast.
+M1#physics-u24-07-q1: Gluons differ from photons because they: | Carry colour charge and interact with each other | Are massive | Have spin 2 | Are fermions | Non-abelian.
+M2#physics-u24-07-q2: Strong decays typically take about: | 10^{-23} s | 10^{-8} s | 1 s | 10^{-16} s | Fast.
 
 ## Gravitational interaction
 S: Gravity is the weakest fundamental interaction but dominates on large scales because it's always attractive and acts on all energy. It's described by general relativity, and there is no accepted quantum theory of gravity.
@@ -171,8 +171,8 @@ X: Ratio of gravitational to electric force between two electrons?
 !: Gravity isn't part of the Standard Model; the Standard Model works with gravity treated classically.
 Q: What is the Planck energy? | About 10^{19} GeV, where quantum gravity effects should become important.
 Q: Why does gravity dominate astronomy despite being weakest? | It's always attractive and can't be screened, while matter is electrically neutral overall.
-M1: The hypothetical graviton has spin: | 2 | 1 | 0 | ½ | Tensor field.
-M2: Gravity couples to: | Energy and momentum | Electric charge only | Colour charge | Weak isospin only | All forms of energy.
+M1#physics-u24-08-q1: The hypothetical graviton has spin: | 2 | 1 | 0 | ½ | Tensor field.
+M2#physics-u24-08-q2: Gravity couples to: | Energy and momentum | Electric charge only | Colour charge | Weak isospin only | All forms of energy.
 
 ## Standard Model
 S: The Standard Model is the quantum field theory of all known particles and three of the four forces. Built in the 1960s–70s, it has passed every collider test, but leaves out gravity, dark matter, neutrino masses (in its original form) and the matter–antimatter asymmetry.
@@ -192,8 +192,8 @@ X: Count the Standard Model's gauge bosons.
 !: The Standard Model is a "model" only in name; it's an extraordinarily precise and well-tested theory, though incomplete.
 Q: What is the Standard Model's gauge group? | SU(3) × SU(2) × U(1).
 Q: Name three things the Standard Model doesn't explain. | Gravity, dark matter, matter–antimatter asymmetry (also dark energy, neutrino masses, the hierarchy problem).
-M1: Which particle was the last Standard Model particle discovered? | Higgs boson | Top quark | Tau neutrino | W boson | 2012.
-M2: The Standard Model includes how many generations of fermions? | 3 | 2 | 4 | 6 | Confirmed by Z width.
+M1#physics-u24-09-q1: Which particle was the last Standard Model particle discovered? | Higgs boson | Top quark | Tau neutrino | W boson | 2012.
+M2#physics-u24-09-q2: The Standard Model includes how many generations of fermions? | 3 | 2 | 4 | 6 | Confirmed by Z width.
 
 ## Particle generations
 S: Quarks and leptons come in three generations, each a heavier copy of the first with the same charges and interactions. Only the first generation makes up ordinary matter; why there are three is unknown.
@@ -214,8 +214,8 @@ X: Why don't we find muons in ordinary matter?
 !: Generations aren't excited states of each other; they're separate particles with identical gauge interactions but different masses.
 Q: How was the number of light neutrino types measured? | From the Z boson's decay width at LEP.
 Q: Why are three generations needed for CP violation in the Standard Model? | A complex phase in the CKM mixing matrix requires at least three generations.
-M1: The second-generation charged lepton is the: | Muon | Tau | Electron | Charm | μ.
-M2: The top and bottom quarks belong to the: | Third generation | First | Second | Fourth | Heaviest.
+M1#physics-u24-10-q1: The second-generation charged lepton is the: | Muon | Tau | Electron | Charm | μ.
+M2#physics-u24-10-q2: The top and bottom quarks belong to the: | Third generation | First | Second | Fourth | Heaviest.
 
 ## Quark flavours and colour charge
 S: Quarks come in six flavours (types) and three colours. Flavour is changed only by the weak force; colour is the charge of the strong force, and every observed particle is colour-neutral.
@@ -236,8 +236,8 @@ X: R = σ(e^{+}e^{−} → hadrons)/σ(e^{+}e^{−} → μ^{+}μ^{−}) below th
 !: "Colour" has nothing to do with visual colour; it's just a name for a three-valued charge.
 Q: What evidence supports quark colour? | The Δ^{++} spin–statistics puzzle and the R ratio in e^{+}e^{−} annihilation.
 Q: Which interactions can change quark flavour? | Only the weak interaction.
-M1: How many quark flavours are there? | 6 | 3 | 8 | 12 | u, d, s, c, b, t.
-M2: A baryon is colour-neutral because it contains: | One quark of each colour | Two colours | Gluons only | An antiquark | rgb.
+M1#physics-u24-11-q1: How many quark flavours are there? | 6 | 3 | 8 | 12 | u, d, s, c, b, t.
+M2#physics-u24-11-q2: A baryon is colour-neutral because it contains: | One quark of each colour | Two colours | Gluons only | An antiquark | rgb.
 
 ## Hadrons, baryons and mesons
 S: Hadrons are composite particles made of quarks held by gluons. Baryons contain three quarks (protons, neutrons); mesons contain a quark and an antiquark (pions, kaons). Hundreds of hadrons are known.
@@ -258,8 +258,8 @@ X: Quark content and charge of K^{−}?
 !: Hadrons aren't just their valence quarks: they contain a sea of gluons and quark–antiquark pairs that carry much of their momentum.
 Q: What's the difference between baryons and mesons? | Baryons are three quarks; mesons are a quark and an antiquark.
 Q: Why is the proton stable? | It's the lightest baryon, and baryon number is conserved.
-M1: π^{+} is made of: | ud̄ | uud | ūd | uu | Charge +1.
-M2: The Ω^{−} discovery confirmed: | The eightfold way (SU(3) flavour) | Quarks are free | Leptons | Parity violation | Gell-Mann's prediction.
+M1#physics-u24-12-q1: π^{+} is made of: | ud̄ | uud | ūd | uu | Charge +1.
+M2#physics-u24-12-q2: The Ω^{−} discovery confirmed: | The eightfold way (SU(3) flavour) | Quarks are free | Leptons | Parity violation | Gell-Mann's prediction.
 
 ## Antimatter and antiparticles
 S: Every particle has an antiparticle with the same mass and opposite charges. Particles and antiparticles can annihilate into energy or be created in pairs, and the universe's lack of antimatter is one of physics' biggest puzzles.
@@ -281,8 +281,8 @@ X: Energy released when 1 g of antimatter annihilates with 1 g of matter?
 !: Antimatter isn't "negative mass"; it has positive mass and falls downward in gravity.
 Q: Who discovered the positron? | Carl Anderson (1932), in cosmic rays.
 Q: What do PET scanners detect? | Pairs of 511 keV photons from positron–electron annihilation.
-M1: An antiproton has charge: | −e | +e | 0 | −2e | Opposite of proton.
-M2: Antimatter tested at CERN was found to: | Fall downward like matter | Fall upward | Float | Not be affected by gravity | ALPHA-g 2023.
+M1#physics-u24-13-q1: An antiproton has charge: | −e | +e | 0 | −2e | Opposite of proton.
+M2#physics-u24-13-q2: Antimatter tested at CERN was found to: | Fall downward like matter | Fall upward | Float | Not be affected by gravity | ALPHA-g 2023.
 
 ## Particle decay
 S: Unstable particles decay into lighter ones, at rates set by the interaction involved and the energy available. Lifetimes range from 10^{-25} s (top quark) to 880 s (neutron), while some particles appear completely stable.
@@ -305,8 +305,8 @@ D: phys-u24-pion-survival
 !: Lifetimes quoted in tables are in the particle's rest frame; lab-frame lifetimes are longer by γ.
 Q: How is decay width related to lifetime? | Γ = ħ/τ.
 Q: Why do cosmic-ray muons reach the ground? | Relativistic time dilation extends their lifetime in Earth's frame.
-M1: A particle with width 100 MeV decays via: | The strong interaction | Weak | EM | Gravity | τ ~ 10^{-23} s.
-M2: A branching ratio is: | The fraction of decays into a given final state | The lifetime | The mass ratio | The cross-section | Partial width/total.
+M1#physics-u24-14-q1: A particle with width 100 MeV decays via: | The strong interaction | Weak | EM | Gravity | τ ~ 10^{-23} s.
+M2#physics-u24-14-q2: A branching ratio is: | The fraction of decays into a given final state | The lifetime | The mass ratio | The cross-section | Partial width/total.
 
 ## Conservation laws in particle reactions
 S: Particle reactions obey strict conservation laws: some absolute (energy, momentum, charge, baryon and lepton number), others respected only by some interactions (strangeness, parity). Checking them tells you which reactions can happen and which force is responsible.
@@ -328,8 +328,8 @@ X: Is p + p → p + p + π^{0} allowed? p + p → p + π^{+}?
 !: A reaction obeying all conservation laws still needs enough energy and may be suppressed; conservation laws say what's possible, not how likely.
 Q: Which quantities are conserved in all known interactions? | Energy, momentum, angular momentum, charge, baryon number, lepton number, CPT.
 Q: Which interaction violates strangeness? | The weak interaction.
-M1: Which decay is forbidden? | p → e^{+} + γ | n → p + e^{−} + ν̄_{e} | π^{0} → γγ | μ^{−} → e^{−} + ν̄_{e} + ν_{μ} | Violates B and L.
-M2: Λ (uds) → p + π^{−} must be a weak decay because: | Strangeness changes by 1 | Charge changes | Baryon number changes | Energy isn't conserved | ΔS = 1.
+M1#physics-u24-15-q1: Which decay is forbidden? | p → e^{+} + γ | n → p + e^{−} + ν̄_{e} | π^{0} → γγ | μ^{−} → e^{−} + ν̄_{e} + ν_{μ} | Violates B and L.
+M2#physics-u24-15-q2: Λ (uds) → p + π^{−} must be a weak decay because: | Strangeness changes by 1 | Charge changes | Baryon number changes | Energy isn't conserved | ΔS = 1.
 
 ## Feynman diagrams
 S: Feynman diagrams are pictures of particle interactions that stand for precise mathematical terms in quantum field theory calculations. Lines represent particles; vertices represent interactions, each contributing a coupling constant.
@@ -353,8 +353,8 @@ X: How many vertices in the lowest-order diagram for Compton scattering, and the
 !: Virtual particles in diagrams are terms in a calculation, not literal particles flying between others; their energies and momenta needn't satisfy E^{2} = p^{2}c^{2} + m^{2}c^{4}.
 Q: What does each vertex in a QED Feynman diagram contribute? | A factor of the coupling, e (√α), in the amplitude.
 Q: What do loop diagrams represent? | Higher-order quantum corrections.
-M1: An arrow pointing backwards in time on a fermion line means: | An antiparticle | A virtual particle | A photon | An error | Feynman–Stückelberg.
-M2: In β decay's diagram, the exchanged boson is: | W^{−} | Z | Photon | Gluon | Charged current.
+M1#physics-u24-16-q1: An arrow pointing backwards in time on a fermion line means: | An antiparticle | A virtual particle | A photon | An error | Feynman–Stückelberg.
+M2#physics-u24-16-q2: In β decay's diagram, the exchanged boson is: | W^{−} | Z | Photon | Gluon | Charged current.
 
 ## Quantum electrodynamics
 S: Quantum electrodynamics (QED) is the quantum field theory of electrons, positrons and photons. It's the most precisely tested theory in physics, predicting quantities like the electron's magnetic moment to better than a part in a trillion.
@@ -375,8 +375,8 @@ X: The leading QED correction to the electron's g-factor (Schwinger term)?
 !: QED's success doesn't mean electrons are surrounded by literal clouds of particles; vacuum polarisation is a calculational effect with measurable consequences.
 Q: What is renormalisation? | A procedure that absorbs infinities by expressing predictions in terms of measured physical quantities.
 Q: What is the Schwinger term? | α/2π, the first QED correction to the electron's magnetic moment.
-M1: QED's gauge symmetry group is: | U(1) | SU(2) | SU(3) | SO(3) | Abelian.
-M2: The effective strength of electromagnetism at higher energy: | Increases slightly | Decreases | Is constant | Vanishes | Vacuum polarisation.
+M1#physics-u24-17-q1: QED's gauge symmetry group is: | U(1) | SU(2) | SU(3) | SO(3) | Abelian.
+M2#physics-u24-17-q2: The effective strength of electromagnetism at higher energy: | Increases slightly | Decreases | Is constant | Vanishes | Vacuum polarisation.
 
 ## Quantum chromodynamics
 S: Quantum chromodynamics (QCD) is the theory of the strong interaction between quarks and gluons. Its gluons carry colour charge themselves, giving it two remarkable properties: asymptotic freedom at short distances and confinement at long ones.
@@ -399,8 +399,8 @@ X: Why can't we isolate a single quark?
 !: Lattice QCD calculations are first-principles, not fits; they predict masses from just quark masses and α_{s}.
 Q: Where does most of the proton's mass come from? | Gluon field energy and quark kinetic energy, not the quarks' rest masses.
 Q: What is lattice QCD? | Numerical calculation of QCD on a discrete spacetime lattice.
-M1: QCD's coupling is large at: | Low energies | High energies | All energies | Never | Confinement scale.
-M2: Proving QCD confinement rigorously is: | A Millennium Prize problem | Solved | Impossible | Irrelevant | Yang–Mills mass gap.
+M1#physics-u24-18-q1: QCD's coupling is large at: | Low energies | High energies | All energies | Never | Confinement scale.
+M2#physics-u24-18-q2: Proving QCD confinement rigorously is: | A Millennium Prize problem | Solved | Impossible | Irrelevant | Yang–Mills mass gap.
 
 ## Electroweak theory
 S: Electroweak theory unifies electromagnetism and the weak force into a single interaction, broken at low energies by the Higgs field. It predicted the W and Z bosons and their masses, confirmed at CERN in 1983.
@@ -422,8 +422,8 @@ X: Use M_{W} = M_{Z} cos θ_{W} with sin^{2}θ_{W} = 0.231.
 !: Electroweak unification doesn't make electromagnetism and the weak force identical at everyday energies; symmetry breaking separates them.
 Q: What did electroweak theory predict that was found in 1983? | The W and Z bosons.
 Q: What is the weak mixing angle? | The parameter describing how the neutral gauge fields mix into the photon and Z.
-M1: The Z boson mass is about: | 91 GeV | 80 GeV | 125 GeV | 173 GeV | 91.19 GeV.
-M2: Electroweak symmetry is broken by: | The Higgs field | Gravity | Colour | Neutrinos | Spontaneous symmetry breaking.
+M1#physics-u24-19-q1: The Z boson mass is about: | 91 GeV | 80 GeV | 125 GeV | 173 GeV | 91.19 GeV.
+M2#physics-u24-19-q2: Electroweak symmetry is broken by: | The Higgs field | Gravity | Colour | Neutrinos | Spontaneous symmetry breaking.
 
 ## Higgs mechanism
 S: The Higgs mechanism explains how the W and Z bosons, quarks and charged leptons acquire mass without breaking the underlying gauge symmetry of the theory. A field fills all of space with a nonzero value, and particles interacting with it become massive.
@@ -443,8 +443,8 @@ X: The electron's Yukawa coupling?
 !: The Higgs field doesn't "slow particles down like treacle"; it's a non-zero field that couples to particles and changes their dispersion relation.
 Q: What does the Higgs field's vacuum value do? | Breaks electroweak symmetry, giving masses to W, Z and fermions.
 Q: Does the Higgs give protons most of their mass? | No; most comes from QCD binding energy.
-M1: The Higgs field's vacuum expectation value is about: | 246 GeV | 125 GeV | 1 TeV | 91 GeV | v.
-M2: The longitudinal polarisations of W and Z come from: | Components of the Higgs field | Gluons | Photons | Neutrinos | "Eaten" Goldstone bosons.
+M1#physics-u24-20-q1: The Higgs field's vacuum expectation value is about: | 246 GeV | 125 GeV | 1 TeV | 91 GeV | v.
+M2#physics-u24-20-q2: The longitudinal polarisations of W and Z come from: | Components of the Higgs field | Gluons | Photons | Neutrinos | "Eaten" Goldstone bosons.
 
 ## Higgs boson
 S: The Higgs boson is the particle excitation of the Higgs field. Discovered in 2012 by ATLAS and CMS at the LHC at about 125 GeV, it completed the Standard Model and confirmed how elementary particles get their masses.
@@ -464,8 +464,8 @@ X: Why was H → γγ important despite its 0.2% branching ratio?
 !: The Higgs boson isn't the "God particle" in any meaningful sense; it's one particle among many, whose field happens to give others mass.
 Q: When and where was the Higgs boson discovered? | 2012, by ATLAS and CMS at CERN's LHC.
 Q: What determines how strongly the Higgs couples to a particle? | The particle's mass.
-M1: The Higgs boson mass is about: | 125 GeV | 91 GeV | 1 TeV | 0.5 MeV | 125.2 GeV.
-M2: The most common Higgs decay is to: | bb̄ | γγ | e^{+}e^{−} | Neutrinos | 58%.
+M1#physics-u24-21-q1: The Higgs boson mass is about: | 125 GeV | 91 GeV | 1 TeV | 0.5 MeV | 125.2 GeV.
+M2#physics-u24-21-q2: The most common Higgs decay is to: | bb̄ | γγ | e^{+}e^{−} | Neutrinos | 58%.
 
 ## Neutrino oscillations
 S: Neutrinos change flavour as they travel: an electron neutrino can later be detected as a muon or tau neutrino. This proves neutrinos have mass, the first confirmed physics beyond the original Standard Model (Kajita and McDonald, Nobel 2015).
@@ -488,8 +488,8 @@ D: phys-u24-oscillation-probability
 !: Oscillations depend on mass differences, not absolute masses; they prove neutrinos are massive but don't measure the masses themselves.
 Q: Why do neutrino oscillations prove neutrinos have mass? | Oscillation requires different mass states evolving with different phases.
 Q: How was the solar neutrino problem solved? | SNO measured all flavours, showing electron neutrinos had changed flavour.
-M1: Oscillation probability depends on: | Δm^{2}L/E and mixing angles | Absolute neutrino mass | Electric charge | Temperature | Phase difference.
-M2: Super-Kamiokande saw fewer upward-going muon neutrinos because: | They oscillated over the longer path through Earth | Earth absorbs them | The detector was faulty | They decay | Longer L.
+M1#physics-u24-22-q1: Oscillation probability depends on: | Δm^{2}L/E and mixing angles | Absolute neutrino mass | Electric charge | Temperature | Phase difference.
+M2#physics-u24-22-q2: Super-Kamiokande saw fewer upward-going muon neutrinos because: | They oscillated over the longer path through Earth | Earth absorbs them | The detector was faulty | They decay | Longer L.
 
 ## CP violation
 S: CP symmetry combines swapping particles with antiparticles (C) and mirror reflection (P). The weak interaction violates it slightly, making matter and antimatter behave differently, a necessary ingredient for explaining why the universe is made of matter.
@@ -511,8 +511,8 @@ X: Why do we need more CP violation than the Standard Model provides?
 !: CP violation doesn't mean CPT violation; CPT symmetry is preserved, which is why particles and antiparticles have equal masses and lifetimes.
 Q: Who discovered CP violation? | Cronin and Fitch, in neutral kaon decays (1964).
 Q: What are the Sakharov conditions? | Baryon number violation, C and CP violation, and departure from equilibrium.
-M1: In the Standard Model, quark CP violation comes from: | A complex phase in the CKM matrix | The Higgs mass | Gluons | Gravity | KM mechanism.
-M2: CP violation is needed to explain: | The matter–antimatter asymmetry | Dark energy | Neutrino masses | The Higgs mass | Baryogenesis.
+M1#physics-u24-23-q1: In the Standard Model, quark CP violation comes from: | A complex phase in the CKM matrix | The Higgs mass | Gluons | Gravity | KM mechanism.
+M2#physics-u24-23-q2: CP violation is needed to explain: | The matter–antimatter asymmetry | Dark energy | Neutrino masses | The Higgs mass | Baryogenesis.
 
 ## Symmetry breaking
 S: Symmetry breaking occurs when a system's lowest-energy state lacks a symmetry that its laws possess. It underlies magnetism, superconductivity, the Higgs mechanism and the variety of forces we see today.
@@ -530,8 +530,8 @@ X: Why are pions light (~140 MeV) compared with protons (938 MeV)?
 !: Spontaneous symmetry breaking doesn't mean the symmetry is gone from the laws; it's hidden in the ground state and still constrains physics.
 Q: What is Goldstone's theorem? | Spontaneous breaking of a continuous global symmetry produces massless bosons.
 Q: Give an example of spontaneous symmetry breaking in everyday physics. | A ferromagnet choosing a magnetisation direction (also crystals).
-M1: In the Higgs mechanism, Goldstone bosons: | Become longitudinal modes of W and Z | Remain massless particles | Are photons | Disappear entirely | Eaten.
-M2: Phonons are Goldstone bosons of broken: | Translational symmetry | Gauge symmetry | Time reversal | CP | Crystal lattice.
+M1#physics-u24-24-q1: In the Higgs mechanism, Goldstone bosons: | Become longitudinal modes of W and Z | Remain massless particles | Are photons | Disappear entirely | Eaten.
+M2#physics-u24-24-q2: Phonons are Goldstone bosons of broken: | Translational symmetry | Gauge symmetry | Time reversal | CP | Crystal lattice.
 
 ## Particle accelerators
 S: Particle accelerators use electric fields to speed up charged particles and magnetic fields to steer and focus them. They probe nature at the smallest scales, and thousands more serve medicine and industry.
@@ -555,8 +555,8 @@ D: phys-u24-bending-radius
 !: Higher energy needs bigger rings or stronger magnets; synchrotron radiation makes circular electron machines impractical above a few hundred GeV.
 Q: Why do circular electron colliders lose energy so fast? | Synchrotron radiation scales as γ^{4}, and electrons have huge γ for their energy.
 Q: How does a synchrotron keep particles on a fixed orbit as they speed up? | The magnetic field and RF frequency rise in step with the particles' momentum.
-M1: The LHC accelerates protons to about: | 6.8 TeV | 7 GeV | 1 MeV | 100 TeV | Run 3 energy.
-M2: Medical linacs mainly produce: | High-energy X-rays for radiotherapy | Neutrinos | Antimatter | Microwaves | Bremsstrahlung beams.
+M1#physics-u24-25-q1: The LHC accelerates protons to about: | 6.8 TeV | 7 GeV | 1 MeV | 100 TeV | Run 3 energy.
+M2#physics-u24-25-q2: Medical linacs mainly produce: | High-energy X-rays for radiotherapy | Neutrinos | Antimatter | Microwaves | Bremsstrahlung beams.
 
 ## Collider experiments
 S: Colliders smash particle beams head-on so all their energy is available to create new particles. Giant detectors record the debris, and statistical analysis of billions of events reveals rare processes like Higgs production.
@@ -580,8 +580,8 @@ X: How many Higgs bosons in 140 fb^{-1} at 13 TeV (σ ≈ 55 pb)?
 !: Hadron collisions aren't collisions of whole protons; the hard scatter is between individual quarks or gluons carrying fractions of the proton's energy.
 Q: Why do colliders beat fixed-target machines for new particle searches? | Colliding beams make all the energy available in the centre-of-mass frame.
 Q: How is the number of events related to luminosity? | N = σ × integrated luminosity.
-M1: An inverse femtobarn measures: | Integrated luminosity | Energy | Cross-section | Mass | Data collected.
-M2: Two 7 TeV proton beams colliding head-on give √s = | 14 TeV | 7 TeV | 49 TeV | 3.5 TeV | 2E.
+M1#physics-u24-26-q1: An inverse femtobarn measures: | Integrated luminosity | Energy | Cross-section | Mass | Data collected.
+M2#physics-u24-26-q2: Two 7 TeV proton beams colliding head-on give √s = | 14 TeV | 7 TeV | 49 TeV | 3.5 TeV | 2E.
 
 ## Particle detectors
 S: Particle detectors reconstruct what happened in a collision by measuring the tracks, energies and identities of the particles produced. Modern collider detectors are layered like onions, each layer specialised for different particles.
@@ -602,8 +602,8 @@ X: A track curves with radius 1 m in a 2 T field. Momentum?
 !: Neutral particles leave no tracks; they're detected through their energy deposits or decay products, or inferred from missing momentum.
 Q: How is a charged particle's momentum measured? | From the curvature of its track in a magnetic field.
 Q: How are neutrinos detected at collider experiments? | Indirectly, as missing transverse momentum.
-M1: Which particles reach the outermost muon chambers? | Muons (and neutrinos, undetected) | Electrons | Photons | Pions | Minimal interaction.
-M2: IceCube detects neutrinos using: | Cherenkov light in ice | Magnetic tracks | Calorimeters only | Radio waves only | Cubic kilometre of ice.
+M1#physics-u24-27-q1: Which particles reach the outermost muon chambers? | Muons (and neutrinos, undetected) | Electrons | Photons | Pions | Minimal interaction.
+M2#physics-u24-27-q2: IceCube detects neutrinos using: | Cherenkov light in ice | Magnetic tracks | Calorimeters only | Radio waves only | Cubic kilometre of ice.
 
 ## Scattering experiments
 S: Scattering experiments fire particles at targets and measure how they deflect, lose energy or create new particles. From Rutherford's alpha particles to the LHC, scattering is how physics sees inside matter.
@@ -623,8 +623,8 @@ X: Resolution of a 50 GeV probe?
 !: Scattering measures cross-sections, which depend on both the probe and the target; interpreting them needs a model of the interaction.
 Q: What did deep inelastic scattering reveal? | Point-like constituents (quarks) inside protons.
 Q: Why do higher-energy probes see smaller structures? | Their de Broglie wavelength is shorter.
-M1: Bjorken scaling indicated: | Point-like partons inside the proton | Nuclear size | Neutrino mass | Parity violation | DIS.
-M2: Quarks carry about what fraction of the proton's momentum? | Half | All | 10% | 90% | Gluons carry the rest.
+M1#physics-u24-28-q1: Bjorken scaling indicated: | Point-like partons inside the proton | Nuclear size | Neutrino mass | Parity violation | DIS.
+M2#physics-u24-28-q2: Quarks carry about what fraction of the proton's momentum? | Half | All | 10% | 90% | Gluons carry the rest.
 
 ## Beyond the Standard Model
 S: Physics beyond the Standard Model seeks to explain what it leaves out: dark matter, neutrino masses, the matter–antimatter asymmetry, gravity, and the puzzling values of its parameters. Experiments at colliders, underground labs and in precision measurements search for clues.
@@ -647,8 +647,8 @@ X: Why does the hierarchy problem suggest new physics near the TeV scale?
 !: "Beyond the Standard Model" doesn't mean the Standard Model is wrong; it means it's incomplete, like Newtonian gravity before general relativity.
 Q: Name three pieces of evidence for physics beyond the Standard Model. | Neutrino masses, dark matter and the matter–antimatter asymmetry (also dark energy).
 Q: What is the strong CP problem? | QCD allows CP violation, but none is observed; why the parameter θ is so tiny is unexplained.
-M1: Axions were proposed to solve: | The strong CP problem | The hierarchy problem | Neutrino mass | Confinement | Peccei–Quinn.
-M2: The hierarchy problem concerns: | Why the Higgs mass is so light | Proton decay | Gravity's strength | Quark charges | Fine-tuning.
+M1#physics-u24-29-q1: Axions were proposed to solve: | The strong CP problem | The hierarchy problem | Neutrino mass | Confinement | Peccei–Quinn.
+M2#physics-u24-29-q2: The hierarchy problem concerns: | Why the Higgs mass is so light | Proton decay | Gravity's strength | Quark charges | Fine-tuning.
 
 ## Supersymmetry
 S: Supersymmetry (SUSY) proposes that every boson has a fermion partner and vice versa. It would solve the hierarchy problem, unify forces precisely and offer a dark matter candidate, but no superpartners have yet been found.
@@ -667,8 +667,8 @@ X: Superpartner of the top quark, and its spin?
 !: Supersymmetry isn't ruled out; its simplest, most natural forms are increasingly constrained.
 Q: What does supersymmetry pair together? | Every fermion with a boson and every boson with a fermion.
 Q: Why is the lightest superpartner a dark matter candidate? | If R-parity holds it's stable, neutral and weakly interacting.
-M1: The superpartner of the photon is the: | Photino | Selectron | Squark | Gluino | Fermion partner.
-M2: Superpartners haven't been seen because: | SUSY is broken, making them heavy (if they exist) | They're massless | They're identical to known particles | They decay instantly into gravitons | Mass bounds.
+M1#physics-u24-30-q1: The superpartner of the photon is the: | Photino | Selectron | Squark | Gluino | Fermion partner.
+M2#physics-u24-30-q2: Superpartners haven't been seen because: | SUSY is broken, making them heavy (if they exist) | They're massless | They're identical to known particles | They decay instantly into gravitons | Mass bounds.
 
 ## Grand unified theories
 S: Grand unified theories (GUTs) propose that the strong, weak and electromagnetic forces merge into one at extremely high energies (~10^{16} GeV). They explain charge quantisation and predict that protons decay, which hasn't been observed.
@@ -688,8 +688,8 @@ X: How long would 50 000 t of water need to see a proton decay if τ = 10^{34} y
 !: GUT energies are about 10^{12} times beyond the LHC; tests are indirect (proton decay, coupling running, cosmology).
 Q: What is a key prediction of grand unified theories? | Proton decay.
 Q: How do GUTs explain charge quantisation? | Quarks and leptons share multiplets of a unified group, fixing their relative charges.
-M1: The current lower limit on the proton lifetime is about: | 10^{34} years | 10^{10} years | 10^{20} years | 10^{50} years | Super-K.
-M2: The original SU(5) GUT was proposed by: | Georgi and Glashow | Einstein | Feynman | Higgs | 1974.
+M1#physics-u24-31-q1: The current lower limit on the proton lifetime is about: | 10^{34} years | 10^{10} years | 10^{20} years | 10^{50} years | Super-K.
+M2#physics-u24-31-q2: The original SU(5) GUT was proposed by: | Georgi and Glashow | Einstein | Feynman | Higgs | 1974.
 
 ## Dark matter candidates
 S: Dark matter makes up about 85% of the universe's matter but emits no light. Its gravitational effects are certain; its identity is not. Candidates range from ultra-light fields to massive particles and primordial black holes.
@@ -709,8 +709,8 @@ X: Why are direct detection experiments deep underground?
 !: Dark matter isn't just "missing ordinary matter"; Big Bang nucleosynthesis and the CMB show most of it can't be made of atoms.
 Q: What is the WIMP miracle? | Particles with weak-scale masses and interactions naturally produce the observed dark matter density as thermal relics.
 Q: How do axion searches work? | Axions convert into microwave photons in strong magnetic fields inside resonant cavities.
-M1: Dark matter makes up about what fraction of all matter? | 85% | 5% | 50% | 100% | ~5:1 with baryons.
-M2: The neutrino fog is: | An irreducible neutrino background in direct detection | A cloud of neutrinos in space | A detector malfunction | Dark matter itself | Coherent neutrino scattering.
+M1#physics-u24-32-q1: Dark matter makes up about what fraction of all matter? | 85% | 5% | 50% | 100% | ~5:1 with baryons.
+M2#physics-u24-32-q2: The neutrino fog is: | An irreducible neutrino background in direct detection | A cloud of neutrinos in space | A detector malfunction | Dark matter itself | Coherent neutrino scattering.
 
 ## Open questions in particle physics
 S: Despite the Standard Model's success, deep questions remain unanswered: what dark matter is, why matter beat antimatter, what neutrino masses are, why particles have the masses they do, and how gravity fits with quantum theory.
@@ -737,6 +737,6 @@ X: How could neutrinoless double beta decay show neutrinos are Majorana particle
 !: Not finding new particles at the LHC is itself valuable information; it rules out many models and guides theory.
 Q: Name three open questions in particle physics. | Dark matter's identity, the matter–antimatter asymmetry, neutrino masses (also quantum gravity, the hierarchy problem).
 Q: What would neutrinoless double beta decay reveal? | That neutrinos are Majorana particles and lepton number isn't conserved.
-M1: Which experiment measures the absolute neutrino mass from tritium decay? | KATRIN | LHC | Super-K | LIGO | Endpoint spectrum.
-M2: A Majorana neutrino is: | Its own antiparticle | Massless | Charged | A boson | Self-conjugate.
+M1#physics-u24-33-q1: Which experiment measures the absolute neutrino mass from tritium decay? | KATRIN | LHC | Super-K | LIGO | Endpoint spectrum.
+M2#physics-u24-33-q2: A Majorana neutrino is: | Its own antiparticle | Massless | Charged | A boson | Self-conjugate.
 `;

@@ -20,8 +20,8 @@ X: Period of a moon orbiting a planet of mass 2 × 10^{27} kg at 4 × 10^{8} m?
 !: Planets don't orbit the Sun's centre exactly; they orbit the Solar System's centre of mass, which is sometimes outside the Sun.
 Q: What are orbital elements? | Six numbers describing an orbit's size, shape, orientation and position.
 Q: What causes the Kirkwood gaps? | Orbital resonances with Jupiter clearing those regions of the asteroid belt.
-M1: Pluto and Neptune are in a: | 3:2 resonance | 1:1 resonance | 2:1 resonance | No resonance | Pluto orbits twice per three Neptune orbits.
-M2: Milankovitch cycles are variations in Earth's: | Orbit and tilt, affecting climate | Rotation speed only | Magnetic field | Core temperature | Ice ages.
+M1#physics-u30-01-q1: Pluto and Neptune are in a: | 3:2 resonance | 1:1 resonance | 2:1 resonance | No resonance | Pluto orbits twice per three Neptune orbits.
+M2#physics-u30-01-q2: Milankovitch cycles are variations in Earth's: | Orbit and tilt, affecting climate | Rotation speed only | Magnetic field | Core temperature | Ice ages.
 
 ## Stellar structure and evolution
 S: Stars are balls of plasma held up by pressure against gravity, powered by nuclear fusion in their cores. Their mass decides how bright they shine, how long they live, and whether they end as white dwarfs, neutron stars or black holes.
@@ -44,8 +44,8 @@ D: phys-u30-main-sequence-lifetime
 !: More fuel doesn't mean a longer life: massive stars burn their fuel disproportionately fast.
 Q: What decides a star's fate? | Mainly its initial mass.
 Q: How does main-sequence lifetime scale with mass? | Roughly as M^{−2.5}.
-M1: The Sun will end as a: | White dwarf | Neutron star | Black hole | Supernova remnant only | Low mass.
-M2: Stars above about 8 M_{⊙} end in: | Core-collapse supernovae | Planetary nebulae only | Nothing | Brown dwarfs | Massive star fate.
+M1#physics-u30-02-q1: The Sun will end as a: | White dwarf | Neutron star | Black hole | Supernova remnant only | Low mass.
+M2#physics-u30-02-q2: Stars above about 8 M_{⊙} end in: | Core-collapse supernovae | Planetary nebulae only | Nothing | Brown dwarfs | Massive star fate.
 
 ## Star formation
 S: Stars form when cold, dense regions of molecular clouds collapse under their own gravity. Rotation flattens infalling gas into discs, where planets can form, while the central protostar heats up until fusion begins.
@@ -67,8 +67,8 @@ X: Why do protostellar discs form?
 !: Star formation is inefficient: only a few per cent of a molecular cloud's mass becomes stars.
 Q: What is the Jeans mass? | The minimum mass a cloud needs for gravity to overcome thermal pressure and collapse.
 Q: What is a brown dwarf? | An object too low in mass (< 0.08 M_{⊙}) to sustain hydrogen fusion.
-M1: Stars form in: | Cold, dense molecular clouds | Hot ionised gas | Black holes | Planetary nebulae | 10–20 K.
-M2: Bipolar outflows from protostars are driven by: | Accretion discs and magnetic fields | Supernovae | Fusion | Planets | Jets.
+M1#physics-u30-03-q1: Stars form in: | Cold, dense molecular clouds | Hot ionised gas | Black holes | Planetary nebulae | 10–20 K.
+M2#physics-u30-03-q2: Bipolar outflows from protostars are driven by: | Accretion discs and magnetic fields | Supernovae | Fusion | Planets | Jets.
 
 ## Hydrostatic equilibrium in stars
 S: A stable star balances the inward pull of gravity with the outward push of pressure at every depth. This balance sets the central pressure and temperature and keeps stars stable for billions of years.
@@ -90,8 +90,8 @@ X: Estimate the Sun's central temperature from the virial theorem.
 !: Losing energy makes stars hotter, not cooler: a consequence of gravity's negative heat capacity.
 Q: What balances gravity in a main-sequence star? | The gas (and radiation) pressure gradient.
 Q: Why do stars have negative heat capacity? | Losing energy makes them contract, converting gravitational energy so their temperature rises.
-M1: The Sun's central temperature is about: | 15 million K | 5800 K | 1 million K | 1 billion K | Core.
-M2: The virial theorem relates: | Thermal and gravitational energies | Mass and luminosity | Temperature and colour | Rotation and magnetism | 2K + U = 0.
+M1#physics-u30-04-q1: The Sun's central temperature is about: | 15 million K | 5800 K | 1 million K | 1 billion K | Core.
+M2#physics-u30-04-q2: The virial theorem relates: | Thermal and gravitational energies | Mass and luminosity | Temperature and colour | Rotation and magnetism | 2K + U = 0.
 
 ## Nuclear fusion in stars
 S: Stars shine by fusing light nuclei into heavier ones in their cores. Hydrogen fusion powers the main sequence; later stages fuse helium, carbon and beyond, forging the elements up to iron.
@@ -112,8 +112,8 @@ X: Hydrogen mass converted per second in the Sun (L = 3.8 × 10^{26} W, 0.7% mas
 !: The Sun's core power density is low (~280 W m^{-3}); its enormous output comes from its enormous volume.
 Q: What are the two main hydrogen-burning processes? | The proton–proton chain and the CNO cycle.
 Q: Why do massive stars use the CNO cycle? | Their hotter cores make the strongly temperature-dependent CNO cycle dominant.
-M1: Fusion in stars stops releasing energy at: | Iron | Helium | Carbon | Uranium | Binding energy peak.
-M2: The Sun's first fusion step is slow because it involves: | The weak interaction | Gravity | The strong force only | Photons | p + p → d.
+M1#physics-u30-05-q1: Fusion in stars stops releasing energy at: | Iron | Helium | Carbon | Uranium | Binding energy peak.
+M2#physics-u30-05-q2: The Sun's first fusion step is slow because it involves: | The weak interaction | Gravity | The strong force only | Photons | p + p → d.
 
 ## Stellar spectra and classification
 S: A star's spectrum reveals its temperature, composition, surface gravity, motion and magnetic field. Stars are classified by spectral type, from hot O stars to cool M stars, and by luminosity class.
@@ -136,8 +136,8 @@ X: Why do M stars show molecular bands (TiO) but O stars don't?
 !: Spectral class tracks temperature, not mass directly: giants and dwarfs can share a spectral type.
 Q: What is the order of spectral types? | O, B, A, F, G, K, M (hottest to coolest).
 Q: What did Payne-Gaposchkin discover? | Stars are mostly hydrogen and helium; spectral differences reflect temperature.
-M1: The Sun's spectral type is: | G2 V | M5 V | O5 I | A0 V | Yellow dwarf.
-M2: Hydrogen Balmer lines are strongest in: | A stars | M stars | O stars | Brown dwarfs | ~10 000 K.
+M1#physics-u30-06-q1: The Sun's spectral type is: | G2 V | M5 V | O5 I | A0 V | Yellow dwarf.
+M2#physics-u30-06-q2: Hydrogen Balmer lines are strongest in: | A stars | M stars | O stars | Brown dwarfs | ~10 000 K.
 
 ## Main-sequence stars
 S: Main-sequence stars fuse hydrogen into helium in their cores. They spend about 90% of their lives here, and their position on the Hertzsprung–Russell diagram depends almost entirely on their mass.
@@ -158,8 +158,8 @@ D: phys-u30-mass-luminosity
 !: The main sequence isn't an evolutionary path; stars stay at nearly one point on it while burning hydrogen.
 Q: What defines a main-sequence star? | Core hydrogen fusion into helium.
 Q: What determines a star's position on the main sequence? | Mainly its mass.
-M1: The most common stars in the Milky Way are: | Red dwarfs | Blue giants | Sun-like stars | White dwarfs | M dwarfs.
-M2: The HR diagram plots: | Luminosity against temperature | Mass against radius | Age against distance | Colour against mass | Hertzsprung–Russell.
+M1#physics-u30-07-q1: The most common stars in the Milky Way are: | Red dwarfs | Blue giants | Sun-like stars | White dwarfs | M dwarfs.
+M2#physics-u30-07-q2: The HR diagram plots: | Luminosity against temperature | Mass against radius | Age against distance | Colour against mass | Hertzsprung–Russell.
 
 ## Red giants and supergiants
 S: When a star exhausts hydrogen in its core, the core contracts and heats while the outer layers swell enormously and cool. It becomes a red giant, or for massive stars a supergiant, hundreds to a thousand times larger than the Sun.
@@ -181,8 +181,8 @@ X: Why do red giants have cool surfaces despite high luminosity?
 !: Red giants aren't hotter inside because they're bigger; their cores contract and heat, while envelopes expand and cool.
 Q: Why does a star become a red giant? | Core hydrogen runs out; shell burning makes the envelope expand and cool.
 Q: What is the helium flash? | Explosive ignition of helium in a degenerate core of a low-mass red giant.
-M1: Betelgeuse is a: | Red supergiant | White dwarf | Main-sequence star | Neutron star | Orion.
-M2: AGB stars are important for producing: | s-process elements | Iron | Hydrogen | Uranium only | Slow neutron capture.
+M1#physics-u30-08-q1: Betelgeuse is a: | Red supergiant | White dwarf | Main-sequence star | Neutron star | Orion.
+M2#physics-u30-08-q2: AGB stars are important for producing: | s-process elements | Iron | Hydrogen | Uranium only | Slow neutron capture.
 
 ## White dwarfs
 S: A white dwarf is the hot, dense core left behind when a low- or medium-mass star dies. About the size of Earth but with roughly the Sun's mass, it's held up by electron degeneracy pressure and slowly cools for billions of years.
@@ -203,8 +203,8 @@ X: Surface gravity of a 0.6 M_{⊙}, 8700 km white dwarf?
 !: White dwarfs don't contract as they cool; degeneracy pressure doesn't depend on temperature.
 Q: What supports a white dwarf? | Electron degeneracy pressure.
 Q: Why are white dwarfs useful for dating the galaxy? | Their predictable cooling ages the oldest stellar populations.
-M1: A typical white dwarf is about the size of: | Earth | The Sun | Jupiter | A city | ~7000 km.
-M2: Type Ia supernovae come from: | White dwarfs exceeding (or near) the Chandrasekhar limit | Massive star collapse | Neutron star mergers only | Planets | Thermonuclear.
+M1#physics-u30-09-q1: A typical white dwarf is about the size of: | Earth | The Sun | Jupiter | A city | ~7000 km.
+M2#physics-u30-09-q2: Type Ia supernovae come from: | White dwarfs exceeding (or near) the Chandrasekhar limit | Massive star collapse | Neutron star mergers only | Planets | Thermonuclear.
 
 ## Neutron stars
 S: A neutron star is the collapsed core of a massive star: about 1.4–2 solar masses packed into a sphere ~20–25 km across. Supported by neutron degeneracy and nuclear forces, it's the densest matter known outside black holes.
@@ -225,8 +225,8 @@ X: Rotation speed at the equator of a 12 km neutron star spinning 700 times per 
 !: Neutron stars aren't just giant nuclei of neutrons; they have crusts, superfluids and possibly exotic cores.
 Q: What supports a neutron star? | Neutron degeneracy pressure and repulsive nuclear forces.
 Q: What is a magnetar? | A neutron star with an extremely strong magnetic field (~10^{10}–10^{11} T).
-M1: A neutron star's radius is about: | 12 km | 1000 km | 1 km | 7000 km | Tiny.
-M2: The maximum neutron star mass is about: | 2–2.3 solar masses | 1.4 | 10 | 0.5 | TOV limit.
+M1#physics-u30-10-q1: A neutron star's radius is about: | 12 km | 1000 km | 1 km | 7000 km | Tiny.
+M2#physics-u30-10-q2: The maximum neutron star mass is about: | 2–2.3 solar masses | 1.4 | 10 | 0.5 | TOV limit.
 
 ## Pulsars
 S: Pulsars are rotating neutron stars that sweep beams of radiation across Earth like a lighthouse, producing extremely regular pulses. They're precise cosmic clocks used to test gravity and detect gravitational waves.
@@ -249,8 +249,8 @@ X: Characteristic age of the Crab pulsar (P = 0.033 s, dP/dt = 4.2 × 10^{-13})?
 !: Pulsars don't pulse; they rotate, and we see a pulse when the beam sweeps past Earth.
 Q: Who discovered pulsars? | Jocelyn Bell Burnell (with Antony Hewish), 1967.
 Q: What are millisecond pulsars? | Old pulsars spun up by accretion from a companion, rotating hundreds of times per second.
-M1: The first exoplanets were found around: | A pulsar | The Sun | A white dwarf | A red giant | 1992.
-M2: Pulsar timing arrays search for: | Nanohertz gravitational waves | Dark matter only | Neutrinos | Exoplanet atmospheres | Supermassive BH binaries.
+M1#physics-u30-11-q1: The first exoplanets were found around: | A pulsar | The Sun | A white dwarf | A red giant | 1992.
+M2#physics-u30-11-q2: Pulsar timing arrays search for: | Nanohertz gravitational waves | Dark matter only | Neutrinos | Exoplanet atmospheres | Supermassive BH binaries.
 
 ## Black holes
 S: Black holes are regions where gravity is so strong that nothing escapes. Astronomers find them as stellar remnants in binaries, as giants at the centres of galaxies, and through gravitational waves when they merge.
@@ -272,8 +272,8 @@ X: Shadow size of M87* (r_{s} ≈ 1.9 × 10^{13} m, distance 1.7 × 10^{23} m)?
 !: Most black holes are found indirectly; we see their effects on matter and light around them.
 Q: How are stellar black holes detected? | In X-ray binaries, via gravitational waves, and from companions' orbits.
 Q: What is the M–σ relation? | Correlation between supermassive black hole mass and host galaxy bulge velocity dispersion.
-M1: The EHT imaged black holes using: | Very-long-baseline radio interferometry | Optical telescopes | X-rays only | Neutrinos | Earth-sized virtual telescope.
-M2: A tidal disruption event is: | A star torn apart by a black hole | A supernova | A merger | A pulsar glitch | Spaghettification.
+M1#physics-u30-12-q1: The EHT imaged black holes using: | Very-long-baseline radio interferometry | Optical telescopes | X-rays only | Neutrinos | Earth-sized virtual telescope.
+M2#physics-u30-12-q2: A tidal disruption event is: | A star torn apart by a black hole | A supernova | A merger | A pulsar glitch | Spaghettification.
 
 ## Supernovae
 S: Supernovae are stellar explosions briefly outshining entire galaxies. They come from collapsing massive stars or exploding white dwarfs, scatter heavy elements, trigger star formation, and serve as cosmic distance markers.
@@ -295,8 +295,8 @@ X: Energy released in a core-collapse supernova, from gravitational binding of a
 !: Only ~1% of a core-collapse supernova's energy goes into the explosion and light; neutrinos carry nearly all of it.
 Q: What powers a type Ia supernova's light? | Radioactive decay of nickel-56 to cobalt-56 and iron-56.
 Q: How were neutrinos from SN 1987A detected? | By underground detectors (Kamiokande, IMB) hours before the light was seen.
-M1: Type Ia supernovae are standard candles because: | Their peak luminosity can be calibrated | They're all at the same distance | They're dim | They have no spectra | Phillips relation.
-M2: Most of a core-collapse supernova's energy escapes as: | Neutrinos | Light | Gravitational waves | Kinetic energy | 99%.
+M1#physics-u30-13-q1: Type Ia supernovae are standard candles because: | Their peak luminosity can be calibrated | They're all at the same distance | They're dim | They have no spectra | Phillips relation.
+M2#physics-u30-13-q2: Most of a core-collapse supernova's energy escapes as: | Neutrinos | Light | Gravitational waves | Kinetic energy | 99%.
 
 ## Neutron star mergers
 S: When two neutron stars spiral together and merge, they emit gravitational waves, a gamma-ray burst and a glowing kilonova rich in heavy elements. The 2017 event GW170817 was seen in both gravitational waves and light, launching multi-messenger astronomy.
@@ -319,8 +319,8 @@ X: Why is a kilonova red and slow to fade?
 !: Not every neutron-star merger will be seen in light; it depends on viewing angle, distance and the remnant.
 Q: What was special about GW170817? | First event seen in both gravitational waves and electromagnetic radiation, a neutron-star merger.
 Q: What is a kilonova? | A transient powered by radioactive decay of r-process elements made in a neutron-star merger.
-M1: GW170817 confirmed short gamma-ray bursts come from: | Neutron-star mergers | Supernovae | Pulsars | White dwarfs | 1.7 s delay.
-M2: Kilonovae produce: | Heavy r-process elements like gold | Only helium | Hydrogen | Iron only | Rapid neutron capture.
+M1#physics-u30-14-q1: GW170817 confirmed short gamma-ray bursts come from: | Neutron-star mergers | Supernovae | Pulsars | White dwarfs | 1.7 s delay.
+M2#physics-u30-14-q2: Kilonovae produce: | Heavy r-process elements like gold | Only helium | Hydrogen | Iron only | Rapid neutron capture.
 
 ## Binary star systems
 S: Most stars are in binary or multiple systems. Binaries are essential for measuring stellar masses, and when stars interact by transferring mass, they produce novae, supernovae, X-ray sources and gravitational-wave sources.
@@ -342,8 +342,8 @@ X: Total mass of a binary with period 10 years and separation 5 AU?
 !: Binary stars orbit their common centre of mass, not each other's centre.
 Q: Why are binaries important for stellar physics? | Their orbits give stellar masses directly.
 Q: What is Roche lobe overflow? | Mass transfer when a star expands beyond its Roche lobe, spilling matter through L1 to its companion.
-M1: Eclipsing binaries give: | Stellar radii and inclinations | Only colours | Temperatures only | Nothing | Light curves.
-M2: The Algol paradox was solved by: | Mass transfer between the stars | New physics | Measurement errors | Dark matter | Binary evolution.
+M1#physics-u30-15-q1: Eclipsing binaries give: | Stellar radii and inclinations | Only colours | Temperatures only | Nothing | Light curves.
+M2#physics-u30-15-q2: The Algol paradox was solved by: | Mass transfer between the stars | New physics | Measurement errors | Dark matter | Binary evolution.
 
 ## Accretion discs
 S: When gas falls towards a star or black hole with angular momentum, it forms a flattened, rotating accretion disc. Friction and turbulence heat the gas as it spirals inward, making accretion the most efficient power source in the universe after matter–antimatter annihilation.
@@ -366,8 +366,8 @@ X: Accretion luminosity onto a black hole at 10^{-8} M_{⊙} per year with η = 
 !: Accretion is far more efficient than fusion (0.7%): up to ~42% of rest-mass energy for spinning black holes.
 Q: How efficient is accretion onto black holes? | Between about 6% and 42% of rest-mass energy.
 Q: What transports angular momentum in accretion discs? | Turbulence from the magnetorotational instability.
-M1: The Eddington luminosity is set by: | Radiation pressure balancing gravity | Fusion | Disc size | Rotation | L_{Edd} ∝ M.
-M2: Accretion discs around stellar black holes glow mainly in: | X-rays | Radio | Infrared only | Ultraviolet only | Millions of K.
+M1#physics-u30-16-q1: The Eddington luminosity is set by: | Radiation pressure balancing gravity | Fusion | Disc size | Rotation | L_{Edd} ∝ M.
+M2#physics-u30-16-q2: Accretion discs around stellar black holes glow mainly in: | X-rays | Radio | Infrared only | Ultraviolet only | Millions of K.
 
 ## Exoplanets
 S: Exoplanets are planets orbiting other stars. Since the first confirmed discoveries in the 1990s, over 5000 have been found, revealing worlds unlike any in our Solar System and showing planets are common.
@@ -392,8 +392,8 @@ D: phys-u30-transit
 !: Transit surveys only see planets whose orbits are edge-on from our viewpoint; occurrence rates must correct for this geometric bias.
 Q: How does the transit method find planets? | By detecting periodic dips in a star's brightness as a planet crosses it.
 Q: What was the first exoplanet found around a Sun-like star? | 51 Pegasi b (1995), a hot Jupiter.
-M1: The radial velocity method measures: | A planet's minimum mass | Its radius | Its temperature | Its atmosphere | Star wobble.
-M2: The most common known planet types are: | Super-Earths and mini-Neptunes | Hot Jupiters | Earth twins | Gas giants like Saturn | Kepler statistics.
+M1#physics-u30-17-q1: The radial velocity method measures: | A planet's minimum mass | Its radius | Its temperature | Its atmosphere | Star wobble.
+M2#physics-u30-17-q2: The most common known planet types are: | Super-Earths and mini-Neptunes | Hot Jupiters | Earth twins | Gas giants like Saturn | Kepler statistics.
 
 ## Planetary systems
 S: Planetary systems form from discs of gas and dust around young stars. Their architectures, from our Solar System to compact multi-planet systems, record how planets grow, migrate and interact.
@@ -414,8 +414,8 @@ X: Where is the snow line in the solar nebula, and why does it matter?
 !: Planetary systems aren't static; migration and instabilities can rearrange orbits long after formation.
 Q: What is core accretion? | Formation of giant planets by building a solid core that then captures gas.
 Q: What is the snow line? | The distance from a young star beyond which water ice can condense.
-M1: Hot Jupiters probably reached small orbits by: | Migration | Forming there | Collisions only | Capture from other stars | Disc interactions.
-M2: ALMA images of HL Tauri showed: | Rings and gaps in a protoplanetary disc | A black hole | A supernova | Exoplanet atmospheres | Planet formation.
+M1#physics-u30-18-q1: Hot Jupiters probably reached small orbits by: | Migration | Forming there | Collisions only | Capture from other stars | Disc interactions.
+M2#physics-u30-18-q2: ALMA images of HL Tauri showed: | Rings and gaps in a protoplanetary disc | A black hole | A supernova | Exoplanet atmospheres | Planet formation.
 
 ## Interstellar medium
 S: The interstellar medium (ISM) is the gas, dust, cosmic rays and magnetic fields between the stars. It's the reservoir from which stars form and into which they return enriched material, in a cycle that drives galactic evolution.
@@ -437,8 +437,8 @@ X: How many hydrogen atoms in a 1 cm^{3} sample of the warm ISM (n ≈ 0.3 cm^{-
 !: The ISM is far emptier than the best laboratory vacuums in its diffuse phases, yet it holds enough mass to form future generations of stars.
 Q: What are the main phases of the ISM? | Molecular, cold neutral, warm neutral and ionised, and hot ionised.
 Q: How is atomic hydrogen in the ISM mapped? | With the 21 cm hyperfine line.
-M1: The Sun sits within: | The Local Bubble | A molecular cloud | A globular cluster | The galactic halo | Supernova cavity.
-M2: About what fraction of ISM mass is dust? | 1% | 50% | 10% | 0.0001% | Gas-to-dust ~100.
+M1#physics-u30-19-q1: The Sun sits within: | The Local Bubble | A molecular cloud | A globular cluster | The galactic halo | Supernova cavity.
+M2#physics-u30-19-q2: About what fraction of ISM mass is dust? | 1% | 50% | 10% | 0.0001% | Gas-to-dust ~100.
 
 ## Molecular clouds
 S: Molecular clouds are cold, dense regions of the interstellar medium where hydrogen exists as molecules. Giant molecular clouds, up to millions of solar masses, are the birthplaces of stars and planets.
@@ -459,8 +459,8 @@ X: Jeans mass in a cloud with T = 10 K, n = 10^{10} m^{-3}?
 !: Molecular clouds are mostly H_{2}, but we see them mainly through trace molecules like CO.
 Q: Why is CO used to trace molecular clouds? | H_{2} has no dipole and is hard to detect; CO is abundant and emits bright rotational lines.
 Q: What disperses molecular clouds? | Radiation, winds and supernovae from the stars they form.
-M1: Molecular clouds have temperatures around: | 10–20 K | 10 000 K | 1 million K | 300 K | Cold.
-M2: Herschel images show molecular clouds are: | Filamentary | Perfect spheres | Uniform | Empty | Filaments and cores.
+M1#physics-u30-20-q1: Molecular clouds have temperatures around: | 10–20 K | 10 000 K | 1 million K | 300 K | Cold.
+M2#physics-u30-20-q2: Herschel images show molecular clouds are: | Filamentary | Perfect spheres | Uniform | Empty | Filaments and cores.
 
 ## Cosmic dust
 S: Cosmic dust is made of tiny solid grains of silicates, carbon and ices that make up about 1% of the interstellar medium's mass. Dust dims and reddens starlight, catalyses molecule formation and builds planets.
@@ -481,8 +481,8 @@ X: Why does the galactic centre need infrared or radio telescopes?
 !: Interstellar reddening isn't a Doppler redshift; spectral lines don't move, only the continuum colour changes.
 Q: What is interstellar extinction? | Dimming of starlight by dust absorption and scattering, stronger at shorter wavelengths.
 Q: How does dust reveal magnetic fields? | Aligned grains polarise starlight and their own emission.
-M1: Interstellar dust makes stars look: | Redder and dimmer | Bluer | Brighter | Unchanged | Reddening.
-M2: Dust re-emits absorbed starlight mainly in the: | Infrared | Ultraviolet | X-ray | Gamma ray | Cool grains.
+M1#physics-u30-21-q1: Interstellar dust makes stars look: | Redder and dimmer | Bluer | Brighter | Unchanged | Reddening.
+M2#physics-u30-21-q2: Dust re-emits absorbed starlight mainly in the: | Infrared | Ultraviolet | X-ray | Gamma ray | Cool grains.
 
 ## Nebulae
 S: Nebulae are clouds of gas and dust in space, glowing, reflecting or blocking light. They mark where stars are born and how they die, and include some of astronomy's most famous images.
@@ -504,8 +504,8 @@ X: Why are H II regions red in photographs?
 !: Despite the name, planetary nebulae have nothing to do with planets; early telescopes showed them as planet-like discs.
 Q: What powers an emission nebula? | UV light from hot young stars ionising the gas.
 Q: What is a planetary nebula? | A glowing shell of gas ejected by a dying low-mass star, ionised by its hot core.
-M1: Reflection nebulae look blue because: | Dust scatters blue light more | They're hot | They emit Hα | They contain oxygen | Scattering.
-M2: The Crab Nebula is a: | Supernova remnant | Planetary nebula | H II region | Dark nebula | SN 1054.
+M1#physics-u30-22-q1: Reflection nebulae look blue because: | Dust scatters blue light more | They're hot | They emit Hα | They contain oxygen | Scattering.
+M2#physics-u30-22-q2: The Crab Nebula is a: | Supernova remnant | Planetary nebula | H II region | Dark nebula | SN 1054.
 
 ## Star clusters
 S: Star clusters are groups of stars born together from the same cloud, sharing age and composition. They're laboratories for stellar evolution and tracers of galactic history.
@@ -526,8 +526,8 @@ D: phys-u30-main-sequence-lifetime
 !: Cluster stars aren't all the same mass; they're the same age, which is what makes clusters useful.
 Q: How is a cluster's age found? | From the main-sequence turn-off point on its HR diagram.
 Q: How do open and globular clusters differ? | Open: young, loose, in the disc. Globular: old, dense, in the halo.
-M1: The Pleiades is a: | Young open cluster | Globular cluster | Galaxy | Nebula only | Seven Sisters.
-M2: Globular clusters are about: | 10–13 billion years old | 1 million years | 100 million years | 1 billion years | Oldest stars.
+M1#physics-u30-23-q1: The Pleiades is a: | Young open cluster | Globular cluster | Galaxy | Nebula only | Seven Sisters.
+M2#physics-u30-23-q2: Globular clusters are about: | 10–13 billion years old | 1 million years | 100 million years | 1 billion years | Oldest stars.
 
 ## Galaxies and galaxy formation
 S: Galaxies are vast systems of stars, gas, dust and dark matter bound by gravity. They formed as gas cooled within dark matter haloes that grew from tiny density fluctuations, merging and evolving over 13 billion years.
@@ -553,8 +553,8 @@ X: How fast does the Sun orbit the galaxy (r = 8.2 kpc, period 230 Myr)?
 !: The Hubble sequence isn't an evolutionary sequence; ellipticals don't turn into spirals.
 Q: How do galaxies form in the standard model? | Gas cools within hierarchically growing dark matter haloes.
 Q: What is "cosmic noon"? | The epoch ~10 billion years ago when cosmic star formation peaked.
-M1: The Milky Way is a: | Barred spiral | Elliptical | Irregular | Lenticular | SBbc.
-M2: Andromeda will collide with the Milky Way in about: | 4–5 billion years | 1 million years | 100 billion years | Never | Approaching at 110 km s^{-1}.
+M1#physics-u30-24-q1: The Milky Way is a: | Barred spiral | Elliptical | Irregular | Lenticular | SBbc.
+M2#physics-u30-24-q2: Andromeda will collide with the Milky Way in about: | 4–5 billion years | 1 million years | 100 billion years | Never | Approaching at 110 km s^{-1}.
 
 ## Galaxy dynamics
 S: Galaxy dynamics studies how stars and gas move under gravity within galaxies. Stellar motions reveal galaxies' masses, the shapes of their dark matter haloes, and the origin of spiral arms and bars.
@@ -575,8 +575,8 @@ X: Mass within the Sun's orbit from v = 220 km s^{-1}, r = 8.2 kpc (2.5 × 10^{2
 !: Spiral arms aren't fixed structures of the same stars; stars move through them.
 Q: What is density wave theory? | Spiral arms are density patterns rotating slower than stars, compressing gas as it passes through.
 Q: What is the Tully–Fisher relation? | Luminosity of spiral galaxies scales as rotation speed to about the fourth power.
-M1: Stars in galaxies are: | Essentially collisionless | Constantly colliding | Fixed in place | Moving randomly at light speed | Huge separations.
-M2: Gaia revealed the ancient merger: | Gaia–Enceladus | Andromeda | LMC collision | Sagittarius A* | Halo debris.
+M1#physics-u30-25-q1: Stars in galaxies are: | Essentially collisionless | Constantly colliding | Fixed in place | Moving randomly at light speed | Huge separations.
+M2#physics-u30-25-q2: Gaia revealed the ancient merger: | Gaia–Enceladus | Andromeda | LMC collision | Sagittarius A* | Halo debris.
 
 ## Dark matter in galaxies
 S: Galaxies rotate too fast for the visible matter alone to hold them together. Their flat rotation curves, along with lensing and cluster dynamics, show they're embedded in massive haloes of dark matter, about five times the mass of ordinary matter.
@@ -598,8 +598,8 @@ D: phys-u30-rotation-curve
 !: Dark matter isn't simply undiscovered dim stars or gas; Big Bang nucleosynthesis and the CMB limit ordinary matter to ~5% of the universe.
 Q: What do flat rotation curves imply? | Mass continues to increase with radius: an extended dark matter halo.
 Q: Who measured galaxy rotation curves showing dark matter? | Vera Rubin and Kent Ford (1970s).
-M1: Dark matter outweighs ordinary matter by about: | 5 to 1 | 1 to 1 | 100 to 1 | 1 to 5 | Ω_{dm}/Ω_{b}.
-M2: MOND has difficulty explaining: | Galaxy clusters and the CMB | Spiral rotation curves | Tully–Fisher | Dwarf galaxies | Beyond galaxies.
+M1#physics-u30-26-q1: Dark matter outweighs ordinary matter by about: | 5 to 1 | 1 to 1 | 100 to 1 | 1 to 5 | Ω_{dm}/Ω_{b}.
+M2#physics-u30-26-q2: MOND has difficulty explaining: | Galaxy clusters and the CMB | Spiral rotation curves | Tully–Fisher | Dwarf galaxies | Beyond galaxies.
 
 ## Active galactic nuclei
 S: Active galactic nuclei (AGN) are galaxy centres outshining their entire galaxies, powered by gas falling into supermassive black holes. They include quasars, Seyfert galaxies, radio galaxies and blazars.
@@ -622,8 +622,8 @@ X: A broad line responds 20 days after the continuum, with v = 4000 km s^{-1}. B
 !: AGN are powered by accretion, not by the black hole itself; inactive galaxies have equally massive but quiet black holes.
 Q: What powers an AGN? | Accretion onto a supermassive black hole.
 Q: What is the AGN unified model? | Different AGN types are explained by viewing angle and accretion properties of the same structure.
-M1: A blazar is an AGN viewed: | Down its jet | Edge-on through the torus | From behind | With no black hole | Beamed emission.
-M2: AGN feedback can: | Quench star formation | Create dark matter | Stop the black hole forever | Form planets | Heating gas.
+M1#physics-u30-27-q1: A blazar is an AGN viewed: | Down its jet | Edge-on through the torus | From behind | With no black hole | Beamed emission.
+M2#physics-u30-27-q2: AGN feedback can: | Quench star formation | Create dark matter | Stop the black hole forever | Form planets | Heating gas.
 
 ## Quasars
 S: Quasars are the most luminous active galactic nuclei, shining with up to thousands of times the light of a whole galaxy from a region smaller than the Solar System. Seen across the universe, they reveal early black holes and the gas between galaxies.
@@ -642,8 +642,8 @@ X: How big can a region varying in 1 day be?
 !: Quasar redshifts are cosmological; early proposals that they were nearby objects with odd redshifts were ruled out.
 Q: What did Schmidt discover about 3C 273? | Its spectrum was highly redshifted, implying great distance and enormous luminosity.
 Q: What is the Lyman-alpha forest? | Many absorption lines in quasar spectra from intergalactic hydrogen clouds at different redshifts.
-M1: Rapid quasar variability implies: | A very compact emitting region | Large size | Nearby objects | Errors | Light-travel time.
-M2: Quasars were most common around redshift: | 2–3 | 0 | 20 | 0.1 | Quasar era.
+M1#physics-u30-28-q1: Rapid quasar variability implies: | A very compact emitting region | Large size | Nearby objects | Errors | Light-travel time.
+M2#physics-u30-28-q2: Quasars were most common around redshift: | 2–3 | 0 | 20 | 0.1 | Quasar era.
 
 ## Gravitational lensing
 S: Mass bends light, so galaxies and clusters act as lenses that magnify, distort and multiply images of objects behind them. Lensing maps dark matter, finds exoplanets and lets astronomers see the faintest, most distant galaxies.
@@ -666,8 +666,8 @@ X: Einstein radius of a 10^{14} M_{⊙} cluster with D_{l} = 1 Gpc, D_{s} = 2 Gp
 !: Lensing magnifies by focusing light, not by making sources intrinsically brighter; surface brightness is conserved.
 Q: What is weak lensing used for? | Mapping dark matter statistically from small distortions of many background galaxies.
 Q: What is Earendel? | A very distant individual star at z ≈ 6.2, magnified by lensing.
-M1: The Einstein Cross is an example of: | Strong lensing | Weak lensing | Microlensing | A supernova | Four quasar images.
-M2: Euclid's main goal is to study: | Dark matter and dark energy via lensing and clustering | Exoplanets | The Sun | Comets | Cosmology.
+M1#physics-u30-29-q1: The Einstein Cross is an example of: | Strong lensing | Weak lensing | Microlensing | A supernova | Four quasar images.
+M2#physics-u30-29-q2: Euclid's main goal is to study: | Dark matter and dark energy via lensing and clustering | Exoplanets | The Sun | Comets | Cosmology.
 
 ## High-energy astrophysics
 S: High-energy astrophysics studies X-rays, gamma rays, cosmic rays and neutrinos from the most violent places in the universe: black holes, neutron stars, supernovae and gamma-ray bursts.
@@ -688,8 +688,8 @@ X: Why must X-ray telescopes use grazing-incidence mirrors?
 !: High-energy photons can't be focused like visible light; their detection uses very different technologies.
 Q: What are gamma-ray bursts? | Brief, extremely energetic flashes from collapsing massive stars or merging neutron stars.
 Q: How do ground-based gamma-ray telescopes detect photons? | By imaging Cherenkov light from particle showers they create in the atmosphere.
-M1: Long gamma-ray bursts come from: | Collapsing massive stars | Neutron-star mergers | Comets | Planets | Collapsars.
-M2: Synchrotron radiation comes from: | Relativistic electrons in magnetic fields | Hot gas | Nuclear decay | Molecules | Non-thermal.
+M1#physics-u30-30-q1: Long gamma-ray bursts come from: | Collapsing massive stars | Neutron-star mergers | Comets | Planets | Collapsars.
+M2#physics-u30-30-q2: Synchrotron radiation comes from: | Relativistic electrons in magnetic fields | Hot gas | Nuclear decay | Molecules | Non-thermal.
 
 ## Cosmic rays
 S: Cosmic rays are high-energy charged particles, mostly protons and nuclei, arriving from space. They span energies from MeV to beyond 10^{20} eV, far exceeding any human accelerator, and their origins are still partly mysterious.
@@ -710,8 +710,8 @@ X: Why are galactic cosmic-ray directions scrambled?
 !: Cosmic rays aren't rays; the name stuck from early 20th-century assumptions.
 Q: Who discovered cosmic rays? | Victor Hess, using balloon flights (1912).
 Q: What is the GZK cut-off? | The energy (~5 × 10^{19} eV) above which cosmic-ray protons lose energy interacting with CMB photons.
-M1: Most cosmic rays are: | Protons | Electrons | Photons | Neutrinos | ~90%.
-M2: Galactic cosmic rays are thought to be accelerated mainly in: | Supernova remnant shocks | The Sun | Planets | Black hole interiors | Diffusive shock acceleration.
+M1#physics-u30-31-q1: Most cosmic rays are: | Protons | Electrons | Photons | Neutrinos | ~90%.
+M2#physics-u30-31-q2: Galactic cosmic rays are thought to be accelerated mainly in: | Supernova remnant shocks | The Sun | Planets | Black hole interiors | Diffusive shock acceleration.
 
 ## Neutrino astronomy
 S: Neutrinos pass almost unhindered through matter, so they carry information straight from the cores of stars, supernovae and the most violent cosmic accelerators. Neutrino astronomy uses vast detectors to catch the rare interactions.
@@ -733,8 +733,8 @@ X: Why must neutrino detectors be enormous?
 !: Neutrinos travel straight from sources (no deflection, little absorption), so their directions point back to where they were made.
 Q: Why are neutrinos valuable astronomical messengers? | They travel unimpeded and undeflected from dense, distant sources.
 Q: What did SN 1987A's neutrinos confirm? | That core-collapse supernovae release most energy as neutrinos.
-M1: IceCube is located in: | Antarctic ice | The Pacific | A mountain | Space | South Pole.
-M2: The first identified high-energy neutrino source was: | A blazar | The Sun | A pulsar | Jupiter | TXS 0506+056.
+M1#physics-u30-32-q1: IceCube is located in: | Antarctic ice | The Pacific | A mountain | Space | South Pole.
+M2#physics-u30-32-q2: The first identified high-energy neutrino source was: | A blazar | The Sun | A pulsar | Jupiter | TXS 0506+056.
 
 ## Gravitational-wave astronomy
 S: Gravitational-wave astronomy observes ripples in spacetime from merging black holes and neutron stars, opening a window on the universe independent of light. It measures masses, spins and distances directly from gravity.
@@ -757,8 +757,8 @@ X: Distance range scaling: if detector sensitivity improves 10 times in strain, 
 !: Gravitational-wave detectors are nearly omnidirectional; locating sources needs several detectors and triangulation.
 Q: What are gravitational-wave "standard sirens"? | Mergers whose gravitational-wave signals give distances directly, for measuring cosmic expansion.
 Q: What did GW190521 reveal? | A black hole merger with components in the pair-instability mass gap.
-M1: Third-generation detectors planned include: | Einstein Telescope and Cosmic Explorer | Hubble | JWST | ALMA | Next-gen interferometers.
-M2: Improving strain sensitivity 2 times increases detection volume by: | 8 | 2 | 4 | 16 | Cube.
+M1#physics-u30-33-q1: Third-generation detectors planned include: | Einstein Telescope and Cosmic Explorer | Hubble | JWST | ALMA | Next-gen interferometers.
+M2#physics-u30-33-q2: Improving strain sensitivity 2 times increases detection volume by: | 8 | 2 | 4 | 16 | Cube.
 
 ## Multi-messenger astronomy
 S: Multi-messenger astronomy combines light, gravitational waves, neutrinos and cosmic rays from the same event. Each messenger reveals different physics, and together they give a far more complete picture than any alone.
@@ -783,6 +783,6 @@ X: Why did SNEWS form?
 !: Different messengers from one event can arrive at different times because they're emitted at different stages or travel through different paths.
 Q: What is multi-messenger astronomy? | Combining observations of light, gravitational waves, neutrinos and cosmic rays from the same sources.
 Q: Why did neutrinos from SN 1987A arrive before the light? | They escaped immediately, while light took hours to break out of the star.
-M1: GW170817 was observed in: | Gravitational waves and across the electromagnetic spectrum | Neutrinos only | Radio only | Cosmic rays | Multi-messenger.
-M2: SNEWS provides early alerts using: | Supernova neutrinos | Gravitational waves only | Optical telescopes | Radio | Neutrino burst.
+M1#physics-u30-34-q1: GW170817 was observed in: | Gravitational waves and across the electromagnetic spectrum | Neutrinos only | Radio only | Cosmic rays | Multi-messenger.
+M2#physics-u30-34-q2: SNEWS provides early alerts using: | Supernova neutrinos | Gravitational waves only | Optical telescopes | Radio | Neutrino burst.
 `;

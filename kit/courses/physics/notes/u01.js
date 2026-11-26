@@ -19,8 +19,8 @@ H: Branches and links
 Q: What are the four main aims of physics? | To describe, explain, predict and unify natural phenomena using as few principles as possible.
 Q: Roughly how many orders of magnitude in length does physics span? | About 60, from the Planck length (~10^{-35} m) to the observable universe (~10^{27} m).
 Q: Give an example of unification in physics. | Maxwell's equations unified electricity, magnetism and light; the electroweak theory unified electromagnetism with the weak force.
-M1: Which statement best describes the aim of physics? | To explain the widest range of phenomena with the fewest principles | To list every natural phenomenon | To prove theories with certainty | To replace mathematics with experiment | Physics seeks economical, general, testable laws, not certainty or mere cataloguing.
-M2: Which regime needs both quantum mechanics and special relativity? | High-energy particle collisions | A pendulum clock | Planetary orbits in the Solar System | Heat flow through a wall | When particles move near c and quantum effects matter, you need quantum field theory.
+M1#physics-u01-01-q1: Which statement best describes the aim of physics? | To explain the widest range of phenomena with the fewest principles | To list every natural phenomenon | To prove theories with certainty | To replace mathematics with experiment | Physics seeks economical, general, testable laws, not certainty or mere cataloguing.
+M2#physics-u01-01-q2: Which regime needs both quantum mechanics and special relativity? | High-energy particle collisions | A pendulum clock | Planetary orbits in the Solar System | Heat flow through a wall | When particles move near c and quantum effects matter, you need quantum field theory.
 
 ## Physical quantities and observables
 S: A physical quantity is a property that can be measured and expressed as a number times a unit. An observable is a quantity that a measurement can actually return; in quantum mechanics this idea becomes precise and surprising.
@@ -41,8 +41,8 @@ K: An operational definition says how to measure a quantity. Physics only admits
 Q: What is an operational definition? | A definition of a quantity by the procedure used to measure it.
 Q: Is temperature extensive or intensive? | Intensive: joining two identical systems doesn't double the temperature.
 Q: In quantum mechanics, what does a measurement of an observable return? | One of the eigenvalues of its operator, with a probability set by the state.
-M1: Which of these is an extensive quantity? | Internal energy | Temperature | Pressure | Density | Extensive quantities add when systems combine; energy does, the others don't.
-M2: 3.2 m is converted to millimetres. What happens? | The number is multiplied by 1000; the quantity is unchanged | The quantity becomes 1000 times larger | The number is divided by 1000 | The unit stays the same but the number changes | Number and unit change inversely so the product (the quantity) is invariant.
+M1#physics-u01-02-q1: Which of these is an extensive quantity? | Internal energy | Temperature | Pressure | Density | Extensive quantities add when systems combine; energy does, the others don't.
+M2#physics-u01-02-q2: 3.2 m is converted to millimetres. What happens? | The number is multiplied by 1000; the quantity is unchanged | The quantity becomes 1000 times larger | The number is divided by 1000 | The unit stays the same but the number changes | Number and unit change inversely so the product (the quantity) is invariant.
 
 ## SI base and derived units
 S: The International System of Units (SI) defines seven base units by fixing exact values of seven constants of nature. Every other unit is a product of powers of these.
@@ -69,9 +69,9 @@ X: Express the volt in base units.
 Q: How many SI base units are there? | Seven: s, m, kg, A, K, mol, cd.
 Q: Which constant now defines the kilogram? | The Planck constant h, fixed at 6.626 070 15 × 10^{-34} J s.
 Q: What is the pascal in base units? | kg m^{-1} s^{-2}.
-M1: Which is NOT an SI base unit? | Newton | Kelvin | Mole | Ampere | The newton is derived: kg m s^{-2}.
-M2: What is the tesla in SI base units? | kg s^{-2} A^{-1} | kg m s^{-2} A^{-1} | kg A s^{-2} m^{-1} | kg m^{2} s^{-3} A^{-1} | From F = BIL: B = N/(A m) = kg m s^{-2}/(A m) = kg s^{-2} A^{-1}.
-M3: The metre is defined by fixing which quantity? | The speed of light | The wavelength of krypton-86 light | A platinum-iridium bar | The second and Avogadro's number | Since 1983 c is exact, so the metre is the distance light travels in 1/299 792 458 s.
+M1#physics-u01-03-q1: Which is NOT an SI base unit? | Newton | Kelvin | Mole | Ampere | The newton is derived: kg m s^{-2}.
+M2#physics-u01-03-q2: What is the tesla in SI base units? | kg s^{-2} A^{-1} | kg m s^{-2} A^{-1} | kg A s^{-2} m^{-1} | kg m^{2} s^{-3} A^{-1} | From F = BIL: B = N/(A m) = kg m s^{-2}/(A m) = kg s^{-2} A^{-1}.
+M3#physics-u01-03-q3: The metre is defined by fixing which quantity? | The speed of light | The wavelength of krypton-86 light | A platinum-iridium bar | The second and Avogadro's number | Since 1983 c is exact, so the metre is the distance light travels in 1/299 792 458 s.
 
 ## Dimensional analysis
 S: Every physical quantity has dimensions: powers of the base dimensions mass [M], length [L], time [T], current [I], temperature [Θ], amount [N] and luminous intensity [J]. Equations must balance dimensionally, which lets you check results and even derive formulas.
@@ -91,9 +91,9 @@ P: If a problem involves n variables built from k independent dimensions, the ph
 Q: What are the dimensions of energy? | M L^{2} T^{-2}.
 Q: What does the Buckingham π theorem say? | n variables with k independent dimensions can be combined into n − k independent dimensionless groups that the physics depends on.
 Q: Why must the argument of e^{x} be dimensionless? | Its power series adds 1 + x + x^{2}/2 + …, and only like dimensions can be added.
-M1: What are the dimensions of power? | M L^{2} T^{-3} | M L^{2} T^{-2} | M L T^{-2} | M L^{2} T^{-1} | Power is energy per time: M L^{2} T^{-2} ÷ T.
-M2: The speed of deep-water waves depends only on g and wavelength λ. Which form must it take? | v = k √(gλ) | v = k gλ | v = k g/λ | v = k √(g/λ) | √(gλ) has dimensions √(L T^{-2} · L) = L T^{-1}, the only combination giving a speed.
-M3: A drag force depends on ρ, v, a size L and viscosity μ. How many dimensionless groups govern it? | 2 | 1 | 3 | 5 | Five variables (F, ρ, v, L, μ) with three dimensions (M, L, T) give 5 − 3 = 2 groups: a drag coefficient and the Reynolds number.
+M1#physics-u01-04-q1: What are the dimensions of power? | M L^{2} T^{-3} | M L^{2} T^{-2} | M L T^{-2} | M L^{2} T^{-1} | Power is energy per time: M L^{2} T^{-2} ÷ T.
+M2#physics-u01-04-q2: The speed of deep-water waves depends only on g and wavelength λ. Which form must it take? | v = k √(gλ) | v = k gλ | v = k g/λ | v = k √(g/λ) | √(gλ) has dimensions √(L T^{-2} · L) = L T^{-1}, the only combination giving a speed.
+M3#physics-u01-04-q3: A drag force depends on ρ, v, a size L and viscosity μ. How many dimensionless groups govern it? | 2 | 1 | 3 | 5 | Five variables (F, ρ, v, L, μ) with three dimensions (M, L, T) give 5 − 3 = 2 groups: a drag coefficient and the Reynolds number.
 
 ## Unit conversions and prefixes
 S: SI prefixes scale units by powers of ten; conversions multiply by factors equal to one. Doing this carefully, with units written in, removes a whole class of errors.
@@ -115,9 +115,9 @@ P: A prefix applies to the unit before any power: 1 cm^{3} = (10^{-2} m)^{3} = 1
 Q: How many m^{3} are in 1 cm^{3}? | 10^{-6} m^{3}.
 Q: How do you convert km h^{-1} to m s^{-1}? | Divide by 3.6.
 Q: What is 1 kWh in joules? | 3.6 × 10^{6} J.
-M1: What is 4.7 μF in farads? | 4.7 × 10^{-6} F | 4.7 × 10^{-3} F | 4.7 × 10^{-9} F | 4.7 × 10^{6} F | Micro means 10^{-6}.
-M2: A wire has a cross-section of 0.50 mm^{2}. What is it in m^{2}? | 5.0 × 10^{-7} m^{2} | 5.0 × 10^{-4} m^{2} | 5.0 × 10^{-3} m^{2} | 5.0 × 10^{-10} m^{2} | 1 mm^{2} = (10^{-3} m)^{2} = 10^{-6} m^{2}, so 0.50 mm^{2} = 5.0 × 10^{-7} m^{2}.
-M2: What is a density of 1.0 g cm^{-3} in kg m^{-3}? | 1000 kg m^{-3} | 1.0 kg m^{-3} | 0.001 kg m^{-3} | 100 kg m^{-3} | g → kg divides by 10^{3}; cm^{-3} → m^{-3} multiplies by 10^{6}: net × 10^{3}.
+M1#physics-u01-05-q1: What is 4.7 μF in farads? | 4.7 × 10^{-6} F | 4.7 × 10^{-3} F | 4.7 × 10^{-9} F | 4.7 × 10^{6} F | Micro means 10^{-6}.
+M2#physics-u01-05-q2: A wire has a cross-section of 0.50 mm^{2}. What is it in m^{2}? | 5.0 × 10^{-7} m^{2} | 5.0 × 10^{-4} m^{2} | 5.0 × 10^{-3} m^{2} | 5.0 × 10^{-10} m^{2} | 1 mm^{2} = (10^{-3} m)^{2} = 10^{-6} m^{2}, so 0.50 mm^{2} = 5.0 × 10^{-7} m^{2}.
+M2#physics-u01-05-q3: What is a density of 1.0 g cm^{-3} in kg m^{-3}? | 1000 kg m^{-3} | 1.0 kg m^{-3} | 0.001 kg m^{-3} | 100 kg m^{-3} | g → kg divides by 10^{3}; cm^{-3} → m^{-3} multiplies by 10^{6}: net × 10^{3}.
 
 ## Scalar and vector quantities
 S: A scalar has magnitude only; a vector has magnitude and direction and adds by the parallelogram rule. Deciding which a quantity is determines how it combines with others.
@@ -138,9 +138,9 @@ P: Under rotation of axes, scalars stay the same and vector components mix in a 
 Q: Is work a scalar or a vector? | A scalar (the dot product of force and displacement), though it can be negative.
 Q: How do you find the magnitude of a vector from its components? | |A| = √(A_{x}^{2} + A_{y}^{2} + A_{z}^{2}).
 Q: What is a pseudovector? | A quantity like angular momentum that rotates like a vector but does not change sign under reflection.
-M1: Which is a vector? | Momentum | Kinetic energy | Temperature | Power | Momentum p = mv has the direction of v.
-M2: Forces of 6 N and 8 N act at 90° to each other. What is the size of the resultant? | 10 N | 14 N | 2 N | 48 N | √(6^{2} + 8^{2}) = 10 N.
-M3: Two forces of 5 N give a resultant of 5 N. What is the angle between them? | 120° | 60° | 90° | 45° | R^{2} = 25 + 25 + 50 cos θ = 25, so cos θ = −1/2 and θ = 120°.
+M1#physics-u01-06-q1: Which is a vector? | Momentum | Kinetic energy | Temperature | Power | Momentum p = mv has the direction of v.
+M2#physics-u01-06-q2: Forces of 6 N and 8 N act at 90° to each other. What is the size of the resultant? | 10 N | 14 N | 2 N | 48 N | √(6^{2} + 8^{2}) = 10 N.
+M3#physics-u01-06-q3: Two forces of 5 N give a resultant of 5 N. What is the angle between them? | 120° | 60° | 90° | 45° | R^{2} = 25 + 25 + 50 cos θ = 25, so cos θ = −1/2 and θ = 120°.
 
 ## Significant figures and scientific notation
 S: Significant figures carry the precision of a measurement; scientific notation (a × 10^{n}, 1 ≤ a < 10) makes size and precision explicit. A result should never claim more precision than its data.
@@ -161,9 +161,9 @@ P: Significant figures are a rough guide. The proper statement is a value with a
 Q: How many significant figures are in 0.00340? | Three (3, 4 and the trailing 0).
 Q: What sets the significant figures of a product? | The input with the fewest significant figures.
 Q: How should 1 250 000 with 3 significant figures be written? | 1.25 × 10^{6}.
-M1: How many significant figures in 6.020 × 10^{23}? | 4 | 3 | 24 | 2 | All digits of the coefficient count, including the trailing zero.
-M2: 12.11 m + 18.0 m + 1.013 m = ? | 31.1 m | 31.123 m | 31.12 m | 31 m | Addition keeps the fewest decimal places (one, from 18.0).
-M2: A value is 9.8165 with uncertainty 0.023. How should it be quoted? | 9.82 ± 0.02 | 9.8165 ± 0.023 | 9.8 ± 0.023 | 9.817 ± 0.02 | Round the uncertainty to 1 s.f. and the value to the same decimal place.
+M1#physics-u01-07-q1: How many significant figures in 6.020 × 10^{23}? | 4 | 3 | 24 | 2 | All digits of the coefficient count, including the trailing zero.
+M2#physics-u01-07-q2: 12.11 m + 18.0 m + 1.013 m = ? | 31.1 m | 31.123 m | 31.12 m | 31 m | Addition keeps the fewest decimal places (one, from 18.0).
+M2#physics-u01-07-q3: A value is 9.8165 with uncertainty 0.023. How should it be quoted? | 9.82 ± 0.02 | 9.8165 ± 0.023 | 9.8 ± 0.023 | 9.817 ± 0.02 | Round the uncertainty to 1 s.f. and the value to the same decimal place.
 
 ## Estimation and order-of-magnitude calculations
 S: An order-of-magnitude estimate gets the answer to within a factor of about 10 using rough inputs. It tests whether a result is sensible, guides experiment design, and is a core physicist's skill (a "Fermi problem").
@@ -187,9 +187,9 @@ P: The order of magnitude of x is the power of ten nearest to it (often taken as
 Q: What is a Fermi problem? | An estimation problem solved by breaking it into factors that can be roughly guessed.
 Q: What is the order of magnitude of the Earth's radius in metres? | 10^{7} m (6.4 × 10^{6} m).
 Q: Why do Fermi estimates often work well? | Over- and under-estimates of separate factors tend to partly cancel.
-M1: Roughly how many seconds are in a year? | 3 × 10^{7} | 3 × 10^{5} | 9 × 10^{9} | 5 × 10^{6} | 365 × 24 × 3600 ≈ 3.2 × 10^{7} s.
-M2: Estimate the kinetic energy of a sprinter at top speed. | ~4 kJ | ~40 J | ~400 kJ | ~4 MJ | ½ × 70 kg × (10 m s^{-1})^{2} ≈ 3.5 kJ.
-M3: About how many atoms are in a human body? | 10^{27} to 10^{28} | 10^{23} | 10^{33} | 10^{18} | ~70 kg mostly water (~0.018 kg mol^{-1}, 3 atoms per molecule): ~4000 mol × 3 × 6 × 10^{23} ≈ 7 × 10^{27}.
+M1#physics-u01-08-q1: Roughly how many seconds are in a year? | 3 × 10^{7} | 3 × 10^{5} | 9 × 10^{9} | 5 × 10^{6} | 365 × 24 × 3600 ≈ 3.2 × 10^{7} s.
+M2#physics-u01-08-q2: Estimate the kinetic energy of a sprinter at top speed. | ~4 kJ | ~40 J | ~400 kJ | ~4 MJ | ½ × 70 kg × (10 m s^{-1})^{2} ≈ 3.5 kJ.
+M3#physics-u01-08-q3: About how many atoms are in a human body? | 10^{27} to 10^{28} | 10^{23} | 10^{33} | 10^{18} | ~70 kg mostly water (~0.018 kg mol^{-1}, 3 atoms per molecule): ~4000 mol × 3 × 6 × 10^{23} ≈ 7 × 10^{27}.
 
 ## Physical constants
 S: Physical constants are quantities that appear in the laws of nature and have the same value everywhere. Some are now exact by definition; others are measured; the dimensionless ones are the deep mysteries.
@@ -210,9 +210,9 @@ K: Constants with dimensions can be set to 1 by choosing units (natural units: c
 Q: Which fundamental constant is known least precisely? | The gravitational constant G.
 Q: What is the fine-structure constant, approximately? | α ≈ 1/137, a dimensionless measure of the strength of electromagnetism.
 Q: How are c, ε_{0} and μ_{0} related? | c^{2} = 1/(μ_{0}ε_{0}).
-M1: Which constant has an exact defined value in the SI? | Boltzmann constant | Gravitational constant | Electron mass | Fine-structure constant | k_{B} was fixed exactly in 2019 to define the kelvin.
-M2: Why are dimensionless constants considered more fundamental? | Their values don't depend on the choice of units | They are always exact | They can be calculated from theory | They are all close to 1 | Only unit-independent numbers can tell different possible universes apart.
-M2: What is R/N_{A}? | The Boltzmann constant | The Stefan constant | The Faraday constant | Planck's constant | R = N_{A}k_{B}, so k_{B} = R/N_{A}.
+M1#physics-u01-09-q1: Which constant has an exact defined value in the SI? | Boltzmann constant | Gravitational constant | Electron mass | Fine-structure constant | k_{B} was fixed exactly in 2019 to define the kelvin.
+M2#physics-u01-09-q2: Why are dimensionless constants considered more fundamental? | Their values don't depend on the choice of units | They are always exact | They can be calculated from theory | They are all close to 1 | Only unit-independent numbers can tell different possible universes apart.
+M2#physics-u01-09-q3: What is R/N_{A}? | The Boltzmann constant | The Stefan constant | The Faraday constant | Planck's constant | R = N_{A}k_{B}, so k_{B} = R/N_{A}.
 
 ## Mathematical modelling
 S: A mathematical model represents a physical system with variables and equations so its behaviour can be predicted. Building one means choosing what matters, writing laws as equations, solving, and testing against reality.
@@ -237,8 +237,8 @@ K: "All models are wrong, but some are useful" (George Box). A model is judged b
 Q: What are the main stages of the modelling cycle? | Identify, assume, formulate, solve, validate, refine.
 Q: What property do linear models have that nonlinear ones generally lack? | Superposition: the response to a sum of inputs is the sum of the responses.
 Q: How can you test an exponential cooling model with data? | Plot ln(T − T_{room}) against t; a straight line supports it and its gradient gives −k.
-M1: Which step checks a model against measurements? | Validation | Formulation | Idealisation | Discretisation | Validation compares predictions with data.
-M2: A model with 12 parameters fits 10 data points perfectly. What is the concern? | Overfitting: it may have no predictive power | It must be correct | It is underdetermined so cannot be solved | It violates conservation of energy | More free parameters than data can fit noise, not physics.
+M1#physics-u01-10-q1: Which step checks a model against measurements? | Validation | Formulation | Idealisation | Discretisation | Validation compares predictions with data.
+M2#physics-u01-10-q2: A model with 12 parameters fits 10 data points perfectly. What is the concern? | Overfitting: it may have no predictive power | It must be correct | It is underdetermined so cannot be solved | It violates conservation of energy | More free parameters than data can fit noise, not physics.
 
 ## Idealisation and simplifying assumptions
 S: Idealisation replaces a messy real system with a simpler one that keeps the essential physics: point masses, frictionless surfaces, ideal gases, thin lenses. The skill is knowing when the simplification is valid.
@@ -262,8 +262,8 @@ K: Idealisations are not errors. They are controlled approximations, and a good 
 Q: When can an object be treated as a point particle? | When its size is negligible compared with the other distances in the problem, and rotation doesn't matter.
 Q: What is the small-angle approximation for sin θ? | sin θ ≈ θ (in radians) for θ ≪ 1.
 Q: How do you check an approximation is valid? | Estimate the ratio of the neglected effect to the retained one; it should be ≪ 1.
-M1: An ideal voltmeter has what resistance? | Infinite | Zero | Equal to the circuit's | 1 MΩ exactly | It should draw no current from the circuit it measures.
-M2: The small-angle approximation for a pendulum is about 1% wrong at around which amplitude? | 0.4 rad (about 23°) | 0.04 rad | 1.0 rad | 1.5 rad | The period's correction is about θ_{0}^{2}/16; this reaches 1% near θ_{0} ≈ 0.4 rad.
+M1#physics-u01-11-q1: An ideal voltmeter has what resistance? | Infinite | Zero | Equal to the circuit's | 1 MΩ exactly | It should draw no current from the circuit it measures.
+M2#physics-u01-11-q2: The small-angle approximation for a pendulum is about 1% wrong at around which amplitude? | 0.4 rad (about 23°) | 0.04 rad | 1.0 rad | 1.5 rad | The period's correction is about θ_{0}^{2}/16; this reaches 1% near θ_{0} ≈ 0.4 rad.
 
 ## Deterministic and probabilistic models
 S: A deterministic model gives one future from a given present; a probabilistic model gives a distribution of possible outcomes. Physics uses both: probability enters through ignorance (statistical mechanics, chaos) or, in quantum mechanics, fundamentally.
@@ -284,8 +284,8 @@ D: phys-u01-decay-fluctuations
 Q: What is the Born rule? | The probability density for finding a particle at x is |ψ(x)|^{2}.
 Q: How do relative fluctuations scale with the number N of independent events? | As 1/√N.
 Q: Is a chaotic system deterministic? | Yes; it follows deterministic laws but is extremely sensitive to initial conditions.
-M1: Which is a fundamentally probabilistic process in standard physics? | The decay time of a single radioactive nucleus | The orbit of the Moon | A ball rolling down a ramp | Current in a resistor | Quantum decay of an individual nucleus is random in principle.
-M2: Weather can't be forecast beyond about two weeks mainly because: | Small errors in initial conditions grow exponentially (chaos) | The laws of fluid dynamics are unknown | Weather is a quantum process | Computers are too slow | Atmospheric dynamics are chaotic, with a short Lyapunov time.
+M1#physics-u01-12-q1: Which is a fundamentally probabilistic process in standard physics? | The decay time of a single radioactive nucleus | The orbit of the Moon | A ball rolling down a ramp | Current in a resistor | Quantum decay of an individual nucleus is random in principle.
+M2#physics-u01-12-q2: Weather can't be forecast beyond about two weeks mainly because: | Small errors in initial conditions grow exponentially (chaos) | The laws of fluid dynamics are unknown | Weather is a quantum process | Computers are too slow | Atmospheric dynamics are chaotic, with a short Lyapunov time.
 
 ## Conservation laws
 S: A conservation law states that some quantity of an isolated system stays constant however the system changes. Energy, momentum, angular momentum and charge are conserved in every known interaction, and conservation laws are often the fastest route to an answer.
@@ -309,9 +309,9 @@ K: Conservation laws let you relate "before" and "after" without knowing the det
 Q: When is linear momentum conserved? | When the net external force on the system is zero.
 Q: What does local conservation of charge mean? | Charge can only change in a region by flowing through its boundary (∂ρ/∂t + ∇·J = 0).
 Q: In an inelastic collision what is conserved? | Momentum and total energy; kinetic energy is not.
-M1: A skater pulls in their arms and spins faster. Which quantity is conserved? | Angular momentum | Kinetic energy | Angular velocity | Moment of inertia | No external torque, so L = Iω is constant; I falls so ω rises.
-M2: A 60 kg person jumps off a 140 kg boat at 2.0 m s^{-1}. The boat was at rest. What is the boat's speed? | 0.86 m s^{-1} | 2.0 m s^{-1} | 4.7 m s^{-1} | 0.43 m s^{-1} | 0 = 60 × 2.0 − 140v, so v = 0.86 m s^{-1} the other way.
-M3: Which process is forbidden by a conservation law? | p → e^{+} + γ | n → p + e^{−} + ν̄_{e} | γ → e^{−} + e^{+} near a nucleus | π^{0} → γ + γ | p → e^{+} + γ would violate baryon number (and lepton number).
+M1#physics-u01-13-q1: A skater pulls in their arms and spins faster. Which quantity is conserved? | Angular momentum | Kinetic energy | Angular velocity | Moment of inertia | No external torque, so L = Iω is constant; I falls so ω rises.
+M2#physics-u01-13-q2: A 60 kg person jumps off a 140 kg boat at 2.0 m s^{-1}. The boat was at rest. What is the boat's speed? | 0.86 m s^{-1} | 2.0 m s^{-1} | 4.7 m s^{-1} | 0.43 m s^{-1} | 0 = 60 × 2.0 − 140v, so v = 0.86 m s^{-1} the other way.
+M3#physics-u01-13-q3: Which process is forbidden by a conservation law? | p → e^{+} + γ | n → p + e^{−} + ν̄_{e} | γ → e^{−} + e^{+} near a nucleus | π^{0} → γ + γ | p → e^{+} + γ would violate baryon number (and lepton number).
 
 ## Symmetry and invariance
 S: A symmetry is a transformation that leaves the laws of physics unchanged. Noether's theorem shows that every continuous symmetry of the laws corresponds to a conserved quantity: the deepest reason conservation laws exist.
@@ -331,9 +331,9 @@ K: Symmetry arguments often solve problems with no calculation: by symmetry, the
 Q: State Noether's theorem informally. | Every continuous symmetry of the laws of physics corresponds to a conserved quantity.
 Q: Which symmetry gives conservation of energy? | Invariance under translation in time.
 Q: What is spontaneous symmetry breaking? | When the laws have a symmetry but the system's lowest-energy state does not.
-M1: Conservation of angular momentum follows from which symmetry? | Rotational invariance | Time-translation invariance | Reflection symmetry | Gauge invariance | Noether: rotations ↔ angular momentum.
-M2: Which interaction violates parity symmetry? | The weak interaction | Electromagnetism | Gravity | The strong interaction | Wu's 1957 cobalt-60 experiment showed the weak force distinguishes left from right.
-M3: In cosmology, why isn't the energy of light conserved as the universe expands? | The expanding spacetime isn't time-translation invariant | Photons are absorbed by dark matter | Energy is never conserved in relativity | Light loses energy to friction with space | Without time-translation symmetry, Noether's theorem gives no energy conservation; photons redshift.
+M1#physics-u01-14-q1: Conservation of angular momentum follows from which symmetry? | Rotational invariance | Time-translation invariance | Reflection symmetry | Gauge invariance | Noether: rotations ↔ angular momentum.
+M2#physics-u01-14-q2: Which interaction violates parity symmetry? | The weak interaction | Electromagnetism | Gravity | The strong interaction | Wu's 1957 cobalt-60 experiment showed the weak force distinguishes left from right.
+M3#physics-u01-14-q3: In cosmology, why isn't the energy of light conserved as the universe expands? | The expanding spacetime isn't time-translation invariant | Photons are absorbed by dark matter | Energy is never conserved in relativity | Light loses energy to friction with space | Without time-translation symmetry, Noether's theorem gives no energy conservation; photons redshift.
 
 ## Physical laws, principles and theories
 S: Physicists use these words for different things. A law summarises a regularity, often as an equation; a principle is a broad guiding statement; a theory is an explanatory framework that ties laws together and makes new predictions.
@@ -353,8 +353,8 @@ K: Empirical laws (Ohm's law) describe; theories (the Drude model, band theory) 
 Q: What is the difference between a law and a theory? | A law describes a regularity (often an equation); a theory is an explanatory framework that accounts for laws and predicts new phenomena.
 Q: What is the correspondence principle? | A new theory must reproduce the old, successful theory in the domain where the old one worked.
 Q: Give two examples of physical principles. | Conservation of energy; the principle of relativity; least action; Pauli exclusion; equivalence principle.
-M1: Ohm's law is best described as: | An empirical law with a limited range of validity | A fundamental principle | A complete theory of conduction | A hypothesis | V ∝ I holds for metallic conductors at constant temperature, not for diodes or lamps.
-M2: Which observation could Newtonian gravity NOT explain? | The extra precession of Mercury's perihelion | The shape of planetary orbits | The tides | The period of the Moon | General relativity accounts for the extra 43″ per century.
+M1#physics-u01-15-q1: Ohm's law is best described as: | An empirical law with a limited range of validity | A fundamental principle | A complete theory of conduction | A hypothesis | V ∝ I holds for metallic conductors at constant temperature, not for diodes or lamps.
+M2#physics-u01-15-q2: Which observation could Newtonian gravity NOT explain? | The extra precession of Mercury's perihelion | The shape of planetary orbits | The tides | The period of the Moon | General relativity accounts for the extra 43″ per century.
 
 ## Classical and modern physics
 S: Classical physics (mechanics, thermodynamics, electromagnetism before 1900) works superbly for everyday scales. Modern physics (relativity and quantum mechanics) was needed where it failed: at speeds near c, in strong gravity and at atomic scales.
@@ -373,8 +373,8 @@ K: Modern physics doesn't make classical physics wrong in its domain; it shows w
 Q: What was the ultraviolet catastrophe? | The classical prediction that a black body emits infinite power at short wavelengths.
 Q: Which experiment found no evidence for the ether? | The Michelson–Morley experiment (1887).
 Q: When are quantum effects important for a particle? | When its de Broglie wavelength is comparable to or larger than the size of the system.
-M1: Which phenomenon required the photon concept? | The photoelectric effect | Refraction | Diffraction of sound | Thermal expansion | Electron emission depends on frequency, not intensity: light comes in quanta hf.
-M2: At what speed is γ about 1.005? | About 0.1c | About 0.01c | About 0.5c | About 0.9c | γ ≈ 1 + v^{2}/(2c^{2}) = 1.005 when v/c ≈ 0.1.
+M1#physics-u01-16-q1: Which phenomenon required the photon concept? | The photoelectric effect | Refraction | Diffraction of sound | Thermal expansion | Electron emission depends on frequency, not intensity: light comes in quanta hf.
+M2#physics-u01-16-q2: At what speed is γ about 1.005? | About 0.1c | About 0.01c | About 0.5c | About 0.9c | γ ≈ 1 + v^{2}/(2c^{2}) = 1.005 when v/c ≈ 0.1.
 
 ## Microscopic and macroscopic descriptions
 S: A macroscopic description uses a few bulk variables (pressure, temperature, volume); a microscopic one tracks the constituents (molecules, electrons). Statistical mechanics connects them, explaining bulk laws as averages over huge numbers of particles.
@@ -394,8 +394,8 @@ K: Fluctuations relative to the mean scale as 1/√N; with N ~ 10^{23} they are 
 Q: What is the difference between a microstate and a macrostate? | A microstate specifies every particle; a macrostate gives bulk variables, and corresponds to many microstates.
 Q: What is Boltzmann's entropy formula? | S = k_{B} ln Ω, where Ω is the number of microstates.
 Q: What does "emergent" mean in physics? | A property of the collective system that its individual parts don't have, like temperature or rigidity.
-M1: Which is a macroscopic variable? | Pressure | The velocity of one molecule | An electron's spin | A nucleus's position | Pressure is a bulk average.
-M2: The mean kinetic energy of an ideal gas molecule at 300 K is about: | 6 × 10^{-21} J | 4 × 10^{-23} J | 1 eV | 6 × 10^{-19} J | (3/2)k_{B}T = 1.5 × 1.38 × 10^{-23} × 300 ≈ 6.2 × 10^{-21} J (≈ 0.04 eV).
+M1#physics-u01-17-q1: Which is a macroscopic variable? | Pressure | The velocity of one molecule | An electron's spin | A nucleus's position | Pressure is a bulk average.
+M2#physics-u01-17-q2: The mean kinetic energy of an ideal gas molecule at 300 K is about: | 6 × 10^{-21} J | 4 × 10^{-23} J | 1 eV | 6 × 10^{-19} J | (3/2)k_{B}T = 1.5 × 1.38 × 10^{-23} × 300 ≈ 6.2 × 10^{-21} J (≈ 0.04 eV).
 
 ## Uncertainty and measurement limitations
 S: No measurement is exact. Every result carries an uncertainty from random scatter, systematic bias and instrument resolution, and ultimately from fundamental quantum limits. Reporting a value without its uncertainty tells only half the story.
@@ -417,9 +417,9 @@ X: Five timings of a pendulum's 10 oscillations: 15.2, 15.4, 15.1, 15.3, 15.5 s.
 Q: What's the difference between accuracy and precision? | Accuracy is closeness to the true value; precision is the closeness of repeated results to each other.
 Q: How does the uncertainty in a mean scale with the number of readings? | As 1/√n.
 Q: Why time many oscillations rather than one? | The reaction-time uncertainty is spread over many periods, reducing the fractional uncertainty in T.
-M1: A zero error on a micrometer is an example of: | A systematic error | A random error | A resolution limit | A quantum limit | It shifts every reading by the same amount.
-M2: Length 2.00 ± 0.02 m and width 1.00 ± 0.02 m. What is the percentage uncertainty in the area (adding in quadrature)? | About 2.2% | 3% | 1% | 0.04% | √(1^{2} + 2^{2})% ≈ 2.2%.
-M3: To halve the random uncertainty in a mean, you need: | 4 times as many readings | twice as many readings | half as many readings | 8 times as many readings | σ_{mean} ∝ 1/√n.
+M1#physics-u01-18-q1: A zero error on a micrometer is an example of: | A systematic error | A random error | A resolution limit | A quantum limit | It shifts every reading by the same amount.
+M2#physics-u01-18-q2: Length 2.00 ± 0.02 m and width 1.00 ± 0.02 m. What is the percentage uncertainty in the area (adding in quadrature)? | About 2.2% | 3% | 1% | 0.04% | √(1^{2} + 2^{2})% ≈ 2.2%.
+M3#physics-u01-18-q3: To halve the random uncertainty in a mean, you need: | 4 times as many readings | twice as many readings | half as many readings | 8 times as many readings | σ_{mean} ∝ 1/√n.
 
 ## Scientific reasoning and falsifiability
 S: Science advances by proposing hypotheses that make risky predictions and testing them against observation. Karl Popper argued that what makes a claim scientific is falsifiability: some possible observation must be able to show it wrong.
@@ -440,7 +440,7 @@ K: Good scientific claims are precise, risky and testable; extraordinary claims 
 Q: What is falsifiability? | A claim is falsifiable if some possible observation could show it to be false.
 Q: What is the Duhem–Quine problem? | A failed prediction refutes the whole set of assumptions used, so it's not clear which one is wrong.
 Q: What is abduction? | Inference to the best explanation of the evidence.
-M1: Which statement is falsifiable? | All electrons have the same charge | Some unobservable force guides history | The universe is exactly as it should be | Everything happens for a reason | Finding one electron with a different charge would refute it.
-M2: The discovery of Neptune from Uranus's orbit is an example of: | Questioning an auxiliary assumption instead of the core theory | A refutation of Newtonian gravity | Induction from a single case | An unfalsifiable hypothesis | Le Verrier kept Newton's law and changed the assumption that there were no unseen planets.
-M3: A test of a hypothesis has P(D|H) = 0.9 and P(D|not H) = 0.1, with prior P(H) = 0.5. What is P(H|D)? | 0.9 | 0.5 | 0.1 | 0.45 | P(H|D) = 0.9 × 0.5 / (0.9 × 0.5 + 0.1 × 0.5) = 0.9.
+M1#physics-u01-19-q1: Which statement is falsifiable? | All electrons have the same charge | Some unobservable force guides history | The universe is exactly as it should be | Everything happens for a reason | Finding one electron with a different charge would refute it.
+M2#physics-u01-19-q2: The discovery of Neptune from Uranus's orbit is an example of: | Questioning an auxiliary assumption instead of the core theory | A refutation of Newtonian gravity | Induction from a single case | An unfalsifiable hypothesis | Le Verrier kept Newton's law and changed the assumption that there were no unseen planets.
+M3#physics-u01-19-q3: A test of a hypothesis has P(D|H) = 0.9 and P(D|not H) = 0.1, with prior P(H) = 0.5. What is P(H|D)? | 0.9 | 0.5 | 0.1 | 0.45 | P(H|D) = 0.9 × 0.5 / (0.9 × 0.5 + 0.1 × 0.5) = 0.9.
 `;

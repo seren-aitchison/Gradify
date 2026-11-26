@@ -20,7 +20,7 @@ export const TARGETS = [
     skills: () => TOPICS.filter((t) => ["cardio", "phys"].includes(t.m)).map((t) => ({ name: t.name, now: strength(t), target: 75, c: MODULES[t.m].c, topic: t.id })),
   },
   {
-    id: "job", name: "Land a junior data scientist role", short: "Data scientist role", site: "TechGradify · ForgeLab", due: 240, rate: 0.02,
+    id: "job", name: "Land a junior data scientist role", short: "Data scientist role", site: "TechGradify", due: 240, rate: 0.02,
     skills: () => [
       { name: "Python", now: 82, target: 80 }, { name: "Statistics", now: 58, target: 75 },
       { name: "Machine learning", now: 64, target: 75 }, { name: "SQL", now: 40, target: 70 },

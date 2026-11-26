@@ -185,12 +185,12 @@ The full reasons are in the table. Each needs either content or a new card, whic
 | MathGradify | Probability | `course/#/learn/u12` | unit | Probability |
 | MathGradify | Geometry | `course/#/learn/u05` | unit | Geometry |
 | MathGradify | Problem solving | `course/#/learn/u26` | unit | Mathematical Reasoning and Research Methods |
-| TechGradify · ForgeLab | Programming | `course/#/learn/u02` | unit | Python Programming Fundamentals |
-| TechGradify · ForgeLab | Algorithms | `course/#/learn/u04` | unit | Algorithms |
-| TechGradify · ForgeLab | Data structures | `course/#/learn/u05` | unit | Data Structures |
-| TechGradify · ForgeLab | Computer systems | `course/#/learn/u06` | unit | Data Representation (architecture and operating systems are units 7 and 8) |
-| TechGradify · ForgeLab | Networks and data | `course/#/learn/u09` | unit | Networks and the Internet |
-| TechGradify · ForgeLab | Software and society | `course/#/learn/u12` | unit | Security, AI and Society |
+| TechGradify | Programming | `course/#/learn/u02` | unit | Python Programming Fundamentals |
+| TechGradify | Algorithms | `course/#/learn/u04` | unit | Algorithms |
+| TechGradify | Data structures | `course/#/learn/u05` | unit | Data Structures |
+| TechGradify | Computer systems | `course/#/learn/u06` | unit | Data Representation (architecture and operating systems are units 7 and 8) |
+| TechGradify | Networks and data | `course/#/learn/u09` | unit | Networks and the Internet |
+| TechGradify | Software and society | `course/#/learn/u12` | unit | Security, AI and Society |
 | SciGradify | Biology | `biology/` | course | Biology course |
 | SciGradify | Chemistry | `chemistry/` | course | Chemistry course |
 | SciGradify | Physics | `physics/` | course | Physics course |

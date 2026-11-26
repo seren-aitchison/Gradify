@@ -74,7 +74,7 @@ for (const g of GROUPS) {
 
   for (const s of g.items) {
     const live = canVisit(s), st = statusOf(s);
-    const featured = s.n.includes("ForgeLab");
+    const featured = s.n === "TechGradify";
     // One compact tile per site: icon, name, who it's for, and a chevron. The whole tile is the link,
     // so there's one obvious thing to do; a status shows only when it isn't simply "live".
     const card = document.createElement(live ? "a" : "article");

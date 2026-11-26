@@ -49,7 +49,7 @@ REV <lesson-id> OK C1=L<n> C2=none C3=open      (one Cn= per CONF line in the re
 REV <lesson-id> FAIL <code> <line> <note of 12 words or fewer>; <code> <line> <note>
 ```
 
-Codes: `FACT` not supported by the brief, or wrong · `COV` a REQ not taught to the depth asked · `LVL` wrong level for its LV · `Q` question flawed (wrong key, two right answers, answer given away) · `CLR` unclear · `SAFE` a needed safety line is missing · `COPY` wording copied from a specification or source · `CONF` relies on a CONFLICT item · `REQ` a REQ line that the lesson doesn't actually teach.
+Codes: `FACT` not supported by the brief, or wrong · `COV` a REQ not taught to the depth asked · `LVL` wrong level for its LV · `Q` question flawed (wrong key, two right answers, answer given away) · `CLR` unclear · `SAFE` a needed safety line is missing · `COPY` wording copied from a specification or source · `CONF` relies on a CONFLICT item · `REQ` a REQ line that the lesson doesn't actually teach · `CARD` a flashcard that's trivial, ambiguous, repeated or unsupported · `DIAG` a diagram that doesn't teach, is wrong or lacks a teaching text alternative · `TEACH` a teaching-quality defect (sequence, overload, level, example before application, difficulty, misconceptions).
 
 ## Fix list (engine → Writer)
 

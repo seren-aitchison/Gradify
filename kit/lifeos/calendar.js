@@ -12,7 +12,7 @@ const START = 6, END = 23, SNAP = 0.25; // hours shown, and 15-minute snapping
 const CALS = [
   { id: "class", name: "Classes", c: "3c78d8", site: "UnderGradify" },
   { id: "study", name: "Study time", c: "1fae8c", site: "MedGradify" },
-  { id: "forge", name: "ForgeLab", c: "ff5a4d", site: "TechGradify · ForgeLab" },
+  { id: "forge", name: "TechGradify", c: "ff5a4d", site: "TechGradify" },
   { id: "lang", name: "Spanish", c: "dd7d6b", site: "LanguageGradify" },
   { id: "health", name: "Health and fitness", c: "6a60ff", site: "SportGradify" },
   { id: "work", name: "Work", c: "e69138", site: "ProGradify" },
@@ -24,9 +24,9 @@ const hidden = new Set();
 let nextId = 1;
 const B = (day, start, end, title, cal, extra = {}) => ({ id: nextId++, day, start, end, title, cal, ...extra });
 const blocks = [
-  B(0, 7, 8, "Gym", "health"), B(0, 9, 11, "Cardiovascular lecture", "class"), B(0, 14, 15.5, "Review: cardiac cycle", "study"), B(0, 19, 20.5, "ForgeLab: Unit 4", "forge"),
+  B(0, 7, 8, "Gym", "health"), B(0, 9, 11, "Cardiovascular lecture", "class"), B(0, 14, 15.5, "Review: cardiac cycle", "study"), B(0, 19, 20.5, "TechGradify: Unit 4", "forge"),
   B(1, 8, 8.5, "Spanish drill", "lang"), B(1, 10, 12, "Physiology lab", "class"), B(1, 14, 15, "Tutorial", "class"), B(1, 16, 19, "Part-time job", "work"),
-  B(2, 7, 8, "Gym", "health"), B(2, 9, 10.5, "Pharmacology lecture", "class"), B(2, 13, 14, "Flashcards", "study"), B(2, 18, 19.5, "ForgeLab: backprop", "forge"), B(2, 20, 22, "Free time", "free"),
+  B(2, 7, 8, "Gym", "health"), B(2, 9, 10.5, "Pharmacology lecture", "class"), B(2, 13, 14, "Flashcards", "study"), B(2, 18, 19.5, "TechGradify: backprop", "forge"), B(2, 20, 22, "Free time", "free"),
   B(3, 8, 8.5, "Spanish drill", "lang"), B(3, 9, 11, "Cardiovascular lecture", "class"), B(3, 14, 16, "Exam prep", "study"),
   B(4, 7, 8, "Gym", "health"), B(4, 11, 13, "Anatomy practical", "class"), B(4, 18, 19, "Unit 4 challenge", "forge"), B(4, 19.5, 22, "Free time", "free"),
   B(5, 8, 9, "Run", "health"), B(5, 9.25, 9.75, "Spanish drill", "lang"), B(5, 10, 12, "Weekly review", "study"), B(5, 13, 17, "Part-time job", "work"),
@@ -201,13 +201,13 @@ function place(day, len, title, cal, prefer = 13) {
 function autoPlan() {
   const fading = TOPICS.filter((t) => stateOf(t) === "fading");
   const ev = ctx.events();
-  const forgeDue = ev.find((e) => e.site === "TechGradify · ForgeLab" && !e.planned);
+  const forgeDue = ev.find((e) => e.site === "TechGradify" && !e.planned);
   const made = [];
   for (let d = todayIdx(); d < 7; d++) {
     const hasLang = blocks.some((b) => b.day === d && b.cal === "lang");
     const t = fading[(d - todayIdx()) % Math.max(1, fading.length)];
     if (t) made.push(place(d, 0.75, `Review: ${t.name.replace(/^The /, "")}`, "study"));
-    if (forgeDue && d < todayIdx() + forgeDue.in) made.push(place(d, 1, "ForgeLab: unit challenge prep", "forge", 17));
+    if (forgeDue && d < todayIdx() + forgeDue.in) made.push(place(d, 1, "TechGradify: unit challenge prep", "forge", 17));
     if (!hasLang && d < 6) made.push(place(d, 0.33, "Spanish speaking", "lang", 8));
     made.push(place(d, 0.33, "Flashcard feed", "study", 12));
   }

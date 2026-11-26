@@ -63,7 +63,7 @@ export const ROADS = [
 ];
 // Portals: links to other Gradify sites
 const PORTALS = [
-  { to: "pk", site: "ForgeLab", what: "Data analysis for drug trials", c: "#ff5a4d", dir: [0.3, -0.45, 0.15] },
+  { to: "pk", site: "TechGradify", what: "Data analysis for drug trials", c: "#ff5a4d", dir: [0.3, -0.45, 0.15] },
   { to: "chambers", site: "LanguageGradify", what: "Medical Spanish: el corazón", c: "#dd7d6b", dir: [-0.4, 0.4, 0.15] },
 ];
 

@@ -12,10 +12,19 @@
 // knows it, and the requirement text is Gradify's own summary (wording: "paraphrased"), not AQA's wording. None of it
 // has been checked against AQA's published specification yet: set `verified` (and `wording: "verbatim"` if the text
 // is replaced with AQA's own) only once someone has checked every point against the current version.
-const P = (id, title, text, lessons, { partial = [], ht = false, sep = false } = {}) => ({ id, title, text, lessons, partial, flags: [ht && "ht", sep && "sep"].filter(Boolean) });
+// Which lessons teach a point comes only from the mapping store (kit/curriculum/maps/aqa-gcse-biology.json), through
+// the generated LINKS (scripts/curriculum/spec-view.mjs): owner's decision 6, 25 Nov 2026. The lessons written by hand
+// below are kept as `proposed`, for reviewers, and never shown as coverage.
+import { LINKS } from "./aqa-gcse-biology-8461.links.js";
+const P = (id, title, text, lessons, { partial = [], ht = false, sep = false } = {}) => {
+  const L = LINKS[id] || { lessons: [], partial: [], evidence: null, state: "unchecked", statements: null };
+  return { id, title, text, lessons: L.lessons, partial: L.partial, evidence: L.evidence, state: L.state, statements: L.statements, proposed: { lessons, partial }, flags: [ht && "ht", sep && "sep"].filter(Boolean) };
+};
 
 export default {
   id: "aqa-gcse-biology-8461",
+  // the framework whose mapping store links this view's points to lessons (kit/curriculum/maps/<framework>.json)
+  framework: "aqa-gcse-biology",
   // where it sits: an education system and qualification from kit/curriculum/coverage.js, the awarding body and code
   system: "uk-eng", qualification: "gcse", board: "AQA", subject: "Biology", code: "8461",
   title: "AQA GCSE Biology (8461)",

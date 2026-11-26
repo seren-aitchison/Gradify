@@ -3,7 +3,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { SPECS, checkRegistry, specsFor, nationsOf } from "../kit/curriculum/uk.js";
-import { statusOf, coverageReport, claimFor, checkMap, whereYouStand } from "../kit/curriculum/mapping.js";
+import { statusOf, coverageReport, claimFor, checkMap, whereYouStand, COVERAGE as LABELS } from "../kit/curriculum/mapping.js";
 import { COURSES as COVERAGE } from "../kit/curriculum/coverage.js";
 import { parseSpecText, parseSpecCsv, propose, mergeProposals, loadStatements, loadMap } from "../scripts/curriculum/engine.mjs";
 import { lessonsOf } from "../scripts/growth/lesson-readiness.mjs";
@@ -27,8 +27,22 @@ test("the UK registry: every Biology specification across the four nations, noth
 test("statuses: covered, partial, missing, and anything unreviewed or out of date is awaiting", () => {
   const r = coverageReport(spec, map);
   assert.deepEqual(r.rows.map((x) => x.status), ["covered", "partial", "missing", "awaiting"]);
-  assert.deepEqual(r.totals, { statements: 4, covered: 1, partial: 1, missing: 1, awaiting: 1 });
+  assert.deepEqual(r.totals, { statements: 4, covered: 1, partial: 1, missing: 1, mapped: 0, partiallyMapped: 0, rejected: 0, awaiting: 1 });
   assert.equal(statusOf(map.links["1.1"], "2.0", "1.0"), "awaiting", "reviewed against an older version");
+});
+
+test("AI decisions show as mapped, never as verified, hold only for the text they judged, and allow no claim", () => {
+  const st = [{ ref: "A", hash: "h1" }, { ref: "B", hash: "h2" }, { ref: "C", hash: "h3" }, { ref: "D", hash: "new" }];
+  const ai = (lessons, hash) => ({ status: "ai-confirmed", by: "agent:haiku", on: "2026-11-25", hash, lessons });
+  const m = { spec: "t", specVersion: "1.0", links: { A: ai([{ id: "u02-20", coverage: "full" }], "h1"), B: ai([{ id: "u02-21", coverage: "partial" }], "h2"),
+    C: { status: "rejected", by: "agent:haiku", on: "2026-11-25", hash: "h3", lessons: [], missing: ["no osmosis practical"] }, D: ai([{ id: "u02-22", coverage: "full" }], "old") } };
+  const r = coverageReport({ spec: "t", version: "1.0", statements: st }, m);
+  assert.deepEqual(r.rows.map((x) => x.status), ["mapped", "partially-mapped", "awaiting", "awaiting"], "D was judged on older text");
+  assert.deepEqual(r.totals, { statements: 4, covered: 0, partial: 0, missing: 0, mapped: 1, partiallyMapped: 1, rejected: 1, awaiting: 4 });
+  assert.equal(r.reviewed, 0, "an AI decision is not a review"); assert.equal(claimFor({ spec: "t", version: "1.0", statements: st }, m).allowed, false);
+  assert.equal(LABELS.mapped.name, "Provisionally mapped \u2014 awaiting verification"); assert.equal(LABELS.covered.name, "Independently verified"); assert.equal(LABELS["partially-mapped"].name, "Provisionally mapped in part \u2014 awaiting verification");
+  assert.deepEqual(checkMap({ spec: "t", statements: st }, { spec: "t", links: { A: { status: "ai-confirmed", lessons: [] }, C: { status: "rejected", by: "x", on: "2026-11-25", lessons: [] } } }, new Set()).sort(),
+    ["A: ai-confirmed needs the lesson it confirmed", "A: an AI decision needs by and on", "C: a rejection needs what's missing"]);
 });
 
 test("a claim needs every statement reviewed against the current version, and says only what's measured", () => {

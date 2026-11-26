@@ -23,8 +23,8 @@ K: Stimulated emission produces identical photons; a population inversion lets i
 !: A two-level system cannot reach steady-state inversion by optical pumping; at best it saturates to equal populations.
 Q: What is the photon energy in eV at wavelength λ in nm? | E ≈ 1240/λ.
 Q: What property makes stimulated emission special? | The emitted photon is identical in frequency, phase, direction and polarisation to the stimulating photon.
-M1: Net optical gain requires: | Population inversion | Thermal equilibrium | Only spontaneous emission | A wider band gap | More atoms must be in the upper level.
-M2: Rayleigh scattering scales as: | 1/λ^{4} | λ^{2} | 1/λ | Constant | Short wavelengths scatter much more.
+M1#physics-u36-01-q1: Net optical gain requires: | Population inversion | Thermal equilibrium | Only spontaneous emission | A wider band gap | More atoms must be in the upper level.
+M2#physics-u36-01-q2: Rayleigh scattering scales as: | 1/λ^{4} | λ^{2} | 1/λ | Constant | Short wavelengths scatter much more.
 
 ## Semiconductor light emission
 S: Semiconductors emit light when electrons in the conduction band recombine with holes in the valence band. The band gap sets the colour, and the band structure decides whether recombination produces light efficiently, which is why LEDs use compound semiconductors rather than silicon.
@@ -47,8 +47,8 @@ K: Light emission needs a direct band gap; the gap energy sets the wavelength.
 !: Silicon is a poor light emitter because its gap is indirect, not because its gap is the wrong size.
 Q: Why is GaAs a good light emitter but Si is not? | GaAs has a direct gap; Si's is indirect, needing a phonon for each photon.
 Q: What causes LED efficiency droop at high current? | Mainly Auger recombination, plus carrier leakage.
-M1: A semiconductor with E_{g} = 1.9 eV emits about: | 650 nm | 450 nm | 1550 nm | 250 nm | 1240/1.9.
-M2: Quantum wells raise efficiency by: | Confining carriers | Making the gap indirect | Adding defects | Removing holes | Confinement increases overlap of electrons and holes.
+M1#physics-u36-02-q1: A semiconductor with E_{g} = 1.9 eV emits about: | 650 nm | 450 nm | 1550 nm | 250 nm | 1240/1.9.
+M2#physics-u36-02-q2: Quantum wells raise efficiency by: | Confining carriers | Making the gap indirect | Adding defects | Removing holes | Confinement increases overlap of electrons and holes.
 
 ## LEDs and laser diodes
 S: LEDs and laser diodes are forward-biased p–n junctions that turn current into light. An LED emits incoherent spontaneous light over a broad spectrum; a laser diode adds an optical cavity and enough gain to produce narrow, intense, coherent beams.
@@ -78,8 +78,8 @@ K: An LED is spontaneous emission from a junction; a laser diode adds feedback s
 !: LED efficiency is often limited by light extraction, not internal recombination.
 Q: How is white light made in most LEDs? | A blue InGaN chip excites a yellow phosphor; blue plus yellow looks white.
 Q: What is a VCSEL? | A vertical-cavity surface-emitting laser that emits perpendicular to the wafer.
-M1: Below threshold a laser diode behaves like: | An LED | A photodiode | A resistor | A capacitor | Spontaneous emission dominates.
-M2: Light extraction is hard from LEDs because: | High refractive index causes total internal reflection | They are too cold | Photons are absorbed in metal only | The gap is indirect | Only a small escape cone exists.
+M1#physics-u36-03-q1: Below threshold a laser diode behaves like: | An LED | A photodiode | A resistor | A capacitor | Spontaneous emission dominates.
+M2#physics-u36-03-q2: Light extraction is hard from LEDs because: | High refractive index causes total internal reflection | They are too cold | Photons are absorbed in metal only | The gap is indirect | Only a small escape cone exists.
 
 ## Photodetectors
 S: Photodetectors convert light into an electrical signal. Photodiodes, avalanche photodiodes, photomultipliers and image sensors each balance sensitivity, speed, noise and wavelength range to suit uses from fibre receivers to phone cameras and astronomy.
@@ -106,8 +106,8 @@ K: Responsivity rises with wavelength until photons no longer exceed the band ga
 !: More gain does not always mean better SNR: APD excess noise grows with gain.
 Q: What is the cutoff wavelength of silicon? | About 1.1 μm, set by its 1.12 eV band gap.
 Q: How does a SPAD detect single photons? | Biased above breakdown, one photo-electron triggers a self-sustaining avalanche that is then quenched.
-M1: A photodiode with η = 1 at 1240 nm has responsivity: | 1 A W^{-1} | 0.5 A W^{-1} | 2 A W^{-1} | 1240 A W^{-1} | R = ηλ(μm)/1.24.
-M2: Which detector suits 1.55 μm fibre receivers? | InGaAs p–i–n | Silicon CCD | Selenium | Germanium-free glass | InGaAs absorbs to 1.7 μm.
+M1#physics-u36-04-q1: A photodiode with η = 1 at 1240 nm has responsivity: | 1 A W^{-1} | 0.5 A W^{-1} | 2 A W^{-1} | 1240 A W^{-1} | R = ηλ(μm)/1.24.
+M2#physics-u36-04-q2: Which detector suits 1.55 μm fibre receivers? | InGaAs p–i–n | Silicon CCD | Selenium | Germanium-free glass | InGaAs absorbs to 1.7 μm.
 
 ## Optical modulators
 S: Optical modulators impose information on light by changing its intensity, phase or polarisation at high speed. They are the transmitters of the internet's fibre backbone and data centres, using electro-optic, electro-absorption and carrier-plasma effects.
@@ -135,8 +135,8 @@ K: Modulators convert electrical signals into changes of optical phase or absorp
 !: Phase modulation alone changes no intensity; an interferometer is needed to see it on a simple detector.
 Q: What is V_{π}? | The voltage needed to shift the optical phase by π, switching an MZM from fully on to fully off.
 Q: Which effect do silicon modulators use? | The free-carrier plasma dispersion effect.
-M1: The Pockels effect gives: | Δn ∝ E | Δn ∝ E^{2} | Δn ∝ 1/E | No change | It is linear in field.
-M2: QPSK carries how many bits per symbol per polarisation? | 2 | 1 | 4 | 8 | Four phase states.
+M1#physics-u36-05-q1: The Pockels effect gives: | Δn ∝ E | Δn ∝ E^{2} | Δn ∝ 1/E | No change | It is linear in field.
+M2#physics-u36-05-q2: QPSK carries how many bits per symbol per polarisation? | 2 | 1 | 4 | 8 | Four phase states.
 
 ## Photonic integrated circuits
 S: Photonic integrated circuits put many optical components, such as lasers, waveguides, modulators, filters and detectors, on a single chip, as electronic chips did for transistors. They make optical transceivers, sensors and quantum devices small, cheap and robust.
@@ -161,8 +161,8 @@ K: PICs miniaturise optical systems onto chips; the choice of platform trades la
 !: Silicon cannot easily make its own lasers; light sources must usually be added from III–V materials.
 Q: What does an arrayed waveguide grating do? | It separates or combines many wavelength channels on a chip.
 Q: Why is silicon photonics attractive? | It uses mature CMOS fabrication for dense, low-cost, high-volume chips.
-M1: A ring resonator's FSR falls if: | The ring gets larger | The wavelength increases | The group index falls | The ring shrinks | FSR ∝ 1/L.
-M2: Which platform makes monolithic lasers? | Indium phosphide | Silicon | Glass | Silicon dioxide | Direct-gap III–V material.
+M1#physics-u36-06-q1: A ring resonator's FSR falls if: | The ring gets larger | The wavelength increases | The group index falls | The ring shrinks | FSR ∝ 1/L.
+M2#physics-u36-06-q2: Which platform makes monolithic lasers? | Indium phosphide | Silicon | Glass | Silicon dioxide | Direct-gap III–V material.
 
 ## Optical waveguides
 S: Optical waveguides confine and guide light along a path using total internal reflection or more subtle interference effects. Optical fibres and on-chip waveguides both rely on a high-index core surrounded by lower-index cladding, supporting a discrete set of modes.
@@ -186,8 +186,8 @@ K: Waveguides confine light with an index contrast; the V number decides how man
 !: A single-mode fibre is multimode at shorter wavelengths, because V rises as λ falls.
 Q: What is the single-mode condition for a step-index fibre? | V < 2.405.
 Q: What is the evanescent field? | The part of a guided mode that decays exponentially into the cladding.
-M1: Numerical aperture increases if: | Core–cladding index difference grows | Core radius shrinks | Wavelength grows | Cladding index rises | NA depends on n_{1}^{2} − n_{2}^{2}.
-M2: Modal dispersion affects: | Multimode fibres | Single-mode fibres | Neither | Only vacuum | Different modes travel at different speeds.
+M1#physics-u36-07-q1: Numerical aperture increases if: | Core–cladding index difference grows | Core radius shrinks | Wavelength grows | Cladding index rises | NA depends on n_{1}^{2} − n_{2}^{2}.
+M2#physics-u36-07-q2: Modal dispersion affects: | Multimode fibres | Single-mode fibres | Neither | Only vacuum | Different modes travel at different speeds.
 
 ## Fibre-optic communications
 S: Fibre-optic communication sends data as light pulses through glass fibres thinner than a hair, across oceans and into homes. Low loss, enormous bandwidth and optical amplifiers make fibre the backbone of the internet.
@@ -214,8 +214,8 @@ K: Fibre wins through ultra-low loss and huge bandwidth, with amplifiers and DSP
 !: dB values add: 3 dB is half, 10 dB is a tenth, 20 dB is a hundredth.
 Q: Why is 1550 nm used for long-haul fibre? | Lowest loss (~0.2 dB/km) and erbium amplifiers work there.
 Q: What does WDM do? | It sends many wavelengths on one fibre, each carrying its own data channel.
-M1: 30 dB of loss reduces power by: | 1000× | 30× | 100× | 3× | 10^{3}.
-M2: EDFAs amplify around: | 1550 nm | 850 nm | 1310 nm | 650 nm | The erbium C-band.
+M1#physics-u36-08-q1: 30 dB of loss reduces power by: | 1000× | 30× | 100× | 3× | 10^{3}.
+M2#physics-u36-08-q2: EDFAs amplify around: | 1550 nm | 850 nm | 1310 nm | 650 nm | The erbium C-band.
 
 ## Nonlinear optical processes
 S: At high intensities, a material's response to light is no longer proportional to the field, so new frequencies appear and beams change their own propagation. Nonlinear optics underpins frequency conversion, ultrafast lasers, optical switching and quantum light sources.
@@ -239,8 +239,8 @@ K: Nonlinear optics appears when intense light changes the material's response, 
 !: χ^{(2)} vanishes in materials with inversion symmetry, such as glass and silicon, so they have no Pockels effect or efficient SHG.
 Q: Which nonlinear order occurs in all materials? | Third order, χ^{(3)}.
 Q: What is a fibre soliton? | A pulse whose self-phase modulation balances dispersion, so it travels without changing shape.
-M1: Second-harmonic generation requires: | A non-centrosymmetric crystal | Any glass | A metal | Vacuum | χ^{(2)} must be nonzero.
-M2: Self-focusing arises from: | Positive n_{2} with high central intensity | Absorption | Rayleigh scattering | Diffraction alone | The beam makes its own lens.
+M1#physics-u36-09-q1: Second-harmonic generation requires: | A non-centrosymmetric crystal | Any glass | A metal | Vacuum | χ^{(2)} must be nonzero.
+M2#physics-u36-09-q2: Self-focusing arises from: | Positive n_{2} with high central intensity | Absorption | Rayleigh scattering | Diffraction alone | The beam makes its own lens.
 
 ## Frequency conversion
 S: Frequency conversion uses nonlinear crystals to make new colours of laser light: doubling, tripling, summing and splitting photons. It turns infrared lasers into green pointers and UV sources and creates widely tunable sources and entangled photons.
@@ -269,8 +269,8 @@ K: Nonlinear conversion must conserve energy (frequencies) and momentum (phase m
 !: Without phase matching, the generated wave keeps cycling back to zero, giving very little output.
 Q: What is quasi-phase matching? | Periodically reversing the crystal's nonlinear coefficient to reset the phase every coherence length.
 Q: How is a green laser pointer made? | An infrared diode pumps Nd:YVO_{4} at 1064 nm, and a KTP crystal doubles it to 532 nm.
-M1: Doubling the input power to an SHG crystal (low efficiency) gives: | 4× the output | 2× | 8× | No change | P_{2ω} ∝ P_{ω}^{2}.
-M2: SPDC is used to generate: | Entangled photon pairs | X-rays | Electron beams | Microwaves | One pump photon splits into two.
+M1#physics-u36-10-q1: Doubling the input power to an SHG crystal (low efficiency) gives: | 4× the output | 2× | 8× | No change | P_{2ω} ∝ P_{ω}^{2}.
+M2#physics-u36-10-q2: SPDC is used to generate: | Entangled photon pairs | X-rays | Electron beams | Microwaves | One pump photon splits into two.
 
 ## Ultrafast lasers
 S: Ultrafast lasers produce pulses lasting picoseconds to femtoseconds, the shortest controlled events humans can make. Mode-locking locks many cavity modes in phase so their interference produces a train of intense, brief pulses.
@@ -296,8 +296,8 @@ K: Short pulses need broad bandwidth; mode-locking brings that bandwidth into ph
 !: Peak power can be enormous while average power is modest; damage and nonlinear effects follow peak intensity.
 Q: What did chirped-pulse amplification solve? | It stretched pulses before amplification to avoid damaging peak intensities, then compressed them.
 Q: Why does a 10 fs pulse need a broad spectrum? | Time–bandwidth: short duration requires many frequencies.
-M1: A 3 m cavity gives a repetition rate of: | 50 MHz | 100 MHz | 25 MHz | 3 GHz | c/(2L).
-M2: Kerr-lens mode-locking relies on: | Intensity-dependent self-focusing | Saturable absorption in dye only | Electro-optic switching | Doppler shifts | Strong pulses focus and see less loss.
+M1#physics-u36-11-q1: A 3 m cavity gives a repetition rate of: | 50 MHz | 100 MHz | 25 MHz | 3 GHz | c/(2L).
+M2#physics-u36-11-q2: Kerr-lens mode-locking relies on: | Intensity-dependent self-focusing | Saturable absorption in dye only | Electro-optic switching | Doppler shifts | Strong pulses focus and see less loss.
 
 ## Femtosecond optics
 S: Femtosecond optics deals with how ultrashort pulses are measured, shaped and used. Dispersion, chirp and nonlinear effects matter hugely at these timescales, while the pulses open windows on chemical reactions, electron dynamics and precision timing.
@@ -326,8 +326,8 @@ K: At femtosecond scales, even a few millimetres of glass reshape a pulse, so di
 !: An autocorrelation width is not the pulse width; it must be divided by a shape factor (√2 for a Gaussian).
 Q: How do frequency combs work as rulers? | Each line is at n × f_{rep} + f_{ceo}; measuring both pins every line's frequency.
 Q: What is pump–probe spectroscopy? | A pump pulse excites a system; a delayed probe pulse records its evolution.
-M1: Shorter input pulses broaden in glass: | More | Less | Not at all | Only in vacuum | Broader spectra suffer more dispersion.
-M2: Attosecond pulses are made by: | High-harmonic generation | LEDs | Q-switching | Fluorescence | Strong-field ionisation and recollision.
+M1#physics-u36-12-q1: Shorter input pulses broaden in glass: | More | Less | Not at all | Only in vacuum | Broader spectra suffer more dispersion.
+M2#physics-u36-12-q2: Attosecond pulses are made by: | High-harmonic generation | LEDs | Q-switching | Fluorescence | Strong-field ionisation and recollision.
 
 ## Quantum optics
 S: Quantum optics treats light as made of photons with quantum states, revealing effects classical waves cannot explain: antibunching, squeezing, entanglement and two-photon interference. These underpin quantum communication, sensing and photonic quantum computing.
@@ -349,8 +349,8 @@ K: Photon statistics, not just intensity, reveal the quantum nature of light.
 !: A very attenuated laser is not a single-photon source; it still has Poissonian statistics and occasional multi-photon pulses.
 Q: What is g^{(2)}(0) for a perfect single-photon source? | 0.
 Q: What is the Hong–Ou–Mandel effect? | Two indistinguishable photons meeting at a 50:50 beam splitter always exit together.
-M1: Laser light has photon statistics that are: | Poissonian | Sub-Poissonian | Super-Poissonian with g^{(2)} = 2 | Fixed number | Coherent states.
-M2: Squeezed light improves LIGO by: | Reducing quantum noise in one quadrature | Making lasers brighter | Removing mirrors | Adding thermal noise | It lowers shot noise.
+M1#physics-u36-13-q1: Laser light has photon statistics that are: | Poissonian | Sub-Poissonian | Super-Poissonian with g^{(2)} = 2 | Fixed number | Coherent states.
+M2#physics-u36-13-q2: Squeezed light improves LIGO by: | Reducing quantum noise in one quadrature | Making lasers brighter | Removing mirrors | Adding thermal noise | It lowers shot noise.
 
 ## Single-photon sources
 S: Single-photon sources emit exactly one photon on demand, ideally indistinguishable from every other. They are essential for quantum key distribution, photonic quantum computing and quantum networks, and building good ones is a major engineering challenge.
@@ -374,8 +374,8 @@ K: An ideal single-photon source is pure, indistinguishable, efficient and on de
 !: Heralded sources are probabilistic; "on demand" requires multiplexing or a deterministic emitter.
 Q: What does heralding mean? | Detecting one photon of a pair to announce the presence of its partner.
 Q: What does the Purcell effect do? | A cavity enhances and directs an emitter's spontaneous emission.
-M1: Indistinguishability is tested with: | Hong–Ou–Mandel interference | A power meter | An oscilloscope | A thermometer | Identical photons bunch.
-M2: Quantum dot sources usually require: | Cryogenic temperatures | High vacuum only | Microwaves | X-ray pumping | Typically ~4 K.
+M1#physics-u36-14-q1: Indistinguishability is tested with: | Hong–Ou–Mandel interference | A power meter | An oscilloscope | A thermometer | Identical photons bunch.
+M2#physics-u36-14-q2: Quantum dot sources usually require: | Cryogenic temperatures | High vacuum only | Microwaves | X-ray pumping | Typically ~4 K.
 
 ## Photonic crystals
 S: Photonic crystals are materials with periodic refractive index on the scale of the wavelength of light. Like electrons in a crystal lattice, photons in them have band structures and band gaps, which let engineers trap, slow and steer light in new ways.
@@ -401,8 +401,8 @@ K: Periodic structures make photonic band gaps, letting us mirror, trap and slow
 !: A band gap appears only for wavelengths comparable to the period; it is not a property of the material alone.
 Q: What causes structural colour in butterfly wings? | Photonic nanostructures that reflect particular wavelengths by interference.
 Q: What is a hollow-core fibre? | A fibre guiding light in an air core using a photonic band gap or anti-resonance.
-M1: A fibre Bragg grating's reflected wavelength rises when it is: | Stretched | Cooled heavily | Removed | Painted | Strain increases Λ and changes n.
-M2: Slow light occurs near: | Photonic band edges | Zero frequency | Total transmission | Metals | Group velocity drops at the band edge.
+M1#physics-u36-15-q1: A fibre Bragg grating's reflected wavelength rises when it is: | Stretched | Cooled heavily | Removed | Painted | Strain increases Λ and changes n.
+M2#physics-u36-15-q2: Slow light occurs near: | Photonic band edges | Zero frequency | Total transmission | Metals | Group velocity drops at the band edge.
 
 ## Plasmonics
 S: Plasmonics uses collective oscillations of electrons at metal surfaces, surface plasmons, to squeeze light into regions far smaller than its wavelength. This boosts local fields enormously and enables nanoscale sensors, enhanced spectroscopy and new optical components.
@@ -426,8 +426,8 @@ K: Plasmons beat the diffraction limit by storing energy in electron oscillation
 !: Plasmonic confinement comes with high absorption; there is always a trade-off between confinement and propagation length.
 Q: What condition gives a localised plasmon resonance in a small sphere? | ε_{metal} = −2ε_{dielectric}.
 Q: How does SERS work? | Plasmonic hot spots greatly enhance the local field, boosting Raman signals.
-M1: Surface plasmons can exist at the interface of: | A metal and a dielectric | Two glasses | Two vacuum regions | Two insulators of equal index | They need negative ε on one side.
-M2: SPR biosensors detect: | Changes in refractive index at a surface | X-ray absorption | Magnetism | Electrical resistance | Binding shifts the resonance angle.
+M1#physics-u36-16-q1: Surface plasmons can exist at the interface of: | A metal and a dielectric | Two glasses | Two vacuum regions | Two insulators of equal index | They need negative ε on one side.
+M2#physics-u36-16-q2: SPR biosensors detect: | Changes in refractive index at a surface | X-ray absorption | Magnetism | Electrical resistance | Binding shifts the resonance angle.
 
 ## Optical sensors
 S: Optical sensors use light to measure temperature, strain, chemistry, rotation, pressure and more. They are immune to electromagnetic interference, often passive and can be multiplexed along a single fibre over kilometres.
@@ -452,8 +452,8 @@ K: Optical sensors convert physical changes into measurable shifts in light, oft
 !: FBGs respond to both strain and temperature; separate them with a reference grating or two-parameter design.
 Q: What effect does a fibre-optic gyroscope use? | The Sagnac effect: rotation changes the phase between counter-propagating beams.
 Q: Name an advantage of fibre sensors. | Immune to electromagnetic interference, intrinsically safe and multiplexable.
-M1: Distributed acoustic sensing along a telecom fibre uses: | Rayleigh backscatter | LED emission | Photoelectric effect | Pair production | Phase changes in backscattered light.
-M2: Pulse oximetry is an example of: | Absorption spectroscopy | Interferometry | Brillouin sensing | Plasmonics | Red and infrared absorption ratios.
+M1#physics-u36-17-q1: Distributed acoustic sensing along a telecom fibre uses: | Rayleigh backscatter | LED emission | Photoelectric effect | Pair production | Phase changes in backscattered light.
+M2#physics-u36-17-q2: Pulse oximetry is an example of: | Absorption spectroscopy | Interferometry | Brillouin sensing | Plasmonics | Red and infrared absorption ratios.
 
 ## Lidar
 S: Lidar measures distance by timing laser pulses or measuring frequency shifts of returning light, building precise 3D maps. It guides self-driving cars, surveys forests and terrain, measures wind and aerosols, and maps the Moon.
@@ -477,8 +477,8 @@ K: Lidar is radar with light: shorter wavelength gives finer resolution and prec
 !: Fog, rain and dark surfaces reduce returns; lidar complements rather than replaces radar and cameras.
 Q: Why use 1550 nm lidar? | Eye safety allows higher power, giving longer range, though detectors cost more.
 Q: What extra information does FMCW lidar give? | Velocity of each point, from the Doppler shift.
-M1: Range resolution of 15 cm requires timing to about: | 1 ns | 1 ms | 1 μs | 1 s | Δt = 2ΔR/c.
-M2: Airborne lidar can map ground under forests because: | Some pulses pass through gaps to the ground | Light passes through leaves fully | It uses X-rays | It measures heat | Multiple returns per pulse.
+M1#physics-u36-18-q1: Range resolution of 15 cm requires timing to about: | 1 ns | 1 ms | 1 μs | 1 s | Δt = 2ΔR/c.
+M2#physics-u36-18-q2: Airborne lidar can map ground under forests because: | Some pulses pass through gaps to the ground | Light passes through leaves fully | It uses X-rays | It measures heat | Multiple returns per pulse.
 
 ## Optical communications
 S: Optical communications covers the whole system that moves information with light: transmitters, channels, receivers and the coding that squeezes in more bits. It includes fibre networks, data-centre interconnects, free-space laser links and satellite communications.
@@ -505,8 +505,8 @@ K: Capacity depends on bandwidth and SNR; optical systems maximise both while ma
 !: Increasing launch power does not raise capacity forever; fibre nonlinearity eventually adds more noise than it removes.
 Q: What is PAM4? | Four-level amplitude modulation, carrying 2 bits per symbol in direct detection links.
 Q: What is a passive optical network? | A fibre access network using passive splitters to share one fibre among many homes.
-M1: 0 dBm is: | 1 mW | 0 W | 1 W | 10 mW | dBm is referenced to 1 mW.
-M2: The main limit on fibre capacity at high power is: | Nonlinear effects | Rayleigh scattering only | Gravity | Detector colour | Kerr effects distort signals.
+M1#physics-u36-19-q1: 0 dBm is: | 1 mW | 0 W | 1 W | 10 mW | dBm is referenced to 1 mW.
+M2#physics-u36-19-q2: The main limit on fibre capacity at high power is: | Nonlinear effects | Rayleigh scattering only | Gravity | Detector colour | Kerr effects distort signals.
 
 ## Optical metrology
 S: Optical metrology uses light to measure length, shape, surface finish, vibration and time with extraordinary precision. Interferometers measure to fractions of a nanometre, and optical clocks keep time to one second in the age of the universe.
@@ -534,8 +534,8 @@ K: Interference turns the wavelength of light into a ruler, and optical frequenc
 !: Air refractive index changes with temperature, pressure and humidity, shifting interferometer readings unless compensated.
 Q: How far does a mirror move per fringe in a Michelson interferometer? | λ/2.
 Q: How is the metre defined? | By fixing the speed of light at 299 792 458 m s^{-1}; the metre is the distance light travels in 1/299 792 458 s.
-M1: Ellipsometry measures: | Thin-film thickness and optical constants | Temperature only | Radio signals | Magnetic fields | From polarisation changes on reflection.
-M2: Optical clocks can detect height changes because of: | Gravitational time dilation | Thermal expansion | Air pressure | Magnetism | Clocks tick faster higher up.
+M1#physics-u36-20-q1: Ellipsometry measures: | Thin-film thickness and optical constants | Temperature only | Radio signals | Magnetic fields | From polarisation changes on reflection.
+M2#physics-u36-20-q2: Optical clocks can detect height changes because of: | Gravitational time dilation | Thermal expansion | Air pressure | Magnetism | Clocks tick faster higher up.
 
 ## Silicon photonics
 S: Silicon photonics builds optical circuits in silicon using the same foundries that make computer chips. It powers high-speed data-centre transceivers and is moving into lidar, sensing, AI accelerators and quantum computing.
@@ -559,6 +559,6 @@ K: Silicon photonics trades material limits (no laser, no Pockels effect) for th
 !: Silicon waveguides only work at wavelengths longer than ~1.1 μm, where silicon is transparent.
 Q: Why are germanium detectors used in silicon photonics? | Ge absorbs telecom wavelengths and can be grown on silicon.
 Q: What is SOI? | Silicon-on-insulator: a thin silicon layer on buried oxide, forming high-contrast waveguides.
-M1: Silicon modulators usually rely on: | Carrier depletion (plasma dispersion) | The Pockels effect | Electron-beam lithography | Stimulated emission | Silicon lacks χ^{(2)}.
-M2: Silicon's main photonic weakness is: | No efficient light emission | High cost | Opacity at 1550 nm | Low index | Its gap is indirect.
+M1#physics-u36-21-q1: Silicon modulators usually rely on: | Carrier depletion (plasma dispersion) | The Pockels effect | Electron-beam lithography | Stimulated emission | Silicon lacks χ^{(2)}.
+M2#physics-u36-21-q2: Silicon's main photonic weakness is: | No efficient light emission | High cost | Opacity at 1550 nm | Low index | Its gap is indirect.
 `;

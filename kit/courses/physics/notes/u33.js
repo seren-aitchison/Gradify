@@ -20,8 +20,8 @@ D: phys-u33-lapse-rate
 !: The thermosphere's high temperature means fast molecules, not much heat: you'd freeze there because there's too little gas to warm you.
 Q: Why does stratospheric temperature increase with height? | Ozone absorbs solar UV, heating it from within.
 Q: Where does most weather occur? | In the troposphere.
-M1: The ozone layer is in the: | Stratosphere | Troposphere | Mesosphere | Thermosphere | 15–35 km.
-M2: The Kármán line is at about: | 100 km | 10 km | 1000 km | 36 000 km | Edge of space.
+M1#physics-u33-01-q1: The ozone layer is in the: | Stratosphere | Troposphere | Mesosphere | Thermosphere | 15–35 km.
+M2#physics-u33-01-q2: The Kármán line is at about: | 100 km | 10 km | 1000 km | 36 000 km | Edge of space.
 
 ## Atmospheric pressure and temperature
 S: Atmospheric pressure is the weight of air above per unit area; it falls roughly exponentially with height. Temperature, pressure and density are linked by the gas law and by the vertical balance of forces.
@@ -43,8 +43,8 @@ D: phys-u33-pressure-height
 !: Pressure differences, not absolute pressure, drive winds; a "high" is only a few per cent above average.
 Q: What is the atmospheric scale height? | The height over which pressure falls by a factor of e, about 8 km.
 Q: What is a temperature inversion? | A layer where temperature increases with height, suppressing convection.
-M1: Standard sea-level pressure is about: | 1013 hPa | 100 hPa | 10 000 hPa | 760 hPa | 101 kPa.
-M2: Pressure halves roughly every: | 5.5 km | 1 km | 50 km | 100 m | Exponential decrease.
+M1#physics-u33-02-q1: Standard sea-level pressure is about: | 1013 hPa | 100 hPa | 10 000 hPa | 760 hPa | 101 kPa.
+M2#physics-u33-02-q2: Pressure halves roughly every: | 5.5 km | 1 km | 50 km | 100 m | Exponential decrease.
 
 ## Gas laws in the atmosphere
 S: Air behaves almost as an ideal gas, so its pressure, density and temperature obey the gas law. Combining it with hydrostatic balance and adiabatic expansion explains how air cools as it rises and why clouds form.
@@ -66,8 +66,8 @@ X: Density of air at 1000 hPa and 288 K?
 !: Humid air is lighter, not heavier, than dry air at the same temperature and pressure.
 Q: What is potential temperature? | The temperature air would have if brought adiabatically to 1000 hPa.
 Q: What is the dry adiabatic lapse rate? | About 9.8 K per km, g/c_{p}.
-M1: Humid air compared with dry air at the same T and p is: | Less dense | Denser | The same density | Liquid | Water vapour lighter.
-M2: The hypsometric equation relates layer thickness to: | Mean temperature | Wind speed | Humidity only | Altitude | Warmer layers thicker.
+M1#physics-u33-03-q1: Humid air compared with dry air at the same T and p is: | Less dense | Denser | The same density | Liquid | Water vapour lighter.
+M2#physics-u33-03-q2: The hypsometric equation relates layer thickness to: | Mean temperature | Wind speed | Humidity only | Altitude | Warmer layers thicker.
 
 ## Radiative transfer
 S: Radiative transfer describes how radiation is absorbed, emitted and scattered as it passes through the atmosphere. It determines Earth's energy balance, the greenhouse effect and what satellites see.
@@ -90,8 +90,8 @@ D: phys-u33-optical-depth
 !: An atmosphere opaque at a wavelength still emits at it; what escapes comes from the upper layers.
 Q: What is optical depth? | A measure of how much radiation is attenuated along a path: I = I_{0}e^{−τ}.
 Q: How does adding CO_{2} enhance the greenhouse effect? | It raises the effective emission height to colder levels, reducing outgoing radiation.
-M1: The sky is blue mainly due to: | Rayleigh scattering | Mie scattering | Absorption by ozone | Reflection from oceans | λ^{−4}.
-M2: Radiation escaping to space originates mainly near optical depth: | 1 | 0 | 100 | 0.001 | Emission level.
+M1#physics-u33-04-q1: The sky is blue mainly due to: | Rayleigh scattering | Mie scattering | Absorption by ozone | Reflection from oceans | λ^{−4}.
+M2#physics-u33-04-q2: Radiation escaping to space originates mainly near optical depth: | 1 | 0 | 100 | 0.001 | Emission level.
 
 ## Solar and terrestrial radiation
 S: Earth receives short-wavelength radiation from the hot Sun and emits long-wavelength infrared from its cool surface and atmosphere. The two hardly overlap, which lets greenhouse gases treat them very differently.
@@ -115,8 +115,8 @@ X: Average solar input over Earth's sphere from 1361 W m^{-2}?
 !: Solar variability is too small to explain recent warming; satellite measurements show no upward trend in solar output since the 1980s.
 Q: Why do solar and terrestrial radiation hardly overlap? | The Sun (~5800 K) emits short wavelengths; Earth (~255–288 K) emits long infrared.
 Q: What is Earth's albedo? | About 0.3: the fraction of sunlight reflected.
-M1: Earth's emission peaks near: | 10 μm | 500 nm | 1 mm | 100 nm | Wien.
-M2: Earth's current energy imbalance is about: | +0.5–1 W m^{-2} | −10 W m^{-2} | 0 | +100 W m^{-2} | Warming.
+M1#physics-u33-05-q1: Earth's emission peaks near: | 10 μm | 500 nm | 1 mm | 100 nm | Wien.
+M2#physics-u33-05-q2: Earth's current energy imbalance is about: | +0.5–1 W m^{-2} | −10 W m^{-2} | 0 | +100 W m^{-2} | Warming.
 
 ## Greenhouse gases
 S: Greenhouse gases absorb and emit infrared radiation, warming the surface. Water vapour and CO_{2} are the most important; human activity has raised CO_{2}, methane and nitrous oxide sharply since industrialisation.
@@ -138,8 +138,8 @@ X: Radiative forcing from doubling CO_{2}?
 !: Water vapour isn't ignored in climate science; it's included as a feedback amplifying CO_{2}-driven warming.
 Q: Why are N_{2} and O_{2} not greenhouse gases? | Their vibrations don't change their dipole moment, so they don't absorb infrared.
 Q: Why is water vapour a feedback, not a forcing? | Its concentration is controlled by temperature; it adjusts quickly to changes.
-M1: Pre-industrial CO_{2} was about: | 280 ppm | 420 ppm | 1000 ppm | 100 ppm | Ice cores.
-M2: Methane's 100-year global warming potential is about: | 28–30 | 1 | 300 | 10 000 | Per kg vs CO_{2}.
+M1#physics-u33-06-q1: Pre-industrial CO_{2} was about: | 280 ppm | 420 ppm | 1000 ppm | 100 ppm | Ice cores.
+M2#physics-u33-06-q2: Methane's 100-year global warming potential is about: | 28–30 | 1 | 300 | 10 000 | Per kg vs CO_{2}.
 
 ## Atmospheric energy balance
 S: Earth's climate settles where absorbed sunlight balances emitted infrared. Changing either side (albedo, greenhouse gases, solar output) shifts the balance until temperatures adjust.
@@ -159,8 +159,8 @@ X: With α = 0.3 and S = 1361 W m^{-2}, effective temperature?
 !: Back radiation doesn't violate the second law; net heat still flows from the warmer surface to the cooler atmosphere.
 Q: What is Earth's effective radiating temperature? | About 255 K.
 Q: What is radiative–convective equilibrium? | Balance in which radiation and convection together set the atmosphere's temperature profile.
-M1: Without an atmosphere, Earth's mean temperature would be about: | 255 K | 288 K | 0 K | 373 K | Radiative equilibrium.
-M2: Most surface energy loss to the atmosphere (besides radiation) is via: | Evaporation (latent heat) | Conduction to space | Wind kinetic energy | Lightning | ~80 W m^{-2}.
+M1#physics-u33-07-q1: Without an atmosphere, Earth's mean temperature would be about: | 255 K | 288 K | 0 K | 373 K | Radiative equilibrium.
+M2#physics-u33-07-q2: Most surface energy loss to the atmosphere (besides radiation) is via: | Evaporation (latent heat) | Conduction to space | Wind kinetic energy | Lightning | ~80 W m^{-2}.
 
 ## Convection and atmospheric stability
 S: Whether a rising parcel of air keeps rising or sinks back depends on how its temperature compares with its surroundings. Stability controls thunderstorms, cloud types and pollution dispersion.
@@ -183,8 +183,8 @@ X: Maximum updraft from CAPE = 2000 J kg^{-1}?
 !: A stable atmosphere can still have clouds; they're layered (stratus) rather than towering.
 Q: What is conditional instability? | Stable for dry air but unstable once a rising parcel becomes saturated.
 Q: What does CAPE measure? | The potential energy available to accelerate rising air parcels.
-M1: Large CAPE indicates potential for: | Severe thunderstorms | Fog | Calm weather | Snow only | Strong updrafts.
-M2: An inversion makes the atmosphere: | Very stable | Unstable | Neutral | Turbulent | Warm air above.
+M1#physics-u33-08-q1: Large CAPE indicates potential for: | Severe thunderstorms | Fog | Calm weather | Snow only | Strong updrafts.
+M2#physics-u33-08-q2: An inversion makes the atmosphere: | Very stable | Unstable | Neutral | Turbulent | Warm air above.
 
 ## Cloud formation and microphysics
 S: Clouds form when rising air cools to its dew point and water vapour condenses on tiny particles. Cloud microphysics explains how microscopic droplets and ice crystals form, grow, and eventually fall as rain or snow.
@@ -207,8 +207,8 @@ D: phys-u33-saturation-vapour
 !: Clouds aren't water vapour (invisible); they're liquid droplets or ice crystals.
 Q: What are cloud condensation nuclei? | Small particles on which water vapour condenses to form cloud droplets.
 Q: Why does supercooled water exist in clouds? | Ice formation needs ice nuclei, which are scarce; pure droplets can stay liquid to −38 °C.
-M1: Water vapour capacity increases with temperature by about: | 7% per K | 1% per K | 50% per K | Not at all | Clausius–Clapeyron.
-M2: Ship tracks in satellite images show: | Aerosols brightening clouds | Rain | Lightning | Ozone | Twomey effect.
+M1#physics-u33-09-q1: Water vapour capacity increases with temperature by about: | 7% per K | 1% per K | 50% per K | Not at all | Clausius–Clapeyron.
+M2#physics-u33-09-q2: Ship tracks in satellite images show: | Aerosols brightening clouds | Rain | Lightning | Ozone | Twomey effect.
 
 ## Precipitation physics
 S: Cloud droplets are too small to fall; precipitation requires them to grow a million-fold in volume. Two processes do this: collisions between droplets in warm clouds and ice-crystal growth in cold clouds.
@@ -232,8 +232,8 @@ X: Terminal speed of a 2 mm raindrop compared with a 10 μm droplet?
 !: Raindrops aren't teardrop-shaped; small ones are spherical, larger ones flatten into hamburger-bun shapes.
 Q: What is the Bergeron process? | Ice crystals growing at the expense of supercooled droplets in mixed-phase clouds.
 Q: Why do polluted clouds rain less easily? | Many small droplets form, slowing collision–coalescence.
-M1: Most mid-latitude rain begins as: | Ice crystals (snow) | Hail | Dew | Fog | Bergeron.
-M2: Hail forms in: | Strong updrafts of thunderstorms | Fog | Stable clouds | Clear air | Repeated cycling.
+M1#physics-u33-10-q1: Most mid-latitude rain begins as: | Ice crystals (snow) | Hail | Dew | Fog | Bergeron.
+M2#physics-u33-10-q2: Hail forms in: | Strong updrafts of thunderstorms | Fog | Stable clouds | Clear air | Repeated cycling.
 
 ## Atmospheric circulation
 S: The atmosphere moves heat from the tropics to the poles. Earth's rotation breaks this flow into three circulation cells per hemisphere, producing trade winds, westerlies, jet streams, deserts and rain belts.
@@ -257,8 +257,8 @@ X: Why are many deserts near 30° latitude?
 !: The three-cell model is idealised; real circulation includes waves, monsoons and land–sea effects.
 Q: What is the Hadley cell? | The tropical circulation with rising air at the equator and sinking air near 30° latitude.
 Q: What causes jet streams? | Strong temperature gradients and Earth's rotation (thermal wind balance) near the tropopause.
-M1: Trade winds blow: | Towards the equator, deflected westward | From west to east at mid-latitudes | From the poles | Vertically | Surface Hadley flow.
-M2: The ITCZ is associated with: | Rising air and heavy rain near the equator | Deserts | Polar highs | Jet streams | Convergence zone.
+M1#physics-u33-11-q1: Trade winds blow: | Towards the equator, deflected westward | From west to east at mid-latitudes | From the poles | Vertically | Surface Hadley flow.
+M2#physics-u33-11-q2: The ITCZ is associated with: | Rising air and heavy rain near the equator | Deserts | Polar highs | Jet streams | Convergence zone.
 
 ## Fluid dynamics of the atmosphere
 S: The atmosphere is a thin, rotating, stratified fluid. Its motion obeys the Navier–Stokes equations with rotation, gravity and heating, and simplified balances explain winds and the growth of weather systems.
@@ -281,8 +281,8 @@ X: Geostrophic wind with a pressure gradient of 1 hPa per 100 km at 45° (ρ = 1
 !: Winds around a low in the northern hemisphere blow anticlockwise, not straight in; rotation dominates large-scale flows.
 Q: What is potential vorticity? | A quantity combining rotation and stratification, conserved in adiabatic frictionless flow.
 Q: What causes mid-latitude cyclones? | Baroclinic instability of horizontal temperature gradients.
-M1: Near the ground, friction makes wind: | Cross isobars towards low pressure | Flow parallel to isobars | Stop | Reverse | Ekman layer.
-M2: Weather forecast models solve the: | Primitive equations | Schrödinger equation | Maxwell's equations | Einstein's equations | Fluid dynamics.
+M1#physics-u33-12-q1: Near the ground, friction makes wind: | Cross isobars towards low pressure | Flow parallel to isobars | Stop | Reverse | Ekman layer.
+M2#physics-u33-12-q2: Weather forecast models solve the: | Primitive equations | Schrödinger equation | Maxwell's equations | Einstein's equations | Fluid dynamics.
 
 ## Weather systems
 S: Weather systems are the moving patterns of pressure, wind, cloud and precipitation that make daily weather: mid-latitude cyclones and fronts, anticyclones, tropical cyclones and thunderstorms.
@@ -308,8 +308,8 @@ X: Why do tropical cyclones weaken over land?
 !: Forecast probability of rain refers to the chance of measurable rain at a point, not the fraction of an area or time.
 Q: What powers a tropical cyclone? | Latent heat released when water vapour from warm oceans condenses.
 Q: What limits weather forecasts to about two weeks? | Chaos: small errors in initial conditions grow exponentially.
-M1: Tropical cyclones need sea surface temperatures above about: | 26.5 °C | 10 °C | 40 °C | 0 °C | Warm water.
-M2: A cold front is where: | Cold air advances under warm air | Warm air advances over cold | Pressure is high | Nothing happens | Frontal lifting.
+M1#physics-u33-13-q1: Tropical cyclones need sea surface temperatures above about: | 26.5 °C | 10 °C | 40 °C | 0 °C | Warm water.
+M2#physics-u33-13-q2: A cold front is where: | Cold air advances under warm air | Warm air advances over cold | Pressure is high | Nothing happens | Frontal lifting.
 
 ## Atmospheric waves
 S: The atmosphere supports many kinds of waves, from sound to planetary-scale Rossby waves. They transport energy and momentum, shape weather patterns, and couple the lower and upper atmosphere.
@@ -332,8 +332,8 @@ X: Rossby wave westward phase speed relative to the mean flow for wavelength 600
 !: Waves transport energy and momentum without transporting the air far; parcels oscillate.
 Q: What restores atmospheric gravity waves? | Buoyancy in a stably stratified atmosphere.
 Q: What causes Rossby waves? | The change of the Coriolis parameter with latitude.
-M1: Lenticular clouds indicate: | Mountain lee waves | Hurricanes | Fronts | Fog | Standing gravity waves.
-M2: The quasi-biennial oscillation is driven by: | Breaking waves in the tropical stratosphere | Ocean tides | Solar flares | Volcanoes | Wave momentum.
+M1#physics-u33-14-q1: Lenticular clouds indicate: | Mountain lee waves | Hurricanes | Fronts | Fog | Standing gravity waves.
+M2#physics-u33-14-q2: The quasi-biennial oscillation is driven by: | Breaking waves in the tropical stratosphere | Ocean tides | Solar flares | Volcanoes | Wave momentum.
 
 ## Turbulence and boundary layers
 S: The atmospheric boundary layer is the lowest ~1–2 km of air, directly influenced by the surface. Turbulence there mixes heat, moisture, momentum and pollutants, and controls wind energy, fog and air quality.
@@ -359,8 +359,8 @@ D: phys-u33-wind-profile
 !: Nights are often less windy at the surface because a stable layer decouples the surface from faster winds aloft.
 Q: What is the atmospheric boundary layer? | The lowest part of the atmosphere directly influenced by the surface, typically 1–2 km.
 Q: What does the Richardson number measure? | The balance of stability against shear, predicting turbulence.
-M1: Wind speed near the surface increases with height roughly: | Logarithmically | Linearly | Exponentially | Not at all | Log law.
-M2: Eddy covariance towers measure: | Surface fluxes of heat, water and CO_{2} | Temperature only | Lightning | Ozone layer | Turbulent fluxes.
+M1#physics-u33-15-q1: Wind speed near the surface increases with height roughly: | Logarithmically | Linearly | Exponentially | Not at all | Log law.
+M2#physics-u33-15-q2: Eddy covariance towers measure: | Surface fluxes of heat, water and CO_{2} | Temperature only | Lightning | Ozone layer | Turbulent fluxes.
 
 ## Aerosols and atmospheric optics
 S: Aerosols are tiny particles suspended in air, from sea salt and dust to soot and sulfate. They affect health, cloud formation and climate, and together with molecules and ice crystals they create the sky's optical phenomena.
@@ -385,8 +385,8 @@ X: Why is a halo around the Sun at 22°?
 !: Reducing aerosol pollution improves health but can unmask some greenhouse warming, slightly accelerating temperature rise.
 Q: How do aerosols affect climate? | Directly by scattering and absorbing sunlight, and indirectly by changing clouds.
 Q: Why do volcanic eruptions cool the climate? | Stratospheric sulfate aerosols reflect sunlight for a year or two.
-M1: The 22° halo is caused by: | Hexagonal ice crystals | Raindrops | Dust | Ozone | Refraction.
-M2: PM2.5 refers to: | Particles smaller than 2.5 μm | 2.5 ppm | 2.5 km visibility | Ozone | Particulate matter.
+M1#physics-u33-16-q1: The 22° halo is caused by: | Hexagonal ice crystals | Raindrops | Dust | Ozone | Refraction.
+M2#physics-u33-16-q2: PM2.5 refers to: | Particles smaller than 2.5 μm | 2.5 ppm | 2.5 km visibility | Ozone | Particulate matter.
 
 ## Climate modelling
 S: Climate models simulate the physics of the atmosphere, oceans, ice and land on computers, solving equations for fluid motion, radiation and chemistry. They project how climate responds to greenhouse gases and test our understanding.
@@ -410,8 +410,8 @@ X: Why can models project climate decades ahead but not weather?
 !: Models aren't fitted to reproduce warming trends; they're built from physics and tested against observations.
 Q: What are parameterisations? | Approximate representations of processes smaller than a model's grid, like clouds.
 Q: How are climate models tested? | Against historical records, volcanic responses, paleoclimates and satellite observations.
-M1: CMIP is: | An international model intercomparison project | A satellite | A type of cloud | A gas | Coupled Model Intercomparison.
-M2: The largest source of uncertainty in climate sensitivity is: | Cloud feedbacks | CO_{2} radiative properties | Solar constant | Gravity | Clouds.
+M1#physics-u33-17-q1: CMIP is: | An international model intercomparison project | A satellite | A type of cloud | A gas | Coupled Model Intercomparison.
+M2#physics-u33-17-q2: The largest source of uncertainty in climate sensitivity is: | Cloud feedbacks | CO_{2} radiative properties | Solar constant | Gravity | Clouds.
 
 ## Climate feedback mechanisms
 S: Feedbacks amplify or dampen the climate's response to a forcing. Positive feedbacks (water vapour, ice albedo) roughly double or triple the warming from CO_{2} alone; the Planck response ultimately stabilises it.
@@ -432,8 +432,8 @@ X: Without feedbacks (Planck only), warming from doubled CO_{2}?
 !: A positive feedback doesn't mean runaway warming; as long as the net feedback is negative (stabilising), the climate settles at a new equilibrium.
 Q: What is the Planck feedback? | The increase in outgoing radiation as temperature rises; the main stabilising feedback.
 Q: Why is ice–albedo feedback positive? | Melting ice exposes darker surfaces that absorb more sunlight, causing more warming.
-M1: The largest positive feedback is: | Water vapour | Clouds | Ice albedo | Lapse rate | ~+1.8 W m^{-2} K^{-1}.
-M2: Without any feedbacks, doubling CO_{2} warms Earth by about: | 1.2 K | 3 K | 10 K | 0 K | Planck only.
+M1#physics-u33-18-q1: The largest positive feedback is: | Water vapour | Clouds | Ice albedo | Lapse rate | ~+1.8 W m^{-2} K^{-1}.
+M2#physics-u33-18-q2: Without any feedbacks, doubling CO_{2} warms Earth by about: | 1.2 K | 3 K | 10 K | 0 K | Planck only.
 
 ## Ocean-atmosphere interactions
 S: The ocean and atmosphere exchange heat, water, momentum and gases, coupling them into one system. Their interactions produce climate patterns like El Niño and drive weather extremes worldwide.
@@ -458,8 +458,8 @@ X: Why does El Niño raise global average temperatures?
 !: El Niño doesn't cause global warming; it adds year-to-year variability on top of the long-term trend.
 Q: What is El Niño? | A periodic warming of the eastern tropical Pacific with weakened trade winds, affecting global weather.
 Q: How has ocean pH changed since industrialisation? | Dropped by about 0.1 (about 30% more acidic).
-M1: El Niño events typically occur every: | 2–7 years | Every year | 50 years | 100 years | ENSO cycle.
-M2: Sea level rise comes mainly from: | Thermal expansion and melting land ice | Melting sea ice | Rain | Tides | Ocean volume increase.
+M1#physics-u33-19-q1: El Niño events typically occur every: | 2–7 years | Every year | 50 years | 100 years | ENSO cycle.
+M2#physics-u33-19-q2: Sea level rise comes mainly from: | Thermal expansion and melting land ice | Melting sea ice | Rain | Tides | Ocean volume increase.
 
 ## Climate sensitivity
 S: Equilibrium climate sensitivity is how much global temperature eventually rises for a doubling of atmospheric CO_{2}. It's the key number in climate science, constrained by physics, observations and past climates to about 2.5–4 °C.
@@ -479,8 +479,8 @@ X: Equilibrium warming at 560 ppm CO_{2} (doubling from 280) with ECS = 3 °C?
 !: Climate sensitivity isn't the warming we'll see by 2100; that depends on emissions and the slower transient response.
 Q: What is equilibrium climate sensitivity? | The eventual global warming from a doubling of atmospheric CO_{2}.
 Q: What is TCRE? | The transient warming per unit of cumulative CO_{2} emissions.
-M1: IPCC's best estimate of ECS is: | 3 °C | 1 °C | 6 °C | 10 °C | AR6.
-M2: Warming is roughly proportional to: | Cumulative CO_{2} emissions | Annual emissions | Population | Solar output | Carbon budget.
+M1#physics-u33-20-q1: IPCC's best estimate of ECS is: | 3 °C | 1 °C | 6 °C | 10 °C | AR6.
+M2#physics-u33-20-q2: Warming is roughly proportional to: | Cumulative CO_{2} emissions | Annual emissions | Population | Solar output | Carbon budget.
 
 ## Remote sensing of the atmosphere
 S: Satellites and ground instruments measure the atmosphere remotely by analysing radiation it emits, absorbs or scatters. Remote sensing provides global data on temperature, gases, clouds, aerosols and winds for forecasting and climate monitoring.
@@ -501,8 +501,8 @@ X: How do infrared sounders get vertical profiles?
 !: Satellite measurements are indirect; they need careful calibration and validation against ground-based and balloon data.
 Q: How does GPS radio occultation measure temperature? | From the bending of GPS signals passing through the atmosphere, which depends on density.
 Q: What does TROPOMI measure? | Trace gases like methane, NO_{2} and ozone at high resolution.
-M1: Microwave sounders are useful because: | They see through most clouds | They see colours | They measure gravity | They're cheap | Cloud-penetrating.
-M2: Data assimilation combines: | Observations with model forecasts | Two satellites | Ocean and land only | Rain gauges only | Initial conditions.
+M1#physics-u33-21-q1: Microwave sounders are useful because: | They see through most clouds | They see colours | They measure gravity | They're cheap | Cloud-penetrating.
+M2#physics-u33-21-q2: Data assimilation combines: | Observations with model forecasts | Two satellites | Ocean and land only | Rain gauges only | Initial conditions.
 
 ## Atmospheric electricity and lightning
 S: The atmosphere carries a global electric circuit: thunderstorms charge the ionosphere, and current leaks back through fair-weather air. Lightning discharges billions of joules in a fraction of a second, producing thunder, radio waves and even gamma rays.
@@ -526,6 +526,6 @@ X: Thunder heard 9 s after a flash. Distance?
 !: Lightning can strike the same place twice; tall objects like the Empire State Building are struck ~20–25 times a year.
 Q: How do thunderclouds become charged? | Collisions between graupel and ice crystals transfer charge.
 Q: What maintains the global electric circuit? | Thunderstorms worldwide charging the ionosphere.
-M1: A lightning return stroke reaches about: | 30 000 K | 3000 K | 300 K | 3 million K | Hotter than the Sun's surface.
-M2: Terrestrial gamma-ray flashes are produced by: | Runaway electrons accelerated in thunderstorm fields | Radioactive rocks | The Sun | Cosmic rays only | Relativistic electrons.
+M1#physics-u33-22-q1: A lightning return stroke reaches about: | 30 000 K | 3000 K | 300 K | 3 million K | Hotter than the Sun's surface.
+M2#physics-u33-22-q2: Terrestrial gamma-ray flashes are produced by: | Runaway electrons accelerated in thunderstorm fields | Radioactive rocks | The Sun | Cosmic rays only | Relativistic electrons.
 `;

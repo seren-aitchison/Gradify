@@ -25,3 +25,5 @@ content/inbox/
 
 # content engine: request files quote specification text (copyright, never committed); rebuilt by gradify work
 content/queue/**/*.req.txt
+# content engine: templates for an external model quote specification text (gradify template); never committed
+content/templates/

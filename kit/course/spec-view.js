@@ -5,7 +5,9 @@
 // HTML only, from the model in kit/learning/spec-mastery.js. Nothing here is specific to a board or subject.
 //
 // Three measures are never mixed: Mastery (what the learner's answers show, a percentage with a level), Confidence
-// (how much evidence that rests on, a three-step meter) and Coverage (what's taught and done, counts "x of y").
+// (how much evidence that rests on, a three-step meter) and Coverage, which keeps two lists apart: Gradify's coverage
+// (what Gradify teaches, and on whose evidence) and the learner's own progress (what they've answered and completed).
+// A learner's progress never makes a requirement look taught (owner, 26 Nov 2026).
 // The heatmap uses the activity tracker's scale (.co-heat in kit/styles/course.css): filled tiles get a stronger colour with more
 // demonstrated understanding; an empty tile has no evidence yet, so it can't be mistaken for a weak result.
 import { esc } from "../core/text.js";
@@ -15,11 +17,19 @@ import { sixHtml, calibrationHtml } from "../learning/mastery-view.js";
 const pct = (v) => `${Math.round(v * 100)}%`;
 const SHADE = { emerging: 0.22, building: 0.4, developing: 0.58, secure: 0.78, strong: 1 };
 const STEPS = { none: 0, low: 1, medium: 2, high: 3 };
-const COVER = { full: ["Fully taught", "Gradify's lessons teach and test all of this point."], partial: ["Partly taught", "Gradify's lessons cover part of this point; use your class notes for the rest."], none: ["Not on Gradify yet", "No Gradify lesson teaches this point yet, so Gradify can't measure it."] };
+const COVER = { full: ["Fully taught", "Gradify's lessons teach and test all of this point."], partial: ["Partly taught", "Gradify's lessons cover part of this point; use your class notes for the rest."], none: ["Not on Gradify yet", "No Gradify lesson teaches this point yet, so Gradify can't measure it."],
+  unchecked: ["Not checked yet", "Gradify hasn't yet checked which of its lessons teach this point, so it can't measure it yet."] };
+// what the coverage rests on (the mapping store): a named person's check, or an AI reviewer's only
+const EVIDENCE = {
+  verified: { full: ["Independently verified", "A named reviewer confirmed Gradify's lessons teach all of this point."], partial: ["Partly taught (verified)", "A named reviewer confirmed Gradify's lessons teach part of this point; use your class notes for the rest."] },
+  // provisional: an AI-supported match nobody has checked. Never presented as confirmed coverage or as a requirement done
+  "ai-mapped": { full: ["Provisionally mapped \u2014 awaiting verification", "Gradify has matched this point to its lessons, but nobody has checked the match yet. Your results show your progress on those lessons, not a confirmed part of your specification."], partial: ["Provisionally mapped in part \u2014 awaiting verification", "Gradify has matched part of this point to its lessons, but nobody has checked the match yet. Use your class notes too."] },
+};
+const coverOf = (p) => EVIDENCE[p.coverage.evidence]?.[p.coverage.gradify] || COVER[p.coverage.gradify] || COVER.none;
 const TREND = { improving: "Improving: your recent answers are better than earlier ones.", steady: "Steady: your recent answers are about the same as earlier ones.", slipping: "Slipping: your recent answers are clearly weaker than before. Worth revisiting soon." };
 
 const fig = (p) => (p.estimate == null ? "" : `${p.provisional ? "~" : ""}${pct(p.estimate)}`);
-const state = (p) => (p.estimate != null ? p.band.label : p.coverage.gradify === "none" ? "Not on Gradify yet" : "Not assessed yet");
+const state = (p) => (p.estimate != null ? p.band.label : p.coverage.gradify === "none" ? "Not on Gradify yet" : p.coverage.gradify === "unchecked" ? "Not checked yet" : "Not assessed yet");
 const pill = (p) => `<span class="sm-pill b-${p.estimate == null ? "none" : p.band.key}">${esc(state(p))}</span>`;
 const tip = (p) => `${p.id} ${p.title}: ${state(p)}${p.estimate == null ? "" : ` ${fig(p)}${p.provisional ? " (early estimate)" : ""}`}${p.trend === "slipping" ? ", slipping" : ""}`;
 const tileCls = (p) => [p.estimate == null ? (p.coverage.gradify === "none" ? "gap" : "none") : `b-${p.band.key}`, p.provisional ? "prov" : "", p.trend === "slipping" ? "slip" : ""].filter(Boolean).join(" ");
@@ -44,9 +54,11 @@ function scaleHtml(v) {
   return `<div class="sm-scale" aria-hidden="true">${BANDS.map((b) => `<span style="--v:${SHADE[b.key]}"><small>${b.label}</small></span>`).join("")}${v == null ? "" : `<i style="left:${Math.min(99, Math.max(1, v * 100))}%"></i>`}</div>`;
 }
 /**
- * mastery: { estimate, provisional, band, empty, scope }   confidence: { level, basis }   coverage: [[label, n, of]]
+ * mastery: { estimate, provisional, band, empty, scope }   confidence: { level, basis }
+ * coverage: [[label, n, of, note]] (Gradify's)   progress: [[label, n, of, note]] (the learner's)
  */
-function measuresHtml({ mastery, confidence, coverage }) {
+const covList = (rows) => `<ul class="sm-cov">${rows.map(([label, n, of, note]) => `<li class="${of == null ? "txt" : ""}"><span>${esc(label)}</span><b>${of == null ? esc(n) : `${n}<small> of ${of}</small>`}</b>${of ? `<i style="--f:${of ? n / of : 0}"></i>` : ""}${note ? `<small>${esc(note)}</small>` : ""}</li>`).join("")}</ul>`;
+function measuresHtml({ mastery, confidence, coverage, progress = [] }) {
   const m = mastery;
   return `<div class="sm-measures">
     <section class="sm-measure sm-m-mastery" aria-label="Mastery"><h3>Mastery</h3>
@@ -54,8 +66,8 @@ function measuresHtml({ mastery, confidence, coverage }) {
     <section class="sm-measure" aria-label="Confidence in the mastery figure"><h3>Confidence in this figure</h3>
       <b class="sm-cfig">${meter(confidence.level)}${esc(confidence.level === "none" ? "No evidence yet" : CONFIDENCE[confidence.level].label.replace(" confidence", ""))}</b>
       <p>${esc(confidence.basis)}</p></section>
-    <section class="sm-measure" aria-label="Coverage"><h3>Coverage</h3>
-      <ul class="sm-cov">${coverage.map(([label, n, of, note]) => `<li class="${of == null ? "txt" : ""}"><span>${esc(label)}</span><b>${of == null ? esc(n) : `${n}<small> of ${of}</small>`}</b>${of ? `<i style="--f:${of ? n / of : 0}"></i>` : ""}${note ? `<small>${esc(note)}</small>` : ""}</li>`).join("")}</ul></section>
+    <section class="sm-measure" aria-label="Gradify's coverage and your progress"><h3>Gradify's coverage</h3>${covList(coverage)}
+      ${progress.length ? `<h3 class="sm-h-progress">Your progress</h3>${covList(progress)}` : ""}</section>
   </div>`;
 }
 
@@ -102,7 +114,11 @@ export function specPageHtml(m, { specs = [], practiseHref } = {}) {
     ${measuresHtml({
       mastery: { estimate: o.estimate, provisional: o.provisional, band: o.band, scope: `Across ${o.assessed} assessed ${o.assessed === 1 ? "requirement" : "requirements"}.`, empty: "Answer a few questions to start." },
       confidence: { level: o.confidence, basis: o.assessed ? `${o.firm} of ${o.assessed} with firm evidence.` : "No answers yet." },
-      coverage: [["Requirements with evidence", o.assessed, o.total], ["Taught on Gradify", o.covered, o.total, o.covered - o.full ? `${o.covered - o.full} only in part` : ""], ["Lessons you've completed", o.lessonsDone, o.lessonsMapped]],
+      // verified and provisional coverage are counted apart: a provisional mapping is never shown as taught
+      coverage: [...(o.evidence.verified || o.evidence.aiMapped
+          ? [["Taught on Gradify, verified", o.taught.verified, o.total, o.taught.verifiedPart ? `${o.taught.verifiedPart} only in part` : ""], ...(o.taught.provisional ? [["Provisionally mapped, awaiting verification", o.taught.provisional, o.total, "Not counted as taught until a person checks it"]] : [])]
+          : [["Taught on Gradify", o.covered, o.total, o.covered - o.full ? `${o.covered - o.full} only in part` : ""]])],
+      progress: [["Requirements you've answered on", o.assessed, o.total], ["Lessons you've completed", o.lessonsDone, o.lessonsMapped]],
     })}
     ${nextStepsHtml(m, practiseHref)}
     <section class="co-panel sm-map"><div class="cx-acth"><h3>Your specification map</h3><span>${o.assessed} of ${o.total} assessed</span></div>
@@ -119,11 +135,12 @@ function groupsOf(points) { const out = new Map(); for (const p of points) (out.
 
 // ---------- #/spec/<topic> ----------
 // a requirement's row opens in place (kit/ui/disclosure.js wireRows): its wording, the lessons that teach it with
-// where the learner is in each, and a way to practise it, without leaving the topic
+// where the learner is in each, and a way to practise it, without leaving the topic. Only a person's verified mapping
+// says "Taught in"; an unchecked match is labelled provisional (docs/CONTENT-ENGINE.md, mapping)
 const rowMore = (p, { titleOf, statusOf, practiseHref }) => {
   const ls = [...p.lessons.map((id) => [id, "full"]), ...p.partial.map((id) => [id, "partial"])];
   return `<div class="sm-more" id="sm-more-${esc(p.id.replace(/[^\w-]/g, "_"))}" hidden><p class="sm-mtext">${esc(p.text)}</p>
-    ${ls.length ? `<p class="sm-mk">Taught in</p><ul class="sm-mls">${ls.map(([id, kind]) => { const st = statusOf(id); return `<li><a href="#/lesson/${esc(id)}">${esc(titleOf(id))}</a><small>${kind === "partial" ? "part of it" : ""}${kind === "partial" && st ? " · " : ""}${st ? esc(st) : ""}</small></li>`; }).join("")}</ul>` : `<p class="sm-mk">${esc(COVER[p.coverage.gradify][1] || "Not taught in Gradify yet.")}</p>`}
+    ${ls.length ? `<p class="sm-mk">${p.coverage.evidence === "verified" ? "Taught in" : "Provisionally mapped to \u2014 awaiting verification"}</p><ul class="sm-mls">${ls.map(([id, kind]) => { const st = statusOf(id); return `<li><a href="#/lesson/${esc(id)}">${esc(titleOf(id))}</a><small>${kind === "partial" ? "part of it" : ""}${kind === "partial" && st ? " · " : ""}${st ? esc(st) : ""}</small></li>`; }).join("")}</ul>` : `<p class="sm-mk">${esc(coverOf(p)[1] || "Not taught in Gradify yet.")}</p>`}
     <div class="co-row">${practiseHref && p.practise.length ? `<a class="btn btn-light lg btn-sm" href="${practiseHref(p)}"><span>Practise this: 5 minutes</span></a>` : ""}<a class="btn btn-ghost lg btn-sm" href="#/spec/${esc(p.id)}"><span>Everything on ${esc(p.id)}</span></a></div></div>`;
 };
 const rowBtn = (p) => `<button type="button" class="sm-x" data-row="${esc(p.id)}" aria-expanded="false" aria-controls="sm-more-${esc(p.id.replace(/[^\w-]/g, "_"))}" aria-label="Show what teaches ${esc(p.id)}" title="Lessons, questions and resources"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>`;
@@ -134,13 +151,13 @@ export function topicPageHtml(m, t, { practiseHref, titleOf = (id) => id, status
     <div class="sm-topicnav">${m.topics.map((x) => `<a href="#/spec/${esc(x.id)}" ${x === t ? 'aria-current="page"' : ""}>${esc(x.id)} ${esc(x.title)}</a>`).join("")}</div>
     <div class="co-intro"><span class="co-kicker">Topic ${esc(t.id)}</span><h2>${esc(t.title)}</h2><p>${topicStatus(t)} · ${t.assessed} of ${t.total} requirements assessed</p>${summaryNote(m.spec, { short: true })}</div>
     ${groupsOf(t.points).map((g) => `<section class="co-panel sm-group"><h3><span class="sm-id">${esc(g[0].group.id)}</span>${esc(g[0].group.title)}</h3>
-      <ul class="sm-rows">${g.map((p) => `<li class="sm-xrow">${rowBtn(p)}<span class="sm-tiles sm-swatch">${tile(p)}</span><a class="sm-rt" href="#/spec/${esc(p.id)}"><span class="sm-id">${esc(p.id)}</span>${esc(p.title)}${flagTags(m.spec, p)}<small>${p.estimate == null ? esc(COVER[p.coverage.gradify][0]) : `${esc(CONFIDENCE[p.confidence.level].label)}${p.trend === "slipping" ? " · slipping" : ""}`}</small></a><span class="sm-rs">${pill(p)}<b>${fig(p)}</b></span>${action(p, practiseHref)}${rowMore(p, { titleOf, statusOf, practiseHref })}</li>`).join("")}</ul></section>`).join("")}
+      <ul class="sm-rows">${g.map((p) => `<li class="sm-xrow">${rowBtn(p)}<span class="sm-tiles sm-swatch">${tile(p)}</span><a class="sm-rt" href="#/spec/${esc(p.id)}"><span class="sm-id">${esc(p.id)}</span>${esc(p.title)}${flagTags(m.spec, p)}<small>${p.estimate == null ? esc(coverOf(p)[0]) : `${esc(CONFIDENCE[p.confidence.level].label)}${p.trend === "slipping" ? " · slipping" : ""}`}</small></a><span class="sm-rs">${pill(p)}<b>${fig(p)}</b></span>${action(p, practiseHref)}${rowMore(p, { titleOf, statusOf, practiseHref })}</li>`).join("")}</ul></section>`).join("")}
     <nav class="sm-pager">${prev ? `<a href="#/spec/${esc(prev.id)}">← ${esc(prev.id)} ${esc(prev.title)}</a>` : "<span></span>"}${next ? `<a href="#/spec/${esc(next.id)}">${esc(next.id)} ${esc(next.title)} →</a>` : ""}</nav>`;
 }
 
 // ---------- #/spec/<point> ----------
 export function pointPageHtml(m, p, { titleOf = (id) => id, statusOf = () => null, practiseHref } = {}) {
-  const spec = m.spec, c = p.confidence, cov = COVER[p.coverage.gradify];
+  const spec = m.spec, c = p.confidence, cov = coverOf(p);
   const i = m.points.findIndex((x) => x.id === p.id), prev = m.points[i - 1], next = m.points[i + 1], topic = m.topics.find((t) => t.id === p.topic.id);
   const lessonRow = (id, kind) => {
     const r = p.byLesson[id] || { state: "unanswered", n: 0 }, st = statusOf(id);
@@ -159,7 +176,8 @@ export function pointPageHtml(m, p, { titleOf = (id) => id, statusOf = () => nul
     ${measuresHtml({
       mastery: { estimate: p.estimate, provisional: p.provisional, band: p.band, scope: p.provisional ? "An early estimate: not enough answers yet for a full measurement." : "Measured from your answers on this requirement's lessons.", empty: p.coverage.gradify === "none" ? "Gradify doesn't teach this requirement yet, so it can't measure it." : "No answers on this requirement yet." },
       confidence: { level: c.level, basis: basisText(c) },
-      coverage: [["Gradify", cov[0], null, cov[1]], ["Lessons you've completed", p.coverage.done, p.coverage.total, "Completing a lesson is coverage, not mastery."]],
+      coverage: [["Gradify", cov[0], null, cov[1]]],
+      progress: [["Lessons you've completed", p.coverage.done, p.coverage.total, "Your progress: it doesn't change what Gradify teaches, and only your answers show mastery."]],
     })}
     <div class="sm-two">
       <section class="co-panel"><h3>What you can already show</h3>${p.can.length ? `<ul class="sm-list ok">${p.can.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>` : `<p class="co-empty">${c.level === "none" ? "Nothing yet: no answers on this requirement." : "Nothing consistently yet. Keep practising."}</p>`}</section>

@@ -5,10 +5,10 @@
 import { readFileSync, existsSync, readdirSync } from "node:fs";
 import { titleKey } from "../../kit/course/syllabus.js";
 import { SPECS } from "../../kit/curriculum/uk.js";
-import { loadIndex } from "../curriculum/engine.mjs";
+import { loadIndex, tokens } from "../curriculum/engine.mjs";
 import { CONFIG, at, out, fp, save, slug, today, briefPath, draftPath, loadLedger, saveLedger } from "./lib.mjs";
 import { packet, parseBrief, parseVerdicts, fixList, parseRepairs, applyRepair, splitUnit, numbered, parentOf, conflictStakes } from "./shorthand.mjs";
-import { runGates } from "./gates.mjs";
+import { runGates, topicFlashcards, SKILL_WORDS } from "./gates.mjs";
 import { diagramsFor, reqHash, TYPE } from "./queue.mjs";
 import { longestSharedRun } from "../knowledge/lib.mjs";
 import { SOURCES, sourceFor, classOf } from "../../kit/curriculum/sources.js";
@@ -61,7 +61,14 @@ export const allowLines = (rows = SOURCES) => rows.filter((r) => classOf(r)).map
 export function checkBrief(text, topic = null) {
   const parsed = parseBrief(text), allow = parsed.problems.length ? [] : allowlistProblems(parsed);
   const problems = [...parsed.problems, ...allow, ...(parsed.problems.length ? [] : licenceProblems(parsed))];
-  for (const r of topic?.reqs || []) if (r.text) { const run = longestSharedRun(text, r.text); if (run.words >= 8) problems.push(`copies ${run.words} words of ${r.id}'s wording ("${run.run.split(" ").slice(0, 6).join(" ")}…"): condense it in your own words`); }
+  const briefWords = new Set(tokens(text));
+  for (const r of topic?.reqs || []) if (r.text) {
+    const run = longestSharedRun(text, r.text); if (run.words >= 8) problems.push(`copies ${run.words} words of ${r.id}'s wording ("${run.run.split(" ").slice(0, 6).join(" ")}…"): condense it in your own words`);
+    // evidence: a lesson is written from the brief alone, so the brief must cover what each requirement names (the
+    // specification gate later asks the lesson for the same terms)
+    const terms = [...new Set(tokens(`${r.title || ""} ${r.text}`))].filter((t) => !SKILL_WORDS.has(t)), missing = terms.filter((t) => !briefWords.has(t));
+    if (terms.length && missing.length / terms.length > 0.4) problems.push(`doesn't support ${r.id}: the brief never covers ${missing.slice(0, 8).join(", ")}`);
+  }
   return { parsed, problems };
 }
 export const stampBrief = (topic, text) => `# fp=${briefKey(topic)} · ${today()}\n${String(text).replace(/^#.*\n/, "").trim().replace(/\nEND\s*$/, "")}\nEND\n`;
@@ -92,11 +99,20 @@ export function packetFor(topic, brief) {
   const { diagrams, renderers } = diagramsFor(topic);
   return packet({ id: `${topic.fw}/${topic.section}`, subject: topic.subject, level: topic.level, country: topic.country, framework: topic.fw, reqs: topic.reqs, reuse: topic.reuse, diagrams, renderers, brief: brief.replace(/^#.*\n/, "") });
 }
-export const reviewRequest = (s, topic, brief) => [`LESSON ${s.key}`, numbered(s.text), ...topic.reqs.map((r) => `REQ ${r.id} | ${String(r.asks).replace(/\s+/g, " ")}`), `BRIEF ${topic.id}`, brief.replace(/^#.*\n/, "").trim(),
+export const reviewRequest = (s, topic, brief) => [`LESSON ${s.key}`, numbered(s.text), ...topic.reqs.map((r) => `REQ ${r.id} | ${String(r.asks).replace(/\s+/g, " ")}`),
+  // each library diagram the lesson uses, as the learner will see it, so the reviewer can judge what it teaches
+  ...diagramLines(s.text), `BRIEF ${topic.id}`, brief.replace(/^#.*\n/, "").trim(),
   // the brief's conflicts, numbered as the verdict's Cn= names them
   ...parseBrief(brief).conflicts.map((c, i) => `CONF C${i + 1} | ${c[0]} | src=${c[1] || ""} | stakes=${conflictStakes(c)}`)].join("\n");
+let MANIFEST = null;
+/** "DIAG <id> | <title> | <caption> | alt: <alt>" for each D: line, or a note that the id isn't in the library */
+export function diagramLines(text) {
+  MANIFEST ||= (() => { try { const m = JSON.parse(readFileSync(at("kit/diagrams/manifest.json"), "utf8")); return m.diagrams || m; } catch { return {}; } })();
+  const one = (x) => String(x || "").replace(/\s+/g, " ").trim();
+  return [...new Set([...String(text).matchAll(/^D:\s*(\S+)/gm)].map((m) => m[1]))].map((id) => { const d = MANIFEST[id]; return d ? `DIAG ${id} | ${one(d.title)} | ${one(d.caption)} | alt: ${one(d.alt)}` : `DIAG ${id} | not in the diagram library`; });
+}
 export const repairRequest = (s, pkt) => [fixList(s.key, s.issues), `LESSON ${s.key}`, numbered(s.text), pkt].join("\n");
-export const gateOptions = (topic, { siblings = [], ...extra } = {}) => ({ reqs: topic.reqs, allowed: new Set(topic.reqs.map((x) => x.id)), prereq: prereqResolver(topic.subject, siblings), taken: takenTitle(topic.subject), ...extra });
+export const gateOptions = (topic, { siblings = [], brief = null, ...extra } = {}) => ({ reqs: topic.reqs, sources: brief ? (brief.sources || []).map((x) => x.url) : null, allowed: new Set(topic.reqs.map((x) => x.id)), prereq: prereqResolver(topic.subject, siblings), taken: takenTitle(topic.subject), ...extra });
 /** the course's own lesson titles, keyed as the syllabus keys them; the engine's published unit is left out, since a
  * lesson published there keeps its title when it's rebuilt */
 export function courseTitles(subject, { withPublished = true } = {}) {
@@ -127,11 +143,12 @@ export function applyRepairReply(s, reply) {
 export const verdictOf = (reply) => (reply instanceof Error ? { ok: false, issues: [{ code: "CLR", line: null, note: `review call failed: ${reply.message}` }] } : parseVerdicts(reply)[0] || { ok: false, issues: [{ code: "CLR", line: null, note: "reviewer returned no verdict" }] });
 
 const escRe = (x) => x.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-/** the high-risk keywords found in a lesson's text. A keyword matches at the start of a word
+/** the high-risk keywords found in a lesson's text (not its D:/DIA: diagram references). A keyword matches at the start of a word
  * (so the stem "pregnan" finds "pregnancy", but "acid" no longer fires inside "placid"), and
  * phrases in `notKeywords` ("amino acid") are removed first, so molecule names aren't hazards. */
 export function riskKeywords(text, hr = CONFIG.highRisk) {
-  let t = String(text).toLowerCase();
+  // diagram references are file names and render specs, not teaching text ("D: bio-amino-acids" isn't about acids)
+  let t = String(text).split("\n").filter((l) => !/^(D|DIA):/.test(l)).join("\n").toLowerCase();
   for (const n of hr.notKeywords || []) t = t.replace(new RegExp(`\\b${escRe(n.toLowerCase())}`, "g"), " ");
   return hr.keywords.filter((k) => new RegExp(`\\b${escRe(k.toLowerCase())}`).test(t));
 }
@@ -177,7 +194,7 @@ export async function runTopic(topic, { ask, askMany, render = null, legible = n
   const pkt = packetFor(topic, r.brief);
   const states = splitUnit(await ask("write", pkt)).map((l, i) => ({ ...lessonState(l, i), models: { write: CONFIG.models.write, review: CONFIG.models.review } }));
   if (!states.length) return fileTopic(topic, [], { brief: r, failures: [{ title: "(unit)", gate: "parse", issues: [{ code: "FMT", line: null, note: "the Writer returned no lessons" }] }] });
-  const opts = gateOptions(topic, { render, legible, siblings: states.map((s) => s.title) });
+  const opts = gateOptions(topic, { render, legible, siblings: states.map((s) => s.title), brief: r.parsed });
   let active = states, stopped = null;
   try {
     for (let round = 0; round <= CONFIG.repairs && active.length; round++) {
@@ -216,7 +233,15 @@ export async function runTopic(topic, { ask, askMany, render = null, legible = n
  */
 export function fileTopic(topic, states, { brief = null, failures = [], reviewed = true } = {}) {
   const rec = { topic: topic.id, fw: topic.fw, section: topic.section, title: topic.title, date: today(), lessons: [], failures: [...failures], uncovered: [], gaps: [], needs: [], brief: brief ? (brief.cached ? "reused" : "new") : null };
-  const passed = states.filter((s) => s.done && s.lesson);
+  let passed = states.filter((s) => s.done && s.lesson);
+  // the topic's flashcard minimum (config.standards), over every lesson its draft will hold: the ones filed before and
+  // the ones passing now. Short of it, nothing new is filed; the lessons are listed with what's missing
+  if (passed.length) {
+    const file = draftPath(topic.subject, topic.fw, slug(topic.title)), prior = existsSync(file) ? splitUnit(readFileSync(file, "utf8")) : [];
+    const merged = new Map(prior.map((l) => [l.title, l.text])); for (const s of passed) merged.set(s.lesson.title, s.text);
+    const f = topicFlashcards([...merged.values()]);
+    if (!f.ok) { for (const s of passed) { s.done = false; s.failedAt = "standards"; s.issues = [{ code: "STD", line: null, note: f.note }]; } passed = []; }
+  }
   for (const s of passed) {
     const flags = lessonRisk(topic, s, brief.parsed), title = s.lesson.title;
     rec.lessons.push({ title, tier: !reviewed ? "gates-passed" : flags.risk || flags.conflict ? "expert-required" : "ai-verified", reqs: s.lesson.reqs.map((x) => x.id), disagreed: s.reviewFails > 0, repairs: s.gateFails + s.reviewFails, ...(flags.conflict ? { conflict: true, conflictsOpen: flags.conflicts.open } : {}), ...(flags.conflicts.explained.length ? { conflictsExplained: flags.conflicts.explained } : {}), ...(flags.risk ? { highRisk: true } : {}), hash: fp(s.text),
@@ -285,13 +310,15 @@ function finish(topic, rec) {
     for (const l of e.lessons) if (!rec.lessons.includes(l) && !l.superseded && l.reqs.length && l.reqs.every((id) => fresh.has(id))) l.superseded = rec.date;
     const key = targetKey(topic.full || topic); e.rebuilds = e.rebuildKey === key ? (e.rebuilds || 0) + 1 : 1; e.rebuildKey = key;
   }
-  // a requirement is covered by a lesson naming it, or naming one of its parts
+  // a requirement is covered only by a lesson naming the whole requirement: a lesson naming one of its parts
+  // (4.1.1.1.b.ii) teaches that part, but the index doesn't list a statement's parts, so the engine can't tell the
+  // rest are taught; the requirement stays uncovered and is written (owner, 26 Nov 2026, rule H)
   const all = (topic.full || topic).reqs, known = new Set(all.map((x) => x.id));
   // a lesson covers a requirement only if it was built from that requirement's current text: when a statement changes,
   // the old lesson stays in the draft but its requirement is queued again until a replacement passes
   const hashOf = new Map(all.map((x) => [x.id, x.hash]));
   const current = (l, id) => { const b = l.built?.reqs; if (!b) return true; return b.includes(`${id}@${hashOf.get(id)}`) || !b.some((x) => x.startsWith(`${id}@`)); };
-  const covered = new Set(e.lessons.flatMap((l) => l.reqs.map((id) => parentOf(id, known)).filter((id) => id && current(l, id))));
+  const covered = new Set(e.lessons.flatMap((l) => l.reqs.filter((id) => known.has(id) && current(l, id))));
   rec.uncovered = all.filter((x) => !covered.has(x.id)).map((x) => x.id);
   e.failures = rec.failures; e.uncovered = rec.uncovered; e.gaps = rec.gaps; e.needs = rec.needs;
   e.status = e.lessons.length ? (rec.uncovered.length ? "partial" : "filed") : e.runs >= CONFIG.repairs ? "blocked" : "failed";

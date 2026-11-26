@@ -1,4 +1,4 @@
-// TechGradify · ForgeLab Computational Thinking and Problem Solving (content standard 2). Added by scripts/new-course.mjs add-notes.
+// TechGradify Computational Thinking and Problem Solving (content standard 2). Added by scripts/new-course.mjs add-notes.
 export default `
 ## What is computer science?
 LV: GCSE · Foundation

@@ -23,8 +23,8 @@ K: Nonlinear systems cannot be understood by adding up simple pieces; interactio
 !: A good small-amplitude linear model can give badly wrong predictions at large amplitude.
 Q: What is the superposition principle? | For linear systems, any sum of solutions is also a solution.
 Q: Why is the full pendulum nonlinear? | Its restoring torque depends on sin θ, not θ.
-M1: Which equation is nonlinear? | ẋ = x − x^{3} | ẋ = 3x | ẍ + x = 0 | ẋ = −2x + 5 | The cubic term breaks linearity.
-M2: Linearisation is valid: | Near an equilibrium | Everywhere | Only for chaos | For all amplitudes | It uses a first-order Taylor expansion.
+M1#physics-u38-01-q1: Which equation is nonlinear? | ẋ = x − x^{3} | ẋ = 3x | ẍ + x = 0 | ẋ = −2x + 5 | The cubic term breaks linearity.
+M2#physics-u38-01-q2: Linearisation is valid: | Near an equilibrium | Everywhere | Only for chaos | For all amplitudes | It uses a first-order Taylor expansion.
 
 ## Nonlinear differential equations
 S: Nonlinear differential equations describe how systems change when rates depend nonlinearly on the state. Few can be solved exactly, so physicists combine special solutions, qualitative geometry and numerical integration to understand them.
@@ -50,8 +50,8 @@ K: Nonlinear ODEs rarely have formulas, but uniqueness, geometry and numerics re
 !: Nonlinear equations can blow up in finite time, which never happens in linear ones with constant coefficients.
 Q: What does the Van der Pol oscillator model? | Self-sustained oscillations with nonlinear damping, such as in valve circuits and heartbeats.
 Q: Why can't trajectories cross in phase space for a smooth autonomous system? | Uniqueness: each point has only one future.
-M1: Logistic growth approaches: | The carrying capacity K | Infinity | Zero always | Oscillates forever | x → K.
-M2: The fourth-order Runge–Kutta method is used to: | Integrate ODEs numerically | Find Fourier series | Factor numbers | Measure entropy | It is a standard integrator.
+M1#physics-u38-02-q1: Logistic growth approaches: | The carrying capacity K | Infinity | Zero always | Oscillates forever | x → K.
+M2#physics-u38-02-q2: The fourth-order Runge–Kutta method is used to: | Integrate ODEs numerically | Find Fourier series | Factor numbers | Measure entropy | It is a standard integrator.
 
 ## Fixed points and stability
 S: Fixed points are states where a system stays put. Whether nearby states return or run away determines what we actually observe, and linear stability analysis classifies equilibria by the eigenvalues of the Jacobian.
@@ -79,8 +79,8 @@ K: Eigenvalues of the Jacobian classify equilibria: real parts decide stability,
 !: A linear centre may become a spiral when nonlinear terms are included; check further.
 Q: What makes a fixed point a saddle? | Real eigenvalues of opposite sign (determinant negative).
 Q: What is a Lyapunov function? | A function that decreases along trajectories, proving stability of an equilibrium.
-M1: For ẋ = −x + x^{2}, the fixed point x = 1 is: | Unstable | Stable | A centre | A saddle in 1D | f'(1) = −1 + 2 = 1 > 0.
-M2: Eigenvalues −2 ± 3i give a: | Stable spiral | Unstable node | Saddle | Centre | Negative real part, complex.
+M1#physics-u38-03-q1: For ẋ = −x + x^{2}, the fixed point x = 1 is: | Unstable | Stable | A centre | A saddle in 1D | f'(1) = −1 + 2 = 1 > 0.
+M2#physics-u38-03-q2: Eigenvalues −2 ± 3i give a: | Stable spiral | Unstable node | Saddle | Centre | Negative real part, complex.
 
 ## Phase-space analysis
 S: Phase-space analysis pictures every possible state of a system as a point and its evolution as a trajectory. Drawing the flow, with fixed points, nullclines, separatrices and limit cycles, shows the whole range of behaviour at a glance without solving the equations.
@@ -104,8 +104,8 @@ K: Phase portraits show the full qualitative behaviour: equilibria, cycles and w
 !: 2D autonomous flows cannot be chaotic; you need three dimensions or a driven (time-dependent) system.
 Q: What does Liouville's theorem say? | Phase-space volume is conserved in Hamiltonian systems.
 Q: What is a limit cycle? | An isolated closed trajectory that nearby orbits approach or leave.
-M1: Nullclines are where: | One component of the flow is zero | Energy is zero | Trajectories cross | Chaos begins | Fixed points lie where they intersect.
-M2: The minimum dimension for chaos in an autonomous ODE is: | 3 | 1 | 2 | 4 | Poincaré–Bendixson forbids it in 2D.
+M1#physics-u38-04-q1: Nullclines are where: | One component of the flow is zero | Energy is zero | Trajectories cross | Chaos begins | Fixed points lie where they intersect.
+M2#physics-u38-04-q2: The minimum dimension for chaos in an autonomous ODE is: | 3 | 1 | 2 | 4 | Poincaré–Bendixson forbids it in 2D.
 
 ## Bifurcation theory
 S: A bifurcation is a qualitative change in a system's behaviour as a parameter crosses a critical value: equilibria appear, disappear or swap stability, or oscillations begin. Bifurcations explain tipping points in lasers, ecosystems, climate and buckling beams.
@@ -132,8 +132,8 @@ K: Bifurcations are where systems change character; their type predicts smooth c
 !: Subcritical bifurcations cause abrupt, hysteretic transitions that small-signal models fail to warn about.
 Q: Which bifurcation creates a limit cycle from a fixed point? | A Hopf bifurcation.
 Q: What is critical slowing down? | Near a bifurcation, recovery from perturbations becomes very slow.
-M1: In a saddle-node bifurcation, two fixed points: | Collide and annihilate | Swap stability | Split into three | Become a limit cycle | ẋ = r + x^{2}.
-M2: Laser threshold is a classic example of a: | Transcritical bifurcation | Hopf bifurcation | Period-doubling | Saddle-node | Zero-output and lasing states swap stability.
+M1#physics-u38-05-q1: In a saddle-node bifurcation, two fixed points: | Collide and annihilate | Swap stability | Split into three | Become a limit cycle | ẋ = r + x^{2}.
+M2#physics-u38-05-q2: Laser threshold is a classic example of a: | Transcritical bifurcation | Hopf bifurcation | Period-doubling | Saddle-node | Zero-output and lasing states swap stability.
 
 ## Period-doubling
 S: Period-doubling is a route to chaos in which an oscillation repeatedly doubles its period as a parameter increases: period 2, 4, 8 and so on, faster and faster, until chaos appears. The cascade's geometry is universal, governed by Feigenbaum's constants.
@@ -156,8 +156,8 @@ K: Period-doubling cascades converge geometrically with the universal ratio δ �
 !: Universality applies to maps with a quadratic maximum; different shapes give different constants.
 Q: What is Feigenbaum's δ? | About 4.669, the ratio of successive bifurcation intervals in period-doubling cascades.
 Q: Where does chaos begin in the logistic map? | At r ≈ 3.5699.
-M1: Period-doubling occurs when a cycle's multiplier passes: | −1 | +1 | 0 | i | Flip bifurcation.
-M2: Feigenbaum's constants are universal because of: | Renormalisation and self-similarity | Quantum mechanics | Thermodynamics | Relativity | Rescaling maps to a universal fixed point.
+M1#physics-u38-06-q1: Period-doubling occurs when a cycle's multiplier passes: | −1 | +1 | 0 | i | Flip bifurcation.
+M2#physics-u38-06-q2: Feigenbaum's constants are universal because of: | Renormalisation and self-similarity | Quantum mechanics | Thermodynamics | Relativity | Rescaling maps to a universal fixed point.
 
 ## Deterministic chaos
 S: Deterministic chaos is complex, unpredictable-looking behaviour arising from simple rules with no randomness. The future is fully determined by the present, yet tiny uncertainties grow exponentially, making long-term prediction impossible in practice.
@@ -185,9 +185,9 @@ K: Chaos is deterministic yet unpredictable long-term, because errors grow expon
 !: Chaotic does not mean random or structureless; chaotic motion lives on structured attractors with clear statistics.
 Q: What two geometric operations produce chaos? | Stretching and folding of phase space.
 Q: Who first found chaos in the three-body problem? | Henri Poincaré.
-M1: Chaotic systems are: | Deterministic but unpredictable long-term | Random | Always periodic | Linear | No noise needed.
-M2: Improving initial precision by 1000× extends prediction by: | About 7/λ | 1000× | 3× | Nothing | Logarithmic gain.
-M2: What makes the double pendulum's motion chaotic rather than random? | It follows deterministic laws but is extremely sensitive to starting conditions | It is driven by random forces in the lab | Its equations of motion are unknown | It obeys quantum uncertainty at large scale | Chaos is deterministic: tiny differences in starting conditions grow exponentially.
+M1#physics-u38-07-q1: Chaotic systems are: | Deterministic but unpredictable long-term | Random | Always periodic | Linear | No noise needed.
+M2#physics-u38-07-q2: Improving initial precision by 1000× extends prediction by: | About 7/λ | 1000× | 3× | Nothing | Logarithmic gain.
+M2#physics-u38-07-q3: What makes the double pendulum's motion chaotic rather than random? | It follows deterministic laws but is extremely sensitive to starting conditions | It is driven by random forces in the lab | Its equations of motion are unknown | It obeys quantum uncertainty at large scale | Chaos is deterministic: tiny differences in starting conditions grow exponentially.
 
 ## Sensitivity to initial conditions
 S: Sensitivity to initial conditions, the butterfly effect, means that two almost identical starting states end up completely different. It is the hallmark of chaos and sets fundamental limits on forecasting weather, orbits and many complex systems.
@@ -216,9 +216,9 @@ K: In chaotic systems, tiny initial differences grow exponentially; forecasts ne
 !: Sensitivity limits detailed prediction, not statistical prediction; climate averages remain forecastable even if weather is not.
 Q: What did Lorenz's rounding experiment show? | Tiny differences in initial data led to completely different forecasts.
 Q: What is ensemble forecasting? | Running many forecasts from slightly perturbed starting states to estimate uncertainty.
-M1: Error growth in chaotic systems is: | Exponential until it saturates | Linear forever | Zero | Quadratic only | e^{λt}, bounded by attractor size.
-M2: OGY control uses: | Small perturbations to stabilise orbits | Large forces | Random noise | Feedback disconnection | Chaos is easily nudged.
-M2: Two double pendulums start a millionth of a radian apart. What happens? | They agree at first, then diverge completely | They stay together for ever | They diverge immediately and randomly | They always end up in the same place | Sensitivity to initial conditions means small differences grow until the motions are unrelated.
+M1#physics-u38-08-q1: Error growth in chaotic systems is: | Exponential until it saturates | Linear forever | Zero | Quadratic only | e^{λt}, bounded by attractor size.
+M2#physics-u38-08-q2: OGY control uses: | Small perturbations to stabilise orbits | Large forces | Random noise | Feedback disconnection | Chaos is easily nudged.
+M2#physics-u38-08-q3: Two double pendulums start a millionth of a radian apart. What happens? | They agree at first, then diverge completely | They stay together for ever | They diverge immediately and randomly | They always end up in the same place | Sensitivity to initial conditions means small differences grow until the motions are unrelated.
 
 ## Lyapunov exponents
 S: Lyapunov exponents measure the average exponential rate at which nearby trajectories separate or converge. A positive largest exponent signals chaos, and the full spectrum reveals how phase-space volumes stretch, shrink and fold.
@@ -245,8 +245,8 @@ K: λ_{1} > 0 means chaos; the full spectrum describes stretching, shrinking and
 !: Finite-time estimates fluctuate; reliable exponents need long runs and careful renormalisation.
 Q: What does a zero Lyapunov exponent indicate in a flow? | The direction along the trajectory, which neither stretches nor shrinks on average.
 Q: What is the Lyapunov time? | 1/λ_{1}, the timescale on which predictions lose accuracy.
-M1: In a dissipative system the sum of Lyapunov exponents is: | Negative | Positive | Zero | Infinite | Volumes contract.
-M2: The Lorenz attractor's Kaplan–Yorke dimension is about: | 2.06 | 1 | 3 | 0.9 | Slightly above 2.
+M1#physics-u38-09-q1: In a dissipative system the sum of Lyapunov exponents is: | Negative | Positive | Zero | Infinite | Volumes contract.
+M2#physics-u38-09-q2: The Lorenz attractor's Kaplan–Yorke dimension is about: | 2.06 | 1 | 3 | 0.9 | Slightly above 2.
 
 ## Strange attractors
 S: A strange attractor is the set a chaotic dissipative system settles onto: bounded, with a fractal structure and chaotic motion on it. It combines the predictable shape of an attractor with the unpredictable motion of chaos.
@@ -275,8 +275,8 @@ K: Strange attractors are fractal sets where dissipative chaotic motion lives; t
 !: An attractor can be strange (fractal) without being chaotic, and chaotic without being strange, though usually both go together.
 Q: What does Takens' theorem allow? | Reconstructing an attractor from time-delayed measurements of a single variable.
 Q: What shape is the Lorenz attractor? | A two-lobed "butterfly".
-M1: A torus attractor gives: | Quasiperiodic motion | Chaos | A fixed point | Divergence | Two incommensurate frequencies.
-M2: The Hénon attractor's dimension is about: | 1.26 | 2 | 0.5 | 3 | Fractal, between 1 and 2.
+M1#physics-u38-10-q1: A torus attractor gives: | Quasiperiodic motion | Chaos | A fixed point | Divergence | Two incommensurate frequencies.
+M2#physics-u38-10-q2: The Hénon attractor's dimension is about: | 1.26 | 2 | 0.5 | 3 | Fractal, between 1 and 2.
 
 ## Logistic map
 S: The logistic map x_{n+1} = rx_{n}(1 − x_{n}) is a one-line model of population growth that shows the whole route from steady behaviour to chaos. Robert May's 1976 paper made it famous as a warning that simple models can behave wildly.
@@ -304,8 +304,8 @@ K: One quadratic map shows extinction, equilibrium, cycles, period doubling and 
 !: Fixed points of maps are stable when |f'(x^{*})| < 1, not when f' < 0 as for flows.
 Q: At what r does the logistic map's fixed point lose stability? | r = 3, where f'(x^{*}) = −1.
 Q: What does "period three implies chaos" mean? | A period-3 orbit forces orbits of all periods and chaotic behaviour.
-M1: For r = 0.8, the population: | Dies out | Reaches 1 − 1/r | Oscillates | Is chaotic | r < 1.
-M2: Map stability requires: | |f'(x^{*})| < 1 | f'(x^{*}) < 0 | f'(x^{*}) > 1 | f(x^{*}) = 0 | Multipliers inside the unit circle.
+M1#physics-u38-11-q1: For r = 0.8, the population: | Dies out | Reaches 1 − 1/r | Oscillates | Is chaotic | r < 1.
+M2#physics-u38-11-q2: Map stability requires: | |f'(x^{*})| < 1 | f'(x^{*}) < 0 | f'(x^{*}) > 1 | f(x^{*}) = 0 | Multipliers inside the unit circle.
 
 ## Lorenz system
 S: The Lorenz system is three simple equations derived from atmospheric convection that became the icon of chaos. Its butterfly-shaped attractor showed in 1963 that deterministic weather models are fundamentally unpredictable beyond a certain time.
@@ -330,8 +330,8 @@ K: Three coupled nonlinear equations produce a strange attractor and sensitive d
 !: The Lorenz model is a severe truncation of real convection; its importance is conceptual, not as a weather model.
 Q: What physical system inspired the Lorenz equations? | Rayleigh–Bénard convection in the atmosphere.
 Q: What are the classic Lorenz parameters? | σ = 10, β = 8/3, ρ = 28.
-M1: For ρ < 1, the Lorenz system: | Settles to the origin | Is chaotic | Has a limit cycle | Diverges | Conduction is stable.
-M2: Phase-space volume in the Lorenz system: | Contracts exponentially | Expands | Is conserved | Oscillates | Divergence is negative.
+M1#physics-u38-12-q1: For ρ < 1, the Lorenz system: | Settles to the origin | Is chaotic | Has a limit cycle | Diverges | Conduction is stable.
+M2#physics-u38-12-q2: Phase-space volume in the Lorenz system: | Contracts exponentially | Expands | Is conserved | Oscillates | Divergence is negative.
 
 ## Fractals
 S: Fractals are shapes with detail at every scale, often self-similar, and with non-integer dimensions. They describe coastlines, clouds, lungs, river networks and strange attractors, and arise naturally from repeated simple rules.
@@ -357,8 +357,8 @@ K: Fractal dimension measures how detail fills space as you zoom in; non-integer
 !: Real-world fractals are self-similar only over a finite range of scales, not infinitely.
 Q: What is the dimension of the Cantor set? | ln 2/ln 3 ≈ 0.631.
 Q: How is the Mandelbrot set defined? | The set of c for which iterating z → z^{2} + c from z = 0 stays bounded.
-M1: A shape of 4 copies at half scale has dimension: | 2 | 4 | 1 | 0.5 | ln 4/ln 2.
-M2: Coastline length grows as the ruler shrinks because: | Its dimension exceeds 1 | It is perfectly smooth | Rulers are inaccurate | Tides change | L ∝ ε^{1−D}.
+M1#physics-u38-13-q1: A shape of 4 copies at half scale has dimension: | 2 | 4 | 1 | 0.5 | ln 4/ln 2.
+M2#physics-u38-13-q2: Coastline length grows as the ruler shrinks because: | Its dimension exceeds 1 | It is perfectly smooth | Rulers are inaccurate | Tides change | L ∝ ε^{1−D}.
 
 ## Self-organisation
 S: Self-organisation is the spontaneous emergence of order from local interactions, without a designer or external template. Driven, dissipative systems far from equilibrium can form patterns, rhythms and structures, from convection cells to flocks of birds.
@@ -386,8 +386,8 @@ K: Order can emerge spontaneously when energy flows through systems with nonline
 !: Self-organisation does not violate the second law; the system exports entropy to its surroundings.
 Q: What is a dissipative structure? | An ordered pattern maintained by continuous energy flow and entropy export, such as convection cells.
 Q: What is self-organised criticality? | Systems evolving by themselves to a critical state with power-law event sizes.
-M1: Convection onset is set by the: | Rayleigh number | Reynolds number | Mach number | Prandtl number alone | Ra ≈ 1708 for rigid boundaries.
-M2: The Vicsek model describes: | Flocking | Crystal growth | Superconductivity | Radioactive decay | Self-propelled particles aligning.
+M1#physics-u38-14-q1: Convection onset is set by the: | Rayleigh number | Reynolds number | Mach number | Prandtl number alone | Ra ≈ 1708 for rigid boundaries.
+M2#physics-u38-14-q2: The Vicsek model describes: | Flocking | Crystal growth | Superconductivity | Radioactive decay | Self-propelled particles aligning.
 
 ## Synchronisation
 S: Synchronisation is the tendency of coupled oscillators to fall into step. Fireflies flash together, pendulum clocks on a shared beam swing in time, heart pacemaker cells fire in unison, and power grids lock to a common frequency.
@@ -411,8 +411,8 @@ K: Coupled oscillators synchronise when coupling beats their frequency spread; t
 !: Synchronisation can be harmful: the Millennium Bridge, epileptic seizures and power grid instabilities.
 Q: What does the Kuramoto order parameter measure? | How coherent the phases are: 0 for random, 1 for full synchrony.
 Q: What caused the Millennium Bridge wobble? | Pedestrians unconsciously synchronised their steps with the bridge's sideways sway.
-M1: Two oscillators lock if: | |Δω| ≤ K | Δω > K | K = 0 | Frequencies are equal only | Adler equation.
-M2: Huygens observed synchronisation in: | Pendulum clocks | Fireflies | Lasers | Neurons | 1665.
+M1#physics-u38-15-q1: Two oscillators lock if: | |Δω| ≤ K | Δω > K | K = 0 | Frequencies are equal only | Adler equation.
+M2#physics-u38-15-q2: Huygens observed synchronisation in: | Pendulum clocks | Fireflies | Lasers | Neurons | 1665.
 
 ## Coupled nonlinear oscillators
 S: Coupled nonlinear oscillators exchange energy and phase in rich ways: normal modes, beats, localisation, resonance and chaos. They model molecules, crystals, circuits, neurons, biological rhythms and engineering structures.
@@ -435,8 +435,8 @@ K: Coupling plus nonlinearity lets oscillators share, trap or synchronise energy
 !: Nonlinear systems don't necessarily share energy evenly among modes; FPUT recurrence showed equipartition can fail for long times.
 Q: What did the FPUT experiment reveal? | Energy in a nonlinear chain returned to its initial mode instead of spreading out evenly.
 Q: What is a chimera state? | A state where identical coupled oscillators split into synchronised and incoherent groups.
-M1: A Duffing oscillator's frequency: | Depends on amplitude | Is constant | Is always zero | Depends only on damping | Hardening or softening springs.
-M2: Central pattern generators produce: | Rhythmic movements like walking | Hormones | Vision | Memory | Coupled neural oscillators.
+M1#physics-u38-16-q1: A Duffing oscillator's frequency: | Depends on amplitude | Is constant | Is always zero | Depends only on damping | Hardening or softening springs.
+M2#physics-u38-16-q2: Central pattern generators produce: | Rhythmic movements like walking | Hormones | Vision | Memory | Coupled neural oscillators.
 
 ## Pattern formation
 S: Pattern formation is how uniform states break into spatial structures such as stripes, spots, spirals and hexagons. Instabilities select a preferred wavelength, and nonlinear interactions decide which pattern wins, in fluids, chemistry, biology and geology.
@@ -462,8 +462,8 @@ K: Patterns arise when instabilities pick a length scale and nonlinearity choose
 !: The observed pattern can depend on history and boundaries; several patterns may be stable for the same parameters.
 Q: What instability makes snowflake arms? | The Mullins–Sekerka instability of a growing solidification front.
 Q: What equation describes amplitudes of patterns near onset universally? | The (complex) Ginzburg–Landau equation.
-M1: Faraday waves are produced by: | Vertically vibrating a liquid | Heating from below | Chemical reactions | Magnetic fields | Parametric excitation.
-M2: Columnar basalt forms hexagons due to: | Cooling and cracking patterns | Crystal structure of minerals | Wind erosion | Tides | Contraction cracks optimise.
+M1#physics-u38-17-q1: Faraday waves are produced by: | Vertically vibrating a liquid | Heating from below | Chemical reactions | Magnetic fields | Parametric excitation.
+M2#physics-u38-17-q2: Columnar basalt forms hexagons due to: | Cooling and cracking patterns | Crystal structure of minerals | Wind erosion | Tides | Contraction cracks optimise.
 
 ## Reaction-diffusion systems
 S: Reaction-diffusion systems combine local chemical reactions with diffusion, producing waves, spirals and stationary Turing patterns. Turing's 1952 insight, that diffusion can destabilise a uniform state, explains many biological patterns and chemical structures.
@@ -492,8 +492,8 @@ K: Diffusion, usually smoothing, can create patterns when coupled to reactions w
 !: Turing patterns need different diffusion rates; with equal rates, diffusion only smooths the system.
 Q: What did Turing propose in 1952? | That reaction and diffusion of morphogens can spontaneously form patterns.
 Q: What is the Fisher–KPP front speed? | v = 2√(Dr).
-M1: Turing patterns require: | Short-range activation, long-range inhibition | Equal diffusion coefficients | No reactions | Constant concentrations | The inhibitor diffuses faster.
-M2: FitzHugh–Nagumo models describe: | Excitable media like nerves | Superconductors | Fractals | Black holes | Simplified Hodgkin–Huxley dynamics.
+M1#physics-u38-18-q1: Turing patterns require: | Short-range activation, long-range inhibition | Equal diffusion coefficients | No reactions | Constant concentrations | The inhibitor diffuses faster.
+M2#physics-u38-18-q2: FitzHugh–Nagumo models describe: | Excitable media like nerves | Superconductors | Fractals | Black holes | Simplified Hodgkin–Huxley dynamics.
 
 ## Solitons and nonlinear waves
 S: Solitons are solitary waves that keep their shape while travelling and survive collisions intact, because nonlinearity exactly balances dispersion. First seen as a canal wave in 1834, they now carry data in optical fibres and appear in plasmas, water and condensates.
@@ -519,8 +519,8 @@ K: Solitons balance nonlinear steepening against dispersive spreading, giving st
 !: Not every solitary wave is a true soliton; strict solitons survive collisions with only a phase shift.
 Q: Who first described a solitary wave? | John Scott Russell, on the Union Canal in 1834.
 Q: How does soliton speed relate to height in KdV? | Taller solitons travel faster.
-M1: Shock waves differ from solitons because: | Dissipation or insufficient dispersion lets them steepen | They are linear | They have no speed | They pass through each other unchanged | Burgers vs KdV.
-M2: The NLS equation describes solitons in: | Optical fibres | Planetary orbits | Transistors | Radioactive decay | Kerr nonlinearity + dispersion.
+M1#physics-u38-19-q1: Shock waves differ from solitons because: | Dissipation or insufficient dispersion lets them steepen | They are linear | They have no speed | They pass through each other unchanged | Burgers vs KdV.
+M2#physics-u38-19-q2: The NLS equation describes solitons in: | Optical fibres | Planetary orbits | Transistors | Radioactive decay | Kerr nonlinearity + dispersion.
 
 ## Chaos in mechanical and electrical systems
 S: Chaos is not just theory: it appears in pendulums, rotating machines, electronic circuits, lasers and orbits. Engineers must recognise, avoid or exploit it, from preventing vibration failures to using chaotic signals for secure communication.
@@ -548,9 +548,9 @@ K: Real mechanical and electronic systems become chaotic when nonlinearity, driv
 !: Chaotic vibration can resemble random noise; misdiagnosing it can lead to wrong fixes in engineering.
 Q: What makes Chua's circuit chaotic? | A piecewise-linear nonlinear resistor with three energy-storage elements (two capacitors and an inductor).
 Q: Why is Hyperion's rotation chaotic? | Its irregular shape and eccentric orbit couple rotation to orbital motion chaotically.
-M1: Fractal basin boundaries occur in the: | Magnetic pendulum | Simple harmonic oscillator | RC circuit | Free fall | The final magnet depends sensitively on the start.
-M2: Pecora–Carroll synchronisation allows: | Receivers to lock to chaotic signals | Linear amplification | Faster CPUs | Superconductivity | Chaotic communication.
-M2: Why is long-range weather forecasting limited even with perfect equations? | The atmosphere is chaotic, so small measurement errors grow | The equations of fluid flow are random | Weather obeys no physical laws | Computers can't solve differential equations | Like the double pendulum, the atmosphere amplifies tiny uncertainties in the starting state.
+M1#physics-u38-20-q1: Fractal basin boundaries occur in the: | Magnetic pendulum | Simple harmonic oscillator | RC circuit | Free fall | The final magnet depends sensitively on the start.
+M2#physics-u38-20-q2: Pecora–Carroll synchronisation allows: | Receivers to lock to chaotic signals | Linear amplification | Faster CPUs | Superconductivity | Chaotic communication.
+M2#physics-u38-20-q3: Why is long-range weather forecasting limited even with perfect equations? | The atmosphere is chaotic, so small measurement errors grow | The equations of fluid flow are random | Weather obeys no physical laws | Computers can't solve differential equations | Like the double pendulum, the atmosphere amplifies tiny uncertainties in the starting state.
 
 ## Complex systems and emergent behaviour
 S: Complex systems consist of many interacting parts whose collective behaviour is not obvious from the parts alone. Emergence, networks, feedback and adaptation describe phenomena from ecosystems and economies to the brain and the internet.
@@ -578,6 +578,6 @@ K: Complex systems show emergent behaviour from interactions; understanding need
 !: Emergent behaviour is real but not magical; it follows from the parts and their interactions, even if it cannot be easily predicted from them.
 Q: What is a small-world network? | One with short average path lengths and high clustering.
 Q: What did Anderson mean by "More is different"? | New laws and concepts emerge at each level of complexity.
-M1: Scale-free networks are vulnerable to: | Targeted attacks on hubs | Random failures | Adding nodes | Small-world shortcuts | Hubs hold the network together.
-M2: Herd immunity threshold for R_{0} = 5 is: | 80% | 20% | 50% | 95% | 1 − 1/5.
+M1#physics-u38-21-q1: Scale-free networks are vulnerable to: | Targeted attacks on hubs | Random failures | Adding nodes | Small-world shortcuts | Hubs hold the network together.
+M2#physics-u38-21-q2: Herd immunity threshold for R_{0} = 5 is: | 80% | 20% | 50% | 95% | 1 − 1/5.
 `;

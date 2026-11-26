@@ -24,8 +24,8 @@ K: Ion chambers collect all ionisation charge without multiplication, giving a s
 !: Ion chamber signals are tiny (pA–nA); electrometer leakage and environmental corrections matter.
 Q: What is W for air? | About 34 eV per ion pair.
 Q: Why is an ion chamber operated on the saturation plateau? | All charge is collected without amplification, so the signal is independent of small voltage changes.
-M1: An ionisation chamber's gas gain is: | 1 | 10^{3} | 10^{6} | 0 | No multiplication.
-M2: Ion chambers are the reference instrument for: | Radiotherapy dosimetry | Particle tracking | Photon counting | Time-of-flight | Stable, absolute dose.
+M1#physics-u43-01-q1: An ionisation chamber's gas gain is: | 1 | 10^{3} | 10^{6} | 0 | No multiplication.
+M2#physics-u43-01-q2: Ion chambers are the reference instrument for: | Radiotherapy dosimetry | Particle tracking | Photon counting | Time-of-flight | Stable, absolute dose.
 
 ## Geiger–Müller counters
 S: A Geiger–Müller tube produces a large, uniform pulse each time radiation triggers an avalanche in its gas. It is cheap, simple and sensitive, ideal for detecting and counting radiation, but it cannot measure particle energy.
@@ -52,8 +52,8 @@ K: GM tubes give large identical pulses ideal for counting, but no energy inform
 !: GM counters saturate in very high fields and can read low or even zero ("fold-back") at extreme dose rates.
 Q: What is a quench gas for? | It stops the self-sustaining discharge after each pulse.
 Q: Why can't a GM tube measure energy? | Every event triggers a full discharge of the same size.
-M1: GM dead time causes the measured rate to be: | Lower than true | Higher than true | Exact | Random | Missed events.
-M2: GM tubes detect gamma rays with efficiency around: | 1% | 50% | 99% | 0% | Gas has low stopping power.
+M1#physics-u43-02-q1: GM dead time causes the measured rate to be: | Lower than true | Higher than true | Exact | Random | Missed events.
+M2#physics-u43-02-q2: GM tubes detect gamma rays with efficiency around: | 1% | 50% | 99% | 0% | Gas has low stopping power.
 
 ## Scintillation detectors
 S: Scintillation detectors convert radiation energy into flashes of visible light, which photodetectors turn into electrical pulses. Large crystals give high efficiency and energy information, and fast plastics give nanosecond timing, so scintillators are used everywhere from PET scanners to particle physics.
@@ -80,8 +80,8 @@ K: Scintillators turn energy into light; light yield sets energy resolution, den
 !: The Compton continuum can hide weak photopeaks; larger or denser crystals improve peak-to-Compton ratios.
 Q: Why is LaBr_{3}(Ce) valued? | High light yield and fast decay give excellent energy resolution (~3% at 662 keV) and timing.
 Q: What is pulse-shape discrimination? | Using differences in scintillation pulse shapes to identify particle types, e.g. neutrons vs gammas.
-M1: The photopeak represents: | Full absorption of the gamma ray | Compton scattering only | Backscatter | Noise | All energy deposited.
-M2: Plastic scintillators are best for: | Fast timing and charged particles | High-resolution gamma spectroscopy | X-ray imaging only | Low-energy alpha only | Fast, low Z.
+M1#physics-u43-03-q1: The photopeak represents: | Full absorption of the gamma ray | Compton scattering only | Backscatter | Noise | All energy deposited.
+M2#physics-u43-03-q2: Plastic scintillators are best for: | Fast timing and charged particles | High-resolution gamma spectroscopy | X-ray imaging only | Low-energy alpha only | Fast, low Z.
 
 ## Semiconductor radiation detectors
 S: Semiconductor detectors collect electron–hole pairs created by radiation in a reverse-biased diode. Because a pair needs only a few eV, they give many more charge carriers than gases or scintillators, and so the best energy resolution of any common detector.
@@ -108,8 +108,8 @@ K: Low energy per carrier pair gives semiconductors superb energy resolution; HP
 !: Germanium must be cooled; at room temperature its small band gap gives huge leakage currents.
 Q: What is the Fano factor? | A factor (~0.1 for Si and Ge) by which pair-creation fluctuations are smaller than Poisson.
 Q: Why do HPGe detectors need cooling? | Ge's small band gap (0.67 eV) causes large thermal leakage current at room temperature.
-M1: Energy per electron–hole pair in silicon is about: | 3.6 eV | 34 eV | 1 keV | 0.1 eV | Much less than gas.
-M2: CZT detectors operate at: | Room temperature | 77 K only | 4 K | 1000 K | Wide band gap.
+M1#physics-u43-04-q1: Energy per electron–hole pair in silicon is about: | 3.6 eV | 34 eV | 1 keV | 0.1 eV | Much less than gas.
+M2#physics-u43-04-q2: CZT detectors operate at: | Room temperature | 77 K only | 4 K | 1000 K | Wide band gap.
 
 ## Photomultiplier tubes
 S: A photomultiplier tube converts a faint flash of light into a measurable electrical pulse by turning photons into electrons and multiplying them in a chain of dynodes. It can detect single photons with nanosecond timing and is the classic readout for scintillators and Cherenkov detectors.
@@ -135,8 +135,8 @@ K: PMTs give enormous low-noise gain and fast timing; SiPMs are taking over wher
 !: PMT gain is very sensitive to supply voltage and magnetic fields; calibrate and shield.
 Q: What is quantum efficiency for a PMT? | The fraction of incident photons producing photoelectrons at the photocathode.
 Q: Why are SiPMs used in PET/MRI scanners? | They work in strong magnetic fields where PMTs fail.
-M1: A PMT with δ = 5 and 8 dynodes has gain: | ~3.9 × 10^{5} | 40 | 5 × 10^{8} | 8^{5} | 5^{8}.
-M2: Mu-metal shields protect PMTs from: | Magnetic fields | Light | Heat | Radiation | Electron paths bend.
+M1#physics-u43-05-q1: A PMT with δ = 5 and 8 dynodes has gain: | ~3.9 × 10^{5} | 40 | 5 × 10^{8} | 8^{5} | 5^{8}.
+M2#physics-u43-05-q2: Mu-metal shields protect PMTs from: | Magnetic fields | Light | Heat | Radiation | Electron paths bend.
 
 ## Silicon tracking detectors
 S: Silicon tracking detectors measure where charged particles pass with micrometre precision. Layers of silicon strips and pixels around collision points reconstruct tracks, momenta and decay vertices, essential for finding b-quarks, tau leptons and the Higgs boson.
@@ -162,8 +162,8 @@ K: Silicon trackers give micrometre hit positions; in a magnetic field, curvatur
 !: Momentum resolution degrades at high p_{T} because tracks curve less; larger B and longer lever arms help.
 Q: What does p_{T} = 0.3BR give? | Transverse momentum in GeV from field in tesla and radius in metres.
 Q: Why are pixels used close to the beam? | They give unambiguous 2D points at very high track densities.
-M1: A minimum-ionising particle in 300 μm silicon creates about: | 22 000 electron–hole pairs | 22 pairs | 2 × 10^{6} pairs | 220 pairs | ~80 per μm.
-M2: b-quark identification relies on: | Displaced secondary vertices | Muon chambers only | Calorimeter timing | Cherenkov rings | b hadrons travel ~mm before decaying.
+M1#physics-u43-06-q1: A minimum-ionising particle in 300 μm silicon creates about: | 22 000 electron–hole pairs | 22 pairs | 2 × 10^{6} pairs | 220 pairs | ~80 per μm.
+M2#physics-u43-06-q2: b-quark identification relies on: | Displaced secondary vertices | Muon chambers only | Calorimeter timing | Cherenkov rings | b hadrons travel ~mm before decaying.
 
 ## Time projection chambers
 S: A time projection chamber is a large gas or liquid volume where charged particles leave ionisation trails that drift to a readout plane. The 2D readout plus drift time gives full 3D tracks, and the charge measured along each track identifies the particle.
@@ -187,8 +187,8 @@ K: TPCs give 3D tracks from 2D readout plus drift time, and many dE/dx samples f
 !: Long drift times make TPCs slow; at high rates, overlapping events and space charge become serious problems.
 Q: How does a TPC measure the coordinate along the drift direction? | From the drift time multiplied by the drift velocity.
 Q: Why use a magnetic field parallel to the drift field? | It curves tracks for momentum and suppresses transverse diffusion.
-M1: Dark matter xenon TPCs use S1 and S2 signals from: | Scintillation and electroluminescence | Cherenkov and fluorescence | Heat and sound | Muons only | Two-phase detection.
-M2: TPC particle ID mainly uses: | dE/dx along the track | Time of flight only | Calorimetry | Cherenkov angles | Energy loss per length.
+M1#physics-u43-07-q1: Dark matter xenon TPCs use S1 and S2 signals from: | Scintillation and electroluminescence | Cherenkov and fluorescence | Heat and sound | Muons only | Two-phase detection.
+M2#physics-u43-07-q2: TPC particle ID mainly uses: | dE/dx along the track | Time of flight only | Calorimetry | Cherenkov angles | Energy loss per length.
 
 ## Calorimeters
 S: Calorimeters measure particle energy by absorbing it completely and sampling the resulting shower. Electromagnetic calorimeters catch electrons and photons; hadronic calorimeters catch protons, neutrons, pions and jets, and both are central to discoveries like the Higgs boson.
@@ -213,8 +213,8 @@ K: Calorimeters absorb particles to measure energy; resolution improves as 1/√
 !: Hadronic calorimeters are much less precise than EM ones because of invisible energy and fluctuating EM fractions.
 Q: What is a radiation length? | The mean distance over which a high-energy electron loses all but 1/e of its energy by bremsstrahlung.
 Q: What is a sampling calorimeter? | Alternating layers of dense absorber and active material, measuring a fraction of the shower energy.
-M1: The constant term in calorimeter resolution dominates at: | High energy | Low energy | All energies equally | Zero energy | Stochastic term shrinks as 1/√E.
-M2: Hadronic showers are characterised by the: | Nuclear interaction length | Radiation length only | Molière radius only | Debye length | λ_{I} ≫ X_{0}.
+M1#physics-u43-08-q1: The constant term in calorimeter resolution dominates at: | High energy | Low energy | All energies equally | Zero energy | Stochastic term shrinks as 1/√E.
+M2#physics-u43-08-q2: Hadronic showers are characterised by the: | Nuclear interaction length | Radiation length only | Molière radius only | Debye length | λ_{I} ≫ X_{0}.
 
 ## Cherenkov detectors
 S: A charged particle moving faster than light in a medium emits Cherenkov radiation, a cone of blue light like an optical sonic boom. The cone angle reveals the particle's speed, allowing identification of particles and detection of neutrinos and cosmic rays.
@@ -243,8 +243,8 @@ K: Cherenkov light appears above β = 1/n; its angle measures speed, which with 
 !: Cherenkov radiation doesn't mean exceeding c in vacuum; only the phase velocity of light in the medium is exceeded.
 Q: What is the Cherenkov threshold condition? | The particle's speed exceeds c/n, i.e. β > 1/n.
 Q: How does Super-Kamiokande distinguish electrons from muons? | Muons give sharp rings, electrons give fuzzy rings from their showers.
-M1: The maximum Cherenkov angle in a medium of index n is: | cos^{−1}(1/n) | 90° | 0° | sin^{−1}(n) | When β → 1.
-M2: The blue glow in reactor pools is: | Cherenkov radiation | Fluorescence of water | Thermal emission | Bremsstrahlung only | Fast beta electrons.
+M1#physics-u43-09-q1: The maximum Cherenkov angle in a medium of index n is: | cos^{−1}(1/n) | 90° | 0° | sin^{−1}(n) | When β → 1.
+M2#physics-u43-09-q2: The blue glow in reactor pools is: | Cherenkov radiation | Fluorescence of water | Thermal emission | Bremsstrahlung only | Fast beta electrons.
 
 ## Time-of-flight measurements
 S: Time-of-flight systems measure how long a particle takes to travel a known distance. Combined with momentum from tracking, the speed gives the particle's mass, identifying pions, kaons and protons, and similar timing powers PET, lidar and neutron spectroscopy.
@@ -272,8 +272,8 @@ K: TOF gives velocity; with momentum, it gives mass. Separation shrinks as 1/p^{
 !: Start time (t_{0}) uncertainty often limits TOF resolution as much as the detector itself.
 Q: Why does TOF separation fall at high momentum? | All particles approach c, so time differences shrink as 1/p^{2}.
 Q: What timing do MRPCs achieve? | About 50 ps.
-M1: TOF PET improves images by: | Localising annihilation along each line | Increasing dose | Changing isotopes | Using X-rays | Arrival-time difference.
-M2: Mass from TOF requires also measuring: | Momentum | Charge only | Spin | Temperature | m = p√(1/β^{2} − 1).
+M1#physics-u43-10-q1: TOF PET improves images by: | Localising annihilation along each line | Increasing dose | Changing isotopes | Using X-rays | Arrival-time difference.
+M2#physics-u43-10-q2: Mass from TOF requires also measuring: | Momentum | Charge only | Spin | Temperature | m = p√(1/β^{2} − 1).
 
 ## Particle identification
 S: Particle identification (PID) determines what kind of particle left a signal: electron, muon, pion, kaon, proton, photon, neutron or neutrino. Experiments combine several detector signatures, because no single detector identifies everything at all momenta.
@@ -302,8 +302,8 @@ K: PID combines tracking, calorimetry, timing, Cherenkov and dE/dx; each techniq
 !: PID performance must be calibrated on data; simulations rarely reproduce misidentification rates perfectly.
 Q: How is a muon identified? | It penetrates the calorimeters and leaves hits in the outer muon chambers.
 Q: What does missing transverse momentum indicate? | Invisible particles such as neutrinos (or new weakly interacting particles).
-M1: An electron is identified by: | A track and EM shower with E/p ≈ 1 | No track | Hits in muon chambers | Hadronic shower only | Energy matches momentum.
-M2: Transition radiation detectors identify: | Electrons | Neutrons | Neutrinos | Protons only | Very high γ particles.
+M1#physics-u43-11-q1: An electron is identified by: | A track and EM shower with E/p ≈ 1 | No track | Hits in muon chambers | Hadronic shower only | Energy matches momentum.
+M2#physics-u43-11-q2: Transition radiation detectors identify: | Electrons | Neutrons | Neutrinos | Protons only | Very high γ particles.
 
 ## Trigger systems
 S: Trigger systems decide in microseconds which collisions to keep, since detectors produce far more data than can be stored. At the LHC, of 40 million bunch crossings per second, only about a thousand are recorded, chosen to contain potentially interesting physics.
@@ -326,8 +326,8 @@ K: Triggers select rare interesting events in real time through fast hardware an
 !: Trigger biases shape the recorded data; efficiencies must be measured, not assumed.
 Q: Why does the LHC need a trigger? | Collision rates and data volumes far exceed what can be stored.
 Q: What is a prescale? | Keeping only one in N events passing a high-rate trigger.
-M1: Level-1 triggers typically use: | Custom hardware such as FPGAs | Full offline reconstruction | Human inspection | Only tracker data | Microsecond decisions.
-M2: Tag-and-probe is used to measure: | Trigger efficiency | Luminosity | Detector alignment | Magnet strength | Using a known clean sample.
+M1#physics-u43-12-q1: Level-1 triggers typically use: | Custom hardware such as FPGAs | Full offline reconstruction | Human inspection | Only tracker data | Microsecond decisions.
+M2#physics-u43-12-q2: Tag-and-probe is used to measure: | Trigger efficiency | Luminosity | Detector alignment | Magnet strength | Using a known clean sample.
 
 ## Event reconstruction
 S: Event reconstruction turns millions of raw detector signals into physics objects: tracks, vertices, electrons, photons, muons, jets and missing energy. It combines pattern recognition, fitting and calibration, and its quality sets the reach of every analysis.
@@ -355,8 +355,8 @@ K: Reconstruction builds physics objects from raw hits; algorithms like Kalman f
 !: Mis-measured jets or detector noise can fake missing energy; quality cuts and cleaning are essential.
 Q: What does the Kalman filter do in tracking? | Recursively combines hits with predictions, accounting for noise and material, to fit tracks.
 Q: Why is anti-k_{T} the standard jet algorithm? | It produces regular, cone-like jets and is infrared and collinear safe.
-M1: Particle flow combines: | Tracker, calorimeter and muon information | Only calorimeters | Only triggers | Luminosity data | Best detector for each particle.
-M2: Pile-up refers to: | Multiple simultaneous collisions per bunch crossing | Detector heating | Magnetic quench | Data storage | Overlapping events.
+M1#physics-u43-13-q1: Particle flow combines: | Tracker, calorimeter and muon information | Only calorimeters | Only triggers | Luminosity data | Best detector for each particle.
+M2#physics-u43-13-q2: Pile-up refers to: | Multiple simultaneous collisions per bunch crossing | Detector heating | Magnetic quench | Data storage | Overlapping events.
 
 ## Background suppression
 S: Background suppression removes ordinary events that mimic the signal being searched for. Through careful selection, shielding, vetoes and clever estimation, experiments find rare processes buried under backgrounds that can be billions of times larger.
@@ -383,8 +383,8 @@ K: Find the signal by rejecting look-alikes: kinematics, isolation, shielding, p
 !: Over-tuning cuts on the data inflates significance; blinding and pre-registered selections prevent this.
 Q: What is a blind analysis? | Hiding the signal region until the analysis procedure is finalised, to avoid unconscious bias.
 Q: Why are dark matter detectors placed deep underground? | To shield against cosmic-ray muons and their secondary neutrons.
-M1: The ABCD method estimates backgrounds using: | Control regions defined by two uncorrelated variables | Simulation only | Shielding | Luminosity | Data-driven extrapolation.
-M2: The "neutrino fog" is a background from: | Coherent neutrino scattering | Radon | Cosmic rays | Detector noise | Irreducible for dark matter searches.
+M1#physics-u43-14-q1: The ABCD method estimates backgrounds using: | Control regions defined by two uncorrelated variables | Simulation only | Shielding | Luminosity | Data-driven extrapolation.
+M2#physics-u43-14-q2: The "neutrino fog" is a background from: | Coherent neutrino scattering | Radon | Cosmic rays | Detector noise | Irreducible for dark matter searches.
 
 ## Detector calibration
 S: Calibration translates raw detector signals into physical quantities such as energy, position and time. Precision measurements, like the Higgs mass or W mass, depend on calibrations accurate to fractions of a percent, using known sources and well-understood physics processes.
@@ -412,8 +412,8 @@ K: Calibrate with known sources and standard candles, align with tracks, and mon
 !: A calibration valid at one energy may not hold at another; check linearity across the full range.
 Q: Why is Z → ee used for calibration? | The Z mass is precisely known, giving a high-energy standard candle for electron energy scale.
 Q: What is detector alignment? | Determining the exact positions and orientations of detector elements using tracks.
-M1: Co-60 gamma lines are at: | 1173 and 1332 keV | 662 keV | 511 keV | 59.5 keV | Two common calibration lines.
-M2: Laser monitoring in calorimeters tracks: | Response changes over time | Particle charge | Beam energy | Luminosity | Transparency loss.
+M1#physics-u43-15-q1: Co-60 gamma lines are at: | 1173 and 1332 keV | 662 keV | 511 keV | 59.5 keV | Two common calibration lines.
+M2#physics-u43-15-q2: Laser monitoring in calorimeters tracks: | Response changes over time | Particle charge | Beam energy | Luminosity | Transparency loss.
 
 ## Radiation spectroscopy
 S: Radiation spectroscopy measures the energy distribution of emitted gamma rays, X-rays, alpha and beta particles to identify isotopes and study nuclear structure. Spectra reveal what is radioactive, how much is present and how nuclei arrange their energy levels.
@@ -438,8 +438,8 @@ K: Spectra identify isotopes by their characteristic lines; peak areas with effi
 !: Peak interference and summing can mislead; always check all lines of an isotope and coincidence summing corrections.
 Q: What causes escape peaks? | After pair production, one or both 511 keV annihilation photons escape the detector.
 Q: What is the backscatter peak? | Photons Compton scattered by ~180° in surrounding material then absorbed, around 200–250 keV.
-M1: Beta spectra are continuous because: | Energy is shared with an antineutrino | Electrons scatter | Detectors are imperfect | Nuclei recoil only | Three-body decay.
-M2: The 1461 keV line identifies: | Potassium-40 | Caesium-137 | Cobalt-60 | Radon-222 | Natural potassium.
+M1#physics-u43-16-q1: Beta spectra are continuous because: | Energy is shared with an antineutrino | Electrons scatter | Detectors are imperfect | Nuclei recoil only | Three-body decay.
+M2#physics-u43-16-q2: The 1461 keV line identifies: | Potassium-40 | Caesium-137 | Cobalt-60 | Radon-222 | Natural potassium.
 
 ## Accelerator instrumentation
 S: Accelerator instrumentation measures the beam's position, size, intensity, energy and losses so operators can steer, focus and protect a machine. Without these diagnostics, modern colliders and light sources couldn't run or stay safe.
@@ -465,8 +465,8 @@ K: Diagnostics measure position, current, profile, losses and luminosity; protec
 !: A single mis-steered high-energy bunch can damage equipment; loss monitoring and fast dumps are non-negotiable.
 Q: What does a beam position monitor detect? | Image currents induced on electrodes, giving the beam's transverse position.
 Q: What is a Van der Meer scan? | Sweeping colliding beams across each other to measure their overlap and calibrate luminosity.
-M1: Beam loss monitors are usually: | Ionisation chambers | PMTs only | Silicon trackers | Thermometers | Detect showers from lost particles.
-M2: Luminosity increases if beam size: | Decreases | Increases | Doesn't matter | Becomes zero length | L ∝ 1/(σ_{x}σ_{y}).
+M1#physics-u43-17-q1: Beam loss monitors are usually: | Ionisation chambers | PMTs only | Silicon trackers | Thermometers | Detect showers from lost particles.
+M2#physics-u43-17-q2: Luminosity increases if beam size: | Decreases | Increases | Doesn't matter | Becomes zero length | L ∝ 1/(σ_{x}σ_{y}).
 
 ## Collider data analysis
 S: Collider data analysis turns petabytes of recorded collisions into physics measurements: cross-sections, masses, couplings and searches for new particles. It combines event selection, simulation, background estimation, statistical inference and careful systematic uncertainties.
@@ -494,8 +494,8 @@ K: Analyses combine selection, simulation, background estimation and likelihood 
 !: Systematic uncertainties often dominate large datasets; more data alone won't improve precision then.
 Q: What does the signal strength μ represent? | The measured cross-section relative to the Standard Model prediction.
 Q: What is unfolding? | Correcting measured distributions for detector resolution and efficiency to compare with theory.
-M1: Expected events equal: | σ × integrated luminosity × efficiency × acceptance | σ/L | L/σ | ε only | Basic counting formula.
-M2: The transverse mass is used for: | W → ℓν decays | Z → ℓℓ only | Photons | Jets | Neutrino escapes.
+M1#physics-u43-18-q1: Expected events equal: | σ × integrated luminosity × efficiency × acceptance | σ/L | L/σ | ε only | Basic counting formula.
+M2#physics-u43-18-q2: The transverse mass is used for: | W → ℓν decays | Z → ℓℓ only | Photons | Jets | Neutrino escapes.
 
 ## Statistical significance of discoveries
 S: Particle physicists claim a discovery when the chance that background alone produced the observed excess is below about 1 in 3.5 million: five sigma. Understanding p-values, the look-elsewhere effect and systematic uncertainties is essential for judging such claims.
@@ -522,6 +522,6 @@ K: Five sigma is the discovery standard; account for look-elsewhere effects and 
 !: A p-value is not the probability that the signal is fake; it is the probability of data this extreme if there were no signal.
 Q: What p-value corresponds to 5σ? | About 2.9 × 10^{-7} (one-sided), roughly 1 in 3.5 million.
 Q: What is the look-elsewhere effect? | The increased chance of a large fluctuation somewhere when searching many places.
-M1: 3σ is conventionally called: | Evidence | Discovery | Exclusion | Proof | p ≈ 0.00135.
-M2: OPERA's superluminal neutrino result was caused by: | A loose fibre-optic cable | New physics | Statistics only | Gravity | Systematic error.
+M1#physics-u43-19-q1: 3σ is conventionally called: | Evidence | Discovery | Exclusion | Proof | p ≈ 0.00135.
+M2#physics-u43-19-q2: OPERA's superluminal neutrino result was caused by: | A loose fibre-optic cable | New physics | Statistics only | Gravity | Systematic error.
 `;

@@ -22,8 +22,8 @@ X: Is a candle flame a plasma?
 !: Ionisation alone doesn't make a plasma; collective behaviour does.
 Q: What is quasineutrality? | Near-equality of positive and negative charge densities over scales larger than the Debye length.
 Q: Why is plasma called the "fourth state of matter"? | It has distinct collective electromagnetic behaviour unlike solids, liquids or gases.
-M1: Most visible matter in the universe is: | Plasma | Solid | Liquid | Neutral gas | Stars.
-M2: A plasma requires many particles within: | A Debye sphere | A metre | An atom | A molecule | N_{D} ≫ 1.
+M1#physics-u29-01-q1: Most visible matter in the universe is: | Plasma | Solid | Liquid | Neutral gas | Stars.
+M2#physics-u29-01-q2: A plasma requires many particles within: | A Debye sphere | A metre | An atom | A molecule | N_{D} ≫ 1.
 
 ## Ionisation and recombination
 S: Plasmas form when atoms lose electrons through collisions, radiation or strong fields, and they're maintained by a balance between ionisation and recombination. The degree of ionisation depends on temperature and density.
@@ -45,8 +45,8 @@ X: Why did the universe become transparent at ~3000 K although hydrogen's ionisa
 !: Ionisation fraction depends on density too: lower density favours ionisation at a given temperature.
 Q: What does the Saha equation describe? | The degree of ionisation of a gas in thermal equilibrium.
 Q: How do photons ionise the ionosphere? | Solar UV and X-ray photoionisation.
-M1: Recombination in nebulae produces: | Emission lines | Absorption lines | Continuous radio only | Nothing | Radiative recombination.
-M2: Saha's equation explained: | Stellar spectral classes as a temperature sequence | Fusion | Superconductivity | Gravity | Payne-Gaposchkin.
+M1#physics-u29-02-q1: Recombination in nebulae produces: | Emission lines | Absorption lines | Continuous radio only | Nothing | Radiative recombination.
+M2#physics-u29-02-q2: Saha's equation explained: | Stellar spectral classes as a temperature sequence | Fusion | Superconductivity | Gravity | Payne-Gaposchkin.
 
 ## Debye shielding
 S: In a plasma, free charges rearrange to screen out any electric potential, so the field of a charge falls off exponentially beyond a short distance. Debye shielding is why plasmas are quasineutral on large scales.
@@ -67,8 +67,8 @@ D: phys-u29-debye-shielding
 !: Shielding is statistical; individual charges still move through the plasma and interact.
 Q: What is Debye shielding? | The screening of a charge's field by the surrounding plasma charges, making it decay exponentially.
 Q: What is a plasma sheath? | A thin non-neutral boundary layer, a few Debye lengths thick, between a plasma and a surface.
-M1: Beyond several Debye lengths, a charge's field is: | Effectively screened | Stronger | Unchanged | Oscillating | e^{−r/λ_{D}}.
-M2: Debye–Hückel theory applies screening to: | Electrolytes | Superconductors | Photons | Neutron stars | Ionic solutions.
+M1#physics-u29-03-q1: Beyond several Debye lengths, a charge's field is: | Effectively screened | Stronger | Unchanged | Oscillating | e^{−r/λ_{D}}.
+M2#physics-u29-03-q2: Debye–Hückel theory applies screening to: | Electrolytes | Superconductors | Photons | Neutron stars | Ionic solutions.
 
 ## Debye length
 S: The Debye length is the distance over which charges in a plasma screen each other. It sets the smallest scale on which a plasma can be non-neutral and is a key criterion for whether an ionised gas behaves as a plasma.
@@ -89,8 +89,8 @@ X: Debye length in the ionosphere (n = 10^{12} m^{-3}, T_{e} = 0.1 eV)?
 !: The Debye length uses the electron temperature (in most cases); hot electrons and cold ions are common in labs.
 Q: How does the Debye length depend on temperature and density? | λ_{D} ∝ √(T/n).
 Q: What is the plasma parameter? | The number of particles in a Debye sphere; must be large for collective behaviour.
-M1: Doubling density changes λ_{D} by: | ×1/√2 | ×2 | ×½ | No change | ∝ n^{−1/2}.
-M2: A plasma must be much larger than: | Its Debye length | Its atoms | 1 m | Its temperature | L ≫ λ_{D}.
+M1#physics-u29-04-q1: Doubling density changes λ_{D} by: | ×1/√2 | ×2 | ×½ | No change | ∝ n^{−1/2}.
+M2#physics-u29-04-q2: A plasma must be much larger than: | Its Debye length | Its atoms | 1 m | Its temperature | L ≫ λ_{D}.
 
 ## Plasma frequency
 S: The plasma frequency is the natural oscillation frequency of electrons displaced in a plasma. It sets which electromagnetic waves can travel through a plasma: lower frequencies are reflected, higher ones pass.
@@ -112,8 +112,8 @@ X: Plasma frequency of the ionosphere's F-layer (n = 10^{12} m^{-3})?
 !: Metals' shininess and the ionosphere's radio reflection are the same physics at very different frequencies.
 Q: What is the plasma frequency? | The natural oscillation frequency of electrons in a plasma, ω_{p} = √(ne^{2}/ε_{0}m).
 Q: Why does the ionosphere reflect shortwave radio but not FM? | Shortwave is below the plasma frequency; FM is above it.
-M1: Metals reflect visible light because: | Visible frequencies are below their plasma frequency | They're dense | They're cold | They emit light | ω < ω_{p}.
-M2: Pulsar signals at lower radio frequencies arrive: | Later | Earlier | At the same time | Never | Dispersion.
+M1#physics-u29-05-q1: Metals reflect visible light because: | Visible frequencies are below their plasma frequency | They're dense | They're cold | They emit light | ω < ω_{p}.
+M2#physics-u29-05-q2: Pulsar signals at lower radio frequencies arrive: | Later | Earlier | At the same time | Never | Dispersion.
 
 ## Charged-particle motion
 S: Understanding how individual charged particles move in electric and magnetic fields is the starting point of plasma physics. In magnetic fields they gyrate; combined with other forces they drift in characteristic ways.
@@ -136,8 +136,8 @@ X: Larmor radius of a 1 keV proton in 1 T?
 !: The E × B drift is perpendicular to both fields and independent of charge: electrons and ions drift together, so no current flows from it.
 Q: What is the E × B drift? | A drift of all charged particles perpendicular to both E and B at speed E/B.
 Q: How does a magnetic mirror trap particles? | Conservation of magnetic moment reflects particles moving into stronger field.
-M1: Electron gyrofrequency compared with ion gyrofrequency is: | Much higher | Lower | Equal | Zero | ∝ 1/m.
-M2: The Van Allen belts trap particles by: | Magnetic mirroring in Earth's dipole field | Gravity | Electric fields | Solar wind pressure | Bounce motion.
+M1#physics-u29-06-q1: Electron gyrofrequency compared with ion gyrofrequency is: | Much higher | Lower | Equal | Zero | ∝ 1/m.
+M2#physics-u29-06-q2: The Van Allen belts trap particles by: | Magnetic mirroring in Earth's dipole field | Gravity | Electric fields | Solar wind pressure | Bounce motion.
 
 ## Plasma oscillations
 S: Displace electrons slightly in a plasma and the resulting charge separation pulls them back, so they oscillate at the plasma frequency. With thermal motion, these oscillations travel as Langmuir waves, and they can be damped even without collisions.
@@ -158,8 +158,8 @@ X: Accelerating field of a plasma wave in n = 10^{24} m^{-3}?
 !: Landau damping doesn't dissipate energy as heat directly; it transfers energy from the wave to resonant particles.
 Q: What is Landau damping? | Collisionless damping of plasma waves through energy exchange with resonant particles.
 Q: Why can plasma wakefield accelerators be so compact? | Plasma waves sustain accelerating fields ~1000 times stronger than conventional RF cavities.
-M1: In a cold plasma, electron oscillations occur at: | The plasma frequency | The cyclotron frequency | Zero | The ion frequency | ω_{p}.
-M2: Langmuir waves propagate because of: | Electron thermal pressure | Magnetic fields | Ion motion only | Gravity | Bohm–Gross.
+M1#physics-u29-07-q1: In a cold plasma, electron oscillations occur at: | The plasma frequency | The cyclotron frequency | Zero | The ion frequency | ω_{p}.
+M2#physics-u29-07-q2: Langmuir waves propagate because of: | Electron thermal pressure | Magnetic fields | Ion motion only | Gravity | Bohm–Gross.
 
 ## Magnetised plasmas
 S: In a magnetic field, plasma behaviour becomes strongly directional: particles move freely along field lines but are tied to them across. Magnetised plasmas fill space, power solar activity and are confined in fusion devices.
@@ -180,8 +180,8 @@ X: β for a tokamak with n = 10^{20} m^{-3}, T = 10 keV, B = 5 T?
 !: Magnetised plasma isn't the same as a magnetic material; the field is external or self-generated by currents, not by aligned spins.
 Q: What is plasma beta? | The ratio of plasma thermal pressure to magnetic pressure.
 Q: What is the frozen-in flux theorem? | In a perfectly conducting plasma, magnetic field lines move with the fluid.
-M1: In the solar corona, β is: | Much less than 1 | Much greater than 1 | Exactly 1 | Zero | Field-dominated.
-M2: Magnetic reconnection occurs when: | Frozen-in conditions break down locally | β = 0 | Temperature falls | Density is zero | Field lines reconnect.
+M1#physics-u29-08-q1: In the solar corona, β is: | Much less than 1 | Much greater than 1 | Exactly 1 | Zero | Field-dominated.
+M2#physics-u29-08-q2: Magnetic reconnection occurs when: | Frozen-in conditions break down locally | β = 0 | Temperature falls | Density is zero | Field lines reconnect.
 
 ## Magnetohydrodynamics
 S: Magnetohydrodynamics (MHD) treats a plasma as an electrically conducting fluid interacting with magnetic fields. It describes large-scale plasma behaviour in stars, planets, fusion devices and liquid metals.
@@ -205,8 +205,8 @@ X: Why does Earth's magnetic field persist for billions of years?
 !: MHD assumes the plasma behaves as one fluid; it fails at small scales or low collisionality, where kinetic or two-fluid models are needed.
 Q: What does MHD describe? | Plasma as a conducting fluid coupled to magnetic fields.
 Q: What is the geodynamo? | The self-sustaining generation of Earth's magnetic field by convection in its liquid outer core.
-M1: Magnetic tension acts to: | Straighten curved field lines | Increase pressure | Heat plasma | Remove fields | (B·∇)B/μ_{0}.
-M2: A high magnetic Reynolds number means: | Field is frozen into the flow | Field diffuses quickly | No field | Low conductivity | R_{m} ≫ 1.
+M1#physics-u29-09-q1: Magnetic tension acts to: | Straighten curved field lines | Increase pressure | Heat plasma | Remove fields | (B·∇)B/μ_{0}.
+M2#physics-u29-09-q2: A high magnetic Reynolds number means: | Field is frozen into the flow | Field diffuses quickly | No field | Low conductivity | R_{m} ≫ 1.
 
 ## Plasma waves
 S: Plasmas support a rich variety of waves: electrostatic and electromagnetic, involving electrons, ions or both, with magnetic fields adding more modes. They heat fusion plasmas, carry energy in space, and diagnose plasma properties.
@@ -227,8 +227,8 @@ X: Ion acoustic speed in a hydrogen plasma with T_{e} = 10 eV?
 !: Plasma "sound" depends on electron temperature but ion mass; cold electrons mean no ion acoustic waves.
 Q: What are whistlers? | Low-frequency electromagnetic waves guided along Earth's field, often from lightning, with descending tones.
 Q: How are fusion plasmas heated with waves? | By RF waves resonant with ion or electron cyclotron motion.
-M1: Ion acoustic waves depend on electron temperature and: | Ion mass | Electron mass | Magnetic field only | Light speed | √(k_{B}T_{e}/m_{i}).
-M2: ECRH heats electrons using waves at: | The electron cyclotron frequency | Plasma frequency only | Sound frequencies | 50 Hz | Resonance.
+M1#physics-u29-10-q1: Ion acoustic waves depend on electron temperature and: | Ion mass | Electron mass | Magnetic field only | Light speed | √(k_{B}T_{e}/m_{i}).
+M2#physics-u29-10-q2: ECRH heats electrons using waves at: | The electron cyclotron frequency | Plasma frequency only | Sound frequencies | 50 Hz | Resonance.
 
 ## Alfvén waves
 S: Alfvén waves are transverse oscillations of magnetic field lines and plasma, like waves on a plucked string, with the field's tension providing the restoring force. They carry energy in the Sun's corona, the solar wind and Earth's magnetosphere.
@@ -250,8 +250,8 @@ X: Alfvén speed in the solar wind (B = 5 nT, n = 5 × 10^{6} m^{-3} protons)?
 !: Alfvén waves don't compress the plasma; they bend field lines, unlike sound or magnetosonic waves.
 Q: What is the Alfvén speed? | v_{A} = B/√(μ_{0}ρ).
 Q: Why are Alfvén waves linked to coronal heating? | They can carry energy from the solar surface into the corona and dissipate it there.
-M1: The restoring force for Alfvén waves is: | Magnetic tension | Gas pressure | Gravity | Surface tension | Field lines like strings.
-M2: Doubling plasma density changes the Alfvén speed by: | ×1/√2 | ×2 | ×½ | No change | ∝ ρ^{−1/2}.
+M1#physics-u29-11-q1: The restoring force for Alfvén waves is: | Magnetic tension | Gas pressure | Gravity | Surface tension | Field lines like strings.
+M2#physics-u29-11-q2: Doubling plasma density changes the Alfvén speed by: | ×1/√2 | ×2 | ×½ | No change | ∝ ρ^{−1/2}.
 
 ## Plasma instabilities
 S: Plasmas store energy in gradients of density, temperature, current and velocity, and often release it through instabilities that grow rapidly. Instabilities limit fusion confinement and drive dramatic events in space.
@@ -273,8 +273,8 @@ X: Why does a straight current-carrying plasma column kink?
 !: Not all instabilities are bad; some (magnetorotational instability) are essential to astrophysical accretion.
 Q: What is a disruption in a tokamak? | A sudden loss of plasma confinement, releasing energy and current onto the walls.
 Q: What is anomalous transport? | Heat and particle loss from turbulence, much faster than collisional (classical) transport.
-M1: The kink instability is driven by: | Plasma current | Temperature only | Gravity | Neutral gas | Current-driven MHD.
-M2: H-mode in tokamaks provides: | Improved confinement with an edge transport barrier | Disruptions | Lower temperatures | No plasma | Discovered at ASDEX 1982.
+M1#physics-u29-12-q1: The kink instability is driven by: | Plasma current | Temperature only | Gravity | Neutral gas | Current-driven MHD.
+M2#physics-u29-12-q2: H-mode in tokamaks provides: | Improved confinement with an edge transport barrier | Disruptions | Lower temperatures | No plasma | Discovered at ASDEX 1982.
 
 ## Magnetic confinement
 S: Magnetic confinement holds a hot plasma away from material walls using magnetic fields, since charged particles spiral along field lines. It's the leading route to fusion power, with tokamaks and stellarators the main designs.
@@ -298,8 +298,8 @@ X: Why does confinement improve with stronger magnets?
 !: Magnetic fields don't stop all losses: collisions, turbulence and radiation still leak energy across field lines.
 Q: Why is toroidal confinement needed? | To close field lines so particles don't escape along them at the ends.
 Q: What is the energy confinement time? | Stored plasma energy divided by the rate of energy loss.
-M1: ITER's goal is: | Q = 10 | Q = 1 | Net electricity to the grid | Q = 0.1 | 500 MW from 50 MW.
-M2: Rotational transform in a tokamak comes from: | Plasma current | Twisted coils only | Gravity | Neutral beams | Poloidal field.
+M1#physics-u29-13-q1: ITER's goal is: | Q = 10 | Q = 1 | Net electricity to the grid | Q = 0.1 | 500 MW from 50 MW.
+M2#physics-u29-13-q2: Rotational transform in a tokamak comes from: | Plasma current | Twisted coils only | Gravity | Neutral beams | Poloidal field.
 
 ## Tokamaks and stellarators
 S: Tokamaks and stellarators are the two main toroidal magnetic confinement designs for fusion. Tokamaks use a large plasma current to twist the field; stellarators twist it with complex external coils.
@@ -321,8 +321,8 @@ X: Why does a tokamak need a central solenoid?
 !: A tokamak can't run forever on inductive current drive; the solenoid's flux runs out, so steady state needs other current-drive methods.
 Q: What's the main difference between tokamaks and stellarators? | Tokamaks twist the field using plasma current; stellarators use twisted external coils.
 Q: What is a divertor? | A region that removes heat and impurities by guiding edge field lines to target plates.
-M1: Wendelstein 7-X is a: | Stellarator | Tokamak | Laser fusion facility | Mirror machine | Germany.
-M2: ITER is being built in: | France | Japan | USA | UK | Cadarache.
+M1#physics-u29-14-q1: Wendelstein 7-X is a: | Stellarator | Tokamak | Laser fusion facility | Mirror machine | Germany.
+M2#physics-u29-14-q2: ITER is being built in: | France | Japan | USA | UK | Cadarache.
 
 ## Inertial confinement fusion
 S: Inertial confinement fusion compresses a tiny fuel capsule so fast and hard that it fuses before it can fly apart. Powerful lasers or particle beams implode the capsule to densities and temperatures exceeding the Sun's core.
@@ -342,8 +342,8 @@ X: Target gain of the December 2022 NIF shot?
 !: NIF's ignition milestone means fusion yield exceeded laser energy on target, not that the facility produced net electricity.
 Q: How does indirect-drive ICF work? | Lasers heat a hohlraum, whose X-rays uniformly compress the fuel capsule.
 Q: What did NIF achieve in December 2022? | Fusion ignition: more fusion energy out than laser energy delivered to the target.
-M1: The main instability limiting ICF implosions is: | Rayleigh–Taylor | Kink | Tearing | Two-stream | Interface between dense and light.
-M2: NIF uses how many laser beams? | 192 | 12 | 1 | 1000 | National Ignition Facility.
+M1#physics-u29-15-q1: The main instability limiting ICF implosions is: | Rayleigh–Taylor | Kink | Tearing | Two-stream | Interface between dense and light.
+M2#physics-u29-15-q2: NIF uses how many laser beams? | 192 | 12 | 1 | 1000 | National Ignition Facility.
 
 ## Fusion energy
 S: Fusion energy aims to generate electricity from the same reactions that power the Sun, using abundant fuels and producing no carbon emissions or long-lived high-level waste. It's scientifically demonstrated but not yet commercially viable.
@@ -367,8 +367,8 @@ X: Energy from 1 g of D–T fuel fully fused?
 !: Fusion reactors can't run away like fission reactors; but they're not entirely free of radioactive waste.
 Q: Why is fusion inherently safe from runaway reactions? | The plasma conditions are so hard to maintain that any disturbance stops fusion.
 Q: How is tritium supplied in a D–T reactor? | By breeding it from lithium in a blanket using fusion neutrons.
-M1: Deuterium is obtained from: | Seawater | Lithium | Uranium | Air | Abundant.
-M2: The main radioactive waste in fusion comes from: | Neutron activation of structures | Spent fuel rods | Fission products | Alpha particles | Structural activation.
+M1#physics-u29-16-q1: Deuterium is obtained from: | Seawater | Lithium | Uranium | Air | Abundant.
+M2#physics-u29-16-q2: The main radioactive waste in fusion comes from: | Neutron activation of structures | Spent fuel rods | Fission products | Alpha particles | Structural activation.
 
 ## Solar and astrophysical plasmas
 S: Almost all visible matter in the universe is plasma. The Sun's plasma generates magnetic fields, flares and the solar wind; beyond, plasmas form nebulae, accretion discs, jets and the hot gas filling galaxy clusters.
@@ -392,8 +392,8 @@ X: Why does the Sun's magnetic polarity reverse every 11 years?
 !: The corona's high temperature doesn't mean it radiates much energy; it's extremely thin.
 Q: What is the coronal heating problem? | Explaining why the corona is millions of degrees hotter than the photosphere.
 Q: What powers solar flares? | Magnetic reconnection releasing stored magnetic energy.
-M1: The intracluster medium is seen mainly in: | X-rays | Radio only | Visible light | Gamma rays | Hot thermal bremsstrahlung.
-M2: The magnetorotational instability drives: | Turbulence and accretion in discs | Sunspots | Fusion | Solar wind only | Angular momentum transport.
+M1#physics-u29-17-q1: The intracluster medium is seen mainly in: | X-rays | Radio only | Visible light | Gamma rays | Hot thermal bremsstrahlung.
+M2#physics-u29-17-q2: The magnetorotational instability drives: | Turbulence and accretion in discs | Sunspots | Fusion | Solar wind only | Angular momentum transport.
 
 ## Space plasma physics
 S: Space plasma physics studies plasmas in the solar system: the solar wind, planetary magnetospheres and ionospheres. It underpins space weather, which can damage satellites, disrupt communications and black out power grids.
@@ -417,8 +417,8 @@ X: How long does a CME at 1000 km s^{-1} take to reach Earth?
 !: Auroras aren't caused by solar wind particles hitting the atmosphere directly; magnetospheric processes accelerate the electrons.
 Q: What causes geomagnetic storms? | Coronal mass ejections and fast solar wind interacting with Earth's magnetosphere.
 Q: What was the Carrington event? | An extreme geomagnetic storm in 1859, causing auroras at low latitudes and telegraph disruption.
-M1: The magnetopause on Earth's dayside is at about: | 10 Earth radii | 1 Earth radius | 100 Earth radii | The Moon's orbit | Pressure balance.
-M2: Green auroral light comes mainly from: | Atomic oxygen | Nitrogen | Hydrogen | Helium | 557.7 nm.
+M1#physics-u29-18-q1: The magnetopause on Earth's dayside is at about: | 10 Earth radii | 1 Earth radius | 100 Earth radii | The Moon's orbit | Pressure balance.
+M2#physics-u29-18-q2: Green auroral light comes mainly from: | Atomic oxygen | Nitrogen | Hydrogen | Helium | 557.7 nm.
 
 ## Plasma diagnostics
 S: Plasma diagnostics measure temperatures, densities, fields and flows in plasmas that are too hot or remote for ordinary instruments. They combine probes, lasers, spectroscopy and electromagnetic waves.
@@ -439,8 +439,8 @@ X: Thomson-scattered light from electrons at 10 keV: why is the spectrum so broa
 !: Probes perturb plasmas; in hot cores, non-invasive optical and microwave methods are essential.
 Q: What does Thomson scattering measure? | Electron temperature (from spectral width) and density (from intensity).
 Q: How does a Langmuir probe work? | Its current–voltage characteristic reveals electron temperature and density.
-M1: Interferometry measures plasma density using: | Phase shifts of waves passing through | Magnetic coils | Neutrons | Thermometers | Refractive index.
-M2: Ion temperature is often measured by: | Doppler broadening of spectral lines | Voltmeters | Langmuir probes only | Weighing | Spectroscopy.
+M1#physics-u29-19-q1: Interferometry measures plasma density using: | Phase shifts of waves passing through | Magnetic coils | Neutrons | Thermometers | Refractive index.
+M2#physics-u29-19-q2: Ion temperature is often measured by: | Doppler broadening of spectral lines | Voltmeters | Langmuir probes only | Weighing | Spectroscopy.
 
 ## Industrial and technological plasmas
 S: Low-temperature plasmas are essential industrial tools: they etch and deposit layers on every computer chip, light our streets, cut and weld metals, sterilise medical equipment and treat surfaces.
@@ -464,6 +464,6 @@ X: Why are plasmas essential for etching chips with vertical walls?
 !: Cold plasmas aren't cold in their electrons; it's the heavy particles that stay near room temperature.
 Q: What is reactive ion etching? | Plasma etching combining chemical radicals and directional ion bombardment.
 Q: How do Hall thrusters work? | Electrons trapped in a magnetic field ionise propellant; an electric field accelerates the ions out.
-M1: Non-thermal plasmas have: | Hot electrons and cool ions | Hot ions and cold electrons | Equal temperatures | No electrons | Non-equilibrium.
-M2: Neon signs glow red because of: | Neon's emission lines | Phosphors | Incandescence | Mercury | Gas discharge.
+M1#physics-u29-20-q1: Non-thermal plasmas have: | Hot electrons and cool ions | Hot ions and cold electrons | Equal temperatures | No electrons | Non-equilibrium.
+M2#physics-u29-20-q2: Neon signs glow red because of: | Neon's emission lines | Phosphors | Incandescence | Mercury | Gas discharge.
 `;

@@ -22,8 +22,8 @@ K: Realists take theories as true descriptions; instrumentalists see them as pre
 !: Predictive success doesn't automatically prove truth; history shows successful theories can rest on false entities.
 Q: What is the no-miracles argument? | Science's predictive success would be miraculous unless theories were approximately true.
 Q: What is the pessimistic meta-induction? | Since many past successful theories proved false, current ones may also be false.
-M1: Entity realism is associated with: | Ian Hacking | Kuhn | Popper | Newton | "If you can spray them..."
-M2: Constructive empiricism aims for: | Empirical adequacy | Truth about unobservables | Paradigm shifts | Falsification only | Van Fraassen.
+M1#physics-u50-01-q1: Entity realism is associated with: | Ian Hacking | Kuhn | Popper | Newton | "If you can spray them..."
+M2#physics-u50-01-q2: Constructive empiricism aims for: | Empirical adequacy | Truth about unobservables | Paradigm shifts | Falsification only | Van Fraassen.
 
 ## Explanation and prediction in physics
 S: Physics both predicts what will happen and explains why it happens. Philosophers distinguish the two: a good predictive model may not explain, and a deep explanation may not predict precisely. Understanding this helps judge theories and communicate science.
@@ -47,8 +47,8 @@ K: Explaining and predicting are distinct goals; good physics often achieves bot
 !: A model that predicts well, such as a neural network, may provide little physical understanding.
 Q: What is the deductive-nomological model? | Explanation by logically deducing a phenomenon from general laws and initial conditions.
 Q: Give an example of prediction without explanation. | Balmer's formula for hydrogen lines before quantum theory.
-M1: The flagpole problem shows: | Explanation has a direction (asymmetry) | Shadows don't exist | Laws are false | Prediction is impossible | Causal asymmetry.
-M2: Unificationist explanation emphasises: | Fitting many phenomena into one framework | Causal processes only | Single events | Measurement | Kitcher, Friedman.
+M1#physics-u50-02-q1: The flagpole problem shows: | Explanation has a direction (asymmetry) | Shadows don't exist | Laws are false | Prediction is impossible | Causal asymmetry.
+M2#physics-u50-02-q2: Unificationist explanation emphasises: | Fitting many phenomena into one framework | Causal processes only | Single events | Measurement | Kitcher, Friedman.
 
 ## Laws of nature
 S: Laws of nature, like Newton's gravitation or the conservation of energy, seem to express how the universe must behave. Philosophers ask what makes something a law rather than a coincidence, and whether laws describe regularities or govern them.
@@ -71,8 +71,8 @@ K: Laws support counterfactuals and are universal; philosophers debate whether t
 !: Many textbook "laws" are approximate empirical relations valid only in limited regimes.
 Q: What is the best-system account of laws? | Laws are the axioms of the deductive system best balancing simplicity and strength in describing the world.
 Q: What distinguishes laws from accidental generalisations? | Laws support counterfactuals and hold necessarily or robustly.
-M1: Hooke's law is an example of: | A phenomenological law with limited validity | A fundamental conservation law | A symmetry | An accident | Fails beyond elastic limit.
-M2: Humean accounts treat laws as: | Summaries of regularities | Necessary connections | Divine commands | Fictions | Patterns, not governors.
+M1#physics-u50-03-q1: Hooke's law is an example of: | A phenomenological law with limited validity | A fundamental conservation law | A symmetry | An accident | Fails beyond elastic limit.
+M2#physics-u50-03-q2: Humean accounts treat laws as: | Summaries of regularities | Necessary connections | Divine commands | Fictions | Patterns, not governors.
 
 ## Causality and determinism
 S: Causality concerns how events bring about others; determinism holds that the present state fixes the entire future. Physics both supports and challenges these ideas, from Laplace's demon to relativistic light cones and quantum randomness.
@@ -95,8 +95,8 @@ K: Determinism means the state fixes the future; relativity limits causal influe
 !: Determinism and predictability are different: chaotic systems are deterministic but unpredictable.
 Q: What is Laplace's demon? | A hypothetical intellect that could predict the entire future from complete knowledge of the present state and laws.
 Q: What is Norton's dome? | A classical mechanics example where a particle can start moving spontaneously, showing non-uniqueness.
-M1: Spacelike-separated events: | Cannot influence each other | Always have fixed order | Are simultaneous for all | Are causally linked | Outside light cones.
-M2: Bohmian mechanics is: | Deterministic | Purely random | Classical only | Non-quantum | Particles guided by the wavefunction.
+M1#physics-u50-04-q1: Spacelike-separated events: | Cannot influence each other | Always have fixed order | Are simultaneous for all | Are causally linked | Outside light cones.
+M2#physics-u50-04-q2: Bohmian mechanics is: | Deterministic | Purely random | Classical only | Non-quantum | Particles guided by the wavefunction.
 
 ## Probability and chance
 S: Probability is everywhere in physics, from statistical mechanics to quantum measurement. But what does a probability mean? Interpretations range from long-run frequencies and objective propensities to degrees of belief, and physics uses them in different ways.
@@ -121,8 +121,8 @@ K: Probability can mean frequencies, propensities or degrees of belief; physics 
 !: Confusing P(data|hypothesis) with P(hypothesis|data) is the prosecutor's fallacy.
 Q: What is the Born rule? | The probability of a measurement outcome equals the squared magnitude of the corresponding amplitude.
 Q: What is Bertrand's paradox? | Different reasonable ways of choosing a "random chord" give different probabilities, showing the need to specify sampling.
-M1: Bayesian probability represents: | Degrees of belief | Only long-run frequency | Certainty | Objective propensity only | Updated by evidence.
-M2: A fair coin flip is an example of: | Deterministic chance | Quantum randomness necessarily | Impossible probability | Pure belief only | Classical dynamics, probabilistic outcome.
+M1#physics-u50-05-q1: Bayesian probability represents: | Degrees of belief | Only long-run frequency | Certainty | Objective propensity only | Updated by evidence.
+M2#physics-u50-05-q2: A fair coin flip is an example of: | Deterministic chance | Quantum randomness necessarily | Impossible probability | Pure belief only | Classical dynamics, probabilistic outcome.
 
 ## Measurement and observation
 S: Measurement connects theory to the world, but it is never simple. Observations depend on instruments, calibration, theory and interpretation, and in quantum mechanics measurement plays a uniquely puzzling role.
@@ -145,8 +145,8 @@ K: Measurement depends on theory, instruments and standards; agreement of indepe
 !: "Raw data" never comes without interpretation; instruments and analysis embed assumptions.
 Q: What is theory-ladenness of observation? | The idea that what we observe and how we describe it depends on theoretical background.
 Q: How did Perrin support atomism? | By measuring Avogadro's number consistently using several independent methods.
-M1: Operationalism defines concepts by: | Measurement procedures | Mathematics only | Intuition | Laws | Bridgman.
-M2: Decoherence explains: | Loss of observable interference in large systems | Why one outcome occurs | Faster-than-light signalling | Gravity | Environment entanglement.
+M1#physics-u50-06-q1: Operationalism defines concepts by: | Measurement procedures | Mathematics only | Intuition | Laws | Bridgman.
+M2#physics-u50-06-q2: Decoherence explains: | Loss of observable interference in large systems | Why one outcome occurs | Faster-than-light signalling | Gravity | Environment entanglement.
 
 ## The problem of induction
 S: Physics generalises from finite observations to universal laws, but logic alone cannot justify this leap. Hume's problem of induction asks why past regularities should continue; responses include falsificationism, Bayesian reasoning and pragmatic justifications.
@@ -171,8 +171,8 @@ K: Induction can't be justified deductively; science manages it through testing,
 !: Past success doesn't guarantee future success, especially when extrapolating far beyond tested regimes.
 Q: What is Hume's problem of induction? | There is no non-circular justification for inferring future regularities from past ones.
 Q: How does Popper respond to the problem of induction? | By arguing science proceeds through conjecture and falsification rather than induction.
-M1: Goodman's "grue" problem concerns: | Which predicates are projectible | Colour vision | Quantum states | Measurement errors | New riddle of induction.
-M2: Inference to the best explanation chooses: | The hypothesis that best explains the evidence | The simplest data | The oldest theory | Random hypotheses | Abduction.
+M1#physics-u50-07-q1: Goodman's "grue" problem concerns: | Which predicates are projectible | Colour vision | Quantum states | Measurement errors | New riddle of induction.
+M2#physics-u50-07-q2: Inference to the best explanation chooses: | The hypothesis that best explains the evidence | The simplest data | The oldest theory | Random hypotheses | Abduction.
 
 ## Reductionism and emergence
 S: Reductionism holds that complex phenomena can be explained by simpler underlying parts and laws. Emergence holds that new properties and laws arise at higher levels that cannot be practically or even in principle derived from lower ones. Physics offers striking examples of both.
@@ -197,8 +197,8 @@ K: Reductionism explains wholes by parts; emergence highlights new collective pr
 !: "Emergent" doesn't mean mysterious; most physical emergence is weak and follows from the parts in principle.
 Q: What did Anderson mean by "More is different"? | Each level of complexity requires new concepts and laws not obvious from lower levels.
 Q: What is weak emergence? | Higher-level behaviour derivable from parts in principle but practically unpredictable without simulation.
-M1: Phonons are an example of: | Quasiparticles arising collectively | Fundamental particles | Photons | Black holes | Lattice vibrations.
-M2: Universality in critical phenomena supports: | Independence from microscopic details | Strict reductionism only | Strong emergence of consciousness | Determinism | Same exponents, different systems.
+M1#physics-u50-08-q1: Phonons are an example of: | Quasiparticles arising collectively | Fundamental particles | Photons | Black holes | Lattice vibrations.
+M2#physics-u50-08-q2: Universality in critical phenomena supports: | Independence from microscopic details | Strict reductionism only | Strong emergence of consciousness | Determinism | Same exponents, different systems.
 
 ## Space and time
 S: What are space and time? Are they containers that exist independently, or just relations between objects? The debate between Newton and Leibniz continues through relativity, cosmology and quantum gravity.
@@ -223,8 +223,8 @@ K: The nature of space and time remains debated: substance or relations, block o
 !: Relativity of simultaneity doesn't mean "everything is relative"; spacetime intervals are invariant.
 Q: What is Mach's principle? | The idea that local inertia is determined by the distribution of distant matter.
 Q: What is the block universe view? | Past, present and future are all equally real in four-dimensional spacetime.
-M1: Leibniz held that space is: | Relational | Absolute | Illusory | Infinite and empty | Relations between objects.
-M2: The Wheeler–DeWitt equation leads to: | The problem of time | Mach's principle | Absolute space | Determinism only | No time parameter.
+M1#physics-u50-09-q1: Leibniz held that space is: | Relational | Absolute | Illusory | Infinite and empty | Relations between objects.
+M2#physics-u50-09-q2: The Wheeler–DeWitt equation leads to: | The problem of time | Mach's principle | Absolute space | Determinism only | No time parameter.
 
 ## The nature of spacetime
 S: General relativity treats spacetime as a dynamical, curved entity that carries energy and waves. Yet the hole argument, quantum gravity and holography raise questions about whether spacetime points are real and whether spacetime is fundamental at all.
@@ -248,8 +248,8 @@ K: In GR spacetime is dynamical and coordinate-free; quantum gravity hints it ma
 !: Coordinates in GR are labels, not physical things; mistaking them for physical can cause confusion (e.g. about horizons).
 Q: What is the hole argument? | Einstein's argument that diffeomorphism freedom seemed to make GR indeterministic, resolved by denying spacetime points independent identity.
 Q: What does the Ryu–Takayanagi formula relate? | Entanglement entropy in a boundary theory to the area of surfaces in the bulk spacetime.
-M1: The Planck length is about: | 10^{-35} m | 10^{-15} m | 10^{-10} m | 10^{-20} m | √(ħG/c^{3}).
-M2: Gravitational waves show spacetime: | Has its own dynamics and carries energy | Is static | Is absolute | Is illusory | Detected by LIGO.
+M1#physics-u50-10-q1: The Planck length is about: | 10^{-35} m | 10^{-15} m | 10^{-10} m | 10^{-20} m | √(ħG/c^{3}).
+M2#physics-u50-10-q2: Gravitational waves show spacetime: | Has its own dynamics and carries energy | Is static | Is absolute | Is illusory | Detected by LIGO.
 
 ## Interpretations of quantum mechanics
 S: Quantum mechanics predicts experimental results with extraordinary accuracy, yet physicists disagree about what it says reality is like. Interpretations differ on whether the wavefunction is real, whether collapse happens and whether outcomes are determined.
@@ -275,8 +275,8 @@ K: Interpretations agree on predictions but disagree about reality; only collaps
 !: "Shut up and calculate" works for predictions but leaves the measurement problem unresolved.
 Q: What does QBism hold? | Quantum states represent an agent's personal degrees of belief about outcomes.
 Q: Why are most interpretations experimentally equivalent? | They reproduce the same Born-rule predictions for standard quantum experiments.
-M1: Many-worlds denies: | Wavefunction collapse | Superposition | Entanglement | Unitary evolution | All branches exist.
-M2: GRW is an example of: | Objective collapse theory | Hidden variables | Many-worlds | QBism | Spontaneous localisation.
+M1#physics-u50-11-q1: Many-worlds denies: | Wavefunction collapse | Superposition | Entanglement | Unitary evolution | All branches exist.
+M2#physics-u50-11-q2: GRW is an example of: | Objective collapse theory | Hidden variables | Many-worlds | QBism | Spontaneous localisation.
 
 ## Copenhagen interpretation
 S: The Copenhagen interpretation, developed by Bohr, Heisenberg and others in the 1920s, became the standard view taught in textbooks. It emphasises measurement, complementarity and the role of classical concepts, though it is really a family of related views.
@@ -302,8 +302,8 @@ K: Copenhagen emphasises measurement, complementarity and probability; it works 
 !: There isn't a single Copenhagen interpretation; Bohr's and Heisenberg's views differed.
 Q: What is complementarity? | Wave and particle aspects are mutually exclusive yet both needed for a complete description.
 Q: What is the projection postulate? | Upon measurement, the state jumps to the eigenstate corresponding to the observed outcome.
-M1: Einstein's objection was mainly that QM is: | Incomplete | Too accurate | Classical | Unfalsifiable only | EPR argument.
-M2: Decoherence helps explain: | Why macroscopic objects appear classical | Why collapse is real | Faster-than-light signals | Nothing | Environment suppresses interference.
+M1#physics-u50-12-q1: Einstein's objection was mainly that QM is: | Incomplete | Too accurate | Classical | Unfalsifiable only | EPR argument.
+M2#physics-u50-12-q2: Decoherence helps explain: | Why macroscopic objects appear classical | Why collapse is real | Faster-than-light signals | Nothing | Environment suppresses interference.
 
 ## Many-worlds interpretation
 S: The many-worlds interpretation, proposed by Hugh Everett in 1957, takes the quantum wavefunction literally and denies collapse. Every possible measurement outcome occurs, each in a separate branch of reality, which raises deep questions about probability and identity.
@@ -328,8 +328,8 @@ K: Many-worlds keeps only unitary evolution; outcomes all occur in branches, but
 !: "Worlds" are not separately created universes but effectively independent components of one universal wavefunction.
 Q: Who proposed the many-worlds interpretation? | Hugh Everett III, in 1957.
 Q: What is the probability problem in many-worlds? | Explaining why Born-rule weights act as probabilities when all outcomes occur.
-M1: Many-worlds evolution is: | Always unitary | Sometimes collapsing | Random | Classical | No collapse postulate.
-M2: Branches are separated by: | Decoherence | Space | Gravity | Time travel | Interference suppressed.
+M1#physics-u50-13-q1: Many-worlds evolution is: | Always unitary | Sometimes collapsing | Random | Classical | No collapse postulate.
+M2#physics-u50-13-q2: Branches are separated by: | Decoherence | Space | Gravity | Time travel | Interference suppressed.
 
 ## Pilot-wave theory
 S: Pilot-wave theory, developed by de Broglie (1927) and revived by David Bohm (1952), says particles always have definite positions, guided by the wavefunction. It reproduces quantum predictions deterministically, at the price of explicit nonlocality.
@@ -355,8 +355,8 @@ K: Pilot-wave theory gives definite particle trajectories guided by the wavefunc
 !: Bohmian mechanics isn't a classical theory; its nonlocal quantum potential has no classical analogue.
 Q: What is the guidance equation? | The rule giving particle velocities from the wavefunction's phase gradient.
 Q: What is quantum equilibrium? | Particle positions distributed according to |ψ|^{2}, reproducing quantum predictions.
-M1: Pilot-wave theory was revived by: | David Bohm | Hugh Everett | Niels Bohr | Erwin Schrödinger | 1952.
-M2: Bohmian mechanics is: | Deterministic and nonlocal | Local and random | Classical | Collapse-based | Hidden positions.
+M1#physics-u50-14-q1: Pilot-wave theory was revived by: | David Bohm | Hugh Everett | Niels Bohr | Erwin Schrödinger | 1952.
+M2#physics-u50-14-q2: Bohmian mechanics is: | Deterministic and nonlocal | Local and random | Classical | Collapse-based | Hidden positions.
 
 ## Objective collapse theories
 S: Objective collapse theories modify quantum mechanics so that wavefunctions collapse spontaneously and physically, rarely for single particles but rapidly for large objects. They solve the measurement problem with new physics that can be tested experimentally.
@@ -379,8 +379,8 @@ K: Collapse models make wavefunction collapse a real physical process, negligibl
 !: Collapse theories aren't just interpretations; they predict deviations from standard quantum mechanics.
 Q: What does GRW stand for? | Ghirardi–Rimini–Weber spontaneous localisation theory.
 Q: How are collapse models tested? | By searching for deviations like spontaneous heating, X-ray emission or failed interference of large objects.
-M1: In GRW, macroscopic objects collapse quickly because: | Collapse rates add over many particles | Gravity is stronger | They are classical | Observers watch them | Nλ amplification.
-M2: Diósi–Penrose links collapse to: | Gravity | Electric charge | Spin | Temperature | Gravitational self-energy.
+M1#physics-u50-15-q1: In GRW, macroscopic objects collapse quickly because: | Collapse rates add over many particles | Gravity is stronger | They are classical | Observers watch them | Nλ amplification.
+M2#physics-u50-15-q2: Diósi–Penrose links collapse to: | Gravity | Electric charge | Spin | Temperature | Gravitational self-energy.
 
 ## Quantum measurement problem
 S: The quantum measurement problem asks how definite outcomes arise from quantum superpositions, given that the Schrödinger equation never produces a single result. It is the central puzzle of quantum foundations, and different interpretations offer different solutions.
@@ -405,8 +405,8 @@ K: The measurement problem is the conflict between linear evolution and definite
 !: Decoherence alone doesn't solve the measurement problem; it still leaves an improper mixture of possible outcomes.
 Q: What is Schrödinger's cat meant to illustrate? | The apparent absurdity of applying superposition to macroscopic objects.
 Q: What does decoherence explain and not explain? | It explains suppression of interference, not why a single outcome occurs.
-M1: Many-worlds resolves the problem by denying: | That measurements have single outcomes | Linear evolution | Completeness | Probability | Every outcome occurs.
-M2: Collapse theories deny: | Purely linear evolution | Definite outcomes | Completeness | Probabilities | Add nonlinear collapse.
+M1#physics-u50-16-q1: Many-worlds resolves the problem by denying: | That measurements have single outcomes | Linear evolution | Completeness | Probability | Every outcome occurs.
+M2#physics-u50-16-q2: Collapse theories deny: | Purely linear evolution | Definite outcomes | Completeness | Probabilities | Add nonlinear collapse.
 
 ## Locality and nonlocality
 S: Locality means things are influenced only by their immediate surroundings, with influences spreading no faster than light. Quantum entanglement produces correlations that violate locality assumptions, though without allowing faster-than-light signalling.
@@ -430,8 +430,8 @@ K: Quantum mechanics violates local causality but respects no-signalling; this "
 !: Nonlocal correlations aren't faster-than-light communication; they can't be used to send messages.
 Q: What is the no-signalling theorem? | Local operations on one part of an entangled system cannot change the measurement statistics of the distant part.
 Q: What did EPR argue? | That quantum mechanics must be incomplete if locality and realism hold.
-M1: Quantum mechanics violates: | Bell's local causality | Signal locality | Energy conservation | Relativity of simultaneity | Without signalling.
-M2: Superdeterminism rejects: | Statistical independence of measurement choices | Determinism | Locality always | Quantum mechanics | Settings correlated with hidden variables.
+M1#physics-u50-17-q1: Quantum mechanics violates: | Bell's local causality | Signal locality | Energy conservation | Relativity of simultaneity | Without signalling.
+M2#physics-u50-17-q2: Superdeterminism rejects: | Statistical independence of measurement choices | Determinism | Locality always | Quantum mechanics | Settings correlated with hidden variables.
 
 ## Bell's theorem
 S: Bell's theorem (1964) proves that no theory based on local hidden variables can reproduce all predictions of quantum mechanics. Experiments confirm quantum predictions, so nature is not locally realistic in Bell's sense, a profound result about reality.
@@ -458,8 +458,8 @@ K: Bell's theorem shows local hidden variables can't explain quantum correlation
 !: Bell's theorem doesn't prove quantum mechanics correct; it shows local realism conflicts with experiment.
 Q: What does the CHSH inequality limit? | Correlations in local hidden-variable theories to |S| ≤ 2.
 Q: What did the 2015 experiments achieve? | Bell tests closing the main loopholes simultaneously.
-M1: Tsirelson's bound is: | 2√2 | 2 | 4 | 1 | Maximum quantum CHSH value.
-M2: The 2022 physics Nobel recognised: | Bell test experiments | The Higgs | Gravitational waves | Exoplanets | Aspect, Clauser, Zeilinger.
+M1#physics-u50-18-q1: Tsirelson's bound is: | 2√2 | 2 | 4 | 1 | Maximum quantum CHSH value.
+M2#physics-u50-18-q2: The 2022 physics Nobel recognised: | Bell test experiments | The Higgs | Gravitational waves | Exoplanets | Aspect, Clauser, Zeilinger.
 
 ## Scientific explanation and unification
 S: Unification, explaining diverse phenomena with fewer principles, has driven physics from Newton's gravity to Maxwell's electromagnetism and the electroweak theory. Philosophers ask why unification counts as explanatory and whether a final "theory of everything" is possible.
@@ -485,8 +485,8 @@ K: Unification explains by reducing many phenomena to few principles and often p
 !: Unification is a powerful guide but not guaranteed; nature might not reduce to one elegant theory.
 Q: What did the electroweak theory unify? | The electromagnetic and weak forces.
 Q: What prediction distinguishes many GUTs? | Proton decay.
-M1: Who argued nature may be "dappled"? | Nancy Cartwright | Einstein | Weinberg | Feynman | Plurality of laws.
-M2: Newton's unification combined: | Terrestrial and celestial mechanics | Electricity and magnetism | Space and time | Weak and strong forces | Apple and Moon.
+M1#physics-u50-19-q1: Who argued nature may be "dappled"? | Nancy Cartwright | Einstein | Weinberg | Feynman | Plurality of laws.
+M2#physics-u50-19-q2: Newton's unification combined: | Terrestrial and celestial mechanics | Electricity and magnetism | Space and time | Weak and strong forces | Apple and Moon.
 
 ## Symmetry and physical law
 S: Symmetry is one of physics's deepest principles: laws stay the same under certain transformations. Symmetries determine conservation laws, constrain possible interactions, classify particles and guide theory building, and philosophers ask why symmetry has such power.
@@ -513,8 +513,8 @@ K: Symmetries constrain laws, predict particles and give conservation laws; thei
 !: Local gauge symmetry is a redundancy, not an observable transformation; only gauge-invariant quantities are physical.
 Q: What did Wigner call "unreasonable"? | The effectiveness of mathematics in describing the natural sciences.
 Q: How do symmetries predict particles? | Missing members of symmetry multiplets indicate particles yet to be found, like the Ω^{−}.
-M1: CPT symmetry is: | Respected by all local Lorentz-invariant QFTs | Always violated | Only in gravity | A gauge symmetry | CPT theorem.
-M2: Symmetry breaking explains: | How symmetric laws give asymmetric structures | Why laws vanish | Conservation laws | Nothing | Magnets, Higgs, crystals.
+M1#physics-u50-20-q1: CPT symmetry is: | Respected by all local Lorentz-invariant QFTs | Always violated | Only in gravity | A gauge symmetry | CPT theorem.
+M2#physics-u50-20-q2: Symmetry breaking explains: | How symmetric laws give asymmetric structures | Why laws vanish | Conservation laws | Nothing | Magnets, Higgs, crystals.
 
 ## Model dependence and idealisation
 S: Physics relies on models that simplify reality: frictionless planes, point masses, ideal gases, perfect crystals. Idealisations make problems solvable and reveal essentials, but understanding their limits is crucial for reliable predictions.
@@ -539,8 +539,8 @@ K: Idealisations simplify to reveal essentials; reliable use requires knowing as
 !: Forgetting a model's assumptions leads to applying it outside its domain, often with large errors.
 Q: What is a Galilean idealisation? | A deliberate simplification later corrected by adding back neglected factors.
 Q: Why are nuclear models an example of multiple-models idealisation? | The liquid-drop and shell models make incompatible assumptions but each explains different phenomena.
-M1: The thermodynamic limit means: | N → ∞ with density fixed | N = 1 | T → 0 | Zero volume | Needed for sharp transitions.
-M2: Model-dependent realism was proposed by: | Hawking and Mlodinow | Popper | Kuhn | Bohr | Grand Design.
+M1#physics-u50-21-q1: The thermodynamic limit means: | N → ∞ with density fixed | N = 1 | T → 0 | Zero volume | Needed for sharp transitions.
+M2#physics-u50-21-q2: Model-dependent realism was proposed by: | Hawking and Mlodinow | Popper | Kuhn | Bohr | Grand Design.
 
 ## Underdetermination of theory by evidence
 S: Underdetermination says that evidence alone may not decide between rival theories: different theories can fit the same data. It raises questions about how physicists choose theories and whether we can know which theory is true.
@@ -564,8 +564,8 @@ K: Data can fit multiple theories; physicists use theoretical virtues and new ev
 !: Underdetermination doesn't mean "anything goes"; rival theories still must fit all data and meet stringent standards.
 Q: What is the Duhem–Quine thesis? | Hypotheses are tested only together with auxiliary assumptions, so a failed test doesn't single out which is wrong.
 Q: What are theoretical virtues? | Criteria like simplicity, unification and fruitfulness used to choose among theories that fit the data.
-M1: Quantum interpretations are an example of: | Possible permanent underdetermination | Transient only | Falsified theories | Measurement errors | Same predictions.
-M2: The Bullet Cluster helped resolve: | Dark matter vs modified gravity | Quantum interpretations | Aether vs relativity | Copernican debates | Mass separated from gas.
+M1#physics-u50-22-q1: Quantum interpretations are an example of: | Possible permanent underdetermination | Transient only | Falsified theories | Measurement errors | Same predictions.
+M2#physics-u50-22-q2: The Bullet Cluster helped resolve: | Dark matter vs modified gravity | Quantum interpretations | Aether vs relativity | Copernican debates | Mass separated from gas.
 
 ## The limits of scientific knowledge
 S: Physics has explained a vast range of phenomena, but are there limits to what it can know? Limits may come from practical measurement, chaos, quantum uncertainty, cosmological horizons, mathematics itself and the nature of explanation.
@@ -591,6 +591,6 @@ K: Knowledge faces physical, logical and conceptual limits, yet identifying them
 !: Limits on measurement or computation are not failures of science; they are discoveries about the world.
 Q: What does Gödel's incompleteness theorem imply for physics? | Formal systems powerful enough for arithmetic have unprovable truths, suggesting possible limits to axiomatised physics.
 Q: Why can't we see beyond the cosmological horizon? | Light from there hasn't had time to reach us since the Big Bang (and with acceleration, some never will).
-M1: The spectral gap problem was shown to be: | Undecidable | Easy | Solved for all systems | Irrelevant | Cubitt, Pérez-García, Wolf 2015.
-M2: Fine-tuning arguments ask why: | Physical constants allow complex structures | Experiments have errors | Theories are simple | Computers fail | Anthropic reasoning.
+M1#physics-u50-23-q1: The spectral gap problem was shown to be: | Undecidable | Easy | Solved for all systems | Irrelevant | Cubitt, Pérez-García, Wolf 2015.
+M2#physics-u50-23-q2: Fine-tuning arguments ask why: | Physical constants allow complex structures | Experiments have errors | Theories are simple | Computers fail | Anthropic reasoning.
 `;

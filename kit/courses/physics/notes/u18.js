@@ -19,8 +19,8 @@ D: phys-u18-spreading
 !: EM waves don't need a medium; the 19th-century "luminiferous ether" was abandoned after Michelson–Morley and special relativity.
 Q: What produces electromagnetic waves? | Accelerating charges.
 Q: Why does light travel slower in glass? | The field drives bound electrons to re-radiate, and the superposed wave advances more slowly.
-M1: EM waves are: | Transverse | Longitudinal | Both | Neither | E and B perpendicular to travel.
-M2: The amplitude of E from a point source falls as: | 1/r | 1/r^{2} | 1/r^{3} | Constant | Intensity ∝ 1/r^{2}.
+M1#physics-u18-01-q1: EM waves are: | Transverse | Longitudinal | Both | Neither | E and B perpendicular to travel.
+M2#physics-u18-01-q2: The amplitude of E from a point source falls as: | 1/r | 1/r^{2} | 1/r^{3} | Constant | Intensity ∝ 1/r^{2}.
 
 ## Speed of light
 S: The speed of light in vacuum, c = 299 792 458 m s^{-1}, is a universal constant: the same for all observers and the maximum speed for any signal. Since 1983 it's exact by definition, fixing the metre.
@@ -41,8 +41,8 @@ X: A signal to the Moon (3.84 × 10^{8} m) and back. Delay?
 !: "Light-year" is a distance, not a time.
 Q: Why is the speed of light exact? | Since 1983 the metre has been defined from it.
 Q: How did Rømer estimate the speed of light? | From delays in the eclipses of Io when Jupiter was farther from Earth.
-M1: c in m s^{-1} is: | 299 792 458 | 300 000 000 exactly | 3 × 10^{6} | 186 000 | Defined value.
-M2: Light has been slowed to walking speed in: | A Bose–Einstein condensate | Glass | Water | Diamond | Electromagnetically induced transparency.
+M1#physics-u18-02-q1: c in m s^{-1} is: | 299 792 458 | 300 000 000 exactly | 3 × 10^{6} | 186 000 | Defined value.
+M2#physics-u18-02-q2: Light has been slowed to walking speed in: | A Bose–Einstein condensate | Glass | Water | Diamond | Electromagnetically induced transparency.
 
 ## Electric and magnetic field relationships
 S: In an electromagnetic wave, the electric and magnetic fields are locked together: perpendicular to each other and the direction of travel, in phase, and with sizes in the fixed ratio E/B = c.
@@ -59,8 +59,8 @@ X: Sunlight at Earth has E_{rms} ≈ 720 V m^{-1}. B_{rms}?
 !: B in a wave is numerically small in tesla, but its energy density equals E's: don't conclude that the magnetic part is negligible.
 Q: How are E and B related in an EM wave in vacuum? | Perpendicular, in phase, with E = cB.
 Q: Which direction does an EM wave travel? | Along E × B.
-M1: An EM wave has E_{0} = 300 V m^{-1}. B_{0} = ? | 1 μT | 300 T | 1 mT | 9 × 10^{10} T | E/c.
-M2: In a plane EM wave, the electric and magnetic energy densities are: | Equal | E's is larger | B's is larger | Zero | ε_{0}E^{2} = B^{2}/μ_{0}.
+M1#physics-u18-03-q1: An EM wave has E_{0} = 300 V m^{-1}. B_{0} = ? | 1 μT | 300 T | 1 mT | 9 × 10^{10} T | E/c.
+M2#physics-u18-03-q2: In a plane EM wave, the electric and magnetic energy densities are: | Equal | E's is larger | B's is larger | Zero | ε_{0}E^{2} = B^{2}/μ_{0}.
 
 ## Electromagnetic wave equation
 S: Combining Maxwell's equations in empty space gives a wave equation for E and B, with wave speed 1/√(μ_{0}ε_{0}) = c. Its plane-wave solutions describe all electromagnetic radiation.
@@ -82,8 +82,8 @@ D: phys-u18-plasma-dispersion
 !: The wave equation in vacuum is non-dispersive: all frequencies travel at c.
 Q: What wave speed comes from Maxwell's equations? | c = 1/√(μ_{0}ε_{0}).
 Q: Why do AM/shortwave signals reflect off the ionosphere while FM doesn't? | Frequencies below the plasma frequency reflect; FM frequencies are above it.
-M1: In vacuum, ω and k are related by: | ω = ck | ω = ck^{2} | ω = c/k | ω = constant | Non-dispersive.
-M2: EM waves in a conductor: | Decay within a skin depth | Travel unattenuated | Speed up | Become longitudinal | Damping by currents.
+M1#physics-u18-04-q1: In vacuum, ω and k are related by: | ω = ck | ω = ck^{2} | ω = c/k | ω = constant | Non-dispersive.
+M2#physics-u18-04-q2: EM waves in a conductor: | Decay within a skin depth | Travel unattenuated | Speed up | Become longitudinal | Damping by currents.
 
 ## Electromagnetic spectrum
 S: Electromagnetic waves range from radio waves kilometres long to gamma rays smaller than nuclei. They're all the same phenomenon; frequency (and photon energy) decides how they're produced, how they interact with matter, and what they're used for.
@@ -106,8 +106,8 @@ D: phys-u18-spectrum
 !: All EM waves travel at c in vacuum; only frequency and wavelength differ.
 Q: List the EM spectrum from longest to shortest wavelength. | Radio, microwave, infrared, visible, ultraviolet, X-ray, gamma.
 Q: Why must X-ray telescopes be in space? | The atmosphere absorbs X-rays.
-M1: Photon energy of 124 nm UV: | 10 eV | 1 eV | 100 eV | 0.1 eV | 1240/124.
-M2: Which band has the highest frequency? | Gamma rays | Radio | Visible | Microwave | Shortest λ.
+M1#physics-u18-05-q1: Photon energy of 124 nm UV: | 10 eV | 1 eV | 100 eV | 0.1 eV | 1240/124.
+M2#physics-u18-05-q2: Which band has the highest frequency? | Gamma rays | Radio | Visible | Microwave | Shortest λ.
 
 ## Radio waves
 S: Radio waves have the longest wavelengths in the EM spectrum. Produced by oscillating currents in antennas, they carry broadcasting, mobile phones, Wi-Fi, navigation and much of astronomy.
@@ -128,8 +128,8 @@ X: Wavelength of a 100 MHz FM signal? Suitable antenna length (half-wave)?
 !: Radio waves aren't sound; they're EM waves that carry sound information after demodulation.
 Q: Why does HF radio travel round the world? | It reflects off the ionosphere.
 Q: What does the 21 cm line reveal? | The distribution of neutral hydrogen in galaxies.
-M1: Wi-Fi at 2.4 GHz has wavelength: | 12.5 cm | 1.25 m | 1.25 cm | 125 m | c/f.
-M2: FM has better noise immunity than AM because: | Noise mostly affects amplitude | FM is louder | FM is lower frequency | FM uses light | Information in frequency.
+M1#physics-u18-06-q1: Wi-Fi at 2.4 GHz has wavelength: | 12.5 cm | 1.25 m | 1.25 cm | 125 m | c/f.
+M2#physics-u18-06-q2: FM has better noise immunity than AM because: | Noise mostly affects amplitude | FM is louder | FM is lower frequency | FM uses light | Information in frequency.
 
 ## Microwaves
 S: Microwaves span wavelengths from about 1 mm to 1 m. They heat food, carry mobile and satellite communications, power radar, and reveal the cosmic microwave background left over from the Big Bang.
@@ -149,8 +149,8 @@ X: A radar echo returns after 200 μs. Range?
 !: Microwave ovens heat water molecules mainly by dielectric loss, not at a special "resonance" of water; 2.45 GHz is chosen for penetration and regulation.
 Q: How do microwave ovens heat food? | The oscillating field rotates polar water molecules; dielectric friction produces heat.
 Q: Why are microwaves non-ionising? | Their photon energies are far too small to break bonds or ionise atoms.
-M1: The CMB is observed mainly as: | Microwaves | X-rays | Visible light | Gamma rays | 2.7 K.
-M2: Radar measures distance from: | Echo time delay | Brightness | Colour | Polarisation only | d = ct/2.
+M1#physics-u18-07-q1: The CMB is observed mainly as: | Microwaves | X-rays | Visible light | Gamma rays | 2.7 K.
+M2#physics-u18-07-q2: Radar measures distance from: | Echo time delay | Brightness | Colour | Polarisation only | d = ct/2.
 
 ## Infrared radiation
 S: Infrared radiation lies between visible light and microwaves. Every warm object emits it, making it the radiation of heat, night vision and thermal imaging, as well as remote controls and fibre-optic communications.
@@ -172,8 +172,8 @@ D: phys-u18-person-thermal
 !: Glass is transparent to visible but opaque to thermal infrared; thermal cameras use germanium or chalcogenide lenses.
 Q: Who discovered infrared radiation and how? | William Herschel, by finding a thermometer heated beyond the red end of the spectrum.
 Q: Why does JWST observe in infrared? | It sees through dust and detects light from distant galaxies redshifted from visible to infrared.
-M1: Fibre-optic communication commonly uses: | 1.55 μm | 10 μm | 500 nm | 1 mm | Low loss window.
-M2: Thermal cameras detect mostly: | 8–14 μm | 400–700 nm | 1 mm | X-rays | Room-temperature emission.
+M1#physics-u18-08-q1: Fibre-optic communication commonly uses: | 1.55 μm | 10 μm | 500 nm | 1 mm | Low loss window.
+M2#physics-u18-08-q2: Thermal cameras detect mostly: | 8–14 μm | 400–700 nm | 1 mm | X-rays | Room-temperature emission.
 
 ## Visible light
 S: Visible light is the narrow band of EM wavelengths, about 400–700 nm, that human eyes detect. It's where the Sun's output peaks and where the atmosphere and water are transparent, which is probably why eyes evolved to use it.
@@ -193,8 +193,8 @@ D: phys-u18-rayleigh
 !: An object's colour depends on the light illuminating it; a red apple under blue light looks dark.
 Q: Why is the sky blue? | Air molecules scatter shorter (blue) wavelengths much more strongly (Rayleigh, ∝ 1/λ^{4}).
 Q: How do screens make colours? | Additive mixing of red, green and blue light.
-M1: The visible range is about: | 400–700 nm | 100–400 nm | 700–1000 nm | 1–10 μm | Human eye sensitivity.
-M2: Clouds look white because: | Large droplets scatter all wavelengths similarly | They emit white light | They absorb blue | They're cold | Mie scattering.
+M1#physics-u18-09-q1: The visible range is about: | 400–700 nm | 100–400 nm | 700–1000 nm | 1–10 μm | Human eye sensitivity.
+M2#physics-u18-09-q2: Clouds look white because: | Large droplets scatter all wavelengths similarly | They emit white light | They absorb blue | They're cold | Mie scattering.
 
 ## Ultraviolet radiation
 S: Ultraviolet radiation has wavelengths shorter than violet light, 10–400 nm. Its photons carry enough energy to break chemical bonds, so it causes sunburn and skin cancer but also sterilises water and makes vitamin D.
@@ -216,8 +216,8 @@ D: phys-u18-uv-bands
 !: Clouds don't block much UV; you can burn on cloudy days.
 Q: Why is UVC used for sterilisation? | Its photons damage microbial DNA.
 Q: What does the ozone layer absorb? | Most UVB and all UVC.
-M1: Which UV band causes most sunburn? | UVB | UVA | UVC | EUV | 280–315 nm.
-M2: EUV lithography uses: | 13.5 nm light | 254 nm | 400 nm | 1 nm | Advanced chipmaking.
+M1#physics-u18-10-q1: Which UV band causes most sunburn? | UVB | UVA | UVC | EUV | 280–315 nm.
+M2#physics-u18-10-q2: EUV lithography uses: | 13.5 nm light | 254 nm | 400 nm | 1 nm | Advanced chipmaking.
 
 ## X-rays
 S: X-rays are high-energy photons (about 100 eV to 100 keV) produced by decelerating electrons and by inner-shell electron transitions. They pass through soft tissue but are absorbed by bone and metal, revolutionising medicine since 1895.
@@ -241,8 +241,8 @@ D: phys-u18-xray-continuum
 !: The continuous X-ray spectrum's cut-off depends only on the tube voltage, not the target material.
 Q: How are X-rays produced in a tube? | Fast electrons decelerate in a metal target (bremsstrahlung) and knock out inner electrons (characteristic lines).
 Q: Why does bone show up on X-rays? | Calcium's higher atomic number absorbs X-rays far more (photoelectric effect ∝ Z^{3}).
-M1: Who discovered X-rays? | Röntgen (1895) | Curie | Becquerel | Thomson | Nobel 1901.
-M2: X-ray crystallography reveals: | Atomic arrangements in crystals | Temperatures | Magnetic fields | Chemical reactions in real time only | Diffraction by lattices.
+M1#physics-u18-11-q1: Who discovered X-rays? | Röntgen (1895) | Curie | Becquerel | Thomson | Nobel 1901.
+M2#physics-u18-11-q2: X-ray crystallography reveals: | Atomic arrangements in crystals | Temperatures | Magnetic fields | Chemical reactions in real time only | Diffraction by lattices.
 
 ## Gamma rays
 S: Gamma rays are the most energetic photons, emitted by atomic nuclei, particle annihilations and the most violent events in the universe. They're highly penetrating and ionising.
@@ -264,8 +264,8 @@ D: phys-u18-gamma-lead
 !: Gamma rays and X-rays overlap in energy; the name reflects the source (nuclear vs electronic), not a sharp energy boundary.
 Q: Where do gamma rays come from? | Nuclear transitions, particle annihilation and high-energy astrophysical processes.
 Q: How do PET scanners work? | Positrons from a tracer annihilate with electrons; detectors catch the back-to-back 511 keV gamma pairs.
-M1: Pair production requires photon energy above: | 1.022 MeV | 511 keV | 10 keV | 100 MeV | 2m_{e}c^{2}.
-M2: The best shielding for gamma rays is: | Dense, high-Z material like lead | Paper | Aluminium foil | Plastic | High attenuation.
+M1#physics-u18-12-q1: Pair production requires photon energy above: | 1.022 MeV | 511 keV | 10 keV | 100 MeV | 2m_{e}c^{2}.
+M2#physics-u18-12-q2: The best shielding for gamma rays is: | Dense, high-Z material like lead | Paper | Aluminium foil | Plastic | High attenuation.
 
 ## Polarisation
 S: The polarisation of an electromagnetic wave is the direction in which its electric field oscillates. Light can be unpolarised, linearly, circularly or elliptically polarised, and controlling polarisation is central to optics and communications.
@@ -291,8 +291,8 @@ D: phys-u18-three-polarisers
 !: Polarisation applies to transverse waves only; it was key evidence that light is transverse.
 Q: What does a quarter-wave plate do? | Introduces a 90° phase shift between two polarisation components, turning linear into circular polarisation (at 45°).
 Q: What is Faraday rotation? | Rotation of the plane of polarisation by a magnetic field along the propagation direction.
-M1: Crossed polarisers with a third at 45° between them transmit: | 1/8 of unpolarised intensity | Nothing | Half | All | Malus twice.
-M2: 3D cinema glasses usually use: | Circular polarisation | Colour filters | Shutters only | Diffraction | Left and right handed.
+M1#physics-u18-13-q1: Crossed polarisers with a third at 45° between them transmit: | 1/8 of unpolarised intensity | Nothing | Half | All | Malus twice.
+M2#physics-u18-13-q2: 3D cinema glasses usually use: | Circular polarisation | Colour filters | Shutters only | Diffraction | Left and right handed.
 
 ## Reflection and transmission
 S: When an EM wave meets a boundary, part reflects and part transmits. The amounts depend on the refractive indices, the angle and the polarisation, as given by the Fresnel equations.
@@ -315,8 +315,8 @@ D: phys-u18-lens-transmission
 !: Total internal reflection isn't perfectly "total" when another medium comes within a wavelength: light can tunnel across.
 Q: What fraction of light reflects from glass at normal incidence? | About 4%.
 Q: What is an evanescent wave? | An exponentially decaying field beyond a totally internally reflecting surface.
-M1: At Brewster's angle, reflected light is: | Completely s-polarised | Unpolarised | Completely p-polarised | Absent entirely | p reflection vanishes.
-M2: Dielectric mirrors work by: | Constructive interference of reflections from many layers | Metallic reflection | Absorption | Diffraction gratings | Multilayer stacks.
+M1#physics-u18-14-q1: At Brewster's angle, reflected light is: | Completely s-polarised | Unpolarised | Completely p-polarised | Absent entirely | p reflection vanishes.
+M2#physics-u18-14-q2: Dielectric mirrors work by: | Constructive interference of reflections from many layers | Metallic reflection | Absorption | Diffraction gratings | Multilayer stacks.
 
 ## Refraction
 S: Refraction bends light as it crosses into a medium of different refractive index, because its speed changes. It makes lenses, prisms, fibres and rainbows work, and creates mirages and the twinkling of stars.
@@ -338,8 +338,8 @@ D: phys-u18-water-surface
 !: Light doesn't bend because it "chooses" a shorter path; Fermat's principle describes the result, but the cause is the change of speed at the interface.
 Q: What is refractive index? | The ratio of the speed of light in vacuum to its speed in the medium.
 Q: Why do stars twinkle? | Turbulent air with varying refractive index deflects their light randomly.
-M1: Light entering glass from air bends: | Toward the normal | Away from the normal | Not at all | Backwards | Slower medium.
-M2: Mirages on hot roads occur because hot air near the surface has: | Lower refractive index | Higher refractive index | No refractive index | Negative index | Light curves upward.
+M1#physics-u18-15-q1: Light entering glass from air bends: | Toward the normal | Away from the normal | Not at all | Backwards | Slower medium.
+M2#physics-u18-15-q2: Mirages on hot roads occur because hot air near the surface has: | Lower refractive index | Higher refractive index | No refractive index | Negative index | Light curves upward.
 
 ## Dispersion
 S: Dispersion is the variation of a medium's refractive index with frequency. It separates colours in prisms, makes rainbows, causes chromatic aberration, and spreads optical pulses in fibres.
@@ -358,8 +358,8 @@ X: Crown glass has n = 1.514 (blue) and 1.509 (red). Angular separation for a 60
 !: Dispersion is about speed depending on frequency, not about light being "split" by the prism; each colour was already there.
 Q: What is anomalous dispersion? | A region near absorption where refractive index decreases with increasing frequency.
 Q: How is chromatic aberration corrected? | With achromatic doublets combining glasses of different dispersion.
-M1: In normal dispersion, which colour has the higher refractive index? | Blue | Red | Both equal | Neither | n rises with frequency.
-M2: Kramers–Kronig relations connect: | Absorption and refractive index | Reflection and transmission | E and B | Energy and momentum | Causality.
+M1#physics-u18-16-q1: In normal dispersion, which colour has the higher refractive index? | Blue | Red | Both equal | Neither | n rises with frequency.
+M2#physics-u18-16-q2: Kramers–Kronig relations connect: | Absorption and refractive index | Reflection and transmission | E and B | Energy and momentum | Causality.
 
 ## Absorption
 S: Matter absorbs electromagnetic waves when their frequency matches a way for the material to take up energy: electronic transitions, molecular vibrations and rotations, or free charges. Absorption decides what's transparent, what's coloured and what heats up.
@@ -381,8 +381,8 @@ D: phys-u18-beer-lambert
 !: Absorption and scattering both remove light from a beam; only absorption converts it to heat or chemical energy.
 Q: State the Beer–Lambert law. | Intensity decays exponentially with path length: I = I_{0}e^{−αx}.
 Q: How does a pulse oximeter work? | It compares red and infrared absorption of blood, which differ for oxygenated and deoxygenated haemoglobin.
-M1: Greenhouse gases absorb mainly via: | Molecular vibrations in the infrared | Electronic transitions in visible | Nuclear transitions | Free electrons | IR vibrational bands.
-M2: Deep water looks blue partly because water: | Absorbs red light slightly | Absorbs blue | Emits blue | Is blue-tinted by salt | Weak vibrational overtone absorption.
+M1#physics-u18-17-q1: Greenhouse gases absorb mainly via: | Molecular vibrations in the infrared | Electronic transitions in visible | Nuclear transitions | Free electrons | IR vibrational bands.
+M2#physics-u18-17-q2: Deep water looks blue partly because water: | Absorbs red light slightly | Absorbs blue | Emits blue | Is blue-tinted by salt | Weak vibrational overtone absorption.
 
 ## Electromagnetic wave intensity
 S: The intensity of an electromagnetic wave is the average power it carries per unit area. It depends on the square of the field amplitude and sets everything from the brightness of stars to the dose from a laser.
@@ -403,8 +403,8 @@ X: Number of photons per second from a 5 mW red laser (650 nm)?
 !: A small laser can be more dangerous to the eye than the Sun because its power is concentrated into a tiny area.
 Q: How does EM intensity depend on field amplitude? | I ∝ E_{0}^{2}.
 Q: How is photon flux found from intensity? | Divide intensity by photon energy hf.
-M1: Doubling E_{0} multiplies intensity by: | 4 | 2 | √2 | 8 | ∝ E^{2}.
-M2: Intensity from an isotropic 100 W source at 10 m: | 0.08 W m^{-2} | 10 W m^{-2} | 1 W m^{-2} | 0.8 W m^{-2} | 100/(4π × 100).
+M1#physics-u18-18-q1: Doubling E_{0} multiplies intensity by: | 4 | 2 | √2 | 8 | ∝ E^{2}.
+M2#physics-u18-18-q2: Intensity from an isotropic 100 W source at 10 m: | 0.08 W m^{-2} | 10 W m^{-2} | 1 W m^{-2} | 0.8 W m^{-2} | 100/(4π × 100).
 
 ## Poynting vector
 S: The Poynting vector S = E × B/μ_{0} describes the direction and rate of electromagnetic energy flow. It shows where energy goes in waves, antennas and even simple circuits.
@@ -425,8 +425,8 @@ X: S at the surface of a resistor (R, length L, radius a) carrying I.
 !: The Poynting vector can be non-zero in static fields; only its divergence matters for energy conservation.
 Q: What does the Poynting vector describe? | The rate and direction of electromagnetic energy flow per unit area.
 Q: Where does energy flow in a circuit according to Poynting? | Through the space around the wires, into the resistors.
-M1: S is proportional to: | E × B | E·B | E + B | E/B | Cross product.
-M2: Integrating S over a closed surface gives: | The net power leaving | Charge enclosed | Magnetic flux | Zero always | Poynting's theorem.
+M1#physics-u18-19-q1: S is proportional to: | E × B | E·B | E + B | E/B | Cross product.
+M2#physics-u18-19-q2: Integrating S over a closed surface gives: | The net power leaving | Charge enclosed | Magnetic flux | Zero always | Poynting's theorem.
 
 ## Radiation pressure
 S: Electromagnetic waves carry momentum, so they exert pressure on surfaces that absorb or reflect them. Tiny on Earth, radiation pressure shapes comet tails, holds up massive stars, propels solar sails and traps atoms.
@@ -449,8 +449,8 @@ X: Force of sunlight on a 100 m × 100 m perfectly reflecting sail at Earth's di
 !: Radiation pressure is tiny but constant and fuel-free; over months it builds up large velocity changes.
 Q: What pressure does light exert on a perfect reflector? | 2I/c.
 Q: What is the Eddington limit? | The luminosity at which radiation pressure balances gravity on ionised gas.
-M1: Light reflected from a mirror transfers momentum: | Twice that of absorption | Equal to absorption | None | Half | Reversal doubles Δp.
-M2: Optical tweezers were developed by: | Arthur Ashkin | Einstein | Maxwell | Hertz | Nobel 2018.
+M1#physics-u18-20-q1: Light reflected from a mirror transfers momentum: | Twice that of absorption | Equal to absorption | None | Half | Reversal doubles Δp.
+M2#physics-u18-20-q2: Optical tweezers were developed by: | Arthur Ashkin | Einstein | Maxwell | Hertz | Nobel 2018.
 
 ## Waveguides
 S: A waveguide is a structure that confines and guides electromagnetic waves: hollow metal pipes for microwaves, optical fibres for light. Only certain field patterns (modes) can travel, each above its own cut-off frequency.
@@ -473,8 +473,8 @@ D: phys-u18-wr90-velocities
 !: Waveguides don't carry DC or frequencies below cut-off at all, unlike two-conductor lines.
 Q: What is a waveguide's cut-off frequency? | The lowest frequency a mode can propagate at; below it the wave is evanescent.
 Q: Why use single-mode fibres for long distances? | They avoid modal dispersion, which spreads pulses.
-M1: Light is confined in an optical fibre by: | Total internal reflection | Metal walls | Absorption | Diffraction | Higher-index core.
-M2: In a waveguide, the group velocity is: | Less than c | Greater than c | Equal to c | Zero above cut-off | v_{g}v_{p} = c^{2}.
+M1#physics-u18-21-q1: Light is confined in an optical fibre by: | Total internal reflection | Metal walls | Absorption | Diffraction | Higher-index core.
+M2#physics-u18-21-q2: In a waveguide, the group velocity is: | Less than c | Greater than c | Equal to c | Zero above cut-off | v_{g}v_{p} = c^{2}.
 
 ## Antennas and radiation patterns
 S: An antenna converts electrical signals into electromagnetic waves and back. Its size, shape and arrangement determine which frequencies it handles and in which directions it radiates most strongly.
@@ -497,8 +497,8 @@ X: A 3 m dish receives 12 GHz satellite TV. Beamwidth?
 !: A bigger dish gives a narrower beam and higher gain, but needs more precise pointing.
 Q: Why is a half-wave dipole a common antenna? | It resonates efficiently at its design frequency with a convenient impedance (~73 Ω).
 Q: How do phased arrays steer beams? | By adjusting the relative phases of signals fed to many antenna elements.
-M1: A dipole antenna doesn't radiate: | Along its own axis | Perpendicular to it | In any direction | Only upward | Doughnut pattern.
-M2: Antenna reciprocity means: | Transmit and receive patterns are identical | Antennas can't receive | Gain is zero | Polarisation reverses | Same pattern both ways.
+M1#physics-u18-22-q1: A dipole antenna doesn't radiate: | Along its own axis | Perpendicular to it | In any direction | Only upward | Doughnut pattern.
+M2#physics-u18-22-q2: Antenna reciprocity means: | Transmit and receive patterns are identical | Antennas can't receive | Gain is zero | Polarisation reverses | Same pattern both ways.
 
 ## Near-field and far-field behaviour
 S: Close to an antenna or source, electromagnetic fields store energy and fall off rapidly; far away, they form radiating waves that fall as 1/r. The boundary depends on wavelength and antenna size, and it matters for measurement, wireless charging and safety.
@@ -518,8 +518,8 @@ D: phys-u18-field-regions
 !: Near-field exposure limits and measurements can't use far-field formulas like I = E^{2}/(377 Ω).
 Q: What characterises the far field? | Radiating fields with E/B = c, intensity ∝ 1/r^{2}, and a fixed angular pattern.
 Q: Why does NFC work only at short range? | It uses near-field magnetic coupling that falls off steeply with distance.
-M1: The far-field boundary is roughly: | 2D^{2}/λ | λ/2π | D | λ | Fraunhofer distance.
-M2: Near-field optical microscopy beats the diffraction limit using: | Evanescent fields | Shorter wavelengths only | Larger lenses | Polarisation | Sub-wavelength probe.
+M1#physics-u18-23-q1: The far-field boundary is roughly: | 2D^{2}/λ | λ/2π | D | λ | Fraunhofer distance.
+M2#physics-u18-23-q2: Near-field optical microscopy beats the diffraction limit using: | Evanescent fields | Shorter wavelengths only | Larger lenses | Polarisation | Sub-wavelength probe.
 
 ## Electromagnetic interference
 S: Electromagnetic interference (EMI) is unwanted electromagnetic energy disrupting electronic devices. Electromagnetic compatibility (EMC) design ensures devices neither emit too much nor are too easily disturbed.
@@ -541,8 +541,8 @@ X: Why does a cheap phone charger cause hum on an AM radio?
 !: Every fast edge in a digital circuit is a broadband emitter; slowing edges where possible reduces EMI.
 Q: Name two ways EMI couples into a circuit. | Conduction along cables and radiation through the air (also capacitive and inductive crosstalk).
 Q: What does a ferrite bead do? | Suppresses high-frequency noise currents on a cable.
-M1: Differential signalling reduces EMI because: | Interference affects both wires equally and cancels | It uses higher voltages | It's slower | It uses optical fibre | Common-mode rejection.
-M2: Electrostatic discharge is a form of: | Electromagnetic interference | Magnetic storage | Thermal noise | Shot noise only | Transient disturbance.
+M1#physics-u18-24-q1: Differential signalling reduces EMI because: | Interference affects both wires equally and cancels | It uses higher voltages | It's slower | It uses optical fibre | Common-mode rejection.
+M2#physics-u18-24-q2: Electrostatic discharge is a form of: | Electromagnetic interference | Magnetic storage | Thermal noise | Shot noise only | Transient disturbance.
 
 ## Electromagnetic shielding
 S: Shielding blocks electromagnetic fields from entering or leaving a region. How well it works depends on the frequency, the material's conductivity and permeability, and how carefully holes and seams are controlled.
@@ -567,8 +567,8 @@ D: phys-u18-skin-depth-aluminium
 !: A shield with a long slit can be almost useless at frequencies where the slit is half a wavelength long.
 Q: Why is low-frequency magnetic shielding difficult? | Skin depths are large and reflection is weak; it needs high-permeability materials to divert flux.
 Q: What limits a shield's effectiveness in practice? | Holes, seams and cable penetrations.
-M1: A shield's absorption improves with: | Greater thickness relative to skin depth | Lower conductivity | Larger holes | Lower frequency | e^{−t/δ}.
-M2: Mu-metal is used to shield: | Low-frequency magnetic fields | Light | Gamma rays | Sound | High permeability.
+M1#physics-u18-25-q1: A shield's absorption improves with: | Greater thickness relative to skin depth | Lower conductivity | Larger holes | Lower frequency | e^{−t/δ}.
+M2#physics-u18-25-q2: Mu-metal is used to shield: | Low-frequency magnetic fields | Light | Gamma rays | Sound | High permeability.
 
 ## Microwave engineering
 S: Microwave engineering designs circuits and systems at frequencies (~300 MHz–300 GHz) where wavelengths are comparable to component sizes. Wires become transmission lines, and every structure behaves like a circuit element.
@@ -591,8 +591,8 @@ D: phys-u18-reflection-coefficient
 !: At microwave frequencies, a few millimetres of wire is a significant fraction of a wavelength; ordinary circuit rules break down.
 Q: What is characteristic impedance? | The ratio of voltage to current for a wave travelling along a transmission line.
 Q: What does a VSWR of 1 mean? | Perfect matching: no reflected wave.
-M1: The standard impedance for RF test equipment is: | 50 Ω | 75 Ω | 377 Ω | 1 kΩ | Convention.
-M2: A circulator: | Routes signals between ports in one direction | Amplifies signals | Filters frequencies | Converts AC to DC | Non-reciprocal ferrite device.
+M1#physics-u18-26-q1: The standard impedance for RF test equipment is: | 50 Ω | 75 Ω | 377 Ω | 1 kΩ | Convention.
+M2#physics-u18-26-q2: A circulator: | Routes signals between ports in one direction | Amplifies signals | Filters frequencies | Converts AC to DC | Non-reciprocal ferrite device.
 
 ## Radio-frequency physics
 S: Radio-frequency (RF) physics covers electromagnetic phenomena from kHz to GHz: how RF fields interact with matter, plasmas and biological tissue, and how they're generated, transmitted and detected.
@@ -614,6 +614,6 @@ X: Thermal noise in a 1 MHz bandwidth at 290 K?
 !: RF exposure limits are set by heating; RF photons can't ionise, so concern is with absorbed power, not bond breaking.
 Q: What is SAR? | Specific absorption rate: RF power absorbed per kg of tissue.
 Q: What is the thermal noise power per hertz at room temperature? | k_{B}T ≈ 4 × 10^{-21} W Hz^{-1} (−174 dBm Hz^{-1}).
-M1: MRI at 1.5 T uses RF around: | 64 MHz | 2.4 GHz | 50 Hz | 1 THz | 42.6 MHz T^{-1}.
-M2: Satellite TV signals at ~12 GHz can drop out in heavy rain because: | Raindrops absorb and scatter the signal | The ionosphere reflects them | Clouds are conductors | The dish freezes | Rain fade.
+M1#physics-u18-27-q1: MRI at 1.5 T uses RF around: | 64 MHz | 2.4 GHz | 50 Hz | 1 THz | 42.6 MHz T^{-1}.
+M2#physics-u18-27-q2: Satellite TV signals at ~12 GHz can drop out in heavy rain because: | Raindrops absorb and scatter the signal | The ionosphere reflects them | Clouds are conductors | The dish freezes | Rain fade.
 `;

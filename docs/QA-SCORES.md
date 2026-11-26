@@ -53,7 +53,7 @@ These scores are evidence-based proxies, not judgements:
 | LitGradify | live | **70.3** | 20/20 | 14.6/20 | 8/15 | 9.7/15 | 8/10 | 0/10 | 10/10 | academic quality −10, learning experience −7, content −5.4 |
 | ProGradify | live | **70.2** | 20/20 | 14.8/20 | 8/15 | 9.4/15 | 8/10 | 0/10 | 10/10 | academic quality −10, learning experience −7, engineering −5.6 |
 | InternshipGradify | live | **69.2** | 20/20 | 13.8/20 | 8/15 | 9.4/15 | 8/10 | 0/10 | 10/10 | academic quality −10, learning experience −7, content −6.2 |
-| TechGradify · ForgeLab | external | **67.5** | 20/20 | 8.1/20 | 8/15 | 13.4/15 | 8/10 | 0/10 | 10/10 | content −11.9, academic quality −10, learning experience −7 |
+| TechGradify | external | **67.5** | 20/20 | 8.1/20 | 8/15 | 13.4/15 | 8/10 | 0/10 | 10/10 | content −11.9, academic quality −10, learning experience −7 |
 | Klerio | external | **8** | 0/20 | 0/20 | 0/15 | 0/15 | 8/10 | 0/10 | 0/10 | functionality −20, content −20, learning experience −15 |
 
 ## Rules

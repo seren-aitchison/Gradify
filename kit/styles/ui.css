@@ -487,6 +487,8 @@ html.cx-focus .gx-ctxbar { display: none; }
 /* ---------- sections that fold (kit/ui/disclosure.js wireSections) ---------- */
 .gx-sech { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; margin: 0; padding: 0; border: 0; background: none; color: inherit; font: inherit; letter-spacing: inherit; text-align: left; cursor: pointer; }
 .gx-sech > span { min-width: 0; }
+:is(h2, h3, h4):has(> .gx-sech) { display: flex; align-items: center; }
+:is(h2, h3, h4) > .gx-sech { flex: 1; min-width: 0; }
 .gx-sech:focus-visible { outline: 2px solid var(--fg); outline-offset: 4px; border-radius: 6px; }
 .gx-sechv { flex: none; width: 20px; height: 20px; color: var(--faint); transform: rotate(90deg); transition: transform .18s; }
 .gx-sech:hover .gx-sechv { color: var(--fg); }

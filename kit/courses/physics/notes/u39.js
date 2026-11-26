@@ -30,8 +30,8 @@ K: Correct, tested and clearly written code matters more than clever tricks; res
 !: Never test floating-point equality with ==; use a tolerance such as abs(a − b) < 1e-12 × scale.
 Q: What is machine epsilon in double precision? | About 2.2 × 10^{-16}.
 Q: What is catastrophic cancellation? | Loss of significant digits when subtracting nearly equal numbers.
-M1: Double precision gives about: | 16 significant digits | 7 digits | 32 digits | 3 digits | 53-bit mantissa.
-M2: Before optimising code you should: | Profile it | Rewrite in assembly | Remove tests | Add more loops | Find the real bottleneck.
+M1#physics-u39-01-q1: Double precision gives about: | 16 significant digits | 7 digits | 32 digits | 3 digits | 53-bit mantissa.
+M2#physics-u39-01-q2: Before optimising code you should: | Profile it | Rewrite in assembly | Remove tests | Add more loops | Find the real bottleneck.
 
 ## Numerical integration
 S: Numerical integration (quadrature) approximates definite integrals by weighted sums of function values. Simple rules like the trapezium and Simpson's rule work well for smooth functions, while Gaussian quadrature, adaptive methods and Monte Carlo handle harder cases.
@@ -58,8 +58,8 @@ K: Higher-order rules converge faster for smooth functions; Monte Carlo wins in 
 !: High-order rules can perform worse on non-smooth or noisy integrands; check convergence by refining h.
 Q: How does trapezium error scale with step size? | As h^{2}.
 Q: Why use Monte Carlo for high-dimensional integrals? | Its error ∝ 1/√N doesn't depend on dimension.
-M1: Halving h in Simpson's rule reduces error by about: | 16× | 4× | 2× | 8× | O(h^{4}).
-M2: n-point Gaussian quadrature is exact for polynomials up to degree: | 2n − 1 | n | n + 1 | 2n + 1 | Optimally chosen nodes.
+M1#physics-u39-02-q1: Halving h in Simpson's rule reduces error by about: | 16× | 4× | 2× | 8× | O(h^{4}).
+M2#physics-u39-02-q2: n-point Gaussian quadrature is exact for polynomials up to degree: | 2n − 1 | n | n + 1 | 2n + 1 | Optimally chosen nodes.
 
 ## Numerical differentiation
 S: Numerical differentiation estimates derivatives from function values at nearby points. Finite-difference formulas are simple, but choosing the step size is a balance: too large gives truncation error, too small gives round-off error.
@@ -83,8 +83,8 @@ K: Central differences are second-order accurate; choose h to balance truncation
 !: Making h ever smaller does not keep improving accuracy; below the optimum, round-off error explodes.
 Q: What is the error order of the central difference? | O(h^{2}).
 Q: What is automatic differentiation? | Exact evaluation of derivatives by applying the chain rule to each operation in code.
-M1: The forward difference has error of order: | h | h^{2} | h^{3} | 1/h | It uses one-sided Taylor expansion.
-M2: Complex-step differentiation avoids: | Subtractive cancellation | Complex numbers | Taylor series | Step size choice entirely | No subtraction of close values.
+M1#physics-u39-03-q1: The forward difference has error of order: | h | h^{2} | h^{3} | 1/h | It uses one-sided Taylor expansion.
+M2#physics-u39-03-q2: Complex-step differentiation avoids: | Subtractive cancellation | Complex numbers | Taylor series | Step size choice entirely | No subtraction of close values.
 
 ## Root-finding algorithms
 S: Root-finding algorithms solve f(x) = 0 when no formula exists. Bisection is slow but guaranteed; Newton's method is fast but can fail; hybrid methods combine safety and speed. Root-finding underlies solving equations of state, energy levels and implicit integration steps.
@@ -112,8 +112,8 @@ K: Bracketing methods are safe, Newton is fast; robust solvers use both.
 !: Newton's method needs a good initial guess; plot the function first.
 Q: What is the convergence order of Newton's method? | Quadratic, near a simple root.
 Q: What does Brent's method combine? | Bisection, secant and inverse quadratic interpolation.
-M1: Bisection's convergence is: | Linear | Quadratic | Cubic | Superexponential | Error halves each step.
-M2: Newton fails when: | f'(x) ≈ 0 near the iterate | f is smooth | The root is simple | Starting close to the root | Division by a tiny derivative.
+M1#physics-u39-04-q1: Bisection's convergence is: | Linear | Quadratic | Cubic | Superexponential | Error halves each step.
+M2#physics-u39-04-q2: Newton fails when: | f'(x) ≈ 0 near the iterate | f is smooth | The root is simple | Starting close to the root | Division by a tiny derivative.
 
 ## Solving ordinary differential equations
 S: Most physical ODEs, such as orbits, circuits and reaction kinetics, must be solved numerically. Methods step forward in time, trading accuracy, stability and cost, and the right choice depends on whether the problem is smooth, stiff or conservative.
@@ -139,8 +139,8 @@ K: Choose RK45 for smooth problems, implicit methods for stiff ones, and symplec
 !: A stable-looking result does not mean an accurate one; always check convergence by changing the step size.
 Q: What is a stiff ODE? | One with widely separated timescales that forces explicit methods to take tiny steps.
 Q: Why use symplectic integrators for orbits? | They preserve phase-space structure so energy errors stay bounded.
-M1: RK4's global error scales as: | h^{4} | h | h^{2} | h^{5} | Fourth-order method.
-M2: Shooting methods solve: | Boundary-value problems | Initial-value problems only | Integrals | Eigenvalues only | Adjust initial conditions to meet end conditions.
+M1#physics-u39-05-q1: RK4's global error scales as: | h^{4} | h | h^{2} | h^{5} | Fourth-order method.
+M2#physics-u39-05-q2: Shooting methods solve: | Boundary-value problems | Initial-value problems only | Integrals | Eigenvalues only | Adjust initial conditions to meet end conditions.
 
 ## Solving partial differential equations
 S: Partial differential equations govern fields in space and time: heat, waves, fluids, electromagnetism and quantum mechanics. Numerical PDE methods discretise space and time, and the equation's type (elliptic, parabolic or hyperbolic) shapes which methods work.
@@ -166,8 +166,8 @@ K: Know your PDE type: it dictates boundary conditions, stability limits and sui
 !: Unphysical boundary reflections and too-coarse grids are the most common sources of PDE simulation error.
 Q: What kind of PDE is the heat equation? | Parabolic.
 Q: What is the method of lines? | Discretising space only to obtain a system of ODEs, which are then integrated in time.
-M1: Laplace's equation is: | Elliptic | Parabolic | Hyperbolic | Not a PDE | Steady-state, no time.
-M2: Multigrid methods solve elliptic problems in: | O(N) operations | O(N^{3}) | O(e^{N}) | O(N^{2} log N) only | Hierarchy of grids removes all error scales.
+M1#physics-u39-06-q1: Laplace's equation is: | Elliptic | Parabolic | Hyperbolic | Not a PDE | Steady-state, no time.
+M2#physics-u39-06-q2: Multigrid methods solve elliptic problems in: | O(N) operations | O(N^{3}) | O(e^{N}) | O(N^{2} log N) only | Hierarchy of grids removes all error scales.
 
 ## Finite difference methods
 S: Finite difference methods replace derivatives with differences on a regular grid, turning PDEs into algebraic equations. They are simple to code and analyse, and stability conditions such as the CFL criterion decide which time steps work.
@@ -192,8 +192,8 @@ K: Finite differences are easy to implement; their stability limits must be resp
 !: Halving Δx in explicit diffusion requires quartering Δt, so costs rise steeply; implicit schemes avoid this.
 Q: What is the CFL condition? | The numerical domain of dependence must include the physical one: cΔt/Δx ≤ 1 for simple schemes.
 Q: Why is Crank–Nicolson popular? | It is second-order accurate in time and unconditionally stable.
-M1: Explicit FTCS for diffusion is stable if r is at most: | 1/2 | 1 | 2 | 1/4 | Von Neumann analysis.
-M2: Upwind schemes suffer from: | Numerical diffusion | Instability always | No accuracy at all | Infinite cost | First-order smoothing.
+M1#physics-u39-07-q1: Explicit FTCS for diffusion is stable if r is at most: | 1/2 | 1 | 2 | 1/4 | Von Neumann analysis.
+M2#physics-u39-07-q2: Upwind schemes suffer from: | Numerical diffusion | Instability always | No accuracy at all | Infinite cost | First-order smoothing.
 
 ## Finite element methods
 S: The finite element method breaks a complicated region into small elements, approximates the solution on each with simple functions, and assembles a global system. Its flexibility with geometry makes it the standard in structural engineering, electromagnetics and biomechanics.
@@ -220,8 +220,8 @@ K: FEM turns PDEs into sparse linear systems using local basis functions on flex
 !: Results depend on mesh quality; always run a mesh-convergence study.
 Q: What is the weak form? | An integral version of the PDE obtained by multiplying by test functions and integrating by parts.
 Q: What is adaptive mesh refinement? | Refining the mesh where estimated errors are largest.
-M1: FEM's main advantage over finite differences is: | Complex geometry handling | Always faster | No matrices | No boundary conditions | Unstructured meshes.
-M2: Hat functions are: | Piecewise linear basis functions | Fourier modes | Random numbers | Splines only | Peaks at one node, zero at others.
+M1#physics-u39-08-q1: FEM's main advantage over finite differences is: | Complex geometry handling | Always faster | No matrices | No boundary conditions | Unstructured meshes.
+M2#physics-u39-08-q2: Hat functions are: | Piecewise linear basis functions | Fourier modes | Random numbers | Splines only | Peaks at one node, zero at others.
 
 ## Finite volume methods
 S: Finite volume methods divide space into cells and track the flux of conserved quantities across cell faces. Because what leaves one cell enters its neighbour, mass, momentum and energy are conserved exactly, which makes them the workhorse of computational fluid dynamics.
@@ -243,8 +243,8 @@ K: Finite volumes conserve quantities exactly by balancing fluxes, making them i
 !: High-order reconstruction without limiters creates oscillations at shocks; limiters reduce accuracy locally to keep stability.
 Q: Why are finite volumes conservative? | The flux leaving a cell through a face is exactly the flux entering its neighbour.
 Q: What is a Riemann problem? | Evolution from an initial jump between two constant states, solved at cell faces.
-M1: Slope limiters are used to: | Prevent oscillations near shocks | Increase time step | Remove conservation | Add noise | TVD schemes.
-M2: OpenFOAM is mainly a: | Finite volume CFD code | Molecular dynamics code | Quantum chemistry code | Spreadsheet | Open-source fluid solver.
+M1#physics-u39-09-q1: Slope limiters are used to: | Prevent oscillations near shocks | Increase time step | Remove conservation | Add noise | TVD schemes.
+M2#physics-u39-09-q2: OpenFOAM is mainly a: | Finite volume CFD code | Molecular dynamics code | Quantum chemistry code | Spreadsheet | Open-source fluid solver.
 
 ## Monte Carlo simulation
 S: Monte Carlo methods use random sampling to estimate integrals, simulate stochastic processes and explore huge state spaces. From particle transport to statistical mechanics, they trade exactness for flexibility and errors that shrink as 1/√N.
@@ -274,8 +274,8 @@ K: Monte Carlo's error falls as 1/√N regardless of dimension; MCMC samples com
 !: MCMC samples are correlated; effective sample size can be much smaller than the number of steps.
 Q: What does detailed balance guarantee in MCMC? | The chain converges to the desired equilibrium distribution.
 Q: What is importance sampling? | Sampling more often where the integrand matters most, with compensating weights.
-M1: To halve Monte Carlo error you need: | 4× more samples | 2× more | 8× more | No change | Error ∝ 1/√N.
-M2: Geant4 is used for: | Particle transport through matter | Weather forecasting | Spreadsheets | Optics design only | Monte Carlo detector simulation.
+M1#physics-u39-10-q1: To halve Monte Carlo error you need: | 4× more samples | 2× more | 8× more | No change | Error ∝ 1/√N.
+M2#physics-u39-10-q2: Geant4 is used for: | Particle transport through matter | Weather forecasting | Spreadsheets | Optics design only | Monte Carlo detector simulation.
 
 ## Molecular dynamics
 S: Molecular dynamics simulates the motion of atoms and molecules by integrating Newton's equations with forces from interatomic potentials. It reveals how proteins fold, liquids flow, materials fracture and drugs bind, at femtosecond resolution.
@@ -301,8 +301,8 @@ K: MD integrates Newton's laws for atoms; force fields set accuracy, time steps 
 !: Results are only as good as the force field and the sampling; one short trajectory rarely captures rare events.
 Q: Why use periodic boundary conditions? | To simulate a bulk material without surfaces, using a small replicated box.
 Q: Why is the time step ~1–2 fs? | It must resolve the fastest motions, such as bond vibrations involving hydrogen.
-M1: Lennard-Jones repulsion scales as: | 1/r^{12} | 1/r^{6} | 1/r | r^{2} | Steep short-range repulsion.
-M2: PME is used for: | Long-range electrostatics | Thermostats | Visualisation | Neighbour lists | Particle mesh Ewald.
+M1#physics-u39-11-q1: Lennard-Jones repulsion scales as: | 1/r^{12} | 1/r^{6} | 1/r | r^{2} | Steep short-range repulsion.
+M2#physics-u39-11-q2: PME is used for: | Long-range electrostatics | Thermostats | Visualisation | Neighbour lists | Particle mesh Ewald.
 
 ## N-body simulations
 S: N-body simulations follow many particles interacting through long-range forces, mainly gravity. They model planetary systems, star clusters, galaxy collisions and the formation of the cosmic web of dark matter from tiny early fluctuations.
@@ -326,8 +326,8 @@ K: N-body codes use trees, meshes and multipoles to tame O(N^{2}) gravity for mi
 !: Softening and resolution limits mean small-scale structure in simulations must be interpreted carefully.
 Q: What does the Barnes–Hut algorithm do? | It approximates distant groups of particles by their centre of mass, giving O(N log N) cost.
 Q: Why use softening in N-body codes? | To avoid singular forces and tiny time steps in close encounters.
-M1: Particle-mesh methods solve gravity using: | FFTs on a grid | Direct summation only | Monte Carlo | Root finding | Poisson equation in Fourier space.
-M2: IllustrisTNG is a: | Cosmological simulation | Particle accelerator | Telescope | Climate model | Galaxy formation in a box.
+M1#physics-u39-12-q1: Particle-mesh methods solve gravity using: | FFTs on a grid | Direct summation only | Monte Carlo | Root finding | Poisson equation in Fourier space.
+M2#physics-u39-12-q2: IllustrisTNG is a: | Cosmological simulation | Particle accelerator | Telescope | Climate model | Galaxy formation in a box.
 
 ## Computational fluid dynamics
 S: Computational fluid dynamics (CFD) solves the equations of fluid flow numerically, predicting forces, heat transfer and mixing. It designs aircraft, cars, turbines, buildings and blood vessels, and models weather, oceans and stars.
@@ -350,8 +350,8 @@ K: CFD discretises Navier–Stokes; the turbulence model is often the biggest so
 !: A converged, colourful CFD plot is not necessarily correct; validate with experiments and mesh studies.
 Q: What does DNS mean? | Direct numerical simulation, resolving all turbulent scales without modelling.
 Q: Name a common RANS turbulence model. | k–ε or k–ω SST.
-M1: LES resolves: | Large eddies and models small ones | Only the mean flow | All scales | No eddies | Filtering separates scales.
-M2: High Reynolds number flows are usually: | Turbulent | Laminar | Static | Inviscid exactly | Inertia dominates viscosity.
+M1#physics-u39-13-q1: LES resolves: | Large eddies and models small ones | Only the mean flow | All scales | No eddies | Filtering separates scales.
+M2#physics-u39-13-q2: High Reynolds number flows are usually: | Turbulent | Laminar | Static | Inviscid exactly | Inertia dominates viscosity.
 
 ## Numerical linear algebra
 S: Numerical linear algebra solves systems of equations, least-squares problems and matrix factorisations, the core of almost every simulation. Efficiency depends on exploiting structure such as sparsity and symmetry, and accuracy depends on conditioning.
@@ -377,8 +377,8 @@ K: Use factorisations for dense systems, Krylov plus preconditioners for large s
 !: Explicitly inverting a matrix is slower and less accurate than solving with a factorisation.
 Q: When can conjugate gradient be used? | For symmetric positive-definite systems.
 Q: What does the condition number tell you? | How much input errors can be amplified in the solution.
-M1: Cholesky factorisation requires the matrix to be: | Symmetric positive-definite | Diagonal | Singular | Rectangular | A = LL^{T}.
-M2: The Thomas algorithm solves: | Tridiagonal systems in O(n) | Dense systems | Eigenvalues | Integrals | Special banded case.
+M1#physics-u39-14-q1: Cholesky factorisation requires the matrix to be: | Symmetric positive-definite | Diagonal | Singular | Rectangular | A = LL^{T}.
+M2#physics-u39-14-q2: The Thomas algorithm solves: | Tridiagonal systems in O(n) | Dense systems | Eigenvalues | Integrals | Special banded case.
 
 ## Eigenvalue algorithms
 S: Eigenvalue problems give normal modes, energy levels, stability and principal components. Numerical algorithms find eigenvalues and eigenvectors of matrices too large to solve by hand, from small dense matrices to sparse ones with billions of entries.
@@ -401,8 +401,8 @@ K: Power-type methods find extreme eigenvalues; QR handles dense matrices fully;
 !: Power iteration converges slowly when the top two eigenvalues are close in magnitude.
 Q: What does the QR algorithm converge to? | An upper-triangular (Schur) form whose diagonal holds the eigenvalues.
 Q: What is the Lanczos method used for? | Finding extreme eigenvalues of large sparse symmetric matrices.
-M1: Power iteration converges at a rate set by: | |λ_{2}/λ_{1}| | |λ_{1}| | trace | determinant | Ratio of the top two.
-M2: SVD is the basis of: | Principal component analysis | Euler integration | Bisection | Monte Carlo | Low-rank structure.
+M1#physics-u39-15-q1: Power iteration converges at a rate set by: | |λ_{2}/λ_{1}| | |λ_{1}| | trace | determinant | Ratio of the top two.
+M2#physics-u39-15-q2: SVD is the basis of: | Principal component analysis | Euler integration | Bisection | Monte Carlo | Low-rank structure.
 
 ## Fourier transforms and spectral methods
 S: Fourier transforms decompose signals and fields into frequencies, and the fast Fourier transform computes them in N log N operations. Spectral methods use Fourier and other global bases to solve PDEs with exceptional accuracy for smooth problems.
@@ -428,8 +428,8 @@ K: The FFT makes frequency analysis and spectral PDE solvers fast; sample above 
 !: Zero padding makes spectra look smoother but cannot separate peaks closer than 1/T.
 Q: What is aliasing? | Frequencies above the Nyquist limit appearing falsely as lower frequencies.
 Q: Why are spectral methods so accurate for smooth problems? | Errors decrease exponentially with the number of basis functions.
-M1: The FFT reduces DFT cost to: | O(N log N) | O(N^{2}) | O(N^{3}) | O(1) | Cooley–Tukey divide and conquer.
-M2: Windowing reduces: | Spectral leakage | Sampling rate | Aliasing completely | Signal energy to zero | Tapering edges.
+M1#physics-u39-16-q1: The FFT reduces DFT cost to: | O(N log N) | O(N^{2}) | O(N^{3}) | O(1) | Cooley–Tukey divide and conquer.
+M2#physics-u39-16-q2: Windowing reduces: | Spectral leakage | Sampling rate | Aliasing completely | Signal energy to zero | Tapering edges.
 
 ## Optimisation and parameter estimation
 S: Optimisation finds the best parameters for a model or design by minimising a cost function. Parameter estimation fits physical models to data, and the choice of algorithm depends on smoothness, constraints and whether many local minima exist.
@@ -458,8 +458,8 @@ K: Pick local optimisers for smooth single-minimum problems and global methods f
 !: A local optimiser finds a local minimum; try multiple starts if the landscape may have many.
 Q: What is simulated annealing? | A global optimiser using random moves accepted by a Metropolis rule while temperature slowly decreases.
 Q: What does reduced χ^{2} ≈ 1 indicate? | The model fits the data within the stated uncertainties.
-M1: Levenberg–Marquardt is designed for: | Nonlinear least-squares fitting | Integer programming | Sorting | FFTs | Blends gradient descent and Gauss–Newton.
-M2: Adjoint methods give: | Gradients for many parameters cheaply | Random numbers | Eigenvalues | Meshes | One extra solve per objective.
+M1#physics-u39-17-q1: Levenberg–Marquardt is designed for: | Nonlinear least-squares fitting | Integer programming | Sorting | FFTs | Blends gradient descent and Gauss–Newton.
+M2#physics-u39-17-q2: Adjoint methods give: | Gradients for many parameters cheaply | Random numbers | Eigenvalues | Meshes | One extra solve per objective.
 
 ## Random number generation
 S: Simulations need vast numbers of random-looking numbers. Pseudorandom number generators produce deterministic but statistically random sequences, and their quality, period and reproducibility matter for Monte Carlo results.
@@ -484,8 +484,8 @@ K: Use modern, tested generators with recorded seeds; transform uniforms into wh
 !: Different seeds don't guarantee independent streams in parallel codes; use generators designed for parallel use.
 Q: What is inverse transform sampling? | Applying the inverse cumulative distribution function to uniform random numbers.
 Q: What is the Mersenne Twister's period? | 2^{19937} − 1.
-M1: Box–Muller produces: | Normally distributed numbers | Uniform numbers | Primes | Exponential numbers only | From two uniforms.
-M2: True random numbers can be generated from: | Quantum or thermal noise | An LCG | Mersenne Twister | A fixed seed | Physical processes.
+M1#physics-u39-18-q1: Box–Muller produces: | Normally distributed numbers | Uniform numbers | Primes | Exponential numbers only | From two uniforms.
+M2#physics-u39-18-q2: True random numbers can be generated from: | Quantum or thermal noise | An LCG | Mersenne Twister | A fixed seed | Physical processes.
 
 ## Error and stability analysis
 S: Every numerical result carries errors from modelling, discretisation, iteration and round-off. Error and stability analysis identifies these sources, measures convergence, and ensures that small errors don't grow into nonsense.
@@ -514,8 +514,8 @@ K: Consistency plus stability gives convergence; always measure the observed ord
 !: Agreement between two runs at similar resolution does not prove accuracy; both may share the same systematic error.
 Q: What does the Lax equivalence theorem state? | For well-posed linear problems, a consistent scheme converges if and only if it is stable.
 Q: What is Richardson extrapolation? | Combining results at different step sizes to cancel the leading error term.
-M1: If error falls 8× when h halves, the order is: | 3 | 2 | 8 | 4 | 2^{3} = 8.
-M2: Backward stability means: | The computed answer exactly solves a nearby problem | No errors at all | Running time reversed | Infinite precision | Wilkinson's concept.
+M1#physics-u39-19-q1: If error falls 8× when h halves, the order is: | 3 | 2 | 8 | 4 | 2^{3} = 8.
+M2#physics-u39-19-q2: Backward stability means: | The computed answer exactly solves a nearby problem | No errors at all | Running time reversed | Infinite precision | Wilkinson's concept.
 
 ## Parallel computing
 S: Parallel computing splits a problem across many processors that work simultaneously. It is how modern simulations reach billions of grid cells or particles, but the speed-up depends on how much of the work can run in parallel and how much communication is needed.
@@ -540,8 +540,8 @@ K: Serial fractions and communication limit parallel speed-up; design codes to k
 !: Floating-point addition isn't associative, so parallel sums can give slightly different results run to run.
 Q: What does Amdahl's law say? | The serial fraction of a program limits its maximum parallel speed-up.
 Q: What is weak scaling? | Increasing problem size in proportion to processors, keeping work per processor fixed.
-M1: MPI is used for: | Distributed-memory parallelism | Single-thread speed | Graphics | Random numbers | Message passing between nodes.
-M2: A 99% parallel code has maximum speed-up: | 100 | 99 | 1000 | Infinite | 1/0.01.
+M1#physics-u39-20-q1: MPI is used for: | Distributed-memory parallelism | Single-thread speed | Graphics | Random numbers | Message passing between nodes.
+M2#physics-u39-20-q2: A 99% parallel code has maximum speed-up: | 100 | 99 | 1000 | Infinite | 1/0.01.
 
 ## High-performance computing
 S: High-performance computing (HPC) uses supercomputers with hundreds of thousands of processors and accelerators to tackle the largest scientific problems: climate projections, fusion plasmas, cosmology, materials design and AI training.
@@ -565,8 +565,8 @@ K: Real HPC performance depends on data movement; design algorithms for locality
 !: Peak FLOPS figures rarely reflect real application performance; many codes reach only a few percent of peak.
 Q: What is exascale? | Computing at 10^{18} floating-point operations per second.
 Q: What does the roofline model show? | Whether a kernel is limited by compute or by memory bandwidth.
-M1: Slurm is a: | Batch job scheduler | Compiler | File system | Programming language | Manages HPC jobs.
-M2: Low arithmetic intensity code is usually: | Memory-bound | Compute-bound | I/O-free | Perfectly scalable | Limited by bandwidth.
+M1#physics-u39-21-q1: Slurm is a: | Batch job scheduler | Compiler | File system | Programming language | Manages HPC jobs.
+M2#physics-u39-21-q2: Low arithmetic intensity code is usually: | Memory-bound | Compute-bound | I/O-free | Perfectly scalable | Limited by bandwidth.
 
 ## GPU computing
 S: Graphics processing units contain thousands of simple cores that run the same instructions on many data at once. GPUs now power most of the world's fastest supercomputers, accelerating simulations, data analysis and machine learning by 10–100×.
@@ -590,8 +590,8 @@ K: GPUs excel at massively parallel, data-heavy work; minimise transfers and org
 !: Moving data to and from the GPU can cost more than the computation; a "GPU port" can be slower if done naively.
 Q: What is a warp? | A group of 32 GPU threads executing the same instruction in lockstep.
 Q: What is branch divergence? | When threads in a warp take different branches, forcing serial execution of each path.
-M1: GPU memory access should be: | Coalesced | Random | Serialised | Avoided entirely | Neighbouring threads read neighbouring data.
-M2: Which is a GPU programming model? | CUDA | Slurm | Lustre | LAPACK | NVIDIA's platform.
+M1#physics-u39-22-q1: GPU memory access should be: | Coalesced | Random | Serialised | Avoided entirely | Neighbouring threads read neighbouring data.
+M2#physics-u39-22-q2: Which is a GPU programming model? | CUDA | Slurm | Lustre | LAPACK | NVIDIA's platform.
 
 ## Scientific visualisation
 S: Scientific visualisation turns numbers into images that reveal structure, trends and errors. Good visualisation choices, from colour maps to 3D rendering, can make discoveries obvious, while poor ones can mislead.
@@ -617,8 +617,8 @@ K: Choose plots and colour maps that represent data faithfully; label everything
 !: Rainbow colour maps exaggerate some features and hide others; use perceptually uniform maps.
 Q: Why avoid the "jet" rainbow colour map? | It isn't perceptually uniform, creating false features and hiding real ones.
 Q: When is a diverging colour map appropriate? | When the data have a meaningful midpoint, such as zero.
-M1: ParaView is mainly used for: | Large 3D scientific visualisation | Word processing | Compiling code | Random numbers | Open-source visual analysis.
-M2: Isosurfaces show: | Surfaces of constant value in 3D | Time series | Histograms | Text | Like 3D contours.
+M1#physics-u39-23-q1: ParaView is mainly used for: | Large 3D scientific visualisation | Word processing | Compiling code | Random numbers | Open-source visual analysis.
+M2#physics-u39-23-q2: Isosurfaces show: | Surfaces of constant value in 3D | Time series | Histograms | Text | Like 3D contours.
 
 ## Data analysis and fitting
 S: Data analysis extracts physical meaning from measurements and simulations: estimating parameters, testing hypotheses and quantifying uncertainty. Least-squares fitting, likelihood methods and Bayesian inference are the main tools.
@@ -642,8 +642,8 @@ K: Fit with appropriate statistics, check residuals and reduced χ^{2}, and repo
 !: A high R^{2} does not mean the model is right; always look at the residuals.
 Q: What does a reduced χ^{2} much greater than 1 suggest? | The model is inadequate or the uncertainties are underestimated.
 Q: What is the bootstrap? | Estimating uncertainty by repeatedly resampling the data with replacement and refitting.
-M1: For Poisson count data, the best fitting approach is: | Maximum likelihood with Poisson statistics | Unweighted least squares always | Ignoring errors | Fitting by eye | Low counts are non-Gaussian.
-M2: BIC penalises: | Extra model parameters | Data points | Small errors | Residual plots | Guards against overfitting.
+M1#physics-u39-24-q1: For Poisson count data, the best fitting approach is: | Maximum likelihood with Poisson statistics | Unweighted least squares always | Ignoring errors | Fitting by eye | Low counts are non-Gaussian.
+M2#physics-u39-24-q2: BIC penalises: | Extra model parameters | Data points | Small errors | Residual plots | Guards against overfitting.
 
 ## Reproducible computational experiments
 S: A computational result is reproducible if others (or you, later) can rerun the code and get the same answer. Reproducibility requires recording code versions, environments, parameters, random seeds and data, and it is now expected by journals and funders.
@@ -668,8 +668,8 @@ K: Reproducibility needs version-controlled code, captured environments, recorde
 !: Notebooks run out of order can hide state; restart and run all before sharing.
 Q: What do FAIR principles stand for? | Findable, accessible, interoperable and reusable.
 Q: What does a container like Docker provide? | A packaged software environment that runs the same on different machines.
-M1: Replicability means: | An independent implementation gets consistent results | Running the same script twice | Copying files | Using the same laptop | Strongest test of a result.
-M2: Zenodo provides: | DOIs for archived code and data | Supercomputing time | Compilers | Peer review | Permanent research archives.
+M1#physics-u39-25-q1: Replicability means: | An independent implementation gets consistent results | Running the same script twice | Copying files | Using the same laptop | Strongest test of a result.
+M2#physics-u39-25-q2: Zenodo provides: | DOIs for archived code and data | Supercomputing time | Compilers | Peer review | Permanent research archives.
 
 ## Verification and validation of simulations
 S: Verification asks whether a code solves its equations correctly; validation asks whether those equations describe reality well enough. Together they build trust in simulations used for safety-critical design, climate projections and fundamental science.
@@ -693,8 +693,8 @@ K: Verification: solving the equations right. Validation: solving the right equa
 !: Agreement with one experiment after tuning parameters is calibration, not validation.
 Q: What is the method of manufactured solutions? | Choosing an exact solution, deriving matching source terms, and checking the code reproduces it at the expected convergence rate.
 Q: What is the difference between verification and validation? | Verification checks the maths is solved correctly; validation checks the model matches reality.
-M1: Validation requires: | Comparison with independent experimental data | Only code review | Faster computers | More parameters | Reality is the judge.
-M2: Regression tests detect: | Unintended changes in results | Physics errors only | Hardware failures | Experimental noise | Results compared to stored references.
+M1#physics-u39-26-q1: Validation requires: | Comparison with independent experimental data | Only code review | Faster computers | More parameters | Reality is the judge.
+M2#physics-u39-26-q2: Regression tests detect: | Unintended changes in results | Physics errors only | Hardware failures | Experimental noise | Results compared to stored references.
 
 ## Machine learning in physics
 S: Machine learning finds patterns in data and builds fast models from examples. Physicists use it to classify collision events, find exoplanets, accelerate simulations, discover materials and control experiments, while physics in turn inspires new ML methods.
@@ -719,8 +719,8 @@ K: ML is a powerful tool for patterns and fast surrogates, but it needs careful 
 !: ML models interpolate well but often extrapolate badly; physics constraints and out-of-distribution tests help.
 Q: What is overfitting? | Fitting noise in training data so the model generalises poorly to new data.
 Q: Why did Hopfield and Hinton win the 2024 Nobel Prize in Physics? | For foundational discoveries enabling machine learning with artificial neural networks.
-M1: Reinforcement learning has been used to: | Control tokamak plasma shapes | Measure charge | Build telescopes | Replace experiments entirely | DeepMind and TCV.
-M2: Graph neural networks suit: | Particle tracks and molecules | Single numbers | Sorting text | Random numbers | Data with relational structure.
+M1#physics-u39-27-q1: Reinforcement learning has been used to: | Control tokamak plasma shapes | Measure charge | Build telescopes | Replace experiments entirely | DeepMind and TCV.
+M2#physics-u39-27-q2: Graph neural networks suit: | Particle tracks and molecules | Single numbers | Sorting text | Random numbers | Data with relational structure.
 
 ## Physics-informed neural networks
 S: Physics-informed neural networks (PINNs) train a neural network to satisfy both data and the governing equations, by putting the PDE residual into the loss function. They can solve forward and inverse problems with sparse data, though they have important limitations.
@@ -743,8 +743,8 @@ K: PINNs embed equations in the loss, excelling at inverse problems with sparse 
 !: A low training loss doesn't guarantee an accurate solution; verify against reference solutions.
 Q: How do PINNs compute derivatives? | Using automatic differentiation of the network with respect to its inputs.
 Q: What is a Fourier neural operator? | A network that learns mappings between function spaces using Fourier-space layers.
-M1: PINNs are especially useful for: | Inverse problems with sparse data | Replacing all CFD | Random number generation | Sorting data | Inferring hidden parameters.
-M2: Spectral bias means networks: | Learn low frequencies first | Learn high frequencies first | Cannot learn | Need FFTs | Struggle with sharp features.
+M1#physics-u39-28-q1: PINNs are especially useful for: | Inverse problems with sparse data | Replacing all CFD | Random number generation | Sorting data | Inferring hidden parameters.
+M2#physics-u39-28-q2: Spectral bias means networks: | Learn low frequencies first | Learn high frequencies first | Cannot learn | Need FFTs | Struggle with sharp features.
 
 ## Digital twins and surrogate models
 S: A surrogate model is a fast approximation of an expensive simulation; a digital twin is a living virtual model of a real system, continuously updated with sensor data. Together they let engineers predict, optimise and control jet engines, power grids, patients and even the Earth.
@@ -770,6 +770,6 @@ K: Surrogates make expensive models fast; digital twins keep models synchronised
 !: A surrogate is only valid within the space it was trained on; extrapolation can be badly wrong.
 Q: What is data assimilation? | Combining model forecasts with observations to estimate the current state of a system.
 Q: What is proper orthogonal decomposition? | Extracting dominant spatial modes from simulation snapshots to build reduced-order models.
-M1: A digital twin differs from a simulation by: | Being continuously updated with real data | Being larger | Using no physics | Running offline only | Live feedback loop.
-M2: Gaussian process surrogates provide: | Predictions with uncertainty | Exact answers always | Random numbers | Meshes | Mean and variance.
+M1#physics-u39-29-q1: A digital twin differs from a simulation by: | Being continuously updated with real data | Being larger | Using no physics | Running offline only | Live feedback loop.
+M2#physics-u39-29-q2: Gaussian process surrogates provide: | Predictions with uncertainty | Exact answers always | Random numbers | Meshes | Mean and variance.
 `;

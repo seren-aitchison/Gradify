@@ -2,7 +2,7 @@
 
 **Bring your notes into Gradify. Turn them into useful study materials. Learn, track your progress and know what to do next.**
 
-The parent site for the Gradify family of learning sites. It links out to every Gradify site, plus TechGradify · ForgeLab and Klerio.
+The parent site for the Gradify family of learning sites. It links out to every Gradify site, plus TechGradify and Klerio.
 
 It's a plain static site with no build step: HTML, CSS and JavaScript modules.
 

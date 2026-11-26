@@ -54,16 +54,20 @@ export function parseNotes(text) {
   for (const raw of String(text || "").split("\n")) {
     const line = raw.trim();
     if (!line) { ex = null; continue; }
-    if (line.startsWith("## ")) { L = { title: line.slice(3).trim(), lead: "", blocks: [], cards: [], mcq: [], tasks: [], objectives: [], prereq: [], terms: [], summary: [], sources: [], reading: [], evidence: [], authorities: [], level: "", reqs: [], needs: [], gaps: [], tier: "" }; lessons.push(L); ex = null; continue; }
+    if (line.startsWith("## ")) { L = { title: line.slice(3).trim(), lead: "", blocks: [], cards: [], mcq: [], tasks: [], objectives: [], prereq: [], terms: [], summary: [], sources: [], reading: [], evidence: [], authorities: [], level: "", reqs: [], placed: [], needs: [], gaps: [], tier: "" }; lessons.push(L); ex = null; continue; }
     if (!L) continue;
     if (line.startsWith("> ") && ex) { (ex.steps || ex.more).push(line.slice(2)); continue; }
     ex = null;
     // block tags, then question tags (TAG_LINE, which includes any type a subject adapter has registered)
-    const m = line.match(/^(S|H|P|E|X|K|!|Q|O|PRE|T|SUM|SAFE|SRC|READ|IX|D|EV|LV|CASE|LAW|DRUG|REQ|DIA|DNEED|GAP|TIER|DEEP):\s*(.*)$/) || line.match(TAG_LINE);
+    const m = line.match(/^(S|H|P|E|X|K|!|Q|O|PRE|T|SUM|SAFE|SRC|READ|IX|D|EV|LV|CASE|LAW|DRUG|REQ|DIA|DNEED|GAP|TIER|HOOK|MORE|ALT|DEEP):\s*(.*)$/) || line.match(TAG_LINE);
     const [tag, body] = m ? [m[1], m[2]] : line.startsWith("- ") ? ["-", line.slice(2)] : ["P", line];
     const last = L.blocks.at(-1);
     if (tag === "S") L.lead += (L.lead ? " " : "") + body;
-    else if (tag === "H") L.blocks.push({ t: "h", x: body });
+    // schema v2 (docs/LESSON-SCHEMA.md): "H: Title @2" tags the concept block with the objective it teaches
+    else if (tag === "H") { const o = body.match(/\s+@(\d+(?:,\d+)*)\s*$/); L.blocks.push(o ? { t: "h", x: body.slice(0, o.index).trim(), obj: o[1].split(",").map(Number) } : { t: "h", x: body }); }
+    else if (tag === "HOOK") L.blocks.push({ t: "hook", x: body });
+    else if (tag === "MORE") L.blocks.push({ t: "more", x: body });
+    else if (tag === "ALT") { const i = body.indexOf(" | "); L.blocks.push(i > 0 ? { t: "alt", style: body.slice(0, i).trim().toLowerCase(), x: body.slice(i + 3).trim() } : { t: "alt", style: "another way", x: body }); }
     else if (tag === "P") L.blocks.push({ t: "p", x: body });
     else if (tag === "-") { if (last?.t === "ul") last.items.push(body); else L.blocks.push({ t: "ul", items: [body] }); }
     else if (tag === "E") { const [x, note] = body.split(" :: "); if (last?.t === "eq") last.rows.push([x, note]); else L.blocks.push({ t: "eq", rows: [[x, note]] }); }
@@ -115,6 +119,9 @@ export function parseNotes(text) {
       // the physics course) alongside the full question in Q
       if (Q && (Q.type === "sba" || Q.type === "mcq")) L.mcq.push({ q: Q.q, right: Q.options.find((o) => o.correct).text, wrong: Q.options.filter((o) => !o.correct).map((o) => o.text), why: Q.why, d: Q.d, id: Q.id, Q });
       else if (Q) L.tasks.push(Q);
+      // where the question sits: after how many headed sections (schema v2 places checks inside their concept block).
+      // Kept apart from the question itself, so its content (and its version) doesn't change
+      if (Q) L.placed.push({ kind: Q.type === "sba" || Q.type === "mcq" ? "mcq" : "task", i: (Q.type === "sba" || Q.type === "mcq" ? L.mcq : L.tasks).length - 1, sec: L.blocks.filter((b) => b.t === "h").length });
     }
   }
   return lessons;
@@ -155,6 +162,10 @@ function block(b) {
   if (b.t === "pit") return `<div class="mv-clin co-pit lx-call lx-pit">${head("pit", "Common mistake")}<div class="lx-b">${inline(b.x)}</div></div>`;
   if (b.t === "ix") return `<div class="co-ixslot" data-ix="${esc(b.id)}"></div>`;
   if (b.t === "dg") return `<figure class="vx" data-dg="${esc(b.id)}" hidden></figure>`;
+  // schema v2 in the flat Notes view: the hook as a question to think about, deeper detail and another way in place
+  if (b.t === "hook") return `<div class="lx-call lx-hook"><div class="lx-h"><b>Think first</b></div><p class="lx-b">${inline(b.x)}</p></div>`;
+  if (b.t === "more") return `<p class="lx-more">${inline(b.x)}</p>`;
+  if (b.t === "alt") return `<details class="lx-alt"><summary>${esc(b.style[0].toUpperCase() + b.style.slice(1))}</summary><p>${inline(b.x)}</p></details>`;
   return "";
 }
 // the lesson as plain text, for saving to the learner's documents

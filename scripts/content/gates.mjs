@@ -6,8 +6,10 @@ import { parseNotes, norm } from "../../kit/course/notes.js";
 import { longestSharedRun } from "../knowledge/lib.mjs";
 import { tokens } from "../curriculum/engine.mjs";
 import { parentOf } from "./shorthand.mjs";
+import { CONFIG } from "./lib.mjs";
+import { readFileSync } from "node:fs";
 
-const KNOWN = new Set(["S", "H", "P", "E", "X", "K", "!", "Q", "O", "PRE", "T", "SUM", "SAFE", "SRC", "READ", "IX", "D", "EV", "LV", "CASE", "LAW", "DRUG", "REQ", "DIA", "DNEED", "GAP"]);
+const KNOWN = new Set(["S", "H", "HOOK", "MORE", "ALT", "P", "E", "X", "K", "!", "Q", "O", "PRE", "T", "SUM", "SAFE", "SRC", "READ", "IX", "D", "EV", "LV", "CASE", "LAW", "DRUG", "REQ", "DIA", "DNEED", "GAP"]);
 const QTAG = /^(M|TF|MS|SEQ|MATCH|SA|NUM)[123]?(#[a-z0-9-]+)?(@[\d,]+)?:/;
 const lineOf = (text, re) => { const i = text.split("\n").findIndex((l) => re.test(l)); return i < 0 ? null : i + 1; };
 const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -183,10 +185,51 @@ export async function mathsDiagramGate(L, text, { render = null, legible = null 
 }
 
 /** all deterministic gates in order, stopping at the first failure */
-export async function runGates(text, { reqs = [], allowed = null, render = null, legible = null, prereq = null, taken = null } = {}) {
+// ---------- the production standard (owner, 25 Nov 2026; config.standards) ----------
+const normLine = (x) => String(x).toLowerCase().replace(/\s+/g, " ").replace(/[^a-z0-9 ]/g, "").trim();
+/** a lesson's diagrams, each counted once: library (D:), new rendered (DIA:) and specified but not yet drawn (DNEED:) */
+export function diagramsOf(text) {
+  const pick = (re) => [...new Set([...String(text).matchAll(re)].map((m) => normLine(m[1])).filter(Boolean))];
+  const library = pick(/^D:\s*(.+)$/gm), rendered = pick(/^DIA:\s*(.+)$/gm), needed = pick(/^DNEED:\s*(.+)$/gm);
+  return { library, rendered, needed, drawn: library.length + rendered.length, total: library.length + rendered.length + needed.length };
+}
+/** a lesson's flashcards (Q: lines), by question, each counted once */
+export const flashcardsOf = (text) => [...new Set([...String(text).matchAll(/^Q:\s*([^|]+)\|/gm)].map((m) => normLine(m[1])).filter(Boolean))];
+const STD = () => ({ flashcardsPerTopic: 20, diagramsPerLesson: 3, ...(CONFIG.standards || {}) });
+let LIBRARY = null;
+const libraryIds = () => (LIBRARY ||= (() => { try { const m = JSON.parse(readFileSync(new URL("../../kit/diagrams/manifest.json", import.meta.url), "utf8")); return new Set(Object.keys(m.diagrams || m)); } catch { return null; } })());
+/** every lesson: at least N distinct diagrams (a DNEED: specification counts here; publishing needs them drawn), and
+ * every D: id is a diagram in the library */
+export function standardsGate(L, text) {
+  const need = STD().diagramsPerLesson, d = diagramsOf(text), lib = libraryIds(), issues = [];
+  if (lib) for (const m of String(text).matchAll(/^D:\s*(\S+)/gm)) if (!lib.has(m[1])) issues.push({ code: "STD", line: lineOf(text, new RegExp(`^D:\\s*${esc(m[1])}`)), note: `D: ${m[1]} isn't in the diagram library: use an id from the packet's DIAG list, or a DNEED: line` });
+  if (d.total < need) issues.push({ code: "STD", line: null, note: `${d.total} distinct diagram${d.total === 1 ? "" : "s"}; every lesson needs at least ${need}: use a listed D: diagram, a DIA: spec for a listed renderer, or a DNEED: line saying exactly what to draw` });
+  return issues.length ? { gate: "standards", ok: false, issues } : { gate: "standards", ok: true };
+}
+const normUrl = (u) => String(u || "").trim().toLowerCase().replace(/^https?:\/\//, "").replace(/^www\./, "").replace(/[/#?]+$/, "");
+/** every SRC: line links to a source in the topic's research brief (sources: the brief's URLs), so each fact traces to it */
+export function sourcesGate(L, text, sources) {
+  if (!sources) return { gate: "sources", ok: true };
+  const ok = sources.map(normUrl).filter(Boolean), issues = [];
+  for (const x of L.sources) {
+    const at = lineOf(text, new RegExp(`^SRC:\\s*${esc(x.cite.slice(0, 30))}`)), n = normUrl(x.url);
+    if (!n) issues.push({ code: "SRC", line: at, note: `"${x.cite.slice(0, 50)}" has no link: cite a source from the research brief by its URL` });
+    else if (!ok.some((a) => n === a || n.startsWith(`${a}/`))) issues.push({ code: "SRC", line: at, note: `${x.url} isn't a source in the research brief` });
+  }
+  return issues.length ? { gate: "sources", ok: false, issues } : { gate: "sources", ok: true };
+}
+/** a topic: at least N distinct flashcards across its lessons (texts: every lesson of the topic, filed or new) */
+export function topicFlashcards(texts) {
+  const need = STD().flashcardsPerTopic, n = new Set(texts.flatMap(flashcardsOf)).size;
+  return { ok: n >= need, n, need, note: `${n} distinct flashcards across the topic; it needs at least ${need}` };
+}
+/** whether a filed lesson may be published: its diagrams must be drawn, not only specified */
+export const drawnEnough = (text) => diagramsOf(text).drawn >= STD().diagramsPerLesson;
+
+export async function runGates(text, { reqs = [], allowed = null, render = null, legible = null, prereq = null, taken = null, sources = null } = {}) {
   const p = parseGate(text); if (!p.ok) return { ok: false, failed: p, results: [p] };
   const L = p.lesson, results = [p];
-  for (const g of [() => coverageGate(L, text, { allowed, prereq, taken }), () => qaGate(L, text), () => specGate(L, text, reqs), () => mathsDiagramGate(L, text, { render, legible })]) {
+  for (const g of [() => coverageGate(L, text, { allowed, prereq, taken }), () => qaGate(L, text), () => sourcesGate(L, text, sources), () => standardsGate(L, text), () => specGate(L, text, reqs), () => mathsDiagramGate(L, text, { render, legible })]) {
     const r = await g(); results.push(r); if (!r.ok) return { ok: false, failed: r, results, lesson: L };
   }
   return { ok: true, results, lesson: L };

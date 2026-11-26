@@ -19,8 +19,8 @@ X: Why is the observable universe's radius larger than 13.8 billion light-years?
 !: Distant galaxies receding faster than light don't violate relativity; it's space expanding, not motion through space.
 Q: What is the particle horizon? | The maximum distance from which light could have reached us since the Big Bang.
 Q: How old is the universe? | About 13.8 billion years.
-M1: The radius of the observable universe is about: | 46 billion light-years | 13.8 billion | 100 million | Infinite | Comoving.
-M2: Ordinary matter makes up about what fraction of the universe's energy? | 5% | 27% | 68% | 50% | Baryons.
+M1#physics-u31-01-q1: The radius of the observable universe is about: | 46 billion light-years | 13.8 billion | 100 million | Infinite | Comoving.
+M2#physics-u31-01-q2: Ordinary matter makes up about what fraction of the universe's energy? | 5% | 27% | 68% | 50% | Baryons.
 
 ## Cosmological principles
 S: The cosmological principle states that, on large enough scales, the universe looks the same everywhere (homogeneous) and in every direction (isotropic). It's the foundational assumption that makes cosmology mathematically tractable and is supported by observations.
@@ -43,8 +43,8 @@ X: The CMB dipole (3.4 mK) isn't a violation of isotropy. Why?
 !: The universe is very inhomogeneous on small scales (galaxies, voids); the principle applies only on very large scales.
 Q: State the cosmological principle. | On large scales, the universe is homogeneous and isotropic.
 Q: What causes the CMB dipole? | Our motion relative to the CMB rest frame.
-M1: Above what scale does the universe look homogeneous? | ~100 Mpc | 1 kpc | 1 AU | 1 Gpc only | End of greatness.
-M2: The perfect cosmological principle was used by: | Steady-state theory | Big Bang theory | Inflation | ΛCDM | Unchanging in time.
+M1#physics-u31-02-q1: Above what scale does the universe look homogeneous? | ~100 Mpc | 1 kpc | 1 AU | 1 Gpc only | End of greatness.
+M2#physics-u31-02-q2: The perfect cosmological principle was used by: | Steady-state theory | Big Bang theory | Inflation | ΛCDM | Unchanging in time.
 
 ## Expansion of the universe
 S: The universe is expanding: distant galaxies are moving apart, not through space but because space itself stretches. The expansion was discovered in the 1920s and has been accelerating for the last ~5 billion years.
@@ -66,8 +66,8 @@ X: If the scale factor doubles, what happens to the distance between two unbound
 !: The expansion isn't an explosion into pre-existing space; space itself grows.
 Q: What is the scale factor? | The function a(t) describing how distances between unbound objects grow with time.
 Q: Who discovered the accelerating expansion? | Riess, Schmidt and Perlmutter's teams using type Ia supernovae (1998).
-M1: Galaxies held together by gravity: | Don't expand | Expand with space | Shrink | Vanish | Bound systems.
-M2: The CMB temperature scales with scale factor as: | 1/a | a | a^{2} | Constant | Redshift.
+M1#physics-u31-03-q1: Galaxies held together by gravity: | Don't expand | Expand with space | Shrink | Vanish | Bound systems.
+M2#physics-u31-03-q2: The CMB temperature scales with scale factor as: | 1/a | a | a^{2} | Constant | Redshift.
 
 ## Hubble's law
 S: Hubble's law states that galaxies recede at speeds proportional to their distance. The constant of proportionality, the Hubble constant, sets the current expansion rate and the universe's scale and age.
@@ -88,8 +88,8 @@ D: phys-u31-hubble-law
 !: Hubble's law is linear only at small distances; at high redshift, the relation depends on the expansion history.
 Q: State Hubble's law. | Recession velocity is proportional to distance: v = H_{0}d.
 Q: What is the Hubble tension? | The disagreement between early-universe (~67) and local (~73) measurements of H_{0}.
-M1: The Hubble time 1/H_{0} is roughly: | The age of the universe | The age of the Sun | 1 billion years | Infinite | ~14 Gyr.
-M2: Early-universe estimates of H_{0} come from: | The CMB | Cepheids | Supernovae only | Radar | Planck.
+M1#physics-u31-04-q1: The Hubble time 1/H_{0} is roughly: | The age of the universe | The age of the Sun | 1 billion years | Infinite | ~14 Gyr.
+M2#physics-u31-04-q2: Early-universe estimates of H_{0} come from: | The CMB | Cepheids | Supernovae only | Radar | Planck.
 
 ## Redshift and distance measurements
 S: Redshift measures how much the universe has expanded since light left a source; turning redshift into distance requires a cosmological model. Astronomers use several distance measures, each defined for a different purpose.
@@ -109,8 +109,8 @@ X: Light from a galaxy at z = 3: by what factor have wavelengths stretched, and 
 !: "Distance" is ambiguous in cosmology; always specify which one, especially at high redshift.
 Q: What is luminosity distance? | The distance inferred from observed flux and known luminosity, F = L/(4πd_{L}^{2}).
 Q: Why do very distant galaxies appear larger than intermediate ones? | Angular diameter distance decreases beyond z ≈ 1.6: we see them when the universe was smaller.
-M1: A galaxy at z = 2 emitted light when the universe was: | 1/3 its current size | Half its size | Twice its size | The same size | 1/(1 + z).
-M2: Type Ia supernovae are used as: | Standard candles | Standard rulers | Clocks | Lenses | Known luminosity.
+M1#physics-u31-05-q1: A galaxy at z = 2 emitted light when the universe was: | 1/3 its current size | Half its size | Twice its size | The same size | 1/(1 + z).
+M2#physics-u31-05-q2: Type Ia supernovae are used as: | Standard candles | Standard rulers | Clocks | Lenses | Known luminosity.
 
 ## Friedmann–Lemaître–Robertson–Walker models
 S: FLRW models are the family of general-relativistic universes that are homogeneous and isotropic. With the Friedmann equations and the universe's measured contents, they describe its expansion history from the Big Bang to the far future.
@@ -134,8 +134,8 @@ X: Age of an Einstein–de Sitter universe with H_{0} = 70 km s^{-1} Mpc^{-1}?
 !: FLRW models assume perfect homogeneity; real structure is treated as perturbations on top.
 Q: What does the equation of state parameter w describe? | The ratio of pressure to energy density for a cosmic component.
 Q: When did cosmic acceleration begin? | About 5 billion years ago (z ≈ 0.6–0.7 for onset of acceleration; Λ dominance near z ≈ 0.3).
-M1: A matter-dominated universe expands as: | t^{2/3} | t^{1/2} | e^{Ht} | t | Einstein–de Sitter.
-M2: Dark energy as a cosmological constant has w = : | −1 | 0 | ⅓ | 1 | Negative pressure.
+M1#physics-u31-06-q1: A matter-dominated universe expands as: | t^{2/3} | t^{1/2} | e^{Ht} | t | Einstein–de Sitter.
+M2#physics-u31-06-q2: Dark energy as a cosmological constant has w = : | −1 | 0 | ⅓ | 1 | Negative pressure.
 
 ## Big Bang cosmology
 S: The Big Bang theory states that the universe began about 13.8 billion years ago in an extremely hot, dense state and has been expanding and cooling ever since. It's supported by the expansion, the CMB, light element abundances and cosmic evolution.
@@ -161,8 +161,8 @@ X: Temperature of the universe when the CMB was released (z ≈ 1100)?
 !: The Big Bang didn't happen at a point in space; it happened everywhere at once.
 Q: What are the four main pieces of evidence for the Big Bang? | Expansion, the CMB, light-element abundances and cosmic evolution of galaxies.
 Q: When was the CMB released? | About 380 000 years after the Big Bang.
-M1: Big Bang nucleosynthesis happened at about: | 3 minutes | 380 000 years | 1 billion years | 10^{-36} s | First minutes.
-M2: Who coined the term "Big Bang"? | Fred Hoyle | Lemaître | Einstein | Hubble | 1949 radio.
+M1#physics-u31-07-q1: Big Bang nucleosynthesis happened at about: | 3 minutes | 380 000 years | 1 billion years | 10^{-36} s | First minutes.
+M2#physics-u31-07-q2: Who coined the term "Big Bang"? | Fred Hoyle | Lemaître | Einstein | Hubble | 1949 radio.
 
 ## Cosmic microwave background
 S: The cosmic microwave background is the afterglow of the Big Bang: light released when the universe became transparent 380 000 years after it began. Its near-perfect blackbody spectrum and tiny fluctuations are cosmology's most precise data.
@@ -185,8 +185,8 @@ D: phys-u31-cmb-spectrum
 !: The CMB isn't from the Big Bang "moment" itself; it was released 380 000 years later when atoms formed.
 Q: Why is the CMB a blackbody? | The early universe was in thermal equilibrium, and expansion preserves the blackbody shape while lowering the temperature.
 Q: What does the first acoustic peak's position tell us? | The universe is spatially flat.
-M1: The CMB was discovered by: | Penzias and Wilson | Hubble | COBE | Planck | 1965.
-M2: CMB anisotropies are about: | 1 part in 10^{5} | 1% | 10% | 1 part in 10^{12} | Tiny.
+M1#physics-u31-08-q1: The CMB was discovered by: | Penzias and Wilson | Hubble | COBE | Planck | 1965.
+M2#physics-u31-08-q2: CMB anisotropies are about: | 1 part in 10^{5} | 1% | 10% | 1 part in 10^{12} | Tiny.
 
 ## Primordial nucleosynthesis
 S: In the first few minutes after the Big Bang, protons and neutrons fused into deuterium, helium and a little lithium. The predicted abundances match observations, a major success of the Big Bang theory and a measure of ordinary matter's density.
@@ -206,8 +206,8 @@ X: Helium mass fraction if n/p = 1/7 at nucleosynthesis?
 !: Big Bang nucleosynthesis made almost no carbon or heavier elements; those came from stars.
 Q: What did Big Bang nucleosynthesis produce? | Hydrogen, helium-4 (~25% by mass), deuterium, helium-3 and traces of lithium-7.
 Q: Why couldn't BBN make heavier elements? | No stable nuclei at mass 5 or 8, and the universe cooled too fast.
-M1: The primordial helium mass fraction is about: | 25% | 75% | 2% | 50% | Y_{p}.
-M2: The lithium problem is that observed lithium-7 is: | About three times lower than predicted | Higher | Absent | Exactly right | Unresolved.
+M1#physics-u31-09-q1: The primordial helium mass fraction is about: | 25% | 75% | 2% | 50% | Y_{p}.
+M2#physics-u31-09-q2: The lithium problem is that observed lithium-7 is: | About three times lower than predicted | Higher | Absent | Exactly right | Unresolved.
 
 ## Structure formation
 S: Galaxies, clusters and the cosmic web grew from tiny density fluctuations in the early universe, amplified by gravity over billions of years. Dark matter provided the scaffolding; ordinary matter fell in and formed stars.
@@ -227,8 +227,8 @@ X: By what factor has a density fluctuation grown since recombination (z ≈ 110
 !: Without dark matter, there wouldn't have been enough time to form galaxies from the tiny CMB fluctuations.
 Q: What seeded cosmic structure? | Quantum fluctuations stretched to cosmic scales by inflation.
 Q: Why is structure formation called hierarchical? | Small objects form first and merge into larger ones.
-M1: Hot dark matter would: | Suppress small-scale structure | Form galaxies first | Cause acceleration | Heat the CMB | Free streaming.
-M2: The cosmic web consists of: | Filaments, walls, clusters and voids | Uniform gas | Only galaxies | Black holes | Large-scale structure.
+M1#physics-u31-10-q1: Hot dark matter would: | Suppress small-scale structure | Form galaxies first | Cause acceleration | Heat the CMB | Free streaming.
+M2#physics-u31-10-q2: The cosmic web consists of: | Filaments, walls, clusters and voids | Uniform gas | Only galaxies | Black holes | Large-scale structure.
 
 ## Dark matter
 S: Dark matter is invisible matter making up about 27% of the universe's energy (85% of its matter). It interacts through gravity but not light, holds galaxies and clusters together and shaped cosmic structure. Its nature is unknown.
@@ -251,8 +251,8 @@ X: Ratio of dark matter to baryon density from Ω_{c} = 0.26 and Ω_{b} = 0.049?
 !: Dark matter isn't the same as dark energy; one attracts and clumps, the other is smooth and drives acceleration.
 Q: What fraction of matter is dark? | About 85%.
 Q: Why can't dark matter be ordinary matter? | Nucleosynthesis and the CMB limit baryons to ~5% of the universe, far below total matter.
-M1: The Bullet Cluster shows dark matter: | Separated from hot gas | Is hot gas | Doesn't exist | Is dark energy | Lensing offset.
-M2: Cold dark matter means it was: | Non-relativistic when structures formed | At 0 K | Frozen | Inside stars | Slow-moving.
+M1#physics-u31-11-q1: The Bullet Cluster shows dark matter: | Separated from hot gas | Is hot gas | Doesn't exist | Is dark energy | Lensing offset.
+M2#physics-u31-11-q2: Cold dark matter means it was: | Non-relativistic when structures formed | At 0 K | Frozen | Inside stars | Slow-moving.
 
 ## Dark energy
 S: Dark energy is the mysterious component causing the universe's expansion to accelerate. Making up about 68% of the universe's energy, it acts like a smooth energy with negative pressure, possibly the energy of empty space.
@@ -279,8 +279,8 @@ D: phys-u31-matter-vs-lambda
 !: Dark energy's effects are only significant on cosmic scales; it doesn't affect the Solar System measurably.
 Q: What is dark energy? | The component causing the accelerating expansion, with negative pressure.
 Q: What equation of state does a cosmological constant have? | w = −1.
-M1: Dark energy makes up about: | 68% of the universe | 27% | 5% | 95% | Largest component.
-M2: DESI results hint that dark energy may be: | Evolving over time | Exactly constant | Nonexistent | Made of neutrinos | Dynamical.
+M1#physics-u31-12-q1: Dark energy makes up about: | 68% of the universe | 27% | 5% | 95% | Largest component.
+M2#physics-u31-12-q2: DESI results hint that dark energy may be: | Evolving over time | Exactly constant | Nonexistent | Made of neutrinos | Dynamical.
 
 ## Cosmological constant
 S: The cosmological constant Λ is a term in Einstein's equations representing a constant energy density of empty space. Einstein added and abandoned it; it returned as the simplest explanation for cosmic acceleration, with a deep puzzle about its size.
@@ -299,8 +299,8 @@ X: Vacuum energy in a cubic metre at the observed density?
 !: The cosmological constant isn't a force pushing galaxies apart locally; its effect is negligible within bound systems.
 Q: Why did Einstein introduce the cosmological constant? | To allow a static universe.
 Q: What is the cosmological constant problem? | Quantum field theory predicts vacuum energy vastly larger (~10^{120}) than observed.
-M1: The cosmological constant behaves like: | Vacuum energy with negative pressure | Dark matter | Radiation | Ordinary matter | w = −1.
-M2: The coincidence problem asks why: | Dark energy and matter densities are similar today | Λ is negative | Galaxies exist | The CMB is uniform | Fine-tuned timing.
+M1#physics-u31-13-q1: The cosmological constant behaves like: | Vacuum energy with negative pressure | Dark matter | Radiation | Ordinary matter | w = −1.
+M2#physics-u31-13-q2: The coincidence problem asks why: | Dark energy and matter densities are similar today | Λ is negative | Galaxies exist | The CMB is uniform | Fine-tuned timing.
 
 ## Inflationary cosmology
 S: Inflation is a proposed period of extremely rapid exponential expansion in the first ~10^{-32} s. It explains why the universe is so flat and uniform and provides the seeds of all cosmic structure from quantum fluctuations.
@@ -323,8 +323,8 @@ X: Expansion factor for 60 e-folds?
 !: Inflation doesn't explain the origin of the universe; it describes a phase within its early history.
 Q: What three problems does inflation solve? | The horizon, flatness and monopole problems.
 Q: What would detecting primordial B-modes confirm? | Gravitational waves from inflation.
-M1: Inflation was first proposed by: | Alan Guth | Einstein | Hubble | Hawking | 1981.
-M2: The measured scalar spectral index is about: | 0.965 | 1.5 | 0 | 2 | Slightly red tilt.
+M1#physics-u31-14-q1: Inflation was first proposed by: | Alan Guth | Einstein | Hubble | Hawking | 1981.
+M2#physics-u31-14-q2: The measured scalar spectral index is about: | 0.965 | 1.5 | 0 | 2 | Slightly red tilt.
 
 ## Baryon acoustic oscillations
 S: Before recombination, sound waves rippled through the hot plasma of photons and baryons. When the universe became transparent, they froze in place, leaving a characteristic separation of ~150 Mpc between galaxies: a cosmic standard ruler.
@@ -343,8 +343,8 @@ X: Angular size of the BAO scale at a comoving distance of 3000 Mpc?
 !: The BAO signal is statistical: a slight excess of galaxy pairs at ~150 Mpc separation, not visible rings around individual galaxies.
 Q: What are baryon acoustic oscillations? | Frozen sound waves from the early universe, imprinting a preferred galaxy separation of ~150 Mpc.
 Q: Why is BAO a good standard ruler? | Its scale is set by well-understood early-universe physics.
-M1: The BAO scale is about: | 150 Mpc | 1 Mpc | 15 kpc | 1.5 Gpc | Sound horizon.
-M2: BAO was first detected in galaxy surveys in: | 2005 | 1965 | 1998 | 2020 | SDSS and 2dF.
+M1#physics-u31-15-q1: The BAO scale is about: | 150 Mpc | 1 Mpc | 15 kpc | 1.5 Gpc | Sound horizon.
+M2#physics-u31-15-q2: BAO was first detected in galaxy surveys in: | 2005 | 1965 | 1998 | 2020 | SDSS and 2dF.
 
 ## Large-scale structure
 S: On scales of millions of light-years, galaxies form a cosmic web: dense clusters linked by filaments and sheets surrounding vast empty voids. Its statistics test cosmological models and the nature of dark matter and dark energy.
@@ -366,8 +366,8 @@ X: Why does the cosmic web form filaments?
 !: Large-scale structure isn't static; galaxies flow along filaments towards clusters.
 Q: What is the cosmic web? | The network of galaxy clusters, filaments and sheets surrounding cosmic voids.
 Q: What is the S_{8} tension? | Weak lensing measures less clumpy matter than ΛCDM predicts from the CMB.
-M1: Our home supercluster is: | Laniakea | Virgo | Coma | Shapley | 2014.
-M2: The correlation function measures: | Excess probability of galaxy pairs at given separations | Galaxy temperatures | Star formation | Black hole spin | Clustering.
+M1#physics-u31-16-q1: Our home supercluster is: | Laniakea | Virgo | Coma | Shapley | 2014.
+M2#physics-u31-16-q2: The correlation function measures: | Excess probability of galaxy pairs at given separations | Galaxy temperatures | Star formation | Black hole spin | Clustering.
 
 ## Galaxy surveys
 S: Galaxy surveys map the positions, distances and properties of millions to billions of galaxies. They trace large-scale structure, measure cosmic expansion and growth, and test dark energy and gravity.
@@ -389,8 +389,8 @@ X: How many galaxies will Rubin LSST catalogue?
 !: Photometric redshifts are approximate (errors ~0.02–0.05 × (1 + z)); spectroscopic surveys are needed for precise 3D clustering.
 Q: What's the difference between spectroscopic and photometric surveys? | Spectroscopic gives precise redshifts for fewer objects; photometric gives approximate redshifts for many more.
 Q: What does DESI measure? | Baryon acoustic oscillations and redshift-space distortions from tens of millions of galaxy redshifts.
-M1: Redshift-space distortions measure: | The growth rate of structure | Galaxy colours | Star ages | Black hole masses | Peculiar velocities.
-M2: The Vera C. Rubin Observatory performs: | A wide photometric survey (LSST) | Spectroscopy only | Radio surveys | X-ray surveys | Legacy Survey of Space and Time.
+M1#physics-u31-17-q1: Redshift-space distortions measure: | The growth rate of structure | Galaxy colours | Star ages | Black hole masses | Peculiar velocities.
+M2#physics-u31-17-q2: The Vera C. Rubin Observatory performs: | A wide photometric survey (LSST) | Spectroscopy only | Radio surveys | X-ray surveys | Legacy Survey of Space and Time.
 
 ## Cosmic distance ladder
 S: The cosmic distance ladder measures distances step by step: each method calibrates the next, reaching from the Solar System to the edge of the observable universe. It's how astronomers measure the Hubble constant locally.
@@ -413,8 +413,8 @@ X: Parallax of a star at 100 pc?
 !: Each rung's uncertainty adds to the next; that's why independent anchors and methods matter.
 Q: What is Leavitt's law? | Cepheid variables' periods correlate with their luminosities.
 Q: What is the most direct way to measure stellar distances? | Trigonometric parallax.
-M1: Gaia measures distances using: | Parallax | Redshift | Supernovae | Cepheids only | Astrometry.
-M2: A star with parallax 0.1″ is at: | 10 pc | 0.1 pc | 100 pc | 1 pc | d = 1/p.
+M1#physics-u31-18-q1: Gaia measures distances using: | Parallax | Redshift | Supernovae | Cepheids only | Astrometry.
+M2#physics-u31-18-q2: A star with parallax 0.1″ is at: | 10 pc | 0.1 pc | 100 pc | 1 pc | d = 1/p.
 
 ## Age and geometry of the universe
 S: Combining the expansion rate and the universe's contents gives its age, 13.8 billion years, and its geometry, flat to within 0.2%. Independent ages from the oldest stars agree.
@@ -436,8 +436,8 @@ X: Why was a 1990s Hubble constant near 80 a problem without dark energy?
 !: "Flat" refers to spatial geometry; spacetime is still curved because of expansion.
 Q: How old is the universe? | About 13.8 billion years.
 Q: How does the CMB reveal geometry? | The angular size of acoustic peaks (a known ruler) depends on spatial curvature.
-M1: The universe's spatial curvature is: | Consistent with flat | Strongly positive | Strongly negative | Unmeasured | |Ω_{k}| < 0.002.
-M2: The oldest stars are about: | 12–13.5 billion years old | 4.6 billion | 20 billion | 1 billion | Globular clusters.
+M1#physics-u31-19-q1: The universe's spatial curvature is: | Consistent with flat | Strongly positive | Strongly negative | Unmeasured | |Ω_{k}| < 0.002.
+M2#physics-u31-19-q2: The oldest stars are about: | 12–13.5 billion years old | 4.6 billion | 20 billion | 1 billion | Globular clusters.
 
 ## Open, flat and closed cosmologies
 S: The overall geometry of the universe depends on its total density compared with the critical density. Closed universes curve back on themselves, open ones curve like saddles, and flat ones follow Euclidean geometry.
@@ -456,8 +456,8 @@ X: Critical density today (H_{0} = 67.4 km s^{-1} Mpc^{-1})?
 !: A flat universe isn't flat like a sheet of paper; it's three-dimensional space with zero curvature.
 Q: What determines whether the universe is open, flat or closed? | Its total density relative to the critical density.
 Q: Does a closed universe necessarily recollapse? | No; with enough dark energy, it can expand forever.
-M1: Ω > 1 corresponds to: | Closed (positive curvature) | Open | Flat | Static | k = +1.
-M2: The critical density is about: | 5 hydrogen atoms per m^{3} | 1 g cm^{-3} | 1 atom per km^{3} | Water density | ~10^{-26} kg m^{-3}.
+M1#physics-u31-20-q1: Ω > 1 corresponds to: | Closed (positive curvature) | Open | Flat | Static | k = +1.
+M2#physics-u31-20-q2: The critical density is about: | 5 hydrogen atoms per m^{3} | 1 g cm^{-3} | 1 atom per km^{3} | Water density | ~10^{-26} kg m^{-3}.
 
 ## Matter-energy density parameters
 S: The universe's contents are summarised by density parameters: each component's density as a fraction of the critical density. Measuring them precisely is the main goal of observational cosmology.
@@ -481,8 +481,8 @@ D: phys-u31-matter-fraction
 !: Density parameters change with time; quoted values are today's.
 Q: What is a density parameter? | A component's density divided by the critical density.
 Q: Where are most of the universe's baryons? | In hot, diffuse gas around and between galaxies.
-M1: Baryons make up about what fraction of all matter? | ~16% | 50% | 85% | 100% | 0.049/0.31.
-M2: Fast radio bursts helped locate: | The missing baryons | Dark matter | Dark energy | Neutrinos | Dispersion measures.
+M1#physics-u31-21-q1: Baryons make up about what fraction of all matter? | ~16% | 50% | 85% | 100% | 0.049/0.31.
+M2#physics-u31-21-q2: Fast radio bursts helped locate: | The missing baryons | Dark matter | Dark energy | Neutrinos | Dispersion measures.
 
 ## Modified gravity
 S: Modified gravity theories change general relativity on large scales or at low accelerations, aiming to explain cosmic acceleration or galaxy dynamics without dark energy or dark matter. Observations increasingly constrain them.
@@ -504,8 +504,8 @@ X: Why did GW170817 kill many modified gravity models?
 !: Modified gravity must reproduce all the successes of GR, from GPS to binary pulsars; that's a demanding requirement.
 Q: What is a screening mechanism? | A way for modified gravity effects to be suppressed in dense regions like the Solar System.
 Q: What is MOND? | Modified Newtonian Dynamics, altering gravity at very low accelerations to explain galaxy rotation without dark matter.
-M1: GW170817 constrained the speed of gravity to equal c within: | 10^{-15} | 1% | 10% | 10^{-3} | Arrival times.
-M2: f(R) gravity modifies: | The Einstein–Hilbert action | Newton's constant only | Quantum mechanics | The speed of light | R → f(R).
+M1#physics-u31-22-q1: GW170817 constrained the speed of gravity to equal c within: | 10^{-15} | 1% | 10% | 10^{-3} | Arrival times.
+M2#physics-u31-22-q2: f(R) gravity modifies: | The Einstein–Hilbert action | Newton's constant only | Quantum mechanics | The speed of light | R → f(R).
 
 ## Cyclic and alternative cosmological models
 S: Besides the standard inflationary Big Bang, physicists explore alternatives: cyclic universes, bouncing cosmologies and steady-state theories. They address the origin of the Big Bang and the initial conditions inflation assumes.
@@ -525,8 +525,8 @@ X: How did type Ia supernova light curves rule out tired light?
 !: Alternatives aren't fringe if they make testable predictions; the steady-state theory was respectable until data refuted it.
 Q: Why was the steady-state theory abandoned? | The CMB and evolving galaxy and quasar populations contradicted it.
 Q: How could B-mode polarisation discriminate between inflation and cyclic models? | Inflation predicts primordial gravitational waves; ekpyrotic models predict almost none.
-M1: Supernova time dilation rules out: | Tired light | The Big Bang | Dark energy | Inflation | Light-curve stretching.
-M2: Loop quantum cosmology replaces the Big Bang singularity with: | A bounce | A black hole | Nothing | Inflation | Quantum geometry.
+M1#physics-u31-23-q1: Supernova time dilation rules out: | Tired light | The Big Bang | Dark energy | Inflation | Light-curve stretching.
+M2#physics-u31-23-q2: Loop quantum cosmology replaces the Big Bang singularity with: | A bounce | A black hole | Nothing | Inflation | Quantum geometry.
 
 ## Observational constraints on cosmology
 S: Modern cosmology combines many independent observations, each constraining different parameters. The six-parameter ΛCDM model fits them remarkably well, though several tensions hint at possible new physics.
@@ -547,6 +547,6 @@ X: Why combine probes rather than rely on one?
 !: A good fit doesn't prove a model; ΛCDM fits well but leaves dark matter and dark energy unexplained.
 Q: How many free parameters does basic ΛCDM have? | Six.
 Q: Name two current tensions in cosmology. | The Hubble tension and the S_{8} tension (also evolving dark energy hints).
-M1: Cosmological data constrain the sum of neutrino masses to below about: | 0.1 eV | 10 eV | 1 keV | 1 eV | Tight bound.
-M2: Combining probes helps by: | Breaking parameter degeneracies | Hiding errors | Removing dark energy | Lowering costs only | Complementary constraints.
+M1#physics-u31-24-q1: Cosmological data constrain the sum of neutrino masses to below about: | 0.1 eV | 10 eV | 1 keV | 1 eV | Tight bound.
+M2#physics-u31-24-q2: Combining probes helps by: | Breaking parameter degeneracies | Hiding errors | Removing dark energy | Lowering costs only | Complementary constraints.
 `;

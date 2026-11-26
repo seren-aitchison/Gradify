@@ -66,8 +66,8 @@
   {
    "slug": "computing",
    "name": "Computer Science",
-   "site": "TechGradify · ForgeLab",
-   "status": "external",
+   "site": "TechGradify",
+   "status": "beta",
    "accent": "#666666",
    "page": "/techgradify/course/",
    "units": 12,

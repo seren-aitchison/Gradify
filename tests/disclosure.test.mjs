@@ -49,6 +49,11 @@ test("a requirement's row opens to its wording, the lessons that teach it and a 
   assert.match(html, /Prokaryotic cells<\/a><small>Not started/);
   assert.match(html, /Notation<\/a><small>part of it · Not started/);
   assert.match(html, /Practise this: 5 minutes/);
+  // an unchecked match is never "Taught in": only a person's verified mapping is
+  assert.match(html, /<p class="sm-mk">Provisionally mapped to \u2014 awaiting verification<\/p>/); assert.doesNotMatch(html, /Taught in/);
+  for (const evidence of ["ai-mapped", null]) assert.doesNotMatch(topicPageHtml({ ...m, points: [{ ...p, coverage: { ...p.coverage, evidence } }] }, { ...t, points: [{ ...p, coverage: { ...p.coverage, evidence } }] }, { titleOf: (id) => id }), /Taught in/);
+  const v = { ...p, coverage: { ...p.coverage, evidence: "verified" } };
+  assert.match(topicPageHtml({ ...m, points: [v] }, { ...t, points: [v] }, { titleOf: (id) => id }), /<p class="sm-mk">Taught in<\/p>/);
 });
 
 test("the tutor says what it uses: the lesson, what you type, a lab if used, other lessons' titles; focus can be switched off", () => {

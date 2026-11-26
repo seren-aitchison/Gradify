@@ -24,8 +24,8 @@ K: Every imaging modality is a physical measurement; choosing one means choosing
 !: A sharper image is not always a better one. If noise rises with resolution, the CNR can fall and lesions become harder to see.
 Q: What tissue property does ultrasound image? | Changes in acoustic impedance, which produce reflections.
 Q: How does Poisson noise scale with the number of counts N? | As √N, so the relative noise falls as 1/√N.
-M1: Which modality shows function rather than anatomy? | PET | Plain X-ray | CT without contrast | Ultrasound B-mode | PET maps where a metabolic tracer accumulates.
-M2: Detectability of a lesion is best described by: | Contrast-to-noise ratio | Pixel count alone | Field of view | Scan length | CNR combines contrast and noise.
+M1#physics-u35-01-q1: Which modality shows function rather than anatomy? | PET | Plain X-ray | CT without contrast | Ultrasound B-mode | PET maps where a metabolic tracer accumulates.
+M2#physics-u35-01-q2: Detectability of a lesion is best described by: | Contrast-to-noise ratio | Pixel count alone | Field of view | Scan length | CNR combines contrast and noise.
 
 ## X-ray production and imaging
 S: X-rays are produced when fast electrons strike a metal target, creating a continuous bremsstrahlung spectrum topped with characteristic lines. Passing through the body, they are attenuated by different amounts, and the transmitted pattern forms a shadow image.
@@ -53,9 +53,9 @@ K: Image contrast comes from differences in μ, which depends strongly on Z thro
 !: Raising kV improves penetration but reduces contrast, because the photoelectric effect falls steeply with energy.
 Q: What fraction of electron energy in an X-ray tube becomes X-rays? | About 1%; the rest is heat.
 Q: Why is bone so visible on X-ray images? | Its higher atomic number (calcium) strongly increases photoelectric absorption, which scales as Z^{3}.
-M1: The maximum photon energy from an 80 kV tube is: | 80 keV | 40 keV | 160 keV | 8 keV | E_{max} = eV.
-M2: Anti-scatter grids remove photons from: | Compton scattering | Photoelectric absorption | Characteristic emission | Pair production | Scattered photons blur the image.
-M3: Mammography uses low kV because: | Photoelectric contrast between soft tissues is higher | It is cheaper | It reduces scatter to zero | It gives higher dose | Low energies enhance small differences in Z and density.
+M1#physics-u35-02-q1: The maximum photon energy from an 80 kV tube is: | 80 keV | 40 keV | 160 keV | 8 keV | E_{max} = eV.
+M2#physics-u35-02-q2: Anti-scatter grids remove photons from: | Compton scattering | Photoelectric absorption | Characteristic emission | Pair production | Scattered photons blur the image.
+M3#physics-u35-02-q3: Mammography uses low kV because: | Photoelectric contrast between soft tissues is higher | It is cheaper | It reduces scatter to zero | It gives higher dose | Low energies enhance small differences in Z and density.
 
 ## Computed tomography
 S: Computed tomography rotates an X-ray source and detector around the patient, measuring attenuation along thousands of lines. A computer reconstructs a cross-sectional map of attenuation, removing the overlapping shadows that limit plain radiographs.
@@ -78,8 +78,8 @@ K: CT turns many projections into a map of attenuation coefficients, expressed i
 !: HU values depend on beam energy and calibration; they are not universal constants of the tissue.
 Q: What is the HU of water and air? | Water 0, air −1000.
 Q: What does helical CT mean? | The table moves continuously while the gantry rotates, so the beam traces a spiral through the patient.
-M1: Fat has a Hounsfield value of roughly: | −100 | +100 | 0 | −1000 | Fat attenuates slightly less than water.
-M2: Each CT detector reading measures: | A line integral of μ | μ at a single point | Proton density | Acoustic impedance | ln(I_{0}/I) = ∫μ dl.
+M1#physics-u35-03-q1: Fat has a Hounsfield value of roughly: | −100 | +100 | 0 | −1000 | Fat attenuates slightly less than water.
+M2#physics-u35-03-q2: Each CT detector reading measures: | A line integral of μ | μ at a single point | Proton density | Acoustic impedance | ln(I_{0}/I) = ∫μ dl.
 
 ## Magnetic resonance imaging
 S: Magnetic resonance imaging uses a strong magnetic field and radiofrequency pulses to make hydrogen nuclei in the body emit signals. Magnetic field gradients encode position, and differences in relaxation times give exceptional soft-tissue contrast without ionising radiation.
@@ -107,9 +107,9 @@ K: MRI signal comes from precessing proton magnetisation, and contrast comes fro
 !: T_{2} is always shorter than or equal to T_{1}; T_{2}* is shorter still.
 Q: What does a 180° refocusing pulse undo? | Dephasing from static field inhomogeneities, recovering a spin echo.
 Q: Which appears bright on a T_{2}-weighted image, fat or fluid? | Fluid (long T_{2}), such as CSF and oedema.
-M1: The proton Larmor frequency at 1.5 T is about: | 64 MHz | 42.58 MHz | 128 MHz | 1.5 GHz | 42.58 × 1.5 ≈ 63.9 MHz.
-M2: Gadolinium contrast works mainly by: | Shortening T_{1} | Increasing proton density | Absorbing X-rays | Raising B_{0} | Paramagnetic ions speed up longitudinal relaxation.
-M3: MRI position encoding uses: | Magnetic field gradients | Rotating X-ray tubes | Ultrasound echoes | Radioactive tracers | Gradients make the frequency and phase depend on position.
+M1#physics-u35-04-q1: The proton Larmor frequency at 1.5 T is about: | 64 MHz | 42.58 MHz | 128 MHz | 1.5 GHz | 42.58 × 1.5 ≈ 63.9 MHz.
+M2#physics-u35-04-q2: Gadolinium contrast works mainly by: | Shortening T_{1} | Increasing proton density | Absorbing X-rays | Raising B_{0} | Paramagnetic ions speed up longitudinal relaxation.
+M3#physics-u35-04-q3: MRI position encoding uses: | Magnetic field gradients | Rotating X-ray tubes | Ultrasound echoes | Radioactive tracers | Gradients make the frequency and phase depend on position.
 
 ## Nuclear medicine
 S: Nuclear medicine images and treats disease using radioactive tracers given to the patient. The tracer follows a biological pathway, so the emitted radiation reveals function such as blood flow, bone turnover, thyroid uptake or cancer metabolism.
@@ -136,8 +136,8 @@ K: Nuclear medicine images physiology: where the tracer goes, and how fast it ge
 !: Effective half-life is always shorter than both the physical and biological half-lives.
 Q: Why is Tc-99m so widely used? | Ideal 140 keV gamma, 6 h half-life, no beta emission, and it is made on site from a Mo-99 generator.
 Q: What does a gamma camera collimator do? | It passes only photons travelling in set directions, so each event's position is meaningful.
-M1: The effective half-life when T_{phys} = T_{bio} = 4 h is: | 2 h | 4 h | 8 h | 1 h | 1/T = 1/4 + 1/4.
-M2: Iodine-131 therapy targets the: | Thyroid | Liver | Brain | Lungs | The thyroid actively takes up iodine.
+M1#physics-u35-05-q1: The effective half-life when T_{phys} = T_{bio} = 4 h is: | 2 h | 4 h | 8 h | 1 h | 1/T = 1/4 + 1/4.
+M2#physics-u35-05-q2: Iodine-131 therapy targets the: | Thyroid | Liver | Brain | Lungs | The thyroid actively takes up iodine.
 
 ## Positron emission tomography
 S: Positron emission tomography detects pairs of 511 keV photons from positron annihilation. Because the photons fly apart in opposite directions, coincidence detection pins each decay to a line, building quantitative 3D maps of metabolism and receptor binding.
@@ -164,8 +164,8 @@ K: PET's coincidence detection gives electronic collimation, making it far more 
 !: Attenuation correction is essential. Both photons must escape, so the total path through the body matters, and an uncorrected image under-represents deep structures.
 Q: Why are PET photons 511 keV? | Each carries the rest energy of an electron (or positron), m_{e}c^{2} = 511 keV.
 Q: Why does FDG accumulate in many tumours? | Tumours consume lots of glucose; FDG is trapped after phosphorylation.
-M1: Time-of-flight PET improves: | Localisation along the line of response | Positron range | Photon energy | Half-life | Arrival-time difference narrows the event's position.
-M2: PET attenuation correction is usually derived from: | A CT scan | Ultrasound | An ECG | The injected activity alone | CT gives an attenuation map.
+M1#physics-u35-06-q1: Time-of-flight PET improves: | Localisation along the line of response | Positron range | Photon energy | Half-life | Arrival-time difference narrows the event's position.
+M2#physics-u35-06-q2: PET attenuation correction is usually derived from: | A CT scan | Ultrasound | An ECG | The injected activity alone | CT gives an attenuation map.
 
 ## Single-photon emission computed tomography
 S: Single-photon emission computed tomography rotates gamma cameras around the patient to build 3D images from single gamma photons. It is cheaper and more widely available than PET, and it is central to cardiac perfusion, bone and brain imaging.
@@ -189,8 +189,8 @@ K: SPECT trades PET's sensitivity for availability and a wide range of long-live
 !: Keep the camera close to the patient; resolution worsens rapidly with distance.
 Q: Why is SPECT less sensitive than PET? | It needs physical collimators that absorb most photons, whereas PET uses coincidence timing.
 Q: What is a typical SPECT tracer for cardiac perfusion? | Tc-99m sestamibi (or tetrofosmin).
-M1: Making collimator holes longer will: | Improve resolution but lower sensitivity | Raise both | Lower both | Change photon energy | Fewer oblique photons get through.
-M2: CZT detectors offer: | Better energy resolution | Positron detection | Higher X-ray dose | Larger crystals | Semiconductors convert gamma rays directly to charge.
+M1#physics-u35-07-q1: Making collimator holes longer will: | Improve resolution but lower sensitivity | Raise both | Lower both | Change photon energy | Fewer oblique photons get through.
+M2#physics-u35-07-q2: CZT detectors offer: | Better energy resolution | Positron detection | Higher X-ray dose | Larger crystals | Semiconductors convert gamma rays directly to charge.
 
 ## Ultrasound imaging
 S: Ultrasound imaging sends short pulses of high-frequency sound into the body and listens for echoes from tissue boundaries. Timing gives depth, echo strength gives brightness, and the whole process is safe, cheap, portable and fast enough to watch the heart beat.
@@ -216,9 +216,9 @@ K: Ultrasound images are maps of echoes: impedance changes and their depths, ass
 !: Air and bone block ultrasound almost completely, so the lungs and adult brain are hard to image.
 Q: Why is coupling gel used? | It removes air between transducer and skin; a tissue–air boundary would reflect nearly all the sound.
 Q: What trade-off governs the choice of frequency? | Higher frequency gives better resolution but more attenuation, so less penetration.
-M1: An echo arrives 130 μs after the pulse. Depth is about: | 10 cm | 20 cm | 5 cm | 1 cm | d = 1540 × 130 μs / 2.
-M2: Acoustic impedance is: | Density × speed of sound | Speed/density | Frequency × wavelength | Attenuation × depth | Z = ρc.
-M3: Imaging a thyroid near the skin would best use: | 12 MHz | 2 MHz | 50 kHz | 500 Hz | Shallow targets allow high frequency for resolution.
+M1#physics-u35-08-q1: An echo arrives 130 μs after the pulse. Depth is about: | 10 cm | 20 cm | 5 cm | 1 cm | d = 1540 × 130 μs / 2.
+M2#physics-u35-08-q2: Acoustic impedance is: | Density × speed of sound | Speed/density | Frequency × wavelength | Attenuation × depth | Z = ρc.
+M3#physics-u35-08-q3: Imaging a thyroid near the skin would best use: | 12 MHz | 2 MHz | 50 kHz | 500 Hz | Shallow targets allow high frequency for resolution.
 
 ## Doppler ultrasound
 S: Doppler ultrasound measures the frequency shift of echoes from moving blood cells to find how fast and in which direction blood flows. It diagnoses narrowed arteries, leaky heart valves, clots and fetal wellbeing.
@@ -245,8 +245,8 @@ K: The Doppler shift measures velocity along the beam; angle matters as much as 
 !: Pulsed Doppler aliases if the shift exceeds PRF/2; high-velocity jets wrap around and look like reverse flow.
 Q: What do red and blue mean in colour Doppler? | By convention, red is flow towards the transducer and blue away (not arterial vs venous).
 Q: Why does the Doppler shift fall at 90° insonation? | cos 90° = 0, so there is no velocity component along the beam.
-M1: Doubling the transmit frequency makes the Doppler shift: | Double | Halve | Unchanged | Quadruple | Δf ∝ f_{0}.
-M2: Continuous-wave Doppler cannot give: | Depth of the moving blood | High velocities | Direction | An audible signal | It receives from the whole overlapping beam.
+M1#physics-u35-09-q1: Doubling the transmit frequency makes the Doppler shift: | Double | Halve | Unchanged | Quadruple | Δf ∝ f_{0}.
+M2#physics-u35-09-q2: Continuous-wave Doppler cannot give: | Depth of the moving blood | High velocities | Direction | An audible signal | It receives from the whole overlapping beam.
 
 ## Radiation therapy
 S: Radiation therapy uses ionising radiation to kill cancer cells by damaging their DNA, while sparing normal tissue as much as possible. About half of all cancer patients receive it, and modern techniques shape dose to the tumour with millimetre accuracy.
@@ -272,8 +272,8 @@ K: Radiotherapy succeeds by delivering a lethal dose to the tumour while keeping
 !: Megavoltage photon beams deposit maximum dose a centimetre or more below the skin (build-up), which spares skin. This is a benefit, not a fault.
 Q: Why are hypoxic tumour cells radioresistant? | Oxygen fixes radiation damage to DNA; without it, more damage is repaired.
 Q: What is the PTV? | The planning target volume: the clinical target plus a margin for motion and setup error.
-M1: The lethal DNA lesion in radiotherapy is mainly the: | Double-strand break | Single base change | Methylation | Single-strand break | Double-strand breaks are hard to repair correctly.
-M2: Protons are attractive because of the: | Bragg peak | Photoelectric effect | Compton edge | Cherenkov light | Dose peaks at depth then falls sharply.
+M1#physics-u35-10-q1: The lethal DNA lesion in radiotherapy is mainly the: | Double-strand break | Single base change | Methylation | Single-strand break | Double-strand breaks are hard to repair correctly.
+M2#physics-u35-10-q2: Protons are attractive because of the: | Bragg peak | Photoelectric effect | Compton edge | Cherenkov light | Dose peaks at depth then falls sharply.
 
 ## Ionising radiation dosimetry
 S: Dosimetry measures and calculates how much energy ionising radiation deposits in matter and what that means biologically. Absorbed dose, equivalent dose and effective dose each answer a different question, and mixing them up is a classic error.
@@ -300,8 +300,8 @@ K: Gray measures energy; sievert estimates risk. Use Gy for radiotherapy and det
 !: Effective dose is for populations and comparisons, not for estimating an individual patient's precise risk.
 Q: What is 1 Gy? | 1 joule of energy absorbed per kilogram.
 Q: What is the radiation weighting factor for alpha particles? | 20.
-M1: An effective dose of 8 mSv is typical of: | A CT abdomen | A chest X-ray | A dental X-ray | A day of background | CT gives several mSv.
-M2: Equivalent dose accounts for: | Radiation type | Organ sensitivity | Time of exposure | Body mass | w_{R} weights the radiation type; w_{T} the organ.
+M1#physics-u35-11-q1: An effective dose of 8 mSv is typical of: | A CT abdomen | A chest X-ray | A dental X-ray | A day of background | CT gives several mSv.
+M2#physics-u35-11-q2: Equivalent dose accounts for: | Radiation type | Organ sensitivity | Time of exposure | Body mass | w_{R} weights the radiation type; w_{T} the organ.
 
 ## Radiation protection
 S: Radiation protection keeps exposures to patients, staff and the public as low as reasonably achievable while allowing the benefits of radiation. It rests on three principles, justification, optimisation and dose limits, and three practical tools: time, distance and shielding.
@@ -328,9 +328,9 @@ K: Doubling your distance from a source cuts dose rate to a quarter; distance is
 !: Dose limits do not apply to patients; their exposures are controlled by justification and optimisation.
 Q: What is the annual effective dose limit for the public? | 1 mSv (excluding natural background and medical exposures).
 Q: What does ALARA stand for? | As low as reasonably achievable.
-M1: Tripling distance from a point source changes dose rate by: | 1/9 | 1/3 | 1/6 | 3 | Inverse square.
-M2: Three half-value layers transmit: | 12.5% | 33% | 25% | 3% | (1/2)^{3}.
-M3: The occupational effective dose limit is: | 20 mSv per year | 1 mSv per year | 100 mSv per year | 500 mSv per year | ICRP and UK IRR17.
+M1#physics-u35-12-q1: Tripling distance from a point source changes dose rate by: | 1/9 | 1/3 | 1/6 | 3 | Inverse square.
+M2#physics-u35-12-q2: Three half-value layers transmit: | 12.5% | 33% | 25% | 3% | (1/2)^{3}.
+M3#physics-u35-12-q3: The occupational effective dose limit is: | 20 mSv per year | 1 mSv per year | 100 mSv per year | 500 mSv per year | ICRP and UK IRR17.
 
 ## Medical accelerators
 S: Medical linear accelerators accelerate electrons to several MeV using microwaves, then turn them into therapeutic X-ray beams or use them directly. Cyclotrons and synchrotrons accelerate protons and ions for particle therapy and make PET isotopes.
@@ -357,8 +357,8 @@ K: Linacs make megavoltage X-rays by stopping fast electrons in a target; cyclot
 !: "6 MV" describes the accelerating potential; the photon spectrum is continuous with a mean energy about a third of the maximum.
 Q: What produces the microwaves in a linac? | A magnetron or klystron, at about 3 GHz.
 Q: What does the multileaf collimator do? | Its many tungsten leaves shape the field to the tumour outline and modulate intensity.
-M1: A 9 MeV electron beam has a practical range of about: | 4.5 cm | 9 cm | 18 cm | 1 cm | E/2.
-M2: Medical PET isotopes are usually made in: | A cyclotron | A linac | A nuclear reactor only | An X-ray tube | Proton bombardment of targets.
+M1#physics-u35-13-q1: A 9 MeV electron beam has a practical range of about: | 4.5 cm | 9 cm | 18 cm | 1 cm | E/2.
+M2#physics-u35-13-q2: Medical PET isotopes are usually made in: | A cyclotron | A linac | A nuclear reactor only | An X-ray tube | Proton bombardment of targets.
 
 ## Brachytherapy
 S: Brachytherapy places sealed radioactive sources inside or next to a tumour, delivering a high dose locally with a steep fall-off that spares surrounding tissue. It is used for prostate, cervical, breast, skin and eye cancers.
@@ -383,8 +383,8 @@ K: Brachytherapy's steep 1/r^{2} fall-off gives dose concentration that external
 !: A positioning error of a few millimetres changes dose substantially because the gradient is so steep.
 Q: What isotope is used in most HDR afterloaders? | Iridium-192.
 Q: What is afterloading? | Placing empty applicators first, then sending the source in remotely, which reduces staff exposure.
-M1: Permanent prostate seeds commonly contain: | Iodine-125 | Cobalt-60 | Caesium-137 | Fluorine-18 | Low-energy, ~59-day half-life.
-M2: Total dose from a permanent implant is: | Initial dose rate × mean life | Initial dose rate × half-life | Initial rate only | Infinite | Integrating e^{−λt} gives Ḋ_{0}/λ.
+M1#physics-u35-14-q1: Permanent prostate seeds commonly contain: | Iodine-125 | Cobalt-60 | Caesium-137 | Fluorine-18 | Low-energy, ~59-day half-life.
+M2#physics-u35-14-q2: Total dose from a permanent implant is: | Initial dose rate × mean life | Initial dose rate × half-life | Initial rate only | Infinite | Integrating e^{−λt} gives Ḋ_{0}/λ.
 
 ## Radiobiological modelling
 S: Radiobiological models predict how cells, tumours and normal tissues respond to radiation dose, dose per fraction and time. The linear-quadratic model and biologically effective dose let clinicians compare and design fractionation schedules.
@@ -414,8 +414,8 @@ K: BED lets you compare schedules: larger fractions hit low α/β tissues harder
 !: LQ parameters come from limited data with big uncertainties; treat outputs as guides, not exact predictions.
 Q: Which tissue type has low α/β? | Late-reacting normal tissues (about 3 Gy) and prostate cancer (about 1.5 Gy).
 Q: Name the four Rs of radiobiology. | Repair, repopulation, reoxygenation, redistribution.
-M1: BED for 10 × 3 Gy with α/β = 10 is: | 39 Gy | 30 Gy | 60 Gy | 33 Gy | 30 × (1 + 0.3).
-M2: Treatment gaps mainly hurt outcomes through: | Tumour repopulation | Reoxygenation | Repair | Redistribution | Surviving clonogens keep dividing.
+M1#physics-u35-15-q1: BED for 10 × 3 Gy with α/β = 10 is: | 39 Gy | 30 Gy | 60 Gy | 33 Gy | 30 × (1 + 0.3).
+M2#physics-u35-15-q2: Treatment gaps mainly hurt outcomes through: | Tumour repopulation | Reoxygenation | Repair | Redistribution | Surviving clonogens keep dividing.
 
 ## Image reconstruction
 S: Image reconstruction turns raw measurements, such as projections, k-space samples or coincidence counts, into images. The same mathematics of inverse problems underpins CT, PET, SPECT and MRI, from the Radon transform to iterative and deep-learning methods.
@@ -443,8 +443,8 @@ K: Reconstruction is an inverse problem: know the physics, model the noise, and 
 !: Iterative and AI methods can change noise texture and fine detail; radiologists need to know what they are looking at.
 Q: Why is a ramp filter used in filtered back projection? | It removes the 1/r blurring caused by simple back projection.
 Q: What does the Fourier slice theorem state? | The Fourier transform of a projection is a central slice of the object's 2D Fourier transform.
-M1: OSEM is an iterative method suited to: | Poisson-distributed emission data | Ultrasound echoes only | Plain radiographs | Optical photographs | It is maximum-likelihood for counts.
-M2: Compressed sensing in MRI allows: | Undersampling k-space | Higher B_{0} | Ionising contrast | Removing gradients | Sparsity lets fewer samples suffice.
+M1#physics-u35-16-q1: OSEM is an iterative method suited to: | Poisson-distributed emission data | Ultrasound echoes only | Plain radiographs | Optical photographs | It is maximum-likelihood for counts.
+M2#physics-u35-16-q2: Compressed sensing in MRI allows: | Undersampling k-space | Higher B_{0} | Ionising contrast | Removing gradients | Sparsity lets fewer samples suffice.
 
 ## Image registration and analysis
 S: Image registration aligns images from different times, patients or modalities so they can be compared or fused. Image analysis then extracts quantities such as volumes, shapes and textures, turning pictures into measurements that guide diagnosis and treatment.
@@ -469,8 +469,8 @@ K: Registration puts images into the same coordinates so information can be comb
 !: A good similarity score does not guarantee anatomically correct deformation; always check registrations visually.
 Q: Why is mutual information used for multimodality registration? | It measures statistical dependence without assuming the intensities are similar.
 Q: How many parameters does a rigid 3D registration have? | Six: three translations and three rotations.
-M1: A Dice coefficient of 1 means: | Perfect overlap | No overlap | Half overlap | Undefined | Identical segmentations.
-M2: Deformable registration is needed for: | Breathing-induced organ motion | A fixed skull only | Changing pixel size only | Colour display | Organs warp, not just move rigidly.
+M1#physics-u35-17-q1: A Dice coefficient of 1 means: | Perfect overlap | No overlap | Half overlap | Undefined | Identical segmentations.
+M2#physics-u35-17-q2: Deformable registration is needed for: | Breathing-induced organ motion | A fixed skull only | Changing pixel size only | Colour display | Organs warp, not just move rigidly.
 
 ## Medical detector systems
 S: Medical detectors convert X-rays, gamma rays and particles into electrical signals. Choosing between scintillators, semiconductors and gas detectors depends on the needed efficiency, energy resolution, speed, spatial resolution and cost.
@@ -496,8 +496,8 @@ K: Detector choice is a balance of stopping power, light or charge yield, speed 
 !: High count rates cause dead-time losses; a detector can under-read a strong source dramatically.
 Q: Why is NaI(Tl) used in gamma cameras? | Good light output and efficiency at 140 keV, and it can be grown in large crystals cheaply.
 Q: What does DQE measure? | How efficiently a detector preserves the signal-to-noise ratio of the incoming photons.
-M1: Silicon photomultipliers replace: | Photomultiplier tubes | Collimators | Anodes | X-ray filters | They read scintillation light compactly, even in MRI fields.
-M2: Photon-counting CT detectors are typically made from: | CdTe or CZT | Lead | Air | Plastic scintillator | High-Z semiconductors.
+M1#physics-u35-18-q1: Silicon photomultipliers replace: | Photomultiplier tubes | Collimators | Anodes | X-ray filters | They read scintillation light compactly, even in MRI fields.
+M2#physics-u35-18-q2: Photon-counting CT detectors are typically made from: | CdTe or CZT | Lead | Air | Plastic scintillator | High-Z semiconductors.
 
 ## Optical medical imaging
 S: Optical imaging uses visible and near-infrared light to see tissue structure and chemistry at high resolution without ionising radiation. Its challenge is scattering, which limits depth, so methods range from endoscopy to optical coherence tomography and diffuse optics.
@@ -521,8 +521,8 @@ K: Optical imaging offers molecular and functional contrast, but scattering limi
 !: The near-infrared window improves penetration but does not abolish scattering; resolution still falls with depth.
 Q: How does a pulse oximeter work? | It compares absorption of red and infrared light by oxygenated and deoxygenated haemoglobin during each pulse.
 Q: What sets OCT axial resolution? | The source's coherence length: broader bandwidth gives finer resolution.
-M1: The tissue optical window lies around: | 650–950 nm | 200–300 nm | 10 μm | 1 mm | Lower absorption by haemoglobin and water.
-M2: Photoacoustic imaging detects: | Ultrasound produced by absorbed light | Reflected light only | X-rays | Radio waves | Light in, sound out.
+M1#physics-u35-19-q1: The tissue optical window lies around: | 650–950 nm | 200–300 nm | 10 μm | 1 mm | Lower absorption by haemoglobin and water.
+M2#physics-u35-19-q2: Photoacoustic imaging detects: | Ultrasound produced by absorbed light | Reflected light only | X-rays | Radio waves | Light in, sound out.
 
 ## Functional imaging
 S: Functional imaging measures what tissue is doing rather than what it looks like: blood flow, metabolism, oxygenation, diffusion and neural activity. Functional MRI, PET, perfusion and diffusion imaging are vital in neuroscience, oncology and cardiology.
@@ -545,8 +545,8 @@ K: Functional imaging measures physiology; BOLD fMRI sees blood oxygenation chan
 !: BOLD signals are small and noisy; statistical thresholds and motion correction matter enormously.
 Q: Why does neural activity raise the BOLD signal? | Blood flow overshoots oxygen demand, reducing paramagnetic deoxyhaemoglobin and lengthening T_{2}*.
 Q: What does a low ADC indicate? | Restricted diffusion, as in acute stroke or highly cellular tumours.
-M1: Diffusion tensor tractography maps: | White-matter fibre tracts | Bone density | Blood glucose | Lung ventilation | Water diffuses along axons.
-M2: Which gives the best time resolution for brain activity? | MEG | fMRI | PET | Perfusion CT | MEG measures magnetic fields from neural currents in milliseconds.
+M1#physics-u35-20-q1: Diffusion tensor tractography maps: | White-matter fibre tracts | Bone density | Blood glucose | Lung ventilation | Water diffuses along axons.
+M2#physics-u35-20-q2: Which gives the best time resolution for brain activity? | MEG | fMRI | PET | Perfusion CT | MEG measures magnetic fields from neural currents in milliseconds.
 
 ## Quality assurance in medical physics
 S: Quality assurance makes sure imaging and therapy equipment performs consistently and safely, so every patient gets the intended image quality or dose. Medical physicists design tests, set tolerances and track trends from daily checks to annual audits.
@@ -573,8 +573,8 @@ K: QA catches drift and faults before they reach patients; documentation and tre
 !: Passing gamma analysis does not guarantee a clinically correct plan; it only tests agreement under the chosen criteria.
 Q: What is commissioning? | Measuring and verifying a machine's data and performance before its first clinical use.
 Q: What does CTDI measure? | A standardised CT dose index measured in a phantom.
-M1: A daily CT check measures water's HU as: | About 0 | About −1000 | About +1000 | About +100 | Water defines 0 HU.
-M2: A typical IMRT QA gamma criterion is: | 3%/2 mm | 30%/20 mm | 0.1%/0.1 mm | 50%/1 cm | With ~95% pass rate.
+M1#physics-u35-21-q1: A daily CT check measures water's HU as: | About 0 | About −1000 | About +1000 | About +100 | Water defines 0 HU.
+M2#physics-u35-21-q2: A typical IMRT QA gamma criterion is: | 3%/2 mm | 30%/20 mm | 0.1%/0.1 mm | 50%/1 cm | With ~95% pass rate.
 
 ## Radiation safety and clinical risk
 S: Radiation safety in hospitals combines physics, regulation and human factors to prevent accidents and manage risk. Learning from incidents, clear roles and a just culture protect patients, staff and the public every day.
@@ -606,6 +606,6 @@ K: Most radiation incidents come from systems and people, not physics; layered i
 !: Do not quote LNT-based risks to individuals as certainties; they are population estimates with large uncertainty at low dose.
 Q: What does IR(ME)R regulate? | Medical exposures of patients to ionising radiation.
 Q: What was the main lesson of Therac-25? | Software errors can kill; safety needs independent hardware interlocks and rigorous system design.
-M1: Skin erythema in fluoroscopy is a: | Deterministic effect | Stochastic effect | Heritable effect | Psychological effect | It has a dose threshold.
-M2: FMEA is used to: | Anticipate and rank failures before they happen | Calibrate dosimeters | Reconstruct images | Measure T_{1} | It is a prospective risk method.
+M1#physics-u35-22-q1: Skin erythema in fluoroscopy is a: | Deterministic effect | Stochastic effect | Heritable effect | Psychological effect | It has a dose threshold.
+M2#physics-u35-22-q2: FMEA is used to: | Anticipate and rank failures before they happen | Calibrate dosimeters | Reconstruct images | Measure T_{1} | It is a prospective risk method.
 `;

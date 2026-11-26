@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!-- coming soon: kept out of search until the site has its own lessons (kit/core/sites.js status) -->
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>GeographyGradify: Read the world from rivers to cities.</title>
+  <!-- GeographyGradify's homepage, made from kit/templates/subsite by npm run new-site, with the opening
+       copy from kit/core/site-pages.js. Build the site out from here; the look comes from
+       kit/styles/subsite.css, shared by every sub-site. -->
+  <meta name="gradify-site" content="GeographyGradify">
+  <meta name="description" content="Physical, human and environmental geography, with maps, GIS and fieldwork, learned from your notes and applied to real places.">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="preload" href="/assets/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../kit/styles/base.css">
+  <script src="../kit/core/theme-boot.js"></script>
+  <link rel="stylesheet" href="../kit/styles/components.css">
+  <link rel="stylesheet" href="../kit/styles/subsite.css">
+  <!-- module-preload: written by scripts/preload-modules.mjs; run it after changing imports -->
+  <link rel="modulepreload" href="../kit/core/site.js">
+  <link rel="modulepreload" href="../kit/core/icons.js">
+  <link rel="modulepreload" href="../kit/core/colour.js">
+  <link rel="modulepreload" href="../kit/core/subsite-home.js">
+  <link rel="modulepreload" href="../kit/core/subheader.js">
+  <link rel="modulepreload" href="../kit/core/text.js">
+  <link rel="modulepreload" href="../kit/core/sites.js">
+  <link rel="modulepreload" href="../gradify.config.js">
+  <link rel="modulepreload" href="../kit/core/subnav.js">
+  <link rel="modulepreload" href="../kit/core/accent.js">
+  <link rel="modulepreload" href="../kit/core/site-content.js">
+  <link rel="modulepreload" href="../kit/models/index.js">
+  <link rel="modulepreload" href="../kit/data/profile.js">
+  <link rel="modulepreload" href="../kit/core/analytics.js">
+  <link rel="modulepreload" href="../kit/ui/art.js">
+  <link rel="modulepreload" href="../kit/core/glass-icons.js">
+  <link rel="modulepreload" href="../kit/core/continue.js">
+  <link rel="modulepreload" href="../kit/ui/global-nav.js">
+  <link rel="modulepreload" href="../kit/core/menu-set.js">
+  <link rel="modulepreload" href="../kit/ui/store.js">
+  <link rel="modulepreload" href="../kit/ui/icons.js">
+  <link rel="modulepreload" href="../kit/ui/palette.js">
+  <link rel="modulepreload" href="../kit/ui/places.js">
+  <link rel="modulepreload" href="../kit/ui/feedback.js">
+  <link rel="modulepreload" href="../kit/ui/resources.js">
+  <link rel="modulepreload" href="../kit/ui/keys.js">
+  <link rel="modulepreload" href="../kit/ui/shelf.js">
+  <link rel="modulepreload" href="../kit/data/learner-state.js">
+  <link rel="modulepreload" href="../kit/ui/overlay.js">
+  <!-- /module-preload -->
+  <script type="module">
+    import { SITES, nameHtml, accentOf } from "../kit/core/site.js";
+    import { icon } from "../kit/core/icons.js";
+    import { tile, ink } from "../kit/core/colour.js";
+    import { renderHome } from "../kit/core/subsite-home.js";
+    // the rest of the page (how it works, topics, features, progress, a day, questions), from kit/core/site-content.js
+    renderHome(document.getElementById("sub-more"), document.querySelector('meta[name="gradify-site"]').content);
+    const s = SITES.find((x) => x.n === "GeographyGradify");
+    if (s) {
+      document.body.style.setProperty("--accent", accentOf(s));
+      document.querySelectorAll(".sub-brand .icon").forEach((el) => { el.innerHTML = icon(s.i); el.style.cssText = `--c:#${s.c};--tile:${tile(s.c)};--ink:${ink(s.c)}`; });
+      // the site's name with its first word in the accent colour, everywhere it appears
+      document.querySelectorAll("[data-site-name]").forEach((n) => { n.innerHTML = nameHtml(s); });
+      document.querySelectorAll("[data-icon]").forEach((el) => { el.innerHTML = icon(el.dataset.icon); });
+    }
+    // the checks in the demo window tick off one by one, like tests passing, then start again
+    const checks = [...document.querySelectorAll(".sw-tests li")], run = document.querySelector(".sw-run");
+    const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let k = 0;
+    const step = () => {
+      if (k > checks.length) { checks.forEach((c) => c.classList.remove("ok")); k = 0; }
+      checks.forEach((c, i) => c.classList.toggle("ok", i < k));
+      run.textContent = k >= checks.length ? `All ${checks.length} checks passed` : `Checking your answer…`;
+      k++;
+    };
+    if (still) { checks.forEach((c) => c.classList.add("ok")); run.textContent = `All ${checks.length} checks passed`; }
+    else { step(); setInterval(step, 1100); }
+  </script>
+</head>
+<body class="sub-page">
+  <div class="wrap">
+    <!-- sub-header: written by scripts/sync-headers.mjs; edit it there -->
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="sub-nav glass">
+      <a class="sub-brand" href="./"><span class="icon"></span><span data-site-name>GeographyGradify</span></a>
+      <nav class="sub-links" aria-label="GeographyGradify">
+        <a href="app.html#/study">Study</a>
+        <details class="sub-more"><summary>More</summary><div class="sub-more-list"><a href="map.html">Map</a><a href="lifeos.html">LifeOS</a><a href="app.html#/notes">Notes</a><a href="app.html#/progress">Progress</a><a href="app.html#/plan">Plan</a><a href="/">All Gradify sites</a></div></details>
+      </nav>
+      <div class="sub-right">
+        <a class="signin" href="app.html#/account">Sign in</a>
+        <a class="btn btn-light lg btn-sm sub-cta" href="app.html"><span>Start free</span></a>
+      </div>
+    </header>
+    <script type="module" src="../kit/core/subheader.js"></script>
+    <!-- /sub-header -->
+
+    <main id="main">
+      <section class="sub-hero">
+        <div>
+          <a class="sub-badge" href="/#lifeos"><i></i>A Gradify site, designed to connect with Gradify LifeOS <span aria-hidden="true">→</span></a>
+          <h1><span>Read the world</span><span class="fade">from rivers to cities.</span></h1>
+          <p class="lede">Physical, human and environmental geography, with maps, GIS and fieldwork, learned from your notes and applied to real places.</p>
+          <div class="sub-ctas">
+            <a class="btn btn-light lg" href="app.html"><span>Add your first notes</span> <span aria-hidden="true">→</span></a>
+            <a class="btn btn-ghost lg" href="map.html"><span data-icon="route"></span><span>Open the learning map</span></a>
+          </div>
+          <ul class="sub-ticks"><li>Physical and human</li><li>Maps and fieldwork</li><li>Free to start</li></ul>
+        </div>
+        <div class="sub-window" aria-label="An example of GeographyGradify checking an answer">
+          <div class="sw-top"><i></i><i></i><i></i><span class="sw-file">river-processes.pdf</span><span class="sw-level">GCSE</span></div>
+          <pre class="sw-code"><span class="c"># Question</span>
+<span class="k">Why does a meander's outer bank erode faster than its inner bank?</span>
+
+<span class="c"># Your answer</span>
+<span class="a">Water flows fastest on the outside of the bend, so it erodes there and deposits on the slower inside.</span></pre>
+          <div class="sw-tests"><span class="sw-run">Checking your answer…</span><ul><li>Velocity</li><li>Erosion</li><li>Deposition</li><li>Landform</li></ul></div>
+        </div>
+      </section>
+      <div id="sub-more"></div>
+    </main>
+    <!-- sub-footer: written by scripts/sync-headers.mjs; edit it there -->
+    <footer class="sub-foot"><p><span data-site-name>GeographyGradify</span> is part of <a href="/">Gradify</a>. Sign in to keep your progress on every device.</p><nav aria-label="Free study resources"><a href="/study-plan/">Free study plans</a><a href="/tools/">Free study tools</a><a href="/guides/">Study guides</a></nav><nav aria-label="GeographyGradify footer"><a href="/">All Gradify sites</a><a href="/pricing.html">Pricing</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="mailto:hello@getgradify.com">Contact</a></nav></footer>
+    <!-- /sub-footer -->
+  </div>
+</body>
+</html>

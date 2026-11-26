@@ -15,8 +15,8 @@ D: phys-u14-copper-rod
 !: Materials that feel cold (metal, stone) aren't colder; they conduct heat away from your hand faster.
 Q: Why are metals good thermal conductors? | Free electrons carry heat efficiently, as well as lattice vibrations.
 Q: What is the Wiedemann–Franz law? | The ratio of thermal to electrical conductivity in metals is proportional to temperature: κ/σ = LT.
-M1: Which conducts heat best? | Diamond | Wood | Air | Glass | Exceptionally high phonon conductivity.
-M2: Doubling the thickness of a wall changes conductive heat loss by: | ×1/2 | ×2 | ×4 | No change | P ∝ 1/L.
+M1#physics-u14-01-q1: Which conducts heat best? | Diamond | Wood | Air | Glass | Exceptionally high phonon conductivity.
+M2#physics-u14-01-q2: Doubling the thickness of a wall changes conductive heat loss by: | ×1/2 | ×2 | ×4 | No change | P ∝ 1/L.
 
 ## Convection
 S: Convection transfers heat by bulk movement of a fluid. Warm fluid rises because it's less dense, carrying energy with it. Convection drives weather, ocean currents, boiling, and cooling of everything from computers to stars.
@@ -35,8 +35,8 @@ X: A 1 m^{2} radiator at 60 °C in 20 °C air with h = 10 W m^{-2} K^{-1}. Conve
 !: Convection can't happen in solids or in a vacuum; it needs a fluid that can flow.
 Q: What drives natural convection? | Buoyancy: warmer, less dense fluid rises and cooler fluid sinks.
 Q: Why is boiling such an effective way to remove heat? | Latent heat absorption and vigorous fluid motion give very high heat transfer coefficients.
-M1: A sea breeze blows during the day because: | Land heats faster, air above it rises and cooler sea air flows in | The sea is warmer | The Moon's gravity | Air is pushed by waves | Differential heating.
-M2: Convective heat transfer is largest with: | Boiling water | Still air | Moving air | Vacuum | Highest h.
+M1#physics-u14-02-q1: A sea breeze blows during the day because: | Land heats faster, air above it rises and cooler sea air flows in | The sea is warmer | The Moon's gravity | Air is pushed by waves | Differential heating.
+M2#physics-u14-02-q2: Convective heat transfer is largest with: | Boiling water | Still air | Moving air | Vacuum | Highest h.
 
 ## Thermal radiation
 S: Every object above absolute zero emits electromagnetic radiation because of the thermal motion of its charges. Radiation needs no medium: it's how the Sun warms the Earth and how hot objects glow.
@@ -58,8 +58,8 @@ X: Net radiation from a person (A = 1.8 m^{2}, ε = 0.97, skin 307 K) in a 293 K
 !: A hot object in a hot room radiates just as much as in a cold room; it's the net exchange that changes.
 Q: Why does a vacuum flask have silvered walls? | Low emissivity reduces heat transfer by radiation.
 Q: Why does frost form on clear nights? | Surfaces radiate to the cold, clear sky and cool below air temperature.
-M1: Thermal radiation can travel through: | A vacuum | Only solids | Only liquids | Only air | EM waves.
-M2: A body's radiated power quadruples when its absolute temperature increases by a factor of: | √2 | 2 | 4 | 16 | T^{4}.
+M1#physics-u14-03-q1: Thermal radiation can travel through: | A vacuum | Only solids | Only liquids | Only air | EM waves.
+M2#physics-u14-03-q2: A body's radiated power quadruples when its absolute temperature increases by a factor of: | √2 | 2 | 4 | 16 | T^{4}.
 
 ## Fourier's law of heat conduction
 S: Fourier's law states that heat flux is proportional to the temperature gradient and flows down it. Combined with energy conservation, it gives the heat equation, the model for diffusion of heat in any material.
@@ -80,8 +80,8 @@ D: phys-u14-penetration-depth
 !: Fourier's law assumes local equilibrium; it fails at nanoscales or very short times (ballistic phonons, second sound).
 Q: State Fourier's law. | Heat flux is proportional to and opposite the temperature gradient: q = −κ∇T.
 Q: What equation results from Fourier's law plus energy conservation? | The heat (diffusion) equation.
-M1: The temperature profile through a uniform plane wall in steady state is: | Linear | Exponential | Logarithmic | Parabolic | Constant flux.
-M2: Seasonal temperature swings penetrate deeper than daily ones because: | Lower frequency waves penetrate deeper | Summer is hotter | Soil changes | Rain carries heat | δ ∝ 1/√ω.
+M1#physics-u14-04-q1: The temperature profile through a uniform plane wall in steady state is: | Linear | Exponential | Logarithmic | Parabolic | Constant flux.
+M2#physics-u14-04-q2: Seasonal temperature swings penetrate deeper than daily ones because: | Lower frequency waves penetrate deeper | Summer is hotter | Soil changes | Rain carries heat | δ ∝ 1/√ω.
 
 ## Newton's law of cooling
 S: Newton's law of cooling says an object's rate of heat loss is proportional to the temperature difference between it and its surroundings. Its temperature then approaches the surroundings exponentially.
@@ -103,8 +103,8 @@ D: phys-u14-coffee-cooling
 !: Newton's law is an empirical approximation, not a fundamental law; it fails for large temperature differences and for objects with internal temperature gradients.
 Q: State Newton's law of cooling. | The rate of cooling is proportional to the temperature difference with the surroundings.
 Q: What does the Biot number test? | Whether an object can be treated as having uniform internal temperature (Bi < 0.1).
-M1: Under Newton's law, temperature difference decays: | Exponentially | Linearly | As 1/t | Not at all | First-order ODE.
-M2: A larger object of the same material cools: | More slowly | Faster | At the same rate | Instantly | τ ∝ mass/area ∝ size.
+M1#physics-u14-05-q1: Under Newton's law, temperature difference decays: | Exponentially | Linearly | As 1/t | Not at all | First-order ODE.
+M2#physics-u14-05-q2: A larger object of the same material cools: | More slowly | Faster | At the same rate | Instantly | τ ∝ mass/area ∝ size.
 
 ## Stefan–Boltzmann law
 S: The Stefan–Boltzmann law gives the total power radiated by a blackbody: proportional to its surface area and the fourth power of its absolute temperature. It lets us find stars' sizes and planets' temperatures.
@@ -123,8 +123,8 @@ X: A star has the Sun's temperature but 100 times its luminosity. Radius?
 !: Use kelvin; T^{4} magnifies any error, and Celsius gives nonsense.
 Q: State the Stefan–Boltzmann law. | A blackbody radiates P = σAT^{4}.
 Q: How can a star's radius be found? | From its luminosity and temperature: L = 4πR^{2}σT^{4}.
-M1: The Sun's surface (5800 K) emits per m^{2}: | 64 MW | 64 kW | 640 W | 6.4 GW | σT^{4} ≈ 6.4 × 10^{7}.
-M2: Without greenhouse gases, Earth's mean temperature would be about: | 255 K | 288 K | 300 K | 200 K | Radiative equilibrium with albedo 0.3.
+M1#physics-u14-06-q1: The Sun's surface (5800 K) emits per m^{2}: | 64 MW | 64 kW | 640 W | 6.4 GW | σT^{4} ≈ 6.4 × 10^{7}.
+M2#physics-u14-06-q2: Without greenhouse gases, Earth's mean temperature would be about: | 255 K | 288 K | 300 K | 200 K | Radiative equilibrium with albedo 0.3.
 
 ## Wien's displacement law
 S: Wien's law says the wavelength at which a blackbody's emission peaks is inversely proportional to its temperature. Hotter objects glow bluer; it's how we read the temperatures of stars from their colours.
@@ -145,8 +145,8 @@ D: phys-u14-wien-star
 !: The peak in wavelength and the peak in frequency don't correspond to the same photon energy; specify which you mean.
 Q: State Wien's displacement law. | λ_{max}T ≈ 2.9 × 10^{-3} m K.
 Q: Why do thermal cameras work at 8–14 μm? | Objects near room and body temperature emit most strongly there.
-M1: A hotter star appears: | Bluer | Redder | Dimmer always | Green | Shorter peak wavelength.
-M2: The peak wavelength of the human body's emission is about: | 9 μm | 500 nm | 1 mm | 100 nm | 2.9 × 10^{-3}/310.
+M1#physics-u14-07-q1: A hotter star appears: | Bluer | Redder | Dimmer always | Green | Shorter peak wavelength.
+M2#physics-u14-07-q2: The peak wavelength of the human body's emission is about: | 9 μm | 500 nm | 1 mm | 100 nm | 2.9 × 10^{-3}/310.
 
 ## Thermal diffusivity
 S: Thermal diffusivity measures how quickly temperature changes spread through a material. It combines conductivity (how well heat flows) with heat capacity per volume (how much heat is needed to warm it).
@@ -165,8 +165,8 @@ X: How long for heat to diffuse through 2 cm of steak (α ≈ 1.4 × 10^{-7} m^{
 !: High conductivity doesn't guarantee high diffusivity if the heat capacity per volume is large too (water conducts poorly and stores a lot).
 Q: Define thermal diffusivity. | α = κ/(ρc), conductivity divided by volumetric heat capacity.
 Q: How does diffusion time scale with thickness? | As thickness squared.
-M1: Doubling a slab's thickness changes the time for heat to diffuse through by: | ×4 | ×2 | ×8 | ×1/2 | t ∝ L^{2}.
-M2: Which has the highest thermal diffusivity? | Copper | Water | Wood | Brick | High κ, moderate ρc.
+M1#physics-u14-08-q1: Doubling a slab's thickness changes the time for heat to diffuse through by: | ×4 | ×2 | ×8 | ×1/2 | t ∝ L^{2}.
+M2#physics-u14-08-q2: Which has the highest thermal diffusivity? | Copper | Water | Wood | Brick | High κ, moderate ρc.
 
 ## Heat exchangers
 S: Heat exchangers move heat from one fluid to another without mixing them. They're everywhere: car radiators, boilers, condensers, air conditioners, and the countercurrent blood vessels in a penguin's feet.
@@ -188,8 +188,8 @@ D: phys-u14-counterflow
 !: Using the arithmetic mean temperature difference instead of the log mean overestimates heat transfer when the end differences are very unequal.
 Q: Why is counterflow more effective than parallel flow? | It maintains a larger temperature difference along the whole length.
 Q: What is the log mean temperature difference? | (ΔT_{1} − ΔT_{2})/ln(ΔT_{1}/ΔT_{2}), the effective driving difference in an exchanger.
-M1: A car radiator is mainly a: | Crossflow exchanger | Counterflow exchanger | Mixing tank | Heat engine | Air crosses the tubes.
-M2: Penguins' feet stay cold because of: | Countercurrent heat exchange | Thick feathers on feet | Low blood flow only | Fat | Arterial heat passes to venous blood.
+M1#physics-u14-09-q1: A car radiator is mainly a: | Crossflow exchanger | Counterflow exchanger | Mixing tank | Heat engine | Air crosses the tubes.
+M2#physics-u14-09-q2: Penguins' feet stay cold because of: | Countercurrent heat exchange | Thick feathers on feet | Low blood flow only | Fat | Arterial heat passes to venous blood.
 
 ## Insulation and thermal resistance
 S: Insulation slows heat flow. The idea of thermal resistance, like electrical resistance, lets you add up layers and paths to find the total heat loss of a wall, a house or a cryostat.
@@ -210,8 +210,8 @@ X: A wall: 10 cm brick (κ = 0.7) + 10 cm mineral wool (κ = 0.04), area 1 m^{2}
 !: Insulation slows heat flow in both directions; it doesn't "add heat", and it keeps cold things cold as well as warm things warm.
 Q: How do thermal resistances combine in series? | They add.
 Q: Why do fluffy materials insulate well? | They trap still air, which has low conductivity and can't convect.
-M1: Lower U-value means: | Better insulation | Worse insulation | Higher conductivity | More heat loss | Heat loss per area per K.
-M2: A thermal bridge is: | A conductive path bypassing insulation | A type of heat exchanger | A heat pump | An insulating layer | e.g. steel through a wall.
+M1#physics-u14-10-q1: Lower U-value means: | Better insulation | Worse insulation | Higher conductivity | More heat loss | Heat loss per area per K.
+M2#physics-u14-10-q2: A thermal bridge is: | A conductive path bypassing insulation | A type of heat exchanger | A heat pump | An insulating layer | e.g. steel through a wall.
 
 ## Blackbody and greybody radiation
 S: A blackbody absorbs and emits perfectly at every wavelength; real surfaces don't. A greybody has the same emissivity at all wavelengths, a convenient approximation; truly selective surfaces vary strongly with wavelength.
@@ -233,8 +233,8 @@ X: Equilibrium temperature of a flat plate in sunlight (1000 W m^{-2}), insulate
 !: White paint isn't low emissivity in the infrared; it's a good emitter of thermal radiation while reflecting sunlight.
 Q: What is a greybody? | A surface with emissivity less than 1 but the same at all wavelengths.
 Q: How does low-e glass save energy? | It transmits visible light but reflects thermal infrared back into the room.
-M1: A cavity with a small hole approximates: | A blackbody | A mirror | A greybody with ε = 0.5 | A transparent body | Radiation entering is trapped.
-M2: Radiative cooling works by emitting strongly in: | The 8–13 μm atmospheric window | Visible light | Ultraviolet | Microwaves | Radiation escapes to cold space.
+M1#physics-u14-11-q1: A cavity with a small hole approximates: | A blackbody | A mirror | A greybody with ε = 0.5 | A transparent body | Radiation entering is trapped.
+M2#physics-u14-11-q2: Radiative cooling works by emitting strongly in: | The 8–13 μm atmospheric window | Visible light | Ultraviolet | Microwaves | Radiation escapes to cold space.
 
 ## Emissivity and absorptivity
 S: Emissivity is how well a surface emits thermal radiation compared with a blackbody; absorptivity is the fraction of incoming radiation it absorbs. Kirchhoff's law says they're equal at each wavelength in thermal equilibrium: good absorbers are good emitters.
@@ -254,8 +254,8 @@ X: A thermal camera set for ε = 0.95 views polished aluminium (ε = 0.05) at 10
 !: Colour in the visible doesn't predict thermal infrared emissivity; black and white paint both have ε ≈ 0.9 in the infrared.
 Q: State Kirchhoff's law of thermal radiation. | At each wavelength, emissivity equals absorptivity.
 Q: Why do shiny metals read cold on infrared thermometers? | Their low emissivity means they emit little and mostly reflect the surroundings.
-M1: A good absorber of a wavelength is also: | A good emitter at that wavelength | A poor emitter | A good reflector | Transparent | Kirchhoff.
-M2: Foil emergency blankets work mainly by: | Reducing radiative heat loss | Conducting heat in | Generating heat | Blocking wind only | Low emissivity.
+M1#physics-u14-12-q1: A good absorber of a wavelength is also: | A good emitter at that wavelength | A poor emitter | A good reflector | Transparent | Kirchhoff.
+M2#physics-u14-12-q2: Foil emergency blankets work mainly by: | Reducing radiative heat loss | Conducting heat in | Generating heat | Blocking wind only | Low emissivity.
 
 ## Greenhouse effect
 S: Greenhouse gases are transparent to most incoming sunlight but absorb and re-emit outgoing infrared. This keeps Earth's surface about 33 K warmer than it would otherwise be; adding more of these gases raises the temperature further.
@@ -277,8 +277,8 @@ X: Forcing from CO_{2} rising from 280 to 420 ppm?
 !: Garden greenhouses mainly work by stopping convection, not by trapping infrared; the atmospheric effect is named by loose analogy.
 Q: Why are greenhouse gases transparent to sunlight but not to Earth's radiation? | Their absorption bands lie in the infrared, where Earth emits, not in the visible, where sunlight peaks.
 Q: What fingerprint shows warming is greenhouse-driven? | The stratosphere cooling while the surface warms.
-M1: Without the greenhouse effect, Earth's average surface temperature would be about: | −18 °C | 15 °C | 0 °C | −100 °C | 255 K.
-M2: Radiative forcing from CO_{2} grows with concentration: | Logarithmically | Linearly | Exponentially | Not at all | Band saturation.
+M1#physics-u14-13-q1: Without the greenhouse effect, Earth's average surface temperature would be about: | −18 °C | 15 °C | 0 °C | −100 °C | 255 K.
+M2#physics-u14-13-q2: Radiative forcing from CO_{2} grows with concentration: | Logarithmically | Linearly | Exponentially | Not at all | Band saturation.
 
 ## Thermoelectric effects
 S: Thermoelectric effects convert directly between heat and electricity in conducting materials. A temperature difference drives a voltage (Seebeck), a current carries heat (Peltier), and current in a temperature gradient absorbs or releases heat (Thomson).
@@ -298,8 +298,8 @@ X: A Bi_{2}Te_{3} couple (S = 400 μV K^{-1} combined) across 100 K. Open-circui
 !: Thermoelectric devices are reliable and silent but inefficient; they suit niche uses where those matter more.
 Q: What is the Seebeck effect? | A voltage generated by a temperature difference across a conductor or junction.
 Q: What is the thermoelectric figure of merit? | ZT = S^{2}σT/κ.
-M1: Which material property should be low for a good thermoelectric? | Thermal conductivity | Seebeck coefficient | Electrical conductivity | Temperature | It shorts the temperature difference.
-M2: The Kelvin relation links Peltier and Seebeck coefficients as: | Π = ST | Π = S/T | Π = S^{2} | Π = −S | Onsager reciprocity.
+M1#physics-u14-14-q1: Which material property should be low for a good thermoelectric? | Thermal conductivity | Seebeck coefficient | Electrical conductivity | Temperature | It shorts the temperature difference.
+M2#physics-u14-14-q2: The Kelvin relation links Peltier and Seebeck coefficients as: | Π = ST | Π = S/T | Π = S^{2} | Π = −S | Onsager reciprocity.
 
 ## Peltier and Seebeck effects
 S: Seebeck and Peltier effects are two faces of thermoelectricity. Seebeck devices turn heat into electricity (thermocouples, RTGs); Peltier devices pump heat with a current (portable coolers, laser and sensor temperature control).
@@ -317,8 +317,8 @@ X: A Peltier cooler pumps 20 W from its cold side using 40 W of electricity. Hea
 !: A Peltier module without a good heat sink on its hot side overheats, and its cold side warms up too.
 Q: Why are RTGs used on deep-space probes? | They provide steady power for decades without sunlight, with no moving parts.
 Q: How do you switch a Peltier module from cooling to heating? | Reverse the current direction.
-M1: Thermocouples measure temperature using: | The Seebeck effect | The Peltier effect | Resistance change | Thermal expansion | Voltage from ΔT.
-M2: A Peltier cooler's hot side must reject: | Heat pumped plus electrical power | Only the heat pumped | Nothing | Only the electrical power | Energy conservation.
+M1#physics-u14-15-q1: Thermocouples measure temperature using: | The Seebeck effect | The Peltier effect | Resistance change | Thermal expansion | Voltage from ΔT.
+M2#physics-u14-15-q2: A Peltier cooler's hot side must reject: | Heat pumped plus electrical power | Only the heat pumped | Nothing | Only the electrical power | Energy conservation.
 
 ## Thermal contact resistance
 S: When two solid surfaces touch, they really meet only at tiny high points, so heat flow across the interface is impeded. This contact resistance can dominate heat transfer in electronics, engines and cryogenic systems.
@@ -337,8 +337,8 @@ X: A CPU dissipates 100 W through 1.5 cm^{2}. Contact resistance 1 × 10^{-4} m^
 !: More thermal paste isn't better; a thick layer adds bulk resistance. A thin film that fills gaps is ideal.
 Q: Why does thermal contact resistance exist? | Surfaces touch only at small high points, leaving gaps that conduct heat poorly.
 Q: What is Kapitza resistance? | Interfacial thermal resistance from phonon scattering at a boundary, even with perfect contact.
-M1: Thermal paste improves heat transfer by: | Filling microscopic air gaps | Being a better conductor than copper | Adding insulation | Cooling by evaporation | Air is a poor conductor.
-M2: Increasing clamping pressure between surfaces: | Reduces contact resistance | Increases it | Has no effect | Melts the surfaces | Larger real contact area.
+M1#physics-u14-16-q1: Thermal paste improves heat transfer by: | Filling microscopic air gaps | Being a better conductor than copper | Adding insulation | Cooling by evaporation | Air is a poor conductor.
+M2#physics-u14-16-q2: Increasing clamping pressure between surfaces: | Reduces contact resistance | Increases it | Has no effect | Melts the surfaces | Larger real contact area.
 
 ## Cryogenics
 S: Cryogenics is the production and use of very low temperatures, typically below about 120 K. It liquefies gases, enables superconducting magnets and quantum computers, and preserves biological samples.
@@ -363,8 +363,8 @@ X: 1 L of liquid nitrogen boils into how much gas at room temperature?
 !: Never seal a cryogenic liquid in a closed container: boil-off generates enormous pressure.
 Q: Name three ways of reaching cryogenic temperatures. | Joule–Thomson expansion, expansion engines/cryocoolers, dilution refrigeration, adiabatic demagnetisation.
 Q: Why is liquid nitrogen hazardous in enclosed spaces? | Boiling releases large volumes of gas that displace oxygen.
-M1: Liquid helium boils at: | 4.2 K | 77 K | 20 K | 0.3 K | At 1 atm.
-M2: Multilayer insulation in cryostats reduces: | Radiative heat transfer | Conduction only | Convection only | Pressure | Many reflective layers.
+M1#physics-u14-17-q1: Liquid helium boils at: | 4.2 K | 77 K | 20 K | 0.3 K | At 1 atm.
+M2#physics-u14-17-q2: Multilayer insulation in cryostats reduces: | Radiative heat transfer | Conduction only | Convection only | Pressure | Many reflective layers.
 
 ## Low-temperature physics
 S: Cooling matter towards absolute zero reveals quantum behaviour on a macroscopic scale: superconductivity, superfluidity, quantum Hall effects and Bose–Einstein condensates. Low temperatures silence thermal noise so quantum effects dominate.
@@ -381,8 +381,8 @@ X: Below what temperature is the thermal energy smaller than a 1 meV superconduc
 !: Superfluidity and superconductivity are macroscopic quantum states, not just "very low resistance".
 Q: What is the lambda point? | The temperature (2.17 K) at which helium-4 becomes superfluid.
 Q: What is the Meissner effect? | The expulsion of magnetic field from a superconductor.
-M1: Superconductivity was discovered in: | 1911 | 1957 | 1986 | 1938 | Kamerlingh Onnes, mercury.
-M2: The quantum Hall resistance is quantised in units of: | h/e^{2} | e^{2}/h | h/e | ħ/e | R = h/(ne^{2}).
+M1#physics-u14-18-q1: Superconductivity was discovered in: | 1911 | 1957 | 1986 | 1938 | Kamerlingh Onnes, mercury.
+M2#physics-u14-18-q2: The quantum Hall resistance is quantised in units of: | h/e^{2} | e^{2}/h | h/e | ħ/e | R = h/(ne^{2}).
 
 ## Heat transport in solids and fluids
 S: Heat moves through matter by different carriers: phonons and electrons in solids, molecules in gases, and both conduction and convection in liquids. Understanding the carriers explains why conductivities span over five orders of magnitude.
@@ -407,8 +407,8 @@ X: Why does diamond conduct heat better than copper at room temperature, though 
 !: Thermal and electrical conduction aren't always linked: diamond is an electrical insulator but an exceptional heat conductor.
 Q: What carries heat in electrical insulators? | Phonons (lattice vibrations).
 Q: Why does phonon thermal conductivity fall at high temperature? | More phonon–phonon (Umklapp) scattering shortens mean free paths.
-M1: In the kinetic formula κ = ⅓Cvl, l is: | The mean free path | The length of the sample | The latent heat | The wavelength | Distance between collisions.
-M2: Glass has low thermal conductivity because: | Its disordered structure scatters phonons strongly | It has many free electrons | It's transparent | It's dense | Short mean free path.
+M1#physics-u14-19-q1: In the kinetic formula κ = ⅓Cvl, l is: | The mean free path | The length of the sample | The latent heat | The wavelength | Distance between collisions.
+M2#physics-u14-19-q2: Glass has low thermal conductivity because: | Its disordered structure scatters phonons strongly | It has many free electrons | It's transparent | It's dense | Short mean free path.
 
 ## Thermal management in engineering
 S: Thermal management keeps devices within safe temperatures: removing heat from chips, batteries, engines and spacecraft, or keeping things warm. Performance, reliability and safety all depend on it.
@@ -430,6 +430,6 @@ X: A chip dissipates 50 W; thermal resistances: junction–case 0.3, case–sink
 !: Thermal design must consider the worst case (hot day, dust, maximum load), not just typical conditions.
 Q: How does a heat pipe move heat so effectively? | Liquid evaporates at the hot end, vapour carries latent heat to the cold end, condenses, and wicks back.
 Q: Why does temperature matter for electronics reliability? | Degradation processes are thermally activated; failure rates rise steeply with temperature.
-M1: Total thermal resistance of layers in series: | Adds | Multiplies | Is the smallest | Averages | Like series resistors.
-M2: JWST's main mirror is kept cold mainly by: | A five-layer sunshield | Liquid helium | Its distance from the Sun alone | Peltier coolers | Passive radiative cooling.
+M1#physics-u14-20-q1: Total thermal resistance of layers in series: | Adds | Multiplies | Is the smallest | Averages | Like series resistors.
+M2#physics-u14-20-q2: JWST's main mirror is kept cold mainly by: | A five-layer sunshield | Liquid helium | Its distance from the Sun alone | Peltier coolers | Passive radiative cooling.
 `;

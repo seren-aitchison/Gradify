@@ -19,8 +19,8 @@ D: phys-u03-two-point-calibration
 !: A high-resolution digital display doesn't make an instrument accurate; an uncalibrated 6-digit meter can be wrong in the second digit.
 Q: What is traceability? | An unbroken chain of calibrations linking a measurement back to national standards and the SI.
 Q: What is a zero error? | A non-zero reading when the true value is zero; it offsets every reading.
-M1: Which instrument has the best resolution for a 5 mm wire diameter? | Micrometer screw gauge | Metre rule | Vernier caliper | Tape measure | A micrometer resolves 0.01 mm.
-M2: A voltmeter with low internal resistance connected across a high-resistance component will: | Read low, because it draws current and changes the circuit | Read high | Read correctly | Be damaged | Loading: the meter in parallel lowers the effective resistance.
+M1#physics-u03-01-q1: Which instrument has the best resolution for a 5 mm wire diameter? | Micrometer screw gauge | Metre rule | Vernier caliper | Tape measure | A micrometer resolves 0.01 mm.
+M2#physics-u03-01-q2: A voltmeter with low internal resistance connected across a high-resistance component will: | Read low, because it draws current and changes the circuit | Read high | Read correctly | Be damaged | Loading: the meter in parallel lowers the effective resistance.
 Q: What is the range of an instrument? | The span of values it can measure.
 Q: What is the resolution of an instrument? | The smallest change in the quantity it can show.
 Q: What is the sensitivity of an instrument? | The change in output per unit change in input.
@@ -51,8 +51,8 @@ D: phys-u03-accuracy-precision
 !: Precision isn't accuracy. Averaging a thousand readings from a miscalibrated instrument gives a very precise wrong answer.
 Q: Define accuracy and precision. | Accuracy: closeness to the true value. Precision: closeness of repeated measurements to each other.
 Q: How can you beat an instrument's resolution? | Measure many identical units together (e.g. 20 oscillations, 100 sheets) and divide.
-M1: Readings 4.31, 4.32, 4.31, 4.30 V when the true value is 5.00 V are: | Precise but inaccurate | Accurate but imprecise | Accurate and precise | Neither | Small spread, wrong centre.
-M2: Which improves accuracy but not precision? | Correcting a calibration error | Taking more readings | Using a finer scale | Reducing electrical noise | Calibration removes systematic offset; it doesn't reduce scatter.
+M1#physics-u03-02-q1: Readings 4.31, 4.32, 4.31, 4.30 V when the true value is 5.00 V are: | Precise but inaccurate | Accurate but imprecise | Accurate and precise | Neither | Small spread, wrong centre.
+M2#physics-u03-02-q2: Which improves accuracy but not precision? | Correcting a calibration error | Taking more readings | Using a finer scale | Reducing electrical noise | Calibration removes systematic offset; it doesn't reduce scatter.
 Q: In the dartboard picture, what does a tight cluster off-centre represent? | Precise but inaccurate results, caused by a systematic error.
 Q: In the dartboard picture, what does a wide scatter centred on the bullseye represent? | Accurate but imprecise results, caused by random error.
 Q: How is precision improved? | Repeat and average, reduce noise, and use better instruments.
@@ -82,8 +82,8 @@ D: phys-u03-zero-error
 !: Taking more repeats only reduces random error. If your result disagrees with an accepted value by many standard errors, look for a systematic error.
 Q: How can a graph reveal a systematic error? | A straight line that should pass through the origin has a non-zero intercept.
 Q: Why doesn't averaging remove systematic error? | Every reading is shifted the same way, so the mean is shifted too.
-M1: Parallax from always reading a scale from above is: | Systematic | Random | A resolution limit | Not an error | A consistent viewing angle shifts all readings the same way.
-M2: Reaction time when hand-timing a pendulum causes mostly: | Random error (plus some systematic delay) | Only systematic error | No error over many swings | A zero error | Reaction times vary, scattering readings; timing many swings reduces their effect.
+M1#physics-u03-03-q1: Parallax from always reading a scale from above is: | Systematic | Random | A resolution limit | Not an error | A consistent viewing angle shifts all readings the same way.
+M2#physics-u03-03-q2: Reaction time when hand-timing a pendulum causes mostly: | Random error (plus some systematic delay) | Only systematic error | No error over many swings | A zero error | Reaction times vary, scattering readings; timing many swings reduces their effect.
 Q: What is a random error? | An error that scatters readings unpredictably either side of the true value.
 Q: What is a systematic error? | An error that shifts all readings the same way.
 Q: Give three causes of random error. | Reading judgement, reaction time, electrical noise or fluctuating conditions.
@@ -112,8 +112,8 @@ X: A digital caliper reads 25.43 mm (resolution 0.01 mm). Five repeats have stan
 !: "Error" is the (unknown) difference from the true value; "uncertainty" is your estimate of how big it could be. They aren't the same thing.
 Q: What is the difference between Type A and Type B uncertainty? | Type A comes from statistics of repeated readings; Type B from other information like resolution or calibration certificates.
 Q: What does k = 2 mean in an expanded uncertainty? | About 95% coverage for a normal distribution.
-M1: How should a result be reported? | Value ± uncertainty with units | Value only | Uncertainty only | Value to as many digits as the calculator gives | Both value and uncertainty are needed.
-M2: A scale has ±0.5 mm reading limits treated as rectangular. What is the standard uncertainty? | 0.29 mm | 0.5 mm | 0.25 mm | 1.0 mm | 0.5/√3 ≈ 0.29 mm.
+M1#physics-u03-04-q1: How should a result be reported? | Value ± uncertainty with units | Value only | Uncertainty only | Value to as many digits as the calculator gives | Both value and uncertainty are needed.
+M2#physics-u03-04-q2: A scale has ±0.5 mm reading limits treated as rectangular. What is the standard uncertainty? | 0.29 mm | 0.5 mm | 0.25 mm | 1.0 mm | 0.5/√3 ≈ 0.29 mm.
 Q: What is measurement uncertainty? | The range within which the true value is expected to lie, at a stated confidence.
 Q: What does GUM stand for? | The Guide to the Expression of Uncertainty in Measurement.
 Q: Give two sources of Type B uncertainty. | Instrument resolution, calibration certificates, manufacturer specifications or judgement.
@@ -141,8 +141,8 @@ X: Two lengths, 50.0 ± 0.2 cm and 48.0 ± 0.2 cm, are subtracted.
 !: Never quote a percentage uncertainty on a quantity that can be near zero (like a temperature in °C): the percentage is meaningless.
 Q: Which uncertainties combine for a quotient? | Relative (fractional) uncertainties.
 Q: Why is subtracting nearly equal quantities risky? | The absolute uncertainty stays similar while the result becomes small, so the relative uncertainty becomes large.
-M1: What is the percentage uncertainty of 8.0 ± 0.4 s? | 5% | 0.4% | 2% | 50% | 0.4/8.0 = 0.05.
-M2: A cube's side is 2.00 ± 0.02 cm. What is the percentage uncertainty in its volume? | 3% | 1% | 6% | 0.3% | Power 3 multiplies the 1% relative uncertainty by 3.
+M1#physics-u03-05-q1: What is the percentage uncertainty of 8.0 ± 0.4 s? | 5% | 0.4% | 2% | 50% | 0.4/8.0 = 0.05.
+M2#physics-u03-05-q2: A cube's side is 2.00 ± 0.02 cm. What is the percentage uncertainty in its volume? | 3% | 1% | 6% | 0.3% | Power 3 multiplies the 1% relative uncertainty by 3.
 Q: What is absolute uncertainty? | The uncertainty in the same units as the quantity, such as ± 0.2 cm.
 Q: How is relative uncertainty calculated? | Absolute uncertainty divided by the value: Δx/x.
 Q: How is percentage uncertainty calculated? | 100 × Δx/x.
@@ -170,8 +170,8 @@ X: A calculation gives a = 2.34567 m s^{-2} with uncertainty 0.1543 m s^{-2}.
 !: Writing 2.34567 ± 0.2 claims precision you don't have: the trailing digits are noise.
 Q: How many significant figures should an uncertainty usually have? | One (or two if its first digit is 1 or 2).
 Q: How do you choose the decimal places of the value? | Match the last decimal place of the rounded uncertainty.
-M1: A result is 127.452 ± 3.8. How should it be written? | 127 ± 4 | 127.45 ± 3.8 | 130 ± 3.8 | 127.452 ± 4 | Round uncertainty to 4 and value to the units digit.
-M2: In a results table, length readings should be recorded: | To the instrument's resolution, consistently | To 2 decimal places always | To as many digits as possible | Rounded to whole numbers | Consistency and honesty about resolution matter.
+M1#physics-u03-06-q1: A result is 127.452 ± 3.8. How should it be written? | 127 ± 4 | 127.45 ± 3.8 | 130 ± 3.8 | 127.452 ± 4 | Round uncertainty to 4 and value to the units digit.
+M2#physics-u03-06-q2: In a results table, length readings should be recorded: | To the instrument's resolution, consistently | To 2 decimal places always | To as many digits as possible | Rounded to whole numbers | Consistency and honesty about resolution matter.
 Q: In experimental work, what sets the number of significant figures in a result? | The uncertainty, not the calculator.
 Q: How should 9.8165 ± 0.0234 be rounded? | 9.82 ± 0.02.
 Q: How should a value and its uncertainty be written in scientific notation? | With the same power of ten for both, such as (6.67 ± 0.05) × 10^{-11}.
@@ -201,8 +201,8 @@ X: Density from m = 125.0 ± 0.5 g and a sphere's diameter d = 3.10 ± 0.02 cm.
 !: Quadrature addition assumes independent errors. If two inputs share a systematic error (same instrument), they're correlated and need a covariance term.
 Q: What is the uncertainty rule for f = a^{n}? | The relative uncertainty is multiplied by |n|.
 Q: Why identify the dominant uncertainty? | Improving the largest contribution is the only effective way to reduce the total.
-M1: Which variable dominates the uncertainty in g = 4π^{2}l/T^{2} if l has 0.2% and T has 0.5%? | T, contributing 1.0% | l | Both equally | π | T is squared, so its 0.5% doubles.
-M2: What is the uncertainty in ln(x) for x = 20 ± 1? | 0.05 | 1 | 0.5 | 3.0 | σ = σ_{x}/x = 1/20.
+M1#physics-u03-07-q1: Which variable dominates the uncertainty in g = 4π^{2}l/T^{2} if l has 0.2% and T has 0.5%? | T, contributing 1.0% | l | Both equally | π | T is squared, so its 0.5% doubles.
+M2#physics-u03-07-q2: What is the uncertainty in ln(x) for x = 20 ± 1? | 0.05 | 1 | 0.5 | 3.0 | σ = σ_{x}/x = 1/20.
 Q: What is propagation of uncertainty? | How uncertainties in measured quantities carry through into a result calculated from them.
 Q: What is the general rule for propagating independent uncertainties? | σ_{f}^{2} = Σ (∂f/∂x_{i})^{2} σ_{i}^{2}.
 Q: What is the uncertainty in f = a + b for independent errors? | σ_{f} = √(σ_{a}^{2} + σ_{b}^{2}).
@@ -231,8 +231,8 @@ X: Five readings have mean 12.40 and standard error 0.05. Give a 95% CI.
 !: A 95% CI does not mean a 95% probability that this particular interval contains the true value in the frequentist sense; it's a statement about the procedure.
 Q: How do worst-fit lines give a gradient uncertainty? | Draw the steepest and shallowest lines consistent with the error bars; half their difference estimates Δm.
 Q: Why use Student's t for small samples? | The standard deviation is itself uncertain when n is small, widening the interval.
-M1: Error bars on a graph usually represent: | The uncertainty in each data point | The range of the axes | The best-fit line | The number of repeats | They show each point's uncertainty (state the convention).
-M2: Two results are 9.78 ± 0.02 and 9.84 ± 0.02. Are they consistent? | Only marginally: they differ by about 2.1 combined standard uncertainties | Yes, comfortably within 1σ | They are identical | Agreement can't be judged without more data | The difference is 0.06 and the combined σ is √(0.02^{2} + 0.02^{2}) = 0.028, so 0.06/0.028 ≈ 2.1σ.
+M1#physics-u03-08-q1: Error bars on a graph usually represent: | The uncertainty in each data point | The range of the axes | The best-fit line | The number of repeats | They show each point's uncertainty (state the convention).
+M2#physics-u03-08-q2: Two results are 9.78 ± 0.02 and 9.84 ± 0.02. Are they consistent? | Only marginally: they differ by about 2.1 combined standard uncertainties | Yes, comfortably within 1σ | They are identical | Agreement can't be judged without more data | The difference is 0.06 and the combined σ is √(0.02^{2} + 0.02^{2}) = 0.028, so 0.06/0.028 ≈ 2.1σ.
 Q: What do error bars usually represent? | Plus or minus one standard uncertainty (about 68%), unless the caption says otherwise.
 Q: Why should a graph caption state what the error bars mean? | Some fields use 2σ or 95% instead of 1σ.
 Q: What is the formula for gradient uncertainty from worst-fit lines? | Δm ≈ (m_{max} − m_{min})/2.
@@ -261,8 +261,8 @@ X: Measurements of G in different labs disagree by more than their stated uncert
 !: Don't report repeatability as if it were the total uncertainty of your result.
 Q: What is reproducibility? | Agreement of results obtained under changed conditions: different people, equipment, methods or labs.
 Q: Why is reproducibility a stronger test than repeatability? | Changing conditions exposes systematic errors that repeat identically in one setup.
-M1: Repeating a measurement 10 times in one session tests: | Repeatability | Reproducibility | Accuracy | Calibration | Same conditions, same session.
-M2: Independent labs getting different G values beyond their errors indicates: | Unrecognised systematic errors | G varies with location | Random errors only | The SI is inconsistent | Reproducibility failures point to systematics.
+M1#physics-u03-09-q1: Repeating a measurement 10 times in one session tests: | Repeatability | Reproducibility | Accuracy | Calibration | Same conditions, same session.
+M2#physics-u03-09-q2: Independent labs getting different G values beyond their errors indicates: | Unrecognised systematic errors | G varies with location | Random errors only | The SI is inconsistent | Reproducibility failures point to systematics.
 Q: What is repeatability? | Agreement between results under the same conditions: same person, apparatus, lab and short time.
 Q: What does the spread of repeated trials in one session estimate? | The random error.
 Q: Why doesn't good repeatability guarantee a correct result? | The same systematic error repeats every time.
@@ -290,8 +290,8 @@ P: Many large experiments hide the final result (add a secret offset, or mask th
 !: Measuring in increasing order of the variable can confound it with drift (warming up, battery running down); randomise or go up and back down.
 Q: What is a blind analysis? | An analysis where the result is hidden until the method is fixed, so expectations can't bias it.
 Q: Why measure background count before using a radioactive source? | To subtract it from the source count rate.
-M1: In measuring how wire resistance varies with length, a controlled variable is: | Temperature of the wire | Length | Resistance | The current reading | Temperature affects resistance, so it must be fixed.
-M2: Why randomise the order of measurements? | So slow drifts don't correlate with the independent variable | To make data look random | To reduce resolution error | It is required by SI | Randomising breaks the link between drift and the variable.
+M1#physics-u03-10-q1: In measuring how wire resistance varies with length, a controlled variable is: | Temperature of the wire | Length | Resistance | The current reading | Temperature affects resistance, so it must be fixed.
+M2#physics-u03-10-q2: Why randomise the order of measurements? | So slow drifts don't correlate with the independent variable | To make data look random | To reduce resolution error | It is required by SI | Randomising breaks the link between drift and the variable.
 Q: What is the purpose of an experimental control? | To remove alternative explanations for a result.
 Q: What is a controlled variable? | A variable kept constant so that only the independent variable changes.
 Q: What is a control run or null measurement? | The same setup run without the cause being tested, to measure the background.
@@ -321,8 +321,8 @@ X: Investigating how the period of a mass–spring system depends on mass.
 !: Correlation isn't causation. Without controlling confounders, a link between two variables doesn't show one causes the other.
 Q: Which variable goes on the x-axis? | The independent variable.
 Q: What is a confounding variable? | An uncontrolled factor that changes along with the independent variable and could cause the observed effect.
-M1: In a light-intensity vs distance experiment, distance is: | Independent | Dependent | Controlled | Confounding | It's set by the experimenter.
-M2: Why take more readings where a graph curves? | To define the shape accurately where it changes most | To make the graph look smoother | To reduce systematic error | It's a convention without purpose | Curvature needs more points to be resolved.
+M1#physics-u03-11-q1: In a light-intensity vs distance experiment, distance is: | Independent | Dependent | Controlled | Confounding | It's set by the experimenter.
+M2#physics-u03-11-q2: Why take more readings where a graph curves? | To define the shape accurately where it changes most | To make the graph look smoother | To reduce systematic error | It's a convention without purpose | Curvature needs more points to be resolved.
 Q: What is the independent variable? | The variable chosen and changed by the experimenter.
 Q: What is the dependent variable? | The variable measured as the response.
 Q: Which axis is the dependent variable plotted on? | The y-axis.
@@ -355,8 +355,8 @@ X: Design an experiment to measure g with a pendulum to 0.5%.
 !: Don't decide what to measure after looking at the data (p-hacking, "garden of forking paths"): plan the analysis in advance.
 Q: Why estimate uncertainties before doing an experiment? | To find the dominant source and plan where effort will reduce the final uncertainty.
 Q: What is a null method? | A method that adjusts a known quantity until a detector reads zero, cancelling many systematic errors (like a Wheatstone bridge).
-M1: To test T = 2π√(l/g) with a straight-line graph, plot: | T^{2} against l | T against l | T against l^{2} | ln T against l | T^{2} = (4π^{2}/g)l is linear through the origin.
-M2: What is the main purpose of a pilot run? | To test and refine the method before collecting final data | To obtain the final result quickly | To calibrate the SI | To replace repeats | It catches practical problems early.
+M1#physics-u03-12-q1: To test T = 2π√(l/g) with a straight-line graph, plot: | T^{2} against l | T against l | T against l^{2} | ln T against l | T^{2} = (4π^{2}/g)l is linear through the origin.
+M2#physics-u03-12-q2: What is the main purpose of a pilot run? | To test and refine the method before collecting final data | To obtain the final result quickly | To calibrate the SI | To replace repeats | It catches practical problems early.
 Q: What is experimental design? | Planning what to measure, how, and how many times to answer the question with the smallest uncertainty for the effort.
 Q: When should the experimental design be decided? | Before taking any data.
 Q: Why choose a linearised plot when designing an experiment? | To test the model with a straight-line graph, such as T^{2} against l.
@@ -387,8 +387,8 @@ D: phys-u03-thermistor-calibration
 !: Extrapolating a calibration curve beyond the measured standards is risky: many sensors become non-linear outside their calibrated range.
 Q: What is a calibration curve? | A graph of instrument response against known standard values, used to convert readings to true values.
 Q: Why avoid extrapolating calibration curves? | The response may be non-linear outside the calibrated range.
-M1: A sensor gives y = 2.0x + 0.5 from calibration. A reading y = 6.5 corresponds to: | x = 3.0 | x = 13.5 | x = 3.5 | x = 2.5 | x = (6.5 − 0.5)/2.0.
-M2: The uncertainty of a value read from a calibration curve includes: | Both the measurement and the calibration fit uncertainties | Only the measurement | Only the standards | Neither | Both contribute.
+M1#physics-u03-13-q1: A sensor gives y = 2.0x + 0.5 from calibration. A reading y = 6.5 corresponds to: | x = 3.0 | x = 13.5 | x = 3.5 | x = 2.5 | x = (6.5 − 0.5)/2.0.
+M2#physics-u03-13-q2: The uncertainty of a value read from a calibration curve includes: | Both the measurement and the calibration fit uncertainties | Only the measurement | Only the standards | Neither | Both contribute.
 Q: How many standards should a calibration curve use? | At least 5, and more if the response is non-linear.
 Q: How do you find an unknown from a linear calibration y = mx + c? | Invert it: x = (y − c)/m.
 Q: Is interpolation or extrapolation preferred with a calibration curve? | Interpolation, inside the calibrated range.
@@ -419,8 +419,8 @@ D: phys-u03-linearise-capacitor
 !: Transforming data also transforms its uncertainties: error bars on ln y are σ_{y}/y, not σ_{y}.
 Q: What graph tests y = kx^{n} and finds n? | log y against log x; the gradient is n.
 Q: What are the error bars on ln y? | σ_{y}/y (the fractional uncertainty of y).
-M1: To find the decay constant from A = A_{0}e^{−λt}, plot: | ln A against t | A against t | A against ln t | 1/A against t | Gradient = −λ.
-M2: A log-log plot of power against frequency has gradient 3. The relationship is: | P ∝ f^{3} | P ∝ e^{3f} | P ∝ 3f | P ∝ ln f^{3} | The gradient of a log-log plot is the exponent.
+M1#physics-u03-14-q1: To find the decay constant from A = A_{0}e^{−λt}, plot: | ln A against t | A against t | A against ln t | 1/A against t | Gradient = −λ.
+M2#physics-u03-14-q2: A log-log plot of power against frequency has gradient 3. The relationship is: | P ∝ f^{3} | P ∝ e^{3f} | P ∝ 3f | P ∝ ln f^{3} | The gradient of a log-log plot is the exponent.
 Q: What is linearisation? | Transforming a relationship into the form y = mx + c so a straight-line graph tests it.
 Q: What graph tests y = Ae^{kx}? | ln y against x; the gradient is k and the intercept is ln A.
 Q: What is the gradient of a T^{2} against l graph for a pendulum? | 4π^{2}/g.
@@ -451,8 +451,8 @@ P: Why squares? If errors are Gaussian, minimising χ^{2} gives the maximum-like
 !: A fit always gives numbers, even for the wrong model. Check residuals and χ^{2} before trusting the parameters.
 Q: What point does a least-squares line always pass through? | The centroid (x̄, ȳ).
 Q: Why weight points by 1/σ^{2}? | More precise points should have more influence on the fit.
-M1: Least squares minimises: | The sum of squared vertical residuals | The sum of residuals | The largest residual | The sum of horizontal distances | Squares avoid cancellation and match Gaussian likelihood.
-M2: Least squares with Gaussian errors gives parameters that are: | Maximum-likelihood estimates | Always exact | Biased by design | Only valid for lines | Minimising χ^{2} maximises the Gaussian likelihood.
+M1#physics-u03-15-q1: Least squares minimises: | The sum of squared vertical residuals | The sum of residuals | The largest residual | The sum of horizontal distances | Squares avoid cancellation and match Gaussian likelihood.
+M2#physics-u03-15-q2: Least squares with Gaussian errors gives parameters that are: | Maximum-likelihood estimates | Always exact | Biased by design | Only valid for lines | Minimising χ^{2} maximises the Gaussian likelihood.
 Q: What quantity does a straight-line least-squares fit minimise? | S = Σ (y_{i} − mx_{i} − c)^{2}.
 Q: How is the intercept found once the least-squares gradient is known? | c = ȳ − m x̄.
 Q: What is the least-squares gradient of a line forced through the origin? | m = Σxy/Σx^{2}.
@@ -482,8 +482,8 @@ X: A quadratic fit improves χ^{2} from 25 to 22 with one extra parameter and 20
 !: R^{2} close to 1 doesn't prove a model right; a straight line can have R^{2} = 0.99 through data that are clearly curved.
 Q: What is reduced χ^{2}, and what value indicates a good fit? | χ^{2} divided by degrees of freedom; about 1.
 Q: Why do information criteria penalise extra parameters? | To avoid overfitting: more parameters always reduce χ^{2}.
-M1: A fit has χ^{2}_{ν} = 0.1. This suggests: | Uncertainties are overestimated | An excellent model with correct errors | The model is wrong | Too few parameters | Residuals are much smaller than the claimed errors.
-M2: y = a + bx + cx^{2} is a ___ regression problem. | Linear (linear in a, b, c) | Non-linear | Logistic | Impossible | Linear refers to the parameters.
+M1#physics-u03-16-q1: A fit has χ^{2}_{ν} = 0.1. This suggests: | Uncertainties are overestimated | An excellent model with correct errors | The model is wrong | Too few parameters | Residuals are much smaller than the claimed errors.
+M2#physics-u03-16-q2: y = a + bx + cx^{2} is a ___ regression problem. | Linear (linear in a, b, c) | Non-linear | Logistic | Impossible | Linear refers to the parameters.
 Q: What is regression analysis? | Modelling how a dependent variable depends on predictors, estimating parameters and quantifying the fit.
 Q: What does R^{2} measure? | The fraction of variance explained: R^{2} = 1 − SS_{res}/SS_{tot}.
 Q: Where do fitted parameter uncertainties come from? | The covariance matrix of the fit.
@@ -512,8 +512,8 @@ D: phys-u03-residual-pattern
 !: Don't delete outliers just because they're inconvenient. Have a physical reason (a recorded mistake) or use a pre-agreed rule, and report it.
 Q: What does a curved residual pattern mean? | The fitted model has the wrong functional form.
 Q: What fraction of normalised residuals should lie within ±2? | About 95%.
-M1: Residuals that widen as x increases indicate: | Uncertainty growing with x | A perfect fit | A zero error | Too many points | Heteroscedastic errors: weight the fit.
-M2: A single residual of 6σ appears. The best response is: | Check the record for a mistake before deciding | Delete it immediately | Ignore it | Refit with a higher-order polynomial | Investigate; remove only with justification.
+M1#physics-u03-17-q1: Residuals that widen as x increases indicate: | Uncertainty growing with x | A perfect fit | A zero error | Too many points | Heteroscedastic errors: weight the fit.
+M2#physics-u03-17-q2: A single residual of 6σ appears. The best response is: | Check the record for a mistake before deciding | Delete it immediately | Ignore it | Refit with a higher-order polynomial | Investigate; remove only with justification.
 Q: What is a residual? | The difference between a data point and the fitted model: r_{i} = y_{i} − f(x_{i}).
 Q: What is a normalised residual? | The residual divided by the point's uncertainty: r_{i}/σ_{i}.
 Q: What residual pattern shows a good fit? | Random scatter about zero with constant spread.
@@ -544,8 +544,8 @@ D: phys-u03-hypothesis-test
 !: The p-value is not the probability that H_{0} is true. It's the probability of the data (or more extreme) given H_{0}.
 Q: What is a p-value? | The probability, if the null hypothesis is true, of getting data at least as extreme as observed.
 Q: What is a Type I error? | Rejecting a null hypothesis that is actually true (a false positive).
-M1: Increasing the sample size mainly increases: | The power of the test | α | The p-value always | Systematic error | More data reduce the standard error, making real effects easier to detect.
-M2: p = 0.03 means: | Data this extreme would occur 3% of the time if H_{0} were true | H_{0} is 3% likely | H_{1} is 97% likely | The effect is 3% in size | It's a statement about data given H_{0}.
+M1#physics-u03-18-q1: Increasing the sample size mainly increases: | The power of the test | α | The p-value always | Systematic error | More data reduce the standard error, making real effects easier to detect.
+M2#physics-u03-18-q2: p = 0.03 means: | Data this extreme would occur 3% of the time if H_{0} were true | H_{0} is 3% likely | H_{1} is 97% likely | The effect is 3% in size | It's a statement about data given H_{0}.
 Q: What is a null hypothesis? | The default claim, such as no effect or the standard model, that the data are tested against.
 Q: When is the null hypothesis rejected? | When the p-value is smaller than the chosen significance level α.
 Q: Give two examples of test statistics. | χ^{2}, a z-score or a likelihood ratio.
@@ -574,8 +574,8 @@ X: The Higgs boson announcement (2012).
 !: The 2016 "750 GeV diphoton" excess reached ~3–4σ locally and vanished with more data, a reminder of why 5σ is required.
 Q: What significance is required for a discovery in particle physics? | 5σ.
 Q: What is the look-elsewhere effect? | Searching many places raises the chance of a large fluctuation somewhere, so local significance must be corrected.
-M1: Roughly what is the two-sided p-value for 2σ? | 0.05 | 0.32 | 0.003 | 0.5 | About 4.6%.
-M2: A very large dataset finds a statistically significant but tiny effect. This means: | It's probably real but may not matter practically | It must be important | It must be an error | p-values don't apply | Significance and importance differ.
+M1#physics-u03-19-q1: Roughly what is the two-sided p-value for 2σ? | 0.05 | 0.32 | 0.003 | 0.5 | About 4.6%.
+M2#physics-u03-19-q2: A very large dataset finds a statistically significant but tiny effect. This means: | It's probably real but may not matter practically | It must be important | It must be an error | p-values don't apply | Significance and importance differ.
 Q: When is a result statistically significant? | When chance alone is an unlikely explanation for it.
 Q: What two-sided p-value corresponds to 3σ, and what is it called? | About 0.0027, called evidence.
 Q: What is the two-sided p-value for 5σ? | About 5.7 × 10^{-7}.
@@ -605,8 +605,8 @@ D: phys-u03-first-order-response
 !: High sensitivity often comes with a smaller range and more noise; the most sensitive instrument isn't always the best choice.
 Q: What is the time constant of a first-order sensor? | The time to reach 63% of a step change.
 Q: What is hysteresis in an instrument? | Different outputs for the same input depending on whether the input is rising or falling.
-M1: A sensor gives 2.0 V at 0 °C and 3.0 V at 100 °C. Its sensitivity is: | 10 mV per °C | 1 V per °C | 100 mV per °C | 30 mV per °C | 1.0 V / 100 °C.
-M2: A first-order sensor's bandwidth is set by: | Its time constant, f = 1/(2πτ) | Its resolution | Its range | Its calibration | Faster response means higher bandwidth.
+M1#physics-u03-20-q1: A sensor gives 2.0 V at 0 °C and 3.0 V at 100 °C. Its sensitivity is: | 10 mV per °C | 1 V per °C | 100 mV per °C | 30 mV per °C | 1.0 V / 100 °C.
+M2#physics-u03-20-q2: A first-order sensor's bandwidth is set by: | Its time constant, f = 1/(2πτ) | Its resolution | Its range | Its calibration | Faster response means higher bandwidth.
 Q: What four aspects describe an instrument's response? | Sensitivity, linearity, time response and bandwidth.
 Q: What is dynamic range? | The ratio of the largest to the smallest measurable signal.
 Q: How does a first-order sensor respond to a step change? | y(t) = y_{∞}(1 − e^{−t/τ}).
@@ -635,8 +635,8 @@ X: A detector's background is 400 counts in 10 min. What is the minimum detectab
 !: Report results below the detection limit as upper limits ("< 60 counts at 95% confidence"), not as zero or as a measured value.
 Q: What is a common definition of detection limit? | About three times the standard deviation of the blank or background.
 Q: How should you report a non-detection? | As an upper limit at a stated confidence level.
-M1: Doubling the counting time with a steady background improves the detection limit on rate by about: | √2 | 2 | 4 | Not at all | Counts ∝ t, noise ∝ √t: rate limit ∝ 1/√t.
-M2: The limit of quantification is higher than the limit of detection because: | Quantifying needs a signal measurable with reasonable relative precision | Detection is impossible | They're equal by definition | It includes systematic errors only | You can tell something is there before you can say how much.
+M1#physics-u03-21-q1: Doubling the counting time with a steady background improves the detection limit on rate by about: | √2 | 2 | 4 | Not at all | Counts ∝ t, noise ∝ √t: rate limit ∝ 1/√t.
+M2#physics-u03-21-q2: The limit of quantification is higher than the limit of detection because: | Quantifying needs a signal measurable with reasonable relative precision | Detection is impossible | They're equal by definition | It includes systematic errors only | You can tell something is there before you can say how much.
 Q: What is a detection limit? | The smallest signal an instrument or method can reliably distinguish from noise and background.
 Q: What is the limit of quantification? | About 10σ_{blank}, where a value can be stated with useful precision.
 Q: In a counting experiment with background B, when is a source detected? | When counts exceed B by about 3√B.
@@ -668,8 +668,8 @@ X: Find the thermal noise of a 1 MΩ resistor at 300 K over 10 kHz.
 !: Averaging doesn't help with interference or drift that's correlated between repeats; those must be removed at source.
 Q: By what factor does averaging N repeats improve SNR (amplitude)? | √N.
 Q: What is Johnson noise? | Thermal voltage noise in any resistor, V_{rms} = √(4k_{B}TRΔf).
-M1: An SNR of 100 in power is how many decibels? | 20 dB | 100 dB | 10 dB | 40 dB | 10 log_{10} 100.
-M2: Narrowing the measurement bandwidth reduces: | White noise power, ∝ Δf | The signal | Systematic errors | 1/f noise only | White noise power is proportional to bandwidth.
+M1#physics-u03-22-q1: An SNR of 100 in power is how many decibels? | 20 dB | 100 dB | 10 dB | 40 dB | 10 log_{10} 100.
+M2#physics-u03-22-q2: Narrowing the measurement bandwidth reduces: | White noise power, ∝ Δf | The signal | Systematic errors | 1/f noise only | White noise power is proportional to bandwidth.
 Q: What is the signal-to-noise ratio? | The strength of a wanted signal compared with the random fluctuations hiding it.
 Q: How is SNR expressed in decibels? | 10 log_{10}(P_{s}/P_{n}).
 Q: How is power SNR related to amplitude ratio? | P_{signal}/P_{noise} = (A_{signal}/A_{noise})^{2}.
@@ -699,8 +699,8 @@ X: A 0–5 V, 10-bit ADC measures a 1.2 V sensor output. What is the resolution?
 !: Sampling a signal below the Nyquist rate produces aliases: false low frequencies that no software can remove afterwards.
 Q: What is the Nyquist criterion? | Sample at more than twice the highest frequency present.
 Q: Why use an anti-aliasing filter? | To remove frequencies above half the sampling rate before they alias.
-M1: How many levels does a 12-bit ADC have? | 4096 | 1024 | 12 | 65 536 | 2^{12}.
-M2: A 3 kHz tone sampled at 4 kHz appears at: | 1 kHz | 3 kHz | 7 kHz | 2 kHz | It aliases to |4 − 3| = 1 kHz.
+M1#physics-u03-23-q1: How many levels does a 12-bit ADC have? | 4096 | 1024 | 12 | 65 536 | 2^{12}.
+M2#physics-u03-23-q2: A 3 kHz tone sampled at 4 kHz appears at: | 1 kHz | 3 kHz | 7 kHz | 2 kHz | It aliases to |4 − 3| = 1 kHz.
 Q: What is a data acquisition system? | A system that converts physical signals into digital numbers a computer can store.
 Q: What is the order of the DAQ chain? | Sensor, signal conditioning, ADC, computer.
 Q: What does signal conditioning do? | Amplifies, filters and isolates the sensor signal before conversion.
@@ -728,8 +728,8 @@ X: A strain gauge (G = 2.0, R = 120 Ω) sees strain 5 × 10^{-4}. Find ΔR.
 !: Every sensor responds to more than one quantity (a strain gauge also to temperature); design so unwanted sensitivities cancel or are measured.
 Q: What does a thermocouple measure, physically? | A voltage generated by a temperature difference between junctions of two different metals (the Seebeck effect).
 Q: Why are strain gauges used in Wheatstone bridges? | To measure tiny resistance changes sensitively and cancel temperature effects.
-M1: Which sensor measures magnetic field? | Hall probe | Thermistor | LDR | Strain gauge | The Hall voltage is proportional to B.
-M2: An NTC thermistor's resistance: | Falls as temperature rises | Rises as temperature rises | Is independent of temperature | Depends only on light | More charge carriers are freed at higher T.
+M1#physics-u03-24-q1: Which sensor measures magnetic field? | Hall probe | Thermistor | LDR | Strain gauge | The Hall voltage is proportional to B.
+M2#physics-u03-24-q2: An NTC thermistor's resistance: | Falls as temperature rises | Rises as temperature rises | Is independent of temperature | Depends only on light | More charge carriers are freed at higher T.
 Q: What is a transducer? | A device that converts energy from one form into another.
 Q: What is a sensor? | A transducer that produces a measurable signal, usually electrical, from a physical quantity.
 Q: Name three temperature sensors. | Thermocouple, thermistor, platinum RTD or infrared pyrometer.
@@ -762,8 +762,8 @@ D: phys-u03-oscilloscope-trace
 !: A scope's bandwidth must be well above the signal frequency (rule of thumb 5×), or fast edges look rounded and amplitudes read low.
 Q: What does triggering do on an oscilloscope? | Starts each sweep at the same point on the waveform so the display is stable.
 Q: How do you measure phase difference on a scope? | Δφ = 360° × (time shift)/(period).
-M1: A trace has period 5 divisions at 0.1 ms/div. The frequency is: | 2 kHz | 500 Hz | 20 kHz | 200 Hz | T = 0.5 ms.
-M2: Why use a ×10 probe? | It loads the circuit less | It amplifies the signal | It removes noise | It increases the timebase | Higher input impedance and lower capacitance disturb the circuit less.
+M1#physics-u03-25-q1: A trace has period 5 divisions at 0.1 ms/div. The frequency is: | 2 kHz | 500 Hz | 20 kHz | 200 Hz | T = 0.5 ms.
+M2#physics-u03-25-q2: Why use a ×10 probe? | It loads the circuit less | It amplifies the signal | It removes noise | It increases the timebase | Higher input impedance and lower capacitance disturb the circuit less.
 Q: What does an oscilloscope display? | Voltage against time.
 Q: What do the vertical scale and timebase settings of a scope control? | Volts per division and seconds per division.
 Q: What does AC coupling do on an oscilloscope? | Blocks the DC level so only the varying part is shown.
@@ -793,8 +793,8 @@ X: A 1 nV signal sits in 1 μV of broadband noise (over 100 kHz). Using a 1 Hz b
 !: A longer time constant means a slower response; wait about 5τ after any change before reading.
 Q: What does a lock-in amplifier detect? | Only the component of a signal at the reference frequency and phase.
 Q: Why modulate a signal before lock-in detection? | To move it away from DC where 1/f noise and drift are worst.
-M1: Increasing the lock-in time constant: | Reduces noise but slows the response | Increases noise | Speeds up the response | Changes the reference frequency | Narrower bandwidth, slower settling.
-M2: X = 3 μV and Y = 4 μV. The signal amplitude is: | 5 μV | 7 μV | 1 μV | 12 μV | R = √(X^{2} + Y^{2}).
+M1#physics-u03-26-q1: Increasing the lock-in time constant: | Reduces noise but slows the response | Increases noise | Speeds up the response | Changes the reference frequency | Narrower bandwidth, slower settling.
+M2#physics-u03-26-q2: X = 3 μV and Y = 4 μV. The signal amplitude is: | 5 μV | 7 μV | 1 μV | 12 μV | R = √(X^{2} + Y^{2}).
 Q: What is a lock-in amplifier? | A device that extracts a tiny signal from noise by detecting only what varies at a known frequency and phase.
 Q: How can a signal be modulated for lock-in detection? | By chopping a light beam or modulating a current at the reference frequency.
 Q: What is phase-sensitive detection? | Multiplying the detector output by a reference sine at the reference frequency.
@@ -824,8 +824,8 @@ X: What is the mean free path at 10^{-4} Pa?
 !: Venting a turbopump at full speed or exposing it to atmosphere can wreck it; follow the venting procedure.
 Q: Why is UHV needed for surface science? | At 10^{-4} Pa a surface is covered by a monolayer of gas in about a second; UHV keeps it clean for hours.
 Q: What limits the ultimate pressure in a sealed vacuum chamber? | Outgassing from surfaces (and leaks and permeation).
-M1: Which pump needs a backing pump? | Turbomolecular | Rotary vane | Scroll | None of these | Turbopumps can't exhaust to atmosphere.
-M2: The mean free path is inversely proportional to: | Pressure | Temperature | Chamber size | Pump speed | λ ∝ T/p.
+M1#physics-u03-27-q1: Which pump needs a backing pump? | Turbomolecular | Rotary vane | Scroll | None of these | Turbopumps can't exhaust to atmosphere.
+M2#physics-u03-27-q2: The mean free path is inversely proportional to: | Pressure | Temperature | Chamber size | Pump speed | λ ∝ T/p.
 Q: Give three reasons experiments need a vacuum. | To let particles travel without collisions, keep surfaces clean, or insulate thermally.
 Q: What pressure counts as ultra-high vacuum? | Below 10^{-5} Pa.
 Q: What is the mean free path of air at room temperature? | About 7 mm divided by the pressure in pascals.
@@ -857,8 +857,8 @@ X: Why do superconducting quantum computers run at ~10 mK?
 !: Liquid nitrogen and helium boil to large gas volumes; in a closed room they can displace oxygen. Use oxygen monitors and ventilation.
 Q: What temperature does a dilution refrigerator reach? | About 10 mK.
 Q: Why must thermometer currents be small at millikelvin temperatures? | Self-heating would raise the sensor's temperature above that of the sample.
-M1: The boiling point of liquid nitrogen is: | 77 K | 4.2 K | 273 K | 20 K | At 1 atm.
-M2: Why are heat capacities tiny at very low T? | Few vibrational and electronic modes are excited | Matter becomes massless | Atoms stop moving entirely | Heat flows faster | Debye T^{3} law and electronic ∝ T contributions vanish as T → 0.
+M1#physics-u03-28-q1: The boiling point of liquid nitrogen is: | 77 K | 4.2 K | 273 K | 20 K | At 1 atm.
+M2#physics-u03-28-q2: Why are heat capacities tiny at very low T? | Few vibrational and electronic modes are excited | Matter becomes massless | Atoms stop moving entirely | Heat flows faster | Debye T^{3} law and electronic ∝ T contributions vanish as T → 0.
 Q: What is cryogenics? | The study of matter at very low temperatures, where superconductivity, superfluidity and quantum effects appear.
 Q: What is the boiling point of liquid helium-4? | 4.2 K, which can be pumped to about 1.5 K.
 Q: What temperature do helium-3 systems reach? | About 0.3 K.
@@ -890,8 +890,8 @@ X: A 100 μF capacitor is charged to 400 V. How much energy does it store?
 !: "Switched off" isn't "safe": capacitors, batteries and induced voltages can remain. Test before touching.
 Q: Why is wet skin more dangerous? | It lowers body resistance, so the same voltage drives a larger current.
 Q: What does an RCD detect? | An imbalance between live and neutral currents, indicating leakage (e.g. through a person).
-M1: Which hazard remains after unplugging equipment? | Charged capacitors | Mains current | Earth faults | Fuse failure | Capacitors can hold charge.
-M2: Approximately what AC current through the chest can cause fibrillation? | 50–100 mA | 1 μA | 1 mA | 10 A only | Tens of milliamps are lethal.
+M1#physics-u03-29-q1: Which hazard remains after unplugging equipment? | Charged capacitors | Mains current | Earth faults | Fuse failure | Capacitors can hold charge.
+M2#physics-u03-29-q2: Approximately what AC current through the chest can cause fibrillation? | 50–100 mA | 1 μA | 1 mA | 10 A only | Tens of milliamps are lethal.
 Q: Roughly what current through the chest can prevent you letting go? | About 10 mA.
 Q: How does body resistance change from dry to wet skin? | From about 100 kΩ to about 1 kΩ.
 Q: Why can a capacitor be dangerous after switch-off? | It stores energy E = ½CV^{2} long after the supply is removed.
@@ -922,8 +922,8 @@ X: You notice the room temperature rose 3 °C during a resistance measurement.
 !: Rewriting a "neat copy" of results and discarding the original record destroys evidence and can hide mistakes or invite suspicion.
 Q: Why should raw data, not just processed results, be recorded? | So the analysis can be checked and redone if a mistake or better method is found.
 Q: How should mistakes in a lab notebook be corrected? | Strike through with a single line so the original remains readable, and write the correction.
-M1: Which is good notebook practice? | Recording conditions and problems as they happen | Writing up only successful runs | Using pencil for easy corrections | Copying data neatly at the end of the week | Contemporaneous, complete records.
-M2: For electronic data, the notebook should record: | File names, locations and software versions | Nothing; files are enough | Only the final graph | The computer's brand | Links make the analysis reproducible.
+M1#physics-u03-30-q1: Which is good notebook practice? | Recording conditions and problems as they happen | Writing up only successful runs | Using pencil for easy corrections | Copying data neatly at the end of the week | Contemporaneous, complete records.
+M2#physics-u03-30-q2: For electronic data, the notebook should record: | File names, locations and software versions | Nothing; files are enough | Only the final graph | The computer's brand | Links make the analysis reproducible.
 Q: What is a lab notebook? | The permanent, dated record of what you did, saw and thought.
 Q: Give three reasons to keep a good lab notebook. | It makes work reproducible, defends priority and integrity, and helps recheck results later.
 Q: What should be recorded about the apparatus? | Its details, with serial numbers and settings, plus diagrams.
@@ -955,8 +955,8 @@ D: phys-u03-damped-model
 !: A model that fits the data it was tuned on hasn't been validated; it has to predict data it hasn't seen.
 Q: What is cross-validation? | Testing a model on data that weren't used to fit its parameters.
 Q: What should you check first when model and experiment disagree? | Systematic errors in the experiment, then the model's assumptions.
-M1: Which result best validates a model? | It correctly predicts a new, independent measurement | It fits the data it was tuned on | It has many parameters | It's mathematically elegant | Predictive success on unseen data.
-M2: A model works at low speeds but fails at high speeds. This shows: | Its domain of validity is limited | It's useless | The experiment is wrong | Physics is inconsistent | Models are valid within a range of conditions.
+M1#physics-u03-31-q1: Which result best validates a model? | It correctly predicts a new, independent measurement | It fits the data it was tuned on | It has many parameters | It's mathematically elegant | Predictive success on unseen data.
+M2#physics-u03-31-q2: A model works at low speeds but fails at high speeds. This shows: | Its domain of validity is limited | It's useless | The experiment is wrong | Physics is inconsistent | Models are valid within a range of conditions.
 Q: When is a model validated? | When its predictions agree with independent measurements within uncertainties across its claimed range.
 Q: What should be stated first when validating a model? | The model, its assumptions and its domain of validity.
 Q: Why must predictions include parameter uncertainties? | So the comparison with data is quantitative and fair.
