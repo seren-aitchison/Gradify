@@ -299,7 +299,9 @@ export function mountCourse(root, cfg) {
   const lessonRun = (id) => { if (!runs.has(id)) runs.set(id, { xp: 0, right: 0, tried: 0, best: 0 }); return runs.get(id); };
   function wirePractice(el, context, contextId, xp = XP.check, onAnswer = null) {
     wireQuestions(el, (k) => pageQs.get(k)?.Q, (Q, res, first, box, meta) => {
-      const it = pageQs.get(box.dataset.key); record(it, context, contextId, res, meta); onAnswer?.(it, res);
+      const it = pageQs.get(box.dataset.key), a = record(it, context, contextId, res, meta); onAnswer?.(it, res);
+      // "How sure were you?" asked after the answer: the pick is kept on that first attempt (calibration reads it)
+      if (first && !box.dataset.confWired) { box.dataset.confWired = "1"; box.addEventListener("aq-confidence", (e) => { if (e.detail) { a.confidence = e.detail; save(); } }); }
       if (first && !res.self && it.l) { const r = lessonRun(it.l.id); r.tried++; if (res.score >= 0.7) r.right++; }
       if (first && res.score >= 0.7 && !res.self) { box.classList.remove("aq-win"); void box.offsetWidth; box.classList.add("aq-win"); }
       if (first) { if (res.score >= 0.7) { combo++; comboBest = Math.max(comboBest, combo); if (it.l) { const r = lessonRun(it.l.id); r.best = Math.max(r.best, combo); }
@@ -441,7 +443,23 @@ export function mountCourse(root, cfg) {
   // ---------- feedback ----------
   function pop(text) {
     const el = document.createElement("div"); el.className = "co-pop"; el.textContent = text; document.body.append(el);
+    // in Learn mode the points fly into the XP counter in the bar, which then counts up: progress you can see land
+    const chip = root.querySelector(".ls-xp");
+    if (chip && el.animate && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      el.classList.add("co-pop-fly");
+      const a = el.getBoundingClientRect(), b = chip.getBoundingClientRect();
+      const dx = b.left + b.width / 2 - (a.left + a.width / 2), dy = b.top + b.height / 2 - (a.top + a.height / 2);
+      el.animate([{ transform: "translate(-50%, 0) scale(1)", opacity: 1 }, { transform: "translate(-50%, -14px) scale(1.08)", opacity: 1, offset: 0.25 },
+        { transform: `translate(calc(-50% + ${dx}px), ${dy}px) scale(.35)`, opacity: 0.2 }], { duration: 900, easing: "cubic-bezier(.5, 0, .2, 1)", fill: "forwards" })
+        .finished.then(() => { el.remove(); bumpXp(chip); }).catch(() => el.remove());
+      return;
+    }
+    if (chip) bumpXp(chip);
     setTimeout(() => el.remove(), 1400);
+  }
+  function bumpXp(chip) {
+    const b = chip.querySelector("b"); if (b) b.textContent = totalXp().toLocaleString();
+    chip.classList.remove("bump"); void chip.offsetWidth; chip.classList.add("bump");
   }
   // the shared toast (kit/ui/feedback.js): opts.undo adds Undo (and ⌘Z / Ctrl+Z while it shows)
   const toast = (html, opts = {}) => uiToast({ html }, opts);
@@ -1526,7 +1544,7 @@ export function mountCourse(root, cfg) {
     const mins = Math.max(2, Math.round(lessonText(N).split(/\s+/).length / 200 + (N.items?.length || 0) * 0.75));
     const nextL = u.lessons[l.i + 1] && byId[u.lessons[l.i + 1].id];
     const href = (k) => `#/step/${id}/${k}`;
-    const qBlock = (qs, opts = {}) => qs.map((q, k) => `<div class="ls-q" data-qn="${q.n}">${qHtml(N.items[q.n], { confidence: true, ...opts })}</div>`).join("");
+    const qBlock = (qs, opts = {}) => qs.map((q, k) => `<div class="ls-q" data-qn="${q.n}">${qHtml(N.items[q.n], { confidence: "after", ...opts })}</div>`).join("");
     const objList = (os) => os.map((o) => `<li><span class="ls-ob">${o}</span>${inline(N.objectives[o - 1] || "")}</li>`).join("");
     let body = "", needsAnswer = 0, primary = n < steps.length - 1 ? "Continue" : "";
     if (s.kind === "orient") {
@@ -1540,7 +1558,7 @@ export function mountCourse(root, cfg) {
       needsAnswer = s.questions.length;
     } else if (s.kind === "block") {
       const B = s.block, partsHtml = lessonHtml({ blocks: B.parts }), ob = B.objectives.length ? `<p class="ls-obtag">${ic("target")} ${B.objectives.map((o) => esc(N.objectives[o - 1] || `Objective ${o}`)).join(" · ")}</p>` : "";
-      body = `<span class="ls-kicker">Concept ${s.n} of ${s.of}<span class="ls-kstep"> · step ${n + 1} of ${steps.length}</span></span><h1 class="ls-title" tabindex="-1">${inline(B.title || l.title)}</h1>${ob}
+      body = `<span class="ls-kicker">Concept ${s.n} of ${s.of}</span><h1 class="ls-title" tabindex="-1">${inline(B.title || l.title)}</h1>${ob}
         ${B.hook ? `<div class="ls-hook"><b>Think first</b><p>${inline(B.hook)}</p></div>` : ""}
         <div class="co-read"><div class="ls-teach co-prose">${partsHtml}</div></div>
         ${B.more.length ? `<details class="ls-more"><summary>${ic("more")} More detail</summary>${B.more.map((x) => `<p>${inline(x)}</p>`).join("")}</details>` : ""}
@@ -1563,19 +1581,22 @@ export function mountCourse(root, cfg) {
     } else {
       const shown = new Set((S.attempts || []).filter((a) => a.lesson === id && a.score >= 0.7).flatMap((a) => a.question?.objectives || []));
       const run = runs.get(id), runCard = run && run.tried ? `<section class="ls-card ls-run" aria-label="This lesson so far"><h2>This lesson</h2><ul class="ls-runstats">
-          <li><b>+${run.xp}</b><span>XP earned</span></li><li><b>${run.right}/${run.tried}</b><span>right first time</span></li><li><b>${run.best}</b><span>best run in a row</span></li></ul>
+          <li><b>+${run.xp}</b><span>XP earned</span></li><li><b>${run.right}/${run.tried}</b><span>right first time</span></li>${run.best >= 2 ? `<li><b>${run.best}</b><span>best run in a row</span></li>` : ""}</ul>
           <p class="ls-runline">${run.right === run.tried ? "Every answer right first time. Brilliant work." : run.right / run.tried >= 0.6 ? "Strong work. The ones you missed come back in your review, so they stick." : "Good effort. The ones you missed come back in your review until they stick."}</p></section>` : "";
-      body = `<span class="ls-kicker">Next</span><h1 class="ls-title" tabindex="-1">${S.done[id] ? "Lesson complete" : "Almost there"}</h1>${runCard}
+      body = `<span class="ls-kicker">Next</span><h1 class="ls-title" tabindex="-1">${S.done[id] ? "Lesson complete" : "Nice work: one step left"}</h1>${runCard}
         ${N.objectives.length ? `<section class="ls-card"><h2>What you've shown</h2><ul class="ls-objs">${N.objectives.map((o, k) => { const ok = shown.has(k + 1), at = ok ? -1 : steps.findIndex((x) => x.kind === "block" && x.block.objectives.includes(k + 1));
-          return `<li class="${ok ? "ok" : ""}"><span class="ls-ob">${ok ? "✓" : k + 1}</span>${inline(o)}<small>${ok ? "Shown in your answers" : at >= 0 ? `Not shown yet · <a href="${href(at)}">Revisit this concept</a>` : "Not shown yet"}</small></li>`; }).join("")}</ul></section>` : ""}
+          return `<li class="${ok ? "ok" : ""}"><span class="ls-ob">${ok ? "✓" : k + 1}</span>${inline(o)}<small>${ok ? "Shown in your answers" : at >= 0 ? `Comes up in your review · <a href="${href(at)}">Revisit this concept</a>` : "Comes up in your review"}</small></li>`; }).join("")}</ul></section>` : ""}
         ${(() => { const b = buildsOnHtml(id); return b && b.includes("review first") ? `<section class="ls-card"><h2>Worth revisiting first</h2><p>This lesson builds on these. Your answers there suggest a quick review would help.</p>${b}</section>` : ""; })()}
-        <div class="ls-tools">${S.done[id] ? "" : `<button type="button" class="btn btn-light lg" data-done>Complete lesson · +${XP.lesson} XP</button>`}${nextL ? `<a class="btn btn-ghost lg" href="${href(0).replace(id, nextL.id)}">Next lesson: ${esc(nextL.title)}</a>` : ""}<a class="ls-tool" href="#/lesson/${id}">${ic("notes")} Read as notes</a></div>`;
+        <div class="ls-end">${S.done[id] ? (nextL ? `<a class="btn btn-light lg ls-endgo" href="${href(0).replace(id, nextL.id)}">Next lesson: ${esc(nextL.title)}</a>` : "") : `<button type="button" class="btn btn-light lg ls-endgo" data-done>Complete lesson · +${XP.lesson} XP</button>`}
+          <a class="ls-endlink" href="#/lesson/${id}">${ic("notes")} Read as notes</a></div>`;
       primary = "";
     }
+    const sk = streak();
     main.innerHTML = `<article class="ls" style="--a:${t.from};--b:${t.to}">
       <header class="ls-bar"><a class="ls-back" href="${n ? href(n - 1) : `#/lesson/${id}`}" aria-label="${n ? "Previous step" : "Back to the lesson"}">${ic("left")}</a>
         <ol class="ls-prog" aria-label="Step ${n + 1} of ${steps.length}">${steps.map((x, k) => `<li class="${k < n ? "done" : k === n ? "here" : ""}"><a href="${href(k)}" tabindex="${k <= (S.step[id] || 0) ? 0 : -1}" aria-label="Step ${k + 1}${k === n ? " (current)" : ""}"></a></li>`).join("")}</ol>
         <span class="ls-count" aria-hidden="true">${n + 1}/${steps.length}</span>
+        <span class="ls-xp" title="Your XP${sk.n ? ` · ${sk.n}-day streak` : ""}">${ic("bolt")}<b>${totalXp().toLocaleString()}</b>${sk.n ? `<i class="ls-streak">${ic("flame")}${sk.n}</i>` : ""}</span>
         <a class="ls-close" href="#/lesson/${id}" aria-label="Leave step-by-step and read as notes">${ic("notes")}<span>Notes</span></a></header>
       <div class="ls-body">${body}</div>
       ${primary ? `<footer class="ls-foot"><a class="btn btn-light lg ls-go${needsAnswer ? " off" : ""}" href="${href(n + 1)}" ${needsAnswer ? 'aria-disabled="true"' : ""}>${esc(primary)}</a>${needsAnswer ? `<p class="ls-why">Answer ${needsAnswer === 1 ? "the question" : "each question"} to continue</p>` : ""}</footer>` : ""}

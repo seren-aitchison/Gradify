@@ -1631,3 +1631,16 @@ html.onb .lo-shell { display: block; }   /* the sidebar's grid column goes with 
 .onb-skip { background: none; border: 0; color: var(--fg); font: inherit; font-size: 14px; min-height: 40px; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 560px) { .onb-head { gap: 14px; } .onb-mascot { width: 60px; height: 60px; border-radius: 22px; } .onb-mascot svg { width: 30px; height: 30px; } .onb-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; } .onb-card { min-height: 140px; padding: 16px 10px; } }
 @media (prefers-reduced-motion: reduce) { .onb-card { transition: none; } .onb-card:hover { transform: none; } }
+
+/* onboarding buttons: solid, no glow */
+.onb-foot .btn.lg { box-shadow: none !important; }
+.onb-foot .btn.lg::after, .onb-foot .btn.lg::before { display: none !important; }
+/* phones: choices as compact rows (icon, name, one line), so the whole set shows at a glance */
+@media (max-width: 640px) {
+  .onb-cards { grid-template-columns: 1fr !important; gap: 8px; }
+  .onb-card { min-height: 0; grid-template-columns: 44px minmax(0, 1fr); grid-template-rows: auto auto; justify-items: start; align-items: center; text-align: left; gap: 0 12px; padding: 12px 44px 12px 14px; }
+  .onb-card .onb-ic { grid-row: 1 / span 2; width: 44px; height: 44px; }
+  .onb-card b { font-size: 16px; }
+  .onb-card > span:not(.onb-ic) { font-size: 13px; }
+  .onb-card[aria-pressed="true"]::after { top: 50%; transform: translateY(-50%); }
+}

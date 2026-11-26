@@ -41,9 +41,10 @@ export function renderQuestion(Q, key, { mode = "practice", levels = DEFAULT_LEV
   const conf = confidence && mode === "practice" ? `<fieldset class="aq-conf"><legend>How sure are you? <small>(optional)</small></legend>${["Guessing", "Unsure", "Sure"].map((c, i) => `<label><input type="radio" name="${qid}-conf" value="${i + 1}"><span>${c}</span></label>`).join("")}</fieldset>` : "";
   return `<div class="aq aq-type-${Q.type}" data-key="${esc(key)}" data-mode="${mode}" role="group" aria-labelledby="${qid}-stem">
     <p class="aq-q" id="${qid}-stem">${inline(Q.q)}<small>${LABELS[Q.type]} · ${esc(levels[Q.d - 1] || "")}</small></p>
-    ${conf}${h.render(Q, { key: String(key), mode })}
+    ${confidence === "after" ? "" : conf}${h.render(Q, { key: String(key), mode })}
     <div class="aq-result" role="status" aria-live="polite"></div>
-    <div class="aq-why" hidden>${Q.why ? `<p>${inline(Q.why)}</p>` : ""}<div class="aq-detail"></div></div></div>`;
+    <div class="aq-why" hidden>${Q.why ? `<p>${inline(Q.why)}</p>` : ""}<div class="aq-detail"></div></div>
+    ${confidence === "after" ? conf.replace('class="aq-conf"', 'class="aq-conf aq-conf-after" hidden').replace("How sure are you?", "How sure were you?") : ""}</div>`;
 }
 
 export function markQuestion(Q, response) { Q = normalize(Q); return { status: "final", method: "auto", ...handlerFor(Q).mark(Q, response) }; }
@@ -68,6 +69,8 @@ export function wireQuestions(el, lookup, onAnswer) {
       box.querySelector(".aq-detail").innerHTML = h.feedback(Q, response, res);
       box.querySelector(".aq-why").hidden = false;
       if (res.correct || res.self) { solved = true; box.classList.add("solved"); }
+      const after = box.querySelector(".aq-conf-after");
+      if (after && attempt === 1) { after.hidden = false; after.addEventListener("change", () => box.dispatchEvent(new CustomEvent("aq-confidence", { detail: confidence() })), { once: true }); }
       onAnswer?.(Q, res, attempt === 1, box, { response, confidence: confidence(), ms: Date.now() - shown, attempt });
     }, { mode: box.dataset.mode });
   });
