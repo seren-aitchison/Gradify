@@ -42,7 +42,7 @@ export function topTools(hist = [], { limit = 5 } = {}) {
 export function alertsFor({ due = 0, missed = [], mistakes: open = 0, sync = null, deadline = null } = {}, on = new Set()) {
   const out = [];
   if (sync && (sync.state === "failed" || sync.state === "offline") && sync.waiting) out.push({ tone: "warn", t: sync.state === "offline" ? `Offline: ${sync.waiting} change${sync.waiting === 1 ? "" : "s"} waiting to sync` : `${sync.waiting} change${sync.waiting === 1 ? "" : "s"} couldn't sync yet: Gradify will retry`, href: "#/account" });
-  if (deadline && deadline.days <= 3 && !on.has("s-deadline") && !on.has("b-exam")) out.push({ tone: "warn", t: deadline.days <= 0 ? `${deadline.title} is today` : `${deadline.title} in ${deadline.days} day${deadline.days === 1 ? "" : "s"}`, href: "#/plan" });
+  if (deadline && deadline.days <= 3 && !on.has("s-deadline") && !(on.has("b-exam") && deadline.kind === "exam")) out.push({ tone: "warn", t: deadline.days <= 0 ? `${deadline.title} is today` : `${deadline.title} in ${deadline.days} day${deadline.days === 1 ? "" : "s"}`, href: "#/plan" });
   if (missed.length && !on.has("w-tasks")) out.push({ t: `${missed.length} study block${missed.length === 1 ? "" : "s"} from earlier today not done`, href: "#/plan" });
   if (due && !on.has("s-due") && !on.has("w-flash") && !on.has("b-hero")) out.push({ t: `${due} card${due === 1 ? "" : "s"} due`, href: "#/study" });
   if (open && !on.has("w-mistakes")) out.push({ t: `${open} mistake${open === 1 ? "" : "s"} to revisit`, href: "#/revise" });
@@ -80,13 +80,17 @@ export const MORE = [
         const c = queue[i];
         body.innerHTML = `<div class="wd-card"><small>${i + 1} of ${queue.length}${c.topic ? ` · ${esc(c.topic)}` : ""}</small><p class="wd-cf">${esc(c.front)}</p>${shown ? `<p class="wd-cb">${esc(c.back)}</p>` : ""}</div>
           <div class="wd-cact">${shown ? [["again", "Again"], ["hard", "Hard"], ["good", "Good"], ["easy", "Easy"]].map(([r, l]) => `<button type="button" class="cp-pill${r === "good" ? " dark" : ""}" data-rate="${r}">${l}</button>`).join("") : `<button type="button" class="cp-pill dark" data-show>Show the answer</button>`}</div>`;
-        body.querySelector("button")?.focus({ preventScroll: true });
+        if (moved) body.querySelector("button")?.focus({ preventScroll: true });   // only after the learner acts
       };
+      let moved = false;
       body.addEventListener("click", async (e) => {
-        if (e.target.closest("[data-show]")) { shown = true; draw(); return; }
+        if (e.target.closest("[data-show]")) { shown = true; moved = true; draw(); return; }
         const r = e.target.closest("[data-rate]")?.dataset.rate; if (!r) return;
-        body.querySelectorAll("button").forEach((b) => { b.disabled = true; });
-        await ctx.reviewOne(queue[i], r, Date.now() - t0);   // the same review a study session records
+        moved = true;
+        const btns = body.querySelectorAll("button"); btns.forEach((b) => { b.disabled = true; });
+        // the same review a study session records; if it can't be saved, the card stays so it can be tried again
+        try { await ctx.reviewOne(queue[i], r, Date.now() - t0); }
+        catch (err) { console.warn("quick review", err); btns.forEach((b) => { b.disabled = false; }); ctx.toast?.("Couldn't save that review. Try again."); return; }
         if (r !== "again") right++;
         i++; shown = false; t0 = Date.now(); draw();
       });
@@ -128,7 +132,7 @@ export const MORE = [
     render: (d) => {
       const nowMin = new Date().getHours() * 60 + new Date().getMinutes();
       const missed = todaysTasks(d.m.blocks, d.m.today).filter((b) => !b.done && b.end_min < nowMin);
-      const dl = (d.m.deadlines || []).map((x) => ({ title: x.title, days: Math.round((Date.parse(`${x.day}T00:00:00`) - Date.parse(`${d.m.today}T00:00:00`)) / 864e5) })).sort((a, b) => a.days - b.days)[0] || null;
+      const dl = (d.m.deadlines || []).map((x) => ({ title: x.title, kind: x.kind, days: Math.round((Date.parse(`${x.day}T00:00:00`) - Date.parse(`${d.m.today}T00:00:00`)) / 864e5) })).sort((a, b) => a.days - b.days)[0] || null;
       const a = alertsFor({ due: d.s.due.length, missed, mistakes: mistakes().filter((x) => !x.resolved).length, sync: syncStatus(), deadline: dl }, new Set(d.chosen || []));
       return a.length ? `<ul class="wd-list wd-alerts">${a.map((x) => `<li class="${x.tone || ""}"><a href="${esc(x.href)}"><b>${esc(x.t)}</b></a></li>`).join("")}</ul>` : empty("Nothing needs you right now.");
     } },

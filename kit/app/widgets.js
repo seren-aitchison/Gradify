@@ -132,12 +132,19 @@ export const DEFAULT_WIDGETS = ["s-ready", "s-due", "s-streak", "s-deadline", "s
 // ---------- the board: what's on it, in the learner's order ----------
 // One widget can show everything another does: then the smaller one is left off while both are chosen, so the board
 // never says the same thing twice (it comes back if the bigger one is hidden).
-export const COVERS = { "b-exam": ["s-deadline"], "b-hero": ["s-due"], "w-flash": ["s-due"], "w-week": ["w-upcoming"] };
+export const COVERS = { "b-exam": ["s-deadline"], "b-hero": ["s-due"], "w-flash": ["s-due"] };
+// some cover only with the learner's data: the exam countdown covers "Next deadline" only when the next deadline is
+// that exam (an assignment due first, or no exam at all, keeps "Next deadline" on the board)
+const nextDeadline = (m) => (m?.deadlines || []).slice().sort((a, b) => a.day.localeCompare(b.day))[0] || null;
+export const COVERS_WHEN = { "b-exam>s-deadline": (d) => nextDeadline(d?.m)?.kind === "exam" };
 /** the widgets to draw, in order, and the ones left off because another on the board covers them. Pure. */
-export function boardPlan(chosen = DEFAULT_WIDGETS, all = WIDGETS) {
+export function boardPlan(chosen = DEFAULT_WIDGETS, all = WIDGETS, d = null) {
   const known = chosen.filter((id) => all.some((w) => w.id === id));
   const covered = new Map();
-  for (const id of known) for (const c of COVERS[id] || []) if (known.includes(c)) covered.set(c, id);
+  for (const id of known) for (const c of COVERS[id] || []) {
+    const when = COVERS_WHEN[`${id}>${c}`];
+    if (known.includes(c) && (!when || when(d))) covered.set(c, id);
+  }
   return { show: known.filter((id) => !covered.has(id)), covered };
 }
 // presets: a board for what the learner is doing now. Each is just a starting point; any widget can be added after.
@@ -163,7 +170,7 @@ export function drawWidget(w, d) {
 
 /** The board: chosen widgets, grouped by size so each row's boxes fit what's inside them. */
 export function boardHtml(d, chosen = DEFAULT_WIDGETS) {
-  const { show, covered } = boardPlan(chosen);
+  const { show, covered } = boardPlan(chosen, WIDGETS, d);
   const data = { ...d, chosen: show };
   const pick = (size) => show.map((id) => WIDGETS.find((w) => w.id === id)).filter((w) => w && w.size === size);
   const s = pick("s"), wd = pick("w"), b = pick("b");
@@ -217,6 +224,9 @@ export function wireBoard(view, ctx, d = null) {
     try { data = ctx.reload ? await ctx.reload() : data; } catch (e) { console.warn("widget data", e); }
     const tmp = document.createElement("div"); tmp.innerHTML = drawWidget(w, { ...data, chosen: chosen() });
     const fresh = tmp.firstElementChild; if (!fresh) return;
+    // the older widgets (Tell Gradify, upcoming learning, …) have their controls wired by the page itself
+    // (wireTell, wireIntel), not by a mount: those redraw the whole board, so their controls keep working
+    if (!w.mount && fresh.querySelector("form, input, textarea, select, button:not(.wd-hb):not(.wd-fold):not([data-wretry])")) { ctx.rerender(); return; }
     el.replaceWith(fresh); set(fresh, folded().has(id), false); mountOne(fresh);
   }
   view.addEventListener("click", async (e) => {

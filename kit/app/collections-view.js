@@ -33,7 +33,8 @@ export function renderCollections(view, id, { toast }) {
 function studyHtml(items) {
   const packs = items.filter((x) => x.kind === "pack"), lessons = items.filter((x) => x.kind === "lesson"), qs = items.filter((x) => x.kind === "question");
   const acts = [
-    ...packs.slice(0, 3).map((p) => [`#/study/${encodeURIComponent(p.rid.slice(5))}`, `Revise ${p.title}`]),
+    // a pack's revise page is in the app it was made in (each app keeps its own packs), so build it from the pack's own address
+    ...packs.slice(0, 3).map((p) => [`${(p.href || location.pathname).split("#")[0] || location.pathname}#/study/${encodeURIComponent(p.rid.slice(5))}`, `Revise ${p.title}`]),
     lessons[0] ? [lessons[0].href, `Open ${lessons[0].title}`] : null,
     qs[0] ? [qs[0].href, `${qs.length} question${qs.length > 1 ? "s" : ""} saved: start with the first`] : null,
   ].filter(Boolean);

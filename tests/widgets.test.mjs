@@ -14,10 +14,19 @@ test("every widget id is unique, and every preset, default and cover names real 
 });
 
 test("the board keeps the learner's order, and leaves off what another widget on it already shows", () => {
-  const { show, covered } = boardPlan(["w-flash", "s-due", "s-streak", "nope", "b-exam", "s-deadline"]);
+  const examFirst = { m: { deadlines: [{ day: "2026-12-10", kind: "exam", title: "Biology" }, { day: "2026-12-20", kind: "deadline", title: "Essay" }] } };
+  const { show, covered } = boardPlan(["w-flash", "s-due", "s-streak", "nope", "b-exam", "s-deadline"], undefined, examFirst);
   assert.deepEqual(show, ["w-flash", "s-streak", "b-exam"]);              // unknown ids dropped, order kept
   assert.equal(covered.get("s-due"), "w-flash"); assert.equal(covered.get("s-deadline"), "b-exam");
   assert.deepEqual(boardPlan(["s-due", "s-deadline"]).show, ["s-due", "s-deadline"]);   // shown again once the bigger one's gone
+});
+
+test("the exam countdown only stands in for 'Next deadline' when the next deadline is that exam", () => {
+  const essayFirst = { m: { deadlines: [{ day: "2026-12-04", kind: "deadline", title: "Essay" }, { day: "2026-12-10", kind: "exam", title: "Biology" }] } };
+  assert.deepEqual(boardPlan(["b-exam", "s-deadline"], undefined, essayFirst).show, ["b-exam", "s-deadline"]);
+  assert.deepEqual(boardPlan(["b-exam", "s-deadline"], undefined, { m: { deadlines: [] } }).show, ["b-exam", "s-deadline"]);
+  // the week view and the day's plan show different things: both stay
+  assert.deepEqual(boardPlan(["w-week", "w-upcoming"]).show, ["w-week", "w-upcoming"]);
 });
 
 test("one widget that fails is just that widget; the rest of the board draws", () => {
@@ -40,9 +49,12 @@ test("'Worth doing' says what needs the learner, most pressing first, and not wh
   const all = alertsFor({ due: 12, missed: [{}], mistakes: 3, sync: { state: "offline", waiting: 2 }, deadline: { title: "Biology exam", days: 2 } });
   assert.deepEqual(all.map((a) => a.href), ["#/account", "#/plan", "#/plan", "#/study", "#/revise"]);
   assert.match(all[0].t, /Offline: 2 changes waiting/); assert.match(all[1].t, /Biology exam in 2 days/);
-  const lean = alertsFor({ due: 12, missed: [{}], mistakes: 3, deadline: { title: "x", days: 2 } }, new Set(["s-due", "w-tasks", "w-mistakes", "b-exam"]));
+  const lean = alertsFor({ due: 12, missed: [{}], mistakes: 3, deadline: { title: "x", kind: "exam", days: 2 } }, new Set(["s-due", "w-tasks", "w-mistakes", "b-exam"]));
   assert.deepEqual(lean, []);
   assert.deepEqual(alertsFor({ deadline: { title: "x", days: 9 } }), []);   // far away isn't pressing
+  // the exam countdown doesn't show an assignment, so one due soon is still worth saying
+  assert.equal(alertsFor({ deadline: { title: "Essay", kind: "deadline", days: 1 } }, new Set(["b-exam"])).length, 1);
+  assert.equal(alertsFor({ deadline: { title: "Biology", kind: "exam", days: 1 } }, new Set(["b-exam"])).length, 0);
 });
 
 test("the timer: time left running and paused, and how it reads", () => {

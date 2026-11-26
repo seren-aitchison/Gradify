@@ -13,8 +13,14 @@ import { collections, createCollection, addToCollection } from "../data/links.js
 import { resource } from "../core/resource.js";
 
 const KEY = "gradify.timer";
-const read = () => { try { return JSON.parse(localStorage.getItem(KEY) || "null"); } catch { return null; } };
-const write = (v) => { try { if (v) localStorage.setItem(KEY, JSON.stringify(v)); else localStorage.removeItem(KEY); } catch { /* private mode */ } dispatchEvent(new Event("gradify-timer")); };
+// kept in the browser so it survives moving between pages; where storage is blocked, it still runs on this page
+let mem = null, memOnly = false;
+const read = () => { if (memOnly) return mem; try { return JSON.parse(localStorage.getItem(KEY) || "null"); } catch { return mem; } };
+const write = (v) => {
+  mem = v || null;
+  try { if (v) localStorage.setItem(KEY, JSON.stringify(v)); else localStorage.removeItem(KEY); memOnly = false; } catch { memOnly = true; }
+  dispatchEvent(new Event("gradify-timer"));
+};
 
 // ---------- the timer (pure parts) ----------
 /** how long is left, in seconds, now: a paused timer keeps what it had. Pure. */
@@ -65,6 +71,11 @@ function paintTimer() {
   const t = timerState(), el = panel?.querySelector('[data-qpane="timer"]'), badge = dock?.querySelector(".qd-t");
   if (badge) { badge.hidden = !t; badge.textContent = t ? fmt(t.left) : ""; dock.classList.toggle("timing", Boolean(t)); }
   if (!el) return;
+  // each second only the time changes: the buttons are redrawn only when the timer's state does, so a focused
+  // Pause or Stop keeps its focus
+  const state = t ? `${t.label}|${t.mins}|${t.paused != null}|${t.end}` : "none";
+  if (el.dataset.state === state) { const big = el.querySelector(".qd-big"); if (big && t) big.textContent = fmt(t.left); return; }
+  el.dataset.state = state;
   el.innerHTML = t
     ? `<p class="qd-big" aria-live="off">${fmt(t.left)}</p><p class="qd-sub">${esc(t.label)} · ${t.mins} min${t.paused != null ? " · paused" : ""}</p>
        <div class="qd-row">${t.paused != null ? `<button type="button" class="cp-pill dark" data-qt="resume">Resume</button>` : `<button type="button" class="cp-pill dark" data-qt="pause">Pause</button>`}<button type="button" class="cp-pill" data-qt="stop">Stop</button></div>`
@@ -74,7 +85,7 @@ function every() {
   const t = timerState();
   if (t && t.paused == null && t.left <= 0) {
     stopTimer();
-    toast(`<b>${esc(t.label)}</b> done: ${t.mins} minutes.`, { icon: "check" });
+    toast({ html: `<b>${esc(t.label)}</b> done: ${t.mins} minutes.` }, { icon: "check" });
     try { navigator.vibrate?.([120, 80, 120]); } catch { /* fine */ }
   }
   paintTimer();
@@ -106,12 +117,13 @@ export function mountQuickDock({ app: appPath = "/app.html", where = document.bo
   });
   dock.addEventListener("keydown", (e) => { if (e.key === "Escape" && !panel.hidden) { e.stopPropagation(); close(true); } });
   dock.querySelector('[data-qpane="note"]').addEventListener("submit", async (e) => {
-    e.preventDefault(); const ta = e.target.querySelector("textarea");
-    try { if (await quickNote(ta.value)) { ta.value = ""; toast(`Added to today's notes. <a href="${esc(app)}#/notes/daily">Open</a>`); } } catch (err) { toast(`Couldn't save the note: ${esc(err.message || "try again")}`); }
+    e.preventDefault(); const ta = e.target.querySelector("textarea"), sent = ta.value;
+    // only what was sent is cleared: anything typed while it saved stays
+    try { if (await quickNote(sent)) { if (ta.value === sent) ta.value = ""; toast({ html: `Added to today's notes. <a href="${esc(app)}#/notes/daily">Open</a>` }); } } catch (err) { toast(`Couldn't save the note: ${err.message || "try again"}`); }
   });
   dock.querySelector('[data-qpane="capture"]').addEventListener("submit", async (e) => {
-    e.preventDefault(); const inp = e.target.querySelector("input");
-    try { const r = await capture(inp.value); if (r) { inp.value = ""; toast(r.where === "collection" ? `Saved to <a href="${esc(app)}#/collections/${esc(r.cid)}">Captured</a>.` : `Added to today's notes.`); } } catch (err) { toast(`Couldn't capture it: ${esc(err.message || "try again")}`); }
+    e.preventDefault(); const inp = e.target.querySelector("input"), sent = inp.value;
+    try { const r = await capture(sent); if (r) { if (inp.value === sent) inp.value = ""; toast(r.where === "collection" ? { html: `Saved to <a href="${esc(app)}#/collections/${esc(r.cid)}">Captured</a>.` } : "Added to today's notes."); } } catch (err) { toast(`Couldn't capture it: ${err.message || "try again"}`); }
   });
   addEventListener("gradify-timer", paintTimer);
   addEventListener("storage", (e) => { if (e.key === KEY) paintTimer(); });

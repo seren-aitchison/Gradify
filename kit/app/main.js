@@ -1011,7 +1011,7 @@ async function renderToday() {
   const firstRun = !s.cards.length && !courses.length;
   // the widget board: its data (also rebuilt for one widget's refresh: boardData) and the learner's widgets, in order
   const boardD = { m: M, s, G, L, streak: streakDays, xp: gxp, lv, xpForLevel, heat: heatmap(s.byDay), topicHref, studyHref };
-  const boardIds = (M.intel.widgets?.length ? M.intel.widgets : DEFAULT_WIDGETS).filter((id) => ACCESS.has("intelligence") || !INTEL_WIDGETS.has(id));
+  const boardIds = (Array.isArray(M.intel.widgets) ? M.intel.widgets : DEFAULT_WIDGETS).filter((id) => ACCESS.has("intelligence") || !INTEL_WIDGETS.has(id));
   view.innerHTML = `<section class="today">
     <div class="today-head"><div><span class="kicker lo-kicker">${icon("home")}Command Centre · ${fmtDate(Date.now(), { weekday: "long", day: "numeric", month: "long" })}</span>
       <h1>${hour < 12 ? "Good morning" : hour < 18 ? "Good afternoon" : "Good evening"}${profile.display_name ? `, ${esc(profile.display_name)}` : ""} <span class="wave" aria-hidden="true">👋</span></h1>
