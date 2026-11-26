@@ -10,6 +10,9 @@
 //   Workspace tabs over the page: the notes, plan, flashcards and question set you're working between, each kept
 //             where you were (kit/ui/workspace.js), shared with the lessons on every course page.
 //   History   every screen opened goes into the learner's history (kit/ui/history.js, the History screen).
+//   Essentials first: each section shows the screens most people need; the rest wait behind "N more" until the
+//             learner opens the section's extras or uses one (from search, a link), and then they stay.
+//   Courses   a dropdown of the courses recently opened, in the top bar (kit/ui/switcher.js).
 //
 //   const nav = mountAppNav({ sections, settings, screenOf, sectionOf, icon, haptic, home });
 //   nav.arrived(name, view)       // after each screen draws: highlight it, breadcrumbs, note it in Recent
@@ -25,7 +28,9 @@ import { shortcuts } from "../ui/keys.js";
 import { toast } from "../ui/feedback.js";
 import { loadIndex, searchIndex, myCourses, score } from "../ui/global-nav.js";
 import { mountWorkspace, workspace, switchTo, KINDS } from "../ui/workspace.js";
-import { logEvent } from "../ui/history.js";
+import { logEvent, history } from "../ui/history.js";
+import { mountCourseSwitcher } from "../ui/switcher.js";
+import { continueItems } from "./continue-view.js";
 
 const norm = (s) => String(s || "").toLowerCase().normalize("NFKD").replace(/[̀-ͯ]/g, "");
 
@@ -56,6 +61,16 @@ export function crumbTrail(hash, { sections, settings, screenOf = (r) => r, home
   const t = String(itemTitle || "").trim();
   if (deeper && t && t !== trail.at(-1)?.label) trail.push({ label: t.length > 60 ? `${t.slice(0, 57)}…` : t, href: `#/${parts.join("/")}` });
   return trail;
+}
+
+/**
+ * Progressive disclosure: which of a section's screens show. Essentials always; an advanced screen once the section's
+ * extras are open, once it's been used, or while it's the current one. Pure.
+ */
+export function visibleScreens(list, { advanced = new Set(), open = false, used = new Set(), current = null } = {}) {
+  const shown = [], hidden = [];
+  for (const s of list) (!advanced.has(s[0]) || open || used.has(s[0]) || s[0] === current ? shown : hidden).push(s);
+  return { shown, hidden };
 }
 
 /** screens whose name (or section) matches the query, best first, as palette hits */
@@ -97,11 +112,11 @@ export function matchActions(list, raw) {
 // ---------- the page ----------
 const P = "app";   // prefs scope
 
-export function mountAppNav({ sections, settings, screenOf, sectionOf, icon, haptic = () => {}, home = "#/today", appName = "Gradify", afterPaint = () => {} }) {
+export function mountAppNav({ sections, settings, screenOf, sectionOf, icon, haptic = () => {}, home = "#/today", appName = "Gradify", afterPaint = () => {}, advanced = new Set() }) {
   ensureStyles();
   const view = document.querySelector("#view"), shell = view?.parentElement;
   if (!view || !shell) return { arrived() {}, markCurrent() {} };
-  const folded = prefSet(P, "folded");
+  const folded = prefSet(P, "folded"), extras = prefSet(P, "extras"), used = prefSet(P, "used");
   const screens = allScreens(sections, settings);
   const currentRoute = () => location.hash.replace(/^#\/?/, "").split(/[/?]/)[0] || "today";
   const here = () => `${location.pathname}${location.hash || "#/today"}`;
@@ -137,7 +152,13 @@ export function mountAppNav({ sections, settings, screenOf, sectionOf, icon, hap
       <button type="button" class="lo-find" data-find title="Search (${isMac() ? "⌘K" : "Ctrl+K"})">${uiIcon("search")}<span>Search or jump to…</span><kbd>${isMac() ? "⌘K" : "/"}</kbd></button>
       ${mine.length ? group("pinned", "Pinned", mine.map((p, i) => placeRow(p, "pin", i)).join(""), { open: !folded.has("pinned"), cls: "lo-mine" }) : ""}
       ${seen.length ? group("recent", "Recent", seen.map((p) => placeRow(p, "recent")).join(""), { open: !folded.has("recent"), cls: "lo-mine" }) : ""}
-      ${sections.map(([id, label, , list]) => group(id, label, list.map(link).join(""), { open: id === cur || !folded.has(id), cls: id === cur ? "open" : "" })).join("")}
+      ${sections.map(([id, label, , list]) => {
+        // essentials first; the rest behind "N more" (the rail has room for every icon, so it shows them all)
+        const v = visibleScreens(list, { advanced, open: rail || extras.has(id), used: new Set(used.all()), current: screenOf(currentRoute()) });
+        const more = v.hidden.length ? `<button type="button" class="lo-more" data-more="${id}" aria-expanded="false" title="${esc(v.hidden.map((x) => x[1]).join(", "))}">${uiIcon("more")}<span>${v.hidden.length} more</span></button>`
+          : !rail && extras.has(id) && list.some((x) => advanced.has(x[0]) && !used.has(x[0])) ? `<button type="button" class="lo-more" data-more="${id}" aria-expanded="true">${uiIcon("up")}<span>Show fewer</span></button>` : "";
+        return group(id, label, v.shown.map(link).join("") + more, { open: id === cur || !folded.has(id), cls: id === cur ? "open" : "" });
+      }).join("")}
       <div class="lo-sec lo-sec-end expanded"><div class="lo-sec-body">${link(settings)}</div></div>`;
     markCurrent();
     afterPaint(side);
@@ -187,6 +208,15 @@ export function mountAppNav({ sections, settings, screenOf, sectionOf, icon, hap
       return;
     }
     if (e.target.closest("[data-rail]")) { setRail(!isRail()); return; }
+    const m = e.target.closest("[data-more]");
+    if (m) {
+      // open or close a section's extras; focus goes to the first screen that appeared, or back to the button
+      const id = m.dataset.more, opening = !extras.has(id), inSec = () => [...side.querySelectorAll(`[data-section="${id}"] a[data-route]`)];
+      const before = new Set(inSec().map((a) => a.dataset.route));
+      extras.toggle(id, opening); paint();
+      (opening && inSec().find((a) => !before.has(a.dataset.route)) || side.querySelector(`[data-more="${id}"]`) || side.querySelector(`[data-fold="${id}"]`))?.focus();
+      return;
+    }
     if (e.target.closest("[data-close]")) { closeDrawer(true); return; }
     if (e.target.closest("[data-find]")) { closeDrawer(); pal.open(); return; }
     const un = e.target.closest("[data-unpin]");
@@ -235,6 +265,7 @@ export function mountAppNav({ sections, settings, screenOf, sectionOf, icon, hap
   find.innerHTML = `${uiIcon("search")}<span>Search</span><kbd>${isMac() ? "⌘K" : "/"}</kbd>`;
   find.addEventListener("click", () => pal.open());
   bar?.querySelector(".mode-chip")?.before(find);
+  const switcher = mountCourseSwitcher(bar?.querySelector(".brand"), { where: "afterend" });
 
   // ----- breadcrumbs -----
   const crumbs = document.createElement("nav");
@@ -281,7 +312,9 @@ export function mountAppNav({ sections, settings, screenOf, sectionOf, icon, hap
     searchMore: (raw) => loadIndex().then((idx) => searchIndex(idx, raw, { site: appName === "Gradify" ? null : appName })),
     suggestions: () => {
       const r = resume();
-      const cont = r ? [{ type: "action", t: "Resume last lesson", k: [r.course, r.next?.label || r.title].filter(Boolean).join(" · "), href: r.next?.href || r.href }] : [];
+      // everything the learner was in the middle of (the same as Today's "Pick up where you left off")
+      let session = null; try { session = JSON.parse(localStorage.getItem("gradify.session")); } catch { /* none */ }
+      const cont = continueItems({ course: r, hist: history(), session }).map((x) => ({ type: "action", t: x.kind === "lesson" ? `Resume: ${x.title}` : `${x.label}: ${x.title}`, k: x.sub || x.label, href: local(x.href) }));
       return [
         { title: "Continue", items: cont },
         { title: "Workspace", items: workspace().tabs.filter((t) => t.id !== workspace().active).map((t) => ({ type: "tab", t: t.title, k: `${KINDS[t.kind]?.[0] || ""}${t.scopeLabel ? ` · ${t.scopeLabel}` : ""} · workspace tab`, href: local(t.href), run: () => switchTo(t) })) },
@@ -329,6 +362,10 @@ export function mountAppNav({ sections, settings, screenOf, sectionOf, icon, hap
       const kind = { deck: "flashcards", study: "flashcards", session: "flashcards", notes: "notes", jot: "notes", plan: "plan" }[name]
         || (name === "tools" && arg === "quiz" ? "questions" : name === "tools" && arg === "notebook" ? "notes" : null);
       tabs.arrived({ href: here(), title: p.title, kind, scope: appPath, scopeLabel: appName === "Gradify" ? "" : appName });
+      // an extra screen the learner has used now stays in the sidebar
+      const scr = screenOf(name);
+      if (advanced.has(scr) && !used.has(scr)) { used.toggle(scr, true); paint(); }
+      switcher?.refresh();
       if (!["start", "offer", "history"].includes(name)) logEvent({ act: "viewed", href: here(), title: p.title, kind: name, where: p.sub });
       markCurrent();
     },

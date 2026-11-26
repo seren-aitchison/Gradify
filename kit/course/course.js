@@ -67,6 +67,7 @@ import { resourceSwitcher, wireActions } from "../ui/resources.js";
 import { mountWorkspace } from "../ui/workspace.js";
 import { logEvent } from "../ui/history.js";
 import { mountContextBar } from "../ui/context-bar.js";
+import { mountCourseSwitcher } from "../ui/switcher.js";
 import { pref, setPref } from "../ui/prefs.js";
 import { openModal, openDrawer } from "../ui/overlay.js";
 import { tabsHtml, wireTabs } from "../ui/disclosure.js";
@@ -498,6 +499,8 @@ export function mountCourse(root, cfg) {
   // the learner's workspace tabs (kit/ui/workspace.js): this course's lesson, its questions and flashcards, beside
   // their notes and plan in the study app; and, in a lesson, its tools in a bar that follows you (kit/ui/context-bar.js)
   const workspaceTabs = mountWorkspace(root, { where: "afterbegin" });
+  // the learner's other courses, one click away from this one's header (kit/ui/switcher.js)
+  mountCourseSwitcher(root.querySelector(".cx-headrow"), { current: location.pathname, where: "afterbegin" });
   let ctxBar = null, placeTitle = "";
   addSave(root.querySelector(".co-head .cx-save"));
   // pin this course to the top of the Gradify homepage and the subject site's (kit/ui/places.js); Undo, no confirm

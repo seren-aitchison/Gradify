@@ -62,7 +62,9 @@ import { calendarPanelHtml, wireCalendar, intelStripHtml, nextHtml, upcomingHtml
 const $ = (s, el = document) => el.querySelector(s);
 import { esc } from "../core/text.js";
 import { mountAppNav } from "./app-nav.js";
-import { logEvent } from "../ui/history.js";
+import { logEvent, history as activity } from "../ui/history.js";
+import { continueItems, continueHtml } from "./continue-view.js";
+import { myCourses } from "../ui/global-nav.js";
 import { renderHistory } from "./history-view.js";
 const DAY = 864e5;
 const dayKey = (d) => { const x = new Date(d); return `${x.getFullYear()}-${String(x.getMonth() + 1).padStart(2, "0")}-${String(x.getDate()).padStart(2, "0")}`; };
@@ -132,6 +134,9 @@ const SECTIONS = [
   ["progress", "Progress", "trend", [["progress", "Progress", "trend"], ["intel", "Intelligence", "sparkles"], ["history", "History", "clock"]]],
 ];
 const SETTINGS = ["account", "Settings", "cog"];
+// progressive disclosure: these wait behind each section's "N more" in the sidebar until the learner opens the extras
+// or uses one, then stay (kit/app/app-nav.js). The rest are what most learners need most days.
+const ADVANCED = new Set(["my", "goals", "curriculum", "knowledge", "earth", "community", "intel", "history"]);
 // screens that belong to another screen's place in the navigation (a pack lives in your library, a topic in Progress)
 const SCREEN_OF = { academic: "my", deck: "library", jot: "notes", topic: "progress", goal: "goals", session: "study" };
 const screenOf = (route) => SCREEN_OF[route] || route;
@@ -149,7 +154,7 @@ function markLocks() {
 }
 // the sidebar (a rail of icons, folding sections, Pinned and Recent), the phone's drawer and tab bar, breadcrumbs and
 // ⌘K search: kit/app/app-nav.js
-const appNav = mountAppNav({ sections: SECTIONS, settings: SETTINGS, screenOf, sectionOf, icon, haptic, appName: SITE || "Gradify", afterPaint: () => markLocks() });
+const appNav = mountAppNav({ sections: SECTIONS, settings: SETTINGS, screenOf, sectionOf, icon, haptic, appName: SITE || "Gradify", afterPaint: () => markLocks(), advanced: ADVANCED });
 // the pricing page lives on getgradify.com; sub-sites served elsewhere link to it there
 const PRICING = /(^|\.)getgradify\.com$|^localhost/.test(location.hostname) ? "/pricing.html" : "https://getgradify.com/pricing.html";
 
@@ -966,6 +971,7 @@ async function renderToday() {
       <h1>${hour < 12 ? "Good morning" : hour < 18 ? "Good afternoon" : "Good evening"}${profile.display_name ? `, ${esc(profile.display_name)}` : ""} <span class="wave" aria-hidden="true">👋</span></h1>
       <p class="sub lo-hello">${s.cards.length ? `${n0(s.cards.length)} flashcards across ${n0(s.docs.length)} study ${s.docs.length === 1 ? "pack" : "packs"}${streakDays ? ` · ${streakDays}-day streak` : ""}.` : "Nice to have you here."}</p></div>
       ${heroArt(firstRun ? "path" : streakDays ? "streak" : "cards", { cls: "today-art" })}</div>
+    ${continueHtml(continueItems({ course: myCourses()[0] || null, hist: activity(), session: (() => { try { return JSON.parse(localStorage.getItem("gradify.session")); } catch { return null; } })(), blocks: ahead.filter((b) => b.day === today()) }), { appPath: location.pathname })}
     ${offerCardHtml()}
     ${needsSetup(profile) ? setupNudgeHtml("Tell it your goal and exam date, and it plans your study around them. About a minute, whenever you like.") : ""}
     ${firstRun ? welcomeHtml(profile.display_name) : ""}
