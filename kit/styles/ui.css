@@ -522,8 +522,15 @@ section.gx-shut > h3 { opacity: .8; }
 [data-row] svg { width: 16px; height: 16px; transition: transform .15s; }
 [data-row][aria-expanded="true"] svg { transform: rotate(90deg); }
 
-/* a wrong answer's explanation, on request (kit/assess/questions.js) */
-.aq-whyb { display: inline-flex; align-items: center; min-height: 34px; margin: 6px 0 2px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--line-strong); background: none; color: var(--fg); font: 600 13px var(--sans); cursor: pointer; }
-.aq-whyb:hover { background: rgba(var(--ink-rgb), .06); }
-.aq-whyb:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
+/* a wrong first try in practice (kit/assess/questions.js): why that answer isn't right, a hint, another go; the
+   answer is one click away, and shows itself after a second wrong try */
+.aq-tools { display: grid; gap: 8px; margin: 6px 0 2px; }
+.aq-try { display: grid; gap: 6px; padding: 10px 12px; border-radius: 12px; background: rgba(var(--ink-rgb), .04); border: 1px solid var(--line); font-size: 14px; line-height: 1.5; }
+.aq-try[hidden] { display: none; }
+.aq-try p { margin: 0; }
+.aq-hint2 b { color: var(--fg); }
+.aq-show { justify-self: start; padding: 4px 2px; border: 0; background: none; color: var(--mute); font: 500 13px var(--sans); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.aq-show:hover { color: var(--fg); }
+.aq-show:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; border-radius: 4px; }
+.aq-opts button.ruled { opacity: .45; text-decoration: line-through; cursor: not-allowed; }
 .aq-why:focus { outline: none; }
