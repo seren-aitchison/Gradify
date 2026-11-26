@@ -66,7 +66,7 @@ export async function advance(topic, { render = null, legible = null } = {}) {
     }
   }
   // nothing is written from a brief until a person has approved its evidence (scripts/content/evidence.mjs, decision C)
-  if (!evidenceApproved(topic.id)) { keep(); return { actions: [], filed: null, awaiting: gateNote(topic.id) }; }
+  if (!evidenceApproved(topic.id, { topic })) { keep(); return { actions: [], filed: null, awaiting: gateNote(topic.id, { topic }) }; }
   // in-flight work is valid only for the inputs it was made from: if the requirements or the brief changed, the
   // drafts, repairs and reviews in progress describe something else, so they're discarded and the topic restarts
   const inputs = `${reqHash(topic)}|${brief.key}`;

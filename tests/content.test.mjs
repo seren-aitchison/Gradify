@@ -12,26 +12,50 @@ const S = await import("../scripts/content/shorthand.mjs");
 const G = await import("../scripts/content/gates.mjs");
 const { runTopic: runTopicGated, research } = await import("../scripts/content/loop.mjs");
 // Lesson writing needs a person's approval of the brief's evidence (scripts/content/evidence.mjs). These tests exercise
-// the engine after that approval, so each fixture brief is approved the way a person approves one (approveEvidence,
-// with its gaps accepted and the reason recorded). The gate itself is tested on its own, without these wrappers.
+// the engine after that approval, so each fixture brief is approved the way a person approves one: approveEvidence with
+// the topic's requirements, its gaps accepted and the reason recorded, changed inputs acknowledged, and the approval
+// verified against a GitHub PR review (a recorded review stands in for the GitHub API). The gate itself is tested in
+// tests/evidence.test.mjs, without these wrappers.
 const EVIDENCE = await import("../scripts/content/evidence.mjs");
+const require_fs = await import("node:fs");
 const FIXTURE_APPROVAL = "test fixture: the evidence itself is not under test here";
-const approveText = (text) => {
-  const id = String(text || "").match(/^TOPIC (\S+)/m)?.[1];
-  if (id && !EVIDENCE.evidenceApproved(id, { briefText: text })) EVIDENCE.approveEvidence(id, { by: "Test fixture", on: "2026-11-26", acceptGaps: FIXTURE_APPROVAL, briefText: text });
+// the copying checks need the specification's text: the sandbox carries the fixture requirement's own (the real text
+// is the awarding body's and never committed), so they run in CI as they do locally
+{
+  const idx = JSON.parse(require_fs.readFileSync(new URL("../kit/curriculum/specs/aqa-gcse-biology.json", import.meta.url), "utf8"));
+  const f = join(process.env.GRADIFY_OUT, "data/curriculum/specs/aqa-gcse-biology.json");
+  require_fs.mkdirSync(join(f, ".."), { recursive: true });
+  require_fs.writeFileSync(f, JSON.stringify({ ...idx, statements: idx.statements.map((x) => (x.ref === "4.1.1.1.b" ? { ...x, text: "Prokaryotic cells are much smaller than eukaryotic cells and have no nucleus; their genetic material is a single loop of DNA." } : x)) }));
+}
+const ledgerIds = (id) => {
+  const f = join(process.env.GRADIFY_OUT, `content/ledger/${id.split("/")[0]}.json`); if (!require_fs.existsSync(f)) return null;
+  const e = JSON.parse(require_fs.readFileSync(f, "utf8")).topics?.[id]; if (!e) return null;
+  const ids = String(e.reqHash || "").split(",").map((x) => x.split(":").slice(0, -1).join(":")).filter(Boolean);
+  return ids.length ? ids : [...new Set((e.lessons || []).flatMap((l) => l.reqs || []))];
 };
-const approveStored = () => {
+const approveText = (text, topic = null) => {
+  const id = String(text || "").match(/^TOPIC (\S+)/m)?.[1]; if (!id) return;
+  const ctx = topic ? { topic } : { reqIds: ledgerIds(id) || ["aqa-gcse-biology:4.1.1.1.b"], fw: "aqa-gcse-biology" };
+  const now = EVIDENCE.approvalOf(id, { briefText: text, ...ctx }); if (now.approval) return;
+  EVIDENCE.approveEvidence(id, { by: "Test fixture", github: "test-reviewer", on: "2026-11-26", acceptGaps: FIXTURE_APPROVAL, acknowledge: ["brief", "requirements", "verdicts", "policy", "rules", ...now.changes.map((c) => c.key)], briefText: text, ...ctx });
+  EVIDENCE.verifyApproval(id, { pr: 1, reviews: [{ state: "APPROVED", user: { login: "test-reviewer" }, id: 1, html_url: "https://github.com/example/example/pull/1#review-1", submitted_at: new Date(Date.now() + 1000).toISOString() }], author: { commit: "0".repeat(40), name: "Test fixture", email: "fixture@example.com" } });
+};
+const approveStored = (hints = []) => {
   const { readdirSync, readFileSync: rf, existsSync: ex } = require_fs;
   for (const dir of ["content/research", "content/queue"]) {
     const root = join(process.env.GRADIFY_OUT, dir); if (!ex(root)) continue;
-    for (const f of readdirSync(root, { recursive: true })) if (/(^|\/)[^/]+\.txt$/.test(f) && (dir === "content/research" || f.endsWith("research.out.txt"))) approveText(rf(join(root, f), "utf8"));
+    for (const f of readdirSync(root, { recursive: true })) if (/(^|\/)[^/]+\.txt$/.test(f) && (dir === "content/research" || f.endsWith("research.out.txt"))) {
+      const text = rf(join(root, f), "utf8"), id = text.match(/^TOPIC (\S+)/m)?.[1];
+      approveText(text, hints.find((t) => t?.id === id) || null);
+    }
   }
 };
-const require_fs = await import("node:fs");
-const approving = (ask) => async (job, x) => { const r = await ask(job, x); if (job === "research") approveText(r); return r; };
-const runTopic = (topic, o = {}) => runTopicGated(topic, { ...o, ask: approving(o.ask) });
+const approving = (ask, topic) => async (job, x) => { const r = await ask(job, x); if (job === "research") approveText(r, topic); return r; };
+const runTopic = (topic, o = {}) => runTopicGated(topic, { ...o, ask: approving(o.ask, topic) });
 const gated = async (path) => {
-  const m = await import(path), before = (f) => async (...a) => { approveStored(); const r = await f(...a); approveStored(); return r; };
+  const m = await import(path);
+  const hintsOf = (a) => [a[0], ...(a[2]?.all || []), ...(a[1]?.all || [])].filter((t) => t && typeof t === "object" && t.id && t.reqs);
+  const before = (f) => async (...a) => { approveStored(hintsOf(a)); const r = await f(...a); approveStored(hintsOf(a)); return r; };
   return { ...m, ...Object.fromEntries(["advance", "ingestFile", "ingestAll", "publish", "work"].filter((k) => typeof m[k] === "function").map((k) => [k, before(m[k])])) };
 };
 const { suspects } = await import("../scripts/content/signals.mjs");
@@ -489,7 +513,7 @@ test("publish: titles differing only in case share an identity, and one TIER lab
   // a topic filed by hand still needs a stored brief for its evidence approval (the gated publish approves it)
   mkdirSync(join(process.env.GRADIFY_OUT, "content/research/biology"), { recursive: true });
   writeFileSync(join(process.env.GRADIFY_OUT, "content/research/biology/test-case.txt"), BRIEF.replace("test-prokaryotes", "test-case"));
-  led.topics["biology/test-case"] = { file: "content/drafts/biology/aqa-gcse-biology/test-case.txt", title: "Test case", lessons: [{ title: "prokaryotes UP CLOSE", tier: "ai-verified", hash: fp(text), reqs: [REQ.id] }], status: "filed" };
+  led.topics["biology/test-case"] = { fw: "aqa-gcse-biology", file: "content/drafts/biology/aqa-gcse-biology/test-case.txt", title: "Test case", lessons: [{ title: "prokaryotes UP CLOSE", tier: "ai-verified", hash: fp(text), reqs: [REQ.id] }], status: "filed" };
   writeFileSync(ledPath, JSON.stringify(led));
   const r = await publish("biology");
   assert.ok(r.skipped.some((x) => /prokaryotes UP CLOSE .*already published a lesson with this title/.test(x)), "a case-only variant gets no new id");
@@ -526,7 +550,7 @@ test("review fixes after #208 merged: mapping replies, publish wiring and duplic
   writeFileSync(join(process.env.GRADIFY_OUT, "content/drafts/biology/aqa-gcse-biology/test-dupe.txt"), `# draft\n\n${one}\n\n${two}\n`);
   mkdirSync(join(process.env.GRADIFY_OUT, "content/research/biology"), { recursive: true });
   writeFileSync(join(process.env.GRADIFY_OUT, "content/research/biology/test-dupe.txt"), BRIEF.replace("test-prokaryotes", "test-dupe"));
-  led.topics["biology/test-dupe"] = { file: "content/drafts/biology/aqa-gcse-biology/test-dupe.txt", title: "Test dupe", status: "filed", lessons: [{ title: "Cell division", tier: "ai-verified", hash: fp(one), reqs: [REQ.id] }, { title: "Cell-division", tier: "ai-verified", hash: fp(two), reqs: [REQ.id] }] };
+  led.topics["biology/test-dupe"] = { fw: "aqa-gcse-biology", file: "content/drafts/biology/aqa-gcse-biology/test-dupe.txt", title: "Test dupe", status: "filed", lessons: [{ title: "Cell division", tier: "ai-verified", hash: fp(one), reqs: [REQ.id] }, { title: "Cell-division", tier: "ai-verified", hash: fp(two), reqs: [REQ.id] }] };
   writeFileSync(ledPath, JSON.stringify(led));
   const r = await publish("biology");
   assert.equal(r.added.filter((x) => /Cell.division/.test(x)).length, 1);

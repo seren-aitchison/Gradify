@@ -205,7 +205,7 @@ export async function runTopic(topic, { ask, askMany, render = null, legible = n
   const r = await research(topic, { ask });
   if (!r.brief) return fileTopic(topic, [], { failures: [{ title: "(research)", gate: "brief", issues: (r.problems || []).map((p) => ({ code: "SRC", line: null, note: p })) }] });
   // nothing is written from a brief until a person has approved its evidence (scripts/content/evidence.mjs, decision C)
-  if (!evidenceApproved(topic.id)) return { topic: topic.id, status: "awaiting-approval", awaiting: gateNote(topic.id), lessons: [], failures: [], uncovered: topic.reqs.map((x) => x.id), gaps: [], needs: [] };
+  if (!evidenceApproved(topic.id, { topic })) return { topic: topic.id, status: "awaiting-approval", awaiting: gateNote(topic.id, { topic }), lessons: [], failures: [], uncovered: topic.reqs.map((x) => x.id), gaps: [], needs: [] };
   const pkt = packetFor(topic, r.brief);
   const states = splitUnit(await ask("write", pkt)).map((l, i) => ({ ...lessonState(l, i), models: { write: CONFIG.models.write, review: CONFIG.models.review } }));
   if (!states.length) return fileTopic(topic, [], { brief: r, failures: [{ title: "(unit)", gate: "parse", issues: [{ code: "FMT", line: null, note: "the Writer returned no lessons" }] }] });

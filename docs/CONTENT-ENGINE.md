@@ -98,6 +98,19 @@ Only a person's confirmation counts as coverage (owner, 26 Nov 2026). A false "a
 
 Decisions are recorded in the mapping store, `kit/curriculum/maps/<framework>.json` (`scripts/content/mapstore.mjs`).
 
+## Evidence and approval (owner's decisions A–D and P0, 26 Nov 2026)
+
+A brief that passes its format checks shows how the evidence is written down, not whether it holds up. Nothing is written, templated, ingested or published from a brief until a person has approved its evidence (`scripts/content/evidence.mjs`, `gradify evidence`, `gradify approve-evidence`).
+
+- **Retrieval.** The engine retrieves each cited source itself and keeps every attempt. A failed attempt never erases an earlier success; the freshness policy (`evidence.freshnessDays`, 90 by default) decides whether that success still counts. A bot check or near-empty page is a failure. Retrieved text is cached locally only (`data/research-cache/`). A named person can record a source they opened by hand.
+- **Claims.** Each `F`, `BG`, `NUM` and `EXAM` line is assessed. A source counts for a claim only when it's fresh, a person recorded that it supports that exact claim on that version of the page, it isn't suspended (`scripts/content/source-policy.mjs`), and it's a knowledge source: requirement sources such as AQA count only for `EXAM` lines. Publishers are counted, not URLs.
+- **Checks** report PASS, FAIL or NOT RUN: requirements resolved, source evidence current, evidence sufficient, no copying from the whole specification, no copying from the retrieved sources; for publishing also a verified review identity and expert authority where needed. A mandatory check that didn't run (no specification text here, a stale source) blocks approval and publishing; it's never a silent pass. Evidence gaps (a FAIL) may be accepted only with a recorded reason.
+- **Material inputs.** An approval binds the brief, the topic's requirements (each statement's fingerprint and the specification's version), each source's evidence, the verdicts, the source policy, the registry rows cited and the evidence rules. Any change voids it, the report names each changed input, and re-approval must acknowledge every changed input (`--acknowledge source:S2,requirements`). Approval and publishing both re-retrieve the sources first.
+- **Accountability**, kept as three things: technical authorship (the git commit of the record), review identity (an APPROVED GitHub PR review by the approver's login: `gradify verify-approval <topic> --pr <n>`; "claimed" until then, and publishing needs it verified), and expert authority (only from the owner's register, `content/reviewers.json`; a GitHub account is never a qualification).
+- **Publishing** re-runs the checks and re-checks each lesson for copying against the corpus as it is now; a copying check that can't run blocks the lesson.
+
+Not yet assessed: definitions, misconceptions and scope notes (the brief format gives them no citations; a format change is proposed, not made).
+
 ## Student data as QA
 
 `gradify signals` reads two sources with the Supabase service role:

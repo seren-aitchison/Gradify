@@ -12,7 +12,7 @@ import { pathToFileURL } from "node:url";
 import { at, out, fp, today, loadLedger } from "./lib.mjs";
 import { splitUnit, PART } from "./shorthand.mjs";
 import { loadStore, saveStore, linkPublished } from "./mapstore.mjs";
-import { evidenceApproved, gateNote } from "./evidence.mjs";
+import { publishCheck, lessonCopyCheck, loadEvidence } from "./evidence.mjs";
 import { loadIndex } from "../curriculum/engine.mjs";
 import { checkTiers } from "./report.mjs";
 import { titleKey } from "../../kit/course/syllabus.js";
@@ -58,7 +58,7 @@ export const PUBLISHED = ${JSON.stringify(P, null, 1)};
 /** publish every eligible lesson of a subject; returns what was added or updated. preview (gradify preview, into a
  * scratch copy only): every filed lesson of the topic given, whatever its tier and whether its diagrams are drawn,
  * labelled "Preview" */
-export async function publish(subject, { preview = false, topic = null } = {}) {
+export async function publish(subject, { preview = false, topic = null, fetcher = undefined } = {}) {
   checkTiers(subject);
   const led = loadLedger(subject), P = await current(subject), added = [], updated = [], skipped = [];
   const n = P.n || nextUnitNumber(subject), uid = P.id || `u${String(n).padStart(2, "0")}`;
@@ -74,8 +74,14 @@ export async function publish(subject, { preview = false, topic = null } = {}) {
   const linked = [];           // lessons published in this run, for their provisional links in the mapping store
   for (const [topicId, e] of Object.entries(led.topics)) {
     if (topic && topicId !== topic) continue;
-    // nothing is published from a brief whose evidence no person has approved (scripts/content/evidence.mjs)
-    if (!evidenceApproved(topicId)) { for (const l of e.lessons || []) skipped.push(`${l.title} (${gateNote(topicId)})`); continue; }
+    // nothing is published unless the evidence approval still holds and every publishing check passes: sources
+    // re-retrieved and current, copying checks run, review identity verified, expert where needed (evidence.mjs)
+    // the topic's requirements as filed (statement ids; a lesson naming one part of a statement doesn't widen them)
+    const filedIds = String(e.reqHash || "").split(",").map((x) => x.split(":").slice(0, -1).join(":")).filter(Boolean);
+    const reqIds = filedIds.length ? filedIds : [...new Set((e.lessons || []).flatMap((l) => l.reqs || []))];
+    const pc = publishCheck(topicId, { reqIds, fw: e.fw, ...(fetcher ? { fetcher } : {}) });
+    if (!pc.ok) { for (const l of e.lessons || []) skipped.push(`${l.title} (not published: ${pc.reasons.join("; ")})`); continue; }
+    const evidence = loadEvidence(topicId);
     const draft = e.file && out(e.file); if (!draft || !existsSync(draft)) continue;
     const lessons = new Map(splitUnit(readFileSync(draft, "utf8")).map((l) => [l.title, l.text]));
     for (const l of e.lessons || []) {
@@ -83,6 +89,9 @@ export async function publish(subject, { preview = false, topic = null } = {}) {
       const text = lessons.get(l.title); if (!text || fp(text) !== l.hash) { skipped.push(`${l.title} (text changed since it was checked)`); continue; }
       // a DNEED: diagram counts towards filing, but a lesson is published only once its diagrams are drawn (config.standards)
       if (!preview && !drawnEnough(text)) { skipped.push(`${l.title} (its diagrams aren't all drawn yet: ${diagramsOf(text).needed.length} DNEED)`); continue; }
+      // copying is checked again at publishing, against the corpus as it is now; a check that can't run blocks
+      const cc = lessonCopyCheck(text, e.fw, evidence, l.reqs || []);
+      if (cc.status !== "PASS") { skipped.push(`${l.title} (copying check ${cc.status}: ${cc.detail})`); continue; }
       const known = byKey.get(titleKey(l.title));
       // titles are unique in a unit: a second topic's lesson with the same title waits for a rename, and gets no id
       if (known && meta[known]?.topic && meta[known].topic !== topicId) { skipped.push(`${l.title} (${meta[known].topic} already published a lesson with this title)`); continue; }

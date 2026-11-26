@@ -81,7 +81,7 @@ export function exportTemplates(subjects, { limit = 5, topicId = null } = {}) {
     for (const topic of topics) {
       const brief = currentBrief(topic), kind = brief ? "write" : "research";
       // a lesson template only once a person has approved the brief's evidence (scripts/content/evidence.mjs)
-      if (kind === "write" && !evidenceApproved(topic.id)) { res.push({ subject, topic: topic.id, title: topic.title, section: topic.section, reqs: topic.reqs.length, kind: "approval", file: null, awaiting: gateNote(topic.id) }); continue; }
+      if (kind === "write" && !evidenceApproved(topic.id, { topic })) { res.push({ subject, topic: topic.id, title: topic.title, section: topic.section, reqs: topic.reqs.length, kind: "approval", file: null, awaiting: gateNote(topic.id, { topic }) }); continue; }
       const file = new URL(`${slug(topic.id.split("/").pop())}.${kind}.md`, templateDir(subject));
       save(file, kind === "write" ? writeTemplate(topic, brief) : researchTemplate(topic));
       res.push({ subject, topic: topic.id, title: topic.title, section: topic.section, reqs: topic.reqs.length, kind, file: file.pathname, save: submissionName(topic, kind) });
@@ -124,7 +124,7 @@ export async function ingestFile(name, raw, { all = [], ask = null, askMany = nu
   if (!topic) return { ok: false, kind: "unit", report: [...lines, `**Rejected.** No \`REQ:\` line names a queued requirement${reqIds.length ? ` (found ${[...new Set(reqIds)].join(", ")})` : " (the file has none)"}.`, ""].join("\n") };
   const brief = currentBrief(topic);
   if (!brief) return { ok: false, kind: "unit", topic: topic.id, report: [...lines, `**Rejected.** \`${topic.id}\` has no current research brief: run \`gradify template\` for its research template first.`, ""].join("\n") };
-  if (!evidenceApproved(topic.id)) return { ok: false, kind: "unit", topic: topic.id, report: [...lines, `**Rejected.** ${gateNote(topic.id)}. Lessons are ingested only once the brief's evidence is approved.`, ""].join("\n") };
+  if (!evidenceApproved(topic.id, { topic })) return { ok: false, kind: "unit", topic: topic.id, report: [...lines, `**Rejected.** ${gateNote(topic.id, { topic })}. Lessons are ingested only once the brief's evidence is approved.`, ""].join("\n") };
   const fake = async (job) => { if (job === "write") return `${sub.text.replace(/\nEND\s*$/, "")}\nEND`; if (job === "research") return brief.brief.replace(/^#.*\n/, ""); throw new Error(`${job} isn't available while ingesting`); };
   // repairs are the writer's job: a failing lesson is reported, never rewritten here
   const noRepair = async (job, items) => new Map(items.map((it) => [it.key, job === "review" ? `REV ${it.key} OK` : new Error("repairs come back as a resubmitted file")]));

@@ -16,8 +16,11 @@
 //                                           mobile screenshots; publishes only into a scratch copy (preview.mjs)
 //   gradify evidence <topic> [--brief f] [--retrieve] [--sheet] [--apply f]   the evidence behind a brief: retrieve its
 //                                           sources, report claim by claim, and the sheet a person fills in to check them
-//   gradify approve-evidence <topic> --by <name> [--accept-gaps <reason>]   a person approves the evidence: unlocks
-//                                           lesson writing for that exact brief and evidence (revoke-evidence --why)
+//   gradify approve-evidence <topic> --by <name> --github <login> [--accept-gaps <reason>] [--acknowledge <inputs>]
+//                                           a person approves the evidence: unlocks lesson writing for that exact brief,
+//                                           evidence and every other material input (revoke-evidence --why)
+//   gradify verify-approval <topic> --pr <n>   links the approval to an APPROVED GitHub PR review by that login (needed
+//                                           to publish); expert authority comes only from content/reviewers.json
 //   gradify template [--subject s] [--limit n] [--topic t]   self-contained templates for an external model to write
 //                                           from: a research template, or once the brief is in, a lesson template
 //   gradify ingest [files…] [--review]      check and install the returned .md files from content/inbox/ (factory.mjs)
@@ -88,7 +91,7 @@ async function next() {
   if (!tp) return log("Nothing queued.");
   if (tp.reqs.every((r) => !r.text)) log(`# Note: the specification text isn't imported here, so the packet names requirements by reference only.\n#   node scripts/curriculum/engine.mjs fetch ${tp.fw} && node scripts/curriculum/engine.mjs import ${tp.fw}\n`);
   if (!existsSync(briefPath(tp.id))) return log(`# No research brief for ${tp.id} yet. Paste this into the Researcher project, save the reply to content/research/${tp.id}.txt, then run gradify next again:\n\nRESEARCH ${tp.id} | levels=${tp.level} | reqs=${tp.reqs.map((r) => r.id).join(",")} | ctry=${tp.country}\n${tp.reqs.map((r) => `REQ ${r.id} | ${r.asks}`).join("\n")}\nEND`);
-  if (!evidenceApproved(tp.id)) return log(`# ${gateNote(tp.id)}.`);
+  if (!evidenceApproved(tp.id, { topic: tp })) return log(`# ${gateNote(tp.id, { topic: tp })}.`);
   const { diagrams, renderers } = diagramsFor(tp);
   log(packet({ id: `${tp.fw}/${tp.section}`, subject: tp.subject, level: tp.level, country: tp.country, framework: tp.fw, reqs: tp.reqs, reuse: tp.reuse, diagrams, renderers, brief: readFileSync(briefPath(tp.id), "utf8").replace(/^#.*\n/, "") }));
 }
@@ -185,9 +188,15 @@ try {
   else if (cmd === "evidence") await evidence();
   else if (cmd === "approve-evidence" || cmd === "revoke-evidence") {
     const E = await import("./content/evidence.mjs"), id = argv[1];
-    if (!id || id.startsWith("--")) throw new Error(`usage: gradify ${cmd} <subject/topic> --by "<name>" --on YYYY-MM-DD ${cmd === "approve-evidence" ? '[--note "…"] [--accept-gaps "<reason>"]' : '--why "<reason>"'}`);
-    const r = cmd === "approve-evidence" ? E.approveEvidence(id, { by: opt("by"), on: opt("on", today()), note: opt("note", ""), acceptGaps: opt("accept-gaps") }) : E.revokeEvidence(id, { by: opt("by"), on: opt("on", today()), why: opt("why") });
-    log(cmd === "approve-evidence" ? `Evidence for ${id} approved by ${r.by} on ${r.on}${r.sufficient ? "" : `, accepting ${r.acceptedGaps.length} gap(s): ${r.acceptGaps}`}. Lesson writing is unlocked for this exact brief and evidence.` : `Approval for ${id} revoked by ${r.by} on ${r.on}. Lesson writing is locked again.`);
+    if (!id || id.startsWith("--")) throw new Error(`usage: gradify ${cmd} <subject/topic> --by "<name>" --github <login> --on YYYY-MM-DD ${cmd === "approve-evidence" ? '[--note "…"] [--accept-gaps "<reason>"] [--acknowledge <changed inputs, comma-separated>]' : '--why "<reason>"'}`);
+    const r = cmd === "approve-evidence" ? E.approveEvidence(id, { by: opt("by"), github: opt("github"), on: opt("on", today()), note: opt("note", ""), acceptGaps: opt("accept-gaps"), acknowledge: String(opt("acknowledge", "")).split(",").map((x) => x.trim()).filter(Boolean) }) : E.revokeEvidence(id, { by: opt("by"), github: opt("github"), on: opt("on", today()), why: opt("why") });
+    log(cmd === "approve-evidence" ? `Evidence for ${id} approved by ${r.by} on ${r.on}${r.sufficient ? "" : `, accepting ${r.acceptedGaps.length} gap(s): ${r.acceptGaps}`}. Lesson writing is unlocked for this exact brief and evidence. Review identity: ${r.identity.review.status}${r.identity.review.github ? ` (${r.identity.review.github})` : ""}; publishing also needs it verified (gradify verify-approval ${id} --pr <n>).` : `Approval for ${id} revoked by ${r.by} on ${r.on}. Lesson writing is locked again.`);
+  }
+  else if (cmd === "verify-approval") {
+    const E = await import("./content/evidence.mjs"), id = argv[1];
+    if (!id || id.startsWith("--")) throw new Error("usage: gradify verify-approval <subject/topic> --pr <number>   (an APPROVED review on that PR by the approver's GitHub login)");
+    const r = E.verifyApproval(id, { pr: opt("pr") });
+    log(`Review identity verified: ${r.review.github} approved PR #${r.review.pr} (${r.review.url}). Technical author: ${r.technical ? `${r.technical.name} <${r.technical.email}>, ${r.technical.commit.slice(0, 9)}` : "not found in git"}. Expert authority: ${r.expert.status}${r.expert.qualification ? ` (${r.expert.qualification})` : ""}.`);
   }
   else if (cmd === "standards") { const { report } = await import("./content/standards.mjs"); log(await report({ lessonsFile: opt("lessons") })); }
   else if (cmd === "preview") {
