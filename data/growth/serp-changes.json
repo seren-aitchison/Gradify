@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "date": "2026-11-26",
+    "pages": ["index.html"],
+    "field": "title and description",
+    "reason": "Product positioning, not a click-through test: the homepage now leads with Gradify's own offer (tell us your exam; we teach the specification, plan the revision and show what you know) instead of notes-to-flashcards, which is the pitch of upload-first competitors such as Studley. Decided in the product review of 26 Nov 2026 (Product Vision brief v2, 'Navigation and UX').",
+    "evidence": "No Search Console data behind this change: it follows the product decision above. Baseline to compare against after 28 days: the homepage's impressions, clicks and CTR in the 28 days to 2026-11-26.",
+    "override": ""
+  }
+]

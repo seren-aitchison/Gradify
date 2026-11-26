@@ -43,7 +43,7 @@ function siteMapPage(pages, courses) {
   return page({
     path: "site-map.html", title: "Site Map: Every Gradify Page · Gradify", description: "Every part of Gradify on one page: the app, every subject site, free study tools, guides, comparisons, the glossary, templates, topics and study plans.", crumbs: [["Site map", "site-map.html"]], ogType: "website", share: false, cta: false,
     body: `<h1>Site map</h1>
-    <h2>Gradify</h2>${list([["", "Home"], ["app.html", "The Gradify app"], ["explore.html", "Explore"], ["journey.html", "Journey"], ["pricing.html", "Pricing"], ["about.html", "About"], ["quality.html", "Quality and coverage"], ["ambassadors.html", "Campus ambassadors"], ["privacy.html", "Privacy"], ["terms.html", "Terms"]])}
+    <h2>Gradify</h2>${list([["", "Home"], ["app.html", "The Gradify app"], ["explore.html", "Explore"], ["journey.html", "Progress"], ["pricing.html", "Pricing"], ["about.html", "About"], ["quality.html", "Quality and coverage"], ["ambassadors.html", "Campus ambassadors"], ["privacy.html", "Privacy"], ["terms.html", "Terms"]])}
     <h2>Features</h2>${list([["features/", "Every Gradify feature"], ...FEATURES.filter((f) => FEATURE_PAGES[featureSlug(f)] && f.plan !== "pro").map((f) => [`features/${featureSlug(f)}/`, f.n])])}
     <h2>Subject sites</h2>${list(live.map((s) => [`${slugOf(s)}/`, s.n]))}
     <h2>Free study tools</h2>${list([...TOOLS.map((t) => [`tools/${t.slug}/`, t.name]), ...TOOLS2.map((t) => [`tools/${t.slug}/`, t.name]), ["tools/bookmarklet/", "Send to Gradify bookmarklet"], ["investorgradify/tools/", "Compound interest and fund fee calculator"], ...LANDINGS.map((l) => [`${l.slug}/`, l.name])])}

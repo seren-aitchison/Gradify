@@ -14,7 +14,7 @@ export const HUB_PAGES = {
 export const HUB_LINKS = [
   ["explore", "/explore.html", "Explore"],
   ["sites", "/#find", "Sites"],
-  ["journey", "/journey.html", "Journey"],
+  ["journey", "/journey.html", "Progress"],
   ["pricing", "/pricing.html", "Pricing"],
 ];
 const G = `<svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4641ff"/><stop offset=".35" stop-color="#f055dd"/><stop offset=".7" stop-color="#ff5600"/><stop offset="1" stop-color="#ffc002"/></linearGradient></defs><rect x=".75" y=".75" width="30.5" height="30.5" rx="9" fill="#0b0b0b" stroke="rgba(255,255,255,.22)" stroke-width="1.5"/><path d="M22.9 10.9A8.6 8.6 0 1 0 24.6 16H16.4" fill="none" stroke="url(#gg)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
@@ -45,10 +45,10 @@ export function hubHeader(current = "", skip = "main") {
       <nav class="sections" aria-label="Gradify">${HUB_LINKS.map(link).join("")}</nav>
       <div class="right">
         <a class="link hub-signin" href="/app.html#/account">Sign in</a>
-        <a class="btn btn-primary btn-sm lg hub-open" href="/app.html">Open Gradify</a>
+        <a class="btn btn-primary btn-sm lg hub-open" href="/app.html#/start">Start free</a>
         <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
       </div>
-      <nav class="menu" id="menu" aria-label="Menu" hidden>${HUB_LINKS.map(link).join("")}<a class="hub-signin" href="/app.html#/account">Sign in</a><a class="btn btn-primary lg hub-open" href="/app.html">Open Gradify</a></nav>
+      <nav class="menu" id="menu" aria-label="Menu" hidden>${HUB_LINKS.map(link).join("")}<a class="hub-signin" href="/app.html#/account">Sign in</a><a class="btn btn-primary lg hub-open" href="/app.html#/start">Start free</a></nav>
     </header>
     <script type="module" src="/kit/core/hubnav.js"></script>
     ${END}`;

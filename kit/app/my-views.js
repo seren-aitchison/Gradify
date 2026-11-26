@@ -23,7 +23,7 @@ export async function renderMy(arg, more, ctx) {
   if (arg === "module") return renderModule(Number(more?.[0]), a, ctx);
 
   if (!a) {
-    view.innerHTML = `<section class="my"><span class="kicker lo-kicker">${icon("cap")}MyGradify</span><h1>Your course, in one place</h1>
+    view.innerHTML = `<section class="my"><span class="kicker lo-kicker">${icon("cap")}My course</span><h1>Your course, in one place</h1>
       <p class="sub">Tell Gradify what and where you study, and your plan, tracker and revision follow your actual course.</p>
       ${actionCard({ kicker: "Start here", title: "Add your course", why: "Seven quick steps, all skippable except the country. If your university or course isn't listed yet, just type it.", actions: [{ label: "Add your course", icon: "cap", href: "#/academic/1" }] })}</section>`;
     return;
@@ -37,7 +37,7 @@ export async function renderMy(arg, more, ctx) {
       ? actionCard({ kicker: "Next step", title: `Finish your course details (${c.filled} of ${c.total})`, why: `Still to add: ${c.missing.map((f) => LABEL[f].toLowerCase()).join(", ")}. Each one helps Gradify plan around your course.`, actions: [{ label: "Finish details", icon: "checklist", href: "#/academic/7" }] })
       : actionCard({ kicker: "Next step", title: "Plan this week around your modules", why: "Your course details are complete. Smart Plan can now organise your week.", actions: [{ label: "Open Smart Plan", icon: "calendar", href: "#/plan" }] });
   view.innerHTML = `<section class="my">
-    <span class="kicker lo-kicker">${icon("cap")}MyGradify</span>
+    <span class="kicker lo-kicker">${icon("cap")}My course</span>
     <div class="my-hero panel glass">
       <div class="my-hero-main"><h1>${esc(title)}</h1>
         <p class="sub">${esc([a.institution?.name, a.current_stage?.label, mode].filter(Boolean).join(" · ") || "Add your university and year in your course details.")}</p>
