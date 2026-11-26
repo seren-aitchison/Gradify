@@ -294,10 +294,17 @@ export function mountCourse(root, cfg) {
     setTimeout(() => el.remove(), 1600);
     root.querySelectorAll(".cx-combo-n").forEach((x) => { x.textContent = n; x.closest(".cx-combo")?.classList.add("hot"); });
   }
+  // what this visit to a lesson has earned, for Learn mode's end-of-lesson summary (memory only: it is a moment, not a record)
+  const runs = new Map();
+  const lessonRun = (id) => { if (!runs.has(id)) runs.set(id, { xp: 0, right: 0, tried: 0, best: 0 }); return runs.get(id); };
   function wirePractice(el, context, contextId, xp = XP.check, onAnswer = null) {
     wireQuestions(el, (k) => pageQs.get(k)?.Q, (Q, res, first, box, meta) => {
       const it = pageQs.get(box.dataset.key); record(it, context, contextId, res, meta); onAnswer?.(it, res);
-      if (first) { if (res.score >= 0.7) { combo++; comboBest = Math.max(comboBest, combo); if ([3, 5, 8, 12].includes(combo)) comboPop(combo); } else { combo = 0; root.querySelectorAll(".cx-combo").forEach((x) => x.classList.remove("hot")); } root.querySelectorAll(".cx-combo-n").forEach((x) => { x.textContent = combo; x.closest(".cx-combo").hidden = !combo; }); }
+      if (first && !res.self && it.l) { const r = lessonRun(it.l.id); r.tried++; if (res.score >= 0.7) r.right++; }
+      if (first && res.score >= 0.7 && !res.self) { box.classList.remove("aq-win"); void box.offsetWidth; box.classList.add("aq-win"); }
+      if (first) { if (res.score >= 0.7) { combo++; comboBest = Math.max(comboBest, combo); if (it.l) { const r = lessonRun(it.l.id); r.best = Math.max(r.best, combo); }
+          // the answer's own moment (feel("correct")) plays in record(); a run of 3, 5, 8 or 12 adds a bigger one just after
+          if ([3, 5, 8, 12].includes(combo)) { comboPop(combo); setTimeout(() => feel(combo >= 5 ? "levelup" : "achievement"), 260); } } else { combo = 0; root.querySelectorAll(".cx-combo").forEach((x) => x.classList.remove("hot")); } root.querySelectorAll(".cx-combo-n").forEach((x) => { x.textContent = combo; x.closest(".cx-combo").hidden = !combo; }); }
       // an explanation shown in this lesson is judged by the next answer (kit/learning/explain.js)
       if (it.l && !res.self) { const credited = wayAnswered(it.l.id, res.correct); if (credited) logWay("explanation_outcome", credited, it.l.id, res.correct); }
       if (!res.correct && !res.self && it.l && !box.querySelector(".co-anotherw")) offerAnotherWay(box, Q, it);
@@ -416,6 +423,7 @@ export function mountCourse(root, cfg) {
   async function award(xp, k, id, detail) {
     const before = { lvl: levelOf(totalXp()).n, badges: new Set(earned().map((b) => b.id)), goal: todayXp() >= S.goal };
     S.log.push({ t: Date.now(), xp, k, id }); save();
+    if (curLesson?.id && runs.has(curLesson.id)) runs.get(curLesson.id).xp += xp;
     pop(`+${xp} XP`);
     store().then((s) => s.logActivity({ site: cfg.site, kind: `${cfg.slug}-${k}`, xp, detail: detail || id })).catch(() => {});
     const lvl = levelOf(totalXp()).n;
@@ -1554,7 +1562,10 @@ export function mountCourse(root, cfg) {
       needsAnswer = s.questions.length;
     } else {
       const shown = new Set((S.attempts || []).filter((a) => a.lesson === id && a.score >= 0.7).flatMap((a) => a.question?.objectives || []));
-      body = `<span class="ls-kicker">Next</span><h1 class="ls-title" tabindex="-1">${S.done[id] ? "Lesson complete" : "Almost there"}</h1>
+      const run = runs.get(id), runCard = run && run.tried ? `<section class="ls-card ls-run" aria-label="This lesson so far"><h2>This lesson</h2><ul class="ls-runstats">
+          <li><b>+${run.xp}</b><span>XP earned</span></li><li><b>${run.right}/${run.tried}</b><span>right first time</span></li><li><b>${run.best}</b><span>best run in a row</span></li></ul>
+          <p class="ls-runline">${run.right === run.tried ? "Every answer right first time. Brilliant work." : run.right / run.tried >= 0.6 ? "Strong work. The ones you missed come back in your review, so they stick." : "Good effort. The ones you missed come back in your review until they stick."}</p></section>` : "";
+      body = `<span class="ls-kicker">Next</span><h1 class="ls-title" tabindex="-1">${S.done[id] ? "Lesson complete" : "Almost there"}</h1>${runCard}
         ${N.objectives.length ? `<section class="ls-card"><h2>What you've shown</h2><ul class="ls-objs">${N.objectives.map((o, k) => `<li class="${shown.has(k + 1) ? "ok" : ""}"><span class="ls-ob">${shown.has(k + 1) ? "✓" : k + 1}</span>${inline(o)}<small>${shown.has(k + 1) ? "Shown in your answers" : "Not shown yet"}</small></li>`).join("")}</ul></section>` : ""}
         <div class="ls-tools">${S.done[id] ? "" : `<button type="button" class="btn btn-light lg" data-done>Complete lesson · +${XP.lesson} XP</button>`}${nextL ? `<a class="btn btn-ghost lg" href="${href(0).replace(id, nextL.id)}">Next lesson: ${esc(nextL.title)}</a>` : ""}<a class="ls-tool" href="#/lesson/${id}">${ic("notes")} Read as notes</a></div>`;
       primary = "";
@@ -1595,6 +1606,7 @@ export function mountCourse(root, cfg) {
       if (proveQs.some((k) => !tried.has(k))) { location.hash = href(steps.findIndex((x) => x.kind === "prove")); return; }
       S.done[id] = Date.now(); save(); track("lesson_complete", cfg.site);
       ledger({ event: "lesson_completed", concept: `${cfg.slug}:${id}`, source: "course", detail: { mode: "learn", seconds: Math.round((lt.current()?.ms || 0) / 1000) + (S.time?.[id]?.s || 0) } });
+      confetti();   // the haptic and sound for completing come with the award (feel("complete"))
       await award(XP.lesson, "lesson", id, `${cfg.name}: ${l.title}`); shareProgress(l);
       e.currentTarget.remove(); viewStep(id, n);
     });
