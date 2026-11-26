@@ -1729,3 +1729,12 @@ body.side-open body.side-open /* phones: set-up's Continue stays in reach at the
 /* the courses dropdown sits after the brand; on a phone the brand's G is enough room for it */
 .app-bar .gx-cs { margin-left: 4px; }
 @media (max-width: 560px) { .app-bar .gx-csb span { display: none; } }
+/* Customise your sidebar (kit/app/app-nav.js customise) */
+.lo-cust-lead { margin: 0 0 12px; }
+.lo-cust { margin: 0 0 12px; padding: 0; border: 0; }
+.lo-cust legend { padding: 0; margin-bottom: 4px; font: 600 11px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--faint); }
+.lo-cust-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 6px 0; border-bottom: 1px solid var(--line); }
+.lo-cust-row > span { display: inline-flex; align-items: center; gap: 10px; font-size: 14.5px; }
+.lo-cust-row > span svg { width: 16px; height: 16px; }
+.lo-cust-row select { width: auto; min-height: 36px; padding: 0 30px 0 10px; border-radius: 10px; border: 1px solid var(--line); background-color: rgba(var(--ink-rgb), .03); color: var(--fg); font: 500 13px var(--sans); }
+.lo-cust-row em { font-style: normal; font-size: 13px; color: var(--faint); }

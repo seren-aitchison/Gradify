@@ -280,6 +280,10 @@ export function mountCourse(root, cfg) {
   const LEVELS = cfg.levels || ["Easy", "Medium", "Hard"];
   const pageQs = new Map();                                   // key → item, for questions on the current view
   const qHtml = (it, opts = {}) => { pageQs.set(it.key, it); return renderQuestion(it.Q, it.key, { levels: LEVELS, ...opts }); };
+  // a quiz or test's state in the learner's history (kit/ui/history.js): in progress from the first answer, then
+  // completed, or available to retry when the score is under the pass mark. Opening one records nothing here, so
+  // "Pick up where you left off" only offers what the learner actually started.
+  const assessState = (title, kind, extra) => logEvent({ act: "studied", href: `${location.pathname}${location.hash}`, title, kind, subject: cfg.name, where: `${cfg.site} · ${cfg.name}`, ...extra });
   function record(it, context, contextId, res, meta = {}) {
     const a = makeAttempt({ site: cfg.site, subject: cfg.slug, context, contextId, Q: it.Q, key: it.key, version: it.v, lesson: it.l?.id, module: it.l?.module, unit: it.l?.unit.id, response: meta.response, result: res, meta });
     S.attempts.push(a); if (S.attempts.length > 2000) S.attempts.splice(0, S.attempts.length - 2000);
@@ -1912,6 +1916,7 @@ export function mountCourse(root, cfg) {
         if (box.classList.contains("done")) return;
         box.classList.add("done");
         score += res.score; record(it, "quiz", u.id, res, meta);
+        assessState(`${U} ${u.n} quiz`, "quiz", { state: "in-progress", answered: k + 1, total: qs.length });
         box.querySelectorAll("button:not(.co-nextq), input, select, textarea").forEach((x) => { x.disabled = true; });
         main.querySelector(".co-nextq").hidden = false; main.querySelector(".co-nextq").focus();
       });
@@ -1919,6 +1924,7 @@ export function mountCourse(root, cfg) {
     };
     const finish = async () => {
       const p = score / qs.length, pass = p >= 0.75, prev = S.quiz[u.id];
+      assessState(`${U} ${u.n} quiz`, "quiz", { state: "completed", answered: qs.length, total: qs.length, score: Math.round(p * 100), pass });
       S.quiz[u.id] = { best: Math.max(p, prev?.best || 0), pass: pass || prev?.pass || false, t: Date.now() }; save();
       globalThis.gradifyConsent?.event("quiz_complete", { passed: pass });   // Google Analytics, with consent: pass or not, never the score
       main.innerHTML = `<div class="co-panel co-result"><div class="co-burst">${ic(pass ? "trophy" : "target")}</div><h2>${Math.round(score * 10) / 10} / ${qs.length}</h2><p>${pass ? `Passed ${U} ${u.n}: ${esc(u.title)}.` : `You need 75% to pass. Look back over the lessons you missed, then try again.`}</p>
@@ -2163,6 +2169,7 @@ export function mountCourse(root, cfg) {
         if (box.classList.contains("done")) return;
         box.classList.add("done");
         record(it, "quiz", "target", res, meta); rows.push({ lesson: it.l.id, key: it.key, score: res.score });
+        assessState(`Target test · ${scopeLabel}`, "target", { state: "in-progress", answered: rows.length, total: items.length });
         if (res.score >= 0.7) { right++; run++; best = Math.max(best, run); if ([3, 5, 8].includes(run)) comboPop(run); } else run = 0;
         box.querySelectorAll("button:not(.co-nextq), input, select, textarea").forEach((x) => { x.disabled = true; });
         main.querySelector(".co-from").hidden = false;
@@ -2173,6 +2180,7 @@ export function mountCourse(root, cfg) {
     const finish = async () => {
       clearInterval(timer); routeStop = null;
       const n = rows.length, p = n ? rows.reduce((a, r) => a + r.score, 0) / n : 0, ms = Date.now() - t0, by = targetResults(rows);
+      if (n) assessState(`Target test · ${scopeLabel}`, "target", { state: "completed", answered: n, total: items.length, score: Math.round(p * 100), pass: p >= 0.7 });
       // XP for each question solved for the first time (as in the problem bank), paid once at the end
       let gain = 0; for (const r of rows) if (r.score >= 0.7 && !S.solved[r.key]) { S.solved[r.key] = Date.now(); gain += XP.problem; }
       if (gain) save();

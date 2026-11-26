@@ -85,6 +85,13 @@ export function mountWorkspace(host, { where = "beforebegin" } = {}) {
       const [kind, icon] = KINDS[t.kind] || ["", "grid"], on = t.id === ws.active;
       return `<li class="${on ? "on" : ""}"><a href="${esc(t.href)}" data-tab="${esc(t.id)}" ${on ? 'aria-current="page"' : ""} title="${esc(`${kind}${t.scopeLabel ? ` · ${t.scopeLabel}` : ""}: ${t.title}`)}">${uiIcon(icon)}<span>${t.title !== kind || t.scopeLabel ? `<small>${esc(kind)}${t.scopeLabel ? ` · ${esc(t.scopeLabel)}` : ""}</small>` : ""}${esc(t.title)}</span></a><button type="button" data-close="${esc(t.id)}" aria-label="Close ${esc(kind)}: ${esc(t.title)}" title="Close">${uiIcon("close")}</button></li>`;
     }).join("")}</ul>`;
+    // more tabs than fit: they scroll sideways (a swipe, a trackpad, Shift+wheel), with a fade on the side that has more
+    const ul = strip.querySelector("ul");
+    const edges = () => { const max = ul.scrollWidth - ul.clientWidth; strip.classList.toggle("more-l", ul.scrollLeft > 4); strip.classList.toggle("more-r", ul.scrollLeft < max - 4); };
+    ul.addEventListener("scroll", edges, { passive: true });
+    const on = ul.querySelector("li.on");
+    if (on && (on.offsetLeft < ul.scrollLeft || on.offsetLeft + on.offsetWidth > ul.scrollLeft + ul.clientWidth)) ul.scrollLeft = on.offsetLeft - 12;
+    edges();
   }
   strip.addEventListener("click", (e) => {
     const c = e.target.closest("[data-close]");
@@ -103,6 +110,7 @@ export function mountWorkspace(host, { where = "beforebegin" } = {}) {
   let timer = 0;
   addEventListener("scroll", () => { clearTimeout(timer); timer = setTimeout(() => { const ws = workspace(); if (ws.active && ws.tabs.find((t) => t.id === ws.active)?.href === here()) saveWs(noteScroll(ws, scrollY)); }, 250); }, { passive: true });
   addEventListener("storage", (e) => { if (e.key === KEY) paint(); });
+  addEventListener("resize", () => strip.querySelector("ul")?.dispatchEvent(new Event("scroll")), { passive: true });
   if (!wiredKeys) {
     wiredKeys = true;
     shortcuts([

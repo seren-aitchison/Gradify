@@ -10,8 +10,9 @@
 //   Workspace tabs over the page: the notes, plan, flashcards and question set you're working between, each kept
 //             where you were (kit/ui/workspace.js), shared with the lessons on every course page.
 //   History   every screen opened goes into the learner's history (kit/ui/history.js, the History screen).
-//   Essentials first: each section shows the screens most people need; the rest wait behind "N more" until the
-//             learner opens the section's extras or uses one (from search, a link), and then they stay.
+//   Essentials first: each section shows the screens most people need, always. The rest wait behind "N more"
+//             until the learner opens the section's extras, or uses one (from search or a direct link, which always
+//             work), and then it stays for 30 days. "Customise" sets each extra to recently used, always or never.
 //   Courses   a dropdown of the courses recently opened, in the top bar (kit/ui/switcher.js).
 //
 //   const nav = mountAppNav({ sections, settings, screenOf, sectionOf, icon, haptic, home });
@@ -67,10 +68,18 @@ export function crumbTrail(hash, { sections, settings, screenOf = (r) => r, home
  * Progressive disclosure: which of a section's screens show. Essentials always; an advanced screen once the section's
  * extras are open, once it's been used, or while it's the current one. Pure.
  */
-export function visibleScreens(list, { advanced = new Set(), open = false, used = new Set(), current = null } = {}) {
+export function visibleScreens(list, { advanced = new Set(), open = false, used = new Set(), current = null, choice = {} } = {}) {
   const shown = [], hidden = [];
-  for (const s of list) (!advanced.has(s[0]) || open || used.has(s[0]) || s[0] === current ? shown : hidden).push(s);
+  for (const s of list) {
+    const r = s[0], c = choice[r];
+    const on = !advanced.has(r) || open || r === current || c === "always" || (c !== "never" && used.has(r));
+    (on ? shown : hidden).push(s);
+  }
   return { shown, hidden };
+}
+/** the extras used within `days` (usedAt: { route: time }). Pure. */
+export function recentlyUsed(usedAt = {}, { now = Date.now(), days = 30 } = {}) {
+  return new Set(Object.entries(usedAt).filter(([, t]) => now - t < days * 864e5).map(([r]) => r));
 }
 
 /** screens whose name (or section) matches the query, best first, as palette hits */
@@ -116,7 +125,9 @@ export function mountAppNav({ sections, settings, screenOf, sectionOf, icon, hap
   ensureStyles();
   const view = document.querySelector("#view"), shell = view?.parentElement;
   if (!view || !shell) return { arrived() {}, markCurrent() {} };
-  const folded = prefSet(P, "folded"), extras = prefSet(P, "extras"), used = prefSet(P, "used");
+  const folded = prefSet(P, "folded"), extras = prefSet(P, "extras");
+  // when each extra screen was last used, and the learner's own choice for it ("always" | "never"; none: recently used)
+  const usedAt = () => pref(P, "usedAt", {}), choices = () => pref(P, "navChoice", {});
   const screens = allScreens(sections, settings);
   const currentRoute = () => location.hash.replace(/^#\/?/, "").split(/[/?]/)[0] || "today";
   const here = () => `${location.pathname}${location.hash || "#/today"}`;
@@ -154,12 +165,12 @@ export function mountAppNav({ sections, settings, screenOf, sectionOf, icon, hap
       ${seen.length ? group("recent", "Recent", seen.map((p) => placeRow(p, "recent")).join(""), { open: !folded.has("recent"), cls: "lo-mine" }) : ""}
       ${sections.map(([id, label, , list]) => {
         // essentials first; the rest behind "N more" (the rail has room for every icon, so it shows them all)
-        const v = visibleScreens(list, { advanced, open: rail || extras.has(id), used: new Set(used.all()), current: screenOf(currentRoute()) });
+        const v = visibleScreens(list, { advanced, open: rail || extras.has(id), used: recentlyUsed(usedAt()), current: screenOf(currentRoute()), choice: choices() });
         const more = v.hidden.length ? `<button type="button" class="lo-more" data-more="${id}" aria-expanded="false" title="${esc(v.hidden.map((x) => x[1]).join(", "))}">${uiIcon("more")}<span>${v.hidden.length} more</span></button>`
-          : !rail && extras.has(id) && list.some((x) => advanced.has(x[0]) && !used.has(x[0])) ? `<button type="button" class="lo-more" data-more="${id}" aria-expanded="true">${uiIcon("up")}<span>Show fewer</span></button>` : "";
+          : !rail && extras.has(id) && visibleScreens(list, { advanced, used: recentlyUsed(usedAt()), current: screenOf(currentRoute()), choice: choices() }).hidden.length ? `<button type="button" class="lo-more" data-more="${id}" aria-expanded="true">${uiIcon("up")}<span>Show fewer</span></button>` : "";
         return group(id, label, v.shown.map(link).join("") + more, { open: id === cur || !folded.has(id), cls: id === cur ? "open" : "" });
       }).join("")}
-      <div class="lo-sec lo-sec-end expanded"><div class="lo-sec-body">${link(settings)}</div></div>`;
+      <div class="lo-sec lo-sec-end expanded"><div class="lo-sec-body">${link(settings)}${advanced.size ? `<button type="button" class="lo-more lo-custom" data-customise>${uiIcon("grid")}<span>Customise sidebar</span></button>` : ""}</div></div>`;
     markCurrent();
     afterPaint(side);
   }
@@ -208,6 +219,7 @@ export function mountAppNav({ sections, settings, screenOf, sectionOf, icon, hap
       return;
     }
     if (e.target.closest("[data-rail]")) { setRail(!isRail()); return; }
+    if (e.target.closest("[data-customise]")) { closeDrawer(); customise(); return; }
     const m = e.target.closest("[data-more]");
     if (m) {
       // open or close a section's extras; focus goes to the first screen that appeared, or back to the button
@@ -228,6 +240,24 @@ export function mountAppNav({ sections, settings, screenOf, sectionOf, icon, hap
     }
     if (e.target.closest("a")) { haptic("tap"); closeDrawer(); }
   });
+
+  // ----- customise: what the primary navigation shows. Essentials always; each extra recently used, always or never.
+  // Whatever is chosen, every screen stays in search (⌘K) and opens from a direct link.
+  async function customise() {
+    const { openModal } = await import("../ui/overlay.js");
+    const opts = [["", "When I've used it recently"], ["always", "Always"], ["never", "Only from search"]];
+    const c = choices();
+    const body = `<p class="sub lo-cust-lead">Essentials are always in the sidebar. Choose when the others show. Every screen is always in search (${isMac() ? "⌘K" : "Ctrl+K"}) and opens from a link.</p>
+      ${sections.map(([id, label, , list]) => `<fieldset class="lo-cust"><legend>${esc(label)}</legend>${list.map(([r, l, ic]) => `<div class="lo-cust-row"><span>${icon(ic)}${esc(l)}</span>${advanced.has(r)
+        ? `<select data-choice="${r}" aria-label="When ${esc(l)} shows">${opts.map(([v, t]) => `<option value="${v}" ${(c[r] || "") === v ? "selected" : ""}>${t}</option>`).join("")}</select>`
+        : `<em>Always shown</em>`}</div>`).join("")}</fieldset>`).join("")}`;
+    const m = openModal({ title: "Customise your sidebar", body, actions: [{ label: "Reset", value: "reset", run: () => { setPref(P, "navChoice", null); paint(); } }, { label: "Done", primary: true }] });
+    m.box?.addEventListener("change", (e) => {
+      const sel = e.target.closest("[data-choice]"); if (!sel) return;
+      const next = { ...choices() }; if (sel.value) next[sel.dataset.choice] = sel.value; else delete next[sel.dataset.choice];
+      setPref(P, "navChoice", Object.keys(next).length ? next : null); paint();
+    });
+  }
 
   // ----- the drawer (phones and tablets) -----
   const bar = document.querySelector("header.app-bar") || shell.querySelector("header");
@@ -364,7 +394,7 @@ export function mountAppNav({ sections, settings, screenOf, sectionOf, icon, hap
       tabs.arrived({ href: here(), title: p.title, kind, scope: appPath, scopeLabel: appName === "Gradify" ? "" : appName });
       // an extra screen the learner has used now stays in the sidebar
       const scr = screenOf(name);
-      if (advanced.has(scr) && !used.has(scr)) { used.toggle(scr, true); paint(); }
+      if (advanced.has(scr)) { const was = recentlyUsed(usedAt()).has(scr); setPref(P, "usedAt", { ...usedAt(), [scr]: Date.now() }); if (!was) paint(); }
       switcher?.refresh();
       if (!["start", "offer", "history"].includes(name)) logEvent({ act: "viewed", href: here(), title: p.title, kind: name, where: p.sub });
       markCurrent();

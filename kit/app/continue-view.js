@@ -4,7 +4,9 @@
 //   Study session     a session from the planner that isn't finished (gradify.session)
 //   Last lesson       the course they were last in, at the lesson and section they left (gradify.recent)
 //   Flashcards        the last flashcard set they opened or revised
-//   Questions         a quiz, target test or question set they opened and didn't finish
+//   Questions         a quiz or target test with at least one answer submitted and not finished ("in progress"),
+//                     or one finished under its pass mark in the last fortnight ("available to retry"). Opening one
+//                     and answering nothing is "not started" and isn't offered; a pass is "completed" and isn't either.
 //   Today's plan      study blocks still to do today
 //   Notes             the last page or folder they opened in Notes
 //   Last subject      the subject they were last in, if it isn't the last lesson's
@@ -14,7 +16,19 @@
 import { esc } from "../core/text.js";
 import { uiIcon } from "../ui/icons.js";
 
-const QUESTION_KINDS = new Set(["quiz", "target", "practice", "exam", "problems", "questions"]);
+const RETRY_FOR = 14 * 864e5;
+
+/**
+ * A quiz or test's status from its newest history entry (kit/course/course.js assessState): "not-started" (no
+ * answer yet, only opened), "in-progress" (at least one answer submitted), "completed" (finished at or over the pass
+ * mark) or "retry" (finished under it). Pure.
+ */
+export function assessmentStatus(entry) {
+  if (!entry?.state) return "not-started";
+  if (entry.state === "in-progress") return entry.answered > 0 ? "in-progress" : "not-started";
+  if (entry.state === "completed") return entry.pass === false ? "retry" : "completed";
+  return "not-started";
+}
 const CARD_KINDS = new Set(["deck", "flashcards", "review", "revise"]);
 const NOTES_PAGE = /#\/notes\/(?!daily\b|tasks\b|tag\/|cards\b|exams?\b|help\b|ask\b|io\b)[^/?]+/;
 // blocks from the learner's own calendar (lectures, being away) aren't Gradify's to finish
@@ -27,7 +41,7 @@ const hm = (m) => `${String(Math.floor(m / 60)).padStart(2, "0")}:${String(m % 6
  * course: the courses' list's newest entry ({ title, href, course, site, course_pct, t }); hist: kit/ui/history.js
  * entries, newest first; session: { steps, i } or null; blocks: today's plan blocks; now: for "today".
  */
-export function continueItems({ course = null, hist = [], session = null, blocks = [], limit = 6 } = {}) {
+export function continueItems({ course = null, hist = [], session = null, blocks = [], limit = 6, now = Date.now() } = {}) {
   const out = [], seen = new Set();
   const add = (x) => { if (!x?.href || seen.has(x.href)) return; seen.add(x.href); out.push(x); };
   if (session && session.i < session.steps?.length) {
@@ -44,9 +58,14 @@ export function continueItems({ course = null, hist = [], session = null, blocks
   const first = (f) => hist.find(f);
   const cards = first((h) => (h.act === "viewed" || h.act === "studied") && (CARD_KINDS.has(h.kind) || (h.kind === "study" && /#\/study\/./.test(h.href))));
   if (cards) rest.push({ kind: "flashcards", icon: "cards", label: "Flashcards", title: cards.title, sub: cards.where || "", href: cards.href, t: cards.t });
-  // a question set opened and not finished: no "studied" for that place since it was opened
-  const q = first((h) => h.act === "viewed" && (QUESTION_KINDS.has(h.kind) || /#\/tools\/quiz/.test(h.href)));
-  if (q && !hist.some((h) => h.act === "studied" && h.href === q.href && h.t >= q.t)) rest.push({ kind: "questions", icon: "target", label: "Unfinished questions", title: q.title, sub: q.where || "", href: q.href, t: q.t });
+  // quizzes and tests: the newest state of each; in progress first, then ones worth another go
+  const latest = new Map();
+  for (const h of hist) if (h.act === "studied" && h.state && !latest.has(h.href)) latest.set(h.href, h);
+  const qs = [...latest.values()];
+  const going = qs.find((h) => assessmentStatus(h) === "in-progress");
+  if (going) rest.push({ kind: "questions", icon: "target", label: "Questions in progress", title: going.title, sub: [`${going.answered} of ${going.total} answered`, going.where].filter(Boolean).join(" · "), href: going.href, t: going.t });
+  const again = qs.find((h) => assessmentStatus(h) === "retry" && now - h.t < RETRY_FOR);
+  if (again) rest.push({ kind: "retry", icon: "undo", label: "Available to retry", title: again.title, sub: [`${again.score}% last time`, again.where].filter(Boolean).join(" · "), href: again.href, t: again.t - 1 });
   const notes = first((h) => h.act === "viewed" && NOTES_PAGE.test(h.href));
   if (notes) rest.push({ kind: "notes", icon: "notes", label: "Last opened in Notes", title: notes.title, sub: "Notes", href: notes.href, t: notes.t });
   const subj = first((h) => h.subject);

@@ -37,7 +37,8 @@ export function renderHistory(view, { toast }) {
     const rows = filterHistory(history(), f);
     out.innerHTML = rows.length ? groupByDay(rows).map((g) => `<section class="hist-day"><h2 class="lo-h">${esc(g.label)}</h2><ol>${g.items.map((h) => {
       const act = ACTS.find(([k]) => k === h.act)?.[1] || h.act;
-      const extra = h.n && h.unit ? ` · ${h.n} ${esc(h.unit)}` : "";
+      const state = h.state === "in-progress" ? ` · in progress, ${h.answered} of ${h.total} answered` : h.state === "completed" ? ` · ${h.pass === false ? "finished under the pass mark" : "completed"}${h.score != null ? `, ${h.score}%` : ""}` : "";
+      const extra = state || (h.n && h.unit ? ` · ${h.n} ${esc(h.unit)}` : "");
       return `<li><a href="${esc(hrefOf(h.href))}" class="hist-i a-${esc(h.act)}"><span class="hist-ic" aria-hidden="true">${icon(ACT_ICON[h.act] || "clock")}</span><span class="hist-t"><b>${esc(h.title)}</b><small>${esc(act)}${h.where ? ` · ${esc(h.where)}` : ""}${extra}</small></span><time datetime="${new Date(h.t).toISOString()}">${time(h.t)}</time></a></li>`;
     }).join("")}</ol></section>`).join("")
       : `<p class="sub hist-none">Nothing matches these filters. <button type="button" class="gx-link" data-reset>Show everything</button></p>`;

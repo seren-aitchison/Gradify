@@ -406,7 +406,13 @@ html[data-motion="reduce"] :is(.gx-toast, .gx-layer, .gx-dialog, .gx-panel, .gx-
 .gx-ws { display: flex; align-items: center; gap: 10px; min-width: 0; margin: 18px 0 0; }
 .gx-ws[hidden] { display: none; }
 .gx-wsl { flex: none; font: 600 10.5px var(--mono, monospace); letter-spacing: .12em; text-transform: uppercase; color: var(--faint); }
-.gx-ws ul { display: flex; gap: 6px; flex: 1; min-width: 0; margin: 0; padding: 2px; list-style: none; overflow-x: auto; scrollbar-width: none; }
+.gx-ws ul { display: flex; gap: 6px; flex: 1; min-width: 0; margin: 0; padding: 2px; list-style: none; overflow-x: auto; scrollbar-width: none;
+  overscroll-behavior-x: contain; scroll-snap-type: x proximity; scroll-padding-inline: 12px; -webkit-overflow-scrolling: touch; }
+.gx-ws li { scroll-snap-align: start; }
+/* more tabs off to one side: the strip fades out on that side, so it's plain there's more to swipe to */
+.gx-ws.more-r ul { -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 48px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 48px), transparent); }
+.gx-ws.more-l ul { -webkit-mask-image: linear-gradient(90deg, transparent, #000 48px); mask-image: linear-gradient(90deg, transparent, #000 48px); }
+.gx-ws.more-l.more-r ul { -webkit-mask-image: linear-gradient(90deg, transparent, #000 48px, #000 calc(100% - 48px), transparent); mask-image: linear-gradient(90deg, transparent, #000 48px, #000 calc(100% - 48px), transparent); }
 .gx-ws ul::-webkit-scrollbar { display: none; }
 .gx-ws li { flex: 0 1 220px; min-width: 120px; display: flex; align-items: center; border-radius: 12px; border: 1px solid var(--line); background: rgba(var(--ink-rgb), .03); }
 .gx-ws li.on { border-color: var(--line-strong); background: rgba(var(--ink-rgb), .09); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .18); }
