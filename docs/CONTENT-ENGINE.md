@@ -100,6 +100,17 @@ Decisions are recorded in the mapping store, `kit/curriculum/maps/<framework>.js
 
 ## Evidence and approval (owner's decisions A–D and P0, 26 Nov 2026)
 
+**Governance rules (owner, 26 Nov 2026).** These are hard requirements, not recommendations. Later work must not weaken them, and only the owner can change them.
+
+1. No verified human approval, no lesson generation.
+2. No live GitHub verification, no lesson generation.
+3. No current matching fingerprint, no lesson generation.
+4. No qualified expert where one is required, no high-risk publication.
+5. No accepted evidence gap without a recorded explanation.
+6. No source-registry change without the owner's explicit approval.
+
+Until the GitHub App's identity (including its numeric bot account ID) and the CI verification job exist, review verification is NOT RUN and must never be treated as passed. A local test run is not a substitute for CI evidence: tests that CI skips (the AQA statement text tests, under "Known gaps") count as locally verified only, not CI-verified.
+
 A brief that passes its format checks shows how the evidence is written down, not whether it holds up. Nothing is written, templated, ingested or published from a brief until a person has approved its evidence and a live GitHub review check has verified that approval (`scripts/content/evidence.mjs`, `gradify evidence`, `gradify approve-evidence`).
 
 - **Retrieval.** The engine retrieves each cited source itself and keeps every attempt. A failed attempt never erases an earlier success; the freshness policy (`evidence.freshnessDays`, 90 by default) decides whether that success still counts. A bot check or near-empty page is a failure. Retrieved text is cached locally only (`data/research-cache/`). A named person can record a source they opened by hand.
