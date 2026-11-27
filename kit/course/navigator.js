@@ -121,11 +121,12 @@ export function createPalette(api) {
   const KINDS = [["all", "All"], ["lesson", "Lessons"], ["topic", "Units & modules"], ["note", "In the notes"], ["lab", api.labLabel || "Labs"], ["action", "Actions"]].filter(([k]) => k !== "lab" || api.hasLabs);
   return createCommandPalette({
     name: api.name, placeholder: "Search lessons, topics and key terms…", kinds: KINDS,
-    groups: [["Lessons", "lesson", 8], ["Units and modules", "topic", 6], ["In the notes", "note", 6], [api.labLabel || "Labs", "lab", 6], ["Actions", "action", 6]],
-    icons: { lesson: "play", topic: "flag", note: "sparkles", lab: "cube", action: "bolt", recent: "clock", mark: "star", next: "play" },
+    groups: [["In this lesson", "find", 5], ["Lessons", "lesson", 8], ["Units and modules", "topic", 6], ["In the notes", "note", 6], [api.labLabel || "Labs", "lab", 6], ["Actions", "action", 6]],
+    icons: { lesson: "play", topic: "flag", note: "sparkles", lab: "cube", action: "bolt", recent: "clock", mark: "star", next: "play", find: "search", all: "search", history: "clock" },
     lead: (h) => (h.st ? dot(h.st) : ""),
     search: api.search,
     searchMore: (raw, filter) => (filter === "all" || filter === "note" ? api.searchNotes(raw) : null),
     suggestions: api.suggestions,
+    seeAll: api.seeAll,
   });
 }

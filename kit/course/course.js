@@ -73,6 +73,7 @@ import { resource as makeResource, rid as makeRid } from "../core/resource.js";
 import { recordMistake, resolveMistake, scheduledFor, unschedule, retitle, mistakes, noteOf, linksOf, collectionsOf, onConnections } from "../data/links.js";
 import { mountQuickDock } from "../ui/quick-dock.js";
 import { mountQuickKeys, reportDialog, sendOrKeep } from "../ui/quick-actions.js";
+import { mountFind } from "../search/find.js";
 import { mountResourceActions, runResourceAction } from "../ui/resource-actions.js";
 import { mountConnections } from "../ui/connections.js";
 import { pref, setPref } from "../ui/prefs.js";
@@ -795,7 +796,13 @@ export function mountCourse(root, cfg) {
     if (e.target.closest("[data-cards]")) main.querySelector("[data-cards]")?.click();
   });
   addEventListener("keydown", (e) => { if (e.key === "Escape" && treeEl.classList.contains("open")) drawer(false); });
-  const palette = createPalette({ esc, ic, name: cfg.name, search: searchHits, searchNotes, suggestions, labLabel: PL, hasLabs: ixs.length > 0 });
+  // find inside the lesson being read (Shift+F, or "In this lesson" in quick search: kit/search/find.js)
+  const finder = mountFind({ root: () => main.querySelector(".co-lesson .co-notes") || main.querySelector(".co-lesson"), label: "Find in this lesson" });
+  const inLessonHits = (raw) => (inLesson() && String(raw).trim().length > 1 ? finder.hits(raw).slice(0, 5).map((x) => ({ type: "find", t: x.title, k: `${x.count} match${x.count === 1 ? "" : "es"} in this lesson`, run: () => finder.open(raw, x.id) })) : []);
+  const palette = createPalette({ esc, ic, name: cfg.name, search: (raw) => [...inLessonHits(raw), ...searchHits(raw)], searchNotes, suggestions, labLabel: PL, hasLabs: ixs.length > 0,
+    // the Study app's Search screen: this course first, then all of Gradify
+    seeAll: (raw) => [{ t: `See all results in ${cfg.name}`, k: "Lessons, questions, flashcards, your notes and the specification", href: `${appHref}#/search?q=${encodeURIComponent(raw)}&course=${encodeURIComponent(cfg.slug)}` },
+      { t: `Search all of Gradify for “${raw}”`, k: "Every course, and everything of yours", href: `${appHref}#/search?q=${encodeURIComponent(raw)}` }] });
   // keyboard shortcuts (kit/ui/keys.js): one registry, so ? lists them all and every Gradify page writes them the same
   let curPN = { prev: null, next: null };
   const inLesson = () => Boolean(curLesson && root.dataset.view === "lesson");
@@ -805,6 +812,7 @@ export function mountCourse(root, cfg) {
     { keys: "n", label: "The recommended next step", group: "In a lesson", when: inLesson, run: () => main.querySelector(".gx-switch .gx-res.primary")?.click() },
     { keys: "b", label: "Bookmark the lesson", group: "In a lesson", when: inLesson, run: () => toggleMark(curLesson.id) },
     { keys: "f", label: "Focus mode", group: "In a lesson", when: inLesson, run: () => setFocus(!focusOn()) },
+    { keys: "shift+f", label: "Find in this lesson", group: "In a lesson", when: inLesson, run: () => finder.open(getSelection?.().toString().trim().slice(0, 60) || "") },
     { keys: "s", label: "Split screen: notes beside questions", group: "In a lesson", when: () => inLesson() && splitFits(), run: () => setSplit(!splitOn()) },
     { keys: "e", label: "Explore related topics", group: "In a lesson", when: inLesson, run: () => relatedTopics() },
     { keys: "r", label: "Revision notes for the lesson", group: "In a lesson", when: () => inLesson() && Boolean(curN), run: () => revisionNotes() },

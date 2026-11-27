@@ -120,7 +120,8 @@ Tailwind theme if Gradify moves to Next.js (`docs/NEXTJS-MIGRATION.md`).
 | GradifyTabs, segmented controls, GradifyAccordion | `kit/ui/disclosure.js` | `tabsHtml` + `wireTabs` (arrow keys, Home/End, remembered); `segmentedHtml` + `wireSegmented`; `wireAccordion` (open sections remembered, expand/collapse all); `wireSections` (a long page's headed sections fold, remembered per page, never by themselves, opened by a jump to them, with expand/collapse all); `wireSteps` (a worked example's steps one at a time, the last marked as the answer; every step stays in the HTML); `densityHtml` + `wireDensity` (full or compact, remembered); `wireRows` (a row's detail opens under it). `details.gx-more` is Show more / Show less |
 | GradifyEmptyState, skeletons | `kit/ui/states.js` | `emptyState({ icon, title, body, actions })`; `skeleton("lesson" \| "list" \| "cards" \| "text")` |
 | Keyboard shortcuts | `kit/ui/keys.js` | `shortcuts([{ keys, label, group, run, when }])`: one registry, so **?** lists every shortcut on the page |
-| GradifyCommandPalette | `kit/ui/palette.js` | `createCommandPalette({ search, searchMore, suggestions, kinds, groups })`: **/** or **⌘K** anywhere |
+| GradifyCommandPalette | `kit/ui/palette.js` | `createCommandPalette({ search, searchMore, suggestions, kinds, groups })`: **/** or **⌘K** anywhere (recent searches before typing; `seeAll(raw)` adds "See all results", **⇧↵**) |
+| Search | `kit/search/` | The Study app's Search screen (`#/search?q=…`) and the engine behind every search box: `query.js` (the query language: phrases, `-words`, `type:` `in:` `board:` `qual:` `status:` `done:` `difficulty:` `after:`), `engine.js` (ranking, grouping, autocomplete, recovery, find in a page), `sources.js` (courses, lessons, questions, course flashcards, the curriculum, the learner's own things), `memory.js` (recent and saved searches), `view.js` (the screen), `find.js` (find in a lesson, **⇧F**). docs/SEARCH.md |
 | GradifyResourceSwitcher, intelligent course card | `kit/ui/resources.js` | `resourceSwitcher({ kicker, items })` ("What would you like to do next?"); `courseCard({ … next })` |
 | Back to where I was | `kit/ui/wayfinding.js` | `offerBack(place)`: a chip back to the lesson you came from, at the same scroll position |
 | Places: trail, recent, pins | `kit/ui/places.js` | The tab's trail of places with scroll positions (Back restores them), recently visited, and pins (Undo, drag to reorder, Alt+↑/↓) |
@@ -234,6 +235,7 @@ Pages need no extra `<link>`: the first component used loads `kit/styles/ui.css`
 | ← → | Previous / next lesson |
 | N | The recommended next step |
 | B, F, S, R, E, O, U | Bookmark, focus mode, split screen, revision notes, explore related topics, outline, up to the unit |
+| Shift+F | Find in this lesson (↵ / ⇧↵ next and previous match) |
 | G then H / S / R / P / E / B | Course home, Syllabus, Revise, Progress, Exams, back to where I was |
 | Esc | Close a menu, dialog or the search |
 
