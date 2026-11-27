@@ -67,7 +67,10 @@ export function combine(...ixs) {
   if (parts.length === 1) return parts[0];
   const vocab = new Map(parts[0]?.vocab || []);
   for (const p of parts.slice(1)) for (const [w, n] of p.vocab) vocab.set(w, (vocab.get(w) || 0) + n);
-  const list = parts.flatMap((p) => p.list);
+  // one result per thing: the first source wins (Gradify's own, which knows the most), so a lesson saved to a
+  // collection isn't listed twice
+  const seen = new Set(), list = [];
+  for (const p of parts) for (const x of p.list) { if (seen.has(x.d.id)) continue; seen.add(x.d.id); list.push(x); }
   return { list, vocab, size: list.length };
 }
 function addDocs(ix, docs) {
@@ -75,7 +78,7 @@ function addDocs(ix, docs) {
   const count = (w, n) => vocab.set(w, (vocab.get(w) || 0) + n);
   for (const d of docs) {
     if (!d?.title || !d.type) continue;
-    const t = words(d.title), k = (d.terms || []).flatMap(words), c = words([d.sub, ...(d.crumbs || []).map((x) => x.label)].filter(Boolean).join(" ")), b = words(d.body || "");
+    const t = words(d.title), k = [...(d.terms || []), ...(d.tags || [])].flatMap(words), c = words([d.sub, ...(d.crumbs || []).map((x) => x.label)].filter(Boolean).join(" ")), b = words(d.body || "");
     const x = { d, t, ts: t.map(stem), k, ks: k.map(stem), c, cs: c.map(stem), b, bs: b.map(stem),
       tf: ` ${t.join(" ")} `, all: ` ${[...t, ...k, ...c, ...b].join(" ")} ` };
     list.push(x);
@@ -107,8 +110,11 @@ export function passes(d, q, { skip = null } = {}) {
   if (f.board.length && !(d.board || []).some((b) => f.board.includes(b))) return false;
   if (f.qual.length && !(d.qual || []).some((x) => f.qual.includes(x))) return false;
   if (f.status.length && !f.status.every((s) => (d.status || []).includes(s))) return false;
-  if (f.done != null && (d.done == null || Boolean(d.done) !== f.done)) return false;
+  // "done" needs it known to be done; "not finished" is anything not known to be done (a note, a set of your own)
+  if (f.done === true && d.done !== true) return false;
+  if (f.done === false && d.done === true) return false;
   if (f.difficulty.length && !(d.difficulty && f.difficulty.includes(String(d.difficulty)))) return false;
+  if (f.tag?.length && !f.tag.every((t) => (d.tags || []).includes(t))) return false;
   const when = d.modified || d.created || null;
   if (q.from != null && !(when && when >= q.from)) return false;
   if (q.to != null && !(when && when < q.to)) return false;
@@ -200,11 +206,11 @@ function why(x, q) {
 }
 
 /** search: ranked, grouped results, the counts per type, and recovery when nothing matched */
-export function search(ix, q, { context = {}, limit = 400, groups = GROUPS, expand = null } = {}) {
+export function search(ix, q, { context = {}, limit = 400, groups = GROUPS, expand = null, any = false } = {}) {
   const scored = [], counts = {};
   for (const x of ix.list) {
     if (!passes(x.d, q, { skip: "type" })) continue;
-    const s = scoreDoc(x, q, { context });
+    const s = scoreDoc(x, q, { context, any });
     if (!s) continue;
     counts[x.d.type] = (counts[x.d.type] || 0) + 1;
     if (q.filters.type.length && !q.filters.type.includes(x.d.type)) continue;
@@ -215,11 +221,11 @@ export function search(ix, q, { context = {}, limit = 400, groups = GROUPS, expa
   const byType = new Map();
   for (const h of hits) { if (!byType.has(h.type)) byType.set(h.type, []); byType.get(h.type).push(h); }
   // groups always in reading order; a result that is exactly what was typed is also shown on its own, first ("best")
-  const out = groups.filter(([t]) => byType.has(t)).map(([type, title, n]) => ({ type, title, total: byType.get(type).length, items: byType.get(type).slice(0, expand === type || q.filters.type.length === 1 ? 50 : n) }));
+  const out = groups.filter(([t]) => byType.has(t)).map(([type, title, n]) => ({ type, title, total: byType.get(type).length, items: expand === type || q.filters.type.length === 1 ? byType.get(type) : byType.get(type).slice(0, n) }));
   for (const t of byType.keys()) if (GROUP_OF[t] == null) out.push({ type: t, title: TYPES[t]?.[0] || t, total: byType.get(t).length, items: byType.get(t).slice(0, 4) });
   const top = hits[0] && hits[0].score >= 40 && (!hits[1] || hits[0].score > hits[1].score * 1.15) ? hits[0] : null;
   const total = hits.length;
-  return { total, hits, groups: out, counts, best: top, recover: total ? null : recover(ix, q, { context }) };
+  return { total, hits, groups: out, counts, best: top, capped: scored.length > limit, recover: total ? null : recover(ix, q, { context }) };
 }
 
 // ---------- when nothing matches ----------
@@ -269,7 +275,7 @@ export function recover(ix, q, { context = {} } = {}) {
   const f = q.filters, tries = [];
   if (f.type.length) tries.push(["type", "every kind of resource", { ...f, type: [] }]);
   for (const k of Object.keys(f.scope)) tries.push([`scope.${k}`, k === "course" ? "every course" : k === "folder" ? "everything, not just this collection" : "the whole course", { ...f, scope: Object.fromEntries(Object.entries(f.scope).filter(([x]) => x !== k)) }]);
-  for (const k of ["board", "qual", "status", "difficulty"]) if (f[k].length) tries.push([k, `any ${k === "qual" ? "qualification" : k === "board" ? "exam board" : k}`, { ...f, [k]: [] }]);
+  for (const k of ["board", "qual", "status", "difficulty", "tag"]) if (f[k]?.length) tries.push([k, k === "tag" ? "without the tag" : `any ${k === "qual" ? "qualification" : k === "board" ? "exam board" : k}`, { ...f, [k]: [] }]);
   if (f.done != null) tries.push(["done", "finished or not", { ...f, done: null }]);
   if (q.from != null || q.to != null) tries.push(["date", "any date", f, true]);
   for (const [key, label, filters, dates] of tries) {
@@ -302,7 +308,7 @@ export function suggest(ix, raw, { history = [], saved = [], limit = 8, context 
     for (const [w] of done) push({ kind: "word", text: `${head ? `${head} ` : ""}${w}` });
   }
   // titles that match what's typed so far
-  const q = { terms: words(s), phrases: [], not: [], filters: { type: [], scope: {}, board: [], qual: [], status: [], done: null, difficulty: [] }, from: null, to: null };
+  const q = { terms: words(s), phrases: [], not: [], filters: { type: [], scope: {}, board: [], qual: [], status: [], done: null, difficulty: [], tag: [] }, from: null, to: null };
   if (q.terms.length) {
     const best = ix.list.map((x) => ({ x, sc: scoreDoc(x, q, { context }) })).filter((y) => y.sc > 5).sort((a, b) => b.sc - a.sc).slice(0, 5);
     for (const { x } of best) push({ kind: "hit", text: x.d.title, hit: { ...x.d, html: markTitle(x.d.title, q) } });

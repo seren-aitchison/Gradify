@@ -4,11 +4,11 @@
 //   equilibrium                       every word must match (AND)
 //   "le chatelier"                    an exact phrase
 //   equilibrium -industrial           leave out anything with that word
-//   type:flashcards  in:course:chemistry  board:aqa  qual:a-level  status:saved  done:no  difficulty:hard
+//   type:flashcards  in:course:chemistry  board:aqa  qual:a-level  status:saved  done:no  difficulty:hard  tag:difficult
 //   after:7d  before:2026-11-01  since:month
 //
 // parseQuery(raw, chips?) → { raw, text, terms, phrases, not, filters, from, to, empty }
-//   filters   { type: [], scope: { course, folder, lesson }, board: [], qual: [], status: [], done, difficulty: [] }
+//   filters   { type: [], scope: { course, folder, lesson }, board: [], qual: [], status: [], done, difficulty: [], tag: [] }
 //   chips     the same filters from the UI, merged under what was typed
 //
 // A value may be quoted (folder:"Mock week"). Unknown keys stay in the text, so "note:" or a time like "10:30" is
@@ -42,7 +42,9 @@ const BOARD_ALIAS = { pearson: "edexcel", "pearson edexcel": "edexcel" };
 export const QUALS = [["gcse", "GCSE"], ["as", "AS level"], ["a-level", "A level"], ["nat5", "National 5"], ["higher", "Higher"], ["adv-higher", "Advanced Higher"], ["ib", "IB"], ["university", "University"]];
 const QUAL_ALIAS = { "a level": "a-level", alevel: "a-level", "a-levels": "a-level", "a levels": "a-level", "as level": "as", "national 5": "nat5", n5: "nat5", "advanced higher": "adv-higher", degree: "university", uni: "university", undergraduate: "university" };
 
-const KEYS = new Set(["type", "in", "course", "board", "qual", "level", "status", "done", "difficulty", "folder", "lesson", "before", "after", "since", "created", "modified"]);
+const KEYS = new Set(["type", "in", "course", "board", "qual", "level", "status", "done", "difficulty", "folder", "lesson", "before", "after", "since", "created", "modified", "tag"]);
+// a tag as kept (kit/data/organise.js normTag): lower case, spaces as hyphens
+const tagKey = (v) => fold(v).replace(/^#+/, "").trim().replace(/[\s_]+/g, "-").replace(/[^a-z0-9-]/g, "").replace(/-+/g, "-").replace(/^-|-$/g, "");
 
 /** split a query into tokens, keeping "quoted phrases" and key:"quoted values" whole */
 export function tokens(raw) {
@@ -85,7 +87,7 @@ const norm = (map, v) => { const s = fold(v).trim(); return map[s] || s; };
 
 /** parse a typed query (and any chip filters from the UI) */
 export function parseQuery(raw = "", chips = {}, { now = Date.now() } = {}) {
-  const q = { raw: String(raw || ""), text: "", terms: [], phrases: [], not: [], filters: { type: [], scope: {}, board: [], qual: [], status: [], done: null, difficulty: [] }, from: null, to: null, empty: true };
+  const q = { raw: String(raw || ""), text: "", terms: [], phrases: [], not: [], filters: { type: [], scope: {}, board: [], qual: [], status: [], done: null, difficulty: [], tag: [] }, from: null, to: null, empty: true };
   const f = q.filters, rest = [];
   const setScope = (k, v) => { if (v) f.scope[k] = v; };
   for (const t of tokens(raw)) {
@@ -101,6 +103,7 @@ export function parseQuery(raw = "", chips = {}, { now = Date.now() } = {}) {
       else if (t.key === "board") add(f.board, norm(BOARD_ALIAS, v));
       else if (t.key === "qual" || t.key === "level") add(f.qual, norm(QUAL_ALIAS, v));
       else if (t.key === "status") add(f.status, norm(STATUS_ALIAS, v));
+      else if (t.key === "tag") add(f.tag, tagKey(v));
       else if (t.key === "done") f.done = /^(y|yes|true|1|done|complete|completed)$/.test(fold(v)) ? true : /^(n|no|false|0|todo|unfinished|incomplete|open)$/.test(fold(v)) ? false : f.done;
       else if (t.key === "difficulty") add(f.difficulty, DIFF_ALIAS[fold(v)] || (["1", "2", "3"].includes(v) ? v : null));
       else if (t.key === "before") { const w = parseWhen(v, now); if (w != null) q.to = w; }
@@ -113,7 +116,7 @@ export function parseQuery(raw = "", chips = {}, { now = Date.now() } = {}) {
   }
   q.text = rest.map((t) => (t.neg ? "-" : "") + (t.quoted ? `"${t.value}"` : t.key ? `${t.key}:${t.value}` : t.value)).join(" ");
   // the UI's filters sit under what was typed
-  for (const k of ["type", "board", "qual", "status", "difficulty"]) for (const v of chips[k] || []) add(f[k], v);
+  for (const k of ["type", "board", "qual", "status", "difficulty", "tag"]) for (const v of chips[k] || []) add(f[k], v);
   if (chips.done != null && f.done == null) f.done = chips.done;
   for (const k of ["course", "folder", "lesson"]) if (chips.scope?.[k] && !f.scope[k]) f.scope[k] = chips.scope[k];
   if (chips.from != null && q.from == null) q.from = chips.from;
@@ -133,6 +136,7 @@ export function activeFilters(q) {
   for (const v of f.status) out.push({ key: "status", value: v, label: label(STATUSES, v) });
   if (f.done != null) out.push({ key: "done", value: f.done, label: f.done ? "Completed" : "Not finished" });
   for (const v of f.difficulty) out.push({ key: "difficulty", value: v, label: label(DIFFICULTIES, v) });
+  for (const v of f.tag || []) out.push({ key: "tag", value: v, label: `#${v}` });
   if (q.from != null) out.push({ key: "from", value: q.from, label: `Since ${new Date(q.from).toLocaleDateString("en-GB", { day: "numeric", month: "short" })}` });
   if (q.to != null) out.push({ key: "to", value: q.to, label: `Before ${new Date(q.to).toLocaleDateString("en-GB", { day: "numeric", month: "short" })}` });
   return out;
@@ -144,9 +148,10 @@ export function queryString(q) {
   const quote = (v) => (/\s/.test(v) ? `"${v}"` : v);
   for (const v of f.type) bits.push(`type:${v}`);
   for (const [k, v] of Object.entries(f.scope)) bits.push(`in:${k}:${quote(v)}`);
-  for (const k of ["board", "qual", "status", "difficulty"]) for (const v of f[k]) bits.push(`${k}:${v}`);
+  for (const k of ["board", "qual", "status", "difficulty", "tag"]) for (const v of f[k] || []) bits.push(`${k}:${v}`);
   if (f.done != null) bits.push(`done:${f.done ? "yes" : "no"}`);
-  const d = (t) => new Date(t).toISOString().slice(0, 10);
+  // the learner's own calendar day, as parseWhen reads it back (toISOString would give UTC's, a day out east of it)
+  const d = (t) => { const x = new Date(t); return `${x.getFullYear()}-${String(x.getMonth() + 1).padStart(2, "0")}-${String(x.getDate()).padStart(2, "0")}`; };
   if (q.from != null) bits.push(`after:${d(q.from)}`);
   if (q.to != null) bits.push(`before:${d(q.to)}`);
   return bits.filter(Boolean).join(" ").trim();
@@ -164,4 +169,4 @@ export function without(q, { key, value }) {
   return c;
 }
 /** the query's filters alone, in the shape parseQuery takes as chips */
-export const chipsOf = (q) => ({ type: [...q.filters.type], board: [...q.filters.board], qual: [...q.filters.qual], status: [...q.filters.status], difficulty: [...q.filters.difficulty], done: q.filters.done, scope: { ...q.filters.scope }, from: q.from, to: q.to });
+export const chipsOf = (q) => ({ type: [...q.filters.type], board: [...q.filters.board], qual: [...q.filters.qual], status: [...q.filters.status], difficulty: [...q.filters.difficulty], tag: [...(q.filters.tag || [])], done: q.filters.done, scope: { ...q.filters.scope }, from: q.from, to: q.to });

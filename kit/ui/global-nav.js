@@ -36,7 +36,9 @@ export function score(title, words) {
  * Pure (tests/ui.test.mjs): idx is the parsed search-index.json.
  */
 export function searchIndex(idx, raw, { site = null, limit = 40 } = {}) {
-  const words = norm(raw).split(/\s+/).filter(Boolean);
+  // a typed filter (type:lessons, in:course:chemistry, board:aqa…) isn't a word to find in a title: the words alone
+  // are searched here, and a type filter keeps only its kind (the Search screen applies the rest, kit/search)
+  const { words, types } = plainQuery(raw);
   if (!words.length) return [];
   const out = [];
   const bonus = (c) => (site && c.site === site ? 2 : 0);
@@ -53,7 +55,20 @@ export function searchIndex(idx, raw, { site = null, limit = 40 } = {}) {
       }
     }
   }
-  return out.sort((a, b) => b.s - a.s).slice(0, limit).map((h) => ({ ...h, html: mark(h.t, raw) }));
+  return out.filter((h) => !types || types.has(h.type)).sort((a, b) => b.s - a.s).slice(0, limit).map((h) => ({ ...h, html: mark(h.t, words.join(" ")) }));
+}
+const KEY = /^-?(type|in|course|board|qual|level|status|done|difficulty|folder|lesson|before|after|since|created|modified|tag):/i;
+const TYPE_OF = { lesson: "lesson", lessons: "lesson", course: "course", courses: "course", topic: "topic", topics: "topic", unit: "topic", units: "topic", module: "topic", modules: "topic" };
+/** the words of a query without its typed filters, and the kinds a type: filter asks for (null: any). Pure. */
+export function plainQuery(raw) {
+  const parts = String(raw || "").match(/-?\w+:"[^"]*"|"[^"]*"|\S+/g) || [];
+  const words = [], types = new Set();
+  for (const p of parts) {
+    if (KEY.test(p)) { const m = /^type:(\w+)/i.exec(p); if (m) types.add(TYPE_OF[m[1].toLowerCase()] || "none"); continue; }
+    if (p.startsWith("-")) continue;
+    words.push(...norm(p.replace(/"/g, "")).split(/\s+/).filter(Boolean));
+  }
+  return { words, types: types.size ? types : null };
 }
 
 const siteHits = (raw, site) => {

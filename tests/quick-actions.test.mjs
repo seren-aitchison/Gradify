@@ -7,19 +7,19 @@ import { actionsFor } from "../kit/ui/resource-actions.js";
 
 test("the ••• menu is the same for every resource, plus what the page can do with this one, always in one order", () => {
   const lesson = { kind: "lesson" }, pack = { kind: "pack" };
-  assert.deepEqual(actionsFor(lesson), ["pin", "save", "link", "note", "share", "history"]);
+  assert.deepEqual(actionsFor(lesson), ["pin", "save", "tag", "link", "note", "share", "history"]);
   const f = () => {};
-  assert.deepEqual(actionsFor(lesson, { canSchedule: true, ops: { report: f } }), ["pin", "save", "link", "schedule", "note", "share", "history", "report"]);
+  assert.deepEqual(actionsFor(lesson, { canSchedule: true, ops: { report: f } }), ["pin", "save", "tag", "link", "schedule", "note", "share", "history", "report"]);
   // the order is the menu's, not the page's, and only functions count
   assert.deepEqual(actionsFor(pack, { ops: { delete: f, export: f, rename: f, duplicate: "no" } }).slice(-3), ["rename", "export", "delete"]);
-  assert.deepEqual(actionsFor({ kind: "card" }, { ops: { delete: f } }), ["pin", "save", "link", "note", "share", "delete"]);
+  assert.deepEqual(actionsFor({ kind: "card" }, { ops: { delete: f } }), ["pin", "save", "tag", "link", "note", "share", "delete"]);
 });
 
 test("every action has a key of its own while the menu is open", () => {
   const keys = Object.values(MENU_KEYS);
   assert.equal(new Set(keys).size, keys.length);
   for (const [a] of EXTRA) assert.ok(MENU_KEYS[a], a);
-  for (const a of ["pin", "save", "link", "schedule", "note", "share", "history"]) assert.ok(MENU_KEYS[a], a);
+  for (const a of ["pin", "save", "tag", "link", "schedule", "note", "share", "history"]) assert.ok(MENU_KEYS[a], a);
 });
 
 test("anything can be created from anywhere: notes, tasks, flashcards, collections, mind maps, quizzes", () => {

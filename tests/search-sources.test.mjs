@@ -100,3 +100,15 @@ test("end to end on Gradify's real content: 'equilibrium' is grouped, ranked and
   const kc = search(ix, parseQuery("le chatelier"));
   assert.ok(kc.hits.some((h) => h.type === "lesson"));
 });
+
+test("progress is put onto documents built earlier: lessons, their questions, units and courses", async () => {
+  const { applyProgress } = await import("../kit/search/sources.js");
+  const docs = docsFromIndex(IDX, { lessons: LESSONS });
+  applyProgress(docs, { chemistry: { done: { "u08-01": true, "u08-02": true } } });
+  assert.ok(docs.filter((d) => d.type === "lesson").every((d) => d.done && d.status.includes("completed")));
+  assert.equal(docs.find((d) => d.type === "course").done, true);
+  applyProgress(docs, { chemistry: { done: { "u08-01": true } } });
+  assert.equal(docs.find((d) => d.lesson === "u08-02" && d.type === "lesson").done, false);
+  assert.deepEqual(docs.find((d) => d.type === "course").status, ["in-progress"]);
+  assert.equal(docs.find((d) => d.id === "qset:/scigradify/chemistry/u08-01").done, true);
+});

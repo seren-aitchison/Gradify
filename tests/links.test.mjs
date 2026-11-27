@@ -106,8 +106,8 @@ test("renamed: every copy of its title is updated; nothing else is touched", asy
 test("the same menu everywhere: the same actions in the same order, history only where there is one", async () => {
   const { actionsFor } = await import("../kit/ui/resource-actions.js");
   const lesson = actionsFor({ kind: "lesson" }, { canSchedule: true }), card = actionsFor({ kind: "card" }, { canSchedule: true }), q = actionsFor({ kind: "question" }, { canSchedule: true });
-  assert.deepEqual(lesson, ["pin", "save", "link", "schedule", "note", "share", "history"]);
-  assert.deepEqual(card, ["pin", "save", "link", "schedule", "note", "share"]);
+  assert.deepEqual(lesson, ["pin", "save", "tag", "link", "schedule", "note", "share", "history"]);
+  assert.deepEqual(card, ["pin", "save", "tag", "link", "schedule", "note", "share"]);
   assert.deepEqual(q, card);
   assert.ok(!actionsFor({ kind: "pack" }).includes("schedule"));                  // only with somewhere to schedule into
   assert.equal(new Set(lesson).size, lesson.length);                              // no action twice

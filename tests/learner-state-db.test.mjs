@@ -70,3 +70,10 @@ test("only the record's own kinds, and no oversized values", async () => {
   await assert.rejects(as(ANA, `insert into public.learner_state (kind, key, value, t, dev) values ('secrets', 'k', null, 1, 'd')`), /check constraint/);
   await assert.rejects(as(ANA, `insert into public.learner_state (kind, key, value, t, dev) values ('note', 'k', '{"text":"${"x".repeat(20000)}"}', 1, 'd')`), /learner_state_value_size/);
 });
+
+test("tags are part of the record (20261128120000_learner_state_tags.sql), and a kind it doesn't know is still refused", async () => {
+  const { as } = await db();
+  await as(ANA, `insert into public.learner_state (user_id, kind, key, value, t, dev) values ('${ANA}', 'tag', 'lesson:/scigradify/chemistry/u08-02', '{"tags":["difficult"]}', 1, 'laptop')`);
+  assert.equal((await as(ANA, "select count(*)::int as n from public.learner_state where kind = 'tag'"))[0].n, 1);
+  await assert.rejects(as(ANA, `insert into public.learner_state (user_id, kind, key, value, t, dev) values ('${ANA}', 'secret', 'x', null, 1, 'laptop')`), /learner_state_kind_check/);
+});

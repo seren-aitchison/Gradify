@@ -801,3 +801,25 @@ body:has(.gx-ms-bar:not([hidden])) .qd { visibility: hidden; }
 mark.gx-find { color: inherit; background: color-mix(in srgb, #facc15 45%, transparent); border-radius: 3px; padding: 0 1px; }
 mark.gx-find.on { background: #facc15; color: #111; box-shadow: 0 0 0 2px #facc15; }
 @media (forced-colors: active) { mark.gx-find { forced-color-adjust: none; background: Mark; color: MarkText; } mark.gx-find.on { outline: 2px solid Highlight; } }
+
+/* ---------- Organise (kit/ui/resource-actions.js organiseDialog): folders, tags and curriculum, side by side ---------- */
+.gx-org { display: grid; gap: 18px; }
+.gx-org h3 { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; margin: 0 0 8px; font-size: 15px; }
+.gx-org h3 .gx-ic { width: 16px; height: 16px; color: var(--gx-accent); align-self: center; }
+.gx-org h3 small { flex-basis: 100%; font-weight: 400; font-size: 12.5px; color: var(--mute); }
+.gx-org .gx-ra-cols { max-height: 220px; overflow: auto; margin: 6px 0; }
+.gx-ra-cols li { padding-left: calc(var(--d, 0) * 18px); }
+.gx-ra-cols small { color: var(--mute); font-size: 12px; }
+.gx-org-sug { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 6px 0; font-size: 13px; color: var(--mute); }
+.gx-chip { display: inline-flex; align-items: center; gap: 4px; padding: 4px 10px; border-radius: 99px; border: 1px dashed var(--line-strong); background: none; color: var(--fg); font: 500 12.5px var(--sans); cursor: pointer; }
+.gx-chip .gx-ic { width: 12px; height: 12px; } .gx-chip.quiet { color: var(--mute); }
+.gx-chip:hover { border-style: solid; border-color: var(--gx-accent); }
+.gx-org-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 8px; }
+.gx-org .gx-tagc { display: inline-flex; align-items: center; gap: 4px; padding: 4px 6px 4px 10px; border-radius: 99px; background: color-mix(in srgb, var(--gx-accent) 14%, transparent); font: 500 13px var(--sans); }
+.gx-org .gx-tagc button { display: inline-grid; place-items: center; width: 18px; height: 18px; border: 0; border-radius: 50%; background: none; color: inherit; cursor: pointer; }
+.gx-org .gx-tagc .gx-ic { width: 11px; height: 11px; }
+.gx-ra-tag { display: flex; gap: 8px; } .gx-ra-tag input { flex: 1; min-width: 0; }
+.gx-org-cur { margin: 0; padding-left: 18px; font-size: 14px; } .gx-org-cur li { margin: 2px 0; }
+.gx-org-vis { margin: 10px 0 0; font-size: 13px; color: var(--mute); }
+.sx-b.sx-tag { color: var(--fg); } .sx-b.sx-own { color: var(--gx-accent); }
+.gx-org .sub { font-size: 13.5px; margin: 0; }

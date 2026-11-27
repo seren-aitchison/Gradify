@@ -13,7 +13,8 @@ import { uiIcon } from "./icons.js";
 import { openModal, openDrawer } from "./overlay.js";
 import { toast } from "./feedback.js";
 import { pin, pinned, pins, setPins, restoreAt } from "./places.js";
-import { collections, createCollection, addToCollection, removeFromCollection, collectionsOf, noteOf, setNote, schedule } from "../data/links.js";
+import { collections, itemsOf, createCollection, addToCollection, removeFromCollection, collectionsOf, noteOf, setNote, schedule, mistakes } from "../data/links.js";
+import { tree, folderLabel, tagsOf, setTags, allTags, autoTags, STARTER_TAGS, normTag, placeFor, ownerOf, visibilityOf } from "../data/organise.js";
 import { mountConnections } from "./connections.js";
 import { EXTRA, MENU_KEYS, registerPageMenu } from "./quick-actions.js";
 
@@ -21,7 +22,7 @@ import { EXTRA, MENU_KEYS, registerPageMenu } from "./quick-actions.js";
 // has no history of its own and doesn't offer one.
 export const HAS_HISTORY = new Set(["course", "unit", "lesson", "quiz", "test", "spec", "pack", "note", "map", "collection", "screen", "page"]);
 /** the actions a resource's menu offers, in order (pure; tests/links.test.mjs) */
-export const actionsFor = (r, { canSchedule = false, ops = {} } = {}) => ["pin", "save", "link", ...(canSchedule ? ["schedule"] : []), "note", "share", ...(HAS_HISTORY.has(r?.kind) ? ["history"] : []), ...EXTRA.map(([a]) => a).filter((a) => typeof ops?.[a] === "function")];
+export const actionsFor = (r, { canSchedule = false, ops = {} } = {}) => ["pin", "save", "tag", "link", ...(canSchedule ? ["schedule"] : []), "note", "share", ...(HAS_HISTORY.has(r?.kind) ? ["history"] : []), ...EXTRA.map(([a]) => a).filter((a) => typeof ops?.[a] === "function")];
 const today = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`; };
 const abs = (href) => { try { return new URL(href, location.href).href; } catch { return href; } };
 
@@ -37,12 +38,13 @@ export function mountResourceActions(host, getRes, { store = null, app = "/app.h
   const acts = () => { const r = getRes(); return r ? actionsFor(r, { canSchedule: Boolean(store), ops: opsNow() }) : []; };
   function paint() {
     const r = getRes(); if (!r) return;
-    const on = pinned(r.href), inCols = collectionsOf(r.rid).length, hasNote = Boolean(noteOf(r.rid));
+    const on = pinned(r.href), inCols = collectionsOf(r.rid).length, hasNote = Boolean(noteOf(r.rid)), tags = tagsOf(r.rid);
     const it = (act, ic, text, sub = "") => `<button type="button" role="menuitem" data-ra="${act}" aria-keyshortcuts="${esc(MENU_KEYS[act] || "")}">${uiIcon(ic)}<span><b>${text}</b>${sub ? `<small>${sub}</small>` : ""}</span>${MENU_KEYS[act] ? `<kbd aria-hidden="true">${esc(MENU_KEYS[act].toUpperCase())}</kbd>` : ""}</button>`;
     // one list of actions for every resource (actionsFor), so every menu offers the same things in the same order
     const ITEM = {
       pin: () => it("pin", on ? "pinned" : "pin", on ? "Unpin" : "Pin", on ? "Pinned to your sidebar and home" : "Keep it in your sidebar and home"),
-      save: () => it("save", "inbox", "Save to a collection", inCols ? `In ${inCols} collection${inCols > 1 ? "s" : ""}` : "Group it with things from any tool"),
+      save: () => it("save", "inbox", "Save to a folder", inCols ? `In ${inCols} folder${inCols > 1 ? "s" : ""}` : "Keep it with things from any tool"),
+      tag: () => it("tag", "flag", "Tags", tags.length ? tags.slice(0, 3).map((t) => `#${esc(t)}`).join(" ") : "Label it: difficult, priority, homework…"),
       link: () => it("link", "link", "Connections", "Link it to notes, flashcards, lessons…"),
       schedule: () => it("schedule", "clock", "Schedule", "Put it in your plan"),
       note: () => it("note", "notes", hasNote ? "Edit your note" : "Add a note", "Your own words on it"),
@@ -91,7 +93,8 @@ export async function runResourceAction(what, r, { store = null, app = "/app.htm
   if (what === "pin") {
     const x = pin({ href: r.href, title: r.title, sub: r.sub || r.label, kind: r.kind });
     toast({ html: `${x.pinned ? "Pinned" : "Unpinned"} <b>${esc(r.title)}</b>` }, { undo: () => setPins(x.pinned ? pins().filter((p) => p.href !== r.href) : restoreAt(pins(), x.item, x.index)) });
-  } else if (what === "save") saveDialog(r);
+  } else if (what === "save") organiseDialog(r, "folders");
+  else if (what === "tag") organiseDialog(r, "tags");
   else if (what === "link") openConnections(r, app);
   else if (what === "schedule") scheduleDialog(r, store);
   else if (what === "note") noteDialog(r);
@@ -101,13 +104,51 @@ export async function runResourceAction(what, r, { store = null, app = "/app.htm
     catch { toast(`Copy this link: ${url}`); }
   } else if (what === "history") location.href = `${app}#/history?q=${encodeURIComponent(r.title)}`;
 }
-function saveDialog(r) {
-  const draw = () => { const mine = new Set(collectionsOf(r.rid)); return `<p class="sub">A collection groups things from any tool: lessons, flashcard sets, notes, questions. One thing can be in several.</p>
-    ${collections().length ? `<ul class="gx-ra-cols">${collections().map((c) => `<li><label><input type="checkbox" data-col="${esc(c.id)}" ${mine.has(c.id) ? "checked" : ""}> ${esc(c.name)}</label></li>`).join("")}</ul>` : ""}
-    <form class="gx-ra-new"><label class="sr-only" for="gx-ra-cn">New collection</label><input id="gx-ra-cn" placeholder="New collection, e.g. Mock exam week" maxlength="80"><button type="submit" class="btn btn-ghost lg btn-sm"><span>Create and add</span></button></form>`; };
-  const m = openModal({ title: `Save “${r.title}”`, body: draw(), actions: [{ label: "Done", primary: true }] });
+// Organise: the three ways a thing is placed, side by side and never mixed. Folders are where the learner keeps it;
+// tags are what it's like; the curriculum is what it teaches, which Gradify sets (kit/data/organise.js).
+const signedIn = () => { try { return Object.keys(localStorage).some((k) => /^sb-[\w-]+-auth-token$/.test(k)); } catch { return false; } };
+export function organiseDialog(r, focus = "folders") {
+  const draw = () => {
+    const mine = new Set(collectionsOf(r.rid)), cols = collections(), flat = [];
+    const walk = (xs) => xs.forEach((c) => { if (!c.smart) flat.push(c); walk(c.children); });
+    walk(tree(cols));
+    const tags = tagsOf(r.rid), known = allTags().map((t) => t.tag);
+    const mistakesHere = mistakes().filter((x) => !x.resolved && x.lesson?.rid === r.rid).length;
+    const auto = autoTags(r, { mistakes: mistakesHere, have: tags });
+    const starters = STARTER_TAGS.filter((t) => !tags.includes(t) && !auto.some((a) => a.tag === t)).slice(0, 6);
+    const places = mine.size ? [] : placeFor(r, cols.map((c) => ({ ...c, items: itemsOf(c.id) })));
+    const vis = visibilityOf(r, { signedIn: signedIn() });
+    const where = [r.subject && `Subject: ${r.subject}`, r.unit && `Topic: ${r.unit}`, r.module && `Module: ${r.module}`, r.qualification && `Qualification: ${r.qualification}`].filter(Boolean);
+    return `<div class="gx-org">
+      <section aria-labelledby="gx-org-f"><h3 id="gx-org-f">${uiIcon("inbox")} Folders <small>Where you keep it. One thing can be in several, never copied.</small></h3>
+        ${places.length ? `<p class="gx-org-sug">Suggested: ${places.map((p) => `<button type="button" class="gx-chip" data-sug="${esc(p.id)}" title="${esc(p.why)}">${uiIcon("plus")}${esc(p.name)}</button>`).join(" ")}</p>` : ""}
+        ${flat.length ? `<ul class="gx-ra-cols">${flat.map((c) => `<li style="--d:${c.depth}"><label><input type="checkbox" data-col="${esc(c.id)}" ${mine.has(c.id) ? "checked" : ""}> ${esc(c.name)}${c.depth ? ` <small>${esc(folderLabel(cols, c.parent))}</small>` : ""}</label></li>`).join("")}</ul>` : `<p class="sub">No folders yet: make the first one here.</p>`}
+        <form class="gx-ra-new"><label class="sr-only" for="gx-ra-cn">New folder</label><input id="gx-ra-cn" placeholder="New folder, e.g. Mock exam week" maxlength="80"><button type="submit" class="btn btn-ghost lg btn-sm"><span>Create and add</span></button></form></section>
+      <section aria-labelledby="gx-org-t"><h3 id="gx-org-t">${uiIcon("flag")} Tags <small>What it's like. Your own labels, the same in every tool.</small></h3>
+        <p class="gx-org-tags">${tags.map((t) => `<span class="gx-tagc">#${esc(t)}<button type="button" data-untag="${esc(t)}" aria-label="Remove the tag ${esc(t)}">${uiIcon("close")}</button></span>`).join("") || `<span class="sub">No tags yet.</span>`}</p>
+        <form class="gx-ra-tag"><label class="sr-only" for="gx-ra-tn">Add a tag</label><input id="gx-ra-tn" list="gx-ra-tl" placeholder="Add a tag, e.g. difficult" maxlength="32" autocomplete="off"><datalist id="gx-ra-tl">${known.map((t) => `<option value="${esc(t)}">`).join("")}</datalist><button type="submit" class="btn btn-ghost lg btn-sm"><span>Add</span></button></form>
+        ${auto.length || starters.length ? `<p class="gx-org-sug">${auto.map((a) => `<button type="button" class="gx-chip" data-tag="${esc(a.tag)}" title="${esc(a.why)}">${uiIcon("plus")}#${esc(a.tag)}</button>`).join("")}${starters.map((t) => `<button type="button" class="gx-chip quiet" data-tag="${esc(t)}">${uiIcon("plus")}#${esc(t)}</button>`).join("")}</p>` : ""}</section>
+      <section aria-labelledby="gx-org-c"><h3 id="gx-org-c">${uiIcon("target")} Curriculum <small>What it teaches. Set by Gradify from the course and specification.</small></h3>
+        ${where.length || r.refs?.length ? `<ul class="gx-org-cur">${where.map((w) => `<li>${esc(w)}</li>`).join("")}${(r.refs || []).slice(0, 6).map((x) => `<li>Specification point ${esc(x)}</li>`).join("")}</ul>` : `<p class="sub">${ownerOf(r) === "yours" ? "Your own things aren't mapped to a curriculum; filing them in a folder or tagging them keeps them findable." : "Not mapped to a specification yet."}</p>`}
+        <p class="gx-org-vis"><b>${esc(ownerOf(r) === "yours" ? "Yours" : "Gradify's")}</b> · ${esc(vis.label)}: ${esc(vis.line)}</p></section>
+    </div>`;
+  };
+  const m = openModal({ title: `Organise “${r.title}”`, body: draw(), actions: [{ label: "Done", primary: true }] });
+  const redraw = (sel) => { m.box.querySelector(".gx-body").innerHTML = draw(); if (sel) m.box.querySelector(sel)?.focus(); };
   m.box.addEventListener("change", (e) => { const x = e.target.closest("[data-col]"); if (!x) return; if (x.checked) addToCollection(x.dataset.col, r); else removeFromCollection(x.dataset.col, r.rid); });
-  m.box.addEventListener("submit", (e) => { e.preventDefault(); const name = m.box.querySelector("#gx-ra-cn").value.trim(); if (!name) return; const id = createCollection(name); addToCollection(id, r); m.box.querySelector(".gx-body").innerHTML = draw(); m.box.querySelector("#gx-ra-cn")?.focus(); toast({ html: `Added to <b>${esc(name)}</b>` }); });   // focus stays in the dialog, so Escape and Tab still work
+  m.box.addEventListener("click", (e) => {
+    const s = e.target.closest("[data-sug]"); if (s) { addToCollection(s.dataset.sug, r); redraw(); return; }
+    const t = e.target.closest("[data-tag]"); if (t) { setTags(r, [...tagsOf(r.rid), t.dataset.tag]); redraw("#gx-ra-tn"); return; }
+    const u = e.target.closest("[data-untag]"); if (u) { setTags(r, tagsOf(r.rid).filter((x) => x !== u.dataset.untag)); redraw("#gx-ra-tn"); }
+  });
+  m.box.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (e.target.closest(".gx-ra-tag")) { const v = normTag(m.box.querySelector("#gx-ra-tn").value); if (v) setTags(r, [...tagsOf(r.rid), v]); redraw("#gx-ra-tn"); return; }
+    const name = m.box.querySelector("#gx-ra-cn").value.trim(); if (!name) return;
+    const id = createCollection(name); addToCollection(id, r); redraw("#gx-ra-cn"); toast({ html: `Made <b>${esc(name)}</b> and added it.` });
+  });
+  setTimeout(() => m.box.querySelector(focus === "tags" ? "#gx-ra-tn" : "#gx-ra-cn")?.focus(), 50);
+  return m;
 }
 function noteDialog(r) {
   const m = openModal({ title: `Your note on “${r.title}”`, body: `<label class="sr-only" for="gx-ra-note">Your note</label><textarea id="gx-ra-note" rows="6" maxlength="4000" placeholder="What to remember, what to ask, where you got stuck…">${esc(noteOf(r.rid))}</textarea><p class="aq-note">It's shown with this ${esc(r.label.toLowerCase())} wherever it appears, and in its Connections.</p>`,

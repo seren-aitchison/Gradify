@@ -38,7 +38,8 @@ Everything a filter chip does can also be typed, and the two are the same thing:
 | `in:course:chemistry`, `in:folder:"Mock week"`, `in:lesson:u08-02` | within a course, a collection or a lesson |
 | `board:aqa`, `qual:a-level` | exam board, qualification |
 | `status:saved` (pinned, scheduled, completed, in-progress, draft) | resource status |
-| `done:no`, `done:yes` | finished or not |
+| `done:no`, `done:yes` | finished or not (`done:no` includes things whose completion isn't tracked, such as your own notes) |
+| `tag:difficult` | carries one of your tags (docs/ORGANISE.md) |
 | `difficulty:hard` (easy, medium, 1–3) | level |
 | `after:7d`, `before:2026-11-01`, `since:month` | created or changed in a timeframe |
 
@@ -75,7 +76,7 @@ Underneath, it offers to browse every course, ask Gradify AI, or make flashcards
 | 132 | Recent search suggestions | Autocomplete and quick search |
 | 133 | Autocomplete | Saved searches, then past searches, then the word finished, then matching titles |
 | 134 | Within a course | The screen's scope menu; a course's quick search ("See all results in Chemistry"); `in:course:` |
-| 135 | Within a folder | The scope menu (a collection); `in:folder:` |
+| 135 | Within a folder | The scope menu (a folder); `in:folder:`; "Search inside" on a folder |
 | 136 | Within a lesson | **⇧F** find bar (every match marked, "3 of 12", sections listed, closed sections opened) and "In this lesson" in quick search |
 | 137 | By date | Filters → Created or changed; `after:` / `before:` |
 | 138 | By completion | Filters → Completion; `done:` |

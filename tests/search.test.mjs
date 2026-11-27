@@ -69,7 +69,7 @@ test("filters: type, course, board, qualification, status, completion, difficult
   assert.deepEqual(run("equilibrium type:cards").hits.map((h) => h.id), ["p1"]);
   assert.deepEqual(run("equilibrium in:course:biology").hits.map((h) => h.id), ["l4"]);
   assert.deepEqual(run("board:aqa qual:a-level").hits.map((h) => h.id).sort(), ["l1", "l2", "s1"]);
-  assert.deepEqual(run("equilibrium done:no type:lesson").hits.map((h) => h.id), ["l2"]);
+  assert.deepEqual(run("equilibrium done:no type:lesson").hits.map((h) => h.id), ["l2", "l4"]);   // l4's completion isn't known: not finished
   assert.deepEqual(run("equilibrium done:yes").hits.map((h) => h.id), ["l1"]);
   assert.deepEqual(run("equilibrium difficulty:hard").hits.map((h) => h.id).sort(), ["l2", "q1"]);
   assert.deepEqual(run("status:saved").hits.map((h) => h.id), ["p1"]);
@@ -150,4 +150,44 @@ test("marking and snippets keep the original text, escaped", () => {
   assert.match(s, /^…/); assert.match(s, /<mark>equilibrium<\/mark>/);
   assert.equal(passes({ type: "lesson" }, parseQuery("done:yes")), false);   // unknown completion isn't "done"
   assert.ok(related(run("equilibrium").hits, parseQuery("equilibrium")).includes("reversible reaction"));
+});
+
+test("tags: tag:difficult finds what the learner tagged, a tag is searchable as a word, and it writes back out", () => {
+  const ix2 = buildIndex([{ id: "a", type: "lesson", title: "Dynamic equilibrium", tags: ["difficult"] }, { id: "b", type: "pack", title: "Kc cards", tags: ["difficult", "priority"] }, { id: "c", type: "note", title: "Equilibrium notes" }]);
+  const q = parseQuery("tag:Difficult tag:priority");
+  assert.deepEqual(q.filters.tag, ["difficult", "priority"]);
+  assert.deepEqual(search(ix2, q).hits.map((h) => h.id), ["b"]);
+  assert.deepEqual(search(ix2, parseQuery("tag:difficult")).hits.map((h) => h.id).sort(), ["a", "b"]);
+  assert.deepEqual(search(ix2, parseQuery("priority")).hits.map((h) => h.id), ["b"]);
+  assert.equal(queryString(q), "tag:difficult tag:priority");
+  assert.deepEqual(activeFilters(q).map((f) => f.label), ["#difficult", "#priority"]);
+  assert.equal(search(ix2, parseQuery("equilibrium tag:homework")).recover.loosen[0].label, "without the tag");
+});
+
+test("review fixes: one result per thing, 'any of the words' keeps the rest of the query, and every match in a group can be shown", async () => {
+  const { combine } = await import("../kit/search/engine.js");
+  const pub = buildIndex([{ id: "lesson:/c/u1", type: "lesson", title: "Osmosis", status: ["saved"] }]), mine = buildIndex([{ id: "lesson:/c/u1", type: "lesson", title: "Osmosis", mine: true }, { id: "pack:p", type: "pack", title: "Osmosis cards" }]);
+  const both = combine(pub, mine);
+  assert.deepEqual(both.list.map((x) => x.d.id), ["lesson:/c/u1", "pack:p"]);
+  assert.deepEqual(search(both, parseQuery("status:saved")).hits.map((h) => h.id), ["lesson:/c/u1"]);
+  // any: phrases, left-out words and filters still apply
+  const ix3 = buildIndex([{ id: "a", type: "lesson", title: "Osmosis in plant cells" }, { id: "b", type: "lesson", title: "Diffusion" }, { id: "c", type: "note", title: "Osmosis notes" }]);
+  assert.deepEqual(search(ix3, parseQuery("osmosis diffusion -plant type:lesson"), { any: true }).hits.map((h) => h.id), ["b"]);
+  // more than a group shows: "Show all" (expand) shows every one, and so does a one-type filter
+  const many = buildIndex(Array.from({ length: 70 }, (_, i) => ({ id: `l${i}`, type: "lesson", title: `Cell ${i}` })));
+  assert.equal(search(many, parseQuery("cell")).groups[0].items.length, 6);
+  assert.equal(search(many, parseQuery("cell"), { expand: "lesson" }).groups[0].items.length, 70);
+  assert.equal(search(many, parseQuery("cell type:lesson")).groups[0].items.length, 70);
+});
+
+test("review fixes: dates are written in the learner's own calendar, east of UTC too", async () => {
+  const { execFileSync } = await import("node:child_process");
+  const code = `import("${new URL("../kit/search/query.js", import.meta.url).href}").then((m) => { const q = m.parseQuery("after:2026-11-01"); process.stdout.write(m.queryString(q)); })`;
+  for (const tz of ["Australia/Sydney", "America/Los_Angeles", "UTC"]) assert.equal(execFileSync(process.execPath, ["-e", code], { env: { ...process.env, TZ: tz } }).toString(), "after:2026-11-01", tz);
+});
+
+test("review fixes: quick search's course index ignores typed filters as words, and a type filter keeps its kind", async () => {
+  const { plainQuery } = await import("../kit/ui/global-nav.js");
+  assert.deepEqual(plainQuery('type:lessons equilibrium in:course:"Chemistry" -industrial'), { words: ["equilibrium"], types: new Set(["lesson"]) });
+  assert.deepEqual(plainQuery("osmosis"), { words: ["osmosis"], types: null });
 });

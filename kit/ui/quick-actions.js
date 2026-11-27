@@ -17,6 +17,7 @@ import { openModal } from "./overlay.js";
 import { toast } from "./feedback.js";
 import { shortcuts } from "./keys.js";
 import { createCollection, collections, addToCollection } from "../data/links.js";
+import { folderLabel } from "../data/organise.js";
 
 // ---------- undo ----------
 const undos = [];
@@ -90,7 +91,7 @@ export const EXTRA = [
   ["delete", "trash", "Delete", "You can undo it", "x"],
 ];
 /** each menu action's key in the ••• menu (pure; tests) */
-export const MENU_KEYS = { pin: "p", save: "s", link: "l", schedule: "t", note: "n", share: "c", history: "h", ...Object.fromEntries(EXTRA.map(([a, , , , k]) => [a, k])) };
+export const MENU_KEYS = { pin: "p", save: "s", tag: "g", link: "l", schedule: "t", note: "n", share: "c", history: "h", ...Object.fromEntries(EXTRA.map(([a, , , , k]) => [a, k])) };
 
 // ---------- create ----------
 /** what can be made from anywhere (pure; tests). [id, label, icon, what, needs] */
@@ -182,7 +183,8 @@ export function renameInPlace(el, current, save, { label = "Name" } = {}) {
 /** choose a collection (or make one): resolves to its id, or null */
 export function pickCollection({ title = "Choose a collection", exclude = null } = {}) {
   return new Promise((done) => {
-    const cols = collections().filter((c) => c.id !== exclude);
+    // folders only (a smart folder fills itself), with the folders they're inside
+    const all = collections(), cols = all.filter((c) => c.id !== exclude && !c.smart && !c.archived).map((c) => ({ ...c, name: folderLabel(all, c.id) })).sort((a, b) => a.name.localeCompare(b.name));
     let chosen = null;
     const m = openModal({ title, body: `${cols.length ? `<ul class="gx-ra-cols">${cols.map((c) => `<li><button type="button" class="gx-pick" data-col="${esc(c.id)}">${uiIcon("inbox")}${esc(c.name)}</button></li>`).join("")}</ul>` : `<p class="sub">No other collections yet.</p>`}
       <form class="gx-ra-new"><label class="sr-only" for="gx-pc-new">New collection</label><input id="gx-pc-new" placeholder="Or a new one, e.g. Mock exam week" maxlength="80"><button type="submit" class="btn btn-ghost lg btn-sm"><span>Create</span></button></form>`,
@@ -196,7 +198,7 @@ export function pickCollection({ title = "Choose a collection", exclude = null }
 }
 /** add many resources to a collection the learner picks, with Undo */
 export async function saveMany(rs) {
-  const cid = await pickCollection({ title: `Save ${rs.length} to a collection` }); if (!cid) return;
+  const cid = await pickCollection({ title: `Save ${rs.length} to a folder` }); if (!cid) return;
   const name = collections().find((c) => c.id === cid)?.name || "the collection";
   const { itemsOf, removeFromCollection } = await import("../data/links.js");
   const had = new Set(itemsOf(cid).map((x) => x.rid)), added = rs.filter((r) => !had.has(r.rid));

@@ -66,7 +66,8 @@ import { mountAppNav, allScreens, appActions } from "./app-nav.js";
 import { mountQuickDock, startTimer } from "../ui/quick-dock.js";
 import { mountQuickKeys, setPageOps, deferredDelete, undoable, download, cardsCsv, fileName, mountMultiSelect, stopMultiSelect, saveMany, sendOrKeep, renameInPlace } from "../ui/quick-actions.js";
 import { attachAccount, exportState, list as stateList, batch as stateBatch, SYNCED } from "../data/learner-state.js";
-import { renderCollections } from "./collections-view.js";
+import { renderCollections, tagDialog } from "./collections-view.js";
+import { toTrash } from "../data/organise.js";
 import { mountConnections } from "../ui/connections.js";
 import { mountResourceActions } from "../ui/resource-actions.js";
 import { mistakes, mistakesByLesson, forget, retitle } from "../data/links.js";
@@ -729,6 +730,13 @@ function deletePacks(docs, { leave = false } = {}) {
         try {
           // if the cards can't be listed the set isn't deleted: their links, places, notes and pins would be left behind
           const cards = await store.listCards({ documentId: id });
+          // into Recently deleted first (kit/data/organise.js, this device, 30 days): the set, its cards and where
+          // each card had got to, so restoring it brings back the learning too
+          const [full, pack] = await Promise.all([store.getDocument(id).catch(() => null), store.getPack(id).catch(() => null)]);
+          toTrash({ kind: "pack", label: full?.title || docs.find((d) => d.id === id)?.title || "Flashcard set", n: cards.length,
+            payload: { doc: { title: full?.title, site: full?.site, file_name: full?.file_name ?? null, pages: full?.pages ?? null, text: String(full?.text || "").slice(0, 100_000) },
+              pack: pack ? { engine: pack.engine, model: pack.model, pack: pack.pack, stats: pack.stats } : null,
+              cards: cards.map(({ id: _i, user_id: _u, document_id: _d, created_at: _c, ...rest }) => rest) } });
           await store.deleteDocument(id);
           // the set and its cards are gone: so are their links, collection places, notes, schedules and pins
           forget(makeRid("pack", id), { href: `${location.pathname}#/deck/${id}` });
@@ -739,6 +747,16 @@ function deletePacks(docs, { leave = false } = {}) {
       if (failed) throw new Error(`${failed} of ${ids.length} stayed`);
     },
   });
+}
+/** a deleted set back from Recently deleted, with its cards and their progress (Collections › Recently deleted) */
+async function restorePack(entry) {
+  const { doc, pack, cards = [] } = entry.payload || {};
+  const made = await store.addDocument({ title: doc?.title || entry.label, site: doc?.site, file_name: doc?.file_name ?? null, pages: doc?.pages ?? null, text: doc?.text || "" });
+  try {
+    if (pack) await store.addPack({ document_id: made.id, ...pack });
+    if (cards.length) await store.addCards(cards.map((c) => ({ ...c, document_id: made.id })));
+  } catch (err) { await store.deleteDocument(made.id).catch(() => {}); throw err; }
+  return made;
 }
 /** a copy of each set with its cards (progress starts again: the copy is for changing, not a second schedule) */
 async function duplicatePacks(docs) {
@@ -794,7 +812,8 @@ async function renderNotes() {
     const packRes = (d) => resource(makeRid("pack", d.id), { title: d.title, sub: "Flashcard set", href: `${location.pathname}#/deck/${d.id}` });
     const head = document.createElement("div"); head.className = "gx-ms-head"; grid.before(head);
     mountMultiSelect(grid, { item: ".doc", key: (el) => el.dataset.doc, name: (el) => el.querySelector("b")?.textContent || "", toggleHost: head, actions: [
-      { id: "save", label: "Save to a collection", icon: "inbox", run: (ids) => saveMany(pick(ids).map(packRes)) },
+      { id: "save", label: "Save to a folder", icon: "inbox", run: (ids) => saveMany(pick(ids).map(packRes)) },
+      { id: "tag", label: "Tag…", icon: "flag", run: (ids) => tagDialog(pick(ids).map(packRes)) },
       { id: "dup", label: "Duplicate", icon: "copy", run: (ids) => duplicatePacks(pick(ids)) },
       { id: "export", label: "Export", icon: "download", run: async (ids) => { const cs = cards.filter((c) => ids.includes(c.document_id)); download(fileName(ids.length === 1 ? pick(ids)[0].title : "gradify-flashcards", "csv"), cardsCsv(cs), "text/csv"); toast(`Downloaded ${cs.length} cards as a spreadsheet (CSV).`); } },
       { id: "delete", label: "Delete", icon: "trash", run: (ids) => deletePacks(pick(ids)) },
@@ -1804,7 +1823,7 @@ routes.history = () => renderHistory(view, { toast });
 // Search (kit/search/view.js): everything in Gradify and everything of the learner's, grouped, filtered and previewed
 routes.search = async () => (await import("../search/view.js")).renderSearch(view, { store: async () => store, app: location.pathname, site: SITE || null, toast,
   screens: allScreens(SECTIONS, SETTINGS), actions: appActions() });
-routes.collections = (arg) => renderCollections(view, arg, { toast });
+routes.collections = (arg, more) => renderCollections(view, arg, { toast, more, store: async () => store, restorePack });
 // Settings › Your data: the learner's workspace record (kit/data/learner-state.js), what's in it, a copy of it, and
 // removing it from every device. Not content: notes, cards and progress are listed and deleted above.
 const STATE_NAMES = { pin: "pins", tab: "workspace tabs", activity: "history lines", link: "links between resources", collection: "collections", collitem: "items in collections", note: "notes on resources", mistake: "mistakes to revisit", sched: "scheduled resources" };

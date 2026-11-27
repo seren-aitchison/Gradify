@@ -14,11 +14,12 @@
 //
 // Kinds: pin, tab (workspace tabs), activity (history, including quiz and test states), link (a connection between
 // two resources, kit/core/resource.js ids), collection and collitem, note (the learner's own note on a resource),
-// mistake (a question got wrong, until it's got right), sched (a resource scheduled as a plan block).
+// mistake (a question got wrong, until it's got right), sched (a resource scheduled as a plan block), tag (the learner's
+// own labels on a resource, kit/data/organise.js).
 // merge, the entry helpers and importLegacy are pure (tests/learner-state.test.mjs).
 
 const KEY = "gradify.state", DEV = "gradify.device";
-export const SYNCED = new Set(["pin", "tab", "activity", "link", "collection", "collitem", "note", "mistake", "sched"]);
+export const SYNCED = new Set(["pin", "tab", "activity", "link", "collection", "collitem", "note", "mistake", "sched", "tag"]);
 const id = (kind, key) => `${kind}|${key}`;
 
 // ---------- pure ----------

@@ -46,11 +46,11 @@ export function docsFromIndex(idx, { lessons = null, states = {}, site = null } 
     const S = states[c.s] || null, done = S?.done || {}, quals = courseQuals(c.s), here = site && c.site === site ? 0.5 : 0;
     const all = c.units.flatMap((u) => u[3].map((l) => l[0])), doneN = all.filter((id) => done[id]).length;
     const status = doneN && doneN === all.length ? ["completed"] : doneN || (S?.log || []).length ? ["in-progress"] : [];
-    out.push({ id: rid("course", c.u), type: "course", title: c.n, sub: `${c.site} · ${plural(all.length, "lesson")}`, href: c.u, crumbs: [{ label: c.site }], course: c.s, site: c.site, qual: quals, status, done: all.length ? doneN === all.length : null, terms: [c.site, ...(c.T || [])], icon: "book", weight: here + 1 });
+    out.push({ id: rid("course", c.u), type: "course", lessons: all, title: c.n, sub: `${c.site} · ${plural(all.length, "lesson")}`, href: c.u, crumbs: [{ label: c.site }], course: c.s, site: c.site, qual: quals, status, done: all.length ? doneN === all.length : null, terms: [c.site, ...(c.T || [])], icon: "book", weight: here + 1 });
     for (const [uid, n, title, ls, mods = [], , blurb = ""] of c.units) {
       const uCrumbs = [{ label: c.site }, { label: c.n, href: c.u }, { label: `${c.U} ${n}`, href: `${c.u}#/learn/${uid}` }];
       const uDone = ls.filter((l) => done[l[0]]).length;
-      out.push({ id: rid("unit", c.u, uid), type: "topic", title, sub: `${c.n} · ${c.U} ${n} · ${plural(ls.length, "lesson")}`, href: `${c.u}#/learn/${uid}`, crumbs: uCrumbs.slice(0, 2), course: c.s, site: c.site, qual: quals, body: blurb, preview: blurb, status: uDone && uDone === ls.length ? ["completed"] : uDone ? ["in-progress"] : [], done: ls.length ? uDone === ls.length : null, terms: mods, icon: "flag", weight: here });
+      out.push({ id: rid("unit", c.u, uid), type: "topic", lessons: ls.map((l) => l[0]), title, sub: `${c.n} · ${c.U} ${n} · ${plural(ls.length, "lesson")}`, href: `${c.u}#/learn/${uid}`, crumbs: uCrumbs.slice(0, 2), course: c.s, site: c.site, qual: quals, body: blurb, preview: blurb, status: uDone && uDone === ls.length ? ["completed"] : uDone ? ["in-progress"] : [], done: ls.length ? uDone === ls.length : null, terms: mods, icon: "flag", weight: here });
       mods.forEach((m, mi) => out.push({ id: `module:${c.u}${uid}/${mi}`, type: "topic", title: m, sub: `${c.n} · ${c.U} ${n}.${mi + 1}`, href: `${c.u}#/learn/${uid}`, crumbs: uCrumbs, course: c.s, site: c.site, qual: quals, icon: "flag", weight: here - 0.5 }));
       let unitQ = 0, unitCards = 0;
       for (const [lid, lt, mi] of ls) {
@@ -110,7 +110,7 @@ export function docsFromLearner(o = {}) {
   const app = o.app || "/app.html", out = [];
   const folders = o.folderOf || new Map(), pinned = new Set((o.pins || []).map((p) => p.href)), sched = o.scheduled || new Map();
   const status = (id, href, extra = []) => [...extra, ...(pinned.has(href) ? ["pinned"] : []), ...((folders.get(id) || []).length ? ["saved"] : []), ...((sched.get(id) || []).length ? ["scheduled"] : [])];
-  const put = (d) => { d.folders = [...new Set([...(d.folders || []), ...(folders.get(d.id) || [])])]; d.folderName = d.folders.map((f) => o.names?.get(f)).filter(Boolean).join(" "); out.push(d); };
+  const put = (d) => { d.tags = o.tags?.get(d.id) || []; d.folders = [...new Set([...(d.folders || []), ...(folders.get(d.id) || [])])]; d.folderName = d.folders.map((f) => o.names?.get(f)).filter(Boolean).join(" "); out.push(d); };
   // flashcard sets, with what's on their cards
   const byDoc = new Map();
   for (const c of o.cards || []) { if (!byDoc.has(c.document_id)) byDoc.set(c.document_id, []); byDoc.get(c.document_id).push(c); }
@@ -176,8 +176,29 @@ export function docsFromApp({ screens = [], actions = [] } = {}) {
   ];
 }
 
+/**
+ * Lesson progress again, onto documents built earlier (the index is built once; progress changes as the learner works):
+ * each lesson and its practice questions, and each unit and course from its lessons. states: { [slug]: state }. Pure.
+ */
+export function applyProgress(docs, states = {}) {
+  const PROGRESS = new Set(["completed", "in-progress"]);
+  for (const d of docs) {
+    if (d.mine || !d.course || !["lesson", "question", "topic", "course"].includes(d.type)) continue;
+    const S = states[d.course], done = S?.done || {};
+    const keep = (d.status || []).filter((x) => !PROGRESS.has(x));
+    if (d.lesson && (d.type === "lesson" || d.id.startsWith("qset:"))) { d.done = Boolean(done[d.lesson]); if (d.done) keep.push("completed"); }
+    else if (d.lessons) {
+      const n = d.lessons.filter((id) => done[id]).length;
+      d.done = d.lessons.length ? n === d.lessons.length : null;
+      if (d.done) keep.push("completed"); else if (n || (d.type === "course" && (S?.log || []).length)) keep.push("in-progress");
+    }
+    d.status = keep;
+  }
+  return docs;
+}
+
 /** lessons a learner has in progress or finished, and pins, put on top of the course documents */
-export function applyPlaces(docs, { pins = [], folderOf = new Map(), scheduled = new Map(), names = new Map() } = {}) {
+export function applyPlaces(docs, { pins = [], folderOf = new Map(), scheduled = new Map(), names = new Map(), tags = new Map() } = {}) {
   const pinned = new Set(pins.map((p) => p.href)), PLACE = new Set(["pinned", "saved", "scheduled"]);
   for (const d of docs) {
     if (d.mine) continue;
@@ -189,6 +210,7 @@ export function applyPlaces(docs, { pins = [], folderOf = new Map(), scheduled =
     if (f?.length) keep.push("saved");
     if (scheduled.get(d.id)?.length) keep.push("scheduled");
     d.status = keep;
+    d.tags = tags.get(d.id) || [];
   }
   return docs;
 }
@@ -196,9 +218,10 @@ export function applyPlaces(docs, { pins = [], folderOf = new Map(), scheduled =
 // ---------- in the browser ----------
 const cache = new Map();
 const once = (k, f) => { if (!cache.has(k)) cache.set(k, Promise.resolve().then(f).catch((e) => { cache.delete(k); throw e; })); return cache.get(k); };
-const json = (url) => fetch(url).then((r) => (r.ok ? r.json() : null)).catch(() => null);
-export const loadLessonIndex = () => once("lessons", () => json(new URL("../api/v1/lessons.json", import.meta.url).href));
-export const loadSearchIndex = () => once("index", () => json(new URL("../data/search-index.json", import.meta.url).href).then((x) => x || { courses: [] }));
+// a failed fetch rejects, so once() forgets it and the next search asks again; callers fall back for now
+const json = (url) => fetch(url).then((r) => { if (!r.ok) throw new Error(`${r.status} ${url}`); return r.json(); });
+export const loadLessonIndex = () => once("lessons", () => json(new URL("../api/v1/lessons.json", import.meta.url).href)).catch(() => null);
+export const loadSearchIndex = () => once("index", () => json(new URL("../data/search-index.json", import.meta.url).href)).catch(() => ({ courses: [] }));
 
 /** the curriculum documents: imported specifications (with their course's spec pages) and the qualification registry */
 export function curriculumDocs({ app = "/app.html", pages = {} } = {}) {
@@ -206,7 +229,7 @@ export function curriculumDocs({ app = "/app.html", pages = {} } = {}) {
     const { SPECS, BODIES, QUAL_TYPES } = await import("../curriculum/uk.js");
     const imported = SPECS.filter((s) => s.statements === "imported");
     const specs = await Promise.all(imported.map(async (s) => {
-      const index = await json(new URL(`../curriculum/specs/${s.id}.json`, import.meta.url).href);
+      const index = await json(new URL(`../curriculum/specs/${s.id}.json`, import.meta.url).href);   // a failure rejects the whole: tried again next time
       const course = s.subject, page = pages[course] || null;
       // biology has a Specification Mastery view by topic; the others open the app's curriculum screen
       const hrefFor = course === "biology" && page ? (ref) => `${page}#/spec/${ref.split(".").slice(0, 2).join(".")}` : null;
@@ -219,7 +242,7 @@ export function curriculumDocs({ app = "/app.html", pages = {} } = {}) {
 /** the learner's own documents, read fresh each time (they change as the learner works) */
 export async function learnerDocs({ store = null, app = "/app.html", indexed = new Set() } = {}) {
   const safe = (f, d) => Promise.resolve().then(f).catch(() => d);
-  const [links, places, LS, tools, jot, kbStore] = await Promise.all([import("../data/links.js"), import("../ui/places.js"), import("../data/learner-state.js"), safe(() => import("../tools/store.js"), null), safe(() => import("../notes/jot.js"), null), safe(() => import("../notes/kb/store.js"), null)]);
+  const [links, places, LS, org, tools, jot, kbStore] = await Promise.all([import("../data/links.js"), import("../ui/places.js"), import("../data/learner-state.js"), import("../data/organise.js"), safe(() => import("../tools/store.js"), null), safe(() => import("../notes/jot.js"), null), safe(() => import("../notes/kb/store.js"), null)]);
   const day = (d) => d.toISOString().slice(0, 10), now = new Date();
   const [documents, cards, blocks] = await Promise.all([
     safe(() => store?.listDocuments?.() || [], []), safe(() => store?.listCards?.() || [], []),
@@ -229,10 +252,10 @@ export async function learnerDocs({ store = null, app = "/app.html", indexed = n
   const items = collections.flatMap((c) => links.itemsOf(c.id).map((r) => ({ cid: c.id, rid: r.rid, title: r.title, r })));
   const folderOf = new Map(); for (const it of items) { if (!folderOf.has(it.rid)) folderOf.set(it.rid, []); folderOf.get(it.rid).push(it.cid); }
   const scheduled = new Map(); try { for (const e of LS.list("sched")) { const r = e.value?.r?.rid; if (!r) continue; if (!scheduled.has(r)) scheduled.set(r, []); scheduled.get(r).push(e.value.block); } } catch { /* fine */ }
-  const pins = places.pins();
+  const pins = places.pins(), tags = new Map(org.tagged().map((x) => [x.rid, x.tags]));
   let kb = null; try { kb = kbStore?.load?.() || null; } catch { /* Notes not available here */ }
-  const docs = docsFromLearner({ app, documents, cards, decks: tools?.decks?.() || [], maps: tools?.maps?.() || [], pages: tools?.pages?.() || [], jots: jot?.loadJots?.() || [], kb, collections, items, pins, scheduled, blocks, folderOf, names, indexed });
-  return { docs, places: { pins, folderOf, scheduled, names } };
+  const docs = docsFromLearner({ app, documents, cards, decks: tools?.decks?.() || [], maps: tools?.maps?.() || [], pages: tools?.pages?.() || [], jots: jot?.loadJots?.() || [], kb, collections, items, pins, scheduled, blocks, folderOf, names, indexed, tags });
+  return { docs, places: { pins, folderOf, scheduled, names, tags } };
 }
 
 /** lesson progress for every course this learner has opened (kit/learning/course-states.js) */
