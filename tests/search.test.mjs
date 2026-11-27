@@ -191,3 +191,32 @@ test("review fixes: quick search's course index ignores typed filters as words, 
   assert.deepEqual(plainQuery('type:lessons equilibrium in:course:"Chemistry" -industrial'), { words: ["equilibrium"], types: new Set(["lesson"]) });
   assert.deepEqual(plainQuery("osmosis"), { words: ["osmosis"], types: null });
 });
+
+test("review fixes: phrases stay within one field, -\"phrase\" leaves it out, and a left-out word is matched whole", () => {
+  const ix4 = buildIndex([
+    { id: "a", type: "lesson", title: "Dynamic", terms: ["Equilibrium"] },
+    { id: "b", type: "lesson", title: "Dynamic equilibrium" },
+    { id: "c", type: "lesson", title: "Reaction rated useful" }, { id: "d", type: "lesson", title: "Reaction rates" },
+    { id: "e", type: "lesson", title: "Equilibrium in an open system" }, { id: "f", type: "lesson", title: "Equilibrium in a closed system" },
+  ]);
+  assert.deepEqual(search(ix4, parseQuery('"dynamic equilibrium"')).hits.map((h) => h.id), ["b"]);
+  assert.deepEqual(search(ix4, parseQuery("reaction -rate")).hits.map((h) => h.id), ["c"]);
+  const q = parseQuery('equilibrium -"open system"');
+  assert.deepEqual([q.phrases, q.notPhrases], [[], ["open system"]]);
+  assert.ok(!search(ix4, q).hits.some((h) => h.id === "e"));
+  assert.ok(search(ix4, q).hits.some((h) => h.id === "f"));
+});
+
+test("review fixes: relative dates count calendar days back from local midnight, across a clock change", async () => {
+  const { execFileSync } = await import("node:child_process");
+  // 30 March 2026, London: the clocks went forward on the 29th (a 23-hour day)
+  const code = `import("${new URL("../kit/search/query.js", import.meta.url).href}").then((m) => { const now = new Date(2026, 2, 30, 12).getTime(); const d = new Date(m.parseWhen("yesterday", now)); process.stdout.write([d.getDate(), d.getHours()].join(",")); })`;
+  assert.equal(execFileSync(process.execPath, ["-e", code], { env: { ...process.env, TZ: "Europe/London" } }).toString(), "29,0");
+});
+
+test("review fixes: find's phrase pattern ends with the phrase", async () => {
+  const { findPattern } = await import("../kit/search/find.js");
+  const re = findPattern('"cell wall"');
+  assert.deepEqual("the cell wall and the cell wallpaper".match(re), ["cell wall"]);
+  assert.deepEqual("a cell, two cells".match(findPattern("cells")), ["cell", "cells"]);   // a word finds its other forms
+});

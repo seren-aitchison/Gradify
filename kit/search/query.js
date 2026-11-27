@@ -69,14 +69,16 @@ export function words(s) {
 /** "7d", "2w", "3m", "week", "month", "today", "2026-11-01" → a time in ms (the start of that moment), or null */
 export function parseWhen(v, now = Date.now()) {
   const s = fold(v).trim(); if (!s) return null;
-  const DAY = 864e5, d0 = new Date(now); d0.setHours(0, 0, 0, 0);
+  const d0 = new Date(now); d0.setHours(0, 0, 0, 0);
   if (s === "today") return d0.getTime();
-  if (s === "yesterday") return d0.getTime() - DAY;
-  if (s === "week") return d0.getTime() - 7 * DAY;
-  if (s === "month") return d0.getTime() - 30 * DAY;
-  if (s === "year") return d0.getTime() - 365 * DAY;
+  // calendar days back from local midnight (a day with a clock change is 23 or 25 hours, not 24)
+  const back = (days) => { const d = new Date(d0); d.setDate(d.getDate() - days); return d.getTime(); };
+  if (s === "yesterday") return back(1);
+  if (s === "week") return back(7);
+  if (s === "month") return back(30);
+  if (s === "year") return back(365);
   const rel = /^(\d{1,3})\s*(d|w|m|y)$/.exec(s);
-  if (rel) return d0.getTime() - Number(rel[1]) * { d: 1, w: 7, m: 30, y: 365 }[rel[2]] * DAY;
+  if (rel) return back(Number(rel[1]) * { d: 1, w: 7, m: 30, y: 365 }[rel[2]]);
   const iso = /^(\d{4})-(\d{2})(?:-(\d{2}))?$/.exec(s);
   if (iso) { const t = new Date(Number(iso[1]), Number(iso[2]) - 1, Number(iso[3] || 1)).getTime(); return Number.isNaN(t) ? null : t; }
   return null;
@@ -87,7 +89,7 @@ const norm = (map, v) => { const s = fold(v).trim(); return map[s] || s; };
 
 /** parse a typed query (and any chip filters from the UI) */
 export function parseQuery(raw = "", chips = {}, { now = Date.now() } = {}) {
-  const q = { raw: String(raw || ""), text: "", terms: [], phrases: [], not: [], filters: { type: [], scope: {}, board: [], qual: [], status: [], done: null, difficulty: [], tag: [] }, from: null, to: null, empty: true };
+  const q = { raw: String(raw || ""), text: "", terms: [], phrases: [], not: [], notPhrases: [], filters: { type: [], scope: {}, board: [], qual: [], status: [], done: null, difficulty: [], tag: [] }, from: null, to: null, empty: true };
   const f = q.filters, rest = [];
   const setScope = (k, v) => { if (v) f.scope[k] = v; };
   for (const t of tokens(raw)) {
@@ -109,7 +111,8 @@ export function parseQuery(raw = "", chips = {}, { now = Date.now() } = {}) {
       else if (t.key === "before") { const w = parseWhen(v, now); if (w != null) q.to = w; }
       else { const w = parseWhen(v, now); if (w != null) q.from = w; }   // after, since, created, modified
     } else if (t.quoted && v) {
-      const ph = words(v); if (ph.length > 1) q.phrases.push(ph.join(" ")); else if (ph.length) { if (t.neg) add(q.not, ph[0]); else add(q.terms, ph[0]); }
+      // -"open system" leaves the phrase out; it isn't a phrase to find
+      const ph = words(v); if (ph.length > 1) add(t.neg ? q.notPhrases : q.phrases, ph.join(" ")); else if (ph.length) { if (t.neg) add(q.not, ph[0]); else add(q.terms, ph[0]); }
       rest.push(t);
     } else if (t.neg && v) { for (const w of words(v)) add(q.not, w); rest.push(t); }
     else { for (const w of words(t.key ? `${t.key}:${v}` : v)) add(q.terms, w); rest.push(t); }

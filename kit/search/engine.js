@@ -80,7 +80,10 @@ function addDocs(ix, docs) {
     if (!d?.title || !d.type) continue;
     const t = words(d.title), k = [...(d.terms || []), ...(d.tags || [])].flatMap(words), c = words([d.sub, ...(d.crumbs || []).map((x) => x.label)].filter(Boolean).join(" ")), b = words(d.body || "");
     const x = { d, t, ts: t.map(stem), k, ks: k.map(stem), c, cs: c.map(stem), b, bs: b.map(stem),
-      tf: ` ${t.join(" ")} `, all: ` ${[...t, ...k, ...c, ...b].join(" ")} ` };
+      tf: ` ${t.join(" ")} `, all: ` ${[...t, ...k, ...c, ...b].join(" ")} `,
+      // each field on its own, so a phrase can't span a title and a key term
+      fields: [` ${t.join(" ")} `, ...(d.terms || []).map((s) => ` ${words(s).join(" ")} `), ...(d.tags || []).map((s) => ` ${words(s).join(" ")} `),
+        ...[d.sub, ...(d.crumbs || []).map((y) => y.label)].filter(Boolean).map((s) => ` ${words(s).join(" ")} `), ` ${b.join(" ")} `] };
     list.push(x);
     for (const w of t) count(w, 3); for (const w of k) count(w, 2); for (const w of b) count(w, 0.2);
   }
@@ -127,7 +130,9 @@ export function passes(d, q, { skip = null } = {}) {
  */
 export function scoreDoc(x, q, { context = {}, any = false } = {}) {
   const d = x.d;
-  for (const n of q.not) if (x.all.includes(` ${n} `) || x.all.includes(` ${stem(n)}`)) return 0;
+  // a left-out word: the word itself or another form of it (rates, rated → rate? only whole stemmed words match)
+  if (q.not.length) { const sn = new Set(q.not.flatMap((n) => [n, stem(n)])); x.stems ||= new Set([...x.ts, ...x.ks, ...x.cs, ...x.bs, ...x.t, ...x.k, ...x.c, ...x.b]); for (const n of sn) if (x.stems.has(n)) return 0; }
+  for (const p of q.notPhrases || []) if (x.fields.some((f) => f.includes(` ${p} `))) return 0;
   let s = 0, matched = 0, inTitle = 0;
   for (const w of q.terms) {
     const ws = stem(w);
@@ -139,7 +144,7 @@ export function scoreDoc(x, q, { context = {}, any = false } = {}) {
   }
   for (const p of q.phrases) {
     if (x.tf.includes(` ${p} `)) s += 18;
-    else if (x.all.includes(` ${p} `)) s += 9;
+    else if (x.fields.some((f) => f.includes(` ${p} `))) s += 9;
     else return 0;
   }
   if (any && !matched && !q.phrases.length) return 0;

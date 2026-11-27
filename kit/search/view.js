@@ -22,7 +22,7 @@ import { resourceFromPlace } from "../core/resource.js";
 import { parseQuery, queryString, activeFilters, without, chipsOf, TYPES, STATUSES, DIFFICULTIES, BOARDS, QUALS } from "./query.js";
 import { buildIndex, buildIndexAsync, combine, search, suggest, related, GROUPS } from "./engine.js";
 import { docsFromIndex, docsFromApp, applyPlaces, applyProgress, loadSearchIndex, loadLessonIndex, curriculumDocs, learnerDocs, progress } from "./sources.js";
-import { searchHistory, savedSearches, remember, forgetSearch, clearSearchHistory, saveSearch, unsaveSearch, restoreSaved, isSaved } from "./memory.js";
+import { searchHistory, savedSearches, remember, forgetSearch, clearSearchHistory, saveSearch, unsaveSearch, restoreSaved, isSaved, restoreHistory } from "./memory.js";
 
 // ---------- the service ----------
 // Gradify's own content is indexed once per page (in slices, so the page stays responsive); the learner's things are
@@ -159,31 +159,36 @@ export async function renderSearch(view, ctx = {}) {
     writeUrl();
     if (!keep) res.setAttribute("aria-busy", "true");
     const r = await svc.run(raw, chips, { force, expand, context: { course: chips.scope.course || ctx.course || null } });
-    if (my !== seq) return;
+    if (my !== seq) return null;
     last = r;
     res.removeAttribute("aria-busy");
     paintChips(r); paintPills(r.q); paintResults(r); paintSide();
     $(".sx-save").setAttribute("aria-pressed", String(Boolean(isSaved(queryString(r.q)))));
+    return r;
   }
   let typing = 0;
   input.addEventListener("input", () => { raw = input.value; expand = null; clearTimeout(typing); typing = setTimeout(() => { go({ keep: true }); }, 140); openSuggest(); });
-  form.addEventListener("submit", (e) => { e.preventDefault(); if (ac >= 0 && sugg[ac]) return pick(sugg[ac]); closeSuggest(); raw = input.value; go().then(() => { if (raw.trim().length > 1) remember(raw, { count: last?.total ?? null }); paintSide(); }); });
+  // what was submitted is what's remembered, with its own count (not whatever is typed by the time it comes back)
+  form.addEventListener("submit", (e) => { e.preventDefault(); if (ac >= 0 && sugg[ac]) return pick(sugg[ac]); closeSuggest(); const sent = raw = input.value; go().then((r) => { if (r && sent.trim().length > 1) remember(sent, { count: r.total }); paintSide(); }); });
   scopeSel.addEventListener("change", () => {
     const [k, v] = scopeSel.value.split(":"); chips.scope = {}; if (k && v) chips.scope[k] = v; go();
   });
 
   // ----- autocomplete -----
+  // suggestions have their own generation: one dismissed (Escape) or overtaken by more typing never reopens the list
+  let acGen = 0;
   async function openSuggest() {
-    const my = seq;
-    sugg = await svc.suggest(input.value, { context: { course: chips.scope.course || null } });
-    if (my !== seq && document.activeElement !== input) return;
+    const my = ++acGen;
+    const got = await svc.suggest(input.value, { context: { course: chips.scope.course || null } });
+    if (my !== acGen) return;
+    sugg = got;
     ac = -1;
     if (!sugg.length || document.activeElement !== input) { closeSuggest(); return; }
     const kindIcon = { saved: "bookmarked", history: "clock", word: "search", hit: null };
     acEl.innerHTML = sugg.map((s, i) => `<li role="option" id="sx-ac${i}" data-i="${i}" aria-selected="false">${uiIcon(kindIcon[s.kind] || ICON[s.hit?.type] || "search")}<span>${s.kind === "hit" ? s.hit.html : esc(s.text)}${s.label ? ` <small>${esc(s.label)}</small>` : s.kind === "history" ? " <small>Recent search</small>" : s.kind === "hit" ? ` <small>${esc(TYPES[s.hit.type]?.[0]?.replace(/s$/, "") || "")}${s.hit.sub ? ` · ${esc(s.hit.sub)}` : ""}</small>` : ""}</span>${s.kind === "history" ? `<button type="button" class="sx-acx" data-forget="${i}" aria-label="Remove ${esc(s.text)} from recent searches" title="Remove">${uiIcon("close")}</button>` : ""}</li>`).join("");
     acEl.hidden = false; input.setAttribute("aria-expanded", "true");
   }
-  function closeSuggest() { acEl.hidden = true; input.setAttribute("aria-expanded", "false"); input.removeAttribute("aria-activedescendant"); ac = -1; }
+  function closeSuggest() { acGen++; acEl.hidden = true; input.setAttribute("aria-expanded", "false"); input.removeAttribute("aria-activedescendant"); ac = -1; }
   function moveSuggest(d) {
     if (acEl.hidden || !sugg.length) return false;
     // -1 is the box itself, as typed
@@ -344,7 +349,9 @@ export async function renderSearch(view, ctx = {}) {
   // "any of the words": the results of each word alone, merged
   async function anyOnce(q) {
     // the whole query (its phrases, left-out words and filters) with only its words matched as any, not all
+    const my = ++seq;
     const r = await svc.run(raw, chips, { any: true, context: { course: q.filters.scope.course || ctx.course || null } });
+    if (my !== seq) return;   // a newer search has started: these results are out of date
     last = r; paintChips(r); paintResults(r);
     const c = res.querySelector(".sx-count"); if (c) c.innerHTML = `${r.total} result${r.total === 1 ? "" : "s"} with any of <b>${esc(q.terms.join(", "))}</b>`;
   }
@@ -377,14 +384,18 @@ export async function renderSearch(view, ctx = {}) {
     if (q) { setQuery(parseQuery(q.dataset.runQ)); expand = null; go().then(() => remember(q.dataset.runQ, { count: last?.total ?? null })); return; }
     const u = e.target.closest("[data-unsave]");
     if (u) { const gone = unsaveSearch(u.dataset.unsave); paintSide(); toast({ html: `Removed the saved search <b>${esc(gone?.name || "")}</b>` }, { undo: () => { restoreSaved(gone); paintSide(); } }); return; }
-    if (e.target.closest("[data-clear-history]")) { const was = searchHistory(); clearSearchHistory(); paintSide(); toast("Recent searches cleared.", { undo: () => { for (const x of [...was].reverse()) remember(x.q, { count: x.n }); paintSide(); } }); }
+    if (e.target.closest("[data-clear-history]")) { const was = searchHistory(); if (!clearSearchHistory()) { toast("Couldn't clear them: this browser isn't letting Gradify change what it keeps.", { tone: "warn" }); return; } paintSide(); toast("Recent searches cleared.", { undo: () => { restoreHistory(was); paintSide(); } }); }
   });
   $(".sx-save").addEventListener("click", () => {
     const q = parseQuery(raw, chips), s = queryString(q);
     if (!s) { toast("Type a search to save it."); input.focus(); return; }
     const was = isSaved(s);
     if (was) { unsaveSearch(was.id); toast({ html: `Removed the saved search <b>${esc(was.name)}</b>` }, { undo: () => { restoreSaved(was); paintSide(); } }); }
-    else { const name = prompt("Name this search", q.text || s); if (name == null) return; saveSearch(name, s); toast({ html: `Saved <b>${esc(name || s)}</b>: it's under Saved searches, and in quick search.` }, { tone: "ok" }); }
+    else {
+      const name = prompt("Name this search", q.text || s); if (name == null) return;
+      if (!saveSearch(name, s)) { toast("Couldn't save it: this browser isn't letting Gradify keep anything.", { tone: "warn" }); return; }
+      toast({ html: `Saved <b>${esc(name || s)}</b>: it's under Saved searches, and in quick search.` }, { tone: "ok" });
+    }
     $(".sx-save").setAttribute("aria-pressed", String(!was)); paintSide();
   });
 

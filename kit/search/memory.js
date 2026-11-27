@@ -32,8 +32,13 @@ export const searchHistory = (store = local()) => read(store).history;
 export const savedSearches = (store = local()) => read(store).saved;
 export function remember(q, { count = null, store = local() } = {}) { const r = read(store); r.history = addHistory(r.history, q, { count }); write(r, store); return r.history; }
 export function forgetSearch(q, store = local()) { const r = read(store); r.history = r.history.filter((x) => !same(x.q, q)); write(r, store); }
-export function clearSearchHistory(store = local()) { const r = read(store); r.history = []; write(r, store); }
-export function saveSearch(name, q, store = local()) { const r = read(store); r.saved = addSaved(r.saved, name, q); write(r, store); return r.saved[0]; }
+export function clearSearchHistory(store = local()) { const r = read(store); r.history = []; return write(r, store); }
+/** saved by name; null when this browser wouldn't keep it (storage full or blocked) */
+export function saveSearch(name, q, store = local()) { const r = read(store); r.saved = addSaved(r.saved, name, q); return write(r, store) ? r.saved[0] : null; }
+/** put cleared searches back as they were (their own times), keeping any made since (Undo on "Clear recent searches") */
+export function restoreHistory(list = [], store = local()) { const r = read(store), have = new Set(r.history.map((x) => x.q.toLowerCase())); r.history = [...r.history, ...list.filter((x) => !have.has(x.q.toLowerCase()))].sort((a, b) => b.t - a.t).slice(0, MAX); write(r, store); }
+/** forget every search and saved search on this device (signing out, so the next person here doesn't see them) */
+export function clearSearchMemory(store = local()) { try { store.removeItem(KEY); } catch { /* fine */ } }
 export function unsaveSearch(id, store = local()) { const r = read(store); const gone = r.saved.find((x) => x.id === id); r.saved = r.saved.filter((x) => x.id !== id); write(r, store); return gone || null; }
 export function restoreSaved(item, store = local()) { if (!item) return; const r = read(store); if (!r.saved.some((x) => x.id === item.id)) { r.saved = [item, ...r.saved]; write(r, store); } }
 export const isSaved = (q, store = local()) => savedSearches(store).find((x) => same(x.q, q)) || null;

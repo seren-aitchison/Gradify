@@ -1720,7 +1720,8 @@ async function renderAccount() {
     try { await store.signInWithEmail($("#email").value.trim()); toast("Check your email for a sign-in link."); } catch (err) { toast(esc(err.message)); }
   });
   $("#google")?.addEventListener("click", () => store.signInWithGoogle().catch((err) => toast(esc(err.message))));
-  $("#signout")?.addEventListener("click", async () => { await store.signOut(); location.reload(); });
+  // signing out forgets this device's recent and saved searches too, so the next person on it doesn't see them
+  $("#signout")?.addEventListener("click", async () => { await store.signOut(); (await import("../search/memory.js")).clearSearchMemory(); location.reload(); });
 }
 
 // The learner's Gradify plan on the Account page: Free, Pro or Ultra, what needs doing, Manage billing, and Gradify AI used

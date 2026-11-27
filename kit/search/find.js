@@ -16,7 +16,8 @@ const reEsc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 /** the pattern that marks a query's words and phrases in text (pure) */
 export function findPattern(raw) {
   const q = parseQuery(raw), alts = [];
-  for (const p of q.phrases) alts.push(p.split(" ").map(reEsc).join("[\\s\\-–]+"));
+  // a phrase ends where a word does ("cell wall", not "cell wallpaper"); a word may be the start of a longer one
+  for (const p of q.phrases) alts.push(`${p.split(" ").map(reEsc).join("[\\s\\-–]+")}(?![\\p{L}\\p{N}])`);
   for (const w of q.terms) { const s = stem(w); alts.push(`${reEsc(s.length >= 3 && s.length < w.length ? s : w)}[\\p{L}\\p{N}]*`); }
   return alts.length ? new RegExp(`(?<![\\p{L}\\p{N}])(?:${alts.sort((a, b) => b.length - a.length).join("|")})`, "giu") : null;
 }
@@ -32,43 +33,63 @@ export function mountFind({ root, label = "Find in this page", onJump = null } =
   let bar = null, input = null, marks = [], at = -1, timer = 0;
   const host = () => (typeof root === "function" ? root() : root);
   function clear() {
-    for (const m of marks) { const t = document.createTextNode(m.textContent); m.replaceWith(t); t.parentNode?.normalize(); }
-    marks = []; at = -1;
+    const parents = new Set();
+    for (const m of marks) { const t = document.createTextNode(m.textContent); const p = m.parentNode; m.replaceWith(t); if (p) parents.add(p); }
+    parents.forEach((p) => p.normalize());
+    marks = []; groups = []; at = -1;
   }
+  // matched on each block's text as read (so "cell **wall**" is one phrase), then marked node by node: one match can be
+  // several <mark>s (across bold, italics, links), moved to as one
+  let groups = [];
   function mark(raw) {
-    clear();
+    clear(); groups = [];
     const el = host(), re = findPattern(raw); if (!el || !re) return 0;
-    const walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, { acceptNode: (n) => (n.parentElement?.closest("script, style, textarea, input, select, .gx-findbar, mark.gx-find") || !n.nodeValue.trim() ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT) });
-    const nodes = []; while (walk.nextNode()) nodes.push(walk.currentNode);
-    for (const n of nodes) {
-      const s = n.nodeValue; re.lastIndex = 0; let m, last = 0; const frag = document.createDocumentFragment(); let any = false;
-      while ((m = re.exec(s))) {
-        if (!m[0]) { re.lastIndex++; continue; }
-        any = true;
-        frag.append(s.slice(last, m.index));
-        const mk = Object.assign(document.createElement("mark"), { className: "gx-find", textContent: m[0] });
-        frag.append(mk); marks.push(mk); last = m.index + m[0].length;
-        if (marks.length > 999) break;
-      }
-      if (any) { frag.append(s.slice(last)); n.replaceWith(frag); }
-      if (marks.length > 999) break;
+    const skip = (n) => n.parentElement?.closest("script, style, textarea, input, select, .gx-findbar, mark.gx-find");
+    // every text node, grouped by the block it reads in (inline formatting, links and code stay in their sentence)
+    const BLOCK = "p, li, h1, h2, h3, h4, h5, h6, td, th, dt, dd, figcaption, blockquote, summary, div, section, article, details, header, footer, aside, ol, ul, table, figure, pre, label, button";
+    const walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, { acceptNode: (n) => (skip(n) || !n.nodeValue ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT) });
+    const runs = []; let cur = null;
+    while (walk.nextNode()) {
+      const n = walk.currentNode, blk = n.parentElement.closest(BLOCK) || el;
+      if (!cur || cur.blk !== blk) { cur = { blk, nodes: [], text: "" }; runs.push(cur); }
+      cur.nodes.push({ n, at: cur.text.length }); cur.text += n.nodeValue;
     }
-    return marks.length;
+    for (const { nodes, text } of runs) {
+      if (!text.trim()) continue;
+      re.lastIndex = 0; let m; const found = [];
+      while ((m = re.exec(text))) { if (!m[0]) { re.lastIndex++; continue; } found.push([m.index, m.index + m[0].length]); if (found.length > 200) break; }
+      // wrap from the last match back, so earlier offsets stay true
+      const made = [];
+      for (const [s0, e0] of found.reverse()) {
+        const group = [];
+        for (const { n, at } of [...nodes].reverse()) {
+          const end = at + n.nodeValue.length; if (end <= s0 || at >= e0) continue;
+          const a0 = Math.max(0, s0 - at), b0 = Math.min(n.nodeValue.length, e0 - at);
+          const mid = n.splitText(a0); mid.splitText(b0 - a0);
+          const mk = Object.assign(document.createElement("mark"), { className: "gx-find", textContent: mid.nodeValue });
+          mid.replaceWith(mk); group.unshift(mk);
+        }
+        made.unshift(group);
+      }
+      for (const g of made) { groups.push(g); marks.push(...g); }
+      if (groups.length > 999) break;
+    }
+    return groups.length;
   }
   function show(i) {
-    if (!marks.length) { count(); return; }
-    marks[at]?.classList.remove("on");
-    at = (i + marks.length) % marks.length;
-    const m = marks[at];
+    if (!groups.length) { count(); return; }
+    groups[at]?.forEach((x) => x.classList.remove("on"));
+    at = (i + groups.length) % groups.length;
+    const m = groups[at][0];
+    groups[at].forEach((x) => x.classList.add("on"));
     // a match inside a closed part opens it
     for (let d = m.closest("details:not([open])"); d; d = d.parentElement?.closest("details:not([open])")) d.open = true;
-    m.classList.add("on");
     m.scrollIntoView({ block: "center", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
     count(); onJump?.(m);
   }
   function count() {
     if (!bar) return;
-    const n = marks.length, raw = input.value.trim();
+    const n = groups.length, raw = input.value.trim();
     bar.querySelector(".gx-findn").textContent = !raw ? "" : n ? `${at + 1} of ${n >= 1000 ? "1000+" : n}` : "No matches";
     bar.querySelectorAll("[data-step]").forEach((b) => { b.disabled = n < 2; });
     const list = bar.querySelector(".gx-findl");
@@ -97,13 +118,13 @@ export function mountFind({ root, label = "Find in this page", onJump = null } =
       bar.addEventListener("click", (e) => {
         const st = e.target.closest("[data-step]"); if (st) { show(at + Number(st.dataset.step)); return; }
         if (e.target.closest("[data-close]")) { close(); return; }
-        const sc = e.target.closest("[data-sec]"); if (sc) { const i = marks.findIndex((m) => m.closest(`[id="${CSS.escape(sc.dataset.sec)}"]`)); if (i >= 0) show(i); }
+        const sc = e.target.closest("[data-sec]"); if (sc) { const i = groups.findIndex((g) => g[0].closest(`[id="${CSS.escape(sc.dataset.sec)}"]`)); if (i >= 0) show(i); }
       });
       addEventListener("hashchange", close, { once: true });
     }
     input.value = q; input.focus(); input.select();
     mark(q);
-    const first = sectionId ? marks.findIndex((m) => m.closest(`[id="${CSS.escape(sectionId)}"]`)) : 0;
+    const first = sectionId ? groups.findIndex((g) => g[0].closest(`[id="${CSS.escape(sectionId)}"]`)) : 0;
     show(Math.max(0, first));
   }
   function close() { clearTimeout(timer); clear(); bar?.remove(); bar = null; input = null; }

@@ -2997,6 +2997,8 @@ export function mountCourse(root, cfg) {
   let routeStop = null;   // a view's own clean-up (the target test's timer)
   let routedHash = null;
   async function route() {
+    // Find marks the lesson on screen: a route draws it again (even without a new address), so Find closes first
+    try { finder.close(); } catch { /* not made yet */ }
     // a real change of place ends a lab sitting; a redraw of the same place (an account sync) doesn't. A try still
     // open when the learner leaves is recorded first, against the place they're leaving and in that sitting
     const moved = location.hash !== routedHash;
